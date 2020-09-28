@@ -35,7 +35,7 @@ if (!$personID && !$person_name) {
 $template = "sssssssssssssssssssssssssssss";
 $query = "INSERT IGNORE INTO $dna_tests_table (test_type, test_number, notes, vendor, test_date, match_date, personID, gedcom, urls, markers, y_results, hvr1_results, hvr2_results, person_name, ydna_confirmed, mtdna_confirmed,markeropt, notesopt, linksopt, surnamesopt, private_dna, private_test, dna_group, dna_group_desc, surnames, mtdna_haplogroup, ydna_haplogroup, significant_snp, terminal_snp)
 		VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-$params = array(&$template, &$test_type, &$test_number, &$notes, &$vendor, &$test_date, &$match_date, &$personID, &$mynewgedcom, &$urls, &$markers, &$y_results, &$hvr1_results, &$hvr2_results, &$person_name, &$ydna_confirmed, &$mtdna_confirmed, &$markeropt, &$notesopt, &$linksopt, &$surnamesopt, &$private_dna, &$private_test, &$dna_group, &$dna_group_desc, &$surnames, &$mtdna_haplogroup, &$ydna_haplogroup, &$signsnp, &$termsnp);
+$params = [&$template, &$test_type, &$test_number, &$notes, &$vendor, &$test_date, &$match_date, &$personID, &$mynewgedcom, &$urls, &$markers, &$y_results, &$hvr1_results, &$hvr2_results, &$person_name, &$ydna_confirmed, &$mtdna_confirmed, &$markeropt, &$notesopt, &$linksopt, &$surnamesopt, &$private_dna, &$private_test, &$dna_group, &$dna_group_desc, &$surnames, &$mtdna_haplogroup, &$ydna_haplogroup, &$signsnp, &$termsnp];
 tng_execute($query, $params);
 $success = tng_affected_rows();
 if ($success) {
@@ -44,7 +44,7 @@ if ($success) {
     if ($personID) {
         $template = "ssss";
         $query = "INSERT IGNORE INTO $dna_links_table (testID,personID,gedcom,dna_group) VALUES (?,?,?,?)";
-        $params = array(&$template, &$testID, &$personID, &$mynewgedcom, &$dna_group);
+        $params = [&$template, &$testID, &$personID, &$mynewgedcom, &$dna_group];
         tng_execute($query, $params);
     }
 

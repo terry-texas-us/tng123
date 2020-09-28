@@ -32,10 +32,10 @@ tng_adminheader($admtext['modifylogsettings'], $flags);
 <body class="admin-body">
 
 <?php
-$setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");
-$setuptabs[1] = array(1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics");
-$setuptabs[2] = array(1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation");
-$setuptabs[3] = array(1, "#", $admtext['logconfigsettings'], "log");
+$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
+$setuptabs[3] = [1, "#", $admtext['logconfigsettings'], "log"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/logconfig_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($setuptabs, "log", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['logconfigsettings'], "img/setup_icon.gif", $menu, "");

@@ -109,12 +109,12 @@ class ReCaptcha
         }
         $getResponse = $this->_submitHttpGet(
             self::$_siteVerifyUrl,
-            array(
+            [
                 'secret' => $this->_secret,
                 'remoteip' => $remoteIp,
                 'v' => self::$_version,
                 'response' => $response
-            )
+            ]
         );
         $answers = json_decode($getResponse, true);
         $recaptchaResponse = new ReCaptchaResponse();

@@ -122,7 +122,7 @@ class moddeleter extends modbase
             return true;
         }
 
-        $files = array_diff(scandir($dir), array('.', '..'));
+        $files = array_diff(scandir($dir), ['.', '..']);
         foreach ($files as $file) {
             (is_dir("$dir/$file") && !is_link($dir)) ? $this->delTree("$dir/$file") : unlink("$dir/$file");
         }

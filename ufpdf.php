@@ -58,12 +58,12 @@ if (!class_exists('UFPDF')) {
                 $this->Error('Could not include font definition file');
             }
             $i = count($this->fonts) + 1;
-            $this->fonts[$family . $style] = array('i' => $i, 'type' => $type, 'name' => $name, 'desc' => $desc, 'up' => $up, 'ut' => $ut, 'cw' => $cw, 'file' => $file, 'ctg' => $ctg);
+            $this->fonts[$family . $style] = ['i' => $i, 'type' => $type, 'name' => $name, 'desc' => $desc, 'up' => $up, 'ut' => $ut, 'cw' => $cw, 'file' => $file, 'ctg' => $ctg];
             if ($file) {
                 if ($type == 'TrueTypeUnicode') {
-                    $this->FontFiles[$file] = array('length1' => $originalsize);
+                    $this->FontFiles[$file] = ['length1' => $originalsize];
                 } else {
-                    $this->FontFiles[$file] = array('length1' => $size1, 'length2' => $size2);
+                    $this->FontFiles[$file] = ['length1' => $size1, 'length2' => $size2];
                 }
             }
         }
@@ -245,14 +245,14 @@ if (!class_exists('UFPDF')) {
             //Convert to UTF-16BE
             $s = $this->utf8_to_utf16be($s);
             //Escape necessary characters
-            return '(' . strtr($s, array(')' => '\\)', '(' => '\\(', '\\' => '\\\\')) . ')';
+            return '(' . strtr($s, [')' => '\\)', '(' => '\\(', '\\' => '\\\\']) . ')';
         }
 
         public function _escapetext($s) {
             //Convert to UTF-16BE
             $s = $this->utf8_to_utf16be($s, false);
             //Escape necessary characters
-            return '(' . strtr($s, array(')' => '\\)', '(' => '\\(', '\\' => '\\\\')) . ')';
+            return '(' . strtr($s, [')' => '\\)', '(' => '\\(', '\\' => '\\\\']) . ')';
         }
 
         public function _putinfo() {
@@ -311,7 +311,7 @@ if (!class_exists('UFPDF')) {
                             }
                         }
 
-                        $q = array($c);
+                        $q = [$c];
                         // Fetch rest of sequence
                         while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
                             ++$i;
@@ -385,7 +385,7 @@ if (!class_exists('UFPDF')) {
 // Correctly handles all illegal UTF-8 sequences.
         public function utf8_to_codepoints($txt) {
             $l = strlen($txt);
-            $out = array();
+            $out = [];
             for ($i = 0; $i < $l; ++$i) {
                 $c = ord($txt[$i]);
                 // ASCII
@@ -417,7 +417,7 @@ if (!class_exists('UFPDF')) {
                             }
                         }
 
-                        $q = array($c);
+                        $q = [$c];
                         // Fetch rest of sequence
                         while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
                             ++$i;

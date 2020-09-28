@@ -9,7 +9,7 @@ class modinfo extends modlister
         $this->modname = '';
         $this->version = '';
         $this->description = '';
-        $this->authors = array();
+        $this->authors = [];
         $this->wikipage = '';
         $this->private = '';
         $this->status_header = '';
@@ -56,7 +56,7 @@ class modinfo extends modlister
     }
 
     public function get_target_files() {
-        $targets = array();
+        $targets = [];
         foreach ($this->tags as $tag) {
             if ($tag['name'] == 'target') {
                 $targets[] = $tag['arg1'];

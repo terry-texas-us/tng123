@@ -114,7 +114,7 @@ function parentRow($parent, $spouse, $label) {
         $pout .= "<select name=\"$fieldname{$parent['familyID']}\">\n";
         $pout .= "<option value=\"\"></option>\n";
 
-        $reltypes = array("adopted", "birth", "foster", "sealing", "step", "putative");
+        $reltypes = ["adopted", "birth", "foster", "sealing", "step", "putative"];
         foreach ($reltypes as $reltype) {
             $pout .= "<option value=\"$reltype\"";
             if ($parent[$fieldname] == $reltype || $parent[$fieldname] == $admtext[$reltype]) {
@@ -270,11 +270,11 @@ include_once "eventlib_js.php";
     <body class="admin-body" onload="startSort()">
 
     <?php
-    $peopletabs[0] = array(1, "admin_people.php", $admtext['search'], "findperson");
-    $peopletabs[1] = array($allow_add, "admin_newperson.php", $admtext['addnew'], "addperson");
-    $peopletabs[2] = array($allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review");
-    $peopletabs[3] = array($allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge");
-    $peopletabs[4] = array($allow_edit, "admin_editperson.php?personID=$personID&tree=$tree", $admtext['edit'], "edit");
+    $peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
+    $peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
+    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
+    $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
+    $peopletabs[4] = [$allow_edit, "admin_editperson.php?personID=$personID&tree=$tree", $admtext['edit'], "edit"];
     $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
     $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
     $innermenu .= " &nbsp;|&nbsp; <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";

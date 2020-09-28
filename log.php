@@ -8,7 +8,7 @@ function writelog($string) {
         $_SERVER['REMOTE_HOST'] = '';
     }
 
-    $string = str_replace(array("\n", "\r"), " ", $string);
+    $string = str_replace(["\n", "\r"], " ", $string);
     if (strpos($string, "http") !== false || strpos($string, "www") !== false) {
         return;
     }

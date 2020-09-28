@@ -75,31 +75,31 @@ if ($dnarow['personID']) {
     $dna_namestr = ($dnarow['private_dna'] && !$allow_edit) ? $admtext['text_private'] : $person_name;
 }
 
-$dnatext .= showEvent(array("text" => $text['takenby'], "fact" => $dna_namestr));
+$dnatext .= showEvent(["text" => $text['takenby'], "fact" => $dna_namestr]);
 
 if ($dnarow['private_test'] && $allow_private) {
-    $dnatext .= showEvent(array("text" => $text['keep_test_private'], "fact" => $admtext['yes']));
+    $dnatext .= showEvent(["text" => $text['keep_test_private'], "fact" => $admtext['yes']]);
 }
 if ($dnarow['test_date'] && $dnarow['test_date'] != "0000-00-00") {
     $test_date = formatInternalDate($dnarow['test_date']);
     if ($dprights['both']) {
-        $dnatext .= showEvent(array("text" => $text['test_date'], "fact" => $test_date));
+        $dnatext .= showEvent(["text" => $text['test_date'], "fact" => $test_date]);
     }
 }
 if ($dnarow['match_date'] && $dnarow['match_date'] != "0000-00-00") {
     $match_date = formatInternalDate($dnarow['match_date']);
     if ($dprights['both']) {
-        $dnatext .= showEvent(array("text" => $admtext['match_date'], "fact" => $match_date));
+        $dnatext .= showEvent(["text" => $admtext['match_date'], "fact" => $match_date]);
     }
 }
 
 if ($dnarow['vendor']) {
-    $dnatext .= showEvent(array("text" => $admtext['vendor'], "fact" => $dnarow['vendor']));
+    $dnatext .= showEvent(["text" => $admtext['vendor'], "fact" => $dnarow['vendor']]);
 }
 
-$dnatext .= showEvent(array("text" => $text['test_type'], "fact" => $test_type));
+$dnatext .= showEvent(["text" => $text['test_type'], "fact" => $test_type]);
 if ($dnarow['test_number'] && ($allow_edit || $showtestnumbers)) {
-    $dnatext .= showEvent(array("text" => $text['test_number'], "fact" => $dnarow['test_number']));
+    $dnatext .= showEvent(["text" => $text['test_number'], "fact" => $dnarow['test_number']]);
 }
 $dnagroup = $dnarow['dna_group'];
 $dscquery = "SELECT description FROM $dna_groups_table WHERE dna_group='$dnagroup'";
@@ -108,12 +108,12 @@ $dscrow = tng_fetch_assoc($dscresult);
 tng_free_result($dscresult);
 $group = $dnagroup ? $dscrow['description'] : $text['none'];
 if ($dnarow['dna_group']) {
-    $dnatext .= showEvent(array("text" => $text['testgroup'], "fact" => $group));
+    $dnatext .= showEvent(["text" => $text['testgroup'], "fact" => $group]);
 }
 if ($dnarow['GEDmatchID']) {
     if ($dprights['both']) {
         $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target=\"_blank\">{$dnarow['GEDmatchID']}</a>";
-        $dnatext .= showEvent(array("text" => $admtext['gedmatchID'], "fact" => $GEDmatch_str));
+        $dnatext .= showEvent(["text" => $admtext['gedmatchID'], "fact" => $GEDmatch_str]);
     }
 }
 if ($dnarow['MD_ancestorID']) {
@@ -131,7 +131,7 @@ if ($dnarow['MD_ancestorID']) {
     tng_free_result($dna_pers_result);
 
     $ancestor_str = ($dnarow['test_type'] == "atDNA") ? $admtext['mrca'] : $admtext['mda'];
-    $dnatext .= showEvent(array("text" => $admtext['mda'], "fact" => $anc_namestr));
+    $dnatext .= showEvent(["text" => $admtext['mda'], "fact" => $anc_namestr]);
 }
 if ($dnarow['MRC_ancestorID']) {
     if ($dnarow['MRC_ancestorID'][0] == $tngconfig['personprefix']) {
@@ -148,7 +148,7 @@ if ($dnarow['MRC_ancestorID']) {
 
         tng_free_result($dna_mrca_result);
 
-        $dnatext .= showEvent(array("text" => $admtext['mrca'], "fact" => $anc_namestr));
+        $dnatext .= showEvent(["text" => $admtext['mrca'], "fact" => $anc_namestr]);
     } else {
         if ($dnarow['MRC_ancestorID'][0] == $tngconfig['familyprefix']) {
             $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"{$dnarow['MRC_ancestorID']}\" AND gedcom = \"{$dnarow['gedcom']}\"";
@@ -165,13 +165,13 @@ if ($dnarow['MRC_ancestorID']) {
             $famname = getFamilyName($famrow);
             $anc_namestr = "<a href=\"familygroup.php?familyID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$famname</a>";
             $anc_namestr = $text['family'] . ": " . "<a href=\"familygroup.php?familyID={$dnarow['MRC_ancestorID']}&tree={$dnarow['gedcom']}\">$famname</a>";
-            $dnatext .= showEvent(array("text" => $admtext['mrca'], "fact" => $anc_namestr));
+            $dnatext .= showEvent(["text" => $admtext['mrca'], "fact" => $anc_namestr]);
         }
     }
 }
 
 if ($dnarow['markers']) {
-    $dnatext .= showEvent(array("text" => $admtext['markers'], "fact" => $dnarow['markers']));
+    $dnatext .= showEvent(["text" => $admtext['markers'], "fact" => $dnarow['markers']]);
 }
 if ($dnarow['y_results']) {
     $dnatext .= "<tr>\n";
@@ -185,7 +185,7 @@ if ($dnarow['ydna_haplogroup']) {
     } else {
         $dnarow['ydna_haplogroup'] = "<span class='predicted_haplogroup'>" . $dnarow['ydna_haplogroup'] . " - " . $text['predicted'] . "</span>";
     }
-    $dnatext .= showEvent(array("text" => $admtext['ydna_haplogroup'], "fact" => $dnarow['ydna_haplogroup']));
+    $dnatext .= showEvent(["text" => $admtext['ydna_haplogroup'], "fact" => $dnarow['ydna_haplogroup']]);
 }
 if ($dnarow['mtdna_haplogroup']) {
     if ($dnarow['mtdna_confirmed']) {
@@ -193,29 +193,29 @@ if ($dnarow['mtdna_haplogroup']) {
     } else {
         $dnarow['mtdna_haplogroup'] = "<span class='predicted_haplogroup'>" . $dnarow['mtdna_haplogroup'] . " - " . $text['predicted'] . "</span>";
     }
-    $dnatext .= showEvent(array("text" => $admtext['mtdna_haplogroup'], "fact" => $dnarow['mtdna_haplogroup']));
+    $dnatext .= showEvent(["text" => $admtext['mtdna_haplogroup'], "fact" => $dnarow['mtdna_haplogroup']]);
 }
 if ($dnarow['significant_snp']) {
-    $dnatext .= showEvent(array("text" => $admtext['signsnp'], "fact" => $dnarow['significant_snp']));
+    $dnatext .= showEvent(["text" => $admtext['signsnp'], "fact" => $dnarow['significant_snp']]);
 }
 if ($dnarow['terminal_snp']) {
-    $dnatext .= showEvent(array("text" => $admtext['termsnp'], "fact" => $dnarow['terminal_snp']));
+    $dnatext .= showEvent(["text" => $admtext['termsnp'], "fact" => $dnarow['terminal_snp']]);
 }
 if ($dnarow['ref_seq']) {
     $fact = $dnarow['ref_seq'] == "rsrs" ? $admtext['rsrs'] : $admtext['rcrs'];
-    $dnatext .= showEvent(array("text" => $admtext['ref_seq'], "fact" => $fact));
+    $dnatext .= showEvent(["text" => $admtext['ref_seq'], "fact" => $fact]);
 }
 if ($dnarow['hvr1_results']) {
-    $dnatext .= showEvent(array("text" => $admtext['hvr1_values'], "fact" => $dnarow['hvr1_results']));
+    $dnatext .= showEvent(["text" => $admtext['hvr1_values'], "fact" => $dnarow['hvr1_results']]);
 }
 if ($dnarow['hvr2_results']) {
-    $dnatext .= showEvent(array("text" => $admtext['hvr2_values'], "fact" => $dnarow['hvr2_results']));
+    $dnatext .= showEvent(["text" => $admtext['hvr2_values'], "fact" => $dnarow['hvr2_results']]);
 }
 if ($dnarow['xtra_mut']) {
-    $dnatext .= showEvent(array("text" => $admtext['xtra_mut'], "fact" => $dnarow['xtra_mut']));
+    $dnatext .= showEvent(["text" => $admtext['xtra_mut'], "fact" => $dnarow['xtra_mut']]);
 }
 if ($allow_admin && $dnarow['coding_reg']) {
-    $dnatext .= showEvent(array("text" => $admtext['coding_reg'], "fact" => $dnarow['coding_reg']));
+    $dnatext .= showEvent(["text" => $admtext['coding_reg'], "fact" => $dnarow['coding_reg']]);
 }
 if ($allow_admin) {
     if ($dnarow['shared_cMs']) {
@@ -225,40 +225,40 @@ if ($allow_admin) {
         } else {
             $total_shared .= "";
         }
-        $dnatext .= showEvent(array("text" => $admtext['shared_dna'], "fact" => $total_shared));
+        $dnatext .= showEvent(["text" => $admtext['shared_dna'], "fact" => $total_shared]);
     }
     if ($dnarow['chromosome'] && $dnarow['centiMorgans']) {
         $segment = "{$admtext['chromosome']}  {$dnarow['chromosome']}  | {$dnarow['centiMorgans']}  {$admtext['centiMorgans']} ";
-        $dnatext .= showEvent(array("text" => $admtext['largest_segment'], "fact" => $segment));
+        $dnatext .= showEvent(["text" => $admtext['largest_segment'], "fact" => $segment]);
     }
     if ($dnarow['segment_start']) {
-        $dnatext .= showEvent(array("text" => $admtext['segment_start'], "fact" => $dnarow['segment_start']));
+        $dnatext .= showEvent(["text" => $admtext['segment_start'], "fact" => $dnarow['segment_start']]);
     }
     if ($dnarow['segment_end']) {
-        $dnatext .= showEvent(array("text" => $admtext['segment_end'], "fact" => $dnarow['segment_end']));
+        $dnatext .= showEvent(["text" => $admtext['segment_end'], "fact" => $dnarow['segment_end']]);
     }
     if ($dnarow['matching_SNPs']) {
-        $dnatext .= showEvent(array("text" => $admtext['matchingSNPs'], "fact" => $dnarow['matching_SNPs']));
+        $dnatext .= showEvent(["text" => $admtext['matchingSNPs'], "fact" => $dnarow['matching_SNPs']]);
     }
     if ($dnarow['relationship_range']) {
-        $dnatext .= showEvent(array("text" => $admtext['relationship_range'], "fact" => $dnarow['relationship_range']));
+        $dnatext .= showEvent(["text" => $admtext['relationship_range'], "fact" => $dnarow['relationship_range']]);
     }
     if ($dnarow['suggested_relationship']) {
-        $dnatext .= showEvent(array("text" => $admtext['suggested_relationship'], "fact" => $dnarow['suggested_relationship']));
+        $dnatext .= showEvent(["text" => $admtext['suggested_relationship'], "fact" => $dnarow['suggested_relationship']]);
     }
     if ($dnarow['actual_relationship']) {
-        $dnatext .= showEvent(array("text" => $admtext['actual_relationship'], "fact" => $dnarow['actual_relationship']));
+        $dnatext .= showEvent(["text" => $admtext['actual_relationship'], "fact" => $dnarow['actual_relationship']]);
     }
     if ($dnarow['related_side']) {
-        $dnatext .= showEvent(array("text" => $admtext['related_side'], "fact" => $dnarow['related_side']));
+        $dnatext .= showEvent(["text" => $admtext['related_side'], "fact" => $dnarow['related_side']]);
     }
     if ($dnarow['x_match']) {
-        $dnatext .= showEvent(array("text" => $admtext['xmatch'], "fact" => $admtext['yes']));
+        $dnatext .= showEvent(["text" => $admtext['xmatch'], "fact" => $admtext['yes']]);
     }
 }
 if ($dnarow['surnames']) {
     $dnarow['surnames'] = $ancsurnameupper ? strtoupper($dnarow['surnames']) : $dnarow['surnames'];
-    $dnatext .= showEvent(array("text" => $admtext['ancestral_surnames'], "fact" => $dnarow['surnames']));
+    $dnatext .= showEvent(["text" => $admtext['ancestral_surnames'], "fact" => $dnarow['surnames']]);
 }
 
 if ($dnarow['urls']) {
@@ -337,7 +337,7 @@ if ($numrows >= $maxsearchresults) {
 tng_free_result($presult);
 
 if ($dnalinktext) {
-    $dnatext .= showEvent(array("text" => $text['indlinked'], "fact" => $dnalinktext));
+    $dnatext .= showEvent(["text" => $text['indlinked'], "fact" => $dnalinktext]);
 }
 
 $dnatext .= "</table>\n";

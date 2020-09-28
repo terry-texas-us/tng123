@@ -69,7 +69,7 @@ function getEvents($person) {
 
     $personID = $person['personID'];
     $tree = $person['tree'];
-    $events = array();
+    $events = [];
     $eventstr = "";
     $leftoffset = 3;
     $maxleft = 0;
@@ -233,7 +233,7 @@ function getEvents($person) {
 writelog("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($logname)</a>");
 preparebookmark("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($namestr)</a>");
 
-$keeparray = array();
+$keeparray = [];
 $earliest = intval(date('Y'));
 $latest = 0;
 foreach ($timeline as $timeentry) {
@@ -246,7 +246,7 @@ foreach ($timeline as $timeentry) {
     $result2 = tng_query($query);
     if ($result2) {
         $row2 = tng_fetch_assoc($result2);
-        $newtimeentry = array();
+        $newtimeentry = [];
         $newtimeentry['personID'] = $output['timeperson'];
         $newtimeentry['tree'] = $output['timetree'];
         $displaydeath = $row2['death'] ? $row2['death'] : "";
@@ -303,8 +303,8 @@ $tlquery = "SELECT evday, evmonth, evyear, evtitle, evdetail, endday, endmonth, 
 	ORDER BY evyear * 1, evmonth, evday";
 
 $tlresult = tng_query($tlquery) or die ($text['cannotexecutequery'] . ": $tlquery");
-$tlevents = array();
-$tlevents2 = array();
+$tlevents = [];
+$tlevents2 = [];
 while ($tlrow = tng_fetch_assoc($tlresult)) {
     $evyear = $tlrow['evyear'];
     if ($evyear < $earliest) {

@@ -167,7 +167,7 @@ class modbase
     protected $time_offset = 0;
     protected $sitever = 'standard';
     protected $currentuserdesc = '';
-    protected $admtext = array();
+    protected $admtext = [];
 
     // options
     public $sortby = 0;
@@ -380,7 +380,7 @@ class modbase
 // MODS
 
     public function get_modfile_names() {
-        $fileNames = array();
+        $fileNames = [];
 
         if ($handle = opendir($this->modspath)) {
             while (false !== ($file = readdir($handle))) {
@@ -397,7 +397,7 @@ class modbase
     // returns file names (no path) as array indexes and mod name as array values
     public function get_modlist_sorted() {
 
-        $mod_list = array();
+        $mod_list = [];
 
         if (!is_dir($this->modspath)) {
             return self::NOPATH;

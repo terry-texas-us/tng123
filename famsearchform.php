@@ -213,7 +213,7 @@ echo $formstr;
                 <td class="databack">
                     <select name="mfnqualify" class="mediumfield">
                         <?php
-                        $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"), array($text['soundexof'], "soundexof"));
+                        $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mfnqualify == $item[1]) {
@@ -252,7 +252,7 @@ echo $formstr;
                 <td class="databack">
                     <select name="fidqualify" class="mediumfield">
                         <?php
-                        $item_array = array(array($text['equals'], "equals"), array($text['contains'], "contains"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"));
+                        $item_array = [[$text['equals'], "equals"], [$text['contains'], "contains"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($fidqualify == $item[1]) {
@@ -345,7 +345,7 @@ echo $formstr;
                 <td class="databack">
                     <select name="mtqualify" class="mediumfield">
                         <?php
-                        $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
+                        $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($mtqualify == $item[1]) {
@@ -425,7 +425,7 @@ echo $formstr;
                 echo "<td>\n";
                 echo "<select name=\"cyq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
 
-                $item2_array = array(array($text['equals'], ""), array($text['plusminus2'], "pm2"), array($text['plusminus5'], "pm5"), array($text['plusminus10'], "pm10"), array($text['lessthan'], "lt"), array($text['greaterthan'], "gt"), array($text['lessthanequal'], "lte"), array($text['greaterthanequal'], "gte"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
+                $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                 foreach ($item2_array as $item) {
                     echo "<option value=\"$item[1]\"";
                     echo ">$item[0]</option>\n";
@@ -474,7 +474,7 @@ echo $formstr;
                 <td>
                     <select name="nr">
                         <?php
-                        $item3_array = array(array(50, 50), array(100, 100), array(150, 150), array(200, 200));
+                        $item3_array = [[50, 50], [100, 100], [150, 150], [200, 200]];
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($nr == $item[1]) {

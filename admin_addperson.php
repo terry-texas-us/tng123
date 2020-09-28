@@ -181,7 +181,7 @@ $branchlist = explode(',', $allbranches);
 $template = "sss";
 foreach ($branchlist as $b) {
     $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(?,?,?)";
-    $params = array(&$template, &$b, &$tree, &$personID);
+    $params = [&$template, &$b, &$tree, &$personID];
     tng_execute($query, $params);
 }
 
@@ -196,7 +196,7 @@ if ($type == "child") {
 
         $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,frel,mrel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES (?,?,?,?,\"\",\"\",0,0,\"\",\"0000-00-00\",\"\")";
         $template = "ssis";
-        $params = array(&$template, &$familyID, &$personID, &$order, &$tree);
+        $params = [&$template, &$familyID, &$personID, &$order, &$tree];
         tng_execute($query, $params);
 
         $query = "SELECT husband, wife FROM $families_table WHERE familyID='$familyID' AND gedcom='$tree'";
@@ -205,12 +205,12 @@ if ($type == "child") {
         $template = "ss";
         if ($famrow['husband']) {
             $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
-            $params = array(&$template, &$famrow['husband'], &$tree);
+            $params = [&$template, &$famrow['husband'], &$tree];
             tng_execute($query, $params);
         }
         if ($famrow['wife']) {
             $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
-            $params = array(&$template, &$famrow['wife'], &$tree);
+            $params = [&$template, &$famrow['wife'], &$tree];
             tng_execute($query, $params);
         }
         tng_free_result($result);

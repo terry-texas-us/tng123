@@ -15,14 +15,14 @@ if ($assignedtree) {
 require "adminlog.php";
 
 if ($table == "all") {
-    $tablelist = array($cemeteries_table, $people_table, $families_table, $children_table, $languages_table, $places_table, $states_table,
+    $tablelist = [$cemeteries_table, $people_table, $families_table, $children_table, $languages_table, $places_table, $states_table,
         $countries_table, $sources_table, $repositories_table, $citations_table, $reports_table, $events_table, $eventtypes_table, $trees_table, $notelinks_table,
         $xnotes_table, $users_table, $tlevents_table, $temp_events_table, $templates_table, $branches_table, $branchlinks_table, $dna_groups_table, $dna_links_table, $dna_tests_table,
-        $address_table, $albums_table, $albumlinks_table, $album2entities_table, $assoc_table, $media_table, $medialinks_table, $mediatypes_table, $mostwanted_table);
+        $address_table, $albums_table, $albumlinks_table, $album2entities_table, $assoc_table, $media_table, $medialinks_table, $mediatypes_table, $mostwanted_table];
     $tablename = $admtext['alltables'];
     $message = "$tablename {$admtext['succoptimized']}.";
 } else {
-    $tablelist = array("$table");
+    $tablelist = ["$table"];
     $tablename = $table;
     $message = "{$admtext['table']} $tablename {$admtext['succoptimized']}.";
 }

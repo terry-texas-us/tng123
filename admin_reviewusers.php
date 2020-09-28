@@ -37,9 +37,9 @@ tng_adminheader($admtext['users'], $flags);
 <body class="admin-body">
 
 <?php
-$usertabs[0] = array(1, "admin_users.php", $admtext['search'], "finduser");
-$usertabs[1] = array($allow_add, "admin_newuser.php", $admtext['addnew'], "adduser");
-$usertabs[2] = array($allow_edit, "admin_reviewusers.php", $admtext['review'] . $revstar, "review");
+$usertabs[0] = [1, "admin_users.php", $admtext['search'], "finduser"];
+$usertabs[1] = [$allow_add, "admin_newuser.php", $admtext['addnew'], "adduser"];
+$usertabs[2] = [$allow_edit, "admin_reviewusers.php", $admtext['review'] . $revstar, "review"];
 $usertabs[3] = [1, "admin_mailusers.php", $admtext['email'], "mail"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/users_help.php#addreg');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($usertabs, "review", $innermenu);

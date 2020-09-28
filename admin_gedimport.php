@@ -36,7 +36,7 @@ $readmsecs = (!empty($tngimpcfg['readmsecs']) && is_numeric($tngimpcfg['readmsec
 $writeinterval = (!empty($tngimpcfg['rrnum']) && is_numeric($tngimpcfg['rrnum'])) ? $tngimpcfg['rrnum'] : 100;  //every 100 records
 
 global $prefix, $medialinks, $albumlinks;
-$medialinks = $albumlinks = array();
+$medialinks = $albumlinks = [];
 $num_medialinks = $num_albumlinks = 0;
 $ldsOK = determineLDSRights();
 
@@ -44,7 +44,7 @@ $ldsOK = determineLDSRights();
 @ob_implicit_flush(true);
 
 function initEvent() {
-    $event = array();
+    $event = [];
     $event['DATE'] = "";
     $event['PLAC'] = "";
     $event['TEMP'] = "";
@@ -58,7 +58,7 @@ function initEvent() {
 }
 
 function initEventHolder() {
-    $event = array();
+    $event = [];
     $event['INFO'] = initCustomEvent();
     $event['TAG'] = "";
     $event['TYPE'] = "";
@@ -80,7 +80,7 @@ function initCustomEvent() {
 function getMediaLinksToSave() {
     global $events_table, $tree, $medialinks_table;
 
-    $medialinks = array();
+    $medialinks = [];
     $query = "SELECT medialinkID, mediaID, $medialinks_table.eventID, persfamID, eventtypeID, eventdate, eventplace, info ";
     $query .= "FROM ($medialinks_table, $events_table) ";
     $query .= "WHERE $medialinks_table.gedcom = '$tree' AND $medialinks_table.eventID != '' AND $medialinks_table.eventID = $events_table.eventID";
@@ -97,7 +97,7 @@ function getMediaLinksToSave() {
 function getAlbumLinksToSave() {
     global $events_table, $tree, $album2entities_table;
 
-    $albumlinks = array();
+    $albumlinks = [];
     $query = "SELECT alinkID, albumID, album2entities.eventID, entityID, eventtypeID, eventdate, eventplace, info ";
     $query .= "FROM ($album2entities_table album2entities, $events_table events) ";
     $query .= "WHERE album2entities.gedcom = '$tree' AND album2entities.eventID != '' AND album2entities.eventID = events.eventID";
@@ -120,9 +120,9 @@ tng_adminheader($admtext['datamaint'], $flags);
 
 <?php
 if (!empty($old)) {
-    $datatabs['0'] = array(1, "admin_dataimport.php", $admtext['import'], "import");
-    $datatabs['1'] = array($allow_export, "admin_export.php", $admtext['export'], "export");
-    $datatabs['2'] = array(1, "admin_secondmenu.php", $admtext['secondarymaint'], "second");
+    $datatabs['0'] = [1, "admin_dataimport.php", $admtext['import'], "import"];
+    $datatabs['1'] = [$allow_export, "admin_export.php", $admtext['export'], "export"];
+    $datatabs['2'] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
     $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
     $menu = doMenu($datatabs, "import", $innermenu);
     echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, $message);
@@ -133,9 +133,9 @@ if (!empty($old)) {
 ?>
 
 <?php
-$stdevents = array("BIRT", "SEX", "DEAT", "BURI", "MARR", "SLGS", "SLGC", "NICK", "NSFX", "TITL", "BAPL", "CONL", "INIT", "ENDL", "CHAN", "CALN", "AUTH", "PUBL", "ABBR", "TEXT");
-$pciteevents = array("NAME", "BIRT", "CHR", "DEAT", "BURI", "BAPL", "CONL", "INIT", "ENDL", "SLGC");
-$fciteevents = array("MARR", "DIV", "SLGS");
+$stdevents = ["BIRT", "SEX", "DEAT", "BURI", "MARR", "SLGS", "SLGC", "NICK", "NSFX", "TITL", "BAPL", "CONL", "INIT", "ENDL", "CHAN", "CALN", "AUTH", "PUBL", "ABBR", "TEXT"];
+$pciteevents = ["NAME", "BIRT", "CHR", "DEAT", "BURI", "BAPL", "CONL", "INIT", "ENDL", "SLGC"];
+$fciteevents = ["MARR", "DIV", "SLGS"];
 
 function tng_extract($gedfilename) {
     global $rootpath, $gedpath, $savegedfilename, $basefilename;
@@ -419,7 +419,7 @@ if ($fp !== false) {
     //get custom event types
     $query = "SELECT eventtypeID, tag, description, keep, type, display FROM $eventtypes_table";
     $result = @tng_query($query);
-    $custeventlist = array();
+    $custeventlist = [];
     while ($row = tng_fetch_assoc($result)) {
         $eventtype = strtoupper($row['type'] . "_" . $row['tag'] . "_" . $row['description']);
         $custevents[$eventtype]['keep'] = $row['keep'];
@@ -431,7 +431,7 @@ if ($fp !== false) {
     }
     tng_free_result($result);
 
-    $stdnotes = array();
+    $stdnotes = [];
     $notecount = 0;
 
     $lineinfo = getLine();
@@ -460,7 +460,7 @@ if ($fp !== false) {
                     break;
                 case "OBJE":
                     if ($savestate['media']) {
-                        $mminfo = array();
+                        $mminfo = [];
                         getMultimediaRecord($id, 0);
                     } else {
                         $lineinfo = getLine();

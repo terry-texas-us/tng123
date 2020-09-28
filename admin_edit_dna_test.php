@@ -92,16 +92,16 @@ tng_adminheader($admtext['modifydna'], $flags);
 <body class="admin-body">
 
 <?php
-$dnatabs[0] = array(1, "admin_dna_tests.php", $admtext['search'], "findtest");
-$dnatabs[1] = array($allow_add, "admin_new_dna_test.php", $admtext['addnew'], "addtest");
-$dnatabs[2] = array($allow_edit, "#", $admtext['edit'], "edit");
+$dnatabs[0] = [1, "admin_dna_tests.php", $admtext['search'], "findtest"];
+$dnatabs[1] = [$allow_add, "admin_new_dna_test.php", $admtext['addnew'], "addtest"];
+$dnatabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/dna_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a> ";
 $innermenu .= "&nbsp;|&nbsp;<a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($dnatabs, "edit", $innermenu);
 echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['modifydna'], "img/dna_icon.gif", $menu, "");
 
-$surnamesarr = array();
-$surnamesexc = array();
+$surnamesarr = [];
+$surnamesexc = [];
 $surnamesexc = explode(',', $surnameexcl);
 $pass1 = true;
 
@@ -134,10 +134,10 @@ function get_ancestor_surnames($personID, $tree, $type) {
     return implode(', ', $surnamesarr);
 }
 
-$atsurnamesarr = array();
-$atsurnamesexc = array();
+$atsurnamesarr = [];
+$atsurnamesexc = [];
 $atsurnamesexc = explode(',', $surnameexcl);
-$perID = array();
+$perID = [];
 include "tngdblib.php";
 
 function get_atdna_ancestor_surnames($personID, $tree, $type) {

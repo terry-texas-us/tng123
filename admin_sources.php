@@ -138,9 +138,9 @@ tng_adminheader($admtext['sources'], $flags);
 <body class="admin-body">
 
 <?php
-$sourcetabs[0] = array(1, "admin_sources.php", $admtext['search'], "findsource");
-$sourcetabs[1] = array($allow_add, "admin_newsource.php", $admtext['addnew'], "addsource");
-$sourcetabs[2] = array($allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge");
+$sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
+$sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
+$sourcetabs[2] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/sources_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($sourcetabs, "findsource", $innermenu);
 echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $message);

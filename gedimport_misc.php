@@ -13,13 +13,13 @@ $max_note_length = 65500;
 function getLine() {
     global $fp, $lineending, $saveimport, $savestate;
 
-    $lineinfo = array();
+    $lineinfo = [];
     if ($line = ltrim(@fgets($fp, 1024))) {
         if ($saveimport) {
             $savestate['len'] = strlen($line);
         }
-        $patterns = array("/��.*��/", "/��.*/", "/.*��/", "/@@/");
-        $replacements = array("", "", "", "@");
+        $patterns = ["/��.*��/", "/��.*/", "/.*��/", "/@@/"];
+        $replacements = ["", "", "", "@"];
         $line = preg_replace($patterns, $replacements, $line);
 
         preg_match("/^(\d+)\s+(\S+) ?(.*)$/", $line, $matches);
@@ -82,7 +82,7 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
     $prevlevel++;
     $citecnt = 0;
     $notecnt = 0;
-    $mminfo = array();
+    $mminfo = [];
     $mmcount = 0;
 
     while ($lineinfo['level'] >= $prevlevel) {
@@ -145,11 +145,11 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
                     break;
                 case "NOTE":
                     if (!$notecnt) {
-                        $moreinfo['NOTES'] = array();
+                        $moreinfo['NOTES'] = [];
                     }
                     $notecnt++;
 
-                    $moreinfo['NOTES'][$notecnt] = array();
+                    $moreinfo['NOTES'][$notecnt] = [];
                     preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
                     if (!empty($matches[1])) {
                         $moreinfo['NOTES'][$notecnt]['XNOTE'] = adjustID($matches[1], $savestate['noffset']);
@@ -168,7 +168,7 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
                     break;
                 case "SOUR":
                     if (!$citecnt) {
-                        $moreinfo['SOUR'] = array();
+                        $moreinfo['SOUR'] = [];
                     }
                     $citecnt++;
                     $moreinfo['SOUR'][$citecnt] = handleSource($persfamID, $prevlevel);
@@ -179,7 +179,7 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
                         $share->id = $matches[1];
                         $lineinfo = getLine();
                         while ($lineinfo['level'] >= $prevlevel + 1) {
-                            $note = array();
+                            $note = [];
                             switch ($lineinfo['tag']) {
                                 case "ROLE":
                                     $note['NOTE'] = $admtext['role'] . ": " . addslashes($lineinfo['rest']);
@@ -297,7 +297,7 @@ function handleCustomEvent($id, $prefix, $tag) {
 }
 
 function initAddress() {
-    $address = array();
+    $address = [];
 
     $address['ADR1'] = "";
     $address['ADR2'] = "";
@@ -429,11 +429,11 @@ function getPlaceRecord($place, $prevlevel) {
 
     $place = addslashes($place);
     $note = $namc = "";
-    $map = array();
+    $map = [];
     $map['long'] = "";
     $map['lati'] = "";
     $map['zoom'] = $map['placelevel'] = "0";
-    $mminfo = array();
+    $mminfo = [];
     $mmcount = 0;
     $prevlevel++;
 
@@ -534,7 +534,7 @@ function getPlaceRecord($place, $prevlevel) {
             processMedia($mmcount, $mminfo, $place, "");
         }
     } else {
-        $info = array();
+        $info = [];
         $info['MAP'] = $map;
         $info['NOTE'] = $note;
         $info['media'] = $mminfo;
@@ -552,7 +552,7 @@ function isTemple($place) {
 function getMapCoords($prevlevel) {
     global $lineinfo;
 
-    $map = array();
+    $map = [];
     $map['long'] = "";
     $map['lati'] = "";
     $map['zoom'] = $map['placelevel'] = "0";
@@ -1037,7 +1037,7 @@ function mmd($nextchar) {
 }
 
 function initMultimedia() {
-    $mminfo = array();
+    $mminfo = [];
 
     $mminfo['FORM'] = "";
     $mminfo['defphoto'] = "";

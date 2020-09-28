@@ -95,7 +95,7 @@ if (!function_exists('array_column')) {
                 $paramsIndexKey = (string)$params[2];
             }
         }
-        $resultArray = array();
+        $resultArray = [];
         foreach ($paramsInput as $row) {
             $key = $value = null;
             $keySet = $valueSet = false;
@@ -126,11 +126,11 @@ $comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
 $innermenu = "";
 $menu = doMenu($comptabs, "", $innermenu);
 echo displayHeadline($text['dnatestscompare'], "img//dna_icon.gif", $menu, $message);
-$dysv = array("DYS_393", "DYS_390", "DYS_19", "DYS_391", "DYS_385", "DYS_426", "DYS_388", "DYS_439", "DYS_389I", "DYS_392", "DYS_389II", "DYS_458", "DYS_459", "DYS_455", "DYS_454", "DYS_447", "DYS_437", "DYS_448", "DYS_449", "DYS_464", "DYS_460", "Y_GATA_H4", "YCAI", "YCAII", "DYS_456", "DYS_607", "DYS_576", "DYS_570", "CDY", "DYS_442", "DYS_438", "DYS_531", "DYS_578", "DYS_395S1", "DYS_590", "DYS_537", "DYS_641", "DYS_472", "DYS_406S1", "DYS_511", "DYS_425", "DYS_413", "DYS_557", "DYS_594", "DYS_436", "DYS_490", "DYS_534", "DYS_450", "DYS_444", "DYS_481", "DYS_520", "DYS_446", "DYS_617", "DYS_568", "DYS_487", "DYS_572", "DYS_640", "DYS_492", "DYS_565", "DYS_710", "DYS_485", "DYS_632", "DYS_495", "DYS_540", "DYS_714", "DYS_716", "DYS_717", "DYS_505", "DYS_556", "DYS_549", "DYS_589", "DYS_522", "DYS_494", "DYS_533", "DYS_636", "DYS_575", "DYS_638", "DYS_462", "DYS_452", "DYS_445", "Y_GATA_A10", "DYS_463", "DYS_441", "Y_GGAAT_1B07", "DYS_525", "DYS_712", "DYS_593", "DYS_650", "DYS_532", "DYS_715", "DYS_504", "DYS_513", "DYS_561", "DYS_552", "DYS_726", "DYS_635", "DYS_587", "DYS_643", "DYS_497", "DYS_510", "DYS_434", "DYS_461", "DYS_435");
+$dysv = ["DYS_393", "DYS_390", "DYS_19", "DYS_391", "DYS_385", "DYS_426", "DYS_388", "DYS_439", "DYS_389I", "DYS_392", "DYS_389II", "DYS_458", "DYS_459", "DYS_455", "DYS_454", "DYS_447", "DYS_437", "DYS_448", "DYS_449", "DYS_464", "DYS_460", "Y_GATA_H4", "YCAI", "YCAII", "DYS_456", "DYS_607", "DYS_576", "DYS_570", "CDY", "DYS_442", "DYS_438", "DYS_531", "DYS_578", "DYS_395S1", "DYS_590", "DYS_537", "DYS_641", "DYS_472", "DYS_406S1", "DYS_511", "DYS_425", "DYS_413", "DYS_557", "DYS_594", "DYS_436", "DYS_490", "DYS_534", "DYS_450", "DYS_444", "DYS_481", "DYS_520", "DYS_446", "DYS_617", "DYS_568", "DYS_487", "DYS_572", "DYS_640", "DYS_492", "DYS_565", "DYS_710", "DYS_485", "DYS_632", "DYS_495", "DYS_540", "DYS_714", "DYS_716", "DYS_717", "DYS_505", "DYS_556", "DYS_549", "DYS_589", "DYS_522", "DYS_494", "DYS_533", "DYS_636", "DYS_575", "DYS_638", "DYS_462", "DYS_452", "DYS_445", "Y_GATA_A10", "DYS_463", "DYS_441", "Y_GGAAT_1B07", "DYS_525", "DYS_712", "DYS_593", "DYS_650", "DYS_532", "DYS_715", "DYS_504", "DYS_513", "DYS_561", "DYS_552", "DYS_726", "DYS_635", "DYS_587", "DYS_643", "DYS_497", "DYS_510", "DYS_434", "DYS_461", "DYS_435"];
 
-$fastmut = array("DYS_385", "DYS_439", "DYS_458", "DYS_449", "DYS_464", "DYS_456", "DYS_576", "DYS_570", "CDY");
-$compound_dys = array("385", "459", "464", "CDY", "395S1", "413");
-$col_count = array(3, 3, 5, 3, 3, 3);
+$fastmut = ["DYS_385", "DYS_439", "DYS_458", "DYS_449", "DYS_464", "DYS_456", "DYS_576", "DYS_570", "CDY"];
+$compound_dys = ["385", "459", "464", "CDY", "395S1", "413"];
+$col_count = [3, 3, 5, 3, 3, 3];
 $mainstyle = "background-color:$bgmain; color:$txtmain;";
 $modestyle = "background-color:$bgmode; color:$txtmode;";
 ?>
@@ -146,7 +146,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             <th class="fieldnameback center nw" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
             <?php
 
-            $resultsarr = array();
+            $resultsarr = [];
             $i = $ii = $iii = '0';
 
             foreach (array_keys($_POST) as $key) {
@@ -172,8 +172,8 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 tng_free_result($rresult);
             }
 
-            $mode = array();
-            $modesarr = array(array());
+            $mode = [];
+            $modesarr = [[]];
             $displaystr = "";
             $j = '0';
             foreach ($resultsarr as $subKey => $subArray) {

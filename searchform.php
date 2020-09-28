@@ -156,8 +156,8 @@ tng_header($text['searchnames'], $flags);
                 URL = URL + "&showspouse=yes";
 
             <?php
-            $qualifiers = array("ln", "fn", "id", "bp", "by", "cp", "cy", "dp", "dy", "brp", "bry", "nn", "t", "pf", "sf", "sp", "ge");
-            $criteria = array("lastname", "firstname", "personid", "birthplace", "birthyear", "altbirthplace", "altbirthyear", "deathplace", "deathyear", "burialplace", "burialyear", "nickname", "title", "prefix", "suffix", "splname", "gender");
+            $qualifiers = ["ln", "fn", "id", "bp", "by", "cp", "cy", "dp", "dy", "brp", "bry", "nn", "t", "pf", "sf", "sp", "ge"];
+            $criteria = ["lastname", "firstname", "personid", "birthplace", "birthyear", "altbirthplace", "altbirthyear", "deathplace", "deathyear", "burialplace", "burialyear", "nickname", "title", "prefix", "suffix", "splname", "gender"];
 
             $qcount = 0;
             $found = 0;
@@ -336,7 +336,7 @@ echo $formstr;
                 <td class="databack">
                     <select name="bpqualify" class="mediumfield">
                         <?php
-                        $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
+                        $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($bpqualify == $item[1]) {
@@ -484,7 +484,7 @@ echo $formstr;
                 <td class="databack">
                     <select name="spqualify" class="mediumfield">
                         <?php
-                        $item_array = array(array($text['contains'], "contains"), array($text['equals'], "equals"), array($text['startswith'], "startswith"), array($text['endswith'], "endswith"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"), array($text['soundexof'], "soundexof"), array($text['metaphoneof'], "metaphoneof"));
+                        $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($spqualify == $item[1]) {
@@ -643,7 +643,7 @@ echo $formstr;
                 echo "<td>\n";
                 echo "<select name=\"cyq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
 
-                $item2_array = array(array($text['equals'], ""), array($text['plusminus2'], "pm2"), array($text['plusminus5'], "pm5"), array($text['plusminus10'], "pm10"), array($text['lessthan'], "lt"), array($text['greaterthan'], "gt"), array($text['lessthanequal'], "lte"), array($text['greaterthanequal'], "gte"), array($text['exists'], "exists"), array($text['dnexist'], "dnexist"));
+                $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                 foreach ($item2_array as $item) {
                     echo "<option value=\"$item[1]\"";
                     echo ">$item[0]</option>\n";
@@ -692,7 +692,7 @@ echo $formstr;
                 <td>
                     <select name="nr">
                         <?php
-                        $item3_array = array(array(50, 50), array(100, 100), array(150, 150), array(200, 200));
+                        $item3_array = [[50, 50], [100, 100], [150, 150], [200, 200]];
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($nr == $item[1]) {

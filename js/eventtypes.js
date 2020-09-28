@@ -2,7 +2,7 @@ var Itypes = new Array("EVEN", "ADOP", "ADDR", "ALIA", "ANCI", "BARM", "BASM", "
 var Ftypes = new Array("EVEN", "ANUL", "CENS", "DIV", "DIVF", "ENGA", "MARB", "MARC", "MARL", "MARS", "REFN", "RIN");
 var Stypes = new Array("EVEN", "REFN", "RIN");
 var Rtypes = Stypes;
-var messages = new Array();
+var messages = new [];
 
 function populateTags(etype, match) {
     var types = eval(etype + "types");

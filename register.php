@@ -18,8 +18,8 @@ if ($tngmore) {
 $generation = 1;
 $personcount = 1;
 
-$currgen = array();
-$nextgen = array();
+$currgen = [];
+$nextgen = [];
 
 $result = getPersonFullPlusDates($tree, $personID);
 if ($result) {
@@ -204,7 +204,7 @@ echo "</form>\n";
             }
             $currgen = $nextgen;
             unset($nextgen);
-            $nextgen = array();
+            $nextgen = [];
             $generation++;
             echo "</ol>\n<br>\n";
         }

@@ -66,7 +66,7 @@ $paperdim = $pdf->GetPageSize();
 // set the document title
 $title = $text['descendfor'] . ' ' . $infoDescend[0]['name'];
 $pdf->SetTitle($title);
-$titleConfig = array('title' => $title,
+$titleConfig = ['title' => $title,
     'image' => $blankform ? "" : getPdfSmallPhoto($personID, $rights['living'] && $rights['private'], $row['sex']),
     'font' => $rptFont,
     'fontSize' => $hdrFontSize,
@@ -74,15 +74,15 @@ $titleConfig = array('title' => $title,
     'lMargin' => $lftmrg,
     'skipFirst' => false,
     'header' => false,
-    'line' => true);
-$footerConfig = array('font' => $rptFont,
+    'line' => true];
+$footerConfig = ['font' => $rptFont,
     'fontSizeLarge' => 8,
     'fontSizeSmall' => 6,
     'printWordPage' => true,
     'bMargin' => $botmrg,
     'lMargin' => $lftmrg,
     'skipFirst' => false,
-    'line' => false);
+    'line' => false];
 
 // set margins
 $pdf->SetTopMargin($topmrg);

@@ -22,9 +22,9 @@ tng_adminheader($admtext['secondarymaint'], $flags);
 <body class="admin-body">
 
 <?php
-$datatabs[0] = array(1, "admin_dataimport.php", $admtext['import'], "import");
-$datatabs[1] = array(1, "admin_export.php", $admtext['export'], "export");
-$datatabs[2] = array(1, "admin_secondmenu.php", $admtext['secondarymaint'], "second");
+$datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
+$datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
+$datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/second_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "second", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarymaint'] . " &gt;&gt; " . $secaction, "img/data_icon.gif", $menu, (isset($message) ? $message : ""));

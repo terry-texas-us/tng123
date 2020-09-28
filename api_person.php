@@ -39,7 +39,7 @@ $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : 
 
 writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
 
-$events = array();
+$events = [];
 echo api_person($row, $fullevents);
 
 echo "}";

@@ -16,7 +16,7 @@ require "adminlog.php";
 
 $template = "ssssssss";
 $query = "INSERT INTO $reports_table (reportname, reportdesc, ranking, active, display, criteria, orderby, sqlselect) VALUES (?,?,?,?,?,?,?,?)";
-$params = array(&$template, &$reportname, &$reportdesc, &$ranking, &$active, &$display, &$criteria, &$orderby, &$sqlselect);
+$params = [&$template, &$reportname, &$reportdesc, &$ranking, &$active, &$display, &$criteria, &$orderby, &$sqlselect];
 tng_execute($query, $params);
 $reportID = tng_insert_id();
 

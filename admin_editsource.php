@@ -37,7 +37,7 @@ $row['allow_living'] = 1;
 
 $query = "SELECT DISTINCT eventID AS eventID FROM $notelinks_table WHERE persfamID=\"$sourceID\" AND gedcom ='$tree'";
 $notelinks = tng_query($query);
-$gotnotes = array();
+$gotnotes = [];
 while ($note = tng_fetch_assoc($notelinks)) {
     if (!$note['eventID']) {
         $note['eventID'] = "general";
@@ -65,10 +65,10 @@ include_once "eventlib_js.php";
 <body class="admin-body">
 
 <?php
-$sourcetabs[0] = array(1, "admin_sources.php", $admtext['search'], "findsource");
-$sourcetabs[1] = array($allow_add, "admin_newsource.php", $admtext['addnew'], "addsource");
-$sourcetabs[2] = array($allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge");
-$sourcetabs[3] = array($allow_edit, "admin_editsource.php?sourceID=$sourceID&tree=$tree", $admtext['edit'], "edit");
+$sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
+$sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
+$sourcetabs[2] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
+$sourcetabs[3] = [$allow_edit, "admin_editsource.php?sourceID=$sourceID&tree=$tree", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/sources_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {

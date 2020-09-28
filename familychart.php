@@ -25,7 +25,7 @@ if (!($familyID || $personID)) {
 }
 
 if (!($family = getfamily($tree, $familyID, $personID))) {
-    $family = array();
+    $family = [];
 }
 
 doheader($tree, $family);
@@ -120,9 +120,9 @@ function getfamily($tree, $familyID, $personID) {
     if (tng_num_rows($result) == 0) {
         return '';
     } else {
-        $res = array();
+        $res = [];
         $i = 0;
-        $res['children'] = array();
+        $res['children'] = [];
         $righttree = checktree($tree);
         while ($row = tng_fetch_assoc($result)) {
             $rightbranch = $righttree ? checkbranch($row['branch']) : 0;
@@ -155,7 +155,7 @@ function getfamily($tree, $familyID, $personID) {
 function familyorder(&$family, $personID) {
     #return position of a person in a family and number of children
     if (!$family) {
-        return array(0, 0, 0);
+        return [0, 0, 0];
     }
     if ($family['husband'] || $family['wife']) {
         $parents = 1;
@@ -165,11 +165,11 @@ function familyorder(&$family, $personID) {
     $count = count($children);
     foreach ($children as $child) {
         if ($child['personID'] == $personID) {
-            return array($order, $count, $parents);
+            return [$order, $count, $parents];
         }
         $order++;
     }
-    return array(0, $count, $parents);
+    return [0, $count, $parents];
 }
 
 function getresult($result, $multiple = 0) {
@@ -412,7 +412,7 @@ function getfamilyID($person, $type) {
     } elseif ($type == 'other') {    #more than one possible
         $familyID = $person['familyID'];
         $result = tng_query("select familyID from $families_table where $partner='$personID' and familyID!='$familyID' and gedcom='$tree' order by marrdatetr");
-        $sp = array();
+        $sp = [];
         $spouse = 0;
         while ($row = tng_fetch_array($result))
             $sp[$spouse++] = $row[0];
@@ -424,12 +424,11 @@ function getOtherFamilies($tree, $personID, $familyID) {
     #check to see if person has another (usually adopted) family, return ID and text
     global $text, $admtext;
     $result = getChildParentsFamily($tree, $personID);
-    $res = array();
+    $res = [];
     while ($row = tng_fetch_assoc($result)) {
         if (($f = $row['familyID']) != $familyID) {
             $type = strtolower($row['frel'] ? $row['frel'] : ($row['mrel'] ? $row['mrel'] : 'birth'));
-            array_push($res, array('familyID' => $f, 'type' => $type,
-                'text' => "{$text['showfamily']} - $admtext[$type]")); #language independent
+            array_push($res, ['familyID' => $f, 'type' => $type, 'text' => "{$text['showfamily']} - $admtext[$type]"]); #language independent
         }
     }
     return $res;
@@ -462,7 +461,7 @@ function getRights($person) {
 
 function doheader($tree, $family) {
     #calls tng_Drawheading and tng_menu
-    global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $nonames;
+    global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $allow_pdf, $nonames;
 
     $f = $family['husband'];
     $m = $family['wife'];

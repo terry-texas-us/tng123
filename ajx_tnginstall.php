@@ -71,7 +71,7 @@ switch ($_POST['subroutine']) {
             $failed .= " (666 / rw-rw-rw-)";
         }
 
-        $folders = array("photos", "histories", "documents", "headstones", "media", "gendex", "backups", "gedcom", "mods", "extensions", "classes");
+        $folders = ["photos", "histories", "documents", "headstones", "media", "gendex", "backups", "gedcom", "mods", "extensions", "classes"];
         $failed2 = "";
         foreach ($folders as $folder) {
             if (@chmod($folder, 0755)) {

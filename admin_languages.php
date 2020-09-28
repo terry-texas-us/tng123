@@ -68,8 +68,8 @@ tng_adminheader($admtext['languages'], $flags);
 <body class="admin-body">
 
 <?php
-$langtabs['0'] = array(1, "admin_languages.php", $admtext['search'], "findlang");
-$langtabs['1'] = array($allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage");
+$langtabs['0'] = [1, "admin_languages.php", $admtext['search'], "findlang"];
+$langtabs['1'] = [$allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/languages_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($langtabs, "findlang", $innermenu);
 echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $message);

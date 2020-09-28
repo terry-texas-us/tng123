@@ -1,7 +1,7 @@
 <?php
 $name = 'DejaVuSerif';
 $type = 'TTF';
-$desc = array(
+$desc = [
     'Ascent' => 928.0,
     'Descent' => -236.0,
     'CapHeight' => 928.0,
@@ -10,7 +10,7 @@ $desc = array(
     'ItalicAngle' => 0.0,
     'StemV' => 87.0,
     'MissingWidth' => 600.0,
-);
+];
 $up = -63;
 $ut = 44;
 $ttffile = 'C:/Apache24/htdocs/tng123/font/unifont/DejaVuSerif/DejaVuSerif.ttf';

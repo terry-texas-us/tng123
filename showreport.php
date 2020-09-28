@@ -76,7 +76,7 @@ if ($rrow['sqlselect']) {
     $sqlselect = substr($sqlselect, 0, $fromat);
 
     $displayfields = explode(",", $sqlselect);
-    $newds = array();
+    $newds = [];
     $newdsctr = 0;
     for ($i = 0; $i < count($displayfields); $i++) {
         $displaymsg = "";
@@ -138,7 +138,7 @@ if ($rrow['sqlselect']) {
     $need_families = 0;
     $need_children = 0;
 
-    $subtypes = array();
+    $subtypes = [];
     $evfields['dt'] = "eventdate";
     $evfields['tr'] = "eventdatetr";
     $evfields['pl'] = "eventplace";
@@ -149,10 +149,10 @@ if ($rrow['sqlselect']) {
     $subtypes['fa'] = "";
 
     $displaytext = "";
-    $truedates = array("birthdatetr", "altbirthdatetr", "deathdatetr", "burialdatetr", "baptdatetr", "confdatetr", "initdatetr", "endldatetr", "ssealdatetr", "psealdatetr", "marrdatetr", "changedate");
-    $familyfields = array("marrdate", "marrdatetr", "marrplace", "divdate", "divdatetr", "divplace", "ssealdate", "ssealdatetr", "ssealplace");
-    $familyfields_nonss = array("marrdate", "marrdatetr", "marrplace", "divdate", "divdatetr", "divplace");
-    $cejoins = array();
+    $truedates = ["birthdatetr", "altbirthdatetr", "deathdatetr", "burialdatetr", "baptdatetr", "confdatetr", "initdatetr", "endldatetr", "ssealdatetr", "psealdatetr", "marrdatetr", "changedate"];
+    $familyfields = ["marrdate", "marrdatetr", "marrplace", "divdate", "divdatetr", "divplace", "ssealdate", "ssealdatetr", "ssealplace"];
+    $familyfields_nonss = ["marrdate", "marrdatetr", "marrplace", "divdate", "divdatetr", "divplace"];
+    $cejoins = [];
 
     $displaystr = "$people_table.living, $people_table.private, lnprefix, prefix, suffix, $people_table.branch";
     $displayfields = explode($lineending, $rrow['display']);
@@ -238,8 +238,8 @@ if ($rrow['sqlselect']) {
 
     $criteriastr = "";
     $criteriafields = explode($lineending, $rrow['criteria']);
-    $mnemonics = array("eq", "neq", "gt", "gte", "lt", "lte");
-    $symbols = array("=", "!=", ">", ">=", "<", "<=");
+    $mnemonics = ["eq", "neq", "gt", "gte", "lt", "lte"];
+    $symbols = ["=", "!=", ">", ">=", "<", "<="];
     for ($i = 0; $i < count($criteriafields) - 1; $i++) {
         $table = "";
         if ($criteriastr) {

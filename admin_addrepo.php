@@ -23,7 +23,7 @@ $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $email || $www) {
     $template = "ssssssssss";
     $query = "INSERT INTO $address_table (address1, address2, city, state, zip, country, gedcom, phone, email, www) VALUES(?,?,?,?,?,?,?,?,?,?)";
-    $params = array(&$template, &$address1, &$address2, &$city, &$state, &$zip, &$country, &$tree, &$phone, &$email, &$www);
+    $params = [&$template, &$address1, &$address2, &$city, &$state, &$zip, &$country, &$tree, &$phone, &$email, &$www];
     tng_execute($query, $params);
     $addressID = tng_insert_id();
 } else {
@@ -35,7 +35,7 @@ if (!$addressID) {
 }
 $template = "ssssss";
 $query = "INSERT INTO $repositories_table (repoID,reponame,addressID,changedate,gedcom,changedby) VALUES (?,?,?,?,?,?)";
-$params = array(&$template, &$repoID, &$reponame, &$addressID, &$newdate, &$tree1, &$currentuser);
+$params = [&$template, &$repoID, &$reponame, &$addressID, &$newdate, &$tree1, &$currentuser];
 tng_execute($query, $params);
 
 adminwritelog("<a href=\"admin_editrepo.php?repoID=$repoID&tree=$tree\">{$admtext['addnewrepo']}: $tree/$repoID</a>");

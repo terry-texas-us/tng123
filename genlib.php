@@ -1080,7 +1080,7 @@ function getMediaHREF($row, $mlflag) {
 function insertLinks($notes) {
     if ($notes) {
         $pos = 0;
-        $notepos = array();
+        $notepos = [];
         while (($pos = strpos($notes, "http", $pos)) !== FALSE) {
             if ($pos) {
                 $prevchar = substr($notes, $pos - 1, 1);

@@ -18,7 +18,7 @@ if ($link) {
 
 $tmp = getAllTemplatesVars($templates_table);
 
-$languageArray = array();
+$languageArray = [];
 $query = "SELECT display, folder FROM $languages_table ORDER BY display";
 $result = tng_query($query);
 $languageList = tng_num_rows($result) ? "<option value=\"\"></option>\n" : "";
@@ -124,10 +124,10 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
 <body class="admin-body">
 
 <?php
-$setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");
-$setuptabs[1] = array(1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics");
-$setuptabs[2] = array(1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation");
-$setuptabs[3] = array(1, "#", $admtext['templateconfigsettings'], "template");
+$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
+$setuptabs[3] = [1, "#", $admtext['templateconfigsettings'], "template"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/templateconfig_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($setuptabs, "template", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['templateconfigsettings'], "img/setup_icon.gif", $menu, "");
@@ -156,9 +156,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                 <?php
                 chdir($rootpath . $endrootpath . TEMPLATES_PATH);
                 $totaltemplates = 0;
-                $sections = array();
-                $entries = array();
-                $folders = array();
+                $sections = [];
+                $entries = [];
+                $folders = [];
                 if ($handle = @opendir('.')) {
                     while ($filename = readdir($handle)) {
                         if (is_dir($filename) && $filename != "." && $filename != "..") {
@@ -211,9 +211,9 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
 
             <br><br>
             <?php
-            $textareas = array('mainpara', 'searchpara', 'fhpara', 'fhlinkshis', 'fhlinkshers', 'mwpara', 'featurepara', 'respara', 'featurelinks', 'reslinks', 'headtitle', 'headsubtitle', 'latestnews', 'featurepara1', 'featurepara2', 'featurepara3', 'featurepara4', 'featurepara5', 'featurepara6', 'featurepara7', 'featurepara8', 'photocaption', 'newstext', 'featurespara', 'textpara1', 'textpara2', 'textpara3', 'photocaptionl', 'photocaptionr', 'snipinfoone', 'snipinfotwo', 'quote');
+            $textareas = ['mainpara', 'searchpara', 'fhpara', 'fhlinkshis', 'fhlinkshers', 'mwpara', 'featurepara', 'respara', 'featurelinks', 'reslinks', 'headtitle', 'headsubtitle', 'latestnews', 'featurepara1', 'featurepara2', 'featurepara3', 'featurepara4', 'featurepara5', 'featurepara6', 'featurepara7', 'featurepara8', 'photocaption', 'newstext', 'featurespara', 'textpara1', 'textpara2', 'textpara3', 'photocaptionl', 'photocaptionr', 'snipinfoone', 'snipinfotwo', 'quote'];
             //needtrans: these fields can be duplicated in another language
-            $needtrans = array('headline', 'maintitle', 'welcome', 'hisside', 'herside', 'headtitle1', 'headtitle2', 'headtitle3', 'momside', 'dadside', 'mainpara', 'featurepara', 'searchpara', 'fhpara', 'mwpara', 'respara', 'headtitle', 'headsubtitle', 'latestnews', 'featuretitle1', 'featuretitle2', 'featuretitle3', 'featuretitle4', 'featuretitle5', 'featuretitle6', 'featurepara1', 'featurepara2', 'featurepara3', 'featurepara4', 'featurepara5', 'featurepara6', 'featurepara7', 'featurepara8', 'photocaption', 'newstext', 'menutitle', 'phototitlel', 'photocaptionl', 'phototitler', 'photocaptionr', 'topsurnames', 'featurespara', 'sidebarhead1', 'sidebarhead2', 'sidebarhead3', 'texttitle1', 'texttitle2', 'texttitle3', 'textpara1', 'textpara2', 'textpara3', 'subhead1', 'subhead2', 'snipinfoone', 'snipinfotwo', 'quote', 'subhead');
+            $needtrans = ['headline', 'maintitle', 'welcome', 'hisside', 'herside', 'headtitle1', 'headtitle2', 'headtitle3', 'momside', 'dadside', 'mainpara', 'featurepara', 'searchpara', 'fhpara', 'mwpara', 'respara', 'headtitle', 'headsubtitle', 'latestnews', 'featuretitle1', 'featuretitle2', 'featuretitle3', 'featuretitle4', 'featuretitle5', 'featuretitle6', 'featurepara1', 'featurepara2', 'featurepara3', 'featurepara4', 'featurepara5', 'featurepara6', 'featurepara7', 'featurepara8', 'photocaption', 'newstext', 'menutitle', 'phototitlel', 'photocaptionl', 'phototitler', 'photocaptionr', 'topsurnames', 'featurespara', 'sidebarhead1', 'sidebarhead2', 'sidebarhead3', 'texttitle1', 'texttitle2', 'texttitle3', 'textpara1', 'textpara2', 'textpara3', 'subhead1', 'subhead2', 'snipinfoone', 'snipinfotwo', 'quote', 'subhead'];
             foreach ($tmp as $key => $value) {
                 $parts = explode("_", $key);
                 $n = $parts[0];

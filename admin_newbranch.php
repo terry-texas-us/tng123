@@ -51,8 +51,8 @@ tng_adminheader($admtext['addnewbranch'], $flags);
 <body class="admin-body">
 
 <?php
-$branchtabs[0] = array(1, "admin_branches.php", $admtext['search'], "findbranch");
-$branchtabs[1] = array($allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch");
+$branchtabs[0] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
+$branchtabs[1] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/branches_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($branchtabs, "addbranch", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranch'], "img/branches_icon.gif", $menu, $message);

@@ -31,9 +31,9 @@ $citefontsub = 4;  // number of font pts to take off for superscript
 $ldsOK = determineLDSRights(true);
 
 // compute the label width based on the longest string that will be displayed
-$labelwidth = getMaxStringWidth(array($text['name'], $text['born'], $text['christened'], $text['died'], $text['buried'], $text['cremated'], $text['spouse'], $text['married']), $rptFont, "B", $lblFontSize, ':');
+$labelwidth = getMaxStringWidth([$text['name'], $text['born'], $text['christened'], $text['died'], $text['buried'], $text['cremated'], $text['spouse'], $text['married']], $rptFont, "B", $lblFontSize, ':');
 if ($ldsOK) {
-    $labelwidth = getMaxStringWidth(array($text['baptizedlds'], $text['endowedlds'], $text['sealedslds']), $rptFont, "B", $lblFontSize, ':', $labelwidth);
+    $labelwidth = getMaxStringWidth([$text['baptizedlds'], $text['endowedlds'], $text['sealedslds']], $rptFont, "B", $lblFontSize, ':', $labelwidth);
 }
 $labelwidth += 0.1;
 
@@ -57,7 +57,7 @@ if ($blankform == 1) {
 }
 
 $pdf->SetTitle($title);
-$titleConfig = array('title' => $title,
+$titleConfig = ['title' => $title,
     'image' => $blankform ? "" : getPdfSmallPhoto($personID, $rights['living'] && $rights['private'], $row['sex']),
     'font' => $rptFont,
     'fontSize' => $hdrFontSize,
@@ -65,15 +65,15 @@ $titleConfig = array('title' => $title,
     'lMargin' => $lftmrg,
     'skipFirst' => false,
     'header' => false,
-    'line' => false);
-$footerConfig = array('font' => $rptFont,
+    'line' => false];
+$footerConfig = ['font' => $rptFont,
     'fontSizeLarge' => 8,
     'fontSizeSmall' => 6,
     'printWordPage' => true,
     'bMargin' => $botmrg,
     'lMargin' => $lftmrg,
     'skipFirst' => false,
-    'line' => false);
+    'line' => false];
 
 // set margins
 $pdf->SetTopMargin($topmrg);
@@ -89,9 +89,9 @@ $pdf->SetAuthor($dbowner);
 $pdf->AddPage();
 $paperdim = $pdf->GetPageSize();
 
-$citations = array();
-$citedisplay = array();
-$citestring = array();
+$citations = [];
+$citedisplay = [];
+$citestring = [];
 
 // create a blank form if that's what they asked for
 if ($blankform == 1) {
@@ -163,7 +163,7 @@ else {
         $custevents = getPersonEventData($tree, $personID);
         while ($custevent = tng_fetch_assoc($custevents)) {
             $displayval = getEventDisplay($custevent['display']);
-            $fact = array();
+            $fact = [];
             if ($custevent['info']) {
                 $fact = checkXnote($custevent['info']);
                 if ($fact[1]) {
@@ -223,13 +223,13 @@ else {
     // do parents
     $parents = getChildParentsFamily($tree, $personID);
     if ($parents && tng_num_rows($parents)) {
-        $titleConfig = array('title' => $title,
+        $titleConfig = ['title' => $title,
             'font' => $rptFont,
             'fontSize' => $hdrFontSize,
             'justification' => 'L',
             'lMargin' => $lftmrg,
             'skipFirst' => false,
-            'line' => false);
+            'line' => false];
         while ($parent = tng_fetch_assoc($parents)) {
             $gotfather = getParentSimplePlusDates($tree, $parent['familyID'], "husband");
             if ($gotfather) {

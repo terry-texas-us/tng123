@@ -77,7 +77,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         //get custom event types
         $query = "SELECT eventtypeID, tag, description, keep, type, display FROM $eventtypes_table";
         $result = tng_query($query);
-        $custeventlist = array();
+        $custeventlist = [];
         while ($row = tng_fetch_assoc($result)) {
             $eventtype = $row['type'] . "_" . $row['tag'] . "_" . $row['description'];
             if ($row['keep'] && !in_array($eventtype, $custeventlist)) {
@@ -91,10 +91,10 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         function getLine() {
             global $fp, $lineending;
 
-            $lineinfo = array();
+            $lineinfo = [];
             if ($line = ltrim(fgets($fp, 1024))) {
-                $patterns = array("/��.*��/", "/��.*/", "/.*��/", "/@@/");
-                $replacements = array("", "", "", "@");
+                $patterns = ["/��.*��/", "/��.*/", "/.*��/", "/@@/"];
+                $replacements = ["", "", "", "@"];
                 $line = preg_replace($patterns, $replacements, $line);
 
                 preg_match("/^(\d+)\s+(\S+) ?(.*)$/", $line, $matches);

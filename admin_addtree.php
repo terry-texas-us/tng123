@@ -28,7 +28,7 @@ if (!$private) {
 }
 $template = "ssssssssssssss";
 $query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate,disallowpdf) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-$params = array(&$template, &$gedcom, &$treename, &$description, &$owner, &$email, &$address, &$city, &$state, &$country, &$zip, &$phone, &$private, &$disallowgedcreate, &$disallowpdf);
+$params = [&$template, &$gedcom, &$treename, &$description, &$owner, &$email, &$address, &$city, &$state, &$country, &$zip, &$phone, &$private, &$disallowgedcreate, &$disallowpdf];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
     adminwritelog("<a href=\"admin_edittree.php?tree=$gedcom\">{$admtext['addnewtree']}: $gedcom/$treename</a>");

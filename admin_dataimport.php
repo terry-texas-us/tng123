@@ -90,9 +90,9 @@ if (!$allow_ged && $assignedtree) {
     tng_free_result($disresult);
 }
 
-$datatabs['0'] = array(1, "admin_dataimport.php", $admtext['import'], "import");
-$datatabs['1'] = array($allow_export, "admin_export.php", $admtext['export'], "export");
-$datatabs['2'] = array(1, "admin_secondmenu.php", $admtext['secondarymaint'], "second");
+$datatabs['0'] = [1, "admin_dataimport.php", $admtext['import'], "import"];
+$datatabs['1'] = [$allow_export, "admin_export.php", $admtext['export'], "export"];
+$datatabs['2'] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "import", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));

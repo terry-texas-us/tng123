@@ -10,7 +10,7 @@ foreach ($orgprefixes as $prefix) {
 }
 
 function initIndividual() {
-    $info = array();
+    $info = [];
 
     $info['BIRT'] = initEvent();
     $info['CHR'] = initEvent();
@@ -45,11 +45,11 @@ function getIndividualRecord($personID, $prevlevel) {
     $prifamily = "";
     $changedate = "";
     $burialtype = 0;
-    $spouses = array();
-    $events = array();
-    $stdnotes = array();
-    $mminfo = array();
-    $cite = array();
+    $spouses = [];
+    $events = [];
+    $stdnotes = [];
+    $mminfo = [];
+    $cite = [];
     $notecount = 0;
     $mmcount = 0;
     $custeventctr = 0;
@@ -57,11 +57,11 @@ function getIndividualRecord($personID, $prevlevel) {
     $citecount = 0;
     $parentorder = 1;
     $prevlevel++;
-    $assocarr = array();
+    $assocarr = [];
     $living = $private = 0;
 
-    static $arrayLower = array('�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�');
-    static $arrayUpper = array('�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�');
+    static $arrayLower = ['�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�'];
+    static $arrayUpper = ['�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�'];
 
     $lineinfo = getLine();
     while ($lineinfo['tag'] && $lineinfo['level'] >= $prevlevel) {
@@ -206,19 +206,19 @@ function getIndividualRecord($personID, $prevlevel) {
                             dumpnotes($info[$tag]['NOTES']);
                         }
                         if ($tag == "BIRT" && $info['BIRT']['TYPE'] == "stillborn") {
-                            $info['BIRT']['NOTES'][] = array("NOTE" => "stillborn");
+                            $info['BIRT']['NOTES'][] = ["NOTE" => "stillborn"];
                         }
                         if (!empty($info[$tag]['FACT'])) {
                             if (empty($info[$tag]['DATE']) && empty($info[$tag]['PLAC'])) {
                                 $info[$tag]['DATE'] = $info[$tag]['FACT'];
                             } elseif ($info[$tag]['FACT'] != "Y") {
                                 if (empty($info[$tag]['NOTES'])) {
-                                    $info[$tag]['NOTES'] = array();
+                                    $info[$tag]['NOTES'] = [];
                                     $notectr = 1;
                                 } else {
                                     $notectr = count($info[$tag]['NOTES']);
                                 }
-                                $info[$tag]['NOTES'][$notectr] = array("NOTE" => $info[$tag]['FACT'], "TAG" => $tag, "XNOTE" => "");
+                                $info[$tag]['NOTES'][$notectr] = ["NOTE" => $info[$tag]['FACT'], "TAG" => $tag, "XNOTE" => ""];
                                 dumpnotes($info[$tag]['NOTES']);
                             }
                         }
@@ -232,7 +232,7 @@ function getIndividualRecord($personID, $prevlevel) {
                             if (in_array($thisevent, $custeventlist)) {
                                 $events[$custeventctr]['INFO'] = $info[$tag];
                                 $events[$custeventctr]['INFO']['NOTES'] = "";
-                                $events[$custeventctr]['INFO']['SOUR'] = array();
+                                $events[$custeventctr]['INFO']['SOUR'] = [];
                                 $events[$custeventctr]['INFO']['MEDIA'] = "";
                             }
                         }
@@ -300,7 +300,7 @@ function getIndividualRecord($personID, $prevlevel) {
                     break;
                 case "ASSO":
                     preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
-                    $thisassoc = array();
+                    $thisassoc = [];
                     if (substr($matches[1], 0, 1) == "I" || substr($matches[1], -1) == "I") {
                         $countertouse = $savestate['ioffset'];
                         $thisassoc['reltype'] = "I";

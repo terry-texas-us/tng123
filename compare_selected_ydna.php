@@ -99,7 +99,7 @@ if (!function_exists('array_column')) {
                 $paramsIndexKey = (string)$params[2];
             }
         }
-        $resultArray = array();
+        $resultArray = [];
         foreach ($paramsInput as $row) {
             $key = $value = null;
             $keySet = $valueSet = false;
@@ -137,7 +137,7 @@ $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--
 $menu = doMenu($comptabs, "", $innermenu);
 
 // moved here so that we can control whether to show the markers 68-111 heading
-$resultsarr = array();
+$resultsarr = [];
 $i = $ii = $iii = '0';
 
 foreach (array_keys($_POST) as $key) {
@@ -163,8 +163,8 @@ if (isset($rresult)) {
     tng_free_result($rresult);
 }
 
-$mode = array();
-$modesarr = array(array());
+$mode = [];
+$modesarr = [[]];
 $displaystr = "";
 $j = '0';
 foreach ($resultsarr as $subKey => $subArray) {
@@ -234,7 +234,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
 
             /* moved up so that we can control whether to show Markers m68-111 heading
 
-            $resultsarr = array();
+            $resultsarr = [];
             $i = $ii = $iii = '0';
 
             foreach( array_keys($_POST) as $key ) {
@@ -255,7 +255,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             if (isset($result)) tng_free_result($result);
 
 
-            $mode = array();
+            $mode = [];
             $modesarr = array(array());
             $displaystr = "";
             $j='0';

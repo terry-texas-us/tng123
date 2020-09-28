@@ -6,11 +6,11 @@ include "datelib.php";
 
 $timeline = $_SESSION['timeline'];
 if (!is_array($timeline)) {
-    $timeline = array();
+    $timeline = [];
 }
 
 function getTimelineDate($date) {
-    $ret = array();
+    $ret = [];
 
     preg_match('/(\d\d\d\d)-(\d\d)-(\d\d).*/', $date, $matches);
     if ($matches[2] == "00") {

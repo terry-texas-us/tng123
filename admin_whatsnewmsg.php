@@ -33,10 +33,10 @@ tng_adminheader($admtext['whatsnew'], $flags);
 <body class="admin-body">
 
 <?php
-$misctabs[0] = array(1, "admin_misc.php", $admtext['menu'], "misc");
-$misctabs[1] = array(1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew");
-$misctabs[2] = array(1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted");
-$misctabs[3] = array(1, "admin_data_validation.php", $admtext['dataval'], "validation");
+$misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
+$misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
+$misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
+$misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
 $innermenu = "<a class='lightlink' href='#' onclick=\"return openHelp('$helplang/misc_help.php#add');\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a class='lightlink' href='whatsnew.php' target='_blank'>{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "whatsnew", $innermenu);

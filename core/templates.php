@@ -9,7 +9,7 @@ define("TEMPLATES_PATH", "templates");
  * @return array of t<template>_<keyname>[_<language>] => <value>
  */
 function buildTemplateArray(mysqli_result $result) {
-    $tmp = array();
+    $tmp = [];
     while ($row = tng_fetch_assoc($result)) {
         $key = "t" . $row['template'] . "_" . $row['keyname'];
         if ($row['language']) {
@@ -30,7 +30,7 @@ function getTemplateVars($table, $template) {
     $query = "SELECT * FROM $table WHERE template = '$template'";
     $result = tng_query_noerror($query);
 
-    return ($result == FALSE) ? array() : buildTemplateArray($result);
+    return ($result == FALSE) ? [] : buildTemplateArray($result);
 }
 
 /**

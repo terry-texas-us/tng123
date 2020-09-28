@@ -67,7 +67,7 @@ function getOrderedTreesList2($assignedtree, $trees_table): array {
         $treenum++;
     }
     tng_free_result($result);
-    return array($numtrees, $treenum, $trees, $treenames);
+    return [$numtrees, $treenum, $trees, $treenames];
 }
 
 /**
@@ -91,7 +91,7 @@ function getTreeOptions(string $trees_table, string $currentTree, bool $omitCurr
             $currentTreeName = $row['treename'];
         }
     }
-    return array($treelist, $currentTreeName);
+    return [$treelist, $currentTreeName];
 }
 
 /**

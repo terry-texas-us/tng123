@@ -3,8 +3,8 @@
 
    Public Methods:
       $this->show_editor( $cfgpath );
-      $this->update_parameter( $param = array() );
-      $this->restore_parameter( $param = array() );
+      $this->update_parameter( $param = [] );
+      $this->restore_parameter( $param = [] );
 
    Only the value of the first occurrence of a variable is now edited in each
    file. This applies to both target files and mod configuration file. Parameter
@@ -58,7 +58,7 @@ class modeditor extends modparser
         // BUILD A PRELIM TABLE FROM TAGS ARRAY
         $i = 0; // params array index
         $k = 0;
-        $params = array();
+        $params = [];
         for ($j = 0; isset($tags[$j]); $j++) {
             if ($tags[$j]['name'] == 'target') {
                 $tgtfile = $tags[$j]['arg1'];

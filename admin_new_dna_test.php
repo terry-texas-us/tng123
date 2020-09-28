@@ -30,8 +30,8 @@ tng_adminheader($admtext['addnewdna'], $flags);
 <body class="admin-body">
 
 <?php
-$dnatabs[0] = array(1, "admin_dna_tests.php", $admtext['search'], "findtest");
-$dnatabs[1] = array($allow_add, "admin_new_dna_test.php", $admtext['addnew'], "addtest");
+$dnatabs[0] = [1, "admin_dna_tests.php", $admtext['search'], "findtest"];
+$dnatabs[1] = [$allow_add, "admin_new_dna_test.php", $admtext['addnew'], "addtest"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/dna_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a> ";
 $innermenu .= "&nbsp;|&nbsp;<a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($dnatabs, "addtest", $innermenu);

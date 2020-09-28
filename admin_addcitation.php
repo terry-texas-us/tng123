@@ -25,7 +25,7 @@ $sourceID = strtoupper($sourceID);
 $template = "ssssssssss";
 $query = "INSERT INTO $citations_table (gedcom, persfamID, eventID, sourceID, page, quay, citedate, citedatetr, citetext, note, description, ordernum)  
 	VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,'', 999)";
-$params = array(&$template, &$tree, &$persfamID, &$eventID, &$sourceID, &$citepage, &$quay, &$citedate, &$citedatetr, &$citetext, &$citenote);
+$params = [&$template, &$tree, &$persfamID, &$eventID, &$sourceID, &$citepage, &$quay, &$citedate, &$citedatetr, &$citetext, &$citenote];
 tng_execute($query, $params);
 $citationID = tng_insert_id();
 

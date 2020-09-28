@@ -180,9 +180,9 @@ tng_adminheader($admtext['families'], $flags);
 <body class="admin-body">
 
 <?php
-$familytabs[0] = array(1, "admin_families.php", $admtext['search'], "findfamily");
-$familytabs[1] = array($allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily");
-$familytabs[2] = array($allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review");
+$familytabs[0] = [1, "admin_families.php", $admtext['search'], "findfamily"];
+$familytabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
+$familytabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/families_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($familytabs, "findfamily", $innermenu);
 echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $message);

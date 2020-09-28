@@ -27,8 +27,8 @@ tng_adminheader($admtext['places'], $flags);
 <body class="admin-body">
 
 <?php
-$placetabs[0] = array(1, "admin_places.php", $admtext['search'], "findplace");
-$placetabs[1] = array($allow_add, "admin_newplace.php", $admtext['addnew'], "addplace");
+$placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
+$placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
 $placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
 $placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/places_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";

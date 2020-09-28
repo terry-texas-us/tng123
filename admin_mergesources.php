@@ -348,7 +348,7 @@ tng_adminheader($admtext['merge'], $flags);
 <body class="admin-body">
 
 <?php
-$sourcetabs[0] = array(1, "admin_sources.php", $admtext['search'], "findsource");
+$sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
 $sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
 $sourcetabs[3] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/sources_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
@@ -486,7 +486,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                     <table class="normal">
                         <?php
                         if (is_array($s1row)) {
-                            $eventlist = array();
+                            $eventlist = [];
                             echo "<tr>\n";
                             echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
                             if (is_array($s2row)) {

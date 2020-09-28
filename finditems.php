@@ -39,7 +39,7 @@ if ($albumID) {
 
 if ($mediaquery) {
     $result2 = tng_query($mediaquery) or die ($admtext['cannotexecutequery'] . ": $mediaquery");
-    $alreadygot = array();
+    $alreadygot = [];
     while ($row2 = tng_fetch_assoc($result2))
         $alreadygot[] = $row2['entityID'];
     tng_free_result($result2);

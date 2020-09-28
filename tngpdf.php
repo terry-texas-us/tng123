@@ -40,7 +40,7 @@ if (!class_exists('TNGPDF')) {
             if ($this->charset == 'UTF-8') {
                 $s = $this->utf8_to_utf16be($s, false);
             }
-            return '(' . strtr($s, array(')' => '\\)', '(' => '\\(', '\\' => '\\\\')) . ')';
+            return '(' . strtr($s, [')' => '\\)', '(' => '\\(', '\\' => '\\\\']) . ')';
         }
 
         public function Image($file, $x = null, $y = null, $w = 0, $h = 0, $type = '', $link = '') {
@@ -219,7 +219,7 @@ if (!class_exists('TNGPDF')) {
                     } else {
                         $a2 = explode(' ', $e);
                         $tag = strtoupper(array_shift($a2));
-                        $attr = array();
+                        $attr = [];
                         foreach ($a2 as $v) {
                             if (preg_match('/([^=]*)=["\']?([^"\']*)/', $v, $a3)) {
                                 $attr[strtoupper($a3[1])] = $a3[2];
@@ -270,7 +270,7 @@ if (!class_exists('TNGPDF')) {
             //Modify style and select corresponding font
             $this->$tag += ($enable ? 1 : -1);
             $style = '';
-            foreach (array('B', 'I', 'U') as $s)
+            foreach (['B', 'I', 'U'] as $s)
                 if ($this->$s > 0) {
                     $style .= $s;
                 }
@@ -278,7 +278,7 @@ if (!class_exists('TNGPDF')) {
         }
 
         public function GetPageSize() {
-            $dim = array();
+            $dim = [];
             $dim['w'] = $this->w;
             $dim['h'] = $this->h;
             return $dim;

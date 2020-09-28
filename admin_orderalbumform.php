@@ -64,8 +64,8 @@ tng_adminheader($admtext['sortmedia'], $flags);
 <body class="admin-body">
 
 <?php
-$albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
-$albumtabs[1] = array($allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum");
+$albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
+$albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
 $albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#sort');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($albumtabs, "sortalbums", $innermenu);

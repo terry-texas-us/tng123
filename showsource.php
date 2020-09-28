@@ -70,25 +70,25 @@ $sourcetext .= beginSection("info");
 $sourcetext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
 $sourcetext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($srcrow['title']) {
-    $sourcetext .= showEvent(array("text" => $text['title'], "fact" => $srcrow['title']));
+    $sourcetext .= showEvent(["text" => $text['title'], "fact" => $srcrow['title']]);
 }
 if ($srcrow['shorttitle']) {
-    $sourcetext .= showEvent(array("text" => $text['shorttitle'], "fact" => $srcrow['shorttitle']));
+    $sourcetext .= showEvent(["text" => $text['shorttitle'], "fact" => $srcrow['shorttitle']]);
 }
 if ($srcrow['author']) {
-    $sourcetext .= showEvent(array("text" => $text['author'], "fact" => $srcrow['author']));
+    $sourcetext .= showEvent(["text" => $text['author'], "fact" => $srcrow['author']]);
 }
 if ($srcrow['publisher']) {
-    $sourcetext .= showEvent(array("text" => $text['publisher'], "fact" => $srcrow['publisher']));
+    $sourcetext .= showEvent(["text" => $text['publisher'], "fact" => $srcrow['publisher']]);
 }
 if ($srcrow['callnum']) {
-    $sourcetext .= showEvent(array("text" => $text['callnum'], "fact" => $srcrow['callnum']));
+    $sourcetext .= showEvent(["text" => $text['callnum'], "fact" => $srcrow['callnum']]);
 }
 if ($srcrow['reponame']) {
-    $sourcetext .= showEvent(array("text" => $text['repository'], "fact" => "<a href=\"showrepo.php?repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"));
+    $sourcetext .= showEvent(["text" => $text['repository'], "fact" => "<a href=\"showrepo.php?repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"]);
 }
 if ($srcrow['other']) {
-    $sourcetext .= showEvent(array("text" => $text['other'], "fact" => $srcrow['other']));
+    $sourcetext .= showEvent(["text" => $text['other'], "fact" => $srcrow['other']]);
 }
 
 //do custom events
@@ -99,9 +99,9 @@ ksort($events);
 foreach ($events as $event)
     $sourcetext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-    $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
+    $sourcetext .= showEvent(["text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1]);
 } else {
-    $sourcetext .= showEvent(array("text" => $text['sourceid'], "date" => $sourceID));
+    $sourcetext .= showEvent(["text" => $text['sourceid'], "date" => $sourceID]);
 }
 
 if ($ioffset) {
@@ -149,7 +149,7 @@ if ($srcrow['actualtext']) {
     if ((!$noneliving && !$srcrow['allow_living']) || (!$noneprivate && !$srcrow['allow_private'])) {
         $srcrow['actualtext'] = $text['livingphoto'];
     }
-    $sourcetext .= showEvent(array("text" => $text['text'], "fact" => $srcrow['actualtext']));
+    $sourcetext .= showEvent(["text" => $text['text'], "fact" => $srcrow['actualtext']]);
 }
 
 if ($numrows > $maxsearchresults) {
@@ -185,7 +185,7 @@ if ($numrows >= $maxsearchresults) {
 tng_free_result($sresult);
 
 if ($sourcelinktext) {
-    $sourcetext .= showEvent(array("text" => $text['indlinked'], "fact" => $sourcelinktext));
+    $sourcetext .= showEvent(["text" => $text['indlinked'], "fact" => $sourcelinktext]);
 }
 
 $sourcetext .= "</table>\n";

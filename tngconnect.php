@@ -145,7 +145,7 @@ function tng_prepare($query) {
 function tng_execute_only($stmt, $query, $params) {
     global $link, $text;
 
-    call_user_func_array(array($stmt, 'bind_param'), $params);
+    call_user_func_array([$stmt, 'bind_param'], $params);
     if (!mysqli_stmt_execute($stmt)) {
         $error = mysqli_error($link);
         $errorstr = $error ? "<br><br>$error" : "";
@@ -159,7 +159,7 @@ function tng_execute_only($stmt, $query, $params) {
 }
 
 function tng_execute_only_noerror($stmt, $params) {
-    call_user_func_array(array($stmt, 'bind_param'), $params);
+    call_user_func_array([$stmt, 'bind_param'], $params);
     @mysqli_stmt_execute($stmt);
     $affected_rows = tng_stmt_affected_rows($stmt);
     mysqli_stmt_close($stmt);

@@ -361,8 +361,8 @@ tng_adminheader($admtext['merge'], $flags);
 <body class="admin-body">
 
 <?php
-$repotabs['0'] = array(1, "admin_repositories.php", $admtext['search'], "findrepo");
-$repotabs['1'] = array($allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo");
+$repotabs['0'] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
+$repotabs['1'] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
 $repotabs['3'] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($repotabs, "merge", $innermenu);
@@ -452,7 +452,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                 <table class="normal">
                     <?php
                     if (is_array($r1row)) {
-                        $eventlist = array();
+                        $eventlist = [];
                         echo "<tr>\n";
                         echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['repository']} 1 | <a href=\"\" onclick=\"deepOpen('admin_editrepo.php?repoID={$r1row['repoID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
                         if (is_array($r2row)) {

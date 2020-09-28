@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
-$varlist = array('newsearch', 'searchstring', 'tree', 'living', 'private', 'exactmatch', 'nokids', 'noparents', 'nospouse');
+$varlist = ['newsearch', 'searchstring', 'tree', 'living', 'private', 'exactmatch', 'nokids', 'noparents', 'nospouse'];
 foreach ($varlist as $myvar) {
     if (!isset(${$myvar})) {
         ${$myvar} = "";
@@ -230,10 +230,10 @@ tng_adminheader($admtext['people'], $flags);
 <body class="admin-body">
 
 <?php
-$peopletabs['0'] = array(1, "admin_people.php", $admtext['search'], "findperson");
-$peopletabs['1'] = array($allow_add, "admin_newperson.php", $admtext['addnew'], "addperson");
-$peopletabs['2'] = array($allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review");
-$peopletabs['3'] = array($allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge");
+$peopletabs['0'] = [1, "admin_people.php", $admtext['search'], "findperson"];
+$peopletabs['1'] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
+$peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
+$peopletabs['3'] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($peopletabs, "findperson", $innermenu);
 if (!isset($message)) {

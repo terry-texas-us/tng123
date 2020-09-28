@@ -39,7 +39,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewmedia'], $flags);
 
 $lastcoll = isset($_COOKIE['lastcoll']) ? $_COOKIE['lastcoll'] : "";
-$standardtypes = array();
+$standardtypes = [];
 $moptions = "";
 $likearray = "var like = new Array();\n";
 foreach ($mediatypes as $mediatype) {

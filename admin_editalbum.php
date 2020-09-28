@@ -138,10 +138,10 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
 <body class="admin-body" onload="startMediaSort()">
 
 <?php
-$albumtabs[0] = array(1, "admin_albums.php", $admtext['search'], "findalbum");
-$albumtabs[1] = array($allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum");
-$albumtabs[2] = array($allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums");
-$albumtabs[3] = array($allow_edit, "#", $admtext['edit'], "edit");
+$albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
+$albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
+$albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
+$albumtabs[3] = [$allow_edit, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/albums_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($albumtabs, "edit", $innermenu);

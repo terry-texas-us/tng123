@@ -92,7 +92,7 @@ if ($tngconfig['autotree']) {
     if ($tngconfig['autoapp']) {
         $template = "ssssssssss";
         $query = "INSERT IGNORE INTO $trees_table (gedcom, treename, description, owner, email, address, city, state, country, zip, phone, secret, disallowgedcreate) VALUES (?,?,'',?,?,?,?,?,?,?,?,'0','0')";
-        $params = array(&$template, &$gedcom, &$realname, &$realname, &$email, &$address, &$city, &$state, &$country, &$zip, &$phone);
+        $params = [&$template, &$gedcom, &$realname, &$realname, &$email, &$address, &$city, &$state, &$country, &$zip, &$phone];
         tng_execute($query, $params);
     }
 } else {

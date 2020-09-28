@@ -753,8 +753,8 @@ tng_adminheader($admtext['merge'], $flags);
 <body class="admin-body">
 
 <?php
-$peopletabs['0'] = array(1, "admin_people.php", $admtext['search'], "findperson");
-$peopletabs['1'] = array($allow_add, "admin_newperson.php", $admtext['addnew'], "addperson");
+$peopletabs['0'] = [1, "admin_people.php", $admtext['search'], "findperson"];
+$peopletabs['1'] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
 $peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
 $peopletabs['3'] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#merge');\" class=\"lightlink\">{$admtext['help']}</a>";
@@ -901,9 +901,9 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                     <table class="normal">
                         <?php
                         if (is_array($p1row)) {
-                            $parentsets = array();
-                            $spouses = array();
-                            $eventlist = array();
+                            $parentsets = [];
+                            $spouses = [];
+                            $eventlist = [];
                             echo "<tr>\n";
                             echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['person']} 1 | <a href=\"\" onclick=\"return deepOpen('admin_editperson.php?personID={$p1row['personID']}&amp;tree=$tree&amp;cw=1','edit')\">{$admtext['edit']}</a></strong></td>\n";
                             if (is_array($p2row)) {

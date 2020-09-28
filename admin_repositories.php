@@ -126,9 +126,9 @@ tng_adminheader($admtext['repositories'], $flags);
 <body class="admin-body">
 
 <?php
-$repotabs[0] = array(1, "admin_repositories.php", $admtext['search'], "findrepo");
-$repotabs[1] = array($allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo");
-$repotabs[2] = array($allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge");
+$repotabs[0] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
+$repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
+$repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($repotabs, "findrepo", $innermenu);
 echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $message);

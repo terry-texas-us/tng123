@@ -15,9 +15,9 @@ $allow_lds_this = "";
 
 $flags['imgprev'] = true;
 
-$citations = array();
-$citedisplay = array();
-$citestring = array();
+$citations = [];
+$citedisplay = [];
+$citestring = [];
 $citedispctr = 0;
 
 $ldsOK = determineLDSRights();
@@ -162,7 +162,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
     $indtext .= showDatePlace($event);
 
-    $event = array();
+    $event = [];
     $event['event'] = "CHR";
     $event['type'] = "I";
     $event['ID'] = $personID;
@@ -181,7 +181,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $indtext .= showDatePlace($event);
     }
 
-    $event = array();
+    $event = [];
     $event['text'] = $text['died'];
     $event['event'] = "DEAT";
     $event['type'] = "I";
@@ -198,7 +198,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
     $indtext .= showDatePlace($event);
 
-    $event = array();
+    $event = [];
     $event['text'] = $ind['burialtype'] ? $text['cremated'] : $text['buried'];
     $event['event'] = "BURI";
     $event['type'] = "I";
@@ -237,8 +237,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
             tng_free_result($result);
 
-            $event = array();
-            $eventd = array();
+            $event = [];
+            $eventd = [];
             $event['text'] = $text['married'];
             $event['event'] = "MARR";
             $event['type'] = "F";
@@ -312,7 +312,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         }
         $indtext .= showFact($spousetext, $spouselink);
 
-        $event = array();
+        $event = [];
         $event['text'] = $text['married'];
         $event['event'] = "MARR";
         $event['type'] = "F";
@@ -479,7 +479,7 @@ if ($rights['both']) {
     $query = "SELECT passocID, relationship, reltype FROM $assoc_table WHERE gedcom = '$tree' AND personID = '$familyID'";
     $assocresult = tng_query($query);
     while ($assoc = tng_fetch_assoc($assocresult)) {
-        $assoctext .= showEvent(array("text" => $text['association'], "fact" => formatAssoc($assoc)));
+        $assoctext .= showEvent(["text" => $text['association'], "fact" => formatAssoc($assoc)]);
     }
     tng_free_result($assocresult);
     if ($assoctext) {

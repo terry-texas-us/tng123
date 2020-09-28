@@ -13,9 +13,9 @@ if (!$allow_add) {
     exit;
 }
 
-$dontdo = array("ADDR", "BIRT", "CHR", "DEAT", "BURI", "NAME", "NICK", "TITL", "NSFX", "NPFX");
+$dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NAME", "NICK", "TITL", "NSFX", "NPFX"];
 
-$dfields = array();
+$dfields = [];
 $dfields['personID'] = "personid";
 $dfields['fullname'] = "fullname";
 $dfields['lastfirst'] = "lastfirst";
@@ -59,7 +59,7 @@ if ($allow_lds) {
     $dfields['psealplace'] = "ldssealpplace";
 }
 
-$cfields = array();
+$cfields = [];
 $cfields['personID'] = "personid";
 $cfields['firstname'] = "firstname";
 $cfields['lastname'] = "lastname";
@@ -116,7 +116,7 @@ if ($allow_lds) {
     $cfields['psealplace'] = "ldssealpplace";
 }
 
-$ofields = array();
+$ofields = [];
 $ofields['contains'] = "contains";
 $ofields['starts with'] = "startswith";
 $ofields['ends with'] = "endswith";
@@ -129,13 +129,13 @@ $ofields['currday'] = "currentday";
 $ofields['today'] = "today";
 $ofields['to_days'] = "convtodays";
 
-$subtypes = array();
+$subtypes = [];
 $subtypes['dt'] = $admtext['rptdate'];
 $subtypes['tr'] = $admtext['rptdatetr'];
 $subtypes['pl'] = $admtext['place'];
 $subtypes['fa'] = $admtext['fact'];
 
-$cetypes = array();
+$cetypes = [];
 $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep='1' AND type=\"I\" ORDER BY display";
 $ceresult = tng_query($query);
 while ($cerow = tng_fetch_assoc($ceresult)) {
@@ -171,8 +171,8 @@ tng_adminheader($admtext['addnewreport'], $flags);
 <body class="admin-body">
 
 <?php
-$reporttabs[0] = array(1, "admin_reports.php", $admtext['search'], "findreport");
-$reporttabs[1] = array($allow_add, "admin_newreport.php", $admtext['addnew'], "addreport");
+$reporttabs[0] = [1, "admin_reports.php", $admtext['search'], "findreport"];
+$reporttabs[1] = [$allow_add, "admin_newreport.php", $admtext['addnew'], "addreport"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/reports_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($reporttabs, "addreport", $innermenu);
 echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['addnewreport'], "img/reports_icon.gif", $menu, $message);

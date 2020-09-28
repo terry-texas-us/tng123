@@ -95,11 +95,11 @@ echo $style->getStyle();
 <body class="admin-body">
 
 <?php
-$usertabs[0] = array(1, "admin_users.php", $admtext['search'], "finduser");
-$usertabs[1] = array($allow_add, "admin_newuser.php", $admtext['addnew'], "adduser");
-$usertabs[2] = array($allow_edit, "admin_reviewusers.php", $admtext['review'] . $revstar, "review");
-$usertabs[3] = array(1, "admin_mailusers.php", $admtext['email'], "mail");
-$usertabs['4'] = array(1, "#", $admtext['edit'], "edit");
+$usertabs[0] = [1, "admin_users.php", $admtext['search'], "finduser"];
+$usertabs[1] = [$allow_add, "admin_newuser.php", $admtext['addnew'], "adduser"];
+$usertabs[2] = [$allow_edit, "admin_reviewusers.php", $admtext['review'] . $revstar, "review"];
+$usertabs[3] = [1, "admin_mailusers.php", $admtext['email'], "mail"];
+$usertabs['4'] = [1, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/users_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($usertabs, "edit", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], "img/users_icon.gif", $menu, $message);

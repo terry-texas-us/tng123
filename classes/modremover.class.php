@@ -24,9 +24,9 @@ class modremover extends modparser
 
         $this->cfgpath = $cfgpath;
         $this->cfgfile = $cfgfile = pathinfo($cfgpath, PATHINFO_BASENAME);
-        $this->parse_error = array();
+        $this->parse_error = [];
         $this->mod_status = '';
-        $moddirs = array();
+        $moddirs = [];
 
         // GET PARSE TABLE FOR THIS MOD
         $tags = $this->parse($cfgpath);

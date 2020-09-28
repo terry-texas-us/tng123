@@ -19,7 +19,7 @@ if (!$alwayson) {
 }
 $template = "sssss";
 $query = "INSERT INTO $albums_table (albumname,description,keywords,active,alwayson) VALUES (?,?,?,?,?)";
-$params = array(&$template, &$albumname, &$description, &$keywords, &$active, &$alwayson);
+$params = [&$template, &$albumname, &$description, &$keywords, &$active, &$alwayson];
 tng_execute($query, $params);
 $albumID = tng_insert_id();
 

@@ -115,7 +115,7 @@ $objinits = array (
 /*************************************************************************
 BATCH MOD PROCESSING
 *************************************************************************/
-$modlist = array();
+$modlist = [];
 if (!empty($_POST)) {
     foreach ($_POST as $key => $value) {
         ${$key} = $value;
@@ -290,7 +290,7 @@ if ($filter == F_SELECT && !empty($modlist)) {
     $modlist = $_SESSION['modlist'];
 } else {
     unset($_SESSION['modlist']);
-    $modlist = array();
+    $modlist = [];
 }
 include 'classes/modlister.class.php';
 $oModlist = new modlister($objinits);
@@ -303,18 +303,18 @@ $oModlist->list_mods();
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
     global $admtext;
 
-    $modtabs = array();
-    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    $modtabs = [];
+    $modtabs[0] = [1, "admin_modhandler.php", $admtext['modlist'], "modlist"];
+    $modtabs[1] = [1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog"];
+    $modtabs[2] = [1, "admin_modoptions.php", $admtext['options'], "options"];
     if ($show_analyzer == YES) {
-        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+        $modtabs[3] = [1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files'];
     }
     if ($show_developer == YES) {
-        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+        $modtabs[4] = [1, "admin_modtables.php", $admtext['parsetable'], 'parser'];
     }
     if ($show_updates == YES) {
-        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+        $modtabs[5] = [1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates'];
     }
     return $modtabs;
 }

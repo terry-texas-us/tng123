@@ -42,10 +42,10 @@ tng_adminheader($admtext['modifypedsettings'], $flags);
 <body class="admin-body">
 
 <?php
-$setuptabs[0] = array(1, "admin_setup.php", $admtext['configuration'], "configuration");
-$setuptabs[1] = array(1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics");
-$setuptabs[2] = array(1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation");
-$setuptabs[3] = array(1, "#", $admtext['pedconfigsettings'], "ped");
+$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
+$setuptabs[3] = [1, "#", $admtext['pedconfigsettings'], "ped"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/pedconfig_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($setuptabs, "ped", $innermenu);

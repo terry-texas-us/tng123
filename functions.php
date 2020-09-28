@@ -39,7 +39,7 @@ function get_media_offsets($result, $mediaID) {
     $prev = $i ? $i - 1 : $nexttolast;
     $next = $i < $nexttolast ? $i + 1 : 0;
 
-    return array($i, $prev, $next, $nexttolast);
+    return [$i, $prev, $next, $nexttolast];
 }
 
 function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $allstr, $showlinks) {

@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 
 include "version.php";
 function scan($dir) {
-    $files = array_diff(scandir($dir), array('.', '..'));
+    $files = array_diff(scandir($dir), ['.', '..']);
     foreach ($files as $file) {
         (is_dir("$dir/$file")) ? scan("$dir/$file") : modify($dir, $file);
     }

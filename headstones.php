@@ -176,7 +176,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $query .= "ORDER BY description ";
     $query .= "LIMIT $newoffset" . $maxsearchresults;
     if (!$subquery) {
-        $cemetery = array();
+        $cemetery = [];
         $cemetery['cemname'] = $text['nocemetery'];
         $subquery = "done";
     }

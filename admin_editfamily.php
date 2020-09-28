@@ -242,10 +242,10 @@ include_once "eventlib_js.php";
 <body class="admin-body">
 
 <?php
-$familytabs['0'] = array(1, "admin_families.php", $admtext['search'], "findfamily");
-$familytabs['1'] = array($allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily");
-$familytabs['2'] = array($allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review");
-$familytabs['3'] = array($allow_edit, "admin_editfamily.php?familyID=$familyID&tree=$tree", $admtext['edit'], "edit");
+$familytabs['0'] = [1, "admin_families.php", $admtext['search'], "findfamily"];
+$familytabs['1'] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
+$familytabs['2'] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review"];
+$familytabs['3'] = [$allow_edit, "admin_editfamily.php?familyID=$familyID&tree=$tree", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/families_help.php#edit');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
@@ -387,7 +387,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                     $branchresult = tng_query($query);
                                     $branchlist = explode(",", $row['branch']);
 
-                                    $descriptions = array();
+                                    $descriptions = [];
                                     $options = "";
                                     while ($branchrow = tng_fetch_assoc($branchresult)) {
                                         $options .= "	<option value=\"{$branchrow['branch']}\"";

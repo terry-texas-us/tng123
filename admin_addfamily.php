@@ -57,7 +57,7 @@ deleteEvents($familyID, $tree);
 deleteNoteLinks($familyID, $tree);
 deleteChildren($familyID, $tree);
 
-$places = array();
+$places = [];
 if (trim($marrplace) && !in_array($marrplace, $places)) {
     array_push($places, $marrplace);
 }
@@ -72,7 +72,7 @@ $template = "sss";
 foreach ($places as $place) {
     $temple = strlen($place) == 5 && $place == strtoupper($place) ? 1 : 0;
     $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,\"0\",\"0\",\"0\",?)";
-    $params = array(&$template, &$placetree, &$place, &$temple);
+    $params = [&$template, &$placetree, &$place, &$temple];
     tng_execute($query, $params);
     if ($tngconfig['autogeo'] && tng_affected_rows()) {
         $ID = tng_insert_id();
@@ -136,15 +136,15 @@ if (!$allbranches) {
 $query = "INSERT INTO $families_table (familyID,husband,husborder,wife,wifeorder,living,private,marrdate,marrdatetr,marrplace,marrtype,divdate,divdatetr,divplace,sealdate,sealdatetr,sealplace,changedate,gedcom,branch,changedby,status,edituser,edittime) 
 	VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",\"\",\"0\")";
 $template = "sssssssssssssssssssss";
-$params = array(&$template, &$familyID, &$husband, &$husborder, &$wife, &$wifeorder, &$familyliving, &$private, &$marrdate, &$marrdatetr, &$marrplace, &$marrtype, &$divdate, &$divdatetr,
-    &$divplace, &$sealdate, &$sealdatetr, &$sealplace, &$newdate, &$tree, &$allbranches, &$currentuser);
+$params = [&$template, &$familyID, &$husband, &$husborder, &$wife, &$wifeorder, &$familyliving, &$private, &$marrdate, &$marrdatetr, &$marrplace, &$marrtype, &$divdate, &$divdatetr,
+    &$divplace, &$sealdate, &$sealdatetr, &$sealplace, &$newdate, &$tree, &$allbranches, &$currentuser];
 tng_execute($query, $params);
 
 $branchlist = explode(',', $allbranches);
 $template = "sss";
 foreach ($branchlist as $b) {
     $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(?,?,?)";
-    $params = array(&$template, &$b, &$tree, &$familyID);
+    $params = [&$template, &$b, &$tree, &$familyID];
     tng_execute($query, $params);
 }
 
@@ -154,24 +154,24 @@ if ($lastperson) {
     $template = "sssi";
     $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,mrel,frel,haskids,parentorder,sealdate,sealdatetr,sealplace) 
 		VALUES (?,?,1,?,\"\",\"\",?,0,\"\",\"0000-00-00\",\"\")";
-    $params = array(&$template, &$familyID, &$lastperson, &$tree, &$haskids);
+    $params = [&$template, &$familyID, &$lastperson, &$tree, &$haskids];
     tng_execute($query, $params);
 
     $template = "ss";
     if ($husband) {
         $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
-        $params = array(&$template, &$husband, &$tree);
+        $params = [&$template, &$husband, &$tree];
         tng_execute($query, $params);
     }
     if ($wife) {
         $query = "UPDATE $children_table SET haskids='1' WHERE personID = ? AND gedcom = ?";
-        $params = array(&$template, &$wife, &$tree);
+        $params = [&$template, &$wife, &$tree];
         tng_execute($query, $params);
     }
 
     $template = "sss";
     $query = "UPDATE $people_table SET famc=? WHERE personID = ? AND gedcom = ?";
-    $params = array(&$template, &$familyID, &$lastperson, &$tree);
+    $params = [&$template, &$familyID, &$lastperson, &$tree];
     tng_execute($query, $params);
 }
 

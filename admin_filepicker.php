@@ -60,7 +60,7 @@ if ($order == "date") {
 if (!isset($subdir)) {
     $subdir = '';
 }
-$ImageFileTypes = array("GIF", "JPG", "PNG");
+$ImageFileTypes = ["GIF", "JPG", "PNG"];
 
 header("Content-type:text/html; charset=" . $session_charset);
 
@@ -104,8 +104,8 @@ function frmFiles() {
     $savedir = getcwd();
     chdir("$rootpath$tngpath/" . stripslashes($subdir));
     if ($handle = @opendir('.')) {
-        $fnentries = array();
-        $dnentries = array();
+        $fnentries = [];
+        $dnentries = [];
         while ($file = readdir($handle)) {
             if (!$searchstring || strpos(strtoupper($file), strtoupper($searchstring)) === 0) {
                 if (is_file($file)) {
@@ -364,7 +364,7 @@ function natksort(&$array, $reverse) {
         $keys = array_reverse($keys);
     }
 
-    $new_array = array();
+    $new_array = [];
     foreach ($keys as $k) {
         $new_array[$k] = $array[$k];
     }

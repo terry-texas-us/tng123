@@ -52,11 +52,11 @@ class modparser extends modbase
 
        protected $cfgpath = '';
        protected $cfgfile = '';
-       protected $parse_error = array();
+       protected $parse_error = [];
        protected $classID = '';
     */
 
-    protected $optags = array(
+    protected $optags = [
         'replace',
         'insert:before',
         'insert:after',
@@ -65,7 +65,7 @@ class modparser extends modbase
         'trimreplace',
         'triminsert:before',
         'triminsert:after',
-    );
+    ];
 
     protected $configs = [
         'config.php',
@@ -654,7 +654,7 @@ class modparser extends modbase
                         $this->parse_error['line'] = $parts[$i][1];
                         $this->parse_error['tag'] = '%' . $parts[$i][0] . ':';
                         $this->parse_error['text'] = self::TAGUNK; // index into admtext[]
-                    //return array();
+                    //return [];
                 }
             } // RAW TAGS PROCESSING LOOP
 
@@ -672,7 +672,7 @@ class modparser extends modbase
     } // END PARSE FUNCTION
 
     protected function arrange_table($table) {
-        $newtable = array();
+        $newtable = [];
 
         // make new directories available for file copies
         for ($i = 0; isset($table[$i]); $i++) {
@@ -785,14 +785,14 @@ class modparser extends modbase
 
     private function show_table_rows($table) {
 
-        $hdrs = array(
+        $hdrs = [
             'line' => '4%',
             'name' => '10%',
             'arg1' => '26%',
             'arg2' => '26%',
             'arg3' => '26%',
             'flag' => '4%'
-        );
+        ];
 
         if (!empty($table)) {
             echo "

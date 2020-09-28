@@ -78,7 +78,7 @@ if ($psearch) {
     $myburialplace = trim(stripslashes($myburialplace));
     $myburialyear = trim(stripslashes($myburialyear));
 
-    $_SERVER['QUERY_STRING'] = str_replace(array('&amp;', '&'), array('&', '&amp;'), $_SERVER['QUERY_STRING']);
+    $_SERVER['QUERY_STRING'] = str_replace(['&amp;', '&'], ['&', '&amp;'], $_SERVER['QUERY_STRING']);
     $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_SERVER['QUERY_STRING'];
     $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 
@@ -254,7 +254,7 @@ while ($row = tng_fetch_assoc($result)) {
         $item->longitude = $row['longitude'];
         $item->place = $row['place'];
         $item->notes = isset($row['notes']) ? $row['notes'] : "";
-        $item->people = array();
+        $item->people = [];
 
         $uniquePlaces[$key] = $item;
     }

@@ -43,8 +43,8 @@ tng_adminheader($admtext['modifynote'], $flags);
 <body class="admin-body">
 
 <?php
-$misctabs[0] = array(1, "admin_notelist.php", $admtext['notes'], "notes");
-$misctabs[1] = array($allow_edit, "#", $admtext['edit'], "edit");
+$misctabs[0] = [1, "admin_notelist.php", $admtext['notes'], "notes"];
+$misctabs[1] = [$allow_edit, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/notes2_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($misctabs, "edit", $innermenu);
 echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $message);

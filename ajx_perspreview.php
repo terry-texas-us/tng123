@@ -34,13 +34,13 @@ $persontext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" width=\"10
 resetEvents();
 if ($rights['both']) {
     if ($row['nickname']) {
-        $persontext .= showEvent(array("text" => $text['nickname'], "fact" => $row['nickname'], "event" => "NICK", "entity" => $personID, "type" => "I"));
+        $persontext .= showEvent(["text" => $text['nickname'], "fact" => $row['nickname'], "event" => "NICK", "entity" => $personID, "type" => "I"]);
     }
-    setEvent(array("text" => $text['birth'], "fact" => $stdex['BIRT'], "date" => $row['birthdate'], "place" => $row['birthplace'], "event" => "BIRT", "entity" => $personID, "type" => "I", "np" => 1), $row['birthdatetr']);
-    setEvent(array("text" => $text['christened'], "fact" => $stdex['CHR'], "date" => $row['altbirthdate'], "place" => $row['altbirthplace'], "event" => "CHR", "entity" => $personID, "type" => "I", "np" => 1), $row['altbirthdatetr']);
-    setEvent(array("text" => $text['died'], "fact" => $stdex['DEAT'], "date" => $row['deathdate'], "place" => $row['deathplace'], "event" => "DEAT", "entity" => $personID, "type" => "I", "np" => 1), $row['deathdatetr']);
+    setEvent(["text" => $text['birth'], "fact" => $stdex['BIRT'], "date" => $row['birthdate'], "place" => $row['birthplace'], "event" => "BIRT", "entity" => $personID, "type" => "I", "np" => 1], $row['birthdatetr']);
+    setEvent(["text" => $text['christened'], "fact" => $stdex['CHR'], "date" => $row['altbirthdate'], "place" => $row['altbirthplace'], "event" => "CHR", "entity" => $personID, "type" => "I", "np" => 1], $row['altbirthdatetr']);
+    setEvent(["text" => $text['died'], "fact" => $stdex['DEAT'], "date" => $row['deathdate'], "place" => $row['deathplace'], "event" => "DEAT", "entity" => $personID, "type" => "I", "np" => 1], $row['deathdatetr']);
     $burialmsg = $row['burialtype'] ? $text['cremated'] : $text['buried'];
-    setEvent(array("text" => $burialmsg, "fact" => $stdex['BURI'], "date" => $row['burialdate'], "place" => $row['burialplace'], "event" => "BURI", "entity" => $personID, "type" => "I", "np" => 1), $row['burialdatetr']);
+    setEvent(["text" => $burialmsg, "fact" => $stdex['BURI'], "date" => $row['burialdate'], "place" => $row['burialplace'], "event" => "BURI", "entity" => $personID, "type" => "I", "np" => 1], $row['burialdatetr']);
 }
 if ($row['sex'] == "M") {
     $spouse = "wife";
@@ -86,11 +86,11 @@ if ($parents && tng_num_rows($parents)) {
             if ($frights['both']) {
                 $fatherlink .= $birthinfo;
             }
-            $persontext .= showEvent(array("text" => $text['father'], "fact" => $fatherlink));
+            $persontext .= showEvent(["text" => $text['father'], "fact" => $fatherlink]);
             if ($rights['both'] && $parent['frel']) {
                 $rel = $parent['frel'];
                 $relstr = $admtext[$rel] ? $admtext[$rel] : $rel;
-                $persontext .= showEvent(array("text" => $text['relationship2'], "fact" => $relstr));
+                $persontext .= showEvent(["text" => $text['relationship2'], "fact" => $relstr]);
             }
             tng_free_result($gotfather);
         }
@@ -111,11 +111,11 @@ if ($parents && tng_num_rows($parents)) {
             if ($mrights['both']) {
                 $motherlink .= $birthinfo;
             }
-            $persontext .= showEvent(array("text" => $text['mother'], "fact" => $motherlink));
+            $persontext .= showEvent(["text" => $text['mother'], "fact" => $motherlink]);
             if ($rights['both'] && $parent['mrel']) {
                 $rel = $parent['mrel'];
                 $relstr = $admtext[$rel] ? $admtext[$rel] : $rel;
-                $persontext .= showEvent(array("text" => $text['relationship2'], "fact" => $relstr));
+                $persontext .= showEvent(["text" => $text['relationship2'], "fact" => $relstr]);
             }
 
             tng_free_result($gotmother);
@@ -130,8 +130,8 @@ if ($parents && tng_num_rows($parents)) {
             $prights = determineLivingPrivateRights($parentrow, $righttree);
 
             if ($prights['both']) {
-                setEvent(array("text" => $text['married'], "fact" => $stdexf['MARR'], "date" => $parentrow['marrdate'], "place" => $parentrow['marrplace'], "event" => "MARR", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1, "np" => 1), $parentrow['marrdatetr']);
-                setEvent(array("text" => $text['divorced'], "fact" => $stdexf['DIV'], "date" => $parentrow['divdate'], "place" => $parentrow['divplace'], "event" => "DIV", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1, "np" => 1), $parentrow['divdatetr']);
+                setEvent(["text" => $text['married'], "fact" => $stdexf['MARR'], "date" => $parentrow['marrdate'], "place" => $parentrow['marrplace'], "event" => "MARR", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1, "np" => 1], $parentrow['marrdatetr']);
+                setEvent(["text" => $text['divorced'], "fact" => $stdexf['DIV'], "date" => $parentrow['divdate'], "place" => $parentrow['divplace'], "event" => "DIV", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1, "np" => 1], $parentrow['divdatetr']);
 
                 ksort($events);
                 foreach ($events as $event)
@@ -164,7 +164,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     $stdexf = getStdExtras($marriagerow['familyID']);
     if ($marriagerow['marrtype']) {
         if (!is_array($stdexf['MARR'])) {
-            $stdexf['MARR'] = array();
+            $stdexf['MARR'] = [];
         }
         array_unshift($stdexf['MARR'], $text['type'] . ": " . $marriagerow['marrtype']);
     }
@@ -194,9 +194,9 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     }
     $marrstr = $marrtot > 1 ? " $marrcount" : "";
     if ($spouserow['allow_living']) {
-        $persontext .= showEvent(array("text" => "{$text['family']}$marrstr", "fact" => $spouselink, "entity" => $marriagerow['familyID'], "type" => "F"));
+        $persontext .= showEvent(["text" => "{$text['family']}$marrstr", "fact" => $spouselink, "entity" => $marriagerow['familyID'], "type" => "F"]);
     } else {
-        $persontext .= showEvent(array("text" => "{$text['family']}$marrstr", "fact" => $spouselink));
+        $persontext .= showEvent(["text" => "{$text['family']}$marrstr", "fact" => $spouselink]);
     }
 
     $marrights = determineLivingPrivateRights($marriagerow, $righttree);
@@ -205,8 +205,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     if ($marrights['both']) {
         resetEvents();
 
-        setEvent(array("text" => $text['married'], "fact" => $stdexf['MARR'], "date" => $marriagerow['marrdate'], "place" => $marriagerow['marrplace'], "event" => "MARR", "entity" => $marriagerow['familyID'], "type" => "F", "np" => 1), $marriagerow['marrdatetr']);
-        setEvent(array("text" => $text['divorced'], "fact" => $stdexf['DIV'], "date" => $marriagerow['divdate'], "place" => $marriagerow['divplace'], "event" => "DIV", "entity" => $marriagerow['familyID'], "type" => "F", "np" => 1), $marriagerow['divdatetr']);
+        setEvent(["text" => $text['married'], "fact" => $stdexf['MARR'], "date" => $marriagerow['marrdate'], "place" => $marriagerow['marrplace'], "event" => "MARR", "entity" => $marriagerow['familyID'], "type" => "F", "np" => 1], $marriagerow['marrdatetr']);
+        setEvent(["text" => $text['divorced'], "fact" => $stdexf['DIV'], "date" => $marriagerow['divdate'], "place" => $marriagerow['divplace'], "event" => "DIV", "entity" => $marriagerow['familyID'], "type" => "F", "np" => 1], $marriagerow['divdatetr']);
 
 
         ksort($events);

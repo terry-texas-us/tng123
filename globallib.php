@@ -89,7 +89,7 @@ function getNameRev($row, $hcard = null) {
 function getNameUniversal($row, $order, $hcard = null) {
     global $text, $admtext, $tngconfig, $nonames;
 
-    $indexlist = array('lastname', 'firstname', 'lnprefix', 'allow_living', 'allow_private');
+    $indexlist = ['lastname', 'firstname', 'lnprefix', 'allow_living', 'allow_private'];
     foreach ($indexlist as $index)
         if (!isset($row[$index])) {
             $row[$index] = '';
@@ -348,7 +348,7 @@ function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranc
         $row['personID'] = '';
     }
 
-    $rights = array('private' => true, 'living' => true, 'lds' => !$ldsdefault);
+    $rights = ['private' => true, 'living' => true, 'lds' => !$ldsdefault];
 
     $living = $livedefault == 2 ? false : $row['living'];
     $private = $row['private'];
@@ -639,7 +639,7 @@ function printDate($date, $datetr) {
             $datepartu = strtoupper($datepart);
             if (isset($dates[$datepartu])) {
                 $datepart = $dates[$datepartu];
-                $dtprefix = in_array($datepartu, array("ABT", "ABT.", "ABOUT", "AFT", "AFT.", "AFTER", "BEF", "BEF.", "BEFORE", "BET", "BET.", "BETWEEN", "CAL", "CAL.", "EST", "EST."));
+                $dtprefix = in_array($datepartu, ["ABT", "ABT.", "ABOUT", "AFT", "AFT.", "AFTER", "BEF", "BEF.", "BEFORE", "BET", "BET.", "BETWEEN", "CAL", "CAL.", "EST", "EST."]);
                 if ($dtprefix) {
                     $prefix = 1;
                     switch ($datepartu) {
@@ -692,7 +692,7 @@ function printDate($date, $datetr) {
 }
 
 function xmlcharacters($string) {
-    $string = str_replace(array('&', '"', '\''), array('&amp;', '&quot;', '&apos;'), $string);
+    $string = str_replace(['&', '"', '\''], ['&amp;', '&quot;', '&apos;'], $string);
     return preg_replace('/&amp;([A-Za-z]+;|#[0-9]+;)/', "&$1", $string);
 }
 
@@ -738,7 +738,7 @@ function getDatePrefix($datestr) {
     if ($datestr) {
         $orgstr = $datestr;
         $datestr = strtoupper($datestr);
-        $prefixes = array($dates['BEF'], $dates['AFT'], $dates['ABT'], $dates['CAL'], $dates['EST']);
+        $prefixes = [$dates['BEF'], $dates['AFT'], $dates['ABT'], $dates['CAL'], $dates['EST']];
         foreach ($prefixes as $str) {
             if (strpos($datestr, strtoupper($str)) === 0) {
                 $prefix = $str . " ";
@@ -1153,9 +1153,9 @@ function utf82iso88592_chris($text) {
     if (function_exists('mb_convert_encoding')) {
         return mb_convert_encoding($text, 'ISO-8859-2', 'UTF-8');
     }
-    return str_replace(array("\xC4\x85", "\xC4\x84", "\xC4\x87", "\xC4\x86", "\xC4\x99", "\xC4\x98", "\xC5\x82", "\xC5\x81",
-        "\xC3\xB3", "\xC3\x93", "\xC5\x9B", "\xC5\x9A", "\xC5\xBC", "\xC5\xBB", "\xC5\xBA", "\xC5\xB9", "\xc5\x84", "\xc5\x83"),
-        array("\xB1", "\xA1", "\xE6", "\xC6", "\xEA", "\xCA", "\xB3", "\xA3", "\xF3", "\xD3", "\xB6", "\xA6", "\xBF", "\xAF", "\xBC", "\xAC", "\xF1", "\xD1"), $text
+    return str_replace(["\xC4\x85", "\xC4\x84", "\xC4\x87", "\xC4\x86", "\xC4\x99", "\xC4\x98", "\xC5\x82", "\xC5\x81",
+        "\xC3\xB3", "\xC3\x93", "\xC5\x9B", "\xC5\x9A", "\xC5\xBC", "\xC5\xBB", "\xC5\xBA", "\xC5\xB9", "\xc5\x84", "\xc5\x83"],
+        ["\xB1", "\xA1", "\xE6", "\xC6", "\xEA", "\xCA", "\xB3", "\xA3", "\xF3", "\xD3", "\xB6", "\xA6", "\xBF", "\xAF", "\xBC", "\xAC", "\xF1", "\xD1"], $text
     );
 }
 

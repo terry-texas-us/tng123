@@ -37,8 +37,8 @@ tng_adminheader($admtext['addnewlanguage'], $flags);
 <body class="admin-body">
 
 <?php
-$langtabs[0] = array(1, "admin_languages.php", $admtext['search'], "findlang");
-$langtabs[1] = array($allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage");
+$langtabs[0] = [1, "admin_languages.php", $admtext['search'], "findlang"];
+$langtabs[1] = [$allow_add, "admin_newlanguage.php", $admtext['addnew'], "addlanguage"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/languages_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($langtabs, "addlanguage", $innermenu);
 echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['addnewlanguage'], "img/languages_icon.gif", $menu, $message);
@@ -57,7 +57,7 @@ echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['addnewlang
                                 <?php
                                 @chdir($rootpath . $endrootpath . $languages_path);
                                 if ($handle = @opendir('.')) {
-                                    $dirs = array();
+                                    $dirs = [];
                                     while ($filename = readdir($handle)) {
                                         if (is_dir($filename) && $filename != '..' && $filename != '.') {
                                             array_push($dirs, $filename);

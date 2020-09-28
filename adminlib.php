@@ -220,7 +220,7 @@ function showEventRow($datefield, $placefield, $label, $persfamID) {
     $citesicon = $gotcites[$label] ? "admin-cite-on-icon" : "admin-cite-off-icon";
     $moreicon = $gotmore[$label] ? "admin-more-on-icon" : "admin-more-off-icon";
 
-    $ldsarray = array("BAPL", "CONL", "INIT", "ENDL", "SLGS", "SLGC");
+    $ldsarray = ["BAPL", "CONL", "INIT", "ENDL", "SLGS", "SLGC"];
 
     if (!isset($currentform)) {
         $currentform = "document.form1";

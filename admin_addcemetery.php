@@ -39,7 +39,7 @@ if (!$zoom) {
 }
 $template = "sssssssssss";
 $query = "INSERT INTO $cemeteries_table (cemname,maplink,city,county,state,country,latitude,longitude,zoom,notes,place) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-$params = array(&$template, &$cemname, &$maplink, &$city, &$county, &$state, &$country, &$latitude, &$longitude, &$zoom, &$notes, &$place);
+$params = [&$template, &$cemname, &$maplink, &$city, &$county, &$state, &$country, &$latitude, &$longitude, &$zoom, &$notes, &$place];
 tng_execute($query, $params);
 $cemeteryID = tng_insert_id();
 
@@ -68,7 +68,7 @@ if ($place) {
         $placetree = $tngconfig['places1tree'] ? "" : $tree;
         $template = "ssssss";
         $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,latitude,longitude,zoom,notes) VALUES (?,?,'0',?,?,?,?)";
-        $params = array(&$template, &$placetree, &$place, &$latitude, &$longitude, &$zoom, &$notes);
+        $params = [&$template, &$placetree, &$place, &$latitude, &$longitude, &$zoom, &$notes];
         tng_execute($query, $params);
     } elseif (isset($usecoords)) {
         $treestr = $tree && $tngconfig['places1tree'] ? "gedcom='$tree' AND " : "";

@@ -8,7 +8,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 
-$reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef_birth', 'died_bef_birth', 'parents_younger', 'children_late', 'not_living', 'not_dead');
+$reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef_birth', 'died_bef_birth', 'parents_younger', 'children_late', 'not_living', 'not_dead'];
 if (!$report || !in_array($report, $reports)) {
     header("Location: admin_data_validation.php");
     exit;
@@ -27,11 +27,11 @@ tng_adminheader(_todo_('Validation'), $flags);
 <body class="admin-body">
 
 <?php
-$misctabs[0] = array(1, "admin_misc.php", $admtext['menu'], "misc");
-$misctabs[1] = array(1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew");
-$misctabs[2] = array(1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted");
-$misctabs[3] = array(1, "admin_data_validation.php", $admtext['dataval'], "validation");
-$misctabs[4] = array(1, "admin_valreport.php?report=$report&amp;tree=$tree", $admtext['report'], "report");
+$misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
+$misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
+$misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
+$misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
+$misctabs[4] = [1, "admin_valreport.php?report=$report&amp;tree=$tree", $admtext['report'], "report"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "report", $innermenu);
@@ -67,8 +67,8 @@ switch ($report) {
         $query2 = "FROM $families_table, $people_table
 				WHERE $people_table.gedcom = $families_table.gedcom AND $people_table.personID = $families_table.wife AND sex != 'F' $treestr ";
         $orderby = "ORDER BY lastname, firstname";
-        $display = array('personid', 'name', 'sex', 'familyid', 'treeid');
-        $values = array('personID', 'name', 'sex', 'familyID', 'gedcom');
+        $display = ['personid', 'name', 'sex', 'familyid', 'treeid'];
+        $values = ['personID', 'name', 'sex', 'familyID', 'gedcom'];
         break;
     case "unk_gender":
         $select1a = "SELECT $nameFields, sex ";
@@ -77,8 +77,8 @@ switch ($report) {
 				WHERE (sex = \"\" OR sex = \"U\") $treestr ";
         $orderby = "ORDER BY lastname, firstname";
         $select2a = $select2b = $query2 = "";
-        $display = array('personid', 'name', 'sex', 'treeid');
-        $values = array('personID', 'name', 'sex', 'gedcom');
+        $display = ['personid', 'name', 'sex', 'treeid'];
+        $values = ['personID', 'name', 'sex', 'gedcom'];
         break;
     case "marr_young":
         //select from families, join husb and wife with people, return entries where husb younger than 15 at marriage or wife younger than 15 at marriage, show person and spouse
@@ -93,8 +93,8 @@ switch ($report) {
 				WHERE $people_table.gedcom = $families_table.gedcom AND $people_table.personID = $families_table.wife 
 					AND marrdatetr != '0000-00-00' AND birthdatetr < marrdatetr AND marrdatetr < DATE_ADD(birthdatetr, interval 15 year) $treestr ";
         $orderby = "ORDER BY lastname, firstname";
-        $display = array('personid', 'name', 'birthdate', 'marriagedate', 'treeid');
-        $values = array('personID', 'name', 'birthdate', 'marrdate', 'gedcom');
+        $display = ['personid', 'name', 'birthdate', 'marriagedate', 'treeid'];
+        $values = ['personID', 'name', 'birthdate', 'marrdate', 'gedcom'];
         break;
     case "marr_aft_death":
         //select from families, join husb and wife with people, return entries were husb death before marriage date or wife death before marriage date, show person and marriage info
@@ -109,8 +109,8 @@ switch ($report) {
 				WHERE $people_table.gedcom = $families_table.gedcom AND $people_table.personID = $families_table.wife 
 					AND deathdatetr != '0000-00-00' AND marrdatetr != '0000-00-00' AND marrdatetr > deathdatetr $treestr ";
         $orderby = "ORDER BY lastname, firstname";
-        $display = array('personid', 'name', 'marriagedate', 'deathdate', 'treeid');
-        $values = array('personID', 'name', 'marrdate', 'deathdate', 'gedcom');
+        $display = ['personid', 'name', 'marriagedate', 'deathdate', 'treeid'];
+        $values = ['personID', 'name', 'marrdate', 'deathdate', 'gedcom'];
         break;
     case "marr_bef_birth":
         //select from families, join husb and wife with people, return entries where husb birth after marriage date or wife birth after marriage date, show person and marriage info
@@ -125,8 +125,8 @@ switch ($report) {
 				WHERE $people_table.gedcom = $families_table.gedcom AND $people_table.personID = $families_table.wife 
 					AND marrdatetr != '0000-00-00' AND marrdatetr < birthdatetr $treestr ";
         $orderby = "ORDER BY lastname, firstname";
-        $display = array('personid', 'name', 'birthdate', 'marriagedate', 'treeid');
-        $values = array('personID', 'name', 'birthdate', 'marrdate', 'gedcom');
+        $display = ['personid', 'name', 'birthdate', 'marriagedate', 'treeid'];
+        $values = ['personID', 'name', 'birthdate', 'marrdate', 'gedcom'];
         break;
     case "died_bef_birth":
         //select from people, return entries where death date is before birth date, show person and info
@@ -135,8 +135,8 @@ switch ($report) {
         $query1 = "FROM $people_table
 				WHERE deathdatetr != '0000-00-00' AND deathdatetr < birthdatetr $treestr ";
         $orderby = "ORDER BY lastname, firstname";
-        $display = array('personid', 'name', 'birthdate', 'deathdate', 'treeid');
-        $values = array('personID', 'name', 'birthdate', 'deathdate', 'gedcom');
+        $display = ['personid', 'name', 'birthdate', 'deathdate', 'treeid'];
+        $values = ['personID', 'name', 'birthdate', 'deathdate', 'gedcom'];
         break;
     case "parents_younger":
         //select from children, join child with people, join family with family, join husb and wife with people, return entries where child's birthdatetr is less than marriage date, show child and parent's info
@@ -148,8 +148,8 @@ switch ($report) {
         $query1 .= "WHERE $children_table.personID = $people_table.personID AND $children_table.gedcom = $people_table.gedcom AND $children_table.familyID = $families_table.familyID AND $children_table.gedcom = $families_table.gedcom AND $people_table.birthdatetr != '0000-00-00' AND ((marrdatetr != '0000-00-00' AND $people_table.birthdatetr < marrdatetr) OR (h.birthdatetr != '0000-00-00' AND $people_table.birthdatetr < DATE_ADD(h.birthdatetr, interval 15 year)) OR (w.birthdatetr != '0000-00-00' AND $people_table.birthdatetr < DATE_ADD(w.birthdatetr, interval 15 year))) $treestr ";
         $orderby = "ORDER BY lastname, firstname";
         $select2a = $select2b = $query2 = "";
-        $display = array('personid', 'name', 'birthdate', 'parmarr', 'treeid');
-        $values = array('personID', 'name', 'birthdate', 'marrdate', 'gedcom');
+        $display = ['personid', 'name', 'birthdate', 'parmarr', 'treeid'];
+        $values = ['personID', 'name', 'birthdate', 'marrdate', 'gedcom'];
         break;
     case "children_late":
         //select from children, join child with people, join family with family, join wife with people, return entries where wife's birthdatetr is more than 50 years later than child's birthdatetr, show child and parent's info
@@ -171,8 +171,8 @@ switch ($report) {
 				WHERE living = 1 AND (deathdate != '' OR burialdate != '' OR deathplace != '' OR burialplace != '') $treestr ";
         $orderby = "ORDER BY lastname, firstname";
         $select2a = $select2b = $query2 = "";
-        $display = array('personid', 'name', 'birthdate', 'deathdate', 'treeid');
-        $values = array('personID', 'name', 'birthdate', 'deathdate', 'gedcom');
+        $display = ['personid', 'name', 'birthdate', 'deathdate', 'treeid'];
+        $values = ['personID', 'name', 'birthdate', 'deathdate', 'gedcom'];
         break;
     case "not_dead":
         //select from people, return entries where living box is NOT checked but person has no death/burial info and birth is less than 110 years ago, show person and info
@@ -183,8 +183,8 @@ switch ($report) {
 					AND CURDATE() < DATE_ADD(birthdatetr, interval 110 year) $treestr ";
         $orderby = "ORDER BY lastname, firstname";
         $select2a = $select2b = $query2 = "";
-        $display = array('personid', 'name', 'birthdate', 'deathdate', 'treeid');
-        $values = array('personID', 'name', 'birthdate', 'deathdate', 'gedcom');
+        $display = ['personid', 'name', 'birthdate', 'deathdate', 'treeid'];
+        $values = ['personID', 'name', 'birthdate', 'deathdate', 'gedcom'];
         break;
 }
 //add offset

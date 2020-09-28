@@ -202,7 +202,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $spouselink .= $fam['familyID'];
         $indtext .= showFact($spousetext, $spouselink);
 
-        $event = array();
+        $event = [];
         $event['text'] = $text['married'];
         $event['event'] = "MARR";
         $event['type'] = "F";

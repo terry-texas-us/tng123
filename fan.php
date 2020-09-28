@@ -62,11 +62,11 @@ tng_header("{$text['fanchart']}: {$perName[0]}  Generations: {$generations}", $f
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $row['name'], getYears($row));
 
-$perID = array();
+$perID = [];
 $perID[0] = $personID;
 $pNames = null;
 $pIDs = null;
-$marriages = array();
+$marriages = [];
 
 $righttree = checktree($tree);
 

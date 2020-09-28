@@ -26,7 +26,7 @@ $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['phimport'] was not defined in any language. Manually added here.
 tng_adminheader(_todo_('Photo Import'), $flags);
 
-$standardtypes = array();
+$standardtypes = [];
 $moptions = "";
 $likearray = "var like = new Array();\n";
 foreach ($mediatypes as $mediatype) {

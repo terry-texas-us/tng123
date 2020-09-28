@@ -165,9 +165,9 @@ include_once "eventlib_js.php";
 <body class="admin-body" onload="generateID('family',document.form1.familyID,document.form1.tree1);">
 
 <?php
-$familytabs[0] = array(1, "admin_families.php", $admtext['search'], "findfamily");
-$familytabs[1] = array($allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily");
-$familytabs[2] = array($allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review");
+$familytabs[0] = [1, "admin_families.php", $admtext['search'], "findfamily"];
+$familytabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
+$familytabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/families_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href=\"#\" class=\"lightlink\" onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($familytabs, "addfamily", $innermenu);
@@ -209,7 +209,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                             $numbranches = tng_num_rows($branchresult);
                             $branchlist = explode(",", $row['branch']);
 
-                            $descriptions = array();
+                            $descriptions = [];
                             $assdesc = "";
                             $options = "";
                             while ($branchrow = tng_fetch_assoc($branchresult)) {

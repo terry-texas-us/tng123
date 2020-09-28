@@ -279,7 +279,7 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
 if ($tngneedresults) {
     $successcount = 0;
     if ($tngevent) {
-        $tngevents = array($tngevent);
+        $tngevents = [$tngevent];
     } else {
         $tngevents = ["birth", "altbirth", "death", "burial", "marr", "div"];
         if ($ldsOK) {

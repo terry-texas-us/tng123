@@ -209,7 +209,7 @@ include_once "eventlib.php";
                                     $branchresult = tng_query($query);
                                     $branchlist = explode(",", $row['branch']);
 
-                                    $descriptions = array();
+                                    $descriptions = [];
                                     $options = "";
                                     while ($branchrow = tng_fetch_assoc($branchresult)) {
                                         $options .= "	<option value=\"{$branchrow['branch']}\"";

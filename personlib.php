@@ -10,7 +10,7 @@ function doStrong($string) {
 function getBirthInfo($thisperson, $noicon = null) {
     global $text, $tngconfig, $tree;
 
-    $varlist = array('birthdate', 'birthplace', 'altbirthdate', 'altbirthplace', 'deathdate', 'deathplace', 'burialdate', 'burialplace');
+    $varlist = ['birthdate', 'birthplace', 'altbirthdate', 'altbirthplace', 'deathdate', 'deathplace', 'burialdate', 'burialplace'];
     foreach ($varlist as $myindex) {
         if (!isset($thisperson[$myindex])) {
             $thisperson[$myindex] = '';
@@ -211,7 +211,7 @@ function reorderCitation($citekey, $withlink = 1) {
     global $citedispctr, $citestring, $citations, $citedisplay;
 
     $newstring = "";
-    $newcitearr = array();
+    $newcitearr = [];
     if (!empty($citations[$citekey])) {
         $citationlist = explode(',', $citations[$citekey]);
         foreach ($citationlist as $citation) {
@@ -247,21 +247,21 @@ function reorderCitation($citekey, $withlink = 1) {
 function getNotes($persfamID, $flag) {
     global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text, $allow_private;
 
-    $custnotes = array();
-    $gennotes = array();
-    $precustnotes = array();
-    $postcustnotes = array();
-    $finalnotesarray = array();
+    $custnotes = [];
+    $gennotes = [];
+    $precustnotes = [];
+    $postcustnotes = [];
+    $finalnotesarray = [];
 
     if ($flag == "I") {
-        $precusttitles = array("BIRT" => $text['born'], "CHR" => $text['christened'], "NAME" => $text['name'], "TITL" => $text['title'], "NPFX" => $text['prefix'], "NSFX" => $text['suffix'], "NICK" => $text['nickname'], "BAPL" => $text['baptizedlds'], "CONL" => $text['conflds'], "INIT" => $text['initlds'], "ENDL" => $text['endowedlds']);
-        $postcusttitles = array("DEAT" => $text['died'], "BURI" => $text['buried'], "SLGC" => $text['sealedplds']);
+        $precusttitles = ["BIRT" => $text['born'], "CHR" => $text['christened'], "NAME" => $text['name'], "TITL" => $text['title'], "NPFX" => $text['prefix'], "NSFX" => $text['suffix'], "NICK" => $text['nickname'], "BAPL" => $text['baptizedlds'], "CONL" => $text['conflds'], "INIT" => $text['initlds'], "ENDL" => $text['endowedlds']];
+        $postcusttitles = ["DEAT" => $text['died'], "BURI" => $text['buried'], "SLGC" => $text['sealedplds']];
     } elseif ($flag == "F") {
-        $precusttitles = array("MARR" => $text['married'], "SLGS" => $text['sealedslds'], "DIV" => $text['divorced']);
-        $postcusttitles = array();
+        $precusttitles = ["MARR" => $text['married'], "SLGS" => $text['sealedslds'], "DIV" => $text['divorced']];
+        $postcusttitles = [];
     } else {
-        $precusttitles = array("ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']);
-        $postcusttitles = array();
+        $precusttitles = ["ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']];
+        $postcusttitles = [];
     }
 
     $secretstr = $allow_private ? "" : " AND secret != \"1\"";
@@ -295,13 +295,13 @@ function getNotes($persfamID, $flag) {
                 $currtitle = getEventDisplay($note['display']);
                 $key = "$currsig";
 
-                $custnotes[$key] = array("title" => $currtitle, "text" => "", "cite" => "", "xnote" => "");
+                $custnotes[$key] = ["title" => $currtitle, "text" => "", "cite" => "", "xnote" => ""];
 
                 $type = 2;
             } else {
                 if (!empty($postcusttitles[$currevent])) {
                     $currtitle = $postcusttitles[$currevent];
-                    $postcustnotes[$currsig] = array("title" => $postcusttitles[$currevent], "text" => "", "cite" => "", "xnote" => "");
+                    $postcustnotes[$currsig] = ["title" => $postcusttitles[$currevent], "text" => "", "cite" => "", "xnote" => ""];
                     $type = 3;
                 } else {
                     if (!empty($precusttitles[$currevent])) {
@@ -312,10 +312,10 @@ function getNotes($persfamID, $flag) {
                     }
 
                     if (substr($note['eventID'], 0, 15) == "--x-general-x--") {
-                        $gennotes[$currsig] = array("title" => $precusttitles[$currevent], "text" => "", "cite" => "", "xnote" => "");
+                        $gennotes[$currsig] = ["title" => $precusttitles[$currevent], "text" => "", "cite" => "", "xnote" => ""];
                         $type = 0;
                     } else {
-                        $precustnotes[$currsig] = array("title" => $precusttitles[$currevent], "text" => "", "cite" => "", "xnote" => "");
+                        $precustnotes[$currsig] = ["title" => $precusttitles[$currevent], "text" => "", "cite" => "", "xnote" => ""];
                         $type = 1;
                     }
                 }
@@ -478,7 +478,7 @@ function buildGenNotes($notearray, $entity, $eventlist) {
 function checkXnote($fact) {
     global $xnotes_table, $tree;
 
-    $newfact = array();
+    $newfact = [];
     preg_match("/^@(\S+)@/", $fact, $matches);
     if (isset($matches[1])) {
         $query = "SELECT note, ID FROM $xnotes_table WHERE noteID = \"$matches[1]\" AND gedcom='$tree'";
@@ -505,7 +505,7 @@ function strpos_array($notes, $needle) {
 function resetEvents() {
     global $eventctr, $events, $nodate;
 
-    $events = array();
+    $events = [];
     $nodate = "0000-00-00";
     $eventctr = 1;
 }
@@ -548,7 +548,7 @@ function setEvent($data, $datetr) {
             $info = $data['fact'];
             $pinplacelevel = !empty($custevent['placelevel']) ? ${"pinplacelevel" . $custevent['placelevel']} : $pinplacelevel0;
             //using $index above will ensure that this array gets sorted in the same order as the events on the page
-            $locations2map[$l2mCount] = array($index_all,
+            $locations2map[$l2mCount] = [$index_all,
                 "placelevel" => $custevent['placelevel'],
                 "pinplacelevel" => $pinplacelevel,
                 "event" => $data['text'],
@@ -561,7 +561,7 @@ function setEvent($data, $datetr) {
                 "eventdate" => $data['date'],
                 "description" => (isset($info[0]) ? $info : ""),
                 "fixedplace" => $fixedplace
-            );
+            ];
             $l2mCount++;
         }
         tng_free_result($custevents);
@@ -579,7 +579,7 @@ function showEvent($data) {
     global $indnotes, $famnotes, $srcnotes, $reponotes, $indmedia, $fammedia, $srcmedia, $repomedia, $tngconfig;
     global $indalbums, $famalbums, $srcalbums, $repoalbums, $eventcounter, $num_collapsed;
 
-    $myindexlist = array('type', 'event', 'entity', 'date', 'place', 'collapse', 'fact', 'xnote');
+    $myindexlist = ['type', 'event', 'entity', 'date', 'place', 'collapse', 'fact', 'xnote'];
     foreach ($myindexlist as $myindex) {
         if (!isset($data[$myindex])) {
             $data[$myindex] = '';
@@ -612,7 +612,7 @@ function showEvent($data) {
     $eventcounter += 1;
     $toggle = !empty($data['collapse']) ? " style=\"display:none;\"" : "";
     if (!isset($notearray)) {
-        $notearray = array();
+        $notearray = [];
     }
     $notes = $notestogether && $data['event'] ? buildGenNotes($notearray, $data['entity'], $data['event']) : "";
     $rows = $dateplace;
@@ -692,10 +692,10 @@ function showEvent($data) {
     $event = $data['event'];
 
     if (!isset($media[$event])) {
-        $media[$event] = array();
+        $media[$event] = [];
     }
     if (!isset($albums[$event])) {
-        $albums[$event] = array();
+        $albums[$event] = [];
     }
     $media_array = array_merge($media[$event], $albums[$event]);
 
@@ -844,7 +844,7 @@ function doCustomEvents($entityID, $type, $nomap = 0) {
         if (!$custevent['ldsevent'] || $allow_lds) {
             $displayval = getEventDisplay($custevent['display']);
             $eventID = $custevent['eventID'];
-            $fact = array();
+            $fact = [];
             if ($custevent['info']) {
                 $fact = checkXnote($custevent['info']);
                 if (isset($fact[1])) {
@@ -854,7 +854,7 @@ function doCustomEvents($entityID, $type, $nomap = 0) {
             }
             $extras = getFact($custevent);
             $fact = (count($fact) && $fact[0] != "") ? array_merge($fact, $extras) : $extras;
-            setEvent(array("text" => $displayval, "date" => $custevent['eventdate'], "place" => $custevent['eventplace'], "fact" => $fact, "xnote" => $xnote, "event" => $eventID, "entity" => $entityID, "type" => $type, "nomap" => $nomap, "collapse" => $custevent['collapse'] && !$tngprint), $custevent['eventdatetr']);
+            setEvent(["text" => $displayval, "date" => $custevent['eventdate'], "place" => $custevent['eventplace'], "fact" => $fact, "xnote" => $xnote, "event" => $eventID, "entity" => $entityID, "type" => $type, "nomap" => $nomap, "collapse" => $custevent['collapse'] && !$tngprint], $custevent['eventdatetr']);
         }
     }
     tng_free_result($custevents);
@@ -891,7 +891,7 @@ function doMediaSection($entity, $medialist, $albums) {
 }
 
 function getLinkTypeMisc($entity, $linktype) {
-    $misc = array();
+    $misc = [];
     switch ($linktype) {
         case "I":
             $misc['personID'] = $entity['personID'];
@@ -925,7 +925,7 @@ function getLinkTypeMisc($entity, $linktype) {
 function getAlbums($entity, $linktype) {
     global $tree, $album2entities_table, $albums_table, $albumlinks_table, $people_table, $families_table, $text, $livedefault;
 
-    $albums = array();
+    $albums = [];
 
     $misc = getLinkTypeMisc($entity, $linktype);
     $ID = $misc['personID'];
@@ -946,7 +946,7 @@ function getAlbums($entity, $linktype) {
     }
 
     while ($albumlink = tng_fetch_assoc($albumlinks)) {
-        $thisalbum = array();
+        $thisalbum = [];
         $eventID = $albumlink['eventID'] && $entity['allow_living'] && $entity['allow_private'] ? $albumlink['eventID'] : "-x--general--x-";
 
         //check to see if we have rights to view this album
@@ -1005,7 +1005,7 @@ function getAlbums($entity, $linktype) {
         }
 
         if (!isset($albums[$eventID])) {
-            $albums[$eventID] = array();
+            $albums[$eventID] = [];
         }
         array_push($albums[$eventID], $thisalbum);
     }
@@ -1063,7 +1063,7 @@ function getMedia($entity, $linktype, $all = false) {
     global $medialinks_table, $media_table, $tree, $text, $nonames;
     global $mediapath, $mediatypes_assoc, $tngconfig, $rootpath;
 
-    $media = array();
+    $media = [];
     //if mediatypeID, do it in media type sections, otherwise, do it all together
     $misc = getLinkTypeMisc($entity, $linktype);
     $personID = $misc['personID'];
@@ -1083,7 +1083,7 @@ function getMedia($entity, $linktype, $all = false) {
 
     while ($medialink = tng_fetch_assoc($medialinks)) {
         $imgsrc = "";
-        $thismedia = array();
+        $thismedia = [];
         $eventID = !$all && $medialink['eventID'] && ($linktype == "L" || ($entity['allow_living'] && $entity['allow_private'])) ? $medialink['eventID'] : "-x--general--x-";
         $mediatypeID = $medialink['mediatypeID'];
         $usefolder = $medialink['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
@@ -1141,14 +1141,14 @@ function getMedia($entity, $linktype, $all = false) {
         }
         if (!$all && $medialink['eventID'] && ($linktype == "L" || ($entity['allow_living'] && $entity['allow_private']))) {
             if (!isset($media[$eventID])) {
-                $media[$eventID] = array();
+                $media[$eventID] = [];
             }
             array_push($media[$eventID], $thismedia);
         } elseif ($linktype == "C") {
             array_push($media, $thismedia);
         } else {
             if (!isset($media[$eventID][$mediatypeID])) {
-                $media[$eventID][$mediatypeID] = array();
+                $media[$eventID][$mediatypeID] = [];
             }
             array_push($media[$eventID][$mediatypeID], $thismedia);
         }
@@ -1371,7 +1371,7 @@ function getAlbumPhoto($albumID, $albumname) {
 function getFact($row) {
     global $address_table, $text;
 
-    $fact = array();
+    $fact = [];
     $i = 0;
     if ($row['age']) {
         $fact[$i++] = $text['age'] . ": " . $row['age'];
@@ -1430,7 +1430,7 @@ function getFact($row) {
 function getStdExtras($persfamID) {
     global $tree, $events_table;
 
-    $stdex = array();
+    $stdex = [];
     $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
     $stdextras = tng_query($query);
     while ($stdextra = tng_fetch_assoc($stdextras)) {

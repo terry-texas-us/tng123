@@ -31,9 +31,9 @@ $shading = 220;              // value of shaded lines (255 = white, 0 = black)
 $ldsOK = determineLDSRights(true);
 
 // compute the label width based on the longest string that will be displayed
-$labelwidth = getMaxStringWidth(array($text['name'], $text['born'], $text['christened'], $text['died'], $text['buried'], $text['cremated'], $text['spouse'], $text['married']), $rptFont, "B", $lblFontSize, ':');
+$labelwidth = getMaxStringWidth([$text['name'], $text['born'], $text['christened'], $text['died'], $text['buried'], $text['cremated'], $text['spouse'], $text['married']], $rptFont, "B", $lblFontSize, ':');
 if ($ldsOK) {
-    $labelwidth = getMaxStringWidth(array($text['baptizedlds'], $text['endowedlds'], $text['sealedslds']), $rptFont, "B", $lblFontSize, ':', $labelwidth);
+    $labelwidth = getMaxStringWidth([$text['baptizedlds'], $text['endowedlds'], $text['sealedslds']], $rptFont, "B", $lblFontSize, ':', $labelwidth);
 }
 
 // header and footer config
@@ -55,22 +55,22 @@ if ($blankform == 1) {
     }
 }
 $pdf->SetTitle($title);
-$titleConfig = array('title' => $title,
+$titleConfig = ['title' => $title,
     'font' => $rptFont,
     'fontSize' => $hdrFontSize,
     'justification' => 'L',
     'lMargin' => $lftmrg,
     'skipFirst' => false,
     'header' => false,
-    'line' => false);
-$footerConfig = array('font' => $rptFont,
+    'line' => false];
+$footerConfig = ['font' => $rptFont,
     'fontSizeLarge' => 8,
     'fontSizeSmall' => 6,
     'printWordPage' => true,
     'bMargin' => $botmrg,
     'lMargin' => $lftmrg,
     'skipFirst' => false,
-    'line' => false);
+    'line' => false];
 
 // set margins
 $pdf->SetTopMargin($topmrg);
@@ -87,9 +87,9 @@ $pdf->AddPage();
 $paperdim = $pdf->GetPageSize();
 
 // citation vars
-$citations = array();
-$citedisplay = array();
-$citestring = array();
+$citations = [];
+$citedisplay = [];
+$citestring = [];
 
 // create a blank form if that's what they asked for
 if ($blankform == 1) {

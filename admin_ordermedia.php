@@ -144,11 +144,11 @@ if (file_exists("$rootpath$photoref")) {
 <body class="admin-body" onLoad="startMediaSort()">
 
 <?php
-$mediatabs[0] = array(1, "admin_media.php", $admtext['search'], "findmedia");
-$mediatabs[1] = array($allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia");
-$mediatabs[2] = array($allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia");
-$mediatabs[3] = array($allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs");
-$mediatabs[4] = array($allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import");
+$mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
+$mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
+$mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
+$mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
+$mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#sortfor');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"$test_url" . "$testID=$personID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";

@@ -20,7 +20,7 @@ if (!$dospouses) {
 }
 $template = "ssssssss";
 $query = "INSERT INTO $branches_table (gedcom,branch,description,personID,agens,dgens,dagens,inclspouses,action) VALUES (?,?,?,?,?,?,?,?,'2')";
-$params = array(&$template, &$tree, &$branch, &$description, &$personID, &$agens, &$dgens, &$dagens, &$dospouses);
+$params = [&$template, &$tree, &$branch, &$description, &$personID, &$agens, &$dgens, &$dagens, &$dospouses];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
     $message = $admtext['branch'] . " $description {$admtext['succadded']}.";

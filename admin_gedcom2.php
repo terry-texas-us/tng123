@@ -31,12 +31,12 @@ if (!$allow_ged && $assignedtree) {
     }
 }
 
-$allsources = array();
-$allrepos = array();
-$xnotes = array();
-$citations = array();
-$placelist = array();
-$branchmedia = array();
+$allsources = [];
+$allrepos = [];
+$xnotes = [];
+$citations = [];
+$placelist = [];
+$branchmedia = [];
 if (empty($exportmedia)) {
     $exportmedia = 0;
 }
@@ -77,9 +77,9 @@ foreach ($mediatypes as $mediatype) {
 
 <?php
 $helplang = findhelp("data_help.php");
-$datatabs[0] = array(1, "admin_dataimport.php", $admtext['import'], "import");
-$datatabs[1] = array(1, "admin_export.php", $admtext['export'], "export");
-$datatabs[2] = array(1, "admin_secondmenu.php", $admtext['secondarymaint'], "second");
+$datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
+$datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
+$datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/data_help.php#export');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "export", $innermenu);
 if (!isset($message)) {
@@ -95,13 +95,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         function getCitations($persfamID) {
             global $citations_table, $admtext, $tree;
 
-            $citations = array();
+            $citations = [];
             $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = \"$persfamID\" AND gedcom = \"$tree\" ORDER BY eventID";
             $citresult = tng_query($citquery) or die ($admtext['cannotexecutequery'] . ": $query");
 
             while ($cite = tng_fetch_assoc($citresult)) {
                 $eventID = $cite['eventID'] ? $cite['eventID'] : "NAME";
-                $citations[$eventID][] = array("page" => $cite['page'], "quay" => $cite['quay'], "citedate" => $cite['citedate'], "citetext" => $cite['citetext'], "note" => $cite['note'], "sourceID" => $cite['sourceID'], "description" => $cite['description']);
+                $citations[$eventID][] = ["page" => $cite['page'], "quay" => $cite['quay'], "citedate" => $cite['citedate'], "citetext" => $cite['citetext'], "note" => $cite['note'], "sourceID" => $cite['sourceID'], "description" => $cite['description']];
             }
             return $citations;
         }
@@ -204,7 +204,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         function getStdExtras($persfamID, $level) {
             global $tree, $events_table;
 
-            $stdex = array();
+            $stdex = [];
             $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = \"$tree\" AND parenttag != \"\" ORDER BY parenttag";
             $stdextras = tng_query($query);
             while ($stdextra = tng_fetch_assoc($stdextras)) {
@@ -250,14 +250,14 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             $query .= "WHERE notelinks.persfamID=\"$id\" AND notelinks.gedcom =\"$tree\" ";
             $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
             $notelinks = tng_query($query);
-            $notearray = array();
+            $notearray = [];
             while ($notelink = tng_fetch_assoc($notelinks)) {
                 $eventid = $notelink['eventID'] ? $notelink['eventID'] : "-x--general--x-";
                 $newnote = $notelink['noteID'] ? "@{$notelink['noteID']}@" : $notelink['note'];
                 if (!is_array($notearray[$eventid])) {
-                    $notearray[$eventid] = array();
+                    $notearray[$eventid] = [];
                 }
-                $innerarray = array();
+                $innerarray = [];
                 $innerarray['text'] = $newnote;
                 $innerarray['id'] = "N" . $notelink['ID'];
                 $innerarray['private'] = $notelink['secret'];
@@ -420,7 +420,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             global $tree, $savestate, $media_table, $medialinks_table;
             global $expdir, $exppath, $incl, $resume;
 
-            $allmedia = array();
+            $allmedia = [];
             if ($savestate['media']) {
                 if ($id) {
                     $personstr = "AND $medialinks_table.personID=\"" . addslashes($id) . "\"";
@@ -460,7 +460,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
 
                         $prow['notes'] = $prow['altnotes'] ? $prow['altnotes'] : $prow['notes'];
                         if (!is_array($allmedia[$eventID])) {
-                            $allmedia[$eventID] = array();
+                            $allmedia[$eventID] = [];
                         }
                         array_push($allmedia[$eventID], $prow);
                     }
@@ -489,7 +489,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             if ($branch) {
                                 $type = $media['mediatypeID'];
                                 if (!isset($branchmedia[$type])) {
-                                    $branchmedia[$type] = array();
+                                    $branchmedia[$type] = [];
                                 }
                                 if (!in_array($media, $branchmedia[$type])) {
                                     array_push($branchmedia[$type], $media);
@@ -498,7 +498,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                         }
                     }
                 } else {
-                    $already_done = array();
+                    $already_done = [];
                     foreach ($media_array as $sub_array) {
                         foreach ($sub_array as $media) {
                             if (!in_array($media['mediaID'], $already_done)) {
@@ -714,8 +714,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     $indnotes = getNotes($ind['personID']);
                     $indmedia = getMediaLinks($ind['personID']);
                 } else {
-                    $indnotes = array();
-                    $indmedia = array();
+                    $indnotes = [];
+                    $indmedia = [];
                 }
 
                 $citations = getCitations($ind['personID']);
@@ -1314,7 +1314,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 $treestr = "AND $places_table.gedcom = \"$tree\"";
                 $jtreestr = "AND $places_table.gedcom = $medialinks_table.gedcom";
             }
-            $places = array();
+            $places = [];
 
             if ($branch) {
                 foreach ($placelist as $place) {
@@ -1397,7 +1397,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         }
 
         @set_time_limit(0);
-        $xnotes = array();
+        $xnotes = [];
 
         $largechunk = 1000;
         $filename = "$rootpath$gedpath/$tree.ged";

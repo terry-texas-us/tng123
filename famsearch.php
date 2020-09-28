@@ -183,7 +183,7 @@ if ($mymarrtype || $mtqualify == "exists" || $mtqualify == "dnexist") {
     buildCriteria("marrtype", "mymarrtype", "mtqualify", $mtqualify, $mymarrtype, $text['marrtype']);
 }
 
-$dontdo = array("MARR", "DIV");
+$dontdo = ["MARR", "DIV"];
 $cejoin = doCustomEvents("F");
 
 if ($tree) {
@@ -371,26 +371,26 @@ $i = $offsetplus;
 $chartlink = "<img src=\"img/Chart.gif\" class=\"chartimg\">";
 while ($row = tng_fetch_assoc($result)) {
     //assemble frow and mrow, override family living flag if allow_living for either of these is no
-    $frow = array(
+    $frow = [
         "firstname" => $row['ffirstname'],
         "lnprefix" => $row['flnprefix'],
         "lastname" => $row['flastname'],
         "living" => $row['fliving'],
         "private" => $row['fprivate'],
         "branch" => $row['fbranch']
-    );
+    ];
     $rights = determineLivingPrivateRights($frow);
     $frow['allow_living'] = $rights['living'];
     $frow['allow_private'] = $rights['private'];
 
-    $mrow = array(
+    $mrow = [
         "firstname" => $row['mfirstname'],
         "lnprefix" => $row['mlnprefix'],
         "lastname" => $row['mlastname'],
         "living" => $row['mliving'],
         "branch" => $row['mbranch'],
         "private" => $row['mprivate']
-    );
+    ];
     $rights = determineLivingPrivateRights($mrow);
     $mrow['allow_living'] = $rights['living'];
     $mrow['allow_private'] = $rights['private'];

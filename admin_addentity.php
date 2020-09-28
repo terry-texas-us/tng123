@@ -27,7 +27,7 @@ if ($entity == "state") {
 } elseif ($entity == "country") {
     $query = "INSERT INTO $countries_table (country) VALUES (?)";
 }
-$params = array(&$template, &$newname);
+$params = [&$template, &$newname];
 $affected_rows = tng_execute_noerror($query, $params);
 
 adminwritelog($admtext['enternew'] . " $entity: $original_name");

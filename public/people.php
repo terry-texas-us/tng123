@@ -162,7 +162,7 @@ function getVitalInformation(?array $person, bool $tree): array {
     } else {
         $birthinfo = ($person['private'] ? $admtext['text_private'] : $admtext['living']) . " - " . $person['personID'];
     }
-    return array($person, $birthinfo);
+    return [$person, $birthinfo];
 }
 
 /**
@@ -175,7 +175,7 @@ function getVitalsText(?array $person): array {
     if ($birthstring && $deathstring) {
         $deathstring = ", " . $deathstring;
     }
-    return array($birthstring, $deathstring);
+    return [$birthstring, $deathstring];
 }
 
 

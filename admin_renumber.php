@@ -25,9 +25,9 @@ tng_adminheader($admtext['backuprestore'], $flags);
 <body class="admin-body">
 
 <?php
-$utiltabs[0] = array(1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables");
-$utiltabs[1] = array(1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure");
-$utiltabs[2] = array(1, "admin_renumbermenu.php", $admtext['renumber'], "renumber");
+$utiltabs[0] = [1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables"];
+$utiltabs[1] = [1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure"];
+$utiltabs[2] = [1, "admin_renumbermenu.php", $admtext['renumber'], "renumber"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($utiltabs, "renumber", $innermenu);
 $headline = $admtext['backuprestore'] . " &gt;&gt; " . $admtext['renumber'];
@@ -82,11 +82,11 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
             //search media table for all media records with an image map
             $query = "SELECT mediaID, map FROM $media_table WHERE map != \"\"";
             $result1 = tng_query($query);
-            $keys = array();
-            $maps = array();
+            $keys = [];
+            $maps = [];
             while ($row = tng_fetch_assoc($result1)) {
                 //put all in an array with mediaID as the key
-                $maps[$row['mediaID']] = array("map" => $row['map'], "newmap" => "");
+                $maps[$row['mediaID']] = ["map" => $row['map'], "newmap" => ""];
                 $pattern = "/personID=(I\d+)&[amp;]*tree=$tree/";
                 //loop over all of them and pull out person IDs
                 preg_match_all($pattern, $row['map'], $matches, PREG_SET_ORDER);
@@ -95,7 +95,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                     $fullmatch = $match[0];
                     $specmatch = $match[1];
                     $key = $specmatch;
-                    $keys[$key][] = array("mediaID" => $row['mediaID'], "found" => $fullmatch);
+                    $keys[$key][] = ["mediaID" => $row['mediaID'], "found" => $fullmatch];
                     /* this block used for testing
                         if(isset($keys[$key])) {
                             foreach($keys[$key] as $tkey) {

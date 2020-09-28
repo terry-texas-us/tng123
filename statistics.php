@@ -78,7 +78,7 @@ tng_header($text['databasestatistics'], $flags);
         $uniquesurnames = number_format($row['lncount']);
         tng_free_result($result);
 
-        $totalmedia = array();
+        $totalmedia = [];
         foreach ($mediatypes as $mediatype) {
             $mediatypeID = $mediatype['ID'];
             if ($tree) {
@@ -239,7 +239,7 @@ tng_header($text['databasestatistics'], $flags);
         echo "<td class='databack' align=\"right\"><span class='normal'>$uniquesurnames &nbsp;</span></td>";
         echo "</tr>\n";
 
-        $media_data = $media_names = array();
+        $media_data = $media_names = [];
         $index = 0;
         foreach ($mediatypes as $mediatype) {
             $mediatypeID = $mediatype['ID'];
@@ -417,7 +417,7 @@ tng_header($text['databasestatistics'], $flags);
                     <?php
                     $count = 0;
                     $tot_media_data = count($media_data);
-                    $indexed = array();
+                    $indexed = [];
                     foreach ($media_data as $data) {
                         $indexed[$count] = $data;
                         $count++;

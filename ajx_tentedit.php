@@ -76,7 +76,7 @@ if (is_numeric($event)) {
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
     } else {
-        $row = array();
+        $row = [];
     }
 } else {
     //standard, do switch
@@ -170,7 +170,7 @@ if (is_numeric($event)) {
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
     } else {
-        $row = array();
+        $row = [];
     }
 }
 

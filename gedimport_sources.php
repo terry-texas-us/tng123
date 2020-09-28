@@ -1,6 +1,6 @@
 <?php
 function initCitation() {
-    $cite = array();
+    $cite = [];
 
     $cite['DATETR'] = "0000-00-00";
     $cite['DATE'] = "";
@@ -28,7 +28,7 @@ function handleSource($persfamID, $prevlevel) {
     }
     $prevlevel++;
 
-    $mminfo = array();
+    $mminfo = [];
     $mmcount = 0;
 
     while ($lineinfo['level'] >= $prevlevel) {
@@ -81,7 +81,7 @@ function handleSource($persfamID, $prevlevel) {
 }
 
 function initSource() {
-    $info = array();
+    $info = [];
 
     $info['CALN'] = "";
     $info['AUTH'] = "";
@@ -102,11 +102,11 @@ function getSourceRecord($sourceID, $prevlevel) {
     $prefix = "S";
     $info = initSource();
     $changedate = "";
-    $events = array();
-    $stdnotes = array();
+    $events = [];
+    $stdnotes = [];
     $notecount = 0;
     $custeventctr = 0;
-    $mminfo = array();
+    $mminfo = [];
     $mmcount = 0;
     $prevlevel++;
 
@@ -287,13 +287,13 @@ function getRepoRecord($repoID, $prevlevel) {
     $repoID = adjustID($repoID, $savestate['roffset']);
 
     $prefix = "R";
-    $info = array();
+    $info = [];
     $changedate = "";
-    $events = array();
-    $stdnotes = array();
+    $events = [];
+    $stdnotes = [];
     $notecount = 0;
     $custeventctr = 0;
-    $mminfo = array();
+    $mminfo = [];
     $mmcount = 0;
     $prevlevel++;
 

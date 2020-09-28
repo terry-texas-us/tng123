@@ -123,7 +123,7 @@ if (isMobile()) {
     </thead>
     <?php
     $i = $offsetplus;
-    $treenames = array();
+    $treenames = [];
     while ($row = tng_fetch_assoc($result)) {
         $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE gedcom = \"{$row['gedcom']}\"";
         $famresult = tng_query($query);

@@ -19,11 +19,11 @@ if ($assignedbranch) {
 }
 
 @set_time_limit(0);
-$husbgender = array();
+$husbgender = [];
 $husbgender['self'] = "husband";
 $husbgender['spouse'] = "wife";
 $husbgender['spouseorder'] = "husborder";
-$wifegender = array();
+$wifegender = [];
 $wifegender['self'] = "wife";
 $wifegender['spouse'] = "husband";
 $wifegender['spouseorder'] = "wifeorder";
@@ -31,12 +31,12 @@ $wifegender['spouseorder'] = "wifeorder";
 $treerow = getTree($trees_table, $tree);
 
 $counter = $fcounter = 0;
-$done = $fdone = array();
+$done = $fdone = [];
 
 function getGender($personID) {
     global $tree, $people_table, $husbgender, $wifegender;
 
-    $info = array();
+    $info = [];
     $query = "SELECT firstname, lastname, sex FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);
     if ($result) {
@@ -320,7 +320,7 @@ function doAncestors($personID, $gender, $gen) {
         setSpousesLabel($personID, $gender);
     }
 
-    $spouses = array();
+    $spouses = [];
     if ($gen <= $agens) {
         $query = "SELECT $children_table.familyID AS familyID, husband, wife FROM ($children_table, $families_table) WHERE $children_table.familyID = $families_table.familyID AND personID = \"$personID\" AND $children_table.gedcom = '$tree' AND $families_table.gedcom = '$tree'";
         $familyresult = tng_query($query);
@@ -389,9 +389,9 @@ tng_adminheader($admtext['labelbranches'], $flags);
 <body class="admin-body">
 
 <?php
-$branchtabs[0] = array(1, "admin_branches.php", $admtext['search'], "findbranch");
-$branchtabs[1] = array($allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch");
-$branchtabs[2] = array($allow_edit, "#", $admtext['labelbranches'], "label");
+$branchtabs[0] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
+$branchtabs[1] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
+$branchtabs[2] = [$allow_edit, "#", $admtext['labelbranches'], "label"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/branches_help.php#labelbranch');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($branchtabs, "label", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);

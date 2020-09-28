@@ -77,7 +77,7 @@ if (!$editconflict) {
         }
     } else {
         $allbranches = $branch;
-        $branch = array($branch);
+        $branch = [$branch];
     }
 
     if ($allbranches != $orgbranch) {
@@ -96,7 +96,7 @@ if (!$editconflict) {
         }
     }
 
-    $places = array();
+    $places = [];
     if (trim($birthplace) && !in_array($birthplace, $places)) {
         array_push($places, $birthplace);
     }
@@ -243,7 +243,7 @@ if ($media == "1") {
     </html>
     <?php
 } elseif ($newfamily == "ajax") {
-    $row = array(
+    $row = [
         'personID' => $personID,
         'firstname' => $firstname,
         'lastname' => $lastname,
@@ -256,7 +256,7 @@ if ($media == "1") {
         'private' => $private,
         'branch' => $allbranches,
         'allow_living' => 1
-    );
+    ];
     $name = $session_charset == "UTF-8" ? getName($row) : utf8_encode(getName($row));
     echo "{\"id\":\"$personID\",\"name\":\"" . $name . "\"}";
 } else {

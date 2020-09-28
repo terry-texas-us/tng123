@@ -91,7 +91,7 @@ deleteNoteLinks($personID, $tree);
 if ($result && tng_num_rows($result)) {
     echo "{\"error\":\"{$admtext['person']} $personID {$admtext['idexists']}\"}";
 } else {
-    $places = array();
+    $places = [];
     if (trim($birthplace) && !in_array($birthplace, $places)) {
         array_push($places, $birthplace);
     }
@@ -121,7 +121,7 @@ if ($result && tng_num_rows($result)) {
     foreach ($places as $place) {
         $temple = strlen($place) == 5 && $place == strtoupper($place) ? 1 : 0;
         $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,\"0\",\"0\",\"0\",?)";
-        $params = array(&$template, &$placetree, &$place, &$temple);
+        $params = [&$template, &$placetree, &$place, &$temple];
         tng_execute($query, $params);
     }
 
@@ -155,10 +155,10 @@ if ($result && tng_num_rows($result)) {
 		endldate,endldatetr,endlplace,changedate,gedcom,branch,changedby,famc,metaphone,edituser,edittime)
 		VALUES(?,?,?,?,?,?,?,?,'0',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",\"0\")";
     $template = "ssssssssssssssssssssssssssssssssssssssssss";
-    $params = array(&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickname, &$prefix, &$suffix, &$title, &$living, &$private, &$birthdate, &$birthdatetr,
+    $params = [&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickname, &$prefix, &$suffix, &$title, &$living, &$private, &$birthdate, &$birthdatetr,
         &$birthplace, &$sex, &$altbirthdate, &$altbirthdatetr, &$altbirthplace, &$deathdate, &$deathdatetr, &$deathplace, &$burialdate, &$burialdatetr, &$burialplace,
         &$burialtype, &$baptdate, &$baptdatetr, &$baptplace, &$confdate, &$confdatetr, &$confplace, &$initdate, &$initdatetr, &$initplace, &$endldate, &$endldatetr, &$endlplace,
-        &$newdate, &$tree, &$allbranches, &$currentuser, &$familyID, &$meta);
+        &$newdate, &$tree, &$allbranches, &$currentuser, &$familyID, &$meta];
     tng_execute($query, $params);
     $ID = tng_insert_id();
 
@@ -171,7 +171,7 @@ if ($result && tng_num_rows($result)) {
     $template = "sss";
     foreach ($branchlist as $b) {
         $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(?,?,?)";
-        $params = array(&$template, &$b, &$tree, &$personID);
+        $params = [&$template, &$b, &$tree, &$personID];
         tng_execute($query, $params);
     }
 
@@ -186,7 +186,7 @@ if ($result && tng_num_rows($result)) {
 
             $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,frel,mrel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES (?,?,?,?,?,?,0,0,\"\",\"0000-00-00\",\"\")";
             $template = "ssisss";
-            $params = array(&$template, &$familyID, &$personID, &$order, &$tree, &$frel, &$mrel);
+            $params = [&$template, &$familyID, &$personID, &$order, &$tree, &$frel, &$mrel];
             tng_execute($query, $params);
 
             $query = "SELECT husband, wife FROM $families_table WHERE familyID='$familyID' AND gedcom='$tree'";

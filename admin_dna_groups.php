@@ -108,9 +108,9 @@ tng_adminheader($admtext['dna_groups'], $flags);
 <body class="admin-body">
 
 <?php
-$dnatabs['0'] = array(1, "admin_dna_groups.php", $admtext['search'], "findgroup");
-$dnatabs['1'] = array($allow_add, "admin_new_dna_group.php", $admtext['addnew'], "addgroup");
-$dnatabs['2'] = array(1, "admin_dna_tests.php", $admtext['dna_tests'], "findtest");
+$dnatabs['0'] = [1, "admin_dna_groups.php", $admtext['search'], "findgroup"];
+$dnatabs['1'] = [$allow_add, "admin_new_dna_group.php", $admtext['addnew'], "addgroup"];
+$dnatabs['2'] = [1, "admin_dna_tests.php", $admtext['dna_tests'], "findtest"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/dna_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($dnatabs, "findgroup", $innermenu);
 echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message);

@@ -53,12 +53,12 @@ $repotext .= beginSection("info");
 $repotext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
 $repotext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($reporow['reponame']) {
-    $repotext .= showEvent(array("text" => $text['name'], "fact" => $reporow['reponame']));
+    $repotext .= showEvent(["text" => $text['name'], "fact" => $reporow['reponame']]);
 }
 if ($reporow['addressID']) {
     $reporow['isrepo'] = true;
     $extras = getFact($reporow);
-    $repotext .= showEvent(array("text" => $text['address'], "fact" => $extras));
+    $repotext .= showEvent(["text" => $text['address'], "fact" => $extras]);
 }
 
 //do custom events
@@ -69,9 +69,9 @@ ksort($events);
 foreach ($events as $event)
     $repotext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-    $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1));
+    $repotext .= showEvent(["text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1]);
 } else {
-    $repotext .= showEvent(array("text" => $text['repoid'], "date" => $repoID));
+    $repotext .= showEvent(["text" => $text['repoid'], "date" => $repoID]);
 }
 
 if ($soffset) {
@@ -99,7 +99,7 @@ if ($numrows >= $maxsearchresults) {
 tng_free_result($sresult);
 
 if ($repolinktext) {
-    $repotext .= showEvent(array("text" => $text['indlinked'], "fact" => $repolinktext));
+    $repotext .= showEvent(["text" => $text['indlinked'], "fact" => $repolinktext]);
 }
 
 $repotext .= "</table>\n";

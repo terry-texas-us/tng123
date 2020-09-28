@@ -560,13 +560,13 @@ function showMediaSource($imgrow, $ss = false) {
                     }
                     echo "</a>";
                     echo "<script>flowplayer('videoplayer','flvsupport/flowplayer-3.2.9.swf');</script>";
-                } elseif (in_array($imgrow['form'], array("MOV", "MP4", "WEBM", "OGG"))) {
+                } elseif (in_array($imgrow['form'], ["MOV", "MP4", "WEBM", "OGG"])) {
                     echo "<video $widthstr$heightstr controls>\n<source src=\"$mediasrc\">\n</video>\n";
                 } else {
                     echo "<embed src=\"$mediasrc\"$widthstr$heightstr>\n";
                 }
             } elseif (in_array($imgrow['form'], $recordingtypes)) {
-                if (in_array($imgrow['form'], array("MP3", "WAV", "OGG"))) {
+                if (in_array($imgrow['form'], ["MP3", "WAV", "OGG"])) {
                     echo "<audio $widthstr$heightstr controls>\n<source src=\"$mediasrc\">\n</audio>\n";
                 } else {
                     echo "<embed src=\"$mediasrc\"$widthstr$heightstr>\n";

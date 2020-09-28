@@ -51,7 +51,7 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
     if ($result) {
         $childcounter = 0;
         while ($row = tng_fetch_assoc($result)) {
-            $spouserow = array();
+            $spouserow = [];
             $spousestr = "";
             if (!$spouse) {
                 $spouse = $row['husband'] == $key ? "wife" : "husband";

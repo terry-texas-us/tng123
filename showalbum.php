@@ -211,8 +211,8 @@ if (!$imgsrc) {
     echo tng_DrawHeading($imgsrc, $albumname, $description);
 }
 
-$hiddenfields[0] = array('name' => 'albumID', 'value' => $albumID);
-echo treeDropdown(array('startform' => true, 'endform' => true, 'action' => 'showalbum', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields));
+$hiddenfields[0] = ['name' => 'albumID', 'value' => $albumID];
+echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showalbum', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 
 $toplinks = "<p class='normal'>";
 $toplinks .= $totrows ? "{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp;&nbsp; " : "";

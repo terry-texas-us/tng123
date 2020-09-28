@@ -77,11 +77,11 @@ if ($order) {
     }
 }
 
-$_SERVER['QUERY_STRING'] = str_replace(array('&amp;', '&'), array('&', '&amp;'), $_SERVER['QUERY_STRING']);
+$_SERVER['QUERY_STRING'] = str_replace(['&amp;', '&'], ['&', '&amp;'], $_SERVER['QUERY_STRING']);
 $birthsort = "birth";
 $deathsort = "death";
 $namesort = "nameup";
-$branchnames = array();
+$branchnames = [];
 $orderloc = strpos($_SERVER['QUERY_STRING'], "&amp;order=");
 $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_SERVER['QUERY_STRING'];
 $birthlabel = $tngconfig['hidechr'] ? $text['born'] : $text['bornchr'];
@@ -220,7 +220,7 @@ if ($mygender) {
     buildCriteria("p.sex", "mygender", "gequalify", $gequalify, $mygender, $text['gender']);
 }
 
-$dontdo = array("ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX");
+$dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX"];
 $cejoin = doCustomEvents("I");
 
 if ($tree) {

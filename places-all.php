@@ -143,7 +143,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                                 if ($tree && !$tngconfig['places1tree']) {
                                     $name .= "tree={$place['gedcom']}&";
                                 }
-                                $name .= "psearch=$place2\">" . str_replace(array("<", ">"), array("&lt;", "&gt;"), $place['myplace']) . "</a>";
+                                $name .= "psearch=$place2\">" . str_replace(["<", ">"], ["&lt;", "&gt;"], $place['myplace']) . "</a>";
                                 echo "$snnum. $name ({$place['placecount']})$searchlink<br>\n";
                             } else {
                                 echo "$snnum. $placetitle$searchlink<br>\n";

@@ -136,7 +136,7 @@ $helplang = findhelp("media_help.php");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['media'], $flags);
 
-$standardtypes = array();
+$standardtypes = [];
 foreach ($mediatypes as $mediatype) {
     if (!$mediatype['type']) {
         $standardtypes[] = "\"" . $mediatype['ID'] . "\"";
@@ -218,12 +218,12 @@ $sttypestr = implode(",", $standardtypes);
 <body class="admin-body">
 
 <?php
-$mediatabs[0] = array(1, "admin_media.php", $admtext['search'], "findmedia");
-$mediatabs[1] = array($allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia");
-$mediatabs[2] = array($allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia");
-$mediatabs[3] = array($allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs");
-$mediatabs[4] = array($allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import");
-$mediatabs[5] = array($allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload");
+$mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
+$mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
+$mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
+$mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
+$mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
+$mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "findmedia", $innermenu);
 echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
@@ -496,7 +496,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             $query .= "LIMIT 10";
                             $presult = tng_query($query);
                             $medialinktext = "";
-                            $citelinks = array();
+                            $citelinks = [];
                             while ($prow = tng_fetch_assoc($presult)) {
                                 $prights = determineLivingPrivateRights($prow);
                                 $prow['allow_living'] = $prights['living'];

@@ -105,8 +105,8 @@ tng_adminheader($admtext['cemeteries'], $flags);
 <body class="admin-body">
 
 <?php
-$cemtabs[0] = array(1, "admin_cemeteries.php", $admtext['search'], "findcem");
-$cemtabs[1] = array($allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery");
+$cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
+$cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/cemeteries_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($cemtabs, "findcem", $innermenu);
 echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $message);

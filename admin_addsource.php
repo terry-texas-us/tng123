@@ -40,7 +40,7 @@ if (!$repoID) {
 }
 $template = "sssssssssss";
 $query = "INSERT INTO $sources_table (sourceID,shorttitle,title,author,callnum,publisher,repoID,actualtext,changedate,gedcom,changedby,type,other,comments) VALUES (?,?,?,?,?,?,?,?,?,?,?,'','','')";
-$params = array(&$template, &$sourceID, &$shorttitle, &$title, &$author, &$callnum, &$publisher, &$repoID, &$actualtext, &$newdate, &$tree1, &$currentuser);
+$params = [&$template, &$sourceID, &$shorttitle, &$title, &$author, &$callnum, &$publisher, &$repoID, &$actualtext, &$newdate, &$tree1, &$currentuser];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
     adminwritelog("<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree\">{$admtext['addnewsource']}: $tree/$sourceID</a>");

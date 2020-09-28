@@ -26,9 +26,9 @@ tng_adminheader($admtext['backuprestore'], $flags);
 <body class="admin-body">
 
 <?php
-$utiltabs[0] = array(1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables");
-$utiltabs[1] = array(1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure");
-$utiltabs[2] = array(1, "admin_renumbermenu.php", $admtext['renumber'], "renumber");
+$utiltabs[0] = [1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables"];
+$utiltabs[1] = [1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure"];
+$utiltabs[2] = [1, "admin_renumbermenu.php", $admtext['renumber'], "renumber"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($utiltabs, "renumber", $innermenu);
 $headline = $admtext['backuprestore'] . " &gt;&gt; " . $admtext['renumber'];

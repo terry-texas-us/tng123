@@ -2,7 +2,7 @@
 function getSpouses($personID, $sex) {
     global $tree, $righttree;
 
-    $spouses = array();
+    $spouses = [];
     if ($sex == "M") {
         $self = "husband";
         $spouse = "wife";
@@ -245,7 +245,7 @@ function getOtherEvents($row) {
         $custevents = tng_query($query);
         while ($custevent = tng_fetch_assoc($custevents)) {
             $displayval = getEventDisplay($custevent['display']);
-            $fact = array();
+            $fact = [];
             if ($custevent['info']) {
                 $fact = checkXnote($custevent['info']);
                 if ($fact[1]) {
@@ -285,21 +285,21 @@ function getOtherEvents($row) {
 function getRegNotes($persfamID, $flag) {
     global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text;
 
-    $custnotes = array();
-    $gennotes = array();
-    $precustnotes = array();
-    $postcustnotes = array();
-    $finalnotesarray = array();
+    $custnotes = [];
+    $gennotes = [];
+    $precustnotes = [];
+    $postcustnotes = [];
+    $finalnotesarray = [];
 
     if ($flag == "I") {
-        $precusttitles = array("BIRT" => $text['birth'], "CHR" => $text['christened'], "NAME" => $text['name'], "TITL" => $text['title'], "NSFX" => $text['suffix'], "NICK" => $text['nickname'], "BAPL" => $text['baptizedlds'], "CONL" => $text['conflds'], "INIT" => $text['initlds'], "ENDL" => $text['endowedlds']);
-        $postcusttitles = array("DEAT" => $text['died'], "BURI" => $text['buried'], "SLGC" => $text['sealedplds']);
+        $precusttitles = ["BIRT" => $text['birth'], "CHR" => $text['christened'], "NAME" => $text['name'], "TITL" => $text['title'], "NSFX" => $text['suffix'], "NICK" => $text['nickname'], "BAPL" => $text['baptizedlds'], "CONL" => $text['conflds'], "INIT" => $text['initlds'], "ENDL" => $text['endowedlds']];
+        $postcusttitles = ["DEAT" => $text['died'], "BURI" => $text['buried'], "SLGC" => $text['sealedplds']];
     } elseif ($flag == "F") {
-        $precusttitles = array("MARR" => $text['married'], "SLGS" => $text['sealedslds'], "DIV" => $text['divorced']);
-        $postcusttitles = array();
+        $precusttitles = ["MARR" => $text['married'], "SLGS" => $text['sealedslds'], "DIV" => $text['divorced']];
+        $postcusttitles = [];
     } else {
-        $precusttitles = array("ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']);
-        $postcusttitles = array();
+        $precusttitles = ["ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']];
+        $postcusttitles = [];
     }
 
     $query = "SELECT display, xnotes.note AS note, notelinks.eventID AS eventID, notelinks.ID AS ID ";
@@ -325,20 +325,20 @@ function getRegNotes($persfamID, $flag) {
             if ($note['display']) {
                 $currtitle = getEventDisplay($note['display']);
                 $key = "cust$currevent";
-                $custnotes[$key] = array("title" => $currtitle, "text" => "");
+                $custnotes[$key] = ["title" => $currtitle, "text" => ""];
                 $type = 2;
             } else {
                 if ($postcusttitles[$currevent]) {
                     $currtitle = $postcusttitles[$currevent];
-                    $postcustnotes[$currevent] = array("title" => $postcusttitles[$currevent], "text" => "");
+                    $postcustnotes[$currevent] = ["title" => $postcusttitles[$currevent], "text" => ""];
                     $type = 3;
                 } else {
                     $currtitle = $precusttitles[$currevent] ? $precusttitles[$currevent] : " ";
                     if ($note['eventID'] == "--x-general-x--") {
-                        $gennotes[$currevent] = array("title" => $precusttitles[$currevent], "text" => "");
+                        $gennotes[$currevent] = ["title" => $precusttitles[$currevent], "text" => ""];
                         $type = 0;
                     } else {
-                        $precustnotes[$currevent] = array("title" => $precusttitles[$currevent], "text" => "");
+                        $precustnotes[$currevent] = ["title" => $precusttitles[$currevent], "text" => ""];
                         $type = 1;
                     }
                 }

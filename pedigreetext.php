@@ -171,7 +171,7 @@ function displayIndividual($key, $generation, $slot) {
             $parentfamID = "";
             $locparentset = $parentset;
             $parentscount = 0;
-            $parentfamIDs = array();
+            $parentfamIDs = [];
             $parents = getChildFamily($tree, $key, "parentorder");
             if ($parents) {
                 $parentscount = tng_num_rows($parents);

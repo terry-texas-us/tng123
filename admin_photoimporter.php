@@ -18,7 +18,7 @@ if (!$allow_media_add || $assignedtree) {
 $totalImported = 0;
 function importFrom($tngpath, $orgpath, $needsubdirs) {
     global $rootpath, $media_table, $mediatypeID, $tree, $time_offset, $thumbprefix, $thumbsuffix, $totalImported;
-    $subdirs = array();
+    $subdirs = [];
 
     if ($orgpath) {
         $path = $tngpath . "/" . $orgpath;
@@ -76,12 +76,12 @@ $tngpath = $mediatypes_assoc[$mediatypeID];
 <body class="admin-body">
 
 <?php
-$mediatabs[0] = array(1, "admin_media.php", $admtext['search'], "findmedia");
-$mediatabs[1] = array($allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia");
-$mediatabs[2] = array($allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia");
-$mediatabs[3] = array($allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs");
-$mediatabs[4] = array(!$assignedtree, "admin_photoimport.php", $admtext['import'], "import");
-$mediatabs[5] = array(!$assignedtree, "admin_mediaupload.php", $admtext['upload'], "upload");
+$mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
+$mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
+$mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
+$mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
+$mediatabs[4] = [!$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
+$mediatabs[5] = [!$assignedtree, "admin_mediaupload.php", $admtext['upload'], "upload"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/media_help.php#modify');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($mediatabs, "import", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img/photos_icon.gif", $menu, $message);

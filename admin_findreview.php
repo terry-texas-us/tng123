@@ -138,16 +138,16 @@ tng_adminheader($admtext['review'], $flags);
 if ($type == "I") {
     $icon = "img/people_icon.gif";
     $hmsg = $admtext['people'];
-    $peopletabs[0] = array(1, "admin_people.php", $admtext['search'], "findperson");
-    $peopletabs[1] = array($allow_add, "admin_newperson.php", $admtext['addnew'], "addperson");
-    $peopletabs[2] = array($allow_edit, "admin_findreview.php?type=I", $admtext['review'], "review");
-    $peopletabs[3] = array($allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge");
+    $peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
+    $peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
+    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'], "review"];
+    $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
 } else {
     $icon = "img/families_icon.gif";
     $hmsg = $admtext['families'];
-    $peopletabs['0'] = array(1, "admin_families.php", $admtext['search'], "findperson");
-    $peopletabs['1'] = array($allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily");
-    $peopletabs['2'] = array($allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review");
+    $peopletabs['0'] = [1, "admin_families.php", $admtext['search'], "findperson"];
+    $peopletabs['1'] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
+    $peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review"];
 }
 
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/people_help.php#review');\" class=\"lightlink\">{$admtext['help']}</a>";

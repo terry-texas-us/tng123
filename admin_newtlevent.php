@@ -45,8 +45,8 @@ tng_adminheader($admtext['addnewtlevent'], $flags);
 <body class="admin-body">
 
 <?php
-$timelinetabs[0] = array(1, "admin_timelineevents.php", $admtext['search'], "findtimeline");
-$timelinetabs[1] = array($allow_add, "admin_newtlevent.php", $admtext['addnew'], "addtlevent");
+$timelinetabs[0] = [1, "admin_timelineevents.php", $admtext['search'], "findtimeline"];
+$timelinetabs[1] = [$allow_add, "admin_newtlevent.php", $admtext['addnew'], "addtlevent"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/tlevents_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($timelinetabs, "addtlevent", $innermenu);
 echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['addnewtlevent'], "img/tlevents_icon.gif", $menu, "");

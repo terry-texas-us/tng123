@@ -37,7 +37,7 @@ if ($blankform) {
     $row['allow_private'] = $rights['private'];
 }
 $pdf->SetTitle($title);
-$titleConfig = array('title' => $title,
+$titleConfig = ['title' => $title,
     'image' => $blankform ? "" : getPdfSmallPhoto($personID, $rights['living'] && $rights['private'], $row['sex']),
     'font' => $rptFont,
     'fontSize' => $hdrFontSize,
@@ -45,15 +45,15 @@ $titleConfig = array('title' => $title,
     'lMargin' => $lftmrg,
     'skipFirst' => false,
     'header' => false,
-    'line' => false);
-$footerConfig = array('font' => $rptFont,
+    'line' => false];
+$footerConfig = ['font' => $rptFont,
     'fontSizeLarge' => 8,
     'fontSizeSmall' => 6,
     'printWordPage' => true,
     'bMargin' => $botmrg,
     'lMargin' => $lftmrg,
     'skipFirst' => false,
-    'line' => false);
+    'line' => false];
 
 
 // set margins
@@ -96,16 +96,16 @@ function drawIndInfo($ind, $x, $y, $w, $listwhat, $xh = 0) {
     $pdf->CellFit($w, $lineheight + $xh, ($ind['firstname'] || $ind['lastname'] ? getName($ind) : ''), 0, 1, 'L', 0, '', 1, 0);
     $pdf->SetFont($rptFont, '', $rptFontSize);
     if ($listwhat == 0) {
-        $list = array('birthdate', 'birthplace', 'marrdate', 'marrplace', 'deathdate', 'deathplace');
+        $list = ['birthdate', 'birthplace', 'marrdate', 'marrplace', 'deathdate', 'deathplace'];
     } else {
         if ($listwhat == 1) {
-            $list = array('birthdate', 'birthplace', 'deathdate', 'deathplace');
+            $list = ['birthdate', 'birthplace', 'deathdate', 'deathplace'];
         } else {
             if ($listwhat == 2) {
-                $list = array('birthdate', 'deathdate');
+                $list = ['birthdate', 'deathdate'];
             } else {
                 if ($listwhat == 3) {
-                    $list = array('birthdate');
+                    $list = ['birthdate'];
                 }
             }
         }
@@ -279,7 +279,7 @@ function createBlankChart($gens, $topy) {
 
     $lineheight = 0.1;
 
-    $yval = array();
+    $yval = [];
     if (!is_numeric($startnum) || $startnum < 1) {
         $startnum = 1;
     } else {
@@ -295,7 +295,7 @@ function createBlankChart($gens, $topy) {
     $mfhalf = ($mothboxheight + $fathboxheight) / 2;
     $mhalf = $mothboxheight / 2;
     $fhalf = $fathboxheight / 2;
-    $abbrevs = array($text['capbirthabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']);
+    $abbrevs = [$text['capbirthabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']];
     if ($gens <= 4) {
         $moretopmrg = 0.2;
 
@@ -581,16 +581,16 @@ function drawHusbWifeCombo($w, $num, $fh, $mh, $hsp, $vsp, $endspace = 0, $drawl
 
     // what characters are we going to display?
     if ($listmode == 0) {
-        $charlisth = array($text['capbirthabbr'], $text['capplaceabbr'], $text['capmarrabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']);
-        $charlistw = array($text['capbirthabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']);
+        $charlisth = [$text['capbirthabbr'], $text['capplaceabbr'], $text['capmarrabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']];
+        $charlistw = [$text['capbirthabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']];
     } else {
         if ($listmode == 1) {
-            $charlisth = array($text['capbirthabbr'], $text['capdeathabbr']);
-            $charlistw = array($text['capbirthabbr'], $text['capdeathabbr']);
+            $charlisth = [$text['capbirthabbr'], $text['capdeathabbr']];
+            $charlistw = [$text['capbirthabbr'], $text['capdeathabbr']];
         } else {
             if ($listmode == 2) {
-                $charlisth = array($text['capbirthabbr']);
-                $charlistw = array($text['capbirthabbr']);
+                $charlisth = [$text['capbirthabbr']];
+                $charlistw = [$text['capbirthabbr']];
             }
         }
     }

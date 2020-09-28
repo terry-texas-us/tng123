@@ -46,7 +46,7 @@ tng_header($text['whatsnew'] . " " . $pastxdays, $flags);
 
 $query = "SELECT username, description FROM $users_table WHERE allow_living != '-1' AND (allow_edit = '1' OR allow_add = '1')";
 $result = tng_query($query);
-$userlist = array();
+$userlist = [];
 if (tng_num_rows($result) == 1) {
     $currentuser = "";
 }

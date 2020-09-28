@@ -82,14 +82,14 @@ class tFPDF
         $this->page = 0;
         $this->n = 2;
         $this->buffer = '';
-        $this->pages = array();
-        $this->PageSizes = array();
+        $this->pages = [];
+        $this->PageSizes = [];
         $this->state = 0;
-        $this->fonts = array();
-        $this->FontFiles = array();
-        $this->diffs = array();
-        $this->images = array();
-        $this->links = array();
+        $this->fonts = [];
+        $this->FontFiles = [];
+        $this->diffs = [];
+        $this->images = [];
+        $this->links = [];
         $this->InHeader = false;
         $this->InFooter = false;
         $this->lasth = 0;
@@ -114,7 +114,7 @@ class tFPDF
             $this->fontpath = '';
         }
         // Core fonts
-        $this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
+        $this->CoreFonts = ['courier', 'helvetica', 'times', 'symbol', 'zapfdingbats'];
         // Scale factor
         if ($unit == 'pt') {
             $this->k = 1;
@@ -128,8 +128,8 @@ class tFPDF
             $this->Error('Incorrect unit: ' . $unit);
         }
         // Page sizes
-        $this->StdPageSizes = array('a3' => array(841.89, 1190.55), 'a4' => array(595.28, 841.89), 'a5' => array(420.94, 595.28),
-            'letter' => array(612, 792), 'legal' => array(612, 1008));
+        $this->StdPageSizes = ['a3' => [841.89, 1190.55], 'a4' => [595.28, 841.89], 'a5' => [420.94, 595.28],
+            'letter' => [612, 792], 'legal' => [612, 1008]];
         $size = $this->_getpagesize($size);
         $this->DefPageSize = $size;
         $this->CurPageSize = $size;
@@ -513,14 +513,14 @@ class tFPDF
                 $cw = $ttf->charWidths;
                 $name = preg_replace('/[ ()]/', '', $ttf->fullName);
 
-                $desc = array('Ascent' => round($ttf->ascent),
+                $desc = ['Ascent' => round($ttf->ascent),
                     'Descent' => round($ttf->descent),
                     'CapHeight' => round($ttf->capHeight),
                     'Flags' => $ttf->flags,
                     'FontBBox' => '[' . round($ttf->bbox[0]) . " " . round($ttf->bbox[1]) . " " . round($ttf->bbox[2]) . " " . round($ttf->bbox[3]) . ']',
                     'ItalicAngle' => $ttf->italicAngle,
                     'StemV' => round($ttf->stemV),
-                    'MissingWidth' => round($ttf->defaultWidth));
+                    'MissingWidth' => round($ttf->defaultWidth)];
                 $up = round($ttf->underlinePosition);
                 $ut = round($ttf->underlineThickness);
                 $originalsize = $ttfstat['size'] + 0;
@@ -555,10 +555,10 @@ class tFPDF
             } else {
                 $sbarr = range(0, 32);
             }
-            $this->fonts[$fontkey] = array('i' => $i, 'type' => $type, 'name' => $name, 'desc' => $desc, 'up' => $up, 'ut' => $ut, 'cw' => $cw, 'ttffile' => $ttffile, 'fontkey' => $fontkey, 'subset' => $sbarr, 'unifilename' => $unifilename);
+            $this->fonts[$fontkey] = ['i' => $i, 'type' => $type, 'name' => $name, 'desc' => $desc, 'up' => $up, 'ut' => $ut, 'cw' => $cw, 'ttffile' => $ttffile, 'fontkey' => $fontkey, 'subset' => $sbarr, 'unifilename' => $unifilename];
 
-            $this->FontFiles[$fontkey] = array('length1' => $originalsize, 'type' => "TTF", 'ttffile' => $ttffile);
-            $this->FontFiles[$file] = array('type' => "TTF");
+            $this->FontFiles[$fontkey] = ['length1' => $originalsize, 'type' => "TTF", 'ttffile' => $ttffile];
+            $this->FontFiles[$file] = ['type' => "TTF"];
             unset($cw);
         } else {
             $info = $this->_loadfont($family . "/" . $file);
@@ -575,9 +575,9 @@ class tFPDF
             if (!empty($info['file'])) {
                 // Embedded font
                 if ($info['type'] == 'TrueType') {
-                    $this->FontFiles[$info['file']] = array('length1' => $info['originalsize']);
+                    $this->FontFiles[$info['file']] = ['length1' => $info['originalsize']];
                 } else {
-                    $this->FontFiles[$info['file']] = array('length1' => $info['size1'], 'length2' => $info['size2']);
+                    $this->FontFiles[$info['file']] = ['length1' => $info['size1'], 'length2' => $info['size2']];
                 }
             }
             $this->fonts[$fontkey] = $info;
@@ -659,7 +659,7 @@ class tFPDF
     public function AddLink() {
         // Create a new internal link
         $n = count($this->links) + 1;
-        $this->links[$n] = array(0, 0);
+        $this->links[$n] = [0, 0];
         return $n;
     }
 
@@ -671,12 +671,12 @@ class tFPDF
         if ($page == -1) {
             $page = $this->page;
         }
-        $this->links[$link] = array($page, $y);
+        $this->links[$link] = [$page, $y];
     }
 
     public function Link($x, $y, $w, $h, $link) {
         // Put a link on the page
-        $this->PageLinks[$this->page][] = array($x * $this->k, $this->hPt - $y * $this->k, $w * $this->k, $h * $this->k, $link);
+        $this->PageLinks[$this->page][] = [$x * $this->k, $this->hPt - $y * $this->k, $w * $this->k, $h * $this->k, $link];
     }
 
     public function Text($x, $y, $txt) {
@@ -1277,10 +1277,10 @@ class tFPDF
                 $this->Error('Unknown page size: ' . $size);
             }
             $a = $this->StdPageSizes[$size];
-            return array($a[0] / $this->k, $a[1] / $this->k);
+            return [$a[0] / $this->k, $a[1] / $this->k];
         } else {
             if ($size[0] > $size[1]) {
-                return array($size[1], $size[0]);
+                return [$size[1], $size[0]];
             } else {
                 return $size;
             }
@@ -1321,7 +1321,7 @@ class tFPDF
             $this->CurPageSize = $size;
         }
         if ($orientation != $this->DefOrientation || $size[0] != $this->DefPageSize[0] || $size[1] != $this->DefPageSize[1]) {
-            $this->PageSizes[$this->page] = array($this->wPt, $this->hPt);
+            $this->PageSizes[$this->page] = [$this->wPt, $this->hPt];
         }
     }
 
@@ -1405,7 +1405,7 @@ class tFPDF
         }
         $bpc = isset($a['bits']) ? $a['bits'] : 8;
         $data = file_get_contents($file);
-        return array('w' => $a[0], 'h' => $a[1], 'cs' => $colspace, 'bpc' => $bpc, 'f' => 'DCTDecode', 'data' => $data);
+        return ['w' => $a[0], 'h' => $a[1], 'cs' => $colspace, 'bpc' => $bpc, 'f' => 'DCTDecode', 'data' => $data];
     }
 
     public function _parsepng($file) {
@@ -1473,13 +1473,13 @@ class tFPDF
                 // Read transparency info
                 $t = $this->_readstream($f, $n);
                 if ($ct == 0) {
-                    $trns = array(ord(substr($t, 1, 1)));
+                    $trns = [ord(substr($t, 1, 1))];
                 } elseif ($ct == 2) {
-                    $trns = array(ord(substr($t, 1, 1)), ord(substr($t, 3, 1)), ord(substr($t, 5, 1)));
+                    $trns = [ord(substr($t, 1, 1)), ord(substr($t, 3, 1)), ord(substr($t, 5, 1))];
                 } else {
                     $pos = strpos($t, chr(0));
                     if ($pos !== false) {
-                        $trns = array($pos);
+                        $trns = [$pos];
                     }
                 }
                 $this->_readstream($f, 4);
@@ -1497,7 +1497,7 @@ class tFPDF
         if ($colspace == 'Indexed' && empty($pal)) {
             $this->Error('Missing palette in ' . $file);
         }
-        $info = array('w' => $w, 'h' => $h, 'cs' => $colspace, 'bpc' => $bpc, 'f' => 'FlateDecode', 'dp' => $dp, 'pal' => $pal, 'trns' => $trns);
+        $info = ['w' => $w, 'h' => $h, 'cs' => $colspace, 'bpc' => $bpc, 'f' => 'FlateDecode', 'dp' => $dp, 'pal' => $pal, 'trns' => $trns];
         if ($ct >= 4) {
             // Extract alpha channel
             if (!function_exists('gzuncompress')) {
@@ -1936,7 +1936,7 @@ class tFPDF
             $startcid = 128;
         } else {
             $rangeid = 0;
-            $range = array();
+            $range = [];
             $prevcid = -2;
             $prevwidth = -1;
             $interval = false;
@@ -1983,7 +1983,7 @@ class tFPDF
                             array_pop($range[$rangeid]);
                             // new range
                             $rangeid = $prevcid;
-                            $range[$rangeid] = array();
+                            $range[$rangeid] = [];
                             $range[$rangeid][] = $prevwidth;
                             $range[$rangeid][] = $width;
                         }
@@ -1993,7 +1993,7 @@ class tFPDF
                         if ($interval) {
                             // new range
                             $rangeid = $cid;
-                            $range[$rangeid] = array();
+                            $range[$rangeid] = [];
                             $range[$rangeid][] = $width;
                         } else {
                             $range[$rangeid][] = $width;
@@ -2002,7 +2002,7 @@ class tFPDF
                     }
                 } else {
                     $rangeid = $cid;
-                    $range[$rangeid] = array();
+                    $range[$rangeid] = [];
                     $range[$rangeid][] = $width;
                     $interval = false;
                 }
@@ -2093,7 +2093,7 @@ class tFPDF
         // Soft mask
         if (isset($info['smask'])) {
             $dp = '/Predictor 15 /Colors 1 /BitsPerComponent 8 /Columns ' . $info['w'];
-            $smask = array('w' => $info['w'], 'h' => $info['h'], 'cs' => 'DeviceGray', 'bpc' => 8, 'f' => $info['f'], 'dp' => $dp, 'data' => $info['smask']);
+            $smask = ['w' => $info['w'], 'h' => $info['h'], 'cs' => 'DeviceGray', 'bpc' => 8, 'f' => $info['f'], 'dp' => $dp, 'data' => $info['smask']];
             $this->_putimage($smask);
         }
         // Palette
@@ -2234,7 +2234,7 @@ class tFPDF
 
 // Converts UTF-8 strings to codepoints array
     public function UTF8StringToArray($str) {
-        $out = array();
+        $out = [];
         $len = strlen($str);
         for ($i = 0; $i < $len; $i++) {
             $uni = -1;
@@ -2265,7 +2265,7 @@ class tFPDF
 // Correctly handles all illegal UTF-8 sequences.
     public function utf8_to_codepoints($txt) {
         $l = strlen($txt);
-        $out = array();
+        $out = [];
         for ($i = 0; $i < $l; ++$i) {
             $c = ord($txt[$i]);
             // ASCII
@@ -2297,7 +2297,7 @@ class tFPDF
                         }
                     }
 
-                    $q = array($c);
+                    $q = [$c];
                     // Fetch rest of sequence
                     while (ord($txt[$i + 1]) >= 0x80 && ord($txt[$i + 1]) < 0xC0) {
                         ++$i;

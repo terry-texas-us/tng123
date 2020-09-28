@@ -16,7 +16,7 @@ require "adminlog.php";
 
 $template = "ssss";
 $query = "INSERT INTO $languages_table (display,folder,charset,norels) VALUES (?,?,?,?)";
-$params = array(&$template, &$display, &$folder, &$langcharset, &$langnorels);
+$params = [&$template, &$display, &$folder, &$langcharset, &$langnorels];
 tng_execute($query, $params);
 $languageID = tng_insert_id();
 

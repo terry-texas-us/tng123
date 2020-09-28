@@ -142,7 +142,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     $numbranches = tng_num_rows($branchresult);
                     $branchlist = explode(",", $row['branch']);
 
-                    $descriptions = array();
+                    $descriptions = [];
                     $assdesc = "";
                     $options = "";
                     while ($branchrow = tng_fetch_assoc($branchresult)) {

@@ -22,10 +22,10 @@ if ($pdftype == "ped") {
     $genmin = 2;
     $allow_blank = 1;
     $allow_cite = 0;
-    $hdrFontSizes = array(9, 10, 12, 14);
+    $hdrFontSizes = [9, 10, 12, 14];
     $hdrFontDefault = 14;
-    $lblFontSizes = array();
-    $rptFontSizes = array(8);
+    $lblFontSizes = [];
+    $rptFontSizes = [8];
     $titleidx = 'pedigreefor';
 } elseif ($pdftype == "desc") {
     $dest = "rpt_descend";
@@ -33,10 +33,10 @@ if ($pdftype == "ped") {
     $genmax = !$pedigree['maxdesc'] || $pedigree['maxdesc'] > 12 ? 12 : $pedigree['maxdesc'];
     $allow_blank = 0;
     $allow_cite = 0;
-    $hdrFontSizes = array(9, 10, 12, 14);
+    $hdrFontSizes = [9, 10, 12, 14];
     $hdrFontDefault = 14;
-    $lblFontSizes = array();
-    $rptFontSizes = array(9, 10, 12, 14);
+    $lblFontSizes = [];
+    $rptFontSizes = [9, 10, 12, 14];
     $rptFontDefault = 10;
     $titleidx = 'descendfor';
 } elseif ($pdftype == "fam") {
@@ -45,10 +45,10 @@ if ($pdftype == "ped") {
     $genmax = 0;
     $allow_blank = 1;
     $allow_cite = 1;
-    $hdrFontSizes = array(9, 10, 12, 14);
+    $hdrFontSizes = [9, 10, 12, 14];
     $hdrFontDefault = 14;
-    $lblFontSizes = array(10);
-    $rptFontSizes = array(9, 10, 12, 14);
+    $lblFontSizes = [10];
+    $rptFontSizes = [9, 10, 12, 14];
     $rptFontDefault = 10;
     $titleidx = 'familygroupfor';
 } else {
@@ -57,10 +57,10 @@ if ($pdftype == "ped") {
     $genmax = 0;
     $allow_blank = 1;
     $allow_cite = 1;
-    $hdrFontSizes = array(9, 10, 12, 14);
+    $hdrFontSizes = [9, 10, 12, 14];
     $hdrFontDefault = 14;
-    $lblFontSizes = array(9);
-    $rptFontSizes = array(9, 10, 12, 14);
+    $lblFontSizes = [9];
+    $rptFontSizes = [9, 10, 12, 14];
     $rptFontDefault = 10;
     $titleidx = 'indreportfor';
 }

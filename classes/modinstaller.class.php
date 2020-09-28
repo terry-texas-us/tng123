@@ -22,7 +22,7 @@ class modinstaller extends modparser
     public function install($cfgpath) {
         $this->cfgpath = $cfgpath;
         $this->cfgfile = $cfgfile = pathinfo($cfgpath, PATHINFO_BASENAME);
-        $this->parse_error = array();
+        $this->parse_error = [];
         $this->mod_status = '';
 
         // GET PARSE TABLE FOR THIS MOD

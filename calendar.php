@@ -59,7 +59,7 @@ $time = strtotime($dateString);
 $startDay = date('w', $time);
 
 $daysInMonth = date('t', $time);
-$daysOfWeek = array($text['sunday'], $text['monday'], $text['tuesday'], $text['wednesday'], $text['thursday'], $text['friday'], $text['saturday']);
+$daysOfWeek = [$text['sunday'], $text['monday'], $text['tuesday'], $text['wednesday'], $text['thursday'], $text['friday'], $text['saturday']];
 
 $thisMonthName = $dates[strtoupper(date('F', $time))];
 
@@ -76,11 +76,11 @@ $hideEvents = isset($_GET['hide']) ? explode(',', $_GET['hide']) : $defaultHide;
 
 $thisTree = $tree;
 
-$events = array();
+$events = [];
 
 // Query for individual/person events this month
-$select = array();
-$where = array();
+$select = [];
+$where = [];
 foreach ($calIndEvent as $key => $val) {
     if (in_array($key, $hideEvents)) {
         continue;
@@ -164,8 +164,8 @@ if (!empty($where)) {
 
 
 // Query for family events this month
-$select = array();
-$where = array();
+$select = [];
+$where = [];
 foreach ($calFamEvent as $key => $val) {
     if (in_array($key, $hideEvents)) {
         continue;
@@ -246,7 +246,7 @@ if (!empty($where)) {
 
 
 // Query for custom events this month
-$where = array();
+$where = [];
 foreach ($calEvent as $key => $val) {
     if (in_array($key, $hideEvents)) {
         continue;
@@ -494,7 +494,7 @@ if ($allow_living) {
         <ul class="flat">
             <?php
             // make sure the custom text key is set
-            $where = array();
+            $where = [];
             if (count($calEvent)) {
                 foreach ($calEvent as $key => $val)
                     $where[] = "$eventtypes_table.tag = '$key'";
@@ -525,7 +525,7 @@ if ($allow_living) {
                 if (in_array($key, $hideEvents)) {
                     $class = 'hidden';
                     $checkbox = "<input type=\"checkbox\" onclick=\"redisplay('cal_$key');\">";
-                    $toHide = array_diff($hideEvents, array($key));
+                    $toHide = array_diff($hideEvents, [$key]);
                 } else {
                     $class = 'nothidden';
                     $checkbox = "<input type=\"checkbox\" checked onclick=\"redisplay('cal_$key');\">";

@@ -47,8 +47,8 @@ foreach ($_FILES as $key => $file) {
 }
 
 $lastkey = "";
-$holdarr = array();
-$orders = array();
+$holdarr = [];
+$orders = [];
 
 $insert = "INSERT IGNORE INTO $templates_table (template, ordernum, keyname, language, value) VALUES ";
 $update = "UPDATE $templates_table SET ";

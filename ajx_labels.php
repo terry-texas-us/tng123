@@ -18,11 +18,11 @@ if ($assignedbranch) {
 }
 
 @set_time_limit(0);
-$husbgender = array();
+$husbgender = [];
 $husbgender['self'] = "husband";
 $husbgender['spouse'] = "wife";
 $husbgender['spouseorder'] = "husborder";
-$wifegender = array();
+$wifegender = [];
 $wifegender['self'] = "wife";
 $wifegender['spouse'] = "husband";
 $wifegender['spouseorder'] = "wifeorder";
@@ -30,13 +30,13 @@ $wifegender['spouseorder'] = "wifeorder";
 $treerow = getTree($trees_table, $tree);
 
 $counter = $fcounter = 0;
-$done = $fdone = array();
+$done = $fdone = [];
 $names = $famnames = "";
 
 function getGender($personID) {
     global $tree, $people_table, $husbgender, $wifegender;
 
-    $info = array();
+    $info = [];
     $query = "SELECT firstname, lastname, sex FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);
     if ($result) {
@@ -324,7 +324,7 @@ function doAncestors($personID, $gender, $gen) {
         setSpousesLabel($personID, $gender);
     }
 
-    $spouses = array();
+    $spouses = [];
     if ($gen <= $agens) {
         $query = "SELECT $children_table.familyID AS familyID, husband, wife FROM ($children_table, $families_table) WHERE $children_table.familyID = $families_table.familyID AND personID = \"$personID\" AND $children_table.gedcom = '$tree' AND $families_table.gedcom = '$tree'";
         $familyresult = tng_query($query);

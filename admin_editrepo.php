@@ -31,7 +31,7 @@ $row['allow_living'] = 1;
 
 $query = "SELECT DISTINCT eventID AS eventID FROM $notelinks_table WHERE persfamID='$repoID' AND gedcom ='$tree'";
 $notelinks = tng_query($query);
-$gotnotes = array();
+$gotnotes = [];
 while ($note = tng_fetch_assoc($notelinks)) {
     if (!$note['eventID']) {
         $note['eventID'] = "general";
@@ -58,10 +58,10 @@ include_once "eventlib_js.php";
 <body class="admin-body">
 
 <?php
-$repotabs[0] = array(1, "admin_repositories.php", $admtext['search'], "findrepo");
-$repotabs[1] = array($allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo");
-$repotabs[2] = array($allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge");
-$repotabs[3] = array($allow_edit, "admin_editrepo.php?repoID=$repoID&tree=$tree", $admtext['edit'], "edit");
+$repotabs[0] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
+$repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
+$repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
+$repotabs[3] = [$allow_edit, "admin_editrepo.php?repoID=$repoID&tree=$tree", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/repositories_help.php#repoedit');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {

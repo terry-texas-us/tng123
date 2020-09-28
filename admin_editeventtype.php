@@ -56,7 +56,7 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
         <?php
         $dispvalues = explode("|", $row['display']);
         $numvalues = count($dispvalues);
-        $disppairs = array();
+        $disppairs = [];
         if ($numvalues > 1) {
             for ($i = 0; $i < $numvalues; $i += 2) {
                 $lang = $dispvalues[$i];
@@ -119,7 +119,7 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
     }
 
     <?php
-    $messages = array('EVEN', 'ADOP', 'ADDR', 'ALIA', 'ANCI', 'BARM', 'BASM', 'CAST', 'CENS', 'CHRA', 'CONF', 'CREM', 'DESI', 'DSCR', 'EDUC', 'EMIG', 'FCOM', 'GRAD', 'IDNO', 'IMMI', 'LANG', 'NATI', 'NATU', 'NCHI', 'NMR', 'OCCU', 'ORDI', 'ORDN', 'PHON', 'PROB', 'PROP', 'REFN', 'RELI', 'RESI', 'RESN', 'RETI', 'RFN', 'RIN', 'SSN', 'WILL', 'ANUL', 'DIV', 'DIVF', 'ENGA', 'MARB', 'MARC', 'MARR', 'MARL');
+    $messages = ['EVEN', 'ADOP', 'ADDR', 'ALIA', 'ANCI', 'BARM', 'BASM', 'CAST', 'CENS', 'CHRA', 'CONF', 'CREM', 'DESI', 'DSCR', 'EDUC', 'EMIG', 'FCOM', 'GRAD', 'IDNO', 'IMMI', 'LANG', 'NATI', 'NATU', 'NCHI', 'NMR', 'OCCU', 'ORDI', 'ORDN', 'PHON', 'PROB', 'PROP', 'REFN', 'RELI', 'RESI', 'RESN', 'RETI', 'RFN', 'RIN', 'SSN', 'WILL', 'ANUL', 'DIV', 'DIVF', 'ENGA', 'MARB', 'MARC', 'MARR', 'MARL'];
     foreach ($messages as $msg) {
         echo "messages['$msg'] = \"" . $admtext[$msg] . "\";\n";
     }
@@ -131,9 +131,9 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
 <body class="admin-body">
 
 <?php
-$evtabs[0] = array(1, "admin_eventtypes.php", $admtext['search'], "findevent");
-$evtabs[1] = array($allow_add, "admin_neweventtype.php", $admtext['addnew'], "addevent");
-$evtabs[2] = array($allow_edit, "#", $admtext['edit'], "edit");
+$evtabs[0] = [1, "admin_eventtypes.php", $admtext['search'], "findevent"];
+$evtabs[1] = [$allow_add, "admin_neweventtype.php", $admtext['addnew'], "addevent"];
+$evtabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/eventtypes_help.php#add');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($evtabs, "edit", $innermenu);
 echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['modifyeventtype'], "img/customeventtypes_icon.gif", $menu, $message);

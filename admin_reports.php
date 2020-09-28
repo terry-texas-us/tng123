@@ -95,8 +95,8 @@ tng_adminheader($admtext['reports'], $flags);
 <body class="admin-body">
 
 <?php
-$reporttabs['0'] = array(1, "admin_reports.php", $admtext['search'], "findreport");
-$reporttabs['1'] = array($allow_add, "admin_newreport.php", $admtext['addnew'], "addreport");
+$reporttabs['0'] = [1, "admin_reports.php", $admtext['search'], "findreport"];
+$reporttabs['1'] = [$allow_add, "admin_newreport.php", $admtext['addnew'], "addreport"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/reports_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $menu = doMenu($reporttabs, "findreport", $innermenu);
 echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $message);

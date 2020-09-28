@@ -1,6 +1,6 @@
 <?php
 function initFamily() {
-    $info = array();
+    $info = [];
 
     $info['MARR'] = initEvent();
     $info['SLGS'] = initEvent();
@@ -21,16 +21,16 @@ function getFamilyRecord($familyID, $prevlevel) {
     $prefix = "F";
     $info = initFamily();
     $changedate = "";
-    $events = array();
-    $stdnotes = array();
+    $events = [];
+    $stdnotes = [];
     $notecount = 0;
     $childorder = 1;
     $custeventctr = 0;
-    $cite = array();
-    $mminfo = array();
+    $cite = [];
+    $mminfo = [];
     $mmcount = 0;
     $prevlevel++;
-    $assocarr = array();
+    $assocarr = [];
     $citecount = 0;
     $living = $private = 0;
 
@@ -77,7 +77,7 @@ function getFamilyRecord($familyID, $prevlevel) {
                             if (in_array($thisevent, $custeventlist)) {
                                 $events[$custeventctr]['INFO'] = $info[$tag];
                                 $events[$custeventctr]['INFO']['NOTES'] = "";
-                                $events[$custeventctr]['INFO']['SOUR'] = array();
+                                $events[$custeventctr]['INFO']['SOUR'] = [];
                             }
                         }
                         $info[$tag]['more'] = 1;
@@ -136,7 +136,7 @@ function getFamilyRecord($familyID, $prevlevel) {
                     break;
                 case "ASSO":
                     preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
-                    $thisassoc = array();
+                    $thisassoc = [];
                     if (substr($matches[1], 0, 1) == "I" || substr($matches[1], -1) == "I") {
                         $countertouse = $savestate['ioffset'];
                         $thisassoc['reltype'] = "I";

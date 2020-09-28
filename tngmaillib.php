@@ -14,13 +14,13 @@ function tng_sendmail($from_name, $from_email, $to_name, $to_email, $subject, $b
             $options->charset = $session_charset;
             $mail = new PHPMailer($options);
 
-            $mail->SMTPOptions = array(
-                'ssl' => array(
+            $mail->SMTPOptions = [
+                'ssl' => [
                     'verify_peer' => false,
                     'verify_peer_name' => false,
                     'allow_self_signed' => true
-                )
-            );
+                ]
+            ];
 
             //Your SMTP servers details
 

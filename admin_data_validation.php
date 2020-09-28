@@ -34,16 +34,16 @@ tng_adminheader(_todo_('Validation'), $flags);
 <body class="admin-body">
 
 <?php
-$misctabs[0] = array(1, "admin_misc.php", $admtext['menu'], "misc");
-$misctabs[1] = array(1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew");
-$misctabs[2] = array(1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted");
-$misctabs[3] = array(1, "admin_data_validation.php", $admtext['dataval'], "validation");
+$misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
+$misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
+$misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
+$misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
 $innermenu = "<a href=\"#\" onclick=\"return openHelp('$helplang/misc_help.php');\" class=\"lightlink\">{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class=\"lightlink\">{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "validation", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'], "img/misc_icon.gif", $menu, $message);
 
-$reports = array('wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef_birth', 'died_bef_birth', 'parents_younger', 'children_late', 'not_living', 'not_dead');
+$reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef_birth', 'died_bef_birth', 'parents_younger', 'children_late', 'not_living', 'not_dead'];
 ?>
 
 <table class="lightback">

@@ -123,7 +123,7 @@ $mediakey = $path ? "$usefolder/$path" : time();
 $template = "ssssssssssssssssssssssssssssss";
 $query = "INSERT IGNORE INTO $media_table (mediatypeID,mediakey,gedcom,path,thumbpath,description,notes,width,height,datetaken,placetaken,owner,changedate,changedby,form,alwayson,map,abspath,status,cemeteryID,plot,showmap,linktocem,latitude,longitude,zoom,bodytext,usenl,newwindow,usecollfolder)
 		VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-$params = array(&$template, &$mediatypeID, &$mediakey, &$tree, &$path, &$thumbpath, &$description, &$notes, &$width, &$height, &$datetaken, &$placetaken, &$owner, &$newdate, &$currentuser, &$form, &$alwayson, &$imagemap, &$abspath, &$status, &$cemeteryID, &$plot, &$showmap, &$linktocem, &$latitude, &$longitude, &$zoom, &$bodytext, &$usenl, &$newwindow, &$usecollfolder);
+$params = [&$template, &$mediatypeID, &$mediakey, &$tree, &$path, &$thumbpath, &$description, &$notes, &$width, &$height, &$datetaken, &$placetaken, &$owner, &$newdate, &$currentuser, &$form, &$alwayson, &$imagemap, &$abspath, &$status, &$cemeteryID, &$plot, &$showmap, &$linktocem, &$latitude, &$longitude, &$zoom, &$bodytext, &$usenl, &$newwindow, &$usecollfolder];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
     $mediaID = tng_insert_id();
@@ -143,7 +143,7 @@ if ($affected_rows == 1) {
 
         $template = "ssssss";
         $query = "INSERT IGNORE INTO $medialinks_table (personID,mediaID,ordernum,gedcom,linktype,eventID,defphoto) VALUES (?,?,?,?,?,'',?)";
-        $params = array(&$template, &$link_personID, &$mediaID, &$newrow, &$link_tree, &$link_linktype, &$defval);
+        $params = [&$template, &$link_personID, &$mediaID, &$newrow, &$link_tree, &$link_linktype, &$defval];
         tng_execute_noerror($query, $params);
     }
     $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$mediatypeID\"";
