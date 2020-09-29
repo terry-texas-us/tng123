@@ -63,7 +63,7 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
                         <td>&nbsp;</td>
                         <td>
                             <?php
-                            echo "<input type=\"checkbox\" name=\"private\" value='1'";
+                            echo "<input type='checkbox' name=\"private\" value='1'";
                             if ($row['secret']) {
                                 echo " checked";
                             }
@@ -84,6 +84,4 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

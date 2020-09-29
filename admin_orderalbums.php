@@ -21,7 +21,7 @@ $sortstr = preg_replace("/xxx/", $admtext['albums'], $admtext['sortmedia']);
 
 switch ($linktype) {
     case "I":
-        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
+        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID='$personID' AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $person['allow_living'] = 1;
@@ -126,14 +126,14 @@ tng_adminheader($sortstr, $flags);
     var tree = "<?php echo $tree; ?>";
     var orderaction = "alborder";
 </script>
-<script src="js/albums.js"></script>
-<script src="js/selectutils.js"></script>
-<script src="js/mediautils.js"></script>
-</head>
-
-<body class="admin-body" onload="startMediaSort()">
+    <script src="js/albums.js"></script>
+    <script src="js/selectutils.js"></script>
+    <script src="js/mediautils.js"></script>
+    </head>
 
 <?php
+echo tng_adminlayout(" onload=\"startMediaSort()\"");
+
 $albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
 $albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
 $albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
@@ -142,7 +142,7 @@ $menu = doMenu($albumtabs, "sortalbums", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], "img/albums_icon.gif", $menu, "");
 ?>
 
-<table class="lightback">
+    <table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <span class="subhead"><?php echo "<div id=\"thumbholder\" style=\"float:left;\">$photo</div><strong>$sortstr<br>$namestr</strong>"; ?></span><br>
@@ -208,7 +208,5 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
         </td>
     </tr>
 
-</table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+    </table>
+<?php echo tng_adminfooter(); ?>

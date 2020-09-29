@@ -103,7 +103,4 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

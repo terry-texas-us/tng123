@@ -112,26 +112,26 @@ $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/eventtypes_help.p
 $menu = doMenu($evtabs, "findevent", $innermenu);
 echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gif", $menu, $message);
 ?>
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
-                <form action="admin_eventtypes.php" name="form1">
-                    <table class="normal">
-                        <tr>
-                            <td><?php echo $admtext['searchfor']; ?>:</td>
-                            <td>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
-                            </td>
-                            <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                       onClick="document.form1.searchstring.value=''; document.form1.etype.selectedIndex=0; document.form1.onimport['2'].checked=true;" class="aligntop">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['assocwith']; ?>:</td>
-                            <td>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
+                    <form action="admin_eventtypes.php" name="form1">
+                        <table class="normal">
+                            <tr>
+                                <td><?php echo $admtext['searchfor']; ?>:</td>
+                                <td>
+                                    <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                                    <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
+                                        onClick="document.form1.searchstring.value=''; document.form1.etype.selectedIndex=0; document.form1.onimport['2'].checked=true;" class="aligntop">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $admtext['assocwith']; ?>:</td>
+                                <td>
                                 <select name="etype">
                                     <option value=""><?php echo $admtext['all']; ?></option>
                                     <option value="I"<?php if ($etype == "I") {
@@ -182,7 +182,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_eventtypes.php?searchstring=$searchstring&amp;etype=$etype&amp;stype=$stype&amp;onimport=$onimport&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedeventtypes.php" method="post" name="form2">
                     <p>
@@ -248,7 +248,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                             echo "<tr id=\"row_{$row['eventtypeID']}\">\n";
                             echo "<td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete || $allow_edit) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"et{$row['eventtypeID']}\" value='1'></td>\n";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"et{$row['eventtypeID']}\" value='1'></td>\n";
                             }
                             echo "<td class='lightback'>&nbsp;{$row['tag']}&nbsp;</td>\n";
                             echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";
@@ -264,7 +264,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -272,10 +272,8 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                 tng_free_result($result);
                 ?>
                 </form>
-            </div>
-        </td>
-    </tr>
-</table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+                </div>
+            </td>
+        </tr>
+    </table>
+<?php echo tng_adminfooter(); ?>

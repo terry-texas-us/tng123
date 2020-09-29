@@ -50,7 +50,7 @@ function getCitations($persfamID) {
     global $citations_table, $text, $tree;
 
     $citations = [];
-    $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = \"$persfamID\" AND gedcom = '$tree' ORDER BY eventID";
+    $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' ORDER BY eventID";
     $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $query");
 
     while ($cite = tng_fetch_assoc($citresult)) {
@@ -161,7 +161,7 @@ function getStdExtras($persfamID, $level) {
     global $tree, $events_table;
 
     $stdex = [];
-    $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
+    $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
     $stdextras = tng_query($query);
     while ($stdextra = tng_fetch_assoc($stdextras)) {
         $stdex[$stdextra['parenttag']] = getFact($stdextra, $level);

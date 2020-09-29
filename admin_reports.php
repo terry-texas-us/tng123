@@ -111,7 +111,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -141,7 +141,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_reports.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
 
                 <table class="normal">
@@ -162,7 +162,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                     if ($allow_delete) {
                         $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                     }
-                    $actionstr .= "<a href=\"showreport.php?reportID=xxx&amp;test=1\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                    $actionstr .= "<a href=\"showreport.php?reportID=xxx&amp;test=1\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                     while ($row = tng_fetch_assoc($result)) {
                         $active = $row['active'] ? $admtext['yes'] : $admtext['no'];
@@ -181,7 +181,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                 </table>
             <?php
             echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+            echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             }
             else {
                 echo $admtext['norecords'];
@@ -194,7 +194,5 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
     </tr>
 
 </table>
-</div>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+    </div>
+<?php echo tng_adminfooter(); ?>

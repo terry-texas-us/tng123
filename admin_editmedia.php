@@ -146,7 +146,7 @@ $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], 
 $mediatabs[6] = [$allow_media_edit, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>{$admtext['help']}</a> ";
 $innermenu .= "&nbsp;|&nbsp;<a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"showmedia.php?mediaID=$mediaID\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showmedia.php?mediaID=$mediaID\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($mediatabs, "edit", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediainfo'], "img/photos_icon.gif", $menu, "");
 ?>
@@ -609,11 +609,11 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <p class="normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type=\"radio\" name=\"newmedia\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newmedia\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newmedia\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name=\"newmedia\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newmedia\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name=\"newmedia\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>

@@ -752,7 +752,7 @@ class modparser extends modbase
             return true;
         }
         if (!empty($tags)) {
-            echo "<h3>" . $this->find_tagname_value($tags, 'name', 'name') . "&nbsp;&nbsp;&nbsp;(<a href=\"showcfg.php?mod={$this->cfgpath}\" target=\"_blank\">{$this->cfgpath}</a>)&nbsp;&nbsp;&nbsp;" . $this->find_tagname_value($tags, 'name', 'version') . "</h3>", $this->show_table_rows($tags), "<br>";
+            echo "<h3>" . $this->find_tagname_value($tags, 'name', 'name') . "&nbsp;&nbsp;&nbsp;(<a href=\"showcfg.php?mod={$this->cfgpath}\" target='_blank'>{$this->cfgpath}</a>)&nbsp;&nbsp;&nbsp;" . $this->find_tagname_value($tags, 'name', 'version') . "</h3>", $this->show_table_rows($tags), "<br>";
         }
     }
 

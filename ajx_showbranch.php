@@ -32,7 +32,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         $row['allow_living'] = $rights['living'];
         $row['allow_private'] = $rights['private'];
 
-        $names .= "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getName($row) . " ({$row['personID']})</a><br>\n";
+        $names .= "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target='_blank'>" . getName($row) . " ({$row['personID']})</a><br>\n";
         $counter++;
     }
     tng_free_result($brresult);
@@ -49,7 +49,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         $row['allow_living'] = $rights['living'];
         $row['allow_private'] = $rights['private'];
 
-        $names .= "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getFamilyName($row) . "</a><br>\n";
+        $names .= "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target='_blank'>" . getFamilyName($row) . "</a><br>\n";
         $fcounter++;
     }
     tng_free_result($brresult);

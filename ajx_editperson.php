@@ -290,7 +290,7 @@ include_once "eventlib.php";
                         $checked = $row['burialtype'] == 1 ? " checked" : "";
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "<td colspan=\"3\"><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
                         echo "</tr>\n";
                         if ($rights['lds']) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);

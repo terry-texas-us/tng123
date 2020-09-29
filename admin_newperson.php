@@ -67,11 +67,11 @@ include_once "eventlib_js.php";
     }
 </script>
 
-</head>
-
-<body class="admin-body" onload="generateID('person', document.form1.personID,document.form1.tree1);">
+    </head>
 
 <?php
+echo tng_adminlayout(" onload=\"generateID('person',document.form1.personID,document.form1.tree1);\"");
+
 $peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
 $peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
 $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
@@ -267,7 +267,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                         echo showEventRow('burialdate', 'burialplace', 'BURI', '');
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan=\"3\"><input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "<td colspan=\"3\"><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
                         echo "</tr>\n";
                         if ($allow_lds) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
@@ -296,13 +296,11 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
     </table>
 </form>
 
-<script>
-    <?php
-    echo $swapbranches;
-    echo "tree = \"$firsttree\";\n";
-    ?>
-</script>
+    <script>
+        <?php
+        echo $swapbranches;
+        echo "tree = \"$firsttree\";\n";
+        ?>
+    </script>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

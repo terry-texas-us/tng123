@@ -88,7 +88,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
                             echo "<tr id=\"row_{$row['userID']}\"><td class='lightback' nowrap><span class='normal'>{$newactionstr}</span></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['userID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback' nowrap><span class='normal'>{$row['username']}&nbsp;</span></td>\n";
                             echo "<td class='lightback'><span class='normal'>{$row['description']}&nbsp;</span></td>\n";
@@ -116,6 +116,4 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

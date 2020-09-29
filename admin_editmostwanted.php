@@ -14,7 +14,7 @@ if ($ID) {
     $query .= "FROM $mostwanted_table mostwanted ";
     $query .= "LEFT JOIN $media_table media ON mostwanted.mediaID = media.mediaID ";
     $query .= "LEFT JOIN $people_table people ON mostwanted.personID = people.personID ";
-    $query .= "WHERE mostwanted.ID = \"$ID\"";
+    $query .= "WHERE mostwanted.ID = '$ID'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     tng_free_result($result);

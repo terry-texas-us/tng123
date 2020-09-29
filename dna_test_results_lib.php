@@ -224,7 +224,7 @@ if ($totnum_tests) {
             $persontext .= "<td class='databack'>$haplogroup&nbsp;</td>\n";
             $persontext .= "<td class='databack resultscol'>";
             if ($GEDmatchID) {
-                $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target=\"_blank\">$GEDmatchID</a>";
+                $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target='_blank'>$GEDmatchID</a>";
                 $persontext .= "<strong>{$admtext['gedmatchID']}</strong> =  $GEDmatch_str <br><br>";
             }
             if ($mdanc_namestr) {

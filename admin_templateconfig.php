@@ -255,12 +255,12 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     }
                     $sections[$n] .= "</select>\n";
                 } elseif ($label == "titlechoice") {
-                    $sections[$n] .= "<input type=\"radio\" name=\"form_$key\" id=\"form_{$key}_image\" value=\"image\"";
+                    $sections[$n] .= "<input type='radio' name=\"form_$key\" id=\"form_{$key}_image\" value=\"image\"";
                     if ($value == "image") {
                         $sections[$n] .= " checked";
                     }
                     $sections[$n] .= "> <label for=\"form_{$key}_image\">{$admtext['ttitleimage']}</label> &nbsp;";
-                    $sections[$n] .= "<input type=\"radio\" name=\"form_$key\" id=\"form_{$key}_text\" value=\"text\"";
+                    $sections[$n] .= "<input type='radio' name=\"form_$key\" id=\"form_{$key}_text\" value=\"text\"";
                     if ($value == "text") {
                         $sections[$n] .= " checked";
                     }
@@ -325,7 +325,5 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
     </tr>
 
 </table>
-</form>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+    </form>
+<?php echo tng_adminfooter(); ?>

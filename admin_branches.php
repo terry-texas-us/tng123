@@ -146,12 +146,12 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                                     tng_free_result($treeresult);
                                     ?>
                                 </select>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0;"
-                                       class="aligntop">
+                                    class="aligntop">
                             </td>
                         </tr>
                     </table>
@@ -168,7 +168,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_branches.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -209,7 +209,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                             $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
                             echo "<tr id=\"row_{$row['branch']}\"><td class='lightback'><div>$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['branch']}&{$row['gedcom']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['branch']}&{$row['gedcom']}\" value='1'></td>";
                             }
                             $editlink = "admin_editbranch.php?branch={$row['branch']}&tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['branch'] . "</a>" : $row['branch'];
@@ -231,7 +231,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo $admtext['notrees'];
@@ -243,6 +243,4 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

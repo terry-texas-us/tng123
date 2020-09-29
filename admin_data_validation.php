@@ -38,7 +38,7 @@ $misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
 $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
 $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/misc_help.php');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "validation", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'], "img/misc_icon.gif", $menu, $message);
 
@@ -100,6 +100,4 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

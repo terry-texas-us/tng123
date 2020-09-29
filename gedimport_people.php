@@ -548,7 +548,7 @@ function getIndividualRecord($personID, $prevlevel) {
             $inschangedt = "";
         }
         if ($savestate['neweronly'] && $inschangedt) {
-            $query = "SELECT changedate FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
+            $query = "SELECT changedate FROM $people_table WHERE personID='$personID' AND gedcom = '$tree'";
             $result = @tng_query($query);
             $indrow = tng_fetch_assoc($result);
             $goahead = $inschangedt > $indrow['changedate'] ? 1 : 0;
@@ -575,7 +575,7 @@ function getIndividualRecord($personID, $prevlevel) {
             if ($prifamily) {
                 $query .= ", famc=\"$prifamily\"";
             }
-            $query .= ", metaphone=\"$meta\" WHERE personID=\"$personID\" AND gedcom = '$tree'";
+            $query .= ", metaphone=\"$meta\" WHERE personID='$personID' AND gedcom = '$tree'";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             $success = 1;
 

@@ -657,11 +657,11 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                 <input type="hidden" value="<?php echo $row['personID']; ?>" name="personID_org">
                 <?php
                 echo $admtext['onsave'] . ":<br>";
-                echo "<input type=\"radio\" name=\"newtest\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                echo "<input type='radio' name=\"newtest\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                 if ($cw) {
-                    echo "<input type=\"radio\" name=\"newtest\" value=\"close\" checked> {$text['closewindow']}\n";
+                    echo "<input type='radio' name=\"newtest\" value=\"close\" checked> {$text['closewindow']}\n";
                 } else {
-                    echo "<input type=\"radio\" name=\"newtest\" value=\"none\" checked> {$admtext['saveback']}\n";
+                    echo "<input type='radio' name=\"newtest\" value=\"none\" checked> {$admtext['saveback']}\n";
                 }
                 ?>
                 <br><br>

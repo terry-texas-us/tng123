@@ -66,9 +66,9 @@ $notecount = tng_num_rows($notelinks);
                 while ($note = tng_fetch_assoc($notelinks)) {
                     $citquery = "SELECT citationID FROM $citations_table WHERE gedcom = '$tree' AND ";
                     if ($note['noteID']) {
-                        $citquery .= "((persfamID = \"$persfamID\" AND eventID = \"N{$note['ID']}\") OR persfamID = \"{$note['noteID']}\")";
+                        $citquery .= "((persfamID = '$persfamID' AND eventID = \"N{$note['ID']}\") OR persfamID = \"{$note['noteID']}\")";
                     } else {
-                        $citquery .= "persfamID = \"$persfamID\" AND eventID = \"N{$note['ID']}\"";
+                        $citquery .= "persfamID = '$persfamID' AND eventID = \"N{$note['ID']}\"";
                     }
                     $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
                     $citesicon = tng_num_rows($citresult) ? "admin-cite-on-icon" : "admin-cite-off-icon";

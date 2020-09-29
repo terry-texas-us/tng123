@@ -68,15 +68,12 @@ if ($map['key']) {
     include "googlemaplib2.php";
 }
 ?>
-</head>
-
-<body class="admin-body"<?php if ($map['key']) {
-    if (!$map['startoff']) {
-        echo " onload=\"divbox('mapcontainer');\"";
-    }
-} ?>>
+    </head>
 
 <?php
+$onload = $map['key'] && !$map['startoff'] ? " onload=\"divbox('mapcontainer');\"" : "";
+echo tng_adminlayout($onload);
+
 $cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
 $cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/cemeteries_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
@@ -84,8 +81,8 @@ $menu = doMenu($cemtabs, "addcemetery", $innermenu);
 echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcemetery'], "img/cemeteries_icon.gif", $menu, $message);
 ?>
 
-<form action="admin_addcemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onsubmit="return validateForm();">
-    <table class="lightback">
+    <form action="admin_addcemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onsubmit="return validateForm();">
+        <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
                 <table class="normal" width="100%">
@@ -212,9 +209,6 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                     **<?php echo $admtext['requiredmap']; ?></p>
             </td>
         </tr>
-    </table>
-</form>
-
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+        </table>
+    </form>
+<?php echo tng_adminfooter(); ?>

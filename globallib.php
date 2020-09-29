@@ -999,7 +999,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
     $row = tng_fetch_assoc($result);
 
     if ($row['thumbpath']) {
-        $targettext = $row['newwindow'] ? " target=\"_blank\"" : "";
+        $targettext = $row['newwindow'] ? " target='_blank'" : "";
 
         if (!empty($adm) || $row['alwayson'] || $rights || checkLivingLinks($row['mediaID'])) {
             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";

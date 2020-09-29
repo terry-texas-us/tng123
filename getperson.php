@@ -266,7 +266,7 @@ if ($row['changedate'] || ($allow_edit && $rightbranch)) {
         if ($row['changedate']) {
             $row['changedate'] .= " | ";
         }
-        $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+        $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>";
     }
     $persontext .= showEvent(["text" => $text['lastmodified'], "fact" => $row['changedate']]);
 }
@@ -613,7 +613,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             if ($marriagerow['changedate']) {
                 $marriagerow['changedate'] .= " | ";
             }
-            $marriagerow['changedate'] .= "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+            $marriagerow['changedate'] .= "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>";
         }
         $persontext .= showEvent(["text" => $text['lastmodified'], "fact" => $marriagerow['changedate']]);
     }
@@ -678,7 +678,7 @@ if ($map['key'] && $locations2map) {
                     $usedplaces[] = $place;
                     $savedplaces[] = ["place" => $place, "key" => $key];
                     $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
-                    $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
+                    $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target='_blank'>{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
                     $thismarker = $markerIcon;
                 } else {
                     $total = count($usedplaces);
@@ -708,7 +708,7 @@ if ($map['key'] && $locations2map) {
         }
     }
     $persontext .= "</table></div>\n<table>";
-    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
+    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target='_blank' title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
         $persontext .= "<tr class='align-top'><td class=\"fieldnameback\"><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";

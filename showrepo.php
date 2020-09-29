@@ -69,7 +69,7 @@ ksort($events);
 foreach ($events as $event)
     $repotext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-    $repotext .= showEvent(["text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1]);
+    $repotext .= showEvent(["text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>", "np" => 1]);
 } else {
     $repotext .= showEvent(["text" => $text['repoid'], "date" => $repoID]);
 }

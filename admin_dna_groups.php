@@ -161,7 +161,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_dna_groups.php?offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedgroup.php" method="post" name="form2">
                     <p class="nw">
@@ -197,7 +197,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                             $newactionstr = preg_replace("/zzz/", $row['test_type'], $newactionstr);
                             echo "<tr id=\"row_{$row['dna_group']}\">";
                             echo "<td class='lightback'><div>$newactionstr</div></td>\n";
-                            echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"dna{$row['dna_group']}\" value='1'></td>";
+                            echo "<td class='lightback text-center'><input type='checkbox' name=\"dna{$row['dna_group']}\" value='1'></td>";
                             $editlink = "admin_edit_dna_group.php?dna_group={$row['dna_group']}&tree={$row['gedcom']}";
                             $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['dna_group'] . "</a>" : $row['dna_group'];
 
@@ -214,18 +214,15 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                     </table>
                     <?php
                     echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                     }
                     else {
                         echo $admtext['notrees'];
                     }
                     ?>
-
             </div>
         </td>
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

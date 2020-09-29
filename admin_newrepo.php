@@ -44,11 +44,11 @@ tng_adminheader($admtext['addnewrepo'], $flags);
 
     const selecttree = "<?php echo $admtext['selecttree']; ?>";
 </script>
-</head>
-
-<body class="admin-body" onload="generateID('repo',document.form1.repoID,document.form1.tree1);">
+    </head>
 
 <?php
+echo tng_adminlayout(" onload=\"generateID('repo',document.form1.repoID,document.form1.tree1);\"");
+
 $repotabs[0] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
 $repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
 $repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
@@ -57,7 +57,7 @@ $menu = doMenu($repotabs, "addrepo", $innermenu);
 echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewrepo'], "img/repos_icon.gif", $menu, $message);
 ?>
 
-<form action="admin_addrepo.php" method="post" name="form1" onSubmit="return validateForm();">
+    <form action="admin_addrepo.php" method="post" name="form1" onSubmit="return validateForm();">
     <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
@@ -169,8 +169,6 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['addnewr
             </td>
         </tr>
     </table>
-</form>
+    </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

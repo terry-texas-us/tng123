@@ -151,7 +151,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                     tng_free_result($treeresult);
                                     ?>
                                 </select>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -178,7 +178,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_notelist.php?searchstring=$searchstring_noquotes&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -215,13 +215,11 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['ID'], $actionstr);
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['ID']}\" value='1'></td>";
                             }
-
-                            $query = "SELECT $notelinks_table.ID, $notelinks_table.persfamID AS personID, $notelinks_table.gedcom, secret
-				FROM $notelinks_table
-				WHERE $notelinks_table.xnoteID = \"{$row['ID']}\" ";
-
+                            $query = "SELECT $notelinks_table.ID, $notelinks_table.persfamID AS personID, $notelinks_table.gedcom, secret ";
+                            $query .= "FROM $notelinks_table ";
+                            $query .= "WHERE $notelinks_table.xnoteID = \"{$row['ID']}\" ";
                             $nresult = tng_query($query);
                             $notelinktext = "";
                             while ($nrow = tng_fetch_assoc($nresult)) {
@@ -299,7 +297,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -312,6 +310,4 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

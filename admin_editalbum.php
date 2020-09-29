@@ -216,7 +216,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                 <div id="addmedia">
                     <p class="normal" style="padding-top:12px;">
                         <input type="button" value="<?php echo $admtext['addmedia']; ?>"
-                               onclick="return openAlbumMediaFind();"> <?php echo $admtext['selmedia'] . " (<a href=\"admin_newmedia.php\" target=\"_blank\">" . $admtext['uploadfirst'] . "</a>)"; ?>
+                            onclick="return openAlbumMediaFind();"> <?php echo $admtext['selmedia'] . " (<a href=\"admin_newmedia.php\" target='_blank'>" . $admtext['uploadfirst'] . "</a>)"; ?>
                     </p>
 
                     <p class="normal">&nbsp;<strong><?php echo $admtext['inclmedia']; ?>:</strong> <?php echo $admtext['emoptions']; ?></p>
@@ -267,7 +267,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             echo "<td class='lightback normal'><a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\">{$lrow['description']}</a><br>" . strip_tags($truncated) . "<br>";
                             echo "<div id=\"del_{$lrow['albumlinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">";
                             if ($foundthumb) {
-                                echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$lrow['mediaID']}\"$checked onclick=\"makeDefault(this);\">" . $admtext['makedefault'];
+                                echo "<input type='radio' name=\"rthumbs\" value=\"r{$lrow['mediaID']}\"$checked onclick=\"makeDefault(this);\">" . $admtext['makedefault'];
                                 echo " &nbsp;|&nbsp; ";
                             }
                             echo "<a href='#' onclick=\"return removeFromAlbum('{$lrow['mediaID']}','{$lrow['albumlinkID']}');\">{$admtext['remove']}</a>";
@@ -447,11 +447,11 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                 <p class="normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>

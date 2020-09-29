@@ -69,7 +69,7 @@ $sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsou
 $sourcetabs[2] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
 $sourcetabs[3] = [$allow_edit, "admin_editsource.php?sourceID=$sourceID&tree=$tree", $admtext['edit'], "edit"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/sources_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
     $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$sourceID&amp;tree=$tree&amp;linktype=S\" class='lightlink'>{$admtext['addmedia']}</a>";
 }
@@ -194,11 +194,11 @@ echo "<a href='#' onclick=\"return showNotes('', '$sourceID');\" id='notesicon' 
                 <p class="normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>
@@ -212,6 +212,4 @@ echo "<a href='#' onclick=\"return showNotes('', '$sourceID');\" id='notesicon' 
     </table>
 </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

@@ -125,7 +125,7 @@ class modlister extends modparser
                 $cbchecked = $this->fbox_checked ? "checked" : "";
             }
             $lockit .= "
-            {$this->admtext['stayon']}&nbsp;&nbsp;<input type=\"checkbox\" id=\"stayon\" $cbchecked>";
+            {$this->admtext['stayon']}&nbsp;&nbsp;<input type='checkbox' id=\"stayon\" $cbchecked>";
 
             $selectboxes = "
          <button type='button' id=\"selectAll\">
@@ -327,8 +327,7 @@ class modlister extends modparser
                             continue 2; // DO NOT CONTINUE PROCESSING THIS TAG
                         case 'author':
                             $authors[] = !empty($tags[$j]['arg2']) ?
-                                "<a href=\"{$tags[$j]['arg2']}\" target=\"_blank\">
-                           {$tags[$j]['arg1']}</a>"
+                                "<a href=\"{$tags[$j]['arg2']}\" target='_blank'>{$tags[$j]['arg1']}</a>"
                                 : $tags[$j]['arg1'];
                             $this->authors = $authors;
                             continue 2; // DO NOT CONTINUE PROCESSING THIS TAG
@@ -716,7 +715,7 @@ class modlister extends modparser
 
                 $wikilink = "
             <div class=\"mminner center\">
-               <a href=\"$wiki\" target=\"_blank\"><img class=\"center\" src=\"classes/wiki16.png\"></a>
+               <a href=\"$wiki\" target='_blank'><img class=\"center\" src=\"classes/wiki16.png\"></a>
             </div>";
             }
             if (!$this->use_striping) {
@@ -738,7 +737,7 @@ class modlister extends modparser
                 echo "
 		<td class=\"mmcell $dbclass\">
          <div class=\"mminner center checkpad\">
-            <input class=\"sbox\" type=\"checkbox\" name=\"mods[$ix][selected]\" value='1'>
+            <input class=\"sbox\" type='checkbox' name=\"mods[$ix][selected]\" value='1'>
             <input type='hidden' name=\"mods[$ix][file]\" value=\"$this->cfgfile\">
          </div>
       </td>";
@@ -764,7 +763,7 @@ class modlister extends modparser
          <div class=\"mminner mmcellpad\" title=\"$cfgfile\">";
             if (!empty($this->show_developer)) {
                 $filestr = "<a style=\"text-decoration:none;\" href=\"showcfg.php?mod={$this->modspath}/$cfgfile\"
-                     target=\"_blank\" title=\"{$this->admtext['show']} $cfgfile\">$cfgfile</a>";
+                     target='_blank' title=\"{$this->admtext['show']} $cfgfile\">$cfgfile</a>";
             } else {
                 $filestr = $cfgfile;
             }

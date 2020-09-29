@@ -67,7 +67,7 @@ function deleteAssociations($id, $tree) {
 function deletePersonPlus($personID, $tree, $gender) {
     global $children_table, $families_table;
 
-    $query = "DELETE FROM $children_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
+    $query = "DELETE FROM $children_table WHERE personID='$personID' AND gedcom = '$tree'";
     $result = @tng_query($query);
 
     deleteEvents($personID, $tree);

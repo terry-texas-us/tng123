@@ -322,7 +322,7 @@ if ($test_type == "mtDNA") {
 
             echo "<tr><td class='databack'>$i</td>\n";
             if ($test_type && $test_type != "X-DNA") {
-                echo "<td class='databack text-center'><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
+                echo "<td class='databack text-center'><input type='checkbox' name=\"dna{$row['testID']}\" value='1'></td>";
             }
             $dash = ($row['test_type'] == "Y-DNA") ? "-" : "";
             echo "<td class='databack'><a href=\"show_dna_test.php?group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_type']}$dash{$row['markers']}</a>&nbsp;</td>";

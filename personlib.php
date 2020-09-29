@@ -98,7 +98,7 @@ function getCitations($persfamID, $shortcite = 1) {
     $citquery = "SELECT citationID, title, shorttitle, author, other, publisher, callnum, page, quay, citedate, citetext, citations.note AS note, citations.sourceID, description, eventID{$actualtext} ";
     $citquery .= "FROM $citations_table citations ";
     $citquery .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
-    $citquery .= "WHERE persfamID = \"$persfamID\" AND citations.gedcom = '$tree' ";
+    $citquery .= "WHERE persfamID = '$persfamID' AND citations.gedcom = '$tree' ";
     $citquery .= "ORDER BY ordernum, citationID";
     $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
 
@@ -270,7 +270,7 @@ function getNotes($persfamID, $flag) {
     $query .= "LEFT JOIN  $xnotes_table xnotes ON notelinks.xnoteID = xnotes.ID AND notelinks.gedcom = xnotes.gedcom ";
     $query .= "LEFT JOIN $events_table events ON notelinks.eventID = events.eventID ";
     $query .= "LEFT JOIN $eventtypes_table eventtypes ON eventtypes.eventtypeID = events.eventtypeID ";
-    $query .= "WHERE notelinks.persfamID=\"$persfamID\" AND notelinks.gedcom = '$tree' $secretstr ";
+    $query .= "WHERE notelinks.persfamID='$persfamID' AND notelinks.gedcom = '$tree' $secretstr ";
     $query .= "ORDER BY eventdatetr, eventtypes.ordernum, tag, notelinks.ordernum, ID";
     $notelinks = tng_query($query);
 
@@ -1072,7 +1072,7 @@ function getMedia($entity, $linktype, $all = false) {
 
     $query = "SELECT medialinkID, description, notes, altdescription, altnotes, usecollfolder, mediatypeID, personID, $medialinks_table.mediaID AS mediaID, thumbpath, status, plot, eventID, alwayson, path, form, abspath, newwindow
 		FROM ($medialinks_table, $media_table)
-		WHERE $medialinks_table.personID=\"$personID\"
+		WHERE $medialinks_table.personID='$personID'
 		AND $media_table.mediaID = $medialinks_table.mediaID and dontshow != 1";
     if ($tree) {
         $query .= " AND ($medialinks_table.gedcom = '$tree')";
@@ -1431,7 +1431,7 @@ function getStdExtras($persfamID) {
     global $tree, $events_table;
 
     $stdex = [];
-    $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
+    $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
     $stdextras = tng_query($query);
     while ($stdextra = tng_fetch_assoc($stdextras)) {
         $stdex[$stdextra['parenttag']] = getFact($stdextra);

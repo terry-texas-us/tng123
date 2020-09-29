@@ -29,7 +29,7 @@ if ($mediaID == "") {
 }
 
 if ($ID) {
-    $query = "UPDATE $mostwanted_table SET title=\"$title\", description=\"$description\", personID=\"$personID\", mediaID=\"$mediaID\", gedcom=\"$mwtree\" WHERE ID=\"$ID\"";
+    $query = "UPDATE $mostwanted_table SET title=\"$title\", description=\"$description\", personID='$personID', mediaID=\"$mediaID\", gedcom=\"$mwtree\" WHERE ID='$ID'";
     $result = tng_query($query);
 } else {
     //get new ordernum

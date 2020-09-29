@@ -106,12 +106,12 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                         <tr>
                             <td><?php echo $admtext['searchfor']; ?>:</td>
                             <td>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value=''; document.form1.adminonly.checked=false;"
-                                       class="aligntop">
+                                    class="aligntop">
                             </td>
                         </tr>
                         <tr>
@@ -136,7 +136,7 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_users.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -189,7 +189,7 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['userID'], $actionstr);
                             echo "<tr id=\"row_{$row['userID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['userID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['userID']}\" value='1'></td>";
                             }
                             $editlink = "admin_edituser.php?userID={$row['userID']}";
                             $username = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['username'] . "</a>" : $row['username'];
@@ -219,7 +219,7 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo $admtext['norecords'];
@@ -233,6 +233,4 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

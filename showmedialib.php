@@ -230,7 +230,7 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
     if ($showlinks) {
         if ($allow_admin && $allow_media_edit) {
-            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target=\"_blank\" class=\"snlink\">&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target='_blank' class=\"snlink\">&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
         }
 
         if ($albumlinkID) {
@@ -472,7 +472,7 @@ function showMediaSource($imgrow, $ss = false) {
         $mediasrc = "$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($imgrow['path']));
     }
 
-    $targettext = $imgrow['newwindow'] ? " target=\"_blank\"" : "";
+    $targettext = $imgrow['newwindow'] ? " target='_blank'" : "";
     if ($imgrow['path']) {
         if ($imgrow['abspath']) {
             if ($imgrow['newwindow']) {
@@ -716,7 +716,7 @@ function doCemPlusMap($imgrow, $tree) {
                 $href = "showmedia.php?mediaID=" . $hs['mediaID'];
             }
 
-            $targettext = $hs['newwindow'] ? " target=\"_blank\"" : "";
+            $targettext = $hs['newwindow'] ? " target='_blank'" : "";
             echo "<tr>";
             echo "<td class='databack'><span class='normal'>$i</span></td>";
             echo "<td class='databack' width=\"$thumbmaxw\">";

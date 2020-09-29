@@ -38,8 +38,8 @@ if ($row['type'] == "I" || $row['type'] == "C") {
     $prow['allow_private'] = $rights['private'];
 
     $name = getName($prow);
-    $teststr = "  | <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target=\"_blank\">{$admtext['test']}</a>";
-    $editstr = "  | <a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\" target=\"_blank\">{$admtext['edit']}</a>";
+    $teststr = "  | <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target='_blank'>{$admtext['test']}</a>";
+    $editstr = "  | <a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\" target='_blank'>{$admtext['edit']}</a>";
 } elseif ($row['type'] == "F") {
     $query = "SELECT husband, wife FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
     $result = tng_query($query);
@@ -73,8 +73,8 @@ if ($row['type'] == "I" || $row['type'] == "C") {
     $name = "$hname$plus$wname";
 
     $checkbranch = 1;
-    $teststr = "  | <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target=\"_blank\">{$admtext['test']}</a>";
-    $editstr = "  | <a href=\"admin_editfamily.php?familyID=$familyID&amp;tree=$tree\" target=\"_blank\">{$admtext['edit']}</a>";
+    $teststr = "  | <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target='_blank'>{$admtext['test']}</a>";
+    $editstr = "  | <a href=\"admin_editfamily.php?familyID=$familyID&amp;tree=$tree\" target='_blank'>{$admtext['edit']}</a>";
 }
 
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree) || !$rightbranch) {
@@ -198,7 +198,7 @@ if (is_numeric($eventID)) {
     $evrow = tng_fetch_assoc($result);
     tng_free_result($result);
 
-    $query = "SELECT count(eventID) AS evcount FROM $events_table WHERE persfamID=\"$persfamID\" AND gedcom ='$tree' AND eventID =\"$eventID\"";
+    $query = "SELECT count(eventID) AS evcount FROM $events_table WHERE persfamID='$persfamID' AND gedcom ='$tree' AND eventID =\"$eventID\"";
     $morelinks = tng_query($query);
     $more = tng_fetch_assoc($morelinks);
     $gotmore = $more['evcount'] ? "*" : "";
@@ -209,13 +209,13 @@ if (is_numeric($eventID)) {
 
 $treerow = getTree($trees_table, $tree);
 
-$query = "SELECT count(ID) AS notecount FROM $notelinks_table WHERE persfamID=\"$persfamID\" AND gedcom ='$tree' AND eventID =\"$eventID\"";
+$query = "SELECT count(ID) AS notecount FROM $notelinks_table WHERE persfamID='$persfamID' AND gedcom ='$tree' AND eventID =\"$eventID\"";
 $notelinks = tng_query($query);
 $note = tng_fetch_assoc($notelinks);
 $gotnotes = $note['notecount'] ? "*" : "";
 tng_free_result($notelinks);
 
-$citequery = "SELECT count(citationID) AS citecount FROM $citations_table WHERE persfamID=\"$persfamID\" AND gedcom ='$tree' AND eventID = \"$eventID\"";
+$citequery = "SELECT count(citationID) AS citecount FROM $citations_table WHERE persfamID='$persfamID' AND gedcom ='$tree' AND eventID = \"$eventID\"";
 $citeresult = tng_query($citequery) or die ($admtext['cannotexecutequery'] . ": $citequery");
 $cite = tng_fetch_assoc($citeresult);
 $gotcites = $cite['citecount'] ? "*" : "";
@@ -360,6 +360,4 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 
 </table>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

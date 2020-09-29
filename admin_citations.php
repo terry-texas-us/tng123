@@ -40,7 +40,7 @@ $xnotestr = $noteID ? " OR persfamID = \"$noteID\"" : "";
 $query = "SELECT citationID, citations.sourceID AS sourceID, description, title, shorttitle ";
 $query .= "FROM $citations_table citations ";
 $query .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
-$query .= "WHERE citations.gedcom = '$tree' AND ((persfamID = \"$persfamID\" AND eventID = \"$eventID\")$xnotestr) ";
+$query .= "WHERE citations.gedcom = '$tree' AND ((persfamID = '$persfamID' AND eventID = \"$eventID\")$xnotestr) ";
 $query .= "ORDER BY ordernum, citationID";
 $citresult = tng_query($query);
 $citationcount = tng_num_rows($citresult);

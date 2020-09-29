@@ -72,29 +72,29 @@ $menu = doMenu($langtabs, "findlang", $innermenu);
 echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
 
-                <form action="admin_languages.php" name="form1">
-                    <?php echo $admtext['searchfor']; ?>:
-                    <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" class="longfield">
-                    <input type="hidden" name="findlang" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                    <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                    <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
-                </form>
-                <br>
+                    <form action="admin_languages.php" name="form1">
+                        <?php echo $admtext['searchfor']; ?>:
+                        <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
+                        <input type="hidden" name="findlang" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
+                    </form>
+                    <br>
 
-                <?php
-                $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
+                    <?php
+                    $numrowsplus = $numrows + $offset;
+                    if (!$numrowsplus) {
                     $offsetplus = 0;
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "languages.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
 
                 <table class="normal">
@@ -127,18 +127,16 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                 <?php
                 if ($numrows) {
                     echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 } else {
                     echo $admtext['norecords'];
                 }
                 tng_free_result($result);
                 ?>
 
-            </div>
-        </td>
-    </tr>
+                </div>
+            </td>
+        </tr>
 
-</table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+    </table>
+<?php echo tng_adminfooter(); ?>

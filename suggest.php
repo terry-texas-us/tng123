@@ -111,7 +111,7 @@ if ($enttype == "I") {
     $years = $years = $row['marrdate'] && $row['allow_living'] && $row['allow_private'] ? $text['marrabbr'] . " " . displayDate($row['marrdate']) : "";
 } elseif ($enttype == "S") {
     $typestr = "source";
-    $query = "SELECT title FROM $sources_table WHERE sourceID = \"$ID\" AND gedcom = '$tree'";
+    $query = "SELECT title FROM $sources_table WHERE sourceID = '$ID' AND gedcom = '$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     tng_free_result($result);
@@ -132,7 +132,7 @@ if ($enttype == "I") {
     $years = "";
 } elseif ($enttype == "R") {
     $typestr = "repo";
-    $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$ID\" AND gedcom = '$tree'";
+    $query = "SELECT reponame FROM $repositories_table WHERE repoID = '$ID' AND gedcom = '$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     tng_free_result($result);
@@ -246,7 +246,7 @@ if ($tngconfig['askconsent']) {
     echo $text['consent'];
 }
 if ($tngconfig['dataprotect']) {
-    echo "<br><a href='data_protection_policy.php' target=\"_blank\">{$text['dataprotect']}</a>\n";
+    echo "<br><a href='data_protection_policy.php' target='_blank'>{$text['dataprotect']}</a>\n";
 }
 ?>
     <br><br>

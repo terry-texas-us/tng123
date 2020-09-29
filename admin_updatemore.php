@@ -72,7 +72,7 @@ if ($eventID) {
     $result = tng_query($query);
     adminwritelog($admtext['modifyevent'] . ": $eventID");
 } else {
-    $query = "INSERT INTO $events_table (eventtypeID, persfamID, age, agency, cause, addressID, info, gedcom, parenttag, eventdate, eventdatetr, eventplace)  VALUES(0, \"$persfamID\", \"$age\", \"$agency\", \"$cause\", \"$addressID\", \"$info\", '$tree', \"$eventtypeID\", \"\", \"0000-00-00\", \"\")";
+    $query = "INSERT INTO $events_table (eventtypeID, persfamID, age, agency, cause, addressID, info, gedcom, parenttag, eventdate, eventdatetr, eventplace)  VALUES(0, '$persfamID', \"$age\", \"$agency\", \"$cause\", \"$addressID\", \"$info\", '$tree', \"$eventtypeID\", \"\", \"0000-00-00\", \"\")";
     $result = tng_query($query);
     adminwritelog($admtext['addnewevent'] . ": $eventtypeID/$tree/$persfamID");
     $rval = 1;

@@ -160,11 +160,11 @@ include_once "eventlib_js.php";
     }
 </script>
 
-</head>
-
-<body class="admin-body" onload="generateID('family',document.form1.familyID,document.form1.tree1);">
+    </head>
 
 <?php
+echo tng_adminlayout(" onload=\"generateID('family',document.form1.familyID,document.form1.tree1);\"");
+
 $familytabs[0] = [1, "admin_families.php", $admtext['search'], "findfamily"];
 $familytabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
 $familytabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review"];
@@ -344,13 +344,11 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
     </table>
 </form>
 
-<script>
-    <?php
-    echo $swapbranches;
-    echo "tree = \"$firsttree\";\n";
-    ?>
-</script>
+    <script>
+        <?php
+        echo $swapbranches;
+        echo "tree = \"$firsttree\";\n";
+        ?>
+    </script>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

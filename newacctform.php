@@ -192,7 +192,7 @@ if (!$tngconfig['disallowreg']) {
                         <?php
                         echo $text['consent'];
                         if ($tngconfig['dataprotect']) {
-                            echo "<br><a href='data_protection_policy.php' target=\"_blank\">{$text['dataprotect']}</a>\n";
+                            echo "<br><a href='data_protection_policy.php' target='_blank'>{$text['dataprotect']}</a>\n";
                         }
                     }
                     ?>

@@ -238,7 +238,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 include "treequery.php";
                                 $wherestr = $newwherestr;
                                 ?>
-                                <input type="text" name="searchstring" value="<?php echo $originalstring; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $originalstring; ?>">
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="aligntop">
                             </td>
@@ -341,7 +341,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_media.php?searchstring=$searchstring&amp;mediatypeID=$mediatypeID&amp;fileext=$fileext&amp;hsstat=$hsstat&amp;cemeteryID=$cemeteryID&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedmedia.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
@@ -414,7 +414,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                         if ($allow_media_delete) {
                             $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"showmedia.php?mediaID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showmedia.php?mediaID=xxx\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $mtypeID = $row['mediatypeID'];
@@ -422,7 +422,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             $newactionstr = preg_replace("/xxx/", $row['mediaID'], $actionstr);
                             echo "<tr id=\"row_{$row['mediaID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"ph{$row['mediaID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"ph{$row['mediaID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback text-center'>";
                             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
@@ -542,7 +542,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

@@ -252,7 +252,7 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
                                 <?php include "treequery.php"; ?>
-                                <input type="search" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">

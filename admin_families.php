@@ -198,13 +198,13 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                             <td><?php echo $admtext['searchfor']; ?>:</td>
                             <td>
                                 <?php include "treequery.php"; ?>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                       onClick="document.form1.searchstring.value=''; document.form1.spousename.selectedIndex=0; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false; document.form1.living.checked=false;"
-                                       class="aligntop">
+                                    onClick="document.form1.searchstring.value=''; document.form1.spousename.selectedIndex=0; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false; document.form1.living.checked=false;"
+                                    class="aligntop">
                             </td>
                         </tr>
                         <tr>
@@ -243,7 +243,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_families.php?searchstring=$searchstring&amp;spousename=$spousename&amp;living=$living&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -293,7 +293,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                         if ($allow_delete) {
                             $actionstr .= "<a href='#' onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"familygroup.php?familyID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"familygroup.php?familyID=xxx&amp;tree=yyy\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['familyID'], $actionstr);
@@ -308,7 +308,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
 
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['ID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback'><span class='normal'>&nbsp;$id&nbsp;</span></td>\n";
                             echo "<td class='lightback'><span class='normal'>&nbsp;{$row['husband']}&nbsp;</span></td>\n";
@@ -332,7 +332,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                     </table><br>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -345,6 +345,4 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

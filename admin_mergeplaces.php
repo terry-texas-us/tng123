@@ -148,8 +148,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                         <?php
                         while ($row = tng_fetch_assoc($result)) {
                             echo "<tr class=\"mergerows\" id=\"row_{$row['ID']}\">\n";
-                            echo "<td class='lightback text-center'><input type=\"checkbox\" class=\"mc\" name=\"mc{$row['ID']}\" onclick=\"handleCheck({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
-                            echo "<td class='lightback text-center'><input type=\"radio\" name=\"keep\" id=\"r{$row['ID']}\" onclick=\"handleRadio({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
+                            echo "<td class='lightback text-center'><input type='checkbox' class=\"mc\" name=\"mc{$row['ID']}\" onclick=\"handleCheck({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
+                            echo "<td class='lightback text-center'><input type='radio' name=\"keep\" id=\"r{$row['ID']}\" onclick=\"handleRadio({$row['ID']});\" value=\"{$row['ID']}\"></td>\n";
                             $display = $row['place'];
                             $display = preg_replace("/</", "&lt;", $display);
                             $display = preg_replace("/>/", "&gt;", $display);
@@ -170,6 +170,4 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

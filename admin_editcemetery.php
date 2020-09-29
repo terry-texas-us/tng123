@@ -92,7 +92,7 @@ if ($map['key']) {
     $cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
     $cemtabs[2] = [$allow_add, "#", $admtext['edit'], "edit"];
     $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/cemeteries_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"showmap.php?cemeteryID=$cemeteryID&tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"showmap.php?cemeteryID=$cemeteryID&tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
     $menu = doMenu($cemtabs, "edit", $innermenu);
     echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['modifycemetery'], "img/cemeteries_icon.gif", $menu, $message);
     ?>
@@ -237,11 +237,11 @@ if ($map['key']) {
 		                        <span class="normal">
                                     <?php
                                     echo $admtext['onsave'] . ":<br>";
-                                    echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                                    echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                                     if ($cw) {
-                                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                                        echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
                                     } else {
-                                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                                        echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
                                     }
                                     ?>
 		                        </span>

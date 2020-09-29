@@ -24,7 +24,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             <tr>
                 <td><?php echo $admtext['searchfor']; ?>:</td>
                 <td>
-                    <input type="text" name="searchstring" value="<?php echo $searchstring; ?>" id="searchstring">
+                    <input id="searchstring" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                 </td>
                 <td>
                     <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">

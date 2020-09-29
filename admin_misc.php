@@ -44,7 +44,5 @@ echo displayHeadline($admtext['misc'], "img/misc_icon.gif", $menu, $message);
         </td>
     </tr>
 </table>
-</div>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+    </div>
+<?php echo tng_adminfooter(); ?>

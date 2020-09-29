@@ -80,7 +80,7 @@ if ($enttype == "I") {
     tng_free_result($result);
 } elseif ($enttype == "F") {
     $typestr = "family";
-    $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"$ID\" AND gedcom = '$tree'";
+    $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch FROM $families_table WHERE familyID = '$ID' AND gedcom = '$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
 
@@ -93,14 +93,14 @@ if ($enttype == "I") {
     $pagelink = "$tngwebsite/familygroup.php?familyID=$ID&tree=$tree";
     tng_free_result($result);
 } elseif ($enttype == "S") {
-    $query = "SELECT title FROM $sources_table WHERE sourceID = \"$ID\" AND gedcom = '$tree'";
+    $query = "SELECT title FROM $sources_table WHERE sourceID = '$ID' AND gedcom = '$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $name = $text['source'] . ": {$row['title']} ($ID)";
     $pagelink = "$tngwebsite/showsource.php?sourceID=$ID&tree=$tree";
     tng_free_result($result);
 } elseif ($enttype == "R") {
-    $query = "SELECT reponame FROM $repositories_table WHERE repoID = \"$ID\" AND gedcom = '$tree'";
+    $query = "SELECT reponame FROM $repositories_table WHERE repoID = '$ID' AND gedcom = '$tree'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $name = $text['repository'] . ": {$row['reponame']} ($ID)";

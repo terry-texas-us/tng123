@@ -59,7 +59,7 @@ function doRow($field, $textmsg, $boxname) {
             echo "<td width=\"5\" class='lightback'><span class='normal'>";
             if ($boxname) {
                 if ($s2field) {
-                    echo "<input type=\"checkbox\" name=\"$boxname\" value=\"$field\"";
+                    echo "<input type='checkbox' name=\"$boxname\" value=\"$field\"";
                     if ($s2row[$field] && !$s1row[$field]) {
                         echo " checked";
                     }
@@ -559,7 +559,7 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                         <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
                         <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction">
                         <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction"
-                               onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchsources();">
+                            onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchsources();">
                         <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
                     <?php } ?>
                 </form>
@@ -569,6 +569,4 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
 
 </table>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

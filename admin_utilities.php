@@ -48,7 +48,7 @@ function doRow($table_name, $display_name) {
     }
     echo "></a>";
     echo "</div></td>";
-    echo "<td class='lightback normal text-center'><input type=\"checkbox\" class=\"tablechecks\" name=\"$table_name\" value='1' style=\"margin: 0; padding: 0;\"></td>\n";
+    echo "<td class='lightback normal text-center'><input type='checkbox' class=\"tablechecks\" name=\"$table_name\" value='1' style=\"margin: 0; padding: 0;\"></td>\n";
     echo "<td class='lightback normal'>$display_name &nbsp;</td>\n";
     echo "<td class='lightback normal'><span id=\"time_$table_name\">" . getfiletime("$rootpath$backuppath/$table_name.bak") . "</span>&nbsp;</td>\n";
     echo "<td class='lightback normal' align=\"right\"><span id=\"size_$table_name\">" . getfilesize("$rootpath$backuppath/$table_name.bak") . "</span>&nbsp;</td>\n";
@@ -320,6 +320,4 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

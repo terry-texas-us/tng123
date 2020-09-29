@@ -53,7 +53,7 @@ if (!$personID && !$person_name) {
     $mynewgedcom = "";
 }
 
-$query = "UPDATE $dna_tests_table SET test_type=\"$test_type\", test_number=\"$test_number\", notes=\"$notes\", vendor=\"$vendor\", test_date=\"$test_date\", match_date=\"$match_date\",personID=\"$personID\",
+$query = "UPDATE $dna_tests_table SET test_type=\"$test_type\", test_number=\"$test_number\", notes=\"$notes\", vendor=\"$vendor\", test_date=\"$test_date\", match_date=\"$match_date\",personID='$personID',
 	gedcom=\"$mynewgedcom\", urls=\"$urls\", markers=\"$markers\", y_results=\"$y_results\", hvr1_results=\"$hvr1_results\", hvr2_results=\"$hvr2_results\", person_name = \"$person_name\",
 	mtdna_confirmed = \"$mtdna_confirmed\", ydna_confirmed = \"$ydna_confirmed\", markeropt = \"$markeropt\", notesopt = \"$notesopt\", linksopt = \"$linksopt\", surnamesopt = \"$surnamesopt\", private_dna = \"$private_dna\", private_test = \"$private_test\",
 	dna_group = \"$dna_group\", dna_group_desc = \"$dna_group_desc\", surnames = \"$surnames\", MD_ancestorID = \"$MD_ancestorID\", MRC_ancestorID = \"$MRC_ancestorID\",

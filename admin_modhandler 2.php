@@ -143,7 +143,7 @@ $objinits = array (
 /*************************************************************************
 BATCH MOD PROCESSING
 *************************************************************************/
-$modlist = array();
+$modlist = [];
 if (!empty($_POST)) {
 //echo __LINE__,'<pre>';print_r($_POST);exit;
 //echo __LINE__,' ',$filter;exit;
@@ -291,7 +291,7 @@ elseif ($filter == F_SELECT && isset($_SESSION['modlist'])) {
     $modlist = $_SESSION['modlist'];
 } else {
     unset($_SESSION['modlist']);
-    $modlist = array();
+    $modlist = [];
 }
 
 require_once 'classes/modlister.class.php';
@@ -312,16 +312,16 @@ echo "
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
     global $admtext;
 
-    $modtabs = array();
-    $modtabs[0] = array(1, "admin_modhandler.php", $admtext['modlist'], "modlist");
-    $modtabs[1] = array(1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog");
-    $modtabs[2] = array(1, "admin_modoptions.php", $admtext['options'], "options");
+    $modtabs = [];
+    $modtabs[0] = [1, "admin_modhandler.php", $admtext['modlist'], "modlist"];
+    $modtabs[1] = [1, "admin_showmodslog.php", $admtext['viewlog'], "viewlog"];
+    $modtabs[2] = [1, "admin_modoptions.php", $admtext['options'], "options"];
     if ($show_analyzer == YES)
-        $modtabs[3] = array(1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files');
+        $modtabs[3] = [1, "admin_analyzemods.php", $admtext['analyzefiles'], 'files'];
     if ($show_developer == YES)
-        $modtabs[4] = array(1, "admin_modtables.php", $admtext['parsetable'], 'parser');
+        $modtabs[4] = [1, "admin_modtables.php", $admtext['parsetable'], 'parser'];
     if ($show_updates == YES)
-        $modtabs[5] = array(1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates');
+        $modtabs[5] = [1, "admin_modupdates.php", $admtext['recommendedfixes'], 'updates'];
     return $modtabs;
 }
 
@@ -344,15 +344,15 @@ function set_innermenu_links($tng_version) {
 ";
 
     // MM syntax
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target=\"_blank\" class='lightlink'>{$admtext['modsyntax']}</a>
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target='_blank' class='lightlink'>{$admtext['modsyntax']}</a>
 ";
 
     // mod guidelines
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target=\"_blank\" class='lightlink'>{$admtext['modguidelines']}</a>
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target='_blank' class='lightlink'>{$admtext['modguidelines']}</a>
 ";
 
     // mods for this TNG Version
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target=\"_blank\" class='lightlink'>$tngmodver</a>
+    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target='_blank' class='lightlink'>$tngmodver</a>
 ";
     return $innermenu;
 }

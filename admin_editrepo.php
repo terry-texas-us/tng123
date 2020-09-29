@@ -62,7 +62,7 @@ $repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
 $repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
 $repotabs[3] = [$allow_edit, "admin_editrepo.php?repoID=$repoID&tree=$tree", $admtext['edit'], "edit"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/repositories_help.php#repoedit');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
     $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$repoID&amp;tree=$tree&amp;linktype=R\" class='lightlink'>{$admtext['addmedia']}</a>";
 }
@@ -192,11 +192,11 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                 <p class="normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>
@@ -211,6 +211,4 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
     </table>
 </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

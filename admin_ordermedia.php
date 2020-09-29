@@ -21,7 +21,7 @@ $sortstr = preg_replace("/xxx/", $text[$mediatypeID], $admtext['sortmedia']);
 
 switch ($linktype) {
     case "I":
-        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
+        $query = "SELECT lastname, lnprefix, firstname, prefix, suffix, nameorder, branch FROM $people_table WHERE personID='$personID' AND gedcom = '$tree'";
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $person['allow_living'] = 1;
@@ -84,8 +84,9 @@ adminwritelog("<a href=\"admin_ordermedia.php?personID=$personID&amp;tree=$tree\
 
 $photo = "";
 
-$query = "SELECT alwayson, thumbpath, $media_table.mediaID AS mediaID, usecollfolder, mediatypeID, medialinkID, $media_table.gedcom FROM ($media_table, $medialinks_table)
-	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
+$query = "SELECT alwayson, thumbpath, media.mediaID AS mediaID, usecollfolder, mediatypeID, medialinkID, media.gedcom ";
+$query .= "FROM ($media_table media, $medialinks_table medialinks) ";
+$query .= "WHERE personID = \"$personID\" AND medialinks.gedcom = '$tree' AND media.mediaID = medialinks.mediaID AND defphoto = '1'";
 $result = tng_query($query);
 if ($result) {
     $row = tng_fetch_assoc($result);
@@ -93,7 +94,10 @@ if ($result) {
 $thismediatypeID = $row['mediatypeID'];
 tng_free_result($result);
 
-$query = "SELECT * FROM ($medialinks_table, $media_table) WHERE $medialinks_table.personID=\"$personID\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND eventID = \"$eventID\" AND mediatypeID = \"$mediatypeID\" ORDER BY ordernum";
+$query = "SELECT * ";
+$query .= "FROM ($medialinks_table medialinks, $media_table media) ";
+$query .= "WHERE medialinks.personID='$personID' AND medialinks.gedcom = '$tree' AND media.mediaID = medialinks.mediaID AND eventID = '$eventID' AND mediatypeID = '$mediatypeID' ";
+$query .= "ORDER BY ordernum";
 $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
@@ -136,14 +140,14 @@ if (file_exists("$rootpath$photoref")) {
     var album = "";
     var orderaction = "order";
 </script>
-<script src="js/selectutils.js"></script>
-<script src="js/mediautils.js"></script>
+    <script src="js/selectutils.js"></script>
+    <script src="js/mediautils.js"></script>
 
-</head>
-
-<body class="admin-body" onLoad="startMediaSort()">
+    </head>
 
 <?php
+echo tng_adminlayout(" onLoad=\"startMediaSort()\"");
+
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
@@ -151,7 +155,7 @@ $mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $a
 $mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
 $mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#sortfor');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"$test_url" . "$testID=$personID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"$test_url" . "$testID=$personID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($mediatabs, "sortmedia", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "img/photos_icon.gif", $menu, $message);
 ?>
@@ -211,13 +215,13 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         $checked = $row['defphoto'] ? " checked" : "";
                         echo "<td class='lightback normal'><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated<br>\n";
                         echo "<span id=\"md_{$row['medialinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">\n";
-                        echo "<input type=\"radio\" name=\"rthumbs\" value=\"r{$row['mediaID']}\"$checked onclick=\"makeDefault(this);\">{$admtext['makedefault']}\n";
+                        echo "<input type='radio' name=\"rthumbs\" value=\"r{$row['mediaID']}\"$checked onclick=\"makeDefault(this);\">{$admtext['makedefault']}\n";
                         echo " &nbsp;|&nbsp; ";
                         echo "<a href='#' onclick=\"return removeFromSort('media','{$row['medialinkID']}');\">{$admtext['remove']}</a>";
                         echo "</span>&nbsp;</td>\n";
                         echo "<td class='lightback normal' style=\"width:45px;text-align:center;vertical-align:top;\">";
                         $checked = $row['dontshow'] ? "" : " checked";
-                        echo "<input type=\"checkbox\" name=\"show{$row['medialinkID']}\" onclick=\"toggleShow(this);\" value='1'$checked>&nbsp;</td>\n";
+                        echo "<input type='checkbox' name=\"show{$row['medialinkID']}\" onclick=\"toggleShow(this);\" value='1'$checked>&nbsp;</td>\n";
                         echo "<td class='lightback normal' style=\"width:150px;\">{$row['datetaken']}&nbsp;</td>\n";
                         echo "</tr></table>";
                         echo "</div>\n";
@@ -232,6 +236,4 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

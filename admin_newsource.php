@@ -41,11 +41,11 @@ tng_adminheader($admtext['addnewsource'], $flags);
 
     const selecttree = "<?php echo $admtext['selecttree']; ?>";
 </script>
-</head>
-
-<body class="admin-body" onload="generateID('source',document.form1.sourceID,document.form1.tree1);">
+    </head>
 
 <?php
+echo tng_adminlayout(" onload=\"generateID('source',document.form1.sourceID,document.form1.tree1);\"");
+
 $sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
 $sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
 $sourcetabs[2] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
@@ -54,7 +54,7 @@ $menu = doMenu($sourcetabs, "addsource", $innermenu);
 echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource'], "img/sources_icon.gif", $menu, $message);
 ?>
 
-<form action="admin_addsource.php" method="post" name="form1" onSubmit="return validateForm();">
+    <form action="admin_addsource.php" method="post" name="form1" onSubmit="return validateForm();">
     <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
@@ -109,8 +109,6 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['addnewsource
             </td>
         </tr>
     </table>
-</form>
+    </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

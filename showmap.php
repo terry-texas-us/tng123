@@ -101,7 +101,7 @@ if ($cemeteryID) {
     }
 
     if ($allow_admin && $allow_edit) {
-        $infoblock .= "<p><a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target=\"_blank\" class=\"snlink\">{$text['editcem']}</a></p>\n";
+        $infoblock .= "<p><a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target='_blank' class=\"snlink\">{$text['editcem']}</a></p>\n";
     }
 
     if ($cemetery['notes']) {
@@ -130,11 +130,11 @@ if ($cemeteryID) {
             $localballooncemeteryplace = @htmlspecialchars($cemeteryplace, ENT_QUOTES, $session_charset);
             $remoteballoontext = @htmlspecialchars(str_replace($banish, $banreplace, "{$cemetery['cemname']}, $cemeteryplace"), ENT_QUOTES, $session_charset);
             $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
-            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
+            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target='_blank'>{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
             $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "htmlcontent" => "<div class=\"mapballoon normal\">$localballooncemeteryname<br>$localballooncemeteryplace$codednotes</div>"];
             $cemcoords = true;
-            $body .= "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
-            $body .= "<div style=\"padding-bottom:15px;\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\"></a>";
+            $body .= "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target='_blank'><img src=\"img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
+            $body .= "<div style=\"padding-bottom:15px;\"><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target='_blank'><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=1\" alt=\"\"></a>";
             $map['pins']++;
             $body .= "<span><strong>{$text['latitude']}:</strong> $lat, <strong>{$text['longitude']}:</strong> $long</span></div>";
         }

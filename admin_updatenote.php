@@ -28,7 +28,7 @@ if ($xID) {
 if (!$private) {
     $private = "0";
 }
-$query = "UPDATE $notelinks_table SET secret=\"$private\" WHERE ID=\"$ID\"";
+$query = "UPDATE $notelinks_table SET secret=\"$private\" WHERE ID='$ID'";
 $result = tng_query($query);
 
 adminwritelog($admtext['modifynote'] . ": $tree/$persfamID/$ID/$eventID");

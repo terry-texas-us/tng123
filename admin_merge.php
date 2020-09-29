@@ -86,13 +86,13 @@ function doRow($field, $textmsg, $boxname) {
             }
             if ($boxname) {
                 if ($p2field || $textmsg != "spouse") {
-                    echo "<input type=\"checkbox\" name=\"$boxname\" value=\"$field\"";
+                    echo "<input type='checkbox' name=\"$boxname\" value=\"$field\"";
                     if ($p2row[$field] && !$p1row[$field]) {
                         echo " checked";
                     }
                     echo ">";
                 } elseif ($textmsg == "spouse") {
-                    echo "<input type=\"checkbox\" name=\"zz$boxname\" value=\"$field\">";
+                    echo "<input type='checkbox' name=\"zz$boxname\" value=\"$field\">";
                 }
             } else {
                 echo "&nbsp;";
@@ -1112,8 +1112,6 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
     </tr>
 
 </table>
-</div>
+    </div>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

@@ -144,22 +144,22 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
                                 <?php include "treequery.php"; ?>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                       onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false;" class="aligntop">
+                                    onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false;" class="aligntop">
                             </td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
                             <td colspan="2">
-				<span class="normal">
-				<input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['exactmatch']; ?>
-				</span>
+                                <span class="normal">
+                                <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
+                                    echo " checked";
+                                } ?>> <?php echo $admtext['exactmatch']; ?>
+                                </span>
                             </td>
                         </tr>
                     </table>
@@ -176,7 +176,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_repositories.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -208,7 +208,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                         if ($allow_delete) {
                             $actionstr .= "<a href='#' onclick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"showrepo.php?repoID=xxx&amp;tree=yyy\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showrepo.php?repoID=xxx&amp;tree=yyy\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['repoID'], $actionstr);
@@ -219,7 +219,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
 
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['ID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
                             echo "<td class='lightback'>&nbsp;{$row['reponame']}&nbsp;</td>\n";
@@ -232,7 +232,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -246,7 +246,5 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
     </tr>
 
 </table>
-</div>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+    </div>
+<?php echo tng_adminfooter(); ?>

@@ -217,10 +217,10 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                         </tr>
                         <tr>
                             <td><br><?php echo $admtext['searchfor']; ?>:
-                                <input type="text" name="searchstring" value="<?php echo $originalstring; ?>">&nbsp;
+                                <input name="searchstring" type="search" value="<?php echo $originalstring; ?>">&nbsp;
                                 <input type="submit" name="submit2" value="<?php echo $admtext['search']; ?>" class="aligntop">&nbsp;&nbsp;
                                 <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" class="aligntop"
-                                       onclick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.test_type.selectedIndex = 0; document.form1.test_group.selectedIndex = 0;">
+                                    onclick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.test_type.selectedIndex = 0; document.form1.test_group.selectedIndex = 0;">
                             </td>
                         </tr>
                     </table>
@@ -236,7 +236,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_dna_tests.php?searchstring=$searchstring&amp;test_type=$test_type&amp;test_group=$test_group&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselecteddna.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
@@ -276,14 +276,14 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                         if ($allow_delete) {
                             $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"show_dna_test.php?testID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"show_dna_test.php?testID=xxx\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['testID'], $actionstr);
                             echo "<tr id=\"row_{$row['testID']}\">\n";
                             echo "<td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"dna{$row['testID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"dna{$row['testID']}\" value='1'></td>";
                             }
                             $rights = determineLivingPrivateRights($row);
                             $row['allow_living'] = $rights['living'];
@@ -362,7 +362,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -375,6 +375,4 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

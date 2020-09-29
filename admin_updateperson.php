@@ -166,7 +166,7 @@ if (!$editconflict) {
     $query = "UPDATE $people_table SET firstname=\"$firstname\", lnprefix=\"$lnprefix\", lastname=\"$lastname\", nickname=\"$nickname\", prefix=\"$prefix\", suffix=\"$suffix\", title=\"$title\", nameorder=\"$pnameorder\", living=\"$living\", private=\"$private\",
 		birthdate=\"$birthdate\", birthdatetr=\"$birthdatetr\", birthplace=\"$birthplace\", sex=\"$sex\", altbirthdate=\"$altbirthdate\", altbirthdatetr=\"$altbirthdatetr\", altbirthplace=\"$altbirthplace\",
 		deathdate=\"$deathdate\", deathdatetr=\"$deathdatetr\", deathplace=\"$deathplace\", burialdate=\"$burialdate\", burialdatetr=\"$burialdatetr\", burialplace=\"$burialplace\", burialtype=\"$burialtype\",
-		baptdate=\"$baptdate\", baptdatetr=\"$baptdatetr\", baptplace=\"$baptplace\", confdate=\"$confdate\", confdatetr=\"$confdatetr\", confplace=\"$confplace\", initdate=\"$initdate\", initdatetr=\"$initdatetr\", initplace=\"$initplace\", endldate=\"$endldate\", endldatetr=\"$endldatetr\", endlplace=\"$endlplace\", changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\",metaphone=\"$meta\" $famcstr WHERE personID=\"$personID\" AND gedcom = '$tree'";
+		baptdate=\"$baptdate\", baptdatetr=\"$baptdatetr\", baptplace=\"$baptplace\", confdate=\"$confdate\", confdatetr=\"$confdatetr\", confplace=\"$confplace\", initdate=\"$initdate\", initdatetr=\"$initdatetr\", initplace=\"$initplace\", endldate=\"$endldate\", endldatetr=\"$endldatetr\", endlplace=\"$endlplace\", changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\",metaphone=\"$meta\" $famcstr WHERE personID='$personID' AND gedcom = '$tree'";
     $result = tng_query($query);
 
     if ($sex == "M") {

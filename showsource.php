@@ -99,7 +99,7 @@ ksort($events);
 foreach ($events as $event)
     $sourcetext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-    $sourcetext .= showEvent(["text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>", "np" => 1]);
+    $sourcetext .= showEvent(["text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>", "np" => 1]);
 } else {
     $sourcetext .= showEvent(["text" => $text['sourceid'], "date" => $sourceID]);
 }

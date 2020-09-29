@@ -82,9 +82,9 @@ $tmp['t6_fhlinkshis'] = ">Individual 2</a><br>\"";
 $tmp['t6_fhlinkshers'] = ">Individual 4</a><br>\"";
 $tmp['t6_mwpara'] = "Use this section to display information about individuals you are actively researching.";
 $tmp['t6_respara'] = "List resources here that you would like to share with others.";
-$tmp['t6_reslinks'] = "<a href=\"http://www.ancestry.com\" target=\"_blank\">Ancestry.com</a><br>
-<a href=\"http://www.fold3.com\" target=\"_blank\">Fold3.com</a><br>
-<a href=\"http://lythgoes.net/genealogy/software.php\" target=\"_blank\">TNG Software</a>";
+$tmp['t6_reslinks'] = "<a href=\"http://www.ancestry.com\" target='_blank'>Ancestry.com</a><br>
+<a href=\"http://www.fold3.com\" target='_blank'>Fold3.com</a><br>
+<a href=\"http://lythgoes.net/genealogy/software.php\" target='_blank'>TNG Software</a>";
 $tmp['t7_mainimage'] = "img/bigphoto.jpg";
 $tmp['t7_titlechoice'] = "image";
 $tmp['t7_maintitle'] = "Our Family<br>History";

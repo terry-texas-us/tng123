@@ -94,8 +94,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             global $citations_table, $admtext, $tree;
 
             $citations = [];
-            $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = \"$persfamID\" AND gedcom = '$tree' ORDER BY eventID";
-            $citresult = tng_query($citquery) or die ($admtext['cannotexecutequery'] . ": $query");
+            $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' ORDER BY eventID";
+            $citresult = tng_query($citquery) or die ($admtext['cannotexecutequery'] . ": $citquery");
 
             while ($cite = tng_fetch_assoc($citresult)) {
                 $eventID = $cite['eventID'] ? $cite['eventID'] : "NAME";
@@ -203,7 +203,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             global $tree, $events_table;
 
             $stdex = [];
-            $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = \"$persfamID\" AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
+            $query = "SELECT age, agency, cause, addressID, parenttag FROM $events_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' AND parenttag != \"\" ORDER BY parenttag";
             $stdextras = tng_query($query);
             while ($stdextra = tng_fetch_assoc($stdextras)) {
                 $stdex[$stdextra['parenttag']] = getFact($stdextra, $level);
@@ -1650,6 +1650,4 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
     </div>
 </div>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

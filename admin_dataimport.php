@@ -234,11 +234,9 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         </tr>
     </table>
 </form>
-<iframe id="results" height="<?php if ($debug) {
-    echo "30";
-} ?>0" width="<?php if ($debug) {
-    echo "40";
-} ?>0" frameborder="0" name="results" onload="iframeLoaded();"/>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+    <iframe id="results" height="<?php if ($debug) {
+        echo "30";
+    } ?>0" width="<?php if ($debug) {
+        echo "40";
+    } ?>0" frameborder="0" name="results" onload="iframeLoaded();"/>
+<?php echo tng_adminfooter(); ?>

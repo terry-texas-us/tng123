@@ -126,7 +126,7 @@ if (!$numrowsplus) {
 }
 echo "<p class='normal'>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
 $pagenav = get_album_nav($totrows, $maxsearchresults, 5);
-echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
 ?>
     <table cellpadding="3" cellspacing="1" width="705" class="normal">
         <tr>
@@ -164,7 +164,7 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
             echo "<td class='lightback center' id=\"thumbcell_{$row['mediaID']}\">";
             if ($row['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $row['thumbpath'])) {
                 $size = @GetImageSize("$rootpath$usefolder/$treestr" . $row['thumbpath']);
-                echo "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\" target=\"_blank\"><img border=0 src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" $size[3]></a>\n";
+                echo "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\" target='_blank'><img border=0 src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" $size[3]></a>\n";
             } else {
                 echo "&nbsp;";
             }
@@ -180,5 +180,5 @@ echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
     </table>
 <?php
 echo "<p class='normal'>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
-echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
 ?>

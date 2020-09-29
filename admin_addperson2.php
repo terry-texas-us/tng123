@@ -162,7 +162,7 @@ if ($result && tng_num_rows($result)) {
     tng_execute($query, $params);
     $ID = tng_insert_id();
 
-    $query = "SELECT personID, lastname, firstname, lnprefix, birthdate, altbirthdate, prefix, suffix, nameorder FROM $people_table WHERE ID=\"$ID\"";
+    $query = "SELECT personID, lastname, firstname, lnprefix, birthdate, altbirthdate, prefix, suffix, nameorder FROM $people_table WHERE ID='$ID'";
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     tng_free_result($result);

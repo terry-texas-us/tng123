@@ -121,7 +121,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -141,7 +141,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_cemeteries.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -177,7 +177,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                         if ($allow_delete) {
                             $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                         }
-                        $actionstr .= "<a href=\"showmap.php?cemeteryID=xxx&amp\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showmap.php?cemeteryID=xxx&amp\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $location = $row['city'];
@@ -203,7 +203,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                             $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
                             echo "<tr id=\"row_{$row['cemeteryID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['cemeteryID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['cemeteryID']}\" value='1'></td>";
                             }
                             $editlink = "admin_editcemetery.php?cemeteryID={$row['cemeteryID']}";
                             $cemname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['cemname'] . "</a>" : $row['cemname'];
@@ -238,7 +238,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo $admtext['norecords'];
@@ -251,6 +251,4 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

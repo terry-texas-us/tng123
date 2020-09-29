@@ -330,8 +330,8 @@ while ($prow = tng_fetch_assoc($presult)) {
             $codedplace = @htmlspecialchars(str_replace($banish, $banreplace, $psearchns), ENT_QUOTES, $session_charset);
             $codednotes = $prow['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $prow['notes']) : "";
             // add external link to Google Maps for Directions in the balloon
-            echo "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target=\"_blank\"><img src=\"img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
-            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
+            echo "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target='_blank'><img src=\"img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
+            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target='_blank'>{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
             if ($lat && $long) {
                 $uniqueplace = $psearch . $lat . $long;
                 if ($map['showallpins'] || !in_array($uniqueplace, $usedplaces)) {
@@ -341,7 +341,7 @@ while ($prow = tng_fetch_assoc($presult)) {
                 }
             }
 
-            echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class='normal'><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
+            echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target='_blank'><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class='normal'><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
             $map['pins']++;
         } elseif ($prow['latitude'] || $prow['longitude']) {
             echo "<span><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";

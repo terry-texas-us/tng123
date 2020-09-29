@@ -101,6 +101,4 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['thumbnails'], 
         </tr>
     <?php } ?>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

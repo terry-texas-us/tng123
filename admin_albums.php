@@ -93,7 +93,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
-                                <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
+                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -113,7 +113,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_albums.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
 
                 <table class="normal">
@@ -134,7 +134,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     if ($allow_media_delete) {
                         $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['confdeletealbum']}' )){deleteIt('album',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
                     }
-                    $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                    $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['albumID'], $actionstr);
@@ -219,7 +219,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                 </table>
             <?php
             echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+            echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             }
             else {
                 echo "</table>\n" . $admtext['norecords'];
@@ -232,6 +232,4 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

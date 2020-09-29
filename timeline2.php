@@ -488,7 +488,7 @@ foreach ($keeparray as $timeentry) {
     if ($timeentry['personID'] == $primaryID && $timeentry['tree'] == $tree) {
         echo "&nbsp;";
     } else {
-        echo "<input type=\"checkbox\" name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value='1'>\n";
+        echo "<input type='checkbox' name=\"{$timeentry['tree']}_{$timeentry['personID']}\" value='1'>\n";
     }
     echo "</div>\n";
 

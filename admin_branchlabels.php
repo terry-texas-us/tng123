@@ -141,7 +141,7 @@ function setPersonLabel($personID) {
 
     if ($personID) {
         if ($branchaction == "delete") {
-            $query = "SELECT sex FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
+            $query = "SELECT sex FROM $people_table WHERE personID='$personID' AND gedcom = '$tree'";
             $result = @tng_query($query);
             $row = tng_fetch_assoc($result);
             tng_free_result($result);
@@ -452,6 +452,4 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
 
     </div>
 </div>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

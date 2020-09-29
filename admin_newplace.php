@@ -51,15 +51,12 @@ if ($map['key']) {
     include "googlemaplib2.php";
 }
 ?>
-</head>
-
-<body class="admin-body"<?php if ($map['key']) {
-    if (!$map['startoff']) {
-        echo " onload=\"divbox('mapcontainer');\"";
-    }
-} ?>>
+    </head>
 
 <?php
+$onload = $map['key'] && !$map['startoff'] ? " onload=\"divbox('mapcontainer');\"" : "";
+echo tng_adminlayout($onload);
+
 $placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
 $placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
 $placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
@@ -165,6 +162,4 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

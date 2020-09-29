@@ -70,28 +70,28 @@ $menu = doMenu($timelinetabs, "findtimeline", $innermenu);
 echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
-                <form action="admin_timelineevents.php" name="form1">
-                    <?php echo $admtext['searchfor']; ?>:
-                    <input type="text" name="searchstring" value="<?php echo $searchstring_noquotes; ?>" class="longfield">
-                    <input type="hidden" name="findtlevent" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                    <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                    <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
-                </form>
-                <br>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
+                    <form action="admin_timelineevents.php" name="form1">
+                        <?php echo $admtext['searchfor']; ?>:
+                        <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
+                        <input type="hidden" name="findtlevent" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
+                    </form>
+                    <br>
 
-                <?php
-                $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
+                    <?php
+                    $numrowsplus = $numrows + $offset;
+                    if (!$numrowsplus) {
                     $offsetplus = 0;
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -126,7 +126,7 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                             $newactionstr = preg_replace("/xxx/", $row['tleventID'], $actionstr);
                             echo "<tr id=\"row_{$row['tleventID']}\"><td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['tleventID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['tleventID']}\" value='1'></td>";
                             }
                             echo "<td class='lightback text-center'>{$row['evyear']}&nbsp;</td>\n";
                             echo "<td class='lightback text-center'>{$row['endyear']}&nbsp;</td>";
@@ -137,7 +137,7 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo $admtext['norecords'];
@@ -146,10 +146,8 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                 ?>
                 </form>
 
-            </div>
-        </td>
-    </tr>
-</table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+                </div>
+            </td>
+        </tr>
+    </table>
+<?php echo tng_adminfooter(); ?>

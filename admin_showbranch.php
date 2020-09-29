@@ -61,13 +61,13 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
                     <td colspan="2">
 			<span class="normal"><br>
 <?php
-echo "<p class=\"adminnav\"><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class=\"snlink\">{$admtext['labelbranches']}</a></p>\n";
+echo "<p class='adminnav'><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class=\"snlink\">{$admtext['labelbranches']}</a></p>\n";
 while ($row = tng_fetch_assoc($brresult)) {
     $rights = determineLivingPrivateRights($row, true, true);
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
 
-    echo "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target=\"_blank\">" . getNameRev($row) . " ({$row['personID']})</a><br>\n";
+    echo "<a href=\"admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}&amp;cw=1\" target='_blank'>" . getNameRev($row) . " ({$row['personID']})</a><br>\n";
 }
 tng_free_result($brresult);
 ?>				
@@ -79,6 +79,4 @@ tng_free_result($brresult);
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

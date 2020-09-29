@@ -30,7 +30,7 @@ $misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"]
 $misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
 $misctabs[4] = [1, "admin_valreport.php?report=$report&amp;tree=$tree", $admtext['report'], "report"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 $menu = doMenu($misctabs, "report", $innermenu);
 echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'] . " &gt;&gt; " . $admtext[$report], "img/misc_icon.gif", $menu, $message);
 
@@ -214,7 +214,7 @@ if (!$numrowsplus) {
             <?php
             echo displayListLocation($offsetplus, $numrowsplus, $totrows);
             $pagenav = get_browseitems_nav($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 5);
-            echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+            echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             ?>
             <table cellpadding="5" cellspacing="1" class="normal">
                 <tr>
@@ -236,11 +236,11 @@ if (!$numrowsplus) {
                                 $rights = determineLivingPrivateRights($row);
                                 $row['allow_living'] = $rights['living'];
                                 $row['allow_private'] = $rights['private'];
-                                $value = "<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\" target=\"_blank\">" . getName($row) . "</a>";
+                                $value = "<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\" target='_blank'>" . getName($row) . "</a>";
                             } elseif ($values[$i] == "familyID") {
-                                $value = "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&tree={$row['gedcom']}\" target=\"_blank\">{$row['familyID']}</a>";
+                                $value = "<a href=\"admin_editfamily.php?familyID={$row['familyID']}&tree={$row['gedcom']}\" target='_blank'>{$row['familyID']}</a>";
                             } elseif ($values[$i] == "personID") {
-                                $value = "<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\" target=\"_blank\">{$row['personID']}</a>";
+                                $value = "<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\" target='_blank'>{$row['personID']}</a>";
                             } else {
                                 $value = $row[$values[$i]];
                             }
@@ -250,7 +250,7 @@ if (!$numrowsplus) {
                     }
                     echo "</table>\n";
                     echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 } else {
                     echo "</table>\n" . $admtext['norecords'];
                 }
@@ -265,6 +265,4 @@ if (!$numrowsplus) {
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

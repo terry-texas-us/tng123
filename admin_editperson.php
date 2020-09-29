@@ -272,7 +272,7 @@ include_once "eventlib_js.php";
     $peopletabs[4] = [$allow_edit, "admin_editperson.php?personID=$personID&tree=$tree", $admtext['edit'], "edit"];
     $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
     $innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
     if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
         $innermenu .= " &nbsp;|&nbsp; <a href='#' onclick=\"return addNewMedia();\" class='lightlink'>{$admtext['addmedia']}</a>";
     }
@@ -453,7 +453,7 @@ include_once "eventlib_js.php";
                             echo "<tr>";
                             echo "<td></td>";
                             echo "<td colspan=\"3\">";
-                            echo "<input type=\"checkbox\" name=\"burialtype\" id=\"burialtype\" value='1'$checked> <label for=\"burialtype\">{$admtext['cremated']}</label>";
+                            echo "<input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'$checked> <label for=\"burialtype\">{$admtext['cremated']}</label>";
                             echo "</td>";
                             echo "</tr>\n";
                             if ($rights['lds']) {
@@ -699,16 +699,16 @@ include_once "eventlib_js.php";
                     <?php
                     echo $admtext['onsave'] . ":<br>";
                     if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
-                        echo "<input type=\"radio\" name=\"newfamily\" id=\"radiochild\" value=\"child\">{$admtext['gotonewfamily']} ($personID) {$admtext['aschild']}<br>\n";
+                        echo "<input type='radio' name=\"newfamily\" id=\"radiochild\" value=\"child\">{$admtext['gotonewfamily']} ($personID) {$admtext['aschild']}<br>\n";
                         if ($row['sex']) {
-                            echo "<input type=\"radio\" name=\"newfamily\" id=\"radio$self\" value=\"$self\">{$admtext['gotonewfamily']} ($personID) $selfdisplay<br>\n";
+                            echo "<input type='radio' name=\"newfamily\" id=\"radio$self\" value=\"$self\">{$admtext['gotonewfamily']} ($personID) $selfdisplay<br>\n";
                         }
                     }
-                    echo "<input type=\"radio\" name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newfamily\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name=\"newfamily\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newfamily\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name=\"newfamily\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>

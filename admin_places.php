@@ -230,7 +230,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                                     include "treequery.php";
                                 }
                                 ?>
-                                <input type="text" name="searchstring" value="<?php echo stripslashes($searchstring_noquotes); ?>" class="verylongfield">
+                                <input class="verylongfield" name="searchstring" type="search" value="<?php echo stripslashes($searchstring_noquotes); ?>">
                             </td>
                             <td>
                                 <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
@@ -254,7 +254,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                                 } ?>> <?php echo $admtext['nolevel']; ?>&nbsp;&nbsp;
                                 <?php
                                 if (determineLDSRights()) {
-                                    echo "<input type=\"checkbox\" name=\"temples\" value=\"yes\"";
+                                    echo "<input type='checkbox' name=\"temples\" value=\"yes\"";
                                     if ($temples == "yes") {
                                         echo " checked";
                                     }
@@ -277,7 +277,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_places.php?searchstring=" . stripslashes($searchstring) . "&amp;exactmatch=$exactmatch&amp;noocords=$nocoords&amp;temples=$temples&amp;noevents=$noevents&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -322,7 +322,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                         if (!$tngconfig['places1tree']) {
                             $actionstr .= "&amp;tree=yyy";
                         }
-                        $actionstr .= "\" target=\"_blank\" title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['ID'], $actionstr);
@@ -332,7 +332,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                             $newactionstr = preg_replace("/zzz/", urlencode($row['place']), $newactionstr);
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                             if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type=\"checkbox\" name=\"del{$row['ID']}\" value='1'></td>";
+                                echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['ID']}\" value='1'></td>";
                             }
                             $display = $row['place'];
                             $display = preg_replace("/</", "&lt;", $display);
@@ -355,7 +355,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class=\"adminnav\">$pagenav</span></p>";
+                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -368,6 +368,4 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

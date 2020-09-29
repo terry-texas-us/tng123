@@ -522,11 +522,11 @@ if ($allow_living) {
 
                 if (in_array($key, $hideEvents)) {
                     $class = 'hidden';
-                    $checkbox = "<input type=\"checkbox\" onclick=\"redisplay('cal_$key');\">";
+                    $checkbox = "<input type='checkbox' onclick=\"redisplay('cal_$key');\">";
                     $toHide = array_diff($hideEvents, [$key]);
                 } else {
                     $class = 'nothidden';
-                    $checkbox = "<input type=\"checkbox\" checked onclick=\"redisplay('cal_$key');\">";
+                    $checkbox = "<input type='checkbox' checked onclick=\"redisplay('cal_$key');\">";
                     $toHide = $hideEvents;
                     $toHide[] = $key;
                 }

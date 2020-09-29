@@ -1102,7 +1102,7 @@ function insertLinks($notes) {
                 $linkstr = substr($linkstr, 0, -1);
             }
             $lastpart = substr($notes, $pos + strlen($linkstr));
-            $notes = $firstpart . "<a href=\"$linkstr\" target=\"_blank\">$linkstr</a>" . $lastpart;
+            $notes = $firstpart . "<a href=\"$linkstr\" target='_blank'>$linkstr</a>" . $lastpart;
             $posidx--;
         }
     }
@@ -1141,7 +1141,7 @@ function showLinks($linkList, $newtab = false, $class = null, $inner_html = null
             $href = trim(array_pop($parts));
             $title = implode("", $parts);
         }
-        $target = $newtab ? " target=\"_blank\"" : "";
+        $target = $newtab ? " target='_blank'" : "";
         $finishedList .= "<li";
         if ($class) {
             $finishedList .= " class=\"$class\"";
@@ -1172,7 +1172,7 @@ function showMediaLinks($linkList) {
         $title = !empty($thumbrow['altdescription']) ? $thumbrow['altdescription'] : $thumbrow['description'];
         $imgsrc = "<img src=\"$thumb\" alt=\"$title\" title=\"$title\" class=\"thumb\">";
         $href = getMediaHREF($thumbrow, 0);
-        $finishedmedList .= "<br><a href=\"$href\" title=\"$title\" target=\"_blank\">" . $imgsrc . "</a>&nbsp;<a href=\"$href\" title=\"$title\" target=\"_blank\" style=\"vertical-align:top;\">$title</a><br>";
+        $finishedmedList .= "<br><a href=\"$href\" title=\"$title\" target='_blank'>" . $imgsrc . "</a>&nbsp;<a href=\"$href\" title=\"$title\" target='_blank' style=\"vertical-align:top;\">$title</a><br>";
     }
     return $finishedmedList;
 }

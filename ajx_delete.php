@@ -327,7 +327,7 @@ switch ($t) {
         $logmsg = $admtext['deleted'] . " $id {$admtext['succdeleted']}.";
         break;
     case "child_unlink":
-        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND personID=\"$personID\" AND gedcom = '$tree'";
+        $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND personID='$personID' AND gedcom = '$tree'";
         $result = @tng_query($query);
 
         $query = "UPDATE $people_table SET famc=\"\" WHERE personID = \"$personID\" AND gedcom = '$tree'";
@@ -338,12 +338,12 @@ switch ($t) {
         $logmsg = $admtext['chunlinked'] . ": $personID/$familyID ($tree).";
         break;
     case "child_delete":
-        $query = "SELECT sex FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
+        $query = "SELECT sex FROM $people_table WHERE personID='$personID' AND gedcom = '$tree'";
         $result = @tng_query($query);
         $row = tng_fetch_assoc($result);
         tng_free_result($result);
 
-        $query = "DELETE FROM $people_table WHERE personID=\"$personID\" AND gedcom = '$tree'";
+        $query = "DELETE FROM $people_table WHERE personID='$personID' AND gedcom = '$tree'";
         $result = @tng_query($query);
 
         deletePersonPlus($personID, $tree, $row['sex']);

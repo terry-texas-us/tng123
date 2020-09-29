@@ -136,7 +136,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $indtext .= "<a href=\"getperson.php?personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
 
     if ($allow_edit && $rightbranch) {
-        $indtext .= " | <a href=\"admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+        $indtext .= " | <a href=\"admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>";
     }
     $indtext .= "<br></h3>\n";
     $indtext .= "</td></tr>\n</table>\n<br>\n";

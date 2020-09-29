@@ -245,7 +245,7 @@ $familytabs['2'] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review
 $familytabs['3'] = [$allow_edit, "admin_editfamily.php?familyID=$familyID&tree=$tree", $admtext['edit'], "edit"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/families_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
     $innermenu .= " &nbsp;|&nbsp; <a href='#' onclick=\"return addNewMedia();\" class='lightlink'>{$admtext['addmedia']}</a>";
 }
@@ -541,11 +541,11 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                 <td class="tngshadow normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type=\"radio\" name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type=\"radio\" name=\"newfamily\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name=\"newfamily\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type=\"radio\" name=\"newfamily\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name=\"newfamily\" value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                     <br><br>
@@ -564,8 +564,6 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
         ?>
     </table>
 </form>
-</div>
+    </div>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

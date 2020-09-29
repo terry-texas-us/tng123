@@ -112,7 +112,7 @@ if ($dnarow['dna_group']) {
 }
 if ($dnarow['GEDmatchID']) {
     if ($dprights['both']) {
-        $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target=\"_blank\">{$dnarow['GEDmatchID']}</a>";
+        $GEDmatch_str = "<a href=\"https://www.gedmatch.com/\" target='_blank'>{$dnarow['GEDmatchID']}</a>";
         $dnatext .= showEvent(["text" => $admtext['gedmatchID'], "fact" => $GEDmatch_str]);
     }
 }

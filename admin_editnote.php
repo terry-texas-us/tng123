@@ -36,7 +36,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             <td>&nbsp;</td>
             <td>
                 <?php
-                echo "<input type=\"checkbox\" name=\"private\" value='1'";
+                echo "<input type='checkbox' name=\"private\" value='1'";
                 if ($row['secret']) {
                     echo " checked";
                 }

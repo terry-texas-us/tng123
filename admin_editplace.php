@@ -13,18 +13,21 @@ include "checklogin.php";
 include "version.php";
 $tng_search_places = $_SESSION['tng_search_places'];
 
+$query = "SELECT * ";
+$query .= "FROM $places_table ";
+$query .= "WHERE ";
 if (is_numeric($ID)) {
-    $wherestr = "ID = \"$ID\"";
+    $query .= "ID = '$ID'";
 } else {
-    $wherestr = "place = \"$ID\"";
+    $query .= "place = '$ID'";
     if ($tree && !$tngconfig['places1tree']) {
-        $wherestr .= " AND gedcom = '$tree'";
+        $query .= " AND gedcom = '$tree'";
     }
 }
-$query = "SELECT * FROM $places_table WHERE $wherestr";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
+
 $orgplace = $row['place'];
 $ID = $row['ID'];
 $row['place'] = preg_replace("/\"/", "&#34;", $row['place']);
@@ -144,22 +147,26 @@ if ($map['key']) {
     include "googlemaplib2.php";
 }
 ?>
-</head>
-
-<body class="admin-body"<?php if ($map['key']) {
-    if (!$map['startoff']) {
-        echo " onload=\"divbox('mapcontainer');\"";
-    }
-} ?>>
+    </head>
 
 <?php
+$onload = $map['key'] && !$map['startoff'] ? " onload=\"divbox('mapcontainer');\"" : "";
+echo tng_adminlayout($onload);
+
+if (!isset($tree)) {
+    if (!empty($assignedtree))
+        $tree = $assignedtree;
+    elseif (!$tngconfig['places1tree'])
+        $tree = $row['gedcom'];
+}
+
 $placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
 $placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
 $placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
 $placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
 $placetabs[4] = [$allow_edit, "#", $admtext['edit'], "edit"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"placesearch.php?psearch=" . urlencode($orgplace) . "\" target=\"_blank\" class='lightlink'>{$admtext['test']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"placesearch.php?psearch=" . urlencode($orgplace) . "\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID={$row['place']}&amp;tree=$tree&amp;linktype=L\" class='lightlink'>{$admtext['addmedia']}</a>";
 $menu = doMenu($placetabs, "edit", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace'], "img/places_icon.gif", $menu, $message);
@@ -202,7 +209,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                     if (determineLDSRights()) {
                         echo "<tr>";
                         echo "<td>&nbsp;</td>";
-                        echo "<td><input type=\"checkbox\" name=\"temple\" value='1'";
+                        echo "<td><input type='checkbox' name=\"temple\" value='1'";
                         if ($row['temple']) {
                             echo " checked";
                         }
@@ -328,11 +335,11 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                         <td colspan="2">
                             <?php
                             echo $admtext['onsave'] . ":<br>";
-                            echo "<input type=\"radio\" name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                            echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
                             if ($cw) {
-                                echo "<input type=\"radio\" name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                                echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
                             } else {
-                                echo "<input type=\"radio\" name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                                echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
                             }
                             ?>
                         </td>
@@ -347,6 +354,4 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>
