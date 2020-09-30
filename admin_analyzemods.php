@@ -72,7 +72,9 @@ if ($options['fix_header'] == YES && !isMobile()) {
 }
 
 echo "</head>";
-echo "<body class=\"admin-body\">";
+echo tng_adminlayout();
+
+
 echo "<div id=\"mmhead\" class=\"$headclass adminback\">$headline</div> <!--head-section-->";
 echo "<table id=\"m2table\" class='normal lightback $tableclass'>";
 echo "<tr><td class='databack mmleftcol'>";
@@ -152,9 +154,7 @@ function toggleSection(sectionName) {
 }
 </script>";
 
-echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>";
-echo "</body>";
-echo "</html>";
+echo tng_adminfooter();
 exit;
 
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
@@ -255,7 +255,7 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
     $sections = array_map('trim', explode("%target:", $contentstr));
     echo "<span class=\"mmfilenmfont\">$modfile</span>&nbsp;&nbsp;";
     echo "<a href='#' id=\"{$id}link\" onclick=\"return toggleSection('$id');\">{$admtext['show']}&nbsp;{$admtext['modifications']}</a><br>";
-    echo "<div id=\"{$id}div\" style=\"display:none;\"><br>";
+    echo "<div id=\"{$id}div\" style='display: none;'><br>";
     for ($i = 1; isset($sections[$i]); $i++) {
         $target_file = trim(preg_replace("#([^%]*)%.*#s", "\${1}", $sections[$i]));
         if (trim($target_file) == trim($mtarget)) {

@@ -186,7 +186,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                             </td>
                             <?php
                             if ($lnprefixes) {
-                                echo "<td><input type='text' name=\"lnprefix\" style=\"width:80px;\"></td>\n";
+                                echo "<td><input type='text' name='lnprefix' style=\"width:80px;\"></td>\n";
                             }
                             ?>
                             <td>
@@ -286,7 +286,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                 <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
                 <?php
                 if (!$lnprefixes) {
-                    echo "<input type='hidden' name=\"lnprefix\" value=\"\">";
+                    echo "<input type='hidden' name='lnprefix' value=\"\">";
                 }
                 ?>
                 <input type="submit" class="btn" name="save" accesskey="s" value="<?php echo $admtext['savecont']; ?>">

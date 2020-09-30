@@ -319,7 +319,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
@@ -349,9 +348,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
         {% } %}</td>
     </tr>
 {% } %}
-
-
-
 
 </script>
 <!-- The template to display files available for download -->
@@ -411,9 +407,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
     </tr>
 {% } %}
 
-
-
-
 </script>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="js/jquery.ui.widget.js"></script>
@@ -436,5 +429,5 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
 <!--[if gte IE 8]>
 <script src="js/cors/jquery.xdr-transport.js"></script><![endif]-->
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

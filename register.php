@@ -112,7 +112,7 @@ echo "</form>\n";
             echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
             while ($row = array_shift($currgen)) {
                 echo "<li>";
-                echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td width=\"40\" class=\"aligntop\" align=\"right\">";
+                echo "<table cellpadding='0' cellspacing='0'><tr><td width=\"40\" class='aligntop' align=\"right\">";
                 echo "{$row['number']}.&nbsp;&nbsp;</td><td>";
                 echo showSmallPhoto($row['personID'], $row['name'], $row['allow_living'] && $row['allow_private'], 0, false, $row['sex']);
                 echo "<a href=\"getperson.php?personID={$row['personID']}&amp;tree=$tree\" name=\"p{$row['personID']}\" id=\"p{$row['personID']}\">{$row['name']}</a>";
@@ -169,7 +169,7 @@ echo "</form>\n";
 
                     $result2 = getChildrenData($tree, $spouserow['familyID']);
                     if ($result2 && tng_num_rows($result2)) {
-                        echo "<table cellpadding=\"0\" cellspacing=\"0\"><tr><td>{$text['children']}:<br>\n<ol>\n";
+                        echo "<table cellpadding='0' cellspacing='0'><tr><td>{$text['children']}:<br>\n<ol>\n";
                         while ($childrow = tng_fetch_assoc($result2)) {
                             $childID = $childrow['personID'];
                             if ($nextgen[$childID]) {

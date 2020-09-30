@@ -133,11 +133,10 @@ if ($drow['thumbpath'] && file_exists("$rootpath$photoref")) {
 </script>
 <script src="js/albums.js"></script>
 
-</head>
-
-<body class="admin-body" onload="startMediaSort()">
-
 <?php
+echo "</head>\n";
+echo tng_adminlayout(" onload=\"startMediaSort()\"");
+
 $albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
 $albumtabs[1] = [$allow_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
 $albumtabs[2] = [$allow_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
@@ -447,11 +446,11 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                 <p class="normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name='newscreen' value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>
@@ -464,9 +463,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
     </table>
 </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 <script>
     var findform = document.form1;
 </script>
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

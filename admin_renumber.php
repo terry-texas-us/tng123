@@ -231,7 +231,5 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 
         echo "<p class='normal'>{$admtext['finreseq']}: $count {$admtext['recsreseq']}</p>\n";
         echo "</div></div>\n";
-        echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>";
+        echo tng_adminfooter();
         ?>
-</body>
-</html>

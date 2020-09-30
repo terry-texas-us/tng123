@@ -390,15 +390,15 @@ if ($allow_living) {
     <div style="text-align: right;">
         <div style="float: left;">
             <?php
-            echo "<a href=\"anniversaries.php?tngmonth=$m&amp;tngneedresults=1\"><b>&gt;&gt; {$text['anniversaries']}</b></a>";
+            echo "<a href=\"anniversaries.php?tngmonth=$m&amp;tngneedresults=1\"><strong>&gt;&gt; {$text['anniversaries']}</strong></a>";
             ?>
         </div>
         <?php
-        echo '<b>' . $text['filter'] . ':</b>&nbsp; ';
+        echo "<strong>{$text['filter']}:</strong>&nbsp; ";
         $args = "&amp;hide=" . implode(',', $hideEvents) . "&amp;tree=$thisTree&amp;m=$thisMonth&amp;year=$thisYear";
-        echo $showLiving == 2 ? '<b>' . $text['all'] . '</b> &nbsp;|&nbsp; ' : '<a href="?living=2' . $args . '">' . $text['all'] . '</a> &nbsp;|&nbsp; ';
-        echo $showLiving == 1 ? '<b>' . $text['living'] . '</b> &nbsp;|&nbsp; ' : '<a href="?living=1' . $args . '">' . $text['living'] . '</a> &nbsp;|&nbsp; ';
-        echo !$showLiving ? '<b>' . $text['notliving'] . '</b>' : '<a href="?living=0' . $args . '">' . $text['notliving'] . '</a>';
+        echo $showLiving == 2 ? "<strong>{$text['all']}</strong> &nbsp;|&nbsp; " : "<a href=\"?living=2{$args}\">{$text['all']}</a> &nbsp;|&nbsp; ";
+        echo $showLiving == 1 ? "<strong>{$text['living']}</strong> &nbsp;|&nbsp; " : "<a href=\"?living=1{$args}\">{$text['living']}</a> &nbsp;|&nbsp; ";
+        echo !$showLiving ? "<strong>{$text['notliving']}</strong>" : "<a href=\"?living=0{$args}\">{$text['notliving']}</a>";
         ?>
     </div>
 <?php } ?>

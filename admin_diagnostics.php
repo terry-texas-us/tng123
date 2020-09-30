@@ -249,9 +249,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
             </td>
         </tr>
     </table>
-    <?php echo "<div style='text-align: center;'><span class='normal'>$tng_title</span></div>"; ?>
-    </body>
-    </html>
 <?php
 function fileReadWrite($myuserid, $mygroupid, $fileref) {
     $rval = false;
@@ -349,4 +346,6 @@ function readPerms($in_Perms) {
     $sP .= (($in_Perms & 0x0004) ? 'r' : '-') . (($in_Perms & 0x0002) ? 'w' : '-') . (($in_Perms & 0x0001) ? (($in_Perms & 0x0200) ? 't' : 'x') : (($in_Perms & 0x0200) ? 'T' : '-'));
     return $sP;
 }
+
+echo tng_adminfooter();
 ?>

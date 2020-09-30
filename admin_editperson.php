@@ -338,7 +338,7 @@ include_once "eventlib_js.php";
                                     <input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" size="35">
                                 </td>
                                 <?php if ($lnprefixes) {
-                                    echo "<td><input type='text' value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width: 80px;\"></td>\n";
+                                    echo "<td><input type='text' value=\"{$row['lnprefix']}\" name='lnprefix' style=\"width: 80px;\"></td>\n";
                                 }
                                 ?>
                                 <td>
@@ -564,7 +564,7 @@ include_once "eventlib_js.php";
         <tr class="databack"> <!-- Collapsible section - Spouses -->
             <td class="tngshadow">
                 <?php
-                $display = !$row['sex'] || $row['sex'] == "U" ? " style=\"display:none;\"" : "";
+                $display = !$row['sex'] || $row['sex'] == "U" ? " style='display: none;'" : "";
                 $newspouse = $allow_add && (!$assignedtree || $assignedtree == $tree) ? "&nbsp; <input type='button'$display id=\"addnewspouse\" value=\"  " . $admtext['addnew'] . "  \" onClick=\"return addNewFamily('$self','$self=$personID&tree=$tree&cw=$cw');\">\n" : "";
                 echo displayToggle("plus3", 1, "spouses", $admtext['spouses'] . " (<span id=\"marrcount\">$marrcount</span>)", "", $newspouse);
                 ?>
@@ -639,7 +639,7 @@ include_once "eventlib_js.php";
             <td class='align-top'>
                 <?php
                 $kidcount = 1;
-                echo "<table cellpadding = \"0\" cellspacing = \"0\">\n";
+                echo "<table cellpadding = '0' cellspacing = '0'>\n";
                 while ($child = tng_fetch_assoc($children)) {
                     $ifkids = $child['haskids'] ? "+" : "&nbsp;";
                     $crights = determineLivingPrivateRights($child);
@@ -704,7 +704,7 @@ include_once "eventlib_js.php";
                             echo "<input type='radio' name=\"newfamily\" id=\"radio$self\" value=\"$self\">{$admtext['gotonewfamily']} ($personID) $selfdisplay<br>\n";
                         }
                     }
-                    echo "<input type='radio' name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newfamily\" value='return'> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
                         echo "<input type='radio' name=\"newfamily\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
@@ -718,7 +718,7 @@ include_once "eventlib_js.php";
                 <input type="hidden" name="personID" value="<?php echo "$personID"; ?>">
                 <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
                 <?php if (!$lnprefixes) {
-                    echo "<input type='hidden' name=\"lnprefix\" value=\"{$row['lnprefix']}\">";
+                    echo "<input type='hidden' name='lnprefix' value=\"{$row['lnprefix']}\">";
                 } ?>
                 <?php defineLdsHiddenFields($rights['lds'], $row); ?>
                 <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
@@ -728,7 +728,4 @@ include_once "eventlib_js.php";
         </table>
     </form>
 
-    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-    </body>
-
-<?php echo "</html>"; ?>
+<?php echo tng_adminfooter(); ?>

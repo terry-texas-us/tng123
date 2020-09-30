@@ -41,7 +41,7 @@ if (trim($eventplace)) {
     $template = "sss";
     $placetree = $tngconfig['places1tree'] ? "" : $tree;
     $temple = strlen($eventplace) == 5 && $eventplace == strtoupper($eventplace) ? 1 : 0;
-    $query = "INSERT IGNORE INTO $places_table (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?, ?, \"0\", \"0\", \"0\", ?)";
+    $query = "INSERT IGNORE INTO $places_table (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?, ?, '0', '0', '0', ?)";
     $params = [&$template, &$placetree, &$eventplace, &$temple];
     tng_execute($query, $params);
     if ($tngconfig['autogeo'] && tng_affected_rows()) {

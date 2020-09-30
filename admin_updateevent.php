@@ -129,7 +129,7 @@ if ($dupIDs) {
 
 if (trim($eventplace)) {
     $placetree = $tngconfig['places1tree'] ? "" : $tree;
-    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom) VALUES (\"$placetree\",\"$eventplace\",\"0\",\"0\")";
+    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom) VALUES (\"$placetree\",\"$eventplace\",'0','0')";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     if ($tngconfig['autogeo'] && tng_affected_rows()) {
         $ID = tng_insert_id();

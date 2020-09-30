@@ -99,7 +99,7 @@ while ($i < $numrows) {
                         if ($cemetery['city'] || !$tngconfig['cemblanks']) {
                             $txt = $cemetery['city'] ? @htmlspecialchars($cemetery['city'], ENT_QUOTES, $session_charset) : $text['nocity'];
                             echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;city=" . urlencode($cemetery['city']) . "&amp;tree=$tree\">$txt</a></div>\n";
-                            echo "<div id=\"$divname\" class=\"cemblock\" style=\"display:none;\">\n";
+                            echo "<div id=\"$divname\" class=\"cemblock\" style='display: none;'>\n";
                         } else {
                             echo "<div id=\"$divname\">\n";
                         }
@@ -123,7 +123,7 @@ while ($i < $numrows) {
                     $linectr++;
                     $txt = $cemetery['county'] ? @htmlspecialchars($cemetery['county'], ENT_QUOTES, $session_charset) : $text['nocounty'];
                     echo "<div class=\"pad3\"><img src=\"" . "img/tng_expand.gif\" class=\"expandicon\" title='{$text['expand']}' id='plusminus$divname' onclick=\"return toggleSection('$divname');\" alt=\"\">\n<a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;county=" . urlencode($cemetery['county']) . "&amp;tree=$tree\">$txt</a></div>\n";
-                    echo "<div id=\"$divname\" class=\"cemblock\" style=\"display:none;\">\n";
+                    echo "<div id=\"$divname\" class=\"cemblock\" style='display: none;'>\n";
                     $hiding = true;
                 } else {
                     echo "<div id=\"$divname\">\n";

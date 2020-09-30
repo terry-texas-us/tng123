@@ -103,7 +103,7 @@ if ($xphaction == $admtext['convto']) {
         }
     }
     if ($count) {
-        $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$newmediatypeID\"";
+        $query = "UPDATE $mediatypes_table SET disabled='0' where mediatypeID=\"$newmediatypeID\"";
         $result = @tng_query($query);
     }
 } elseif ($xphaction == $admtext['addtoalbum']) {
@@ -127,7 +127,7 @@ if ($xphaction == $admtext['convto']) {
 
                 $neworder = $row['acount'] ? $row['acount'] + 1 : 1;
 
-                $query = "INSERT INTO $albumlinks_table (albumID, mediaID, ordernum, defphoto) VALUES (\"$albumID\", \"$mediaID\", \"$neworder\", \"0\")";
+                $query = "INSERT INTO $albumlinks_table (albumID, mediaID, ordernum, defphoto) VALUES (\"$albumID\", \"$mediaID\", \"$neworder\", '0')";
                 $result = tng_query($query);
             }
         }

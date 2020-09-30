@@ -187,7 +187,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                     }
                                     $ret .= "</select>\n";
                                     tng_free_result($treeresult);
-                                    $ret .= "&nbsp; <img src=\"img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
+                                    $ret .= "&nbsp; <img src=\"img/spinner.gif\" style='display: none;' id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
                                     echo $ret;
                                 }
                                 echo $admtext['test_type'] . ": ";

@@ -135,7 +135,7 @@ $mainstyle = "background-color:$bgmain; color:$txtmain;";
 $modestyle = "background-color:$bgmode; color:$txtmode;";
 ?>
 <div class="overflowauto">
-    <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
+    <table class="whiteback normal w-100" cellpadding="0" cellspacing="1">
         <thead>
         <tr>
             <?php if ($allow_edit || $showtestnumbers) { ?>
@@ -152,8 +152,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             foreach (array_keys($_POST) as $key) {
                 if (substr($key, 0, 3) == "dna") {
                     $testID = substr($key, 3);
-                    $rquery = "SELECT testID, markers, y_results 
-	FROM $dna_tests_table WHERE testID=$testID";
+                    $rquery = "SELECT testID, markers, y_results FROM $dna_tests_table WHERE testID=$testID";
                     $rresult = tng_query($rquery);
                     $rrow = tng_fetch_assoc($rresult);
                     $resultscsv = str_replace('-', ',', $rrow['y_results']);
@@ -241,8 +240,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 <th colspan=<?php echo $col_span; ?> align="left" valign="top" class="<?php echo $class; ?>" style="<?php echo $style; ?>" title= <?php echo $title; ?>>
                     <div class="dysval">&nbsp;&nbsp;<?php echo $dysv[$j]; ?></div>
                 </th>
-                <?php
-                $j++;
+                <?php $j++;
             } ?>
         </tr>
         </thead>

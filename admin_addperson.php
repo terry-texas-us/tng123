@@ -130,7 +130,7 @@ $placetree = $tngconfig['places1tree'] ? "" : $tree;
 $template = "ssd";
 foreach ($places as $place) {
     $temple = strlen($place) == 5 && $place == strtoupper($place) ? 1 : 0;
-    $query = "INSERT IGNORE INTO {$places_table} (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?,?,\"0\",\"0\",\"0\",?)";
+    $query = "INSERT IGNORE INTO {$places_table} (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?,?,'0','0','0',?)";
     $params = [&$template, &$placetree, &$place, &$temple];
     tng_execute($query, $params);
     if ($tngconfig['autogeo'] && tng_affected_rows()) {
@@ -162,7 +162,7 @@ if (!$burialtype) {
 }
 $meta = metaphone($lnprefix . $lastname);
 $query = "INSERT INTO $people_table (personID, firstname, lnprefix, lastname, nickname, prefix, suffix, title, nameorder, living, private, birthdate, birthdatetr, birthplace, sex, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, baptdate, baptdatetr, baptplace, confdate, confdatetr, confplace, initdate, initdatetr, initplace, endldate, endldatetr, endlplace, changedate, gedcom, branch, changedby, famc, metaphone, edituser, edittime) ";
-$query .= "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",?,\"\",\"0\")";
+$query .= "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",?,\"\",'0')";
 $template = "ssssssssssssssssssssssssssssssssssssssssss";
 $params = [&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickname, &$prefix, &$suffix, &$title, &$pnameorder, &$living, &$private, &$birthdate, &$birthdatetr,
     &$birthplace, &$sex, &$altbirthdate, &$altbirthdatetr, &$altbirthplace, &$deathdate, &$deathdatetr, &$deathplace, &$burialdate, &$burialdatetr, &$burialplace,

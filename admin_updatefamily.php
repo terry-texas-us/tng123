@@ -107,7 +107,7 @@ if (!$editconflict) {
     }
     $placetree = $tngconfig['places1tree'] ? "" : $tree;
     foreach ($places as $place) {
-        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore) VALUES (\"$placetree\",\"$place\",\"0\",\"0\",\"0\")";
+        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore) VALUES (\"$placetree\",\"$place\",'0','0','0')";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         if ($tngconfig['autogeo'] && tng_affected_rows()) {
             $ID = tng_insert_id();
@@ -115,7 +115,7 @@ if (!$editconflict) {
         }
     }
 
-    $query = "UPDATE $families_table SET husband=\"$husband\",wife=\"$wife\",living=\"$familyliving\",private=\"$private\",marrdate=\"$marrdate\",marrdatetr=\"$marrdatetr\",marrplace=\"$marrplace\",marrtype=\"$marrtype\",divdate=\"$divdate\",divdatetr=\"$divdatetr\",divplace=\"$divplace\",sealdate=\"$sealdate\",sealdatetr=\"$sealdatetr\",sealplace=\"$sealplace\",changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime=\"0\" WHERE familyID='$familyID' AND gedcom = '$tree'";
+    $query = "UPDATE $families_table SET husband=\"$husband\",wife=\"$wife\",living=\"$familyliving\",private=\"$private\",marrdate=\"$marrdate\",marrdatetr=\"$marrdatetr\",marrplace=\"$marrplace\",marrtype=\"$marrtype\",divdate=\"$divdate\",divdatetr=\"$divdatetr\",divplace=\"$divplace\",sealdate=\"$sealdate\",sealdatetr=\"$sealdatetr\",sealplace=\"$sealplace\",changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime='0' WHERE familyID='$familyID' AND gedcom = '$tree'";
     $result = tng_query($query);
 
     adminwritelog("<a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree&cw=$cw\">{$admtext['modifyfamily']}: $tree/$familyID</a>");

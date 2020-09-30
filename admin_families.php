@@ -264,13 +264,13 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['husbid']; ?></span></th>
                             <?php
                             if ($spousename == "husband") {
-                                echo "<th class=\"fieldnameback\"><span class=\"fieldname\">{$admtext['husbname']}</span></th>\n";
+                                echo "<th class='fieldnameback'><span class=\"fieldname\">{$admtext['husbname']}</span></th>\n";
                             }
                             ?>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['wifeid']; ?></span></th>
                             <?php
                             if ($spousename == "wife") {
-                                echo "<th class=\"fieldnameback\"><span class=\"fieldname\">{$admtext['wifename']}</span></th>\n";
+                                echo "<th class='fieldnameback'><span class=\"fieldname\">{$admtext['wifename']}</span></th>\n";
                             }
                             ?>
                             <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['marrdate']; ?></span></th>

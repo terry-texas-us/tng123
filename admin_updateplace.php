@@ -43,7 +43,7 @@ if (!$tngconfig['places1tree'] && $newtree) {
     $newtreestr = "";
 }
 
-$query = "UPDATE $places_table SET place=\"$place\",placelevel=\"$placelevel\",temple=\"$temple\",latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\",notes=\"$notes\",geoignore=\"0\"$newtreestr WHERE ID='$ID'";
+$query = "UPDATE $places_table SET place=\"$place\",placelevel=\"$placelevel\",temple=\"$temple\",latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\",notes=\"$notes\",geoignore='0'$newtreestr WHERE ID='$ID'";
 $result = @tng_query_noerror($query);
 if (!$result) {
     $message = $admtext['duplicate'];

@@ -12,9 +12,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack ajaxwindow" id="finddiv">
     <h3 class="subhead"><?php echo $admtext['addlinks']; ?></h3><br>
     <form name="find2" id="find2" style="margin-top:0;" onsubmit="return getPotentialLinks('<?php echo $linktype; ?>');">
-        <?php
-        if ($linktype == "I") {
-            ?>
+        <?php if ($linktype == "I") { ?>
             <table cellspacing="2" id="findformI">
                 <tr>
                     <td colspan="2" class="normal"><br><strong><?php echo $admtext['findpersonid']; ?></strong> <span class="smaller">(<?php echo $admtext['enterinamepart']; ?>)</span></td>
@@ -34,9 +32,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                 </tr>
             </table>
-            <?php
-        } elseif ($linktype == "F") {
-            ?>
+        <?php } elseif ($linktype == "F") { ?>
             <table cellspacing="2" id="findformF">
                 <tr>
                     <td colspan="2" class="normal"><br><strong><?php echo $admtext['findfamilyid']; ?></strong> <span class="smaller">(<?php echo $admtext['enterfnamepart']; ?>)</span></td>
@@ -56,9 +52,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                 </tr>
             </table>
-            <?php
-        } elseif ($linktype == "S") {
-            ?>
+        <?php } elseif ($linktype == "S") { ?>
             <table cellspacing="2" id="findformS">
                 <tr>
                     <td colspan="2" class="normal"><br><strong><?php echo $admtext['findsourceid']; ?></strong> <span class="smaller">(<?php echo $admtext['entersourcepart']; ?>)</span></td>
@@ -74,9 +68,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                 </tr>
             </table>
-            <?php
-        } elseif ($linktype == "R") {
-            ?>
+        <?php } elseif ($linktype == "R") { ?>
             <table cellspacing="2" id="findformR">
                 <tr>
                     <td colspan="2" class="normal"><br><strong><?php echo $admtext['findrepoid']; ?></strong> <span class="smaller">(<?php echo $admtext['enterrepopart']; ?>)</span></td>
@@ -92,9 +84,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                 </tr>
             </table>
-            <?php
-        } elseif ($linktype == "L") {
-            ?>
+        <?php } elseif ($linktype == "L") { ?>
             <table cellspacing="2" id="findformL">
                 <tr>
                     <td colspan="2" class="normal"><br><strong><?php echo $admtext['findplace']; ?></strong> <span class="smaller">(<?php echo $admtext['enterplacepart']; ?>)</span></td>

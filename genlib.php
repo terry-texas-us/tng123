@@ -893,7 +893,7 @@ function tng_icons($instance, $title = "") {
 
         $sharemenu = "";
         if (!empty($tngconfig['showshare']) && !isMobile()) {
-            $sharemenu .= "<div id=\"shareicons\" style=\"display:none;\">\n";
+            $sharemenu .= "<div id=\"shareicons\" style='display: none;'>\n";
             // todo shareicons? use of undefined span attribute displaytext
             $sharemenu .= "<span class='st_facebook_hcount' displayText='Facebook'></span>\n";
             $sharemenu .= "<span class='st_twitter_hcount' displayText='Tweet'></span>\n";
@@ -967,7 +967,7 @@ function treeDropdown($forminfo) {
             }
             $ret .= "<span class='normal'>{$text['tree']}: </span>";
             $ret .= treeSelect($treeresult, $forminfo['name']);
-            $ret .= "&nbsp; <img src=\"img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
+            $ret .= "&nbsp; <img src=\"img/spinner.gif\" style='display: none;' id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
             if (isset($forminfo['hidden']) && is_array($forminfo['hidden'])) {
                 foreach ($forminfo['hidden'] as $hidden)
                     $ret .= "<input type='hidden' name=\"" . $hidden['name'] . "\" value=\"" . $hidden['value'] . "\">\n";

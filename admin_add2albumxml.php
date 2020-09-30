@@ -146,7 +146,7 @@ echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             echo "<div id=\"add_{$row['mediaID']}\" class=\"normal\"";
             $gotit = in_array($row['mediaID'], $alreadygot);
             if ($gotit) {
-                echo " style=\"display:none;\"";
+                echo " style='display: none;'";
             }
             if ($albumID) {
                 echo "><a href='#' onclick=\"return addToAlbum('{$row['mediaID']}');\">" . $admtext['add'] . "</a></div>";
@@ -155,7 +155,7 @@ echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             }
             echo "<div id=\"added_{$row['mediaID']}\"";
             if (!$gotit) {
-                echo " style=\"display:none;\">";
+                echo " style='display: none;'>";
             } else {
                 echo "><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20' class=\"smallicon\">";
             }

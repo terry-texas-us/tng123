@@ -110,7 +110,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 <script src="js/mediautils.js"></script>
 <script>
     var tree = "<?php echo $tree; ?>";
@@ -126,5 +125,5 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
     var manage = 1;
     <?php echo $likearray; ?>
 </script>
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

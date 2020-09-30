@@ -51,10 +51,10 @@ if ($map['key'] && $isConnected) {
 
         function validateForm() {
             let rval = true;
-            if (document.form1.country.value.length == 0) {
+            if (document.form1.country.value.length === 0) {
                 alert("<?php echo $admtext['entercountry']; ?>");
                 rval = false;
-            } else if (document.form1.newfile.value.length > 0 && document.form1.maplink.value.length == 0) {
+            } else if (document.form1.newfile.value.length > 0 && document.form1.maplink.value.length === 0) {
                 alert("<?php echo $admtext['entermapfile']; ?>");
                 rval = false;
             } else
@@ -74,20 +74,14 @@ if ($map['key'] && $isConnected) {
                 dest.value = source.value.slice(lastslash);
         }
     </script>
-<?php
-if ($map['key']) {
-    include "googlemaplib2.php";
-}
-?>
-    </head>
-
-    <body class="admin-body"<?php if ($map['key']) {
-        if (!$map['startoff']) {
-            echo " onload=\"divbox('mapcontainer');\"";
-        }
-    } ?>>
-
     <?php
+    if ($map['key']) {
+        include "googlemaplib2.php";
+    }
+    echo "</head>\n";
+    $onload = $map['key'] && !$map['startoff'] ? " onload=\"divbox('mapcontainer');\"" : "";
+    echo tng_adminlayout($onload);
+
     $cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
     $cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
     $cemtabs[2] = [$allow_add, "#", $admtext['edit'], "edit"];
@@ -96,12 +90,11 @@ if ($map['key']) {
     $menu = doMenu($cemtabs, "edit", $innermenu);
     echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['modifycemetery'], "img/cemeteries_icon.gif", $menu, $message);
     ?>
-
     <form action="admin_updatecemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onSubmit="return validateForm();">
         <table class="lightback">
             <tr class="databack">
                 <td class="tngshadow">
-                    <table class="normal" width="100%">
+                    <table class="normal w-100">
                         <tr>
                             <td><?php echo $admtext['cemeteryname']; ?>:</td>
                             <td width="80%">
@@ -237,11 +230,11 @@ if ($map['key']) {
 		                        <span class="normal">
                                     <?php
                                     echo $admtext['onsave'] . ":<br>";
-                                    echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                                    echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
                                     if ($cw) {
-                                        echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                                        echo "<input type='radio' name='newscreen' value=\"close\" checked> {$text['closewindow']}\n";
                                     } else {
-                                        echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                                        echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
                                     }
                                     ?>
 		                        </span>
@@ -265,6 +258,4 @@ if ($map['key']) {
         </table>
     </form>
 
-    <?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-    </body>
-<?php echo "</html>\n";
+<?php echo tng_adminfooter(); ?>

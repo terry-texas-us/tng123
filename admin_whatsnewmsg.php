@@ -61,7 +61,7 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['whatsnew'], "im
         </td>
     </tr>
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
+
 <script src="js/nicedit.js"></script>
 <script>
     //<![CDATA[
@@ -70,5 +70,5 @@ echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['whatsnew'], "im
     });
     //]]>
 </script>
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

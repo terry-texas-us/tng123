@@ -168,7 +168,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
             <?php
             echo "<p class=\"smaller\" id=\"removedefault\"";
             if (!$photo) {
-                echo " style=\"display:none;\"";
+                echo " style='display: none;'";
             }
             echo "><a href='#' onclick=\"return removeDefault();\">{$admtext['removedef']}</a></p>\n";
             ?>

@@ -190,7 +190,7 @@ $mainstyle = "background-color:$bgmain; color:$txtmain;";
 $modestyle = "background-color:$bgmode; color:$txtmode;";
 ?>
 <div class="overflowauto">
-    <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
+    <table class="whiteback normal w-100" cellpadding="0" cellspacing="1">
         <thead>
         <tr>
             <?php
@@ -215,9 +215,8 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             <th class="center nw" colspan="10" style="<?php echo $style37 ?>"> {$text['37markers']} "</th>
             <?php if ($columnCount > '37') { ?>
                 <th class="center nw" colspan="28" style="<?php echo $style67 ?>"> {$text['67markers']} "</th>
-                <?php
-            }
-            if ($columnCount > '67') { ?>
+            <?php } ?>
+            <?php if ($columnCount > '67') { ?>
                 <th class="center nw" colspan="44" style="<?php echo $style111 ?>">{$text['111markers']} "</th>
             <?php } ?>
         </tr>
@@ -315,7 +314,8 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 </th>
                 <?php
                 $j++;
-            } ?>
+            }
+            ?>
         </tr>
         </thead>
         <?php

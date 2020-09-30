@@ -143,9 +143,9 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['modifytleve
 		<span class="normal">
 <?php
 echo $admtext['onsave'] . ":<br>";
-echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
 if ($tng_search_tlevents) {
-    echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+    echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
 }
 ?>
 		</span>

@@ -140,7 +140,7 @@ if ($choice == $admtext['savedel']) {
 
     if ($eventplace) {
         $placetree = $tngconfig['places1tree'] ? "" : $tree;
-        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom) VALUES (\"$placetree\",\"$eventplace\",\"0\",\"0\")";
+        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom) VALUES (\"$placetree\",\"$eventplace\",'0','0')";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     }
 

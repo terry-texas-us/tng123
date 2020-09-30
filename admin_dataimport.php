@@ -17,6 +17,16 @@ if (!$allow_add || !$allow_edit || $assignedbranch) {
     exit;
 }
 
+if ($assignedtree) {
+    $wherestr = "WHERE gedcom = '$assignedtree'";
+}
+else {
+    $wherestr = "";
+}
+$query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
+$result = tng_query($query);
+$numtrees = tng_num_rows($result);
+
 if (!isset($tngimpcfg['defimpopt'])) {
     $tngimpcfg['defimpopt'] = 0;
 }
@@ -24,7 +34,15 @@ if (!isset($debug)) {
     $debug = false;
 }
 
-[$numtrees, $treenum, $trees, $treenames] = getOrderedTreesList2($assignedtree, $trees_table);
+$treenum = 0;
+$trees = [];
+$treename = [];
+while ($treerow = tng_fetch_assoc($result)) {
+    $trees[$treenum] = $treerow['gedcom'];
+    $treename[$treenum] = $treerow['treename'];
+    $treenum++;
+}
+tng_free_result($result);
 
 $helplang = findhelp("data_help.php");
 
@@ -145,15 +163,15 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             <select name="tree1" id="tree1" onchange="getBranches(this,this.selectedIndex);">
                                 <?php
                                 if ($numtrees != 1) {
-                                    echo "	<option value=\"\"></option>\n";
+                                    echo "	<option value=''></option>\n";
                                 }
                                 $treectr = 0;
                                 for ($i = 0; $i < $treenum; $i++) {
-                                    echo "	<option value=\"{$trees[$treectr]}\"";
+                                    echo "<option value='{$trees[$treectr]}'";
                                     if (!empty($newtree) && $newtree == $trees[$treectr]) {
                                         echo " selected";
                                     }
-                                    echo ">{$treenames[$treectr]}</option>\n";
+                                    echo ">{$treename[$treectr]}</option>\n";
                                     $treectr++;
                                 }
                                 ?>
@@ -204,7 +222,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             <div>
                                 <input type="checkbox" name="ucaselast" value="1"> <?php echo $admtext['ucaselast']; ?></div>
                             <div id="norecalcdiv"<?php if ($tngimpcfg['defimpopt']) {
-                                echo " style=\"display:none;\"";
+                                echo " style='display: none;'";
                             } ?>>
                                 <input type="checkbox" name="norecalc" value="1"> <?php echo $admtext['norecalc']; ?><br>
                                 <input type="checkbox" name="neweronly" value="1"> <?php echo $admtext['neweronly']; ?><br>
@@ -217,7 +235,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                         <td class='align-top'>
                             <br>
                             <div id="appenddiv"<?php if ($tngimpcfg['defimpopt'] != 3) {
-                                echo " style=\"display:none;\"";
+                                echo " style='display: none;'";
                             } ?>>
                                 <input type="radio" name="offsetchoice" value="auto" checked> <?php echo $admtext['autooffset']; ?>&nbsp;<br>
                                 <input type="radio" name="offsetchoice" value="user"> <?php echo $admtext['useroffset']; ?>&nbsp;<input type="text" name="useroffset" size="10" maxlength="9">

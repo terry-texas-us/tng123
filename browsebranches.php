@@ -96,9 +96,9 @@ if (isMobile()) {
     if ($tabletype == "toggle") {
         $tabletype = "columntoggle";
     }
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
 }
 echo $header;
 ?>
@@ -106,9 +106,7 @@ echo $header;
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
         <th data-tablesaw-priority="1" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
-        <?php
-        if ($numtrees > 1) {
-            ?>
+        <?php if ($numtrees > 1) { ?>
             <th data-tablesaw-priority="2" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
         <?php } ?>
         <th data-tablesaw-priority="3" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['startingind']; ?>&nbsp;</th>

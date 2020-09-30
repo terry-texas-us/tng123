@@ -42,13 +42,13 @@ else {
     $rightarrow = @GetImageSize($arrdnpath);
     $pedigree['rightarroww'] = $rightarrow[0];
     $pedigree['rightarrowh'] = $rightarrow[1];
-    $pedigree['rightarrow'] = "<img src=\"" . $templatepath . "img/arrowright2.gif\" border=\"0\" width=\"{$pedigree['rightarroww']}\" height=\"{$pedigree['rightarrowh']}\" alt=\"\" />";
+    $pedigree['rightarrow'] = "<img src=\"" . $templatepath . "img/arrowright2.gif\" border='0' width=\"{$pedigree['rightarroww']}\" height=\"{$pedigree['rightarrowh']}\" alt=\"\" />";
 }
 
 $arrrtpath = $rootpath . $endrootpath . "img/ArrowDownYellow.gif";
 if (file_exists($arrrtpath)) {
     $offpageimg = @GetImageSize($arrrtpath);
-    $pedigree['offpagelink'] = "<img border=\"0\" src=\"" . "img/ArrowDownYellow.gif\" $offpageimg[3] alt=\"{$text['popupnote3']}\" />";
+    $pedigree['offpagelink'] = "<img border='0' src=\"" . "img/ArrowDownYellow.gif\" $offpageimg[3] alt=\"{$text['popupnote3']}\" />";
     $pedigree['offpageimgw'] = $offpageimg[0];
     $pedigree['offpageimgh'] = $offpageimg[1];
 } else
@@ -59,7 +59,7 @@ if (file_exists($arrltpath)) {
     $uparrowimg = @GetImageSize($arrltpath);
     $pedigree['uparrowimgw'] = $uparrowimg[0];
     $pedigree['uparrowimgh'] = $uparrowimg[1];
-    $pedigree['uparrowlink'] = "<img border=\"0\" src=\"" . "img/ArrowUpYellow.gif\" $uparrowimg[3] align=\"left\" title=\"{$text['popupnote3']}\" alt=\"{$text['popupnote3']}\" style=\"margin-right:5px\"/>";
+    $pedigree['uparrowlink'] = "<img border='0' src=\"" . "img/ArrowUpYellow.gif\" $uparrowimg[3] align=\"left\" title=\"{$text['popupnote3']}\" alt=\"{$text['popupnote3']}\" style=\"margin-right:5px\"/>";
     $pedigree['leftindent'] += $pedigree['uparrowimgw'] + $pedigree['shadowoffset'] + 6;
 } else {
     $pedigree['uparrowlink'] = "<b>&lt;</b>";
@@ -80,7 +80,7 @@ $clinkstyle = "";
 $slinkstyle = "3";
 if (file_exists("img/Chart.gif")) {
     $chartlinkimg = @GetImageSize("img/Chart.gif");
-    $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" border=\"0\" $chartlinkimg[3] title=\"{$text['popupnote2']}\" alt=\"\" />";
+    $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" border='0' $chartlinkimg[3] title=\"{$text['popupnote2']}\" alt=\"\" />";
 } else
     $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
 
@@ -155,7 +155,7 @@ function getParents($personID) {
 
 function getNewChart($personID) {
     global $tree, $generations, $cms, $text, $descendvert_url, $kidsflag;
-    return $kidsflag ? "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\" border=\"0\"/></a>" : "";
+    return $kidsflag ? "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\" border='0'/></a>" : "";
 }
 
 function doBox($level, $person, $spouseflag, $kidsflag) {
@@ -193,7 +193,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             //set top
             $boxstr .= "<div id=\"popuptop\" class=\"popup\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; left:" . ($left + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2)) . "px; top:$adjtop" . "px;z-index:10\" onmouseover=\"cancelTimer('top')\" onmouseout=\"setTimer('top')\">\n";
             $boxstr .= "<div>\n<div class=\"tngshadow popvdescinner\">\n<div class=\"pboxpopupdiv\">\n";
-            $boxstr .= "<table><tr><td><table border=\"0\" cellspacing=\"0\" cellpadding='1'>\n";
+            $boxstr .= "<table><tr><td><table border='0' cellspacing='0' cellpadding='1'>\n";
             $boxstr .= "<tr><td class=\"normal pboxpopup\"><b>{$text['parents']}</b></td></tr>\n$parentinfo\n</table></td></tr></table>\n</div>\n</div>\n</div>\n</div>\n";
         }
     }
@@ -216,7 +216,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             //$boxarrow = "<br/>{$pedigree['rightarrow']}";
 
             $hiddenbox = "<div class=\"popup\" id=\"popup$numboxes\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; top:" . ($top - $pedigree['borderwidth'] + round($pedigree['shadowoffset'] / 2)) . "px;z-index:8\" onmouseover=\"cancelTimer($numboxes)\" onmouseout=\"setTimer($numboxes)\">\n";
-            $hiddenbox .= "<div><div class=\"tngshadow popvdescinner\"><div class=\"pboxpopupdiv\">\n<table cellspacing=\"0\" cellpadding='1' border=\"0\" width=\"100%\">\n";
+            $hiddenbox .= "<div><div class=\"tngshadow popvdescinner\"><div class=\"pboxpopupdiv\">\n<table cellspacing='0' cellpadding='1' border='0' width=\"100%\">\n";
             $hiddenbox .= "$vitalinfo\n</table></div></div></div></div>\n";
         }
     }
@@ -235,7 +235,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         //$photoinfo = showSmallPhoto( $person['personID'], $person['name'], $person['allow_living'], $photohtouse );
         $photoInfo = getPhotoSrc($person['personID'], $person['allow_living'] && $person['allow_private'], $person['sex']);
         if ($photoInfo['ref']) {
-            $imagestr = "<img src=\"{$photoInfo['ref']}\" border=\"0\" style=\"max-width: 100%; max-height: 70px; margin-bottom: 10px;\" alt=\"\" class=\"thumb\" />";
+            $imagestr = "<img src=\"{$photoInfo['ref']}\" border='0' style=\"max-width: 100%; max-height: 70px; margin-bottom: 10px;\" alt=\"\" class=\"thumb\" />";
             if ($photoInfo['link'])
                 $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
             $boxstr .= "$imagestr<br/>";
@@ -698,9 +698,7 @@ $maxheight += $pedigree['borderwidth'] + (2 * $pedigree['offpageimgw']) + 6 + $p
 ?>
     <div align="left" id="outer" style="position:relative;padding-top:8px;">
         <div id="inner" style="position:relative;height:<?php echo $maxheight > 200 ? $maxheight : 200; ?>px;width:<?php echo $maxwidth > 200 ? $maxwidth : 200; ?>px;">
-            <?php
-            echo $chart;
-            ?>
+            <?php echo $chart; ?>
         </div>
     </div>
 
@@ -731,19 +729,18 @@ $maxheight += $pedigree['borderwidth'] + (2 * $pedigree['offpageimgw']) + 6 + $p
         }
 
         jQuery(document).ready(function () {
-            jQuery('#inner').draggable();
-            $("#inner").on("mousedown touchstart", function (e) {
+            $innerSelection = jQuery('#inner');
+            $innerSelection.draggable();
+            $innerSelection.on("mousedown touchstart", function (e) {
                 $(this).addClass('grabbing')
             })
 
-            $("#inner").on("mouseup touchend", function (e) {
+            $innerSelection.on("mouseup touchend", function (e) {
                 $(this).removeClass('grabbing')
             })
-            <?php
-            if(!$tngprint) {
-            ?>
-            jQuery('#outer').animate({scrollLeft: jQuery('#uparrow').offset().left - jQuery('body').width() / 2}, 'slow');
-        <?php } ?>
+            <?php if (!$tngprint) { ?>
+                jQuery('#outer').animate({scrollLeft: jQuery('#uparrow').offset().left - jQuery('body').width() / 2}, 'slow');
+            <?php } ?>
         });
         //]]>
     </script>

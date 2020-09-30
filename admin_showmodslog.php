@@ -126,7 +126,7 @@ if ($options['compress_log'] == YES) {
 	.collapse a { text-decoration: none;}
 	.moddetails {display:none;}
 </style>";
-    $hideDetails = "style=\"display:none;\"";
+    $hideDetails = "style='display: none;'";
 } else {
     $hideDetails = "";
 }
@@ -295,12 +295,7 @@ function set_innermenu_links($tng_version) {
     return $innermenu;
 }
 
-/*************************************************************************
- * JQUERY/JAVASCRIPT FUNCTIONS
- *************************************************************************/
-
-if (!isMobile() && $options['adjust_headers']) {
-    echo "
+if (!isMobile() && $options['adjust_headers']) { ?>
 <script>
    jQuery(document).ready(function() {
 	   // set position of table relative to inner menu
@@ -318,12 +313,8 @@ if (!isMobile() && $options['adjust_headers']) {
 	      collision: 'none'
 	   });
 	});
-</script>";
-}
-echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>";
-echo "</body>";
-echo "</html>";
-?>
+</script>
+<?php } ?>
 <script>
     //qQeury document ready handler and embedded event handlers added by RR
     jQuery(document).ready(function () {
@@ -358,3 +349,5 @@ echo "</html>";
         });
     });
 </script>
+
+<?php echo tng_adminfooter(); ?>

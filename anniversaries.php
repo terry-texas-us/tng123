@@ -91,14 +91,7 @@ echo getFORM("anniversaries2", "get", "form1", "form1$js");
 
 echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1']);
 ?>
-    <p class="normal">
-        <?php
-        echo $text['explain'];
-        ?>
-    </p>
-<?php
-?>
-
+    <p class="normal"><?php echo $text['explain']; ?></p>
     <div class="annfield normal">
         <label for="tngevent"><?php echo $text['event']; ?>:</label>
         <br>
@@ -489,9 +482,7 @@ if ($tngneedresults) {
                 <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['lastfirst']; ?>&nbsp;</th>
                 <th data-tablesaw-priority="2" class="fieldnameback fieldname" colspan="2">&nbsp;<?php echo $datetxt; ?>&nbsp;</th>
                 <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['personid']; ?>&nbsp;</th>
-                <?php
-                if ($numtrees > 1) {
-                    ?>
+                <?php if ($numtrees > 1) { ?>
                     <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
                 <?php } ?>
             </tr>

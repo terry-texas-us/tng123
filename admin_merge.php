@@ -639,7 +639,7 @@ if ($mergeaction == $admtext['merge']) {
 
     //update families: remove person2 as spouse from all families
     if ($p1self) {
-        $query = "UPDATE $families_table set $p1self = \"\", $p1spouseorder = \"0\" WHERE $p1self = \"$personID2\" AND gedcom = '$tree'";
+        $query = "UPDATE $families_table set $p1self = \"\", $p1spouseorder = '0' WHERE $p1self = \"$personID2\" AND gedcom = '$tree'";
         $chilresult = tng_query($query);
     }
 

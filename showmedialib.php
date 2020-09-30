@@ -531,15 +531,16 @@ function showMediaSource($imgrow, $ss = false) {
                 }
                 if ($ss) {  //slideshow
                     $img = "<img src=\"$mediasrc\" $mapstr alt=\"$description\">";
-                    echo "<div id=\"slidearea\"><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}$medialinkstr$albumlinkstr\" border=\"0\" title=\"{$text['moreinfo']}\">$img</a></div>\n";
+                    echo "<div id=\"slidearea\"><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}$medialinkstr$albumlinkstr\" border='0' title=\"{$text['moreinfo']}\">$img</a></div>\n";
                 } else {
                     $imgviewer = $tngconfig['imgviewer'];
                     if (!$imgviewer || in_array($imgrow['mediatypeID'], $mediatypes_like[$imgviewer])) {
                         $maxvh = $tngconfig['imgvheight'];
                         $calcHeight = $maxvh ? ($height > $maxvh ? $maxvh : $height) : 1;
-                        echo "<div id=\"loadingdiv2\" class=\"rounded10\" style=\"position:static;\">{$text['loading']}</div><iframe name=\"iframe1\" id=\"iframe1\" src=\"img_viewer.php?mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width=\"100%\" height='1' onload=\"calcHeight($calcHeight)\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\"></iframe>";
+                        echo "<div id='loadingdiv2' class='rounded10' style='position:static;'>{$text['loading']}</div>";
+                        echo "<iframe name='iframe1' id='iframe1' src=\"img_viewer.php?mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width='100%' height='1' onload=\"calcHeight($calcHeight)\" frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>";
                     } else {
-                        echo "<div class=\"titlebox mediaalign\" id=\"imgdiv\"><img src=\"$mediasrc\" id=\"theimage\" $mapstr alt=\"$description\"></div>\n";
+                        echo "<div class='titlebox mediaalign' id='imgdiv'><img src='$mediasrc' id='theimage' $mapstr alt='$description'></div>\n";
                     }
                 }
             } elseif (in_array($imgrow['form'], $videotypes) || in_array($imgrow['form'], $recordingtypes)) {
@@ -600,7 +601,7 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
 
     $tabletext = "";
     $filename = $imgrow['abspath'] ? $imgrow['path'] : basename($imgrow['path']);
-    $tabletext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" width=\"100%\" class=\"whiteback\">\n";
+    $tabletext .= "<table border='0' cellspacing='1' cellpadding=\"4\" width=\"100%\" class=\"whiteback\">\n";
 
     if ($imgrow['owner']) {
         $tabletext .= tableRow($text['photoowner'], $imgrow['owner']);
@@ -697,10 +698,10 @@ function doCemPlusMap($imgrow, $tree) {
         echo "<div class=\"titlebox\">\n";
         echo "<h3 class='subhead'>{$text['cemphotos']}</h3>";
 
-        echo "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\" width=\"100%\">\n";
-        echo "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
-        echo "<td class=\"fieldnameback\" width=\"$thumbmaxw\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
-        echo "<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td></tr>\n";
+        echo "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback\" width=\"100%\">\n";
+        echo "<tr><td class='fieldnameback' width=\"10\">&nbsp;</td>\n";
+        echo "<td class='fieldnameback' width=\"$thumbmaxw\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
+        echo "<td class='fieldnameback'><span class=\"fieldname\">&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td></tr>\n";
 
         while ($hs = tng_fetch_assoc($hsresult)) {
             $description = $hs['description'];

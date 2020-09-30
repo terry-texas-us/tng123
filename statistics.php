@@ -31,9 +31,9 @@ tng_header($text['databasestatistics'], $flags);
             if ($tabletype == "toggle") {
                 $tabletype = "columntoggle";
             }
-            $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" style=\"maxwidth: 350px; width:100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+            $header = "<table cellpadding=\"3\" cellspacing='1' border='0' style=\"maxwidth: 350px; width:100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
         } else {
-            $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"500\" class=\"whiteback normal\">";
+            $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"500\" class=\"whiteback normal\">";
         }
         echo $header;
         ?>
@@ -292,9 +292,7 @@ tng_header($text['databasestatistics'], $flags);
         ?>
         </table>
         <br>
-        <?php
-        echo $header;
-        ?>
+        <?php echo $header; ?>
         <thead>
         <tr>
             <th data-tablesaw-priority="persist" class="fieldnameback fieldname"><?php echo $text['longestlived']; ?><sup>1</sup></th>
@@ -348,7 +346,7 @@ tng_header($text['databasestatistics'], $flags);
 
         echo "<br><br>\n";
         $width = !isMobile() ? "500px" : "100%";
-        echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\">\n";
+        echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback\">\n";
         echo "<tr>";
         echo "<td class='fieldnameback fieldname align-top'><small>1</small></td>";
         echo "<td class='databack normal'>{$text['agedisclaimer']}</td>";

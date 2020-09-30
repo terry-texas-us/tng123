@@ -63,9 +63,7 @@ echo $formstr;
             <td class="fieldnameback" width="30%"><span class="fieldname"><?php echo $text['gedstartfrom']; ?>:&nbsp; </span></td>
             <td class="databack" width="70%"><span class="normal"><?php echo $name; ?></span></td>
         </tr>
-        <?php
-        if (!$currentuser) {
-            ?>
+        <?php if (!$currentuser) { ?>
             <tr>
                 <td class="fieldnameback"><span class="fieldname"><?php echo $text['email']; ?>:&nbsp; </span></td>
                 <td class="databack"><span class="normal"><input name="email" type="text" size="20"></span></td>

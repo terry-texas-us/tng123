@@ -125,7 +125,7 @@ if ($nocoords) {
     $allwhere .= " AND (latitude IS NULL OR latitude = \"\" OR longitude IS NULL OR longitude = \"\")";
 }
 if ($nolevel) {
-    $allwhere .= " AND (placelevel IS NULL OR placelevel = \"\" OR placelevel = \"0\")";
+    $allwhere .= " AND (placelevel IS NULL OR placelevel = \"\" OR placelevel = '0')";
 }
 
 if ($temples) {

@@ -1161,10 +1161,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <tr>
                             <td><?php echo $admtext['treerestrict']; ?>: &nbsp;&nbsp;</td>
                             <td><span id="trdisabled"<?php if ($requirelogin) {
-                                    echo " style=\"display:none;\"";
+                                    echo " style='display: none;'";
                                 } ?>><?php echo $admtext['reqloginset']; ?></span>
                                 <select name="treerestrict" id="treerestrict"<?php if (!$requirelogin) {
-                                    echo " style=\"display:none;\"";
+                                    echo " style='display: none;'";
                                 } ?>>
                                     <option value="0"<?php if (!$treerestrict) {
                                         echo " selected";
@@ -2215,6 +2215,5 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
 
     </table>
 </form>
-<?php echo "<div align=\"right\" class='normal'>$tng_title</div>"; ?>
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

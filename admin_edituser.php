@@ -104,7 +104,7 @@ $menu = doMenu($usertabs, "edit", $innermenu);
 echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], "img/users_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback normal" width="100%" cellpadding="10" cellspacing="2">
+<table class="lightback normal w-100" cellpadding="10" cellspacing="2">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_updateuser.php" method="post" name="form1" onSubmit="return validateForm();">
@@ -505,7 +505,7 @@ echo "</select>\n";
                     }
                     echo "\r\n$owner\r\n$tngdomain</textarea><br><br>\n";
                 } else {
-                    echo "<input type='hidden' name=\"notify\" value=\"0\">\n";
+                    echo "<input type='hidden' name=\"notify\" value='0'>\n";
                 }
                 if (!$numlangs) {
                     echo "<input type='hidden' name=\"preflang\" value=\"{$row['languageID']}\">\n";

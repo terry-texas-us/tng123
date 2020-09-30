@@ -154,14 +154,10 @@ echo $formstr;
 ?>
     <div class="searchformbox">
         <table cellspacing="1" cellpadding="4" class="normal">
-            <?php
-            if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) {
-                ?>
+            <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && $numtrees > 1) { ?>
                 <tr>
                     <td class="fieldnameback fieldname"><?php echo $text['tree']; ?>:</td>
-                    <td class="databack">
-                        <?php echo treeSelect($result); ?>
-                    </td>
+                    <td class="databack"><?php echo treeSelect($result); ?></td>
                 </tr>
             <?php } ?>
             <tr>

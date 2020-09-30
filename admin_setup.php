@@ -71,9 +71,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
 <table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <?php
-            if ($sub == "configuration") {
-                ?>
+            <?php if ($sub == "configuration") { ?>
                 <span class="normal"><em><?php echo $admtext['entersysvars']; ?></em></span><br><br>
 
                 <table>
@@ -96,9 +94,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
                 </table>
                 <br>
                 <p class="normal"><em><?php echo $admtext['custvars']; ?></em></p>
-                <?php
-            } elseif ($sub == "tablecreation") {
-                ?>
+            <?php } elseif ($sub == "tablecreation") { ?>
                 <span class="normal"><em><?php echo $admtext['createdbtables']; ?></em></span><br>
 
                 <p class="normal"><em><?php echo $admtext['tcwarning']; ?></em></p>

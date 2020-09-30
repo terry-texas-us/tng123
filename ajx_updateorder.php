@@ -360,7 +360,7 @@ switch ($action) {
         if ($count == 1) {
             $query = "INSERT INTO $albumlinks_table (albumID,mediaID,ordernum,defphoto) VALUES (\"$album\", \"$media\", \"$count\", '1')";
         } else {
-            $query = "INSERT INTO $albumlinks_table (albumID,mediaID,ordernum,defphoto) VALUES (\"$album\", \"$media\", \"$count\",\"0\")";
+            $query = "INSERT INTO $albumlinks_table (albumID,mediaID,ordernum,defphoto) VALUES (\"$album\", \"$media\", \"$count\",'0')";
         }
         $result = @tng_query($query);
         $albumlinkID = tng_insert_id();
@@ -548,7 +548,7 @@ switch ($action) {
                 $name = stripslashes($entityID);
 
                 if (!$numrows) {
-                    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,temple,latitude,longitude,zoom,notes,geoignore) VALUES ('$tree',\"$entityID\",\"0\",\"0\",\"\",\"\",\"13\",\"\",\"0\")";
+                    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,temple,latitude,longitude,zoom,notes,geoignore) VALUES ('$tree',\"$entityID\",'0','0',\"\",\"\",\"13\",\"\",'0')";
                     $result = tng_query($query);
                     $numrows = 1;
                 }

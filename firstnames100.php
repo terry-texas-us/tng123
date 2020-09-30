@@ -36,11 +36,7 @@ echo $formstr;
     <div class="titlebox">
         <h3 class="subhead"><?php echo "{$text['top30first']} ({$text['totalnames']}):"; ?></h3>
         <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"firstnames.php?tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"firstnames-all.php?tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
-        <?php
-        include "firstnamestable.php";
-        ?>
+        <?php include "firstnamestable.php"; ?>
     </div>
     <br>
-<?php
-tng_footer("");
-?>
+<?php tng_footer(""); ?>

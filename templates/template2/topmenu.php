@@ -1,22 +1,11 @@
 <?php global $text, $tmp; ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> bodytopmenu">
 
-<table cellspacing="0" class="page" width="100%">
+<table class="w-100" cellspacing="0" class="page">
     <tr>
         <td>&nbsp;</td>
         <td class='align-top'>
-
-            <?php
-            //begin HEADER IMAGE (default: small picture of the girl at the top left)
-            //Actual file name has been replaced with t2_headimg variable, configurable from Template Settings. Default name of actual image is "headerphoto.jpg"
-            //You can replace the t2_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-            ?>
-            <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_headimg']; ?>" alt="" class="headerimg" width="70"
-                 height="99">
-            <?php
-            //end HEADER IMAGE
-            ?>
-
+            <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_headimg']; ?>" alt="" class="headerimg" width="70" height="99">
         </td>
         <td class="align-top" align="center">
             <table cellspacing="0">
@@ -86,7 +75,7 @@
 
     <tr>
         <td colspan="4" class="tablebkground">
-            <table cellspacing="0" cellpadding="10" width="100%">
+            <table class="w-100" cellspacing="0" cellpadding="10">
                 <tr>
                     <td>
                         <div class="normal">

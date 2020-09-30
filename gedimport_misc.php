@@ -502,7 +502,7 @@ function getPlaceRecord($place, $prevlevel) {
         }
         $query = "INSERT IGNORE ";
         $query .= "INTO $places_table (place, gedcom, longitude, latitude, zoom, placelevel, temple, notes, geoignore) ";
-        $query .= "VALUES(\"$place\", \"$treeval\", \"{$map['long']}\", \"{$map['lati']}\", \"{$map['zoom']}\", \"{$map['placelevel']}\", \"$temple\", \"$note\", \"0\" )";
+        $query .= "VALUES(\"$place\", \"$treeval\", \"{$map['long']}\", \"{$map['lati']}\", \"{$map['zoom']}\", \"{$map['placelevel']}\", \"$temple\", \"$note\", '0' )";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
         $success = tng_affected_rows();
@@ -984,7 +984,7 @@ function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
         tng_free_result($result);
 
         //insert ignore or update medialink
-        $query = "INSERT IGNORE INTO $medialinks_table (personID, mediaID, linktype, altdescription, altnotes, ordernum, dontshow, gedcom, eventID, defphoto)  VALUES('$persfamID', \"$mediaID\", \"{$mm['linktype']}\", \"{$mm['TITL']}\", \"{$mm['NOTE']}\", \"$orderctr\", \"0\", '$tree', \"$eventID\", \"{$mm['defphoto']}\")";
+        $query = "INSERT IGNORE INTO $medialinks_table (personID, mediaID, linktype, altdescription, altnotes, ordernum, dontshow, gedcom, eventID, defphoto)  VALUES('$persfamID', \"$mediaID\", \"{$mm['linktype']}\", \"{$mm['TITL']}\", \"{$mm['NOTE']}\", \"$orderctr\", '0', '$tree', \"$eventID\", \"{$mm['defphoto']}\")";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $psuccess = tng_affected_rows();
         if (!$psuccess && $savestate['del'] != "no") {
@@ -1218,7 +1218,8 @@ function processCitations($persfamID, $eventID, $citearray) {
 function saveCitation($persfamID, $eventID, $cite) {
     global $citations_table, $admtext, $tree;
 
-    $query = "INSERT INTO $citations_table (persfamID, gedcom, eventID, sourceID, description, citedate, citedatetr, citetext, page, quay, note, ordernum ) VALUES('$persfamID', '$tree', \"$eventID\", \"{$cite['sourceID']}\", \"{$cite['desc']}\", \"{$cite['DATE']}\", \"{$cite['DATETR']}\", \"{$cite['TEXT']}\", \"{$cite['PAGE']}\", \"{$cite['QUAY']}\", \"{$cite['NOTE']}\", \"0\" )";
+    $query = "INSERT INTO $citations_table (persfamID, gedcom, eventID, sourceID, description, citedate, citedatetr, citetext, page, quay, note, ordernum ) ";
+    $query .= "VALUES('$persfamID', '$tree', '$eventID', '{$cite['sourceID']}', '{$cite['desc']}', '{$cite['DATE']}', '{$cite['DATETR']}', '{$cite['TEXT']}', '{$cite['PAGE']}', '{$cite['QUAY']}', '{$cite['NOTE']}', '0' )";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     $citationID = tng_insert_id();
 
@@ -1262,7 +1263,7 @@ function saveNote($persfamID, $eventID, $note) {
 
     $privlen = isset($tngimpcfg['privnote']) ? strlen($tngimpcfg['privnote']) : 0;
     $secret = ($privlen && substr($note['NOTE'], 0, $privlen) == $tngimpcfg['privnote']) ? 1 : 0;
-    $query = "INSERT IGNORE INTO $notelinks_table (persfamID, gedcom, eventID, xnoteID, secret, ordernum) VALUES('$persfamID', '$tree', \"$eventID\", \"$xnoteID\", \"$secret\", \"0\" )";
+    $query = "INSERT IGNORE INTO $notelinks_table (persfamID, gedcom, eventID, xnoteID, secret, ordernum) VALUES('$persfamID', '$tree', '$eventID', '$xnoteID', '$secret', '0' )";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     $ID = tng_insert_id();
 
@@ -1300,7 +1301,7 @@ function getNoteRecord($noteID, $prevlevel) {
         $notesource[$notectr] = handleSource($noteID, $lineinfo['level']);
     }
 
-    $query = "SELECT ID FROM $xnotes_table WHERE noteID = \"{$noteID}\" AND gedcom = '$tree'";
+    $query = "SELECT ID FROM $xnotes_table WHERE noteID = '{$noteID}' AND gedcom = '$tree'";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     $row = tng_fetch_assoc($result);
     if (function_exists('mb_strimwidth')) {
@@ -1308,10 +1309,10 @@ function getNoteRecord($noteID, $prevlevel) {
     }
     if (tng_num_rows($result) && $savestate['del'] != "no") {
         $ID = $row['ID'];
-        $query = "UPDATE $xnotes_table SET note=\"{$note}\" WHERE noteID=\"{$noteID}\" AND gedcom = '$tree'";
+        $query = "UPDATE $xnotes_table SET note='{$note}' WHERE noteID='{$noteID}' AND gedcom = '$tree'";
         $xresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     } else {
-        $query = "INSERT INTO $xnotes_table (noteID, gedcom, note)  VALUES(\"$noteID\", '$tree', \"$note\")";
+        $query = "INSERT INTO $xnotes_table (noteID, gedcom, note)  VALUES('$noteID', '$tree', '$note')";
         $xresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
         $ID = tng_insert_id();
         incrCounter($prefix);
@@ -1326,7 +1327,7 @@ function getNoteRecord($noteID, $prevlevel) {
 
     if ($notectr) {
         if ($savestate['del'] == "match") {
-            $query = "DELETE FROM $citations_table WHERE persfamID = \"$noteID\" and gedcom = '$tree'";
+            $query = "DELETE FROM $citations_table WHERE persfamID = '$noteID' and gedcom = '$tree'";
             $result2 = @tng_query($query);
         }
         processCitations($noteID, "", $notesource);
@@ -1352,7 +1353,7 @@ function saveCustEvents($prefix, $persfamID, $events, $totevents) {
         $eventptr = $events[$eventnum]['INFO'];
         $description = $events[$eventnum]['TYPE'];
         if ($event == "EVEN") {
-            $wherestr = "AND description = \"$description\"";
+            $wherestr = "AND description = '$description'";
         } else {
             $wherestr = "";
         }
@@ -1370,7 +1371,7 @@ function saveCustEvents($prefix, $persfamID, $events, $totevents) {
         if (empty($custevents[$eventtype])) {
             //if not in	custevents array, add to eventtypes_table with keep=ignore
             $keep = $savestate['allevents'];
-            $query = "INSERT IGNORE INTO $eventtypes_table (tag, description, display, keep, type)  VALUES(\"$event\", \"$description\", \"$display\", \"$keep\", \"$prefix\")";
+            $query = "INSERT IGNORE INTO $eventtypes_table (tag, description, display, keep, type)  VALUES('$event', '$description', '$display', '$keep', '$prefix')";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             $custevents[$eventtype]['eventtypeID'] = tng_insert_id();
             $custevents[$eventtype]['keep'] = $keep;
@@ -1392,7 +1393,9 @@ function saveCustEvents($prefix, $persfamID, $events, $totevents) {
 
             foreach ($eventptr['SHARES'] as $share) {
                 $persfamID = $share->id;
-                $query = "INSERT INTO $events_table (eventtypeID, persfamID, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, parenttag, info, gedcom)  VALUES(\"$eventtypeID\", '$persfamID', \"" . $eventptr['DATE'] . "\", \"" . $eventptr['DATETR'] . "\", \"" . $eventptr['PLAC'] . "\", \"" . $eventptr['AGE'] . "\", \"" . $eventptr['AGNC'] . "\", \"" . $eventptr['CAUS'] . "\", \"" . $eventptr['ADDR'] . "\",  \"" . $eventptr['parent'] . "\", \"$eventinfo\", '$tree')";
+                $query = "INSERT INTO $events_table (eventtypeID, persfamID, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, parenttag, info, gedcom)  ";
+                $query .= "VALUES('$eventtypeID', '$persfamID', \"" . $eventptr['DATE'] . "\", \"" . $eventptr['DATETR'] . "\", \"" . $eventptr['PLAC'] . "\", \"" . $eventptr['AGE'] . "\", \"" . $eventptr['AGNC'] . "\",
+                 \"" . $eventptr['CAUS'] . "\", \"" . $eventptr['ADDR'] . "\",  \"" . $eventptr['parent'] . "\", \"$eventinfo\", '$tree')";
                 $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
                 $eventID = tng_insert_id();
 

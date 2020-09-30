@@ -199,9 +199,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 <table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
-            <?php
-            if ($sub == "tables") {
-                ?>
+            <?php if ($sub == "tables") { ?>
                 <p class="normal"><em><?php echo $admtext['brinstructions']; ?></em></p>
 
                 <h3 class="subhead"><?php echo $admtext['backuprestoretables']; ?></h3>
@@ -273,10 +271,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                     </form>
 
                 </div>
-
-                <?php
-            } elseif ($sub == "structure") {
-                ?>
+            <?php } elseif ($sub == "structure") { ?>
                 <p class="normal"><em><?php echo $admtext['brinstructions2']; ?></em></p>
 
                 <h3 class="subhead"><?php echo $admtext['backupstruct']; ?></h3>

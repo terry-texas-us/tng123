@@ -50,9 +50,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['review'], "img
         <td class="tngshadow">
             <div class="normal">
                 <em><?php echo $admtext['editnewusers']; ?></em><br><br>
-                <?php
-                echo "<p>{$admtext['matches']}: <span class=\"restotal\">$numrows</span></p>";
-                ?>
+                <?php echo "<p>{$admtext['matches']}: <span class='restotal'>$numrows</span></p>"; ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
                         <p>

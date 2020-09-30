@@ -177,7 +177,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
         <td class="tngshadow">
             <form action="admin_updateplace.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
                 <p class="plainheader"><?php echo $row['place']; ?></p>
-                <table class="normal" width="100%">
+                <table class="normal w-100">
                     <tr>
                         <td><?php echo $admtext['tree']; ?>:</td>
                         <td>
@@ -335,11 +335,11 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                         <td colspan="2">
                             <?php
                             echo $admtext['onsave'] . ":<br>";
-                            echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                            echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
                             if ($cw) {
-                                echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                                echo "<input type='radio' name='newscreen' value=\"close\" checked> {$text['closewindow']}\n";
                             } else {
-                                echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                                echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
                             }
                             ?>
                         </td>

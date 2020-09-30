@@ -540,7 +540,7 @@ function getIndividualRecord($personID, $prevlevel) {
 		\"" . $info['DEAT']['DATE'] . "\", \"" . $info['DEAT']['DATETR'] . "\", \"" . $info['DEAT']['PLAC'] . "\", \"" . $info['BURI']['DATE'] . "\", \"" . $info['BURI']['DATETR'] . "\", \"" . $info['BURI']['PLAC'] . "\", $burialtype,
 		\"{$info['NICK']}\", \"{$info['TITL']}\", \"{$info['NPFX']}\", \"{$info['NSFX']}\", \"" . $info['BAPL']['DATE'] . "\", \"" . $info['BAPL']['DATETR'] . "\", \"$baplplace\",
 		\"" . $info['CONL']['DATE'] . "\", \"" . $info['CONL']['DATETR'] . "\", \"$confplace\",\"" . $info['INIT']['DATE'] . "\", \"" . $info['INIT']['DATETR'] . "\", \"$initplace\",
-		\"" . $info['ENDL']['DATE'] . "\", \"" . $info['ENDL']['DATETR'] . "\", \"$endlplace\", \"$inschangedt\", \"$prifamily\", \"$meta\", '$tree', \"{$savestate['branch']}\", \"$currentuser\", \"\", \"0\" )";
+		\"" . $info['ENDL']['DATE'] . "\", \"" . $info['ENDL']['DATETR'] . "\", \"$endlplace\", \"$inschangedt\", \"$prifamily\", \"$meta\", '$tree', \"{$savestate['branch']}\", \"$currentuser\", \"\", '0' )";
     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
     $success = tng_affected_rows();
     if (!$success && $savestate['del'] != "no") {

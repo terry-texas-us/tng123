@@ -83,20 +83,20 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
     }
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
 }
 echo $header;
 ?>
 
 <div class="overflowauto">
-    <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
+    <table class="whiteback normal w-100" cellpadding="0" cellspacing="1">
         <thead>
         <tr>
             <?php

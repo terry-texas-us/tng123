@@ -223,7 +223,7 @@ function getEvents($person) {
     ksort($events);
     foreach ($events as $event) {
         $eventstr .= "<div class=\"tlevent\" style=\"margin-left:{$event['left']}px;\">\n";
-        $eventstr .= "<table border=\"0\" cellspacing=\"0\" cellpadding='1'><tr><td class=\"pboxpopup nw\"><span class='normal'>&gt; ";
+        $eventstr .= "<table border='0' cellspacing='0' cellpadding='1'><tr><td class=\"pboxpopup nw\"><span class='normal'>&gt; ";
         $eventstr .= "{$event['year']} - {$event['text']} {$event['date']} &nbsp;</span></td></tr></table></div>\n";
     }
 
@@ -493,14 +493,14 @@ foreach ($keeparray as $timeentry) {
     echo "</div>\n";
 
     echo "<div id=\"bar$numlines\"  class=\"tlbar\" style=\"top:$top" . "px;left:$spanleft" . "px;width:$spanwidth" . "px;\" onmouse{$pedigree['event']}=\"setTimerShow($numlines,'{$pedigree['event']}');\" onmouseout=\"setTimerHide($numlines)\">\n";
-    echo "<table cellspacing=\"0\" cellpadding=\"0\">";
+    echo "<table cellspacing='0' cellpadding='0'>";
     echo "<tr><td class=\"nw\"><span class='normal'>{$timeentry['name']}</span></td></tr>";
-    echo "<tr><td><div class=\"fieldnameback\" style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3;\"></div></td></tr>";
+    echo "<tr><td><div class='fieldnameback' style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3;\"></div></td></tr>";
     echo "</table>\n";
     echo "</div>\n";
 
     echo "<div id=\"popup$numlines\" class=\"popup\" style=\"background-color:{$pedigree['popupcolor']}; top:" . ($top + 25) . "px; left:" . ($spanleft - 5) . "px;\" onmouseover=\"cancelTimer($numlines)\" onmouseout=\"setTimer($numlines)\">\n";
-    echo "<table class=\"popuptable\" style=\"border-color: {$pedigree['bordercolor']};\" cellpadding='1' cellspacing=\"0\"><tr><td>\n";
+    echo "<table class=\"popuptable\" style=\"border-color: {$pedigree['bordercolor']};\" cellpadding='1' cellspacing='0'><tr><td>\n";
 
     $eventinfo = getEvents($timeentry);
     echo "$eventinfo</td></tr></table></div>\n";
@@ -558,7 +558,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
 
 <?php if ($counter) { ?>
     <a name="events" id="events"></a>
-    <table cellpadding="3" cellspacing="1" width="100%" class="whiteback">
+    <table class="whiteback w-100" cellpadding="3" cellspacing="1">
         <tr>
             <td class="fieldnameback" width="20">&nbsp;</td>
             <td class="fieldnameback" width="50"><span class="fieldname"><strong>&nbsp;<?php echo $text['date']; ?></strong></span></td>

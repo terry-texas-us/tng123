@@ -371,7 +371,7 @@ if (!isset($pedigree['vfontsize'])) {
                         </tr>
                     </table>
                     <table<?php if (!$pedigree['simile']) {
-                        echo " style=\"display:none;\"";
+                        echo " style='display: none;'";
                     } ?> id="simileTable">
                         <tr>
                             <td><span class="normal"><?php echo $admtext['tcheight']; ?>:</span></td>

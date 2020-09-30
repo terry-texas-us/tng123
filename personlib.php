@@ -610,7 +610,7 @@ function showEvent($data) {
     }
     $dateplace = !empty($data['date']) || !empty($data['place']) ? 1 : 0;
     $eventcounter += 1;
-    $toggle = !empty($data['collapse']) ? " style=\"display:none;\"" : "";
+    $toggle = !empty($data['collapse']) ? " style='display: none;'" : "";
     if (!isset($notearray)) {
         $notearray = [];
     }
@@ -1111,7 +1111,7 @@ function getMedia($entity, $linktype, $all = false) {
                     if ($linktype != "C") {
                         $thismedia['imgsrc'] .= "_$medialinkID";
                     }
-                    $thismedia['imgsrc'] .= "\" style=\"display:none;\"></div>";
+                    $thismedia['imgsrc'] .= "\" style='display: none;'></div>";
                     $thismedia['imgsrc'] .= "</div>\n";
                     $thismedia['imgsrc'] .= "<a href=\"{$thismedia['href']}\"";
                     if ($gotImageJpeg && isPhoto($medialink) && checkMediaFileSize("$rootpath$usefolder/" . $medialink['path'])) {
@@ -1223,7 +1223,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                         //only do this next line for mediarows
                         $mediarows .= "<tr class=\"m{$prefix}{$mediatypeID}\"";
                         if ($hidemedia) {
-                            $mediarows .= " style=\"display:none;\"";
+                            $mediarows .= " style='display: none;'";
                         }
                         $mediarows .= ">";
                     }
@@ -1242,7 +1242,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             if (empty($tngconfig['ssdisabled']) && $mediacount >= 3 && $slidelink && !isMobile()) {
                 $titlemsg .= "<div id=\"ssm{$prefix}{$mediatypeID}\"";
                 if ($hidemedia) {
-                    $titlemsg .= " style=\"display:none;\"";
+                    $titlemsg .= " style='display: none;'";
                 }
                 $titlemsg .= "><br><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; {$text['slidestart']}</a></div>\n";
             }
@@ -1267,7 +1267,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             //throw in the $thumbdivs
             if ($thumbdivs) {
                 if ($hidemedia) {
-                    $mediatext .= "</tr><tr class=\"m{$prefix}{$mediatypeID}\" style=\"display:none;\">";
+                    $mediatext .= "</tr><tr class=\"m{$prefix}{$mediatypeID}\" style='display: none;'>";
                 }
                 $mediatext .= "<td class='databack' colspan=\"2\">$thumbdivs</td></tr>\n";
             }
@@ -1356,7 +1356,7 @@ function getAlbumPhoto($albumID, $albumname) {
         if (!$foundliving && !$foundprivate) {
             $size = @GetImageSize("$rootpath$tusefolder/{$trow['thumbpath']}");
             $imgsrc = "<div class=\"media-img\">";
-            $imgsrc .= "<div class=\"media-prev\" id=\"prev{$trow['mediaID']}\" style=\"display:none;\"></div>";
+            $imgsrc .= "<div class=\"media-prev\" id=\"prev{$trow['mediaID']}\" style='display: none;'></div>";
             $imgsrc .= "</div>\n";
             $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"{$text['albclicksee']}\"";
             if (function_exists('imageJpeg')) {

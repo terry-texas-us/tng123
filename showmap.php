@@ -153,8 +153,8 @@ if (tng_num_rows($hsresult)) {
     $body .= "<div class=\"titlebox\">\n";
     $body .= "<h3 class='subhead'>{$text['cemphotos']}</h3>\n";
 
-    $body .= "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback\" width=\"100%\">\n";
-    $body .= "<tr><td class=\"fieldnameback\" width=\"10\">&nbsp;</td>\n";
+    $body .= "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback w-100\">\n";
+    $body .= "<tr><td class='fieldnameback' width=\"10\">&nbsp;</td>\n";
     $body .= "<td class=\"fieldnameback fieldname\" width=\"$thumbmaxw\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>\n";
     $body .= "<td class=\"fieldnameback fieldname\">&nbsp;<strong>{$text['description']}</strong>&nbsp;</td>\n";
 
@@ -173,7 +173,7 @@ if (tng_num_rows($hsresult)) {
         $body .= "<td class='databack'><span class='normal'>$i</span></td>";
         $body .= "<td class='databack' width=\"$thumbmaxw\">";
         if ($imgsrc) {
-            $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
+            $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style='display: none;'></div></div>\n";
             $body .= "<a href=\"$href\"";
             if ($gotImageJpeg && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
                 $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
@@ -230,7 +230,7 @@ if ($numrows) {
     $header = $headerr = "";
     $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
     $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-    $tabledef = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback\" ";
+    $tabledef = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"tablesaw whiteback w-100\" ";
 
     if ($tabletype == "toggle") {
         $header = $tabledef . "data-tablesaw-mode=\"columntoggle\"" . $headerr;
@@ -239,16 +239,16 @@ if ($numrows) {
     } elseif ($tabletype == "swipe") {
         $header = $tabledef . "data-tablesaw-mode=\"swipe\"" . $headerr;
     } else {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"whiteback\">\n" . $header;
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback w-100\">\n" . $header;
     }
 
     $body .= $header;
     $body .= "<thead><tr>\n";
-    $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['thumb']}</span></th>";
-    $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['description']}</span></th>";
-    $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['status']}</span></th>";
-    $body .= "<th data-tablesaw-priority=\"4\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['location']}</span></th>";
-    $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</span></th>";
+    $body .= "<th data-tablesaw-priority=\"persist\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['thumb']}</span></th>";
+    $body .= "<th data-tablesaw-priority='1' class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['description']}</span></th>";
+    $body .= "<th data-tablesaw-priority=\"6\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['status']}</span></th>";
+    $body .= "<th data-tablesaw-priority=\"4\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['location']}</span></th>";
+    $body .= "<th data-tablesaw-priority=\"3\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</span></th>";
     $body .= "</tr></thead>\n";
 
     while ($hs = tng_fetch_assoc($hsresult)) {
@@ -335,7 +335,7 @@ if ($numrows) {
         $href = getMediaHREF($hs, 3);
 
         if ($imgsrc) {
-            $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
+            $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style='display: none;'></div></div>\n";
             $body .= "<a href=\"$href\"";
             if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
                 $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
@@ -379,7 +379,7 @@ if ($cemetery['place']) {
         $header = $headerr = "";
         $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
         $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-        $tabledef = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" ";
+        $tabledef = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"tablesaw whiteback normal w-100\" ";
 
         if ($tabletype == "toggle") {
             $header = $tabledef . "data-tablesaw-mode=\"columntoggle\"" . $headerr;
@@ -388,17 +388,17 @@ if ($cemetery['place']) {
         } elseif ($tabletype == "swipe") {
             $header = $tabledef . "data-tablesaw-mode=\"swipe\"" . $headerr;
         } else {
-            $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"whiteback normal\">\n" . $header;
+            $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal w-100\">\n" . $header;
         }
 
         $body .= $header;
         $body .= "<thead><tr>\n";
         $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback nbrcol\"><span class=\"fieldname\">&nbsp;#&nbsp;</span></th>\n";
-        $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback\"><span class=\"fieldname nw\">&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
-        $body .= "<th data-tablesaw-priority=\"2\" colspan=\"2\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
-        $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback\"><span class=\"fieldname nw\">&nbsp;{$text['personid']}&nbsp;</span></th>\n";
+        $body .= "<th data-tablesaw-priority='1' class='fieldnameback'><span class=\"fieldname nw\">&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
+        $body .= "<th data-tablesaw-priority=\"2\" colspan=\"2\" class='fieldnameback'><span class=\"fieldname\">&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
+        $body .= "<th data-tablesaw-priority=\"3\" class='fieldnameback'><span class=\"fieldname nw\">&nbsp;{$text['personid']}&nbsp;</span></th>\n";
         if ($numtrees > 1) {
-            $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;{$text['tree']}&nbsp;</span></th>\n";
+            $body .= "<th data-tablesaw-priority=\"3\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['tree']}&nbsp;</span></th>\n";
         }
         $body .= "</tr></thead>\n";
 

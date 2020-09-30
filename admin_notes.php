@@ -37,7 +37,7 @@ $notecount = tng_num_rows($notelinks);
 ?>
 
 <div class="databack ajaxwindow" id="notelist"<?php if (!$notecount) {
-    echo " style=\"display:none;\"";
+    echo " style='display: none;'";
 } ?>>
     <form name="form1">
         <h3 class="subhead"><?php echo "{$admtext['notes']}: $eventtypedesc"; ?> |
@@ -49,7 +49,7 @@ $notecount = tng_num_rows($notelinks);
             <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();">
         </p>
         <table id="notestbl" class="fieldname normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$notecount) {
-            echo " style=\"display:none;\"";
+            echo " style='display: none;'";
         } ?>>
             <tbody id="notestblbody">
             <tr>
@@ -80,7 +80,7 @@ $notecount = tng_num_rows($notelinks);
                     $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteNote({$note['ID']},'$persfamID','$tree','$eventID');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "";
                     $actionstr .= "<a href='#' onclick=\"return showCitationsInside('N{$note['ID']}','{$note['noteID']}', '$persfamID');\" title=\"{$admtext['sources']}\" id=\"citesiconN{$note['ID']}\" class=\"smallicon $citesicon\"></a>";
                     echo "<div class=\"sortrow\" id=\"notes_{$note['ID']}\">";
-                    echo "<table class='normal' cellpadding=\"3\" cellspacing='1' border=\"0\">";
+                    echo "<table class='normal' cellpadding=\"3\" cellspacing='1' border='0'>";
                     echo "<tr id=\"row_{$note['ID']}\">";
                     echo "<td class=\"dragarea\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
                     echo "<td class='lightback' width=\"80\">$actionstr</td>";
@@ -95,7 +95,7 @@ $notecount = tng_num_rows($notelinks);
 </div>
 
 <div class="databack ajaxwindow"<?php if ($notecount) {
-    echo " style=\"display:none;\"";
+    echo " style='display: none;'";
 } ?> id="addnote">
     <form action="" name="form2" onSubmit="return addNote(this);">
         <div style="float:right;text-align:center;">

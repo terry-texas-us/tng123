@@ -37,7 +37,7 @@ function importFrom($tngpath, $orgpath, $needsubdirs) {
                     $form = strtoupper($fileparts["extension"]);
                     $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
                     $query = "INSERT IGNORE INTO $media_table (mediatypeID,mediakey,gedcom,path,thumbpath,description,notes,width,height,datetaken,placetaken,owner,changedate,form,alwayson,map,abspath,status,cemeteryID,showmap,linktocem,latitude,longitude,zoom,bodytext,usenl,newwindow,usecollfolder)
-						VALUES (\"$mediatypeID\",\"$path/$filename\",'$tree',\"$orgpath$filename\",\"\",\"$orgpath$filename\",\"\",\"\",\"\",\"\",\"\",\"\",\"$newdate\",\"$form\",\"0\",\"\",\"0\",\"\",\"\",\"0\",\"0\",\"\",\"\",\"0\",\"\",\"0\",\"0\",'1')";
+						VALUES (\"$mediatypeID\",\"$path/$filename\",'$tree',\"$orgpath$filename\",\"\",\"$orgpath$filename\",\"\",\"\",\"\",\"\",\"\",\"\",\"$newdate\",\"$form\",'0',\"\",'0',\"\",\"\",'0','0',\"\",\"\",'0',\"\",'0','0','1')";
                     $result = @tng_query($query);
                     $success = tng_affected_rows();
 
@@ -95,7 +95,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
                 importFrom($tngpath, $subdir, 0);
             }
             if ($totalImported) {
-                $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$mediatypeID\"";
+                $query = "UPDATE $mediatypes_table SET disabled='0' where mediatypeID=\"$mediatypeID\"";
                 $result = @tng_query($query);
             }
             ?>

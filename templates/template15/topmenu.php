@@ -14,9 +14,7 @@ $pagetitle = getTemplateMessage('t15_maintitle');
             <div class="responsive-menu-icon"></div>
             <ul class="menu nav-menu menu-primary responsive-menu">
                 <li class="first menu-item current-menu-item"><a href="<?php echo $homepage; ?>">Home</a></li>
-                <?php
-                if ($dadlabel) {
-                    ?>
+                <?php if ($dadlabel) { ?>
                     <li class="menu-item"><a
                             href="pedigree.php?personID=<?php echo $tmp['t15_dadperson']; ?>&amp;tree=<?php echo $tmp['t15_dadtree']; ?>"><?php echo $dadlabel; ?></a>
                     </li>

@@ -143,7 +143,8 @@ if (!$duplicate) {
 
 if ($newuser) {
     if ($tngconfig['autotree'] && !$tngconfig['autoapp']) {
-        $query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate) VALUES (\"$gedcom\",\"$realname\",\"\",\"$realname\",'$email',\"$address\",\"$city\",\"$state\",\"$country\",\"$zip\",\"$phone\",\"0\",\"0\")";
+        $query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate) ";
+        $query .= "VALUES (\"$gedcom\",\"$realname\",\"\",\"$realname\",'$email',\"$address\",\"$city\",\"$state\",\"$country\",\"$zip\",\"$phone\",'0','0')";
         $result = tng_query($query);
     }
     header("Location: admin_reviewusers.php?message=" . urlencode($message));

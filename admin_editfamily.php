@@ -289,9 +289,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                 </table>
             </td>
         </tr>
-        <?php
-        if (!$editconflict) {
-            ?>
+        <?php if (!$editconflict) { ?>
             <tr class="databack">
                 <td class="tngshadow">
                     <?php echo displayToggle("plus0", 1, "spouses", $admtext['spouses'], ""); ?>
@@ -474,9 +472,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
             </tr>
             <tr class="databack">
                 <td class="tngshadow">
-                    <?php
-                    echo displayToggle("plus2", 1, "children", $admtext['children'] . " (<span id=\"childcount\">$kidcount</span>)", "");
-                    ?>
+                    <?php echo displayToggle("plus2", 1, "children", $admtext['children'] . " (<span id=\"childcount\">$kidcount</span>)", ""); ?>
 
                     <div id="children" style="padding-top:10px;">
                         <table id="ordertbl" width="500px" cellpadding="3" cellspacing="1" class="normal">
@@ -541,7 +537,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                 <td class="tngshadow normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type='radio' name=\"newfamily\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newfamily\" value='return'> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
                         echo "<input type='radio' name=\"newfamily\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
@@ -559,9 +555,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                     </span>
                 </td>
             </tr>
-            <?php
-        } //end of the editconflict conditional
-        ?>
+        <?php } ?>
     </table>
 </form>
     </div>

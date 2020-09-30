@@ -70,7 +70,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_addplace.php" method="post" name="form1" onSubmit="return validateForm();">
-                <table class="normal" width="100%">
+                <table class="normal w-100">
                     <?php if (!$tngconfig['places1tree']) { ?>
                         <tr>
                             <td><?php echo $admtext['tree']; ?>:</td>

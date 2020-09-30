@@ -43,7 +43,7 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
 
         $select .= "$options</select>\n";
         $html .= " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">{$admtext['edit']}</a> )</span><br>";
-        $html .= "<div id=\"branchedit\" class=\"lightback pad5\" style=\"position:absolute;display:none;\" onmouseover=\"clearTimeout(branchtimer);\" onmouseout=\"closeBranchEdit('branch','branchedit','branchlist');\">";
+        $html .= "<div id=\"branchedit\" class=\"lightback pad5\" style=\"position:absolute; display: none;\" onmouseover=\"clearTimeout(branchtimer);\" onmouseout=\"closeBranchEdit('branch','branchedit','branchlist');\">";
         $html .= $select;
         $html .= "</div>\n";
     } else {

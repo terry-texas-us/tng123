@@ -76,7 +76,7 @@ include_once "eventlib.php";
                             </td>
                             <?php
                             if ($lnprefixes) {
-                                echo "<td><input type='text' name=\"lnprefix\" style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
+                                echo "<td><input type='text' name='lnprefix' style=\"width:80px;\" value=\"" . $row['lnprefix'] . "\"></td>\n";
                             }
                             ?>
                             <td>
@@ -217,7 +217,7 @@ include_once "eventlib.php";
     <input type="hidden" name="type" value="<?php echo $type; ?>">
     <?php
     if (!$lnprefixes) {
-        echo "<input type='hidden' name=\"lnprefix\" value=\"\">";
+        echo "<input type='hidden' name='lnprefix' value=\"\">";
     }
     ?>
 </form>

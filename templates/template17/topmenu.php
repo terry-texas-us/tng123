@@ -13,9 +13,7 @@ $momlabel = getTemplateMessage('t17_momside');
     </div>
     <div id="tmenu">
         <ul>
-            <?php
-            if ($dadlabel) {
-                ?>
+            <?php if ($dadlabel) { ?>
                 <li>
                     <a href="pedigree.php?personID=<?php echo $tmp['t17_dadperson']; ?>&amp;tree=<?php echo $tmp['t17_dadtree']; ?>"><?php echo $dadlabel; ?></a>
                 </li>

@@ -116,7 +116,7 @@ if ($rrow['sqlselect']) {
         if (!$displaymsg) {
             $displaymsg = $dfield;
         }
-        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class=\"fieldnameback\"><span class=\"fieldname\"><strong>$displaymsg</strong></span></td>\n";
+        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class=\"fieldname\"><strong>$displaymsg</strong></span></td>\n";
 
         $newds[$newdsctr] = $tempmsg;
         $newdsctr++;
@@ -226,7 +226,7 @@ if ($rrow['sqlselect']) {
         if (!$displaymsg) {
             $displaymsg = $text[strtolower($dfield)];
         }
-        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class=\"fieldnameback\"><span class=\"fieldname\"><strong>$displaymsg</strong></span></td>\n";
+        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class=\"fieldname\"><strong>$displaymsg</strong></span></td>\n";
     }
     if ($dtreestr) {
         if ($treestr) {

@@ -188,14 +188,14 @@ class modlister extends modparser
         $filesort = $namesort = '';
         if ($this->sortby == self::NAMECOL) {
             $filesort = "<a href=\"admin_modhandler.php?sort=" . self::FILECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" height=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
+            width=\"15\" height=\"8\" border='0' alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
             $namesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" height=\"8\" border=\"0\" alt=\"\">";
+            width=\"15\" height=\"8\" border='0' alt=\"\">";
         } else {
             $namesort = "<a href=\"admin_modhandler.php?sort=" . self::NAMECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" height=\"8\" border=\"0\" alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
+            width=\"15\" height=\"8\" border='0' alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
             $filesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" height=\"8\" border=\"0\" alt=\"\">";
+            width=\"15\" height=\"8\" border='0' alt=\"\">";
         }
 
         /*******************************************************************
@@ -1294,7 +1294,7 @@ class modlister extends modparser
                $status_header
             </span>
          </div>
-         <div class=\"moddiv $style\" id=\"link{$id}div\" style=\"display:none;padding:5px;\">
+         <div class=\"moddiv $style\" id=\"link{$id}div\" style=\"display: none; padding: 5px;\">
             $buttons
             <hr>
             $author_str

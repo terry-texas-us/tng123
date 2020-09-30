@@ -117,15 +117,7 @@ if ($result2) {
         <tr>
             <td>
                 <select name="tree1" id="microtree">
-                    <?php
-                    for ($j = 1; $j <= $treenum; $j++) {
-                        echo "	<option value=\"{$trees[$j]}\"";
-                        if ($trees[$j] == $usetree) {
-                            echo " selected";
-                        }
-                        echo ">$treename[$j]</option>\n";
-                    }
-                    ?>
+                    <?php echo $orderedTreesList->getSelectOptionsHtml($usetree); ?>
                 </select>
             </td>
             <td>
@@ -166,9 +158,7 @@ if ($result2) {
             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['defphoto']; ?></b>&nbsp;</td>
             <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['show']; ?></b>&nbsp;</td>
         </tr>
-        <?php
-        echo $linkrows;
-        ?>
+        <?php echo $linkrows; ?>
         </tbody>
     </table>
     <div id="nolinks" class="normal" style="margin-left:3px;">

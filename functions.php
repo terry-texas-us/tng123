@@ -233,7 +233,7 @@ function doMedia($mediatypeID) {
         if ($imgsrc) {
             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
             $mediatext .= "<td class='databack center' style=\"width:$thumbmaxw" . "px\">";
-            $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
+            $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
             if ($href && $row['allow_living']) {
                 $mediatext .= "<a href=\"$href\"";
                 if ($gotImageJpeg && isPhoto($row) && checkMediaFileSize("$rootpath$usefolder/$treestr" . $row['path'])) {
@@ -277,7 +277,7 @@ function doMedia($mediatypeID) {
         //ereg if no thumbs
     }
     if (!$thumbcount) {
-        $mediaheader = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
+        $mediaheader = str_replace("<td class='fieldnameback'><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
         $mediatext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
     tng_free_result($mediaresult);

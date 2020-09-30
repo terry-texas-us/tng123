@@ -46,14 +46,11 @@ header("Content-type:text/html; charset=" . $session_charset);
             <tr>
                 <td colspan="3">
                     <input type="radio" name="filter" value="s" onclick="<?php echo $applyfilter; ?>"> <?php echo $text['startswith']; ?> &nbsp;&nbsp;
-                    <input type="radio" name="filter" value="c"
-                           checked="checked"
+                    <input type="radio" name="filter" value="c" checked="checked"
                            onclick="<?php echo $applyfilter; ?>"> <?php echo $text['contains']; ?>
                 </td>
             </tr>
-            <?php
-            if ($temple) {
-                ?>
+            <?php if ($temple) { ?>
                 <tr>
                     <td>&nbsp;</td>
                     <td colspan="2">

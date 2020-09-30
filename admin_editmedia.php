@@ -19,7 +19,8 @@ if (!$allow_media_edit && (!$allow_media_add || !$added)) {
 }
 include "showmedialib.php";
 
-$query = "SELECT *, DATE_FORMAT(changedate,\"%d %b %Y %H:%i:%s\") AS changedate FROM $media_table WHERE mediaID = \"$mediaID\"";
+$query = "SELECT *, DATE_FORMAT(changedate, '%d %b %Y %H:%i:%s') AS changedate FROM $media_table ";
+$query .= "WHERE mediaID = '$mediaID'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 $row['description'] = preg_replace("/\"/", "&#34;", $row['description']);
@@ -49,9 +50,14 @@ if ($row['form']) {
     $form = strtoupper($matches[1]);
 }
 
-[$tree, $trees, $treename, $treequery] = getOrderedTreesList($assignedtree, $trees_table);
+$orderedTreesList = new OrderedTreesList($trees_table, $assignedtree);
 
-$query = "SELECT medialinks.medialinkID AS mlinkID, medialinks.personID AS personID, medialinks.eventID, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, people.nameorder AS nameorder, altdescription, altnotes, medialinks.gedcom AS gedcom, people.branch AS branch, treename, familyID, people.personID AS personID2, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, sources.sourceID, sources.title, citationID, repositories.repoID AS repoID, reponame, defphoto, linktype, dontshow, people.living, people.private, families.living AS fliving, families.private AS fprivate ";
+$query = "SELECT medialinks.medialinkID AS mlinkID, medialinks.personID AS personID, medialinks.eventID, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix,
+ people.suffix AS suffix, people.nameorder AS nameorder, altdescription, altnotes, medialinks.gedcom AS gedcom, people.branch AS branch, treename, familyID, people.personID AS personID2, wifepeople.personID AS wpersonID, 
+ wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, 
+ husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, 
+ husbpeople.nameorder AS hnameorder, sources.sourceID, sources.title, citationID, repositories.repoID AS repoID, reponame, defphoto, linktype, dontshow, people.living, people.private, families.living AS fliving, 
+ families.private AS fprivate ";
 $query .= "FROM $medialinks_table medialinks ";
 $query .= "LEFT JOIN $trees_table trees ON medialinks.gedcom = trees.gedcom ";
 $query .= "LEFT JOIN $people_table people ON medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom ";
@@ -61,7 +67,7 @@ $query .= "LEFT JOIN $citations_table citations ON medialinks.personID = citatio
 $query .= "LEFT JOIN $repositories_table repositories ON medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom ";
 $query .= "LEFT JOIN $people_table husbpeople ON families.husband = husbpeople.personID AND families.gedcom = husbpeople.gedcom ";
 $query .= "LEFT JOIN $people_table wifepeople ON families.wife = wifepeople.personID AND families.gedcom = wifepeople.gedcom ";
-$query .= "WHERE mediaID = \"$mediaID\" ";
+$query .= "WHERE mediaID = '$mediaID' ";
 $query .= "ORDER BY medialinks.medialinkID DESC";
 $result2 = tng_query($query);
 $numlinks = tng_num_rows($result2);
@@ -129,14 +135,12 @@ if ($map['key']) {
     }
 }
 if ($onload) {
-    $onload = "onload=\"$onload\"";
+    $onload = " onload='$onload'";
 }
-?>
-</head>
+echo "</head>\n";
 
-<body class="admin-body" <?php echo "$onload"; ?>>
+echo tng_adminlayout($onload);
 
-<?php
 $mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
 $mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
 $mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
@@ -158,8 +162,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
                         <td class='align-top'>
-                            <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
-                                echo "display:none";
+                            <div id="thumbholder" style="margin-right: 5px;<?php if (!$photo) {
+                                echo "display: none";
                             } ?>"><?php echo $photo; ?></div>
                         </td>
                         <td>
@@ -285,9 +289,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                     echo $row['thumbpath'];
                                 } ?>" id="thumbpath_org" name="thumbpath_org">
                                 <input type="hidden" id="thumbpath_last" name="thumbpath_last">
-                                <input type="button"
-                                       value="<?php echo "{$admtext['select']}..."; ?>"
-                                       name="thumbselect"
+                                <input type="button" value="<?php echo "{$admtext['select']}..."; ?>" name="thumbselect"
                                        OnClick="javascript:var folder = document.form1.usecollfolder[1].checked ? document.form1.mediatypeID.options[document.form1.mediatypeID.selectedIndex].value : 'media';FilePicker('thumbpath',folder);">
                             </td>
                         </tr>
@@ -358,30 +360,21 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                 <?php
                                 if ($assignedtree) {
                                     if ($row['gedcom']) {
-                                        $treeresult = tng_query($treequery);
+                                        $treeresult = tng_query($orderedTreesList->getQuery());
                                         $treerow = tng_fetch_assoc($treeresult);
                                         echo $treerow['treename'];
                                         tng_free_result($treeresult);
                                     } else {
                                         echo $admtext['alltrees'];
                                     }
-                                    echo "<input type='hidden' name=\"tree\" value=\"{$row['gedcom']}\">";
+                                    echo "<input type='hidden' name='tree' value='{$row['gedcom']}'>";
                                 } else {
-                                    echo "<select name=\"tree\" onchange=\"$('#microtree').val($(this).val());\">";
-                                    echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
+                                    echo "<select name='tree' onchange=\"$('#microtree').val($(this).val());\">";
+                                    echo "	<option value=''>{$admtext['alltrees']}</option>\n";
                                     if ($row['gedcom']) {
                                         $tree = $row['gedcom'];
                                     }
-
-                                    $treeresult = tng_query($treequery);
-                                    while ($treerow = tng_fetch_assoc($treeresult)) {
-                                        echo "	<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $row['gedcom']) {
-                                            echo " selected";
-                                        }
-                                        echo ">{$treerow['treename']}</option>\n";
-                                    }
-                                    tng_free_result($treeresult);
+                                    echo $orderedTreesList->getSelectOptionsHtml($row['gedcom']);
                                 }
                                 ?>
                                 </select>
@@ -393,19 +386,21 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                             <td><?php echo $admtext['cemetery']; ?>:</td>
                             <td>
                                 <div id="cemchoice"<?php if ($row['cemeteryID'] || $mediatypeID == "headstones") {
-                                    echo " style=\"display:none;\"";
+                                    echo " style='display: none;'";
                                 } ?>><a href="#" onclick="return toggleCemSelect();"><?php echo $admtext['select']; ?></a></div>
                                 <div id="cemselect"<?php if (!$row['cemeteryID'] && $mediatypeID != "headstones") {
-                                    echo " style=\"display:none;\"";
+                                    echo " style='display: none;'";
                                 } ?>>
                                     <select name="cemeteryID">
                                         <option selected></option>
                                         <?php
-                                        $query = "SELECT cemname, cemeteryID, city, county, state, country FROM $cemeteries_table ORDER BY country, state, county, city, cemname";
+                                        $query = "SELECT cemname, cemeteryID, city, county, state, country ";
+                                        $query .= "FROM $cemeteries_table ";
+                                        $query .= "ORDER BY country, state, county, city, cemname";
                                         $cemresult = tng_query($query);
                                         while ($cemrow = tng_fetch_assoc($cemresult)) {
                                             $cemetery = "{$cemrow['country']}, {$cemrow['state']}, {$cemrow['county']}, {$cemrow['city']}, {$cemrow['cemname']}";
-                                            echo "		<option value=\"{$cemrow['cemeteryID']}\"";
+                                            echo "<option value='{$cemrow['cemeteryID']}'";
                                             if ($row['cemeteryID'] == $cemrow['cemeteryID']) {
                                                 echo " selected";
                                             }
@@ -490,9 +485,9 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <?php echo displayToggle("plus3", $placeopen, "placeinfo", $admtext['placetaken'], ""); ?>
 
                 <div id="placeinfo"<?php if (!$placeopen) {
-                    echo " style=\"display:none;\"";
+                    echo " style='display: none;'";
                 } ?>>
-                    <table class="topbuffer normal" width="100%">
+                    <table class="topbuffer normal w-100">
                         <tr>
                             <td width="150"><?php echo $admtext['placetaken']; ?>:</td>
                             <td>
@@ -540,35 +535,22 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
             </td>
         </tr>
 
-        <?php
-        if ($isphoto && !$row['abspath']) {
-            ?>
+        <?php if ($isphoto && !$row['abspath']) { ?>
             <tr class="databack">
                 <td class="tngshadow">
                     <?php echo displayToggle("plus4", 0, "imagemapdiv", $admtext['imgmap'], $admtext['mapinstr2']); ?>
 
                     <div id="imagemapdiv" class="normal" style="display:none;">
-                        <br>
                         <p><?php echo $admtext['mapinstr3']; ?></p>
-
-                        <table cellspacing="0" cellpadding="2" class="normal">
-                            <tr>
-                                <td><?php echo $admtext['tree']; ?>:</td>
-                                <td>
-                                    <select name="maptree" id="maptree">
-                                        <?php
-                                        for ($j = 1; $j <= $treenum; $j++)
-                                            echo "	<option value=\"$trees[$j]\">$treename[$j]</option>\n";
-                                        ?>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <?php echo "<strong>{$admtext['forrects']}:</strong><br>{$admtext['rectinstr']}"; ?>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="normal">
+                            <label for="maptree"><?php echo $admtext['tree']; ?>: </label>
+                            <select name="maptree" id="maptree">
+                                <?php echo $orderedTreesList->getSelectOptionsHtml(); ?>
+                            </select>
+                            <br><br>
+                            <strong><?php echo $admtext['forrects']; ?>:</strong>
+                            <p><?php echo $admtext['rectinstr']; ?></p>
+                        </div>
                         <br>
                         <?php
                         $width = $size[0];
@@ -583,8 +565,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                 $width = intval($height * $size[0] / $size[1]);
                             }
                         }
-                        $widthstr = "width=\"$width\"";
-                        $heightstr = "height=\"$height\"";
+                        $widthstr = "width='$width'";
+                        $heightstr = "height='$height'";
                         echo "{$admtext['imgdim']}: $width {$admtext['pixw']} x $height {$admtext['pixh']}";
                         $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
                         ?>
@@ -600,16 +582,14 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                     </div>
                 </td>
             </tr>
-            <?php
-        } //end abspath condition
-        ?>
+        <?php } ?>
 
         <tr class="databack">
             <td class="tngshadow">
                 <p class="normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type='radio' name=\"newmedia\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name=\"newmedia\" value='return'> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
                         echo "<input type='radio' name=\"newmedia\" value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
@@ -629,7 +609,6 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     </table>
 </form>
 
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 <script>
     var tree = "";
     var type = "media";
@@ -800,5 +779,5 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     });
     //]]>
 </script>
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

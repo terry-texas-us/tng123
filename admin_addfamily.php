@@ -71,7 +71,7 @@ $placetree = $tngconfig['places1tree'] ? "" : $tree;
 $template = "sss";
 foreach ($places as $place) {
     $temple = strlen($place) == 5 && $place == strtoupper($place) ? 1 : 0;
-    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,\"0\",\"0\",\"0\",?)";
+    $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,'0','0','0',?)";
     $params = [&$template, &$placetree, &$place, &$temple];
     tng_execute($query, $params);
     if ($tngconfig['autogeo'] && tng_affected_rows()) {
@@ -134,7 +134,7 @@ if (!$allbranches) {
     $allbranches = "";
 }
 $query = "INSERT INTO $families_table (familyID,husband,husborder,wife,wifeorder,living,private,marrdate,marrdatetr,marrplace,marrtype,divdate,divdatetr,divplace,sealdate,sealdatetr,sealplace,changedate,gedcom,branch,changedby,status,edituser,edittime) 
-	VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",\"\",\"0\")";
+	VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",\"\",'0')";
 $template = "sssssssssssssssssssss";
 $params = [&$template, &$familyID, &$husband, &$husborder, &$wife, &$wifeorder, &$familyliving, &$private, &$marrdate, &$marrdatetr, &$marrplace, &$marrtype, &$divdate, &$divdatetr,
     &$divplace, &$sealdate, &$sealdatetr, &$sealplace, &$newdate, &$tree, &$allbranches, &$currentuser];

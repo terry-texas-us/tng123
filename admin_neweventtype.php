@@ -181,9 +181,8 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['add
     </tr>
 
 </table>
-</body>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 <script>
     populateTags("I", "");
 </script>
-</html>
+
+<?php echo tng_adminfooter(); ?>

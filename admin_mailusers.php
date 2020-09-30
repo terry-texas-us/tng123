@@ -64,27 +64,27 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['emailmessage']
                         <td class='align-top'>
                             <span class="normal"><?php echo $admtext['tree']; ?>*:</span></td>
                         <td><span class="normal">
-			<select name="gedcom" id="gedcom" onChange="var tree=getTree(this); if( !tree ) tree = 'none'; <?php echo $swapbranches; ?>">
-				<option value=""></option>
-<?php
-$query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
-$treeresult = tng_query($query);
+                            <select name="gedcom" id="gedcom" onChange="var tree=getTree(this); if( !tree ) tree = 'none'; <?php echo $swapbranches; ?>">
+                                <option value=""></option>
+                                    <?php
+                                    $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
+                                    $treeresult = tng_query($query);
 
-while ($treerow = tng_fetch_assoc($treeresult)) {
-    echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
-}
-?>
-			</select> </span>
+                                    while ($treerow = tng_fetch_assoc($treeresult)) {
+                                        echo "	<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
+                                    }
+                                    ?>
+                            </select> </span>
                         </td>
                     </tr>
                     <tr>
                         <td class='align-top'><span class="normal"><?php echo $admtext['branch']; ?>**:</span></td>
                         <td><span class="normal">
-			<select name="branch" id="branch">
-				<option value=""></option>
-				<option value="" selected><?php echo $admtext['nobranch']; ?></option>
-			</select>
-		</span></td>
+                            <select name="branch" id="branch">
+                                <option value=""></option>
+                                <option value="" selected><?php echo $admtext['nobranch']; ?></option>
+                            </select>
+		                </span></td>
                     </tr>
                 </table>
                 <br>
@@ -102,7 +102,4 @@ while ($treerow = tng_fetch_assoc($treeresult)) {
 
 </table>
 
-<?php
-echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

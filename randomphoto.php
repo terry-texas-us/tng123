@@ -11,7 +11,7 @@ if (!isset($rp_maxheight)) {
 if (!isset($rp_mediatypeID) || !$rp_mediatypeID) {
     $rp_mediatypeID = "photos";
 }
-$query = "SELECT DISTINCT $media_table.mediaID, $media_table.description, path, alwayson, usecollfolder, mediatypeID, gedcom FROM $media_table WHERE mediatypeID = \"$rp_mediatypeID\" AND (abspath is NULL OR abspath = \"0\") ORDER BY RAND()";
+$query = "SELECT DISTINCT $media_table.mediaID, $media_table.description, path, alwayson, usecollfolder, mediatypeID, gedcom FROM $media_table WHERE mediatypeID = \"$rp_mediatypeID\" AND (abspath is NULL OR abspath = '0') ORDER BY RAND()";
 $result = tng_query($query);
 while ($imgrow = tng_fetch_assoc($result)) {
 

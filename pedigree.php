@@ -575,9 +575,7 @@ if (!$tngprint) {
          style="position:relative;margin-top:8px;margin-bottom:16px;height:<?php echo(20 + $pedigree['borderwidth'] + ($pedigree['maxheight'] - $pedigree['boxVsep']) + $pedigree['shadowoffset']); ?>px;"
          id="outer">
         <div id="loading"><img src="img/spinner.gif" alt=""> <?php echo $text['loading']; ?></div>
-        <?php
-        echo $boxes;
-        ?>
+        <?php echo $boxes; ?>
     </div>
     <script src="js/rpt_utils.js"></script>
     <script>

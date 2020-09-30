@@ -167,7 +167,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                             if (!$display) {
                                 $display = isset($admtext[$tag]) ? $admtext[$tag] : $tag;
                             }
-                            $query = "INSERT IGNORE INTO $eventtypes_table (tag, description, display, keep, type)  VALUES(\"$tag\", \"$type\", \"$display\", \"0\", \"$prefix\")";
+                            $query = "INSERT IGNORE INTO $eventtypes_table (tag, description, display, keep, type)  VALUES(\"$tag\", \"$type\", \"$display\", '0', \"$prefix\")";
                             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
                             $eventctr++;
@@ -215,11 +215,6 @@ echo $admtext['finishedimporting'] . "<br>$eventctr " . $admtext['eventtypes'];
 ?>
 <br>
 </span>
+        <?php echo "<p><a href=\"admin_dataimport.php\">{$admtext['backtodataimport']}</a></p>"; ?>
 
-        <?php
-        echo "<p><a href=\"admin_dataimport.php\">{$admtext['backtodataimport']}</a></p>";
-
-        echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>";
-        ?>
-</body>
-</html>
+        <?php echo tng_adminfooter(); ?>

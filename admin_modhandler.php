@@ -446,14 +446,12 @@ echo "
          jQuery.post('classes/ajax_filter.php', {filter:\"$oModlist->filter\"});
          }
       else {
-         jQuery.post('classes/ajax_filter.php', {filter:\"0\"});
+         jQuery.post('classes/ajax_filter.php', {filter:'0'});
       }
    });
 });
 
 </script>";
+?>
 
-echo "<div class='text-center'><span class='normal'>$tng_title</span></div>";
-echo "</body>";
-echo "</html>";
-
+<?php echo tng_adminfooter(); ?>

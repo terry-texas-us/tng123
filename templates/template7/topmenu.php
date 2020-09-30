@@ -44,7 +44,7 @@ global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
         </tr>
     </table>
 
-    <table cellspacing="0" class="page" width="100%">
+    <table class="w-100" cellspacing="0" class="page">
         <tr>
             <td class="section">
 
@@ -100,8 +100,7 @@ global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
                 </table>
             </td>
             <td class='align-top'>
-                <table cellspacing="0" width="100%">
+                <table class="w-100" cellspacing="0">
                     <tr>
                         <td colspan="2">
                             <div class="normal"><br>
-                                <!-- end of topmenu.php for template 7 -->

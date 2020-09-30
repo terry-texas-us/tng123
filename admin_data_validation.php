@@ -11,7 +11,7 @@ include "checklogin.php";
 include "version.php";
 $helplang = findhelp("misc_help.php");
 
-list($tree, $trees, $treename, $treequery) = getOrderedTreesList($assignedtree, $trees_table);
+$orderedTreesList = new OrderedTreesList($trees_table, $assignedtree);
 
 $flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
@@ -20,11 +20,9 @@ tng_adminheader(_todo_('Validation'), $flags);
 <script>
     jQuery(document).ready(function () {
         jQuery('.valreport').bind('click', function (e) {
-            var linkval = $(this).attr('href');
-            var treeid = $('#treequeryselect').val();
+            let linkval = $(this).attr('href');
+            let treeid = $('#treequeryselect').val();
             $(this).attr('href', linkval + treeid);
-            //window.location.href = linkval + treeid;
-            //return false;
         });
     });
 </script>
@@ -57,19 +55,12 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
                             <td><span class="normal"><?php echo $admtext['tree']; ?>: </span></td>
                             <td>
                                 <?php
-                                echo "<select name=\"tree\" id=\"treequeryselect\">";
+                                echo "<select id='treequeryselect' name='tree'>";
                                 if (!$assignedtree) {
-                                    echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
+                                    echo "<option value=''>{$admtext['alltrees']}</option>\n";
                                 }
-                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                                while ($treerow = tng_fetch_assoc($treeresult)) {
-                                    echo "	<option value=\"{$treerow['gedcom']}\"";
-                                    if ($treerow['gedcom'] == $tree) {
-                                        echo " selected";
-                                    }
-                                    echo ">{$treerow['treename']}</option>\n";
-                                }
-                                tng_free_result($treeresult);
+                                // todo assigned tree is test and is empty here so likely do not need to pass
+                                echo $orderedTreesList->getSelectOptionsHtml($assignedtree);
                                 ?>
                             </td>
                         </tr>
@@ -92,10 +83,6 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
                     </tr>
                 <?php } ?>
             </table>
-
-            <?php
-
-            ?>
         </td>
     </tr>
 

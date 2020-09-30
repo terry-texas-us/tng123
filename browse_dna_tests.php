@@ -190,7 +190,7 @@ tng_header($admtext['dna_tests'], $flags);
                         }
                         $ret .= "</select>\n";
                         tng_free_result($treeresult);
-                        $ret .= "&nbsp; <img src=\"img/spinner.gif\" style=\"display:none;\" id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
+                        $ret .= "&nbsp; <img src=\"img/spinner.gif\" style='display: none;' id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
                         echo $ret;
                     }
                 }
@@ -217,9 +217,7 @@ tng_header($admtext['dna_tests'], $flags);
             <td>
                 <?php echo $text['testgroup']; ?>:
                 <select name="test_group" id="test_group" onchange="jQuery('#treespinner3').show();document.form1.submit();">
-                    <?php
-                    echo get_test_groups($test_type, $test_group);
-                    ?>
+                    <?php echo get_test_groups($test_type, $test_group); ?>
                 </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner3" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
                 <input type="submit" name="reset" value="<?php echo $text['tng_reset']; ?>" onclick="document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
                 <br>
@@ -249,14 +247,14 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
     }
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
 }
 echo $header;
 ?>
@@ -426,7 +424,7 @@ if ($test_type == "mtDNA") {
 
             if ($dnalinktext) {
                 $more = "<a href='#' onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"img/ArrowDown.gif\" alt=\"{$text['more']}\"></a> ";
-                $morediv = "<div style=\"display:none;\" id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>{$text['indlinked']}:</strong><br>$dnalinktext</div>";
+                $morediv = "<div style='display: none;' id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>{$text['indlinked']}:</strong><br>$dnalinktext</div>";
             } else {
                 $more = $morediv = "";
             }

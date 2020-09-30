@@ -5,34 +5,14 @@ global $text, $tmp;
 <table class="tableborder rounded10 t3shadow w-100" cellspacing="0" cellpadding="5">
     <tr>
         <td class="t3hdr rounded10">
-            <?php
-            //begin HEADER IMAGE (default: small picture of Main Street, Mt. Pleasant, Utah, ca. 1910)
-            //Actual file name has been replaced with t3_headimg variable, configurable from Template Settings. Default name of actual image is "headerphoto.jpg"
-            //You can replace the t3_headimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-            ?>
-            <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headimg']; ?>" alt="" class="headerphoto" width="186"
-                height="110">
-            <?php
-            //end HEADER IMAGE
-            ?>
+            <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headimg']; ?>" alt="" class="headerphoto" width="186" height="110">
         </td>
         <td class="topmenu rounded10">
-            <?php
-            //begin HEADER TITLE IMAGE (default: "Our Family Genealogy Pages")
-            //Actual file name has been replaced with t3_headtitleimg variable, configurable from Template Settings. Default name of actual image is "headertitle.gif"
-            //You can replace the t3_headtitleimg PHP block in the line below with the desired image name if you prefer that to using the Template Settings.
-
-            if ($tmp['t3_titlechoice'] == "text") {
-                ?>
+            <?php if ($tmp['t3_titlechoice'] == "text") { ?>
                 <em class="toptitle"><?php echo getTemplateMessage('t3_maintitle'); ?></em><br>
-                <?php
-            } else {
-                ?>
+            <?php } else { ?>
                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headtitleimg']; ?>" alt="" class="menutitle">
-                <?php
-            }
-            //end HEADER TITLE IMAGE
-            ?>
+            <?php } ?>
             <br>
             <a href="index.php" class="topmenu"><?php echo $text['homepage']; ?></a> |
             <a href="whatsnew.php" class="topmenu"><?php echo $text['mnuwhatsnew']; ?></a> |
@@ -48,4 +28,3 @@ global $text, $tmp;
         </td>
     </tr>
 </table>
-<!-- end of topmenu for template 3 -->

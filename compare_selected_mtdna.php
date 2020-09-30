@@ -82,20 +82,20 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
     }
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
 }
 echo $header;
 ?>
 
 <div class="overflowauto">
-    <table cellpadding="0" cellspacing="1" width="100%" class="whiteback normal">
+    <table class="whiteback normal w-100" cellpadding="0" cellspacing="1">
         <thead>
         <tr>
             <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
@@ -123,8 +123,9 @@ echo $header;
         foreach (array_keys($_POST) as $key) {
             if (substr($key, 0, 3) == "dna") {
                 $testID = substr($key, 3);
-                $query = "SELECT *
-		FROM $dna_tests_table WHERE testID=$testID";
+                $query = "SELECT * ";
+                $query .= "FROM $dna_tests_table ";
+                $query .= "WHERE testID=$testID";
                 $result = tng_query($query);
                 $row = tng_fetch_assoc($result);
 

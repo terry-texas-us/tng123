@@ -246,7 +246,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             //set top
             $boxstr .= "<div id=\"popupleft\" class=\"popup\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; top:" . ($top + $pedigree['borderwidth'] + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2) + 1) . "px; left:$adjleft" . "px;z-index:8\" onmouseover=\"cancelTimer('left')\" onmouseout=\"setTimer('left')\">\n";
             $boxstr .= "<div>\n<div class=\"tngshadow popinner\">\n<div class=\"pboxpopupdiv\">\n";
-            $boxstr .= "<table><tr><td><table border=\"0\" cellspacing=\"0\" cellpadding='1'>\n";
+            $boxstr .= "<table><tr><td><table border='0' cellspacing='0' cellpadding='1'>\n";
             $boxstr .= "<tr><td class=\"normal pboxpopup\"><b>{$text['parents']}</b></td></tr>\n$parentinfo\n</table></td></tr></table>\n</div>\n</div>\n</div>\n</div>\n";
         }
     }
@@ -262,7 +262,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
     }
     $shadow = $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowcolor'];
     $boxstr .= "<div class=\"pedbox $rounded\" id=\"box$numboxes\" style=\"background-color:$bgcolor; top:" . $top . "px; left:" . ($left - $pedigree['borderwidth']) . "px; height:" . $pedigree['boxheight'] . "px; width:{$pedigree['boxwidth']}" . "px; box-shadow:$shadow;border:{$pedigree['borderwidth']}px solid {$pedigree['bordercolor']};\"$iconactions>\n";
-    $boxstr .= "$iconlinks<table align=\"center\" border=\"0\" cellpadding=\"{$pedigree['cellpad']}\" cellspacing=\"0\" class=\"pedboxtable\"><tr>";
+    $boxstr .= "$iconlinks<table align=\"center\" border='0' cellpadding=\"{$pedigree['cellpad']}\" cellspacing='0' class=\"pedboxtable\"><tr>";
 
     // implant a picture (maybe)
     if ($pedigree['inclphotos'] && $pedigree['usepopups']) {
@@ -297,7 +297,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             $boxstr .= "<a href='#' onmouse{$pedigree['event']}=\"showPopup($numboxes,$top," . $pedigree['boxheight'] . ")\">" . $pedigree['downarrow'] . "</a></div>";
 
             $boxstr .= "<div class=\"popup\" id=\"popup$numboxes\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; left:" . ($left - $pedigree['borderwidth'] + round($pedigree['shadowoffset'] / 2)) . "px;z-index:8\" onmouseover=\"cancelTimer($numboxes)\" onmouseout=\"setTimer($numboxes)\">\n";
-            $boxstr .= "<div><div class=\"tngshadow popinner\"><div class=\"pboxpopupdiv\">\n<table cellspacing=\"0\" cellpadding='1' border=\"0\" width=\"100%\">\n";
+            $boxstr .= "<div><div class=\"tngshadow popinner\"><div class=\"pboxpopupdiv\">\n<table cellspacing='0' cellpadding='1' border='0' width=\"100%\">\n";
             $boxstr .= "$vitalinfo\n</table></div></div></div></div>\n";
         }
     }
@@ -741,9 +741,7 @@ $maxheight += $pedigree['boxheight'] + $pedigree['borderwidth'] + $pedigree['dow
 $maxwidth += $pedigree['boxwidth'] + $pedigree['borderwidth'] + (2 * $pedigee['offpageimgw']) + 6 + $pedigree['leftindent'];
 ?>
     <div align="left" id="outer" style="position:relative;padding-top:8px;width:100%;height:<?php echo $maxheight > 200 ? $maxheight : 200; ?>px;">
-        <?php
-        echo $chart;
-        ?>
+        <?php echo $chart; ?>
     </div>
 
     <script>

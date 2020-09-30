@@ -352,7 +352,7 @@ echo $formstr;
                 </td>
             </tr>
             <tr<?php if ($tngconfig['hidechr']) {
-                echo " style=\"display:none;\"";
+                echo " style='display: none;'";
             } ?>>
                 <td class="fieldnameback fieldname"><?php echo $text['altbirthplace']; ?>:</td>
                 <td class="databack">
@@ -371,7 +371,7 @@ echo $formstr;
                 </td>
             </tr>
             <tr<?php if ($tngconfig['hidechr']) {
-                echo " style=\"display:none;\"";
+                echo " style='display: none;'";
             } ?>>
                 <td class="fieldnameback fieldname"><?php echo $text['altbirthdatetr']; ?>:</td>
                 <td class="databack">

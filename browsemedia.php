@@ -167,9 +167,9 @@ if ($tabletype) {
     if ($tabletype == "toggle") {
         $tabletype = "columntoggle";
     }
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" $tablewidth class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n" . $header;
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' $tablewidth class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n" . $header;
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" $tablewidth class=\"whiteback normal\">\n" . $header;
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' $tablewidth class=\"whiteback normal\">\n" . $header;
 }
 
 $i = $offsetplus;
@@ -383,7 +383,7 @@ while ($row = tng_fetch_assoc($result)) {
         $mediatext .= "<td class='databack'>$i</td>";
         if ($imgsrc) {
             $mediatext .= "<td class='databack text-center'>";
-            $mediatext .= "<div class=\"media-img\" id=\"mi{$row['mediaID']}\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style=\"display:none;\"></div></div>\n";
+            $mediatext .= "<div class=\"media-img\" id=\"mi{$row['mediaID']}\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
             if ($href && $row['allow_living']) {
                 $mediatext .= "<a href=\"$href\"";
                 $treestr2 = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";

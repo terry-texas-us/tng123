@@ -1,73 +1,91 @@
 <?php
 
 /**
+ * Class OrderedTreesList
+ */
+class OrderedTreesList
+{
+    private string $assignedTree;
+    private string $query;
+    private array $rows;
+
+    /**
+     * @param string $treesTable
+     * @param string $assignedTree
+     */
+    public function __construct(string $treesTable, string $assignedTree) {
+        global $admtext;
+
+        $this->assignedTree = $assignedTree ?? "";
+
+        $this->query = "SELECT gedcom, treename FROM $treesTable ";
+        if ($assignedTree) {
+            $this->query .= "WHERE gedcom = '$assignedTree' ";
+        }
+        $this->query .= "ORDER BY treename";
+
+        $result = tng_query($this->query) or die ($admtext . ": $this->query");
+
+        $this->rows = tng_fetch_all($result);
+        tng_free_result($result);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAssignedTree() {
+        return $this->assignedTree;
+    }
+
+    /**
+     * @return string
+     */
+    public function getQuery() {
+        return $this->query;
+    }
+
+    /**
+     * @param string $gedcom initial option selected
+     * @return string
+     */
+    public function getSelectOptionsHtml($gedcom = "") {
+        $html = "";
+        foreach ($this->rows as $row) {
+            $html .= "<option value='{$row['gedcom']}'";
+
+            if ($row['gedcom'] == $gedcom) {
+                $html .= " selected";
+            }
+            $html .= ">{$row['treename']}</option>\n";
+        }
+        return $html;
+    }
+}
+
+/**
  * @param $trees_table
  * @param $tree
  * @return array
  */
-function getTree($trees_table, $tree): array {
+function getTree(string $trees_table, string $tree): array {
     $query = "SELECT gedcom, treename FROM $trees_table WHERE gedcom = '$tree'";
     $treeresult = tng_query($query);
+
     $treerow = tng_fetch_assoc($treeresult);
     tng_free_result($treeresult);
     return $treerow;
 }
 
 /**
- * @param $assignedtree
- * @param $trees_table
- * @return array
+ * @param string $trees_table
+ * @return string
  */
-function getOrderedTreesList($assignedtree, $trees_table): array {
-    global $admtext;
-
-    $trees = [];
-    $treenames = [];
-    $tree = $assignedtree ?? "";
-
-    $query = "SELECT gedcom, treename ";
-    $query .= "FROM $trees_table ";
-    if ($assignedtree) {
-        $query .= "WHERE gedcom = '$assignedtree' ";
-    }
-    $query .= "ORDER BY treename";
-    $result = tng_query($query) or die ($admtext . ": $query");
-    $treenum = 0;
-    while ($row = tng_fetch_assoc($result)) {
-        $treenum++;
-        $trees[$treenum] = $row['gedcom'];
-        $treenames[$treenum] = $row['treename'];
-    }
-    tng_free_result($result);
-    return [$tree, $trees, $treenames, $query];
-}
-
-/**
- * @param $assignedtree
- * @param $trees_table
- * @return array
- */
-function getOrderedTreesList2($assignedtree, $trees_table): array {
-    $trees = [];
-    $treenames = [];
-
-    $query = "SELECT gedcom, treename ";
-    $query .= "FROM $trees_table ";
-    if ($assignedtree) {
-        $query .= "WHERE gedcom = '$assignedtree' ";
-    }
-    $query .= "ORDER BY treename";
+function getTreesCount(string $trees_table): string {
+    $query = "SELECT COUNT(gedcom) AS treesCount FROM $trees_table";
     $result = tng_query($query);
-    $numtrees = tng_num_rows($result);
-
-    $treenum = 0;
-    while ($row = tng_fetch_assoc($result)) {
-        $trees[$treenum] = $row['gedcom'];
-        $treenames[$treenum] = $row['treename'];
-        $treenum++;
-    }
+    $row = tng_fetch_assoc($result);
     tng_free_result($result);
-    return [$numtrees, $treenum, $trees, $treenames];
+    return $row['treesCount'];
 }
 
 /**
@@ -77,33 +95,21 @@ function getOrderedTreesList2($assignedtree, $trees_table): array {
  * @param bool $omitCurrentTree
  * @return array
  */
-function getTreeOptions(string $trees_table, string $currentTree, bool $omitCurrentTree = true): array {
-    $treelist = "<option value=\"\"></option>\n";
-    $currentTreeName = "";
-
+function getTreesSelectOptionsHtml(string $trees_table, string $currentTree, bool $omitCurrentTree = true): array {
     $query = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
     $result = tng_query($query);
 
-    while ($row = tng_fetch_assoc($result)) {
+    $currentTreeName = "";
+    $html = "<option value=''></option>\n";
+
+    $rows = tng_fetch_all($result);
+    foreach ($rows as $row) {
         if ($omitCurrentTree == false || $row['gedcom'] != $currentTree) {
-            $treelist .= "<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
+            $html .= "<option value='{$row['gedcom']}'>{$row['treename']}</option>\n";
         } else {
             $currentTreeName = $row['treename'];
         }
     }
-    return [$treelist, $currentTreeName];
-}
-
-/**
- * @param string $trees_table
- * @return string
- */
-function getTreesCount(string $trees_table): string {
-    $query = "SELECT count(gedcom) AS treesCount FROM $trees_table";
-    $result = tng_query($query);
-    $row = tng_fetch_assoc($result);
     tng_free_result($result);
-    return $row['treesCount'];
+    return [$html, $currentTreeName];
 }
-
-

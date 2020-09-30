@@ -116,7 +116,7 @@ function updateHasKids($spouseID, $spousestr) {
     }
     tng_free_result($result);
     if (!$numkids) {
-        $query = "UPDATE $children_table SET haskids=\"0\" WHERE personID=\"$spouseID\" AND gedcom = '$tree'";
+        $query = "UPDATE $children_table SET haskids='0' WHERE personID=\"$spouseID\" AND gedcom = '$tree'";
         $result = @tng_query($query);
     }
 }

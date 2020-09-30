@@ -438,7 +438,7 @@ echo "
          jQuery.post('classes/ajax_filter.php', {filter:\"$oModlist->filter\"});
          }
       else {
-         jQuery.post('classes/ajax_filter.php', {filter:\"0\"});
+         jQuery.post('classes/ajax_filter.php', {filter:'0'});
       }
    });
 });

@@ -555,7 +555,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         $persontext .= "<td class='databack' colspan=\"2\">\n";
 
         $kidcount = 1;
-        $persontext .= "<table cellpadding = \"0\" cellspacing = \"0\" style=\"width:100%;\">\n";
+        $persontext .= "<table cellpadding = '0' cellspacing = '0' style=\"width:100%;\">\n";
         while ($child = tng_fetch_assoc($children)) {
             $childID = $child['personID'];
             $child['gedcom'] = $tree;
@@ -711,11 +711,11 @@ if ($map['key'] && $locations2map) {
     $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target='_blank' title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
-        $persontext .= "<tr class='align-top'><td class=\"fieldnameback\"><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
+        $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
         $persontext .= "<td colspan=\"2\" class='databack'><span class=\"smaller\">";
         for ($i = 1; $i < 7; $i++)
             $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt=\"\" height=\"17\" width=\"10\" class=\"alignmiddle\"/>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
-        $persontext .= "<img src=\"img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class=\"aligntop\">&nbsp;: {$admtext['level0']}</span></td>\n";
+        $persontext .= "<img src=\"img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class='aligntop'>&nbsp;: {$admtext['level0']}</span></td>\n";
         $persontext .= "</tr>\n";
     }
     $persontext .= "</table>\n";

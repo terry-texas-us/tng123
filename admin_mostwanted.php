@@ -16,16 +16,16 @@ function showDiv(string $type) {
     global $thumbmaxw, $admtext, $mostwanted_table, $media_table, $people_table, $mediatypes_assoc, $mediapath, $allow_add, $allow_delete, $allow_edit, $rootpath;
 
     if ($allow_add) {
-        echo "<form action=\"\" style=\"margin:0;padding-bottom:5px;\" method=\"post\" name=\"form$type\" id=\"form$type\">\n";
+        echo "<form action=\"\" style='margin: 0; padding-bottom: 5px;' method='post' name=\"form$type\" id=\"form$type\">\n";
         echo "<input type='button' value=\"" . $admtext['addnew'] . "\" onclick=\"return openMostWanted('$type','');\">\n";
         echo "</form>\n";
     }
     echo "<div id=\"order$type" . "divs\">\n";
     echo "<table class='normal' id=\"order$type" . "tbl\">\n";
     echo "<tr>\n";
-    echo "<th class=\"fieldnameback\" style=\"width: 4em;\"><span class=\"fieldname\">" . $admtext['text_sort'] . "</span></th>\n";
-    echo "<th class=\"fieldnameback\" style=\"width: {$thumbmaxw}px;\"><span class=\"fieldname\">" . $admtext['thumb'] . "</span></th>\n";
-    echo "<th class=\"fieldnameback\"><span class=\"fieldname\">" . $admtext['description'] . "</span></th>\n";
+    echo "<th class='fieldnameback' style=\"width: 4em;\"><span class=\"fieldname\">" . $admtext['text_sort'] . "</span></th>\n";
+    echo "<th class='fieldnameback' style=\"width: {$thumbmaxw}px;\"><span class=\"fieldname\">" . $admtext['thumb'] . "</span></th>\n";
+    echo "<th class='fieldnameback'><span class=\"fieldname\">" . $admtext['description'] . "</span></th>\n";
     echo "</tr>\n";
     echo "</table>\n";
 
@@ -142,18 +142,17 @@ tng_adminheader($admtext['mostwanted'], $flags);
             <td class="tngshadow">
                 <?php
                 echo displayToggle("plus0", 1, "personarea", $admtext['mysperson'], "");
-                echo "<div id=\"personarea\">\n<br>\n";
+                echo "<div id='personarea'>\n<br>\n";
                 showDiv('person');
                 echo "<br></div>\n";
                 echo "<br>\n";
                 echo displayToggle("plus1", 1, "photoarea", $admtext['mysphoto'], "");
-                echo "<div id=\"photoarea\">\n<br>\n";
+                echo "<div id='photoarea'>\n<br>\n";
                 showDiv('photo');
                 echo "</div>\n";
                 ?>
             </td>
         </tr>
     </table>
-    <div style="text-align: right;"><span class="normal"><?php echo "$tng_title"; ?></span></div>
-    </body>
-<?php echo "</html>\n"; ?>
+
+<?php echo tng_adminfooter(); ?>

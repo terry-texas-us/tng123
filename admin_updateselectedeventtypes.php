@@ -16,7 +16,7 @@ require "adminlog.php";
 
 $query = "";
 if ($cetaction == $admtext['ignoreselected']) {
-    $query = "UPDATE $eventtypes_table SET keep=\"0\" WHERE 1=0";
+    $query = "UPDATE $eventtypes_table SET keep='0' WHERE 1=0";
 } else {
     if ($cetaction == $admtext['acceptselected']) {
         $query = "UPDATE $eventtypes_table SET keep='1' WHERE 1=0";
@@ -25,7 +25,7 @@ if ($cetaction == $admtext['ignoreselected']) {
             $query = "UPDATE $eventtypes_table SET collapse='1' WHERE 1=0";
         } else {
             if ($cetaction == $admtext['expselected']) {
-                $query = "UPDATE $eventtypes_table SET collapse=\"0\" WHERE 1=0";
+                $query = "UPDATE $eventtypes_table SET collapse='0' WHERE 1=0";
             } else {
                 if ($cetaction == $admtext['deleteselected']) {
                     $query = "DELETE FROM $eventtypes_table WHERE 1=0";

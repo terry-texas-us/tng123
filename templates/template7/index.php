@@ -59,7 +59,7 @@ if ($tngconfig['maint']) {
         </table>
     </form>
 
-    <table cellspacing="0" class="page" width="100%">
+    <table class="w-100" cellspacing="0" class="page">
         <tr>
             <td class="section">
 

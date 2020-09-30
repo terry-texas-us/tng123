@@ -364,15 +364,15 @@ function getParams(personstr) {
 }
 
 function needspouses(nextfamily) {
-    var husb = families[nextfamily].husband;
-    var wife = families[nextfamily].wife;
+    let husb = families[nextfamily].husband;
+    let wife = families[nextfamily].wife;
 
-    return (!husb || !wife || !people[husb] || !people[wife]) ? true : false;
+    return !husb || !wife || !people[husb] || !people[wife];
 }
 
-var tdclasstxt = 'class="normal pboxpopup" valign="top"';
-var divtxt = '<div class="pboxpopupdiv">\n<table cellspacing="0" cellpadding="1" border="0" width="100%">\n';
-var tabletxt = '<table cellspacing="0" cellpadding="1" width="100%">\n';
+let tdclasstxt = 'class="normal pboxpopup" valign="top"';
+let divtxt = '<div class="pboxpopupdiv">\n<table class="w-100" cellspacing="0" cellpadding="1" border="0">\n';
+let tabletxt = '<table class="w-100" cellspacing="0" cellpadding="1">\n';
 
 function doRow(slot, slotabbr, slotevent1, slotevent2) {
     var rstr = "";

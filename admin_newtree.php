@@ -27,8 +27,35 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
 } else {
     $flags['tabs'] = $tngconfig['tabs'];
     tng_adminheader($admtext['addnewtree'], $flags);
+    ?>
+    <script>
+        function validateTreeForm(form) {
+            let rval = true;
+            if (form.gedcom.value.length == 0) {
+                alert("<?php echo $admtext['entertreeid']; ?>");
+                rval = false;
+            } else {
+                if (!alphaNumericCheck(form.gedcom.value)) {
+                    alert("<?php echo $admtext['alphanum']; ?>");
+                    rval = false;
+                } else {
+                    if (form.treename.value.length == 0) {
+                        alert("<?php echo $admtext['entertreename']; ?>");
+                        rval = false;
+                    }
+                }
+            }
+            return rval;
+        }
+
+        function alphaNumericCheck(string) {
+            const regex = /^[0-9A-Za-z_-]+$/;
+            return regex.test(string);
+        }
+    </script>
+    <?php
     echo "</head>";
-    echo "<body class='admin-body'>\n";
+    echo tng_adminlayout();
     $allow_add_tree = $assignedtree ? 0 : $allow_add;
     $treetabs[0] = [1, "admin_trees.php", $admtext['search'], "findtree"];
     $treetabs[1] = [$allow_add_tree, "admin_newtree.php", $admtext['addnew'], "addtree"];
@@ -37,7 +64,6 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
     echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['addnewtree'], "img/trees_icon.gif", $menu, $message);
 }
 ?>
-
     <table cellpadding="10" cellspacing="2" <?php echo !$beforeimport ? " width=\"100%\" class='lightback'" : "" ?>>
         <tr class="databack">
             <td<?php echo !$beforeimport ? " class=\"tngshadow\"" : "" ?>>
@@ -111,17 +137,17 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
                         </tr>
                     </table>
                     <span class="normal">
-                <input type="checkbox" name="private" value="1"<?php if ($private) {
-                    echo " checked";
-                } ?>> <?php echo $admtext['keepprivate']; ?><br>
-                <input type="checkbox" name="disallowgedcreate" value="1"<?php if ($disallowgedcreate) {
-                    echo " checked";
-                } ?>> <?php echo $admtext['gedcomextraction']; ?><br>
-                <input type="checkbox" name="disallowpdf" value="1"<?php if ($disallowpdf) {
-                    echo " checked";
-                } ?>> <?php echo $admtext['nopdf']; ?>
-                <br><br>
-                </span>
+                    <input type="checkbox" name="private" value="1"<?php if ($private) {
+                        echo " checked";
+                    } ?>> <?php echo $admtext['keepprivate']; ?><br>
+                    <input type="checkbox" name="disallowgedcreate" value="1"<?php if ($disallowgedcreate) {
+                        echo " checked";
+                    } ?>> <?php echo $admtext['gedcomextraction']; ?><br>
+                    <input type="checkbox" name="disallowpdf" value="1"<?php if ($disallowpdf) {
+                        echo " checked";
+                    } ?>> <?php echo $admtext['nopdf']; ?>
+                    <br><br>
+                    </span>
                     <input type="hidden" name="beforeimport" value="<?php echo $beforeimport; ?>">
                     <input type="submit" name="submit" accesskey="s" class="btn"
                            value="<?php echo $admtext['save']; ?>">
@@ -130,40 +156,11 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
                 </form>
             </td>
         </tr>
-
     </table>
-
-<?php if ($beforeimport) {
+<?php
+if ($beforeimport) {
     echo "</div>\n";
 } else {
-    echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>\n";
-    ?>
-    <script>
-        function validateTreeForm(form) {
-            let rval = true;
-            if (form.gedcom.value.length == 0) {
-                alert("<?php echo $admtext['entertreeid']; ?>");
-                rval = false;
-            } else {
-                if (!alphaNumericCheck(form.gedcom.value)) {
-                    alert("<?php echo $admtext['alphanum']; ?>");
-                    rval = false;
-                } else {
-                    if (form.treename.value.length == 0) {
-                        alert("<?php echo $admtext['entertreename']; ?>");
-                        rval = false;
-                    }
-                }
-            }
-            return rval;
-        }
-
-        function alphaNumericCheck(string) {
-            const regex = /^[0-9A-Za-z_-]+$/;
-            return regex.test(string);
-        }
-    </script>
-    <?php
-    echo "</body>\n";
-    echo "</html>\n";
-} ?>
+    echo tng_adminfooter();
+}
+?>

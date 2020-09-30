@@ -26,7 +26,7 @@ switch ($entity) {
         break;
 }
 
-list($treelist, $currenttree) = getTreeOptions($trees_table, $oldtree);
+list($treelist, $currenttree) = getTreesSelectOptionsHtml($trees_table, $oldtree);
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>

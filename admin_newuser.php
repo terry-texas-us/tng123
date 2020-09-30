@@ -366,20 +366,20 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                                 <tr>
                                     <td class='align-top'><span class="normal"><?php echo $admtext['branch']; ?>**:</span></td>
                                     <td><span class="normal">
-<?php
-$query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"{$row['gedcom']}\" ORDER BY description";
-$branchresult = tng_query($query);
+                                        <?php
+                                        $query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"{$row['gedcom']}\" ORDER BY description";
+                                        $branchresult = tng_query($query);
 
-echo "<select name=\"branch\" id=\"branch\">\n";
-echo "	<option value=\"\" selected>{$admtext['allbranches']}</option>\n";
-if ($assignedtree) {
-    while ($branch = tng_fetch_assoc($branchresult)) {
-        echo "	<option value=\"{$branch['branch']}\">{$branch['description']}</option>\n";
-    }
-}
-echo "</select>\n";
-?>
-		</span></td>
+                                        echo "<select name='branch' id='branch'>\n";
+                                        echo "	<option value='' selected>{$admtext['allbranches']}</option>\n";
+                                        if ($assignedtree) {
+                                            while ($branch = tng_fetch_assoc($branchresult)) {
+                                                echo "	<option value=\"{$branch['branch']}\">{$branch['description']}</option>\n";
+                                            }
+                                        }
+                                        echo "</select>\n";
+                                        ?>
+                                    </span></td>
                                 </tr>
                             </table>
                         </div>
@@ -401,7 +401,7 @@ echo "</select>\n";
                         echo "<b>{$text['firstuser']}</b><input type='hidden' name=\"gedcom\" value=\"\"><input type='hidden' name=\"branch\" value=\"\">";
                     }
                     if ($numlangs <= 1) {
-                        echo "<input type='hidden' name=\"preflang\" value=\"0\">\n";
+                        echo "<input type='hidden' name=\"preflang\" value='0'>\n";
                     }
                     ?>
                     <br>
@@ -423,20 +423,13 @@ echo "</select>\n";
 
 </table>
 
-<?php
-if ($row['ucount']) {
-    ?>
+<?php if ($row['ucount']) { ?>
     <script>
-        var tree = getTree();
+        let tree = getTree();
         if (tree) {
-            <?php
-            echo $swapbranches;
-            ?>
+            <?php echo $swapbranches; ?>
         }
     </script>
-    <?php
-}
+<?php } ?>
 
-echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

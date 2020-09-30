@@ -389,7 +389,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
         $shadow = $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowcolor'];
         echo "<div class=\"pedbox rounded10\" style=\"background-color:$boxcolortouse; box-shadow:$shadow;top:" . $gens->offsetV . "px; left:" . $gens->offsetH . "px; height:{$pedigree['puboxheight']}" . "px; width:{$pedigree['puboxwidth']}" . "px;border:{$pedigree['borderwidth']}px solid {$pedigree['bordercolor']};\"$iconactions>\n";
         $tableheight = $pedigree['puboxheight'];
-        echo "$iconlinks<table border=\"0\" cellpadding=\"5\" cellspacing=\"0\" align=\"{$pedigree['puboxalign']}\" class=\"pedboxtable\"><tr>";
+        echo "$iconlinks<table border='0' cellpadding=\"5\" cellspacing='0' align=\"{$pedigree['puboxalign']}\" class=\"pedboxtable\"><tr>";
 
         // implant a picture (maybe)
         if ($pedigree['inclphotos']) {
@@ -467,7 +467,7 @@ function finishRelationship($couple) {
     if ($gens->split || $gens->multparents) {
         $maxheight += $pedigree['borderwidth'] + (2 * $pedigree['boxVsep']);
     }
-    echo "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:{$maxwidth}px; height:{$maxheight}px;\"><tr><td></td></tr></table>\n";
+    echo "<table border='0' cellspacing='0' cellpadding='0' style=\"width:{$maxwidth}px; height:{$maxheight}px;\"><tr><td></td></tr></table>\n";
 
     //if they're not spouses of each other, draw the rest of the boxes
     $downarray = array_reverse($downarray);
@@ -800,7 +800,7 @@ $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 
 $innermenu .= $text['dospouses2'] . ": &nbsp;";
 $innermenu .= "<select name=\"disallowspouses\" class=\"verysmall\">\n";
-$innermenu .= "<option value=\"0\"";
+$innermenu .= "<option value='0'";
 if (!$disallowspouses) {
     $innermenu .= " selected";
 }

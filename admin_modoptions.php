@@ -145,13 +145,13 @@ echo "
 	<form action=\"admin_updatemodoptions.php\" method=\"post\" name=\"form1\">";
 
 echo "
-      <table id=\"m2table\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"2\" class='lightback $tableclass' style=\"padding: 0;\">
+      <table id=\"m2table\" width=\"100%\" border='0' cellpadding=\"10\" cellspacing=\"2\" class='lightback $tableclass' style=\"padding: 0;\">
       <tr class='databack'>
          <td class=\"tngshadow\">";
 
 echo displayToggle("plus0", 0, "log", $admtext['logoptions'], "");
 echo "
-	<div id=\"log\" style=\"display:none;\">
+	<div id=\"log\" style='display: none;'>
 		<table class='normal'>
 		    <tr>
                   <td width=\"270px\">
@@ -229,7 +229,7 @@ echo ">{$admtext['no']}</option>
          <td class=\"tngshadow\">";
 echo displayToggle("plus1", 0, "display", $admtext['displayoptions'], "");
 echo "
-	<div id=\"display\" style=\"display:none;\">
+	<div id=\"display\" style='display: none;'>
 	            <table class='normal'>
 		         <tr>
          			<td width=\"270px\">{$admtext['sortlistby']}:</td>
@@ -407,7 +407,7 @@ echo ">{$admtext['no']}</option>
          <td class=\"tngshadow\">";
 echo displayToggle("plus2", 0, "other", $admtext['othermmoptions'], "");
 echo "
-	<div id=\"other\" style=\"display:none;\">
+	<div id=\"other\" style='display: none;'>
 	    <table class='normal'>
          		<tr>
          			<td width=\"270px\">{$admtext['allowdeletepartial']}:</td>
@@ -524,11 +524,6 @@ function set_innermenu_links($tng_version) {
     return $innermenu;
 }
 
-
-/*************************************************************************
- * JAVASCRIPT SUPPORT
- *************************************************************************/
-
 if (!isMobile() && $options['adjust_headers']) {
     echo "
 <script>
@@ -543,10 +538,6 @@ if (!isMobile() && $options['adjust_headers']) {
    })
 </script>";
 }
+?>
 
-echo "
-<div style=\"text-align: center;\">
-   <span class='normal'>$tng_title</span>
-</div>
-</body>
-</html>";
+<?php echo tng_adminfooter(); ?>

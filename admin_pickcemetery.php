@@ -61,9 +61,7 @@ $result = tng_query($query);
                 </tr>
             </table>
         </form>
-        <?php
-    } else {
-        ?>
+    <?php } else { ?>
         <p><?php echo $admtext['nocemsavail']; ?></p>
         <?php
     }

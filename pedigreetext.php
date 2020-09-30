@@ -69,15 +69,15 @@ function displayIndividual($key, $generation, $slot) {
     }
 
     if ($slot > 1 && $slot % 2 != 0) {
-        echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td width='1'><img src=\"img/black.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\" border=\"0\"></td>\n";
+        echo "<table border='0' cellpadding='0' cellspacing='0'>\n<tr>\n";
+        echo "<td width='1'><img src=\"img/black.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace='0' hspace='0' border='0'></td>\n";
         echo "<td></td>\n</tr>\n</table>\n";
     } else {
-        echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td colspan=\"2\"><img src=\"img/spacer.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\" border=\"0\"></td>\n</tr>\n</table>\n";
+        echo "<table border='0' cellpadding='0' cellspacing='0'>\n<tr>\n";
+        echo "<td colspan=\"2\"><img src=\"img/spacer.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace='0' hspace='0' border='0'></td>\n</tr>\n</table>\n";
     }
 
-    echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
+    echo "<table border='0' cellpadding='0' cellspacing='0' width=\"100%\">\n";
     echo "<tr>\n";
     $pedborder = $slot % 2 && $slot != 1 ? "class=\"nw pedborderleft\"" : "";
     echo "<td colspan=\"2\" $pedborder><span class='normal'>&nbsp;$slot. <a href=\"getperson.php?personID=$key&amp;tree=$tree\">$name</a>&nbsp;</span></td>\n";
@@ -88,7 +88,7 @@ function displayIndividual($key, $generation, $slot) {
     }
 
     echo "</tr>\n";
-    echo "<tr>\n<td colspan=\"2\"><img src=\"img/black.gif\" alt=\"\" width=\"100%\" height='1' vspace=\"0\" hspace=\"0\" border=\"0\"></td>\n</tr>\n";
+    echo "<tr>\n<td colspan=\"2\"><img src=\"img/black.gif\" alt=\"\" width=\"100%\" height='1' vspace='0' hspace='0' border='0'></td>\n</tr>\n";
     echo "<tr>\n";
 
     $pedborder = $slot % 2 ? "" : "class=\"pedborderleft\"";
@@ -151,12 +151,12 @@ function displayIndividual($key, $generation, $slot) {
     }
 
     if ($slot % 2 == 0) {
-        echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td width='1'><img src=\"img/black.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\" border=\"0\"></td>\n";
+        echo "<table border='0' cellpadding='0' cellspacing='0'>\n<tr>\n";
+        echo "<td width='1'><img src=\"img/black.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace='0' hspace='0' border='0'></td>\n";
         echo "<td></td>\n</tr>\n</table>\n";
     } else {
-        echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n";
-        echo "<td colspan=\"2\"><img src=\"img/spacer.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace=\"0\" hspace=\"0\" border=\"0\"></td>\n</tr>\n</table>\n";
+        echo "<table border='0' cellpadding='0' cellspacing='0'>\n<tr>\n";
+        echo "<td colspan=\"2\"><img src=\"img/spacer.gif\" alt=\"\" height=\"$vertfill\" width='1' vspace='0' hspace='0' border='0'></td>\n</tr>\n</table>\n";
     }
     echo "</td>\n";
 
@@ -291,7 +291,7 @@ echo getFORM("pedigree", "", "form1", "form1");
 echo tng_menu("I", "pedigree", $personID, $innermenu);
 echo "</form>\n";
 ?>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <table class="w-100" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <?php
             $slot = 1;

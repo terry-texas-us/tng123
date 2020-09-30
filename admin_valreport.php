@@ -257,12 +257,7 @@ if (!$numrowsplus) {
                 tng_free_result($result);
                 ?>
             </table>
-
-            <?php
-
-            ?>
         </td>
     </tr>
-
 </table>
 <?php echo tng_adminfooter(); ?>

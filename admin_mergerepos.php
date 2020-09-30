@@ -514,9 +514,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     }
                     ?>
                 </table>
-                <?php
-                if ($repoID1 || $repoID2) {
-                    ?>
+                <?php if ($repoID1 || $repoID2) { ?>
                     <br>
                     <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
                     <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
@@ -531,6 +529,4 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
 
 </table>
 
-<?php echo "<div style='text-align: center;'><span class='normal'>$tng_title</span></div>"; ?>
-</body>
-</html>
+<?php echo tng_adminfooter(); ?>

@@ -86,9 +86,9 @@ if (isMobile()) {
     if ($tabletype == "toggle") {
         $tabletype = "columntoggle";
     }
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
+    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
 }
 echo $header;
 
@@ -235,7 +235,7 @@ while ($row = tng_fetch_assoc($result)) {
 tng_free_result($result);
 
 if (!$thumbcount) {
-    $header = str_replace("<td class=\"fieldnameback\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
+    $header = str_replace("<td class='fieldnameback'><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
     $albumtext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $albumtext);
 }
 echo $header . $albumtext;

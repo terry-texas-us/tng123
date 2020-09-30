@@ -326,7 +326,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
 
     </table>
 </form>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
+
 <script>
     var tree = "<?php echo $tree; ?>";
     var tnglitbox;
@@ -429,5 +429,5 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
     });
     //]]>
 </script>
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

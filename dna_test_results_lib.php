@@ -103,7 +103,7 @@ if ($totnum_tests) {
             tng_free_result($dna_pers_result);
 
             if ($testnum) {
-                $persontext .= "</tr>\n<tr class=\"dnatest\" style=\"display:none;\">\n";
+                $persontext .= "</tr>\n<tr class=\"dnatest\" style='display: none;'>\n";
             }
             $markercount = ($dna_test['test_type'] == "Y-DNA") ? "-{$dna_test['markers']}" : "";
             $persontext .= "<td class='databack'><a href=\"show_dna_test.php?testID={$dna_test['testID']}\">{$dna_test['test_type']}$markercount</a></td>\n";

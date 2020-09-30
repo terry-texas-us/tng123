@@ -115,9 +115,7 @@ include_once "eventlib.php";
                 </table>
             </td>
         </tr>
-        <?php
-        if (!$editconflict) {
-            ?>
+        <?php if (!$editconflict) { ?>
             <tr class="databack">
                 <td class="tngbotshadow">
                     <?php echo displayToggle("plus0", 1, "spouses", $admtext['spouses'], ""); ?>
@@ -362,8 +360,6 @@ include_once "eventlib.php";
                     </div>
                 </td>
             </tr>
-            <?php
-        } //end of the editconflict conditional
-        ?>
+        <?php } ?>
     </table>
 </form>

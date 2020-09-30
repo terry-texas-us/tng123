@@ -192,11 +192,11 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                 <p class="normal">
                     <?php
                     echo $admtext['onsave'] . ":<br>";
-                    echo "<input type='radio' name=\"newscreen\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                    echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
                     if ($cw) {
-                        echo "<input type='radio' name=\"newscreen\" value=\"close\" checked> {$text['closewindow']}\n";
+                        echo "<input type='radio' name='newscreen' value=\"close\" checked> {$text['closewindow']}\n";
                     } else {
-                        echo "<input type='radio' name=\"newscreen\" value=\"none\" checked> {$admtext['saveback']}\n";
+                        echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
                     }
                     ?>
                 </p>

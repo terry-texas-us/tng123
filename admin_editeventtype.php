@@ -66,11 +66,11 @@ tng_adminheader($admtext['modifyeventtype'], $flags);
 
         if (count($disppairs) > 1) {
             $defdisplay = "";
-            $displaytrstyle = " style=\"display:none;\"";
+            $displaytrstyle = " style='display: none;'";
             $otherlangsstyle = "";
         } else {
             $displaytrstyle = "";
-            $otherlangsstyle = " style=\"display:none;\"";
+            $otherlangsstyle = " style='display: none;'";
             if (count($disppairs) == 1) {
                 $defdisplay = $dispvalues[1];
             } else {
@@ -258,9 +258,8 @@ echo displayHeadline($admtext['customeventtypes'] . " &gt;&gt; " . $admtext['mod
     </tr>
 
 </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
 <script>
     populateTags(<?php echo "\"{$row['type']}\",\"{$row['tag']}\""; ?>);
 </script>
-</body>
-</html>
+
+<?php echo tng_adminfooter(); ?>

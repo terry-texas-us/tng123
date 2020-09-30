@@ -13,7 +13,7 @@ if (!$allow_edit) {
     exit;
 }
 
-$query = "SELECT * FROM $languages_table WHERE languageID = \"$languageID\"";
+$query = "SELECT * FROM $languages_table WHERE languageID = '$languageID'";
 $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
@@ -26,10 +26,10 @@ tng_adminheader($admtext['modifylanguage'], $flags);
     <script>
         function validateForm() {
             let rval = true;
-            if (document.form1.folder.value.length == 0) {
+            if (document.form1.folder.value.length === 0) {
                 alert("<?php echo $admtext['enterlangfolder']; ?>");
                 rval = false;
-            } else if (document.form1.display.value.length == 0) {
+            } else if (document.form1.display.value.length === 0) {
                 alert("<?php echo $admtext['enterlangdisplay']; ?>");
                 rval = false;
             }
@@ -48,7 +48,6 @@ $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/languages_help.ph
 $menu = doMenu($langtabs, "edit", $innermenu);
 echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylanguage'], "img/languages_icon.gif", $menu, $message);
 ?>
-
     <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
@@ -119,6 +118,5 @@ echo displayHeadline($admtext['languages'] . " &gt;&gt; " . $admtext['modifylang
             </td>
         </tr>
     </table>
-<?php echo "<div style=\"text-align: center;\"><span class='normal'>$tng_title</span></div>"; ?>
-    </body>
-<?php echo "</html>";
+
+<?php echo tng_adminfooter(); ?>

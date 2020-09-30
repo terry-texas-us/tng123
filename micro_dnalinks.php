@@ -54,13 +54,11 @@ if ($result2) {
     <table cellpadding="3" cellspacing="1" id="linktable" class="normal">
         <tbody>
         <tr>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['name'] . " (" . $admtext['id'] . ")"; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname nw">&nbsp;<strong><?php echo $admtext['action']; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname nw">&nbsp;<strong><?php echo $admtext['name'] . " (" . $admtext['id'] . ")"; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname nw">&nbsp;<strong><?php echo $admtext['tree']; ?></strong>&nbsp;</td>
         </tr>
-        <?php
-        echo $linkrows;
-        ?>
+        <?php echo $linkrows; ?>
         </tbody>
     </table>
     <div id="nolinks" class="normal" style="margin-left:3px;">

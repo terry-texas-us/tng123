@@ -120,7 +120,7 @@ if ($result && tng_num_rows($result)) {
     $template = "ssd";
     foreach ($places as $place) {
         $temple = strlen($place) == 5 && $place == strtoupper($place) ? 1 : 0;
-        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,\"0\",\"0\",\"0\",?)";
+        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,'0','0','0',?)";
         $params = [&$template, &$placetree, &$place, &$temple];
         tng_execute($query, $params);
     }
@@ -153,7 +153,7 @@ if ($result && tng_num_rows($result)) {
     $query = "INSERT INTO $people_table (personID,firstname,lnprefix,lastname,nickname,prefix,suffix,title,nameorder,living,private,birthdate,birthdatetr,birthplace,sex,altbirthdate,altbirthdatetr,
 		altbirthplace,deathdate,deathdatetr,deathplace,burialdate,burialdatetr,burialplace,burialtype,baptdate,baptdatetr,baptplace,confdate,confdatetr,confplace,initdate,initdatetr,initplace,
 		endldate,endldatetr,endlplace,changedate,gedcom,branch,changedby,famc,metaphone,edituser,edittime)
-		VALUES(?,?,?,?,?,?,?,?,'0',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",\"0\")";
+		VALUES(?,?,?,?,?,?,?,?,'0',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",'0')";
     $template = "ssssssssssssssssssssssssssssssssssssssssss";
     $params = [&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickname, &$prefix, &$suffix, &$title, &$living, &$private, &$birthdate, &$birthdatetr,
         &$birthplace, &$sex, &$altbirthdate, &$altbirthdatetr, &$altbirthplace, &$deathdate, &$deathdatetr, &$deathplace, &$burialdate, &$burialdatetr, &$burialplace,

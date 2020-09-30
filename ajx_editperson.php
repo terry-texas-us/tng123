@@ -132,7 +132,7 @@ include_once "eventlib.php";
                             </td>
                             <?php
                             if ($lnprefixes) {
-                                echo "<td><input type='text' value=\"{$row['lnprefix']}\" name=\"lnprefix\" style=\"width:80px;\"></td>\n";
+                                echo "<td><input type='text' value=\"{$row['lnprefix']}\" name='lnprefix' style=\"width:80px;\"></td>\n";
                             }
                             ?>
                             <td>
@@ -309,14 +309,12 @@ include_once "eventlib.php";
                             </td>
                         </tr>
                     </table>
-                    <?php
-                    showCustEvents($personID);
-                    ?>
+                    <?php showCustEvents($personID); ?>
                     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
                     <input type="hidden" name="personID" value="<?php echo "$personID"; ?>">
                     <input type="hidden" name="newfamily" value="ajax">
                     <?php if (!$lnprefixes) {
-                        echo "<input type='hidden' name=\"lnprefix\" value=\"{$row['lnprefix']}\">";
+                        echo "<input type='hidden' name='lnprefix' value=\"{$row['lnprefix']}\">";
                     } ?>
                     <?php defineLdsHiddenFields($rights['lds'], $row); ?>
                 </div>
@@ -571,7 +569,7 @@ include_once "eventlib.php";
                             <td class='align-top'><span class="normal">
                         <?php
                         $kidcount = 1;
-                        echo "<table cellpadding = \"0\" cellspacing = \"0\">\n";
+                        echo "<table cellpadding = '0' cellspacing = '0'>\n";
                         while ($child = tng_fetch_assoc($children)) {
                             $ifkids = $child['haskids'] ? "&gt" : "&nbsp;";
                             $crights = determineLivingPrivateRights($child, $righttree);

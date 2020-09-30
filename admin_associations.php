@@ -33,7 +33,7 @@ $assoccount = tng_num_rows($assocresult);
 ?>
 
 <div class="databack ajaxwindow" id="associations"<?php if (!$assoccount) {
-    echo " style=\"display:none;\"";
+    echo " style='display: none;'";
 } ?>>
     <form name="assocform">
         <h3 class="subhead"><?php echo $admtext['associations'] . ": $namestr"; ?> |
@@ -45,7 +45,7 @@ $assoccount = tng_num_rows($assocresult);
             <input type="button" value="<?php echo $admtext['finish']; ?>" onclick="tnglitbox.remove();">
         </p>
         <table id="associationstbl" width="95%" class="normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$assoccount) {
-            echo " style=\"display:none;\"";
+            echo " style='display: none;'";
         } ?>>
             <tbody id="associationstblbody">
             <tr>
@@ -99,11 +99,11 @@ $assoccount = tng_num_rows($assocresult);
 </div>
 
 <div class="databack ajaxwindow"<?php if ($assoccount) {
-    echo " style=\"display:none;\"";
+    echo " style='display: none;'";
 } ?> id="addassociation">
     <h3 class="subhead"><?php echo $admtext['addnewassoc']; ?> |
         <a href="#"
-           onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
+            onclick="return openHelp('<?php echo $helplang; ?>/assoc_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
     </h3>
 
     <form action="" name="newassocform1" onSubmit="return addAssociation(this);">

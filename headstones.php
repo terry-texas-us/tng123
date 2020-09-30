@@ -262,9 +262,9 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         if ($tabletype == "toggle") {
             $tabletype = "columntoggle";
         }
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"tablesaw whiteback normal w-100\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
     } else {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border=\"0\" class=\"whiteback normal\">";
+        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
     }
     $body .= $header;
     $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback center fieldname\" style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
@@ -336,7 +336,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $href = getMediaHREF($hs, 3);
 
         if ($imgsrc) {
-            $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style=\"display:none;\"></div></div>\n";
+            $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style='display: none;'></div></div>\n";
             $body .= "<a href=\"$href\"";
             if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
                 $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";

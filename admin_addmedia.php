@@ -146,7 +146,7 @@ if ($affected_rows == 1) {
         $params = [&$template, &$link_personID, &$mediaID, &$newrow, &$link_tree, &$link_linktype, &$defval];
         tng_execute_noerror($query, $params);
     }
-    $query = "UPDATE $mediatypes_table SET disabled=\"0\" where mediatypeID=\"$mediatypeID\"";
+    $query = "UPDATE $mediatypes_table SET disabled='0' where mediatypeID=\"$mediatypeID\"";
     $result = @tng_query($query);
 
     adminwritelog("<a href=\"admin_editmedia.php?mediaID=$mediaID\">{$admtext['addnewmedia']}: $mediaID</a>");

@@ -124,9 +124,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                 <input type="submit" name="submit" value="<?php echo $admtext['text_continue']; ?>">
                 <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" onclick="return resetFields()">
             </form>
-            <?php
-            if ($place && $numrows) {
-                ?>
+            <?php if ($place && $numrows) { ?>
                 <br><br>
 
                 <h3 class="subhead">2. <?php echo $admtext['selectplacemerge']; ?></h3>
@@ -168,6 +166,5 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
             <?php } ?>
         </td>
     </tr>
-
 </table>
 <?php echo tng_adminfooter(); ?>

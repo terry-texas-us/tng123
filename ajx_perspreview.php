@@ -30,7 +30,7 @@ $persontext = "";
 $persontext .= "<ul class=\"nopad\">\n";
 
 $persontext .= beginSection("info");
-$persontext .= "<table border=\"0\" cellspacing='1' cellpadding=\"4\" width=\"100%\">\n";
+$persontext .= "<table border='0' cellspacing='1' cellpadding=\"4\" width=\"100%\">\n";
 resetEvents();
 if ($rights['both']) {
     if ($row['nickname']) {
@@ -224,7 +224,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         $persontext .= "<td class='databack' colspan=\"2\">\n";
 
         $kidcount = 1;
-        $persontext .= "<table cellpadding = \"0\" cellspacing = \"0\">\n";
+        $persontext .= "<table cellpadding = '0' cellspacing = '0'>\n";
         while ($child = tng_fetch_assoc($children)) {
             $ifkids = $child['haskids'] ? "<strong>+</strong>" : "&nbsp;";
             $birthinfo = getBirthInfo($child, 1);

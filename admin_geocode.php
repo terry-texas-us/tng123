@@ -14,7 +14,7 @@ $orgtree = $tree;
 $helplang = findhelp("places_help.php");
 
 if ($resetignore) {
-    $query = "UPDATE $places_table SET geoignore=\"0\"";
+    $query = "UPDATE $places_table SET geoignore='0'";
     $result = tng_query($query);
 }
 

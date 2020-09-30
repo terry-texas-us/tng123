@@ -15,7 +15,8 @@ if (!$allow_edit) {
     exit;
 }
 
-[$tree, $trees, $treename, $treequery] = getOrderedTreesList($assignedtree, $trees_table);
+$orderedTreesList = new OrderedTreesList($trees_table, $assignedtree);
+$tree = $orderedTreesList->getAssignedTree();
 
 $query = "SELECT * FROM $dna_tests_table WHERE testID = \"$testID\"";
 $result = tng_query($query);
@@ -23,9 +24,9 @@ $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
 if ($row['personID']) {
-    $query = "SELECT personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch
-		FROM $people_table
-		WHERE personID = \"{$row['personID']}\" AND gedcom = \"{$row['gedcom']}\"";
+    $query = "SELECT personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch ";
+    $query .= "FROM $people_table ";
+    $query .= "WHERE personID = '{$row['personID']}' AND gedcom = '{$row['gedcom']}'";
     $result = tng_query($query);
     $row2 = tng_fetch_assoc($result);
     $row2['allow_living'] = $row2['allow_private'] = 1;
@@ -36,9 +37,9 @@ if ($row['personID']) {
 }
 
 if ($row['MD_ancestorID']) {
-    $query = "SELECT personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch
-		FROM $people_table
-		WHERE personID = \"{$row['MD_ancestorID']}\" AND gedcom = \"{$row['gedcom']}\"";
+    $query = "SELECT personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch ";
+    $query .= "FROM $people_table ";
+    $query .= "WHERE personID = '{$row['MD_ancestorID']}' AND gedcom = '{$row['gedcom']}'";
     $result = tng_query($query);
     $row3 = tng_fetch_assoc($result);
     $row3['allow_living'] = $row3['allow_private'] = 1;
@@ -49,9 +50,9 @@ if ($row['MD_ancestorID']) {
 }
 if ($row['MRC_ancestorID']) {
     if ($row['MRC_ancestorID'][0] == $tngconfig['personprefix']) {
-        $query = "SELECT personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch
-			FROM $people_table
-			WHERE personID = \"{$row['MRC_ancestorID']}\" AND gedcom = \"{$row['gedcom']}\"";
+        $query = "SELECT personID, gedcom, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, branch ";
+        $query .= "FROM $people_table ";
+        $query .= "WHERE personID = '{$row['MRC_ancestorID']}' AND gedcom = '{$row['gedcom']}'";
         $result = tng_query($query);
         $row3 = tng_fetch_assoc($result);
         $row3['allow_living'] = $row3['allow_private'] = 1;
@@ -59,7 +60,9 @@ if ($row['MRC_ancestorID']) {
         tng_free_result($result);
     } else {
         if ($row['MRC_ancestorID'][0] == $tngconfig['familyprefix']) {
-            $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch FROM $families_table WHERE familyID = \"{$row['MRC_ancestorID']}\" AND gedcom = \"{$row['gedcom']}\"";
+            $query = "SELECT familyID, husband, wife, living, private, marrdate, gedcom, branch ";
+            $query .= "FROM $families_table ";
+            $query .= "WHERE familyID = '{$row['MRC_ancestorID']}' AND gedcom = '{$row['gedcom']}'";
             $result = tng_query($query);
             $row3 = tng_fetch_assoc($result);
             tng_free_result($result);
@@ -254,15 +257,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                             <td>
                                 <select name="mynewgedcom">
                                     <option value=""></option>
-                                    <?php
-                                    for ($j = 1; $j <= $treenum; $j++) {
-                                        echo "	<option value=\"{$trees[$j]}\"";
-                                        if ($trees[$j] == $row['gedcom']) {
-                                            echo " selected";
-                                        }
-                                        echo ">$treename[$j]</option>\n";
-                                    }
-                                    ?>
+                                    <?php echo $orderedTreesList->getSelectOptionsHtml($row['gedcom']); ?>
                                 </select>
                             </td>
                         </tr>
@@ -282,8 +277,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                         <tr>
                             <td><?php echo "{$admtext['text_or']} {$admtext['person_name']} "; ?></td>
                             <td>
-                                <input type="text" name="person_name" value="<?php echo $row['person_name']; ?>" id="person_name" size="40"
-                                       maxlength="100">
+                                <input type="text" name="person_name" value="<?php echo $row['person_name']; ?>" id="person_name" size="40" maxlength="100">
                             </td>
                         </tr>
                         <tr>
@@ -657,7 +651,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                 <input type="hidden" value="<?php echo $row['personID']; ?>" name="personID_org">
                 <?php
                 echo $admtext['onsave'] . ":<br>";
-                echo "<input type='radio' name=\"newtest\" value=\"return\"> {$admtext['savereturn']}<br>\n";
+                echo "<input type='radio' name=\"newtest\" value='return'> {$admtext['savereturn']}<br>\n";
                 if ($cw) {
                     echo "<input type='radio' name=\"newtest\" value=\"close\" checked> {$text['closewindow']}\n";
                 } else {
