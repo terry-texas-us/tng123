@@ -193,7 +193,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         $truncated = substr($row['notes'], 0, 90);
                         $truncated = strlen($row['notes']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['notes'];
                         echo "<div class=\"sortrow\" id=\"orderdivs_{$row['medialinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#md_{$row['medialinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['medialinkID']}').css('visibility','hidden');\">";
-                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
+                        echo "<table class='w-100' cellpadding='5' cellspacing='1'>\n";
+                        echo "<tr>\n";
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";

@@ -247,7 +247,7 @@ if ($numrows) {
     $body .= "<th data-tablesaw-priority=\"persist\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['thumb']}</span></th>";
     $body .= "<th data-tablesaw-priority='1' class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['description']}</span></th>";
     $body .= "<th data-tablesaw-priority=\"6\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['status']}</span></th>";
-    $body .= "<th data-tablesaw-priority=\"4\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['location']}</span></th>";
+    $body .= "<th data-tablesaw-priority='4' class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['location']}</span></th>";
     $body .= "<th data-tablesaw-priority=\"3\" class='fieldnameback'><span class=\"fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</span></th>";
     $body .= "</tr></thead>\n";
 

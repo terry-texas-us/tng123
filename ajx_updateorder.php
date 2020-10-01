@@ -202,7 +202,8 @@ switch ($action) {
 
         $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;\"";
         $rval .= " onmouseover=\"jQuery('#unlinkc_$personID').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_$personID').css('visibility','hidden');\">\n";
-        $rval .= "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
+        $rval .= "<table class='w-100' cellpadding='5' cellspacing='1'>\n";
+        $rval .= "<tr>\n";
         $rval .= "<td class=\"dragarea normal\">";
         $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
         $rval .= "</td>\n";

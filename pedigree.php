@@ -504,7 +504,7 @@ if ($allow_edit || $allow_add) {
     $flags['scripting'] .= "<script src=\"js/tngpededit.js\"></script>\n";
 }
 
-$flags['scripting'] .= "<style type=\"text/css\">\n";
+$flags['scripting'] .= "<style>\n";
 $flags['scripting'] .= ".pedborder {background-color:{$pedigree['bordercolor']};}\n";
 $flags['scripting'] .= ".pedshadow {background-color:{$pedigree['shadowcolor']};}\n";
 $flags['scripting'] .= ".popup { position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; z-index:8 }\n";

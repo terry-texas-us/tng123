@@ -56,7 +56,7 @@ function doRow($field, $textmsg, $boxname) {
         if (is_array($s2row)) {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
             echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td width=\"5\" class='lightback'><span class='normal'>";
+            echo "<td width='5' class='lightback'><span class='normal'>";
             if ($boxname) {
                 if ($s2field) {
                     echo "<input type='checkbox' name=\"$boxname\" value=\"$field\"";
@@ -73,7 +73,7 @@ function doRow($field, $textmsg, $boxname) {
         } else {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
             echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
-            echo "<td class='lightback' width=\"5\"><span class='normal'>&nbsp;</span></td>";
+            echo "<td class='lightback' width='5'><span class='normal'>&nbsp;</span></td>";
             echo "<td class='lightback' width=\"31%\"><span class='normal'>&nbsp;</span></td>";
         }
         echo "</tr>\n";

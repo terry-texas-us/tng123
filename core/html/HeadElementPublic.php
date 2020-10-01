@@ -146,14 +146,13 @@ class HeadElementPublic
         }
         return $styles;
     }
-
     /**
      * @return array
      */
     public function getLinkElements(): array {
         global $responsivetables, $templatepath, $tngconfig, $tngdomain, $tngprint;
         $links = [];
-        $links[] = "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
+        $links[] = "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK' crossorigin='anonymous'>";
         if (isMobile() && $responsivetables) {
             $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
         }

@@ -250,7 +250,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="myfirstname" value="<?php echo $myfirstname; ?>">
+                    <input type="search" name="myfirstname" value="<?php echo $myfirstname; ?>">
                 </td>
             </tr>
             <tr>
@@ -258,7 +258,8 @@ echo $formstr;
                 <td class="databack">
                     <select name="lnqualify" class="mediumfield">
                         <?php
-                        $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
+                        $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"],
+                            [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
                             if ($lnqualify == $item[1]) {
@@ -268,7 +269,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="mylastname" value="<?php echo $mylastname; ?>">
+                    <input type="search" name="mylastname" value="<?php echo $mylastname; ?>">
                 </td>
             </tr>
             <tr>
@@ -286,7 +287,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="mypersonid" value="<?php echo $mypersonid; ?>">
+                    <input type="search" name="mypersonid" value="<?php echo $mypersonid; ?>">
                 </td>
             </tr>
             <tr>
@@ -330,7 +331,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="mybirthplace" value="<?php echo $mybirthplace; ?>">
+                    <input type="search" name="mybirthplace" value="<?php echo $mybirthplace; ?>">
                 </td>
             </tr>
             <tr>
@@ -367,7 +368,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="myaltbirthplace" value="<?php echo $myaltbirthplace; ?>">
+                    <input type="search" name="myaltbirthplace" value="<?php echo $myaltbirthplace; ?>">
                 </td>
             </tr>
             <tr<?php if ($tngconfig['hidechr']) {
@@ -404,7 +405,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="mydeathplace" value="<?php echo $mydeathplace; ?>">
+                    <input type="search" name="mydeathplace" value="<?php echo $mydeathplace; ?>">
                 </td>
             </tr>
             <tr>
@@ -439,7 +440,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="myburialplace" value="<?php echo $myburialplace; ?>">
+                    <input type="search" name="myburialplace" value="<?php echo $myburialplace; ?>">
                 </td>
             </tr>
             <tr>
@@ -478,7 +479,7 @@ echo $formstr;
                         }
                         ?>
                     </select>
-                    <input type="text" name="mysplname" value="<?php echo $mysplname; ?>">
+                    <input type="search" name="mysplname" value="<?php echo $mysplname; ?>">
                 </td>
             </tr>
         </table>

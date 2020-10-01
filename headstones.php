@@ -270,7 +270,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback center fieldname\" style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
     $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}</th>";
     $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback fieldname\">&nbsp;{$text['status']}</th>";
-    $body .= "<th data-tablesaw-priority=\"4\" class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
+    $body .= "<th data-tablesaw-priority='4' class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
     $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
 
     while ($hs = tng_fetch_assoc($hsresult)) {

@@ -161,7 +161,7 @@ tng_adminheader($admtext['administration'], "");
 
 <?php echo tng_adminlayout(); ?>
 
-    <table border="0" cellspacing="0" cellpadding="0" class="mainbox">
+    <table class="mainbox border-0" cellspacing="0" cellpadding="0">
         <?php
         //no users?
         $messages = "";

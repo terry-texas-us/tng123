@@ -500,7 +500,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                             echo " onmouseover=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','hidden');\"";
                                         }
                                         echo ">\n";
-                                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
+                                        echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
                                         echo "<td class=\"dragarea normal\">";
                                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                                         echo "</td>\n";

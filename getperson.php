@@ -174,7 +174,7 @@ if (!empty($tng_extras)) {
 }
 
 $persontext .= beginSection("info");
-$persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+$persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
 $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
 resetEvents();
 if ($rights['both']) {
@@ -266,7 +266,7 @@ if ($row['changedate'] || ($allow_edit && $rightbranch)) {
         if ($row['changedate']) {
             $row['changedate'] .= " | ";
         }
-        $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>";
+        $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
     }
     $persontext .= showEvent(["text" => $text['lastmodified'], "fact" => $row['changedate']]);
 }
@@ -283,7 +283,7 @@ $parents = getChildParentsFamily($tree, $personID);
 
 if ($parents && tng_num_rows($parents)) {
     while ($parent = tng_fetch_assoc($parents)) {
-        $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+        $persontext .= "<table cellspacing='1' cellpadding='4' class='whiteback tfixed'>\n";
         $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
         $tableid = "fam" . $parent['familyID'] . "_";
         $cellnumber = 0;
@@ -443,7 +443,7 @@ $marrtot = tng_num_rows($marriages);
 $marrcount = 1;
 
 while ($marriagerow = tng_fetch_assoc($marriages)) {
-    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
     $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
     $tableid = "fam" . $marriagerow['familyID'] . "_";
     $cellnumber = 0;
@@ -613,7 +613,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             if ($marriagerow['changedate']) {
                 $marriagerow['changedate'] .= " | ";
             }
-            $marriagerow['changedate'] .= "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>";
+            $marriagerow['changedate'] .= "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
         }
         $persontext .= showEvent(["text" => $text['lastmodified'], "fact" => $marriagerow['changedate']]);
     }
@@ -627,7 +627,7 @@ $persontext .= endSection("info");
 
 if ($map['key'] && $locations2map) {
     $persontext .= beginSection("eventmap");
-    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
     $persontext .= "<col class=\"labelcol\"/><col class=\"mapcol\"/><col />\n";
     $persontext .= "<tr class='align-top'><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class=\"fieldname\">{$text['gmapevent']}</span></td>\n";
     $persontext .= "<td class='databack'>\n";
@@ -638,7 +638,7 @@ if ($map['key'] && $locations2map) {
     $persontext .= "</div>\n";
     $persontext .= "</td>\n";
     $mapheight = (intval($map['indh']) - 20) . "px";
-    $persontext .= "<td class='databack'><div style=\"height:{$mapheight};\" id=\"mapevents\"><table cellpadding=\"4\" class=\"whiteback\">\n";
+    $persontext .= "<td class='databack'><div style=\"height:{$mapheight};\" id=\"mapevents\"><table cellpadding='4' class=\"whiteback\">\n";
 
     asort($locations2map);
     reset($locations2map);
@@ -678,7 +678,7 @@ if ($map['key'] && $locations2map) {
                     $usedplaces[] = $place;
                     $savedplaces[] = ["place" => $place, "key" => $key];
                     $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
-                    $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target='_blank'>{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
+                    $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
                     $thismarker = $markerIcon;
                 } else {
                     $total = count($usedplaces);
@@ -708,7 +708,7 @@ if ($map['key'] && $locations2map) {
         }
     }
     $persontext .= "</table></div>\n<table>";
-    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target='_blank' title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
+    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
         $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
@@ -741,7 +741,7 @@ if ($notestogether != 1) {
 
     if ($notes) {
         $persontext .= beginSection("notes");
-        $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+        $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
         $persontext .= "<col class=\"labelcol\"/><col />\n";
         $persontext .= "<tr>\n";
         $persontext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
@@ -755,7 +755,7 @@ if ($notestogether != 1) {
 
 if ($citedispctr) {
     $persontext .= beginSection("citations");
-    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table cellspacing='1' cellpadding='4' class='whiteback tfixed'>\n";
     $persontext .= "<col class=\"labelcol\"/><col />\n";
     $persontext .= "<tr>\n";
     $persontext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"citations1\"><a name=\"sources\"><span class=\"fieldname\">{$text['sources']}&nbsp;</span></a></td>\n";

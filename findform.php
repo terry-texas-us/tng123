@@ -23,12 +23,12 @@ header("Content-type:text/html; charset=" . $session_charset);
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" name="mylastname" id="mylastname">
+                        <input type="search" name="mylastname" id="mylastname">
                     </td>
                     <td>
-                        <input type="text" name="myfirstname" id="myfirstname">
+                        <input type="search" name="myfirstname" id="myfirstname">
                         <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                        <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
+                        <span id="spinnerfind" style="display: none;"><img src="img/spinner.gif"></span>
                     </td>
                 </tr>
             </table>

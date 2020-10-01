@@ -193,7 +193,6 @@ switch ($textpart) {
         $text['capmarrabbr'] = "M";
         $text['capspouseabbr'] = "SP";
         $text['redraw'] = "Redraw with";
-        $text['scrollnote'] = "Notes: You may have to scroll down or right to see chart.";
         $text['unknownlit'] = "Unknown";
         $text['popupnote1'] = "Additional information";
         $text['popupnote2'] = "New pedigree";
@@ -261,6 +260,8 @@ switch ($textpart) {
         $text['showperson'] = "show person";
         //added in 11.0.2
         $text['otherfamilies'] = "Other families";
+        //changed in 13.0
+        $text['scrollnote'] = "Drag or scroll to see more of the chart.";
         break;
 
     //search.php, searchform.php
@@ -377,9 +378,9 @@ switch ($textpart) {
         $text['in'] = "in";
         $text['showmap'] = "Show map";
         $text['headstonefor'] = "Headstone for";
-        $text['photoof'] = "Photo of";
-        $text['photoowner'] = "Owner/Source";
-        $text['nocemetery'] = "No Cemetery";
+    $text['photoof'] = "Photo of";
+    $text['photoowner'] = "Owner of original";
+    $text['nocemetery'] = "No Cemetery";
         $text['iptc005'] = "Title";
         $text['iptc020'] = "Supp. Categories";
         $text['iptc040'] = "Special Instructions";
@@ -421,17 +422,19 @@ switch ($textpart) {
         $text['nocity'] = "Unknown city";
         $text['nocemname'] = "Unknown cemetery name";
         $text['editalbum'] = "Edit Album";
-        $text['mediamaptext'] = "<strong>Note:</strong> Move your mouse pointer over the image to show names. Click to see a page for each name.";
-        //added in 8.0.0
-        $text['allburials'] = "All Burials";
-        $text['moreinfo'] = "Click for more information on this image";
-        //added in 9.0.0
-        $text['iptc025'] = "Keywords";
-        $text['iptc092'] = "Sub-location";
-        $text['iptc015'] = "Category";
-        $text['iptc065'] = "Originating Program";
-        $text['iptc070'] = "Program Version";
-        break;
+    $text['mediamaptext'] = "<strong>Note:</strong> Move your mouse pointer over the image to show names. Click to see a page for each name.";
+    //added in 8.0.0
+    $text['allburials'] = "All Burials";
+    $text['moreinfo'] = "Click for more information on this image";
+    //added in 9.0.0
+    $text['iptc025'] = "Keywords";
+    $text['iptc092'] = "Sub-location";
+    $text['iptc015'] = "Category";
+    $text['iptc065'] = "Originating Program";
+    $text['iptc070'] = "Program Version";
+    //added in 13.0
+    $text['toggletags'] = "Toggle Tags";
+    break;
 
     //surnames.php, surnames100.php, surnames-all.php, surnames-oneletter.php
     case "surnames":
@@ -613,7 +616,6 @@ switch ($textpart) {
         $text['nodb'] = "Information saved. Connection made, but database does not exist and could not be created here. Please verify that the database name is correct, and that the database user has proper access, or use your control panel to create it.";
         $text['noconn'] = "Information saved but connection failed. One or more of the following is incorrect:";
         $text['exists'] = "already exists.";
-        $text['loginfirst'] = "You must log in first.";
         $text['noop'] = "No operation was performed.";
         //added in 8.0.0
         $text['nouser'] = "User was not created. Username may already exist.";
@@ -621,6 +623,8 @@ switch ($textpart) {
         $text['infosaved2'] = "Information saved";
         $text['renamedto'] = "renamed to";
         $text['norename'] = "could not be renamed";
+        //changed in 13.0.0
+        $text['loginfirst'] = "Existing user records have been detected. To proceed you must first log in or remove all records from the users table.";
         break;
 
     case "imgviewer":
@@ -782,7 +786,6 @@ $text['repository'] = "Repository";
 $text['address'] = "Address";
 $text['suggest'] = "Suggest";
 $text['editevent'] = "Suggest a change for this event";
-$text['findplaces'] = "Find all individuals with events at this location";
 $text['morelinks'] = "More Links";
 $text['faminfo'] = "Family Information";
 $text['persinfo'] = "Personal Information";
@@ -1003,10 +1006,12 @@ $text['onthisdate'] = " on ";    // when used with full date
 $text['inthisyear'] = " in ";    // when used with year only or month / year dates
 $text['and'] = "and ";        // used in conjunction with wasburied or was cremated
 
-//moved here in 12.3
+//moved here in 12.2.1
 $text['dna_info_head'] = "DNA Test Info";
 $text['firstpage'] = "First Page";
 $text['lastpage'] = "Last Page";
+//added in 13.0
+$text['visitor'] = "Visitor";
 
 @include_once "captcha_text.php";
 @include_once "alltext.php";

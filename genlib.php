@@ -455,7 +455,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
                 if (!isset($flags['more'])) {
                     $flags['more'] = "";
                 }
-                $flags['more'] .= "\n<style type=\"text/css\">\n\t<!--\n$more\t-->\n</style>\n";
+                $flags['more'] .= "\n<style>\n\t<!--\n$more\t-->\n</style>\n";
             }
         }
     } else {

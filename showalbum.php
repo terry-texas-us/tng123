@@ -103,7 +103,7 @@ function getAlbumLinkText($albumID) {
 $albumlinktext = getAlbumLinkText($albumID);
 if ($albumlinktext) {
     $altext = $albumlinktext;
-    $albumlinktext = "<table cellpadding=\"4\" cellspacing='1' border='0' class=\"whiteback w-100\">\n";
+    $albumlinktext = "<table cellpadding='4' cellspacing='1' border='0' class=\"whiteback w-100\">\n";
     $albumlinktext .= "<tr>\n";
     $albumlinktext .= "<td class=\"fieldnameback fieldname align-top\" width=\"100\">{$text['indlinked']}</td>\n";
     $albumlinktext .= "<td class='databack' width=\"90%\">$altext</td>\n";

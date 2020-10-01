@@ -1,7 +1,7 @@
 <?php global $text, $tmp; ?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> bodytopmenu">
 
-<table class="w-100" cellspacing="0" class="page">
+<table class="page w-100" cellspacing="0">
     <tr>
         <td>&nbsp;</td>
         <td class='align-top'>

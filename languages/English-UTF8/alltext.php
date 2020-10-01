@@ -156,7 +156,6 @@ $text['switchs'] = "Switch to standard site";
 //added in 11.0.0
 $text['dna_tests'] = "DNA Tests";
 $admtext['preflang'] = "Preferred language";
-$text['problem'] = "An error has occurred in the TNG software. This could be due to a setup issue, an incomplete upgrade or a program bug. If you are the site owner, you may contact TNG support for help with this problem. Please copy the query below and paste it into your message.";
 $text['query'] = "Query";
 $text['fanchart'] = "Fan Chart";
 
@@ -241,6 +240,14 @@ $text['chrabbr'] = "c.";
 $text['deathabbr'] = "d.";  //from descend
 $text['burialabbr'] = "bur.";  //from descend
 $text['marrabbr'] = "m.";
+
+//moved here fron text.php in TNG 13.0
+$text['findplaces'] = "Find all individuals with events at this location";
+
+//changed in 13.0.0
+$text['problem'] = "An error has occurred in the TNG software. What to do:<p>If you just installed an upgrade, you might have skipped part of the installation instructions. Go back to the upgrade readme page reread the instructions. Pay special attention to the database structure step.</p><p>If you just installed TNG for the first time, you might still need to create the database tables. Return to the readme.html page to find that step.</p><p>If you are the site owner, you may contact TNG support for further assistance with this problem. Please copy the query below and paste it into your message.</p>";
+//added in 13.0.0
+$admtext['nobranch'] = "No branch";
 
 // loading English or English-UTF8 is required to display custom text for mods that do not provide all translations
 //$english = $session_charset == "UTF-8" ? "English-UTF8" : "English";

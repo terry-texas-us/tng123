@@ -97,7 +97,7 @@ $header .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameb
 $header .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['thumb']}&nbsp;</th>\n";
 $header .= "<th data-tablesaw-priority=\"2\" class=\"fieldnameback fieldname\">&nbsp;{$text['description']}&nbsp;</th>\n";
 $header .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback fieldname\">&nbsp;{$text['numitems']}&nbsp;</th>\n";
-$header .= "<th data-tablesaw-priority=\"4\" class=\"fieldnameback fieldname\">&nbsp;{$text['indlinked']}&nbsp;</th>\n";
+$header .= "<th data-tablesaw-priority='4' class=\"fieldnameback fieldname\">&nbsp;{$text['indlinked']}&nbsp;</th>\n";
 $header .= "</tr></thead>\n";
 
 $i = $offsetplus;

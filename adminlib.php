@@ -29,7 +29,7 @@ function tng_adminheader($title, $flags) {
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 
-    echo "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I' crossorigin='anonymous'>";
+    echo "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK' crossorigin='anonymous'>";
     echo "<link href='css/genstyle.css' rel='stylesheet'>\n";
     if (isset($flags['modmgr'])) {
         echo "<link href='css/modmanager.css' rel='stylesheet'>\n";
@@ -135,12 +135,18 @@ function tng_adminlayout($args = "") {
     return $output;
 }
 
+/** Gets html to finish. Besides any footer, html will include closing 2 divs, body and html.
+ * @return string
+ */
 function tng_adminfooter() {
     global $tng_title, $tng_version;
-    $output = "</div></div>\n";
-    $output .= "</body>\n</html>\n";
 
-    return $output;
+    $html = "</div>\n";
+    $html .= "</div>\n";
+    $html .= "</body>\n";
+    $html .= "</html>\n";
+
+    return $html;
 }
 
 function getNewNumericID($type, $field, $table) {
@@ -267,24 +273,26 @@ function displayToggle($id, $state, $target, $headline, $subhead, $append = "") 
 }
 
 /**
+ * Returns html which will display an image with associated header, optional status message in red and menu
  * @param $headline
  * @param $icon
  * @param $menu
  * @param $message
- * @return string
+ * @return string html text with headline
  */
 function displayHeadline($headline, $icon, $menu, $message) {
     $rval = "<div class='lightback'>\n";
     $rval .= "<div class='pad5'>\n";
     $rval .= "<img src='$icon' width='40' height='40' align='left' title='$headline' alt='$headline' style='margin-right: 10px;'>";
-    $rval .= "<span class='plainheader'>$headline</span>";
+    $rval .= "<span class='plainheader'>$headline</span>\n";
     $rval .= "</div><br>\n";
     if ($message) {
         $rval .= "<p class='normal red'>&nbsp;<em>" . urldecode(stripslashes($message)) . "</em></p>\n";
     } else {
         $rval .= "<br>\n";
     }
-    $rval .= "$menu\n</div>\n";
+    $rval .= "$menu\n";
+    $rval .= "</div>\n";
 
     return $rval;
 }

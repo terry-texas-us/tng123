@@ -499,7 +499,7 @@ echo "</select>\n";
                 if ($row['allow_living'] == -1) { //account is inactive
                     echo "<input type='checkbox' name=\"notify\" value='1' checked onClick=\"replaceText();\"> {$admtext['notify']}<br>\n";
                     $owner = $sitename ? $sitename : $dbowner;
-                    echo "<textarea name=\"welcome\" rows=\"5\" cols=\"50\">{$deftext['hello']} {$row['realname']},\r\n\r\n{$deftext['activated']}";
+                    echo "<textarea name=\"welcome\" rows='5' cols=\"50\">{$deftext['hello']} {$row['realname']},\r\n\r\n{$deftext['activated']}";
                     if (!$tngconfig['omitpwd']) {
                         echo " {$deftext['infois']}:\r\n\r\n{$deftext['username']}: {$row['username']}\r\n{$deftext['password']}: {$row['password']}\r\n";
                     }

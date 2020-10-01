@@ -601,7 +601,7 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
 
     $tabletext = "";
     $filename = $imgrow['abspath'] ? $imgrow['path'] : basename($imgrow['path']);
-    $tabletext .= "<table border='0' cellspacing='1' cellpadding=\"4\" width=\"100%\" class=\"whiteback\">\n";
+    $tabletext .= "<table border='0' cellspacing='1' cellpadding='4' width=\"100%\" class=\"whiteback\">\n";
 
     if ($imgrow['owner']) {
         $tabletext .= tableRow($text['photoowner'], $imgrow['owner']);

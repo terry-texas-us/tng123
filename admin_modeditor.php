@@ -1,71 +1,50 @@
 <?php
-/*
-   Mod Manager 12 parameter editor
 
-   Instantiates modeditor class to do the editing.
-*/
+ob_start('ob_gzhandler');
 define('YES', "1");
 define('EDITP', 5);
 
-$debug = false;
-
-include "begin.php";
-include "adminlib.php";
+require "begin.php";
+require "adminlib.php";
 $textpart = "mods";
-include "getlang.php";
+require "getlang.php";
 
-include "$mylanguage/admintext.php";
-tng_db_connect($database_host, $database_name, $database_username, $database_password, $database_port, $database_socket) or exit;
-$admin_login = 1;
-include "checklogin.php";
-include "version.php";
-include "classes/version.php";
+require "$mylanguage/admintext.php";
+$helplang = findhelp("modhandler_help.php");
 $thisfile = $_SERVER['PHP_SELF'];
 
-include "config/mmconfig.php";
-$helplang = findhelp("modhandler_help.php");
-
-$parts = explode(".", $tng_version);        // added to determine TNG vNN for
-$tngmodver = "{$admtext['tngmods']} v{$parts[0]}";    // Mods for TNG vNN text display
-$tngmodurl = "Mods_for_TNG_v{$parts[0]}";    // Mods for TNG vNN URL
-
-// SETUP THE PAGE HEADER AND MENUS
-$modtabs = set_horizontal_tabs($options['show_analyzer'], $options['show_updates']);
-$innermenu = set_innermenu_links($tng_version);
-$menu = "<div class=\"mmmenuwrap\">";
-$menu .= doMenu($modtabs, "modlist", $innermenu);
-$menu .= "</div>";
-
-if (!isset($message)) {
-    $message = "";
-}
-$headline = displayHeadline($admtext['modmgr'] . ' - ' . ucwords($admtext['edparams']), "img/modmgr_icon.gif", $menu, $message);
-$first_menu = TRUE;
+$admin_login = 1;
+require "checklogin.php";
+require "version.php";
+require "classes/version.php";
 
 $cfgfolder = rtrim($rootpath, "/") . '/' . trim($modspath, "/") . '/';
 $mhuser = isset($_SESSION['currentuserdesc']) ? $_SESSION['currentuser'] : "";
 
-// INITIALIZATIONS FOR MOD OBJECTS
+require "config/mmconfig.php";
+
+$flags['tabs'] = $tngconfig['tabs'];
+$flags['modmgr'] = true;
+tng_adminheader($admtext['modmgr'], $flags);
+
+$min_width = isMobile() ? '0' : '640px';
+echo "<style>body {margin: 0; overflow-y: scroll; min-width: $min_width;}</style>";
+
+echo "</head>\n";
+
+echo tng_adminlayout();
+
+$modtabs = set_horizontal_tabs($options['show_analyzer'], $options['show_updates']);
+$innermenu = set_innermenu_links($tng_version);
+$menu = "<div class='mmmenuwrap'>";
+$menu .= doMenu($modtabs, "modlist", $innermenu);
+$menu .= "</div>";
+
+if (!isset($message)) $message = "";
+$headline = displayHeadline($admtext['modmgr'] . ' - ' . ucwords($admtext['edparams']), "img/modmgr_icon.gif", $menu, $message);
+
 require 'classes/modobjinits.php';
 
-/*
-// INITIALIZATIONS FOR MOD OBJECTS
-$objinits = array (
-   'rootpath'     => $rootpath,
-   'modspath'     => $modspath,
-   'extspath'     => $extspath,
-   'options'      => $options,
-   'time_offset'  => $time_offset,
-   'sitever'      => $sitever,
-   'currentuserdesc' => $mhuser,
-   'admtext'      => $admtext,
-   'templatenum'  => $templatenum,
-   'tng_version'  => $tng_version
-);
-*/
-/*************************************************************************
- * PROCESS POSTED FORM DATA
- *************************************************************************/
 if (!empty($_POST)) {
     foreach ($_POST as $key => $value) {
         ${$key} = $value;
@@ -93,9 +72,7 @@ if (!empty($_POST)) {
     } elseif ($submit == "pCancel") {
         header("Location:admin_modhandler.php");
     }
-} /*************************************************************************
- * PROCESS QUERY LINE ARGS
- *************************************************************************/
+}
 elseif (!empty($_GET)) {
     foreach ($_GET as $key => $value) {
         ${$key} = $value;
@@ -107,23 +84,6 @@ elseif (!empty($_GET)) {
     }
 }
 
-/*************************************************************************
- * SHOW PAGE HEADER
- *************************************************************************/
-$flags['tabs'] = $tngconfig['tabs'];
-$flags['modmgr'] = true;
-tng_adminheader($admtext['modmgr'], $flags);
-
-$min_width = isMobile() ? '0' : '640px';
-echo "
-<style type='text/css'>
-body {
-   margin:0;
-   overflow-y: scroll;
-   min-width:$min_width;
-}
-</style>";
-
 if ($options['fix_header'] == YES && !isMobile()) {
     $headclass = 'mmhead-fixed';
     $tableclass = 'm2table-fixed';
@@ -132,15 +92,9 @@ if ($options['fix_header'] == YES && !isMobile()) {
     $tableclass = 'm2table-scroll';
 }
 
-echo "
-</head>
-<body class=\"admin-body\">
-<div id=\"mmhead\" class=\"$headclass adminback\">
-   $headline
-</div><!--head-section-->";
-/*************************************************************************
- * SHOW EDIT FORM
- *************************************************************************/
+echo "<div id='mmhead' class='$headclass adminback'>";
+echo $headline;
+echo "</div>";
 
 if (!empty($action) && $action == EDITP) {
 
@@ -158,39 +112,16 @@ if (!empty($action) && $action == EDITP) {
     }
 }
 
-/*************************************************************************
- * SHOW EDIT FORM
- *************************************************************************/
-if (!isMobile() && $options['adjust_headers']) {
-    echo "
-<script>
-   window.scroll(0,0);
-   jQuery(document).ready(function() {
-      // set position of the title bar (tbar) relative to mmhead
-      jQuery('#tbar').position({
-         my: 'left top',
-         at: 'left bottom',
-         of: jQuery('#mmhead'),
-         collision: 'none'
-      });
+echo tng_adminfooter();
 
-      // set position of m3table table relative to title bar (tbar)
-      jQuery('#m3table').position({
-         my: 'left top',
-         at: 'left bottom',
-         of: jQuery('#tbar'),
-         collision: 'none'
-      });
-   });
-</script>";
-}
+ob_end_flush();
 
-echo "
-</body>
-</html>";
-exit;
-
-function set_horizontal_tabs($show_analyzer = NO, $show_updates = NO) {
+/**
+ * @param int|string $show_analyzer
+ * @param int|string $show_updates
+ * @return array
+ */
+function set_horizontal_tabs($show_analyzer = NO, $show_updates = NO): array {
     global $admtext;
 
     $modtabs = [];
@@ -207,26 +138,23 @@ function set_horizontal_tabs($show_analyzer = NO, $show_updates = NO) {
     return $modtabs;
 }
 
-function set_innermenu_links($tng_version) {
+/**
+ * @param $tng_version
+ * @return string
+ */
+function set_innermenu_links($tng_version): string {
     global $admtext;
 
-    $parts = explode(".", $tng_version);        // added to determine TNG vNN for
-    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";    // Mods for TNG vNN text display
-    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";    // Mods for TNG vNN URL
+    $parts = explode(".", $tng_version);
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";
     $helplang = findhelp("modhandler_help.php");
 
-    // inner menu help
-    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/modhandler_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/modhandler_help.php');\" class='lightlink'>{$admtext['help']}</a>\n";
+    $innermenu .= "&nbsp;|&nbsp;&nbsp;<a href='https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax' target='_blank' class='lightlink'>{$admtext['modsyntax']}</a>\n";
+    $innermenu .= "&nbsp;|&nbsp;&nbsp;<a href='https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines' target='_blank' class='lightlink'>{$admtext['modguidelines']}</a>\n";
+    $innermenu .= "&nbsp;|&nbsp;&nbsp;<a href='https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl' target='_blank' class='lightlink'>$tngmodver</a>\n";
 
-    // MM syntax
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target='_blank' class='lightlink'>{$admtext['modsyntax']}</a>";
-
-    // mod guidelines
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target='_blank' class='lightlink'>{$admtext['modguidelines']}</a>";
-
-    // mods for TNGv10
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target='_blank' class='lightlink'>$tngmodver</a>";
     return $innermenu;
 }
-
 ?>

@@ -25,7 +25,7 @@ function substr_unicode($str, $start, $len = null) {
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['link'] = "<link href=\"css/calendar.css\" rel=\"stylesheet\" type=\"text/css\">\n";
+$flags['link'] = "<link href='css/calendar.css' rel='stylesheet'>\n";
 $flags['scripting'] = "<script>\n";
 $flags['scripting'] .= "function redisplay(key) {window.location.href = jQuery('#' + key).attr('href');}\n";
 $flags['scripting'] .= "</script>\n";

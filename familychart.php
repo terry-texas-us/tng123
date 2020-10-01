@@ -518,7 +518,7 @@ function famStylesheet() {
     $lw = floor(($familychart['colsep'] - $b) / 2);
     $jw = floor($familychart['colsep'] / 2);
     return "
-<style type='text/css'>
+<style>
 .fambox, .mfambox {
 	width:{$b}px; height:{$bh}px;
 	position: absolute; z-index: 5;

@@ -154,28 +154,28 @@ class modeditor extends modparser
         $tbclass = $this->fix_header == self::YES ? "tbar-fixed" : "tbar-scroll";
         $tableclass = $this->fix_header == self::YES ? "m3table-fixed" : "m3table-scroll";
 
-        echo "<table id=\"tbar\" class=\"normal lightback $tbclass\">";
-        echo "<tr><td style=\"padding-top: 5px;\"><div class=\"mmsubhead\">{$this->admtext['edopts']}: $cfgfile</div></td></tr>";
+        echo "<table id='tbar' class='normal lightback $tbclass'>";
+        echo "<tr><td style='padding-top: 5px;'><div class='mmsubhead'>{$this->admtext['edopts']}: $cfgfile</div></td></tr>";
         echo "</table>";
-        echo "<table id=\"m3table\" class=\"normal lightback $tableclass\">";
+        echo "<table id='m3table' class='normal lightback $tableclass'>";
         echo "<tr><td>";
         if (!is_writable($cfgpath)) {
-            echo "<span style=\"color:red;\">{$this->admtext['cfgnowrite']}</span>";
+            echo "<span style='color:red;'>{$this->admtext['cfgnowrite']}</span>";
             exit;
         }
         // show the parameters editing form
         for ($i = 0; isset($params[$i]); $i++) {
             $relpath = str_replace($this->rootpath, '', $params[$i]['tgt']);
             echo "
-<form method=\"post\" action=\"\">
-<table class=\"normal tfixed\">
+<form method='post' action=''>
+<table class='normal tfixed'>
 <tr>
    <td class='databack edpanel mmleftcol'>
       {$params[$i]['label']}
    </td>
    <td class='databack edpanel mmrightcol'>
       <div>$relpath: {$params[$i]['param']}</div>
-      <textarea class=\"w100\" name=\"param[val]\">{$params[$i]['val']}</textarea>
+      <textarea class='w100' name=\"param[val]\">{$params[$i]['val']}</textarea>
       <input type='hidden' name=\"param[mod]\" value=\"$this->modname\">
       <input type='hidden' name=\"param[version]\" value=\"$this->version\">
       <input type='hidden' name=\"param[def]\" value=\"{$params[$i]['def']}\">
@@ -183,9 +183,9 @@ class modeditor extends modparser
       <input type='hidden' name=\"param[cfg]\" value=\"{$params[$i]['cfg']}\">
       <input type='hidden' name=\"param[param]\" value=\"{$params[$i]['param']}\">
       <input type='hidden' name=\"param[quot]\" value=\"{$params[$i]['quot']}\">
-      <div class=\"edbuttonbar\">
-         <button type='submit' name=\"submit\" value=\"pUpdate\">{$this->admtext['update']}</button>&nbsp;&nbsp;
-         <button type='submit' name=\"submit\" value=\"pRestore\">{$this->admtext['restore']}</button>&nbsp;&nbsp;
+      <div class='edbuttonbar'>
+         <button type='submit' name='submit' value='pUpdate'>{$this->admtext['update']}</button>&nbsp;&nbsp;
+         <button type='submit' name='submit' value='pRestore'>{$this->admtext['restore']}</button>&nbsp;&nbsp;
       </div>
    </td>
 </tr>
@@ -196,9 +196,9 @@ class modeditor extends modparser
         echo "
 <tr>
 <td>
-<div class=\"lightback edreturn\">
-   <form method=\"post\" action=\"\">
-            <button type='submit' name=\"submit\" value=\"pCancel\">{$this->admtext['return']}</button>
+<div class='lightback edreturn'>
+   <form method='post' action=''>
+            <button type='submit' name='submit' value='pCancel'>{$this->admtext['return']}</button>
    </form>
 </div>
 </td>
@@ -231,12 +231,12 @@ class modeditor extends modparser
 
         $this->modname = $param['mod'];
         $this->version = $param['version'];
-        $this->new_logevent("{$this->admtext['updparam']} {$param['param']}: <span class=\"msgbold\">{$param['tgt']}</span> {$this->admtext['formodname']} <span class=\"msgbold\">{$param['mod']}</span>");
+        $this->new_logevent("{$this->admtext['updparam']} {$param['param']}: <span class='msgbold'>{$param['tgt']}</span> {$this->admtext['formodname']} <span class='msgbold'>{$param['mod']}</span>");
         $this->cfgpath = $param['cfg'];
         $this->cfgfile = pathinfo($param['cfg'], PATHINFO_BASENAME);
         if (!is_writable($param['cfg'])) {
             $this->mod_status = self::ERRORS;
-            $this->add_logevent("<span class=\"msgerror\">{$this->admtext['cantupd']}</span> <span class=\"hilighterr msgbold\">{$param['cfg']} %parameter:% {$param['param']}</span>");
+            $this->add_logevent("<span class='msgerror'>{$this->admtext['cantupd']}</span> <span class='hilighterr msgbold'>{$param['cfg']} %parameter:% {$param['param']}</span>");
             $this->add_logevent("{$this->admtext['fileperms']} ({$param['cfg']})");
             $this->write_eventlog();
             header("Location: admin_showmodslog.php");
@@ -244,7 +244,7 @@ class modeditor extends modparser
         }
         if (!is_writable($param['tgt'])) {
             $this->mod_status = self::ERRORS;
-            $this->add_logevent("<span class=\"msgerror\">{$this->admtext['cantupd']}</span> <span class=\"hilighterr msgbold\">{$param['tgt']} %parameter:% {$param['param']}</span>");
+            $this->add_logevent("<span class='msgerror'>{$this->admtext['cantupd']}</span> <span class='hilighterr msgbold'>{$param['tgt']} %parameter:% {$param['param']}</span>");
             $this->add_logevent("{$this->admtext['fileperms']} ({$param['tgt']})");
             $this->write_eventlog();
             header("Location: admin_showmodslog.php");

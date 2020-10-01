@@ -318,7 +318,7 @@ include_once "eventlib.php";
                                             echo " onmouseover=\"$('unlinkc_{$child['pID']}').style.visibility='visible';\" onmouseout=\"$('unlinkc_{$child['pID']}').style.visibility='hidden';\"";
                                         }
                                         echo ">\n";
-                                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
+                                        echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
                                         echo "<td class=\"dragarea normal\">";
                                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                                         echo "</td>\n";

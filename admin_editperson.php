@@ -101,7 +101,7 @@ function parentRow($parent, $spouse, $label) {
 
         $pout = "<tr>\n";
         $pout .= "<td>" . $admtext[$label] . ":</td>\n";
-        $pout .= "<td colspan=\"4\">";
+        $pout .= "<td colspan='4'>";
         if ($prow['personID']) {
             $pout .= "<a href=\"admin_editperson.php?personID={$prow['personID']}&amp;tree={$tree}&amp;cw={$cw}\">" . getName($prow) . " - {$prow['personID']}</a>{$birthinfo}";
         }
@@ -109,7 +109,7 @@ function parentRow($parent, $spouse, $label) {
         $pout .= "</tr>\n";
         $pout .= "<tr>\n";
         $pout .= "<td>&nbsp;&nbsp;{$admtext['relationship']}:</td>\n";
-        $pout .= "<td colspan=\"4\">\n";
+        $pout .= "<td colspan='4'>\n";
         $fieldname = $label == "father" ? "frel" : "mrel";
         $pout .= "<select name=\"$fieldname{$parent['familyID']}\">\n";
         $pout .= "<option value=\"\"></option>\n";
@@ -260,21 +260,20 @@ include_once "eventlib_js.php";
         setTimeout(editWarning, <?php echo $warnsecs; ?>);
         <?php } ?>
     </script>
-<?php echo "</head>"; ?>
 
-    <body class="admin-body" onload="startSort()">
-
-    <?php
-    $peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
-    $peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
-    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
-    $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
-    $peopletabs[4] = [$allow_edit, "admin_editperson.php?personID=$personID&tree=$tree", $admtext['edit'], "edit"];
-    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
-    if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
-        $innermenu .= " &nbsp;|&nbsp; <a href='#' onclick=\"return addNewMedia();\" class='lightlink'>{$admtext['addmedia']}</a>";
+<?php
+echo "</head>\n";
+echo tng_adminlayout(" onload='startSort()'");
+$peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
+$peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
+$peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'] . $revstar, "review"];
+$peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
+$peopletabs[4] = [$allow_edit, "admin_editperson.php?personID=$personID&tree=$tree", $admtext['edit'], "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#edit');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
+if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
+    $innermenu .= " &nbsp;|&nbsp; <a href='#' onclick=\"return addNewMedia();\" class='lightlink'>{$admtext['addmedia']}</a>";
     }
     $menu = doMenu($peopletabs, "edit", $innermenu);
     if (!isset($message)) {
@@ -497,7 +496,7 @@ include_once "eventlib_js.php";
                         <?php
                         while ($parent = tng_fetch_assoc($parents)) {
                         echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
-                        echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'>";
+                        echo "<table class='w-100' cellpadding='5' cellspacing='1'>";
                         echo "<tr>\n";
                         if ($parentcount > 1) {
                             echo "<td class=\"dragarea normal\">";
@@ -509,7 +508,7 @@ include_once "eventlib_js.php";
                         echo "<table class='normal'>";
                         echo "<tr>";
                         echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
-                        echo "<td class='align-top' colspan=\"4\">\n";
+                        echo "<td class='align-top' colspan='4'>\n";
                         echo "<a href=\"admin_editfamily.php?familyID={$parent['familyID']}&amp;tree=$tree&amp;cw=$cw\">{$parent['familyID']}</a>\n";
                         echo "</td>";
                         echo "</tr>";
@@ -584,7 +583,7 @@ include_once "eventlib_js.php";
                     }
 
                     echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
-                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'>";
+                    echo "<table class='w-100' cellpadding='5' cellspacing='1'>";
                     echo "<tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class=\"dragarea normal\">";

@@ -59,7 +59,7 @@ if ($tngconfig['maint']) {
         </table>
     </form>
 
-    <table class="w-100" cellspacing="0" class="page">
+    <table class="page w-100" cellspacing="0">
         <tr>
             <td class="section">
 
@@ -115,14 +115,14 @@ if ($tngconfig['maint']) {
                 </table>
             </td>
             <td class='align-top'>
-                <table cellspacing="0" class="bodytable">
+                <table class="bodytable" cellspacing="0">
                     <tr>
                         <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td class="spacercol">&nbsp;&nbsp;&nbsp;</td>
                         <td class='align-top'>
-                            <table cellspacing="0" class="bodytable">
+                            <table class="bodytable" cellspacing="0">
                                 <tr>
                                     <td class="maincontent"><br>
                                         <img src="<?php echo $templatepath; ?><?php echo $tmp['t7_mainimage']; ?>" alt=""

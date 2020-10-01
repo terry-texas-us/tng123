@@ -163,7 +163,7 @@ if ($result) {
                     $formstr = getFORM("places100", "get", "", "");
                     echo $formstr;
                     echo $text['showtop'];
-                    echo " <input type='text' name=\"topnum\" value=\"100\" size=\"4\" maxlength=\"4\"> {$text['byoccurrence']}\n";
+                    echo " <input type='text' name=\"topnum\" value=\"100\" size='4' maxlength='4'> {$text['byoccurrence']}\n";
                     if ($tree && !$tngconfig['places1tree']) {
                         echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
                     }

@@ -309,7 +309,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             echo "</tr>\n";
                             echo "<tr>";
                             echo "<td class='align-top'><strong>{$admtext['suggested']}:</strong></td>";
-                            echo "<td class='align-top' colspan=\"2\"><textarea cols=\"60\" rows=\"4\" name=\"newinfo\">{$row['info']}</textarea></td>";
+                            echo "<td class='align-top' colspan=\"2\"><textarea cols=\"60\" rows='4' name=\"newinfo\">{$row['info']}</textarea></td>";
                             echo "</tr>\n";
                         }
                         $row['note'] = preg_replace("/\"/", "&#34;", $row['note']);

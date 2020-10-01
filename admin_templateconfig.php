@@ -243,7 +243,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                 $sections[$n] .= "</td>\n";
                 $sections[$n] .= "<td>";
                 if ($type == "textarea") {
-                    $sections[$n] .= "<textarea name=\"form_$key\" id=\"form_$key\" rows=\"5\" cols=\"80\">$value</textarea>\n";
+                    $sections[$n] .= "<textarea name=\"form_$key\" id=\"form_$key\" rows='5' cols=\"80\">$value</textarea>\n";
                 } elseif ($type == "select") {
                     $sections[$n] .= "<select name=\"form_$key\" id=\"form_$key\">\n";
                     for ($j = 1; $j <= $treenum; $j++) {

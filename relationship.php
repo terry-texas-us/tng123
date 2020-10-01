@@ -389,7 +389,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
         $shadow = $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowcolor'];
         echo "<div class=\"pedbox rounded10\" style=\"background-color:$boxcolortouse; box-shadow:$shadow;top:" . $gens->offsetV . "px; left:" . $gens->offsetH . "px; height:{$pedigree['puboxheight']}" . "px; width:{$pedigree['puboxwidth']}" . "px;border:{$pedigree['borderwidth']}px solid {$pedigree['bordercolor']};\"$iconactions>\n";
         $tableheight = $pedigree['puboxheight'];
-        echo "$iconlinks<table border='0' cellpadding=\"5\" cellspacing='0' align=\"{$pedigree['puboxalign']}\" class=\"pedboxtable\"><tr>";
+        echo "$iconlinks<table border='0' cellpadding='5' cellspacing='0' align=\"{$pedigree['puboxalign']}\" class=\"pedboxtable\"><tr>";
 
         // implant a picture (maybe)
         if ($pedigree['inclphotos']) {

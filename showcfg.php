@@ -22,12 +22,12 @@ $lines = file($mod);
 if (false !== $lines) {
 
     echo "<!doctype html>\n";
-    echo "<html lang=\"en\">\n";
+    echo "<html lang='en'>\n";
     echo "<head>";
     echo "<title>CFG</title>";
     echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">";
 
-    echo "<style type='text/css'>";
+    echo "<style>";
     echo "pre {";
     echo "white-space: pre-wrap; /* Since CSS 2.1 */";
     echo "white-space: -moz-pre-wrap; /* Mozilla, since 1999 */";

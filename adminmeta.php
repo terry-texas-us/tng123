@@ -1,4 +1,4 @@
-<style type="text/css">
+<style>
     #tngnav a {
         font-size: 11px;
     }

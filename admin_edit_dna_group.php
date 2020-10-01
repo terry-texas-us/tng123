@@ -77,16 +77,16 @@ echo displayHeadline($admtext['dna_groups'] . " &gt;&gt; " . $admtext['modifygro
                             <select name="test_type">
                                 <option value=""></option>
                                 <option value="atDNA" <?php if ($row['test_type'] == "atDNA") {
-                                    echo "selected='selected'";
+                                    echo "selected";
                                 } ?>><?php echo $admtext['atdna_test']; ?></option>
                                 <option value="Y-DNA" <?php if ($row['test_type'] == "Y-DNA") {
-                                    echo "selected='selected'";
+                                    echo "selected";
                                 } ?>><?php echo $admtext['ydna_test']; ?></option>
                                 <option value="mtDNA" <?php if ($row['test_type'] == "mtDNA") {
-                                    echo "selected='selected'";
+                                    echo "selected";
                                 } ?>><?php echo $admtext['mtdna_test']; ?></option>
                                 <option value="X-DNA" <?php if ($row['test_type'] == "X-DNA") {
-                                    echo "selected='selected'";
+                                    echo "selected";
                                 } ?>><?php echo $admtext['xdna_test']; ?></option>
                             </select>
                         </td>

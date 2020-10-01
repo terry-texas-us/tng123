@@ -1,67 +1,66 @@
 <?php
-/*************************************************************************
- * file: modanalyzer.php by William (Rick) Bisbee.
- * Analyze all .cfg files in current folder for conflicts.
- * version 10.1.0.2, revised 12/03/2014
- *************************************************************************/
-include 'begin.php';
-include 'adminlib.php';
+
+require 'begin.php';
+require 'adminlib.php';
 $textpart = "mods";
-include 'getlang.php';
-include "$mylanguage/admintext.php";
+
+require "$mylanguage/admintext.php";
+$helplang = findhelp("modhandler_help.php");
 
 $admin_login = 1;
-include 'checklogin.php';
-include 'version.php';
-$modspath .= '/';
-$modfolder = 'tools/';
+require 'checklogin.php';
+require 'version.php';
 
 define('YES', "1");
 define('NO', "0");
 
-// temporary: these can be set from any options file
-include "config/mmconfig.php";
+$modspath .= '/';
+$modfolder = 'tools/';
 
-$helplang = findhelp("modhandler_help.php");
-
-/*************************************************************************
- * Set Up for Admin Mod Header
- **************************************************************************/
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 
+include "config/mmconfig.php";
+
+if (!isset($options['show_analyzer'])) $options['show_analyzer'] = "0";
+if (!isset($options['show_developer'])) $options['show_developer'] = "0";
+if (!isset($options['show_updates'])) $options['show_updates'] = "0";
+
+if ($options['fix_header'] == YES) {
+    ?>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .mmcontainer {
+            position: fixed;
+            float: left;
+            height: 80%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    </style>
+    <?php
+}
 $min_width = isMobile() ? '0' : '640px';
-echo "<style type='text/css'>body { margin:0; overflow-y: scroll; min-width:$min_width; }</style>";
+echo "<style>body {margin: 0; overflow-y: scroll; min-width: $min_width;}</style>\n";
 
-if (!isset($options['show_analyzer'])) {
-    $options['show_analyzer'] = "0";
-}
-if (!isset($options['show_developer'])) {
-    $options['show_developer'] = "0";
-}
-if (!isset($options['show_updates'])) {
-    $options['show_updates'] = "0";
-}
+echo "</head>\n";
+echo tng_adminlayout();
 
-$parts = explode(".", $tng_version);    // added to determine TNG vNN for
-$tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
-$tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
 $modtabs = set_horizontal_tabs($options['show_analyzer'], $options['show_developer'], $options['show_updates']);
 $innermenu = set_innermenu_links($tng_version);
 
-$menu = "<div class=\"mmmenuwrap\">";
+$menu = "<div class='mmmenuwrap'>";
 $menu .= doMenu($modtabs, "files", $innermenu);
 $menu .= "</div>";
 
-if (!isset($message)) {
-    $message = "";
-}
+if (!isset($message)) $message = "";
+
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
-if (empty($admtext['modguidelines'])) {
-    $admtext['modguidelines'] = "Mod Guidelines";
-}
-// SHOW HEADER
+if (empty($admtext['modguidelines'])) $admtext['modguidelines'] = "Mod Guidelines";
 
 if ($options['fix_header'] == YES && !isMobile()) {
     $headclass = 'mmhead-fixed';
@@ -71,78 +70,72 @@ if ($options['fix_header'] == YES && !isMobile()) {
     $tableclass = 'm2table-scroll';
 }
 
-echo "</head>";
-echo tng_adminlayout();
+echo "<div id='mmhead' class='$headclass adminback'>";
+echo $headline;
+echo "</div>";
+echo "<div class='mmcontainer'>";
+echo "<table id='m2table' class='normal lightback $tableclass'>";
+echo "<tr>";
+echo "<td class='databack mmleftcol'>";
 
-
-echo "<div id=\"mmhead\" class=\"$headclass adminback\">$headline</div> <!--head-section-->";
-echo "<table id=\"m2table\" class='normal lightback $tableclass'>";
-echo "<tr><td class='databack mmleftcol'>";
-
-// DISPLAY INDEX OF MODIFIED FILES (LEFT SIDE)
-echo "<table class=\"normal tfixed\">";
-echo "<tr><th class=\"fieldnameback fieldname\">{$admtext['filesel']}</th><tr>";
+echo "<table class='normal tfixed'>";
+echo "<tr>";
+echo "<th class='fieldnameback fieldname'>{$admtext['filesel']}</th>";
+echo "</tr>";
 $modFiles = get_modfile_names();
 $targetFiles = get_targetfile_names($modFiles);
 display_targetfiles($targetFiles);
 echo "<tr><td>&nbsp;</td></tr>";
-echo "</table><!--left-->";
+echo "</table>";
 echo "</td>";
 
-// DISPLAY FILE MODIFICATIONS (RIGHT SIDE)
 echo "<td class='databack mmrightcol'>";
-echo "<table class=\"normal tfixed\">";
-echo "<tr><th class=\"fieldnameback fieldname\">{$admtext['potconf']}</th></tr>";
-
+echo "<table class='normal tfixed'>";
+echo "<tr>";
+echo "<th class='fieldnameback fieldname'>{$admtext['potconf']}</th>";
+echo "</tr>";
 
 if ($_GET && is_array($_GET)) {
     if (!empty($mtarget)) {
         $file_hdr = str_replace('xxx', "<span class=\"mmhighlight\">$mtarget</span>", $admtext['filemod']);
-        echo "<tr><td class='databack'><h2>$file_hdr:</h2></td></tr>";
+        echo "<tr>";
+        echo "<td class='databack'>";
+        echo "<h2>$file_hdr:</h2>";
+        echo "</td>";
+        echo "</tr>";
 
         $id = 1;
 
         foreach ($modFiles as $file) {
             $buffer = file_get_contents($modspath . $file);
-            $buffer = htmlentities($buffer);
+            $buffer = htmlentities($buffer, ENT_IGNORE);
             $buffer = preg_replace('#([@^~])#', '', $buffer);
             $buffer = str_replace('$modspath', $modspath, $buffer);
             $buffer = str_replace('$extspath', $extspath, $buffer);
 
-            if ($file == 'add_my_copyright_v11.0.0.1.cfg') {
-            }
             if (strpos($buffer, "%target:$mtarget%") || strpos($buffer, "%target: $mtarget")) {
-                echo "<tr><td class='databack'>";
+                echo "<tr>";
+                echo "<td class='databack'>";
                 display_section_locations($file, $buffer, $mtarget, "id$id");
                 $id++;
-                echo "</td></tr>";
+                echo "</td>";
+                echo "</tr>";
             }
         }
     }
 }
-echo "</table><!--right-->";
-echo "</td></tr></table><!--outter-->";
+echo "</table>";
+echo "</td>";
+echo "</tr>";
+echo "</table>";
+echo "</div> <!--mmcontainer-->";
 
-if (!isMobile() && $options['adjust_headers']) {
-    echo "
-<script>
-   jQuery(document).ready(function() {
-      // set position of mm2table relative to mmhead
-      jQuery('#m2table').position({
-         my: 'left top',
-         at: 'left bottom',
-         of: jQuery('#mmhead'),
-         collision: 'none'
-      });
-   });
-</script>";
-}
 echo "
 <script>
 function toggleSection(sectionName) {
-   var section = document.getElementById(sectionName + 'div');
-   var link = document.getElementById(sectionName + 'link');
-   if(section.style.display == \"none\") {
+   let section = document.getElementById(sectionName + 'div');
+   let link = document.getElementById(sectionName + 'link');
+   if (section.style.display === \"none\") {
       section.style.display = \"\";
       link.innerHTML = \"{$admtext['hide']}&nbsp;{$admtext['modifications']}\";
    }
@@ -155,8 +148,13 @@ function toggleSection(sectionName) {
 </script>";
 
 echo tng_adminfooter();
-exit;
 
+/**
+ * @param string $show_analyzer
+ * @param string $show_developer
+ * @param string $show_updates
+ * @return array
+ */
 function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_updates = NO) {
     global $admtext;
 
@@ -176,33 +174,35 @@ function set_horizontal_tabs($show_analyzer = NO, $show_developer = NO, $show_up
     return $modtabs;
 }
 
+/**
+ * @param $tng_version
+ * @return string
+ */
 function set_innermenu_links($tng_version) {
     global $admtext;
 
-    $parts = explode(".", $tng_version);    // added to determine TNG vNN for
-    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";  // Mods for TNG vNN text display
-    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";  // Mods for TNG vNN URL
+    $parts = explode(".", $tng_version);
+    $tngmodver = "{$admtext['tngmods']} v{$parts[0]}";
+    $tngmodurl = "Mods_for_TNG_v{$parts[0]}";
     $helplang = findhelp("modhandler_help.php");
 
-    // inner menu help
-    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/modhandler_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/modhandler_help.php');\" class='lightlink'>{$admtext['help']}</a>\n";
+    $innermenu .= "&nbsp;|&nbsp;&nbsp;<a href='https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax' target='_blank' class='lightlink'>{$admtext['modsyntax']}</a>\n";
+    $innermenu .= "&nbsp;|&nbsp;&nbsp;<a href='https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines' target='_blank' class='lightlink'>{$admtext['modguidelines']}</a>\n";
+    $innermenu .= "&nbsp;|&nbsp;&nbsp;<a href='https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl' target='_blank' class='lightlink'>$tngmodver</a>\n";
 
-    // MM syntax
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax\" target='_blank' class='lightlink'>{$admtext['modsyntax']}</a>";
-
-    // mod guidelines
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Mod_Guidelines\" target='_blank' class='lightlink'>{$admtext['modguidelines']}</a>";
-
-    // mods for TNGv10
-    $innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Category:$tngmodurl\" target='_blank' class='lightlink'>$tngmodver</a>";
     return $innermenu;
 }
 
+/**
+ * @return array
+ */
 function get_modfile_names() {
     global $modspath;
 
     $fileNames = [];
-    if ($handle = opendir($modspath)) {
+    $handle = opendir($modspath);
+    if ($handle) {
         while (false !== ($file = readdir($handle))) {
             strtolower($file);
             if (pathinfo($file, PATHINFO_EXTENSION) == 'cfg') {
@@ -215,6 +215,10 @@ function get_modfile_names() {
     return $fileNames;
 }
 
+/**
+ * @param $modFileNames
+ * @return array
+ */
 function get_targetfile_names($modFileNames) {
     global $modspath, $extspath;
 
@@ -230,9 +234,7 @@ function get_targetfile_names($modFileNames) {
             $element = substr($parts[$i], 0, (strpos($parts[$i], '%')));
             $args = explode(':', $element, $limit = 2);
             $element = trim($args[0]);
-            if ($element == 'files') {
-                continue;
-            }
+            if ($element == 'files') continue;
             if (strlen($element) > 0 && !in_array($element, $targets)) {
                 $targets[] = $element;
             }
@@ -242,18 +244,29 @@ function get_targetfile_names($modFileNames) {
     return ($targets);
 }
 
+/**
+ * @param $targetFiles
+ */
 function display_targetfiles($targetFiles) {
     foreach ($targetFiles as $mtarget) {
-        echo "<tr><td class='lightback databack mmrightalign'><a class=\"mmlinks\" href=\"?mtarget=$mtarget\">$mtarget</a></td></tr>";
+        echo "<tr><td class='lightback databack mmrightalign'>";
+        echo "<a class='mmlinks' href=\"?mtarget=$mtarget\">$mtarget</a>";
+        echo "</td></tr>";
     }
 }
 
+/**
+ * @param $modfile
+ * @param $contentstr
+ * @param $mtarget
+ * @param $id
+ */
 function display_section_locations($modfile, $contentstr, $mtarget, $id) {
     global $admtext;
 
     $contentstr = nl2br($contentstr);
     $sections = array_map('trim', explode("%target:", $contentstr));
-    echo "<span class=\"mmfilenmfont\">$modfile</span>&nbsp;&nbsp;";
+    echo "<span class='mmfilenmfont'>$modfile</span>&nbsp;&nbsp;";
     echo "<a href='#' id=\"{$id}link\" onclick=\"return toggleSection('$id');\">{$admtext['show']}&nbsp;{$admtext['modifications']}</a><br>";
     echo "<div id=\"{$id}div\" style='display: none;'><br>";
     for ($i = 1; isset($sections[$i]); $i++) {
@@ -265,8 +278,8 @@ function display_section_locations($modfile, $contentstr, $mtarget, $id) {
                 $locations[$j] = str_replace("%end:%", "</strong>%end:%", $locations[$j]);
                 $locations[$j] .= "%end:%<br>";
                 $locations[$j] = preg_replace("@((%location|%end|%trim|%insert|%replace)[^%]*%)@i", "<span class=\"mmkeyword\">$1</span>", $locations[$j]);
-                echo "<span class=\"mmlochdr\">// Location $j</span><br>";
-                echo "<span class=\"mmkeyword\">%location:%</span><strong>{$locations[$j]}";
+                echo "<span class='mmlochdr'>// Location $j</span><br>";
+                echo "<span class='mmkeyword'>%location:%</span><strong>{$locations[$j]}";
             }
         }
     }

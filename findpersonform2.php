@@ -38,20 +38,20 @@ header("Content-type:text/html; charset=" . $session_charset);
         <input type="hidden" name="type" value="<?php echo $type; ?>">
         <?php
         if ($nameplusid) {
-            echo "<input type='hidden' name=\"nameplusid\" value=\"$nameplusid\">";
+            echo "<input type='hidden' name='nameplusid' value='$nameplusid'>";
         }
         ?>
         <table cellspacing="0" cellpadding="2">
             <tr>
                 <td><span class="normal"><?php echo $admtext['firstname']; ?>: </span></td>
                 <td>
-                    <input type="text" name="myfirstname" id="myfirstname">
+                    <input type="search" name="myfirstname" id="myfirstname">
                 </td>
             </tr>
             <tr>
                 <td><span class="normal"><?php echo $admtext['lastname']; ?>: </span></td>
                 <td>
-                    <input type="text" name="mylastname" id="mylastname">
+                    <input type="search" name="mylastname" id="mylastname">
                 </td>
             </tr>
             <tr>

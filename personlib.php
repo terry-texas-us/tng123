@@ -112,7 +112,7 @@ function getCitations($persfamID, $shortcite = 1) {
         $citmedia = getMedia($citrow, "C");
         $mediaoutput = "";
         if ($citmedia) {
-            $mediaoutput .= "<table cellspacing=\"4\">";
+            $mediaoutput .= "<table cellspacing='4'>";
             foreach ($citmedia as $item) {
                 $mediaoutput .= "<tr>\n";
                 if ($item['imgsrc']) {
@@ -873,7 +873,7 @@ function doMediaSection($entity, $medialist, $albums) {
             if ($media) {
                 $media .= "<br>\n";
             }
-            $media .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+            $media .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
             $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
             $media .= "$newmedia\n</table>\n";
         }
@@ -883,7 +883,7 @@ function doMediaSection($entity, $medialist, $albums) {
         if ($media) {
             $media .= "<br>\n";
         }
-        $media .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+        $media .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
         $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
         $media .= "$albumtext\n</table>\n";
     }

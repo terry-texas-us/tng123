@@ -57,12 +57,12 @@ if ($totnum_tests) {
     } else {
         $linkedstr = $num_links > 1 ? $admtext['dna_tests'] : $text['dna_test'];
     }
-    $persontext .= "<table cellspacing='1' cellpadding=\"4\" class=\"whiteback tfixed\">\n";
+    $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
     $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
 
     $persontext .= "<tr>\n";
     $persontext .= "<td class=\"fieldnameback fieldname align-top\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
-    $persontext .= "<td colspan=\"4\" class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
+    $persontext .= "<td colspan='4' class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
     $persontext .= "<a href='#' title=\"{$text['dna_info_head']}\"><img src=\"img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
     $persontext .= "</td>\n";
     $persontext .= "</tr>\n";

@@ -624,7 +624,7 @@ writelog("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">" .
 preparebookmark("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">{$text['descendfor']} " . $row['name'] . " ($personID)</a>");
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['scripting'] = "<style type=\"text/css\">
+$flags['scripting'] = "<style>
 .desc {
 	margin: 0 0 10px 0;
 }
@@ -665,7 +665,7 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) $innermenu .= " selected=\"selected\"";
+    if ($i == $generations) $innermenu .= " selected";
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";

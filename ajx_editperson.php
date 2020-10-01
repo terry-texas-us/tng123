@@ -341,7 +341,7 @@ include_once "eventlib.php";
                     $gotfather = tng_query($query);
 
                     echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinkp_{$parent['familyID']}').style.display='';\" onmouseout=\"$('unlinkp_{$parent['familyID']}').style.display='none';\">\n";
-                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
+                    echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($parentcount > 1) {
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
@@ -352,7 +352,7 @@ include_once "eventlib.php";
                     echo "<table class='normal'>";
                     echo "<tr>";
                     echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
-                    echo "<td class='align-top' colspan=\"4\">\n";
+                    echo "<td class='align-top' colspan='4'>\n";
 
                     echo $parent['familyID'] . "\n</td></tr>";
                     if ($gotfather) {
@@ -516,7 +516,7 @@ include_once "eventlib.php";
                         $spouse = "husband";
                     }
                     echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinks_{$marriagerow['familyID']}').style.display='';\" onmouseout=\"$('unlinks_{$marriagerow['familyID']}').style.display='none';\">\n";
-                    echo "<table width=\"100%\" cellpadding=\"5\" cellspacing='1'><tr>\n";
+                    echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";

@@ -408,7 +408,7 @@ function do_chart($gens, $output = false) {
     }
     ksort($row);
 
-    $html = '<style type="text/css">
+    $html = '<style>
 	#vcontainer {
 		height:' . $containerheight . 'px;
 	}

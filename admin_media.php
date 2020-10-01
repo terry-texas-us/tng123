@@ -79,27 +79,28 @@ $orgwherestr = $wherestr;
 $orgtree = $tree;
 
 $originalstring = preg_replace("/\"/", "&#34;", $searchstring);
-$wherestr = $searchstring ? "($media_table.mediaID LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR path LIKE \"%$searchstring%\" OR notes LIKE \"%$searchstring%\" OR bodytext LIKE \"%$searchstring%\" OR owner LIKE \"%$searchstring%\")" : "";
+
+$wherestr = $searchstring ? "(media.mediaID LIKE '%$searchstring%' OR description LIKE '%$searchstring%' OR path LIKE '%$searchstring%' OR notes LIKE '%$searchstring%' OR bodytext LIKE '%$searchstring%' OR owner LIKE '%$searchstring%')" : "";
 if ($assignedtree) {
-    $wherestr .= $wherestr ? " AND ($media_table.gedcom = '$tree' || $media_table.gedcom = \"\")" : "($media_table.gedcom = '$tree' || $media_table.gedcom = \"\")";
+    $wherestr .= $wherestr ? " AND (media.gedcom = '$tree' || media.gedcom = '')" : "(media.gedcom = '$tree' || media.gedcom = '')";
 } elseif ($tree) {
-    $wherestr .= $wherestr ? " AND $media_table.gedcom = '$tree'" : "$media_table.gedcom = '$tree'";
+    $wherestr .= $wherestr ? " AND media.gedcom = '$tree'" : "media.gedcom = '$tree'";
 }
 if ($mediatypeID) {
-    $wherestr .= $wherestr ? " AND mediatypeID = \"$mediatypeID\"" : "mediatypeID = \"$mediatypeID\"";
+    $wherestr .= $wherestr ? " AND mediatypeID = '$mediatypeID'" : "mediatypeID = '$mediatypeID'";
 }
 if ($fileext) {
-    $wherestr .= $wherestr ? " AND form = \"$fileext\"" : "form = \"$fileext\"";
+    $wherestr .= $wherestr ? " AND form = '$fileext'" : "form = '$fileext'";
 }
 if ($hsstat != "all") {
     if ($hsstat) {
-        $wherestr .= $wherestr ? " AND status = \"$hsstat\"" : "status = \"$hsstat\"";
+        $wherestr .= $wherestr ? " AND status = '$hsstat'" : "status = '$hsstat'";
     } else {
-        $wherestr .= $wherestr ? " AND (status = \"$hsstat\" OR status IS NULL)" : "(status = \"$hsstat\" OR status IS NULL)";
+        $wherestr .= $wherestr ? " AND (status = '$hsstat' OR status IS NULL)" : "(status = '$hsstat' OR status IS NULL)";
     }
 }
 if ($cemeteryID) {
-    $wherestr .= $wherestr ? " AND cemeteryID = \"$cemeteryID\"" : "cemeteryID = \"$cemeteryID\"";
+    $wherestr .= $wherestr ? " AND cemeteryID = '$cemeteryID'" : "cemeteryID = '$cemeteryID'";
 }
 if ($unlinked) {
     $join = "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID";

@@ -11,6 +11,7 @@ $admin_login = 2;
 
 include "checklogin.php";
 include "version.php";
+
 function adminMenuItem($destination, $label, $number, $message, $icon) {
     $menu = "";
     if (isMobile()) {
@@ -114,7 +115,6 @@ if (!isMobile()) {
 tng_adminheader($admtext['administration'], "");
 ?>
 <script>
-
     jQuery(document).ready(function () {
         let tngadminmsg = getCookie('tngadminmsg');
         if (tngadminmsg != "hide" && $('#msgs').length)
@@ -152,8 +152,9 @@ tng_adminheader($admtext['administration'], "");
 </script>
 </head>
 
-<body class="admin-body" class="mainback">
-<table cellspacing="0" cellpadding="0" class="mainbox">
+<?php echo tng_adminlayout("mainback"); ?>
+
+<table class="mainbox" cellspacing="0" cellpadding="0">
     <?php
     //no users?
     $messages = "";
@@ -203,13 +204,17 @@ tng_adminheader($admtext['administration'], "");
             if (count($files)) {
                 //check dates
                 usort($files, function ($a, $b) {
-                    return filemtime($a) < filemtime($b);
+                    if (filemtime($a) == filemtime($b)) {
+                        return 0;
+                    } else if (filemtime($a) < filemtime($b)) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
                 });
                 $lastBackupTime = filemtime($files[0]);
                 if ($daysSince != "0") {
-                    if (!$daysSince) {
-                        $daysSince = 30;
-                    }
+                    if (!$daysSince) $daysSince = 30;
                     if (time() - $lastBackupTime >= 60 * 60 * 24 * $daysSince) {
                         $backupmsg = preg_replace("/xxx/", $daysSince, $admtext['lastbackup']);
                     }
@@ -307,6 +312,6 @@ if (isMobile()) {
 } elseif ($sitever != $newsitever) {
     echo "<p class=\"smaller\"><a href=\"admin.php?sitever=mobile\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchm']}&nbsp;</a></p>\n\n";
 }
+
+echo tng_adminfooter();
 ?>
-</body>
-</html>

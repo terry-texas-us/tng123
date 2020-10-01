@@ -149,7 +149,6 @@ switch ($textpart) {
         $admtext['existingevtypes'] = "Existing Event Types";
         $admtext['edsevtypes'] = "Edit, delete or sort previously entered event types";
         $admtext['indfam'] = "Ind/Fam";  //individual family
-        $admtext['confdeleteevtype'] = "Are you sure you want to delete this event type?";
         $admtext['selecttag'] = "Select Tag";
         $admtext['selectentertag'] = "Please select or enter the tag for this event type.";
         $admtext['orenter'] = "or enter";
@@ -224,12 +223,14 @@ switch ($textpart) {
         $admtext['expselected'] = "Expand Selected";
         //added in 12.0.0
         $admtext['ldsevent'] = "LDS Event";
+        //changed in 13.0
+        $admtext['confdeleteevtype'] = "Are you sure you want to delete this event type? All events of this type will also be deleted.";
         break;
 
     //addfamily.php, updatefamily.php, findfamily.php, editfamily.php, newfamily.php
     case "families":
         $admtext['changestofamily'] = "Changes to family";
-        $admtext['marrdate'] = "Marr Date"; //marriage date
+        $admtext['marrdate'] = "Marriage Date"; //marriage date
         $admtext['modifyfamily'] = "Edit Existing Family";
         $admtext['selectfamaction'] = "Select Family and Action";
         $admtext['confdeletefam'] = "Are you sure you want to delete this family?";
@@ -336,6 +337,9 @@ switch ($textpart) {
         $admtext['confplace'] = "Confirmation Place (LDS)";
         $admtext['initdate'] = "Initiatory Date (LDS)";
         $admtext['initplace'] = "Initiatory Place (LDS)";
+        //added in 13.0
+        $admtext['savenewparent'] = "Save + New Parents";
+        $admtext['savenewspouse'] = "Save + New Spouse";
         break;
 
     case "headstones":
@@ -385,7 +389,6 @@ switch ($textpart) {
         $admtext['leaveblankallhs'] = "leave blank to show all headstones";
         $admtext['cemnamelocation'] = "Cemetery Name or Location";
         $admtext['pedphoto'] = "Use this photo on pedigree charts and in name titles";
-        $admtext['photoowner'] = "Owner/Source";
         $admtext['dimensions'] = "Dimensions";
         $admtext['selectphoto'] = "Select Image";
         $admtext['specifyimg'] = "Specify image";
@@ -414,7 +417,6 @@ switch ($textpart) {
         $admtext['assign'] = "Assign Defaults";
         $admtext['defsassigned'] = "Default photos assigned";
         //$admtext['isdocument'] = "This image is a document";
-        $admtext['imgmap'] = "Image Map";
         $admtext['circle'] = "circle";
         $admtext['rect'] = "rectangle";
         $admtext['poly'] = "polygon";
@@ -487,7 +489,6 @@ switch ($textpart) {
         $admtext['existingalbuminfo'] = "Album Information";
         $admtext['newmediainfo'] = "Media Information";
         $admtext['mapinstr2'] = "Link regions of your image to different people or other pages (optional)";
-        $admtext['mapinstr3'] = "To link a region of this photo to an individual, first select the individual's tree, then create a rectangle for the desired region. This is done by clicking in the upper left corner of the region and then dragging to the lower right corner. Alternately, you may click in the upper left corner and then again in the lower right corner. A popup box will then help you select the individual. After the selection is made, code for the image map will be added to the box below. Repeat this process as needed for additional regions.";
         $admtext['albumlinks'] = "Album Links";
         $admtext['duplinkmsg'] = "A link to the selected entity already exists in this album.";
         $admtext['invlinkmsg'] = "The entity ID you entered is invalid. No link was created.";
@@ -543,17 +544,22 @@ switch ($textpart) {
         $admtext['collexpas'] = "Export as";
         //added in 9.2.0
         $admtext['upload'] = "Upload";
-        $admtext['linksel'] = "Link to selected";
-        $admtext['mediaupl'] = "Upload Media";
-        $admtext['addfiles'] = "Add files...";
-        $admtext['startupl'] = "Start upload";
-        $admtext['start'] = "Start";
-        $admtext['cancelupl'] = "Cancel upload";
-        //added in 11.0.0
-        $admtext['localpath'] = "Local path(s)";
-        //added in 12.0.0
-        $admtext['confdelmediafile'] = "Do you want to delete the physical file as well?";
-        break;
+    $admtext['linksel'] = "Link to selected";
+    $admtext['mediaupl'] = "Upload Media";
+    $admtext['addfiles'] = "Add files...";
+    $admtext['startupl'] = "Start upload";
+    $admtext['start'] = "Start";
+    $admtext['cancelupl'] = "Cancel upload";
+    //added in 11.0.0
+    $admtext['localpath'] = "Local path(s)";
+    //added in 12.0.0
+    $admtext['confdelmediafile'] = "Do you want to delete the physical file as well?";
+    //changed in 13.0
+    $admtext['imgmap'] = "HTML Image Map (for backward compatibility)";
+    $admtext['mapinstr3'] = "To link a region of this photo to an individual, first select the individual's tree, then create a rectangle for the desired region. This is done by clicking in the upper left corner of the region and then dragging to the lower right corner. Alternately, you may click in the upper left corner and then again in the lower right corner. A popup box will then help you select the individual. Make your selection, then repeat this process as needed for additional regions. Click an existing region to select, then drag to move or click the 'X' to delete.";
+    $admtext['photoowner'] = "Owner of original";
+    $admtext['nothumb'] = "No thumbnail";
+    break;
 
     //addreport.php, updatereport.php, newreport.php, editreport.php
     case "reports":
@@ -649,7 +655,6 @@ switch ($textpart) {
     //index.php
     case "index":
         $admtext['selectimportfile'] = "Please select a file to import.";
-        $admtext['importgedcom'] = "Import GEDCOM (standard 5.5 format)";
         $admtext['addreplacedata'] = "Add to or replace your genealogy (may take several minutes, depending on the size of your file)";
         $admtext['fromyourcomputer'] = "From your computer";
         $admtext['importdata'] = "Import Data";
@@ -679,8 +684,6 @@ switch ($textpart) {
         $admtext['imphints'] = "Hints: All Current Data means all people, families, sources and notes (media associations are not lost as long as IDs remain the same). Matches are always based on IDs only. New records are always added. Append imports all records with new IDs.";
         $admtext['allevents'] = "Accept data for all new Custom Event Types";
         $admtext['destbranch'] = "Destination Branch (optional)";
-        $admtext['inframe'] = "(in frame)";
-        $admtext['getstart'] = "Getting Started";
         $admtext['importlatlong'] = "Import latitude / longitude data if present";
         $admtext['opening'] = "Opening";
         $admtext['reopen'] = "Reopening";
@@ -688,10 +691,8 @@ switch ($textpart) {
         $admtext['stop'] = "Stop";
         $admtext['stopped'] = "Import stopped";
         $admtext['resume'] = "Resume";
-        //changed in 8.0.0
-        $admtext['showlog'] = "Admin Log";
         //added in 8.0.0
-        $admtext['mmgritems'] = "Install and Remove TNG Mods";
+        $admtext['mmgritems'] = "Install and uninstall TNG Mods";
         //added in 9.0.0
         $admtext['oldimport'] = "Old style import (no progress bar)";
         //changed in 11.0.0
@@ -711,6 +712,10 @@ switch ($textpart) {
         $admtext['dna_blurb'] = "Log DNA tests and link them to individuals";
         //added in 12.0.0
         $admtext['task_mapkey'] = "Get a map key from Google to enable maps display";
+        //changed in 13.0
+        $admtext['importgedcom'] = "Import GEDCOM (standard 5.5 format, may be zipped)";
+        //added in 13.0
+        $admtext['stopbackup'] = "Stop! It might be a good idea to back up your current data before proceeding.";
         break;
 
     //addsource.php, updatesource.php, newsource.php, editsource.php, sources.php
@@ -800,12 +805,12 @@ switch ($textpart) {
         $admtext['headtitle3'] = "Header title, part 3"; //8
         $admtext['headsubtitle'] = "Header subtitle"; //8
         $admtext['latestnews'] = "Latest news"; //8
-        $admtext['momside'] = "Mom's Side label"; //8
-        $admtext['dadside'] = "Dad's Side label"; //8
-        $admtext['momperson'] = "Mom's Side person ID"; //8
-        $admtext['momtree'] = "Mom's Side tree ID"; //8
-        $admtext['dadperson'] = "Dad's Side person ID"; //8
-        $admtext['dadtree'] = "Dad's Side tree ID"; //8
+        $admtext['momside'] = "Mom's Side label"; //8, 20
+        $admtext['dadside'] = "Dad's Side label"; //8, 20
+        $admtext['momperson'] = "Mom's Side person ID"; //8, 20
+        $admtext['momtree'] = "Mom's Side tree ID"; //8, 20
+        $admtext['dadperson'] = "Dad's Side person ID"; //8, 20
+        $admtext['dadtree'] = "Dad's Side tree ID"; //8, 20
         $admtext['featurethumb1'] = "Feature 1 thumbnail"; //4
         $admtext['featurelink1'] = "Feature 1 link"; //4
         $admtext['featuretitle1'] = "Feature 1 title"; //4
@@ -901,6 +906,33 @@ switch ($textpart) {
         $admtext['featurethumb9'] = "Feature 9 thumbnail"; //15
         $admtext['featurelink9'] = "Feature 9 link"; //15
         $admtext['featurepara9'] = "Feature 9 paragraph"; //15
+        //added in 13.0
+        $admtext['leftimg'] = "Header Left Image";
+        $admtext['rightimg'] = "Header Right Image";
+        $admtext['photoption'] = "Photo options are<br />&nbsp;&nbsp;(static or random)";
+        $admtext['randomphotowidth'] = "Random Photo Width";
+        $admtext['randomphotoheight'] = "Random Photo Height";
+        $admtext['randomphotomediatypeID'] = "Random Photo Collection";
+        $admtext['momheading'] = "Maternal Family Heading";
+        $admtext['mompara'] = "Maternal Family Paragraph";
+        $admtext['mompagelink'] = "Maternal Family Page Link";
+        $admtext['dadheading'] = "Paternal Family Heading";
+        $admtext['dadpara'] = "Paternal Family Paragraph";
+        $admtext['dadpagelink'] = "Paternal Family Page Link";
+        $admtext['spmomheading'] = "Spouse Maternal Family Heading";
+        $admtext['spmompara'] = "Spouse Maternal Family Paragraph";
+        $admtext['spmompagelink'] = "Spouse Maternal Family Page Link";
+        $admtext['spmomside'] = "Spouse Maternal Side label";
+        $admtext['spdadside'] = "Spouse Paternal Side label";
+        $admtext['spmomperson'] = "Spouse Maternal Side personID";
+        $admtext['spmomtree'] = "Spouse Maternal Side treeID";
+        $admtext['spdadheading'] = "Spouse Paternal Family Heading";
+        $admtext['spdadpara'] = "Spouse Paternal Family Paragrph";
+        $admtext['spdadpagelink'] = "Spouse Paternal Family Page Link";
+        $admtext['spdadperson'] = "Spouse Paternal Side personID";
+        $admtext['spdadtree'] = "Spouse Paternal Side treeID";
+        $admtext['storiesheading'] = "Our Family Stories";
+        $admtext['nbrsurnames'] = "Number of Surnames<br />&nbsp;&nbsp; in Surname Cloud";
 
     //break intentionally left out here so processing will fall through
 
@@ -1196,6 +1228,7 @@ switch ($textpart) {
         $admtext['temptable'] = "Temp Events";
         $admtext['tleventstable'] = "Timeline Events";
         $admtext['album2entitiestable'] = "Album Links";
+        $admtext['doctype'] = "Doctype Declaration";
         $admtext['cemrows'] = "Max lines per column (approx.)";
         $admtext['cemblanks'] = "Suppress \"Unknown\" categories";
         $admtext['success'] = "Success";
@@ -1213,6 +1246,7 @@ switch ($textpart) {
         $admtext['recsreseq'] = "records resequenced";
         $admtext['needmaint'] = "You must be in Maintenance Mode to run this utility (go to Setup &gt;&gt; Configuration &gt;&gt; General Settings)";
         $admtext['reseqwarn'] = "<strong>WARNING:</strong> Resequencing your IDs could cause external links to your site to break or point to erroneous locations.";
+        $admtext['subroot'] = "Config Path";
         $admtext['hidechr'] = "Hide Christening Labels";
         $admtext['datefmt'] = "Numeric Date Preference";
         $admtext['dayfirst'] = "Day/Month/Year";
@@ -1375,6 +1409,16 @@ switch ($textpart) {
         $admtext['dataprotectmsg'] = "Show link to data protection policy";
         $admtext['nointernet'] = "I am using TNG offline";
         $admtext['askconsent'] = "Prompt for consent regarding personal info";
+        //addedin 13.0
+        $admtext['coerce'] = "Change incoming prefixes to match TNG settings";
+        $admtext['sortevents'] = "Sort events by";
+        $admtext['sortbydate'] = "Event date";
+        $admtext['sortbytype'] = "Event type";
+        $admtext['allowsuggest'] = "Allow suggestions from visitors";
+        $admtext['livingchecked'] = "Living flag set for new people and families";
+        $admtext['maxmarried'] = "Mark family living if married less than<br/>this many years";
+        $admtext['imagetags'] = "Rectangles";
+        $admtext['allowcsv'] = "Allow CSV downloads for reports";
         break;
 
     //findpersonform.php
@@ -1436,6 +1480,8 @@ switch ($textpart) {
         $admtext['placenotsaved'] = "Place not saved. Another place with that name already exists. Please merge instead.";
         //added in 12.0.0
         $admtext['noevents'] = "No associated events";
+        //added in 13.0.0
+        $admtext['donotgeocode'] = "Do not geocode";
         break;
 
     //generateID.php
@@ -1526,6 +1572,8 @@ switch ($textpart) {
         $admtext['exprivate'] = "Exclude private";
         $admtext['exliving'] = "Exclude living";
         $admtext['importfilename'] = "Import File Name";
+        //added in 13.0
+        $admtext['exnotes'] = "Exclude notes";
         break;
 
     //adduser.php, users.php, edituser.php, deleteuser.php, newuser.php, updateuser.php
@@ -1620,6 +1668,8 @@ switch ($textpart) {
         //added in 12.0.1
         $admtext['consented'] = "Consent given";
         $admtext['consentdate'] = "Date Consented";
+        //added in 13.0
+        $admtext['disabledonly'] = "Show disabled users only";
         break;
 
     case "login":
@@ -2068,8 +2118,6 @@ $admtext['open'] = "Open";
 $admtext['selectfile'] = "Select File";
 $admtext['altdesc'] = "Alternate Description";
 $admtext['altnotes'] = "Alternate Notes";
-$admtext['savereturn'] = "Return to this page";
-$admtext['saveback'] = "Return to menu";
 $admtext['user'] = "User";
 $admtext['DIV'] = "Divorced";
 $admtext['search'] = "Search";  //from findpersonform
@@ -2331,6 +2379,17 @@ $admtext['author'] = "Author";
 
 //change to $text
 $admtext['living'] = "Living";
+
+//moved here in 13.0.0
+$admtext['getstart'] = "Getting Started";
+$admtext['showlog'] = "Admin Log";
+//changed in 13.0
+$admtext['savereturn'] = "Save + Stay";
+$admtext['saveback'] = "Save + Exit";
+//added in 13.0
+$admtext['allitemsdeleted'] = "All items were successfully deleted.";
+$admtext['private'] = "Private";
+$admtext['imgtags'] = "Image Tags";
 
 @include_once "alltext.php";
 if (!$alltextloaded) {

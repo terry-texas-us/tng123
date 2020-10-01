@@ -405,7 +405,7 @@ echo tng_DrawHeading($photostr, $namestr, getYears($row));
 echo getFORM("timeline", "post", "form1", "form1");
 
 $innermenu = $text['chartwidth'] . ": &nbsp;";
-$innermenu .= "<input type='text' name=\"newwidth\" class=\"verysmall\" value=\"$chartwidth\" maxlength=\"4\" size=\"4\"> &nbsp;&nbsp; ";
+$innermenu .= "<input type='text' name=\"newwidth\" class=\"verysmall\" value=\"$chartwidth\" maxlength='4' size='4'> &nbsp;&nbsp; ";
 $innermenu .= "<a href='#' class='lightlink' onclick=\"document.form1.submit();\">{$text['refresh']}</a>\n";
 
 echo tng_menu("I", "timeline", $primaryID, $innermenu);

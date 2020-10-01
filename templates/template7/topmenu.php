@@ -44,7 +44,7 @@ global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
         </tr>
     </table>
 
-    <table class="w-100" cellspacing="0" class="page">
+    <table class="page w-100" cellspacing="0">
         <tr>
             <td class="section">
 

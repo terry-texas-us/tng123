@@ -125,21 +125,21 @@ function drawEmpty($top, $middle, $bottom) {
 
     echo "<td align='center'>";
     if ($top) {
-        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace='0' vspace='0' border='0'><br>";
+        echo "<img src=\"img/black.gif\" width='5' height='1' hspace='0' vspace='0' border='0'><br>";
         echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace='0' vspace='0' border='0'>";
     } else {
         echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace='0' vspace='0' border='0'>";
     }
 
-    echo "<table width=\"5\" height=\"{$pedigree['puboxheight']}\" border='0' cellspacing='0' cellpadding='0'><tr><td>\n";
+    echo "<table width='5' height=\"{$pedigree['puboxheight']}\" border='0' cellspacing='0' cellpadding='0'><tr><td>\n";
     if ($middle) {
-        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace='0' vspace='0' border='0'>";
+        echo "<img src=\"img/black.gif\" width='5' height='1' hspace='0' vspace='0' border='0'>";
     }
     echo "</td></tr></table>";
 
     if ($bottom && $more) {
         echo "<img src=\"img/spacer.gif\" width='1' height='20' hspace='0' vspace='0' border='0'><br>";
-        echo "<img src=\"img/black.gif\" width=\"5\" height='1' hspace='0' vspace='0' border='0'>";
+        echo "<img src=\"img/black.gif\" width='5' height='1' hspace='0' vspace='0' border='0'>";
     } else {
         echo "<img src=\"img/spacer.gif\" width='1' height=\"21\" hspace='0' vspace='0' border='0'>";
     }
