@@ -142,7 +142,7 @@ $preheader = doMediaSearch(1, $pagenav);
 $preheader .= "<br>\n";
 
 if ($tnggallery) {
-    $preheader .= "<div class=\"titlebox\">\n";
+    $preheader .= "<div class='titlebox'>\n";
     $firstrow = 1;
     $tablewidth = "";
     $header = "";

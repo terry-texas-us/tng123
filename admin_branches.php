@@ -149,9 +149,9 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                                 <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0;"
-                                    class="aligntop">
+                                    class="align-top">
                             </td>
                         </tr>
                     </table>

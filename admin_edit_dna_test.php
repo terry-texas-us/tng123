@@ -270,7 +270,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                    onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                    title="<?php echo $admtext['find']; ?>">
                                     <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>"
-                                         class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
+                                        class="align-middle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
                                 </a>
                             </td>
                         </tr>
@@ -537,7 +537,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                    onclick="return findItem('I','MD_ancestorID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                    title="<?php echo $admtext['find']; ?>">
                                     <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>"
-                                         class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
+                                        class="align-middle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
                                 </a>
                             </td>
                         </tr>
@@ -565,7 +565,7 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                    onclick="return findItem(mrcaType,'MRC_ancestorID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                    title="<?php echo $admtext['find']; ?>">
                                     <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>"
-                                         class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
+                                        class="align-middle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
                                 </a>
                             </td>
                         </tr>

@@ -123,7 +123,7 @@ echo "</form>\n";
         echo "<h3 class='subhead'>{$text['generation']}: 1</h3>\n";
         echo "<ol style=\"list-style-type:none; padding:0; margin:0;\">";
         echo "<li>";
-        echo "<table cellpadding='0' cellspacing='0' class='aligntop' ><tr><td width=\"40\" class='aligntop' align=\"right\">";
+        echo "<table cellpadding='0' cellspacing='0' class='align-top' ><tr><td width=\"40\" class='align-top' align=\"right\">";
         echo "$personcount.&nbsp;&nbsp;</td><td>";
         echo showSmallPhoto($row['personID'], $row['name'], $rights['both'], 0);
         echo "<a href=\"getperson.php?personID={$row['personID']}&amp;tree=$tree\" name=\"p{$row['personID']}\" id=\"p{$row['personID']}\">{$row['name']}</a>";
@@ -261,8 +261,8 @@ echo "</form>\n";
 
                                 echo "<li>";
 
-                                echo "<table class='aligntop' cellpadding='0' cellspacing='0'>";
-                                echo "<tr><td width=\"40\" class='aligntop' align=\"right\">";
+                                echo "<table class='align-top' cellpadding='0' cellspacing='0'>";
+                                echo "<tr><td width=\"40\" class='align-top' align=\"right\">";
                                 echo "$personcount.&nbsp;&nbsp;</td><td>";
                                 echo showSmallPhoto($fathrow['personID'], $fathrow['name'], $frights['both'], 0);
                                 echo "<a href=\"getperson.php?personID={$fathrow['personID']}&amp;tree=$tree\" name=\"p{$fathrow['personID']}\" id=\"p{$fathrow['personID']}\">{$fathrow['name']}</a>";
@@ -331,8 +331,8 @@ echo "</form>\n";
 
                                 echo "<li>";
 
-                                echo "<table class='aligntop' cellpadding='0' cellspacing='0'>";
-                                echo "<tr><td width=\"40\" class='aligntop' align=\"right\">";
+                                echo "<table class='align-top' cellpadding='0' cellspacing='0'>";
+                                echo "<tr><td width=\"40\" class='align-top' align=\"right\">";
                                 echo "$personcount.&nbsp;&nbsp;</td><td>";
                                 echo showSmallPhoto($mothrow['personID'], $mothrow['name'], $mrights['both'], 0);
                                 echo "<a href=\"getperson.php?personID={$mothrow['personID']}&amp;tree=$tree\" name=\"p{$mothrow['personID']}\" id=\"p{$mothrow['personID']}\">{$mothrow['name']}</a>";

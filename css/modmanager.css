@@ -579,7 +579,7 @@ div.list-indent {
     display: inline-block;
     width: 100%;
     padding-left: 3px;
-    border: 1px solid gray;
+    border: 1px solid #808080;
 }
 
 .target {

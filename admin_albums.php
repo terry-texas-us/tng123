@@ -96,8 +96,8 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                                 <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
+                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="align-top">
                             </td>
                         </tr>
                     </table>

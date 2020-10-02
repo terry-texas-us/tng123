@@ -27,7 +27,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     <input id="searchstring" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                 </td>
                 <td>
-                    <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                    <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
                     <span id="spinner1" style="display:none;"><img src="img/spinner.gif"></span>
                 </td>
             </tr>

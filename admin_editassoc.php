@@ -54,7 +54,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             <td class='align-top'>
                 <input type="text" name="passocID" value="<?php echo $row['passocID']; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                 <a href="#" onclick="return findItem(assocType,'passocID','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
-                    <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20" border="0" vspace="0" hspace="2">
+                    <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="align-middle" width="20" height="20" border="0" vspace="0" hspace="2">
                 </a>
             </td>
         </tr>

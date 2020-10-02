@@ -1348,7 +1348,7 @@ class modlister extends modparser
         }
         $retstr .= "
                   <tr>
-                     <td class=\"normal fieldnameback fieldname aligntop nw\">$label</td>
+                     <td class=\"normal fieldnameback fieldname align-top nw\">$label</td>
                      <td class='normal databack w100 mmpadleft'>";
         foreach ($file_array as $listing) {
             if ($listing == 'files') {

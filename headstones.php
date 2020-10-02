@@ -165,7 +165,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     if ($cemcount) {
         $body .= "<br>\n";
     }
-    $body .= "<div class=\"titlebox\">\n";
+    $body .= "<div class='titlebox'>\n";
     $thiscem = $subquery ? $cemetery['cemeteryID'] : "";
     $query = "SELECT DISTINCT media.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, form, mediatypeID, abspath, newwindow, latitude, longitude ";
     $query .= "FROM $media_table media ";

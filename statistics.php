@@ -40,7 +40,7 @@ tng_header($text['databasestatistics'], $flags);
         <thead>
         <tr>
             <th data-tablesaw-priority="persist" class="fieldnameback fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback align-right fieldname" width="30%" align="center">
+            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-right" width="30%" align="center">
                 &nbsp;<?php echo $text['quantity']; ?>&nbsp;
             </th>
         </tr>
@@ -294,7 +294,7 @@ tng_header($text['databasestatistics'], $flags);
         <thead>
         <tr>
             <th data-tablesaw-priority="persist" class="fieldnameback fieldname"><?php echo $text['longestlived']; ?><sup>1</sup></th>
-            <th data-tablesaw-priority="1" class="fieldnameback align-right fieldname" width="30%" align="center">&nbsp;<?php echo $text['age']; ?>
+            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-right" width="30%" align="center">&nbsp;<?php echo $text['age']; ?>
                 &nbsp;
             </th>
         </tr>

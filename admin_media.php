@@ -240,8 +240,8 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 $wherestr = $newwherestr;
                                 ?>
                                 <input class="longfield" name="searchstring" type="search" value="<?php echo $originalstring; ?>">
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
+                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="align-top">
                             </td>
                         </tr>
                         <tr>
@@ -271,12 +271,12 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     ?>
                                 </select>
                                 <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
-                                    <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="aligntop"
-                                           onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
+                                    <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="align-top"
+                                        onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
                                     <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
-                                           onclick="editMediatype(document.form1.mediatypeID);">
+                                        onclick="editMediatype(document.form1.mediatypeID);">
                                     <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
-                                           onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
+                                        onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
                                 <?php } ?>
                             </td>
                         </tr>
@@ -357,7 +357,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             if ($allow_media_edit) {
                             ?>
                             <input type="submit" name="xphaction" value="<?php echo $admtext['convto']; ?>">
-                            <select name="newmediatype" class="aligntop">
+                            <select name="newmediatype" class="align-top">
                                 <?php
                                 foreach ($mediatypes as $mediatype) {
                                     $msgID = $mediatype['ID'];

@@ -5,7 +5,7 @@
 // notable exception is UK locations which due to licensing issues can't be
 // searched from within pages using the map API but can be searched from
 // Google's own pages.
-echo "<input type='button' onclick=\"return divbox('mapcontainer');\" value=\"{$admtext['showhidemap']}\" class=\"alignmiddle\"> <span class='normal'>{$admtext['getcoords']}</span>\n";
+echo "<input type='button' onclick=\"return divbox('mapcontainer');\" value=\"{$admtext['showhidemap']}\" class=\"align-middle\"> <span class='normal'>{$admtext['getcoords']}</span>\n";
 
 echo "<div id=\"mapcontainer\" style=\"display:none; width:{$map['admw']};\" class=\"mappad5 rounded10\">\n";
 $searchstring = $row['place'] ? $row['place'] : $admtext['searchstring'];

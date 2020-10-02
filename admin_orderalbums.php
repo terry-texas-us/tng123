@@ -195,7 +195,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         echo "</td>\n";
                         $checked = $row['defphoto'] ? " checked" : "";
                         echo "<td class='lightback normal'><a href=\"editalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a><br>$truncated<br>";
-                        echo "<span id=\"md_{$row['albumID']}\" class=\"smaller\" style=\"visibility:hidden;\"><a href='#' onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
+                        echo "<span id=\"md_{$row['albumID']}\" class='smaller' style=\"visibility:hidden;\"><a href='#' onclick=\"return removeFromSort('album','{$row['alinkID']}');\">{$admtext['remove']}</a></span></td>\n";
                         echo "</tr></table>";
                         echo "</div>\n";
                         $count++;

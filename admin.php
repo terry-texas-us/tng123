@@ -22,17 +22,18 @@ include "version.php";
  */
 function adminMenuItem($destination, $label, $number, $message, $icon) {
     $menu = "";
-    if (isMobile())
+    if (isMobile()) {
         $iconstr = $msgstr = "";
-    else {
+    } else {
         $iconstr = "<img src='img/{$icon}_icon.gif' alt='{$label}' class='adminicon'>\n";
         $msgstr = "<div class='adminsubmsg'>$message</div>\n";
     }
 
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";
     $menu .= $iconstr;
-    if ($number)
+    if ($number) {
         $menu .= "<div class='admintotal' style='float:right;'><strong>" . number_format($number) . "</strong></div>\n";
+    }
     $menu .= "<div class='adminsubhead'><strong>$label</strong></div>\n";
     $menu .= $msgstr;
     $menu .= "<div style='clear:both;'></div>\n";
@@ -54,15 +55,14 @@ function getTotal($table, $where = "") {
         if ($assignedtree) {
             if ($where == 1) {
                 $where = "gedcom = '$assignedtree'";
-                if ($assignedbranch)
-                    $where .= " AND branch LIKE '%{$assignedbranch}%'";
+                if ($assignedbranch) $where .= " AND branch LIKE '%{$assignedbranch}%'";
             } elseif ($where == 2)
                 $where = "gedcom = '$assignedtree'";
         }
 
-        $query = "SELECT count(*) as num FROM $table";
-        if ($where)
-            $query .= " WHERE $where";
+        $query = "SELECT COUNT(*) AS num FROM $table";
+        if ($where) $query .= " WHERE $where";
+
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         $total = $row['num'];
@@ -77,8 +77,9 @@ if (!isMobile()) {
     if ($allow_add) {
         $genmsg .= $admtext['add'] . " | ";
         $mediamsg = $genmsg;
-    } elseif ($allow_media_add)
+    } elseif ($allow_media_add) {
         $mediamsg = $admtext['add'] . " | ";
+    }
     $genmsg .= $admtext['find2'] . " | ";
     $mediamsg .= $admtext['find2'] . " | ";
     $notesmsg = $admtext['find2'] . " | ";
@@ -86,14 +87,16 @@ if (!isMobile()) {
         $genmsg .= $admtext['edit'] . " | ";
         $mediamsg .= $admtext['edit'] . " | ";
         $notesmsg .= $admtext['edit'] . " | ";
-    } elseif ($allow_media_edit)
+    } elseif ($allow_media_edit) {
         $mediamsg .= $admtext['edit'] . " | ";
+    }
     if ($allow_delete) {
         $genmsg .= $admtext['text_delete'] . " | ";
         $mediamsg .= $admtext['text_delete'] . " | ";
         $notesmsg .= $admtext['text_delete'] . " | ";
-    } elseif ($allow_media_delete)
+    } elseif ($allow_media_delete) {
         $mediamsg .= $admtext['text_delete'] . " | ";
+    }
     $sourcesmsg = $peoplemsg = $familiesmsg = $treesmsg = $cemeteriesmsg = $timelinemsg = $placesmsg = $genmsg;
     $mediamsg .= $admtext['text_sort'];
     if ($allow_edit) {
@@ -124,13 +127,12 @@ tng_adminheader($admtext['administration'], "");
     <script>
         jQuery(document).ready(function () {
             let tngadminmsg = getCookie('tngadminmsg');
-            if (tngadminmsg != "hide" && $('#msgs').length)
+            if (tngadminmsg !== "hide" && $('#msgs').length)
                 toggleSection('msgs', 'plus0');
-            //php: if no msg, then insert javascript to unset the cookie
         });
 
         function toggleMsg(section, img, display) {
-            if (jQuery('#' + section).css('display') == "none")
+            if (jQuery('#' + section).css('display') === "none")
                 setCookie('tngadminmsg', "", 365);
             else
                 setCookie('tngadminmsg', "hide", 365);
@@ -151,19 +153,19 @@ tng_adminheader($admtext['administration'], "");
             let ca = document.cookie.split(';');
             for (var i = 0; i < ca.length; i++) {
                 let c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1);
-                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+                while (c.charAt(0) === ' ') c = c.substring(1);
+                if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
             }
             return "";
         }
     </script>
-    </head>
+<?php echo "</head>\n"; ?>
 
 <?php echo tng_adminlayout(); ?>
 
-    <table class="mainbox border-0" cellspacing="0" cellpadding="0">
+    <table class="mainbox border-0" cellpadding="0">
         <?php
-        //no users?
+
         $messages = "";
         if ($allow_edit || $allow_add || $allow_delete) {
             $total_users = getTotal($users_table);
@@ -171,61 +173,52 @@ tng_adminheader($admtext['administration'], "");
             $total_families = getTotal($families_table, 1);
 
             if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
-                if (!$total_users)
+                if (!$total_users) {
                     $messages .= "<li><a href='admin_newuser.php'>{$admtext['task_user']}</a></li>\n";
-
-                //no tree?
+                }
                 $total_trees = getTotal($trees_table);
-                if (!$total_trees)
+                if (!$total_trees) {
                     $messages .= "<li><a href='admin_newtree.php'>{$admtext['task_tree']}</a></li>\n";
-
-                //no people? import
-                if (!$total_people)
+                }
+                if (!$total_people) {
                     $messages .= "<li><a href='admin_dataimport.php'>{$admtext['importgedcom2']}</a> | <a href='admin_newperson.php'>{$admtext['task_people']}</a></li>\n";
-                else if (!$total_families)
+                } elseif (!$total_families) {
                     $messages .= "<li><a href='admin_newfamily.php'>{$admtext['task_families']}</a></li>\n";
-
-                //new users to review?
+                }
                 $review_users = getTotal($users_table, "allow_living = '-1'");
-                if ($review_users)
+                if ($review_users) {
                     $messages .= "<li><a href='admin_reviewusers.php'>{$admtext['task_revusers']} ($review_users)</a></li>\n";
-
-                //people or families to review?
+                }
                 $review_people = getTotal("$people_table, $temp_events_table", "$people_table.personID = $temp_events_table.personID AND $people_table.gedcom = $temp_events_table.gedcom AND (type = 'I' OR type = 'C')");
-                if ($review_people)
+                if ($review_people) {
                     $messages .= "<li><a href='admin_findreview.php?type=I'>{$admtext['task_revind']} ($review_people)</a></li>\n";
+                }
                 $review_families = getTotal("$families_table, $temp_events_table", "$families_table.familyID = $temp_events_table.familyID AND $families_table.gedcom = $temp_events_table.gedcom AND type = 'F'");
-                if ($review_families)
+                if ($review_families) {
                     $messages .= "<li><a href='admin_findreview.php?type=F'>{$admtext['task_revfam']} ($review_families)</a></li>\n";
-
-                //last backup more than x days ago?
+                }
                 $backupmsg = "";
                 $files = glob("$rootpath$backuppath/*.bak");
                 $daysSince = $tngconfig['backupdays'];
                 if (count($files)) {
-                    //check dates
                     usort($files, function ($a, $b) {
                         return filemtime($a) < filemtime($b);
                     });
                     $lastBackupTime = filemtime($files[0]);
                     if ($daysSince != "0") {
-                        if (!$daysSince) {
-                            $daysSince = 30;
-                        }
+                        if (!$daysSince) $daysSince = 30;
                         if (time() - $lastBackupTime >= 60 * 60 * 24 * $daysSince) {
                             $backupmsg = preg_replace("/xxx/", $daysSince, $admtext['lastbackup']);
                         }
                     }
-                } else if ($total_people && $daysSince != "0") {
-                    //no backup ever done
+                } else if ($total_people && $daysSince != "0") { // no backup ever done
                     $backupmsg = $admtext['nobackups'];
                 }
                 if ($backupmsg) {
                     $messages .= "<li><a href='admin_utilities.php'>{$admtext['task_backup']} ($backupmsg)</a></li>\n";
                 }
 
-                //need map key?
-                if (!$map['key'] || $map['key'] == "1") {
+                if (!$map['key'] || $map['key'] == "1") { // need map key
                     $messages .= "<li><a href='admin_mapconfig.php'>{$admtext['task_mapkey']}</a></li>\n";
                 }
             }
@@ -245,13 +238,14 @@ tng_adminheader($admtext['administration'], "");
                 $switcher .= "<form action='switchtree.php' target='_parent' name='newtreeform' style='display: inline-block;'>\n";
                 $switcher .= "<input type='hidden' name='ret' value='admin.php'>\n";
                 $switcher .= "<select name='newtree' class='normal' onChange='document.newtreeform.submit();'>\n";
+
                 while ($row = tng_fetch_assoc($result)) {
                     $switcher .= "<option value='{$row['gedcom']}'";
-                    if ($assignedtree == $row['gedcom'])
-                        $switcher .= " selected";
+                    if ($assignedtree == $row['gedcom']) $switcher .= " selected";
                     $switcher .= ">{$row['treename']}</option>\n";
                 }
-                $switcher .= "</select>\n</form>\n";
+                $switcher .= "</select>\n";
+                $switcher .= "</form>\n";
                 tng_free_result($result);
             }
         }
@@ -286,7 +280,7 @@ tng_adminheader($admtext['administration'], "");
                                 <strong class="th-indent adminsubhead"><?php echo $admtext['tasks']; ?></strong>
                             </a>
                             <?php if ($switcher) { ?>
-                                <div style='float: right;'><?php echo $switcher; ?>
+                                <div style='float: right'><?php echo $switcher; ?></div>
                             <?php } ?>
                             <div id="msgs" style="display: none;">
                                 <hr>

@@ -543,11 +543,11 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         $persontext .= "<td class='databack' colspan='2'>\n";
 
         $kidcount = 1;
-        $persontext .= "<table cellpadding = '0' cellspacing = '0' style=\"width:100%;\">\n";
+        $persontext .= "<table class='w-100' cellpadding = '0' cellspacing = '0'>\n";
         while ($child = tng_fetch_assoc($children)) {
             $childID = $child['personID'];
             $child['gedcom'] = $tree;
-            $ifkids = $child['haskids'] ? "<a href=\"descend.php?personID=$childID&amp;tree=$tree\" title=\"{$text['descendants']}\" class=\"descindicator\"><strong>+</strong></a>" : "&nbsp;";
+            $ifkids = $child['haskids'] ? "<a href=\"descend.php?personID=$childID&amp;tree=$tree\" title='{$text['descendants']}' class='text-decoration-none'><strong>+</strong></a>" : "&nbsp;";
             $birthinfo = getBirthInfo($child);
             $crights = determineLivingPrivateRights($child, $righttree);
             $child['allow_living'] = $crights['living'];
@@ -684,7 +684,7 @@ if ($map['key'] && $locations2map) {
             } else {
                 $persontext .= "&nbsp;";
             }
-            $persontext .= "</td><td class='databack'><span class=\"smaller\"><strong>$event</strong>";
+            $persontext .= "</td><td class='databack'><span class='smaller'><strong>$event</strong>";
             if ($description) {
                 $persontext .= " - $description";
             }
@@ -700,10 +700,11 @@ if ($map['key'] && $locations2map) {
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
         $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class='fieldname'>{$text['gmaplegend']}</span></td>\n";
-        $persontext .= "<td colspan='2' class='databack'><span class=\"smaller\">";
-        for ($i = 1; $i < 7; $i++)
-            $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt=\"\" height=\"17\" width=\"10\" class=\"alignmiddle\"/>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
-        $persontext .= "<img src=\"img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class='aligntop'>&nbsp;: {$admtext['level0']}</span></td>\n";
+        $persontext .= "<td colspan='2' class='databack'><span class='smaller'>";
+        for ($i = 1; $i < 7; $i++) {
+            $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt='' height='17' width='10' class='align-middle'>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
+        }
+        $persontext .= "<img src=\"img/$pinplacelevel0.png\" alt='' height='17' width='10' class='align-top'>&nbsp;: {$admtext['level0']}</span></td>\n";
         $persontext .= "</tr>\n";
     }
     $persontext .= "</table>\n";

@@ -143,8 +143,8 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                                 </select>
                             </td>
                             <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.tree.selectedIndex=0;" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
+                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.tree.selectedIndex=0;" class="align-top">
                             </td>
                         </tr>
                     </table>

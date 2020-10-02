@@ -65,7 +65,7 @@ foreach ($events as $event)
                 <td class='align-top'>
                     <input type="text" name="eventplace" id="eventplace" size="40"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                     <a href="#" onclick="return openFindPlaceForm('eventplace');">
-                        <img src="img/tng_find.gif" class="alignmiddle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20">
+                        <img src="img/tng_find.gif" class="align-middle" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20">
                     </a>
                 </td>
             </tr>

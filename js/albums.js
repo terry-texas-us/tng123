@@ -109,7 +109,7 @@ function finishAddToAlbum(req) {
 
     newrow += '<td class="lightback" style="width:' + (thumbmaxw + 6) + 'px;text-align:center;">' + jQuery('#thumbcell_' + media).html() + '</td>\n';
     newrow += '<td class="lightback normal">' + jQuery('#desc_' + media).html();
-    newrow += '<div id="del_' + albumlink + '" class="smaller" style="color:gray;visibility:hidden;">';
+    newrow += '<div id="del_' + albumlink + '" class="smaller" style="color: #808080; visibility: hidden;">';
     if (jQuery('#thumbcell_' + media).html() != "&nbsp;") {
         newrow += '<input type="radio" name="rthumbs" value="r' + media + '" onclick="makeDefault(this);">' + mkdefaultmsg;
         newrow += ' &nbsp;|&nbsp; ';

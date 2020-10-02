@@ -82,18 +82,18 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                         <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                         <input type="hidden" name="findlang" value="1">
                         <input type="hidden" name="newsearch" value="1">
-                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
+                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
+                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="align-top">
                     </form>
                     <br>
 
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "languages.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
+                        $offsetplus = 0;
+                    }
+                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                    $pagenav = get_browseitems_nav($totrows, "languages.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
                     echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
 

@@ -24,11 +24,11 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";
     $menu .= $iconstr;
     if ($number) {
-        $menu .= "<div class='admintotal' style=\"float: right;\"><strong>" . number_format($number) . "</strong></div>\n";
+        $menu .= "<div class='admintotal' style='float: right;'><strong>" . number_format($number) . "</strong></div>\n";
     }
     $menu .= "<div class='adminsubhead'><strong>$label</strong></div>\n";
     $menu .= $msgstr;
-    $menu .= "<div style=\"clear: both;\"></div>\n";
+    $menu .= "<div style='clear: both;'></div>\n";
     $menu .= "</a>\n";
 
     return $menu;
@@ -165,36 +165,36 @@ tng_adminheader($admtext['administration'], "");
 
         if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
             if (!$total_users) {
-                $messages .= "<li><a href=\"admin_newuser.php\">{$admtext['task_user']}</a></li>\n";
+                $messages .= "<li><a href='admin_newuser.php'>{$admtext['task_user']}</a></li>\n";
             }
 
             //no tree?
             $total_trees = getTotal($trees_table);
             if (!$total_trees) {
-                $messages .= "<li><a href=\"admin_newtree.php\">{$admtext['task_tree']}</a></li>\n";
+                $messages .= "<li><a href='admin_newtree.php'>{$admtext['task_tree']}</a></li>\n";
             }
 
             //no people? import
             if (!$total_people) {
-                $messages .= "<li><a href=\"admin_dataimport.php\">{$admtext['importgedcom2']}</a> | <a href=\"admin_newperson.php\">{$admtext['task_people']}</a></li>\n";
+                $messages .= "<li><a href='admin_dataimport.php'>{$admtext['importgedcom2']}</a> | <a href='admin_newperson.php'>{$admtext['task_people']}</a></li>\n";
             } elseif (!$total_families) {
-                $messages .= "<li><a href=\"admin_newfamily.php\">{$admtext['task_families']}</a></li>\n";
+                $messages .= "<li><a href='admin_newfamily.php'>{$admtext['task_families']}</a></li>\n";
             }
 
             //new users to review?
             $review_users = getTotal($users_table, "allow_living = '-1'");
             if ($review_users) {
-                $messages .= "<li><a href=\"admin_reviewusers.php\">{$admtext['task_revusers']} ($review_users)</a></li>\n";
+                $messages .= "<li><a href='admin_reviewusers.php'>{$admtext['task_revusers']} ($review_users)</a></li>\n";
             }
 
             //people or families to review?
-            $review_people = getTotal("$people_table, $temp_events_table", "$people_table.personID = $temp_events_table.personID AND $people_table.gedcom = $temp_events_table.gedcom AND (type = \"I\" OR type = \"C\")");
+            $review_people = getTotal("$people_table, $temp_events_table", "$people_table.personID = $temp_events_table.personID AND $people_table.gedcom = $temp_events_table.gedcom AND (type = 'I' OR type = 'C')");
             if ($review_people) {
-                $messages .= "<li><a href=\"admin_findreview.php?type=I\">{$admtext['task_revind']} ($review_people)</a></li>\n";
+                $messages .= "<li><a href='admin_findreview.php?type=I'>{$admtext['task_revind']} ($review_people)</a></li>\n";
             }
-            $review_families = getTotal("$families_table, $temp_events_table", "$families_table.familyID = $temp_events_table.familyID AND $families_table.gedcom = $temp_events_table.gedcom AND type = \"F\"");
+            $review_families = getTotal("$families_table, $temp_events_table", "$families_table.familyID = $temp_events_table.familyID AND $families_table.gedcom = $temp_events_table.gedcom AND type = 'F\"");
             if ($review_families) {
-                $messages .= "<li><a href=\"admin_findreview.php?type=F\">{$admtext['task_revfam']} ($review_families)</a></li>\n";
+                $messages .= "<li><a href='admin_findreview.php?type=F'>{$admtext['task_revfam']} ($review_families)</a></li>\n";
             }
 
             //last backup more than x days ago?
@@ -224,12 +224,12 @@ tng_adminheader($admtext['administration'], "");
                 $backupmsg = $admtext['nobackups'];
             }
             if ($backupmsg) {
-                $messages .= "<li><a href=\"admin_utilities.php\">{$admtext['task_backup']} ($backupmsg)</a></li>\n";
+                $messages .= "<li><a href='admin_utilities.php'>{$admtext['task_backup']} ($backupmsg)</a></li>\n";
             }
 
             //need map key?
             if (!$map['key'] || $map['key'] == "1") {
-                $messages .= "<li><a href=\"admin_mapconfig.php\">{$admtext['task_mapkey']}</a></li>\n";
+                $messages .= "<li><a href='admin_mapconfig.php'>{$admtext['task_mapkey']}</a></li>\n";
             }
         }
     }
@@ -308,9 +308,9 @@ tng_adminheader($admtext['administration'], "");
 <?php
 $newsitever = getSiteVersion(true);
 if (isMobile()) {
-    echo "<p class=\"smaller\"><a href=\"admin.php?sitever=$newsitever\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchs']}&nbsp;</a></p>\n";
+    echo "<p class='smaller'><a href=\"admin.php?sitever=$newsitever\" class='fieldnameback lightlink2' target='_top'>&nbsp;{$text['switchs']}&nbsp;</a></p>\n";
 } elseif ($sitever != $newsitever) {
-    echo "<p class=\"smaller\"><a href=\"admin.php?sitever=mobile\" class=\"fieldnameback lightlink2\" target=\"_top\">&nbsp;{$text['switchm']}&nbsp;</a></p>\n\n";
+    echo "<p class='smaller'><a href=\"admin.php?sitever=mobile\" class='fieldnameback lightlink2' target='_top'>&nbsp;{$text['switchm']}&nbsp;</a></p>\n\n";
 }
 
 echo tng_adminfooter();

@@ -177,7 +177,7 @@ if ($map['key'] && $isConnected) {
                                        onblur="fillCemetery(this.value);">
                                 <a href="#" onclick="return openFindPlaceForm('place');">
                                     <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>"
-                                         width="20" height="20" class="alignmiddle">
+                                        width="20" height="20" class="align-middle">
                                 </a>
                                 <input type="button" value="<?php echo $admtext['fillplace']; ?>" onclick="fillPlace(document.form1);">
                             </td>

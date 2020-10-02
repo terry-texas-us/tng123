@@ -213,10 +213,10 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                             </select>
                             <input type="text" name="personID" id="personID" size="20" maxlength="22"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             <a href="#"
-                               onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
-                               title="<?php echo $admtext['find']; ?>">
-                                <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="alignmiddle" width="20" height="20"
-                                     style="margin-left:2px;margin-bottom:4px;">
+                                onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
+                                title="<?php echo $admtext['find']; ?>">
+                                <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" class="align-middle" width="20" height="20"
+                                    style="margin-left:2px;margin-bottom:4px;">
                             </a>
                         </td>
                     </tr>

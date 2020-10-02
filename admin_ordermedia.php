@@ -215,7 +215,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         echo "</td>\n";
                         $checked = $row['defphoto'] ? " checked" : "";
                         echo "<td class='lightback normal'><a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\">{$row['description']}</a><br>$truncated<br>\n";
-                        echo "<span id=\"md_{$row['medialinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">\n";
+                        echo "<span id=\"md_{$row['medialinkID']}\" class='smaller' style='color: #808080; visibility: hidden;'>\n";
                         echo "<input type='radio' name=\"rthumbs\" value=\"r{$row['mediaID']}\"$checked onclick=\"makeDefault(this);\">{$admtext['makedefault']}\n";
                         echo " &nbsp;|&nbsp; ";
                         echo "<a href='#' onclick=\"return removeFromSort('media','{$row['medialinkID']}');\">{$admtext['remove']}</a>";

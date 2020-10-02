@@ -157,7 +157,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     } ?>"><?php echo $photo; ?></div>
                     <span class="plainheader"><?php echo $row['albumname'] . ": </span><br>" . $row['description']; ?></div>
                 <?php
-                echo "<a href='#' onclick=\"return removeDefault();\" class=\"smaller\" id=\"removedefault\"";
+                echo "<a href='#' onclick=\"return removeDefault();\" class='smaller' id=\"removedefault\"";
                 if (!$photo) {
                     echo " style=\"visibility:hidden\"";
                 }
@@ -265,7 +265,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             echo "</td>\n";
                             $checked = $lrow['defphoto'] ? " checked" : "";
                             echo "<td class='lightback normal'><a href=\"admin_editmedia.php?mediaID={$lrow['mediaID']}\">{$lrow['description']}</a><br>" . strip_tags($truncated) . "<br>";
-                            echo "<div id=\"del_{$lrow['albumlinkID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">";
+                            echo "<div id=\"del_{$lrow['albumlinkID']}\" class='smaller' style='color: #808080; visibility: hidden;'>";
                             if ($foundthumb) {
                                 echo "<input type='radio' name=\"rthumbs\" value=\"r{$lrow['mediaID']}\"$checked onclick=\"makeDefault(this);\">" . $admtext['makedefault'];
                                 echo " &nbsp;|&nbsp; ";

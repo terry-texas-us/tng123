@@ -20,17 +20,16 @@ img {
 /* smfieldname: small text used in conjunction with .fieldname style text */
 .smfieldname {
     font-size: 10px;
-    color: white;
+    color: #fff;
 }
 
 /* fieldname: regular text within column or row title sections */
 .fieldname {
-    color: white;
+    color: #fff;
 }
 
 /* header: heading text */
 .header {
-    /*next line added in 6.1.0*/
     margin-top: 0;
     padding: 0;
     font-size: 22px;
@@ -44,7 +43,6 @@ img {
     font-size: 22px;
     font-weight: bold;
 }
-
 
 /* whiteheader: heading text used on dark backgrounds (usually fieldnameback) */
 .whiteheader {
@@ -86,7 +84,6 @@ a:visited {
 .fieldnameback,
 .tablesaw-cell-label {
     background-color: #336;
-    /*these 2 lines added in 5.0*/
     border-right: 1px solid #777;
     border-bottom: 1px solid #777;
 }
@@ -94,12 +91,11 @@ a:visited {
 /* databack: background color for data areas */
 .databack {
     background-color: #e0e0f7;
-    /*these 2 lines added in 5.0*/
     border-right: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
+/* alternate row striping to databack */
 .databackalt {
     background-color: #cacaf1;
     border-right: 1px solid #bbb;
@@ -214,8 +210,6 @@ ul.nopad {
     padding-left: 0;
 }
 
-
-/* Added in 4.0.0 */
 /* For links on dark background */
 .lightlink:link, .lightlink:visited {
     color: #fff;
@@ -240,7 +234,6 @@ ul.nopad {
 
 .lightback {
     background-color: #fff;
-    /*these 2 lines added in 6.0.0*/
     border-right: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
 }
@@ -313,11 +306,12 @@ ul.nopad {
 }
 
 .mainbox {
-    border: 1px solid silver;
+    border: 1px solid #c0c0c0;
     background-color: #fff;
     padding: 1px;
+    margin: auto;
     width: 100%;
-    max-width: 950px;
+    max-width: 992px;
 }
 
 /* mouseoverback: background color for admin menu items while active*/
@@ -357,7 +351,6 @@ ul.nopad {
     font-size: 9px;
 }
 
-/*added in 5.0.0*/
 /*for active secondary tab link*/
 a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active {
     color: #fc3;
@@ -503,10 +496,10 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
     background: transparent url(../img/media-prevbg.png) no-repeat 0 0;
 }
 
-/* width and heigth definitions added in TNG 10.1.1+ to keep image within container */
+/* width and heigth definitions to keep image within container */
 .media-prev img {
-    max-width: 100%; /* added in TNG 10.1.1+  */
-    height: auto; /* added in TNG 10.1.1+  */
+    max-width: 100%;
+    height: auto;
     border: 1px solid #b3b3b3;
     display: block;
     margin: 0 auto;
@@ -529,11 +522,8 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 * html .media-prev {
     background: url(../img/media-prevbg.gif) no-repeat 0 0;
-    /*width:420px;*/
-    /*height:420px;*/
 }
 
-/*moved here from showmedia.php in 7.0.0*/
 #slideshow {
     position: relative;
 }
@@ -687,7 +677,7 @@ select {
 }
 
 input[type="button"], input[type="submit"], input[type="reset"], input[type="password"], button, input[type="text"], input[type="search"], textarea, select {
-    border: 1px solid gray;
+    border: 1px solid #808080;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     padding: 3px 6px;
@@ -712,7 +702,7 @@ input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:ac
 }
 
 .btn, .disabled, input[type="button"].btn, input[type="submit"].btn, input[type="submit"].disabled, input[type="reset"].btn {
-    border: 1px solid gray;
+    border: 1px solid #808080;
     padding: 5px 12px;
 }
 
@@ -898,10 +888,6 @@ input.minibutton {
     white-space: nowrap;
 }
 
-.coreicon, .descindicator, .nounderline {
-    text-decoration: none;
-}
-
 
 /*small boxes for letters on the surnames page, also for pagination on other pages*/
 .snlink {
@@ -911,7 +897,7 @@ input.minibutton {
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
     background-color: #e0e0f7; /*same as "databack" background color */
-    color: black;
+    color: #000;
     font-weight: bold;
     text-decoration: none;
     -webkit-border-radius: 4px;
@@ -923,17 +909,8 @@ p a.snlink {
     line-height: 2.5em;
 }
 
-/* columns on surnames page */
-.aligntop {
-    vertical-align: top;
-}
-
-.alignmiddle {
-    vertical-align: middle;
-}
-
 .adminnav .snlink {
-    background-color: white;
+    background-color: #fff;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
@@ -1347,12 +1324,6 @@ a.admincell {
     border-radius: 4px;
 }
 
-/* commenting this out will allow the admin cells to grow if necessary
-a.admincell {
-	height:45px;
-}
-*/
-
 .tngmsgarea {
     background-color: #999;
     color: #fff;
@@ -1446,7 +1417,7 @@ a.admincell:hover, a.leftlink:hover {
 
 .pdftoggle {
     text-decoration: none;
-    color: black;
+    color: #000;
 }
 
 .langblock {
@@ -1456,7 +1427,7 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 #mapcontainer {
-    border: solid 1px black;
+    border: solid 1px #000;
     margin-bottom: 8px;
     margin-right: 10px;
     margin-top: 8px;
@@ -1477,7 +1448,7 @@ a.admincell:hover, a.leftlink:hover {
 /*most wanted*/
 .mwperson {
     margin-top: 10px;
-    color: gray;
+    color: #808080;
 }
 
 .mwimage {
@@ -1538,7 +1509,6 @@ ul#tngnav {
     display: block;
     text-decoration: none;
     margin: 0;
-    /*position: relative;*/
     font-size: 11px;
     min-height: 15px;
 }
@@ -1604,14 +1574,6 @@ div.icons-rt {
 
 .shift100left {
     margin-right: 100px;
-}
-
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
 }
 
 ul.tngdd {
@@ -2283,10 +2245,6 @@ thead th {
     text-align: left; /* added to correct the header centering issues in some templates */
 }
 
-.align-right {
-    text-align: right;
-}
-
 .thumbnails {
     vertical-align: text-top;
 }
@@ -2323,7 +2281,7 @@ thead th {
 }
 
 .predicted_haplogroup {
-    color: red;
+    color: #f00;
 }
 
 .compareback {
@@ -2507,7 +2465,7 @@ sup {
     background-image: none;
     /*border: 1px solid transparent;*/
     border-radius: 4px;
-    border: 1px solid gray;
+    border: 1px solid #808080;
     background-color: #ddd;
 }
 

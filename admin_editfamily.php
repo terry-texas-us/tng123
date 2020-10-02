@@ -483,7 +483,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                 if (!isMobile()) {
                                     $hidecode = "class=\"smaller hide-right\"";
                                 } else {
-                                    $hidecode = "class=\"smaller\" style=\"float:right\"";
+                                    $hidecode = "class='smaller' style=\"float:right\"";
                                 }
                                 while ($child = tng_fetch_assoc($children)) {
                                     $crights = determineLivingPrivateRights($child);

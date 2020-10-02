@@ -695,7 +695,7 @@ function doCemPlusMap($imgrow, $tree) {
     $hsresult = tng_query($query);
     if (tng_num_rows($hsresult)) {
         $i = 1;
-        echo "<div class=\"titlebox\">\n";
+        echo "<div class='titlebox'>\n";
         echo "<h3 class='subhead'>{$text['cemphotos']}</h3>";
 
         echo "<table class='whiteback w-100' cellpadding='3' cellspacing='1' border='0'>\n";

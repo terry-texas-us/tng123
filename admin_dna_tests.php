@@ -218,8 +218,8 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                         <tr>
                             <td><br><?php echo $admtext['searchfor']; ?>:
                                 <input name="searchstring" type="search" value="<?php echo $originalstring; ?>">&nbsp;
-                                <input type="submit" name="submit2" value="<?php echo $admtext['search']; ?>" class="aligntop">&nbsp;&nbsp;
-                                <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" class="aligntop"
+                                <input type="submit" name="submit2" value="<?php echo $admtext['search']; ?>" class="align-top">&nbsp;&nbsp;
+                                <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" class="align-top"
                                     onclick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.test_type.selectedIndex = 0; document.form1.test_group.selectedIndex = 0;">
                             </td>
                         </tr>

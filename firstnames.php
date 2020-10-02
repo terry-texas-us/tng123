@@ -139,7 +139,7 @@ if ($result) {
                             echo "<td class=\"table-gutter\">&nbsp;</td>\n";
                         }
                         ?>
-                        <td class="aligntop">
+                        <td class="align-top">
                             <table class="normal table-histogram">
                                 <?php echo $linkstr2col[$i]; ?>
                             </table>

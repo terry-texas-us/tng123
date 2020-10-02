@@ -63,7 +63,7 @@ function showDiv(string $type) {
             echo "<u id=\"title_{$lrow['mwID']}\">{$lrow['title']}</u>";
         }
         echo "<br><span id=\"desc_{$lrow['mwID']}\">$truncated</span><br>";
-        echo "<div id=\"del_{$lrow['mwID']}\" class=\"smaller\" style=\"color:gray;visibility:hidden;\">";
+        echo "<div id=\"del_{$lrow['mwID']}\" class='smaller' style=\"color:gray;visibility:hidden;\">";
         if ($allow_edit) {
             echo "<a href='#' onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['edit']}</a>";
             if ($allow_delete) {

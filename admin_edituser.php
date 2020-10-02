@@ -249,7 +249,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['modifyuser'], 
                                onclick="return findItem('I','personID','',document.form1.mynewgedcom.options[document.form1.mynewgedcom.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
                                title="<?php echo $admtext['find']; ?>">
                                 <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>"
-                                     class="alignmiddle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
+                                    class="align-middle" width="20" height="20" style="margin-left:2px; margin-bottom:4px;">
                             </a>
                         </td>
                     </tr>

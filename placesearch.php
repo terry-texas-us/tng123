@@ -170,7 +170,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
 
         if ($numrows) {
             echo "<br>\n";
-            echo "<div class=\"titlebox\">\n";
+            echo "<div class='titlebox'>\n";
             echo "<h3 class='subhead'>" . $placetxt . "</h3>\n";
             $numrowsplus = $numrows + $offset;
             $successcount++;
@@ -397,7 +397,7 @@ while ($prow = tng_fetch_assoc($presult)) {
 }
 
 if ($cemdata) {
-    echo "<br>\n<div class=\"titlebox\">\n";
+    echo "<br>\n<div class='titlebox'>\n";
     echo "<h3 class='subhead'>{$text['cemeteries']}</h3>";
     echo "<table class='whiteback w-100' cellpadding='3' cellspacing='1' border='0'>\n";
     echo "<tr>\n";

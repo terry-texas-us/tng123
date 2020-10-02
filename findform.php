@@ -27,7 +27,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                     <td>
                         <input type="search" name="myfirstname" id="myfirstname">
-                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
                         <span id="spinnerfind" style="display: none;"><img src="img/spinner.gif"></span>
                     </td>
                 </tr>
@@ -47,7 +47,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                     </td>
                     <td>
                         <input type="text" name="mywifename" id="mywifename">
-                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
                         <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
                     </td>
                 </tr>
@@ -63,7 +63,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <tr>
                     <td>
                         <input type="text" name="mysourcetitle" id="mysourcetitle">
-                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
                         <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
                     </td>
                 </tr>
@@ -79,7 +79,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <tr>
                     <td>
                         <input type="text" name="myrepotitle" id="myrepotitle">
-                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
                         <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif"></span>
                     </td>
                 </tr>
@@ -95,7 +95,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <tr>
                     <td>
                         <input type="text" name="myplace" id="myplace">
-                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                        <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
                         <span id="spinnerfind" style="display:none;"><img src="img/spinner.gif" width="16" height="16"></span>
                     </td>
                 </tr>

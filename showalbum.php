@@ -223,7 +223,7 @@ $pagenav = get_browseitems_nav($totrows, "showalbum.php?albumID=$albumID&amp;tng
 $preheader = $pagenav . "</p>\n";
 
 if ($tnggallery) {
-    $preheader .= "<div class=\"titlebox\">\n";
+    $preheader .= "<div class='titlebox'>\n";
     $firstrow = 1;
     $tablewidth = "";
     $header = "";

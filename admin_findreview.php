@@ -203,10 +203,10 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                                 </select>
                             </td>
                             <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                       onClick="document.form1.reviewuser.value=''; document.form1.tree.selectedIndex=0; document.form1.living.checked=false; document.form1.exactmatch.checked=false;"
-                                       class="aligntop">
+                                    onClick="document.form1.reviewuser.value=''; document.form1.tree.selectedIndex=0; document.form1.living.checked=false; document.form1.exactmatch.checked=false;"
+                                    class="align-top">
                             </td>
                         </tr>
                     </table>

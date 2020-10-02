@@ -279,7 +279,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     } elseif (substr($label, -6) == "person") {
                         $treefield = str_replace("person", "tree", $key);
                         $sections[$n] .= "<a href='#' onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"{$admtext['find']}\">\n";
-                        $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class=\"alignmiddle\" width='20' height='20' style=\"margin-left:2px; margin-bottom:4px;\">\n";
+                        $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class='align-middle' width='20' height='20' style=\"margin-left:2px; margin-bottom:4px;\">\n";
                         $sections[$n] .= "</a>\n";
                     }
                 }

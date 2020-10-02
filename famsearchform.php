@@ -359,13 +359,17 @@ echo $formstr;
         <hr>
         <h3 class="subhead"><?php echo $text['otherevents']; ?></h3>
         <ul id="descendantchart" class="normal">
-            <li id="expand" class="othersearch"><a href="#" onclick="return toggleSection(1);" class="nounderline"><img src="img/tng_expand.gif"
+            <li id="expand" class="othersearch">
+                <a href="#" onclick="return toggleSection(1);" class="text-decoration-none"><img src="img/tng_expand.gif"
                         alt="" width="15"
                         height="15" class="exp-cont"><?php echo $text['clickdisplay']; ?>
-                </a></li>
-            <li id="contract" class="othersearch" style="display:none;"><a href="#" onclick="return toggleSection(0);" class="nounderline"><img
+                </a>
+            </li>
+            <li id="contract" class="othersearch" style="display:none;">
+                <a href="#" onclick="return toggleSection(0);" class="text-decoration-none"><img
                         src="img/tng_collapse.gif" alt="" width="15" height="15"
-                        class="exp-cont"><?php echo $text['clickhide']; ?></a></li>
+                        class="exp-cont"><?php echo $text['clickhide']; ?></a>
+            </li>
         </ul>
         <table style="display:none;" id="otherevents">
             <tr>

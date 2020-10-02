@@ -124,17 +124,17 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                                     <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                                 </td>
                                 <td>
-                                    <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                                    <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
                                     <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                        onClick="document.form1.searchstring.value=''; document.form1.etype.selectedIndex=0; document.form1.onimport['2'].checked=true;" class="aligntop">
+                                        onClick="document.form1.searchstring.value=''; document.form1.etype.selectedIndex=0; document.form1.onimport['2'].checked=true;" class="align-top">
                                 </td>
                             </tr>
                             <tr>
                                 <td><?php echo $admtext['assocwith']; ?>:</td>
                                 <td>
-                                <select name="etype">
-                                    <option value=""><?php echo $admtext['all']; ?></option>
-                                    <option value="I"<?php if ($etype == "I") {
+                                    <select name="etype">
+                                        <option value=""><?php echo $admtext['all']; ?></option>
+                                        <option value="I"<?php if ($etype == "I") {
                                         echo " selected";
                                     } ?>><?php echo $admtext['individual']; ?></option>
                                     <option value="F"<?php if ($etype == "F") {

@@ -150,9 +150,9 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                                 ?>
                             </select>
                             <input type="button" name="addnewcountry" value="<?php echo $admtext['addnew']; ?>"
-                                   onclick="tnglitbox = new LITBox('admin_newentity.php?entity=country', {width:350, height:120}); $('#newitem').focus();">
+                                onclick="tnglitbox = new LITBox('admin_newentity.php?entity=country', {width:350, height:120}); $('#newitem').focus();">
                             <input type="button" name="deletecountry" value="<?php echo $admtext['deleteselected']; ?>"
-                                   onclick="attemptDelete(document.form1.country,'country');">
+                                onclick="attemptDelete(document.form1.country,'country');">
                         </td>
                     </tr>
                     <tr>
@@ -160,7 +160,7 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                         <td>
                             <input type="text" name="place" id="place" class="longfield" onblur="fillCemetery(this.value);">
                             <a href="#" onclick="return openFindPlaceForm('place');">
-                                <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20" class="alignmiddle"></a>
+                                <img src="img/tng_find.gif" title="<?php echo $admtext['find']; ?>" alt="<?php echo $admtext['find']; ?>" width="20" height="20" class="align-middle"></a>
                             <input type="button" value="<?php echo $admtext['fillplace']; ?>" onclick="fillPlace(document.form1);">
                         </td>
                     </tr>

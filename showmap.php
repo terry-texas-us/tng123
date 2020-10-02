@@ -142,7 +142,7 @@ if ($cemeteryID) {
 }
 
 if ($infoblock) {
-    $body .= "<div class=\"titlebox\">$infoblock</div>\n<br>\n";
+    $body .= "<div class='titlebox'>$infoblock</div>\n<br>\n";
 }
 
 $query = "SELECT mediaID, thumbpath, description, notes, usecollfolder, mediatypeID, path, form, abspath, newwindow FROM $media_table WHERE cemeteryID = \"$cemeteryID\" AND (mediatypeID != \"headstones\" OR linktocem = '1') ORDER BY description";
@@ -150,7 +150,7 @@ $hsresult = tng_query($query);
 $gotImageJpeg = function_exists('imageJpeg');
 if (tng_num_rows($hsresult)) {
     $i = 1;
-    $body .= "<div class=\"titlebox\">\n";
+    $body .= "<div class='titlebox'>\n";
     $body .= "<h3 class='subhead'>{$text['cemphotos']}</h3>\n";
 
     $body .= "<table cellpadding='3' cellspacing='1' border='0' class=\"whiteback w-100\">\n";
@@ -210,7 +210,7 @@ $hsresult = tng_query($query);
 
 $numrows = tng_num_rows($hsresult);
 if ($numrows) {
-    $body .= "<div class=\"titlebox\">\n";
+    $body .= "<div class='titlebox'>\n";
     $body .= "<h3 class='subhead'>{$text['headstone']}</h3>\n";
 
     if ($numrows == $maxsearchresults || $offsetplus > 1) {
@@ -373,7 +373,7 @@ if ($cemetery['place']) {
     $query = "SELECT * FROM ($people_table, $trees_table) WHERE burialplace = \"" . addslashes($cemetery['place']) . "\" and $people_table.gedcom = $trees_table.gedcom $treestr ORDER BY lastname, firstname";
     $result = tng_query($query);
     if (tng_num_rows($result)) {
-        $body .= "<br><div class=\"titlebox\">\n";
+        $body .= "<br><div class='titlebox'>\n";
         $body .= "<h3 class='subhead'>{$text['allburials']}</h3>\n";
 
         $header = $headerr = "";

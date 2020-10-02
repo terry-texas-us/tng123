@@ -159,9 +159,9 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                                 <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                    onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false;" class="aligntop">
+                                    onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false;" class="align-top">
                             </td>
                         </tr>
                         <tr>

@@ -79,18 +79,18 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                         <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                         <input type="hidden" name="findtlevent" value="1">
                         <input type="hidden" name="newsearch" value="1">
-                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="aligntop">
+                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
+                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="align-top">
                     </form>
                     <br>
 
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
+                        $offsetplus = 0;
+                    }
+                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                    $pagenav = get_browseitems_nav($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
                     echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">

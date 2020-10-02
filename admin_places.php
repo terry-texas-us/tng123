@@ -233,8 +233,8 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                                 <input class="verylongfield" name="searchstring" type="search" value="<?php echo stripslashes($searchstring_noquotes); ?>">
                             </td>
                             <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
+                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="align-top">
                             </td>
                         </tr>
                         <tr>

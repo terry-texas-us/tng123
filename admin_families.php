@@ -201,10 +201,10 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                                 <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                             </td>
                             <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
                                 <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
                                     onClick="document.form1.searchstring.value=''; document.form1.spousename.selectedIndex=0; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false; document.form1.living.checked=false;"
-                                    class="aligntop">
+                                    class="align-top">
                             </td>
                         </tr>
                         <tr>
