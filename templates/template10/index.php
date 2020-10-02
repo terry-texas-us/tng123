@@ -174,8 +174,7 @@ $title = getTemplateMessage('t10_maintitle');
                                     <div class="cleared"></div>
                                     <div class="art-postcontent">
 
-                                        <img src="<?php echo $templatepath . $tmp['t10_mainimage']; ?>" alt="" style="float:left;"
-                                             class="temppreview">
+                                        <img src="<?php echo $templatepath . $tmp['t10_mainimage']; ?>" alt="" class="temppreview float-left">
                                         <?php
                                         if ($chooselang) {
                                             $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";

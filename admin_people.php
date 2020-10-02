@@ -53,13 +53,19 @@ if ($newsearch) {
         $tngpage = isset($_COOKIE['tng_search_people_post']['tngpage']) ? $_COOKIE['tng_search_people_post']['tngpage'] : 1;
         $offset = isset($_COOKIE['tng_search_people_post']['offset']) ? $_COOKIE['tng_search_people_post']['offset'] : 0;
     } else {
-        setcookie("tng_search_people_post[tngpage]", $tngpage, $exptime);
+        setcookie("tng_search_people_post[tngpage]", isset($tngpage) ? $tngpage : 1, $exptime);
         setcookie("tng_search_people_post[offset]", $offset, $exptime);
     }
 }
 $searchstring_noquotes = preg_replace("/\"/", "&#34;", $searchstring);
 $searchstring = addslashes($searchstring);
 
+if (!empty($order))
+    setcookie("tng_search_people_post[order]", $order, $exptime);
+else
+    $order = isset($_COOKIE['tng_search_people_post']['order']) ? $_COOKIE['tng_search_people_post']['order'] : "name";
+
+if (!isset($offset)) $offset = 0;
 if ($offset) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
@@ -92,14 +98,10 @@ function addCriteria($field, $value, $operator) {
         $innercriteria = "";
         $terms = explode(' ', $value);
         foreach ($terms as $term) {
-            if ($innercriteria) {
-                $innercriteria .= " AND ";
-            }
+            if ($innercriteria) $innercriteria .= " AND ";
             $innercriteria .= "$field $operator '%$term%'";
         }
-        if ($innercriteria) {
-            $criteria = " OR ($innercriteria)";
-        }
+        if ($innercriteria) $criteria = " OR ($innercriteria)";
     }
 
     return $criteria;
@@ -166,13 +168,76 @@ if ($nokids) {
     $nokidselect = "";
 }
 
+$idsort = "id";
+$birthsort = "birth";
+$deathsort = "death";
+$namesort = "nameup";
+$changesort = "change";
+$descicon = "<img src='img/tng_sort_desc.gif' class='sortimg' alt=''>";
+$ascicon = "<img src='img/tng_sort_asc.gif' class='sortimg' alt=''>";
+
+if ($order == "id") {
+    $orderstr = "personIDnum, lastname, lnprefix, firstname";
+    $idsort = "<a href='admin_people.php?order=idup' class='lightlink'>{$admtext['id']} $descicon</a>";
+} else {
+    $idsort = "<a href='admin_people.php?order=id' class='lightlink'>{$admtext['id']} $ascicon</a>";
+    if ($order == "idup") {
+        $orderstr = "personIDnum DESC, lastname, lnprefix, firstname";
+    }
+}
+if ($tngconfig['personsuffix']) {
+    $len = strlen($tngconfig['personsuffix']);
+    $idselect = ", CAST(LEFT(people.personID, LENGTH(people.personID) - $len) AS UNSIGNED) AS personIDnum";
+} elseif ($tngconfig['personprefix']) {
+    $len = strlen($tngconfig['personprefix']);
+    $idselect = ", CAST(RIGHT(people.personID, LENGTH(people.personID) - $len) AS UNSIGNED) AS personIDnum";
+} else {
+    $idselect = ", CAST(people.personID AS UNSIGNED) AS personIDnum";
+}
+
+if ($order == "birth") {
+    $orderstr = "IF(birthdatetr, birthdatetr, altbirthdatetr), lastname, lnprefix, firstname";
+    $birthsort = "<a href='admin_people.php?order=birthup' class='lightlink'>{$admtext['birthdate']}, {$admtext['birthplace']} $descicon</a>";
+} else {
+    $birthsort = "<a href='admin_people.php?order=birth' class='lightlink'>{$admtext['birthdate']}, {$admtext['birthplace']} $ascicon</a>";
+    if ($order == "birthup")
+        $orderstr = "IF(birthdatetr, birthdatetr, altbirthdatetr) DESC, lastname, lnprefix, firstname";
+}
+
+if ($order == "death") {
+    $orderstr = "IF(deathdatetr, deathdatetr, burialdatetr), lastname, lnprefix, firstname";
+    $deathsort = "<a href='admin_people.php?order=deathup' class='lightlink'>{$admtext['deathdate']}, {$admtext['deathplace']} $descicon</a>";
+} else {
+    $deathsort = "<a href='admin_people.php?order=death' class='lightlink'>{$admtext['deathdate']}, {$admtext['deathplace']} $ascicon</a>";
+    if ($order == "deathup")
+        $orderstr = "IF(deathdatetr, deathdatetr, burialdatetr) DESC, lastname, lnprefix, firstname";
+}
+
+if ($order == "name") {
+    $orderstr = "lastname, lnprefix, firstname, IF(birthdatetr, birthdatetr, altbirthdatetr)";
+    $namesort = "<a href='admin_people.php?order=nameup' class='lightlink'>{$admtext['name']} $descicon</a>";
+} else {
+    $namesort = "<a href='admin_people.php?order=name' class='lightlink'>{$admtext['name']} $ascicon</a>";
+    if ($order == "nameup")
+        $orderstr = "lastname DESC, lnprefix DESC, firstname DESC, IF(birthdatetr, birthdatetr, altbirthdatetr)";
+}
+
+if ($order == "change") {
+    $orderstr = "changedate, lastname, lnprefix, firstname";
+    $changesort = "<a href='admin_people.php?order=changeup' class='lightlink'>{$admtext['lastmodified']} $descicon</a>";
+} else {
+    $changesort = "<a href='admin_people.php?order=change' class='lightlink'>{$admtext['lastmodified']} $ascicon</a>";
+    if ($order == "changeup")
+        $orderstr = "changedate DESC, lastname, lnprefix, firstname";
+}
+
 $query = "SET SQL_BIG_SELECTS=1";
 $result = tng_query($query);
 
-$query = "SELECT people.ID, people.personID, lastname, firstname, lnprefix, prefix, suffix, nameorder, birthdate, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') AS birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') AS altbirthyear, altbirthplace, people.gedcom AS gedcom, treename, people.changedby, DATE_FORMAT(people.changedate,'%d %b %Y') AS changedate $nokidselect ";
+$query = "SELECT people.ID, people.personID{$idselect}, lastname, firstname, lnprefix, title, prefix, suffix, nameorder, birthdate, birthdatetr, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') AS birthyear, birthplace, altbirthdate, altbirthdatetr, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') AS altbirthyear, altbirthplace, deathdate, deathplace, burialdate, burialplace, people.living, people.private, people.branch, people.gedcom AS gedcom, treename, people.changedby, DATE_FORMAT(people.changedate,'%d %b %Y') AS changedatef $nokidselect ";
 $query .= "FROM ($people_table people, $trees_table trees) $nokidjoin $noparentjoin $nospousejoin ";
 $query .= "WHERE $allwhere $nokidgroup $nokidhaving ";
-$query .= "ORDER BY lastname, lnprefix, firstname, birthyear, altbirthyear ";
+$query .= "ORDER BY $orderstr ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
 
@@ -204,24 +269,24 @@ $revstar = checkReview("I");
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['people'], $flags);
 ?>
-<script>
-    function confirmDelete(ID) {
-        if (confirm('<?php echo $admtext['confdeletepers']; ?>'))
-            deleteIt('person', ID, '<?php echo $tree; ?>');
-        return false;
-    }
+    <script>
+        function confirmDelete(ID) {
+            if (confirm('<?php echo $admtext['confdeletepers']; ?>'))
+                deleteIt('person', ID, '<?php echo $tree; ?>');
+            return false;
+        }
 
-    function resetPeople() {
-        document.form1.searchstring.value = '';
-        document.form1.tree.selectedIndex = 0;
-        document.form1.living.checked = false;
-        document.form1.private.checked = false;
-        document.form1.exactmatch.checked = false;
-        document.form1.nokids.checked = false;
-        document.form1.noparents.checked = false;
-        document.form1.nospouse.checked = false;
-    }
-</script>
+        function resetPeople() {
+            document.form1.searchstring.value = '';
+            document.form1.tree.selectedIndex = 0;
+            document.form1.living.checked = false;
+            document.form1.private.checked = false;
+            document.form1.exactmatch.checked = false;
+            document.form1.nokids.checked = false;
+            document.form1.noparents.checked = false;
+            document.form1.nospouse.checked = false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
@@ -237,162 +302,154 @@ if (!isset($message)) $message = '';
 echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+    <table class="lightback w-100" cellpadding="10" cellspacing="2" border="0">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
 
-                <form action="admin_people.php" name="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
-                            <td>
-                                <?php include "treequery.php"; ?>
-                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
-                            </td>
-                            <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onclick="resetPeople();" class="aligntop">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;
-                            </td>
-                            <td colspan="2">
-                                <span class="normal">
-                                <input type="checkbox" name="living" value="yes"<?php if ($living == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['livingonly']; ?>
-                                <input type="checkbox" name="private" value="yes"<?php if ($private == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['privateonly']; ?>
-                                <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['exactmatch']; ?>
-                                <input type="checkbox" name="nokids" value="yes"<?php if ($nokids == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['nokids']; ?>
-                                <input type="checkbox" name="noparents" value="yes"<?php if ($noparents == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['noparents']; ?>
-                                <input type="checkbox" name="nospouse" value="yes"<?php if ($nospouse == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['nospouse']; ?>
-                                </span>
-                            </td>
-                        </tr>
-                    </table>
+                    <form action="admin_people.php" name="form1">
+                        <table>
+                            <tr>
+                                <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
+                                <td>
+                                    <?php include "treequery.php"; ?>
+                                    <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="aligntop">
+                                    <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onclick="resetPeople();" class="aligntop">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td colspan="2">
+                                    <span class="normal">
+                                        <input type="checkbox" name="living" value="yes"<?php if ($living == "yes") echo " checked"; ?>> <?php echo $admtext['livingonly']; ?>
+                                        <input type="checkbox" name="private" value="yes"<?php if ($private == "yes") echo " checked"; ?>> <?php echo $admtext['privateonly']; ?>
+                                        <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") echo " checked"; ?>> <?php echo $admtext['exactmatch']; ?>
+                                        <input type="checkbox" name="nokids" value="yes"<?php if ($nokids == "yes") echo " checked"; ?>> <?php echo $admtext['nokids']; ?>
+                                        <input type="checkbox" name="noparents" value="yes"<?php if ($noparents == "yes") echo " checked"; ?>> <?php echo $admtext['noparents']; ?>
+                                        <input type="checkbox" name="nospouse" value="yes"<?php if ($nospouse == "yes") echo " checked"; ?>> <?php echo $admtext['nospouse']; ?>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="findperson" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                    </form>
+                    <br>
 
-                    <input type="hidden" name="findperson" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                </form>
-                <br>
+                    <?php
+                    $numrowsplus = $numrows + $offset;
+                    if (!$numrowsplus) $offsetplus = 0;
+                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                    $pagenav = get_browseitems_nav($totrows, "admin_people.php?searchstring=$searchstring&amp;living=$living&amp;private=$private&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
+                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                    ?>
+                    <form action="admin_deleteselected.php" method="post" name="form2">
+                        <?php if ($allow_delete) { ?>
+                            <p>
+                                <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
+                                <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
+                                <input type="submit" name="xperaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                            </p>
+                        <?php } ?>
 
-                <?php
-                $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_people.php?searchstring=$searchstring&amp;living=$living&amp;private=$private&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
-                ?>
-                <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php if ($allow_delete) { ?>
-                        <p>
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                            <input type="submit" name="xperaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
-                        </p>
-                    <?php } ?>
+                        <table class="normal" cellpadding="4" cellspacing="1" border="0">
+                            <tr>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
+                                <?php if ($allow_delete) { ?>
+                                    <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
+                                <?php } ?>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $idsort; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $namesort; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['thumb']; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $birthsort; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $deathsort; ?></span></th>
+                                <?php if ($numtrees > 1) { ?>
+                                    <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['tree']; ?></span></th>
+                                <?php } ?>
+                                <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $changesort; ?></span></th>
+                            </tr>
 
-                    <table class="normal w-100">
-                        <tr>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
-                            <?php if ($allow_delete) { ?>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
-                            <?php } ?>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['id']; ?></span></th>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['name']; ?></span></th>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['birthdate']; ?></span></th>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['birthplace']; ?></span></th>
-                            <?php if ($numtrees > 1) { ?>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['tree']; ?></span></th>
-                                <?php
+                            <?php
+                            if ($numrows) {
+                            $actionstr = "";
+                            if ($allow_edit) {
+                                $actionstr .= "<a href='admin_editperson.php?personID=xxx&amp;tree=yyy' title='{$admtext['edit']}' class='smallicon admin-edit-icon'></a>";
                             }
-                            if ($numusers > 1) {
-                                ?>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['lastmodified']; ?></span></th>
-                            <?php } ?>
-                        </tr>
+                            if ($allow_delete) {
+                                $actionstr .= "<a href='#' onclick=\"return confirmDelete('zzz');\" title='{$admtext['text_delete']}' class='smallicon admin-delete-icon'></a>";
+                            }
+                            $actionstr .= "<a href='getperson.php?personID=xxx&amp;tree=yyy' target='_blank' title='{$admtext['test']}' class='smallicon admin-test-icon'></a>";
 
-                        <?php
-                        if ($numrows) {
-                        $actionstr = "";
-                        if ($allow_edit) {
-                            $actionstr .= "<a href='admin_editperson.php?personID=xxx&amp;tree=yyy' title='{$admtext['edit']}' class='smallicon admin-edit-icon'></a>";
-                        }
-                        if ($allow_delete) {
-                            $actionstr .= "<a href='#' onclick=\"return confirmDelete('zzz');\" title='{$admtext['text_delete']}' class='smallicon admin-delete-icon'></a>";
-                        }
-                        $actionstr .= "<a href='getperson.php?personID=xxx&amp;tree=yyy' target='_blank' title='{$admtext['test']}' class='smallicon admin-test-icon'></a>";
-
-                        while ($row = tng_fetch_assoc($result)) {
-                            $rights = determineLivingPrivateRights($row);
-                            $row['allow_living'] = $rights['living'];
-                            $row['allow_private'] = $rights['private'];
-                            if ($row['birthdate']) {
-                                $birthdate = $admtext['birthabbr'] . " " . $row['birthdate'];
-                                $birthplace = $row['birthplace'];
-                            } else {
-                                if ($row['altbirthdate']) {
+                            while ($row = tng_fetch_assoc($result)) {
+                                $rights = determineLivingPrivateRights($row);
+                                $row['allow_living'] = $rights['living'];
+                                $row['allow_private'] = $rights['private'];
+                                if ($row['birthdate']) {
+                                    $birthdate = $admtext['birthabbr'] . " " . $row['birthdate'];
+                                    $birthplace = $row['birthplace'];
+                                } elseif ($row['altbirthdate']) {
                                     $birthdate = $admtext['chrabbr'] . " " . $row['altbirthdate'];
                                     $birthplace = $row['altbirthplace'];
                                 } else {
                                     $birthdate = "";
                                     $birthplace = $row['birthplace'] ? $row['birthplace'] : $row['altbirthplace'];
                                 }
-                            }
-                            $newactionstr = preg_replace("/xxx/", $row['personID'], $actionstr);
-                            $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
-                            $newactionstr = preg_replace("/zzz/", $row['ID'], $newactionstr);
-                            $editlink = "admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}";
-                            if ($allow_edit) {
-                                $id = "<a href='$editlink' title='{$admtext['edit']}'>" . $row['personID'] . "</a>";
-                            } else {
-                                $id = $row['personID'];
-                            }
-                            echo "<tr id='row_{$row['ID']}'><td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
-                            if ($allow_delete) {
-                                echo "<td class='lightback text-center'><input type='checkbox' name='del{$row['ID']}' value='1'></td>";
-                            }
-                            echo "<td class='lightback'><span class='normal'>&nbsp;$id&nbsp;</span></td>\n";
-                            echo "<td class='lightback'><span class='normal'>&nbsp;" . getName($row) . "&nbsp;</span></td>\n";
-                            echo "<td class='lightback'><span class='normal'>&nbsp;$birthdate&nbsp;</span></td>\n";
-                            echo "<td class='lightback'><span class='normal'>&nbsp;$birthplace&nbsp;</span></td>\n";
-                            if ($numtrees > 1) {
-                                echo "<td class='lightback'><span class='normal'>&nbsp;{$row['treename']}&nbsp;</span></td>\n";
-                            }
-                            if ($numusers > 1) {
-                                echo "<td class='lightback'><span class='normal'>&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";
-                            }
-                            echo "</tr>\n";
-                        }
-                        ?>
-                    </table>
-                <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
-                }
-                else {
-                    echo "</table>\n" . $admtext['norecords'];
-                }
-                tng_free_result($result);
-                ?>
-                </form>
+                                if ($row['deathdate']) {
+                                    $deathdate = $admtext['deathabbr'] . " " . $row['deathdate'];
+                                    $deathplace = $row['deathplace'];
+                                } else if ($row['burialdate']) {
+                                    $deathdate = $admtext['burabbr'] . " " . $row['burialdate'];
+                                    $deathplace = $row['burialplace'];
+                                } else {
+                                    $deathdate = "";
+                                    $deathplace = $row['deathplace'] ? $row['deathplace'] : $row['burialplace'];
+                                }
+                                $newactionstr = preg_replace("/xxx/", $row['personID'], $actionstr);
+                                $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
+                                $newactionstr = preg_replace("/zzz/", $row['ID'], $newactionstr);
+                                $editlink = "admin_editperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}";
+                                if ($allow_edit) {
+                                    $id = "<a href=\"$editlink\" title='{$admtext['edit']}'>" . $row['personID'] . "</a>";
+                                } else {
+                                    $id = $row['personID'];
+                                }
+                                echo "<tr id=\"row_{$row['ID']}\">\n";
+                                echo "<td class='lightback align-top'><div class='action-btns'>$newactionstr</div></td>\n";
+                                if ($allow_delete) {
+                                    echo "<td class='lightback align-top' align='center'><input type='checkbox' name=\"del{$row['ID']}\" value='1'></td>";
+                                }
+                                echo "<td class='lightback align-top'>$id</td>\n";
+                                $namestr = getName($row);
+                                $photostr = showSmallPhoto($row['personID'], $namestr, $rights['both'], 40, "I", "", $row['gedcom']);
 
-            </div>
-        </td>
-    </tr>
-</table>
+                                echo "<td class='lightback align-top'>$namestr</td>\n";
+                                echo "<td class='lightback align-top'>$photostr</td>\n";
+                                echo "<td class='lightback align-top'>$birthdate<br>$birthplace</td>\n";
+                                echo "<td class='lightback align-top'>$deathdate<br>$deathplace</td>\n";
+                                if ($numtrees > 1) {
+                                    echo "<td class='lightback align-top'>{$row['treename']}</td>\n";
+                                }
+                                $changedby = $numusers > 1 ? "{$row['changedby']}: " : "";
+                                echo "<td class='lightback align-top'>{$changedby}{$row['changedatef']}</td>\n";
+                                echo "</tr>\n";
+                            }
+                            ?>
+                        </table>
+                    <?php
+                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
+                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                    }
+                    else
+                        echo "</table>\n" . $admtext['norecords'];
+                    tng_free_result($result);
+                    ?>
+                    </form>
+
+                </div>
+            </td>
+        </tr>
+    </table>
 <?php echo tng_adminfooter(); ?>
