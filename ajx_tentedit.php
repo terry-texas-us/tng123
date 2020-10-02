@@ -201,7 +201,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             echo "<td class='align-top'><input type='text' name=\"newdate\" value=\"$row[$datefield]\" onblur=\"checkDate(this);\"></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td colspan=\"2\">&nbsp;</td>";
+            echo "<td colspan='2'>&nbsp;</td>";
             echo "</tr>\n";
         }
         if ($placefield) {
@@ -215,7 +215,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             echo "<td class='align-top'><input type='text' name=\"newplace\" size=\"40\" value=\"$row[$placefield]\"></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td colspan=\"2\">&nbsp;</td>";
+            echo "<td colspan='2'>&nbsp;</td>";
             echo "</tr>\n";
         }
         if ($factfield) {
@@ -231,12 +231,12 @@ header("Content-type:text/html; charset=" . $session_charset);
             if ($event == "MARR") {
                 echo "<input type='text' name=\"newinfo\" size=\"40\" value=\"$row[$factfield]\">";
             } else {
-                echo "<textarea cols=\"40\" rows=\"3\" name=\"newinfo\">$row[$factfield]</textarea>";
+                echo "<textarea cols=\"40\" rows='3' name=\"newinfo\">$row[$factfield]</textarea>";
             }
             echo "</td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td colspan=\"2\">&nbsp;</td>";
+            echo "<td colspan='2'>&nbsp;</td>";
             echo "</tr>\n";
         }
         ?>

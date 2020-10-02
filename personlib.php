@@ -12,9 +12,7 @@ function getBirthInfo($thisperson, $noicon = null) {
 
     $varlist = ['birthdate', 'birthplace', 'altbirthdate', 'altbirthplace', 'deathdate', 'deathplace', 'burialdate', 'burialplace'];
     foreach ($varlist as $myindex) {
-        if (!isset($thisperson[$myindex])) {
-            $thisperson[$myindex] = '';
-        }
+        if (!isset($thisperson[$myindex])) $thisperson[$myindex] = '';
     }
 
     $birthstring = "";
@@ -323,15 +321,9 @@ function getNotes($persfamID, $flag) {
         }
         switch ($type) {
             case 0:
-                if (!isset($gennotes[$currsig]['text'])) {
-                    $gennotes[$currsig]['text'] = '';
-                }
-                if (!isset($gennotes[$currsig]['cite'])) {
-                    $gennotes[$currsig]['cite'] = '';
-                }
-                if (!isset($gennotes[$currsig]['xnote'])) {
-                    $gennotes[$currsig]['xnote'] = '';
-                }
+                if (!isset($gennotes[$currsig]['text'])) $gennotes[$currsig]['text'] = '';
+                if (!isset($gennotes[$currsig]['cite'])) $gennotes[$currsig]['cite'] = '';
+                if (!isset($gennotes[$currsig]['xnote'])) $gennotes[$currsig]['xnote'] = '';
 
                 if ($gennotes[$currsig]['text']) {
                     $gennotes[$currsig]['text'] .= "</li>\n";
@@ -341,15 +333,9 @@ function getNotes($persfamID, $flag) {
                 $gennotes[$currsig]['xnote'] .= $note['noteID'];
                 break;
             case 1:
-                if (!isset($precustnotes[$currsig]['text'])) {
-                    $precustnotes[$currsig]['text'] = '';
-                }
-                if (!isset($precustnotes[$currsig]['cite'])) {
-                    $precustnotes[$currsig]['cite'] = '';
-                }
-                if (!isset($precustnotes[$currsig]['xnote'])) {
-                    $precustnotes[$currsig]['xnote'] = '';
-                }
+                if (!isset($precustnotes[$currsig]['text'])) $precustnotes[$currsig]['text'] = '';
+                if (!isset($precustnotes[$currsig]['cite'])) $precustnotes[$currsig]['cite'] = '';
+                if (!isset($precustnotes[$currsig]['xnote'])) $precustnotes[$currsig]['xnote'] = '';
 
                 if ($precustnotes[$currsig]['text']) {
                     $precustnotes[$currsig]['text'] .= "</li>\n";
@@ -359,15 +345,9 @@ function getNotes($persfamID, $flag) {
                 $precustnotes[$currsig]['xnote'] .= $note['noteID'];
                 break;
             case 2:
-                if (!isset($custnotes[$key]['text'])) {
-                    $custnotes[$key]['text'] = '';
-                }
-                if (!isset($custnotes[$key]['cite'])) {
-                    $custnotes[$key]['cite'] = '';
-                }
-                if (!isset($custnotes[$key]['xnote'])) {
-                    $custnotes[$key]['xnote'] = '';
-                }
+                if (!isset($custnotes[$key]['text'])) $custnotes[$key]['text'] = '';
+                if (!isset($custnotes[$key]['cite'])) $custnotes[$key]['cite'] = '';
+                if (!isset($custnotes[$key]['xnote'])) $custnotes[$key]['xnote'] = '';
 
                 if ($custnotes[$key]['text']) {
                     $custnotes[$key]['text'] .= "</li>\n";
@@ -377,15 +357,9 @@ function getNotes($persfamID, $flag) {
                 $custnotes[$key]['xnote'] .= $note['noteID'];
                 break;
             case 3:
-                if (!isset($postcustnotes[$currsig]['text'])) {
-                    $postcustnotes[$currsig]['text'] = '';
-                }
-                if (!isset($postcustnotes[$currsig]['cite'])) {
-                    $postcustnotes[$currsig]['cite'] = '';
-                }
-                if (!isset($postcustnotes[$currsig]['xnote'])) {
-                    $postcustnotes[$currsig]['xnote'] = '';
-                }
+                if (!isset($postcustnotes[$currsig]['text'])) $postcustnotes[$currsig]['text'] = '';
+                if (!isset($postcustnotes[$currsig]['cite'])) $postcustnotes[$currsig]['cite'] = '';
+                if (!isset($postcustnotes[$currsig]['xnote'])) $postcustnotes[$currsig]['xnote'] = '';
 
                 if ($postcustnotes[$currsig]['text']) {
                     $postcustnotes[$currsig]['text'] .= "</li>\n";
@@ -581,9 +555,7 @@ function showEvent($data) {
 
     $myindexlist = ['type', 'event', 'entity', 'date', 'place', 'collapse', 'fact', 'xnote'];
     foreach ($myindexlist as $myindex) {
-        if (!isset($data[$myindex])) {
-            $data[$myindex] = '';
-        }
+        if (!isset($data[$myindex])) $data[$myindex] = '';
     }
 
     switch ($data['type']) {
@@ -611,9 +583,7 @@ function showEvent($data) {
     $dateplace = !empty($data['date']) || !empty($data['place']) ? 1 : 0;
     $eventcounter += 1;
     $toggle = !empty($data['collapse']) ? " style='display: none;'" : "";
-    if (!isset($notearray)) {
-        $notearray = [];
-    }
+    if (!isset($notearray)) $notearray = [];
     $notes = $notestogether && $data['event'] ? buildGenNotes($notearray, $data['entity'], $data['event']) : "";
     $rows = $dateplace;
     if ($tableid && !$cellnumber && ($dateplace || $data['fact'] || $notes)) {
@@ -650,7 +620,7 @@ function showEvent($data) {
                 if ($cite) {
                     $cite = "&nbsp; [$cite]";
                 }
-                $output .= "<td class='databack' colspan=\"2\">" . nl2br(insertLinks($data['fact'][$i])) . "$cite&nbsp;</td></tr>\n";
+                $output .= "<td class='databack' colspan='2'>" . nl2br(insertLinks($data['fact'][$i])) . "$cite&nbsp;</td></tr>\n";
                 $cite = "";
             }
         } else {
@@ -674,7 +644,7 @@ function showEvent($data) {
             if ($cite) {
                 $cite = "&nbsp; [$cite]";
             }
-            $output .= "<td class='databack' colspan=\"2\">" . nl2br(insertLinks($data['fact'])) . "$cite&nbsp;</td></tr>\n";
+            $output .= "<td class='databack' colspan='2'>" . nl2br(insertLinks($data['fact'])) . "$cite&nbsp;</td></tr>\n";
             $cite = "";
         }
     }
@@ -684,28 +654,22 @@ function showEvent($data) {
             if ($output) {
                 $output .= "<tr class=\"t{$eventcounter}\"$toggle>\n";
             }
-            $output .= "<td class='databack' colspan=\"2\">$notes</td>\n";
+            $output .= "<td class='databack' colspan='2'>$notes</td>\n";
             $output .= "</tr>\n";
         }
     }
 
     $event = $data['event'];
 
-    if (!isset($media[$event])) {
-        $media[$event] = [];
-    }
-    if (!isset($albums[$event])) {
-        $albums[$event] = [];
-    }
+    if (!isset($media[$event])) $media[$event] = [];
+    if (!isset($albums[$event])) $albums[$event] = [];
     $media_array = array_merge($media[$event], $albums[$event]);
 
     $mediaoutput = $thumbdivs = "";
     $thumbcount = 0;
     $mediacount = count($media_array);
     if ($mediacount) {
-        if (!isset($sitever)) {
-            $sitever = '';
-        }
+        if (!isset($sitever)) $sitever = '';
         $doThumbs = isset($tngconfig['mediathumbs']) && $mediacount > 1 ? !isMobile() && $tngconfig['mediathumbs'] == "1" : false;
         foreach ($media_array as $item) {
             if ($doThumbs) {
@@ -726,10 +690,10 @@ function showEvent($data) {
             }
         }
         if (!$thumbcount) {
-            $mediaoutput = str_replace("<td class='databack'>&nbsp;</td><td class='databack'>", "<td class='databack' colspan=\"2\">", $mediaoutput);
+            $mediaoutput = str_replace("<td class='databack'>&nbsp;</td><td class='databack'>", "<td class='databack' colspan='2'>", $mediaoutput);
         }
         if ($thumbdivs) {
-            $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle><td class='databack' colspan=\"2\">$thumbdivs</td></tr>\n";
+            $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle><td class='databack' colspan='2'>$thumbdivs</td></tr>\n";
             $rows++;
         }
         $output .= $mediaoutput;
@@ -745,7 +709,7 @@ function showEvent($data) {
         }
         $class = $cellid ? " indleftcol" : "";
         $rowspan = $rows > 1 && !$data['collapse'] ? " rowspan=\"$rows\"" : "";
-        $preoutput = "<tr>\n<td class=\"fieldnameback align-top$class lt{$eventcounter}\" $rowspan$cellid>$toggleicon<span class=\"fieldname\">{$data['text']}$editicon</span></td>\n";
+        $preoutput = "<tr>\n<td class=\"fieldnameback align-top$class lt{$eventcounter}\" $rowspan$cellid>$toggleicon<span class='fieldname'>{$data['text']}$editicon</span></td>\n";
         $final = $preoutput . $output;
     } else {
         $final = "";
@@ -809,7 +773,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
                 $cite = "&nbsp; [$cite]";
             }
             if (!$data['date']) {
-                $output .= " colspan=\"2\"";
+                $output .= " colspan='2'";
             }
             if ($data['place'] == "NN") {
                 $data['place'] = UNKNOWN;
@@ -828,7 +792,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
 }
 
 function showBreak($breaksize) {
-    return "<tr><td colspan=\"3\" class=\"$breaksize\">&nbsp;</td></tr>\n";
+    return "<tr><td colspan='3' class=\"$breaksize\">&nbsp;</td></tr>\n";
 }
 
 function doCustomEvents($entityID, $type, $nomap = 0) {
@@ -937,12 +901,8 @@ function getAlbums($entity, $linktype) {
     $query .= "ORDER BY ordernum, albumname";
     $albumlinks = tng_query($query);
     if (is_array($entity)) {
-        if (!isset($entity['allow_living'])) {
-            $entity['allow_living'] = false;
-        }
-        if (!isset($entity['allow_private'])) {
-            $entity['allow_private'] = false;
-        }
+        if (!isset($entity['allow_living'])) $entity['allow_living'] = false;
+        if (!isset($entity['allow_private'])) $entity['allow_private'] = false;
     }
 
     while ($albumlink = tng_fetch_assoc($albumlinks)) {
@@ -1004,9 +964,7 @@ function getAlbums($entity, $linktype) {
             $thisalbum['description'] = "({$text['livingphoto']})";
         }
 
-        if (!isset($albums[$eventID])) {
-            $albums[$eventID] = [];
-        }
+        if (!isset($albums[$eventID])) $albums[$eventID] = [];
         array_push($albums[$eventID], $thisalbum);
     }
     tng_free_result($albumlinks);
@@ -1047,10 +1005,10 @@ function writeAlbums($albums_array) {
                 $albumcount++;
             }
             $albumtext .= "<tr>\n";
-            $albumtext .= "<td class=\"fieldnameback indleftcol align-top\"$cellid rowspan=\"$totalalbums\"><span class=\"fieldname\">{$text['albums']}</span></td>\n";
+            $albumtext .= "<td class='fieldnameback indleftcol align-top'$cellid rowspan=\"$totalalbums\"><span class='fieldname'>{$text['albums']}</span></td>\n";
 
             if (!$thumbcount) {
-                $albumrows = str_replace("/<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;<\/td><td class='databack'>/", "<td class='databack' colspan=\"2\">", $albumrows);
+                $albumrows = str_replace("/<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;<\/td><td class='databack'>/", "<td class='databack' colspan='2'>", $albumrows);
             }
             $albumtext .= $albumrows;
         }
@@ -1126,12 +1084,6 @@ function getMedia($entity, $linktype, $all = false) {
                     $thismedia['imgsrc'] .= ">$imgsrc</a>";
                 }
             }
-
-            /*if( $medialink['status'] ) {
-              if($thismedia['description']) $thismedia['description'] .= "<br>";
-              $status = $medialink['status'];
-              $thismedia['description'] .= "<strong>" . $text['status'] . ":</strong> " . $text[$status];
-            }*/
             if ($medialink['plot']) {
                 if ($thismedia['description']) {
                     $thismedia['description'] .= "<br>";
@@ -1140,16 +1092,12 @@ function getMedia($entity, $linktype, $all = false) {
             }
         }
         if (!$all && $medialink['eventID'] && ($linktype == "L" || ($entity['allow_living'] && $entity['allow_private']))) {
-            if (!isset($media[$eventID])) {
-                $media[$eventID] = [];
-            }
+            if (!isset($media[$eventID])) $media[$eventID] = [];
             array_push($media[$eventID], $thismedia);
         } elseif ($linktype == "C") {
             array_push($media, $thismedia);
         } else {
-            if (!isset($media[$eventID][$mediatypeID])) {
-                $media[$eventID][$mediatypeID] = [];
-            }
+            if (!isset($media[$eventID][$mediatypeID])) $media[$eventID][$mediatypeID] = [];
             array_push($media[$eventID][$mediatypeID], $thismedia);
         }
     }
@@ -1186,7 +1134,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             $hidemedia = !empty($tngconfig['hidemedia']) && $totalmedia > 1;
             if ($hidemedia) {
                 $mediacount = 1;
-                $countrow = "<td colspan=\"2\" class='databack' id=\"drm{$prefix}{$mediatypeID}\">$totalmedia $titlemsg</td></tr>\n";
+                $countrow = "<td colspan='2' class='databack' id=\"drm{$prefix}{$mediatypeID}\">$totalmedia $titlemsg</td></tr>\n";
                 $rows += 1;
                 $num_collapsed++;
             }
@@ -1256,10 +1204,10 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                 $mediatext .= " rowspan=\"$rows\"";
             }
             $mediatext .= ">$toggleicon";
-            $mediatext .= "<span class=\"fieldname\">$titlemsg</span></td>\n";
+            $mediatext .= "<span class='fieldname'>$titlemsg</span></td>\n";
 
             if (!$thumbcount) {
-                $mediarows = str_replace("<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td><td class='databack'>", "<td class='databack' colspan=\"2\">", $mediarows);
+                $mediarows = str_replace("<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;</td><td class='databack'>", "<td class='databack' colspan='2'>", $mediarows);
             }
 
             $mediatext .= $countrow;
@@ -1269,7 +1217,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                 if ($hidemedia) {
                     $mediatext .= "</tr><tr class=\"m{$prefix}{$mediatypeID}\" style='display: none;'>";
                 }
-                $mediatext .= "<td class='databack' colspan=\"2\">$thumbdivs</td></tr>\n";
+                $mediatext .= "<td class='databack' colspan='2'>$thumbdivs</td></tr>\n";
             }
 
             $mediatext .= $mediarows;

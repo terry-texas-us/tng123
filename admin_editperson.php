@@ -17,12 +17,8 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
-if (!isset($cw)) {
-    $cw = '';
-}
-if (!isset($added)) {
-    $added = 0;
-}
+if (!isset($cw)) $cw = '';
+if (!isset($added)) $added = 0;
 
 initMediaTypes();
 
@@ -276,9 +272,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
     $innermenu .= " &nbsp;|&nbsp; <a href='#' onclick=\"return addNewMedia();\" class='lightlink'>{$admtext['addmedia']}</a>";
     }
     $menu = doMenu($peopletabs, "edit", $innermenu);
-    if (!isset($message)) {
-        $message = "";
-    }
+    if (!isset($message)) $message = "";
     echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['modifyperson'], "img/people_icon.gif", $menu, $message);
     ?>
 
@@ -451,7 +445,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             $checked = $row['burialtype'] == 1 ? " checked" : "";
                             echo "<tr>";
                             echo "<td></td>";
-                            echo "<td colspan=\"3\">";
+                            echo "<td colspan='3'>";
                             echo "<input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'$checked> <label for=\"burialtype\">{$admtext['cremated']}</label>";
                             echo "</td>";
                             echo "</tr>\n";
@@ -527,7 +521,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             echo "<td>&nbsp;</td>";
                             echo "<td>" . $admtext['date'] . "</td>";
                             echo "<td>" . $admtext['place'] . "</td>";
-                            echo "<td colspan=\"2\">&nbsp;</td>";
+                            echo "<td colspan='2'>&nbsp;</td>";
                             echo "</tr>\n";
                             echo "<tr>\n";
                             echo "<td class=\"align-top nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
@@ -591,7 +585,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
-                    echo "<table class='normal' width=\"100%\">";
+                    echo "<table class='normal w-100'>";
                     echo "<tr>";
                     echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td class='align-top' width=\"94%\">\n";

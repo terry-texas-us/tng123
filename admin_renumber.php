@@ -38,12 +38,8 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 
         <?php
         $nextnum = isset($start) ? $start : 1;
-        if (!isset($digits)) {
-            $digits = 0;
-        }
-        if (!isset($type)) {
-            $type = "person";
-        }
+        if (!isset($digits)) $digits = 0;
+        if (!isset($type)) $type = "person";
         $count = 0;
 
         eval("\$prefix = \$tngconfig['{$type}prefix'];");

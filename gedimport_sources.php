@@ -384,9 +384,7 @@ function getRepoRecord($repoID, $prevlevel) {
         }
         if ($goahead) {
             $chdatestr = $inschangedt ? ", changedate=\"$inschangedt\"" : "";
-            if (!isset($info['ADDR'])) {
-                $info['ADDR'] = 0;
-            }
+            if (!isset($info['ADDR'])) $info['ADDR'] = 0;
             $query = "UPDATE $repositories_table SET reponame=\"{$info['NAME']}\", addressID=\"{$info['ADDR']}\", changedby=\"$currentuser\" $chdatestr WHERE repoID=\"$repoID\" AND gedcom = '$tree'";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             $success = 1;

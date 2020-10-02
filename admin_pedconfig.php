@@ -50,18 +50,10 @@ $innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return tog
 $menu = doMenu($setuptabs, "ped", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['pedconfigsettings'], "img/setup_icon.gif", $menu, "");
 
-if (!isset($pedigree['vwidth'])) {
-    $pedigree['vwidth'] = 100;
-}
-if (!isset($pedigree['vheight'])) {
-    $pedigree['vheight'] = 42;
-}
-if (!isset($pedigree['vspacing'])) {
-    $pedigree['vspacing'] = 20;
-}
-if (!isset($pedigree['vfontsize'])) {
-    $pedigree['vfontsize'] = 7;
-}
+if (!isset($pedigree['vwidth'])) $pedigree['vwidth'] = 100;
+if (!isset($pedigree['vheight'])) $pedigree['vheight'] = 42;
+if (!isset($pedigree['vspacing'])) $pedigree['vspacing'] = 20;
+if (!isset($pedigree['vfontsize'])) $pedigree['vfontsize'] = 7;
 ?>
 
 <form action="admin_updatepedconfig.php" method="post" name="form1">

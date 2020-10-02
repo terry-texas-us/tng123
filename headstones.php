@@ -14,9 +14,7 @@ if (!$thumbmaxw) {
 }
 
 $max_pages = 5;
-if (!isset($max_cemeteries)) {
-    $max_cemeteries = 5;
-}
+if (!isset($max_cemeteries)) $max_cemeteries = 5;
 
 $city = preg_replace("/[<>{};!=]/", '', $city);
 $county = preg_replace("/[<>{};!=]/", '', $county);
@@ -262,16 +260,16 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         if ($tabletype == "toggle") {
             $tabletype = "columntoggle";
         }
-        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"tablesaw whiteback normal w-100\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
     } else {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
+        $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
     }
     $body .= $header;
     $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback center fieldname\" style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
     $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}</th>";
     $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback fieldname\">&nbsp;{$text['status']}</th>";
     $body .= "<th data-tablesaw-priority='4' class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
-    $body .= "<th data-tablesaw-priority=\"3\" class=\"fieldnameback fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
+    $body .= "<th data-tablesaw-priority='3' class=\"fieldnameback fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
 
     while ($hs = tng_fetch_assoc($hsresult)) {
         $mediatypeID = $hs['mediatypeID'];

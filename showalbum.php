@@ -229,14 +229,14 @@ if ($tnggallery) {
     $header = "";
 } else {
     $header = "<tr><td class='fieldnameback'>&nbsp;</td>\n";
-    $header .= "<td class='fieldnameback' width=\"$thumbmaxw\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
-    $header .= "<td class='fieldnameback' width=\"70%\"><span class=\"fieldname\">&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td>\n";
-    $header .= "<td class='fieldnameback'><span class=\"fieldname\">&nbsp;<strong>{$text['indlinked']}</strong>&nbsp;</span></td>\n";
+    $header .= "<td class='fieldnameback' width=\"$thumbmaxw\"><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
+    $header .= "<td class='fieldnameback' width=\"70%\"><span class='fieldname'>&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td>\n";
+    $header .= "<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['indlinked']}</strong>&nbsp;</span></td>\n";
     $header .= "</tr>\n";
     $tablewidth = " width=\"100%\"";
 }
 
-$header = "<table cellpadding=\"3\" cellspacing='1' border='0' $tablewidth class=\"whiteback normal\">\n" . $header;
+$header = "<table %nameclass='whiteback no cellpadding='3' cellspacing='1' border='0'$tablewidth rmal'>\n" . $header;
 
 $i = $offsetplus;
 $maxplus = $maxsearchresults + 1;
@@ -426,7 +426,7 @@ if ($tnggallery) {
     }
 } else {
     if (!$thumbcount) {
-        $header = str_replace("<td class='fieldnameback'><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
+        $header = str_replace("<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
         $mediatext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }

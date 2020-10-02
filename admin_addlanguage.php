@@ -15,7 +15,7 @@ if ($assignedtree || !$allow_add) {
 require "adminlog.php";
 
 $template = "ssss";
-$query = "INSERT INTO $languages_table (display,folder,charset,norels) VALUES (?,?,?,?)";
+$query = "INSERT INTO $languages_table (display, folder, charset, norels) VALUES (?, ?, ?, ?)";
 $params = [&$template, &$display, &$folder, &$langcharset, &$langnorels];
 tng_execute($query, $params);
 $languageID = tng_insert_id();

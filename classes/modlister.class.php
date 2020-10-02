@@ -188,14 +188,14 @@ class modlister extends modparser
         $filesort = $namesort = '';
         if ($this->sortby == self::NAMECOL) {
             $filesort = "<a href=\"admin_modhandler.php?sort=" . self::FILECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" height=\"8\" border='0' alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
+            width=\"15\" height=\"8\" border='0' alt='' title=\"{$this->admtext['text_sort']}\"></a>";
             $namesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" height=\"8\" border='0' alt=\"\">";
+            width=\"15\" height=\"8\" border='0' alt=''>";
         } else {
             $namesort = "<a href=\"admin_modhandler.php?sort=" . self::NAMECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" height=\"8\" border='0' alt=\"\" title=\"{$this->admtext['text_sort']}\"></a>";
+            width=\"15\" height=\"8\" border='0' alt='' title=\"{$this->admtext['text_sort']}\"></a>";
             $filesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" height=\"8\" border='0' alt=\"\">";
+            width=\"15\" height=\"8\" border='0' alt=''>";
         }
 
         /*******************************************************************
@@ -1308,9 +1308,9 @@ class modlister extends modparser
     // RETURN AFFECTED FILES POPUP LIST
     protected function affected_files_listing($id, $cfgfile, $modname, $aff_files) {
         $retstr = "
-         <div class=\"descpop1 nw imgcenter\" title=\"\">
+         <div class=\"descpop1 nw imgcenter\" title=''>
 
-            <img src=\"img/tng_more.gif\" width=\"16\" alt=\"\">
+            <img src=\"img/tng_more.gif\" width=\"16\" alt=''>
 
             <div>
                <table class=\"mmpopuptable\">

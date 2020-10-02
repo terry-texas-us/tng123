@@ -312,9 +312,7 @@ function showEventRow($datefield, $placefield, $label, $persfamID) {
 
     $ldsarray = ["BAPL", "CONL", "INIT", "ENDL", "SLGS", "SLGC"];
 
-    if (!isset($currentform)) {
-        $currentform = "document.form1";
-    }
+    if (!isset($currentform)) $currentform = "document.form1";
     $blurAction = ($label == "DEAT" || $label == "BURI") ? " updateLivingBox($currentform,this);" : "";
     $onblur = $blurAction ? " onblur='$blurAction'" : "";
 

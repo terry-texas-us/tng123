@@ -35,7 +35,7 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
         $selectnum = $totbranches < 8 ? $totbranches : 8;
         $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
         $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
-        $select .= "	<option value=\"\"";
+        $select .= "	<option value=''";
         if ($row == "") {
             $select .= " selected";
         }

@@ -27,7 +27,7 @@ if (!$endmonth) {
     $endmonth = "0";
 }
 $template = "ssssssss";
-$query = "INSERT INTO $tlevents_table (evday,evmonth,evyear,endday,endmonth,endyear,evtitle,evdetail) VALUES (?,?,?,?,?,?,?,?)";
+$query = "INSERT INTO $tlevents_table (evday,evmonth,evyear,endday,endmonth,endyear,evtitle,evdetail) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$evday, &$evmonth, &$evyear, &$endday, &$endmonth, &$endyear, &$evtitle, &$evdetail];
 tng_execute($query, $params);
 $tleventID = tng_insert_id();

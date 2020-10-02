@@ -18,7 +18,7 @@ if (!$alwayson) {
     $alwayson = 0;
 }
 $template = "sssss";
-$query = "INSERT INTO $albums_table (albumname,description,keywords,active,alwayson) VALUES (?,?,?,?,?)";
+$query = "INSERT INTO $albums_table (albumname,description,keywords,active,alwayson) VALUES (?, ?, ?, ?, ?)";
 $params = [&$template, &$albumname, &$description, &$keywords, &$active, &$alwayson];
 tng_execute($query, $params);
 $albumID = tng_insert_id();

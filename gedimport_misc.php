@@ -128,9 +128,7 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
                 case "WWW":
                 case "PHON":
                 case "EMAIL":
-                    if (!isset($address)) {
-                        $address = initAddress();
-                    }
+                    if (!isset($address)) $address = initAddress();
                     $address[$tag] = addslashes($lineinfo['rest']) . getContinued();
                     break;
                 case "PLAC":

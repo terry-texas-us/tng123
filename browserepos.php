@@ -9,7 +9,7 @@ function doRepoSearch($instance, $pagenav) {
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browserepos", "get", "RepoSearch$instance", "");
-    $str .= "<input type='text' name=\"reposearch\" value=\"$reposearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='search' name='reposearch' value=\"$reposearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($reposearch) {
         $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='browserepos.php'>{$text['browseallrepos']}</a>";
@@ -115,14 +115,14 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+        $header = "<table style=\"width: 100%;\" class='tablesaw whiteback normal' data-tablesaw-mode='columntoggle'{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+        $header = "<table style=\"width: 100%;\" class='tablesaw whiteback normal' data-tablesaw-mode='stack'{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table style=\"width: 100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+        $header = "<table style=\"width: 100%;\" class='tablesaw whiteback normal' data-tablesaw-mode='swipe'{$headerr}>\n";
     }
 } else {
-    $header = "<table class=\"whiteback normal\">";
+    $header = "<table class='whiteback normal'>";
 }
 echo $header;
 ?>

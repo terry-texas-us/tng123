@@ -79,9 +79,7 @@ $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['mer
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
 $innermenu .= " &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('on');\">{$text['expandall']}</a> &nbsp;|&nbsp; <a href='#' class='lightlink' onClick=\"return toggleAll('off');\">{$text['collapseall']}</a>";
 $menu = doMenu($peopletabs, "addperson", $innermenu);
-if (!isset($message)) {
-    $message = '';
-}
+if (!isset($message)) $message = '';
 echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'], "img/people_icon.gif", $menu, $message);
 ?>
 
@@ -267,7 +265,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                         echo showEventRow('burialdate', 'burialplace', 'BURI', '');
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan=\"3\"><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "<td colspan='3'><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
                         echo "</tr>\n";
                         if ($allow_lds) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', '');

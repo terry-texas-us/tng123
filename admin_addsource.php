@@ -39,7 +39,7 @@ if (!$repoID) {
     $repoID = 0;
 }
 $template = "sssssssssss";
-$query = "INSERT INTO $sources_table (sourceID,shorttitle,title,author,callnum,publisher,repoID,actualtext,changedate,gedcom,changedby,type,other,comments) VALUES (?,?,?,?,?,?,?,?,?,?,?,'','','')";
+$query = "INSERT INTO $sources_table (sourceID,shorttitle,title,author,callnum,publisher,repoID,actualtext,changedate,gedcom,changedby,type,other,comments) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', '', '')";
 $params = [&$template, &$sourceID, &$shorttitle, &$title, &$author, &$callnum, &$publisher, &$repoID, &$actualtext, &$newdate, &$tree1, &$currentuser];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {

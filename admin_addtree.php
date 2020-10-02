@@ -27,7 +27,7 @@ if (!$private) {
     $private = 0;
 }
 $template = "ssssssssssssss";
-$query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate,disallowpdf) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+$query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate,disallowpdf) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$gedcom, &$treename, &$description, &$owner, &$email, &$address, &$city, &$state, &$country, &$zip, &$phone, &$private, &$disallowgedcreate, &$disallowpdf];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {

@@ -489,9 +489,7 @@ class FPDF
                     $style = '';
                 }
                 $fontkey = $family . $style;
-                if (!isset($this->fonts[$fontkey])) {
-                    $this->AddFont($family, $style);
-                }
+                if (!isset($this->fonts[$fontkey])) $this->AddFont($family, $style);
             } else {
                 $this->Error('Undefined font: ' . $family . ' ' . $style);
             }
@@ -544,9 +542,7 @@ class FPDF
 
     public function Text($x, $y, $txt) {
         // Output a string
-        if (!isset($this->CurrentFont)) {
-            $this->Error('No font has been set');
-        }
+        if (!isset($this->CurrentFont)) $this->Error('No font has been set');
         $s = sprintf('BT %.2F %.2F Td (%s) Tj ET', $x * $this->k, ($this->h - $y) * $this->k, $this->_escape($txt));
         if ($this->underline && $txt != '') {
             $s .= ' ' . $this->_dounderline($x, $y, $txt);
@@ -609,9 +605,7 @@ class FPDF
             }
         }
         if ($txt !== '') {
-            if (!isset($this->CurrentFont)) {
-                $this->Error('No font has been set');
-            }
+            if (!isset($this->CurrentFont)) $this->Error('No font has been set');
             if ($align == 'R') {
                 $dx = $w - $this->cMargin - $this->GetStringWidth($txt);
             } elseif ($align == 'C') {
@@ -650,9 +644,7 @@ class FPDF
 
     public function MultiCell($w, $h, $txt, $border = 0, $align = 'J', $fill = false) {
         // Output text with automatic or explicit line breaks
-        if (!isset($this->CurrentFont)) {
-            $this->Error('No font has been set');
-        }
+        if (!isset($this->CurrentFont)) $this->Error('No font has been set');
         $cw = &$this->CurrentFont['cw'];
         if ($w == 0) {
             $w = $this->w - $this->rMargin - $this->x;
@@ -758,9 +750,7 @@ class FPDF
 
     public function Write($h, $txt, $link = '') {
         // Output text in flowing mode
-        if (!isset($this->CurrentFont)) {
-            $this->Error('No font has been set');
-        }
+        if (!isset($this->CurrentFont)) $this->Error('No font has been set');
         $cw = &$this->CurrentFont['cw'];
         $w = $this->w - $this->rMargin - $this->x;
         $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
@@ -1046,9 +1036,7 @@ class FPDF
     protected function _getpagesize($size) {
         if (is_string($size)) {
             $size = strtolower($size);
-            if (!isset($this->StdPageSizes[$size])) {
-                $this->Error('Unknown page size: ' . $size);
-            }
+            if (!isset($this->StdPageSizes[$size])) $this->Error('Unknown page size: ' . $size);
             $a = $this->StdPageSizes[$size];
             return [$a[0] / $this->k, $a[1] / $this->k];
         } else {
@@ -1115,15 +1103,11 @@ class FPDF
             $this->Error('Incorrect font definition file name: ' . $font);
         }
         include $this->fontpath . $font;
-        if (!isset($name)) {
-            $this->Error('Could not include font definition file');
-        }
+        if (!isset($name)) $this->Error('Could not include font definition file');
         if (isset($enc)) {
             $enc = strtolower($enc);
         }
-        if (!isset($subsetted)) {
-            $subsetted = false;
-        }
+        if (!isset($subsetted)) $subsetted = false;
         return get_defined_vars();
     }
 

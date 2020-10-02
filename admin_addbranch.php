@@ -19,7 +19,7 @@ if (!$dospouses) {
     $dospouses = 0;
 }
 $template = "ssssssss";
-$query = "INSERT INTO $branches_table (gedcom,branch,description,personID,agens,dgens,dagens,inclspouses,action) VALUES (?,?,?,?,?,?,?,?,'2')";
+$query = "INSERT INTO $branches_table (gedcom,branch,description,personID,agens,dgens,dagens,inclspouses,action) VALUES (?, ?, ?, ?, ?, ?, ?, ?,'2')";
 $params = [&$template, &$tree, &$branch, &$description, &$personID, &$agens, &$dgens, &$dagens, &$dospouses];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {

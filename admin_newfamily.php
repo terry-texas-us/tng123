@@ -47,12 +47,8 @@ if ($husband) {
         $wifestr = getName($newpersonrow) . " - $wife";
     }
 }
-if (!isset($husbstr)) {
-    $husbstr = $admtext['clickfind'];
-}
-if (!isset($wifestr)) {
-    $wifestr = $admtext['clickfind'];
-}
+if (!isset($husbstr)) $husbstr = $admtext['clickfind'];
+if (!isset($wifestr)) $wifestr = $admtext['clickfind'];
 
 if ($assignedtree) {
     $wherestr = "WHERE gedcom = '$assignedtree'";

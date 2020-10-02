@@ -9,9 +9,7 @@ include "checklogin.php";
 include "version.php";
 $varlist = ['newsearch', 'searchstring', 'tree', 'living', 'private', 'exactmatch', 'nokids', 'noparents', 'nospouse'];
 foreach ($varlist as $myvar) {
-    if (!isset(${$myvar})) {
-        ${$myvar} = "";
-    }
+    if (!isset(${$myvar})) ${$myvar} = "";
 }
 
 $exptime = 0;
@@ -235,9 +233,7 @@ $peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review
 $peopletabs['3'] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($peopletabs, "findperson", $innermenu);
-if (!isset($message)) {
-    $message = '';
-}
+if (!isset($message)) $message = '';
 echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message);
 ?>
 

@@ -71,7 +71,7 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
             var newtr = table.insertRow(row.rowIndex + 1);
             var label = "&nbsp;&nbsp;" + jQuery('#' + rowID + ' :first-child').html();
             insertCell(newtr, 0, label + "<br>&nbsp;&nbsp;&nbsp;(" + langDisplay + ")");
-            var inputstr = type == "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows=\"3\" cols=\"80\"></textarea>" : "<input type='text' class=\"longfield\" name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\">";
+            var inputstr = type == "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows='3' cols=\"80\"></textarea>" : "<input type='text' class=\"longfield\" name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\">";
             insertCell(newtr, 1, inputstr);
             insertCell(newtr, 2, "");
         }
@@ -197,10 +197,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         $newtemplatepfx = is_numeric($i) ? "template" : "";
                         echo "<div class=\"prevdiv\" id=\"prev$i\"><span class=\"prevnum\">$i:</span>";
                         if (file_exists("{$rootpath}{$endrootpath}templates/$newtemplatepfx$i/img/preview1sm.jpg")) {
-                            echo "<img src=\"templates/$newtemplatepfx$i/img/preview1sm.jpg\" id=\"preview-$i\" hspace=\"2\" class=\"temppreview\">";
+                            echo "<img src=\"templates/$newtemplatepfx$i/img/preview1sm.jpg\" id=\"preview-$i\" hspace='2' class=\"temppreview\">";
                         }
                         if (file_exists("{$rootpath}{$endrootpath}templates/$newtemplatepfx$i/img/preview2sm.jpg")) {
-                            echo "<img src=\"templates/$newtemplatepfx$i/img/preview2sm.jpg\" id=\"preview-$i\" hspace=\"2\" class=\"temppreview\"> &nbsp;&nbsp;\n";
+                            echo "<img src=\"templates/$newtemplatepfx$i/img/preview2sm.jpg\" id=\"preview-$i\" hspace='2' class=\"temppreview\"> &nbsp;&nbsp;\n";
                         }
                         echo "</div>\n";
                     }
@@ -302,10 +302,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     $newtemplatepfx = is_numeric($i) ? "template" : "";
                     $imagetext = "";
                     if (file_exists("{$rootpath}templates/$newtemplatepfx$i/img/preview1.jpg")) {
-                        $imagetext .= "<img src=\"templates/$newtemplatepfx$i/img/preview1.jpg\" id=\"preview1\" hspace=\"2\" class=\"temppreview\"> ";
+                        $imagetext .= "<img src=\"templates/$newtemplatepfx$i/img/preview1.jpg\" id=\"preview1\" hspace='2' class=\"temppreview\"> ";
                     }
                     if (file_exists("{$rootpath}templates/$newtemplatepfx$i/img/preview2.jpg")) {
-                        $imagetext .= " &nbsp; <img src=\"templates/$newtemplatepfx$i/img/preview2.jpg\" id=\"preview2\" hspace=\"2\" class=\"temppreview\">\n";
+                        $imagetext .= " &nbsp; <img src=\"templates/$newtemplatepfx$i/img/preview2.jpg\" id=\"preview2\" hspace='2' class=\"temppreview\">\n";
                     }
                     if ($imagetext) {
                         echo "$imagetext<br>";

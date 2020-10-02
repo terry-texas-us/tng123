@@ -120,7 +120,7 @@ class modremover extends modparser
                             break;
                         case self::NOFILE:
                             //$num_errors++;
-                            $logstring .= "<span class=\"\">{$this->admtext['tgtmissing']}</span>";
+                            $logstring .= "<span class=''>{$this->admtext['tgtmissing']}</span>";
                             $this->add_logevent($logstring);
                             break;
                         case self::NOWRITE:

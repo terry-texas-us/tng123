@@ -91,7 +91,8 @@ if ($tngconfig['autotree']) {
 
     if ($tngconfig['autoapp']) {
         $template = "ssssssssss";
-        $query = "INSERT IGNORE INTO $trees_table (gedcom, treename, description, owner, email, address, city, state, country, zip, phone, secret, disallowgedcreate) VALUES (?,?,'',?,?,?,?,?,?,?,?,'0','0')";
+        $query = "INSERT IGNORE INTO $trees_table (gedcom, treename, description, owner, email, address, city, state, country, zip, phone, secret, disallowgedcreate) ";
+        $query .= "VALUES (?, ?, '', ?, ?, ?, ?, ?, ?, ?, ?, '0', '0')";
         $params = [&$template, &$gedcom, &$realname, &$realname, &$email, &$address, &$city, &$state, &$country, &$zip, &$phone];
         tng_execute($query, $params);
     }
@@ -112,7 +113,7 @@ if ($username && $password && $realname && $email && $fingerprint == "realperson
     $password_type = PasswordType();
     $template = "sssssssssssssssssss";
     $query = "INSERT INTO $users_table (description, username, password, password_type, realname, phone, email, website, address, city, state, zip, country, languageID, notes, gedcom, role, allow_living, dt_registered, dt_consented) ";
-    $query .= "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'guest',?,?,?)";
+    $query .= "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'guest', ?, ?, ?)";
     $params = [&$template, &$realname, &$username, &$password, &$password_type, &$realname, &$phone, &$email, &$website, &$address, &$city, &$state, &$zip, &$country, &$preflang, &$notes, &$gedcom, &$allow_living_val, &$today, &$dt_consented];
     $success = tng_execute_noerror($query, $params);
 } else {

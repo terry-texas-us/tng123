@@ -23,9 +23,9 @@ function showDiv(string $type) {
     echo "<div id=\"order$type" . "divs\">\n";
     echo "<table class='normal' id=\"order$type" . "tbl\">\n";
     echo "<tr>\n";
-    echo "<th class='fieldnameback' style=\"width: 4em;\"><span class=\"fieldname\">" . $admtext['text_sort'] . "</span></th>\n";
-    echo "<th class='fieldnameback' style=\"width: {$thumbmaxw}px;\"><span class=\"fieldname\">" . $admtext['thumb'] . "</span></th>\n";
-    echo "<th class='fieldnameback'><span class=\"fieldname\">" . $admtext['description'] . "</span></th>\n";
+    echo "<th class='fieldnameback' style=\"width: 4em;\"><span class='fieldname'>" . $admtext['text_sort'] . "</span></th>\n";
+    echo "<th class='fieldnameback' style=\"width: {$thumbmaxw}px;\"><span class='fieldname'>" . $admtext['thumb'] . "</span></th>\n";
+    echo "<th class='fieldnameback'><span class='fieldname'>" . $admtext['description'] . "</span></th>\n";
     echo "</tr>\n";
     echo "</table>\n";
 

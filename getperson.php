@@ -29,9 +29,7 @@ $stdex = getStdExtras($personID);
 
 $indexlist = ['BIRT', 'CHR', 'BAPL', 'CONL', 'INIT', 'ENDL', 'DEAT', 'BURI'];
 foreach ($indexlist as $myindex)
-    if (!isset($stdex[$myindex])) {
-        $stdex[$myindex] = '';
-    }
+    if (!isset($stdex[$myindex])) $stdex[$myindex] = '';
 
 $result = getPersonFullPlusDates($tree, $personID);
 if (!tng_num_rows($result)) {
@@ -162,7 +160,7 @@ echo "<div class=\"vcard\">\n";
 echo tng_DrawHeading($photostr, $namestr, getYears($row));
 
 $persontext = "";
-$persontext .= "<ul class=\"nopad\">\n";
+$persontext .= "<ul class='nopad'>\n";
 
 if (!empty($tng_extras)) {
     $media = doMediaSection($personID, $indmedia, $indalbums);
@@ -252,8 +250,8 @@ if ($notestogether == 1) {
 
     if ($notes) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class=\"fieldnameback align-top\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-        $persontext .= "<td class='databack' colspan=\"2\"><div class=\"notearea\">$notes</div></td>\n";
+        $persontext .= "<td class=\"fieldnameback align-top\" id=\"notes1\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack' colspan='2'><div class=\"notearea\">$notes</div></td>\n";
         $persontext .= "</tr>\n";
         $notes = ""; //wipe it out so we don't get a link at the top
     }
@@ -374,12 +372,8 @@ if ($parents && tng_num_rows($parents)) {
                     $famnotes = getNotes($parent['familyID'], "F");
                     getCitations($parent['familyID']);
                     $stdexf = getStdExtras($parent['familyID']);
-                    if (!isset($stdexf['MARR'])) {
-                        $stdexf['MARR'] = '';
-                    }
-                    if (!isset($stdexf['DIV'])) {
-                        $stdexf['DIV'] = '';
-                    }
+                    if (!isset($stdexf['MARR'])) $stdexf['MARR'] = '';
+                    if (!isset($stdexf['DIV'])) $stdexf['DIV'] = '';
                     if (!empty($parent['marrtype'])) {
                         if (!is_array($stdexf['MARR'])) {
                             $stdexf['MARR'] = [];
@@ -417,8 +411,8 @@ if ($parents && tng_num_rows($parents)) {
 
                     if ($famnotes2) {
                         $persontext .= "<tr>\n";
-                        $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-                        $persontext .= "<td class='databack' colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
+                        $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+                        $persontext .= "<td class='databack' colspan='2'><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
                         $persontext .= "</tr>\n";
                     }
 
@@ -451,15 +445,9 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     getCitations($marriagerow['familyID']);
     $stdexf = getStdExtras($marriagerow['familyID']);
 
-    if (!isset($stdexf['MARR'])) {
-        $stdexf['MARR'] = '';
-    }
-    if (!isset($stdexf['DIV'])) {
-        $stdexf['DIV'] = '';
-    }
-    if (!isset($stdexf['SLGS'])) {
-        $stdexf['SLGS'] = '';
-    }
+    if (!isset($stdexf['MARR'])) $stdexf['MARR'] = '';
+    if (!isset($stdexf['DIV'])) $stdexf['DIV'] = '';
+    if (!isset($stdexf['SLGS'])) $stdexf['SLGS'] = '';
 
     if ($marriagerow['marrtype']) {
         if (!is_array($stdexf['MARR'])) {
@@ -539,8 +527,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
         if ($famnotes2) {
             $persontext .= "<tr>\n";
-            $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-            $persontext .= "<td class='databack' colspan=\"2\"><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
+            $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+            $persontext .= "<td class='databack' colspan='2'><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
             $persontext .= "</tr>\n";
         }
     }
@@ -551,8 +539,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
     if ($children && tng_num_rows($children)) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['children']}&nbsp;</span></td>\n";
-        $persontext .= "<td class='databack' colspan=\"2\">\n";
+        $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['children']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack' colspan='2'>\n";
 
         $kidcount = 1;
         $persontext .= "<table cellpadding = '0' cellspacing = '0' style=\"width:100%;\">\n";
@@ -629,7 +617,7 @@ if ($map['key'] && $locations2map) {
     $persontext .= beginSection("eventmap");
     $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
     $persontext .= "<col class=\"labelcol\"/><col class=\"mapcol\"/><col />\n";
-    $persontext .= "<tr class='align-top'><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class=\"fieldname\">{$text['gmapevent']}</span></td>\n";
+    $persontext .= "<tr class='align-top'><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class='fieldname'>{$text['gmapevent']}</span></td>\n";
     $persontext .= "<td class='databack'>\n";
     $persontext .= "<div id=\"map\" class=\"rounded10\" style=\"width: {$map['indw']}; height: {$map['indh']};\">";
     if ($map['pstartoff']) {
@@ -638,7 +626,7 @@ if ($map['key'] && $locations2map) {
     $persontext .= "</div>\n";
     $persontext .= "</td>\n";
     $mapheight = (intval($map['indh']) - 20) . "px";
-    $persontext .= "<td class='databack'><div style=\"height:{$mapheight};\" id=\"mapevents\"><table cellpadding='4' class=\"whiteback\">\n";
+    $persontext .= "<td class='databack'><div style=\"height:{$mapheight};\" id=\"mapevents\"><table cellpadding='4' class='whiteback'>\n";
 
     asort($locations2map);
     reset($locations2map);
@@ -711,8 +699,8 @@ if ($map['key'] && $locations2map) {
     $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
-        $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class=\"fieldname\">{$text['gmaplegend']}</span></td>\n";
-        $persontext .= "<td colspan=\"2\" class='databack'><span class=\"smaller\">";
+        $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class='fieldname'>{$text['gmaplegend']}</span></td>\n";
+        $persontext .= "<td colspan='2' class='databack'><span class=\"smaller\">";
         for ($i = 1; $i < 7; $i++)
             $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt=\"\" height=\"17\" width=\"10\" class=\"alignmiddle\"/>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
         $persontext .= "<img src=\"img/$pinplacelevel0.png\" alt=\"\" height=\"17\" width=\"10\" class='aligntop'>&nbsp;: {$admtext['level0']}</span></td>\n";
@@ -744,7 +732,7 @@ if ($notestogether != 1) {
         $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
         $persontext .= "<col class=\"labelcol\"/><col />\n";
         $persontext .= "<tr>\n";
-        $persontext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"notes1\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
         $persontext .= "<td class='databack'>$notes</td>\n";
         $persontext .= "</tr>\n";
         $persontext .= "</table>\n";
@@ -758,7 +746,7 @@ if ($citedispctr) {
     $persontext .= "<table cellspacing='1' cellpadding='4' class='whiteback tfixed'>\n";
     $persontext .= "<col class=\"labelcol\"/><col />\n";
     $persontext .= "<tr>\n";
-    $persontext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"citations1\"><a name=\"sources\"><span class=\"fieldname\">{$text['sources']}&nbsp;</span></a></td>\n";
+    $persontext .= "<td class='fieldnameback indleftcol align-top' id=\"citations1\"><a name=\"sources\"><span class='fieldname'>{$text['sources']}&nbsp;</span></a></td>\n";
     $persontext .= "<td class='databack'>";
     if (!empty($tngconfig['scrollcite'])) {
         $persontext .= "<div class=\"notearea\">";
@@ -880,9 +868,7 @@ echo $persontext;
     <br>
 
 <?php
-if (!isset($flags['more'])) {
-    $flags['more'] = "";
-}
+if (!isset($flags['more'])) $flags['more'] = "";
 if ($map['key'] && $locations2map && $tngconfig['istart']) {
     $flags['more'] .= "\n<script>";
     $flags['more'] .= "window.onload = function() {\$('#eventmap').hide();};\n";

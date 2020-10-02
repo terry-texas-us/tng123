@@ -70,11 +70,11 @@ function doRow($field, $textmsg, $boxname) {
 
     if ($p1field || $p2field) {
         echo "<tr>\n";
-        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>{$admtext[$textmsg]}:</strong></span></td>";
+        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
         echo "<td class='lightback' width=\"31%\"><span class='normal'>$p1field&nbsp;</span></td>";
         if (is_array($p2row)) {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>{$admtext[$textmsg]}:</strong></span></td>";
+            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
             echo "<td class='lightback' width='5'><span class='normal'>";
             //if it's a spouse and they're equal, do a hidden field for p1 & p2 and don't do the checkbox
             if ($textmsg == "spouse") {
@@ -104,7 +104,7 @@ function doRow($field, $textmsg, $boxname) {
             echo "<td class='lightback' width=\"31%\"><span class='normal'>$p2field&nbsp;</span></td>";
         } else {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>{$admtext[$textmsg]}:</strong></span></td>";
+            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
             echo "<td class='lightback' width='5'><span class='normal'>&nbsp;</span></td>";
             echo "<td class='lightback' width=\"31%\"><span class='normal'>&nbsp;</span></td>";
         }
@@ -904,9 +904,9 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                             $spouses = [];
                             $eventlist = [];
                             echo "<tr>\n";
-                            echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['person']} 1 | <a href=\"\" onclick=\"window.open('admin_editperson.php?personID={$p1row['personID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
+                            echo "<td colspan='3'><strong class='subhead'>{$admtext['person']} 1 | <a href=\"\" onclick=\"window.open('admin_editperson.php?personID={$p1row['personID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
                             if (is_array($p2row)) {
-                                echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['person']} 2 | <a href=\"\" onclick=\"window.open('admin_editperson.php?personID={$p2row['personID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
+                                echo "<td colspan='3'><strong class='subhead'>{$admtext['person']} 2 | <a href=\"\" onclick=\"window.open('admin_editperson.php?personID={$p2row['personID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
 
                                 $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                                 $query .= "FROM $events_table events_table, $eventtypes_table eventtypes ";

@@ -83,7 +83,7 @@ echo "
 
 echo "<form action='admin_updatemodoptions.php' method='post' name='form1'>";
 
-echo "<table id='m2table' width='100%' border='0' cellpadding='10' cellspacing='2' class='lightback $tableclass' style='padding: 0;'>\n";
+echo "<table id='m2table' class='lightback w-100 %name' style='padding: 0;' border='0' cellpadding='10'$tableclass cellspacing='2'>\n";
 echo "<tr class='databack'>\n";
 echo "<td class='tngshadow'>\n";
 

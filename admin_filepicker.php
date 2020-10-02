@@ -57,9 +57,7 @@ if ($order == "date") {
     $datedir = "desc";
 }
 
-if (!isset($subdir)) {
-    $subdir = '';
-}
+if (!isset($subdir)) $subdir = '';
 $ImageFileTypes = ["GIF", "JPG", "PNG"];
 
 header("Content-type:text/html; charset=" . $session_charset);

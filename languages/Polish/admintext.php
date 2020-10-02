@@ -65,7 +65,7 @@ switch ($textpart) {
         $admtext['maptoupload'] = "Zdj�cie cmentarza do za�adowania";
         $admtext['mapfilenamefolder'] = "Nazwa pliku cmentarza<br>w folderze Cmentarze";
         $admtext['ifmapuploaded'] = "Je�li ten plik znajduje si� ju� w folderze cmentarze, pozostaw to pole wolne.";
-        $admtext['requiredmap'] = "Wymagane je�li u�ywasz mapy.<br> Powinno odpowiada� nazwie i lokalizacji Twojego pliku w folderze <em><font color=\"#0000ff\" size=\"2\"> nagrobk�w </font></em>, je�li plik  jest za�adowany. <br>Na przyk�ad: je�li Tw�j folder nagrobk�w nazwany jest <em><font color=\"#0000ff\" size=\"2\">nagrobki</font> </em> i chcesz, by Tw�j plik zosta� nazwany <b><em><font color=\"#ff00ff\" size=\"2\"> mapa.jpg</font> </em></b> <br>i mia� zosta� wprowadzony do podfoldera <font color=\"#0000ff\" size=\"2\">nagrobk�w</font> nazwanego <em><font color=\"#ff00ff\" size=\"2\"> <b>mymaps</b></font></em>,<br> wpisz w tym polu <b><em><font color=\"#ff00ff\" size=\"2\"> mymaps/mapa.jpg</font> </em></b>.";
+        $admtext['requiredmap'] = "Wymagane je�li u�ywasz mapy.<br> Powinno odpowiada� nazwie i lokalizacji Twojego pliku w folderze <em><font color=\"#0000ff\" size='2'> nagrobk�w </font></em>, je�li plik  jest za�adowany. <br>Na przyk�ad: je�li Tw�j folder nagrobk�w nazwany jest <em><font color=\"#0000ff\" size='2'>nagrobki</font> </em> i chcesz, by Tw�j plik zosta� nazwany <b><em><font color=\"#ff00ff\" size='2'> mapa.jpg</font> </em></b> <br>i mia� zosta� wprowadzony do podfoldera <font color=\"#0000ff\" size='2'>nagrobk�w</font> nazwanego <em><font color=\"#ff00ff\" size='2'> <b>mymaps</b></font></em>,<br> wpisz w tym polu <b><em><font color=\"#ff00ff\" size='2'> mymaps/mapa.jpg</font> </em></b>.";
         //added in 8.0.0
         $admtext['linkplace'] = "Miejsce linkowane";
         $admtext['fillplace'] = "Wype�nij Miejsce";
@@ -378,7 +378,7 @@ switch ($textpart) {
         $admtext['unmarked'] = "Nieoznakowany";
         $admtext['missing'] = "Zaginiony";
         $admtext['leaveblankhs'] = "Pozostaw wolne je�li ten plik znajduje si� ju� w folderze nagrobki.";
-        $admtext['requiredhs'] = "Wymagane. Musi by� zgodne ze �cie�k� i nazw� pliku w folderze <em><font color=\"#ff00ff\" size=\"2\">Zdjecia</font></em>. Je�eli Tw�j folder zdj�� nazywa si� <em><font color=\"#ff00ff\" size=\"2\">Zdj�cia</font></em> a plik <em>mojezdjecie.jpg</em> ma zosta� zapisany w folderze podrz�dnym nazwanym <em>NoweZdjecia</em>, wpisz w tym polu <em>nowezdjecia/mojezdjecie.jpg</em>.";
+        $admtext['requiredhs'] = "Wymagane. Musi by� zgodne ze �cie�k� i nazw� pliku w folderze <em><font color=\"#ff00ff\" size='2'>Zdjecia</font></em>. Je�eli Tw�j folder zdj�� nazywa si� <em><font color=\"#ff00ff\" size='2'>Zdj�cia</font></em> a plik <em>mojezdjecie.jpg</em> ma zosta� zapisany w folderze podrz�dnym nazwanym <em>NoweZdjecia</em>, wpisz w tym polu <em>nowezdjecia/mojezdjecie.jpg</em>.";
         $admtext['addnewhs'] = "Dodaj nowy nagrobek";
         $admtext['createnewhs'] = "Zapisz jako nowy nagrobek i utw�r� ��cze do osoby";
         $admtext['editexistinghsinfo'] = "Edytuj informacje o poprzednim nagrobku";
@@ -438,8 +438,8 @@ switch ($textpart) {
         $admtext['linktocem'] = "��cz bezpo�rednio z wybranym cmentarzem";
         $admtext['defphotonote'] = " Miniaturka tego zdj�cia identyfikuje osob�, rodzin� lub �r�d�o w drzewach i zestawieniach.";
         $admtext['photonotadded'] = "Ten element nie mo�e zosta� dodany, poniewa� w tej kolekcji istnieje ju� taki zapis.";
-        $admtext['requiredphoto'] = "Wymagane. Musi by� zgodne ze �cie�k� i nazw� pliku <em>w folderze kolekcji</em>. Je�eli Tw�j folder zdj�� nazywa si�  <em><font color=\"#0000ff\" size=\"2\">Zdjecia</font></em> a plik <em><font color=\"#ff00ff\" size=\"2\"> <strong>mojezdjecie.jpg</strong></font></em> ma zosta� zapisany w folderze podrz�dnym nazwanym <em><font color=\"#0000ff\" size=\"2\">NoweZdjecia</font></em>, wpisz w tym polu <em><font color=\"#ff00ff\" size=\"2\"> <strong>nowezdjecia/mojezdjecie.jpg</strong></font></em>.";
-        $admtext['leaveblankphoto'] = "Je�li ten plik znajduje si� ju� w folderze <em><font color=\"#ff00ff\" size=\"2\">Zdj�cia</font></em>, pozostaw to pole wolne.";
+        $admtext['requiredphoto'] = "Wymagane. Musi by� zgodne ze �cie�k� i nazw� pliku <em>w folderze kolekcji</em>. Je�eli Tw�j folder zdj�� nazywa si�  <em><font color=\"#0000ff\" size='2'>Zdjecia</font></em> a plik <em><font color=\"#ff00ff\" size='2'> <strong>mojezdjecie.jpg</strong></font></em> ma zosta� zapisany w folderze podrz�dnym nazwanym <em><font color=\"#0000ff\" size='2'>NoweZdjecia</font></em>, wpisz w tym polu <em><font color=\"#ff00ff\" size='2'> <strong>nowezdjecia/mojezdjecie.jpg</strong></font></em>.";
+        $admtext['leaveblankphoto'] = "Je�li ten plik znajduje si� ju� w folderze <em><font color=\"#ff00ff\" size='2'>Zdj�cia</font></em>, pozostaw to pole wolne.";
         $admtext['thumbconflicts'] = "Nie mo�na wygenerowa� miniaturki z powodu problemu dot. ��cza, uprawnie�, wielko�ci lub formatu zdj�cia";
         $admtext['showmap'] = "Poka� map� cmentarza i media za ka�dym razem, kiedy ta pozycja zostanie wybrana";
         $admtext['bodytext'] = "<strong>ALBO</strong><br>Tekst g��wny";
@@ -510,7 +510,7 @@ switch ($textpart) {
         $admtext['thumbsize'] = "(orygina� jest zbyt du�y)";
         $admtext['thumbinv'] = "(Ten plik jest niew�a�ciwy lub nie ma odpowiednich uprawnie�)";
         $admtext['thumblost'] = "(nie znaleziono orygina�u)";
-        $admtext['uplsel'] = "Za�aduj plik z Twojego komputera lub wybierz istniej�cy z Twojej strony.<b><br><U>UWAGA!</U> <br><font color=\"#800000\" size=\"3\">W  nazwie pliku medi�w <U>nie mo�e by� przerw mi�dzy wyrazami, przecink�w, kropek ani polskich znak�w</U>.<br>Na przyk�ad zamiast: W�adys�aw.J�zef,Jagie��o.jpg  nale�y napisa� <b><font color=\"red\" size=\"3\">Jagiello_Wladyslaw_Jozef.jpg</font></b><br>Format pliku ma by�:<br>Rezolucja=<font color=\"red\">max. 92  dots/inch</font><br>Wysoko�� zdj�cia=<font color=\"red\">max. 500 pixels</font><br>Szeroko�� zdj�cia=<font color=\"red\">max. 750 pixels</font><br><U>Pliki  kt�rych nazwa lub format nie spe�niaj� wymaga� b�d� usuni�te.</U></font><br></b>";
+        $admtext['uplsel'] = "Za�aduj plik z Twojego komputera lub wybierz istniej�cy z Twojej strony.<b><br><U>UWAGA!</U> <br><font color=\"#800000\" size='3'>W  nazwie pliku medi�w <U>nie mo�e by� przerw mi�dzy wyrazami, przecink�w, kropek ani polskich znak�w</U>.<br>Na przyk�ad zamiast: W�adys�aw.J�zef,Jagie��o.jpg  nale�y napisa� <b><font color=\"red\" size='3'>Jagiello_Wladyslaw_Jozef.jpg</font></b><br>Format pliku ma by�:<br>Rezolucja=<font color=\"red\">max. 92  dots/inch</font><br>Wysoko�� zdj�cia=<font color=\"red\">max. 500 pixels</font><br>Szeroko�� zdj�cia=<font color=\"red\">max. 750 pixels</font><br><U>Pliki  kt�rych nazwa lub format nie spe�niaj� wymaga� b�d� usuni�te.</U></font><br></b>";
         $admtext['alblater'] = "Uwaga: Na kolejnej stronie mo�esz do tego albumu doda� media jak r�wnie� utworzy� dla niego ��cza z osobami lub rodzinami.";
         $admtext['medlater'] = "Uwaga: Na kolejnej stronie mo�esz doda� dla tego elementu dalsze informacje jak r�wnie� utworzy� dla niego ��cza z osobami lub  rodzinami.";
         $admtext['minfosubt'] = "Edycja tytu�u, opisu i innych podstawowych danych dla tego medium";
@@ -530,7 +530,7 @@ switch ($textpart) {
         $admtext['entercollicon'] = "Podaj nazw� ikony pliku kolekcji.";
         $admtext['editcoll'] = "Edycja kolekcji";
         $admtext['confmtdelete'] = "Jeste� pewny, �e chcesz usun�� ten rodzaj medium?";
-        $admtext['histlimit'] = "<font color=\"#ff0000\"><strong>Uwaga:</strong></font> <br>Wi�kszo�� wyszukiwarek ogranicza ilo�� danych przesy�anych przy pomocy formularzy w internecie do 64 kB.  <br>Je�li chcesz w pole przeznaczone dla tekstu zasadniczego wpisa� lub wprowadzi� z pami�ci podr�cznej obszerny tekst, powiniene� wzi�� pod uwag� skorzystanie z  <font color=\"#ff00ff\" size=\"2\"><b>historytemplate.php</b></font>. <br>Dalsze informacje na ten temat w pomocy online.";
+        $admtext['histlimit'] = "<font color=\"#ff0000\"><strong>Uwaga:</strong></font> <br>Wi�kszo�� wyszukiwarek ogranicza ilo�� danych przesy�anych przy pomocy formularzy w internecie do 64 kB.  <br>Je�li chcesz w pole przeznaczone dla tekstu zasadniczego wpisa� lub wprowadzi� z pami�ci podr�cznej obszerny tekst, powiniene� wzi�� pod uwag� skorzystanie z  <font color=\"#ff00ff\" size='2'><b>historytemplate.php</b></font>. <br>Dalsze informacje na ten temat w pomocy online.";
         $admtext['repath'] = "Regeneruj nazw� �cie�ki pliku miniaturki je�li plik nie istnieje";
         $admtext['sortalbumind'] = "Sortuj albumy os�b, rodzin, �r�de�, repozytori�w lub miejsc";
         $admtext['cidexists'] = "Podany ID kolekcji jest ju� zaj�ty.";
@@ -912,7 +912,7 @@ switch ($textpart) {
         $admtext['configuration'] = "Konfiguracja";
         $admtext['entersysvars'] = "Podaj warto�ci dla zmiennych systemowych.";
         $admtext['createdbtables'] = "Tworzenie tabel bazy danych dla Twoich zbior�w informacji.";
-        $admtext['tcwarning'] = "<font color=\"#ff0000\" size=\"2\"><strong>Ostrze�enie!</strong></font> <br>Korzystaj z tej opcji <B>TYLKO</B> przy pierwszej instalacji. <font color=\"#ff0000\" size=\"2\"><strong><br>Wszystkie tabele wraz z  informacjami na temat zdj��, historii, nagrobk�w i cmentarzy zostan� usuni�te!</strong></font>";
+        $admtext['tcwarning'] = "<font color=\"#ff0000\" size='2'><strong>Ostrze�enie!</strong></font> <br>Korzystaj z tej opcji <B>TYLKO</B> przy pierwszej instalacji. <font color=\"#ff0000\" size='2'><strong><br>Wszystkie tabele wraz z  informacjami na temat zdj��, historii, nagrobk�w i cmentarzy zostan� usuni�te!</strong></font>";
         $admtext['conftabledelete'] = "Czy na pewno chcesz usn�� WSZYSTKIE dane!! Jeste� pewien, �e chcesz kontynuowa�?";
         $admtext['performdatamaint'] = "Wykonaj konserwacj� danych i zarz�daj zdj�ciami, historiami i innymi elementami.";
         $admtext['createtables'] = "Tw�rz tabele";
@@ -1968,7 +1968,7 @@ $admtext['nothingtodelete'] = "Nie ma nic do usuni�cia";
 $admtext['state'] = "Wojew�dztwo";
 $admtext['country'] = "Kraj";
 $admtext['finish'] = "Koniec";
-$admtext['ifphotouploaded'] = "Je�li ten plik znajduje si� ju� w folderze <em><font color=\"#ff00ff\" size=\"2\">Zdj�cia</font></em>, pozostaw to pole wolne.";
+$admtext['ifphotouploaded'] = "Je�li ten plik znajduje si� ju� w folderze <em><font color=\"#ff00ff\" size='2'>Zdj�cia</font></em>, pozostaw to pole wolne.";
 $admtext['eventtype'] = "Rodzaj wydarzenia";
 $admtext['source'] = "�r�d�o";
 $admtext['savechanges'] = "Zapisz zmiany";
@@ -2237,7 +2237,7 @@ $admtext['idexists'] = "nie mo�e by� dodane poniewa� to ID ju� istnieje.
 $admtext['notdeleted'] = "Plik nie mo�e by� usuni�ty. Sprawd� kod pozwolenia dla pliku.";
 $admtext['confdeletefile'] = "Czy jeste� pewnien, �e chcesz usun�� ten plik?";
 //changed in 8.0.0
-$admtext['datenote'] = "<font color=\"#800000\" size=\"3\"><strong>Wa�ne:</strong> Przy zapisie daty u�ywaj formatu: <strong><font  color=\"red\">DD/MM/RRRR</font></strong>, lub standardowego formatu genealogcznego DD MMM RRRR.<br>Np. 10 Apr 2004.(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug,  Sep, Oct, Nov, Dec)<br> Dla <strong><font color=\"black\">daty nieznanej</font></strong> wpisz <strong><font color=\"red\">Y</font></strong><br> Przed dat� dla  '<strong><font color=\"black\">przed</font></strong>' wpisz <strong><font color=\"red\">bef</font></strong>, dla '<strong><font color=\"black\">po</font></strong>' wpisz <strong><font color=\"red\">aft</font></strong>, dla '<strong><font color=\"black\">oko�o</font></strong>': wpisz <strong><font color=\"red\">abt</font></strong>, dla '<strong><font color=\"black\">pomi�dzy</font></strong>' wpisz <strong><font color=\"red\">bet 1910 - 1920</font></strong>.<br> Dla <strong><font color=\"black\">nieznanego nazwiska</font></strong> wpisz <strong><font color=\"red\">NN</font></strong></font>";
+$admtext['datenote'] = "<font color=\"#800000\" size='3'><strong>Wa�ne:</strong> Przy zapisie daty u�ywaj formatu: <strong><font  color=\"red\">DD/MM/RRRR</font></strong>, lub standardowego formatu genealogcznego DD MMM RRRR.<br>Np. 10 Apr 2004.(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug,  Sep, Oct, Nov, Dec)<br> Dla <strong><font color=\"black\">daty nieznanej</font></strong> wpisz <strong><font color=\"red\">Y</font></strong><br> Przed dat� dla  '<strong><font color=\"black\">przed</font></strong>' wpisz <strong><font color=\"red\">bef</font></strong>, dla '<strong><font color=\"black\">po</font></strong>' wpisz <strong><font color=\"red\">aft</font></strong>, dla '<strong><font color=\"black\">oko�o</font></strong>': wpisz <strong><font color=\"red\">abt</font></strong>, dla '<strong><font color=\"black\">pomi�dzy</font></strong>' wpisz <strong><font color=\"red\">bet 1910 - 1920</font></strong>.<br> Dla <strong><font color=\"black\">nieznanego nazwiska</font></strong> wpisz <strong><font color=\"red\">NN</font></strong></font>";
 $admtext['oriental'] = "Pierwsze nazwisko";
 $admtext['langfolder'] = "Folder w kt�rym j�zyki<br>zostan� zapisane";
 //moved here in 8.0.0

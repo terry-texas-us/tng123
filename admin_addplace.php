@@ -36,7 +36,7 @@ if ($tngconfig['places1tree']) {
 }
 
 $template = "ssssssss";
-$query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,temple,latitude,longitude,zoom,notes,geoignore) VALUES (?,?,?,?,?,?,?,?,'0')";
+$query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,temple,latitude,longitude,zoom,notes,geoignore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, '0')";
 $params = [&$template, &$tree, &$place, &$placelevel, &$temple, &$latitude, &$longitude, &$zoom, &$notes];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows) {

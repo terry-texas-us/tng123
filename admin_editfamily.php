@@ -310,9 +310,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                 $husbstr = getName($spouserow) . getBirth($spouserow) . " - " . $row['husband'];
                                 $husbstr = preg_replace("/\"/", "&#34;", $husbstr);
                             }
-                            if (!isset($husbstr)) {
-                                $husbstr = $admtext['clickfind'];
-                            }
+                            if (!isset($husbstr)) $husbstr = $admtext['clickfind'];
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
@@ -344,9 +342,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             } else {
                                 $spouserow = "";
                             }
-                            if (!isset($wifestr)) {
-                                $wifestr = $admtext['clickfind'];
-                            }
+                            if (!isset($wifestr)) $wifestr = $admtext['clickfind'];
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>

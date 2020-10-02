@@ -171,7 +171,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                 if ($numtrees > 1) {
                                     echo $admtext['tree'] . ": ";
                                     $ret = "";
-                                    $ret .= "<select name=\"tree\" id=\"tree\" onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
+                                    $ret .= "<select name='tree' id='tree' onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
                                     $ret .= "<option value=\"\" ";
                                     if (!$tree) {
                                         $ret .= "selected";

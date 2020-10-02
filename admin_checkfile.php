@@ -22,9 +22,7 @@ function getBase($path) {
 $count = 0;
 while (file_exists("$rootpath$usefolder/$trypath")) {
     $count++;
-    if (!isset($fileparts)) {
-        $fileparts = getBase($path);
-    }
+    if (!isset($fileparts)) $fileparts = getBase($path);
     $trypath = $fileparts['basepath'] . $count . "." . $fileparts['extension'];
 }
 
@@ -33,9 +31,7 @@ unset($fileparts);
 if ($trythumb) {
     while (file_exists("$rootpath$usefolder/$trythumb")) {
         $count++;
-        if (!isset($fileparts)) {
-            $fileparts = getBase($thumbpath);
-        }
+        if (!isset($fileparts)) $fileparts = getBase($thumbpath);
         $trythumb = $fileparts['basepath'] . $count . "." . $fileparts['extension'];
     }
 }

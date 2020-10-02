@@ -135,9 +135,7 @@ include_once "eventlib.php";
                                 $spouserow['allow_private'] = $hrights['private'];
                                 $husbstr = getName($spouserow) . getBirth($spouserow) . " - " . $row['husband'];
                             }
-                            if (!isset($husbstr)) {
-                                $husbstr = $admtext['clickfind'];
-                            }
+                            if (!isset($husbstr)) $husbstr = $admtext['clickfind'];
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
@@ -168,9 +166,7 @@ include_once "eventlib.php";
                                 $spouserow['allow_private'] = $wrights['private'];
                                 $wifestr = getName($spouserow) . getBirth($spouserow) . " - " . $row['wife'];
                             }
-                            if (!isset($wifestr)) {
-                                $wifestr = $admtext['clickfind'];
-                            }
+                            if (!isset($wifestr)) $wifestr = $admtext['clickfind'];
                             ?>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>

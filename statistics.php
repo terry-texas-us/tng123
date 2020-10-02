@@ -31,9 +31,9 @@ tng_header($text['databasestatistics'], $flags);
             if ($tabletype == "toggle") {
                 $tabletype = "columntoggle";
             }
-            $header = "<table cellpadding=\"3\" cellspacing='1' border='0' style=\"maxwidth: 350px; width:100%;\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+            $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' style=\"maxwidth: 350px;\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
         } else {
-            $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"500\" class=\"whiteback normal\">";
+            $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0' width='500'>";
         }
         echo $header;
         ?>
@@ -150,9 +150,7 @@ tng_header($text['databasestatistics'], $flags);
         $totyears = 0;
         $totdays = 0;
 
-        if (!isset($CUTOFF_YEARS)) {
-            $CUTOFF_YEARS = 2;
-        } //remove from the stats if less than 2 years old
+        if (!isset($CUTOFF_YEARS)) $CUTOFF_YEARS = 2; // remove from the stats if less than 2 years old
 
         while ($line = tng_fetch_array($result, 'assoc')) {
             $yearsold = $line['yearsold'];
@@ -346,7 +344,7 @@ tng_header($text['databasestatistics'], $flags);
 
         echo "<br><br>\n";
         $width = !isMobile() ? "500px" : "100%";
-        echo "<table style=\"width:$width;\" cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback\">\n";
+        echo "<table style=\"width:$width;\" cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n";
         echo "<tr>";
         echo "<td class='fieldnameback fieldname align-top'><small>1</small></td>";
         echo "<td class='databack normal'>{$text['agedisclaimer']}</td>";

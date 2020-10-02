@@ -4,9 +4,7 @@ function writelog($string) {
 
     require "config/logconfig.php";
 
-    if (!isset($_SERVER['REMOTE_HOST'])) {
-        $_SERVER['REMOTE_HOST'] = '';
-    }
+    if (!isset($_SERVER['REMOTE_HOST'])) $_SERVER['REMOTE_HOST'] = '';
 
     $string = str_replace(["\n", "\r"], " ", $string);
     if (strpos($string, "http") !== false || strpos($string, "www") !== false) {

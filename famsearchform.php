@@ -386,7 +386,7 @@ echo $formstr;
             ksort($eventtypes);
 
             foreach ($eventtypes as $row) {
-                echo "<tr><td colspan=\"3\"><span class='normal'>{$row['displaymsg']}</span></td></tr>\n";
+                echo "<tr><td colspan='3'><span class='normal'>{$row['displaymsg']}</span></td></tr>\n";
 
                 echo "<tr>\n";
                 echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['fact']}:</span></td>\n";

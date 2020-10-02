@@ -12,9 +12,7 @@ function getNewID($type, $table) {
     eval("\$prefix = \$tngconfig['{$type}prefix'];");
     eval("\$suffix = \$tngconfig['{$type}suffix'];");
 
-    if (!isset($tngconfig['oldids'])) {
-        $tngconfig['oldids'] = "";
-    }
+    if (!isset($tngconfig['oldids'])) $tngconfig['oldids'] = "";
     if ($tngconfig['oldids']) {
         if ($prefix) {
             $prefixlen = strlen($prefix) + 1;

@@ -320,9 +320,7 @@ function getSmallPhoto($medialink) {
         $thumb = "img/" . $mediatypes_thumbs[$mediatypeID];
         $dimensions = $class = "";
     }
-    if (!isset($medialink['description'])) {
-        $medialink['description'] = '';
-    }
+    if (!isset($medialink['description'])) $medialink['description'] = '';
     $altmsg = $medialink['allow_living'] ? str_replace("\"", "'", $medialink['description']) : "";
     $cleantitle = $tnggallery ? $altmsg : "";
     return "<img src=\"$thumb\" $dimensions alt=\"$altmsg\" title=\"$cleantitle\"$class>";
@@ -452,9 +450,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
                 $more .= "\t#tngnav a#a$i {left: -{$offset}px;}\n";
             }
             if ($more) {
-                if (!isset($flags['more'])) {
-                    $flags['more'] = "";
-                }
+                if (!isset($flags['more'])) $flags['more'] = "";
                 $flags['more'] .= "\n<style>\n\t<!--\n$more\t-->\n</style>\n";
             }
         }
@@ -488,9 +484,7 @@ function tng_smallIcon($options) {
 function tng_getLeftIcons() {
     global $tngconfig, $text, $homepage, $currentuser, $allow_profile;
 
-    if (!isset($tngconfig['menucount'])) {
-        $tngconfig['menucount'] = 0;
-    }
+    if (!isset($tngconfig['menucount'])) $tngconfig['menucount'] = 0;
 
     $left_icons = "";
     if (empty($tngconfig['showhome'])) {
@@ -1226,9 +1220,7 @@ function custom_links($linkdefs) {
         if (isset($linkdefs[$i]['user']) && $linkdefs[$i]['user'] === true && !$currentuser) {
             continue;
         }
-        if (!isset($linkdefs[$i]['target'])) {
-            continue;
-        }
+        if (!isset($linkdefs[$i]['target'])) continue;
         $target = $linkdefs[$i]['target'];
 
         // add options to target section

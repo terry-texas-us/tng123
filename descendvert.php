@@ -216,7 +216,8 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             //$boxarrow = "<br/>{$pedigree['rightarrow']}";
 
             $hiddenbox = "<div class=\"popup\" id=\"popup$numboxes\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; top:" . ($top - $pedigree['borderwidth'] + round($pedigree['shadowoffset'] / 2)) . "px;z-index:8\" onmouseover=\"cancelTimer($numboxes)\" onmouseout=\"setTimer($numboxes)\">\n";
-            $hiddenbox .= "<div><div class=\"tngshadow popvdescinner\"><div class=\"pboxpopupdiv\">\n<table cellspacing='0' cellpadding='1' border='0' width=\"100%\">\n";
+            $hiddenbox .= "<div><div class=\"tngshadow popvdescinner\"><div class=\"pboxpopupdiv\">\n";
+            $hiddenbox .= "<table class='w-100' cellspacing='0' cellpadding='1' border='0'>\n";
             $hiddenbox .= "$vitalinfo\n</table></div></div></div></div>\n";
         }
     }
@@ -595,7 +596,7 @@ function getVitalDates($row) {
         $vitalinfo .= "<td class=\"pboxpopup normal\" valign=\"top\">$dp</td></tr>\n";
     }
     if ($vitalinfo)
-        $vitalinfo = "<tr>\n<td class=\"pboxpopup normal\" colspan=\"2\"><strong>" . $row['name'] . "</strong></td></tr>\n" . $vitalinfo;
+        $vitalinfo = "<tr>\n<td class=\"pboxpopup normal\" colspan='2'><strong>" . $row['name'] . "</strong></td></tr>\n" . $vitalinfo;
     return $vitalinfo;
 }
 

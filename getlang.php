@@ -30,9 +30,7 @@ if ($session_language) {
     }
 }
 if ($mylanguage) {
-    if (!isset($endrootpath)) {
-        $endrootpath = '';
-    }
+    if (!isset($endrootpath)) $endrootpath = '';
     $file_exists = file_exists($rootpath . $endrootpath . "$mylanguage/text.php");
 } else {
     $file_exists = false;

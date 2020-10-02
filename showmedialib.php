@@ -601,7 +601,7 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
 
     $tabletext = "";
     $filename = $imgrow['abspath'] ? $imgrow['path'] : basename($imgrow['path']);
-    $tabletext .= "<table border='0' cellspacing='1' cellpadding='4' width=\"100%\" class=\"whiteback\">\n";
+    $tabletext .= "<table class='whiteback w-100' border='0' cellspacing='1' cellpadding='4'>\n";
 
     if ($imgrow['owner']) {
         $tabletext .= tableRow($text['photoowner'], $imgrow['owner']);
@@ -698,10 +698,10 @@ function doCemPlusMap($imgrow, $tree) {
         echo "<div class=\"titlebox\">\n";
         echo "<h3 class='subhead'>{$text['cemphotos']}</h3>";
 
-        echo "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback\" width=\"100%\">\n";
+        echo "<table class='whiteback w-100' cellpadding='3' cellspacing='1' border='0'>\n";
         echo "<tr><td class='fieldnameback' width=\"10\">&nbsp;</td>\n";
-        echo "<td class='fieldnameback' width=\"$thumbmaxw\"><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
-        echo "<td class='fieldnameback'><span class=\"fieldname\">&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td></tr>\n";
+        echo "<td class='fieldnameback' width=\"$thumbmaxw\"><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
+        echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td></tr>\n";
 
         while ($hs = tng_fetch_assoc($hsresult)) {
             $description = $hs['description'];

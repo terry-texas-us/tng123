@@ -10,9 +10,7 @@
  */
 
 /* Make sure we're running under TNG */
-if (!isset($tngconfig)) {
-    die ("Sorry!");
-}
+if (!isset($tngconfig)) die ("Sorry!");
 
 /* What is the first day of the week? */
 $startOfWeek = isset($tngconfig['calstart']) ? $tngconfig['calstart'] : '0';    # 6=Saturday, 0=Sunday, 1=Monday, 2=Tuesday ...

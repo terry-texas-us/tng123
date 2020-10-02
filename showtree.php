@@ -4,8 +4,8 @@ include "tng_begin.php";
 
 function showFact($text, $fact, $numflag = 0) {
     echo "<tr>\n";
-    echo "<td class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\">" . $text . "&nbsp;</span></td>\n";
-    echo "<td colspan=\"2\" class='databack'";
+    echo "<td class=\"fieldnameback align-top\" nowrap><span class='fieldname'>" . $text . "&nbsp;</span></td>\n";
+    echo "<td colspan='2' class='databack'";
     echo $numflag ? " align=\"right\"" : "";
     echo ">";
     echo $numflag ? number_format($fact) : $fact;

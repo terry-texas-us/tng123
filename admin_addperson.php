@@ -22,24 +22,12 @@ if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
 $personID = ucfirst(trim($personID));
 setcookie("tng_tree", $tree, 0);
 
-if (!isset($baptplace)) {
-    $baptplace = "";
-}
-if (!isset($confplace)) {
-    $confplace = "";
-}
-if (!isset($initplace)) {
-    $initplace = "";
-}
-if (!isset($endlplace)) {
-    $endlplace = "";
-}
-if (!isset($altbirthdate)) {
-    $altbirthdate = "";
-}
-if (!isset($altbirthplace)) {
-    $altbirthplace = "";
-}
+if (!isset($baptplace)) $baptplace = "";
+if (!isset($confplace)) $confplace = "";
+if (!isset($initplace)) $initplace = "";
+if (!isset($endlplace)) $endlplace = "";
+if (!isset($altbirthdate)) $altbirthdate = "";
+if (!isset($altbirthplace)) $altbirthplace = "";
 
 if ($newperson == "ajax" && $session_charset != "UTF-8") {
     $firstname = tng_utf8_decode($firstname);
@@ -59,18 +47,10 @@ if ($newperson == "ajax" && $session_charset != "UTF-8") {
     $endlplace = tng_utf8_decode($endlplace);
 }
 
-if (!isset($baptdate)) {
-    $baptdate = "";
-}
-if (!isset($confdate)) {
-    $confdate = "";
-}
-if (!isset($initdate)) {
-    $initdate = "";
-}
-if (!isset($endldate)) {
-    $endldate = "";
-}
+if (!isset($baptdate)) $baptdate = "";
+if (!isset($confdate)) $confdate = "";
+if (!isset($initdate)) $initdate = "";
+if (!isset($endldate)) $endldate = "";
 
 $birthdatetr = convertDate($birthdate);
 $altbirthdatetr = convertDate($altbirthdate);
@@ -83,7 +63,7 @@ $endldatetr = convertDate($endldate);
 
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
-$query = "SELECT personID FROM $people_table WHERE personID = \"{$personID}\" and gedcom = '$tree'";
+$query = "SELECT personID FROM $people_table WHERE personID = '$personID' and gedcom = '$tree'";
 $result = tng_query($query);
 
 if ($result && tng_num_rows($result)) {
@@ -130,7 +110,7 @@ $placetree = $tngconfig['places1tree'] ? "" : $tree;
 $template = "ssd";
 foreach ($places as $place) {
     $temple = strlen($place) == 5 && $place == strtoupper($place) ? 1 : 0;
-    $query = "INSERT IGNORE INTO {$places_table} (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?,?,'0','0','0',?)";
+    $query = "INSERT IGNORE INTO $places_table (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?, ?, '0', '0', '0', ?)";
     $params = [&$template, &$placetree, &$place, &$temple];
     tng_execute($query, $params);
     if ($tngconfig['autogeo'] && tng_affected_rows()) {
@@ -162,7 +142,7 @@ if (!$burialtype) {
 }
 $meta = metaphone($lnprefix . $lastname);
 $query = "INSERT INTO $people_table (personID, firstname, lnprefix, lastname, nickname, prefix, suffix, title, nameorder, living, private, birthdate, birthdatetr, birthplace, sex, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, baptdate, baptdatetr, baptplace, confdate, confdatetr, confplace, initdate, initdatetr, initplace, endldate, endldatetr, endlplace, changedate, gedcom, branch, changedby, famc, metaphone, edituser, edittime) ";
-$query .= "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",?,\"\",'0')";
+$query .= "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, '', '0')";
 $template = "ssssssssssssssssssssssssssssssssssssssssss";
 $params = [&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickname, &$prefix, &$suffix, &$title, &$pnameorder, &$living, &$private, &$birthdate, &$birthdatetr,
     &$birthplace, &$sex, &$altbirthdate, &$altbirthdatetr, &$altbirthplace, &$deathdate, &$deathdatetr, &$deathplace, &$burialdate, &$burialdatetr, &$burialplace,
@@ -180,7 +160,7 @@ tng_free_result($result);
 $branchlist = explode(',', $allbranches);
 $template = "sss";
 foreach ($branchlist as $b) {
-    $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(?,?,?)";
+    $query = "INSERT IGNORE INTO $branchlinks_table (branch, gedcom, persfamID) VALUES(?, ?, ?)";
     $params = [&$template, &$b, &$tree, &$personID];
     tng_execute($query, $params);
 }
@@ -194,7 +174,7 @@ if ($type == "child") {
         $order = tng_num_rows($result);
         tng_free_result($result);
 
-        $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,frel,mrel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES (?,?,?,?,\"\",\"\",0,0,\"\",\"0000-00-00\",\"\")";
+        $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,frel,mrel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES (?, ?, ?, ?, '', '', 0, 0, '', \"0000-00-00\", '')";
         $template = "ssis";
         $params = [&$template, &$familyID, &$personID, &$order, &$tree];
         tng_execute($query, $params);
@@ -228,9 +208,10 @@ if ($type == "child") {
 
     $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
     $rval .= " onmouseover=\"$('unlinkc_$personID').style.visibility='visible';\" onmouseout=\"$('unlinkc_$personID').style.visibility='hidden';\">\n";
-    $rval .= "<table width=\"100%\" cellpadding='5' cellspacing='1'><tr>\n";
+    $rval .= "<table class='w-100' cellpadding='5' cellspacing='1'>\n";
+    $rval .= "<tr>\n";
     $rval .= "<td class=\"dragarea normal\">";
-    $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+    $rval .= "<img src=\"img/admArrowUp.gif\" alt=''><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=''>\n";
     $rval .= "</td>\n";
     $rval .= "<td class='lightback normal childblock'>\n";
 

@@ -42,9 +42,7 @@ if (!$lineendingdisplay) {
         $lineendingdisplay = "\\n";
     }
 }
-if (!isset($tngconfig['maxdesc'])) {
-    $tngconfig['maxdesc'] = $maxdesc;
-}
+if (!isset($tngconfig['maxdesc'])) $tngconfig['maxdesc'] = $maxdesc;
 if (!$tngconfig['backupdays']) {
     $tngconfig['backupdays'] = 30;
 }

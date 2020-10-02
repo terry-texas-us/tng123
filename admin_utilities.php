@@ -61,9 +61,7 @@ $helplang = findhelp("backuprestore_help.php");
 if (empty($sub)) {
     $sub = "tables";
 }
-if (!isset($message)) {
-    $message = "";
-}
+if (!isset($message)) $message = "";
 $flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['backuprestore'], $flags);
 ?>

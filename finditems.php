@@ -22,12 +22,8 @@ $f = $filter == "c" ? "%" : "";
 header("Content-type:text/html; charset=" . $session_charset);
 
 $mediaquery = "";
-if (!isset($albumID)) {
-    $albumID = "";
-}
-if (!isset($mediaID)) {
-    $mediaID = "";
-}
+if (!isset($albumID)) $albumID = "";
+if (!isset($mediaID)) $mediaID = "";
 
 if ($albumID) {
     $mediaquery = "SELECT entityID, gedcom FROM $album2entities_table WHERE gedcom = '$tree' AND albumID = \"$albumID\" AND linktype = \"$type\"";

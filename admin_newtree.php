@@ -64,7 +64,7 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
     echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['addnewtree'], "img/trees_icon.gif", $menu, $message);
 }
 ?>
-    <table cellpadding="10" cellspacing="2" <?php echo !$beforeimport ? " width=\"100%\" class='lightback'" : "" ?>>
+    <table <?php echo !$beforeimport ? " class='lightback w-100'" : "" ?> cellpadding="10" cellspacing="2">
         <tr class="databack">
             <td<?php echo !$beforeimport ? " class=\"tngshadow\"" : "" ?>>
                 <form action="admin_addtree.php" method="post" name="treeform"

@@ -25,9 +25,7 @@ if (isset($sitever)) {
 }
 
 include_once "siteversion.php";
-if (!isset($sitever)) {
-    $sitever = getSiteVersion();
-}
+if (!isset($sitever)) $sitever = getSiteVersion();
 
 @session_start();
 $session_language = $_SESSION['session_language'] ?? $language;

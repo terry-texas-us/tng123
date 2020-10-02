@@ -193,7 +193,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                     } else {
                         echo $admtext['alltrees'];
                     }
-                    echo "<input type='hidden' name=\"tree\" value=\"{$row['gedcom']}\">";
+                    echo "<input type='hidden' name='tree' value=\"{$row['gedcom']}\">";
                 } else {
                     echo "<select name=\"tree\">";
                     echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";

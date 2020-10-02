@@ -447,7 +447,7 @@ switch ($textpart) {
         $text['showmatchingsurnames'] = "点击一个姓氏来显示匹配的记录.";
         $text['backtotop'] = "返回顶部";
         $text['beginswith'] = "开始与";
-        $text['allbeginningwith'] = "以\"\"开头的所有姓氏";
+        $text['allbeginningwith'] = "以''开头的所有姓氏";
         $text['numoccurrences'] = "括号中的总地点数";
         $text['placesstarting'] = "以\"开头显示最大的地方\"";
         $text['showmatchingplaces'] = "点击一个地方来显示较小的地方，点击搜索图标显示匹配的人.";

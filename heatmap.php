@@ -45,9 +45,7 @@ function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $texts
 }
 
 @set_time_limit(0);
-if (!isset($mybool)) {
-    $mybool = "AND";
-}
+if (!isset($mybool)) $mybool = "AND";
 
 if ($psearch) {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE \"%$psearch%\" AND latitude != \"\" AND longitude != \"\"";

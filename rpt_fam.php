@@ -182,9 +182,7 @@ else {
         $notes = preg_replace("/&nbsp;/", ' ', $notes);
         $notes = preg_replace("/<li>/", '* ', $notes);
         $notes = preg_replace("/<br\s*\/?>/", "", $notes);
-        if (!isset($allowable_tags)) {
-            $allowable_tags = "<a>";
-        }
+        if (!isset($allowable_tags)) $allowable_tags = "<a>";
         $notes = strip_tags($notes, $allowable_tags);
 
         $pdf->Ln(0.05);

@@ -19,24 +19,12 @@ include "deletelib.php";
 header("Content-type:text/html; charset=" . $session_charset);
 $personID = ucfirst(trim($personID));
 
-if (!isset($baptplace)) {
-    $baptplace = "";
-}
-if (!isset($confplace)) {
-    $confplace = "";
-}
-if (!isset($initplace)) {
-    $initplace = "";
-}
-if (!isset($endlplace)) {
-    $endlplace = "";
-}
-if (!isset($altbirthdate)) {
-    $altbirthdate = "";
-}
-if (!isset($altbirthplace)) {
-    $altbirthplace = "";
-}
+if (!isset($baptplace)) $baptplace = "";
+if (!isset($confplace)) $confplace = "";
+if (!isset($initplace)) $initplace = "";
+if (!isset($endlplace)) $endlplace = "";
+if (!isset($altbirthdate)) $altbirthdate = "";
+if (!isset($altbirthplace)) $altbirthplace = "";
 
 if ($session_charset != "UTF-8") {
     $firstname = tng_utf8_decode($firstname);
@@ -56,18 +44,10 @@ if ($session_charset != "UTF-8") {
     $endlplace = tng_utf8_decode($endlplace);
 }
 
-if (!isset($baptdate)) {
-    $baptdate = "";
-}
-if (!isset($confdate)) {
-    $confdate = "";
-}
-if (!isset($initdate)) {
-    $initdate = "";
-}
-if (!isset($endldate)) {
-    $endldate = "";
-}
+if (!isset($baptdate)) $baptdate = "";
+if (!isset($confdate)) $confdate = "";
+if (!isset($initdate)) $initdate = "";
+if (!isset($endldate)) $endldate = "";
 
 $birthdatetr = convertDate($birthdate);
 $altbirthdatetr = convertDate($altbirthdate);
@@ -80,7 +60,7 @@ $endldatetr = convertDate($endldate);
 
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
-$query = "SELECT personID FROM $people_table WHERE personID = \"$personID\" and gedcom = '$tree'";
+$query = "SELECT personID FROM $people_table WHERE personID = '$personID' and gedcom = '$tree'";
 $result = tng_query($query);
 
 //delete all notes & citations linked to this person
@@ -120,7 +100,7 @@ if ($result && tng_num_rows($result)) {
     $template = "ssd";
     foreach ($places as $place) {
         $temple = strlen($place) == 5 && $place == strtoupper($place) ? 1 : 0;
-        $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore,temple) VALUES (?,?,'0','0','0',?)";
+        $query = "INSERT IGNORE INTO $places_table (gedcom, place, placelevel, zoom, geoignore, temple) VALUES (?, ?, '0', '0', '0', ?)";
         $params = [&$template, &$placetree, &$place, &$temple];
         tng_execute($query, $params);
     }
@@ -153,7 +133,7 @@ if ($result && tng_num_rows($result)) {
     $query = "INSERT INTO $people_table (personID,firstname,lnprefix,lastname,nickname,prefix,suffix,title,nameorder,living,private,birthdate,birthdatetr,birthplace,sex,altbirthdate,altbirthdatetr,
 		altbirthplace,deathdate,deathdatetr,deathplace,burialdate,burialdatetr,burialplace,burialtype,baptdate,baptdatetr,baptplace,confdate,confdatetr,confplace,initdate,initdatetr,initplace,
 		endldate,endldatetr,endlplace,changedate,gedcom,branch,changedby,famc,metaphone,edituser,edittime)
-		VALUES(?,?,?,?,?,?,?,?,'0',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,\"\",'0')";
+		VALUES(?, ?, ?, ?, ?, ?, ?, ?, '0', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', '0')";
     $template = "ssssssssssssssssssssssssssssssssssssssssss";
     $params = [&$template, &$personID, &$firstname, &$lnprefix, &$lastname, &$nickname, &$prefix, &$suffix, &$title, &$living, &$private, &$birthdate, &$birthdatetr,
         &$birthplace, &$sex, &$altbirthdate, &$altbirthdatetr, &$altbirthplace, &$deathdate, &$deathdatetr, &$deathplace, &$burialdate, &$burialdatetr, &$burialplace,
@@ -170,7 +150,7 @@ if ($result && tng_num_rows($result)) {
     $branchlist = explode(',', $allbranches);
     $template = "sss";
     foreach ($branchlist as $b) {
-        $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES(?,?,?)";
+        $query = "INSERT IGNORE INTO $branchlinks_table (branch, gedcom, persfamID) VALUES(?, ?, ?)";
         $params = [&$template, &$b, &$tree, &$personID];
         tng_execute($query, $params);
     }
@@ -184,7 +164,7 @@ if ($result && tng_num_rows($result)) {
             $order = tng_num_rows($result) + 1;
             tng_free_result($result);
 
-            $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,frel,mrel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES (?,?,?,?,?,?,0,0,\"\",\"0000-00-00\",\"\")";
+            $query = "INSERT INTO $children_table (familyID,personID,ordernum,gedcom,frel,mrel,haskids,parentorder,sealdate,sealdatetr,sealplace) VALUES (?, ?, ?, ?, ?, ?, 0, 0, '', \"0000-00-00\", '')";
             $template = "ssisss";
             $params = [&$template, &$familyID, &$personID, &$order, &$tree, &$frel, &$mrel];
             tng_execute($query, $params);

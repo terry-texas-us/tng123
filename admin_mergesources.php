@@ -51,11 +51,11 @@ function doRow($field, $textmsg, $boxname) {
 
     if ($s1field || $s2field) {
         echo "<tr>\n";
-        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
+        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
         echo "<td width=\"31%\" class='lightback'><span class='normal'>$s1field&nbsp;</span></td>";
         if (is_array($s2row)) {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
             echo "<td width='5' class='lightback'><span class='normal'>";
             if ($boxname) {
                 if ($s2field) {
@@ -72,7 +72,7 @@ function doRow($field, $textmsg, $boxname) {
             echo "<td class='lightback' width=\"31%\"><span class='normal'>$s2field&nbsp;</span></td>";
         } else {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class=\"fieldname\"><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
             echo "<td class='lightback' width='5'><span class='normal'>&nbsp;</span></td>";
             echo "<td class='lightback' width=\"31%\"><span class='normal'>&nbsp;</span></td>";
         }
@@ -487,9 +487,9 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                         if (is_array($s1row)) {
                             $eventlist = [];
                             echo "<tr>\n";
-                            echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 1 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
+                            echo "<td colspan='3'><strong class='subhead'>{$admtext['source']} 1 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
                             if (is_array($s2row)) {
-                                echo "<td colspan=\"3\"><strong class='subhead'>{$admtext['source']} 2 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
+                                echo "<td colspan='3'><strong class='subhead'>{$admtext['source']} 2 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
 
                                 $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                                 $query .= "FROM $events_table events, $eventtypes_table eventtypes ";

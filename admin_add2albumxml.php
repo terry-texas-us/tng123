@@ -64,7 +64,7 @@ function get_album_nav($total, $perpage, $pagenavpages) {
 
 $wherestr = $searchstring ? "($media_table.mediaID LIKE \"%$searchstring%\" OR description LIKE \"%$searchstring%\" OR path LIKE \"%$searchstring%\" OR notes LIKE \"%$searchstring%\" OR owner LIKE \"%$searchstring%\" OR bodytext LIKE \"%$searchstring%\")" : "";
 if ($searchtree) {
-    $wherestr .= $wherestr ? " AND (gedcom = \"\" OR gedcom = \"$searchtree\")" : "(gedcom = \"\" OR gedcom = \"$searchtree\")";
+    $wherestr .= $wherestr ? " AND (gedcom = '' OR gedcom = \"$searchtree\")" : "(gedcom = '' OR gedcom = \"$searchtree\")";
 }
 if ($mediatypeID) {
     $wherestr .= $wherestr ? " AND mediatypeID = \"$mediatypeID\"" : "mediatypeID = \"$mediatypeID\"";
@@ -157,7 +157,7 @@ echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             if (!$gotit) {
                 echo " style='display: none;'>";
             } else {
-                echo "><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20' class=\"smallicon\">";
+                echo "><img src=\"img/tng_test.gif\" alt='' width='20' height='20' class=\"smallicon\">";
             }
             echo "</div>";
             echo "&nbsp;</td>";

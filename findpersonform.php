@@ -25,9 +25,7 @@ if (isset($mediaID)) {
 }
 
 $bailtext = $mediaoption ? $admtext['finish'] : $admtext['cancel'];
-if (!isset($branch)) {
-    $branch = "";
-}
+if (!isset($branch)) $branch = "";
 
 $applyfilter = "applyFilter({form:'findform1', fieldId:'myflastname', myflastname:jQuery('#myflastname').val(), myffirstname:jQuery('#myffirstname').val(), myfpersonID:jQuery('#myfpersonID').val(), type:'I', tree:'$tree', branch:'$branch', destdiv:'findresults'$mediaoption});";
 

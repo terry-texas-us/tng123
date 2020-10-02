@@ -42,12 +42,8 @@ if ($husband) {
         $wifestr = getName($newpersonrow) . " - $wife";
     }
 }
-if (!isset($husbstr)) {
-    $husbstr = $admtext['clickfind'];
-}
-if (!isset($wifestr)) {
-    $wifestr = $admtext['clickfind'];
-}
+if (!isset($husbstr)) $husbstr = $admtext['clickfind'];
+if (!isset($wifestr)) $wifestr = $admtext['clickfind'];
 
 $treerow = getTree($trees_table, $tree);
 

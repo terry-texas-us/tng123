@@ -26,7 +26,7 @@ if (!$display) {
 }
 $template = "ssssssss";
 $query = "INSERT INTO $eventtypes_table (tag,description,display,type,keep,collapse,ordernum,ldsevent) 
-	VALUES (?,?,?,?,?,?,?,?)";
+	VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$tag, &$description, &$display, &$type, &$keep, &$collapse, &$ordernum, &$ldsevent];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {

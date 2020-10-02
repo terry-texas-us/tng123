@@ -80,9 +80,7 @@ $datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
 $datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
 $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php#export');\" class='lightlink'>{$admtext['help']}</a>";
 $menu = doMenu($datatabs, "export", $innermenu);
-if (!isset($message)) {
-    $message = "";
-}
+if (!isset($message)) $message = "";
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'], "img/data_icon.gif", $menu, $message);
 ?>
 
@@ -486,9 +484,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             }
                             if ($branch) {
                                 $type = $media['mediatypeID'];
-                                if (!isset($branchmedia[$type])) {
-                                    $branchmedia[$type] = [];
-                                }
+                                if (!isset($branchmedia[$type])) $branchmedia[$type] = [];
                                 if (!in_array($media, $branchmedia[$type])) {
                                     array_push($branchmedia[$type], $media);
                                 }

@@ -281,9 +281,7 @@ function getIndividualRecord($personID, $prevlevel) {
                         if (empty($info['SLGC']['DATETR'])) {
                             $info['SLGC']['DATETR'] = "0000-00-00";
                         }
-                        if (!isset($slgcplace)) {
-                            $slgcplace = "";
-                        }
+                        if (!isset($slgcplace)) $slgcplace = "";
                         $query = "INSERT IGNORE INTO $children_table (gedcom, familyID, personID, sealdate, sealdatetr, sealplace ) VALUES( '$tree', \"" . $famc . "\", \"$personID\", \"" . $info['SLGC']['DATE'] . "\", \"" . $info['SLGC']['DATETR'] . "\", \"$slgcplace\" )";
                         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
                         $success = tng_affected_rows();

@@ -91,9 +91,7 @@ function getNameUniversal($row, $order, $hcard = null) {
 
     $indexlist = ['lastname', 'firstname', 'lnprefix', 'allow_living', 'allow_private'];
     foreach ($indexlist as $index)
-        if (!isset($row[$index])) {
-            $row[$index] = '';
-        }
+        if (!isset($row[$index])) $row[$index] = '';
 
     $lastname = trim($row['lnprefix'] . " " . $row['lastname']);
     if (!empty($tngconfig['ucsurnames'])) {
@@ -103,12 +101,8 @@ function getNameUniversal($row, $order, $hcard = null) {
         $lastname = "<span class=\"family-name\">" . $lastname . "</span>";
         $title = $suffix = "";
     } else {
-        if (!isset($row['title'])) {
-            $row['title'] = '';
-        }
-        if (!isset($row['prefix'])) {
-            $row['prefix'] = '';
-        }
+        if (!isset($row['title'])) $row['title'] = '';
+        if (!isset($row['prefix'])) $row['prefix'] = '';
         $title = $row['title'] && ($row['title'] == $row['prefix']) ? $row['title'] : trim($row['title'] . " " . $row['prefix']);
 
         $suffix = isset($row['suffix']) ? $row['suffix'] : '';
@@ -332,21 +326,11 @@ function determineLivingRights($row, $usedb = 0, $allow_living_db = 0, $allow_pr
 function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranch = -1): array {
     global $livedefault, $ldsdefault, $allow_living, $allow_private, $allow_lds, $tree;
 
-    if (!isset($row['living'])) {
-        $row['living'] = 0;
-    }
-    if (!isset($row['private'])) {
-        $row['private'] = 0;
-    }
-    if (!isset($row['branch'])) {
-        $row['branch'] = '';
-    }
-    if (!isset($row['gedcom'])) {
-        $row['gedcom'] = '';
-    }
-    if (!isset($row['personID'])) {
-        $row['personID'] = '';
-    }
+    if (!isset($row['living'])) $row['living'] = 0;
+    if (!isset($row['private'])) $row['private'] = 0;
+    if (!isset($row['branch'])) $row['branch'] = '';
+    if (!isset($row['gedcom'])) $row['gedcom'] = '';
+    if (!isset($row['personID'])) $row['personID'] = '';
 
     $rights = ['private' => true, 'living' => true, 'lds' => !$ldsdefault];
 
@@ -562,9 +546,7 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     }
     $curpage = 0;
     $pagenav = $firstlink = $lastlink = '';
-    if (!isset($prevlink)) {
-        $prevlink = '';
-    }
+    if (!isset($prevlink)) $prevlink = '';
     while ($curpage++ < $totalpages) {
         $navoffset = (($curpage - 1) * $perpage);
         if (($curpage <= $tngpage - $pagenavpages || $curpage >= $tngpage + $pagenavpages) && $pagenavpages) {
@@ -772,12 +754,8 @@ function getDisplayYear($datestr, $trueyear) {
 }
 
 function getYears($row) {
-    if (!isset($row['death'])) {
-        $row['death'] = '';
-    }
-    if (!isset($row['birth'])) {
-        $row['birth'] = '';
-    }
+    if (!isset($row['death'])) $row['death'] = '';
+    if (!isset($row['birth'])) $row['birth'] = '';
 
     $years = getGenderIcon($row['sex'], -1);
     if ($row['allow_living'] && $row['allow_private']) {

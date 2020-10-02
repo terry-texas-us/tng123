@@ -20,7 +20,7 @@ if ($session_charset != "UTF-8") {
 }
 
 $template = "sssss";
-$query = "INSERT INTO $assoc_table (gedcom, personID, passocID, relationship, reltype)  VALUES(?,?,?,?,?)";
+$query = "INSERT INTO $assoc_table (gedcom, personID, passocID, relationship, reltype)  VALUES(?, ?, ?, ?, ?)";
 $params = [&$template, &$tree, &$personID, &$passocID, &$relationship, &$reltype];
 tng_execute($query, $params);
 $assocID = tng_insert_id();

@@ -45,9 +45,7 @@ function initMediaTypes() {
         return;
     }
 
-    if (!isset($mediatypes_table)) {
-        return;
-    }
+    if (!isset($mediatypes_table)) return;
     $query = "SELECT * FROM $mediatypes_table ORDER BY ordernum, display";
     $result = @tng_query($query);
 

@@ -122,7 +122,7 @@ $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 $mediakey = $path ? "$usefolder/$path" : time();
 $template = "ssssssssssssssssssssssssssssss";
 $query = "INSERT IGNORE INTO $media_table (mediatypeID,mediakey,gedcom,path,thumbpath,description,notes,width,height,datetaken,placetaken,owner,changedate,changedby,form,alwayson,map,abspath,status,cemeteryID,plot,showmap,linktocem,latitude,longitude,zoom,bodytext,usenl,newwindow,usecollfolder)
-		VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$mediatypeID, &$mediakey, &$tree, &$path, &$thumbpath, &$description, &$notes, &$width, &$height, &$datetaken, &$placetaken, &$owner, &$newdate, &$currentuser, &$form, &$alwayson, &$imagemap, &$abspath, &$status, &$cemeteryID, &$plot, &$showmap, &$linktocem, &$latitude, &$longitude, &$zoom, &$bodytext, &$usenl, &$newwindow, &$usecollfolder];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
@@ -142,7 +142,7 @@ if ($affected_rows == 1) {
         $defval = "";
 
         $template = "ssssss";
-        $query = "INSERT IGNORE INTO $medialinks_table (personID,mediaID,ordernum,gedcom,linktype,eventID,defphoto) VALUES (?,?,?,?,?,'',?)";
+        $query = "INSERT IGNORE INTO $medialinks_table (personID,mediaID,ordernum,gedcom,linktype,eventID,defphoto) VALUES (?, ?, ?, ?, ?, '', ?)";
         $params = [&$template, &$link_personID, &$mediaID, &$newrow, &$link_tree, &$link_linktype, &$defval];
         tng_execute_noerror($query, $params);
     }

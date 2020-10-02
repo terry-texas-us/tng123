@@ -2,15 +2,10 @@
 //Change these vars to affect max width & height of your photo. Aspect ratio will be maintained. Leaving
 //these values blank will cause your photo to be displayed actual size.
 //***To avoid having to change these values every time this script is updated, set your custom values in customconfig.php
-if (!isset($rp_maxwidth)) {
-    $rp_maxwidth = "250";
-}
-if (!isset($rp_maxheight)) {
-    $rp_maxheight = "250";
-}
-if (!isset($rp_mediatypeID) || !$rp_mediatypeID) {
-    $rp_mediatypeID = "photos";
-}
+if (!isset($rp_maxwidth)) $rp_maxwidth = "250";
+if (!isset($rp_maxheight)) $rp_maxheight = "250";
+if (!isset($rp_mediatypeID) || !$rp_mediatypeID) $rp_mediatypeID = "photos";
+
 $query = "SELECT DISTINCT $media_table.mediaID, $media_table.description, path, alwayson, usecollfolder, mediatypeID, gedcom FROM $media_table WHERE mediatypeID = \"$rp_mediatypeID\" AND (abspath is NULL OR abspath = '0') ORDER BY RAND()";
 $result = tng_query($query);
 while ($imgrow = tng_fetch_assoc($result)) {

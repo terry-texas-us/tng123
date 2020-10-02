@@ -22,7 +22,7 @@ $collid = cleanID($collid);
 $newcollid = 0;
 if (!in_array($collid, $stdcolls)) {
     $template = "sssssssss";
-    $query = "INSERT IGNORE INTO $mediatypes_table (mediatypeID,display,path,liketype,icon,thumb,exportas,ordernum,localpath) VALUES (?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT IGNORE INTO $mediatypes_table (mediatypeID,display,path,liketype,icon,thumb,exportas,ordernum,localpath) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $params = [&$template, &$collid, &$display, &$path, &$liketype, &$icon, &$thumb, &$exportas, &$ordernum, &$localpath];
     $affected_rows = tng_execute($query, $params);
 

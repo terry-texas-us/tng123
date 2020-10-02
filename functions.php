@@ -277,7 +277,7 @@ function doMedia($mediatypeID) {
         //ereg if no thumbs
     }
     if (!$thumbcount) {
-        $mediaheader = str_replace("<td class='fieldnameback'><span class=\"fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
+        $mediaheader = str_replace("<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
         $mediatext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
     tng_free_result($mediaresult);

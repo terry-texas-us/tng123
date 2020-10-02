@@ -27,10 +27,10 @@ $photostr = showSmallPhoto($personID, $namestr, $rights['both'], 0, false, $row[
 echo tng_DrawHeading($photostr, $namestr, getYears($row));
 
 $persontext = "";
-$persontext .= "<ul class=\"nopad\">\n";
+$persontext .= "<ul class='nopad'>\n";
 
 $persontext .= beginSection("info");
-$persontext .= "<table border='0' cellspacing='1' cellpadding='4' width=\"100%\">\n";
+$persontext .= "<table class='w-100' border='0' cellspacing='1' cellpadding='4'>\n";
 resetEvents();
 if ($rights['both']) {
     if ($row['nickname']) {
@@ -220,8 +220,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
     if ($children && tng_num_rows($children)) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">{$text['children']}&nbsp;</span></td>\n";
-        $persontext .= "<td class='databack' colspan=\"2\">\n";
+        $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['children']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack' colspan='2'>\n";
 
         $kidcount = 1;
         $persontext .= "<table cellpadding = '0' cellspacing = '0'>\n";

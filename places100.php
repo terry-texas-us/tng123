@@ -88,9 +88,7 @@ echo getFORM("places100", "get", "", "");
                     $topnum = tng_num_rows($result);
                     if ($result) {
                         $counter = 1;
-                        if (!isset($numcols)) {
-                            $numcols = 3;
-                        }
+                        if (!isset($numcols)) $numcols = 3;
                         $num_in_col = ceil($topnum / $numcols);
                         if ($numcols > 3) {
                             $numcols = 3;

@@ -290,7 +290,7 @@ include_once "eventlib.php";
                         $checked = $row['burialtype'] == 1 ? " checked" : "";
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan=\"3\"><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "<td colspan='3'><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
                         echo "</tr>\n";
                         if ($rights['lds']) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
@@ -449,7 +449,7 @@ include_once "eventlib.php";
         echo "<td>&nbsp;</td>";
         echo "<td>" . $admtext['date'] . "</td>";
         echo "<td>" . $admtext['place'] . "</td>";
-        echo "<td colspan=\"2\">&nbsp;</td>";
+        echo "<td colspan='2'>&nbsp;</td>";
         echo "</tr>\n";
         echo "<tr>\n";
         echo "<td class=\"align-top nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
@@ -523,9 +523,13 @@ include_once "eventlib.php";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
-                    echo "<table class='normal' width=\"100%\"><tr><td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
+                    echo "<table class='normal w-100'\n>";
+                    echo "<tr>\n";
+                    echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td class='align-top' width=\"94%\">\n";
-                    echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\"><a href='#' onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a></div>\n";
+                    echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\">\n";
+                    echo "<a href='#' onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a>\n";
+                    echo "</div>\n";
 
                     echo $marriagerow['familyID'] . "\n</td></tr>";
                     if ($marriagerow[$spouse]) {

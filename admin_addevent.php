@@ -63,7 +63,7 @@ if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $
 
 $template = "sssssssssss";
 $query = "INSERT INTO $events_table (eventtypeID, persfamID, eventdate, eventdatetr, eventplace, age, agency, cause, addressID, info, gedcom, parenttag) 
-	VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \"\")";
+	VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '')";
 $params = [&$template, &$eventtypeID, &$persfamID, &$eventdate, &$eventdatetr, &$eventplace, &$age, &$agency, &$cause, &$addressID, &$info, &$tree];
 tng_execute($query, $params);
 $eventID = tng_insert_id();

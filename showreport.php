@@ -3,9 +3,7 @@ $textpart = "reports";
 include "tng_begin.php";
 
 include "functions.php";
-if (!isset($csv)) {
-    $csv = false;
-}
+if (!isset($csv)) $csv = false;
 
 if (!is_numeric($reportID)) {
     die ("Sorry!");
@@ -116,7 +114,7 @@ if ($rrow['sqlselect']) {
         if (!$displaymsg) {
             $displaymsg = $dfield;
         }
-        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class=\"fieldname\"><strong>$displaymsg</strong></span></td>\n";
+        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class='fieldname'><strong>$displaymsg</strong></span></td>\n";
 
         $newds[$newdsctr] = $tempmsg;
         $newdsctr++;
@@ -226,7 +224,7 @@ if ($rrow['sqlselect']) {
         if (!$displaymsg) {
             $displaymsg = $text[strtolower($dfield)];
         }
-        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class=\"fieldname\"><strong>$displaymsg</strong></span></td>\n";
+        $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class='fieldname'><strong>$displaymsg</strong></span></td>\n";
     }
     if ($dtreestr) {
         if ($treestr) {

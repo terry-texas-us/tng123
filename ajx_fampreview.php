@@ -21,7 +21,7 @@ function showFact($text, $fact) {
     $facttext = "";
     if ($fact) {
         $facttext .= "<tr>\n";
-        $facttext .= "<td class=\"fieldnameback align-top nw\"><span class=\"fieldname\">&nbsp;" . $text . "&nbsp;</span></td>\n";
+        $facttext .= "<td class=\"fieldnameback align-top nw\"><span class='fieldname'>&nbsp;" . $text . "&nbsp;</span></td>\n";
         $facttext .= "<td colspan=\"$factcols\" class='databack'><span class='normal'>$fact&nbsp;</span></td>\n";
         $facttext .= "</tr>\n";
     }
@@ -41,7 +41,7 @@ function showDatePlace($event) {
         }
 
         $dptext .= "<tr>\n";
-        $dptext .= "<td class=\"fieldnameback align-top nw\" $cellid><span class=\"fieldname\">&nbsp;" . $event['text'] . "&nbsp;</span></td>\n";
+        $dptext .= "<td class=\"fieldnameback align-top nw\" $cellid><span class='fieldname'>&nbsp;" . $event['text'] . "&nbsp;</span></td>\n";
         $dptext .= "<td class='databack nw'><span class='normal'>" . displayDate($event['date']) . "&nbsp;</span></td>\n";
         $dptext .= "<td class='databack' width=\"80%\"><span class='normal'>{$event['place']}&nbsp;</span></td>\n";
         $dptext .= "</tr>\n";
@@ -283,9 +283,9 @@ echo tng_DrawHeading($photostr, $namestr, $years);
 $famtext = "";
 $personID = $famrow['husband'] ? $famrow['husband'] : $famrow['wife'];
 
-$famtext .= "<ul class=\"nopad\">\n";
+$famtext .= "<ul class='nopad'>\n";
 $famtext .= beginSection("info");
-$famtext .= "<table border='0' cellspacing='1' cellpadding='4' width=\"100%\">\n";
+$famtext .= "<table class= 'w-100' border='0' cellspacing='1' cellpadding='4'>\n";
 
 //get husband & spouses
 if ($famrow['husband']) {

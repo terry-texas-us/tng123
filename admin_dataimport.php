@@ -27,12 +27,8 @@ $query = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename"
 $result = tng_query($query);
 $numtrees = tng_num_rows($result);
 
-if (!isset($tngimpcfg['defimpopt'])) {
-    $tngimpcfg['defimpopt'] = 0;
-}
-if (!isset($debug)) {
-    $debug = false;
-}
+if (!isset($tngimpcfg['defimpopt'])) $tngimpcfg['defimpopt'] = 0;
+if (!isset($debug)) $debug = false;
 
 $treenum = 0;
 $trees = [];

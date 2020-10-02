@@ -234,7 +234,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
                             <td>
 
                                 <?php
-                                echo "<select name=\"tree\">";
+                                echo "<select name='tree'>";
                                 echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                 while ($treerow = tng_fetch_assoc($treeresult)) {

@@ -83,9 +83,7 @@ if (!$allow_private) {
 
 $test_hdr = $admtext['dna_tests'];
 
-if (!isset($test_type)) {
-    $test_type = '';
-}
+if (!isset($test_type)) $test_type = '';
 if ($test_type) {
     switch ($test_type) {
         case "Y-DNA":
@@ -104,9 +102,7 @@ if ($test_type) {
         $wherestr = "WHERE $dna_tests_table.test_type = \"$test_type\"";
     }
 }
-if (!isset($test_group)) {
-    $test_group = '';
-}
+if (!isset($test_group)) $test_group = '';
 if ($test_group) {
     $admtext['dna_tests'] .= ": " . $test_group;
     if ($wherestr) {
@@ -141,9 +137,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 
-if (!isset($offset)) {
-    $offset = 0;
-}
+if (!isset($offset)) $offset = 0;
 $numrowsplus = $numrows + $offset;
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
@@ -247,14 +241,14 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"columntoggle\"{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"stack\"{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table cellpadding=\"3\" cellspacing='1' border='0' width=\"100%\" class=\"tablesaw whiteback normal\" data-tablesaw-mode=\"swipe\"{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'{$headerr}>\n";
     }
 } else {
-    $header = "<table cellpadding=\"3\" cellspacing='1' border='0' class=\"whiteback normal\">";
+    $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
 }
 echo $header;
 ?>

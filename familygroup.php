@@ -28,7 +28,7 @@ $factcols = $totcols - 1;
 function showFact($text, $fact) {
     global $factcols;
     $facttext = "<tr>\n";
-    $facttext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">" . $text . "&nbsp;</span></td>\n";
+    $facttext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>" . $text . "&nbsp;</span></td>\n";
     $facttext .= "<td colspan=\"$factcols\" class='databack'><span class='normal'>$fact&nbsp;</span></td>\n";
     $facttext .= "</tr>\n";
 
@@ -59,7 +59,7 @@ function showDatePlace($event) {
 
     $dptext .= "<tr>\n";
     $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
-    $dptext .= "<td class=\"fieldnameback align-top\"$cellid><span class=\"fieldname\">" . $event['text'] . "&nbsp;$editicon</span></td>\n";
+    $dptext .= "<td class=\"fieldnameback align-top\"$cellid><span class='fieldname'>" . $event['text'] . "&nbsp;$editicon</span></td>\n";
     $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td class='databack'";
     if ($allow_lds_this && $event['ldstext']) {
@@ -78,7 +78,7 @@ function showDatePlace($event) {
             $event['ID'] = $event['ID2'];
         }
         $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
-        $dptext .= "<td class=\"fieldnameback align-top\"><span class=\"fieldname\">" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
+        $dptext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>{$event['ldsplace']}&nbsp;";
         if ($event['ldsplace'] && $event['ldsplace'] != $text['place']) {
@@ -125,7 +125,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
 
     $indtext .= "<div class=\"titlebox\">\n";
-    $indtext .= "<table border='0' cellspacing=\"2\" cellpadding='0' style=\"width:100%;\">\n";
+    $indtext .= "<table border='0' cellspacing='2' cellpadding='0' style=\"width:100%;\">\n";
     //show photo & name
     $indtext .= "<tr><td>";
     $indtext .= showSmallPhoto($ind['personID'], $namestr, $rights['both'], 0, false, $ind['sex']);
@@ -432,7 +432,7 @@ $personID = $famrow['husband'] ? $famrow['husband'] : $famrow['wife'];
 $fammedia = getMedia($famrow, "F", true);
 $famalbums = getAlbums($famrow, "F");
 
-$famtext .= "<ul class=\"nopad\">\n";
+$famtext .= "<ul class='nopad'>\n";
 $famtext .= beginSection("info");
 
 //get husband & spouses
@@ -485,7 +485,7 @@ if ($rights['both']) {
     if ($assoctext) {
         $famtext .= beginSection("assoc");
         $famtext .= "<div class=\"titlebox\">\n";
-        $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class=\"whiteback\">\n";
+        $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class='whiteback'>\n";
         $famtext .= "$assoctext\n";
         $famtext .= "</table>\n</div>\n<br>\n";
         $famtext .= endSection("assoc");
@@ -505,10 +505,10 @@ if ($rights['both']) {
     if ($notes) {
         $famtext .= beginSection("notes");
         $famtext .= "<div class=\"titlebox\">\n";
-        $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class=\"whiteback\">\n";
+        $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class='whiteback'>\n";
         $famtext .= "<tr>\n";
-        $famtext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"notes1\" style=\"width:100px;\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-        $famtext .= "<td class='databack' colspan=\"2\">$notes</td>\n";
+        $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+        $famtext .= "<td class='databack' colspan='2'>$notes</td>\n";
         $famtext .= "</tr>\n";
         $famtext .= "</table>\n</div>\n<br>\n";
         $famtext .= endSection("notes");
@@ -516,10 +516,10 @@ if ($rights['both']) {
     if ($citedispctr) {
         $famtext .= beginSection("citations");
         $famtext .= "<div class=\"titlebox\">\n";
-        $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class=\"whiteback\">\n";
+        $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class='whiteback'>\n";
         $famtext .= "<tr>\n";
-        $famtext .= "<td class=\"fieldnameback indleftcol align-top\" name=\"citations1\" id=\"citations1\" style=\"width:100px;\"><a name=\"sources\"><span class=\"fieldname\">{$text['sources']}&nbsp;</span></td>\n";
-        $famtext .= "<td class='databack' colspan=\"2\"><ol class=\"normal citeblock\">";
+        $famtext .= "<td class='fieldnameback indleftcol align-top' name=\"citations1\" id=\"citations1\" style=\"width:100px;\"><a name=\"sources\"><span class='fieldname'>{$text['sources']}&nbsp;</span></td>\n";
+        $famtext .= "<td class='databack' colspan='2'><ol class=\"normal citeblock\">";
         $citectr = 0;
         $count = count($citestring);
         foreach ($citestring as $cite) {
@@ -537,10 +537,10 @@ if ($rights['both']) {
 } elseif ($rights['both']) {
     $famtext .= beginSection("notes");
     $famtext .= "<div class=\"titlebox\">\n";
-    $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class=\"whiteback\">\n";
+    $famtext .= "<table border='0' cellspacing='1' cellpadding='4' style=\"width:100%;\" class='whiteback'>\n";
     $famtext .= "<tr>\n";
-    $famtext .= "<td class=\"fieldnameback indleftcol align-top\" id=\"notes1\" style=\"width:100px;\"><span class=\"fieldname\">{$text['notes']}&nbsp;</span></td>\n";
-    $famtext .= "<td class='databack' colspan=\"2\"><span class='normal'>{$text['livingnote']}</span></td>\n";
+    $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+    $famtext .= "<td class='databack' colspan='2'><span class='normal'>{$text['livingnote']}</span></td>\n";
     $famtext .= "</tr>\n";
     $famtext .= "</table>\n</div>\n<br>\n";
     $famtext .= endSection("notes");

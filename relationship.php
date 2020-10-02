@@ -8,9 +8,7 @@ include "pedbox.php";
 $totalRelationships = 0;
 $needmore = true;
 
-if (!isset($disallowspouses)) {
-    $disallowspouses = 0;
-}
+if (!isset($disallowspouses)) $disallowspouses = 0;
 if (!isset($pedigree['maxrels']) || !$pedigree['maxrels']) {
     $pedigree['maxrels'] = 10;
 }
@@ -570,9 +568,7 @@ function checkpersonup($nextcouple) {
     $gens->upcount += 1;
     $gens->buildUparray();
 
-    if (!isset($gens->uplist[$gens->upcount])) {
-        $gens->uplist[$gens->upcount] = [];
-    }
+    if (!isset($gens->uplist[$gens->upcount])) $gens->uplist[$gens->upcount] = [];
     $gensup = $gens->upcount;
 
     //get all families in which this person is a child -- for each family
