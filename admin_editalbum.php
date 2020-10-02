@@ -416,9 +416,9 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
 
                                 echo "<tr id=\"alink_{$plink['alinkID']}\"><td class='lightback text-center'>\n";
                                 if ($type != "place") {
-                                    echo "<a href='#' title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                                    echo "<a href='#' title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                                 }
-                                echo "<a href='#' title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>\n";
+                                echo "<a href='#' title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['removelink']}\" class='smallicon admin-delete-icon'></a>\n";
                                 echo "</td>\n";
                                 echo "<td class='lightback normal'>" . $type . "</td>\n";
                                 echo "<td class='lightback normal'>$name$id&nbsp;</td>\n";

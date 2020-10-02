@@ -196,11 +196,11 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
                             if (!$assignedtree) {
-                                $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                                $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                             }
                         }
 

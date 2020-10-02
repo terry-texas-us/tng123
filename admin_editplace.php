@@ -300,7 +300,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                             }
                                             $location .= $cemrow['country'];
                                         }
-                                        $actionstr = $allow_delete ? "<a href='#' onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "&nbsp;";
+                                        $actionstr = $allow_delete ? "<a href='#' onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";
                                         if ($allow_edit) {
                                             $actionstr .= "<a href='#' onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width=\"15\" height=\"15\" class=\"oldicon\"></a>";
                                         }

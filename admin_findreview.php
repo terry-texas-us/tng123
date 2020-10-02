@@ -235,9 +235,9 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                     </tr>
 
                     <?php
-                    $actionstr = "<a href=\"admin_review.php?tempID=xxx\" title=\"{$admtext['review']}\" class=\"smallicon admin-edit-icon\"></a>";
+                    $actionstr = "<a href=\"admin_review.php?tempID=xxx\" title=\"{$admtext['review']}\" class='smallicon admin-edit-icon'></a>";
                     if ($allow_delete) {
-                        $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                     }
 
                     while ($row = tng_fetch_assoc($result)) {

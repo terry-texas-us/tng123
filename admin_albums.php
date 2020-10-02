@@ -129,12 +129,12 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     if ($numrows) {
                     $actionstr = "";
                     if ($allow_media_edit) {
-                        $actionstr .= "<a href=\"admin_editalbum.php?albumID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                        $actionstr .= "<a href=\"admin_editalbum.php?albumID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                     }
                     if ($allow_media_delete) {
-                        $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['confdeletealbum']}' )){deleteIt('album',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['confdeletealbum']}' )){deleteIt('album',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                     }
-                    $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                    $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
 
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['albumID'], $actionstr);

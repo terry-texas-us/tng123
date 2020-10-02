@@ -85,8 +85,8 @@ if ($result2) {
         include "eventmicro.php";
 
         $linkrows .= "<tr id=\"alink_{$plink['mlinkID']}\"><td class='lightback text-center'>";
-        $linkrows .= "<a href='#' title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
-        $linkrows .= "<a href='#' title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['removelink']}\" class=\"smallicon admin-delete-icon\"></a>";
+        $linkrows .= "<a href='#' title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+        $linkrows .= "<a href='#' title=\"{$admtext['removelink']}\" onclick=\"return deleteMedia2EntityLink({$plink['mlinkID']});\" title=\"{$admtext['removelink']}\" class='smallicon admin-delete-icon'></a>";
         $linkrows .= "</td>\n";
         $linkrows .= "<td class='lightback normal'>" . $admtext[$type] . "</td>";
         $linkrows .= "<td class='lightback normal'>$name$id";

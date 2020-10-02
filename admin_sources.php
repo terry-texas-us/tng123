@@ -220,12 +220,12 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editsource.php?sourceID=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_editsource.php?sourceID=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
-                        $actionstr .= "<a href=\"showsource.php?sourceID=xxx&amp;tree=yyy\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showsource.php?sourceID=xxx&amp;tree=yyy\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['sourceID'], $actionstr);

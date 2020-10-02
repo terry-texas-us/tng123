@@ -172,12 +172,12 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
-                        $actionstr .= "<a href=\"showmap.php?cemeteryID=xxx&amp\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                        $actionstr .= "<a href=\"showmap.php?cemeteryID=xxx&amp\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $location = $row['city'];

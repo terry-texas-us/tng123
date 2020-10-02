@@ -205,10 +205,10 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editnote2.php?ID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_editnote2.php?ID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
 
                         while ($row = tng_fetch_assoc($result)) {

@@ -109,10 +109,10 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                     if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editlanguage.php?languageID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_editlanguage.php?languageID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['conflangdelete']}' )){deleteIt('language',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['conflangdelete']}' )){deleteIt('language',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['languageID'], $actionstr);

@@ -113,11 +113,11 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                     if ($numrows) {
                     $actionstr = "";
                     if ($allow_edit && !$assignedbranch) {
-                        $actionstr .= "<a href=\"admin_edittree.php?tree=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                        $actionstr .= "<a href=\"admin_edittree.php?tree=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                     }
                     if ($allow_delete && !$assignedbranch) {
                         if (!$assignedtree) {
-                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
                         $actionstr .= "<a href=\"admin_cleartree.php?tree=xxx\" onClick=\"return confirm('{$admtext['conftreeclear']}' );\" title=\"{$admtext['clear']}\" class=\"smallicon admin-clear-icon\"></a>";
                     }

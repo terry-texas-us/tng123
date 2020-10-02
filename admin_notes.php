@@ -76,8 +76,8 @@ $notecount = tng_num_rows($notelinks);
 
                     $note['note'] = cleanIt($note['note']);
                     $truncated = truncateIt($note['note'], 75);
-                    $actionstr = $allow_edit ? "<a href='#' onclick=\"return editNote({$note['ID']});\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>" : "";
-                    $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteNote({$note['ID']},'$persfamID','$tree','$eventID');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>" : "";
+                    $actionstr = $allow_edit ? "<a href='#' onclick=\"return editNote({$note['ID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>" : "";
+                    $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteNote({$note['ID']},'$persfamID','$tree','$eventID');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "";
                     $actionstr .= "<a href='#' onclick=\"return showCitationsInside('N{$note['ID']}','{$note['noteID']}', '$persfamID');\" title=\"{$admtext['sources']}\" id=\"citesiconN{$note['ID']}\" class=\"smallicon $citesicon\"></a>";
                     echo "<div class=\"sortrow\" id=\"notes_{$note['ID']}\">";
                     echo "<table class='normal' cellpadding='3' cellspacing='1' border='0'>";

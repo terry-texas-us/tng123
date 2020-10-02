@@ -157,12 +157,12 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                     if ($numrows) {
                     $actionstr = "";
                     if ($allow_edit) {
-                        $actionstr .= "<a href=\"admin_editreport.php?reportID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                        $actionstr .= "<a href=\"admin_editreport.php?reportID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                     }
                     if ($allow_delete) {
-                        $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                        $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                     }
-                    $actionstr .= "<a href=\"showreport.php?reportID=xxx&amp;test=1\" target='_blank' title=\"{$admtext['test']}\" class=\"smallicon admin-test-icon\"></a>";
+                    $actionstr .= "<a href=\"showreport.php?reportID=xxx&amp;test=1\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
 
                     while ($row = tng_fetch_assoc($result)) {
                         $active = $row['active'] ? $admtext['yes'] : $admtext['no'];

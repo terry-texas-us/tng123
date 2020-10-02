@@ -185,10 +185,10 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                         }
                         if (!$assignedtree) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
 
                         while ($row = tng_fetch_assoc($result)) {

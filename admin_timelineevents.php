@@ -116,10 +116,10 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_edittlevent.php?tleventID=xxx\" title=\"{$admtext['edit']}\" class=\"smallicon admin-edit-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_edittlevent.php?tleventID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['confdeletetlevent']}' )){deleteIt('tlevent',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class=\"smallicon admin-delete-icon\"></a>";
+                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['confdeletetlevent']}' )){deleteIt('tlevent',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
 
                         while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {
