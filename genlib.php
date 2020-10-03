@@ -107,7 +107,7 @@ function standardHeaderVariants($headElement, array $flags): void {
  * @param $maint
  */
 function preHeaderVariants($headElement, array $flags, $maint): void {
-    global $customheader, $templatenum, $templatepath, $text, $tmp;
+    global $customheader, $templatenum, $templatepath, $tmp;
     global $tngprint;
 
     $title = $headElement->getTitle();
@@ -152,7 +152,7 @@ function preHeaderVariants($headElement, array $flags, $maint): void {
  * @param $flags
  */
 function tng_header($title, $flags) {
-    global $tngconfig;
+    global $tngconfig, $text;
 
     initMediaTypes();
 
@@ -170,6 +170,9 @@ function tng_header($title, $flags) {
     }
 }
 
+/**
+ * @param bool[] $flags
+ */
 function tng_footer($flags = ['basicfooter' => true]) {
     global $customfooter, $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $tngconfig;
 
@@ -220,6 +223,10 @@ function tng_footer($flags = ['basicfooter' => true]) {
     }
 }
 
+/**
+ * @param $flags
+ * @return string
+ */
 function tng_basicfooter($flags) {
     global $text, $sitever, $templatepath;
 
@@ -282,20 +289,19 @@ function tng_basicfooter($flags) {
     return $footer;
 }
 
+/**
+ * @param $medialink
+ * @return string
+ */
 function getSmallPhoto($medialink) {
     global $rootpath, $mediapath, $mediatypes_assoc, $thumbmaxw, $thumbmaxh;
     global $mediatypes_thumbs, $tnggallery, $tngconfig;
 
-    if (!$thumbmaxh) {
-        $thumbmaxh = 100;
-    }        // defaults to 100px if not specified
-    if (!$thumbmaxw) {
-        $thumbmaxw = 80;
-    }        // defaults to 80px if not specified
+    if (!$thumbmaxh) $thumbmaxh = 100;
+    if (!$thumbmaxw) $thumbmaxw = 80;
 
     $mediatypeID = $medialink['mediatypeID'];
     $usefolder = $medialink['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
-    //determine $usefolder based on mediatypeID and usecollfolder
 
     $treestr = !empty($tngconfig['mediatrees']) && $medialink['gedcom'] ? $medialink['gedcom'] . "/" : "";
     if ($medialink['allow_living'] && $medialink['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $medialink['thumbpath'])) {
@@ -314,8 +320,8 @@ function getSmallPhoto($medialink) {
                 $photowtouse = intval($thumbmaxh * $photoinfo[0] / $photoinfo[1]);
             }
         }
-        $dimensions = " height=\"$photohtouse\"";
-        $class = " class=\"thumb\"";
+        $dimensions = " height='$photohtouse'";
+        $class = " class='thumb'";
     } else {
         $thumb = "img/" . $mediatypes_thumbs[$mediatypeID];
         $dimensions = $class = "";
@@ -323,9 +329,15 @@ function getSmallPhoto($medialink) {
     if (!isset($medialink['description'])) $medialink['description'] = '';
     $altmsg = $medialink['allow_living'] ? str_replace("\"", "'", $medialink['description']) : "";
     $cleantitle = $tnggallery ? $altmsg : "";
-    return "<img src=\"$thumb\" $dimensions alt=\"$altmsg\" title=\"$cleantitle\"$class>";
+    return "<img src='$thumb' $dimensions alt='$altmsg' title=\"$cleantitle\"$class>";
 }
 
+/**
+ * @param $photostr
+ * @param $namestr
+ * @param $years
+ * @return string
+ */
 function tng_DrawHeading($photostr, $namestr, $years) {
     global $tngconfig;
     if ($photostr) {
@@ -347,6 +359,10 @@ function tng_DrawHeading($photostr, $namestr, $years) {
 }
 
 // UnusedCode function getSurnameOnly
+/**
+ * @param $row
+ * @return mixed|string
+ */
 function getSurnameOnly($row) {
     global $text, $admtext, $tngconfig;
 
@@ -365,6 +381,10 @@ function getSurnameOnly($row) {
     return $namestr;
 }
 
+/**
+ * @param $row
+ * @return mixed|string
+ */
 function getFirstNameOnly($row) {
     global $text, $admtext;
 
@@ -382,6 +402,13 @@ function getFirstNameOnly($row) {
     return $namestr;
 }
 
+/**
+ * @param $enttype
+ * @param $currpage
+ * @param $entityID
+ * @param $innermenu
+ * @return string
+ */
 function tng_menu($enttype, $currpage, $entityID, $innermenu) {
     global $tree, $text, $disallowgedcreate, $allow_edit;
     global $rightbranch, $allow_ged, $emailaddr, $newbrowser, $tngconfig, $tngprint, $flags;
@@ -461,6 +488,10 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
     return $menu;
 }
 
+/**
+ * @param $options
+ * @return string
+ */
 function tng_smallIcon($options) {
     $target = "";
 
@@ -481,6 +512,9 @@ function tng_smallIcon($options) {
     return "$begin<a href=\"$url\" $onclick $targetloc $rel title=\"{$options['label']}\" class=\"$class\" id=\"{$options['id']}-smicon\">{$options['label']}</a>$end";
 }
 
+/**
+ * @return string
+ */
 function tng_getLeftIcons() {
     global $tngconfig, $text, $homepage, $currentuser, $allow_profile;
 
@@ -552,6 +586,9 @@ function tng_getRightIcons(): string {
     return $right_icons;
 }
 
+/**
+ * @return string
+ */
 function tng_getFindMenu() {
     global $tngconfig, $time_offset;
 
@@ -577,6 +614,9 @@ function tng_getFindMenu() {
     return $menu;
 }
 
+/**
+ * @return string
+ */
 function tng_getMediaMenu() {
     global $mediatypes, $tngconfig;
 
@@ -599,6 +639,10 @@ function tng_getMediaMenu() {
     return $menu;
 }
 
+/**
+ * @param $title
+ * @return string
+ */
 function tng_getInfoMenu($title) {
     global $allow_admin, $tngconfig;
 
@@ -630,6 +674,10 @@ function tng_getInfoMenu($title) {
     return $menu;
 }
 
+/**
+ * @param $instance
+ * @return string
+ */
 function tng_getLanguageSelect($instance) {
     global $chooselang, $languages_table, $mylanguage, $languages_path;
 
@@ -640,7 +688,7 @@ function tng_getLanguageSelect($instance) {
         $numlangs = tng_num_rows($result);
 
         if ($numlangs > 1) {
-            $menu .= "<li class=\"langmenu\">\n";
+            $menu .= "<li class='langmenu'>\n";
             $menu .= getFORM("savelanguage2", "get", "tngmenu$instance", "");
             $menu .= "<select name=\"newlanguage$instance\" id=\"newlanguage$instance\" style=\"font-size:9pt;\" onchange=\"document.tngmenu$instance.submit();\">";
 
@@ -662,6 +710,10 @@ function tng_getLanguageSelect($instance) {
     return $menu;
 }
 
+/**
+ * @param $title
+ * @return string
+ */
 function tng_getLangMenu($title) {
     global $chooselang, $languages_table, $mylanguage, $languages_path, $tngconfig;
 
@@ -678,7 +730,7 @@ function tng_getLangMenu($title) {
                 $tngconfig['menucount']++;
             }
             if ($menu) {
-                $menu = "<ul id=\"mlangmenu\" class=\"mright\">\n" . $menu . "</ul>\n";
+                $menu = "<ul id='mlangmenu' class='mright'>\n" . $menu . "</ul>\n";
             }
         }
 
@@ -688,6 +740,11 @@ function tng_getLangMenu($title) {
     return $menu;
 }
 
+/**
+ * @param $key
+ * @param $itemcount
+ * @return string
+ */
 function get_menustyle($key, $itemcount) {
     $mmenustyle = "";
     if ($itemcount) {
@@ -699,89 +756,88 @@ function get_menustyle($key, $itemcount) {
     return $mmenustyle;
 }
 
+/**
+ * @param $title
+ * @return string
+ */
 function tng_mobileicons($title) {
     global $text, $tngconfig, $custmenu, $custommobilemenu, $custommenulinks;
 
-    //container, full width, fixed at top
-    //get left & right icons, put in single list
-    //get menus, link to icons
-    //do something with languages
-    $menu = "<div id=\"tngheader\">\n";
-    $menu .= "<div id=\"mast\">\n";
-    $menu .= "<div class=\"mhead\">\n";
-    $menu .= "<a href=\"\" id=\"mcore\" onclick=\"return toggleMobileMenu('core');\"></a>\n";
+    $menu = "<div id='tngheader'>\n";
+    $menu .= "<div id='mast'>\n";
+    $menu .= "<div class='mhead'>\n";
+    $menu .= "<a href='' id='mcore' onclick=\"return toggleMobileMenu('core');\"></a>\n";
 
     $tngconfig['mmenustyle'] = "";
     $tngconfig['menucount'] = 0;
-    $menu .= "<ul id=\"mcoremenu\">\n";
+    $menu .= "<ul id='mcoremenu'>\n";
     $menu .= tng_getLeftIcons();
     $menu .= tng_getRightIcons();
     $menu .= "</ul>\n";
     $tngconfig['mmenustyle'] .= get_menustyle("core", $tngconfig['menucount']);
 
-    $menuicons = "<div id=\"mmenus\">\n";
+    $menuicons = "<div id='mmenus'>\n";
     $menuitems = "";
 
     $tngconfig['menucount'] = 0;
     $finditems = tng_getFindMenu();
     if ($tngconfig['menucount']) {
-        $menuitems .= "<ul id=\"mfindmenu\" class=\"mright\">\n" . $finditems . "</ul>\n";
-        $menuicons .= "<a href=\"\" class=\"mmenu\" id=\"mmenu-find\" title=\"{$text['find_menu']}\" onclick=\"return toggleMobileMenu('find');\"></a>\n";
+        $menuitems .= "<ul id='mfindmenu' class='mright'>\n" . $finditems . "</ul>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-find' title=\"{$text['find_menu']}\" onclick=\"return toggleMobileMenu('find');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("find", $tngconfig['menucount']);
     }
 
     $tngconfig['menucount'] = 0;
     $mediaitems = tng_getMediaMenu();
     if ($tngconfig['menucount']) {
-        $menuitems .= "<ul id=\"mmediamenu\" class=\"mright\">\n" . $mediaitems . "</ul>\n";
-        $menuicons .= "<a href=\"\" class=\"mmenu\" id=\"mmenu-media\" title=\"{$text['media']}\" onclick=\"return toggleMobileMenu('media');\"></a>\n";
+        $menuitems .= "<ul id='mmediamenu' class='mright'>\n" . $mediaitems . "</ul>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-media' title=\"{$text['media']}\" onclick=\"return toggleMobileMenu('media');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("media", $tngconfig['menucount']);
     }
 
     $tngconfig['menucount'] = 0;
     $infoitems = tng_getInfoMenu($title);
     if ($tngconfig['menucount']) {
-        $menuitems .= "<ul id=\"minfomenu\" class=\"mright\">\n" . $infoitems . "</ul>\n";
-        $menuicons .= "<a href=\"\" class=\"mmenu\" id=\"mmenu-info\" title=\"{$text['info']}\" onclick=\"return toggleMobileMenu('info');\"></a>\n";
+        $menuitems .= "<ul id='minfomenu' class='mright'>\n" . $infoitems . "</ul>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-info' title=\"{$text['info']}\" onclick=\"return toggleMobileMenu('info');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("info", $tngconfig['menucount']);
     }
-
-    //hook for custom dropdown options
     $tngconfig['menucount'] = 0;
     if (isset($custommobilemenu)) {
         eval($custommobilemenu);
-    } //Rick Bisbee's mod
+    }
     elseif (isset($custmenu)) {
         $items = custom_links($custommenulinks);
         $menuitems .= custom_menu($custmenu, $items, true);
-        $menuicons .= "<a href=\"\" class=\"mmenu\" id=\"mmenu-cust\" title=\"{$custmenu['title_text']}\" onclick=\"return toggleMobileMenu('cust');\"></a>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-cust' title=\"{$custmenu['title_text']}\" onclick=\"return toggleMobileMenu('cust');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("cust", $tngconfig['menucount']);
     }
-
     $tngconfig['menucount'] = 0;
     $menuitems .= tng_getLangMenu($title);
     if ($tngconfig['menucount']) {
-        $menuicons .= "<a href=\"\" class=\"mmenu\" id=\"mmenu-lang\" title=\"{$text['language']}\" onclick=\"return toggleMobileMenu('lang');\"></a>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-lang' title=\"{$text['language']}\" onclick=\"return toggleMobileMenu('lang');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("lang", $tngconfig['menucount']);
     }
-
     $menuicons .= "</div>\n";
     $menu .= $menuicons . $menuitems . "</div>\n</div>\n</div>\n";
 
-    //return both menu and transform style
     return $menu;
 }
 
+/**
+ * @param $instance
+ * @param string $title
+ * @return string
+ */
 function tng_icons($instance, $title = "") {
     global $text, $tngconfig, $customshare, $tngprint, $custommenu, $custmenu, $custommenulinks;
 
     $fullmenu = "";
     if ($tngprint) {
         $fullmenu .= "<div style='float: right;'>";
-        $fullmenu .= "<b><a id='printlink'  style='text-decoration: underline;' href=\"javascript: {document.getElementById('printlink').style.visibility='hidden'; window.print();}\">&gt; {$text['tngprint']} &lt;</a></b>";
+        $fullmenu .= "<b><a id='printlink' style='text-decoration: underline;' href=\"javascript: {document.getElementById('printlink').style.visibility='hidden'; window.print();}\">&gt; {$text['tngprint']} &lt;</a></b>";
         $fullmenu .= "</div>\n";
     } else {
-
         if ($tngconfig['menu'] == 1) {
             $iconalign = "float-left";
         } else {
@@ -790,7 +846,7 @@ function tng_icons($instance, $title = "") {
 
         $left_icons = tng_getLeftIcons();
         if ($left_icons) {
-            $left_icons = "<div class=\"icons\">\n{$left_icons}&nbsp;\n</div>\n";
+            $left_icons = "<div class='icons'>\n{$left_icons}&nbsp;\n</div>\n";
         }
 
         $right_icons = tng_getRightIcons();
@@ -812,7 +868,7 @@ function tng_icons($instance, $title = "") {
             $menu .= "</li>\n";
 
             $menu .= "<li><a href='#' class='menulink'>{$text['info']}</a>\n";
-            $last = !$langmenu && !isset($custommenu) ? " class=\"last\"" : "";
+            $last = !$langmenu && !isset($custommenu) ? " class='last'" : "";
             $menu .= "<ul{$last}>\n";
             $menu .= tng_getInfoMenu($title);
             $menu .= "</ul>\n";
@@ -837,31 +893,31 @@ function tng_icons($instance, $title = "") {
         }
 
         if ($menu) {
-            $outermenu .= "<ul class=\"tngdd $iconalign\" id=\"tngdd\">\n";
+            $outermenu .= "<ul class='tngdd $iconalign' id='tngdd'>\n";
 
             if ($tngconfig['menu'] != 1) {
-                $outermenu .= "<li class=\"langmenu stubmenu\"><br></li>\n";
+                $outermenu .= "<li class='langmenu stubmenu'><br></li>\n";
             }
 
             $outermenu .= $menu;
 
             if ($tngconfig['menu'] == 1) {
-                $outermenu .= "<li class=\"langmenu stubmenu-rt\"><br></li>\n";
+                $outermenu .= "<li class='langmenu stubmenu-rt'><br></li>\n";
             }
 
             $outermenu .= "</ul>\n";
         }
 
         if ($tngconfig['menu'] == 2 && !$langmenu) {
-            $outermenu .= "<div class=\"icons-rt in-bar\">\n$right_icons\n</div>\n";
+            $outermenu .= "<div class='icons-rt in-bar'>\n$right_icons\n</div>\n";
             $shift_str = " shift100left";
         } else {
             $shift_str = "";
         }
 
         if ($outermenu) {
-            $fullmenu .= "<div class=\"menucontainer\">\n";
-            $fullmenu .= "<div class=\"innercontainer\">\n";
+            $fullmenu .= "<div class='menucontainer'>\n";
+            $fullmenu .= "<div class='innercontainer'>\n";
 
             $fullmenu .= $outermenu;
 
@@ -870,14 +926,17 @@ function tng_icons($instance, $title = "") {
 
             if (empty($tngconfig['searchchoice']) && empty($tngconfig['showsearch'])) {
                 $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
-                $fullmenu .= "<a href='#' onclick=\"jQuery('#searchdrop').slideUp(200);return false;\" style=\"float:right;\"><img src=\"img/tng_close.gif\" alt=\"\"/></a>";
+                $fullmenu .= "<a href='#' class='float-right' onclick=\"jQuery('#searchdrop').slideUp(200); return false;\"><img src='img/tng_close.gif' alt=''></a>";
                 $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href='searchform.php'>{$text['mnuadvancedsearch']}</a> | <a href='famsearchform.php'>{$text['searchfams']}</a> | <a href='searchsite.php'>{$text['searchsitemenu']}</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
-                $fullmenu .= "<label for=\"searchfirst\">{$text['firstname']}: </label><input type='text' name=\"myfirstname\" id=\"searchfirst\"/> &nbsp;\n";
-                $fullmenu .= "<label for=\"searchlast\">{$text['lastname']}: </label><input type='text' name=\"mylastname\" id=\"searchlast\"/> &nbsp;\n";
-                $fullmenu .= "<label for=\"searchid\">{$text['id']}: </label><input type='text' class=\"veryshortfield\" name=\"mypersonid\" id=\"searchid\"/> &nbsp;\n";
-                $fullmenu .= "<input type='hidden' name=\"idqualify\" value=\"equals\">\n";
-                $fullmenu .= "<input type='submit' value=\"{$text['search']}\"></form></div>";
+                $fullmenu .= "<label for='searchfirst' class='mr-2'>{$text['firstname']}:</label>";
+                $fullmenu .= "<input type='text' name='myfirstname' id='searchfirst'>\n";
+                $fullmenu .= "<label for='searchlast' class='mr-2'>{$text['lastname']}:</label>";
+                $fullmenu .= "<input type='text' name='mylastname' id='searchlast'>\n";
+                $fullmenu .= "<label for='searchid' class='mr-2'>{$text['id']}:</label>";
+                $fullmenu .= "<input type='text' class='veryshortfield' name='mypersonid' id='searchid'>\n";
+                $fullmenu .= "<input type='hidden' name='idqualify' value='equals'>\n";
+                $fullmenu .= "<input type='submit' value='{$text['search']}'></form></div>";
             }
         }
 
@@ -887,7 +946,7 @@ function tng_icons($instance, $title = "") {
 
         $sharemenu = "";
         if (!empty($tngconfig['showshare']) && !isMobile()) {
-            $sharemenu .= "<div id=\"shareicons\" style='display: none;'>\n";
+            $sharemenu .= "<div id='shareicons' style='display: none;'>\n";
             // todo shareicons? use of undefined span attribute displaytext
             $sharemenu .= "<span class='st_facebook_hcount' displayText='Facebook'></span>\n";
             $sharemenu .= "<span class='st_twitter_hcount' displayText='Tweet'></span>\n";
@@ -900,7 +959,7 @@ function tng_icons($instance, $title = "") {
         }
 
         if ($sharemenu || $right_icons || $tngconfig['menu'] < 2 || $numlangs) {
-            $fullmenu .= "<div class=\"icons-rt$shift_str\">";
+            $fullmenu .= "<div class='icons-rt$shift_str'>";
             $fullmenu .= $sharemenu;
 
             if ($tngconfig['menu'] < 2 || $numlangs) {
@@ -910,7 +969,7 @@ function tng_icons($instance, $title = "") {
             $fullmenu .= "</div>\n";
 
             if ($tngconfig['menu'] == 1) {
-                $fullmenu .= "<br style=\"clear:both;\"><br>\n";
+                $fullmenu .= "<br style='clear:both;'><br>\n";
             }
         }
 
@@ -926,6 +985,14 @@ function tng_icons($instance, $title = "") {
     return $fullmenu;
 }
 
+/**
+ * @param $link
+ * @param $id
+ * @param $thumb
+ * @param $label
+ * @param false $labelliteral
+ * @return string
+ */
 function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
     global $text;
 
@@ -945,6 +1012,10 @@ function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
     return $ddrow;
 }
 
+/**
+ * @param $forminfo
+ * @return string
+ */
 function treeDropdown($forminfo) {
     global $text, $requirelogin, $assignedtree, $trees_table, $time_offset, $treerestrict, $tree, $numtrees, $tngconfig;
 
@@ -1001,6 +1072,12 @@ function treeDropdown($forminfo) {
     return $ret;
 }
 
+/**
+ * @param $treeresult
+ * @param null $formname
+ * @param null $onchange
+ * @return string
+ */
 function treeSelect($treeresult, $formname = null, $onchange = null) {
     global $text, $tree;
 
@@ -1028,6 +1105,11 @@ function treeSelect($treeresult, $formname = null, $onchange = null) {
     return $ret;
 }
 
+/**
+ * @param $row
+ * @param $mlflag
+ * @return mixed|string
+ */
 function getMediaHREF($row, $mlflag) {
     global $mediatypes_assoc, $mediapath, $htmldocs, $imagetypes, $videotypes, $recordingtypes;
 
@@ -1071,6 +1153,10 @@ function getMediaHREF($row, $mlflag) {
     return $uselink;
 }
 
+/**
+ * @param $notes
+ * @return string
+ */
 function insertLinks($notes) {
     if ($notes) {
         $pos = 0;
@@ -1104,6 +1190,10 @@ function insertLinks($notes) {
     return $notes;
 }
 
+/**
+ * @param $key
+ * @return mixed
+ */
 function getTemplateMessage($key) {
     global $tmp, $session_language;
 
@@ -1112,6 +1202,13 @@ function getTemplateMessage($key) {
     return isset($tmp[$langkey]) ? $tmp[$langkey] : $tmp[$key];
 }
 
+/**
+ * @param $linkList
+ * @param false $newtab
+ * @param null $class
+ * @param null $inner_html
+ * @return string
+ */
 function showLinks($linkList, $newtab = false, $class = null, $inner_html = null) {
     $links = explode("\r", $linkList);
     $finishedList = "";
@@ -1150,6 +1247,10 @@ function showLinks($linkList, $newtab = false, $class = null, $inner_html = null
     return $finishedList;
 }
 
+/**
+ * @param $linkList
+ * @return string
+ */
 function showMediaLinks($linkList) {
     global $media_table, $mediapath, $mediatypes_assoc;
     $links = explode(",", $linkList);
@@ -1171,6 +1272,12 @@ function showMediaLinks($linkList) {
     return $finishedmedList;
 }
 
+/**
+ * @param $custmenu
+ * @param $items
+ * @param false $mobile
+ * @return string
+ */
 function custom_menu($custmenu, $items, $mobile = false) {
     global $text;
 
@@ -1200,6 +1307,10 @@ function custom_menu($custmenu, $items, $mobile = false) {
     return $menu;
 }
 
+/**
+ * @param $linkdefs
+ * @return string
+ */
 function custom_links($linkdefs) {
     global $text, $allow_admin, $currentuser, $users_table, $tngconfig;
 
@@ -1268,6 +1379,10 @@ function custom_links($linkdefs) {
     return $menustr;
 }
 
+/**
+ * @param $file
+ * @return string
+ */
 function findlangfolder($file) {
     global $mylanguage, $language;
 

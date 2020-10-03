@@ -69,9 +69,9 @@ $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 
 if ($order == "marr") {
     $orderstr = "marrdatetr, marrplace, father.lastname, father.firstname";
-    $marrsort = "<a href=\"$search_url$currargs&order=marrup\" class='lightlink'>{$text['married']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $marrsort = "<a href=\"search.php?$currargs&order=marrup\" class='lightlink'>{$text['married']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $marrsort = "<a href=\"$search_url$currargs&order=marr\" class='lightlink'>{$text['married']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $marrsort = "<a href=\"search.php?$currargs&order=marr\" class='lightlink'>{$text['married']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "marrup") {
         $orderstr = "marrdatetr DESC, marrplace DESC, father.lastname, father.firstname";
     }
@@ -79,9 +79,9 @@ if ($order == "marr") {
 
 if ($order == "div") {
     $orderstr = "divdatetr, divplace, father.lastname, father.firstname, marrdatetr";
-    $divsort = "<a href=\"$search_url$currargs&order=divup\" class='lightlink'>{$text['divorced']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $divsort = "<a href=\"search.php?$currargs&order=divup\" class='lightlink'>{$text['divorced']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $divsort = "<a href=\"$search_url$currargs&order=div\" class='lightlink'>{$text['divorced']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $divsort = "<a href=\"search.php?$currargs&order=div\" class='lightlink'>{$text['divorced']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "divup") {
         $orderstr = "divdatetr DESC, divplace DESC, father.lastname, father.firstname, marrdatetr";
     }
@@ -89,9 +89,9 @@ if ($order == "div") {
 
 if ($order == "fname") {
     $orderstr = "father.lastname, father.firstname, marrdatetr";
-    $fnamesort = "<a href=\"$search_url$currargs&order=fnameup\" class='lightlink'>{$text['fathername']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $fnamesort = "<a href=\"search.php?$currargs&order=fnameup\" class='lightlink'>{$text['fathername']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $fnamesort = "<a href=\"$search_url$currargs&order=fname\" class='lightlink'>{$text['fathername']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $fnamesort = "<a href=\"search.php?$currargs&order=fname\" class='lightlink'>{$text['fathername']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "fnameup") {
         $orderstr = "father.lastname DESC, father.firstname DESC, marrdatetr";
     }
@@ -99,9 +99,9 @@ if ($order == "fname") {
 
 if ($order == "mname") {
     $orderstr = "mother.lastname, mother.firstname, marrdatetr";
-    $mnamesort = "<a href=\"$search_url$currargs&order=mnameup\" class='lightlink'>{$text['mothername']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
+    $mnamesort = "<a href=\"search.php?$currargs&order=mnameup\" class='lightlink'>{$text['mothername']} <img src=\"img/tng_sort_desc.gif\" class=\"sortimg\"></a>";
 } else {
-    $mnamesort = "<a href=\"$search_url$currargs&order=mname\" class='lightlink'>{$text['mothername']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
+    $mnamesort = "<a href=\"search.php?$currargs&order=mname\" class='lightlink'>{$text['mothername']} <img src=\"img/tng_sort_asc.gif\" class=\"sortimg\"></a>";
     if ($order == "mnameup") {
         $orderstr = "mother.lastname DESC, mother.firstname DESC, marrdatetr";
     }
@@ -307,7 +307,7 @@ if (!isMobile()) {
     <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
     <br style="clear: left;">
 <?php
-$logstring = "<a href=\"famsearch.php?" . $_SERVER['QUERY_STRING'] . "\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
+$logstring = "<a href=\"famsearch.php?{$_SERVER['QUERY_STRING']}\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -414,7 +414,9 @@ while ($row = tng_fetch_assoc($result)) {
 
     echo "<td class='databack'>$famidstr";
     if (!isMobile()) {
-        echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div></div>\n";
+        echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
+        echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
+        echo "</div>\n";
     }
     echo "&nbsp;</td>";
     echo "<td class='databack'>$fname&nbsp;</td>";

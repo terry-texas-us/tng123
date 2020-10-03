@@ -237,8 +237,8 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     $style = "background-color:$bgfastmut; color:$txtfastmut;";
                 }
                 ?>
-                <th colspan=<?php echo $col_span; ?> align="left" valign="top" class="<?php echo $class; ?>" style="<?php echo $style; ?>" title= <?php echo $title; ?>>
-                    <div class="dysval">&nbsp;&nbsp;<?php echo $dysv[$j]; ?></div>
+                <th colspan=<?php echo $col_span; ?> class="<?php echo $class; ?> align-top" style="<?php echo $style; ?>" align="left" title= <?php echo $title; ?>>
+                <div class="dysval">&nbsp;&nbsp;<?php echo $dysv[$j]; ?></div>
                 </th>
                 <?php $j++;
             } ?>

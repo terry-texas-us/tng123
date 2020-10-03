@@ -370,7 +370,7 @@ function needspouses(nextfamily) {
     return !husb || !wife || !people[husb] || !people[wife];
 }
 
-let tdclasstxt = 'class="normal pboxpopup" valign="top"';
+let tdclasstxt = 'class="normal pboxpopup  align-top"';
 let divtxt = '<div class="pboxpopupdiv">\n<table class="w-100" cellspacing="0" cellpadding="1" border="0">\n';
 let tabletxt = '<table class="w-100" cellspacing="0" cellpadding="1">\n';
 
@@ -464,7 +464,7 @@ function getPopup(slot) {
     if (slotperson.parents) {
         if (popupcontent) popupcontent += '<div class="popdivider"></div>\n';
         popupcontent += divtxt;
-        popupcontent += '<tr><td class="normal pboxpopup" valign="top" colspan="4" id="pop' + slot + '"><b>' + txt_parents + ':</b></td></tr>\n';
+        popupcontent += '<tr><td class="normal pboxpopup  align-top" colspan="4" id="pop' + slot + '"><b>' + txt_parents + ':</b></td></tr>\n';
         for (var i = 0; i < slotperson.parents.length; i++) {
             var par = slotperson.parents[i];
             count = i + 1;
@@ -514,7 +514,7 @@ function getPopup(slot) {
             popupcontent += '<td ' + tdclasstxt + ' align="right">' + sppedlink + '</td></tr>';
 
             if (popupkids && children && children.length) {
-                popupcontent += '<tr><td class="normal pboxpopup" align="right" valign="top" id="popabbr' + slot + '">&nbsp;</td><td class="normal pboxpopup" valign="top" colspan="3" id="pop' + slot + '"><B>' + txt_children + ':</B></td></tr>\n';
+                popupcontent += '<tr><td class="normal pboxpopup align-top" align="right" id="popabbr' + slot + '">&nbsp;</td><td class="normal pboxpopup" valign="top" colspan="3" id="pop' + slot + '"><B>' + txt_children + ':</B></td></tr>\n';
                 for (var j = 0; j < children.length; j++) {
                     var spchild = children[j];
 

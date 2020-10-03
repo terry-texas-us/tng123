@@ -191,8 +191,8 @@ if (tng_num_rows($result)) {
             echo "<td class='databack'><a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
             echo "<td class='databack'>\n";
             if (!isMobile()) {
-                echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
-                echo "<div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
+                echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
+                echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
                 echo "</div>\n";
             }
             echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
@@ -288,8 +288,8 @@ if (tng_num_rows($famresult)) {
             echo "<td class='databack'>\n";
             echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']}</a>\n";
             if (!isMobile()) {
-                echo "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
-                echo "<div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
+                echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
+                echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
                 echo "</div>\n";
             }
             echo "</td>";

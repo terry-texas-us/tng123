@@ -29,7 +29,7 @@ function drawBox($person, $box) {
     drawEmpty($box['topleft'], $box['middleleft'], $box['bottomleft']);
 
     //main area
-    echo "<td valign=\"top\" align=\"center\">";
+    echo "<td class=' align-top' align=\"center\">";
 
     //top border
     if ($box['lineinto']) {
@@ -61,7 +61,9 @@ function drawBox($person, $box) {
     echo "<div class=\"popup trackerbox\" style=\"width:{$boxwidth}px; height:{$boxheight}px; background-color:$bgcolor; padding: {$pedigree['cellpad']}px; overflow:hidden;\">\n";
 
     //inner table
-    echo "<table cellpadding='0' cellspacing='0' style=\"margin:0;\">\n<tr><td valign=\"top\">";
+    echo "<table cellpadding='0' cellspacing='0' style=\"margin:0;\">\n";
+    echo "<tr>\n";
+    echo "<td class=' align-top'>\n";
     $name = getName($person);
     $nameinfo = "<a href=\"getperson.php?personID={$person['personID']}&amp;tree=$tree\"><span style=\"font-size:11pt;\">$name</span></a>";
     if ($person['personID'] && $pedigree['inclphotos']) {

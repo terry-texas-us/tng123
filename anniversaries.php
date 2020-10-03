@@ -522,7 +522,9 @@ if ($tngneedresults) {
                         $personIDstr = $row['hpersonID'];
 
                         if (!isMobile()) {
-                            $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
+                            $namestr .= "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\">\n";
+                            $namestr .= "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div>\n";
+                            $namestr .= "</div>\n";
                         }
                         $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                     }
@@ -553,7 +555,9 @@ if ($tngneedresults) {
                             $namestr .= "<br>";
                         }
                         if (!isMobile()) {
-                            $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
+                            $namestr .= "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\">\n";
+                            $namestr .= "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div>\n";
+                            $namestr .= "</div>\n";
                         }
                         $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                     }
@@ -566,7 +570,9 @@ if ($tngneedresults) {
                     $personIDstr = $row['personID'];
 
                     if (!isMobile()) {
-                        $namestr .= "<div class=\"person-img\" id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\"><div class=\"person-prev\" id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div></div>\n";
+                        $namestr .= "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\">\n";
+                        $namestr .= "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div>\n";
+                        $namestr .= "</div>\n";
                     }
                     $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                 }
