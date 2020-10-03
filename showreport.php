@@ -574,7 +574,7 @@ if (!$result) {
 
         $numrowsplus = $numrows + $offset;
         if ($totrows) {
-            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp; <a href=\"showreport.php?reportID=$reportID&csv=1&tree=$tree\" target='_blank' class=\"snlink\">&raquo; {$text['csv']}</a></p>";
+            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp; <a href=\"showreport.php?reportID=$reportID&csv=1&tree=$tree\" target='_blank' class='snlink'>&raquo; {$text['csv']}</a></p>";
         }
 
         $pagenav = get_browseitems_nav($totrows, "showreport.php?reportID=$reportID$testurl&amp;offset", $maxsearchresults, $max_browsesearch_pages);

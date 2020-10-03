@@ -25,12 +25,23 @@ if (isset($_COOKIE[$errorcookiename])) {
     $error = "";
 }
 
+/**
+ * @param $obj
+ */
 function debugPrint($obj) {
     echo "<pre>\n";
     print_r($obj);
     echo "</pre>\n";
 }
 
+/**
+ * @param $firstnames
+ * @param $lastnames
+ * @param $title
+ * @param $suffix
+ * @param $order
+ * @return string|string[]|null
+ */
 function constructName($firstnames, $lastnames, $title, $suffix, $order) {
     if ($title) {
         $title .= " ";
@@ -69,6 +80,11 @@ function constructName($firstnames, $lastnames, $title, $suffix, $order) {
     return preg_replace('/\s\s+/', " ", $namestr);
 }
 
+/**
+ * @param $row
+ * @param null $hcard
+ * @return mixed|string|string[]|null
+ */
 function getName($row, $hcard = null) {
     global $nameorder;
 
@@ -76,6 +92,11 @@ function getName($row, $hcard = null) {
     return getNameUniversal($row, $locnameorder, $hcard);
 }
 
+/**
+ * @param $row
+ * @param null $hcard
+ * @return mixed|string|string[]|null
+ */
 function getNameRev($row, $hcard = null) {
     global $nameorder;
 
@@ -86,6 +107,12 @@ function getNameRev($row, $hcard = null) {
     return getNameUniversal($row, $locnameorder, $hcard);
 }
 
+/**
+ * @param $row
+ * @param $order
+ * @param null $hcard
+ * @return mixed|string|string[]|null
+ */
 function getNameUniversal($row, $order, $hcard = null) {
     global $text, $admtext, $tngconfig, $nonames;
 
@@ -125,7 +152,11 @@ function getNameUniversal($row, $order, $hcard = null) {
     return $namestr;
 }
 
-function getFamilyName($row) {
+/**
+ * @param $row
+ * @return string
+ */
+function getFamilyName($row): string {
     global $text, $people_table;
 
     $righttree = checktree($row['gedcom']);
@@ -155,7 +186,11 @@ function getFamilyName($row) {
     return "$husbname / $wifename";
 }
 
-function initials($name) {
+/**
+ * @param $name
+ * @return string
+ */
+function initials($name): string {
     global $session_charset;
 
     $newname = "";
@@ -178,13 +213,22 @@ function initials($name) {
     return $newname;
 }
 
-function showNames($row) {
+/**
+ * @param $row
+ * @return mixed|string
+ */
+function showNames($row): string {
     global $nonames, $tngconfig;
 
     return $row['private'] ? $tngconfig['nnpriv'] : $nonames;
 }
 
-function getGenderIcon($gender, $valign) {
+/**
+ * @param $gender
+ * @param $valign
+ * @return string
+ */
+function getGenderIcon($gender, $valign): string {
     global $text;
 
     $icon = "";
@@ -201,10 +245,24 @@ function getGenderIcon($gender, $valign) {
     return $icon;
 }
 
+/**
+ * @param $destination
+ * @param $args
+ * @param string $ext
+ * @return string
+ */
 function getURL($destination, $args, $ext = ".php") {
     return $args ? $destination . $ext . "?" : $destination . $ext;
 }
 
+/**
+ * @param $action
+ * @param $method
+ * @param $name
+ * @param $id
+ * @param null $onsubmit
+ * @return string
+ */
 function getFORM($action, $method, $name, $id, $onsubmit = null) {
     $url = $action ? $action . ".php" : "";
     $formstr = "<form action=\"$url\"";
@@ -224,6 +282,10 @@ function getFORM($action, $method, $name, $id, $onsubmit = null) {
     return $formstr;
 }
 
+/**
+ * @param $row
+ * @return bool
+ */
 function isPhoto($row) {
     global $imagetypes;
 
@@ -265,12 +327,20 @@ function getEventDisplay(string $display): string {
     return $displayval;
 }
 
+/**
+ * @param $branch
+ * @return int
+ */
 function checkbranch($branch) {
     global $assignedbranch;
 
     return (!$assignedbranch || (FALSE !== ($pos = strpos($branch, $assignedbranch, 0)))) ? 1 : 0;
 }
 
+/**
+ * @param $tree
+ * @return bool
+ */
 function checktree($tree) {
     global $assignedtree;
 
@@ -278,6 +348,13 @@ function checktree($tree) {
 }
 
 //The following function is now obsolete
+/**
+ * @param $row
+ * @param int $usedb
+ * @param int $allow_living_db
+ * @param int $allow_private_db
+ * @return int
+ */
 function determineLivingRights($row, $usedb = 0, $allow_living_db = 0, $allow_private_db = 0) {
     global $livedefault, $allow_living, $allow_private, $rightbranch, $tree;
 
@@ -359,6 +436,10 @@ function determineLivingPrivateRights($row, $pagerighttree = -1, $pagerightbranc
     return $rights;
 }
 
+/**
+ * @param false $notree
+ * @return bool
+ */
 function determineLDSRights($notree = false) {
     global $ldsdefault, $allow_lds, $tree, $assignedtree;
 
@@ -366,6 +447,12 @@ function determineLDSRights($notree = false) {
     return !$ldsdefault || ($ldsdefault == 2 && $allow_lds && $treeOK);
 }
 
+/**
+ * @param $table
+ * @param $firstname
+ * @param $allOtherInput
+ * @return string
+ */
 function getLivingPrivateRestrictions($table, $firstname, $allOtherInput) {
     global $livedefault, $nonames, $tngconfig, $allow_living, $allow_private, $assignedtree, $assignedbranch, $people_table;
 
@@ -420,6 +507,10 @@ function getLivingPrivateRestrictions($table, $firstname, $allOtherInput) {
     return $query;
 }
 
+/**
+ * @param $itemID
+ * @return bool
+ */
 function checkLivingLinks($itemID) {
     global $livedefault, $assignedtree, $assignedbranch, $people_table, $medialinks_table, $families_table, $allow_living, $allow_private;
 
@@ -490,12 +581,20 @@ function checkLivingLinks($itemID) {
     return true;
 }
 
+/**
+ * @param $path
+ * @return bool
+ */
 function checkMediaFileSize($path) {
     global $maxmediafilesize;
 
     return file_exists($path) && filesize($path) < $maxmediafilesize;
 }
 
+/**
+ * @param bool $replace
+ * @return mixed|string|string[]
+ */
 function getScriptName($replace = true) {
     global $_SERVER;
 
@@ -508,41 +607,44 @@ function getScriptName($replace = true) {
     return $scriptname;
 }
 
+/**
+ * @return string
+ */
 function getScriptPath() {
     $uri = getScriptName();
     return dirname($uri);
 }
 
+/**
+ * @param $total
+ * @param $address
+ * @param $perpage
+ * @param $pagenavpages
+ * @return string
+ */
 function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     global $tngpage, $totalpages, $text, $orgtree, $test_type, $test_group;
 
     $nextlink = '';
 
-    if (!$tngpage) {
-        $tngpage = 1;
-    }
-    if (!$perpage) {
-        $perpage = 50;
-    }
+    if (!$tngpage) $tngpage = 1;
+    if (!$perpage) $perpage = 50;
 
-    if ($total <= $perpage) {
-        return "";
-    }
+    if ($total <= $perpage) return "";
 
     $totalpages = ceil($total / $perpage);
     if ($tngpage > $totalpages) {
         $tngpage = $totalpages;
     }
-
     if ($tngpage > 1) {
         $prevpage = $tngpage - 1;
         $navoffset = (($prevpage * $perpage) - $perpage);
-        $prevlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$prevpage\" class=\"snlink\" title=\"{$text['text_prev']}\">&laquo;{$text['text_prev']}</a> ";
+        $prevlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$prevpage\" class='snlink' title=\"{$text['text_prev']}\">&laquo;{$text['text_prev']}</a> ";
     }
     if ($tngpage < $totalpages) {
         $nextpage = $tngpage + 1;
         $navoffset = (($nextpage * $perpage) - $perpage);
-        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class=\"snlink\" title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
+        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class='snlink' title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
     }
     $curpage = 0;
     $pagenav = $firstlink = $lastlink = '';
@@ -551,21 +653,24 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
         $navoffset = (($curpage - 1) * $perpage);
         if (($curpage <= $tngpage - $pagenavpages || $curpage >= $tngpage + $pagenavpages) && $pagenavpages) {
             if ($curpage == 1) {
-                $firstlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class=\"snlink\" title=\"{$text['firstpage']}\">&laquo;1</a> ... ";
+                $firstlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink' title=\"{$text['firstpage']}\">&laquo;1</a> ... ";
             }
             if ($curpage == $totalpages) {
-                $lastlink = "... <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class=\"snlink\" title=\"{$text['lastpage']}\">$totalpages&raquo;</a>";
+                $lastlink = "... <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink' title=\"{$text['lastpage']}\">$totalpages&raquo;</a>";
             }
         } else {
             if ($curpage == $tngpage) {
-                $pagenav .= " <span class=\"snlink snlinkact\">$curpage</span> ";
+                $pagenav .= " <span class='snlink snlinkact'>$curpage</span> ";
             } else {
-                $pagenav .= " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class=\"snlink\">$curpage</a> ";
+                $pagenav .= " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink'>$curpage</a> ";
             }
         }
     }
     if ($firstlink || $lastlink) {
-        $gotolink = " <span class=\"snlink\"><input type='text' class=\"tngpage minifield\" placeholder=\"{$text['page']} #\" name=\"tngpage\" onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> <input type='button' value=\"{$text['go']}\" class=\"minibutton\" onclick=\"goToPage(this,'$address','$orgtree',$perpage);\"></span>";
+        $gotolink = " <span class='snlink'>";
+        $gotolink .= "<input type='text' class='tngpage minifield' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> ";
+        $gotolink .= "<input type='button' value=\"{$text['go']}\" class='minibutton' onclick=\"goToPage(this,'$address','$orgtree',$perpage);\">";
+        $gotolink .= "</span>";
     } else {
         $gotolink = "";
     }
@@ -574,7 +679,16 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     return $pagenav;
 }
 
-function doMenuItem($index, $link, $image, $label, $page, $thispage) {
+/**
+ * @param $index
+ * @param $link
+ * @param $image
+ * @param $label
+ * @param $page
+ * @param $thispage
+ * @return string
+ */
+function doMenuItem($index, $link, $image, $label, $page, $thispage): string {
     if (isMobile()) {
         $selected = $page == $thispage ? " selected" : "";
         $item = "<option value=\"$link\"$selected>$label</option>\n";
@@ -587,7 +701,11 @@ function doMenuItem($index, $link, $image, $label, $page, $thispage) {
     return $item;
 }
 
-function displayDate($date) {
+/**
+ * @param $date
+ * @return string
+ */
+function displayDate($date): string {
     global $dates;
 
     $newdate = "";
@@ -610,6 +728,11 @@ function displayDate($date) {
 }
 
 //added in 12.1.1 for Register and Ahnentafel reports
+/**
+ * @param $date
+ * @param $datetr
+ * @return string
+ */
 function printDate($date, $datetr) {
     global $dates, $text;
 
@@ -673,11 +796,19 @@ function printDate($date, $datetr) {
     return $newdate;
 }
 
+/**
+ * @param $string
+ * @return string|string[]|null
+ */
 function xmlcharacters($string) {
     $string = str_replace(['&', '"', '\''], ['&amp;', '&quot;', '&apos;'], $string);
     return preg_replace('/&amp;([A-Za-z]+;|#[0-9]+;)/', "&$1", $string);
 }
 
+/**
+ * @param $flag
+ * @return string
+ */
 function generatePassword($flag) {
     $password = "";
     $possible = $flag ? "bcdfghjkmnpqrstvwxyz" : "0123456789bcdfghjkmnpqrstvwxyz";
@@ -695,6 +826,11 @@ function generatePassword($flag) {
     return $password;
 }
 
+/**
+ * @param $noteref
+ * @param string $tree
+ * @return string
+ */
 function getXrefNotes($noteref, $tree = "") {
     global $xnotes_table;
 
@@ -713,7 +849,11 @@ function getXrefNotes($noteref, $tree = "") {
     return $note;
 }
 
-function getDatePrefix($datestr) {
+/**
+ * @param $datestr
+ * @return string
+ */
+function getDatePrefix($datestr): string {
     global $dates;
 
     $prefix = "";
@@ -731,6 +871,11 @@ function getDatePrefix($datestr) {
     return $prefix;
 }
 
+/**
+ * @param $datestr
+ * @param $trueyear
+ * @return mixed|string
+ */
 function getDisplayYear($datestr, $trueyear) {
     global $dates;
 
@@ -753,6 +898,10 @@ function getDisplayYear($datestr, $trueyear) {
     return $display;
 }
 
+/**
+ * @param $row
+ * @return string
+ */
 function getYears($row) {
     if (!isset($row['death'])) $row['death'] = '';
     if (!isset($row['birth'])) $row['birth'] = '';
@@ -777,6 +926,10 @@ function getYears($row) {
     return $years;
 }
 
+/**
+ * @param $row
+ * @return string
+ */
 function justYears($row) {
     if ($row['allow_living'] && $row['allow_private']) {
         $deathdate = $row['deathdate'] ? $row['deathdate'] : $row['burialdate'];
@@ -793,6 +946,10 @@ function justYears($row) {
     return $years;
 }
 
+/**
+ * @param $row
+ * @return false|string
+ */
 function age($row) {
     global $time_offset;
 
@@ -963,6 +1120,15 @@ function age($row) {
     return $age;
 }
 
+/**
+ * @param $persfamID
+ * @param $alttext
+ * @param $rights
+ * @param $height
+ * @param false $type
+ * @param string $gender
+ * @return string
+ */
 function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $gender = "") {
     global $rootpath, $photopath, $mediapath, $mediatypes_assoc;
     global $photosext, $tree, $medialinks_table, $media_table, $admtext, $tngconfig;
@@ -1038,10 +1204,17 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
     return $photo;
 }
 
+/**
+ * @param $place
+ * @return string
+ */
 function placeImage($place) {
     return "<a href=\"placesearch.php?psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"></a>";
 }
 
+/**
+ * @param $area
+ */
 function checkMaintenanceMode($area) {
     global $tngconfig;
 
@@ -1053,6 +1226,10 @@ function checkMaintenanceMode($area) {
     }
 }
 
+/**
+ * @param $string
+ * @return string
+ */
 function cleanIt($string) {
     global $session_charset;
     $string = @htmlspecialchars(preg_replace("/\n/", " ", $string), ENT_QUOTES, $session_charset);
@@ -1067,6 +1244,10 @@ function cleanIt($string) {
     return $string;
 }
 
+/**
+ * @param $string
+ * @return string
+ */
 function filterString($string) {
     $string = strip_tags($string);
     $string = tng_real_escape_string($string);
@@ -1075,6 +1256,11 @@ function filterString($string) {
 }
 
 
+/**
+ * @param $string
+ * @param $length
+ * @return string
+ */
 function truncateIt($string, $length) {
     global $notrunc;
 
@@ -1087,6 +1273,10 @@ function truncateIt($string, $length) {
     return $truncated;
 }
 
+/**
+ * @param $string
+ * @return string
+ */
 function tng_strtoupper($string) {
     global $session_charset;
 
@@ -1101,6 +1291,10 @@ function tng_strtoupper($string) {
     return $string;
 }
 
+/**
+ * @param $string
+ * @return string
+ */
 function tng_strtolower($string) {
     global $session_charset;
 
@@ -1115,6 +1309,10 @@ function tng_strtolower($string) {
     return $string;
 }
 
+/**
+ * @param $text
+ * @return string|string[]
+ */
 function tng_utf8_decode($text) {
     global $session_charset;
 
@@ -1127,6 +1325,10 @@ function tng_utf8_decode($text) {
     return $text;
 }
 
+/**
+ * @param $text
+ * @return string|string[]
+ */
 function utf82iso88592_chris($text) {
     if (function_exists('mb_convert_encoding')) {
         return mb_convert_encoding($text, 'ISO-8859-2', 'UTF-8');
@@ -1137,6 +1339,10 @@ function utf82iso88592_chris($text) {
     );
 }
 
+/**
+ * @param $text
+ * @return string|string[]
+ */
 function utf82iso88592($text) {
     $text = str_replace("\xC4\x85", '�', $text);
     $text = str_replace("\xC4\x84", '�', $text);
@@ -1172,6 +1378,11 @@ function getAllTextPath() {
     }
 }
 
+/**
+ * @param $entityID
+ * @param $type
+ * @return string|string[]
+ */
 function attachPrefixSuffix($entityID, $type) {
     global $tngconfig;
 
@@ -1211,6 +1422,10 @@ function attachPrefixSuffix($entityID, $type) {
     return $entityID;
 }
 
+/**
+ * @param $truedate
+ * @return false|mixed|string
+ */
 function formatInternalDate($truedate) {
     if ($truedate == "0000-00-00") {
         return "";
@@ -1244,6 +1459,9 @@ function formatInternalDate($truedate) {
     return $formatted;
 }
 
+/**
+ * @return bool
+ */
 function isConnected() {
     global $tngconfig;
 

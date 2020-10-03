@@ -69,7 +69,7 @@ $lastcountry = DUMMYPLACE;
 $divctr = $linectr = $colctr = $i = 0;
 
 echo "<div id=\"cemwrapper\">\n";
-echo "<p>&nbsp;&nbsp;<a href=\"browsemedia.php?mediatypeID=headstones\" class=\"snlink\">&raquo; {$text['showallhsr']}</a></p>\n";
+echo "<p>&nbsp;&nbsp;<a href=\"browsemedia.php?mediatypeID=headstones\" class='snlink'>&raquo; {$text['showallhsr']}</a></p>\n";
 echo "<div id=\"cemcontainer\">\n";
 echo "<div id=\"col$colctr\">\n";
 

@@ -1,11 +1,15 @@
-<?php global $text, $flags, $currentuser, $mylanguage, $tngconfig; ?>
+<?php
+
+global $text, $flags, $currentuser, $mylanguage, $tngconfig;
+?>
+<!-- begin footer.php for selected template -->
 </div>
 </td>
 </tr>
 </table>
 
-</td></tr>
-
+</td>
+</tr>
 <tr>
     <td colspan="4" class="tablebottomedge"></td>
 </tr>
@@ -22,4 +26,4 @@
     </td>
 </tr>
 </table>
-<!-- end footer for template 2 -->
+<!-- end footer for selected template -->

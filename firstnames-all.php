@@ -45,10 +45,10 @@ if ($result) {
         }
         if ($firstname['firstchar'] == "") {
             $firstname['firstchar'] = $text['nofirstname'];
-            $linkstr .= "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class=\"snlink\">{$text['nofirstname']}</a> ";
+            $linkstr .= "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>{$text['nofirstname']}</a> ";
         } else {
             if ($firstname['firstchar'] != "_") {
-                $linkstr .= "<a href=\"#char$initialchar\" class=\"snlink\">{$firstname['firstchar']}</a>";
+                $linkstr .= "<a href=\"#char$initialchar\" class='snlink'>{$firstname['firstchar']}</a>";
                 $firstchars[$initialchar] = $firstname['firstchar'];
                 $initialchar++;
             }

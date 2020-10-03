@@ -101,7 +101,7 @@ if ($cemeteryID) {
     }
 
     if ($allow_admin && $allow_edit) {
-        $infoblock .= "<p><a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target='_blank' class=\"snlink\">{$text['editcem']}</a></p>\n";
+        $infoblock .= "<p><a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target='_blank' class='snlink'>{$text['editcem']}</a></p>\n";
     }
 
     if ($cemetery['notes']) {

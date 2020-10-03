@@ -118,9 +118,9 @@ if (!$thumbmaxw) {
 if ($tnggallery) {
     $maxsearchresults *= 2;
     $wherestr .= " AND thumbpath != \"\"";
-    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID\" class=\"snlink\">&raquo; {$text['regphotos']}</a>&nbsp;";
+    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID\" class='snlink'>&raquo; {$text['regphotos']}</a>&nbsp;";
 } else {
-    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID&amp;tnggallery=1\" class=\"snlink\">&raquo; {$text['gallery']}</a>&nbsp;";
+    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID&amp;tnggallery=1\" class='snlink'>&raquo; {$text['gallery']}</a>&nbsp;";
 }
 
 $_SESSION['tng_gallery'] = $tnggallery;
@@ -217,7 +217,7 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showalbu
 $toplinks = "<p class='normal'>";
 $toplinks .= $totrows ? "{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp;&nbsp; " : "";
 $toplinks .= $gallerymsg;
-$toplinks .= $allow_admin && $allow_edit ? "<a href=\"admin_editalbum.php?albumID=$albumID&amp;cw=1\" target='_blank' class=\"snlink\">&raquo; {$text['editalbum']}</a> " : "";
+$toplinks .= $allow_admin && $allow_edit ? "<a href=\"admin_editalbum.php?albumID=$albumID&amp;cw=1\" target='_blank' class='snlink'>&raquo; {$text['editalbum']}</a> " : "";
 
 $pagenav = get_browseitems_nav($totrows, "showalbum.php?albumID=$albumID&amp;tnggallery=$tnggallery&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 $preheader = $pagenav . "</p>\n";
@@ -432,7 +432,7 @@ if ($tnggallery) {
 }
 
 if ($firsthref && !isMobile()) {
-    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref&amp;ss=1\" class=\"snlink\">&raquo; {$text['slidestart']}</a>";
+    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref&amp;ss=1\" class='snlink'>&raquo; {$text['slidestart']}</a>";
 }
 $toplinks .= "</p>";
 //print out the whole shootin' match right here, eh

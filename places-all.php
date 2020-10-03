@@ -46,7 +46,7 @@ if ($result) {
             $linkstr .= " ";
         }
         if ($place['firstchar'] != "" && $place['firstchar'] != "_") {
-            $linkstr .= "<a href=\"#char$initialchar\" class=\"snlink\">{$place['firstchar']}</a> ";
+            $linkstr .= "<a href=\"#char$initialchar\" class='snlink'>{$place['firstchar']}</a> ";
             $firstchars[$initialchar] = $place['firstchar'];
             $initialchar++;
         }

@@ -59,11 +59,11 @@ if ($result) {
         }
         $firstchar = strtoupper($firstchar);
         if ($firstchar == "") {
-            $linkstr .= "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class=\"snlink\">" . $text['nofirstname'] . "</a> ";
+            $linkstr .= "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>" . $text['nofirstname'] . "</a> ";
         } else {
             $urlfirstchar = $firstchar;
             $countstr = $text['firstnamesstarting'] . ": " . $firstchar . " (" . number_format($firstname['lncount']) . " " . $text['totalnames'] . ")";
-            $linkstr .= "<a href=\"firstnames-oneletter.php?firstchar=$urlfirstchar$treestr\" class=\"snlink\" title=\"$countstr\">{$firstchar}</a>";
+            $linkstr .= "<a href=\"firstnames-oneletter.php?firstchar=$urlfirstchar$treestr\" class='snlink' title=\"$countstr\">{$firstchar}</a>";
         }
         $initialchar++;
     }
@@ -104,7 +104,7 @@ if ($result) {
             $col++;
         }
         $linkstr2col[$col] .= "<tr>";
-        $linkstr2col[$col] .= "<td class=\"snlink\">$count.</td>";
+        $linkstr2col[$col] .= "<td class='snlink'>$count.</td>";
         $linkstr2col[$col] .= "<td class=\"nw\"><a href=\"search.php?myfirstname=$firstname2&amp;fnqualify=startswith&amp;mybool=AND$treestr\">{$firstname['lowername']}</a> ($tally_fmt)</td>";
         if (!$col) {
             $linkstr2col[$col] .= "<td class=\"bar-holder\">";

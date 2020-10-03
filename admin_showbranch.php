@@ -61,7 +61,7 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
                     <td colspan="2">
 			<span class="normal"><br>
 <?php
-echo "<p class='adminnav'><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class=\"snlink\">{$admtext['labelbranches']}</a></p>\n";
+echo "<p class='adminnav'><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class='snlink'>{$admtext['labelbranches']}</a></p>\n";
 while ($row = tng_fetch_assoc($brresult)) {
     $rights = determineLivingPrivateRights($row, true, true);
     $row['allow_living'] = $rights['living'];

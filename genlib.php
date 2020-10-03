@@ -163,7 +163,7 @@ function tng_header($title, $flags) {
         mobileHeaderVariants($headElement, $flags);
     } else {
         standardHeaderVariants($headElement, $flags);
-        echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
+//        echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
     }
     if ($tngconfig['maint']) {
         echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";

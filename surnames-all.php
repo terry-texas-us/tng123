@@ -47,10 +47,10 @@ if ($result) {
         }
         if ($surname['firstchar'] == "") {
             $surname['firstchar'] = $text['nosurname'];
-            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class=\"snlink\">{$text['nosurname']}</a> ";
+            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>{$text['nosurname']}</a> ";
         } else {
             if ($surname['firstchar'] != "_") {
-                $linkstr .= "<a href=\"#char$initialchar\" class=\"snlink\">{$surname['firstchar']}</a>";
+                $linkstr .= "<a href=\"#char$initialchar\" class='snlink'>{$surname['firstchar']}</a>";
                 $firstchars[$initialchar] = $surname['firstchar'];
                 $initialchar++;
             }

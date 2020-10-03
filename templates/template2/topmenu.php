@@ -1,4 +1,9 @@
-<?php global $text, $tmp; ?>
+<?php
+
+global $text, $tmp;
+?>
+
+<!-- begin topmenu.php for selected template -->
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> bodytopmenu">
 
 <table class="page w-100" cellspacing="0">
@@ -10,15 +15,16 @@
         <td class="align-top" align="center">
             <table cellspacing="0">
                 <tr>
-                    <td align="center"><a href="index.php" class="toptitle">
+                    <td align="center">
+                        <a href="index.php" class="toptitle">
                             <?php if ($tmp['t2_titlechoice'] == "text") { ?>
                                 <em class="toptitle"><?php echo getTemplateMessage('t2_maintitle'); ?></em>
                             <?php } else { ?>
                                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_headtitleimg']; ?>"
-                                     alt="<?php echo $text['ourpages']; ?>" width="312" height="78" class="noimgborder">
+                                    alt="<?php echo $text['ourpages']; ?>" width="312" height="78" class="noimgborder">
                             <?php } ?>
-
-                        </a></td>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td class="align-bottom" align="center">
@@ -29,13 +35,13 @@
 						<a href="whatsnew.php" class="topmenu"><?php echo $text['mnuwhatsnew']; ?></a>
 						&nbsp;|&nbsp;
 						<a href="browsemedia.php?mediatypeID=photos"
-                           class="topmenu"><?php echo $text['mnuphotos']; ?></a>
+                            class="topmenu"><?php echo $text['mnuphotos']; ?></a>
 						&nbsp;|&nbsp;
 						<a href="browsemedia.php?mediatypeID=histories"
-                           class="topmenu"><?php echo $text['mnuhistories']; ?></a>
+                            class="topmenu"><?php echo $text['mnuhistories']; ?></a>
 						&nbsp;|&nbsp;
 						<a href="browsemedia.php?mediatypeID=headstones"
-                           class="topmenu"><?php echo $text['mnutombstones']; ?></a>
+                            class="topmenu"><?php echo $text['mnutombstones']; ?></a>
 						&nbsp;|&nbsp;
 						<a href="reports.php" class="topmenu"><?php echo $text['mnureports']; ?></a>
 						&nbsp;|&nbsp;
@@ -62,7 +68,7 @@
                         </td>
                         <td><br><br>
                             <input type="image" name="imgsubmit" src="<?php echo $templatepath; ?>img/button-header.jpg"
-                                   style="border:none;" class="menusubmit">
+                                style="border:none;" class="menusubmit">
                         </td>
                     </tr>
                 </table>
@@ -72,11 +78,10 @@
     <tr>
         <td colspan="4" class="tabletopedge"></td>
     </tr>
-
     <tr>
         <td colspan="4" class="tablebkground">
             <table class="w-100" cellspacing="0" cellpadding="10">
                 <tr>
                     <td>
                         <div class="normal">
-                            <!-- end topmenu.php for template 2 -->
+                            <!-- end topmenu.php for selected template -->

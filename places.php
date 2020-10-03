@@ -57,7 +57,7 @@ if ($result) {
         if ($place['firstchar'] != "") {
             $urlfirstchar = urlencode($place['firstchar']);
             $countstr = $text['placesstarting'] . ": " . $place['firstchar'] . " (" . number_format($place['placecount']) . " " . $text['totalnames'] . ")";
-            $linkstr .= "<a href=\"places-oneletter.php?firstchar=$urlfirstchar&amp;{$treestr}offset=$offsetorg&amp;psearch=$psearch\" class=\"snlink\" title=\"$countstr\">{$place['firstchar']}</a> ";
+            $linkstr .= "<a href=\"places-oneletter.php?firstchar=$urlfirstchar&amp;{$treestr}offset=$offsetorg&amp;psearch=$psearch\" class='snlink' title=\"$countstr\">{$place['firstchar']}</a> ";
         }
         $initialchar++;
     }
@@ -105,7 +105,7 @@ if ($result) {
             }
             $chartstr = $col ? "" : "<td width=\"400\"><div style=\"width:{$thiswidth}%;\" class=\"bar rightround\"><a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\" title=\"{$place['myplace']} ($tally_fmt)\"></a></div></td>";
             $linkstr2col[$col] .= "<tr>";
-            $linkstr2col[$col] .= "<td class=\"snlink\" align=\"right\">$count.</td>";
+            $linkstr2col[$col] .= "<td class='snlink' align=\"right\">$count.</td>";
             $linkstr2col[$col] .= "<td>$name$searchlink</td>";
             $linkstr2col[$col] .= "$chartstr";
             $linkstr2col[$col] .= "</tr>\n";
@@ -133,7 +133,7 @@ if ($result) {
         ?>
         </form>
 
-        <br><?php echo "<a href=\"places-all.php?$treestr2\">{$text['showallplaces']}</a> ({$text['sortedalpha']}) &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\" class=\"snlink\">{$text['heatmap']}</a>"; ?>
+        <br><?php echo "<a href=\"places-all.php?$treestr2\">{$text['showallplaces']}</a> ({$text['sortedalpha']}) &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\" class='snlink'>{$text['heatmap']}</a>"; ?>
     </div>
     <br>
     <div class="titlebox">

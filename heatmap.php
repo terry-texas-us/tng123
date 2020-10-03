@@ -6,8 +6,8 @@ include "tng_begin.php";
 
 include "searchlib.php";
 
-$heatmap = $mtype == "h" || !isset($mtype);
-$markermap = $mtype == "m" || !isset($mtype);
+$heatmap = !isset($mtype) || $mtype == "h";
+$markermap = !isset($mtype) || $mtype == "m";
 
 tng_query_noerror(" SET OPTION SQL_BIG_SELECTS = 1 ");
 
@@ -33,9 +33,7 @@ function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $texts
     }
 
     $criteria_count++;
-    if ($criteria_count >= $criteria_limit) {
-        die("sorry");
-    }
+    if ($criteria_count >= $criteria_limit) die("sorry");
     $criteria = "";
     $returnarray = buildColumn($qualifier, $column, $usevalue);
     $criteria .= $returnarray['criteria'];
@@ -47,15 +45,15 @@ function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $texts
 @set_time_limit(0);
 if (!isset($mybool)) $mybool = "AND";
 
-if ($psearch) {
-    $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE \"%$psearch%\" AND latitude != \"\" AND longitude != \"\"";
+if (!empty($psearch)) {
+    $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE '%$psearch%' AND latitude != '' AND longitude != ''";
     $querystring = $text['text_for'] . " " . $text['place'] . " " . $text['contains'] . " " . $psearch;
     if ($tree && !$tngconfig['places1tree']) {
         $query .= " AND gedcom = '$tree'";
         $querystring .= " {$text['cap_and']} " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
     }
     $headline = $text['placelist'] . " | " . $text['heatmap'] . " | " . $psearch;
-} elseif ($firstchar) {
+} elseif (!empty($firstchar)) {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE \"$firstchar%\" AND latitude != \"\" AND longitude != \"\"";
     $querystring = $text['text_for'] . " " . $text['place'] . " " . $text['startswith'] . " " . $firstchar;
     if ($tree && !$tngconfig['places1tree']) {
@@ -63,101 +61,91 @@ if ($psearch) {
         $querystring .= " {$text['cap_and']} " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
     }
     $headline = $text['placelist'] . " | " . $text['heatmap'];
-} elseif ($mylastname || $myfirstname || $mypersonid || $mybirthplace || $mybirthyear || $myaltbirthplace || $mydeathplace || $mydeathyear || $myburialplace || $myburialyear || $mygender || $branch) {
-    $mylastname = trim(stripslashes($mylastname));
-    $myfirstname = trim(stripslashes($myfirstname));
-    $mypersonid = trim(stripslashes($mypersonid));
-    $mybirthplace = trim(stripslashes($mybirthplace));
-    $mybirthyear = trim(stripslashes($mybirthyear));
-    $myaltbirthplace = trim(stripslashes($myaltbirthplace));
-    $myaltbirthyear = trim(stripslashes($myaltbirthyear));
-    $mydeathplace = trim(stripslashes($mydeathplace));
-    $mydeathyear = trim(stripslashes($mydeathyear));
-    $myburialplace = trim(stripslashes($myburialplace));
-    $myburialyear = trim(stripslashes($myburialyear));
+} elseif (!empty($mylastname) || !empty($myfirstname) || !empty($mypersonid) || !empty($mybirthplace) || !empty($mybirthyear) || !empty($myaltbirthplace) || !empty($mydeathplace) || !empty($mydeathyear) || !empty($myburialplace) || !empty($myburialyear) || !empty($mygender) || !empty($branch)) {
+    $mylastname = !empty($mylastname) ? trim(stripslashes($mylastname)) : "";
+    $myfirstname = !empty($myfirstname) ? trim(stripslashes($myfirstname)) : "";
+    $mypersonid = !empty($mypersonid) ? trim(stripslashes($mypersonid)) : "";
+    $mybirthplace = !empty($mybirthplace) ? trim(stripslashes($mybirthplace)) : "";
+    $mybirthyear = !empty($mybirthyear) ? trim(stripslashes($mybirthyear)) : "";
+    $myaltbirthplace = !empty($myaltbirthplace) ? trim(stripslashes($myaltbirthplace)) : "";
+    $myaltbirthyear = !empty($myaltbirthyear) ? trim(stripslashes($myaltbirthyear)) : "";
+    $mydeathplace = !empty($mydeathplace) ? trim(stripslashes($mydeathplace)) : "";
+    $mydeathyear = !empty($mydeathyear) ? trim(stripslashes($mydeathyear)) : "";
+    $myburialplace = !empty($myburialplace) ? trim(stripslashes($myburialplace)) : "";
+    $myburialyear = !empty($myburialyear) ? trim(stripslashes($myburialyear)) : "";
 
     $_SERVER['QUERY_STRING'] = str_replace(['&amp;', '&'], ['&', '&amp;'], $_SERVER['QUERY_STRING']);
-    $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_SERVER['QUERY_STRING'];
+    $currargs = isset($orderloc) && $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_SERVER['QUERY_STRING'];
     $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 
     $querystring = "";
     $allwhere = "";
 
-    if ($mylastname || $lnqualify == "exists" || $lnqualify == "dnexist") {
+    if (!empty($mylastname) || (isset($lnqualify) && ($lnqualify == "exists" || $lnqualify == "dnexist"))) {
         if ($mylastname == $text['nosurname']) {
             addtoQuery($text['lastname'], "mylastname", "lastname = \"\"", "lnqualify", $text['equals'], $text['equals'], $mylastname);
         } else {
             buildCriteria("p.lastname", "mylastname", "lnqualify", $lnqualify, $mylastname, $text['lastname']);
         }
     }
-    if ($myfirstname || $fnqualify == "exists" || $fnqualify == "dnexist") {
+    if (!empty($myfirstname) || (isset($fnqualify) && ($fnqualify == "exists" || $fnqualify == "dnexist"))) {
         buildCriteria("p.firstname", "myfirstname", "fnqualify", $fnqualify, $myfirstname, $text['firstname']);
     }
     if ($mypersonid) {
         $mypersonid = strtoupper($mypersonid);
-        if ($idqualify == "equals" && is_numeric($mypersonid)) {
-            $mypersonid = $personprefix . $mypersonid . $personsuffix;
-        }
+        if ($idqualify == "equals" && is_numeric($mypersonid)) $mypersonid = $tngconfig['personprefix'] . $mypersonid . $tngconfig['personsuffix'];
         buildCriteria("p.personID", "mypersonid", "idqualify", $idqualify, $mypersonid, $text['personid']);
     }
-    if ($mytitle || $tqualify == "exists" || $tqualify == "dnexist") {
+    if (!empty($mytitle) || (isset($tqualify) && ($tqualify == "exists" || $tqualify == "dnexist"))) {
         buildCriteria("p.title", "mytitle", "tqualify", $tqualify, $mytitle, $text['title']);
     }
-    if ($myprefix || $pfqualify == "exists" || $pfqualify == "dnexist") {
+    if (!empty($myprefix) || (isset($pfqualify) && ($pfqualify == "exists" || $pfqualify == "dnexist"))) {
         buildCriteria("p.prefix", "myprefix", "pfqualify", $pfqualify, $myprefix, $text['prefix']);
     }
-    if ($mysuffix || $sfqualify == "exists" || $sfqualify == "dnexist") {
+    if (!empty($mysuffix) || (isset($sfqualify) && ($sfqualify == "exists" || $sfqualify == "dnexist"))) {
         buildCriteria("p.suffix", "mysuffix", "sfqualify", $sfqualify, $mysuffix, $text['suffix']);
     }
-    if ($mynickname || $nnqualify == "exists" || $nnqualify == "dnexist") {
+    if (!empty($mynickname) || (isset($nnqualify) && ($nnqualify == "exists" || $nnqualify == "dnexist"))) {
         buildCriteria("p.nickname", "mynickname", "nnqualify", $nnqualify, $mynickname, $text['nickname']);
     }
-    if ($mybirthplace || $bpqualify == "exists" || $bpqualify == "dnexist") {
+    if (!empty($mybirthplace) || (isset($bpqualify) && ($bpqualify == "exists" || $bpqualify == "dnexist"))) {
         buildCriteria("p.birthplace", "mybirthplace", "bpqualify", $bpqualify, $mybirthplace, $text['birthplace']);
     }
-    if ($mybirthyear || $byqualify == "exists" || $byqualify == "dnexist") {
+    if (!empty($mybirthyear) || (isset($byqualify) && ($byqualify == "exists" || $byqualify == "dnexist"))) {
         buildYearCriteria("p.birthdatetr", "mybirthyear", "byqualify", "p.altbirthdatetr", $byqualify, $mybirthyear, $text['birthdatetr']);
     }
-    if ($myaltbirthplace || $cpqualify == "exists" || $cpqualify == "dnexist") {
+    if (!empty($myaltbirthplace) || (isset($cpqualify) && ($cpqualify == "exists" || $cpqualify == "dnexist"))) {
         buildCriteria("p.altbirthplace", "myaltbirthplace", "cpqualify", $cpqualify, $myaltbirthplace, $text['altbirthplace']);
     }
-    if ($myaltbirthyear || $cyqualify == "exists" || $cyqualify == "dnexist") {
+    if (!empty($myaltbirthyear) || (isset($cyqualify) && ($cyqualify == "exists" || $cyqualify == "dnexist"))) {
         buildYearCriteria("p.altbirthdatetr", "myaltbirthyear", "cyqualify", "", $cyqualify, $myaltbirthyear, $text['altbirthdatetr']);
     }
-    if ($mydeathplace || $dpqualify == "exists" || $dpqualify == "dnexist") {
+    if (!empty($mydeathplace) || (isset($dpqualify) && ($dpqualify == "exists" || $dpqualify == "dnexist"))) {
         buildCriteria("p.deathplace", "mydeathplace", "dpqualify", $dpqualify, $mydeathplace, $text['deathplace']);
     }
-    if ($mydeathyear || $dyqualify == "exists" || $dyqualify == "dnexist") {
+    if (!empty($mydeathyear) || (isset($dyqualify) && ($dyqualify == "exists" || $dyqualify == "dnexist"))) {
         buildYearCriteria("p.deathdatetr", "mydeathyear", "dyqualify", "p.burialdatetr", $dyqualify, $mydeathyear, $text['deathdatetr']);
     }
-    if ($myburialplace || $brpqualify == "exists" || $brpqualify == "dnexist") {
+    if (!empty($myburialplace) || (isset($brpqualify) && ($brpqualify == "exists" || $brpqualify == "dnexist"))) {
         buildCriteria("p.burialplace", "myburialplace", "brpqualify", $brpqualify, $myburialplace, $text['burialplace']);
     }
-    if ($myburialyear || $bryqualify == "exists" || $bryqualify == "dnexist") {
+    if (!empty($myburialyear) || (isset($bryqualify) && ($bryqualify == "exists" || $bryqualify == "dnexist"))) {
         buildYearCriteria("p.burialdatetr", "myburialyear", "bryqualify", "", $bryqualify, $myburialyear, $text['burialdatetr']);
     }
-    if ($mygender) {
-        if ($mygender == "N") {
-            $mygender = "";
-        }
+    if (!empty($mygender)) {
+        if ($mygender == "N") $mygender = "";
         buildCriteria("p.sex", "mygender", "gequalify", $gequalify, $mygender, $text['gender']);
     }
 
     if ($tree) {
-        if ($urlstring) {
-            $urlstring .= "&amp;";
-        }
+        if ($urlstring) $urlstring .= "&amp;";
         $urlstring .= "tree=$tree";
 
-        if ($querystring) {
-            $querystring .= " {$text['cap_and']} ";
-        }
+        if ($querystring) $querystring .= " {$text['cap_and']} ";
 
         $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
 
-        if ($allwhere) {
-            $allwhere = "($allwhere) AND";
-        }
+        if ($allwhere) $allwhere = "($allwhere) AND";
         $allwhere .= " p.gedcom = '$tree'";
 
         if ($branch) {
@@ -175,13 +163,11 @@ if ($psearch) {
         }
     }
 
-    $gotInput = $mytitle || $myprefix || $mysuffix || $mynickname || $mybirthplace || $mydeathplace || $mybirthyear || $mydeathyear || $ecount;
+    $gotInput = !empty($mytitle) || !empty($myprefix) || !empty($mysuffix) || !empty($mynickname) || !empty($mybirthplace) || !empty($mydeathplace) || !empty($mybirthyear) || !empty($mydeathyear) || !empty($ecount);
     $more = getLivingPrivateRestrictions("p", $myfirstname, $gotInput);
 
-    if ($more) {
-        if ($allwhere) {
-            $allwhere = $tree ? "$allwhere AND " : "($allwhere) AND ";
-        }
+    if (!empty($more)) {
+        if ($allwhere) $allwhere = $tree ? "$allwhere AND " : "($allwhere) AND ";
         $allwhere .= $more;
     }
 
@@ -198,14 +184,12 @@ if ($psearch) {
     $query = "SELECT place, latitude, longitude";
     if ($markermap) {
         $query .= ", p.ID, personID, lastname, lnprefix, firstname, living, private, branch, nickname, prefix, suffix, nameorder, title,
-			IF(birthplace, birthplace, altbirthplace) as birthp, birthdate, altbirthdate, p.gedcom ";
+			IF(birthplace, birthplace, altbirthplace) AS birthp, birthdate, altbirthdate, p.gedcom ";
     }
     $query .= "FROM $people_table AS p INNER JOIN $places_table";
 
     $query = $query . $on1 . $allwhere . " UNION " . $query . $on2 . $allwhere;
-    if ($markermap) {
-        $query .= " ORDER BY lastname, firstname";
-    }
+    if ($markermap) $query .= " ORDER BY lastname, firstname";
     $headline = $text['searchresults'] . " | " . $text['heatmap'];
 } else {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE latitude != \"\" AND longitude != \"\"";
@@ -275,17 +259,13 @@ $index = 0;
 $heatOutput = $markerOutput = "";
 foreach ($uniquePlaces as $place) {
     if ($index) {
-        if ($heatmap) {
-            $heatOutput .= ",\n";
-        }
+        if ($heatmap) $heatOutput .= ",\n";
         $markerOutput .= ",\n";
     }
     $people = "";
     if ($heatmap) {
         foreach ($place->people as $person) {
-            if ($people) {
-                $people .= ",";
-            }
+            if ($people) $people .= ",";
 
             if ($session_charset != "UTF-8") {
                 $person->name = utf8_encode($person->name);
@@ -294,19 +274,13 @@ foreach ($uniquePlaces as $place) {
             }
 
             $name = json_encode(trim($person->name));
-            if (!$name) {
-                $name = "\"\"";
-            }
+            if (!$name) $name = "\"\"";
 
             $birthplace = json_encode(trim($person->birthplace));
-            if (!$birthplace) {
-                $birthplace = "\"\"";
-            }
+            if (!$birthplace) $birthplace = "\"\"";
 
             $birthdate = json_encode(trim($person->birthdate));
-            if (!$birthdate) {
-                $birthdate = "\"\"";
-            }
+            if (!$birthdate) $birthdate = "\"\"";
 
             $people .= "{";
             $people .= "\"name\":$name,";
@@ -326,24 +300,16 @@ foreach ($uniquePlaces as $place) {
     }
 
     $thisplace = json_encode($thisplace);
-    if (!$thisplace || $thisplace == "null") {
-        $thisplace = "\"\"";
-    }
+    if (!$thisplace || $thisplace == "null") $thisplace = "\"\"";
 
     $notes = json_encode($notes);
-    if (!$notes) {
-        $notes = "\"\"";
-    }
+    if (!$notes) $notes = "\"\"";
 
     $latitude = json_encode(trim($place->latitude));
-    if (!$latitude) {
-        $latitude = 0;
-    }
+    if (!$latitude) $latitude = 0;
 
     $longitude = json_encode(trim($place->longitude));
-    if (!$longitude) {
-        $longitude = 0;
-    }
+    if (!$longitude) $longitude = 0;
 
     $markerOutput .= "{\"place\":$thisplace,\"latitude\":$latitude,\"longitude\":$longitude,\"people\":[{$people}],\"notes\":$notes}";
     $index++;
@@ -361,39 +327,38 @@ if ($markermap) {
             "places": [<?php echo $markerOutput; ?>]
         }
         <?php if ($markermap) { ?>
-            var markerClusterer = null;
-            var infoWindow = new google.maps.InfoWindow();
-            var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
+        var markerClusterer = null;
+        var infoWindow = new google.maps.InfoWindow();
+        var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
         <?php } ?>
 
         function refreshMap() {
             <?php if ($markermap) { ?>
-                var markers = [];
-                var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(24, 32));
+            var markers = [];
             <?php } ?>
 
             for (var i = 0; i < data.places.length; i++) {
                 var latLng = new google.maps.LatLng(data.places[i].latitude, data.places[i].longitude)
 
                 <?php if ($markermap) { ?>
-                    var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
-                    var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(24, 32));
+                var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png';
+                var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(24, 32));
 
-                    var marker = new google.maps.Marker({
-                        'position': latLng
-                    });
+                var marker = new google.maps.Marker({
+                    'position': latLng
+                });
 
-                    var fn = markerClickFunction(data.places[i], latLng);
-                    google.maps.event.addListener(marker, 'click', fn);
-                    markers.push(marker);
+                var fn = markerClickFunction(data.places[i], latLng);
+                google.maps.event.addListener(marker, 'click', fn);
+                markers.push(marker);
                 <?php } ?>
                 bounds.extend(latLng);
             }
 
             <?php if ($markermap) { ?>
-                markerClusterer = new MarkerClusterer(map, markers, {
-                    imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
-                });
+            markerClusterer = new MarkerClusterer(map, markers, {
+                imagePath: 'img/m'
+            });
             <?php } ?>
 
             if (data.places.length > 1) {
@@ -404,7 +369,7 @@ if ($markermap) {
                 });
                 map.fitBounds(bounds);
                 map.setCenter(bounds.getCenter());
-            } else if (data.places.length == 1) {
+            } else if (data.places.length === 1) {
                 map.setCenter(bounds.getCenter());
                 map.setZoom(8);
             } else {
@@ -414,40 +379,38 @@ if ($markermap) {
         }
 
         <?php if ($markermap) { ?>
-            var markerClickFunction = function (place, latlng) {
-                return function (e) {
-                    e.cancelBubble = true;
-                    e.returnValue = false;
-                    if (e.stopPropagation) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                    }
+        var markerClickFunction = function (place, latlng) {
+            return function (e) {
+                e.cancelBubble = true;
+                e.returnValue = false;
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }
 
-                    var people = "";
-                    for (var i = 0; i < place.people.length; i++) {
-                        people += place.people[i].name;
-                        if (place.people[i].birthdate)
-                            people += " (" + place.people[i].birthdate + ")";
-                        people += "<br>";
-                    }
-                    var infoHtml = '<div class="info"><h4 style="margin-top:0;"><a href="' + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
-                    if (people != "")
-                        infoHtml += '<div class="info-body">' + people + '</div>';
-                    if (place.notes != "")
-                        infoHtml += '<div class="info-body">' + place.notes + '</div>';
-                    infoHtml += '</div>';
+                var people = "";
+                for (var i = 0; i < place.people.length; i++) {
+                    people += place.people[i].name;
+                    if (place.people[i].birthdate)
+                        people += " (" + place.people[i].birthdate + ")";
+                    people += "<br>";
+                }
+                var infoHtml = '<div class="info"><h4 style="margin-top:0;"><a href="' + 'placesearch.php?psearch=' + place.place + '">' + place.place + '</a></h4>';
+                if (people !== "") infoHtml += '<div class="info-body">' + people + '</div>';
+                if (place.notes !== "") infoHtml += '<div class="info-body">' + place.notes + '</div>';
+                infoHtml += '</div>';
 
-                    infoWindow.setContent(infoHtml);
-                    infoWindow.setPosition(latlng);
-                    infoWindow.open(map);
-                };
+                infoWindow.setContent(infoHtml);
+                infoWindow.setPosition(latlng);
+                infoWindow.open(map);
             };
+        };
 
-            function clearClusters(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                markerClusterer.clearMarkers();
-            }
+        function clearClusters(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            markerClusterer.clearMarkers();
+        }
         <?php } ?>
 
         function ShowTheMap() {
@@ -460,21 +423,21 @@ if ($markermap) {
             bounds = new google.maps.LatLngBounds();
 
             <?php if ($heatmap) { ?>
-                var heatMapData = [<?php echo $heatOutput; ?>];
+            var heatMapData = [<?php echo $heatOutput; ?>];
 
-                var heatmap = new google.maps.visualization.HeatmapLayer({
-                    data: heatMapData
-                });
-                heatmap.setOptions({radius: heatmap.get('20')});
-                heatmap.setMap(map);
+            var heatmap = new google.maps.visualization.HeatmapLayer({
+                data: heatMapData
+            });
+            heatmap.setOptions({radius: heatmap.get('20')});
+            heatmap.setMap(map);
             <?php } ?>
 
             <?php if ($markermap) { ?>
-                var refresh = document.getElementById('refresh');
-                google.maps.event.addDomListener(refresh, 'click', refreshMap);
+            var refresh = document.getElementById('refresh');
+            google.maps.event.addDomListener(refresh, 'click', refreshMap);
 
-                var clear = document.getElementById('clear');
-                google.maps.event.addDomListener(clear, 'click', clearClusters);
+            var clear = document.getElementById('clear');
+            google.maps.event.addDomListener(clear, 'click', clearClusters);
             <?php } ?>
             refreshMap();
 
@@ -492,12 +455,12 @@ if ($markermap) {
     </script>
 
     <div id="map" class="rounded10" style="width: 100%; height: 500px;"></div>
-    <?php if ($markermap) { ?>
-        <br>
-        <div id="inline-actions">
-            <input id="refresh" type="button" value="<?php echo $text['refreshmap']; ?>" class="item">
-            <a href="#" id="clear"><?php echo $text['remnums']; ?></a>
-        </div>
-    <?php } ?>
+<?php if ($markermap) { ?>
+    <br>
+    <div id="inline-actions">
+        <input id="refresh" type="button" value="<?php echo $text['refreshmap']; ?>" class="item">
+        <a href="#" id="clear"><?php echo $text['remnums']; ?></a>
+    </div>
+<?php } ?>
 
 <?php tng_footer(""); ?>

@@ -230,25 +230,25 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
     if ($showlinks) {
         if ($allow_admin && $allow_media_edit) {
-            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target='_blank' class=\"snlink\">&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target='_blank' class='snlink'>&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
         }
 
         if ($albumlinkID) {
             $offset = floor($page / $maxsearchresults) * $maxsearchresults;
-            $pagenav .= "<a href=\"showalbum.php?albumID=$albumID&amp;offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class=\"snlink\">&raquo; $albumname</a>  &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"showalbum.php?albumID=$albumID&amp;offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink'>&raquo; $albumname</a>  &nbsp;&nbsp;&nbsp;";
         } elseif (!$personID) {
             $offset = floor($page / $maxsearchresults) * $maxsearchresults;
-            $pagenav .= "<a href=\"browsemedia.php?" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class=\"snlink\">&raquo; {$text['showall']}</a>  &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"browsemedia.php?" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink'>&raquo; {$text['showall']}</a>  &nbsp;&nbsp;&nbsp;";
         } else {
             if ($linktype == "F") {
-                $pagenav .= "<a href=\"familygroup.php?familyID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['groupsheet']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"familygroup.php?familyID=$personID&amp;tree=$tree\" class='snlink'>&raquo; {$text['groupsheet']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "S") {
-                $pagenav .= "<a href=\"showsource.php?sourceID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['source']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showsource.php?sourceID=$personID&amp;tree=$tree\" class='snlink'>&raquo; {$text['source']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "R") {
-                $pagenav .= "<a href=\"showrepo.php?repoID=$personID&amp;tree=$tree\" class=\"snlink\">&raquo; {$text['repository']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showrepo.php?repoID=$personID&amp;tree=$tree\" class='snlink'>&raquo; {$text['repository']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "L") {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree=$tree";
-                $pagenav .= "<a href=\"placesearch.php?psearch=$personID$treestr\" class=\"snlink\">&raquo; {$text['place']}: $personID</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"placesearch.php?psearch=$personID$treestr\" class='snlink'>&raquo; {$text['place']}: $personID</a>  &nbsp;&nbsp;&nbsp;";
             }
         }
     }
