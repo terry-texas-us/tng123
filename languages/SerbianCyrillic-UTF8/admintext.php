@@ -443,8 +443,8 @@ switch ($textpart) {
         $admtext['leaveblankphoto'] = "Оставите ово поље празно ако се фајл већ отпремио/послат у фолдер са фотографијама.";
         $admtext['thumbconflicts'] = "Сличица није генерисана због лоше путање, правом или са проблемом у имену.";
         $admtext['showmap'] = "Прикажи мапу гробља и форографије кад год се појави ова слика.";
-        $admtext['bodytext'] = "<strong>ИЛИ</strong><br/>Тело текста";
-        $admtext['usenl'] = "Претвори линију паузе у ХТМЛ на приказу";
+    $admtext['bodytext'] = "<strong>ИЛИ</strong><br>Тело текста";
+    $admtext['usenl'] = "Претвори линију паузе у ХТМЛ на приказу";
         $admtext['newwin'] = "Отвори нови прозор";
         $admtext['modifymedia'] = "Измена постојећег Медија";
         $admtext['addnewmedia'] = "Додај Нови Медиј";

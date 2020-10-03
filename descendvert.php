@@ -131,7 +131,7 @@ function getParents($personID) {
             $husband['allow_private'] = $rights['private'];
             $husband['name'] = getName($husband);
 
-            $extra = "<br/><p style=\"margin-top: 5px;\">" . getGenderIcon("M", $pedigree['gendalign']) . " " . justYears($husband) . "</p>";
+            $extra = "<br><p style=\"margin-top: 5px;\">" . getGenderIcon("M", $pedigree['gendalign']) . " " . justYears($husband) . "</p>";
             $parentinfo .= "<tr><td class='align-top'><a href=\"$descendvert_url" . "personID={$parents['husband']}&amp;tree=$tree&amp;generations=$generations\">{$pedigree['uparrowlink']}<span class=\"normal\">{$husband['name']}</span></a>{$extra}</td></tr>\n";
             tng_free_result($presult);
         }
@@ -143,7 +143,7 @@ function getParents($personID) {
             $wife['allow_private'] = $rights['private'];
             $wife['name'] = getName($wife);
 
-            $extra = "<br/><p style=\"margin-top: 5px;\">" . getGenderIcon("F", $pedigree['gendalign']) . " " . justYears($wife) . "</p>";
+            $extra = "<br><p style=\"margin-top: 5px;\">" . getGenderIcon("F", $pedigree['gendalign']) . " " . justYears($wife) . "</p>";
             $parentinfo .= "<tr><td class='align-top'><a href=\"$descendvert_url" . "personID={$parents['wife']}&amp;tree=$tree&amp;generations=$generations\">{$pedigree['uparrowlink']}<span class=\"normal\">{$wife['name']}</span></a>{$extra}</td></tr>\n";
             tng_free_result($presult);
         }
@@ -213,7 +213,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         if ($vitalinfo) {
             $mouseover .= "showPopup($numboxes,$left,{$pedigree['boxheight']});";
             $mouseout .= "setTimer($numboxes);";
-            //$boxarrow = "<br/>{$pedigree['rightarrow']}";
+            //$boxarrow = "<br>{$pedigree['rightarrow']}";
 
             $hiddenbox = "<div class=\"popup\" id=\"popup$numboxes\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; top:" . ($top - $pedigree['borderwidth'] + round($pedigree['shadowoffset'] / 2)) . "px;z-index:8\" onmouseover=\"cancelTimer($numboxes)\" onmouseout=\"setTimer($numboxes)\">\n";
             $hiddenbox .= "<div><div class=\"tngshadow popvdescinner\"><div class=\"pboxpopupdiv\">\n";
@@ -239,14 +239,14 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             $imagestr = "<img src=\"{$photoInfo['ref']}\" border='0' style=\"max-width: 100%; max-height: 70px; margin-bottom: 10px;\" alt=\"\" class=\"thumb\" />";
             if ($photoInfo['link'])
                 $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
-            $boxstr .= "$imagestr<br/>";
+            $boxstr .= "$imagestr<br>";
         }
     }
     //echo "name=$person[name], top=$top<br>\n";
 
     // name info
     if (!empty($person['name'])) {
-        $extra = "<br/><p style=\"margin-top: 5px;\">" . getGenderIcon($person['sex'], $pedigree['gendalign']) . " " . justYears($person) . getNewChart($person['personID']) . "</p>";
+        $extra = "<br><p style=\"margin-top: 5px;\">" . getGenderIcon($person['sex'], $pedigree['gendalign']) . " " . justYears($person) . getNewChart($person['personID']) . "</p>";
 
         $boxstr .= "<span style=\"font-size:{$pedigree['boxnamesize']}" . "pt;\">{$pedigree['spacer']}<a href=\"$getperson_url" . "personID={$person['personID']}&amp;tree=$tree" . "\">{$person['name']}</a>{$extra}</span>$boxarrow</div></div>\n";
     } else
@@ -322,7 +322,7 @@ function doIndividual($person, $level) {
         $originaltop = $leftmarker[$level];
         //if( $vslots[$famrow[familyID]] > 2 )
         //$leftmarker[$level] += 100 + intval(($pedigree[diff]) * ($vslots[$famrow[familyID]] - $vendspouses[$famrow[familyID]] - 1) / 2);
-        //echo "fam=$famrow[familyID], ve=" .$vendspouses[$famrow[familyID]] . ", vs= " . $vslots[$famrow[familyID]] . "<br />\n";
+        //echo "fam=$famrow[familyID], ve=" .$vendspouses[$famrow[familyID]] . ", vs= " . $vslots[$famrow[familyID]] . "<br>\n";
 
         //get children
 

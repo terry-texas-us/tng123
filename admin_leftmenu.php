@@ -4,7 +4,7 @@ global $admtext;
 
 $output .= "<div id='adminslidebar' onclick='toggleAdminMenu();'>\n";
 $arrow = isset($_SESSION['tng_menuhidden']) && $_SESSION['tng_menuhidden'] == "on" ? "ArrowRight.gif" : "ArrowLeft.gif";
-$output .= "<img src='img/{$arrow}' id='dirarrow' style='float: right; margin-top: 160px;'><br/>\n";
+$output .= "<img src='img/{$arrow}' id='dirarrow' style='float: right; margin-top: 160px;'><br>\n";
 $output .= "</div>\n";
 
 if ($allow_edit || $allow_add || $allow_delete) {
@@ -29,7 +29,7 @@ if ($allow_edit || $allow_delete) {
 if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
     $output .= "<a href='admin_misc.php' class='lightlink2 leftlink'>{$admtext['misc']}</a>\n";
 }
-$output .= "<hr class='admindivider'/><br/>";
+$output .= "<hr class='admindivider'><br>";
 if ($allow_edit && $allow_add && $allow_delete && !$assignedbranch) {
     $output .= "<a href='admin_dataimport.php' class='lightlink2 leftlink'>{$admtext['datamaint']}</a>\n";
 }
@@ -47,4 +47,4 @@ if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
     $output .= "<a href='admin_utilities.php' class='lightlink2 leftlink'>{$admtext['backuprestore']}</a>\n";
     $output .= "<a href='admin_modhandler.php' class='lightlink2 leftlink'>{$admtext['modmgr']}</a>\n";
 }
-$output .= "<br/>";
+$output .= "<br>";

@@ -1,0 +1,1116 @@
+/* templatestyle.css for template 20 overrides to TNG genstyle.css   */
+
+/* body: describes page background color and all non-table text not governed by any other style */
+body {
+    margin-top: 8px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+}
+
+.normal {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+/* header: heading text */
+.header, .plainheader, .fieldname, .whiteheader, .whitetext, .whitesubhead {
+    color: #262626;
+}
+
+/* For links on dark background changed to light background and dark blue text */
+.lightlink:link, .lightlink:visited {
+    font-weight: bold;
+    color: #009;
+}
+
+.lightlink:hover, .lightlink:active {
+    /* font-weight: bold; */
+    color: #8b4513;
+}
+
+/* For white-only links on dark background changed to lightbackground and dark blue text */
+.lightlink2:link, .lightlink2:visited {
+    /* font-weight: bold;  */
+    color: #009;
+}
+
+.lightlink2:hover, .lightlink2:active {
+    /* font-weight: bold;  */
+    color: #8b4513;
+    text-decoration: none;
+}
+
+a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active {
+    color: #8b4513;
+    text-decoration: none;
+}
+
+h3, h3 a:link, h3 a:visited, a.emphasis:link, a.emphasis:visited {
+    color: #262626;
+    text-decoration: none;
+}
+
+.publicback {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url(../img/back.gif);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: top left;
+    border: 0;
+    width: 94%;
+}
+
+/* CSS for Dynamic Drive Accordion menu */
+.arrowlistmenu .menuheader { /*CSS class for menu headers in general (expanding or not!)*/
+    font: bold 13px Arial;
+    color: #00008b;
+    background-color: #9fbfdf;
+    margin-bottom: 10px; /*bottom spacing between header and rest of content*/
+    padding: 4px 0 4px 10px; /*header text is indented 10px*/
+    cursor: hand;
+    cursor: pointer;
+}
+
+.statusicon { /*CSS for icon image that gets dynamically added to headers*/
+    position: relative;
+    float: right;
+    top: 0px;
+    right: 0px;
+    border: none;
+}
+
+.arrowlistmenu .openheader { /*CSS class to apply to expandable header when it's expanded*/
+    background-color: #9fbfdf;
+}
+
+.arrowlistmenu ul { /*CSS for UL of each sub menu*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 8px; /*bottom spacing between each UL and rest of content*/
+}
+
+.arrowlistmenu ul li {
+    padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.arrowlistmenu ul li a {
+    color: #a70303;
+    background: url(arrowbullet.png) no-repeat center left; /*custom bullet list image*/
+    display: block;
+    padding: 2px 0;
+    padding-left: 19px; /*link text is indented 19px*/
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #dadada;
+    font-size: 90%;
+}
+
+.arrowlistmenu ul li a:visited {
+    color: #a70303;
+}
+
+.arrowlistmenu ul li a:hover { /*hover state CSS*/
+    color: #a70303;
+    background-color: #f3f3f3;
+}
+
+/* bullet: bullet text within column or row title sections */
+.bullet {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #00008b;
+}
+
+/* Template 20 Overrides for Home Page */
+
+/* Remove background-image from footer  */
+.footer {
+    background-image: none;
+    background-color: white;
+}
+
+
+/* change background image */
+.indexfooter {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 90%; /* total width of all the columns */
+}
+
+.labelcol, .fieldname {
+    color: #009;
+}
+
+#mast {
+    background-color: #b6d1e4;
+}
+
+.mhead ul li {
+    color: #009;
+}
+
+/* leftnavlink added for links in left sidebar menu */
+
+a.leftnavlink:hover, a.leftnavlink:active {
+    background-color: #9fbfdf;
+    color: #009;
+}
+
+a.leftnavlink:link, a.leftnavlink:visited {
+    color: #009;
+}
+
+.leftnavlink {
+    display: block;
+    padding: 1px 1px 1px 2px;
+    text-decoration: none;
+}
+
+h3, .fieldname, .leftnavlink, .largeheader, .subheadbold, .emphasis {
+    font-weight: bold;
+}
+
+.largeheader {
+    color: #333;
+}
+
+/* link: normal links, active: links in use */
+a:link, a:active, div.icons a {
+    color: #009;
+}
+
+/* background color for admin menu items while active*/
+a.admincell:hover, a.leftlink:hover {
+    background-color: #9fbfdf;
+}
+
+/* fieldnameback: background color for column and row title sections */
+/* sideback: background color for side and top frames */
+.LB_closeAjaxWindow {
+    background-color: #9fbfdf;
+}
+
+.sideback, .fieldnameback {
+    background-color: #d0e0f0;
+}
+
+.LB_window {
+    background: #e4edf6;
+}
+
+.bar {
+    background-color: #9fbfdf;
+}
+
+.sideback {
+    background-image: none;
+}
+
+/* page: is defined to replace the bgcolor=#FFFFFF; in the top table for the page */
+.page {
+    background-color: #fff;
+    margin-top: 0px;
+    text-align: left;
+    margin-right: 0px;
+    border-collapse: collapse;
+    padding: 0px;
+    width: 100%; /* to center, change to 900px or 90% */
+}
+
+/* line: is defined to replace the bgcolor="#999966" used with a line gif image (khaki.gif in template 20)*/
+.line {
+    background-image: url(../img/khaki.gif);
+    height: 1px;
+    border-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+
+/* footer added to replace footer fonts and links */
+.footer {
+    margin-top: 0px;
+    marging-bottom: 5px;
+    font-size: 10px;
+    text-align: center;
+    color: #000;
+}
+
+a.footer:link {
+    color: #339;
+}
+
+a.footer:visited {
+    color: #339;
+}
+
+a.footer:hover {
+    color: #8b4513;
+}
+
+.databack {
+    background-color: #bcd;
+}
+
+/* added in TNG 10.1 for alternate row striping to databack */
+.databackalt {
+    background-color: #bdd;
+}
+
+.togglehead {
+    color: #009;
+}
+
+.adminsubmsg, .admintotal {
+    color: #6161ff;
+}
+
+#tngnav a {
+    font: 10px arial, helvetica, sans-serif;
+}
+
+/* additional styles added for XHTML 1.0 Strict validation */
+/* featureimg defined to replace width="40" height="45" border="1" hspace="8" align="left" in index.php for feature images */
+.featureimg {
+    width: 40px;
+    height: 45px;
+    margin-left: 8px;
+    margin-right: 8px;
+    float: left;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 1px 1px 3px 0px #333;
+    border-radius: 4px;
+}
+
+/*  margin-left for featuretext is used to align the text completely to the right of the image 
+    instead of floating it around the image. It is defined as the featureimg width + left and right margins 
+	+ border width (1 px on each side), so it is 40 + 8 + 8 +1 +1 = 58 pixels */
+.featuretext {
+    margin-left: 58px;
+}
+
+/* emailimg added to replace width="40" height="26" border="0" align="left" hspace="8" vspace="2" for email.gif */
+.emailimg {
+    width: 40px;
+    height: 26px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    float: left;
+    border: 0px;
+}
+
+/* searchimg added to replace width="109" height="35" vspace="0" border="0" search4.gif */
+.searchimg {
+
+    padding-left: 7px;
+    border: 0px;
+    font-size: 18pt;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #f8f8b2;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+    filter: dropshadow(color=#000, offx=1, offy=1);
+}
+
+/* banner added to replace width="468" height="100" vspace="5" border="0" align="left" for title.gif */
+.banner {
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 5px;
+    border: 0px;
+    float: left;
+    width: 60%; /* was 468px;  */
+    height: 100px;
+}
+
+/* used for optional banner text title 1 */
+.bannertitle1 {
+    text-align: left;
+    margin-top: 10px;
+    line-height: 38px;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+    color: #009;
+}
+
+/* used for optional banner text title 2 */
+.bannertitle2 {
+    text-align: left;
+    margin-top: 12px;
+    line-height: 48px;
+    font-size: 48px;
+    font-weight: bold;
+    font-style: italic;
+    color: #996;
+}
+
+.leftphoto {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 4px 0px #333;
+    border-radius: 6px;
+    max-height: 100px;
+}
+
+.rightphoto {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 4px 0px #333;
+    border-radius: 6px;
+    max-height: 100px;
+}
+
+.imgright {
+    float: right;
+}
+
+/* blueemphasis: added to replace <strong> for welcome message */
+.blueemphasis {
+    font-weight: bold;
+    color: #009;
+    text-decoration: none;
+}
+
+.yellowemphasis, .emphasis {
+    font-weight: bold;
+    color: #262626;
+}
+
+.yellow {
+    color: #900;
+}
+
+/* featurelink added for links in feature section */
+a.featurelink:hover, a.featurelink:active {
+    background-color: #9fbfdf;
+    color: #009;
+}
+
+a.featurelink:link, a.featurelink:visited {
+    color: #009;
+}
+
+.featurelink a {
+    display: block;
+    ` padding: 1px 1px 1px 2px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:link, a:hover, a:visited, a:active {
+    text-decoration: none;
+    color: #009;
+}
+
+/*  home page sections replaces valign="top" width="300" */
+.section {
+    width: 50%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 5px;
+    vertical-align: top;
+}
+
+.leftsection {
+    clear: left;
+    float: left;
+    width: 46%;
+    padding-left: 10px;
+    display: inline;
+}
+
+.rightsection {
+    float: right;
+    width: 46%;
+    padding-right: 20px;
+    display: inline;
+}
+
+.scroll-to-top {
+    background-color: #abab76;
+}
+
+/* column container */
+.content {
+    position: relative; /* This fixes the IE7 overflow hidden bug */
+    clear: both;
+    float: left;
+    width: 100%; /* width of whole page */
+}
+
+.snlink {
+    border-bottom: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    background-color: #cc9;
+    color: #009;
+}
+
+.adminnav .snlink {
+    background-color: #cc9;
+}
+
+a.snlink:hover, .snlinkact, .adminnav .snlinkact {
+    background-color: #b6d1e4;
+    color: #009;
+}
+
+
+.titlebox {
+    background-color: #f0ffff; /* azure - was F5FAFF; */
+}
+
+div.innercontainer {
+    border-bottom: 1px solid #999;
+}
+
+ul.tngdd a {
+    color: #009;
+}
+
+ul.tngdd ul li a {
+    background-color: #eec;
+}
+
+ul.tngdd ul li a:hover {
+    background-color: #8fc9ff;
+}
+
+ul.tngdd .menulink {
+    background: #cc9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+    background-image: url(../img/ArrowDown.gif), from(#e5e5b1), to(#c5c591));
+    background-image: url(../img/ArrowDown.gif),
+    background-image: url(../img/ArrowDown.gif),
+    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e5e5b1, #c5c591);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #e5e5b1, #c5c591);
+    background-position: 2px 8px, 0px 0px;
+    background-repeat: no-repeat;
+}
+
+ul.tngdd .menulink, ul.tngdd .langmenu {
+    border-bottom-color: #999;
+    border-right-color: #999;
+}
+
+ul.tngdd .menulink:hover, ul.tngdd .menuhover {
+    border-bottom: 1px solid #444;
+    border-right: 1px solid #444;
+    color: #009;
+    background: #9fbfdf url(../img/arrowdown2.gif) 2px 8px no-repeat;
+}
+
+/* databack: background color for data areas */
+div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
+    background-color: #cc9;
+    background-image: linear-gradient(top, #e5e5b1, #c5c591);
+}
+
+.databack {
+    background-color: #ecf9ff;
+}
+
+ul.tngdd .sub {
+    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat
+}
+
+ul.tngdd .topline {
+    border-top: 1px solid #777
+}
+
+/* Remove background-image from footer  */
+.footer {
+    background-image: none;
+    background-color: #b6d1e4;
+    color: #009;
+}
+
+/* remove rounded corners for thumbnails, but allow for small image */
+.thumb {
+    box-shadow: 1px 1px 1px 0px #777;
+    border-radius: none;
+}
+
+.smallimg {
+    box-shadow: 1px 1px 1px 0px #777;
+    border-radius: 5px;
+}
+
+/* remove shadow for .leftlink, .whitetext, admincell, and .lightlink2
+	but allow for shadow for whiteheader and whitesubhead */
+.leftlink, .whitetext, .lightlink2, a.admincell {
+    text-shadow: 0px 0px 0px #000;
+    filter: dropshadow(color=#000, offx=0, offy=0);
+}
+
+.whiteheader, .whitesubhead {
+    text-shadow: 1px 1px 0px #333;
+    filter: dropshadow(color=#333, offx=1, offy=1);
+}
+
+/* background color for admin menu items while active*/
+.leftlink {
+    font-weight: bold;
+}
+
+.largeheader {
+    color: #333;
+}
+
+/* admin page overrides  */
+.mainbox {
+    border: 1px solid silver;
+    background-color: #b7cfe7;
+    padding: 1px;
+    /* min-width:80%; */
+}
+
+.admincol {
+    vertical-align: top;
+    width: 50%;
+    min-width: 400px;
+}
+
+/* add shadow and rounded corners to random photo classes */
+.indexphoto {
+    box-shadow: 1px 1px 4px 0px #333;
+    border-radius: 8px;
+}
+
+.indexphototable {
+    clear: both;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #aaa;
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Help screen overrides */
+p.menu {
+    color: #333;
+}
+
+.tblback {
+    background-color: #b7cfe7;
+}
+
+.fambackground {
+    background-color: #cc9;
+}
+
+/* following added as replacement for table layout formatting */
+h1, h2, h3 {
+    margin: .8em 0 .2em 0;
+    padding: 0;
+}
+
+p {
+    margin: .4em 0 .8em 0;
+    padding: 0;
+}
+
+/* Header styles */
+#header {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+#header {
+    background-color: #b6d1e4;
+}
+
+#header p,
+#header h1,
+#header h2 {
+    padding: .4em 15px 0 15px;
+    margin: 0;
+}
+
+#header ul {
+    clear: left;
+    float: left;
+    width: 100%;
+    list-style: none;
+    margin: 10px 0 4px 0;
+    padding: 0;
+}
+
+#header ul li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header ul li a {
+    display: block;
+    float: left;
+    margin: 0 0 0 1px;
+    padding: 3px 10px;
+    text-align: center;
+    background: #cc9;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    line-height: 1.3em;
+    border-radius: 8px;
+}
+
+#header ul li a:hover {
+    background: #369;
+    color: #fff;
+}
+
+#header ul li a.active,
+#header ul li a.active:hover {
+    color: #fff;
+    background: #000;
+    font-weight: bold;
+}
+
+#header ul li a span {
+    display: block;
+}
+
+/* 'widths' sub menu */
+#layoutdims {
+    clear: both;
+    background: #eee;
+    border-top: 4px solid #000;
+    margin: 0;
+    padding: 6px 15px !important;
+    text-align: right;
+}
+
+/* column container */
+.colmask {
+    position: relative; /* This fixes the IE7 overflow hidden bug */
+    clear: both;
+    float: left;
+    width: 100%; /* width of whole page */
+    overflow: hidden; /*	 This chops off any overhanging divs */
+}
+
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+    float: left;
+    width: 100%; /* width of page */
+    position: relative;
+}
+
+.col1,
+.col2,
+.col3 {
+    float: left;
+    position: relative;
+    padding: 0 0 1em 0;
+    /* was 1em no left and right padding on columns, we just make them narrower instead
+        only padding top and bottom is included here, make it whatever value you need */
+    padding: .5em; /* was 5em */
+}
+
+/* 3 Column settings */
+.threecol {
+    background: #fff; /* right column background colour */
+}
+
+.threecol .colmid {
+    right: 44%; /* 42% width of the right column */
+    background: #fff; /* center column background colour */
+}
+
+.threecol .colleft {
+    right: 44%; /* 42% width of the middle column */
+    background-color: #b6d1e4;
+}
+
+.threecol .col1 {
+    width: 40%; /* width of center column content (column width minus padding on either side) */
+    left: 88%; /* 86% 100% - left column (col2 14%) plus left padding of center column */
+}
+
+.threecol .col2 {
+    width: 12%; /* 14% Width of left column content (column width minus padding on either side) */
+    left: 88%; /* 86% width of (right column) plus (center column left and right padding) plus (left column left padding) */
+    background-color: #b6d1e4;
+    /* margin-left: 5px; */
+    vertical-align: top;
+}
+
+.threecol .col3 {
+    width: 40%; /* 40% Width of right column content (column width minus padding on either side) */
+    left: 88%;
+    /* ((100-14 = 86%) + 2 = 88%) - note that only left padding was included
+Original comments were - Please make note of the brackets here:
+(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+
+/* 2 Column (left menu) settings */
+.t20leftmenu {
+    background: #fff; /* right column background colour */
+}
+
+.t20leftmenu .colleft {
+    right: 84%; /* 87 86% right column width - was 75% in holy grail 2-column */
+    background: #b6d1e4; /* left column background colour */
+}
+
+.t20leftmenu .col1 {
+    width: 81%; /* 82% right column content width - was 71% in holy grail 2-column */
+    left: 87%;
+    /* 88 86% 100% plus left column left padding - moves column to right on page
+- was 102% in holy grail 2-column*/
+}
+
+.t20leftmenu .col2 {
+    width: 13%;
+    /*  110px 12% 14% left column content width (column width minus left and right padding)
+                    - was 21% in holy grail 2-column*/
+    left: 85%;
+    /* 87 86% (right column left and right padding) plus (left column left padding)
+                    - was 6% in holy grail 2-column*/
+    background-color: #b6d1e4;
+}
+
+/* following added for testing 
+@media (max-width: 1024px) {
+	.t20leftmenu .col2 {
+		width: 11%;
+	}
+}
+
+@media (max-width: 1366px) {
+	.t20leftmenu .col2 {
+		width: 10%;
+	}
+}
+
+@media (max-width: 1366px) {
+	.t20leftmenu .col2 {
+		width: 9%;
+	}
+}
+
+@media (max-width: 1920px) {
+	.t20leftmenu .col2 {
+		width: 8%;
+	}
+}
+
+ end of testing additions  */
+
+.cleared {
+    display: block;
+    clear: both;
+    float: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.reset-box {
+    overflow: hidden;
+    display: table;
+}
+
+/* menuback: left nav menu background color with no right and bottom border */
+.menuback {
+    background-color: #b6d1e4;
+    border-right: 0px;
+    border-bottom: 0px;
+    /*	width: 170px; */
+    /*	margin-left: 10px; */
+    margin-top: 0px;
+    vertical-align: top;
+}
+
+#leftnavmenu {
+    margin-top: 10px;
+}
+
+#header {
+    width: 100%;
+}
+
+#header #leftphoto {
+    float: left;
+    width: 20%; /* width of center column content (column width minus padding on either side) */
+    /*	left:100%;			 100% plus left padding of center column */
+}
+
+#header #banner {
+    float: left;
+    width: 60%; /* Width of left column content (column width minus padding on either side) */
+    left: 20%; /* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+
+#header #rightphoto {
+    float: right;
+    width: 20%; /* Width of right column content (column width minus padding on either side) */
+    /*	left:80%;			 Please make note of the brackets here:
+            (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+
+#header #textbanner {
+    float: left;
+    width: 100%; /* Width of left column content (column width minus padding on either side) */
+    /* left:20%;			 width of (right column) plus (center column left and right padding) plus (left column left padding) */
+    margin-top: 10px;
+}
+
+/* Footer styles */
+#footer {
+    clear: both;
+    width: 100%;
+    border-top: 1px solid #000;
+}
+
+#footer p {
+    padding: 10px;
+    margin: 0;
+}
+
+.searchbox {
+    width: 95%;
+}
+
+.highlight {
+    background: yellow:
+}
+
+.titletop {
+    color: #009;
+    font-family: Georgia, Arial, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.titlebottom {
+    color: #996;
+    font-family: Georgia, Arial, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-indent: 10px;
+    text-shadow: 1px 1px 1px #000;
+    filter: dropshadow(color=#000, offx=1, offy=1);
+}
+
+@media (max-width: 650px) {
+    .section {
+        width: 100%;
+    }
+
+    .indexpage {
+        width: 100%;
+    }
+
+    .leftsection, .rightsection {
+        width: 93%;
+        float: none;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .titletop {
+        font-size: 20px;
+    }
+
+    .titlebottom {
+        font-size: 32px;
+    }
+
+    .t20leftmenu .colleft {
+        right: 100%;
+    }
+
+    .rightphoto {
+        display: none;
+    }
+
+    .t20leftmenu .colleft .col2 {
+        display: none;
+    }
+
+    .t20leftmenu .colleft .col1 {
+        width: 100%;
+        left: 100%;
+    }
+
+    .content {
+        width: 98%;
+    }
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* styles for home page surname cloud post */
+.surnames-cloud, .surnames-cloud a {
+    font-family: Verdana, Tahoma, Arial;
+    padding: 2px 2px 2px 2px;
+    letter-spacing: 0.0em;
+    word-spacing: 0.0em;
+    text-decoration: none;
+    font-weight: normal;
+    text-align: center;
+    font-size: 14px;
+}
+
+a.size1 {
+    color: #009;
+    font-size: 200%;
+}
+
+a.size1:link {
+    color: #009;
+}
+
+a.size1:visited {
+    color: #009;
+}
+
+a.size2 {
+    color: #33c;
+    font-size: 190%;
+}
+
+a.size2:link {
+    color: #33c;
+}
+
+a.size2:visited {
+    color: #33c;
+}
+
+a.size3 {
+    color: #063;
+    font-size: 180%;
+}
+
+a.size3:link {
+    color: #063;
+}
+
+a.size3:visited {
+    color: #063;
+}
+
+a.size4 {
+    color: #930;
+    font-size: 170%;
+}
+
+a.size4:link {
+    color: #930;
+}
+
+a.size4:visited {
+    color: #930;
+}
+
+a.size5 {
+    color: #c03;
+    font-size: 160%;
+}
+
+a.size5:link {
+    color: #c03;
+}
+
+a.size5:visited {
+    color: #c03;
+}
+
+a.size6 {
+    color: #666;
+    font-size: 150%;
+}
+
+a.size6:link {
+    color: #666;
+}
+
+a.size6:visited {
+    color: #666;
+}
+
+a.size7 {
+    color: #c90;
+    font-size: 140%;
+}
+
+a.size7:link {
+    color: #c90;
+}
+
+a.size7:visited {
+    color: #c90;
+}
+
+a.size8 {
+    color: #993;
+    font-size: 130%;
+}
+
+a.size8:link {
+    color: #993;
+}
+
+a.size8:visited {
+    color: #993;
+}
+
+a.size9 {
+    color: #000;
+    font-size: 120%;
+}
+
+a.size9:link {
+    color: #000;
+}
+
+a.size9:visited {
+    color: #000;
+}
+
+a.size0 {
+    color: #000;
+    font-size: 100%;
+}
+
+a.size0:link {
+    color: #000;
+}
+
+a.size0:visited {
+    color: #000;
+}
+

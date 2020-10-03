@@ -909,7 +909,7 @@ switch ($textpart) {
         //added in 13.0
         $admtext['leftimg'] = "Header Left Image";
         $admtext['rightimg'] = "Header Right Image";
-        $admtext['photoption'] = "Photo options are<br />&nbsp;&nbsp;(static or random)";
+        $admtext['photoption'] = "Photo options are<br>&nbsp;&nbsp;(static or random)";
         $admtext['randomphotowidth'] = "Random Photo Width";
         $admtext['randomphotoheight'] = "Random Photo Height";
         $admtext['randomphotomediatypeID'] = "Random Photo Collection";
@@ -932,7 +932,7 @@ switch ($textpart) {
         $admtext['spdadperson'] = "Spouse Paternal Side personID";
         $admtext['spdadtree'] = "Spouse Paternal Side treeID";
         $admtext['storiesheading'] = "Our Family Stories";
-        $admtext['nbrsurnames'] = "Number of Surnames<br />&nbsp;&nbsp; in Surname Cloud";
+        $admtext['nbrsurnames'] = "Number of Surnames<br>&nbsp;&nbsp; in Surname Cloud";
 
     //break intentionally left out here so processing will fall through
 
@@ -1416,7 +1416,7 @@ switch ($textpart) {
         $admtext['sortbytype'] = "Event type";
         $admtext['allowsuggest'] = "Allow suggestions from visitors";
         $admtext['livingchecked'] = "Living flag set for new people and families";
-        $admtext['maxmarried'] = "Mark family living if married less than<br/>this many years";
+        $admtext['maxmarried'] = "Mark family living if married less than<br>this many years";
         $admtext['imagetags'] = "Rectangles";
         $admtext['allowcsv'] = "Allow CSV downloads for reports";
         break;

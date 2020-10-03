@@ -33,14 +33,14 @@ if ($offset) {
 
 $sourcesearch = cleanIt(trim($sourcesearch));
 if ($tree) {
-    $wherestr = "WHERE $sources_table.gedcom = '$tree'";
+    $wherestr = "WHERE sources.gedcom = '$tree'";
     if ($sourcesearch) {
-        $wherestr .= " AND (title LIKE \"%$sourcesearch%\" OR shorttitle LIKE \"%$sourcesearch%\" OR author LIKE \"%$sourcesearch%\")";
+        $wherestr .= " AND (title LIKE '%$sourcesearch%' OR shorttitle LIKE '%$sourcesearch%' OR author LIKE '%$sourcesearch%')";
     }
     $join = "INNER JOIN";
 } else {
     if ($sourcesearch) {
-        $wherestr = "WHERE title LIKE \"%$sourcesearch%\" OR shorttitle LIKE \"%$sourcesearch%\" OR author LIKE \"%$sourcesearch%\"";
+        $wherestr = "WHERE title LIKE '%$sourcesearch%' OR shorttitle LIKE '%$sourcesearch%' OR author LIKE '%$sourcesearch%'";
     } else {
         $wherestr = "";
     }
@@ -58,8 +58,7 @@ $result = tng_query($query);
 $numrows = tng_num_rows($result);
 
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-
-    $query = "SELECT count(sourceID) AS scount ";
+    $query = "SELECT COUNT(sourceID) AS scount ";
     $query .= "FROM $sources_table sources ";
     if ($tree) {
         $query .= "LEFT JOIN $trees_table trees ON sources.gedcom = trees.gedcom ";
