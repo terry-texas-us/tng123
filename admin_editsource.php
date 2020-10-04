@@ -179,7 +179,7 @@ echo "<a href='#' onclick=\"return showNotes('', '$sourceID');\" id='notesicon' 
                 <table class="normal">
                     <tr>
                         <td class='align-top'>
-                            <h3 class="subhead" style="color:black;"><?php echo $admtext['otherevents']; ?>:</h3>
+                            <h3 class="subhead" style="color:#000;"><?php echo $admtext['otherevents']; ?>:</h3>
                             <?php echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n"; ?>
                         </td>
                         <td class='align-top'>

@@ -450,8 +450,8 @@ switch ($textpart) {
         $text['allbeginningwith'] = "Wszystkie nazwiska zaczynaj�ce si� na";
         $text['numoccurrences'] = "liczba wyst�puj�cych w nawiasie";
         $text['placesstarting'] = "Zaczynaj od najwi�kszych miejsc";
-        $text['showmatchingplaces'] = "<span style=\"color: brown; \"><b>Kliknij na jedn� ze znalezionych pozycji, aby ograniczy� pole wyszukiwa�. Kliknij na ikon� lupki, aby zobaczy� szczeg�y.</b></span>";
-        $text['totalnames'] = "wszystkie osoby";
+    $text['showmatchingplaces'] = "<span style=\\";
+    $text['totalnames'] = "wszystkie osoby";
         $text['showallplaces'] = "Poka� wszystkie miejsca";
         $text['totalplaces'] = "Wszystkie miejsca";
         $text['mainplacepage'] = "Strona g��wna miejsc";

@@ -19,7 +19,7 @@
 }
 
 #col1, #col2 {
-    border-left: 1px solid black;
+    border-left: 1px solid #000;
     padding-left: 10px;
 }
 

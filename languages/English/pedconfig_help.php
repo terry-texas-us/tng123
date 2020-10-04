@@ -253,13 +253,13 @@ echo help_header("Help: Chart Settings");
                     the boxes go from the first generation to the last generation displayed (negative values will fade toward black).</p>
 
                 <h5 class="optionhead">Empty Color</h5>
-                <p>The background color to be used in all pedigree boxes for which no data exists. Default value is #CCCCCC (silver).</p>
+                <p>The background color to be used in all pedigree boxes for which no data exists. Default value is #ccc (silver).</p>
 
                 <h5 class="optionhead">Border Color</h5>
-                <p>The color to be used for the borders around pedigree boxes and the connector lines. Default is #000000 (black).</p>
+                <p>The color to be used for the borders around pedigree boxes and the connector lines. Default is #000 (black).</p>
 
                 <h5 class="optionhead">Shadow Color</h5>
-                <p>The color to be used for shadows. Default value is #999999 (gray).</p>
+                <p>The color to be used for shadows. Default value is #999 (gray).</p>
 
                 <h5 class="optionhead">Shadow Offset</h5>
                 <p>The offset to be used for including box and connector line shadows (in pixels). A negative number will result in

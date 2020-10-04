@@ -222,13 +222,13 @@
 .timeline-duration-event {
     position: absolute;
     overflow: hidden;
-    border: 1px solid blue;
+    border: 1px solid #00f;
 }
 
 .timeline-instant-event2 {
     position: absolute;
     overflow: hidden;
-    border-left: 1px solid blue;
+    border-left: 1px solid #00f;
     padding-left: 2px;
 }
 

@@ -548,26 +548,26 @@ function famStylesheet() {
 	position: absolute; z-index: 3;
 	width: {$dw}px;
 	height: {$dh}px;
-	border-bottom: solid thin black;
-	border-left: solid thin black;
-	border-right: solid thin black;
+	border-bottom: solid thin #000;
+	border-left: solid thin #000;
+	border-right: solid thin #000;
 }
 .leftlower, .rightlower {
 	position: absolute; z-index: 3;
 	width: {$lw}px;
-	border-bottom: solid thin black;
+	border-bottom: solid thin #000;
 }
-.leftlower { border-right: solid thin black; }
-.rightlower { border-left: solid thin black;}
+.leftlower { border-right: solid thin #000; }
+.rightlower { border-left: solid thin #000;}
 .down {
 	position: absolute; z-index: 3;
 	width: $aw;
-	border-left: solid thin black;
+	border-left: solid thin #000;
 }
 .across, .joiner {
 	position: absolute; z-index: 3;
 	height: 5px;	
-	border-top: solid thin black;
+	border-top: solid thin #000;
 }
 .across { width: {$w}px;}
 .joiner { width: {$jw}px;}

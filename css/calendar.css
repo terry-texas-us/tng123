@@ -37,7 +37,7 @@ a.calEvent {
 }
 
 a.hidden {
-    background-color: silver;
+    background-color: #c0c0c0;
     font-style: italic;
     padding: 2px;
 }

@@ -78,8 +78,8 @@ h3, h3 a:link, h3 a:visited, a.emphasis:link, a.emphasis:visited {
 .statusicon { /*CSS for icon image that gets dynamically added to headers*/
     position: relative;
     float: right;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     border: none;
 }
 
@@ -131,7 +131,7 @@ h3, h3 a:link, h3 a:visited, a.emphasis:link, a.emphasis:visited {
 /* Remove background-image from footer  */
 .footer {
     background-image: none;
-    background-color: white;
+    background-color: #fff;
 }
 
 
@@ -139,7 +139,7 @@ h3, h3 a:link, h3 a:visited, a.emphasis:link, a.emphasis:visited {
 .indexfooter {
     margin-left: auto;
     margin-right: auto;
-    padding: 0px;
+    padding: 0;
     width: 90%; /* total width of all the columns */
 }
 
@@ -215,11 +215,11 @@ a.admincell:hover, a.leftlink:hover {
 /* page: is defined to replace the bgcolor=#FFFFFF; in the top table for the page */
 .page {
     background-color: #fff;
-    margin-top: 0px;
+    margin-top: 0;
     text-align: left;
-    margin-right: 0px;
+    margin-right: 0;
     border-collapse: collapse;
-    padding: 0px;
+    padding: 0;
     width: 100%; /* to center, change to 900px or 90% */
 }
 
@@ -228,16 +228,16 @@ a.admincell:hover, a.leftlink:hover {
     background-image: url(../img/khaki.gif);
     height: 1px;
     border-style: none;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
     width: 100%;
 }
 
 
 /* footer added to replace footer fonts and links */
 .footer {
-    margin-top: 0px;
+    margin-top: 0;
     marging-bottom: 5px;
     font-size: 10px;
     text-align: center;
@@ -285,10 +285,8 @@ a.footer:hover {
     margin-left: 8px;
     margin-right: 8px;
     float: left;
-    border: 1px;
-    border-color: black;
-    border-style: solid;
-    box-shadow: 1px 1px 3px 0px #333;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 3px 0 #333;
     border-radius: 4px;
 }
 
@@ -303,19 +301,16 @@ a.footer:hover {
 .emailimg {
     width: 40px;
     height: 26px;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin: 2px 8px;
     float: left;
-    border: 0px;
+    border: 0;
 }
 
 /* searchimg added to replace width="109" height="35" vspace="0" border="0" search4.gif */
 .searchimg {
 
     padding-left: 7px;
-    border: 0px;
+    border: 0;
     font-size: 18pt;
     font-family: Georgia, Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -330,9 +325,9 @@ a.footer:hover {
     text-align: center;
     margin-top: 5px;
     margin-left: 5px;
-    border: 0px;
+    border: 0;
     float: left;
-    width: 60%; /* was 468px;  */
+    width: 60%;
     height: 100px;
 }
 
@@ -363,7 +358,7 @@ a.footer:hover {
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow: 1px 1px 4px 0px #333;
+    box-shadow: 1px 1px 4px 0 #333;
     border-radius: 6px;
     max-height: 100px;
 }
@@ -373,7 +368,7 @@ a.footer:hover {
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow: 1px 1px 4px 0px #333;
+    box-shadow: 1px 1px 4px 0 #333;
     border-radius: 6px;
     max-height: 100px;
 }
@@ -423,7 +418,7 @@ a:link, a:hover, a:visited, a:active {
 /*  home page sections replaces valign="top" width="300" */
 .section {
     width: 50%;
-    border-spacing: 0px;
+    border-spacing: 0;
     border-collapse: collapse;
     margin: 5px;
     vertical-align: top;
@@ -501,7 +496,7 @@ ul.tngdd .menulink {
     background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e5e5b1, #c5c591);
     background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e5e5b1, #c5c591);
     background-image: url(../img/ArrowDown.gif), linear-gradient(top, #e5e5b1, #c5c591);
-    background-position: 2px 8px, 0px 0px;
+    background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 
@@ -544,24 +539,24 @@ ul.tngdd .topline {
 
 /* remove rounded corners for thumbnails, but allow for small image */
 .thumb {
-    box-shadow: 1px 1px 1px 0px #777;
+    box-shadow: 1px 1px 1px 0 #777;
     border-radius: none;
 }
 
 .smallimg {
-    box-shadow: 1px 1px 1px 0px #777;
+    box-shadow: 1px 1px 1px 0 #777;
     border-radius: 5px;
 }
 
 /* remove shadow for .leftlink, .whitetext, admincell, and .lightlink2
 	but allow for shadow for whiteheader and whitesubhead */
 .leftlink, .whitetext, .lightlink2, a.admincell {
-    text-shadow: 0px 0px 0px #000;
+    text-shadow: 0 0 0 #000;
     filter: dropshadow(color=#000, offx=0, offy=0);
 }
 
 .whiteheader, .whitesubhead {
-    text-shadow: 1px 1px 0px #333;
+    text-shadow: 1px 1px 0 #333;
     filter: dropshadow(color=#333, offx=1, offy=1);
 }
 
@@ -576,7 +571,7 @@ ul.tngdd .topline {
 
 /* admin page overrides  */
 .mainbox {
-    border: 1px solid silver;
+    border: 1px solid #c0c0c0;
     background-color: #b7cfe7;
     padding: 1px;
     /* min-width:80%; */
@@ -590,7 +585,7 @@ ul.tngdd .topline {
 
 /* add shadow and rounded corners to random photo classes */
 .indexphoto {
-    box-shadow: 1px 1px 4px 0px #333;
+    box-shadow: 1px 1px 4px 0 #333;
     border-radius: 8px;
 }
 
@@ -840,11 +835,9 @@ Original comments were - Please make note of the brackets here:
 /* menuback: left nav menu background color with no right and bottom border */
 .menuback {
     background-color: #b6d1e4;
-    border-right: 0px;
-    border-bottom: 0px;
-    /*	width: 170px; */
-    /*	margin-left: 10px; */
-    margin-top: 0px;
+    border-right: 0;
+    border-bottom: 0;
+    margin-top: 0;
     vertical-align: top;
 }
 
@@ -899,7 +892,7 @@ Original comments were - Please make note of the brackets here:
 }
 
 .highlight {
-    background: yellow:
+    background: #ff0;
 }
 
 .titletop {

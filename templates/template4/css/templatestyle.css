@@ -132,7 +132,7 @@ a.footer:hover {
     margin-left: 8px;
     margin-right: 8px;
     float: left;
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 
 /* emailimg added to replace width="40" height="26" align="left" hspace="8" vspace="2" for email.gif */
@@ -179,7 +179,7 @@ a.searchimg {
 /* emphasisyellow: added to replace <strong> for welcome message */
 .emphasisyellow {
     font-weight: bold;
-    color: yellow;
+    color: #ff0;
 }
 
 .leftsection, .rightsection {
@@ -230,7 +230,7 @@ a.searchimg {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #cc9;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {

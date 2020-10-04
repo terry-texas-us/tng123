@@ -188,7 +188,7 @@ $width_str = $generations >= 5 && $tngprint ? "width:100%;" : "";
 echo <<< FAN_DOC
 <div id="fanWrapper" style="position:relative;">
 <canvas id="myCanvas" width="100" height="100" style="border-bottom:1px solid {$fan_color_line}; z-index: 0;$width_str"></canvas>
-<canvas id="infoCanvas" width="{$fan_info_width}" height="{$fan_info_height}" style="border: 1px solid black; background-color:white; border-radius: 6px; position: absolute; left:-1000px; top:100px; z-index: 1;"></canvas>
+<canvas id="infoCanvas" width="{$fan_info_width}" height="{$fan_info_height}" style="border: 1px solid #000; background-color: #fff; border-radius: 6px; position: absolute; left: -1000px; top: 100px; z-index: 1;"></canvas>
 </div>
 
 <script>

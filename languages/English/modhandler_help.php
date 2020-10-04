@@ -245,7 +245,7 @@ echo help_header("Help: Mod Manager");
                     the
                     new version. Here again it is recommend that you leave the option as No and just enable it when needed. The
                     <strong>Delete</strong> button is only shown on the Select list if both allow delete options are enabled.</p>
-                <p><strong><span style="color: red; ">Caution:You should only use Batch Operations if you have a good backup of your website and can quickly restore it if the batch operations renders your site inoperable, which can easily happen if you do not delete
+                <p><strong><span style="color: #f00; ">Caution:You should only use Batch Operations if you have a good backup of your website and can quickly restore it if the batch operations renders your site inoperable, which can easily happen if you do not delete
                         previous versions of the mods.</span> Note that it is recommended that you batch Uninstall all your Installed mods and then
                         batch Clean Up all Partially Installed mods before doing a TNG upgrade.</strong></p>
                 <p>The Select Filter options are:

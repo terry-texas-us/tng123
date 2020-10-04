@@ -513,7 +513,7 @@ a.admincell:hover, a.leftlink:hover {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #e2d8e0;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {

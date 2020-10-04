@@ -5,7 +5,12 @@ global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 
 include "functions.php";
 
-function doSourceSearch($instance, $pagenav) {
+/**
+ * @param $instance
+ * @param $pagenav
+ * @return string
+ */
+function doSourceSearch($instance, $pagenav): string {
     global $text, $sourcesearch, $tree;
 
     $str = "<div class='normal'>\n";
@@ -22,6 +27,7 @@ function doSourceSearch($instance, $pagenav) {
 }
 
 $max_browsesource_pages = 5;
+if (!isset($offset)) $offset = 0;
 if ($offset) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
@@ -31,7 +37,7 @@ if ($offset) {
     $page = 1;
 }
 
-$sourcesearch = cleanIt(trim($sourcesearch));
+$sourcesearch = isset($sourcesearch) ? cleanIt(trim($sourcesearch)) : "";
 if ($tree) {
     $wherestr = "WHERE sources.gedcom = '$tree'";
     if ($sourcesearch) {
@@ -74,7 +80,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 $numrowsplus = $numrows + $offset;
 
 $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"browsesources.php?tree=$tree&amp;offset=$offset&amp;sourcesearch=$sourcesearch\">" . xmlcharacters($text['sources'] . $treestr) . "</a>";
+$logstring = "<a href='browsesources.php?tree=$tree&amp;offset=$offset&amp;sourcesearch=$sourcesearch'>" . xmlcharacters($text['sources'] . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 

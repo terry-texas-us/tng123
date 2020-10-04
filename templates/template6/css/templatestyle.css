@@ -278,7 +278,7 @@ a.footer:hover {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #f2e6cc;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {

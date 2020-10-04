@@ -104,7 +104,7 @@ a.topmenu:Active {
     background-color: #fff;
     background-image: url(../img/edge.gif);
     border: 0;
-    border-bottom-color: white;
+    border-bottom-color: #fff;
     width: 100%;
     height: 15px;
 }
@@ -147,7 +147,7 @@ a.topmenu:Active {
 .sidesmall {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: white;
+    color: #fff;
 }
 
 .small {
@@ -246,7 +246,7 @@ a.footer:hover {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #ffe9a9;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
@@ -307,7 +307,7 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu, .databack {
 }
 
 tr.modline:hover td.mmcell:nth-child(-n+5) {
-    background-color: yellow; /* to override the #EEEB8D; which is too close to the template databack */
+    background-color: #ff0;
 }
 
 
@@ -345,7 +345,7 @@ ul.tngdd .topline {
 }
 
 a.smalltitle:hover {
-    color: green;
+    color: #008000;
 }
 
 a.toptitle {

@@ -5,6 +5,7 @@ $dadlabel = getTemplateMessage('t19_dadside');
 $momlabel = getTemplateMessage('t19_momside');
 $pagetitle = getTemplateMessage('t19_maintitle');
 ?>
+<!-- begin topmenu.php for selected template -->
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> home-page content-sidebar tng-nav tng-home">
 <div class="scroll-to-top"><a href="#"><img src="<?php echo $cms['tngpath'] . $templatepath; ?>img/backtotop.png" alt=""/></a></div>
 
@@ -16,8 +17,7 @@ $pagetitle = getTemplateMessage('t19_maintitle');
     <div class="nav-menu">
         <div class="container">
             <?php
-            if (!isset($title) || !$title)
-                $title = getTemplateMessage('t19_maintitle');
+            if (!isset($title) || !$title) $title = getTemplateMessage('t19_maintitle');
             echo tng_icons(1, $title);
             $flags['noicons'] = 1;
             ?>
@@ -26,3 +26,4 @@ $pagetitle = getTemplateMessage('t19_maintitle');
 </header>
 
 <div class="container">
+    <!-- end topmenu.php for selected template -->

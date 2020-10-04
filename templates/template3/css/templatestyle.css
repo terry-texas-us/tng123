@@ -128,12 +128,10 @@ a.topmenu:hover {
     text-decoration: none;
 }
 
-/* tableborder to replace hard-coded style in topmenu.php */
-/* bordercolor="#000000" bgcolor="#D0BC91" style="border-collapse: collapse; border: 1; border-color: black;" */
 .tableborder {
     background-color: #d0bc91;
     border-collapse: collapse;
-    border-color: black;
+    border-color: #000;
     margin-bottom: 15px; /* added to replace <br> after table */
 }
 
@@ -195,7 +193,7 @@ a.topmenu:hover {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #d0bc91;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {

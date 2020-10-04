@@ -221,7 +221,7 @@ echo help_header("Nápověda: Manažer módů");
                 Tlačítko <strong>Vymazat</strong> se zobrazí pouze v seznamu Vybrat, pokud jsou povoleny oba možnosti vymazání.
             </p>
 
-            <p><strong><span style="color: red; ">Upozornění: Dávkové operace používejte pouze tehdy, pokud máte zálohu vašich webových stránek a můžete je snadno obnovit v případě, že vlivem dávkových operací dojde k poškození vašich stránek, což se může snadno
+            <p><strong><span style="color: #f00; ">Upozornění: Dávkové operace používejte pouze tehdy, pokud máte zálohu vašich webových stránek a můžete je snadno obnovit v případě, že vlivem dávkových operací dojde k poškození vašich stránek, což se může snadno
                         stát, pokud nevymažete předchozí verze módů.</span>
                     Je doporučeno Před provedením aktualizace TNG doporučujeme odinstalovat všechny nainstalované módy a poté vyčistit všechny
                     částečně nainstalované módy.</strong></p>

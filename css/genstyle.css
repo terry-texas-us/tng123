@@ -154,7 +154,7 @@ a:visited {
 }
 
 .pedborderleft {
-    border-left: solid 1.2px black;
+    border-left: solid 1.2px #000;
 }
 
 .pedboxtable {
@@ -194,7 +194,7 @@ div.pad5 img, .adminicon {
 }
 
 .trackerbox {
-    border: 1px solid black;
+    border: 1px solid #000;
     overflow: hidden;
 }
 
@@ -537,16 +537,16 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 .livingbox {
     width: 870px;
     height: 550px;
-    border: 1px solid black;
+    border: 1px solid #000;
     padding: 5px;
 }
 
 #loadingdiv, #loadingdiv2 {
     position: absolute;
-    background-color: white;
+    background-color: #fff;
     padding: 20px;
     font-size: 21pt;
-    border: solid 1px black;
+    border: solid 1px #000;
     z-index: 5;
 }
 
@@ -657,7 +657,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 }
 
 .green {
-    color: green;
+    color: #008000;
 }
 
 input:hover, textarea:hover, select:hover {
@@ -696,7 +696,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button {
 }
 
 input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, button:active {
-    color: white;
+    color: #fff;
     border: 1px solid #fc0;
     background-color: #ccc;
 }
@@ -1082,7 +1082,7 @@ td.unhighlightedchild {
 
 /*white box around progress bar*/
 .progcontainer {
-    background-color: white;
+    background-color: #fff;
     padding: 5px;
     width: 500px;
 }
@@ -1091,14 +1091,14 @@ td.unhighlightedchild {
 .emptybar {
     width: 500px;
     height: 20px;
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 
 /*colored part of progress bar*/
 .colorbar {
     width: 0;
     height: 20px;
-    background-color: green;
+    background-color: #008000;
 }
 
 /* for images in pull down menus */
@@ -1164,7 +1164,7 @@ form {
 }
 
 .titlebox {
-    border: 1px solid silver;
+    border: 1px solid #c0c0c0;
     background-color: #f9f9f9;
     padding: 10px;
     margin: 1px;
@@ -1173,7 +1173,7 @@ form {
 }
 
 .whiteback {
-    border: 1px solid silver;
+    border: 1px solid #c0c0c0;
     background-color: #fff;
 }
 
@@ -1202,7 +1202,7 @@ form {
     float: right;
     padding: 10px;
     font-size: 14pt;
-    border: 1px solid black;
+    border: 1px solid #000;
     margin-right: 15%;
 }
 
@@ -1214,15 +1214,15 @@ form {
     margin: 0;
     padding: 10px;
     font-size: 14pt;
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid #000;
+    background-color: #fff;
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
 
 /* white buttons with rounded corners (FF only) */
 .whitebuttonlink {
-    background-color: white;
+    background-color: #fff;
     padding: 3px 7px 3px 7px;
     text-decoration: none;
 }
@@ -1887,7 +1887,7 @@ ul.tngdd ul li a .menu-icon {
 }
 
 .temppreview {
-    border: 1px solid black;
+    border: 1px solid #000;
     -webkit-box-shadow: 1px 1px 3px 0 #666;
     box-shadow: 1px 1px 3px 0 #666;
     -webkit-border-radius: 8px;
@@ -1900,8 +1900,8 @@ ul.tngdd ul li a .menu-icon {
 }
 
 #uploadarea {
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid #000;
+    background-color: #fff;
     min-height: 150px;
     width: 95%;
     -webkit-border-radius: 6px;
@@ -2139,14 +2139,14 @@ a.size0 {
     left: 2px;
     right: 0;
     padding: 3px;
-    color: white;
+    color: #fff;
     background-color: rgba(0, 0, 0, 0.6);
     overflow: visible;
     border-radius: 0 0 5px 5px;
 }
 
 .delx {
-    background-color: red;
+    background-color: #f00;
     padding: 3px;
     width: 15px;
     float: right;
@@ -2413,7 +2413,7 @@ sup {
     width: 89%;
     margin: 8px;
     line-height: 1.4;
-    color: white;
+    color: #fff;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.35);
 }

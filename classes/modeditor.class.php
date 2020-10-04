@@ -160,7 +160,7 @@ class modeditor extends modparser
         echo "<table id='m3table' class='normal lightback $tableclass'>";
         echo "<tr><td>";
         if (!is_writable($cfgpath)) {
-            echo "<span style='color:red;'>{$this->admtext['cfgnowrite']}</span>";
+            echo "<span style='color: #f00;'>{$this->admtext['cfgnowrite']}</span>";
             exit;
         }
         // show the parameters editing form

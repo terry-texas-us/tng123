@@ -23,6 +23,6 @@ header("Content-type:text/html; charset=" . $session_charset);
         &nbsp;<input type="text" name="newitem" id="newitem">
         <input type="submit" value="<?php echo $admtext['add']; ?>">
         <br>
-        <div class="normal" id="entitymsg" style="color:green;"></div>
+        <div class="normal" id="entitymsg" style="color: #008000;"></div>
     </form>
 </div>

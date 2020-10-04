@@ -80,7 +80,7 @@ img.alignnone {
 }
 
 fieldset {
-    border: 1px solid silver;
+    border: 1px solid #c0c0c0;
     margin: 0 2px;
     padding: .35em .625em .75em;
 }
@@ -527,7 +527,7 @@ a.snlink:hover,
 
 div.innercontainer {
     border-bottom: 1px solid #999;
-    border: 3px solid red;
+    border: 3px solid #f00;
     border: none;
     background: transparent;
 }

@@ -176,7 +176,7 @@ a.admincell:hover, a.leftlink:hover {
 /*added in 5.0.0*/
 /*for active secondary tab link*/
 a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active {
-    color: white;
+    color: #fff;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
@@ -222,7 +222,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 .tableborder {
     background-color: #faf4e6;
     border-collapse: collapse;
-    border-color: black;
+    border-color: #000;
 }
 
 /* searchbox added to replace hard-coded style in topmenu */
@@ -341,7 +341,7 @@ a.footer:hover {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #f2f2e9;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {

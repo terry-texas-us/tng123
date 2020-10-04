@@ -222,7 +222,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
                 Tla��tko <strong>Vymazat</strong> se zobraz� pouze v seznamu Vybrat, pokud jsou povoleny oba mo�nosti vymaz�n�.
             </p>
 
-            <p><strong><span style="color: red; ">Upozorn�n�: D�vkov� operace pou��vejte pouze tehdy, pokud m�te z�lohu va�ich webov�ch str�nek a m��ete je snadno obnovit v p��pad�, �e vlivem d�vkov�ch operac� dojde k po�kozen� va�ich str�nek, co� se m��e snadno
+            <p><strong><span style="color: #f00; ">Upozorn�n�: D�vkov� operace pou��vejte pouze tehdy, pokud m�te z�lohu va�ich webov�ch str�nek a m��ete je snadno obnovit v p��pad�, �e vlivem d�vkov�ch operac� dojde k po�kozen� va�ich str�nek, co� se m��e snadno
                         st�t, pokud nevyma�ete p�edchoz� verze m�d�.</span>
                     Je doporu�eno P�ed proveden�m aktualizace TNG doporu�ujeme odinstalovat v�echny nainstalovan� m�dy a pot� vy�istit v�echny
                     ��ste�n� nainstalovan� m�dy.</strong></p>

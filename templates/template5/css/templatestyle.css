@@ -104,16 +104,13 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
     color: #654;
 }
 
-/* line is defined to replace the bgcolor="#660000"  */
 .line {
     color: #600;
 }
 
-/* row:  added to replace bgcolor="#4E7076"  */
 .row-5 {
-    border: 1px;
     border-collapse: collapse;
-    border-color: black;
+    border: 1px #000;
     background-color: #4e7076;
     height: 5px;
 }
@@ -121,7 +118,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 /* row30 added to replace bgcolor="#4E7076" and add a height: 30px for bottom bar */
 .row30 {
     border-collapse: collapse;
-    border-color: black;
+    border-color: #000;
     background-color: #4e7076;
     height: 30px;
 }
@@ -129,7 +126,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 /* sitename: background color for site name section */
 .sitename {
     background-color: #4e7076;
-    color: white;
+    color: #fff;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -170,7 +167,7 @@ a.topmenu:hover {
 .maintable {
     background-color: #faf4e6;
     border-collapse: collapse; /* replace cellpadding */
-    border: 1px solid black;
+    border: 1px solid #000;
     text-align: left; /* added for change made in 6.2.0 */
     width: 90%;
     margin-left: auto; /* added for centering */
@@ -183,9 +180,8 @@ a.topmenu:hover {
 .tableheader {
     background-color: #4e7076;
     background-image: url(../img/blueleaves.gif);
-    border: 1px;
     border-collapse: collapse;
-    border-color: #111;
+    border: 1px #111;
     width: 885px;
     height: 25px;
 }
@@ -225,7 +221,7 @@ a.topmenu:hover {
     color: #654;
     font-size: 30px;
     text-align: right;
-    padding: 10px 10px 5px 0; /* top right bottom left */
+    padding: 10px 10px 5px 0;
 }
 
 /* indexphoto: replace width="160" height="121" vspace="10" for mediumphoto.jpg */
@@ -248,7 +244,7 @@ a.topmenu:hover {
     text-align: left;
     color: #fff;
     margin-bottom: 20px;
-    padding: 5px 10px 5px 10px; /* top right bottom left */
+    padding: 5px 10px 5px 10px;
     float: right;
     width: 160px;
 }
@@ -281,7 +277,7 @@ a.footer:hover {
 
 .smallphoto {
     margin: 2px 30px;
-    border: 1px solid black;
+    border: 1px solid #000;
     vertical-align: middle;
 }
 
@@ -294,10 +290,10 @@ a.footer:hover {
 .content {
     background-color: #faf4e6;
     vertical-align: top;
-    border-collapse: collapse; /* replace cellpadding */
-    border: 1px solid black;
+    border-collapse: collapse;
+    border: 1px solid #000;
     margin: 0;
-    padding: 0 0 0 0; /*  top right bottom left */
+    padding: 0 0 0 0;
 }
 
 /* innertable added to replace hard-coded style in topmenu and index.php */
@@ -325,13 +321,12 @@ a.footer:hover {
 .rightcontent {
     text-align: right;
     margin-right: 10px;
-    padding: 5px 10px 5px 10px; /* top right bottom left */
+    padding: 5px 10px 5px 10px;
 }
 
-/* row:  added to replace bgcolor="#4E7076"  */
 .row12 {
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid #000;
     background-color: #4e7076;
     height: 12px;
 }
@@ -340,7 +335,7 @@ a.footer:hover {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #fdfaf2;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {

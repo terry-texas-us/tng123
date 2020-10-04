@@ -499,7 +499,7 @@ a.admincell:hover, a.leftlink:hover {
     border-bottom: 1px solid #aaa;
     border-right: 1px solid #aaa;
     background-color: #e2b993;
-    color: black;
+    color: #000;
 }
 
 a.snlink:hover, .snlinkact, .adminnav .snlinkact {
@@ -719,7 +719,7 @@ h3.subheader {
 
 hr {
     height: 0;
-    border: 1px solid rgb(114, 60, 1);
+    border: 1px solid #723c01;
 }
 
 .bottomhr {

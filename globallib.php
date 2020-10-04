@@ -1174,7 +1174,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
             tng_free_result($result2);
             if ($numphotos) {
                 //if photos exist, show box with link to sort page where they can pick a default
-                $photo = "<a href=\"admin_ordermedia.php?newlink1=$persfamID&tree1=$tree&mediatypeID=photos&linktype1=$type\" class='smaller' style=\"display:block; padding:8px; border:1px solid black; margin-right:6px; text-align:center;\">{$admtext['choosedef']}</a>";
+                $photo = "<a href=\"admin_ordermedia.php?newlink1=$persfamID&tree1=$tree&mediatypeID=photos&linktype1=$type\" class='smaller' style=\"display:block; padding:8px; border:1px solid #000; margin-right:6px; text-align:center;\">{$admtext['choosedef']}</a>";
             }
         } elseif ($gender && !empty($tngconfig['usedefthumbs'])) {
             if ($gender == "M") {

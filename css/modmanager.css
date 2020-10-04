@@ -37,7 +37,7 @@
 }
 
 .mmlochdr {
-    color: blue;
+    color: #00f;
 }
 
 .mmkeyword {
@@ -150,7 +150,7 @@ div.descpop:hover div {
     background: #fff;
     padding: 3px 3px 3px 3px;
     border-style: solid;
-    border-color: black;
+    border-color: #000;
     border-width: 2px;
 }
 
@@ -338,7 +338,7 @@ div.descpop1 div {
     background: #fff;
     padding: 3px 3px 3px 3px;
     border-style: solid;
-    border-color: black;
+    border-color: #000;
     border-width: 2px;
 }
 
@@ -405,7 +405,7 @@ div.descpop1:hover div {
 
 /* modlister */
 .hilight {
-    background-color: yellow;
+    background-color: #ff0;
 }
 
 /* modlister */
@@ -561,7 +561,7 @@ table.mmlog-fixed, table.mmlog-scroll /* View Log */
 .mmsysmsg {
     font-size: 150%;
     text-align: center;
-    color: red; /* was #77777; */
+    color: #f00;
 }
 
 h2.parse-table-title,
@@ -583,19 +583,19 @@ div.list-indent {
 }
 
 .target {
-    color: brown;
+    color: #a52a2a;
 }
 
 .copyfile {
-    color: navy;
+    color: #000080;
 }
 
 .newfile {
-    color: navy;
+    color: #000080;
 }
 
 .mkdir {
-    color: navy;
+    color: #000080;
 }
 
 .parse-table {

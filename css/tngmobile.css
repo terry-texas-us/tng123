@@ -33,7 +33,7 @@ body {
     display: inline-block;
     padding: 12px;
     font-size: 16pt;
-    color: white;
+    color: #fff;
     width: 60%;
     height: 16px;
     line-height: 26px;
@@ -179,7 +179,7 @@ body {
 }
 
 .mhead a {
-    color: white;
+    color: #fff;
     line-height: 100%;
     text-decoration: none;
 }

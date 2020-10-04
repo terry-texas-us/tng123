@@ -305,7 +305,7 @@ if ($noneliving || $imgrow['alwayson']) {
     }
 } else {
     ?>
-    <div style="border:1px solid black;padding:5px;width:<?php echo $size['0']; ?>px;height:<?php echo $adjheight; ?>px;">
+    <div style="border: 1px solid #000; padding: 5px; width:<?php echo $size['0']; ?>px; height:<?php echo $adjheight; ?>px;">
         <strong><span class="normal"><?php echo $livinginfo['private'] ? $admtext['text_private'] : $text['living']; ?></span></strong>
     </div>
     <?php

@@ -18,5 +18,5 @@ body {
     background-color: #a0a05a;
     border-bottom: 1px solid #69692b;
     border-top: 1px solid #e0e0b9;
-    text-shadow: black 1px 1px 0;
+    text-shadow: #000 1px 1px 0;
 }
