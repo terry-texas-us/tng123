@@ -4,7 +4,7 @@
 /* ================= TNG Media Queries ==================== */
 /* ================================================================================================================================== */
 .mmaintitle {
-    font-family: 'Cormorant Garamond';
+    font-family: 'Cormorant Garamond', serif;
     font-size: 28pt;
     text-shadow: 0.6px 0.6px #000;
     color: #1f2159;

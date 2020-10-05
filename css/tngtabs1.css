@@ -77,7 +77,6 @@ ul#tngnav {
     left: -165px;
 }
 
-/*inactive tab*/
 #tngnav a {
     display: block;
     color: #444;
@@ -90,13 +89,11 @@ ul#tngnav {
     font: 11px arial, helvetica, sans-serif;
 }
 
-/*active tab*/
 #tngnav a:hover {
     background: url(../img/tngtabactive.png) no-repeat;
     color: #fff;
 }
 
-/*active tab*/
 #tngnav a.here {
     position: relative;
     z-index: 10;
@@ -119,7 +116,6 @@ ul#tngnav {
     margin: 0 4px 0 0;
 }
 
-/*inactive tab*/
 #tabs a {
     background: url(../img/tngtab.png) no-repeat;
     color: #444;
@@ -129,13 +125,11 @@ ul#tngnav {
     border-right: 1px solid #aaa;
 }
 
-/*active tab*/
 #tabs a:hover {
     background: url(../img/tngtabactive.png) no-repeat;
     color: #fff;
 }
 
-/*active tab*/
 #tabs a.here {
     background: url(../img/tngtabactive.png) no-repeat;
     color: #fc0;

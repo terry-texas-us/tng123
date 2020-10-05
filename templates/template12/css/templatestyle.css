@@ -1,5 +1,3 @@
-/* templatestyle.css for template 12 overrides to TNG genstyle.css   */
-
 /* Created by Artisteer v4.0.0.58475 */
 
 ul.cb-hmenu {
@@ -159,13 +157,12 @@ ul.cb-hmenu {
 }
 
 header, footer, article, nav, .cb-sheet, .cb-hmenu a {
-    -webkit-background-origin: border !important;
-    -moz-background-origin: border !important;
     background-origin: border-box !important;
 }
 
 header, footer, article, nav, .cb-sheet {
     display: block;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -182,12 +179,11 @@ body {
     padding: 0;
     margin: 0;
     background: #504335 url('../img/page.png') fixed;
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), -o-linear-gradient(bottom, #181510 0, #846f58 250px) no-repeat;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), linear-gradient(to top, #181510 0, #846f58 250px) no-repeat;
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), -webkit-linear-gradient(top, #181510 0, #846f58 250px) no-repeat;
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), -moz-linear-gradient(top, #181510 0, #846f58 250px) no-repeat;
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), -o-linear-gradient(top, #181510 0, #846f58 250px) no-repeat;
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), -ms-linear-gradient(top, #181510 0, #846f58 250px) no-repeat;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), linear-gradient(to top, #181510 0, #846f58 250px) no-repeat;
+    -svg-background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), -o-linear-gradient(bottom, #181510 0, #846f58 250px) no-repeat;
     -svg-background: linear-gradient(to top, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url('../img/page.png'), linear-gradient(to top, #181510 0, #846f58 250px) no-repeat;
     background-attachment: fixed, fixed, fixed !important;
 }
@@ -270,8 +266,6 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
     line-height: 100%;
     margin-left: -113px !important;
     -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
     z-index: 99;
@@ -303,8 +297,6 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
     line-height: 100%;
     margin-left: -113px !important;
     -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
     z-index: 99;
@@ -331,8 +323,6 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
     left: 96.67%;
     margin-left: -340px !important;
     -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
     overflow: hidden;
@@ -372,15 +362,18 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
 
 .cb-nav {
     background: #c3a979;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dbcbae), color-stop(87%, #b08e4f), to(#a28349)) no-repeat;
+    background: -o-linear-gradient(bottom, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
     background: linear-gradient(to top, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
-    background: -webkit-linear-gradient(top, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
-    background: -moz-linear-gradient(top, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
     background: -o-linear-gradient(top, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
-    background: -ms-linear-gradient(top, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
     background: linear-gradient(to top, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
+    -svg-background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dbcbae), color-stop(87%, #b08e4f), to(#a28349)) no-repeat;
+    -svg-background: -o-linear-gradient(bottom, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
     -svg-background: linear-gradient(to top, #dbcbae 0, #b08e4f 87%, #a28349 100%) no-repeat;
 
     border-radius: 20px;
+
+    -webkit-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.15);
 
     box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.15);
 
@@ -438,6 +431,7 @@ ul.cb-hmenu, ul.cb-hmenu ul {
 ul.cb-hmenu {
     display: inline-block;
     vertical-align: middle;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -499,12 +493,13 @@ ul.cb-hmenu > li > a {
 
 ul.cb-hmenu > li > a.active {
     background: #b8a27f;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d4c6b0), color-stop(84%, #a4885b), to(#947b51)) no-repeat;
+    background: -o-linear-gradient(bottom, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     background: linear-gradient(to top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
-    background: -webkit-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
-    background: -moz-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     background: -o-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
-    background: -ms-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     background: linear-gradient(to top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
+    -svg-background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d4c6b0), color-stop(84%, #a4885b), to(#947b51)) no-repeat;
+    -svg-background: -o-linear-gradient(bottom, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     -svg-background: linear-gradient(to top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     border-radius: 8px;
     border: 1px solid #87704a;
@@ -522,12 +517,13 @@ ul.cb-hmenu > li:hover > a {
 
 ul.cb-hmenu > li > a:hover, .desktop ul.cb-hmenu > li:hover > a {
     background: #b8a27f;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d4c6b0), color-stop(84%, #a4885b), to(#947b51)) no-repeat;
+    background: -o-linear-gradient(bottom, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     background: linear-gradient(to top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
-    background: -webkit-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
-    background: -moz-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     background: -o-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
-    background: -ms-linear-gradient(top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     background: linear-gradient(to top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
+    -svg-background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d4c6b0), color-stop(84%, #a4885b), to(#947b51)) no-repeat;
+    -svg-background: -o-linear-gradient(bottom, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     -svg-background: linear-gradient(to top, #d4c6b0 0, #a4885b 84%, #947b51 100%) no-repeat;
     border-radius: 8px;
     border: 1px solid #87704a;
@@ -792,6 +788,7 @@ form.cb-search input[type="text"] {
     margin: 0 auto;
     width: 100%;
     padding: 3px 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: #4d3e23 !important;
     font-size: 16px;
@@ -826,6 +823,8 @@ form.cb-search > input {
 td.cb-searchtext table tbody tr td input[type="submit"] {
     background: url('../img/searchicon.png') center center no-repeat;
     width: 24px;
+
+    -webkit-box-shadow: none;
 
     box-shadow: none;
     -o-box-shadow: none;
@@ -1241,7 +1240,6 @@ a:link, a:active {
     background-color: #f9f9f9;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #e8e6dc;
 }

@@ -438,8 +438,6 @@ div.descpop1:hover div {
 /* modlister */
 #mmgrid th, #mmgrid td, #mmgrid td div, .results {
     border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
 }
 
 /* modeditor */
@@ -618,7 +616,6 @@ Added for TNGv13 (no iframes)
     z-index: 5;
 }
 
-/*active tab*/
 #tngnav a.here {
     position: relative;
     z-index: 0 !important;

@@ -1,5 +1,3 @@
-/* templatestyle.css for template 16 overrides to TNG genstyle.css   */
-
 /* FONTS USED IN THIS TEMPLATE */
 @import url('https://fonts.googleapis.com/css?family=Rochester');
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300');
@@ -358,7 +356,6 @@ ul.tngdd .menulink:hover, ul.tngdd .menuhover {
     background: #5e8db5 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #d9d9d9;
 }

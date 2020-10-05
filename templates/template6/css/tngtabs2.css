@@ -1,4 +1,3 @@
-/*new method*/
 ul#tngnav {
     margin: 0 0 0 10px;
 }
@@ -7,7 +6,6 @@ ul#tngnav {
     margin: 0 0 0 1px;
 }
 
-/*inactive tab*/
 #tngnav a {
     color: #444;
     background: #f2e6cc;
@@ -16,14 +14,12 @@ ul#tngnav {
     border-radius: 4px 4px 0 0;
 }
 
-/*active tab*/
 #tngnav a:hover {
     background-color: #660002;
     color: #fff;
     background-image: url(../img/fieldbg.jpg);
 }
 
-/*active tab*/
 #tngnav a.here {
     background-color: #660002;
     color: #fc0;
@@ -38,7 +34,6 @@ ul#tngnav {
     padding: 0 0 .3em 0;
 }
 
-/*inactive tab*/
 #tabs a {
     background: #f2e6cc;
     color: #444;
@@ -46,14 +41,12 @@ ul#tngnav {
     border-right: 1px solid #aaa;
 }
 
-/*active tab*/
 #tabs a:hover {
     background-color: #660002;
     color: #fff;
     background-image: url(../img/fieldbg.jpg);
 }
 
-/*active tab*/
 #tabs .here {
     background-color: #660002;
     color: #fc0;

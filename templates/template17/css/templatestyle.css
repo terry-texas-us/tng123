@@ -1,5 +1,3 @@
-/* templatestyle.css for template 17 overrides to TNG genstyle.css   */
-
 @import url('https://fonts.googleapis.com/css?family=Lusitana:400,700|Montserrat:400,500');
 
 #tmenu {
@@ -288,7 +286,6 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
     background-color: #e2c2a9;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #f2f0ee;
 }

@@ -1,5 +1,3 @@
-/* templatestyle.css for template 14 overrides to TNG genstyle.css   */
-
 @import url(https://fonts.googleapis.com/css?family=Playball);
 
 #art-main {
@@ -574,7 +572,6 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
     background-color: #fcf0dc;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #fde6b8;
 }

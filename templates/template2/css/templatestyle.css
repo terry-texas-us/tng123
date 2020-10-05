@@ -1,5 +1,3 @@
-/* templatestyle.css for template 2 overrides to TNG genstyle.css   */
-
 /* override to TNG genstyle.css for DNA Compare reports for template 2   */
 .overflowauto {
     width: 98vw;
@@ -37,7 +35,6 @@
 
 /* body: describes page background color and all non-table text not governed by any other style */
 .bodytopmenu {
-    /* next 5 lines added in 7.0.0 to replace bgcolor="#676037" leftmargin=0 topmargin=0 rightmargin=0 bottommargin=0 marginwidth=0 in topmenu.php of template2 */
     background-color: #676037;
     margin: 0 0 0 0;
 }
@@ -57,18 +54,10 @@ a.admincell:hover, a.leftlink:hover {
     background-color: #c3b165;
 }
 
-/* New style definitions added in 7.0.0  */
-/* to replace hard-coded styles in topmenu.php or footer.php */
-
-/* page: is defined to replace the bgcolor=#676037; */
-/* fieldnameback: background color for column and row title sections */
-/* sideback: background color for side and top frames */
 .page, .LB_closeAjaxWindow, .bar, .sideback, .fieldnameback,
 .tablesaw-cell-label {
     background-color: #676037;
 }
-
-/* style definitions in topmenu.php moved here in 7.0.0 */
 
 .topmenu {
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -299,7 +288,6 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu, .databack {
     background-color: #ffe9a9;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #fff6db;
 }

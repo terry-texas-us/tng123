@@ -1,8 +1,5 @@
-/* templatestyle.css for template 20 overrides to TNG genstyle.css   */
-
 /* body: describes page background color and all non-table text not governed by any other style */
 body {
-    margin-top: 8px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -71,7 +68,6 @@ h3, h3 a:link, h3 a:visited, a.emphasis:link, a.emphasis:visited {
     background-color: #9fbfdf;
     margin-bottom: 10px; /*bottom spacing between header and rest of content*/
     padding: 4px 0 4px 10px; /*header text is indented 10px*/
-    cursor: hand;
     cursor: pointer;
 }
 
@@ -102,8 +98,7 @@ h3, h3 a:link, h3 a:visited, a.emphasis:link, a.emphasis:visited {
     color: #a70303;
     background: url(arrowbullet.png) no-repeat center left; /*custom bullet list image*/
     display: block;
-    padding: 2px 0;
-    padding-left: 19px; /*link text is indented 19px*/
+    padding: 2px 0 2px 19px;
     text-decoration: none;
     font-weight: bold;
     border-bottom: 1px solid #dadada;
@@ -236,7 +231,7 @@ a.admincell:hover, a.leftlink:hover {
 /* footer added to replace footer fonts and links */
 .footer {
     margin-top: 0;
-    marging-bottom: 5px;
+    margin-bottom: 5px;
     font-size: 10px;
     text-align: center;
     color: #000;
@@ -258,7 +253,6 @@ a.footer:hover {
     background-color: #bcd;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #bdd;
 }
@@ -403,7 +397,7 @@ a.featurelink:link, a.featurelink:visited {
 
 .featurelink a {
     display: block;
-    ` padding: 1px 1px 1px 2px;
+    padding: 1px 1px 1px 2px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -413,7 +407,6 @@ a:link, a:hover, a:visited, a:active {
     color: #009;
 }
 
-/*  home page sections replaces valign="top" width="300" */
 .section {
     width: 50%;
     border-spacing: 0;
@@ -443,10 +436,10 @@ a:link, a:hover, a:visited, a:active {
 
 /* column container */
 .content {
-    position: relative; /* This fixes the IE7 overflow hidden bug */
+    position: relative;
     clear: both;
     float: left;
-    width: 100%; /* width of whole page */
+    width: 100%;
 }
 
 .snlink {
@@ -486,15 +479,7 @@ ul.tngdd ul li a:hover {
 }
 
 ul.tngdd .menulink {
-    background: #cc9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
-    background-image: url(../img/ArrowDown.gif), from(#e5e5b1), to(#c5c591));
-    background-image: url(../img/ArrowDown.gif),
-    background-image: url(../img/ArrowDown.gif),
-    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(top, #e5e5b1, #c5c591);
-    background-position: 2px 8px, 0 0;
-    background-repeat: no-repeat;
+    background: #cc9 url(../img/ArrowDown.gif), linear-gradient(to top, #e5e5b1, #c5c591) no-repeat 2px 8px, 0 0;
 }
 
 ul.tngdd .menulink, ul.tngdd .langmenu {
@@ -520,11 +505,11 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
 }
 
 ul.tngdd .sub {
-    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat
+    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
 }
 
 ul.tngdd .topline {
-    border-top: 1px solid #777
+    border-top: 1px solid #777;
 }
 
 /* Remove background-image from footer  */
@@ -716,9 +701,6 @@ p {
 .col3 {
     float: left;
     position: relative;
-    padding: 0 0 1em 0;
-    /* was 1em no left and right padding on columns, we just make them narrower instead
-        only padding top and bottom is included here, make it whatever value you need */
     padding: .5em; /* was 5em */
 }
 
@@ -964,7 +946,7 @@ Original comments were - Please make note of the brackets here:
 
 /* styles for home page surname cloud post */
 .surnames-cloud, .surnames-cloud a {
-    font-family: Verdana, Tahoma, Arial;
+    font-family: Verdana, Tahoma, Arial sans-serif;
     padding: 2px 2px 2px 2px;
     letter-spacing: 0.0em;
     word-spacing: 0.0em;

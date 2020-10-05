@@ -1,5 +1,3 @@
-/* templatestyle.css for template 8 overrides to TNG genstyle.css   */
-
 /* body: describes page background color and all non-table text not governed by any other style */
 .templatebody {
     background: #211a16;
@@ -89,7 +87,6 @@ a.lightlink2:link, a.lightlink2:visited {
     background-color: #f9f5f0;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #e1decb;
 }

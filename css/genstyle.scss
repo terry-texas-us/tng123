@@ -142,7 +142,6 @@ a:visited {
 }
 
 .popup, .popinner, .pboxpopupdiv, .slidedown {
-  -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 
@@ -170,17 +169,14 @@ a:visited {
 }
 
 .rounded10 {
-  -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 
 .rounded5 {
-  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
 .rounded4, div.pad5 img {
-  -webkit-border-radius: 4px;
   border-radius: 4px;
 }
 
@@ -675,7 +671,6 @@ select {
 
 input[type=button], input[type=submit], input[type=reset], input[type=password], button, input[type=text], input[type=search], textarea, select {
   border: 1px solid #808080;
-  -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 3px 6px;
 }
@@ -868,6 +863,7 @@ input.minibutton {
 
 .thumb, .smallimg, .adminthumb {
   border: 0;
+  -webkit-box-shadow: 1px 1px 1px 0 #777;
   box-shadow: 1px 1px 1px 0 #777;
   border-radius: 5px;
 }
@@ -896,7 +892,6 @@ input.minibutton {
   color: #000;
   font-weight: bold;
   text-decoration: none;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   text-align: right;
 }
@@ -934,7 +929,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
   display: none;
   z-index: 500;
   padding-top: 28px;
-  -webkit-border-radius: 8px;
   border-radius: 8px;
 }
 
@@ -953,7 +947,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
   position: absolute;
   top: 0;
   background-color: #336;
-  -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
 
@@ -961,7 +954,6 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
   cursor: pointer;
   padding: 1px 4px 2px 2px;
   float: right;
-  -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
 
@@ -1158,7 +1150,6 @@ form {
   background-color: #f9f9f9;
   padding: 10px;
   margin: 1px;
-  -webkit-border-radius: 8px;
   border-radius: 8px;
 }
 
@@ -1173,7 +1164,6 @@ form {
 }
 
 .rightround {
-  -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1206,7 +1196,6 @@ form {
   font-size: 14pt;
   border: 1px solid #000;
   background-color: #fff;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 
@@ -1286,7 +1275,6 @@ p.menu {
   width: 40px;
   height: 40px;
   margin: 1px 9px 0 3px;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
 }
 
@@ -1309,7 +1297,6 @@ a.admincell {
   padding: 8px;
   margin: 2px 3px 4px 3px;
   display: block;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
 }
 
@@ -1333,13 +1320,13 @@ a.admincell {
 .leftlink {
   padding: 4px 4px 4px 6px;
   display: block;
-  -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 
 .tngmsgarea,
 a.admincell, .leftlink, .whiteheader, .whitetext {
   text-shadow: 1px 1px 1px #000;
+  -webkit-filter: dropshadow(color=#000, offx=1, offy=1);
   filter: dropshadow(color=#000, offx=1, offy=1);
 }
 
@@ -1493,7 +1480,6 @@ ul#tngnav {
   float: left;
 }
 
-/*inactive tab*/
 #tngnav a {
   display: block;
   text-decoration: none;
@@ -1502,7 +1488,6 @@ ul#tngnav {
   min-height: 15px;
 }
 
-/*active tab*/
 #tngnav a.here {
   /*position: relative;*/
 }
@@ -1517,7 +1502,6 @@ ul#tngnav {
   z-index: 10;
 }
 
-/*inactive tab*/
 #tabs a {
   font-size: 11px;
   text-decoration: none;
@@ -1536,7 +1520,6 @@ div.menucontainer {
 
 div.innercontainer {
   height: 22px;
-  -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 
@@ -1582,7 +1565,6 @@ ul.tngdd * {
 ul.tngdd a {
   display: block;
   text-decoration: none;
-  -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 
@@ -1590,7 +1572,6 @@ ul.tngdd li {
   position: relative;
   float: left;
   margin-right: 1px;
-  -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 
@@ -1604,7 +1585,6 @@ ul.tngdd ul {
   -webkit-box-shadow: 1px 1px 3px 0 #666;
   box-shadow: 1px 1px 3px 0 #666;
   background-color: #666;
-  -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 
@@ -1618,7 +1598,6 @@ ul.tngdd ul li {
   border-top: none;
   width: 158px;
   margin: 0;
-  -webkit-border-radius: 0;
   border-radius: 0;
 }
 
@@ -1628,17 +1607,14 @@ ul.tngdd ul li a {
   background-color: #eee;
   font-size: 12px;
   border-top: 1px solid #fff;
-  -webkit-border-radius: 0;
   border-radius: 0;
 }
 
 ul.tngdd ul li:first-child, ul.tngdd ul li:first-child a {
-  -webkit-border-radius: 6px 6px 0 0;
   border-radius: 6px 6px 0 0;
 }
 
 ul.tngdd ul li:last-child, ul.tngdd ul li:last-child a {
-  -webkit-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
 }
 
@@ -1680,7 +1656,6 @@ ul.tngdd .langmenu {
 ul.tngdd .stubmenu {
   border-left: 0;
   width: 8px;
-  -webkit-border-radius: 0 6px 6px 0;
   border-radius: 0 6px 6px 0;
 }
 
@@ -1688,7 +1663,6 @@ ul.tngdd .stubmenu-rt {
   border-right: 0;
   margin-right: 0;
   width: 8px;
-  -webkit-border-radius: 6px 0 0 6px;
   border-radius: 6px 0 0 6px;
 }
 
@@ -1879,7 +1853,6 @@ ul.tngdd ul li a .menu-icon {
   border: 1px solid #000;
   -webkit-box-shadow: 1px 1px 3px 0 #666;
   box-shadow: 1px 1px 3px 0 #666;
-  -webkit-border-radius: 8px;
   border-radius: 8px;
 }
 
@@ -1893,7 +1866,6 @@ ul.tngdd ul li a .menu-icon {
   background-color: #fff;
   min-height: 150px;
   width: 95%;
-  -webkit-border-radius: 6px;
   border-radius: 6px;
   -webkit-box-shadow: 1px 1px 3px 0 #666;
   box-shadow: 1px 1px 3px 0 #666;
@@ -1962,7 +1934,6 @@ ul.tngdd ul li a .menu-icon {
   margin-top: -10px;
   z-index: 20;
   background: #e0e0f7;
-  -webkit-border-radius: 8px;
   border-radius: 8px;
 }
 
@@ -2021,7 +1992,6 @@ ul.tngdd ul li a .menu-icon {
     display: none;
   }
 }
-
 /* styles for home page surname cloud post */
 .surnames-cloud, .surnames-cloud a {
   font-family: Verdana, Tahoma, Arial, sans-serif;
@@ -2103,6 +2073,7 @@ a.size0 {
 .mlbox {
   position: absolute;
   border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 3px 0 #333;
   box-shadow: 2px 2px 3px 0 #333;
   z-index: 1;
 }
@@ -2180,6 +2151,7 @@ a.size0 {
 }
 
 .grabbing {
+  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
@@ -2260,6 +2232,8 @@ thead th {
 
 .resultscol {
   overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
   white-space: pre-wrap;
 }
@@ -2335,7 +2309,6 @@ thead th {
     width: 70px;
   }
 }
-
 .dysval {
   height: 112px;
   width: 16px;
@@ -2345,6 +2318,8 @@ thead th {
   text-align: left;
   margin: auto;
   padding: 0.25em;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   -o-transform: rotate(90deg);
   -o-transform-origin: 0 0;
@@ -2522,14 +2497,12 @@ sup {
     width: 230px;
   }
 }
-
 /*  reduce thumbnails and eventdatecol for tablets */
 @media only screen and (min-width: 480px) and (max-width: 1136px) {
   .thumbnails, .eventdatecol, .gallery {
     width: 80px;
   }
 }
-
 /*  reduce thumbnails and eventdatecol for smart phones */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .thumbnails, .gallery {
@@ -2544,7 +2517,6 @@ sup {
     width: 280px;
   }
 }
-
 /*  portrait orientation on newer smart phones  */
 @media screen and (max-width: 360px) and (orientation: portrait) {
   .cemmap {
@@ -2553,7 +2525,6 @@ sup {
     margin-bottom: 20px;
   }
 }
-
 /*  portrait orientation on smaller tablets  */
 @media screen and (max-width: 480px) and (orientation: portrait) {
   .cemmap {
@@ -2562,7 +2533,6 @@ sup {
     margin-bottom: 20px;
   }
 }
-
 /*  landscape orientation on smaller smart phones  */
 @media screen and (max-width: 640px) and (orientation: landscape) {
   .cemmap {
@@ -2571,7 +2541,6 @@ sup {
     margin-bottom: 20px;
   }
 }
-
 /*  landscape orientation on tablets  */
 @media screen and (max-width: 1136px) and (orientation: landscape) {
   .cemmap {
@@ -2580,44 +2549,3 @@ sup {
     margin-bottom: 20px;
   }
 }
-
-/*
-
-body.admin-body table.normal {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 1px;
-}
-
-body.admin-body table.normal th, body.admin-body table.normal td {
-    padding: 3px;
-}
-
-table.uploadmore td {
-    padding: 2px;
-    border: none;
-}
-
-table.tblback, table.lightback {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 2px;
-}
-
-table.tblback th, table.tblback td, table.lightback th, table.lightback td {
-    padding: 10px;
-}
-
-td.databack, td.databackalt, td.lightback {
-    vertical-align: top;
-}
-
-td.highlightedchild {
-    padding: 2px;
-    background-color: #f9f9f9;
-}
-
-td.unhighlightedchild {
-    padding: 2px;
-}
-*/

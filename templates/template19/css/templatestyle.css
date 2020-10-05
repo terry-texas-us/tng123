@@ -1,6 +1,4 @@
-﻿/* templatestyle.css for template 219 overrides to TNG genstyle.css   */
-
-/* Designed by Genealogy Web Templates
+﻿/* Designed by Genealogy Web Templates
    http://genealogywebtemplates.com 
   
 Main Colors used in this template
@@ -618,15 +616,12 @@ ul#tngnav {
     color: #fff;
 }
 
-/*active tab*/
 #tngnav a.here {
     background: #14153a;
     color: #fff;
     border-right: 1px solid #777;
     margin: 0;
 }
-
-/*active tab*/
 
 #tabs div {
     margin: 0 1px 0 0;
@@ -641,19 +636,15 @@ ul#tngnav {
     border-right: 1px solid #aaa;
 }
 
-/*inactive tab*/
 #tabs a:hover {
     background: #14153a;
     color: #fff;
 }
 
-/*active tab*/
 #tabs .here {
     background: #14153a;
     color: #f0f1fa;
 }
-
-/*active tab*/
 
 /*Family Tree Chart Box Coding*/
 .pedbox {

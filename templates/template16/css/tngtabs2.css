@@ -6,7 +6,6 @@ ul#tngnav {
     margin: 0 0 0 1px;
 }
 
-/*inactive tab*/
 #tngnav a {
     color: #444;
     background: #ddd4c7;
@@ -15,13 +14,11 @@ ul#tngnav {
     border-radius: 4px 4px 0 0;
 }
 
-/*active tab*/
 #tngnav a:hover {
     background: #5e8db5;
     color: #fff;
 }
 
-/*active tab*/
 #tngnav a.here {
     background: #5e8db5;
     color: #fc0;
@@ -35,7 +32,6 @@ ul#tngnav {
     padding: 0 0 .3em 0;
 }
 
-/*inactive tab*/
 #tabs a {
     background: #ddd4c7;
     color: #444;
@@ -43,13 +39,11 @@ ul#tngnav {
     border-right: 1px solid #aaa;
 }
 
-/*active tab*/
 #tabs a:hover {
     background: #5e8db5;
     color: #fff;
 }
 
-/*active tab*/
 #tabs .here {
     background: #5e8db5;
     color: #fc0;

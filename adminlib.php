@@ -29,7 +29,7 @@ function tng_adminheader($title, $flags) {
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 
-    echo "<link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK' crossorigin='anonymous'>\n";
+    echo "<link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>\n";
     echo "<link href='css/genstyle.css' rel='stylesheet'>\n";
     if (isset($flags['modmgr'])) {
         echo "<link href='css/modmanager.css' rel='stylesheet'>\n";

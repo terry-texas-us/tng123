@@ -67,7 +67,6 @@ ul#tngnav {
     left: -140px;
 }
 
-/*inactive tab*/
 #tngnav a {
     float: left;
     background: url("../img/tableft.gif") no-repeat left top;

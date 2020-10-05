@@ -1,5 +1,3 @@
-/* templatestyle.css for template 5 overrides to TNG genstyle.css   */
-
 /* override to TNG genstyle.css for DNA Compare reports for template 5   */
 .overflowauto {
     width: 94vw;
@@ -43,7 +41,6 @@ a:active, a:hover {
     background-color: #fdfaf2;
 }
 
-/* added in TNG 10.1 for alternate row striping to databack */
 .databackalt {
     background-color: #eed;
 }
@@ -84,8 +81,6 @@ a.leftlink:hover {
     background-color: #68939b;
 }
 
-/*added in 5.0.0*/
-/*for active secondary tab link*/
 a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active {
     color: #ecd9cc;
 }

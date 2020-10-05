@@ -1,5 +1,3 @@
-/* templatestyle.css for template 15 overrides to TNG genstyle.css   */
-
 @import url(https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer);
 
 /* foundation elements */
@@ -1093,36 +1091,30 @@ a:link, a:active, div.icons a {
     color: #fc3;
 }
 
-/*active tab*/
 #tabs .here {
     background: #063e53;
     color: #fc0;
 }
 
-/*inactive tab*/
 #tabs a {
     color: #444;
     border-right: 1px solid #aaa;
 }
 
-/*inactive tab*/
 #tabs a {
     background: #d1c5b7;
     color: #444;
     border-right: 1px solid #aaa;
 }
 
-/*active tab*/
 #tabs a.here {
     color: #fc0;
 }
 
-/*active tab*/
 #tabs a:hover {
     color: #fff;
 }
 
-/*active tab*/
 #tabs a:hover {
     background: #063e53;
     color: #fff;
@@ -1140,32 +1132,27 @@ a:link, a:active, div.icons a {
 }
 
 /* tabs-2 */
-/*inactive tab*/
 #tngnav a {
     color: #444;
     background: #d1c5b7;
     border-right: 1px solid #444;
 }
 
-/*active tab*/
 #tngnav a.here {
     color: #fc0;
     border-right: 1px solid #777;
 }
 
-/*active tab*/
 #tngnav a.here {
     background: #063e53;
     color: #fc0;
     border-right: 1px solid #444;
 }
 
-/*active tab*/
 #tngnav a:hover {
     color: #fff;
 }
 
-/*active tab*/
 #tngnav a:hover {
     background: #063e53;
     color: #fff;
