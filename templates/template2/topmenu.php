@@ -1,9 +1,5 @@
-<?php
+<?php global $text, $tmp; ?>
 
-global $text, $tmp;
-?>
-
-<!-- begin topmenu.php for selected template -->
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> bodytopmenu">
 
 <table class="page w-100" cellspacing="0">
@@ -84,4 +80,3 @@ global $text, $tmp;
                 <tr>
                     <td>
                         <div class="normal">
-                            <!-- end topmenu.php for selected template -->

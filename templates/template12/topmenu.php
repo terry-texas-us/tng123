@@ -1,6 +1,5 @@
-<?php
-global $text, $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig, $logout_url;
-?>
+<?php global $text, $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig, $logout_url; ?>
+
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicbody">
     <a id="top"></a>
 <div id="cb-main">
@@ -60,9 +59,6 @@ global $text, $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig
         </div>
     </header>
     <div class="cb-sheet clearfix">
-<?php
-# We use a different class for displaying TNG pages
-if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false) {
-    echo "<div class=\"cb-tng-area\">";
-}
-?>
+<?php if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false) { ?>
+    <div class='cb-tng-area'>
+<?php } ?>

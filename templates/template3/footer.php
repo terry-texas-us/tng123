@@ -12,4 +12,3 @@
         </td>
     </tr>
 </table>
-<!-- end of footer for template 3 -->

@@ -1,5 +1,5 @@
-<?php global $currentuser, $text, $flags;
-?>
+<?php global $currentuser, $text, $flags; ?>
+
 </div>
 </td>
 </tr>
@@ -19,4 +19,3 @@
     ?>
 </div>
 </div>
-<!-- end of footer for template 4 -->

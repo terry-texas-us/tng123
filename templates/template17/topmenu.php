@@ -1,4 +1,5 @@
 <?php
+
 global $text, $tmp;
 
 $dadlabel = getTemplateMessage('t17_dadside');
@@ -34,8 +35,5 @@ $momlabel = getTemplateMessage('t17_momside');
     </div>
 </div>
 <div id="tngcontent">
-    <!--
-    -->
 
     <br>
-    <!-- end of topmenu.php for template 1 -->

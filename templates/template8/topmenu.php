@@ -1,7 +1,5 @@
-<?php
+<?php global $text, $currentuser, $allow_admin, $tmp; ?>
 
-global $text, $currentuser, $allow_admin, $tmp;
-?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody m-2">
 <table class="page">
     <tr>
@@ -57,11 +55,8 @@ global $text, $currentuser, $allow_admin, $tmp;
         </td>
     </tr>
     <tr>
-<?php
-# this allows two different classes for the main index page and regular TNG pages
-if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false) {
-    echo "<td class='mainbg' colspan='3' style='border-collapse:separate;'>";
-} else {
-    echo "<td colspan='3' style='border-collapse:separate;'>";
-}
-?>
+<?php if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false) {  // main index page ?>
+    <td class='mainbg' style='border-collapse: separate;' colspan='3'>
+<?php } else {  // regular pages ?>
+    <td style='border-collapse:separate;' colspan='3'>
+<?php } ?>

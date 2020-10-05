@@ -1,8 +1,5 @@
-<?php
+<?php global $text, $flags, $currentuser, $mylanguage, $tngconfig; ?>
 
-global $text, $flags, $currentuser, $mylanguage, $tngconfig;
-?>
-<!-- begin footer.php for selected template -->
 </div>
 </td>
 </tr>
@@ -26,4 +23,3 @@ global $text, $flags, $currentuser, $mylanguage, $tngconfig;
     </td>
 </tr>
 </table>
-<!-- end footer for selected template -->

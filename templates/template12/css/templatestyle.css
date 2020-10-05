@@ -2,7 +2,6 @@
 
 /* Created by Artisteer v4.0.0.58475 */
 
-
 ul.cb-hmenu {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
@@ -241,7 +240,6 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
     margin: 1px;
 }
 
-
 .cb-shapes {
     position: absolute;
     top: 0;
@@ -343,7 +341,6 @@ li h6, .cb-postcontent li h6, .cb-blockcontent li h6 {
     background-repeat: no-repeat;
     z-index: 101;
 }
-
 
 .cb-footer .layout-item-0 {
 }

@@ -1,8 +1,5 @@
-<?php
+<?php global $text, $flags; ?>
 
-global $text, $flags;
-?>
-<!-- begin footer.php for selected template -->
 </td>
 </tr>
 </table> <!-- [topmenu.php]-->
@@ -42,4 +39,3 @@ global $text, $flags;
     <br><br>
 </div>
 </div> <!-- .center [topmenu.php] -->
-<!-- end footer for selected template -->

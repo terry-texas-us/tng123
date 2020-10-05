@@ -1,7 +1,5 @@
-<?php
+<?php global $text, $currentuser, $allow_admin, $tmp, $mediatypes; ?>
 
-global $text, $currentuser, $allow_admin, $tmp, $mediatypes;
-?>
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 
 <div>

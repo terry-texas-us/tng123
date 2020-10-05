@@ -21,7 +21,6 @@
     width: 100%;
 }
 
-
 /*---------------- Weekends ---------------------------*/
 .timeline-ether-weekends {
     position: absolute;
@@ -37,7 +36,6 @@
     top: 0;
     height: 100%;
 }
-
 
 /*-------------------------- HIGHLIGHT DECORATORS -------------------*/
 /* Used for decorators, not used for Timeline Highlight              */
@@ -69,7 +67,6 @@
     background-color: #ff5;
 }
 
-
 /*---------------------------- LABELS -------------------------*/
 .timeline-highlight-label {
     position: absolute;
@@ -78,7 +75,6 @@
     font-weight: bold;
     color: #999;
 }
-
 
 /*---------------- VERTICAL LABEL -------------------*/
 .timeline-horizontal .timeline-highlight-label {
@@ -98,7 +94,6 @@
     text-align: left;
 }
 
-
 /*---------------- HORIZONTAL LABEL -------------------*/
 .timeline-vertical .timeline-highlight-label {
     left: 0;
@@ -116,7 +111,6 @@
 .timeline-vertical .timeline-highlight-label-end {
     text-align: center;
 }
-
 
 /*-------------------------------- DATE LABELS --------------------------------*/
 .timeline-date-label {
@@ -157,7 +151,6 @@
     width: 7em;
 }
 
-
 /*------------------------------- Ether.highlight -------------------------*/
 .timeline-ether-highlight {
     position: absolute;
@@ -171,7 +164,6 @@
 .timeline-vertical .timeline-ether-highlight {
     left: 2px;
 }
-
 
 /*------------------------------ EVENTS ------------------------------------*/
 .timeline-event-icon, .timeline-event-label, .timeline-event-tape {
@@ -195,7 +187,6 @@
     width: 1px;
     height: 6px;
 }
-
 
 /*--------------------------------- TIMELINE-------------------------*/
 .timeline-ether-bg {

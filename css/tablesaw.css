@@ -33,7 +33,6 @@ table.tablesaw {
     padding-bottom: .7em;
 }
 
-
 .tablesaw-enhanced .tablesaw-bar .btn {
     border: 1px solid #ccc;
     background: none;
@@ -362,7 +361,6 @@ table.tablesaw {
         overflow: visible;
     }
 }
-
 
 table.tablesaw tbody th {
     font-weight: bold;

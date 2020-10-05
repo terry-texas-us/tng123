@@ -31,7 +31,6 @@ summary {
     display: block;
 }
 
-
 h1,
 h2,
 h3,
@@ -872,7 +871,6 @@ ul.tngdd ul li a,
     }
 }
 
-
 /* #Mobile (Portrait)
 @media only screen and (max-width:480px) {
 	h2.subheader {
@@ -891,7 +889,6 @@ ul.tngdd ul li a,
 		width:100%;
 	}
 }
-
 
 /* ------------------------- */
 /*		colors		*/
@@ -1173,7 +1170,6 @@ a:link, a:active, div.icons a {
     background: #063e53;
     color: #fff;
 }
-
 
 @font-face {
     font-family: 'Roboto';

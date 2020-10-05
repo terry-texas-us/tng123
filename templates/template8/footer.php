@@ -1,5 +1,5 @@
-<!-- begin footer -->
 <?php global $text, $flags; ?>
+
 </td></tr>
 <tr>
     <td colspan="2" class="footer">
@@ -10,4 +10,3 @@
     </td>
 </tr>
 </table>
-<!-- end footer -->

@@ -1,9 +1,5 @@
-<?php
+<?php global $text, $tmp; ?>
 
-global $text, $tmp;
-?>
-
-<!-- begin topmenu.php for selected template -->
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 
 <?php if ($tmp['t1_titlechoice'] == "text") { ?>
@@ -18,4 +14,3 @@ global $text, $tmp;
     <a href="index.php"><img src="<?php echo $templatepath; ?><?php echo $tmp['t1_headimgplustitle']; ?>" alt=""></a>
 <?php } ?>
 <br>
-<!-- end topmenu.php for selected template -->

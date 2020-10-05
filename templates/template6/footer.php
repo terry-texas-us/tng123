@@ -1,5 +1,5 @@
-<!-- begin footer -->
 <?php global $text, $flags; ?>
+
 </td>
 </tr>
 
@@ -17,5 +17,3 @@
     </td>
 </tr>
 </table>
-
-<!-- end footer for template 6 -->

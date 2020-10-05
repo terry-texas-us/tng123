@@ -1,9 +1,4 @@
-<?php
-// PLEASE NOTE: The topmenu.php generates the header and left menu sections for all pages, including the
-//    Home Page (index.php)
-global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes, $cms, $rootpath;
-
-?>
+<?php global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes, $cms, $rootpath; ?>
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicback">
 

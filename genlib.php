@@ -93,7 +93,9 @@ function standardHeaderVariants($headElement, array $flags): void {
     $icons = $headElement->getIcons();
 
     if (!$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
+        echo "<!-- begin '{$templatepath}{$customheader}' content -->\n";
         include $templatepath . $customheader;
+        echo "<!-- end '{$templatepath}{$customheader}' content -->\n";
     }
     if ((!isset($flags['noicons']) || !$flags['noicons'])) {
         $icons = tng_icons(1, $title);
@@ -202,7 +204,9 @@ function tng_footer($flags = ['basicfooter' => true]) {
                 echo tng_basicfooter($flags);
                 $needtherest = false;
             } else {
+                echo "<!-- begin '{$templatepath}{$customfooter}' content -->\n";
                 include $templatepath . $customfooter;
+                echo "<!-- end '{$templatepath}{$customfooter}' content -->\n";
             }
         }
     }

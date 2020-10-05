@@ -47,7 +47,6 @@ a.headerlink:link {
     font-size: 10px;
 }
 
-
 /* link: normal links, active: links in use */
 a:link, a:active, div.icons a {
     color: #676037;
@@ -144,7 +143,6 @@ a.admincell:hover, a.leftlink:hover {
 .tablebkground {
     background-color: #fff;
 }
-
 
 #mnav a {
     font-size: 12px;

@@ -1,4 +1,5 @@
 <?php global $text, $currentuser, $mylanguage, $tmp, $flags; ?>
+
 <br>
 </div>
 <div id="subfooter">
@@ -7,4 +8,3 @@
     tng_footer($flags);
     ?>
 </div>
-<!-- end of footer for template 17 -->

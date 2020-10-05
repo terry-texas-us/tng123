@@ -96,7 +96,6 @@ a.topmenu:Active {
     text-decoration: none;
 }
 
-
 /* tabletopedge is defined to replace the bgcolor=#FFFFFF; and background=edge.gif in topmenu */
 .tabletopedge {
     margin: 0;
@@ -127,7 +126,6 @@ a.topmenu:Active {
 .noimgborder {
     border: 0;
 }
-
 
 /* style definitions in index.php moved here in 7.0.0 */
 
@@ -309,7 +307,6 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu, .databack {
 tr.modline:hover td.mmcell:nth-child(-n+5) {
     background-color: #ff0;
 }
-
 
 ul.tngdd .sub {
     background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;

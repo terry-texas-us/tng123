@@ -1,11 +1,10 @@
-<?php
-global $text, $tmp;
-?>
+<?php global $text, $tmp; ?>
+
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody">
 <table class="page">
     <tr class="row60">
         <td colspan="4" class="headertitle">
-        <?php echo getTemplateMessage('t6_maintitle'); ?> <!-- Our Family History -->
+            <?php echo getTemplateMessage('t6_maintitle'); ?> <!-- Our Family History -->
         </td>
     </tr>
     <tr>
@@ -42,4 +41,3 @@ global $text, $tmp;
     </tr>
     <tr class="tablebkground">
         <td colspan="4" class="padding" style="border-collapse:separate;">
-            <!-- end topmenu template 6 -->

@@ -1,9 +1,5 @@
-<?php
+<?php global $text, $tmp; ?>
 
-global $text, $tmp;
-?>
-
-<!-- begin topmenu.php for selected template -->
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 <div class="center">
     <table class="maintable">
@@ -34,4 +30,3 @@ global $text, $tmp;
                 <table class="w-100 border-0" cellspacing="0" cellpadding="7" border="0">
                     <tr>
                         <td style="border-collapse:separate;">
-                            <!-- end topmenu.php for selected template -->

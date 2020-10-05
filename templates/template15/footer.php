@@ -1,5 +1,5 @@
-<!-- begin footer -->
 <?php global $text, $flags; ?>
+
 </div>
 <div class="footer-widgets">
     <div class="wrap">
@@ -67,5 +67,3 @@
     </div>
 </footer>
 </div>
-
-<!-- end footer -->

@@ -1,4 +1,5 @@
 <?php global $text, $flags; ?>
+
 </div>
 </div>
 

@@ -1,4 +1,5 @@
 <?php global $text, $flags; ?>
+
 <hr>
 <?php
 $flags['basicfooter'] = true;
