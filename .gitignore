@@ -3,3 +3,4 @@ gedcom/
 documents/
 adminlog.txt
 genlog.txt
+*.css.map
