@@ -1,325 +1,284 @@
-/* override to TNG genstyle.css for DNA Compare reports for template 2   */
 .overflowauto {
-    width: 98vw;
+  width: 98vw;
 }
 
-/*  reduce overflowauto for laptops and tablets */
 @media only screen and (min-width: 1200px) and (max-width: 1550px) {
-    .overflowauto {
-        width: 97.5vw;
-    }
+  .overflowauto {
+    width: 97.5vw;
+  }
 }
 
 @media only screen and (max-width: 1280px) {
-    .overflowauto {
-        width: 97vw;
-    }
+  .overflowauto {
+    width: 97vw;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-    .overflowauto {
-        width: 96vw;
-    }
+  .overflowauto {
+    width: 96vw;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .overflowauto {
-        width: 95vw;
-    }
+  .overflowauto {
+    width: 95vw;
+  }
 }
 
-/* header: heading text */
 .header, .plainheader {
-    color: #676037;
+  color: #676037;
 }
 
-/* body: describes page background color and all non-table text not governed by any other style */
 .bodytopmenu {
-    background-color: #676037;
-    margin: 0 0 0 0;
+  background-color: #676037;
+  margin: 0;
 }
 
-/* link: normal links, active: links in use */
-a:link, a:active, div.icons a {
-    color: #676037;
+a:active, a:link, div.icons a {
+  color: #676037;
 }
 
-/* visited: previously visited links */
 a:visited {
-    color: #8b8776;
+  color: #8b8776;
 }
 
-/* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #c3b165;
+  background-color: #c3b165;
 }
 
-.page, .LB_closeAjaxWindow, .bar, .sideback, .fieldnameback,
-.tablesaw-cell-label {
-    background-color: #676037;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .page, .sideback, .tablesaw-cell-label {
+  background-color: #676037;
 }
 
 .topmenu {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #fff;
-    text-decoration: none;
 }
 
-a.topmenu:link {
-    text-decoration: none;
-    color: #fff;
-}
-
-a.topmenu:visited {
-    text-decoration: none;
-    color: #fff;
+.topmenu, a.topmenu:link, a.topmenu:visited {
+  color: #fff;
+  text-decoration: none;
 }
 
 a.topmenu:hover {
-    color: #fc3;
-    text-decoration: none;
+  color: #fc3;
 }
 
-a.topmenu:Active {
-    text-decoration: none;
+a.topmenu:Active, a.topmenu:hover {
+  text-decoration: none;
 }
 
-/* tabletopedge is defined to replace the bgcolor=#FFFFFF; and background=edge.gif in topmenu */
 .tabletopedge {
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    background-image: url(../img/edge.gif);
-    border: 0;
-    border-bottom-color: #fff;
-    width: 100%;
-    height: 15px;
+  background-image: url(../img/edge.gif);
+  border: 0;
+  border-bottom-color: #fff;
 }
 
-/* tablebottomedge is defined to replace the bgcolor=#FFFFFF; and background=edge.gif in topmenu */
+.tablebottomedge, .tabletopedge {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 15px;
+}
+
 .tablebottomedge {
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    background-image: url(../img/edge-bottom.gif);
-    border: 0;
-    width: 100%;
-    height: 15px;
+  background-image: url(../img/edge-bottom.gif);
+  border: 0;
 }
 
 .tablebkground {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .noimgborder {
-    border: 0;
+  border: 0;
 }
-
-/* style definitions in index.php moved here in 7.0.0 */
 
 .sidelink {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
     color: #676037;
 }
 
 .sidelink:Hover {
-    text-decoration: underline;
-    color: #690;
+  text-decoration: underline;
+  color: #690;
 }
 
 .sidesmall {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: #fff;
+  color: #fff;
 }
 
-.small {
+.sidesmall, .sidesmalllink, .small {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
 
 .sidesmalllink {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: #fff;
+  color: #fff;
 }
 
-/* body-index: describes index page body style definitions replaces hard-coded style information background="burlap.jpg" leftmargin="1" topmargin="10" rightmargin="1" marginwidth="1" in index.php of template2 */
 .bodyindex {
-    background-image: url(../img/burlap.jpg);
-    margin: 10px auto 0;
-    width: 100%; /* width of image used so it will center */
-    height: 100%;
+  background-image: url(../img/burlap.jpg);
+  margin: 10px auto 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* footer added to replace footer fonts and links */
 .footer {
-    color: #fff;
-    font-size: 11px;
-    text-align: center;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
 }
 
-a.footer:link {
-    text-decoration: underline;
-    color: #fff;
-}
-
-a.footer:visited {
-    text-decoration: underline;
-    color: #fff;
+a.footer:link, a.footer:visited {
+  text-decoration: underline;
+  color: #fff;
 }
 
 a.footer:hover {
-    text-decoration: underline;
-    color: #fc3;
+  text-decoration: underline;
+  color: #fc3;
 }
 
-/* additional classes added for strict validation */
-
-/* indexsubmit added to replace hspace="0" vspace="0" width="74" height="76" in index.php for button.jpg */
 .indexsubmit {
-    margin-top: 0;
-    margin-left: 0;
-    width: 74px;
-    height: 76px;
+  width: 74px;
+  height: 76px;
 }
 
-/* menusubmit added to replace align="right" "hspace="0" vspace="0" width="55" height="54" in topmenu */
+.indexsubmit, .menusubmit {
+  margin-top: 0;
+  margin-left: 0;
+}
+
 .menusubmit {
-    float: right;
-    margin-top: 0;
-    margin-left: 0;
-    width: 55px;
-    height: 54px;
+  float: right;
+  width: 55px;
+  height: 54px;
 }
 
-/* searchimg added to replace width="100" height="38" vspace="5" for search.gif in index.php */
 .indexsearch {
-    width: 100px;
-    height: 38px;
-    border: 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  width: 100px;
+  height: 38px;
 }
 
-/* menusearch added to replace width="67" height="24" vspace="5" for search.gif in topmenu */
+.indexsearch, .menusearch {
+  border: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .menusearch {
-    width: 67px;
-    height: 24px;
-    border: 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  width: 67px;
+  height: 24px;
 }
 
-/* headerimg added to replace width="70" height="99" hspace="0" vspace="3" in topmenu for headerphoto.jpg */
 .headerimg {
-    margin: 5px 0;
-    border: 0;
+  margin: 5px 0;
+  border: 0;
 }
 
-/* page: is defined to replace the bgcolor=#676037; */
 .indexpage {
-    background-color: #fff;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 .snlink {
-    border-bottom: 1px solid #aaa;
-    border-right: 1px solid #aaa;
-    background-color: #ffe9a9;
-    color: #000;
+  border-bottom: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  background-color: #ffe9a9;
+  color: #000;
 }
 
-a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #676037;
-    color: #fff;
+.adminnav .snlinkact, .snlinkact, a.snlink:hover {
+  background-color: #676037;
+  color: #fff;
 }
 
 .LB_window {
-    background: #ffe9a9;
-    border: 2px solid #000;
-    color: #000;
+  background: #ffe9a9;
+  border: 2px solid #000;
+  color: #000;
 }
 
 div.innercontainer {
-    border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
 }
 
 ul.tngdd {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 ul.tngdd a {
-    color: #444;
+  color: #444;
 }
 
-ul.tngdd ul li a, .slidedown {
-    background-color: #eec;
+.slidedown, ul.tngdd ul li a {
+  background-color: #eec;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 ul.tngdd .menulink {
-    background: #ffe9a9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+  background: #ffe9a9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
 }
 
-ul.tngdd .menulink, ul.tngdd .langmenu {
-    border-bottom-color: #bbb;
-    border-right-color: #bbb;
+ul.tngdd .langmenu, ul.tngdd .menulink {
+  border-bottom-color: #bbb;
+  border-right-color: #bbb;
 }
 
-ul.tngdd .menulink:hover, ul.tngdd .menuhover {
-    border-bottom: 1px solid #999;
-    border-right: 1px solid #999;
-    color: #fff;
-    background: #676037 url(../img/arrowdown2.gif) 2px 8px no-repeat;
+ul.tngdd .menuhover, ul.tngdd .menulink:hover {
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
+  color: #fff;
+  background: #676037 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
-/* databack: background color for data areas */
-div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu, .databack {
-    background-color: #ffe9a9;
+.databack, div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
+  background-color: #ffe9a9;
 }
 
 .databackalt {
-    background-color: #fff6db;
+  background-color: #fff6db;
 }
 
 tr.modline:hover td.mmcell:nth-child(-n+5) {
-    background-color: #ff0;
+  background-color: #ff0;
 }
 
 ul.tngdd .sub {
-    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
+  background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
 }
 
 ul.tngdd .topline {
-    border-top: 1px solid #777;
+  border-top: 1px solid #777;
 }
 
 .maintitle {
-    font-size: 48px;
-    font-family: Georgia, Arial, sans-serif;
-    color: #676037;
+  font-size: 48px;
+  color: #676037;
 }
 
-.mmaintitle {
+.maintitle, .mmaintitle, .smalltitle {
     font-family: Georgia, Arial, sans-serif;
-    font-style: italic;
+}
+
+.mmaintitle, .smalltitle {
+  font-style: italic;
 }
 
 .smalltitle {
-    font-size: 28px;
-    font-family: Georgia, Arial, sans-serif;
-    color: #676037;
-    font-style: italic;
+  font-size: 28px;
+  color: #676037;
 }
 
 .headertitle {
@@ -330,11 +289,11 @@ ul.tngdd .topline {
 }
 
 a.smalltitle:hover {
-    color: #008000;
+  color: #008000;
 }
 
 a.toptitle {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 em.toptitle {
@@ -344,49 +303,48 @@ em.toptitle {
 }
 
 .mainlink {
-    padding-left: 20px;
-    text-decoration: none;
+  padding-left: 20px;
+  text-decoration: none;
 }
 
 #titlecontainer {
-    padding: 10px 10px 20px 10px;
+  padding: 10px 10px 20px;
 }
 
 #searchblock {
-    padding: 0 0 10px 10px;
+  padding: 0 0 10px 10px;
 }
 
 #searchtitleblock {
-    float: left;
-    text-align: center;
-    padding-right: 10px;
-    padding-top: 8px;
+  float: left;
+  text-align: center;
+  padding-right: 10px;
+  padding-top: 8px;
 }
 
 #searchformblock {
-    padding: 10px 10px 0 0;
-    float: left;
+  padding: 10px 10px 0 0;
+  float: left;
 }
 
 #searcharrowblock {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .fambackground {
-    background-color: #ffe9a9;
+  background-color: #ffe9a9;
 }
 
 @media (max-width: 400px) {
-    #linktable {
-        display: none;
-    }
-
-    .maintitle {
-        font-size: 30px;
-    }
-
-    #mainphoto {
-        width: 100%;
-    }
-
+  #linktable {
+    display: none;
+  }
+  .maintitle {
+    font-size: 30px;
+  }
+  #mainphoto {
+    width: 100%;
+  }
 }
+
+/*# sourceMappingURL=templatestyle.css.map */

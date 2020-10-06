@@ -1,71 +1,70 @@
 ul#tngnav {
-    margin: 0 0 0 10px;
-    padding: 0 0 0 0;
-    list-style: none;
-    border: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+  list-style: none;
+  border: none;
 }
 
 #tngnav li {
-    display: block;
-    margin: 0 0 0 1px;
-    padding: 0;
-    float: left;
+  display: block;
+  margin: 0 0 0 1px;
+  padding: 0;
+  float: left;
 }
 
 #tngnav a {
-    display: block;
-    color: #444;
-    text-decoration: none;
-    background: #e0e0f7;
-    margin: 0;
-    padding: 0.45em 1em 0.35em 8px;
-    border-right: 1px solid #444;
-    position: relative;
-    font: 11px arial, helvetica, sans-serif;
-    border-radius: 4px 4px 0 0;
+  display: block;
+  color: #444;
+  text-decoration: none;
+  background: #e0e0f7;
+  margin: 0;
+  padding: .45em 1em .35em 8px;
+  border-right: 1px solid #444;
+  position: relative;
+  font: 11px arial, helvetica, sans-serif;
+  border-radius: 4px 4px 0 0;
 }
 
-#tngnav a:hover {
-    background: #336;
-    color: #fc0;
+#tngnav a.here, #tngnav a:hover {
+  background: #336;
+  color: #fc0;
 }
 
 #tngnav a.here {
-    position: relative;
-    z-index: 10;
-    background: #336;
-    color: #fc0;
-    border-right: 1px solid #444;
-    margin: 0;
+  position: relative;
+  z-index: 10;
+  border-right: 1px solid #444;
+  margin: 0;
 }
 
-/*to keep older browsers happy*/
 #tabs div {
-    margin: 0 1px 0 0;
-    position: relative;
-    float: left;
-    padding: 0 0 .3em 0;
+  margin: 0 1px 0 0;
+  position: relative;
+  float: left;
+  padding: 0 0 .3em;
 }
 
 #tabs .divhere {
-    z-index: 10;
+  z-index: 10;
 }
 
 #tabs a {
-    background: #e0e0f7;
-    color: #444;
-    padding: 0.2em 0.8em 0.5em 0.8em;
-    font: 11px arial, helvetica, sans-serif;
-    text-decoration: none;
-    border-right: 1px solid #aaa;
+  background: #e0e0f7;
+  color: #444;
+  padding: .2em .8em .5em;
+  font: 11px arial, helvetica, sans-serif;
+  text-decoration: none;
+  border-right: 1px solid #aaa;
 }
 
 #tabs a:hover {
-    background: #336;
-    color: #fff;
+  background: #336;
+  color: #fff;
 }
 
 #tabs .here {
-    background: #336;
-    color: #fc0;
+  background: #336;
+  color: #fc0;
 }
+
+/*# sourceMappingURL=tngtabs2.css.map */

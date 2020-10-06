@@ -1,0 +1,49 @@
+ul#tngnav {
+  margin: 0 0 0 10px;
+}
+
+#tngnav li {
+  margin: 0 0 0 1px;
+}
+
+#tngnav a {
+  color: #444;
+  background: #ddd4c7;
+  padding: .4em 1em .3em 8px;
+  border-right: 1px solid #444;
+  border-radius: 4px 4px 0 0;
+}
+
+#tngnav a:hover {
+  background: #5e8db5;
+  color: #fff;
+}
+
+#tngnav a.here {
+  background: #5e8db5;
+  color: #fc0;
+  border-right: 1px solid #444;
+  margin: 0;
+}
+
+#tabs div {
+  margin: 0 1px 0 0;
+  padding: 0 0 .3em;
+}
+
+#tabs a {
+  background: #ddd4c7;
+  color: #444;
+  padding: .4em .8em;
+  border-right: 1px solid #aaa;
+}
+
+#tabs a:hover {
+  background: #5e8db5;
+  color: #fff;
+}
+
+#tabs .here {
+  background: #5e8db5;
+  color: #fc0;
+}

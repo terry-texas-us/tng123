@@ -54,7 +54,7 @@ if (!isMobile()) {
 
                             <a href="<?php echo $tmp['t15_featurelink2']; ?>" title="" class="alignnone">
                                 <img src="<?php echo $templatepath . $tmp['t15_featurethumb2']; ?>" alt="Lorem Ipsum" title=""
-                                     class="" width="405"></a>
+                                    class="" width="405"></a>
                             <header class="entry-header">
                                 <h2 class="entry-title"><a
                                         href="<?php echo $tmp['t15_featurelink2']; ?>"><?php echo getTemplateMessage('t15_featuretitle2'); ?></a>

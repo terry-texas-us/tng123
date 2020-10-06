@@ -76,7 +76,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                 <br>
                                                 <div class="photo-container">
                                                     <img alt="" class="rounded10"
-                                                         src="<?php echo $templatepath . $tmp['t13_mainimage']; ?>" id="mainphoto">
+                                                        src="<?php echo $templatepath . $tmp['t13_mainimage']; ?>" id="mainphoto">
                                                 </div>
                                                 <br>
                                             </div>
@@ -90,8 +90,8 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                         <div class="left-indent">
                                                             <h4><?php echo $text['contactus']; ?></h4>
                                                             <p class="contact"><img src="<?php echo $templatepath; ?>img/email.gif"
-                                                                                    alt="email image"
-                                                                                    class="emailimg"><?php echo $text['contactus_long']; ?></p>
+                                                                    alt="email image"
+                                                                    class="emailimg"><?php echo $text['contactus_long']; ?></p>
                                                         </div>
                                                     </td>
                                                 </tr>

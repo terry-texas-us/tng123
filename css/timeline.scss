@@ -1,0 +1,80 @@
+.tlevent {
+  top: 0;
+}
+
+.vertlines {
+  position: absolute;
+  font-size: 0;
+  top: 33px;
+  width: 1px;
+  z-index: 0;
+}
+
+.dgray {
+  background-color: #ddd;
+}
+
+#tngtimeline {
+  border: 1px solid #aaa;
+}
+
+#tngchart {
+  position: relative;
+  text-align: left;
+}
+
+.yeardiv {
+  top: 15px;
+  width: 40px;
+}
+
+.footnote, .yeardiv {
+  position: absolute;
+  height: 17px;
+  z-index: 0;
+}
+
+.footnote {
+  width: 12px;
+  font-size: 7pt;
+}
+
+.cb {
+  height: 25px;
+  left: 0;
+}
+
+.tlbar {
+  visibility: visible;
+  z-index: 3;
+}
+
+.popup, .tlbar {
+  position: absolute;
+}
+
+.popup {
+  visibility: hidden;
+  z-index: 8;
+}
+
+.popuptable {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.timeline-band-0 .timeline-ether-bg {
+  background-color: #d1ceca;
+}
+
+.timeline-band-1 .timeline-ether-bg {
+  background-color: #e7dfd6;
+}
+
+.timeline-band-2 .timeline-ether-bg {
+  background-color: #e8e8f4;
+}
+
+.timeline-band-3 .timeline-ether-bg {
+  background-color: #d1ceca;
+}

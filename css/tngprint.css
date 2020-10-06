@@ -1,51 +1,50 @@
-a, a:link, a:active, a:visited {
-    text-decoration: none;
-    color: #000;
+a, a:active, a:link, a:visited {
+  text-decoration: none;
+  color: #000;
 }
 
-/* body: describes page background color and all non-table text not governed by any other style */
 body {
-    background-image: none;
-    background-color: #fff;
+  background-image: none;
+  background-color: #fff;
 }
 
 .publicbody {
-    background: none;
+  background: none;
 }
 
-/* class to suppress printing of display items not covered by the tngprint calling function */
 .noprint {
-    display: none;
+  display: none;
 }
 
 .databack, .fieldnameback, .snlink, .snlinkact {
-    background-color: #fff;
-    border: 1px solid #000;
+  background-color: #fff;
+  border: 1px solid #000;
 }
 
 .fieldname {
-    background-color: #fff;
-    font-weight: bold;
+  background-color: #fff;
+  font-weight: 700;
 }
 
-.databack, .fieldnameback, .fieldname, .snlink, .snlinkact {
-    color: #000;
+.databack, .fieldname, .fieldnameback, .snlink, .snlinkact {
+  color: #000;
 }
 
 .whiteback {
-    border-spacing: 0;
-    border-collapse: collapse;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 .titlebox {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .notearea {
-    max-height: none;
+  max-height: none;
 }
 
-/* Equivalent of Hard Page Break - keeps headings and photos together on printed page */
 .beginpage {
-    page-break-before: always;
+  page-break-before: always;
 }
+
+/*# sourceMappingURL=tngprint.css.map */

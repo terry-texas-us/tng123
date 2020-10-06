@@ -1,24 +1,24 @@
 .publicbody {
-    background: url("../img/022d9.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
-    padding: 8px;
+  background: url(../img/022d9.png) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  padding: 8px;
 }
 
 #mast {
     background-color: #504034;
-    background-image: -moz-linear-gradient(to bottom, #6b584a 0%, #413226 100%);
-    background-image: -webkit-linear-gradient(to bottom, #6b584a 0%, #413226 100%);
-    background-image: linear-gradient(to bottom, #6b584a 0%, #413226 100%);
+    background-image: linear-gradient(180deg, #6b584a, #413226);
     border-top: 1px solid #998475;
 }
 
 .mhead ul li {
-    color: #fff;
+  color: #fff;
 }
 
 .mhead li a {
-    background-color: #c2ac96;
-    border-bottom: 1px solid #795f46;
-    border-top: 1px solid #e7d6c4;
-    text-shadow: #fff 1px 1px 1px;
-    color: #000;
+  background-color: #c2ac96;
+  border-bottom: 1px solid #795f46;
+  border-top: 1px solid #e7d6c4;
+  text-shadow: #fff 1px 1px 1px;
+  color: #000;
 }
+
+/*# sourceMappingURL=tngmobile.css.map */

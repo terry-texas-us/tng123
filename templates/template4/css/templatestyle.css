@@ -1,386 +1,333 @@
-/* override to TNG genstyle.css for DNA Compare reports for template 4   */
 .overflowauto {
-    width: 87vw;
+  width: 87vw;
 }
 
-/*  reduce overflowauto for laptops and tablets */
 @media only screen and (min-width: 1280px) and (max-width: 1550px) {
-    .overflowauto {
-        width: 85vw;
-    }
+  .overflowauto {
+    width: 85vw;
+  }
 }
 
 @media only screen and (max-width: 1280px) {
-    .overflowauto {
-        width: 80vw;
-    }
+  .overflowauto {
+    width: 80vw;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-    .overflowauto {
-        width: 78vw;
-    }
+  .overflowauto {
+    width: 78vw;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .overflowauto {
-        width: 67vw;
-    }
+  .overflowauto {
+    width: 67vw;
+  }
 }
 
-/* header: heading text */
 .header, .plainheader {
-    color: #900;
+  color: #900;
 }
 
-/* body: describes page background color and all non-table text not governed by any other style */
-/*      background-image: url(back.gif); */
-
-body {
-    margin-top: 8px;
-    background-image: url(../img/back.gif);
+.publicback, body {
+  margin-top: 8px;
+  background-image: url(../img/back.gif);
 }
 
-/* publicback: background for public side of site */
-.publicback {
-    margin-top: 8px;
-    background-image: url(../img/back.gif);
+a:active, a:link, div.icons a {
+  color: #900;
 }
 
-/* link: normal links, active: links in use */
-a:link, a:active, div.icons a {
-    color: #900;
-}
-
-/* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #c66;
+  background-color: #c66;
 }
 
-/* fieldnameback: background color for column and row title sections */
-/* sideback: background color for side and top frames */
-.LB_closeAjaxWindow, .bar, .sideback, .fieldnameback,
-.tablesaw-cell-label {
-    background-color: #900;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .tablesaw-cell-label {
+  background-color: #900;
 }
 
 .sideback {
-    background-image: none;
+  background-image: none;
 }
 
-/* page: is defined to replace the bgcolor=#FFFFFF; in the top table for the page */
 .page {
-    background-color: #fff;
-    margin-top: 0;
-    text-align: left; /* added to replace style="text-align:left" in 6.2.0 */
-    margin-right: 0;
-    border-collapse: collapse;
-    padding: 0;
-    width: 100%; /* to center, change to 900px or 90% */
+  background-color: #fff;
+  text-align: left;
+  margin-right: 0;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-/* line: is defined to replace the bgcolor="#999966" used with a line gif image (khaki.gif in template 4)*/
+.line, .page {
+  margin-top: 0;
+  padding: 0;
+}
+
 .line {
-    background-image: url(../img/khaki.gif);
-    height: 1px;
-    border-style: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
+  background-image: url(../img/khaki.gif);
+  height: 1px;
+  border-style: none;
+  margin-bottom: 0;
 }
 
-/* footer added to replace footer fonts and links */
 .footer {
-    font-size: 10px;
-    color: #000;
+  font-size: 10px;
+  color: #000;
 }
 
-a.footer:link {
-    color: #900;
-}
-
-a.footer:visited {
-    color: #900;
+a.footer:link, a.footer:visited {
+  color: #900;
 }
 
 a.footer:hover {
-    color: #990;
+  color: #990;
 }
 
-/* menuback: left nav menu background color with no right and bottom border */
 .menuback {
-    background-color: #900;
-    border-right: 0;
-    border-bottom: 0;
-    width: 170px;
-    padding: 5px;
-    vertical-align: top;
+  background-color: #900;
+  border-right: 0;
+  border-bottom: 0;
+  width: 170px;
+  padding: 5px;
+  vertical-align: top;
 }
 
 #tngnav a {
     font: 11px arial, helvetica, sans-serif;
 }
 
-/* additional styles added for XHTML 1.0 Strict validation */
-/* featureimg defined to replace width="40" height="45" hspace="8" align="left" in index.php for feature images */
 .featureimg {
-    width: 40px;
-    height: 45px;
-    margin-left: 8px;
-    margin-right: 8px;
-    float: left;
-    border: 1px solid #000;
+  width: 40px;
+  height: 45px;
+  margin-left: 8px;
+  margin-right: 8px;
+  float: left;
+  border: 1px solid #000;
 }
 
-/* emailimg added to replace width="40" height="26" align="left" hspace="8" vspace="2" for email.gif */
 .emailimg {
-    width: 40px;
-    height: 26px;
-    margin: 2px 8px;
-    float: left;
-    border: 0;
+  width: 40px;
+  height: 26px;
+  margin: 2px 8px;
+  float: left;
+  border: 0;
 }
 
-/* searchimg added to replace width="109" height="35" vspace="0" search4.gif */
 a.searchimg {
     padding-left: 7px;
     border: 0;
     font-size: 20pt;
     font-family: Georgia, Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     color: #f8f8b2;
     text-decoration: none;
     text-shadow: 1px 1px 1px #000;
 }
 
-/* banner added to replace width="468" height="100" vspace="5" align="left" for title.gif */
 .banner {
-    text-align: left;
-    margin-top: 5px;
-    border: 0;
+  text-align: left;
+  margin-top: 5px;
+  border: 0;
 }
 
-/* smallphoto added to replace width="71" height="100" vspace="5" align="right" for smallphoto.jpg */
-
 .smallphoto {
-    float: right;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border: 0;
+  float: right;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 0;
 }
 
 .imgright {
-    float: right;
+  float: right;
 }
 
-/* emphasisyellow: added to replace <strong> for welcome message */
 .emphasisyellow {
-    font-weight: bold;
-    color: #ff0;
+  font-weight: 700;
+  color: #ff0;
 }
 
 .leftsection, .rightsection {
-    width: 45%;
-    border-spacing: 0;
-    border-collapse: collapse;
-    margin: 10px;
-    vertical-align: top;
+  width: 45%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 10px;
+  vertical-align: top;
 }
 
 .leftsection {
-    float: left;
+  float: left;
 }
 
 .rightsection {
-    float: right;
+  float: right;
 }
 
 .spacercol {
-    width: 5px;
+  width: 5px;
 }
 
 .content {
-    width: 100%;
-    vertical-align: top;
+  width: 100%;
+  vertical-align: top;
 }
 
-/* indexpage defined to replace bgcolor="#FFFFFF" sytle="text-align:left" cellspacing="0" in index.php */
 .indexpage {
-    background-color: #fff;
-    margin-top: 0;
-    text-align: left; /* added to replace style="text-align:left" in 6.2.0 */
-    border: 0;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    width: 90%; /* total width of all the columns */
+  background-color: #fff;
+  margin-top: 0;
+  text-align: left;
+  border: 0;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  width: 90%;
 }
 
-/* bigphoto defined to replace width="300" height="172" in index.php */
 .bigphoto {
-    border: 0;
-    width: 100%;
+  border: 0;
+  width: 100%;
 }
 
 .snlink {
-    border-bottom: 1px solid #aaa;
-    border-right: 1px solid #aaa;
-    background-color: #cc9;
-    color: #000;
+  border-bottom: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  background-color: #cc9;
+  color: #000;
 }
 
-a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #900;
-    color: #fff;
+.adminnav .snlinkact, .snlinkact, a.snlink:hover {
+  background-color: #900;
+  color: #fff;
 }
 
 .LB_window {
-    background: #cc9;
-    border: 2px solid #000;
-    color: #000;
+  background: #cc9;
+  border: 2px solid #000;
+  color: #000;
 }
 
 .titlebox {
-    background-color: #fff9f9;
+  background-color: #fff9f9;
 }
 
 div.innercontainer {
-    border-bottom: 1px solid #999;
+  border-bottom: 1px solid #999;
 }
 
 ul.tngdd {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 ul.tngdd a {
-    color: #900;
+  color: #900;
 }
 
-ul.tngdd ul li a, .slidedown {
-    background-color: #eec;
+.slidedown, ul.tngdd ul li a {
+  background-color: #eec;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 ul.tngdd .menulink {
     background: #cc9 url(../img/ArrowDown.gif) 2px 8px no-repeat;
-    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5e5b1), to(#c5c591));
-    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #e5e5b1, #c5c591);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(0deg, #e5e5b1, #c5c591);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 
-ul.tngdd .menulink, ul.tngdd .langmenu {
-    border-bottom-color: #999;
-    border-right-color: #999;
+ul.tngdd .langmenu, ul.tngdd .menulink {
+  border-bottom-color: #999;
+  border-right-color: #999;
 }
 
-ul.tngdd .menulink:hover, ul.tngdd .menuhover {
-    border-bottom: 1px solid #444;
-    border-right: 1px solid #444;
-    color: #fff;
-    background: #900 url(../img/arrowdown2.gif) 2px 8px no-repeat;
+ul.tngdd .menuhover, ul.tngdd .menulink:hover {
+  border-bottom: 1px solid #444;
+  border-right: 1px solid #444;
+  color: #fff;
+  background: #900 url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
-/* databack: background color for data areas */
 div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
-    background-color: #cc9;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#faf0f8), to(#cac0c8));
-    background-image: -webkit-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: -moz-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: -ms-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: -o-linear-gradient(top, #e5e5b1, #c5c591);
-    background-image: linear-gradient(to top, #e5e5b1, #c5c591);
+  background-color: #cc9;
+  background-image: linear-gradient(0deg, #e5e5b1, #c5c591);
 }
 
 .databack {
-    background-color: #cc9;
+  background-color: #cc9;
 }
 
 .databackalt {
-    background-color: #ddb;
+  background-color: #ddb;
 }
 
 ul.tngdd .sub {
-    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
+  background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
 }
 
 ul.tngdd .topline {
-    border-top: 1px solid #777;
+  border-top: 1px solid #777;
 }
 
 .titletop {
-    color: #900;
-    font-size: 30px;
-    line-height: 30px;
+  color: #900;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.titlebottom, .titletop {
     white-space: nowrap;
-    font-weight: bold;
+    font-weight: 700;
     font-family: Georgia, Arial, sans-serif;
 }
 
 .titlebottom {
-    color: #996;
-    font-size: 48px;
-    font-weight: bold;
-    white-space: nowrap;
-    font-family: Georgia, Arial, sans-serif;
-    text-shadow: 1px 1px 1px #000;
+  color: #996;
+  font-size: 48px;
+  text-shadow: 1px 1px 1px #000;
 }
 
 .mmaintitle {
     font-family: Georgia, Arial, sans-serif;
     color: #900;
-    opacity: 0.4;
+    opacity: .4;
 }
 
 .fambackground {
-    background-color: #cc9;
+  background-color: #cc9;
 }
 
 @media (max-width: 650px) {
-    .section {
-        width: 100%;
-    }
-
-    .menuback, .spacercol {
-        display: none;
-    }
-
-    .leftsection, .rightsection {
-        width: 95%;
-        float: none;
-    }
-
-    .content > div:first-of-type {
-        margin-left: 10px;
-    }
+  .section {
+    width: 100%;
+  }
+  .menuback, .spacercol {
+    display: none;
+  }
+  .leftsection, .rightsection {
+    width: 95%;
+    float: none;
+  }
+  .content > div:first-of-type {
+    margin-left: 10px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .menuback {
-        width: 140px;
-    }
-
-    .bigphoto {
-        width: 100%;
-    }
-
-    .indexpage {
-        width: 100%;
-    }
-
-    .titletop {
-        font-size: 20px;
-    }
-
-    .titlebottom {
-        font-size: 32px;
-    }
+  .menuback {
+    width: 140px;
+  }
+  .bigphoto, .indexpage {
+    width: 100%;
+  }
+  .titletop {
+    font-size: 20px;
+  }
+  .titlebottom {
+    font-size: 32px;
+  }
 }
+
+/*# sourceMappingURL=templatestyle.css.map */

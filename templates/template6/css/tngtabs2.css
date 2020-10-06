@@ -1,54 +1,57 @@
 ul#tngnav {
-    margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
 }
 
 #tngnav li {
-    margin: 0 0 0 1px;
+  margin: 0 0 0 1px;
 }
 
 #tngnav a {
-    color: #444;
-    background: #f2e6cc;
-    padding: 0.4em 1em 0.3em 8px;
-    border-right: 1px solid #444;
-    border-radius: 4px 4px 0 0;
+  color: #444;
+  background: #f2e6cc;
+  padding: .4em 1em .3em 8px;
+  border-right: 1px solid #444;
+  border-radius: 4px 4px 0 0;
 }
 
 #tngnav a:hover {
-    background-color: #660002;
-    color: #fff;
-    background-image: url(../img/fieldbg.jpg);
+  color: #fff;
+}
+
+#tngnav a.here, #tngnav a:hover {
+  background-color: #660002;
+  background-image: url(../img/fieldbg.jpg);
 }
 
 #tngnav a.here {
-    background-color: #660002;
-    color: #fc0;
-    border-right: 1px solid #444;
-    margin: 0;
-    background-image: url(../img/fieldbg.jpg);
+  color: #fc0;
+  border-right: 1px solid #444;
+  margin: 0;
 }
 
-/*to keep older browsers happy*/
 #tabs div {
-    margin: 0 1px 0 0;
-    padding: 0 0 .3em 0;
+  margin: 0 1px 0 0;
+  padding: 0 0 .3em;
 }
 
 #tabs a {
-    background: #f2e6cc;
-    color: #444;
-    padding: 0.4em 0.8em 0.4em 0.8em;
-    border-right: 1px solid #aaa;
+  background: #f2e6cc;
+  color: #444;
+  padding: .4em .8em;
+  border-right: 1px solid #aaa;
 }
 
 #tabs a:hover {
-    background-color: #660002;
-    color: #fff;
-    background-image: url(../img/fieldbg.jpg);
+  color: #fff;
+}
+
+#tabs .here, #tabs a:hover {
+  background-color: #660002;
+  background-image: url(../img/fieldbg.jpg);
 }
 
 #tabs .here {
-    background-color: #660002;
-    color: #fc0;
-    background-image: url(../img/fieldbg.jpg);
+  color: #fc0;
 }
+
+/*# sourceMappingURL=tngtabs2.css.map */

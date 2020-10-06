@@ -1,25 +1,27 @@
 .sscontrols {
-    padding: 0.2em 0 0.2em .7em;
-    border-right: 1px solid #777;
-    border-bottom: 1px solid #777;
-    height: 15px;
-    margin-right: 5px;
-    margin-bottom: 10px;
+  padding: .2em 0 .2em .7em;
+  border-right: 1px solid #777;
+  border-bottom: 1px solid #777;
+  height: 15px;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 .topmargin {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 #slidearea {
-    text-align: center;
+  text-align: center;
 }
 
 #slideshell {
-    margin: 10px;
-    border: 0;
+  margin: 10px;
+  border: 0;
 }
 
-#slideshow, #div1 {
-    width: 100%;
+#div1, #slideshow {
+  width: 100%;
 }
+
+/*# sourceMappingURL=media.css.map */

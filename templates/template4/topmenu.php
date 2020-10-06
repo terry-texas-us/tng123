@@ -34,7 +34,7 @@
                             <div class="fieldname">
                                 <ul>
                                     <li><a href="searchform.php"
-                                           class="lightlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
+                                            class="lightlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
                                     <li><a href="surnames.php" class="lightlink"><?php echo $text['mnulastnames']; ?></a>
                                     </li>
                                 </ul>

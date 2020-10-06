@@ -62,9 +62,9 @@ $title = getTemplateMessage('t2_maintitle');
                             }
                             ?>
                             <a href="pedigree.php?personID=<?php echo $tmp['t2_pedperson']; ?>&amp;tree=<?php echo $tmp['t2_pedtree']; ?>"
-                               class="mainlink smalltitle">&#8226; <?php echo $text['pedigree']; ?></a>
+                                class="mainlink smalltitle">&#8226; <?php echo $text['pedigree']; ?></a>
                             <a href="extrastree.php?personID=<?php echo $tmp['t2_phhistperson']; ?>&amp;tree=<?php echo $tmp['t2_phhisttree']; ?>"
-                               class="mainlink smalltitle">&#8226; <?php echo $text['photoshistories']; ?></a>
+                                class="mainlink smalltitle">&#8226; <?php echo $text['photoshistories']; ?></a>
 
                             <div id="linktable">
                                 <br><br>

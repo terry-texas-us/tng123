@@ -1,659 +1,527 @@
 #mmhead-section {
-    position: fixed;
-    top: 0;
-    width: 99%;
-    background-image: url(../img/background.gif);
-    padding: 5px 1px 1px 1px;
+  position: fixed;
+  top: 0;
+  width: 99%;
+  background-image: url(../img/background.gif);
+  padding: 5px 1px 1px;
 }
 
 #mmpage {
-    padding-top: 110px;
+  padding-top: 110px;
 }
 
 #modlist {
-    padding-top: 150px;
+  padding-top: 150px;
 }
 
 #mmoutter {
-    width: 99.8%;
+  width: 99.8%;
 }
 
 .leftmmanalyzer {
-    width: 35%;
-    vertical-align: top;
+  width: 35%;
+  vertical-align: top;
 }
 
 .rightmmanalyzer {
-    width: 65%;
-    vertical-align: top;
+  width: 65%;
+  vertical-align: top;
 }
 
 .mmhighlight {
-    color: #900;
+  color: #900;
 }
 
 .mmfilenmfont {
-    font-size: 120%;
+  font-size: 120%;
 }
 
 .mmlochdr {
-    color: #00f;
+  color: #00f;
 }
 
 .mmkeyword {
-    color: #a00;
+  color: #a00;
 }
 
 .mmrightalign {
-    text-align: right;
+  text-align: right;
 }
 
 .mmlinks {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.mmhdrtable {
-    width: 100%;
+.mmhdrtable, .mmtable {
+  width: 100%;
 }
 
 .mmtable {
-    width: 100%;
-    padding: 10px 1px;
-}
-
-.mmpopuptable {
-    width: 100%;
-}
-
-.mmpad2 {
-    padding: 2px;
+  padding: 10px 1px;
 }
 
 .mmpadtop5 {
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
-.mmpadleft {
-    padding-left: 3px;
-}
-
-.mmpopuphdr {
-    line-height: 150%;
-    padding-left: 3px;
-}
-
-/*  Batch Updates columns */
 .ptr {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .colcb {
-    width: 5%;
+  width: 5%;
 }
 
-.colmn {
-    width: 35%;
-}
-
-.colfn {
-    width: 35%;
+.colfn, .colmn {
+  width: 35%;
 }
 
 .colvr {
-    width: 10%;
+  width: 10%;
 }
 
-.colst {
-    width: 15%;
+.colmln, .colst {
+  width: 15%;
 }
 
-/*  Mod List columns */
-.colmln {
-    width: 15%;
-}
-
-.colmld {
-    width: 30%;
-}
-
-.colmlfn {
-    width: 30%;
+.colmld, .colmlfn {
+  width: 30%;
 }
 
 .colmlvr {
-    width: 5%;
+  width: 5%;
 }
 
 .colmlst {
-    width: 20%;
+  width: 20%;
 }
 
 div.descpop {
-    position: relative;
-    margin: 0 5px 3px 0;
-    float: right;
+  position: relative;
+  margin: 0 5px 3px 0;
+  float: right;
 }
 
 div.descpop div {
-    position: absolute;
-    max-height: 200px;
-    top: -2000px;
-    right: 14px;
-    visibility: hidden;
+  position: absolute;
+  max-height: 200px;
+  top: -2000px;
+  right: 14px;
+  visibility: hidden;
 }
 
 div.descpop:hover div {
-    visibility: visible;
-    max-height: 200px;
-    overflow-y: auto;
-    top: -75px;
-    background: #fff;
-    padding: 3px 3px 3px 3px;
-    border-style: solid;
-    border-color: #000;
-    border-width: 2px;
+  visibility: visible;
+  max-height: 200px;
+  overflow-y: auto;
+  top: -75px;
+  background: #fff;
+  padding: 3px;
+  border: 2px solid #000;
 }
 
 @media screen and (max-width: 750px) {
-    div.descpop:hover div {
-        width: 300px;
-    }
+  div.descpop:hover div {
+    width: 300px;
+  }
 }
 
 @media screen and (min-width: 750px) {
-    div.descpop:hover div {
-        width: 500px;
-    }
+  div.descpop:hover div {
+    width: 500px;
+  }
 }
 
-/* added for Mod Manager error messages */
 td.avail {
-    border-bottom: 2px solid #00cc7a;
-    border-right: 2px solid #00cc7a;
-    border-top: 1px solid #0f3;
-    border-left: 1px solid #0f3;
-    background-color: #fff;
-    text-align: center;
+  background-color: #fff;
+}
+
+td.avail, td.inst {
+  border-bottom: 2px solid #00cc7a;
+  border-right: 2px solid #00cc7a;
+  border-top: 1px solid #0f3;
+  border-left: 1px solid #0f3;
+  text-align: center;
 }
 
 td.inst {
-    border-bottom: 2px solid #00cc7a;
-    border-right: 2px solid #00cc7a;
-    border-top: 1px solid #0f3;
-    border-left: 1px solid #0f3;
-    background-color: #cfc;
-    text-align: center;
+  background-color: #cfc;
 }
 
 td.failed {
-    border-bottom: 2px solid #c00;
-    border-right: 2px solid #c00;
-    border-top: 1px solid #c00;
-    border-left: 1px solid #c00;
-    background-color: #ffe5e5; /* was FFCCCC in admin_modmanager.php */
+  border-bottom: 2px solid #c00;
+  border-right: 2px solid #c00;
+  border-top: 1px solid #c00;
+  border-left: 1px solid #c00;
+  background-color: #ffe5e5;
 }
 
-/* The following was added for Mod Manager in TNG 10.1.0  */
-
-/* modlister row highlighting */
 tr.modline:hover td.mmcell:nth-child(-n+5) {
-    background-color: #eeeb8d;
+  background-color: #eeeb8d;
 }
 
-/* Mod List column widths (layout-fixed) */
 .colselct {
-    width: 4%;
+  width: 4%;
 }
 
-.colmodnm {
-    width: 20%;
-}
-
-.colcfgnm {
-    width: 20%;
+.colcfgnm, .colmodnm {
+  width: 20%;
 }
 
 .colversn {
-    width: 8%;
+  width: 8%;
 }
 
 .colwiki {
-    width: 4%;
+  width: 4%;
 }
 
 .colstatus {
-    width: 40%;
+  width: 40%;
 }
 
 .colaflist {
-    width: 4%;
+  width: 4%;
 }
 
-/* modlister */
 span.opened {
-    padding-left: 14px;
-    cursor: pointer;
-    background: url(../img/tng_collapse.gif) no-repeat left center;
+  background: url(../img/tng_collapse.gif) no-repeat 0;
 }
 
-/* modlister */
+span.closed, span.opened {
+  padding-left: 14px;
+  cursor: pointer;
+}
+
 span.closed {
-    padding-left: 14px;
-    cursor: pointer;
-    background: url(../img/tng_expand.gif) no-repeat left center;
+  background: url(../img/tng_expand.gif) no-repeat 0;
 }
 
-/* modlister */
 span.modlink {
-    display: inline-block;
-    width: 96%;
-    cursor: pointer;
+  display: inline-block;
+  width: 96%;
 }
 
-/* modlister */
-td.flink {
-    cursor: pointer;
+span.modlink, td.flink {
+  cursor: pointer;
 }
 
-/* modlister */
-/* mod listing table cells */
 .mmcell, .stcell {
-    border: 1px solid #aaa;
-    vertical-align: top;
-    padding: 0 1px;
+  border: 1px solid #aaa;
+  vertical-align: top;
+  padding: 0 1px;
 }
 
-/* modlister */
-/* used inside table cells to keep content from overflowing into next element */
 div.mminner {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.mmcell {
-    white-space: nowrap;
+.mmcell, div.mminner {
+  white-space: nowrap;
 }
 
-/* modlister */
 .checkpad {
-    padding-left: 0;
-    padding-top: 0;
+  padding-left: 0;
+  padding-top: 0;
 }
 
-/* modlister - affected files */
 .afcell {
-    vertical-align: top;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  vertical-align: top;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-/* modlister - affected files popups */
 .mmpad2 {
-    padding: 2px;
+  padding: 2px;
 }
 
-/* modlister - affected rows - from tngv103 */
 .mmpadleft {
-    padding-left: 3px;
+  padding-left: 3px;
 }
 
-/* modlister - affected files popups */
 .cellspace1 {
-    border-spacing: 1px;
-    border-collapse: separate;
+  border-spacing: 1px;
+  border-collapse: separate;
 }
 
 .imgcenter {
-    left: 40%;
-    margin-right: -40%;
+  left: 40%;
+  margin-right: -40%;
 }
 
-/* modlister -- affected files popups */
-/* from tngv103 */
 .mmpopuptable {
-    width: 100%;
+  width: 100%;
 }
 
-/* modlister - affected files popups */
-/* from tngv103 */
 .mmpopuphdr {
-    line-height: 150%;
-    padding-left: 3px;
+  line-height: 150%;
+  padding-left: 3px;
 }
 
 div.descpop1 {
-    position: relative;
-    width: 16px;
-    margin: 0;
+  position: relative;
+  width: 16px;
+  margin: 0;
 }
 
 div.descpop1 div {
-    position: absolute;
-    display: none;
-    right: 16px;
-    top: 0;
-    overflow-y: auto;
-    background: #fff;
-    padding: 3px 3px 3px 3px;
-    border-style: solid;
-    border-color: #000;
-    border-width: 2px;
+  position: absolute;
+  display: none;
+  right: 16px;
+  top: 0;
+  overflow-y: auto;
+  background: #fff;
+  padding: 3px;
+  border: 2px solid #000;
 }
 
 div.descpop1:hover div {
-    display: block;
-    max-height: 150px;
+  display: block;
+  max-height: 150px;
 }
 
 @media screen and (max-width: 750px) {
-    div.descpop1:hover div {
-        width: 300px;
-    }
+  div.descpop1:hover div {
+    width: 300px;
+  }
 }
 
 @media screen and (min-width: 750px) {
-    div.descpop1:hover div {
-        width: 500px;
-    }
+  div.descpop1:hover div {
+    width: 500px;
+  }
 }
 
-/* modlister */
 .results {
-    list-style-type: square;
-    list-style-position: inside;
-    font-style: italic;
-    font-weight: bold;
-    padding: 5px;
+  list-style-type: square;
+  list-style-position: inside;
+  font-style: italic;
+  font-weight: 700;
+  padding: 5px;
 }
 
 .w100 {
-    width: 100%;
+  width: 100%;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-/*** modlister status backgrounds ***/
 .ready {
-    background-color: #f5fff5;
+  background-color: #f5fff5;
 }
 
 .installed {
-    background-color: #c6f6c6;
+  background-color: #c6f6c6;
 }
 
 .partinst {
-    background-color: #ffe8bd;
+  background-color: #ffe8bd;
 }
 
 .badcfg {
-    background-color: #ffe5e5 !important;
+  background-color: #ffe5e5 !important;
 }
 
-/* modlister */
 .tag {
-    font-style: italic;
+  font-style: italic;
 }
 
-/* modlister */
 .tgtfile {
-    font-weight: bold;
+  font-weight: 700;
 }
 
-/* modlister */
 .hilight {
-    background-color: #ff0;
+  background-color: #ff0;
 }
 
-/* modlister */
 .hilighterr {
-    background-color: #ffccf9;
+  background-color: #ffccf9;
 }
 
 .mmmenuwrap {
-    position: relative;
-    padding-bottom: 1px;
+  position: relative;
+  padding-bottom: 1px;
 }
 
 .html, body {
-    height: 100%;
+  height: 100%;
 }
 
 .mmcontainer {
-    height: calc(100vh - 180px);
+  height: calc(100vh - 180px);
 }
 
 #mmgrid.lightback {
-    border-bottom: 0;
-    padding-bottom: 175px;
+  border-bottom: 0;
+  padding-bottom: 175px;
 }
 
 #mmgrid td.tngshadow {
-    border: 0;
+  border: 0;
 }
 
-/* modlister */
-#mmgrid th, #mmgrid td, #mmgrid td div, .results {
-    border-radius: 3px;
+#mmgrid td, #mmgrid td div, #mmgrid th, .results {
+  border-radius: 3px;
 }
 
-/* modeditor */
 .edbuttonbar {
-    text-align: center;
-    padding-top: 5px;
+  text-align: center;
+  padding-top: 5px;
 }
 
 div.edreturn {
-    padding: 1em 0.5em;
+  padding: 1em .5em;
 }
 
 div.edreturn form {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .mmsubhead {
-    text-align: center;
-    padding: 5px;
-    font-size: 12px;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
 }
 
-.grayborder {
-    border: 1px solid #aaa;
+.edpanel, .grayborder {
+  border: 1px solid #aaa;
 }
 
 .edpanel {
-    border: 1px solid #aaa;
-    vertical-align: top;
-    padding: 5px;
+  vertical-align: top;
+  padding: 5px;
 }
 
-/* Analyser and Edit Parameter  */
 .mmleftcol {
-    width: 35%;
-    vertical-align: top;
+  width: 35%;
+  vertical-align: top;
 }
 
 .mmrightcol {
-    width: 65%;
-    vertical-align: top;
+  width: 65%;
+  vertical-align: top;
 }
 
-/***** Styles that depend on current template *****/
 .adminback {
-    background-image: url(../img/background.gif);
+  background-image: url(../img/background.gif);
 }
 
-/* Mod Manager table positioning except for Template 7		*/
-/****** Standard TNG Admin Page Header ******/
 .mmhead-fixed {
-    top: 0;
+  top: 0;
 }
 
 .mmhead-scroll {
-    position: relative;
-    margin-top: 0;
+  position: relative;
+  margin-top: 0;
 }
 
 .mmhead-fixed, .mmhead-scroll {
-    width: 99.5%;
-    min-width: 640px;
+  width: 99.5%;
+  min-width: 640px;
 }
 
-/****** BARS ATTACHED TO BOTTOM OF HEAD SECTION ******/
-.fbar-fixed, .tbar-fixed, .ibar-fixed {
+.fbar-scroll, .ibar-scroll, .tbar-scroll {
+  position: relative;
+  margin-top: 0;
 }
 
-.fbar-scroll, .tbar-scroll, .ibar-scroll {
-    position: relative;
-    margin-top: 0;
+.fbar-fixed, .fbar-scroll, .ibar-fixed, .ibar-scroll, .tbar-fixed, .tbar-scroll {
+  margin-top: 0;
+  padding-bottom: 1px;
+  width: 99.5%;
+  z-index: 1;
 }
 
-/*** common elements ***/
-.fbar-fixed, .fbar-scroll,
-.tbar-fixed, .tbar-scroll,
-.ibar-fixed, .ibar-scroll {
-    margin-top: 0;
-    padding-bottom: 1px;
-    width: 99.5%;
-    z-index: 1;
-}
-
-/****************** CONTENT ******************/
-
-/* main page mod listing positioning */
-table.mmlist-fixed {
-}
-
-/* m2tables - for secondary MH pages Options and Analyzer */
-table.m2table-fixed {
-}
-
-/* modeditor */
 table.m3table-fixed {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
-/* View Log */
-table.mmlog-fixed {
+table.m2table-scroll, table.m3table-scroll, table.mmlist-scroll, table.mmlog-scroll {
+  margin-top: 0;
 }
 
-table.mmlist-scroll, table.m2table-scroll,
-table.m3table-scroll, table.mmlog-scroll {
-    margin-top: 0; /*overrides v10.03*/
-}
-
-/*** common elements ***/
-table.mmlist-fixed, table.mmlist-scroll, /* Main page*/
-table.m2table-fixed, table.m2table-scroll, /* Options, Analyzer */
-table.m3table-fixed, table.m3table-scroll, /* Mod Editor */
-table.mmlog-fixed, table.mmlog-scroll /* View Log */
-{
-    table-layout: fixed;
-    padding: 0;
-    width: 99.5%;
+table.m2table-fixed, table.m2table-scroll, table.m3table-fixed, table.m3table-scroll, table.mmlist-fixed, table.mmlist-scroll, table.mmlog-fixed, table.mmlog-scroll {
+  table-layout: fixed;
+  padding: 0;
+  width: 99.5%;
 }
 
 .mmsysmsg {
-    font-size: 150%;
-    text-align: center;
-    color: #f00;
+  font-size: 150%;
+  text-align: center;
+  color: #f00;
 }
 
-h2.parse-table-title,
-p.parse-error {
-    color: #900;
+h2.parse-table-title, p.parse-error {
+  color: #900;
 }
 
 div.list-indent {
-    margin-left: 2em;
-    text-indent: -2em;
+  margin-left: 2em;
+  text-indent: -2em;
 }
 
-.target-note,
-.location-note {
-    display: inline-block;
-    width: 100%;
-    padding-left: 3px;
-    border: 1px solid #808080;
+.location-note, .target-note {
+  display: inline-block;
+  width: 100%;
+  padding-left: 3px;
+  border: 1px solid #808080;
 }
 
 .target {
-    color: #a52a2a;
+  color: #a52a2a;
 }
 
-.copyfile {
-    color: #000080;
-}
-
-.newfile {
-    color: #000080;
-}
-
-.mkdir {
-    color: #000080;
+.copyfile, .mkdir, .newfile {
+  color: #000080;
 }
 
 .parse-table {
-    position: absolute;
-    min-width: 98%;
-    top: 120px;
-    left: 5px;
-    padding: 5px;
+  position: absolute;
+  min-width: 98%;
+  top: 120px;
+  left: 5px;
+  padding: 5px;
 }
 
-/******************************************************
-Added for TNGv13 (no iframes)
-*******************************************************/
 .admintop {
-    overflow-x: hidden;
-    white-space: nowrap;
+  overflow-x: hidden;
+  white-space: nowrap;
 }
 
 .topbanner {
-    z-index: 5;
+  z-index: 5;
 }
 
 #tngnav a.here {
-    position: relative;
-    z-index: 0 !important;
+  position: relative;
+  z-index: 0 !important;
 }
 
 form {
-    width: 100%;
+  width: 100%;
 }
 
-.fbar-fixed,
-.ibar-fixed,
-.tbar-fixed {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0 !important; /* important for template 7 */
+.fbar-fixed, .ibar-fixed, .tbar-fixed {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0 !important;
 }
 
-.fbar-fixed, .fbar-scroll,
-.ibar-fixed, .ibar-scroll,
-.tbar-fixed, .tbar-scroll {
-    /*z-index:100;*/
-}
-
-.mmhead-scroll {
-    /*z-index:0;*/
-}
-
-/* modeditor */
 table.m3table-fixed {
-    margin-top: 0;
+  margin-top: 0;
 }
 
-/* mod editor textareas */
 .w100 {
-    width: 95%;
+  width: 95%;
 }
 
 table.mmlist-fixed {
-    margin-top: 0 !important; /* inportant for template 7 */
+  margin-top: 0 !important;
 }
 
+/*# sourceMappingURL=modmanager.css.map */

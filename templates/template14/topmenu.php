@@ -52,11 +52,11 @@ $momlabel = getTemplateMessage('t14_momside');
                         <div class="art-post">
                             <div class="art-post-body">
                                 <img alt="" class="rounded4 vignette" height="100"
-                                     src="<?php echo $templatepath . $tmp['t14_headimg3']; ?>">
+                                    src="<?php echo $templatepath . $tmp['t14_headimg3']; ?>">
                                 <img alt="" class="rounded4 vignette" height="100"
-                                     src="<?php echo $templatepath . $tmp['t14_headimg2']; ?>">
+                                    src="<?php echo $templatepath . $tmp['t14_headimg2']; ?>">
                                 <img alt="" class="rounded4 vignette" height="100"
-                                     src="<?php echo $templatepath . $tmp['t14_headimg']; ?>">
+                                    src="<?php echo $templatepath . $tmp['t14_headimg']; ?>">
                                 <h1 class="site-head"><a
                                         href="index.php"><?php echo getTemplateMessage('t14_maintitle'); ?></a></h1>
                                 <h3 class="subheader"><?php echo getTemplateMessage('t14_headsubtitle'); ?></h3>

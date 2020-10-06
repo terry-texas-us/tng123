@@ -1,52 +1,53 @@
 ul#tngnav {
-    margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
 }
 
 #tngnav li {
-    margin: 0 0 0 1px;
+  margin: 0 0 0 1px;
 }
 
 #tngnav a {
-    color: #444;
-    background: #deebf4;
-    padding: 0.4em 1em 0.3em 8px;
-    border-right: 1px solid #444;
-    border-top: 1px solid #ccc;
-    border-radius: 4px 4px 0 0;
+  color: #444;
+  background: #deebf4;
+  padding: .4em 1em .3em 8px;
+  border-right: 1px solid #444;
+  border-top: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
 }
 
 #tngnav a:hover {
-    background: #31708e;
-    color: #fff;
+  background: #31708e;
+  color: #fff;
 }
 
 #tngnav a.here {
-    background: #31708e;
-    color: #fc0;
-    border-right: 1px solid #444;
-    margin: 0;
+  background: #31708e;
+  color: #fc0;
+  border-right: 1px solid #444;
+  margin: 0;
 }
 
-/*to keep older browsers happy*/
 #tabs div {
-    margin: 0 1px 0 0;
-    padding: 0 0 .3em 0;
+  margin: 0 1px 0 0;
+  padding: 0 0 .3em;
 }
 
 #tabs a {
-    background: #deebf4;
-    color: #444;
-    padding: 0.4em 0.8em 0.4em 0.8em;
-    border-right: 1px solid #aaa;
-    border-top: 1px solid #aaa;
+  background: #deebf4;
+  color: #444;
+  padding: .4em .8em;
+  border-right: 1px solid #aaa;
+  border-top: 1px solid #aaa;
 }
 
 #tabs a:hover {
-    background: #31708e;
-    color: #fff;
+  background: #31708e;
+  color: #fff;
 }
 
 #tabs .here {
-    background: #31708e;
-    color: #fc0;
+  background: #31708e;
+  color: #fc0;
 }
+
+/*# sourceMappingURL=tngtabs2.css.map */

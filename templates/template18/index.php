@@ -164,7 +164,7 @@ $momlabel = getTemplateMessage('t18_momside');
                         <div class="left-indent">
                             <h3 class="entry-title"><?php echo $text['contactus']; ?></h3>
                             <p class="entry-content"><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
-                                                          class="emailimg"><?php echo $text['contactus_long']; ?></p>
+                                    class="emailimg"><?php echo $text['contactus_long']; ?></p>
                         </div>
                     </article>
                 </li>

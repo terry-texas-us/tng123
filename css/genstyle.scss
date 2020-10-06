@@ -1,9 +1,3 @@
-/* normal: most regular body text */
-.normal {
-  /*! font-family: Arial, Helvetica, sans-serif; */
-  /*! font-size: 10pt; */
-}
-
 p {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -17,34 +11,27 @@ img {
   border: 0;
 }
 
-/* smfieldname: small text used in conjunction with .fieldname style text */
 .smfieldname {
   font-size: 10px;
   color: #fff;
 }
 
-/* fieldname: regular text within column or row title sections */
 .fieldname {
   color: #fff;
 }
 
-/* header: heading text */
 .header {
-  margin-top: 0;
   padding: 0;
-  font-size: 22px;
-  font-weight: bold;
   color: #336;
   line-height: 22px;
 }
 
-.plainheader {
+.header, .plainheader {
   margin-top: 0;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* whiteheader: heading text used on dark backgrounds (usually fieldnameback) */
 .whiteheader {
   color: #fff;
   margin-top: 0;
@@ -55,63 +42,49 @@ img {
   color: #fff;
 }
 
-/* subhead: subheading text */
 .subhead {
   margin-top: 0;
   font-size: 16px;
 }
 
-/* body: describes page background color and all non-table text not governed by any other style */
 body {
   background-color: #fff;
   color: #000;
-  /*! font-family: 'Open Sans', Arial, Helvetica, sans-serif; */
-  /*! font-size: 12px; */
-  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
 }
 
-/* link: normal links, active: links in use */
-a:link, a:active, div.icons a {
+a:active, a:link, div.icons a {
   color: #339;
 }
 
-/* visited: previously visited links */
 a:visited {
   color: #666;
 }
 
-/* fieldnameback: background color for column and row title sections */
-.fieldnameback,
-.tablesaw-cell-label {
+.fieldnameback, .tablesaw-cell-label {
   background-color: #336;
   border-right: 1px solid #777;
   border-bottom: 1px solid #777;
 }
 
-/* databack: background color for data areas */
 .databack {
   background-color: #e0e0f7;
+}
+
+.databack, .databackalt {
   border-right: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
 }
 
-/* alternate row striping to databack */
 .databackalt {
   background-color: #cacaf1;
-  border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
 }
 
-/* pedigree box: dates font */
-/* font-size should be in points */
-/* pedigree box information popups */
-/* font-size should be in points */
 .pboxpopup {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/*background for pedigree popups*/
 .pboxpopupdiv {
   border-top: 1px solid #bbb;
   border-left: 1px solid #bbb;
@@ -119,13 +92,11 @@ a:visited {
   padding: 7px;
 }
 
-/*area between sections of pedigree popups*/
 .popdivider {
   height: 3px;
   overflow: hidden;
 }
 
-/*inner div for pedigree popups, to allow sliding*/
 .popinner {
   padding: 3px;
   width: 280px;
@@ -137,15 +108,13 @@ a:visited {
 }
 
 .popup, .slidedown {
-  -webkit-box-shadow: 1px 1px 3px 0 #666;
   box-shadow: 1px 1px 3px 0 #666;
 }
 
-.popup, .popinner, .pboxpopupdiv, .slidedown {
+.pboxpopupdiv, .popinner, .popup, .slidedown {
   border-radius: 10px;
 }
 
-/*boxes on pedigree chart*/
 .pedbox {
   position: absolute;
   z-index: 5;
@@ -153,7 +122,7 @@ a:visited {
 }
 
 .pedborderleft {
-  border-left: solid 1.2px #000;
+  border-left: 1.2px solid #000;
 }
 
 .pedboxtable {
@@ -184,8 +153,7 @@ a:visited {
   border-bottom: 1px solid #fff;
 }
 
-div.pad5 img, .adminicon {
-  -webkit-box-shadow: 1px 1px 2px 0 #333;
+.adminicon, div.pad5 img {
   box-shadow: 1px 1px 2px 0 #333;
 }
 
@@ -206,24 +174,17 @@ ul.nopad {
   padding-left: 0;
 }
 
-/* For links on dark background */
 .lightlink:link, .lightlink:visited {
   color: #fff;
   text-decoration: none;
 }
 
-.lightlink:hover, .lightlink:active {
+.lightlink:active, .lightlink:hover {
   color: #fc3;
   text-decoration: none;
 }
 
-/* For white-only links on dark background */
-.lightlink2:link, .lightlink2:visited {
-  color: #fff;
-  text-decoration: none;
-}
-
-.lightlink2:hover, .lightlink2:active {
+.lightlink2:active, .lightlink2:hover, .lightlink2:link, .lightlink2:visited {
   color: #fff;
   text-decoration: none;
 }
@@ -235,14 +196,16 @@ ul.nopad {
 }
 
 .adminbody {
-  background: url(../img/background.gif);
   margin: 0;
+}
+
+.adminbody, .admincorner {
+  background: url(../img/background.gif);
 }
 
 .admincorner {
   float: left;
   padding: 2px 2px 2px 5px;
-  background: url(../img/background.gif);
   width: 154px;
   height: 50px;
   text-align: center;
@@ -255,7 +218,7 @@ ul.nopad {
 
 .admintitle {
   padding: 0;
-  margin: 7px 0 0 0;
+  margin: 7px 0 0;
 }
 
 .admintop {
@@ -276,7 +239,7 @@ ul.nopad {
 .leftmenu {
   width: 150px;
   height: 100%;
-  padding: 60px 6px 0 6px;
+  padding: 60px 6px 0;
   position: fixed;
   line-height: 1.25;
   overflow: auto;
@@ -291,12 +254,10 @@ ul.nopad {
   margin: auto;
 }
 
-/* sideback: background color for side and top frames */
 .sideback {
   background-color: #336;
 }
 
-/* mainback: background for main admin area */
 .mainback {
   padding: 60px 0 0 166px;
 }
@@ -310,13 +271,11 @@ ul.nopad {
   max-width: 992px;
 }
 
-/* mouseoverback: background color for admin menu items while active*/
 .mouseoverback {
   background-color: #336399;
 }
 
-.adminsubhead,
-.whitesubhead {
+.adminsubhead, .whitesubhead {
   font-size: 16px;
   margin-bottom: 2px;
 }
@@ -325,8 +284,7 @@ ul.nopad {
   color: #fff;
 }
 
-.adminsubmsg,
-.admintotal {
+.adminsubmsg, .admintotal {
   color: #ddd;
 }
 
@@ -334,12 +292,7 @@ ul.nopad {
   float: right;
 }
 
-.adminsubmsg {
-  font-size: 11px;
-}
-
-/* smaller: small body text */
-.smaller {
+.adminsubmsg, .smaller {
   font-size: 11px;
 }
 
@@ -347,48 +300,45 @@ ul.nopad {
   font-size: 9px;
 }
 
-/*for active secondary tab link*/
-a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active {
+a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited {
   color: #fc3;
   text-decoration: none;
 }
 
-/*for alignment on menu icons*/
 .tngmenuicon {
   vertical-align: -4px;
   padding: 1px;
-  margin: 0 1px 0 1px;
+  margin: 0 1px;
   border: 0;
   width: 16px;
   height: 15px;
 }
 
 .tngsmallicon {
-  height: 15px;
-  background: url(../img/tng_small_icon_sprites.gif) no-repeat;
-  padding: 0.1em 0 0 18px;
+  padding: .1em 0 0 18px;
   margin-right: 10px;
-  text-decoration: none;
   display: block;
-  float: left;
   line-height: 1.2;
 }
 
-.tngsmallicon2 {
+.tngsmallicon, .tngsmallicon2 {
   height: 15px;
+  background: url(../img/tng_small_icon_sprites.gif) no-repeat;
+  text-decoration: none;
+  float: left;
+}
+
+.tngsmallicon2 {
   position: relative;
   top: -1px;
   width: 16px;
-  background: url(../img/tng_small_icon_sprites.gif) no-repeat;
   margin: 0 2px 0 1px;
   vertical-align: -4px;
-  text-decoration: none;
-  float: left;
 }
 
 .tngsmallicon3 {
   height: 15px;
-  padding: 0.1em 0 0;
+  padding: .1em 0 0;
   text-decoration: none;
   display: block;
   float: left;
@@ -456,7 +406,6 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
   overflow: hidden;
 }
 
-/*for descendancy chart*/
 #descendantchart {
   text-align: left;
 }
@@ -476,7 +425,6 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
   line-height: 1.5;
 }
 
-/*image previews*/
 .media-prev {
   top: -180px;
   right: -426px;
@@ -492,7 +440,6 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
   background: transparent url(../img/media-prevbg.png) no-repeat 0 0;
 }
 
-/* width and heigth definitions to keep image within container */
 .media-prev img {
   max-width: 100%;
   height: auto;
@@ -503,7 +450,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 .media-img {
   height: 1px;
-  margin: 0 0 0;
+  margin: 0;
   position: relative;
 }
 
@@ -524,7 +471,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
   position: relative;
 }
 
-#slideshow div.slide, #slideshow div.loadingdiv {
+#slideshow div.loadingdiv, #slideshow div.slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -542,8 +489,8 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
   background-color: #fff;
   padding: 20px;
   font-size: 21pt;
-  border: solid 1px #000;
-  z-index: 5;
+  border: 1px solid #000;
+  z-index: 3;
 }
 
 #loadingdiv2 {
@@ -589,7 +536,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 .person-img {
   height: 1px;
-  margin: 0 0 0;
+  margin: 0;
   position: relative;
   float: right;
 }
@@ -617,10 +564,9 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
 
 .tngshadow {
   border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
 }
 
-.tngbotshadow {
+.tngbotshadow, .tngshadow {
   border-bottom: 1px solid #bbb;
 }
 
@@ -653,7 +599,7 @@ a.lightlink3:link, a.lightlink3:visited, a.lightlink3:hover, a.lightlink3:active
   color: #008000;
 }
 
-input:hover, textarea:hover, select:hover {
+input:hover, select:hover, textarea:hover {
   border-color: #fc3;
 }
 
@@ -666,16 +612,16 @@ select {
 }
 
 .langmenu select option {
-  padding: 0 5px 1px 5px;
+  padding: 0 5px 1px;
 }
 
-input[type=button], input[type=submit], input[type=reset], input[type=password], button, input[type=text], input[type=search], textarea, select {
+button, input[type=button], input[type=password], input[type=reset], input[type=search], input[type=submit], input[type=text], select, textarea {
   border: 1px solid #808080;
   border-radius: 5px;
   padding: 3px 6px;
 }
 
-input[type=button], input[type=submit], input[type=reset], button {
+button, input[type=button], input[type=reset], input[type=submit] {
   cursor: pointer;
 }
 
@@ -683,17 +629,17 @@ select {
   padding: 2px 4px;
 }
 
-input[type=button], input[type=submit], input[type=reset], button {
+button, input[type=button], input[type=reset], input[type=submit] {
   background-color: #ddd;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active, button:active {
+button:active, input[type=button]:active, input[type=reset]:active, input[type=submit]:active {
   color: #fff;
   border: 1px solid #fc0;
   background-color: #ccc;
 }
 
-.btn, .disabled, input[type=button].btn, input[type=submit].btn, input[type=submit].disabled, input[type=reset].btn {
+.btn, .disabled, input[type=button].btn, input[type=reset].btn, input[type=submit].btn, input[type=submit].disabled {
   border: 1px solid #808080;
   padding: 5px 12px;
 }
@@ -724,15 +670,16 @@ select.mediumfield {
 
 input.minifield {
   width: 50px;
+  font-size: 8pt;
+  padding: 0 1px;
+}
+
+input.minibutton, input.minifield {
   border: none;
   background-color: #eee;
-  font-size: 8pt;
-  padding: 0 1px 0 1px;
 }
 
 input.minibutton {
-  border: none;
-  background-color: #eee;
   font-size: 9pt;
   padding: 1px;
 }
@@ -754,14 +701,15 @@ input.minibutton {
 }
 
 .oldicon {
-  margin: 0 2px 0 2px;
-  border: 0;
   vertical-align: middle;
 }
 
-.smallicon {
-  margin: 0 2px 0 2px;
+.oldicon, .smallicon {
+  margin: 0 2px;
   border: 0;
+}
+
+.smallicon {
   width: 20px;
   height: 20px;
   display: block;
@@ -861,9 +809,8 @@ input.minibutton {
   margin-right: 6px;
 }
 
-.thumb, .smallimg, .adminthumb {
+.adminthumb, .smallimg, .thumb {
   border: 0;
-  -webkit-box-shadow: 1px 1px 1px 0 #777;
   box-shadow: 1px 1px 1px 0 #777;
   border-radius: 5px;
 }
@@ -881,7 +828,6 @@ input.minibutton {
   white-space: nowrap;
 }
 
-/*small boxes for letters on the surnames page, also for pagination on other pages*/
 .snlink {
   padding: 5px;
   border-bottom: 1px solid #999;
@@ -890,7 +836,7 @@ input.minibutton {
   border-left: 1px solid #ddd;
   background-color: #e0e0f7;
   color: #000;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
   border-radius: 4px;
   text-align: right;
@@ -904,7 +850,7 @@ p a.snlink {
   background-color: #fff;
 }
 
-a.snlink:hover, .snlinkact, .adminnav .snlinkact {
+.adminnav .snlinkact, .snlinkact, a.snlink:hover {
   background-color: #336;
   color: #fff;
 }
@@ -917,7 +863,7 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
   height: 100%;
   background-color: #222;
   filter: alpha(opacity=70);
-  opacity: 0.7;
+  opacity: .7;
   z-index: 101;
 }
 
@@ -936,14 +882,14 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
   padding: 10px 25px 10px 0;
 }
 
-.LB_content, #outer, #mapevents {
+#mapevents, #outer, .LB_content {
   overflow: auto;
 }
 
 .LB_closeAjaxWindow {
   cursor: move;
   margin: 0;
-  padding: 1px 0 2px 0;
+  padding: 1px 0 2px;
   position: absolute;
   top: 0;
   background-color: #336;
@@ -961,26 +907,21 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
   margin: 0 0 0 5px;
 }
 
-/* The following classes were added when converting the Help screens to php file for the template look and feel */
-/* subheadbold: subheading text in Help screens */
 .subheadbold {
   margin-top: 0;
   font-size: 18pt;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* largeheader: heading text used on dark backgrounds (usually fieldnameback) in Help screens */
 .largeheader {
   font-size: 32px;
   color: #fff;
 }
 
-/* optionhead: added to replace <strong> on option heading */
 .optionhead {
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* helpbody: describes page background on Help screens  */
 .helpbody {
   background-image: url(../img/background.gif);
 }
@@ -989,8 +930,7 @@ a.snlink:hover, .snlinkact, .adminnav .snlinkact {
   background-color: #fff;
 }
 
-.tngmsgarea .adminsubhead,
-.yellow {
+.tngmsgarea .adminsubhead, .yellow {
   color: #fc3;
 }
 
@@ -1003,7 +943,6 @@ td.unhighlightedchild {
   padding: 2px;
 }
 
-/*arrow underneath pedigree boxes*/
 .downarrow {
   position: absolute;
   z-index: 7;
@@ -1013,19 +952,19 @@ td.unhighlightedchild {
 }
 
 .famdownarrow {
-  position: relative;
-  top: 1px;
-  border: 0;
   height: 8px;
   width: 25px;
   left: -4px;
   margin-right: -4px;
 }
 
-.famuparrow {
+.famdownarrow, .famuparrow {
   position: relative;
   top: 1px;
   border: 0;
+}
+
+.famuparrow {
   padding-left: 4px;
   padding-right: 4px;
 }
@@ -1034,27 +973,22 @@ td.unhighlightedchild {
   font-size: 8pt;
 }
 
-/*right-facing arrows indicating continuing pedigree charts*/
 .offpagearrow {
   position: absolute;
   visibility: hidden;
   z-index: 5;
 }
 
-/*added in 7.1.0*/
-/*popup for import progress bar*/
 .impcontainer {
   margin: 20px;
 }
 
-/*header in progress bar popup*/
 .impheader {
   height: 40px;
 }
 
-/*import counter labels, ie People, Families, Sources*/
 .implabel {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .imp {
@@ -1062,28 +996,24 @@ td.unhighlightedchild {
   float: left;
 }
 
-/*white box around progress bar*/
 .progcontainer {
   background-color: #fff;
   padding: 5px;
   width: 500px;
 }
 
-/*empty progress bar*/
 .emptybar {
   width: 500px;
   height: 20px;
   border: 1px solid #000;
 }
 
-/*colored part of progress bar*/
 .colorbar {
   width: 0;
   height: 20px;
   background-color: #008000;
 }
 
-/* for images in pull down menus */
 .tnggif {
   width: 20px;
   height: 20px;
@@ -1093,7 +1023,6 @@ td.unhighlightedchild {
   padding: -3px;
 }
 
-/* for ArrowDown.gif in genlib.php */
 #mnav .arrow {
   float: left;
   margin-top: 4px;
@@ -1107,18 +1036,11 @@ td.unhighlightedchild {
   border: 0;
 }
 
-/* big save button */
 .bigsave {
   background: #fff;
-  font-size: 21px;
 }
 
-/* search page */
-.databacksave {
-  font-size: 21px;
-}
-
-.fieldnamebacksave {
+.bigsave, .databacksave, .fieldnamebacksave {
   font-size: 21px;
 }
 
@@ -1130,7 +1052,6 @@ form {
   margin: 0;
 }
 
-/*table cell for pedigree image*/
 .lefttop {
   vertical-align: top;
   text-align: left;
@@ -1167,7 +1088,6 @@ form {
   border-radius: 0 4px 4px 0;
 }
 
-/*load the map link*/
 .loadmap {
   font-size: 18px;
   width: 150px;
@@ -1177,13 +1097,15 @@ form {
   cursor: pointer;
 }
 
-/*Searching button on Relationship chart*/
 #searching {
   float: right;
+  margin-right: 15%;
+}
+
+#loading, #searching {
   padding: 10px;
   font-size: 14pt;
   border: 1px solid #000;
-  margin-right: 15%;
 }
 
 #loading {
@@ -1192,21 +1114,16 @@ form {
   visibility: visible;
   z-index: 9;
   margin: 0;
-  padding: 10px;
-  font-size: 14pt;
-  border: 1px solid #000;
   background-color: #fff;
   border-radius: 10px;
 }
 
-/* white buttons with rounded corners (FF only) */
 .whitebuttonlink {
   background-color: #fff;
-  padding: 3px 7px 3px 7px;
+  padding: 3px 7px;
   text-decoration: none;
 }
 
-/* help pages */
 p.menu {
   margin-top: 8px;
   margin-bottom: 0;
@@ -1214,7 +1131,7 @@ p.menu {
 }
 
 .blocknote {
-  margin: 0 15px 0 15px;
+  margin: 0 15px;
 }
 
 .ajaxwindow {
@@ -1232,7 +1149,7 @@ p.menu {
   float: left;
   width: 15px;
   height: 15px;
-  margin: 0 4px 0 4px;
+  margin: 0 4px;
   border-width: 0;
 }
 
@@ -1291,11 +1208,10 @@ p.menu {
   min-width: 354px;
 }
 
-div.tngmsgarea,
-a.admincell {
+a.admincell, div.tngmsgarea {
   color: #fff;
   padding: 8px;
-  margin: 2px 3px 4px 3px;
+  margin: 2px 3px 4px;
   display: block;
   border-radius: 4px;
 }
@@ -1323,10 +1239,8 @@ a.admincell {
   border-radius: 6px;
 }
 
-.tngmsgarea,
-a.admincell, .leftlink, .whiteheader, .whitetext {
+.leftlink, .tngmsgarea, .whiteheader, .whitetext, a.admincell {
   text-shadow: 1px 1px 1px #000;
-  -webkit-filter: dropshadow(color=#000, offx=1, offy=1);
   filter: dropshadow(color=#000, offx=1, offy=1);
 }
 
@@ -1335,31 +1249,30 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 #adm-innermenu {
-  margin: 0 2px 2px 2px;
+  margin: 0 2px 2px;
+  padding: .2em 0 .3em .7em;
+}
+
+#adm-innermenu, #pub-innermenu {
   clear: both;
-  padding: 0.2em 0 0.3em 0.7em;
   border-right: 1px solid #777;
   border-bottom: 1px solid #777;
 }
 
 #pub-innermenu {
-  margin: 0 1px 0 1px;
-  clear: both;
-  padding: 0.3em 0 0.3em 0.7em;
-  border-right: 1px solid #777;
-  border-bottom: 1px solid #777;
+  margin: 0 1px;
+  padding: .3em 0 .3em .7em;
 }
 
 .miscmenu {
   margin: 3px 0 20px 18px;
 }
 
-.fakelink {
+.fakelink, .toggleicon {
   cursor: pointer;
 }
 
 .toggleicon {
-  cursor: pointer;
   float: right;
   padding-top: 4px;
 }
@@ -1403,7 +1316,7 @@ a.admincell:hover, a.leftlink:hover {
 }
 
 #mapcontainer {
-  border: solid 1px #000;
+  border: 1px solid #000;
   margin-bottom: 8px;
   margin-right: 10px;
   margin-top: 8px;
@@ -1413,7 +1326,7 @@ a.admincell:hover, a.leftlink:hover {
   width: 240px;
 }
 
-.pad5, .mappad5 {
+.mappad5, .pad5 {
   padding: 5px;
 }
 
@@ -1421,7 +1334,6 @@ a.admincell:hover, a.leftlink:hover {
   padding: 2px;
 }
 
-/*most wanted*/
 .mwperson {
   margin-top: 10px;
   color: #808080;
@@ -1437,7 +1349,7 @@ a.admincell:hover, a.leftlink:hover {
   max-width: 800px;
 }
 
-.mediaalign, .center {
+.center, .mediaalign {
   text-align: center;
 }
 
@@ -1467,9 +1379,8 @@ a.admincell:hover, a.leftlink:hover {
   height: 9px;
 }
 
-/*tabs, core stuff, common to both methods*/
 ul#tngnav {
-  padding: 0 0 0 0;
+  padding: 0;
   list-style: none;
   border: none;
 }
@@ -1488,11 +1399,6 @@ ul#tngnav {
   min-height: 15px;
 }
 
-#tngnav a.here {
-  /*position: relative;*/
-}
-
-/*everything below this point is to keep older browsers happy*/
 #tabs div {
   position: relative;
   float: left;
@@ -1524,19 +1430,20 @@ div.innercontainer {
 }
 
 div.icons {
-  padding: 0.3em 0 0.2em 3px;
-  font-size: 11px;
+  padding: .3em 0 .2em 3px;
   float: left;
   margin: 0 0 0 2px;
-  font-weight: bold;
+}
+
+div.icons, div.icons-rt {
+  font-size: 11px;
+  font-weight: 700;
 }
 
 div.icons-rt {
-  font-size: 11px;
   float: right;
   margin: 1px 0 0 2px;
   padding: 2px 0 0 3px;
-  font-weight: bold;
 }
 
 .in-bar {
@@ -1550,7 +1457,6 @@ div.icons-rt {
 
 ul.tngdd {
   list-style: none;
-  /*margin:0 6px 0 0;*/
   padding: 0;
   margin-left: 0;
   font-size: 11px;
@@ -1577,12 +1483,10 @@ ul.tngdd li {
 
 ul.tngdd ul {
   position: absolute;
-  /* top:26px; */
   left: 0;
   display: none;
   opacity: 0;
   list-style: none;
-  -webkit-box-shadow: 1px 1px 3px 0 #666;
   box-shadow: 1px 1px 3px 0 #666;
   background-color: #666;
   border-radius: 6px;
@@ -1603,7 +1507,7 @@ ul.tngdd ul li {
 
 ul.tngdd ul li a {
   display: block;
-  padding: 6px 4px 6px;
+  padding: 6px 4px;
   background-color: #eee;
   font-size: 12px;
   border-top: 1px solid #fff;
@@ -1629,19 +1533,19 @@ ul.tngdd ul ul {
 
 ul.tngdd .menulink {
   padding: 3px 2px 3px 30px;
-  font-weight: bold;
+  font-weight: 700;
   height: 16px;
   background: #e0e0f7 url(../img/ArrowDown.gif) 2px 8px no-repeat;
   width: 70px;
   line-height: 1.5;
 }
 
-ul.tngdd .menulink, ul.tngdd .langmenu {
+ul.tngdd .langmenu, ul.tngdd .menulink {
   border-bottom: 1px solid #aaa;
   border-right: 1px solid #aaa;
 }
 
-ul.tngdd .menulink:hover, ul.tngdd .menuhover {
+ul.tngdd .menuhover, ul.tngdd .menulink:hover {
   border-bottom: 1px solid #444;
   border-right: 1px solid #444;
   color: #fff;
@@ -1736,11 +1640,11 @@ ul.tngdd ul li a .menu-icon {
   background-position: -190px 0;
 }
 
-#headstones-hdr-icon, #headstones-icon, #cemeteries-hdr-icon, #cemeteries-icon {
+#cemeteries-hdr-icon, #cemeteries-icon, #headstones-hdr-icon, #headstones-icon {
   background-position: -209px 0;
 }
 
-#unlock-icon, #unlock-hdr-icon {
+#unlock-hdr-icon, #unlock-icon {
   background-position: -228px 0;
 }
 
@@ -1752,7 +1656,7 @@ ul.tngdd ul li a .menu-icon {
   background-position: -266px 0;
 }
 
-#surnames-hdr-icon, #surnames-icon, #firstnames-icon {
+#firstnames-icon, #surnames-hdr-icon, #surnames-icon {
   background-position: -285px 0;
 }
 
@@ -1851,14 +1755,13 @@ ul.tngdd ul li a .menu-icon {
 
 .temppreview {
   border: 1px solid #000;
-  -webkit-box-shadow: 1px 1px 3px 0 #666;
   box-shadow: 1px 1px 3px 0 #666;
   border-radius: 8px;
 }
 
 #imgdiv img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 #uploadarea {
@@ -1867,7 +1770,6 @@ ul.tngdd ul li a .menu-icon {
   min-height: 150px;
   width: 95%;
   border-radius: 6px;
-  -webkit-box-shadow: 1px 1px 3px 0 #666;
   box-shadow: 1px 1px 3px 0 #666;
   padding: 10px;
   margin-right: 20px;
@@ -1914,12 +1816,14 @@ ul.tngdd ul li a .menu-icon {
 }
 
 .sncol {
-  vertical-align: top;
   width: 20%;
 }
 
-.plcol {
+.plcol, .sncol {
   vertical-align: top;
+}
+
+.plcol {
   width: 33%;
 }
 
@@ -1938,7 +1842,7 @@ ul.tngdd ul li a .menu-icon {
 }
 
 .login-options {
-  margin: 8px 0 8px 0;
+  margin: 8px 0;
 }
 
 .loginbtn {
@@ -1973,7 +1877,7 @@ ul.tngdd ul li a .menu-icon {
 
 .mmaintitle {
   margin: 0;
-  opacity: 0.6;
+  opacity: .6;
 }
 
 .mtitlehr {
@@ -1992,14 +1896,14 @@ ul.tngdd ul li a .menu-icon {
     display: none;
   }
 }
-/* styles for home page surname cloud post */
+
 .surnames-cloud, .surnames-cloud a {
   font-family: Verdana, Tahoma, Arial, sans-serif;
-  padding: 2px 2px 2px 2px;
+  padding: 2px;
   letter-spacing: 0;
   word-spacing: 0;
   text-decoration: none;
-  font-weight: normal;
+  font-weight: 400;
   text-align: center;
   font-size: 14px;
 }
@@ -2045,58 +1949,56 @@ a.size0 {
 }
 
 .surnames-cloud a {
-  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
-.msgbold {
-  font-weight: bold;
+.msgbold, .msgerror {
+  font-weight: 700;
 }
 
 .msgerror {
-  font-weight: bold;
   color: #900;
 }
 
 .msgapproved {
-  font-weight: bold;
+  font-weight: 700;
   color: #090;
 }
 
 .bselected {
-  border: 1px #090 solid;
+  border: 1px solid #090;
 }
 
 .bunselected {
-  border: 1px #ccc solid;
+  border: 1px solid #ccc;
 }
 
 .mlbox {
   position: absolute;
   border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 3px 0 #333;
   box-shadow: 2px 2px 3px 0 #333;
   z-index: 1;
 }
 
 .pubbox {
-  opacity: 0.3;
+  opacity: .3;
   cursor: pointer;
 }
 
 #tags {
-  position: absolute;
   left: 0;
-  right: 0;
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
 }
 
-.imagetag {
+#tags, .imagetag {
   position: absolute;
-  /*bottom:0;*/
-  left: 2px;
   right: 0;
+}
+
+.imagetag {
+  left: 2px;
   padding: 3px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.6);
@@ -2109,7 +2011,7 @@ a.size0 {
   padding: 3px;
   width: 15px;
   float: right;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -2134,16 +2036,17 @@ a.size0 {
   padding: 8px;
   text-align: center;
   color: #fff;
-  text-decoration: none;
   background-color: #444;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   border-radius: 50%;
 }
 
-.scroll-to-top:hover {
+.scroll-to-top, .scroll-to-top:hover {
   text-decoration: none;
-  background-color: #777;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.scroll-to-top:hover {
+  background-color: #777;
 }
 
 .scroll-to-top a, .scroll-to-top a:hover {
@@ -2151,28 +2054,25 @@ a.size0 {
 }
 
 .grabbing {
-  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
 .prevnum {
-  vertical-align: top;
   font-size: 18pt;
+}
+
+.prevdiv, .prevnum {
+  vertical-align: top;
 }
 
 .prevdiv {
   display: inline;
   cursor: pointer;
-  vertical-align: top;
 }
 
 table.uploadmore td {
   padding: 2px;
   border: none;
-}
-
-#imgdiv img {
-  max-width: 100%;
 }
 
 .annfield {
@@ -2200,25 +2100,21 @@ a.famlink:hover {
   background-color: #ccc;
 }
 
-/* Added for Responsive Tables mod to correct the header centering issues */
 thead th {
   text-align: left;
 }
 
-.thumbnails {
+.gallery, .thumbnails {
   vertical-align: text-top;
 }
 
 .gallery {
   padding: 10px;
-  width: 100px;
   height: 100px;
   display: inline-block;
-  vertical-align: text-top;
 }
 
-/* Adjust Event Date column on Individual Person page based on thumbnail width */
-.eventdatecol {
+.eventdatecol, .gallery {
   width: 100px;
 }
 
@@ -2232,8 +2128,6 @@ thead th {
 
 .resultscol {
   overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   white-space: pre-wrap;
 }
@@ -2299,32 +2193,27 @@ thead th {
   overflow: auto;
 }
 
-/*  reduce takenbycol for smart phones portrait orientation */
 @media only screen and (min-width: 320px) and (max-width: 680px) {
   .takenbycol {
     width: 80px;
   }
-
   .haplogroupcol {
     width: 70px;
   }
 }
+
 .dysval {
   height: 112px;
   width: 16px;
   font: 9pt Verdana, Arial;
-  font-weight: bold;
+  font-weight: 700;
   display: block;
   text-align: left;
   margin: auto;
-  padding: 0.25em;
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
+  padding: .25em;
   writing-mode: vertical-rl;
   -o-transform: rotate(90deg);
   -o-transform-origin: 0 0;
-  -ms-transform: rotate(90deg);
-  -ms-transform-origin: 50% 10%;
 }
 
 .nbrcol {
@@ -2348,7 +2237,7 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
-  top: -0.5em;
+  top: -.5em;
 }
 
 #fanWrapper {
@@ -2407,54 +2296,39 @@ sup {
   line-height: 1.5;
 }
 
-/*bootstrap*/
 .btn, .disabled {
   display: inline-block;
   padding: 5px 12px;
   margin-bottom: 0;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   background-image: none;
-  /*border: 1px solid transparent;*/
   border-radius: 4px;
   border: 1px solid #808080;
   background-color: #ddd;
 }
 
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-.btn:hover,
-.btn:focus,
-.btn.focus {
+.btn.focus, .btn:focus, .btn:hover {
   color: #333;
   text-decoration: none;
 }
 
-.btn:active,
-.btn.active {
+.btn.active, .btn:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
@@ -2462,17 +2336,11 @@ sup {
   cursor: not-allowed;
 }
 
-/* media query default for smart phones and tablets  */
 @media screen and (max-width: 480px) {
   .media-prev {
     height: 100%;
     top: 50px;
     background: none;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .media-prev {
     padding: 10px 4px 6px 0;
   }
 }
@@ -2497,27 +2365,25 @@ sup {
     width: 230px;
   }
 }
-/*  reduce thumbnails and eventdatecol for tablets */
+
 @media only screen and (min-width: 480px) and (max-width: 1136px) {
-  .thumbnails, .eventdatecol, .gallery {
+  .eventdatecol, .gallery, .thumbnails {
     width: 80px;
   }
 }
-/*  reduce thumbnails and eventdatecol for smart phones */
+
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .thumbnails, .gallery {
+  .gallery, .thumbnails {
     width: 60px;
   }
-
   .eventdatecol {
     width: 80px;
   }
-
   input.longfield {
     width: 280px;
   }
 }
-/*  portrait orientation on newer smart phones  */
+
 @media screen and (max-width: 360px) and (orientation: portrait) {
   .cemmap {
     width: 100%;
@@ -2525,7 +2391,7 @@ sup {
     margin-bottom: 20px;
   }
 }
-/*  portrait orientation on smaller tablets  */
+
 @media screen and (max-width: 480px) and (orientation: portrait) {
   .cemmap {
     width: 100%;
@@ -2533,7 +2399,7 @@ sup {
     margin-bottom: 20px;
   }
 }
-/*  landscape orientation on smaller smart phones  */
+
 @media screen and (max-width: 640px) and (orientation: landscape) {
   .cemmap {
     width: 95%;
@@ -2541,7 +2407,7 @@ sup {
     margin-bottom: 20px;
   }
 }
-/*  landscape orientation on tablets  */
+
 @media screen and (max-width: 1136px) and (orientation: landscape) {
   .cemmap {
     width: 95%;

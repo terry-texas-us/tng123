@@ -1,0 +1,112 @@
+body {
+  background: transparent;
+}
+
+.magnifier {
+  position: absolute;
+  border: 1px solid #000;
+  cursor: move;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+
+.magnifierShadow {
+  position: absolute;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.controller {
+  vertical-align: top;
+}
+
+.controllerContainer {
+  height: 34px;
+  background: #eee;
+  border: 1px solid #000;
+  padding: 0;
+  position: relative;
+  z-index: 100000;
+}
+
+.controllerText {
+  margin: 5px 0 0 5px;
+  font-size: 10pt;
+}
+
+.controllerButton, .controllerText {
+  vertical-align: bottom;
+  font-family: Trebuchet MS, Verdana, sans-serif;
+}
+
+.controllerButton {
+  margin: 5px 5px 0;
+  font-size: 8pt;
+}
+
+.controllerPan {
+  border: 1px solid #eee;
+}
+
+.controllerPan, .controllerPanSelected {
+  margin: 5px 5px 0;
+  vertical-align: bottom;
+}
+
+.controllerPanSelected {
+  background: #ddd;
+  border-left: 1px solid #111;
+  border-top: 1px solid #111;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.controllerClose {
+  margin-top: 3px;
+  float: right;
+}
+
+.controllerMag {
+  border: 1px solid #eee;
+}
+
+.controllerMag, .controllerMagSelected {
+  margin: 5px 5px 0 10px;
+  vertical-align: bottom;
+}
+
+.controllerMagSelected {
+  background: #ddd;
+  border-left: 1px solid #111;
+  border-top: 1px solid #111;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.controllerImage {
+  background: #eee;
+}
+
+.controllerImage, .zoomSelector {
+  margin: 5px 0 0 5px;
+  vertical-align: bottom;
+}
+
+.zoomSelector {
+  font-family: Trebuchet MS, Verdana, sans-serif;
+  font-size: 8pt;
+}
+
+.breakLine {
+  vertical-align: bottom;
+}
+
+.canvas {
+  background-color: #f9f9f9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border: 1px solid #c0c0c0;
+}
+

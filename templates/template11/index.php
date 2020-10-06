@@ -69,13 +69,13 @@ $title = getTemplateMessage('t11_maintitle');
                                                 <div class="center">
                                                     <br>
                                                     <img alt="" class="rounded10"
-                                                         src="<?php echo $templatepath . $tmp['t11_mainimage']; ?>" id="mainphoto">
+                                                        src="<?php echo $templatepath . $tmp['t11_mainimage']; ?>" id="mainphoto">
                                                 </div>
                                                 <p class="big-header">
                                                     <img src="<?php echo $templatepath; ?>img/greenvine1.png"
-                                                         style="margin:0 0 0 10px; float:left;" alt="" class="greenvine">
+                                                        style="margin:0 0 0 10px; float:left;" alt="" class="greenvine">
                                                     <img src="<?php echo $templatepath; ?>img/greenvine2.png"
-                                                         style="margin:0 10px 0 0; float:right;" alt="" class="greenvine">
+                                                        style="margin:0 10px 0 0; float:right;" alt="" class="greenvine">
                                                     <?php echo $title; ?>
                                                 </p>
                                             </div>
@@ -90,8 +90,8 @@ $title = getTemplateMessage('t11_maintitle');
                                                             ?>
                                                             <h4><?php echo $text['contactus']; ?></h4>
                                                             <p class="contact"><img src="<?php echo $templatepath; ?>img/email.gif"
-                                                                                    alt="email image"
-                                                                                    class="emailimg"><?php echo $text['contactus_long']; ?></p>
+                                                                    alt="email image"
+                                                                    class="emailimg"><?php echo $text['contactus_long']; ?></p>
                                                         </div>
                                                     </td>
                                                 </tr>

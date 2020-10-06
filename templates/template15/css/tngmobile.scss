@@ -1,0 +1,41 @@
+body {
+  background: url(../img/bg.gif) repeat scroll 0 0 #fff;
+}
+
+#mast {
+  background-color: #063e53;
+  background-image: none;
+  border-top: 1px solid #998475;
+}
+
+.mhead ul li {
+  color: #fff;
+}
+
+.mhead li a {
+  background-color: #e0d1be;
+  border-bottom: 1px solid #967954;
+  border-top: 1px solid #fcf9f7;
+  text-shadow: #fff 1px 1px 1px;
+  color: #000;
+}
+
+.headerrow {
+  width: inherit;
+}
+
+h3 {
+  color: #063e53;
+}
+
+.mmaintitle {
+  opacity: .9;
+}
+
+.content {
+  margin-right: 20px;
+}
+
+.content, .sidebar-primary {
+  float: left;
+}

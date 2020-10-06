@@ -40,7 +40,7 @@
                 <div class="">
                     <h4 class="widget-title-footer"><?php echo $text['search']; ?></h4>
                     <form method="get" class="search-form" action="helpme" role="search"
-                          onsubmit="return searchGoogleWebSite('<?php echo $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']); ?>')">
+                        onsubmit="return searchGoogleWebSite('<?php echo $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']); ?>')">
                         <input name="s" id="GoogleText" placeholder="<?php echo $text['searchsite']; ?> ..." type="search">
                         <input value="<?php echo $text['search']; ?>" type="submit">
                     </form>

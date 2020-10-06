@@ -34,12 +34,7 @@
     left: -180px;
 }
 
-/*main method*/
-ul#tngnav {
-    margin: 0 0 0;
-}
-
-#tngnav li {
+#tngnav li, ul#tngnav {
     margin: 0;
 }
 
@@ -82,24 +77,25 @@ ul#tngnav {
 #tngnav a {
     color: #aaa;
     background: url(../img/tngtab.png) no-repeat;
-    padding: 0.4em 1.9em 0.3em 26px;
+    padding: .4em 1.9em .3em 26px;
     border-right: 1px solid #aaa;
 }
 
 #tngnav a:hover {
-    background: url(../img/tngtabactive.png) no-repeat;
     color: #fff;
 }
 
-#tngnav a.here {
+#tngnav a.here, #tngnav a:hover {
     background: url(../img/tngtabactive.png) no-repeat;
+}
+
+#tngnav a.here {
     color: #fc0;
     border-right: 1px solid #777;
-    padding: 0.4em 1em 0.4em 26px;
+    padding: .4em 1em .4em 26px;
     margin: 0 4px 0 0;
 }
 
-/*everything below this point is to keep older browsers happy*/
 #tabs div {
     height: 21px;
 }
@@ -111,17 +107,21 @@ ul#tngnav {
 #tabs a {
     background: url(../img/tngtab.png) no-repeat;
     color: #aaa;
-    padding: 0.3em 1.9em .6em 26px;
+    padding: .3em 1.9em .6em 26px;
     border-right: 1px solid #aaa;
 }
 
 #tabs a:hover {
-    background: url(../img/tngtabactive.png) no-repeat;
     color: #fff;
 }
 
-#tabs a.here {
+#tabs a.here, #tabs a:hover {
     background: url(../img/tngtabactive.png) no-repeat;
-    color: #fc0;
-    padding: 0.3em 1.0em .6em 26px;
 }
+
+#tabs a.here {
+    color: #fc0;
+    padding: .3em 1em .6em 26px;
+}
+
+/*# sourceMappingURL=tngtabs1.css.map */

@@ -1,0 +1,226 @@
+body {
+  margin: 8px;
+  background-image: none;
+  font-size: 14px;
+}
+
+#mast {
+  background: linear-gradient(180deg, #339 0, #228);
+  border-top: 1px solid #44f;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  height: 50px;
+  min-width: 300px;
+  position: relative;
+}
+
+#tngheader {
+  height: 50px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.mhead {
+  display: block;
+  margin: 0;
+  min-height: 40px;
+  position: relative;
+}
+
+.mhead span {
+  display: inline-block;
+  padding: 12px;
+  font-size: 16pt;
+  color: #fff;
+  width: 60%;
+  height: 16px;
+  line-height: 26px;
+  overflow: hidden;
+}
+
+.labelcol {
+  width: 90px;
+}
+
+.fieldnameback {
+  font-size: 9pt;
+}
+
+@media (max-width: 500px) {
+  .mhead span {
+    font-size: 12pt;
+    padding: 6px 12px;
+    width: 40%;
+    height: 33px;
+    line-height: 20px;
+  }
+}
+
+#mmenus {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+}
+
+#mcontent {
+  margin-top: 50px;
+  padding-top: 10px;
+}
+
+#mcore {
+  border-right: 1px solid #aaa;
+  height: 22px;
+  padding: 14px;
+  text-indent: 100%;
+  width: 26px;
+  background: url(../img/tng_mobile_sprite.png) no-repeat 12px 12px;
+}
+
+#mcore, .mmenu {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  float: left;
+}
+
+.mmenu {
+  height: 48px;
+  width: 48px;
+}
+
+#mmenu-find {
+  background: url(../img/tng_mobile_sprite.png) no-repeat -1px -43px;
+}
+
+#mmenu-media {
+  background: url(../img/tng_mobile_sprite.png) no-repeat -48px -43px;
+}
+
+#mmenu-info {
+  background: url(../img/tng_mobile_sprite.png) no-repeat -95px -43px;
+}
+
+#mmenu-lang {
+  background: url(../img/tng_mobile_sprite.png) no-repeat -142px -43px;
+}
+
+#mmenu-cust {
+  background: url(../img/tng_mobile_sprite.png) no-repeat -189px -43px;
+}
+
+.mhead ul {
+  border-top: 30px solid #2d2214;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+  border-radius: 0 0 8px 8px;
+  margin-top: -30px;
+  padding: 0;
+  position: absolute;
+  top: 50px;
+  z-index: -1;
+  list-style: none outside none;
+  margin-left: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.25, 0.53, 1.265);
+  transition: all 0.4s cubic-bezier(0.34, -0.385, 0.63, 1.38);
+}
+
+#mcoremenu {
+  left: 0;
+}
+
+.mhead ul.mright {
+  right: 1px;
+}
+
+.mhead ul li {
+  color: #fff;
+  display: block;
+  margin: 0;
+}
+
+.mhead li {
+  display: inline-block;
+  margin: 0 4px 8px 0;
+  padding: 0;
+}
+
+.mhead li:last-child a {
+  border-radius: 0 0 8px 8px;
+}
+
+.mhead li a {
+  background-color: #669;
+  border-bottom: 1px solid #335;
+  border-top: 1px solid #779;
+  display: block;
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 14pt;
+  height: 20px;
+  color: #fff;
+  min-width: 150px;
+}
+
+.mhead a {
+  color: #fff;
+  line-height: 100%;
+  text-decoration: none;
+}
+
+.mobileicon {
+  height: 15px;
+  padding: .1em 0 0 18px;
+  text-decoration: none;
+  display: block;
+  line-height: 1.2;
+  margin-right: 0;
+}
+
+ul#mcoremenu.on, ul#mcustmenu.on, ul#mfindmenu.on, ul#minfomenu.on, ul#mlangmenu.on, ul#mmediamenu.on {
+  transform: translateZ(0);
+}
+
+.sncol {
+  width: 50%;
+}
+
+a.admincell {
+  height: auto;
+  padding: 5px 12px;
+}
+
+a div.whitesubhead {
+  font-size: 18pt;
+}
+
+.notearea {
+  max-height: none;
+}
+
+.mmmenuwrap {
+  padding-left: 0;
+}
+
+.mmhead-scroll {
+  margin-left: 0;
+  width: 100%;
+  padding-top: 0;
+}
+
+.fbar-scroll, .ibar-scroll, .mmlog-scroll, table.mmlist-scroll {
+  margin-left: 0;
+  width: 100%;
+  padding-left: 0;
+}
+
+.mmleftcol {
+  width: 45%;
+  vertical-align: top;
+}
+
+.mmrightcol {
+  width: 55%;
+  vertical-align: top;
+}

@@ -1,50 +1,51 @@
 ul#tngnav {
-    margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
 }
 
 #tngnav li {
-    margin: 0 0 0 1px;
+  margin: 0 0 0 1px;
 }
 
 #tngnav a {
-    color: #ddd;
-    background: #654;
-    padding: 0.4em 1em 0.3em 8px;
-    border-right: 1px solid #444;
-    border-radius: 4px 4px 0 0;
+  color: #ddd;
+  background: #654;
+  padding: .4em 1em .3em 8px;
+  border-right: 1px solid #444;
+  border-radius: 4px 4px 0 0;
 }
 
 #tngnav a:hover {
-    background: #68939b;
-    color: #fff;
+  background: #68939b;
+  color: #fff;
 }
 
 #tngnav a.here {
-    background: #68939b;
-    color: #fc0;
-    border-right: 1px solid #444;
-    margin: 0;
+  background: #68939b;
+  color: #fc0;
+  border-right: 1px solid #444;
+  margin: 0;
 }
 
-/*to keep older browsers happy*/
 #tabs div {
-    margin: 0 1px 0 0;
-    padding: 0 0 .3em 0;
+  margin: 0 1px 0 0;
+  padding: 0 0 .3em;
 }
 
 #tabs a {
-    background: #654;
-    color: #ddd;
-    padding: 0.4em 0.8em 0.4em 0.8em;
-    border-right: 1px solid #aaa;
+  background: #654;
+  color: #ddd;
+  padding: .4em .8em;
+  border-right: 1px solid #aaa;
 }
 
 #tabs a:hover {
-    background: #68939b;
-    color: #fff;
+  background: #68939b;
+  color: #fff;
 }
 
 #tabs .here {
-    background: #68939b;
-    color: #fc0;
+  background: #68939b;
+  color: #fc0;
 }
+
+/*# sourceMappingURL=tngtabs2.css.map */

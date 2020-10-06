@@ -28,6 +28,7 @@ $title = getTemplateMessage('t17_maintitle');
             margin: 0;
             background-color: #272727;
         }
+
         #mcontent {
             padding-top: 0;
         }

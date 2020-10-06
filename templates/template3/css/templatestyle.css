@@ -1,148 +1,118 @@
-/* override to TNG genstyle.css for DNA Compare reports for template 3   */
 .overflowauto {
-    width: 98vw;
+  width: 98vw;
 }
 
-/*  reduce overflowauto for laptops and tablets */
 @media only screen and (min-width: 1200px) and (max-width: 1550px) {
-    .overflowauto {
-        width: 97.9vw;
-    }
+  .overflowauto {
+    width: 97.9vw;
+  }
 }
 
 @media only screen and (max-width: 1280px) {
-    .overflowauto {
-        width: 97.5vw;
-    }
+  .overflowauto {
+    width: 97.5vw;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-    .overflowauto {
-        width: 97vw;
-    }
+  .overflowauto {
+    width: 97vw;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .overflowauto {
-        width: 95vw;
-    }
+  .overflowauto {
+    width: 95vw;
+  }
 }
 
-/* end overrides of for DNA Compare reports */
-
-/* header: heading text */
 .header, .plainheader {
-    color: #39692a;
+  color: #39692a;
 }
 
-/* body: describes page background color and all non-table text not governed by any other style */
 body {
-    background-color: #faf4e6;
+  background-color: #faf4e6;
 }
 
-/* link: normal links, active: links in use */
-a:link, a:active, div.icons a {
-    color: #39692a;
+a:active, a:link, div.icons a {
+  color: #39692a;
 }
 
-/* visited: previously visited links */
 a:visited {
-    color: #46ab28;
+  color: #46ab28;
 }
 
-/* sideback: background color for side and top frames */
 .sideback {
-    background-color: #28541b;
+  background-color: #28541b;
 }
 
-/* background color for admin menu items while active*/
 a.admincell:hover, a.leftlink:hover {
-    background-color: #46ab28;
+  background-color: #46ab28;
 }
 
-/* fieldnameback: background color for column and row title sections */
-/* sideback: background color for side and top frames */
-.LB_closeAjaxWindow, .bar, .sideback, .fieldnameback,
-.tablesaw-cell-label {
-    background-color: #39692a;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .tablesaw-cell-label {
+  background-color: #39692a;
 }
 
-/* line: is defined to replace the bgcolor="#660000"  */
 .line {
-    color: #600;
+  color: #600;
 }
 
 .left-indent {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .newspaper2 {
-    -moz-column-count: 2; /* Firefox */
-    -webkit-column-count: 2; /* Safari and Chrome */
-    column-count: 2;
-    padding-top: 15px;
+  column-count: 2;
+  padding-top: 15px;
 }
 
 .newspaper2 p {
-    margin: 0 0 10px;
-    padding: 0;
+  margin: 0 0 10px;
+  padding: 0;
 }
 
-/* page:  */
 .t3hdr {
-    background-color: #d0bc91;
-    width: 186px;
+  background-color: #d0bc91;
+  width: 186px;
 }
 
 .t3shadow {
-    box-shadow: 1px 1px 2px 1px #666;
+  box-shadow: 1px 1px 2px 1px #666;
 }
-
-/* style definitions in topmenu.php moved here */
 
 .topmenu {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #39692a;
-    text-decoration: none;
 }
 
-a.topmenu:link {
-    text-decoration: none;
-    color: #39692a;
+.topmenu, a.topmenu:link, a.topmenu:visited {
+  color: #39692a;
+  text-decoration: none;
 }
 
-a.topmenu:visited {
-    text-decoration: none;
-    color: #39692a;
-}
-
-a.topmenu:active {
-    text-decoration: none;
+a.topmenu:active, a.topmenu:hover {
+  text-decoration: none;
 }
 
 a.topmenu:hover {
-    color: #000;
-    text-decoration: none;
+  color: #000;
 }
 
 .tableborder {
-    background-color: #d0bc91;
-    border-collapse: collapse;
-    border-color: #000;
-    margin-bottom: 15px; /* added to replace <br> after table */
+  background-color: #d0bc91;
+  border-collapse: collapse;
+  border-color: #000;
+  margin-bottom: 15px;
 }
 
-/* footer added to replace <font face="Arial,Helvetica,sans-serif" size="1"> */
 .footer {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 11px;
 }
 
-/* styles added for index.php *.
-/* homebody added to replace style="background-color:#D0BC91;" in index.php */
 .homebody {
-    background-color: #d0bc91;
+  background-color: #d0bc91;
 }
 
 .mainmenu {
@@ -153,145 +123,123 @@ a.topmenu:hover {
     text-align: center;
 }
 
-/* additional styles added for XHTML 1.0 Strict validation */
 .indexpage {
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  text-align: left;
 }
 
-/* titleimg added to replace width="630" height="93" hspace="10" in index.php for title.gif */
 .titleimg {
-    margin: 0 10px;
-    border: 0;
+  margin: 0 10px;
+  border: 0;
 }
 
-/* mainimg added to replace width="530" height="303" in index.php for mainstreet.jpg */
-.mainimg {
-    margin: 0 0 0 0;
-    border: 0;
+.headerphoto, .mainimg, .menutitle {
+  margin: 0;
+  border: 0;
 }
 
-/* mainimg added to replace width="186" height="110" in topmenu for headerphoto.jpg */
-.headerphoto {
-    margin: 0 0 0 0;
-    border: 0;
-}
-
-/* menutitle added to replace width="565" height="86" in topmenu for title.gif */
 .menutitle {
-    margin: 0 0 0 0;
-    width: 565px;
-    height: 86px;
-    border: 0;
+  width: 565px;
+  height: 86px;
 }
 
 .snlink {
-    border-bottom: 1px solid #aaa;
-    border-right: 1px solid #aaa;
-    background-color: #d0bc91;
-    color: #000;
+  border-bottom: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  background-color: #d0bc91;
+  color: #000;
 }
 
-a.snlink:hover, .snlinkact, .adminnav .snlinkact {
-    background-color: #39692a;
-    color: #fff;
+.adminnav .snlinkact, .snlinkact, a.snlink:hover {
+  background-color: #39692a;
+  color: #fff;
 }
 
 .LB_window {
-    background: #d0bc91;
-    border: 2px solid #000;
-    color: #000;
+  background: #d0bc91;
+  border: 2px solid #000;
+  color: #000;
 }
 
 div.innercontainer {
-    border-bottom: 1px solid #999;
+  border-bottom: 1px solid #999;
 }
 
 ul.tngdd {
-    background-color: #faf4e6;
+  background-color: #faf4e6;
 }
 
 ul.tngdd a {
-    color: #39692a;
+  color: #39692a;
 }
 
-ul.tngdd ul li a, .slidedown {
-    background-color: #ded;
+.slidedown, ul.tngdd ul li a {
+  background-color: #ded;
 }
 
 ul.tngdd ul li a:hover {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 ul.tngdd .menulink {
     background: #d0bc91 url(../img/ArrowDown.gif) 2px 8px no-repeat;
-    background-image: url(../img/ArrowDown.gif), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8d5a9), to(#b8a579));
-    background-image: url(../img/ArrowDown.gif), -webkit-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: url(../img/ArrowDown.gif), -moz-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: url(../img/ArrowDown.gif), -ms-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: url(../img/ArrowDown.gif), -o-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: url(../img/ArrowDown.gif), linear-gradient(to top, #e8d5a9, #b8a579);
+    background-image: url(../img/ArrowDown.gif), linear-gradient(0deg, #e8d5a9, #b8a579);
     background-position: 2px 8px, 0 0;
     background-repeat: no-repeat;
 }
 
-ul.tngdd .menulink, ul.tngdd .langmenu {
-    border-bottom-color: #999;
-    border-right-color: #999;
+ul.tngdd .langmenu, ul.tngdd .menulink {
+  border-bottom-color: #999;
+  border-right-color: #999;
 }
 
-ul.tngdd .menulink:hover, ul.tngdd .menuhover {
-    border-bottom: 1px solid #444;
-    border-right: 1px solid #444;
-    color: #fff;
-    background: #39692a url(../img/arrowdown2.gif) 2px 8px no-repeat;
+ul.tngdd .menuhover, ul.tngdd .menulink:hover {
+  border-bottom: 1px solid #444;
+  border-right: 1px solid #444;
+  color: #fff;
+  background: #39692a url(../img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
-/* databack: background color for data areas */
 div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
-    background-color: #d0bc91;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8d5a9), to(#b8a579));
-    background-image: -webkit-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: -moz-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: -ms-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: -o-linear-gradient(top, #e8d5a9, #b8a579);
-    background-image: linear-gradient(to top, #e8d5a9, #b8a579);
+  background-color: #d0bc91;
+  background-image: linear-gradient(0deg, #e8d5a9, #b8a579);
 }
 
 .databack {
-    background-color: #d0bc91;
+  background-color: #d0bc91;
 }
 
 .databackalt {
-    background-color: #dfd1b4;
+  background-color: #dfd1b4;
 }
 
 ul.tngdd .sub {
-    background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
+  background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
 }
 
 ul.tngdd .topline {
-    border-top: 1px solid #777;
+  border-top: 1px solid #777;
 }
 
 .maintitle {
-    font-size: 68px;
+  font-size: 68px;
+}
+
+.maintitle, .mmaintitle {
     font-family: Georgia, Arial, sans-serif;
     color: #39692a;
 }
 
 .mmaintitle {
-    font-family: Georgia, Arial, sans-serif;
-    font-style: italic;
-    color: #39692a;
+  font-style: italic;
 }
 
 .mainimg {
-    max-height: 303px;
-    float: left;
-    padding-right: 20px;
+  max-height: 303px;
+  float: left;
+  padding-right: 20px;
 }
 
 .toptitle {
@@ -301,26 +249,27 @@ ul.tngdd .topline {
 }
 
 #searchpane {
-    float: right;
+  float: right;
 }
 
 .fambackground {
-    background-color: #d0bc91;
+  background-color: #d0bc91;
 }
 
 @media (max-width: 730px) {
-    #searchpane {
-        float: left;
-        width: 100%;
-    }
+  #searchpane {
+    float: left;
+    width: 100%;
+  }
 }
 
 @media (max-width: 530px) {
-    .maintitle {
-        font-size: 30px;
-    }
-
-    .mainimg {
-        width: 100%;
-    }
+  .maintitle {
+    font-size: 30px;
+  }
+  .mainimg {
+    width: 100%;
+  }
 }
+
+/*# sourceMappingURL=templatestyle.css.map */

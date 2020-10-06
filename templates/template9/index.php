@@ -165,7 +165,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     <div class="art-postcontent">
 
                                         <img src="<?php echo $templatepath . $tmp['t9_mainimage']; ?>" alt="" style="float:left;"
-                                             class="temppreview">
+                                            class="temppreview">
                                         <?php
                                         if ($chooselang) {
                                             $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
