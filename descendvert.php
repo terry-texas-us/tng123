@@ -154,13 +154,13 @@ function getParents($personID) {
 }
 
 function getNewChart($personID) {
-    global $tree, $generations, $cms, $text, $descendvert_url, $kidsflag;
+    global $tree, $generations, $text, $descendvert_url, $kidsflag;
     return $kidsflag ? "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\" border='0'/></a>" : "";
 }
 
 function doBox($level, $person, $spouseflag, $kidsflag) {
     global $pedigree, $leftmarker, $rightmarker, $spouseoffset, $maxwidth, $maxheight, $personID, $tree, $getperson_url;
-    global $generations, $descendvert_url, $text, $cms, $numboxes, $rounded, $slot;
+    global $generations, $descendvert_url, $text, $numboxes, $rounded, $slot;
 
     $numboxes++;
     if (!$leftmarker[$level])

@@ -77,7 +77,7 @@ function tng_adminheader($title, $flags) {
  * @return string
  */
 function tng_adminlayout($args = "") {
-    global $tng_title, $tng_version, $tng_abbrev, $currentuser, $allow_admin, $admtext, $text, $maint, $cms, $homepage;
+    global $tng_title, $tng_version, $tng_abbrev, $currentuser, $allow_admin, $admtext, $text, $maint, $homepage;
 
     $helplang = findhelp("index_help.php");
 

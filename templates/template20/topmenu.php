@@ -1,12 +1,12 @@
-<?php global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes, $cms, $rootpath; ?>
+<?php global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes, $rootpath; ?>
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicback">
 
-<div class="scroll-to-top"><a href="#"><img src="<?php echo $cms['tngpath']; ?>img/backtotop.png" alt=""/></a></div>
+<div class="scroll-to-top"><a href="#"><img src="img/backtotop.png" alt=""/></a></div>
 
 <div id="hidden">
-    <input type="hidden" id="imageplus" value="<?php echo $cms['tngpath'] . $templatepath . "img/plus.gif"; ?> ">
-    <input type="hidden" id="imageminus" value="<?php echo $cms['tngpath'] . $templatepath . "img/minus.gif"; ?> ">
+    <input type="hidden" id="imageplus" value="<?php echo $templatepath . "img/plus.gif"; ?> ">
+    <input type="hidden" id="imageminus" value="<?php echo $templatepath . "img/minus.gif"; ?> ">
 </div>
 <?php
 echo "<script>\n";
@@ -17,7 +17,7 @@ echo "</script>\n";
 <div class="page">
     <div id="header">
         <div id="leftphoto">
-            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t20_leftimg']; ?>" alt="left-photo" class="leftphoto"/>
+            <img src="<?php echo $templatepath; ?><?php echo $tmp['t20_leftimg']; ?>" alt="left-photo" class="leftphoto"/>
         </div>
 
         <div id="banner">
@@ -29,7 +29,7 @@ echo "</script>\n";
 
             if ($tmp['t20_titlechoice'] == "image") {
                 ?>
-                <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t20_titleimg']; ?>" alt="" class="banner"/>
+                <img src="<?php echo $templatepath; ?><?php echo $tmp['t20_titleimg']; ?>" alt="" class="banner"/>
 
                 <?php
             } elseif ($tmp['t20_titlechoice'] == "text") {
@@ -60,28 +60,28 @@ echo "</script>\n";
                     if ($mydadlabel) {
                         ?>
                         <li>
-                            <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_dadperson']; ?>&amp;tree=<?php echo $tmp['t20_dadtree']; ?>"><?php echo $mydadlabel; ?></a>
+                            <a href="pedigree.php?personID=<?php echo $tmp['t20_dadperson']; ?>&amp;tree=<?php echo $tmp['t20_dadtree']; ?>"><?php echo $mydadlabel; ?></a>
                         </li>
                         <?php
                     }
                     if ($mymomlabel) {
                         ?>
                         <li>
-                            <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_momperson']; ?>&amp;tree=<?php echo $tmp['t20_momtree']; ?>"><?php echo $mymomlabel; ?></a>
+                            <a href="pedigree.php?personID=<?php echo $tmp['t20_momperson']; ?>&amp;tree=<?php echo $tmp['t20_momtree']; ?>"><?php echo $mymomlabel; ?></a>
                         </li>
                         <?php
                     }
                     if ($spdadlabel) {
                         ?>
                         <li>
-                            <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_spdadperson']; ?>&amp;tree=<?php echo $tmp['t20_spdadtree']; ?>"><?php echo $spdadlabel; ?></a>
+                            <a href="pedigree.php?personID=<?php echo $tmp['t20_spdadperson']; ?>&amp;tree=<?php echo $tmp['t20_spdadtree']; ?>"><?php echo $spdadlabel; ?></a>
                         </li>
                         <?php
                     }
                     if ($spmomlabel) {
                         ?>
                         <li>
-                            <a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_spmomperson']; ?>&amp;tree=<?php echo $tmp['t20_spmomtree']; ?>"><?php echo $spmomlabel; ?></a>
+                            <a href="pedigree.php?personID=<?php echo $tmp['t20_spmomperson']; ?>&amp;tree=<?php echo $tmp['t20_spmomtree']; ?>"><?php echo $spmomlabel; ?></a>
                         </li>
                         <?php
                     }
@@ -90,7 +90,7 @@ echo "</script>\n";
             </div>        <!-- end of pedigree links div -->
         </div>    <!-- end of banner div -->
         <div id="rightphoto">
-            <img src="<?php echo $cms['tngpath'] . $templatepath; ?><?php echo $tmp['t20_rightimg']; ?>" alt="right-photo" class="rightphoto"/>
+            <img src="<?php echo $templatepath; ?><?php echo $tmp['t20_rightimg']; ?>" alt="right-photo" class="rightphoto"/>
         </div>
 
     </div>  <!-- end of header div -->
@@ -109,9 +109,9 @@ echo "</script>\n";
                         echo "<p class=\"blueemphasis\">&nbsp;&nbsp;{$text['welcome']}, {$text['visitor']}.</p>\n";
                     }
                     ?>
-                    <a href="<?php echo $cms['tngpath']; ?>searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
+                    <a href="searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
 
-                    <form action="<?php echo $cms['tngpath']; ?>search.php" method="get">
+                    <form action="search.php" method="get">
                         <p class="fieldname"><?php echo $text['mnufirstname']; ?>:<br>
                             <input type="text" name="myfirstname" class="searchbox" size="14"/>
                         </p>
@@ -134,10 +134,10 @@ echo "</script>\n";
                             echo "<ul>\n";
                             echo "<li class=\"bullet\"><a href=\"login.php\" class=\"leftnavlink\">{$text['mnulogon']}</a></li>\n";
                             if (!$currentuser && !$tngconfig['disallowreg'])
-                                echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}newacctform.php\" class=\"leftnavlink\">{$text['mnuregister']}</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"newacctform.php\" class=\"leftnavlink\">{$text['mnuregister']}</a></li>\n";
                         }
 
-                        echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}changelanguage.php\" class=\"lightlink\">{$text['mnulanguage']}</a></li>\n";
+                        echo "<li class=\"bullet\"><a href=\"changelanguage.php\" class=\"lightlink\">{$text['mnulanguage']}</a></li>\n";
                         ?>
                         </ul><br>
                     </div>
@@ -161,50 +161,50 @@ echo "</script>\n";
                             //	optional Dad heading - suppress if not used
                             if ($mydadheading) {
                                 ?>
-                                <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_dadpagelink']; ?>"><?php echo getTemplateMessage('t20_dadheading'); ?></a></li>
+                                <li class="bullet"><a href="<?php echo $tmp['t20_dadpagelink']; ?>"><?php echo getTemplateMessage('t20_dadheading'); ?></a></li>
 
                                 <?php
                             }
                             if ($mydadlabel) {
                                 ?>
-                                <li class="bullet"><a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_dadperson']; ?>&amp;tree=<?php echo $tmp['t20_dadtree']; ?>"><?php echo $mydadlabel; ?></a></li>
+                                <li class="bullet"><a href="pedigree.php?personID=<?php echo $tmp['t20_dadperson']; ?>&amp;tree=<?php echo $tmp['t20_dadtree']; ?>"><?php echo $mydadlabel; ?></a></li>
                                 <?php
                             }
                             //	optional Mom heading - suppress if not used
                             if ($mymomheading) {
                                 ?>
 
-                                <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_mompagelink']; ?>"><?php echo getTemplateMessage('t20_momheading'); ?></a></li>
+                                <li class="bullet"><a href="<?php echo $tmp['t20_mompagelink']; ?>"><?php echo getTemplateMessage('t20_momheading'); ?></a></li>
 
                                 <?php
                             }
                             if ($mymomlabel) {
                                 ?>
-                                <li class="bullet"><a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_momperson']; ?>&amp;tree=<?php echo $tmp['t20_momtree']; ?>"><?php echo $mymomlabel; ?></a></li>
+                                <li class="bullet"><a href="pedigree.php?personID=<?php echo $tmp['t20_momperson']; ?>&amp;tree=<?php echo $tmp['t20_momtree']; ?>"><?php echo $mymomlabel; ?></a></li>
                                 <?php
                             }
                             //	optional Spouse Dad heading - suppress if not used
                             if ($spdadheading) {
                                 ?>
-                                <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_spdadpagelink']; ?>"><?php echo getTemplateMessage('t20_spdadheading'); ?></a></li>
+                                <li class="bullet"><a href="<?php echo $tmp['t20_spdadpagelink']; ?>"><?php echo getTemplateMessage('t20_spdadheading'); ?></a></li>
 
                                 <?php
                             }
                             if ($spdadlabel) {
                                 ?>
-                                <li class="bullet"><a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_spdadperson']; ?>&amp;tree=<?php echo $tmp['t20_spdadtree']; ?>"><?php echo $spdadlabel; ?></a></li>
+                                <li class="bullet"><a href="pedigree.php?personID=<?php echo $tmp['t20_spdadperson']; ?>&amp;tree=<?php echo $tmp['t20_spdadtree']; ?>"><?php echo $spdadlabel; ?></a></li>
                                 <?php
                             }
                             //	optional Spouse Mom heading - suppress if not used
                             if ($spmomheading) {
                                 ?>
-                                <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_spmompagelink']; ?>"><?php echo getTemplateMessage('t20_spmomheading'); ?></a></li>
+                                <li class="bullet"><a href="<?php echo $tmp['t20_spmompagelink']; ?>"><?php echo getTemplateMessage('t20_spmomheading'); ?></a></li>
 
                                 <?php
                             }
                             if ($spmomlabel) {
                                 ?>
-                                <li class="bullet"><a href="<?php echo $cms['tngpath']; ?>pedigree.php?personID=<?php echo $tmp['t20_spmomperson']; ?>&amp;tree=<?php echo $tmp['t20_spmomtree']; ?>"><?php echo $spmomlabel; ?></a></li>
+                                <li class="bullet"><a href="pedigree.php?personID=<?php echo $tmp['t20_spmomperson']; ?>&amp;tree=<?php echo $tmp['t20_spmomtree']; ?>"><?php echo $spmomlabel; ?></a></li>
                                 <?php
                             }
                             ?>
@@ -220,12 +220,12 @@ echo "</script>\n";
 
                     <div id="stories" class="fieldname">
                         <ul class="categoryitems">
-                            <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_featurelink1']; ?>"><?php echo getTemplateMessage('t20_featuretitle1'); ?></a></li>
-                            <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_featurelink2']; ?>"><?php echo getTemplateMessage('t20_featuretitle2'); ?></a></li>
-                            <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_featurelink3']; ?>"><?php echo getTemplateMessage('t20_featuretitle3'); ?></a></li>
-                            <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_featurelink4']; ?>"><?php echo getTemplateMessage('t20_featuretitle4'); ?></a></li>
-                            <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_featurelink5']; ?>"><?php echo getTemplateMessage('t20_featuretitle5'); ?></a></li>
-                            <li class="bullet"><a href="<?php echo $cms['tngpath'] ?><?php echo $tmp['t20_featurelink6']; ?>"><?php echo getTemplateMessage('t20_featuretitle6'); ?></a></li>
+                            <li class="bullet"><a href="<?php echo $tmp['t20_featurelink1']; ?>"><?php echo getTemplateMessage('t20_featuretitle1'); ?></a></li>
+                            <li class="bullet"><a href="<?php echo $tmp['t20_featurelink2']; ?>"><?php echo getTemplateMessage('t20_featuretitle2'); ?></a></li>
+                            <li class="bullet"><a href="<?php echo $tmp['t20_featurelink3']; ?>"><?php echo getTemplateMessage('t20_featuretitle3'); ?></a></li>
+                            <li class="bullet"><a href="<?php echo $tmp['t20_featurelink4']; ?>"><?php echo getTemplateMessage('t20_featuretitle4'); ?></a></li>
+                            <li class="bullet"><a href="<?php echo $tmp['t20_featurelink5']; ?>"><?php echo getTemplateMessage('t20_featuretitle5'); ?></a></li>
+                            <li class="bullet"><a href="<?php echo $tmp['t20_featurelink6']; ?>"><?php echo getTemplateMessage('t20_featuretitle6'); ?></a></li>
 
                         </ul>
                         <br>
@@ -239,15 +239,15 @@ echo "</script>\n";
                     <div id="gen" class="fieldname">
                         <ul class="categoryitems">
                             <?php
-                            echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}whatsnew.php\" class=\"lightlink\">{$text['mnuwhatsnew']}</a></li>\n";
-                            echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}mostwanted.php\" class=\"lightlink\">{$text['mostwanted']}</a></li>\n";
-                            echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}reports.php\" class=\"lightlink\">{$text['mnureports']}</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"whatsnew.php\" class=\"lightlink\">{$text['mnuwhatsnew']}</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"mostwanted.php\" class=\"lightlink\">{$text['mostwanted']}</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"reports.php\" class=\"lightlink\">{$text['mnureports']}</a></li>\n";
                             if (!$tngconfig['hidedna'])
-                                echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}browse_dna_tests.php\" class=\"lightlink\">{$text['dna_tests']}</a></li>\n";
-                            echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}statistics.php\" class=\"lightlink\">{$text['mnustatistics']}</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"browse_dna_tests.php\" class=\"lightlink\">{$text['dna_tests']}</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"statistics.php\" class=\"lightlink\">{$text['mnustatistics']}</a></li>\n";
                             if ($allow_admin) {
-                                echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}showlog.php\" class=\"lightlink\">{$text['mnushowlog']}</a></li>\n";
-                                echo "<li class=\"bullet\"><a href=\"{$cms['tngpath']}admin.php\" class=\"lightlink\">{$text['mnuadmin']}</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"showlog.php\" class=\"lightlink\">{$text['mnushowlog']}</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"admin.php\" class=\"lightlink\">{$text['mnuadmin']}</a></li>\n";
                             }
 
                             ?>
