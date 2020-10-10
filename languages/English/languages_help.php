@@ -44,7 +44,7 @@ echo help_header("Help: Languages");
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <h5 class="optionhead">Actions</h5>
+            <h5>Actions</h5>
             <p>The Action buttons next to each language allow you to edit or delete that language.</p>
 
         </td>
@@ -64,25 +64,25 @@ echo help_header("Help: Languages");
             <p>To add a new Language, click on the <strong>Add New</strong> tab, then fill out the form.
                 Take note of the following:</p>
 
-            <h5 class="optionhead">Language folder</h5>
+            <h5>Language folder</h5>
             <p>Use the dropdown to choose the location of the messages for this language. If your new language needs the UTF-8 character set, be sure
                 to choose a folder with "UTF8" in the name.
                 If you want to support a new language not previously supported by TNG, add a folder for that language within the TNG languages folder,
                 then return to this page to select it.</p>
 
-            <h5 class="optionhead">Name for this language as it will be displayed for visitors</h5>
+            <h5>Name for this language as it will be displayed for visitors</h5>
             <p>Enter the name of the language as it will be shown to visitors in the languages options box. It is recommended that you enter this name
                 in the language it
                 represents so that visitors can more easily identify it. For example, use "Norsk" instead of "Norwegian".</p>
 
-            <h5 class="optionhead">Character set</h5>
+            <h5>Character set</h5>
             <p>The character set used for this language. If left blank, ISO-8859-1 will be used.</p>
 
-            <h5 class="optionhead">Turn off relationship messages</h5>
+            <h5>Turn off relationship messages</h5>
             <p>This will hide the written relationship explanation at the bottom of the Relationship Chart. This might be useful if the wording of the
                 explanation doesn't always make sense in this language.</p>
 
-            <h5 class="optionhead">Required fields:</h5> You must enter a language display name, and you must choose the name of the language
+            <h5>Required fields:</h5> You must enter a language display name, and you must choose the name of the language
             folder.</p>
 
             <p><strong>IMPORTANT:</strong> If you plan to allow dynamic language switching, <strong>you must set up your default language</strong>

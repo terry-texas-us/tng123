@@ -37,7 +37,7 @@ echo help_header("Nápověda: Osoby");
                 obnoví
                 všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více osob,
                 zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být odstraněn, a poté klikněte na tlačítko "Vymazat
@@ -56,10 +56,10 @@ echo help_header("Nápověda: Osoby");
                 citace, spojení a
                 další události, můžete přidat po uložení nebo zamknutí záznamu. Význam jednotlivých polí je následující:</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud máte pouze jeden strom, vybrán bude vždy tento strom. Jinak, prosím, pro novou osobu vyberte požadovaný strom.</p>
 
-            <h5 class="optionhead">Větev (volitelné)</h5>
+            <h5>Větev (volitelné)</h5>
             <p>Připojení osoby ke "větvi" omezí přístup k informacím o osobě pro uživatele, kteří jsou spojeni k téže větvi. Je-li definována alespoň
                 jedna větev
                 a váš uživatelský účet není spojen se žádnou konkrétní větví, můžete novou osobu připojit k více existujícím větvím. Chcete-li větev
@@ -68,7 +68,7 @@ echo help_header("Nápověda: Osoby");
                 (Windows) nebo Command (Mac).
                 Po dokončení vašeho výběru přesuňte kursor myši mimo okno úprav a toto okno zmizí.</p>
 
-            <h5 class="optionhead">ID číslo osoby</h5>
+            <h5>ID číslo osoby</h5>
             <p>ID číslo osoby musí být jednoznačné uvnitř vybraného stromu a mělo by se skládat z velkého písmene <strong>I</strong> následovaného
                 číslem (nejvíce 21 číslic).
                 Při prvním zobrazení stránky a kdykoli je vybrán jiný strom, bude doplněno volné a jednoznačné číslo, ale pokud chcete, můžete vložit
@@ -87,14 +87,14 @@ echo help_header("Nápověda: Osoby");
                 odkazů na vaše média. Pokud váš primární program vytváří ID čísla, která neodpovídají tradičním standardům (např.
                 <strong>I</strong> je na konci a ne na začátku), můžete konvence, které TNG používá, změnit v Základním nastavení.</p>
 
-            <h5 class="optionhead">Jméno</h5>
+            <h5>Jméno</h5>
             <p>Zapište křestní jméno a/nebo příjmení osoby. Druhá jména by měla být vložena do křestního jména. Pokud jste nastavili podporu
                 předpon příjmení jako oddělených subjektů (předpony budou během třídění ignorovány), zapište předponu do pole označeného jako Předpona
                 příjmení.
                 <strong>Pozn.:</strong> Pokud toto pole není viditelné, přejděte do Nastavení/Základní nastavení a zaškrtněte volbu o použití předpon
                 příjmení.</p>
 
-            <h5 class="optionhead">Pohlaví / Přezdívka / Titul / Předpona / Přípona / Pořadí jména a příjmení</h5>
+            <h5>Pohlaví / Přezdívka / Titul / Předpona / Přípona / Pořadí jména a příjmení</h5>
             <p>Zapište tolik údajů, kolik jich znáte. <strong>Přezdívka</strong> je neformální jméno spojené někdy s osobou.
                 <strong>Titul</strong> se používá před jménem (např. <em>Ing.</em> nebo <em>MUDr.</em>), ale není součástí jména.
                 <strong>Předpona</strong> se používá před jménem a obvykle je součástí
@@ -102,16 +102,16 @@ echo help_header("Nápověda: Osoby");
                 můžete použít pro změnu zobrazení pořadí.
                 Pořadí jména a příjmení pro všechny osoby v databázi můžete změnit v Nastavení/Základní nastavení.</p>
 
-            <h5 class="optionhead">Žijící</h5>
+            <h5>Žijící</h5>
             <p>Pokud tato osoba žije nebo si přejete omezit přístup k údajům této osoby pouze na uživatele, kteří jsou přihlášeni a mají práva
                 zobrazovat data žijících osob,
                 zaškrtněte toto políčko.</p>
 
-            <h5 class="optionhead">Neveřejné</h5>
+            <h5>Neveřejné</h5>
             <p>Bez ohledu na to, zda tato osoba žije nebo ne, můžete přístupová práva k údajům této osoby omezit zaškrtnutím této volby.
                 Informace spojené s "neveřejnou" osobou budou moci vidět pouze uživatelé s právy zobrazovat neveřejná data.</p>
 
-            <h5 class="optionhead">Události</h5>
+            <h5>Události</h5>
             <p>Zapište data a místa k zobrazeným standardním událostem (pokud je znáte). Další události lze přidat po uložení a zamknutí záznamu. Data
                 vždy zapisujte
                 ve standardním genealogickém formátu DD MMM RRRR (např. <em>18 Úno 2008</em>). Informaci o místě řaďte za sebou od místního po obecnou
@@ -120,7 +120,7 @@ echo help_header("Nápověda: Osoby");
                 Chcete-li omezit počet nalezených výsledků, před kliknutím na ikonu Najít zapište část místa. Všechny výsledky budou obsahovat to, co
                 jste zapsali jako název místa.</p>
 
-            <p><h5 class="optionhead">Údaje CJKSpd (Křest, Obdarování, Biřmování, Zasvěcení)</h5>
+            <p><h5>Údaje CJKSpd (Křest, Obdarování, Biřmování, Zasvěcení)</h5>
             Tyto události jsou spojeny s obřady prováděnými Církví Ježíše Krista Svatých posledních dní (mormonská církev, která vytvořila
             standard GEDCOM).
             <strong>Pozn.:</strong> Nechcete-li vidět pole spojené s CJKSpd, jděte na Nastavení/Základní nastavení a zde tuto možnost vypněte (je
@@ -136,7 +136,7 @@ echo help_header("Nápověda: Osoby");
             <p>Chcete-li upravit existující osobu, použijte záložku <a href="#search">Hledat</a> pro nalezení osoby, a poté klikněte na ikonu Upravit
                 vedle této osoby.</p>
 
-            <h5 class="optionhead">Poznámky / Citace / Spojení / "Více"</h5>
+            <h5>Poznámky / Citace / Spojení / "Více"</h5>
             <p>Poznámky, citace a spojení lze připojit k událostem nebo osobě obecně kliknutím na připojené ikony v horní části stránky
                 nebo vedle každé události. Ke každé události můžete také přidat "více" informací kliknutím na ikonu "Plus". Pokud v nějaké této
                 kategorii existují údaje,
@@ -144,7 +144,7 @@ echo help_header("Nápověda: Osoby");
                 nápovědy,
                 které budou viditelné po kliknutí na tyto ikony.</p>
 
-            <h5 class="optionhead">Jiné události</h5>
+            <h5>Jiné události</h5>
             <p>Chcete-li přidat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Jiné události</strong>. Viz odkaz <a
                     href="events_help.php">Nápověda</a> pro více
                 informací o přidání nových událostí. Po přidání události se pod tlačítkem "Přidat nové" zobrazí v tabulce krátké shrnutí. Tlačítka
@@ -158,7 +158,7 @@ echo help_header("Nápověda: Osoby");
                 standardní události) se uloží kliknutím na tlačítko Uložit na konci stránky nebo kliknutím na ikonu Uložit na stránce nahoře. Strom a
                 ID číslo osoby nelze změnit.</p>
 
-            <h5 class="optionhead">Rodiče</h5>
+            <h5>Rodiče</h5>
             <p>Pokud má aktuální osoba rodiče, pod sekcí Události se bude nacházet sekce <strong>Rodiče</strong>. Sekce bude na začátku zobrazena jako
                 zúžená a v závorkách bude
                 počet párů rodičů). Chcete-li sekci rozšířit a zobrazit všechny páry rodičů, klikněte na slovo "Rodiče" nebo na šipku vedle. Některé
@@ -175,7 +175,7 @@ echo help_header("Nápověda: Osoby");
 
             <p>Nové rodiče můžete přidat také výběrem volby "Přejít na novou rodinu s touto osobou jako dítětem" na konci stránky.</p>
 
-            <h5 class="optionhead">Manželé/Partneři</h5>
+            <h5>Manželé/Partneři</h5>
             <p>Pokud má aktuální osoba nějakého partnera, pod sekcí Rodiče se bude nacházet sekce <strong>Manželé/Partneři</strong> . Sekce bude na
                 začátku zobrazena jako zúžená a v závorkách bude
                 počet párů manželů/partnerů). Chcete-li sekci rozšířit a zobrazit všechny partnery, klikněte na slova "Manželé/Partneři" nebo na šipku
@@ -191,7 +191,7 @@ echo help_header("Nápověda: Osoby");
 
             <p>Nového partnera můžete přidat také výběrem volby "Přejít na novou rodinu s touto osobou jako partnerem" na konci stránky.</p>
 
-            <h5 class="optionhead">Pořadí rodičů nebo partnerů</h5>
+            <h5>Pořadí rodičů nebo partnerů</h5>
             <p>Pokud existuje více partnerů nebo párů rodičů,
                 můžete jejich pořadí změnit "přetažením" bloků nahoru nebo dolů. Chcete-li blok přetáhnout, klikněte myší na tlačítko "Táhnout", toto
                 tlačítko podržte, a vaši myš přesuňte na stránce nahoru
@@ -222,14 +222,14 @@ echo help_header("Nápověda: Osoby");
             Změny můžete prohlédnout podle stromu nebo podle uživatele nebo podle obojího. Po uložení navrhovaných změn není zaslán žádný mail, ale
             pokud nové změny existují, na záložce Přezkoumat se objeví hvězdička (*).</p>
 
-            <h5 class="optionhead">Vybrat událost a akci</h5>
+            <h5>Vybrat událost a akci</h5>
             <p>V tabulce, která popisuje události, které si přejete přezkoumat nebo odstranit, vyberte řádek. Seznam výsledků můžete zúžit výběrem
                 uživatele (osoba
                 odpovědná za navrhované změny) a/nebo strom. Po zobrazení výsledků klikněte na jednu z možných akcí nalevo od tohoto řádku. Chcete-li
                 změny přezkoumat a
                 případně začlenit do databáze, vyberte <em>Přezkoumat</em>. Chcete-li navrhované změny zamítnout, vyberte <em>Odstranit</em>.</p>
 
-            <h5 class="optionhead">Přezkoumat</h5>
+            <h5>Přezkoumat</h5>
             <p>Na obrazovce Přezkoumat můžete provést další potřebné změny, včetně poznámek a pramenů, a poté klikněte na "Uložit a vymazat" pro
                 uložení do databáze a odstranění dočasného záznamu. Kliknutím na "Odmítnout a vymazat" můžete rovněž odstranit dočasný záznam, aniž
                 byste jej uložili,
@@ -245,7 +245,7 @@ echo help_header("Nápověda: Osoby");
             Chcete-li přezkoumat a sloučit duplicitní záznamy, klikněte na záložku "Sloučit". Zde rozhodnete, zda jsou dva záznamy totožné nebo
             ne.</p>
 
-            <h5 class="optionhead">Najít shodu</h5>
+            <h5>Najít shodu</h5>
             <p>Vyberte nejprve strom. Nelze slučovat osoby z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat osobu jako
                 výchozí bod vašeho hledání (osoba 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl všechny změny,
                 nechte pole ID číslo osoby 1 prázdné</p>
@@ -253,13 +253,13 @@ echo help_header("Nápověda: Osoby");
             <p>Pokud jste vybrali osobu jako Osobu 1, můžete také ručně vybrat ID číslo osoby 2. Chcete-li, aby duplicity Osoby 1 nalezl TNG, nechte
                 pole ID číslo osoby 2 prázdné.</p>
 
-            <h5 class="optionhead">Porovnat následující pole</h5>
+            <h5>Porovnat následující pole</h5>
             <p>Toto jsou kritéria, která TNG používá k určení možných duplicit. Standardně jsou vybrány křestní jméno a příjmení, což znamená, že tato
                 pole
                 musí být shodná, aby mohly být dva záznamy považovány za potenciálně duplicitní. Vyberete-li také datum narození, místo narození,
                 datum úmrtí a/nebo místo úmrtí, musí být také tato pole shodná.</p>
 
-            <h5 class="optionhead">Jiné možnosti</h5>
+            <h5>Jiné možnosti</h5>
 
             <p><em>Odmítnout prázdné</em> znamená, že prázdná pole nebudou brána v potaz. Např. někdo s příjmením, ale bez vyplněného křestního jména
                 nebude brán jako shodný s jiným záznamem, pokud je křestní jméno mezi vybranými kritérii.</p>
@@ -276,25 +276,25 @@ echo help_header("Nápověda: Osoby");
                 u osoby 1, pokud budou tyto dvě osoby sloučeny. Není-li tato volba vybrána, všechny odkazy na fotografie, historie a náhrobky osoby 2
                 budou po sloučení odstraněny.</p>
 
-            <p><h5 class="optionhead">Varování!</h5> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy
+            <p><h5>Varování!</h5> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy
                 zazálohujte své databázové tabulky</em>
             pro případ, že byste dvě osoby sloučili omylem.</p>
 
-            <h5 class="optionhead">Další shoda</h5>
+            <h5>Další shoda</h5>
             <p>Najde další možné porovnání, která nezahrne osobu 1. TNG postoupí seznamem možných osob v třídění podle ID čísla v textovém formátu.
                 Znamená to, že "10" bude po "1", ale před "2".</p>
 
-            <h5 class="optionhead">Další duplicita</h5>
+            <h5>Další duplicita</h5>
             <p>Najde další možnou duplicitu k osobě 1. Pokud výsledkem není záznam, který byl zobrazen u osoby 2, znamená to, že duplicita nebyla
                 nalezena.</p>
 
-            <h5 class="optionhead">Porovnat/Obnovit</h5>
+            <h5>Porovnat/Obnovit</h5>
             <p>Porovnání osoby 1 a osoby 2. Je-li toto porovnání již zobrazeno, kliknutí na toto tlačítko způsobí obnovení stránky.</p>
 
-            <h5 class="optionhead">Prohodit</h5>
+            <h5>Prohodit</h5>
             <p>Osoba 1 se stane osobou 2 a naopak.</p>
 
-            <h5 class="optionhead">Sloučit</h5>
+            <h5>Sloučit</h5>
             <p>Osoba 2 bude sloučena s osobou 1. ID číslo osoby 1 bude zachováno, stejně jako ostatní údaje osoby 1, pokud nejsou zaškrtnuta
                 odpovídající políčka
                 u osoby 2. Např. pokud je u osoby 2 zaškrtnuto políčko vedle data narození, bude během sloučení údaj z tohoto pole zkopírován ze
@@ -303,7 +303,7 @@ echo help_header("Nápověda: Osoby");
                 Není-li
                 pole zobrazeno ani u jedné osoby, pak v tomto poli neexistuje žádný údaj.</p>
 
-            <h5 class="optionhead">Upravit</h5>
+            <h5>Upravit</h5>
             <p>Úprava záznamu osoby v novém okně. Po provedení změn musíte kliknout na Porovnat/Obnovit, aby se změny projevily na obrazovce
                 Sloučení.</p>
 

@@ -62,22 +62,22 @@ echo help_header("Nápověda: Události");
 
             <p>Při přidání nebo úpravě události si všimněte následujícího:</p>
 
-            <h5 class="optionhead">Typ události</h5>
+            <h5>Typ události</h5>
             <p>Vyberte typ události (u existující události nelze změnit typ události). Není-li typ události, který chcete, ve výběrovém poli typů
                 událostí,
                 jděte nejprve do Admin/Vlastní typy událostí a nastavte zde typ události, pak se vraťte na tuto obrazovku a vyberte jej.</p>
 
-            <h5 class="optionhead">Datum události</h5>
+            <h5>Datum události</h5>
             <p>Aktuální nebo předpokládané datum spojené s událostí.</p>
 
-            <h5 class="optionhead">Místo události</h5>
+            <h5>Místo události</h5>
             <p>Místo, kde událost proběhla. Zapište název místa nebo klikněte na ikonu Najít (lupa).</p>
 
-            <h5 class="optionhead">Podrobnosti</h5>
+            <h5>Podrobnosti</h5>
             <p>Další podrobnosti popisující událost. Pokud s událostí není spojeno žádné datum ani místo, může pole Podrobnosti obsahovat údaje, které
                 tuto událost definují.</p>
 
-            <h5 class="optionhead">Duplikovat pro (ID):</h5>
+            <h5>Duplikovat pro (ID):</h5>
             <p>Chcete-li tuto událost duplikovat pro více osob nebo rodin, zapište sem čísla ID těchto osob nebo rodin. Vkládáte-li více čísel ID,
                 oddělte je čárkou.
                 Pokud číslo ID neznáte, klikněte na ikonu "Najít" vpravo od tohoto pole a můžete je vyhledat podle jména. Po kliknutí na tlačítko
@@ -86,20 +86,20 @@ echo help_header("Nápověda: Události");
                 v této události
                 provedete, <b>nebudou</b> promítnuty do dříve vytvořených duplikátů.</p>
 
-            <h5 class="optionhead">Více</h5>
+            <h5>Více</h5>
             <p>Kliknutím na "Více" můžete pro každou událost zapsat některé méně běžné údaje. Objeví se další pole.
                 Tato pole lze skrýt opětovným kliknutím na "Více". Skrytí polí neznamená vymazání jejich obsahu. Tato pole obsahují:</p>
 
-            <p><h5 class="optionhead">Věk</h5>: Věk osoby v době události.</p>
+            <p><h5>Věk</h5>: Věk osoby v době události.</p>
 
-            <p><h5 class="optionhead">Instituce</h5>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
+            <p><h5>Instituce</h5>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
 
-            <p><h5 class="optionhead">Příčina</h5>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
+            <p><h5>Příčina</h5>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
 
-            <p><h5 class="optionhead">Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</h5>: Adresa a ostatní
+            <p><h5>Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</h5>: Adresa a ostatní
             kontaktní údaje spojené s událostí.</p>
 
-            <h5 class="optionhead">Povinná pole:</h5>
+            <h5>Povinná pole:</h5>
             <p>Vybrat musíte typ události a nejméně do jednoho z následujících polí musíte něco vložit: <strong>Datum události</strong>, <strong>Místo
                     události</strong>,
                 nebo <strong>Podrobnosti</strong>. Všechna ostatní pole jsou nepovinná.</p>

@@ -35,7 +35,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
                     ur�it�m
                     m���tkem m��e b�t po�et 50 000 osob ve va�em strom�.</em></p>
 
-            <h5 class="optionhead">Z�loha</h5>
+            <h5>Z�loha</h5>
             <p>Chcete-li z�lohovat jednotlivou tabulku, klikn�te na ikonu Z�lohovat ve sloupci Akc� vedle tabulky, kterou chcete z�lohovat. Na prav�
                 stran� ��dku se v�m
                 zobraz� hl�en� o dokon�en� t�to akce. Aktualizov�n bude tak� obsah sloupce Posledn� z�loha, stejn� jako velikost v�sledn�ho souboru.
@@ -51,7 +51,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
                 nen� nutn� z�lohovat tabulky osob, d�t� a rodin, proto�e by tyto z�lohy mohly b�t dost velk� a mohly by zab�rat cenn� m�sto.
                 Pokud by do�lo ke ztr�t� dat, m��ete pak tyto tabulky jednodu�e obnovit nov�m importem va�eho souboru GEDCOM.</p>
 
-            <h5 class="optionhead">Obnova</h5>
+            <h5>Obnova</h5>
             <p>Chcete-li obnovit jednotlivou tabulku, klikn�te na ikonu Obnovit ve sloupci Akc� vedle tabulky, kterou chcete obnovit. Na prav� stran�
                 ��dku se v�m
                 zobraz� hl�en� o dokon�en� t�to akce. Nen�-li ikona Obnovit vedle n�zvu p��slu�n� tabulky vid�t, nen� pro tuto tabulku k dispozici
@@ -60,7 +60,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
                 neodpov�d� struktu�e, kter� byla v dob�, kdy byla vytvo�ena posledn� z�loha. Z�ejm� jste z�lohu vytvo�ili p�ed aktualizac�, kter�
                 zm�nila strukturu tabulky.</p>
 
-            <h5 class="optionhead">Optimalizace</h5>
+            <h5>Optimalizace</h5>
             <p>Chcete-li optimalizovat jednotlivou tabulku, klikn�te na ikonu Optimalizovat ve sloupci Akc� vedle tabulky, kterou chcete
                 optimalizovat. Na prav� stran� ��dku se v�m
                 zobraz� hl�en� o dokon�en� t�to akce. Tabulka by m�la b�t optimalizov�na, pokud jste vymazali velkou ��st tabulky, od doby va��
@@ -70,14 +70,14 @@ echo help_header("N�pov�da: Obslu�n� programy");
                 v�sledkem b�v� obvykle zlep�en� v�kon. S optimalizac� velk�ch tabulek jsou spojena n�kter� nebezpe��, tak�e sv� tabulky p�ed
                 optimalizac� rad�ji zaz�lohujte.</p>
 
-            <h5 class="optionhead">Z�lohovat vybran� / Obnovit vybran� / Optimalizovat vybran� / Vymazat vybran�</h5>
+            <h5>Z�lohovat vybran� / Obnovit vybran� / Optimalizovat vybran� / Vymazat vybran�</h5>
             <p>Chcete-li z�lohovat, obnovit nebo optimalizovat v�ce tabulek najednou, nebo vymazat z�lo�n� soubory, za�krtn�te pol��ko ve sloupci
                 Vybrat vedle po�adovan�ch tabulek, a pot� vyberte
                 z rozbalovac�ho seznamu "S vybran�mi" v horn� ��sti str�nky vyberte p��slu�nou akci. Pokud chcete pro n�kterou operaci vybrat v�echny
                 tabulky, klikn�te na tla��tko "Vybrat v�e".
                 Podobn� m��ete v�echny v�b�ry zru�it kliknut�m na tla��tko "Vy�istit v�e".</p>
 
-            <h5 class="optionhead">Dal�� doporu�en�</h5>
+            <h5>Dal�� doporu�en�</h5>
             <p>Po vytvo�en� z�lohy bude z�lo�n� soubor ulo�en ve slo�ce Backups (podle definice ve va�em Z�kladn�m nastaven�). Doporu�ujeme, abyste si
                 tyto soubory zkop�rovali
                 do sv�ho po��ta�e, proto�e katastrofick� ud�lost, kter� m��e postihnout va�e datab�zov� tabulky, m��e tak� postihnout z�lo�n� soubory
@@ -122,14 +122,14 @@ echo help_header("N�pov�da: Obslu�n� programy");
 
             <p>Volby na t�to str�nce jsou n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Strom mus�te vybrat. Tuto operaci m��ete prov�st pouze v jednom strom�.</p>
 
-            <h5 class="optionhead">Typ ID ��sla</h5>
+            <h5>Typ ID ��sla</h5>
             <p>Volby jsou osoby, rodiny, prameny nebo �lo�i�t� pramen�. P�e��slov�n� jednoho typu, ani� byste provedli tot� s jin�mi typy, by nem�lo
                 m�t ��dn� ne��douc� ��inky, kter� jsou obsahem v��e uveden�ho varov�n�.</p>
 
-            <h5 class="optionhead">Minim�ln� po�et ��slic</h5>
+            <h5>Minim�ln� po�et ��slic</h5>
             <p>Toto ��slo ur�uje, jak budou va�e nov� ID ��sla dlouh�. Je-li ��slo dan� osoby men�� ne� minim�ln� po�et ��slic, zb�vaj�c� ��sla
                 budou dopln�na nulami zleva. Nap�. pokud je v� minim�ln� po�et ��slic roven 5, va�e nejmen�� ��sla budou I00001, I00002, I00003, atd.
                 Nechcete-li nuly zleva,

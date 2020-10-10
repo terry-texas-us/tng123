@@ -48,7 +48,7 @@ echo help_header("Help: Utilities");
                     each server
                     and the available resources, but a good benchmark might be 50,000 people in your tree.</em></p>
 
-            <h5 class="optionhead">Back Up</h5>
+            <h5>Back Up</h5>
             <p>To back up a single table, click on the Backup icon in the Action column next to the table to be backed up. You will see a success or
                 failure message to the
                 right of the row. The Last Backup column will also be updated, as will the size of the resulting file. If the operation is not
@@ -65,7 +65,7 @@ echo help_header("Help: Utilities");
                 take up valuable space.
                 In the event of a data loss, you can simply re-import your GEDCOM file to restore these tables.</p>
 
-            <h5 class="optionhead">Restore</h5>
+            <h5>Restore</h5>
             <p>To restore a single table, click on the Restore icon in the Action column next to the table to be restored. You will see a success or
                 failure message to the
                 right of the row. If the Restore icon is not present next to a particular table name, no backup for that table is available.
@@ -74,7 +74,7 @@ echo help_header("Help: Utilities");
                 to an upgrade that
                 changed the table structure.</p>
 
-            <h5 class="optionhead">Optimize</h5>
+            <h5>Optimize</h5>
             <p>To optimize a single table, click on the Optimize icon in the Action column next to the table to be optimized. You will see a success
                 or failure message to the
                 right of the row. A table should be optimized if you have deleted a large part of the table, have done several imports since your last
@@ -84,14 +84,14 @@ echo help_header("Help: Utilities");
                 your tables before
                 you optimize them.</p>
 
-            <h5 class="optionhead">Back Selected / Restore Selected / Optimize Selected / Delete Selected</h5>
+            <h5>Back Selected / Restore Selected / Optimize Selected / Delete Selected</h5>
             <p>To back up, restore or optimize multiple tables at once, or to delete backup files, check the box in the Select column next to the
                 desired tables, then select
                 the appropriate action from the "With selected" dropdown box at the top of the page. To select all tables for any of these operations,
                 click the "Select All" button.
                 Likewise, all selections can be cleared by clicking the "Clear All" button.</p>
 
-            <h5 class="optionhead">Other Recommendations</h5>
+            <h5>Other Recommendations</h5>
             <p>After making a backup, the backup file will be stored in the Backups folder (as defined in your General Settings). It is recommended
                 that you copy these files to
                 your home computer, since any catastrophic event that affects your database tables could also affect any backups stored on the same
@@ -139,14 +139,14 @@ echo help_header("Help: Utilities");
 
             <p>Options on this page include:</p>
 
-            <h5 class="optionhead">Tree</h5>
+            <h5>Tree</h5>
             <p>You must select a Tree. This operation can only be performed on one tree at a time.</p>
 
-            <h5 class="optionhead">ID Type</h5>
+            <h5>ID Type</h5>
             <p>Choices are People, Families, Sources or Repositories. Resequencing one type without doing the others should not have
                 any adverse side affects not covered in the above warning.</p>
 
-            <h5 class="optionhead">Minimum Digits</h5>
+            <h5>Minimum Digits</h5>
             <p>This number dictates how long your new IDs will be. If the number of any given individual is less than the minimum number of digits,
                 the remaining digits
                 will be filled in with leading zeros. For example, if your Minimum Digits value is 5, your smaller numbers will be I00001, I00002,

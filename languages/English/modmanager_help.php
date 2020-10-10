@@ -161,20 +161,20 @@ echo help_header("Help: Mod Manager");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="files"><h4 class="subheadbold">Config Files</h4></a>
 
-                <h5 class="optionhead">Installing Mods</h5>
+                <h5>Installing Mods</h5>
                 <p>The TNG Wiki provides information on using the <a
                         href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">Config Files</a> to
                     install the mods.</p>
 
-                <h5 class="optionhead">Interpreting Status</h5>
+                <h5>Interpreting Status</h5>
                 <p>The TNG Wiki provides information on <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files"
                                                            target="_blank">Interpreting Status</a>.</p>
 
-                <h5 class="optionhead">Config File Syntax</h5>
+                <h5>Config File Syntax</h5>
                 <p>The TNG Wiki provides information on the <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Config_File_Syntax"
                                                                target="_blank">Config File Syntax</a>.</p>
 
-                <h5 class="optionhead">Creating Config Files</h5>
+                <h5>Creating Config Files</h5>
                 <p>The TNG Wiki provides information for the mod developers on the <a
                         href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">Creating Config
                         Files</a>.

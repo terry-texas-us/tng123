@@ -144,7 +144,7 @@ while ($row = tng_fetch_assoc($result)) {
     echo "<td class='databack'><span class='normal'><a href=\"showrepo.php?repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
     echo "<td class='databack'><span class='normal'><a href=\"showrepo.php?repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
     if ($numtrees > 1) {
-        echo "<td class='databack nw'><span class='normal'>{$row['treename']}&nbsp;</span></td>";
+        echo "<td class='databack text-nowrap'><span class='normal'>{$row['treename']}&nbsp;</span></td>";
     }
     echo "</tr>\n";
     $i++;

@@ -44,24 +44,24 @@ echo help_header("Help: Most Wanted");
                 one of these
                 categories, click on the "Add New" button under the appropriate heading, then fill out the form. Take note of the following:</p>
 
-            <h5 class="optionhead">Title</h5>
+            <h5>Title</h5>
             <p>Give your entry a title, which may actually be a question. For example, <em>Who is this person?</em> or <em>Who is John Carlisle's
                     father?</em></p>
 
-            <h5 class="optionhead">Description</h5>
+            <h5>Description</h5>
             <p>Give your entry a short description as well. This could consist of any current evidence you've gathered, any brick walls you've run
                 into,
                 or some specific piece of information you're looking for.</p>
 
-            <h5 class="optionhead">Tree</h5>
+            <h5>Tree</h5>
             <p>If desired, you can associate this entry with a Tree (optional).</p>
 
-            <h5 class="optionhead">Person</h5>
+            <h5>Person</h5>
             <p>If this entry is closely associated with a person, enter the Person ID or click on the magnifying glass icon to look it up. When you
                 find the desired
                 individual, click on the "Select" link to return to the Most Wanted form with the selected ID.</p>
 
-            <h5 class="optionhead">Select Photo</h5>
+            <h5>Select Photo</h5>
             <p>If this entry is closely associated with a photo, click on the "Select Photo" button to search for that photo from among the photo
                 records
                 already in your database. When you find the desired photo, click on the "Select" link to return to the Most Wanted form with the

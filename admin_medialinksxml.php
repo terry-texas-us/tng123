@@ -49,11 +49,11 @@ function doPeople($firstname, $lastname) {
     global $tree, $assignedbranch, $lnprefixes, $maxsearchresults, $admtext, $people_table;
 
     $lines = "<tr>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\" width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['personid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['name'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['birthdate'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['deathdate'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['personid'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['name'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['birthdate'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['deathdate'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
     $allwhere = "gedcom = '$tree'";
@@ -115,10 +115,10 @@ function doFamilies($husbname, $wifename) {
     global $tree, $assignedbranch, $maxsearchresults, $admtext, $families_table, $people_table;
 
     $lines = "<tr>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\" width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['familyid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['husbname'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['wifename'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['familyid'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['husbname'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['wifename'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
     $allwhere = "families.gedcom = '$tree'";
@@ -196,9 +196,9 @@ function doSources($title) {
     global $tree, $sources_table, $maxsearchresults, $admtext;
 
     $lines = "<tr>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\" width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['sourceid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['sourceid'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
     $query = "SELECT sourceID, title FROM $sources_table WHERE gedcom = '$tree' AND title LIKE \"%$title%\" ORDER BY title LIMIT $maxsearchresults";
@@ -219,9 +219,9 @@ function doRepos($title) {
     global $tree, $repositories_table, $maxsearchresults, $admtext;
 
     $lines = "<tr>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\" width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['repoid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['repoid'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
     $query = "SELECT repoID, reponame FROM $repositories_table WHERE gedcom = '$tree' AND reponame LIKE \"%$title%\" ORDER BY reponame LIMIT $maxsearchresults";
@@ -242,8 +242,8 @@ function doPlaces($place) {
     global $tree, $maxsearchresults, $admtext, $places_table;
 
     $lines = "<tr>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\" width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class=\"fieldnameback fieldname nw\">&nbsp;<b>" . $admtext['place'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname text-nowrap'>&nbsp;<b>" . $admtext['place'] . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
 
     $allwhere = "gedcom = '$tree'";

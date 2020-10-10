@@ -41,7 +41,7 @@ echo help_header("Nápověda: Google Maps");
                 Pro vyhledání souřadnic můžete také využít aplikaci Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>).
             </p>
 
-            <h5 class="optionhead">Geokódovat umístění</h5>
+            <h5>Geokódovat umístění</h5>
             <p>Pokud již bylo místo zavedeno v TNG, obsahuje pole Geokódovat umístění název tohoto místa. Při přidání nového místa bude do pole
                 Geokódovat umístění
                 doplněn název místa z TNG. Při přidání hřbitovů nebo médií nejsou názvy míst doplněny. </p>
@@ -50,7 +50,7 @@ echo help_header("Nápověda: Google Maps");
                 jako součást názvů míst v USA, ani si neporadí s novozélandskými provinciemi. Jako vstup můžete také chtít vložit pouze název místa a
                 zemi.
                 Název země můžete také zapsat v angličtině.</p>
-            <h5 class="optionhead">Příklady názvů míst</h5>
+            <h5>Příklady názvů míst</h5>
             <p>Následují příklady, jak mají být zapsána místa, aby výsledek obsahoval správné údaje o zeměpisné šířce a délce:
             <ul>
                 <li>1102 Shipwatch Circle, Tampa, Florida</li>
@@ -68,7 +68,7 @@ echo help_header("Nápověda: Google Maps");
             <p>Geocoder nemůže pracovat s mapami některých států z národnostních nebo licenčních důvodů.
                 Pro tyto státy musíte použít odkaz <a href="http://maps.google.com/" target="_blank">Plné vyhledávání v Google Maps</a>.</p>
 
-            <h5 class="optionhead">Zeměpisná šířka a délka</h5>
+            <h5>Zeměpisná šířka a délka</h5>
             <p>Při přijetí souřadnic zeměpisné šířky a délky, které vám nabízí vyhledávání v mapě, musíte být velmi pečliví. Přinejmenším byste měli
                 alespoň trochu
                 vědět, kde se dané místo nachází a co očekáváte před tím, než přijmete výsledek z hledání v mapě. Pokud se špendlík na mapě
@@ -79,12 +79,12 @@ echo help_header("Nápověda: Google Maps");
             <p>Přijatou zeměpisnou šířku a délku byste měli také otestovat kliknutím na ikonu Test v seznamu míst a poté kliknutím na špendlík ověřit
                 na externí mapě, že umístění je správné.</p>
 
-            <h5 class="optionhead">Přiblížení</h5>
+            <h5>Přiblížení</h5>
             <p>Není-li místo na mapě v požadovaném přiblížení, můžete použít níže popsaný ovladač přiblížení k přizpůsobení zobrazení
                 mapy, zvlášťe pro omezení chybových hlášení, že Google neobsahuje mapu v této úrovni přiblížení. Hodnota výsledného přiblížení bude
                 uložena ve vaší databázi TNG.</p>
 
-            <h5 class="optionhead">Úroveň sídla</h5>
+            <h5>Úroveň sídla</h5>
             <p>Rozbalovací seznam Úroveň sídla můžete použít k výběru úrovně členění sídla zastoupeného názvem místa. K dispozici je šest úrovní v
                 rozsahu od adresy po zemi,
                 kde adresa je nejpodrobnější. Přepsat obsah proměnné $admtext pro úrovně 1 až 6, které jsou v souboru alltext.php, můžete ve svém
@@ -103,18 +103,18 @@ echo help_header("Nápověda: Google Maps");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="controls"><h4 class="subheadbold">Ovládací prvky Google Maps</h4></a>
 
-            <h5 class="optionhead">Bod / Klik</h5>
+            <h5>Bod / Klik</h5>
             <p>Chcete-li zpřesnit údaj o zeměpisné šířce a délce u daného místa, klikněte v Google Maps na bod, kde si myslíte, že se místo nachází.
                 Pro obdržení lepších údajů
                 o zeměpisné šířce a délce pro název místa v TNG můžete také v Google Maps použít tlačítka Mapa nebo Satelitní. </p>
 
-            <h5 class="optionhead">Táhnout a posunout</h5>
+            <h5>Táhnout a posunout</h5>
             <p>Mapy se dají posunovat, takže můžete použít myš nebo směrové šipky pro posun doleva, doprava, nahoru nebo dolů pro zobrazení oblastí,
                 které jsou skryté
                 mimo obrazovku. Možnost táhnout a posunout znamená, že nemusíte klikat ani čekat na nové načtení grafiky pokaždé, když chcete vidět
                 přilehlé části mapy.</p>
 
-            <h5 class="optionhead">Přiblížení</h5>
+            <h5>Přiblížení</h5>
             <p>Značky plus (+) a minus (-) nebo posuvník přiblížení můžete použít pro přiblížení nebo oddálení mapy. Při přiblížení mapy můžete použít
                 směrové šipky
                 pro vylepšení pozice na mapě. Změníte-li úroveň přiblížení, hodnota přiblížení bude uložena v tabulce TNG.</p>

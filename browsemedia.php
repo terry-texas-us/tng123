@@ -148,7 +148,7 @@ if ($tnggallery) {
     $header = "";
 } else {
     $header = "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback fieldname nbrcol\">&nbsp;#&nbsp;</td>\n";
-    $header .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname center\" width=\"$thumbmaxw\">&nbsp;{$text['thumb']}&nbsp;</th>\n";
+    $header .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname text-center' width=\"$thumbmaxw\">&nbsp;{$text['thumb']}&nbsp;</th>\n";
     $width = $mediatypeID == "headstones" ? "50%" : "75%";
     $header .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}&nbsp;</th>\n";
     if ($mediatypeID == "headstones") {
@@ -408,7 +408,7 @@ while ($row = tng_fetch_assoc($result)) {
             }
             $plotstr = $row['plot'] ? "<br>" . nl2br($row['plot']) : "";
             $mediatext .= "<td class='databack' width=\"30%\"><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
-            $mediatext .= "<td class='databack nw'>{$row['status']}&nbsp;</td>";
+            $mediatext .= "<td class='databack text-nowrap'>{$row['status']}&nbsp;</td>";
             $mediatext .= "<td class='databack' width=\"30%\">\n";
         } else {
             $mediatext .= "<td class='databack' width=\"175\">\n";
@@ -422,7 +422,7 @@ tng_free_result($result);
 if (!$tnggallery) {
     if (!$thumbcount) {
         $header = str_replace("<td class=\"fieldnameback fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>", "", $header);
-        $mediatext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
+        $mediatext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }
 

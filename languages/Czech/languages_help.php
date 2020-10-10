@@ -32,7 +32,7 @@ echo help_header("N�pov�da: Jazyky");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit nebo odstranit tento jazyk.</p>
 
         </td>
@@ -52,21 +52,21 @@ echo help_header("N�pov�da: Jazyky");
             <p>Chcete-li p�idat nov� jazyk, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pot� vypl�te formul��.
                 V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Slo�ka jazyku</h5>
+            <h5>Slo�ka jazyku</h5>
             <p>Pro v�b�r um�st�n� souboru pro jazyk pou�ijte rozbalovac� seznam. Pokud v� nov� jazyk pot�ebuje znakovou sadu UTF-8, vyberte slo�ku s
                 "UTF8" v n�zvu.
                 Chcete-li podporovat nov� jazyk, kter� je�t� nen� podporov�n programem TNG, p�idejte do slo�ky TNG jazyk� slo�ku pro tento jazyk, a
                 pak se vra�te na tuto str�nku a vyberte ji.</p>
 
-            <h5 class="optionhead">N�zev tohoto jazyku, jak bude zobrazen n�v�t�vn�k�m</h5>
+            <h5>N�zev tohoto jazyku, jak bude zobrazen n�v�t�vn�k�m</h5>
             <p>Zadejte n�zev jazyku, jak bude zobrazen n�v�t�vn�k�m v poli pro v�b�r jazyk�. Je vhodn� vlo�it tento n�zev v tomto p��slu�n�m jazyce,
                 aby jej mohli n�v�t�vn�ci sn�ze identifikovat. Nap�. pou�ijte "English" m�sto "Angli�tina".</p>
 
-            <h5 class="optionhead">Znakov� sada</h5>
+            <h5>Znakov� sada</h5>
             <p>Znakov� sada pou�it� pro tento jazyk. Nech�te-li toto pole pr�zdn�, bude pou�ita znakov� sada ISO-8859-1. �e�tina pou��v� znakovou sadu
                 ISO-8859-2 nebo UTF-8</p>
 
-            <h5 class="optionhead">Povinn� pole:</h5> Zadat mus�te n�zev jazyku pro zobrazen� a zvolit mus�te n�zev slo�ky jazyku.</p>
+            <h5>Povinn� pole:</h5> Zadat mus�te n�zev jazyku pro zobrazen� a zvolit mus�te n�zev slo�ky jazyku.</p>
 
             <p><strong>D�LE�IT�:</strong> Pokud uva�ujete o umo�n�n� dynamick�ho p�ep�n�n� jazyk�, <strong>mus�te nastavit v� v�choz� jazyk</strong>
                 (v Nastaven�/Z�kladn� nastaven�) jako jazyk t�chto str�nek.

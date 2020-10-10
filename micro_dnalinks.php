@@ -54,9 +54,9 @@ if ($result2) {
     <table cellpadding="3" cellspacing="1" id="linktable" class="normal">
         <tbody>
         <tr>
-            <td class="fieldnameback fieldname nw">&nbsp;<strong><?php echo $admtext['action']; ?></strong>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<strong><?php echo $admtext['name'] . " (" . $admtext['id'] . ")"; ?></strong>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<strong><?php echo $admtext['tree']; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<strong><?php echo $admtext['action']; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<strong><?php echo $admtext['name'] . " (" . $admtext['id'] . ")"; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<strong><?php echo $admtext['tree']; ?></strong>&nbsp;</td>
         </tr>
         <?php echo $linkrows; ?>
         </tbody>

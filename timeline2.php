@@ -223,7 +223,7 @@ function getEvents($person) {
     ksort($events);
     foreach ($events as $event) {
         $eventstr .= "<div class=\"tlevent\" style=\"margin-left:{$event['left']}px;\">\n";
-        $eventstr .= "<table border='0' cellspacing='0' cellpadding='1'><tr><td class=\"pboxpopup nw\"><span class='normal'>&gt; ";
+        $eventstr .= "<table border='0' cellspacing='0' cellpadding='1'><tr><td class='pboxpopup text-nowrap'><span class='normal'>&gt; ";
         $eventstr .= "{$event['year']} - {$event['text']} {$event['date']} &nbsp;</span></td></tr></table></div>\n";
     }
 
@@ -494,7 +494,7 @@ foreach ($keeparray as $timeentry) {
 
     echo "<div id=\"bar$numlines\"  class=\"tlbar\" style=\"top:$top" . "px;left:$spanleft" . "px;width:$spanwidth" . "px;\" onmouse{$pedigree['event']}=\"setTimerShow($numlines,'{$pedigree['event']}');\" onmouseout=\"setTimerHide($numlines)\">\n";
     echo "<table cellspacing='0' cellpadding='0'>";
-    echo "<tr><td class=\"nw\"><span class='normal'>{$timeentry['name']}</span></td></tr>";
+    echo "<tr><td class='text-nowrap'><span class='normal'>{$timeentry['name']}</span></td></tr>";
     echo "<tr><td><div class='fieldnameback' style=\"font-size:0;height:10px;width:$spanwidth" . "px;z-index:3;\"></div></td></tr>";
     echo "</table>\n";
     echo "</div>\n";

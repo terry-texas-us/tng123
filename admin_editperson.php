@@ -401,7 +401,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
 
                         <table class="normal topbuffer">
                             <tr>
-                                <td class="nw">
+                                <td class="text-nowrap">
                                     <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
                                         echo " checked";
                                     } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
@@ -524,7 +524,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             echo "<td colspan='2'>&nbsp;</td>";
                             echo "</tr>\n";
                             echo "<tr>\n";
-                            echo "<td class=\"align-top nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
+                            echo "<td class='align-top text-nowrap' style='width:110px;'>" . $admtext['SLGC'] . ":</td>\n";
                             echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
                             echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
                             echo "<td><a href='#' onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "',1);\" title=\"{$admtext['find']}\" class=\"smallicon admin-temp-icon\"></a></td>\n";

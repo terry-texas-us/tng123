@@ -68,7 +68,7 @@ function showAction($entityID, $num = null) {
     return $lines;
 }
 
-$selectline = $mediaID || $albumID ? "<td class=\"fieldnameback fieldname nw\" width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n" : "";
+$selectline = $mediaID || $albumID ? "<td class='fieldnameback fieldname text-nowrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n" : "";
 
 switch ($type) {
     case "I":
@@ -116,10 +116,10 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['personid'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['name'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['birthdate'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['deathdate'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['personid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['name'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['birthdate'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['deathdate'] . "</th>\n";
             $lines .= "</tr>\n";
 
             while ($row = tng_fetch_assoc($result)) {
@@ -216,9 +216,9 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['familyid'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['husbname'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['wifename'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['familyid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['husbname'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['wifename'] . "</th>\n";
             $lines .= "</tr>\n";
 
             while ($row = tng_fetch_assoc($result)) {
@@ -275,8 +275,8 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class=\"fieldnameback fieldname nw\" style=\"width:100px;\">" . $admtext['sourceid'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['title'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap' style=\"width:100px;\">" . $admtext['sourceid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['title'] . "</th>\n";
             $lines .= "</tr>\n";
 
             while ($row = tng_fetch_assoc($result)) {
@@ -305,12 +305,12 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class=\"fieldnameback fieldname nw\" style=\"width:100px;\">" . $admtext['id'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['sourceid'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['title'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['page'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['personid'] . "/" . $admtext['familyid'] . "</th>\n";
-            $lines .= "<th class=\"fieldnameback fieldname nw\">" . $admtext['event'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap' style=\"width:100px;\">" . $admtext['id'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['sourceid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['title'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['page'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['personid'] . "/" . $admtext['familyid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['event'] . "</th>\n";
             $lines .= "</tr>\n";
 
             while ($row = tng_fetch_assoc($result)) {
@@ -336,8 +336,8 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<td class=\"fieldnameback fieldname nw\" style=\"width:100px;\">" . $admtext['repoid'] . "</td>\n";
-            $lines .= "<td class=\"fieldnameback fieldname nw\">" . $admtext['title'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname text-nowrap' style=\"width:100px;\">" . $admtext['repoid'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname text-nowrap'>" . $admtext['title'] . "</td>\n";
             $lines .= "</tr>\n";
 
             while ($row = tng_fetch_assoc($result)) {
@@ -365,7 +365,7 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<td class=\"fieldnameback fieldname nw\">" . $admtext['place'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname text-nowrap'>" . $admtext['place'] . "</td>\n";
             $lines .= "</tr>\n";
 
             $num = 1;

@@ -60,22 +60,22 @@ echo help_header("N�pov�da: Ud�losti");
 
             <p>P�i p�id�n� nebo �prav� ud�losti si v�imn�te n�sleduj�c�ho:</p>
 
-            <h5 class="optionhead">Typ ud�losti</h5>
+            <h5>Typ ud�losti</h5>
             <p>Vyberte typ ud�losti (u existuj�c� ud�losti nelze zm�nit typ ud�losti). Nen�-li typ ud�losti, kter� chcete, ve v�b�rov�m poli typ�
                 ud�lost�,
                 jd�te nejprve do Admin/Vlastn� typy ud�lost� a nastavte zde typ ud�losti, pak se vra�te na tuto obrazovku a vyberte jej.</p>
 
-            <h5 class="optionhead">Datum ud�losti</h5>
+            <h5>Datum ud�losti</h5>
             <p>Aktu�ln� nebo p�edpokl�dan� datum spojen� s ud�lost�.</p>
 
-            <h5 class="optionhead">M�sto ud�losti</h5>
+            <h5>M�sto ud�losti</h5>
             <p>M�sto, kde ud�lost prob�hla. Zapi�te n�zev m�sta nebo klikn�te na ikonu Naj�t (lupa).</p>
 
-            <h5 class="optionhead">Podrobnosti</h5>
+            <h5>Podrobnosti</h5>
             <p>Dal�� podrobnosti popisuj�c� ud�lost. Pokud s ud�lost� nen� spojeno ��dn� datum ani m�sto, m��e pole Podrobnosti obsahovat �daje, kter�
                 tuto ud�lost definuj�.</p>
 
-            <h5 class="optionhead">Duplikovat pro (ID):</h5>
+            <h5>Duplikovat pro (ID):</h5>
             <p>Chcete-li tuto ud�lost duplikovat pro v�ce osob nebo rodin, zapi�te sem ��sla ID t�chto osob nebo rodin. Vkl�d�te-li v�ce ��sel ID,
                 odd�lte je ��rkou.
                 Pokud ��slo ID nezn�te, klikn�te na ikonu "Naj�t" vpravo od tohoto pole a m��ete je vyhledat podle jm�na. Po kliknut� na tla��tko
@@ -84,20 +84,20 @@ echo help_header("N�pov�da: Ud�losti");
                 v t�to ud�losti
                 provedete, <b>nebudou</b> prom�tnuty do d��ve vytvo�en�ch duplik�t�.</p>
 
-            <h5 class="optionhead">V�ce</h5>
+            <h5>V�ce</h5>
             <p>Kliknut�m na "V�ce" m��ete pro ka�dou ud�lost zapsat n�kter� m�n� b�n� �daje. Objev� se dal�� pole.
                 Tato pole lze skr�t op�tovn�m kliknut�m na "V�ce". Skryt� pol� neznamen� vymaz�n� jejich obsahu. Tato pole obsahuj�:</p>
 
-            <p><h5 class="optionhead">V�k</h5>: V�k osoby v dob� ud�losti.</p>
+            <p><h5>V�k</h5>: V�k osoby v dob� ud�losti.</p>
 
-            <p><h5 class="optionhead">Instituce</h5>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
+            <p><h5>Instituce</h5>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
 
-            <p><h5 class="optionhead">P���ina</h5>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
+            <p><h5>P���ina</h5>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
 
-            <p><h5 class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</h5>: Adresa a ostatn�
+            <p><h5>Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</h5>: Adresa a ostatn�
             kontaktn� �daje spojen� s ud�lost�.</p>
 
-            <h5 class="optionhead">Povinn� pole:</h5>
+            <h5>Povinn� pole:</h5>
             <p>Vybrat mus�te typ ud�losti a nejm�n� do jednoho z n�sleduj�c�ch pol� mus�te n�co vlo�it: <strong>Datum ud�losti</strong>, <strong>M�sto
                     ud�losti</strong>,
                 nebo <strong>Podrobnosti</strong>. V�echna ostatn� pole jsou nepovinn�.</p>

@@ -46,7 +46,7 @@ echo help_header("Help: Albums");
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each Album allow you to edit, delete or preview that Album.</p>
 
             </td>
@@ -63,26 +63,26 @@ echo help_header("Help: Albums");
                 <p>To add a new Album, click on the <strong>Add New</strong> tab, then fill out the form. Some information, including the media to
                     include and links to people, families and other entities, can be added after saving the record. Take note of the following:</p>
 
-                <h5 class="optionhead">Album Name</h5>
+                <h5>Album Name</h5>
                 <p>The name of your album.</p>
 
-                <h5 class="optionhead">Description</h5>
+                <h5>Description</h5>
                 <p>A short description of the album or the items contained in it.</p>
 
-                <h5 class="optionhead">Keywords</h5>
+                <h5>Keywords</h5>
                 <p>Any number of keywords outside the Album Name or Description that can be used to locate this album when searching.</p>
 
-                <h5 class="optionhead">Active</h5>
+                <h5>Active</h5>
                 <p>If an album is flagged as "Active", it will show on the public listing of all albums on your site. If the Active flag is set to
                     "No", then visitors to your site will not see it.</p>
 
-                <h5 class="optionhead">Always viewable</h5>
+                <h5>Always viewable</h5>
                 <p>If an active album is flagged as "Always viewable" and is linked to a person, family, source or repository, it will always show on
                     the pages for those entities, even if it is linked to a living person or family. Normally, active albums and other media linked to
                     living individuals are hidden from visitors who do not have rights to view living data.
                 </p>
 
-                <h5 class="optionhead">Required fields:</h5>
+                <h5>Required fields:</h5>
                 <p>Album Name is the only required field, but it is in your best interest to fill in the other fields as well.</p>
 
             </td>
@@ -97,7 +97,7 @@ echo help_header("Help: Albums");
                     that Album.
                     Take note of the following items that are not on the "Add New Album" page:</p>
 
-                <h5 class="optionhead">Album Media</h5>
+                <h5>Album Media</h5>
                 <p>To add media to an album, click on the "Add Media" button, then use the form in the resulting popup to select media from the items
                     currently in
                     your database. To do that, select a Collection and/or a Tree (both optional), then enter part of the media name or description in
@@ -136,7 +136,7 @@ echo help_header("Help: Albums");
                 <p>You can also move any item directly to the top of the list by clicking on the double up arrow icon to the right of the "Drag"
                     area.</p>
 
-                <h5 class="optionhead">Album Links</h5>
+                <h5>Album Links</h5>
                 <p>You can link this Album to people, families, sources, repositories or places. For each link, first select the Tree associated with
                     the
                     link entity.
@@ -182,20 +182,20 @@ echo help_header("Help: Albums");
                     entity. To change that
                     order, you must indicate a new order on the Album/Sort tab.</p>
 
-                <h5 class="optionhead">Tree, Link Type, Collection:</h5>
+                <h5>Tree, Link Type, Collection:</h5>
                 <p>Select the Tree associated with the entity for which you would like to sort Albums. Next, select a Link Type (Person, Family,
                     Source,
                     Repository or Place) and
                     the Collection you would like to sort.</p>
 
-                <h5 class="optionhead">ID:</h5>
+                <h5>ID:</h5>
                 <p>Enter the ID number or name (Places only) of the entity. If you don't know the ID number or exact place name, click the magnifying
                     glass icon to search for it.
                     When you find the desired entity, click on the "Select" link next to that entity. The popup will close and the selected ID will
                     appear
                     in the ID field.</p>
 
-                <h5 class="optionhead">Sorting Procedure</h5>
+                <h5>Sorting Procedure</h5>
                 <p>After selecting or entering an ID, click on the "Continue" button to display all Albums for the selected entity and Collection in
                     their
                     current order.

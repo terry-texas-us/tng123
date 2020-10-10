@@ -514,13 +514,13 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['rootpath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['rootpath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $rootpath; ?>" name="newrootpath" class="verylongfield">
                             </td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['photopath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['photopath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $photopath; ?>" name="photopath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('photos',document.form1.photopath.value);">
@@ -528,7 +528,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['documentpath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['documentpath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $documentpath; ?>" name="documentpath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('documents',document.form1.documentpath.value);">
@@ -536,7 +536,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     id="msg_documents"></span></td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['historypath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['historypath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $historypath; ?>" name="historypath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('histories',document.form1.historypath.value);">
@@ -544,7 +544,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     id="msg_histories"></span></td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['headstonepath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['headstonepath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $headstonepath; ?>" name="headstonepath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('headstones',document.form1.headstonepath.value);">
@@ -552,14 +552,14 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     id="msg_headstones"></span></td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['mediapath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['mediapath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $mediapath; ?>" name="mediapath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('media',document.form1.mediapath.value);">
                                 <span id="msg_media"></span></td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['gendex']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['gendex']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $gendexfile; ?>" name="gendexfile" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('gendex',document.form1.gendexfile.value);">
@@ -567,7 +567,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['backuppath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['backuppath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $backuppath; ?>" name="backuppath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('backups',document.form1.backuppath.value);">
@@ -575,14 +575,14 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['modspath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['modspath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $modspath; ?>" name="modspath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('mods',document.form1.modspath.value);">
                                 <span id="msg_mods"></span></td>
                         </tr>
                         <tr>
-                            <td class="nw"><?php echo $admtext['extspath']; ?>:</td>
+                            <td class="text-nowrap"><?php echo $admtext['extspath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $extspath; ?>" name="extspath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('exts',document.form1.extspath.value);">
@@ -1827,7 +1827,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txtmain); ?>" name="txtmain" size="7">&nbsp;&nbsp;
                                 <input type="text" class="<?php echo $mainclass; ?>" style="background-color:<?php echo $bgmain; ?>; color:<?php echo $txtmain; ?>;"
-                                       value="<?php echo $admtext['textcolor']; ?>" id="exmain" disabled>
+                                    value="<?php echo $admtext['textcolor']; ?>" id="exmain" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1836,8 +1836,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <input type="text" value="<?php echo stripslashes($bgmode); ?>" name="bgmode" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txtmode); ?>" name="txtmode" size="7">&nbsp;&nbsp;
-                                <input type="text" class="center" style="background-color:<?php echo $bgmode; ?>; color:<?php echo $txtmode; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="exmode" disabled>
+                                <input type="text" class="text-center" style="background-color:<?php echo $bgmode; ?>; color:<?php echo $txtmode; ?>;" value="<?php echo $admtext['textcolor']; ?>"
+                                    name="exmode" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1846,8 +1846,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <input type="text" value="<?php echo stripslashes($bgfastmut); ?>" name="bgfastmut" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txtfastmut); ?>" name="txtfastmut" size="7">&nbsp;&nbsp;
-                                <input type="text" class="center" style="background-color:<?php echo $bgfastmut; ?>; color:<?php echo $txtfastmut; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="exfastmut" disabled>
+                                <input type="text" class="text-center" style="background-color:<?php echo $bgfastmut; ?>; color:<?php echo $txtfastmut; ?>;" value="<?php echo $admtext['textcolor']; ?>"
+                                    name="exfastmut" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1856,8 +1856,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <input type="text" value="<?php echo stripslashes($bg1_12); ?>" name="bg1_12" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt1_12); ?>" name="txt1_12" size="7">&nbsp;&nbsp;
-                                <input type="text" class="center" style="background-color:<?php echo $bg1_12; ?>; color:<?php echo $txt1_12; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex1_12" disabled>
+                                <input type="text" class="text-center" style="background-color:<?php echo $bg1_12; ?>; color:<?php echo $txt1_12; ?>;" value="<?php echo $admtext['textcolor']; ?>"
+                                    name="ex1_12" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1866,8 +1866,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <input type="text" value="<?php echo stripslashes($bg13_25); ?>" name="bg13_25" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt13_25); ?>" name="txt13_25" size="7">&nbsp;&nbsp;
-                                <input type="text" class="center" style="background-color:<?php echo $bg13_25; ?>; color:<?php echo $txt13_25; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex13_25" disabled>
+                                <input type="text" class="text-center" style="background-color:<?php echo $bg13_25; ?>; color:<?php echo $txt13_25; ?>;" value="<?php echo $admtext['textcolor']; ?>"
+                                    name="ex13_25" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1876,8 +1876,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <input type="text" value="<?php echo stripslashes($bg26_37); ?>" name="bg26_37" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt26_37); ?>" name="txt26_37" size="7">&nbsp;&nbsp;
-                                <input type="text" class="center" style="background-color:<?php echo $bg26_37; ?>; color:<?php echo $txt26_37; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex26_37" disabled>
+                                <input type="text" class="text-center" style="background-color:<?php echo $bg26_37; ?>; color:<?php echo $txt26_37; ?>;" value="<?php echo $admtext['textcolor']; ?>"
+                                    name="ex26_37" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1886,8 +1886,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <input type="text" value="<?php echo stripslashes($bg38_67); ?>" name="bg38_67" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt38_67); ?>" name="txt38_67" size="7">&nbsp;&nbsp;
-                                <input type="text" class="center" style="background-color:<?php echo $bg38_67; ?>; color:<?php echo $txt38_67; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex38_67" disabled>
+                                <input type="text" class="text-center" style="background-color:<?php echo $bg38_67; ?>; color:<?php echo $txt38_67; ?>;" value="<?php echo $admtext['textcolor']; ?>"
+                                    name="ex38_67" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1896,8 +1896,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <input type="text" value="<?php echo stripslashes($bg111); ?>" name="bg111" size="7">&nbsp;
                                 <?php echo $admtext['textcolor']; ?>:
                                 <input type="text" value="<?php echo stripslashes($txt111); ?>" name="txt111" size="7">&nbsp;&nbsp;
-                                <input type="text" class="center" style="background-color:<?php echo $bg111; ?>; color:<?php echo $txt111; ?>;" value="<?php echo $admtext['textcolor']; ?>"
-                                       name="ex111" disabled>
+                                <input type="text" class="text-center" style="background-color:<?php echo $bg111; ?>; color:<?php echo $txt111; ?>;" value="<?php echo $admtext['textcolor']; ?>"
+                                    name="ex111" disabled>
                             </td>
                         </tr>
                         <tr>
@@ -1905,7 +1905,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </tr>
                         <tr>
                             <td colspan="2"><?php echo $admtext['getcolorcodes']; ?> -> <a href="http://hnl.name/color-schemer-online/" class="snlink"
-                                                                                           target="_blank"><?php echo $admtext['colorschemer']; ?></a></td>
+                                    target="_blank"><?php echo $admtext['colorschemer']; ?></a></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>

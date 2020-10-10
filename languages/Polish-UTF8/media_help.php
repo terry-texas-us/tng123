@@ -38,36 +38,36 @@ echo help_header("Pomoc: Media");
                 Jeśli nie wybierzesz żadnej z proponowanych opcji, w polu wyszukiwania wyświetlą się wszystkie media zapisane w bazie danych. Opcje
                 szukania zawierają:</p>
 
-            <h5 class="optionhead">Drzewo</h5>
+            <h5>Drzewo</h5>
             <p>Ogranicza wyniki do mediów przypisanych do wybranego drzewa.</p>
 
-            <h5 class="optionhead">Kolekcja</h5>
+            <h5>Kolekcja</h5>
             <p>Ogranicza wyniki wyszukiwania do mediów z wybranej kolekcji. Aby dodać nową kolekcję, kliknij na "Dodaj kolekcję", a następnie wypełnić
                 formularz w okienku (popup).
                 Aby utworzyć folder dla nowej kolekcji, należy utworzyć własną ikonkę (lub wybrać istniejącą). Pole "Takie same ustawienie jak"
                 pozwala na wskazanie
                 jednego z podstawowych rodzajów Twoich kolekcji, z jakiego nowa kolekcja powinna przejąć ustawienia.</p>
 
-            <h5 class="optionhead">Rozszerzenie pliku</h5>
+            <h5>Rozszerzenie pliku</h5>
             <p>Podaj rozszerzenie pliku (np. "jpg" lub "gif") przed kliknięciem przycisku Szukaj, aby ograniczyć wyniki wyszukiwania do mediów z
                 nazwami plików mającymi takie rozszerzenie.</p>
 
-            <h5 class="optionhead">Tylko bez łączy</h5>
+            <h5>Tylko bez łączy</h5>
             <p>Zaznacz to pole przed kliknięciem przycisku Szukaj, aby ograniczyć wyniki wyszukiwania do mediów, które nie są powiązane z żadnymi
                 osobami, rodzinami, źródłami, repozytoriami lub miejscami.</p>
 
-            <h5 class="optionhead">Status</h5>
+            <h5>Status</h5>
             <p><strong>(Tylko nagrobki)</strong> Wybierz z status listy przed kliknięciem przycisku Szukaj, aby wyszukać wszystkie nagrobki o tym
                 samym statusie.</p>
 
-            <h5 class="optionhead">Cmentarz</h5>
+            <h5>Cmentarz</h5>
             <p><strong>(Tylko nagrobki)</strong> Wybierz z listy cmentarz przed kliknięciem przycisku Szukaj, aby wyszukać wszystkie nagrobki z tego
                 samego cmentarza.</p>
 
             <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
                 przywraca domyślne wartości wszystkich wyszukiwań.</p>
 
-            <h5 class="optionhead">Czynność</h5>
+            <h5>Czynność</h5>
             <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
                 jeden rekord jednocześnie, kliknij pole w kolumnie
                 <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
@@ -86,24 +86,24 @@ echo help_header("Pomoc: Media");
                 zdjęcia, informacje o lokalizacji, oraz łącza do osób, rodzin i itp. mogą zostać dodane
                 dopiero po kliknięciu na "Zapisz i kontynuuj". Do dyspozycji są następujące pola:</p>
 
-            <h5 class="optionhead">Kolekcje</h5>
+            <h5>Kolekcje</h5>
             <p>Wybierz rodzaj medium (np. zdjęcie, dokument, nagrobek, historia, nagranie lub film). Nie ma ograniczeń dotyczących typów plików dla
                 żadnej z <span class="emphasis">kolekcji</span>.</p>
 
-            <h5 class="optionhead">To medium pochodzi z zewnętrznego źródła</h5>
+            <h5>To medium pochodzi z zewnętrznego źródła</h5>
             <p>Zaznacz to pole, jeśli Twoje medium znajduje się w innym miejscu niż na Twoim serwerze. Musisz dostarczyć dokładną ścieżkę dostępu ( na
                 przykład, "http://www.thatsite.com/image.jpg") w polu
                 oznaczonym "Nazwa pliku na stronie" (pozostaw pole "Plik do załadowania " wolne). Jeśli chcesz mieć miniaturkę zdjęcia, musisz
                 dostarczyć swoją (TNG jej nie utworzy).</p>
 
-            <h5 class="optionhead">Plik mediów</h5>
+            <h5>Plik mediów</h5>
             <p>Wybierz fizyczny plik (z Twojego komputera lub z serwera) dla tego medium.</p>
 
-            <h5 class="optionhead">Plik do załadowania</h5>
+            <h5>Plik do załadowania</h5>
             <p>Jeśli Twój plik nie został jeszcze załadowany na serwer naciśnij przycisk Przeglądaj, aby zlokalizować go w Twoim komputerze. Jeśli
                 plik znajduje się już na serwerze, pozostaw to pole wolne.</p>
 
-            <h5 class="optionhead">Nazwa pliku na stronie / Media URL</h5>
+            <h5>Nazwa pliku na stronie / Media URL</h5>
             <p>Jeśli poprzednio załadowałeś Twój plik mediów, podaj ścieżkę dostępu i nazwę tego medium jaka istnieje w folderze odpowiedniej kolekcji
                 na serwerze (lub na innej stronie www). Jeśli nie znasz dokładnej
                 nazwy pliku, możesz kliknąć na przycisk Szukaj, aby zlokalizować plik na serwerze. Jeśli załadowujesz Twój plik korzystając z
@@ -120,24 +120,24 @@ echo help_header("Pomoc: Media");
                 Józefa Mrówczyńskiego 12.11.1988.jpg"
                 powinno zostać zapisane jako "zdjecie_jozefa_mrowczynskiego_12_11_1988.jpg </p>
 
-            <h5 class="optionhead">ALBO Tekst Body</h5>
+            <h5>ALBO Tekst Body</h5>
             <p><strong>(Tylko historie)</strong> Zamiast fizycznego przesyłania plików do historii, można tu wpisać lub wkleić tekst lub kod HTML.</p>
 
             <p><strong>UWAGA:</strong> Jeśli użyjesz HTML <strong>nie może</strong> on zawierać znaczników HTML lub BODY.</p>
 
-            <h5 class="optionhead">Konwertuj nowe linie (BR) do HTML</h5>
+            <h5>Konwertuj nowe linie (BR) do HTML</h5>
             <p><strong>(Tylko historie)</strong> Wybierz tę opcję, aby TNG skonwertowało "nowe linie" zawarte w polu "Tekst BODY" do "nowych linii
                 HTML". Pozostawianie tej kratki niezaznaczonej spowoduje, że "nowe linie" będą ignorowane.
                 "Nowe linie HTML" z tego pola będą wszędzie respektowane. </p>
 
-            <h5 class="optionhead">Plik miniaturki</h5>
+            <h5>Plik miniaturki</h5>
             <p>Wskaż istniejący plik (z twojego komputera lub ze strony WEB) aby stworzyć "miniaturkę" (mały obrazek) dla tego medium (jest to
                 opcjonalne). Ważne: idealne miniaturki powinny mieć od 50 do 100 pixeli na stronę. Twoja miniaturka <strong>NIE
                     MOŻE</strong> być tym samym obrazem co oryginał!
                 TNG zgłosi zastrzeżenia jeżeli spróbujesz użyć oryginalnego obrazu jako miniaturki. TNG może stworzyć dla ciebie miniaturkę tylko
                 jeżeli zawartość Twojego medium jest obowiązującym JPG, GIF lub PNG obrazem.</p>
 
-            <h5 class="optionhead">Określone zdjęcie/Twórz z oryginału</h5>
+            <h5>Określone zdjęcie/Twórz z oryginału</h5>
             <p>Jeśli Twój serwer wspiera bibliotekę GD image library, będziesz tutaj miał możliwość dostarczyć Twoją własną miniaturkę, albo utworzyć
                 ją przy pomocy TNG z oryginału. W tym celu zaznacz pole Twórz z oryginału.
                 Jeśli wybierzesz tę opcję, domyślnie nazwa nowego pliku będzie taka sama jak oryginał, tyle że dołączony zostanie na początku prefiks
@@ -148,14 +148,14 @@ echo help_header("Pomoc: Media");
                 TNG może utworzyć dla Ciebie miniaturkę tylko wtedy, kiedy Twój plik mediów jest w aktualnym formacie JPG, GIF lub PNG, może jednak
                 reklamować, jeśli miniaturka ma zostać utworzona ze zbyt dużego zdjęcia (ponad 1 MB).</p>
 
-            <h5 class="optionhead">Plik do załadowania</h5>
+            <h5>Plik do załadowania</h5>
             <p>Jeśli sobie życzysz, miniatury obrazów każdego zdjęcia związanego z osobą są wyświetlane na jej stronie. Jeśli dla Twojego medium nie
                 ma jeszcze na serwerze załadowanego pliku miniaturki, kliknij przycisk "Przeglądaj" i zlokalizuj miniaturkę
                 w Twoim komputerze.
                 Musisz wtedy wpisać ścieżkę dostępu do punktu docelowego i nazwę miniaturki w następnym polu ("Nazwa pliku na stronie"). Jeśli
                 miniaturka jest już na serwerze, zostaw to pole puste.</p>
 
-            <h5 class="optionhead">Nazwa pliku na stronie</h5>
+            <h5>Nazwa pliku na stronie</h5>
             <p>Jeśli poprzednio załadowałeś Twoją miniaturkę, podaj jej ścieżkę dostępu i dokładną nazwę taką, jaka zapisana jest w odpowiednim dla
                 danej kolekcji folderze na serwerze (rada: jeśli chcesz trzymać miniaturki i oryginały oddzielnie, możesz je
                 zapisywać w
@@ -167,18 +167,18 @@ echo help_header("Pomoc: Media");
                 użyj Twojego programu FTP albo skontaktuj się z Administratorem, aby nadać plikom właściwe uprawnienia
                 (775 powinien funkcjonować, ale czasami wymagany jest 777). </p>
 
-            <h5 class="optionhead">Zapisz pliki w: Folder multimediów/Folder kolekcji</h5>
+            <h5>Zapisz pliki w: Folder multimediów/Folder kolekcji</h5>
             <p>Możesz wybrać zapisywanie mediów w folderze odpowiadającym wybranej kolekcji (opcja domyślna), lub w folderze multimediów .</p>
 
-            <h5 class="optionhead">Tytuł</h5>
+            <h5>Tytuł</h5>
             <p>Powinno to być krótkie określenie &#151; służące do identyfikacji Twojego medium. To określenie będzie użyte jako łącze do strony
                 pokazującej Twoje medium.</p>
 
-            <h5 class="optionhead">Opis</h5>
+            <h5>Opis</h5>
             <p>Tutaj możesz podać więcej szczegółów zawierających informację o przedstawionym medium. Będzie widoczne jako notatka towarzysząca
                 Twojemu tytułowi (poprzednie pole).</p>
 
-            <h5 class="optionhead">Szerokość, wysokość</h5>
+            <h5>Szerokość, wysokość</h5>
             <p><strong>(dotyczy tylko filmów)</strong> Niektóre odtwarzacze wideo (np. Quicktime) wymagają podania wymiarów filmu. Jeśli nie będą one
                 wyszczególnione,
                 film może zostać za mocno obcięty i jego fragmenty nie będą widoczne. Dlatego polecamy podanie tutaj wymiarów Twojego filmu w
@@ -186,36 +186,36 @@ echo help_header("Pomoc: Media");
                 pozostawieniu około 16 pionowych pikseli dla pulpitu sterowania odtwarzacza wideo ( odtwarzanie / stop / regulacje głośności, itp.).
             </p>
 
-            <h5 class="optionhead">Właściciel/Źródło, Data wykonania, Miejsce wykonania</h5>
+            <h5>Właściciel/Źródło, Data wykonania, Miejsce wykonania</h5>
             <p>Są to pola opcjonalne. Jeśli posiadasz jakieś informacje, wpisz je tutaj.</p>
 
-            <h5 class="optionhead">Drzewo</h5>
+            <h5>Drzewo</h5>
             <p>If Jeśli chciałbyś łączyć to medium z wybranym drzewem, wybierz to drzewo tutaj. Mogą to robić tylko użytkownicy mający uprawnienia do
                 edycji danych dotyczących tych drzew.</p>
 
-            <h5 class="optionhead">Cmentarz</h5>
+            <h5>Cmentarz</h5>
             <p><strong>(Tylko nagrobki)</strong> Wybierz z listy cmentarz, na którym znajduje się nagrobek. Musisz najpierw dodać cmentarz (pod Admin
                 / Cmentarze) zanim będzie on widoczny w tym polu.</p>
 
-            <h5 class="optionhead">Sektor</h5>
+            <h5>Sektor</h5>
             <p><strong>(Tylko nagrobki)</strong> Sektor, w którym zlokalizowany jest nagrobek (opcjonalne).</p>
 
-            <h5 class="optionhead">Status</h5>
+            <h5>Status</h5>
             <p><strong>(Tylko nagrobki)</strong> Wybierz z listy określenie, które najlepiej opisuje okoliczność dotyczącą nagrobka.</p>
 
-            <h5 class="optionhead">Zawsze widoczne</h5>
+            <h5>Zawsze widoczne</h5>
             <p>Zaznacz to pole, jeśli chcesz, aby to medium było widoczne dla wszystkich bez względu na to, czy połączone z nim osoby są zapisane jako
                 żyjące i niezależnie od uprawnień użytkownika.</p>
 
-            <h5 class="optionhead">Otwór w nowym oknie</h5>
+            <h5>Otwór w nowym oknie</h5>
             <p>Zaznacz to pole, jeśli chcesz, aby po kliknięciu na jego łącze to medium otwierało się w nowym oknie.</p>
 
-            <h5 class="optionhead">Łącz bezpośrednio z wybranym cmentarzem</h5>
+            <h5>Łącz bezpośrednio z wybranym cmentarzem</h5>
             <p><strong>(Tylko nagrobki)</strong> Zaznacz to pole, aby połączyć to zdjęcie nagrobka z samym cmentarzem. Kiedy otworzy się ta strona,
                 będą na niej widoczne wszystkie nagrobki zapisane dla tego cmentarza, to zdjęcie zaś pokaże się na szczycie
                 strony.</p>
 
-            <h5 class="optionhead">Pokaż mapę cmentarza za każdym razem, kiedy to zdjęcie zostanie wybrane</h5>
+            <h5>Pokaż mapę cmentarza za każdym razem, kiedy to zdjęcie zostanie wybrane</h5>
             <p><strong>(Tylko nagrobki)</strong> Zaznacz to pole, jeśli dla cmentarza, na którym znajduje się ten nagrobek, istnieje mapa lub zdjęcie.
                 Będzie ona widoczna zawsze razem z tym nagrobkiem.</p>
 
@@ -230,7 +230,7 @@ echo help_header("Pomoc: Media");
                 kliknij na ikonkę Edycja obok tego elementu.
                 Oto elementy, których nie ma w "Dodaj nowe":</p>
 
-            <h5 class="optionhead">Linki mediów</h5>
+            <h5>Linki mediów</h5>
             <p>Możesz tworzyć łącza mediów do osób, rodzin, źródeł, repozytoriów lub miejsc. Dla każdego łącza, należy najpierw wybrać drzewo związane
                 z łączonym medium. Następnie rodzaj łącza
                 (osoby, rodziny, źródła, repozytoria lub miejsca) i wreszcie wprowadzić numer ID lub nazwę (tylko miejsca) łączonego podmiotu. Po
@@ -248,29 +248,29 @@ echo help_header("Pomoc: Media");
             <p><strong>OSTRZEŻENIE</strong>: Łącza do wydarzeń niestandardowych utworzonych w ramach TNG mogą zostać nadpisane przy następnym imporcie
                 GEDCOM-u.</p>
 
-            <h5 class="optionhead">Jako standard</h5>
+            <h5>Jako standard</h5>
             <p>Zaznacz to pole podczas edycji łączy mediów, aby użyć miniaturki tego medium w diagramach i na szczytach innych stron związanych z daną
                 osobą lub obiektem, które są z nim połączone.</p>
 
-            <h5 class="optionhead">Miejsce wykonania zdjęcia</h5>
+            <h5>Miejsce wykonania zdjęcia</h5>
             <p>
             <p>Ta sekcja jest przy starcie zamknięta. Aby ją rozwinąć, kliknij na napis "Miejsce wykonania zdjęcia" lub strzałkę obok niego. Jeśli
                 znasz nazwę miejsca, gdzie zdjęcie zostało zrobione, wpisz ją w polu "Miejsce wykonania zdjęcia".</p>
 
-            <h5 class="optionhead">Szerokość, Długość (geograficzna)</h5>
+            <h5>Szerokość, Długość (geograficzna)</h5>
             <p>Jeśli znasz współrzędne geograficzne miejsca związanego z Twoim medium wpisz je tutaj, aby pomóc innym dokładniej zlokalizować dane
                 miejsce.
                 Alternatywnie możesz użyć funkcji geocode Google Map, aby ustawić szerokość i długość geograficzną lokalizacji mediów. Kliknij na
                 "Pokaż / Ukryj mapę Google", aby zobaczyć mapę Google.</p>
 
-            <h5 class="optionhead">Zoom</h5>
+            <h5>Zoom</h5>
             <p>Wpisz poziom powiększenia mapy, lub dostosuj poziom przy pomocy suwaka na mapie Google. Ta opcja jest dostępna tylko jeśli masz "klucz
                 mapy" z Google i wpisałeś go w Administracja/Ustawienia i konfiguracja/Ustawienia mapy.</p>
 
             <p>Uwaga: Szerokość/Długość/Zoom to dane o lokalizacji mediów tylko w celach informacyjnych. Ta lokalizacja nie jest oznakowana na mapie w
                 strefie publicznej.</p>
 
-            <h5 class="optionhead">Mapa zdjęcia</h5>
+            <h5>Mapa zdjęcia</h5>
             <p>Ta sekcja jest przy starcie zamknięta. Aby ją rozwinąć, kliknij na napis "Mapa zdjęcia" lub strzałkę obok niego. Umożliwia ona łączenie
                 różnych fragmentów obrazu z osobami w bazie danych, lub do wyświetlania krótkich wiadomości,
                 kiedy wskaźnik myszy zostanie umieszczony nad tymi fragmentami.</p>
@@ -339,28 +339,28 @@ echo help_header("Pomoc: Media");
                 utworzone łącza. Aby zmienić tę kolejność, możesz na karcie
                 Media / Sortuj przesuwać media według życzenia.</p>
 
-            <h5 class="optionhead">Drzewo, Rodzaj łącza, Kolekcja:</h5>
+            <h5>Drzewo, Rodzaj łącza, Kolekcja:</h5>
             <p>Wybierz z drzewo związane z podmiotem, dla którego chcesz sortować media. Następnie wybierz rodzaj łącza (osoby, rodziny, źródła,
                 repozytoria lub miejsca) oraz kolekcję, w której chcesz posortować media.</p>
 
-            <h5 class="optionhead">ID:</h5>
+            <h5>ID:</h5>
             <p>Wprowadź numer ID lub nazwę (tylko miejsca) podmiotu. Jeśli nie znasz numeru ID lub dokładnej nazwy miejsca, kliknij ikonkę lupy w celu
                 ich wyszukania. Po znalezieniu żądanego podmiotu, kliknij przycisk
                 "Wybierz" obok danego podmiotu. Okienko popup zostanie zamknięte i w polu ID pojawi się wybrany identyfikator .</p>
 
-            <h5 class="optionhead">Łącze do wydarzeń niestandardowych</h5>
+            <h5>Łącze do wydarzeń niestandardowych</h5>
             <p>Jeśli chcesz posortować tylko media połączone z określonymi wydarzeniami związanymi z łączem podmiotu, zaznacz pole "Łącze do
                 określonego wydarzenia". Możesz to jednak uczynić dopiero, kiedy wszystkie
                 inne pola zostaną wypełnione &mdash; w tym numer ID. Spowoduje to otwarcie dodatkowego pola , w którym można wybrać określone
                 wydarzenie (opcjonalnie).</p>
 
-            <h5 class="optionhead">Procedura sortowania</h5>
+            <h5>Procedura sortowania</h5>
             <p>Po wybraniu lub wprowadzeniu numeru ID kliknij "Kontynuuj", aby wyświetlić wszystkie media dla wybranych podmiotów i ich kolekcji w
                 aktualnym porządku. Aby zmienić kolejność pozycji, kliknij na pole "Przeciągnij"
                 dla każdego medium, przytrzymaj przycisk myszy a następnie przesuń wskaźnika myszy do żądanej lokalizacji w obrębie listy, poczym
                 zwolnij przycisk myszy ( "przeciągnij i upuść"). Zmiany są zapisywane automatycznie .</p>
 
-            <h5 class="optionhead">Zdjęcie standardowe</h5>
+            <h5>Zdjęcie standardowe</h5>
             <p>Podczas sortowania, możesz również wybrać dowolne zdjęcie jako "Zdjęcie domyślne". Oznacza to, że miniaturka wybranego zdjęcia będzie
                 wyświetlana na diagramach i nagłówkach aktualnie wybranej nazwy podmiotu lub tytułu.
                 Aby ustawić lub usunąć zdjęcie standardowe, zatrzymaj wskaźnik myszy nad dowolnym z widocznych zdjęć a następnie kliknij na jedną z
@@ -375,7 +375,7 @@ echo help_header("Pomoc: Media");
             <p style="float:right;"><a href="#top">Wróć</a></p>
             <a id="thumbs"><h4 class="subheadbold">Miniaturki</h4></a>
 
-            <h5 class="optionhead">Generowanie miniaturek</h5>
+            <h5>Generowanie miniaturek</h5>
             <p> Kiedy klikniesz na przycisk "Generuj", TNG automatycznie utworzy miniaturki dla wszystkich plików JPG, GIF oraz PNG, które jej jeszcze
                 nie mają. Nazwa nowej miniaturki będzie taka sama jak oryginał, ale będzie poprzedzona
                 prefiksem i / albo będzie miała przyrostek taki, jak to zostało przez Ciebie zdefiniowane w Ustawieniach ogólnych. Zaznacz pole
@@ -386,7 +386,7 @@ echo help_header("Pomoc: Media");
 
             <p><strong>Uwaga</strong>: Jeśli nie widzisz pola Generuj miniaturki, znaczy że Twój serwer nie wspiera biblioteki GD image library.</p>
 
-            <h5 class="optionhead">Twórz zdjęcia standardowe</h5>
+            <h5>Twórz zdjęcia standardowe</h5>
             <p>Ta opcja pozwala na wybranie pierwszego zdjęcia dla każdej osoby, rodziny i źródła się jako zdjęcie standardowe (wyświetlanych w
                 nagłówkach diagramów, arkuszy osób i rodzin oraz innych stron tego podmiotu).
                 Przyporządkowanie może być dokonane w odniesieniu do wszystkich osób, rodzin, źródła i repozytoriów w wybranym drzewie. Zaznacz pole

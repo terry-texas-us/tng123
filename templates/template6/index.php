@@ -71,11 +71,11 @@ if (isMobile()) {
                         </table>
                     </div>
                 </form>
-                <p class="center">
+                <p class="text-center">
                     [<a href="surnames.php"><?php echo $text['mnulastnames']; ?></a>]<br>
                     [<a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]
                 </p>
-                <p class="center">
+                <p class="text-center">
                     [<a href="http://www.gendexnetwork.org">GenDex Network</a>]<br>
                     [<a href="http://www.familytreeseeker.com">FamilyTreeSeeker.com</a>]
                 </p>
@@ -83,7 +83,7 @@ if (isMobile()) {
             <td class="section">
                 <img src="<?php echo $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""><br>
                 <?php include "randomphoto.php"; ?>
-                <p class="center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo $text['viewphotos']; ?></a>]</p>
+                <p class="text-center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo $text['viewphotos']; ?></a>]</p>
                 <p class="normal"><img src="<?php echo $templatepath; ?>img/header_famhist.gif" width="200" height="50" alt=""><br>
                     <?php echo getTemplateMessage('t6_fhpara'); ?>
                 </p>
@@ -114,7 +114,7 @@ if (isMobile()) {
                 <p class="normal"><img src="<?php echo $templatepath; ?>img/header_mostwanted.gif" width="200" height="50" alt="">
                 </p>
                 <?php echo getTemplateMessage('t6_mwpara'); ?>
-                <p class="center">[<a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a>] </p>
+                <p class="text-center">[<a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a>] </p>
                 <p class="normal"><img src="<?php echo $templatepath; ?>img/header_resources.gif" width="200" height="50" alt="">
                 </p>
                 <?php echo getTemplateMessage('t6_respara'); ?>

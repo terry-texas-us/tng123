@@ -63,7 +63,7 @@ echo getFORM("places100", "get", "", "");
         </div>
         <table class="sntable">
             <tr>
-                <td class="plcol">
+                <td class="plcol align-top">
                     <?php
                     $offsetorg = $offset;
                     $offset = $offset ? $offset + 1 : 1;

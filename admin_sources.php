@@ -242,7 +242,7 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                             echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
                             echo "<td class='lightback'>$title&nbsp;</td>\n";
                             if ($numtrees > 1) {
-                                echo "<td class='lightback nw'>&nbsp;{$row['treename']}&nbsp;</td>\n";
+                                echo "<td class='lightback text-nowrap'>&nbsp;{$row['treename']}&nbsp;</td>\n";
                             }
                             if ($numusers > 1) {
                                 echo "<td class='lightback'><span class='normal'>&nbsp;{$row['changedby']}: {$row['changedate']}&nbsp;</span></td>\n";

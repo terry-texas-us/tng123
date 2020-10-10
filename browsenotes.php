@@ -113,7 +113,7 @@ echo $tableStartTag;
     <thead>
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">#</th>
-        <th data-tablesaw-priority="1" class="fieldnameback nw fieldname"><?php echo $text['notes']; ?></th>
+        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap fieldname"><?php echo $text['notes']; ?></th>
         <th data-tablesaw-priority="2" class="fieldnameback fieldname"><?php echo $text['indlinked']; ?></th>
     </tr>
     </thead>

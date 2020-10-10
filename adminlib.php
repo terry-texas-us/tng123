@@ -84,7 +84,7 @@ function tng_adminlayout($args = "") {
     if (isMobile()) {
         $tng_title = $tng_abbrev;
     }
-    $output = "<body class='adminbody'$args>\n";
+    $output = "<body class='adminbody m-0'$args>\n";
 
     $output .= "<div class='topbanner sideback whiteheader'>\n";
 
@@ -96,8 +96,8 @@ function tng_adminlayout($args = "") {
         $output .= "</div>\n";
     }
     $output .= "<div class='admintop'>\n";
-    $output .= "<p class='admintitle' style='white-space: nowrap;'><strong>$tng_title, v.$tng_version</strong></p>\n";
-    $output .= "<span class='whitetext normal' style='white-space: nowrap;'>\n";
+    $output .= "<p class='admintitle text-nowrap'><strong>$tng_title, v.$tng_version</strong></p>\n";
+    $output .= "<span class='whitetext normal text-nowrap'>\n";
     $output .= "<a href='admin.php' class='lightlink'>{$admtext['adminhome']}</a>\n";
     $output .= "&nbsp;|&nbsp; <a href='$homepage' class='lightlink'>{$admtext['publichome']}</a>\n";
     if ($allow_admin) {
@@ -260,11 +260,20 @@ function deleteNote($noteID, $flag) {
     }
 }
 
+/**
+ * @param $id
+ * @param $state
+ * @param $target
+ * @param $headline
+ * @param $subhead
+ * @param string $append
+ * @return string
+ */
 function displayToggle($id, $state, $target, $headline, $subhead, $append = "") {
     global $admtext;
 
     $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='togglehead' style='color:#000;'><img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' title='{$admtext['toggle']}' alt='{$admtext['toggle']}' width='15' height='15' id='$id'>";
-    $rval .= "<strong class='th-indent'>$headline</strong></a> $append</span><br>\n";
+    $rval .= "<strong class='ml-1'>$headline</strong></a> $append</span><br>\n";
     if ($subhead) {
         $rval .= "<span class='normal tsh-indent'><i>$subhead</i></span><br>\n";
     }

@@ -42,14 +42,14 @@ echo help_header("Pomoc: Kolekcje");
                 i Dodaj nowe).
                 Kiedy pojawi się okienko popup, wypełnij formularz. Do dyspozycji są następujące pola:</p>
 
-            <h5 class="optionhead">ID kolekcji</h5>
+            <h5>ID kolekcji</h5>
             <p>ID kolekcji to bardzo krótki ciąg znaków. Nie powinno zawierać spacji ani znaków, które nie są alfanumeryczne. Idealnie było by to 10
                 znaków lub mniej.
                 Na przykład, jeśli tworzysz kolekcję dla tematów wojskowych, możesz podać "wojsko" jako jej ID . Ta wartość nie będzie wyświetlana
                 więc to, jak ją nazwiesz
                 nie jest ważne tak długo, jak długo jest ona niepowtarzalna.</p>
 
-            <h5 class="optionhead">Wyświetlany tytuł</h5>
+            <h5>Wyświetlany tytuł</h5>
             <p>Nazwa ta będzie wyświetlana na liście kolekcji i gdy będą pokazywane elementy tej kolekcji. Wyświetlany tytuł może być nieco dłuższy
                 niż ID kolekcji, ale powinien
                 on być nadal stosunkowo krótki. Korzystając z tego samego przykładu możesz wpisać "Zdjęcia z wojska" jako nazwę dla tej kolekcji .
@@ -64,7 +64,7 @@ echo help_header("Pomoc: Kolekcje");
             <p>Musisz powielić plik cust_text.php dla każdego języka, tłumacząc tylko nazwę "Zdjęcia z wojska". Ani klucz ani ID ( "wojsko") nie może
                 być tłumaczone.</p>
 
-            <h5 class="optionhead">Nazwa folderu</h5>
+            <h5>Nazwa folderu</h5>
             <p>Nazwa fizycznego folderu lub katalogu na Twojej stronie internetowej, w którym będą przechowywane elementy tej kolekcji. Powinna być
                 stosunkowo krótka, bez spacji i składać się wyłącznie ze
                 znaków alfanumerycznych (np. "wojsko"). Po wprowadzeniu wartości, możesz kliknąć na przycisk "Twórz folder". Powinien pojawić się
@@ -74,15 +74,15 @@ echo help_header("Pomoc: Kolekcje");
                 nadrzędnym jak "zdjęcia", "dokumenty", "historie" i inne foldery kolekcji. Upewnij się, że jego rzeczywista nazwa odpowiada dokładnie
                 nazwie wpisanej tutaj ( "Wojsko" to nie to samo co "wojsko").</p>
 
-            <h5 class="optionhead">Plik ikony</h5>
+            <h5>Plik ikony</h5>
             <p>Musisz utworzyć własną ikonę, lub użyć jednego z już istniejących i podać nazwę pliku ikony. Plik ikony powinien znajdować się w
                 folderze głównym TNG, wraz z innymi standardowymi ikonami mediów (np. "tng_photo.gif" lub "tng_doc.gif").</p>
 
-            <h5 class="optionhead">Kolejność wyświetlania</h5>
+            <h5>Kolejność wyświetlania</h5>
             <p>Wpisz tutaj liczbę aby wskazać kolejność, w jakiej będą wyświetlane w menu publicznym niestandardowe typy kolekcji. Jako pierwsze
                 pojawiają się najniższe numery.</p>
 
-            <h5 class="optionhead">Takie same ustawienia jak</h5>
+            <h5>Takie same ustawienia jak</h5>
             <p>Być może zauważyliście, że karty Dodaj nowe i Edycja zmieniają się nieco w zależności od wybranej kolekcji. Pole "Takie same ustawienia
                 jak " pozwala na wskazanie rodzaju standardowej kolekcji, który w odniesieniu do układu tych kart
                 powinna najbardziej przypominać Twoja nowa kolekcja.</p>

@@ -63,7 +63,7 @@ echo help_header("Help: Citations");
 
             <p>While adding or editing a citation, please take note of the following:</p>
 
-            <h5 class="optionhead">Source ID</h5>
+            <h5>Source ID</h5>
             <p>Enter the ID of the source to be cited, or click the "Find" button to search for it. If the source has not yet been created, you
                 can go to Admin/Sources to create the source in the proper tree, then return to the citations list, or you can click the "Create"
                 button
@@ -72,23 +72,23 @@ echo help_header("Help: Citations");
                 also see a "Copy Last" button. Clicking that
                 button will populate all the fields with the same values that you used in your last citation.</p>
 
-            <!--<h5 class="optionhead">Description</h5>
+            <!--<h5>Description</h5>
         <p>If your desktop genealogy program does not assign ID numbers to your sources, your citation will have a Description instead. You will not see
         the Description field for a new citation.</p>-->
 
-            <h5 class="optionhead">Page</h5>
+            <h5>Page</h5>
             <p>Enter the page of the selected source relevant to this event (optional).</p>
 
-            <h5 class="optionhead">Reliability</h5>
+            <h5>Reliability</h5>
             <p>Select a number (0-3) indicating how reliable the source is (optional). Higher numbers indicate greater reliability.</p>
 
-            <h5 class="optionhead">Citation Date</h5>
+            <h5>Citation Date</h5>
             <p>The date associated with this citation (optional).</p>
 
-            <h5 class="optionhead">Actual Text</h5>
+            <h5>Actual Text</h5>
             <p>An short excerpt of the source material (optional).</p>
 
-            <h5 class="optionhead">Notes</h5>
+            <h5>Notes</h5>
             <p>Any helpful comments you may have concerning this source (optional).</p>
 
         </td>

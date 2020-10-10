@@ -33,7 +33,7 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat
                 v�ce z�znam�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
@@ -57,16 +57,16 @@ echo help_header("N�pov�da: Ud�losti �asov� osy");
                 z�lo�ku <a href="#search">Hledat</a> pro nalezen� ud�losti, a pot� klikn�te na ikonu Upravit vedle tohoto ��dku.</p>
             V�znam jednotliv�ch pol� p�i p�id�n� nebo �prav� ud�losti �asov� osy je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Po��te�n� datum / Kone�n� datum</h5>
+            <h5>Po��te�n� datum / Kone�n� datum</h5>
             <p>Vyberte v�echny zn�m� slo�ky (den, m�s�c, rok) po��te�n�ho a kone�n�ho data ud�losti. Povinn� je pouze rok po��te�n�ho data.
                 Zap�ete-li n�jakou slo�ku kone�n�ho data, pak je tak� zde povinn� rok.</p>
 
-            <h5 class="optionhead">Titul ud�losti</h5>
+            <h5>Titul ud�losti</h5>
             <p>Zadejte velmi kr�tk� titul ud�losti. Nap�. <em>Potopen� Titanicu</em> nebo <em>1. sv�tov� v�lka</em>. Toto pole bylo zavedeno v TNG
                 9.0. Ud�losti
                 �asov� osy p�idan� p�ed touto verz� nemaj� titul. V tomto p��pad� budou jako Titul ud�losti pou�ity Podrobnosti ud�losti.</p>
 
-            <h5 class="optionhead">Podrobnosti ud�losti</h5>
+            <h5>Podrobnosti ud�losti</h5>
             <p>Zapi�te stru�n� popis ud�losti. M�l by obsahovat pouze n�kolik v�t.</p>
 
         </td>

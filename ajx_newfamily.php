@@ -113,7 +113,7 @@ include_once "eventlib.php";
 
                     <table class="normal topbuffer">
                         <tr>
-                            <td class="nw">
+                            <td class="text-nowrap">
                                 <input type="checkbox" name="living" value="1" checked="checked"> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
                                 <input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?>
                             </td>
@@ -144,7 +144,7 @@ include_once "eventlib.php";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                 <div id="fbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                      onmouseout="closeBranchEdit('fbranch','fbranchedit','fbranchlist');">

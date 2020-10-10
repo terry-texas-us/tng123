@@ -389,7 +389,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
             </td>
             <td class="size">
             	<button class="linksbutton" id="l{%=file.mediaID%}">
-            		<span class="nw"><?php echo $admtext['medialinks']; ?></span>
+            		<span class="text-nowrap"><?php echo $admtext['medialinks']; ?></span>
             	</button><br><br>
             	<span>&nbsp;{%=file.dims%}</span><br>
             	<span>&nbsp;{%=o.formatFileSize(file.size)%}</span><br><br>

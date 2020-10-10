@@ -52,14 +52,14 @@ echo help_header("Nápověda: Spojení");
 
             <p>Při přidání nebo úpravě spojení mějte na paměti následující:</p>
 
-            <h5 class="optionhead">ID čísla osoby nebo rodiny</h5>
+            <h5>ID čísla osoby nebo rodiny</h5>
             <p>Zapište ID číslo osoby nebo rodiny, která má být spojena s aktivní osobou nebo rodinou, nebo klikněte na ikonu Najít a vyhledejte ID
                 číslo.</p>
 
-            <h5 class="optionhead">Vztah</h5>
+            <h5>Vztah</h5>
             <p>Zapište povahu spojení. Např. <em>Kmotr</em>, <em>Učitel</em> nebo <em>Svědek</em>.</p>
 
-            <h5 class="optionhead">Obrácené spojení?</h5>
+            <h5>Obrácené spojení?</h5>
             <p>Někdy jde spojení oběma směry. Např. vztah <em>Přítel</em> může mít působnost oběma směry. Je-li to pravda,
                 a chcete vytvořit druhé spojení jdoucí opačným směrem, pak klikněte na tuto volbu. Pokud povaha vztahu není taková, že by
                 platila i v opačném směru (např. <em>Kmotr</em> nebo <em>Učitel</em>), pak byste měli vytvořit jiné spojení, začínající

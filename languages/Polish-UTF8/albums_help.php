@@ -34,7 +34,7 @@ echo help_header("Pomoc: Albumy");
             <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie klikniesz przycisku <strong>Zerowanie</strong>, który
                 przywraca domyślne wartości wszystkich wyszukiwań.</p>
 
-            <h5 class="optionhead">Czynność</h5>
+            <h5>Czynność</h5>
             <p>Naciśnięcie przycisku w kolumnie "czynność" obok każdego albumu pozwala na edycję, usuwanie lub podgląd tego albumu.</p>
 
         </td>
@@ -53,16 +53,16 @@ echo help_header("Pomoc: Albumy");
                 do osób, rodzin i innych podmiotów, mogą zostać dodane dopiero po naciśnięciu przycisku "zapisz i kontynuuj". Do dyspozycji są
                 następujące pola:</p>
 
-            <p><h5 class="optionhead">Nazwa albumu</h5>
+            <p><h5>Nazwa albumu</h5>
             Nazwa Twojego albumu.</p>
 
-            <p><h5 class="optionhead">Opis</h5>
+            <p><h5>Opis</h5>
             Krótki opis albumu lub elementów w nim zawartych.</p>
 
-            <p><h5 class="optionhead">Słowa kluczowe</h5>
+            <p><h5>Słowa kluczowe</h5>
             Pewna ilość słów kluczowych poza nazwą albumu lub opis, który może być użyty w celu zlokalizowania tego albumu podczas wyszukiwania.</p>
 
-            <p><h5 class="optionhead">Pola wymagane:</h5> Tylko nazwa albumu jest wymagana, ale powinno być w Twoim interesie wypełnić również
+            <p><h5>Pola wymagane:</h5> Tylko nazwa albumu jest wymagana, ale powinno być w Twoim interesie wypełnić również
             pozostałe pola.</p>
 
         </td>
@@ -76,7 +76,7 @@ echo help_header("Pomoc: Albumy");
                 kliknąć na ikonkę Edycja obok tego albumu.
                 Następujących elementów nie ma na karcie "dodaj nowy album ":</p>
 
-            <h5 class="optionhead">Album mediów</h5>
+            <h5>Album mediów</h5>
             <p>Aby dodać media do albumu, kliknij na "Dodaj media", a następnie skorzystaj z wyskakującego okienka, aby wybrać media znajdujące się w
                 bazie danych.
                 Aby to zrobić, wybierz Kolekcję i / lub drzewo (oba pola opcjonalne), a następnie wpisz część nazwy lub opisu medium w polu "Szukaj
@@ -99,7 +99,7 @@ echo help_header("Pomoc: Albumy");
                 lokalizacji w obrębie listy.
                 Gdy osiągniesz wybrany punkt, zwolnij przycisk myszy ( "przeciągnij i upuść"). Zmiany zapisywane są automatycznie.</p>
 
-            <h5 class="optionhead">Łącza albumów</h5>
+            <h5>Łącza albumów</h5>
             <p>Możesz utworzyć łącze albumu do osób, rodzin, źródeł, repozytoriów lub miejsc. Dla każdego łącza, najpierw należy wybrać drzewo
                 związane z łączem podmiotu.
                 Następnie należy wybrać link "Rodzaj łącza" (osoby, rodziny, źródła, repozytoria lub miejsca), i wreszcie wprowadzić numer ID lub
@@ -137,18 +137,18 @@ echo help_header("Pomoc: Albumy");
                 połączone z danym podmiotem.
                 Aby zmienić tę kolejność, należy przejść na kartę "Sortuj".</p>
 
-            <h5 class="optionhead">Drzewo, Rodzaj łącza, Kolekcja:</h5>
+            <h5>Drzewo, Rodzaj łącza, Kolekcja:</h5>
             <p>Wybierz drzewo powiązane z podmiotem, dla którego chcesz sortować Albumy. Następnie wybierz rodzaj łącza (osoby, rodziny, źródła,
                 repozytoria lub miejsca)
                 oraz kolekcję, które chcesz posortować.</p>
 
-            <h5 class="optionhead">ID:</h5>
+            <h5>ID:</h5>
             <p>Wprowadź numer ID lub nazwę (tylko miejsca) podmiotu. Jeśli nie znasz numeru ID lub dokładnej nazwy miejsca, kliknij ikonę lupy w celu
                 wyszukania.
                 Po znalezieniu żądanego podmiotu, kliknij przycisk "Wybierz" obok tego podmiotu. Okienko popup zostanie zamknięte i wybrany
                 identyfikator pojawi się w polu ID.</p>
 
-            <h5 class="optionhead">Procedura sortowania</h5>
+            <h5>Procedura sortowania</h5>
             <p>Po wybraniu lub wprowadzeniu ID, kliknij na przycisk "Kontynuuj", aby wyświetlić wszystkie albumy dla wybranych podmiotów i ich zbiory
                 w aktualnym porządku.
                 Aby zmienić kolejność albumów, kliknij na obszar "Przeciągnij" przy danym podmiocie, przytrzymaj przycisk myszy i przesuń do żądanej

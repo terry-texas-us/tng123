@@ -40,7 +40,7 @@ echo help_header("N�pov�da: M�sta");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat
                 v�ce z�znam�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
@@ -65,18 +65,18 @@ echo help_header("N�pov�da: M�sta");
                 z�lo�ku <a href="#search">Hledat</a> pro nalezen� m�sta, a pot� klikn�te na ikonu Upravit vedle tohoto ��dku.</p>
             V�znam jednotliv�ch pol� p�i p�id�n� nebo �prav� h�bitova je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud jsou m�sta ve va�em Z�kladn�m nastaven� programu konfigurov�na tak, �e jsou spojena se stromy, uvid�te zde pole v�b�ru stromu. V
                 tomto p��pad� vyberte jeden z va�ich existuj�c�ch strom�,
                 proto�e ka�d� m�sto mus� b�t spojeno se stromem. <strong>Pozn.:</strong> Po vytvo�en� m�sta nelze zm�nit jeho spojen� se stromem
                 (m�sto toho vyma�te m�sto a znovu jej zalo�te pod jin�m stromem). Pokud nechcete, aby byla m�sta spojen� se stromy, zm��te nastaven� v
                 Admin/Nastaven�/Z�kladn� nastaven�/R�zn�.</p>
 
-            <h5 class="optionhead">M�sto</h5>
+            <h5>M�sto</h5>
             <p>Zapi�te n�zev va�eho m�sta nejmen�� ��st� m�sta po��naje. V�echny ��sti m�sta by m�la b�t odd�lena ��rkoou. Nap�.
                 <em>Kl�terec, �umperk, Olomouck� kraj, �esk� republika</em>. Nepou��vejte neur�it� nebo m�lozn�m� zkratky.</p>
 
-            <h5 class="optionhead">Zobrazit/skr�t klikac� mapu</h5>
+            <h5>Zobrazit/skr�t klikac� mapu</h5>
             <p>Kliknut�m na tla��tko "Zobrazit/skr�t klikac� mapu" se zobraz� Google Map. Tato funkce je aktivn�, pokud jste obdr�eli od Google "kl��"
                 a vlo�ili jej do
                 sv�ho nastaven� map v TNG (viz <a href="mapconfig_help.php">N�pov�da pro nastaven� mapy</a> pro v�ce informac�). Op�tovn�m kliknut�m
@@ -88,21 +88,21 @@ echo help_header("N�pov�da: M�sta");
                 <a href="places_googlemap_help.php">N�pov�da Google Maps</a> najdete v�ce informac�. Informace o v�choz�m nastaven� va�ich map najdete
                 v <a href="mapconfig_help.php">N�pov�d�: Nastaven� map</a>.</p>
 
-            <h5 class="optionhead">Zem�pisn� ���ka/d�lka</h5>
+            <h5>Zem�pisn� ���ka/d�lka</h5>
             <p>Zapi�te sou�adnice zem�pisn� ���ky a d�lky m�sta nebo pro nastaven� hodnot pou�ijte klikac� Google Map (nepovinn�, viz v��e).</p>
 
-            <h5 class="optionhead">P�ibl�en�</h5>
+            <h5>P�ibl�en�</h5>
             <p>Zadejte �rove� p�ibl�en� nebo upravte ovl�dac� prvek p�ibl�en� v Google Map pro nastaven� �rovn� p�ibl�en�. Tato volba je dostupn�
                 pouze, kdy� jste obdr�eli "kl��"
                 od Google a zapsali jej do va�eho nastaven� map v TNG.</p>
 
-            <h5 class="optionhead">�rove� s�dla</h5></p>
+            <h5>�rove� s�dla</h5></p>
             <p>�rove� s�dla popisuje �rove� �len�n� s�dla zastoupen�ho n�zvem m�sta. Va�im n�v�t�vn�k�m to m��e pomoci poznat p�esnost um�st�n�
                 �pendl�ku na map�.
                 Nap�. chcete-li um�stit �pendl�k do Francie, ale nev�te, kam p�esn�, m�li byste vybrat v t�to volb�
                 "Zem�", aby va�i n�v�t�vn�ci v�d�li, um�st�n� �pendl�ku ve Francii nen� p�esn�.</p>
 
-            <h5 class="optionhead">H�bitovy</h5>
+            <h5>H�bitovy</h5>
             <p>Chcete-li spojit h�bitov s aktu�ln�m m�stem, klikn�te zde na tla��tko <strong>P�idat nov�</strong>.
                 V mal�m okn�, kter� se objev�, vyberte ze seznamu, kter� jste vytvo�ili v Admin/H�bitovy h�bitov,
                 a pot� klikn�te na tla��tko Go. Chcete-li vymazat h�bitov spojen� s aktu�ln�m m�stem, klikn�te na malou ikonu
@@ -111,10 +111,10 @@ echo help_header("N�pov�da: M�sta");
             <p>Je-li h�bitov propojen s m�stem, �daje o h�bitovu budou zobrazeny na str�nce m�sta a seznam poh�b�
                 spojen�ch s m�stem bude zobrazen na str�nce h�bitova.</p>
 
-            <h5 class="optionhead">Pozn�mky</h5>
+            <h5>Pozn�mky</h5>
             <p>Do tohoto pole zapi�te jak�koli pozn�mky, kter� maj� vztah k va�emu m�stu.</p>
 
-            <h5 class="optionhead">Prov�st zm�ny n�zvu m�sta v existuj�c�ch ud�lostech</h5>
+            <h5>Prov�st zm�ny n�zvu m�sta v existuj�c�ch ud�lostech</h5>
             <p>Toto za�krtnut� pol��ko (viditeln� pouze p�i �prav� existuj�c�ho m�sta) ozna�uje, �e budou p�i ulo�en� zm�n
                 aktualizov�ny v�echny ud�losti, kde je toto m�sto pou�ito.</p>
 
@@ -146,7 +146,7 @@ echo help_header("N�pov�da: M�sta");
             <p>Kliknut�m na tuto z�lo�ku lze p�ezkoumat a slou�it n�zvy m�st, kter� jsou lehce odli�n�, ale odkazuj� na stejn� m�sto.
                 Mus�te rozhodnout, zda jsou tyto z�znamy toto�n� nebo ne.</p>
 
-            <h5 class="optionhead">Naj�t kandid�ty pro slou�en�</h5>
+            <h5>Naj�t kandid�ty pro slou�en�</h5>
             <p>Pokud je ve va�em Z�kladn�m nastaven� konfigurov�no, �e m�sta jsou spojena se stromy, uvid�te zde v�b�rov� pole Strom. V tomto p��pad�
                 vyberte strom.
                 Nelze slu�ovat m�sta z r�zn�ch strom�, tak�e lze vybrat pouze jeden strom. Pot� zadejte v�b�rov� krit�ria,
@@ -157,7 +157,7 @@ echo help_header("N�pov�da: M�sta");
                 <em>TU</em>
                 a do druh�ho <em>Trutnov</em>. Po dokon�en� z�pisu krit�ri� klikn�te na "Pokra�ovat".</p>
 
-            <h5 class="optionhead">Vybrat m�sta pro slou�en�</h5>
+            <h5>Vybrat m�sta pro slou�en�</h5>
             <p>Pod t�mto nadpisem uvid�te seznam v�sledk�, kter� odpov�daj� va�im v�b�rov�m krit�ri�m. Pokud n�kter� z nich odkazuj� na stejn�
                 um�st�n�,
                 za�krtn�te pol��ko ozna�en� "Slou�it tyto (vymazat)" nalevo od ka�d�ho. Ka�d� vybran� ��dek z�erven�. D�le klikn�te na p�ep�na� ve
@@ -184,12 +184,12 @@ echo help_header("N�pov�da: M�sta");
             <a id="geo"><h4 class="subheadbold">Geok�dovat</h4></a>
             <p>N�stroj Geok�dov�n� lze pou��t k nalezen� a ulo�en� sou�adnic zem�pisn� ���ky a d�lky pro m�sta, kter� tyto �daje neobsahuj�.</p>
 
-            <h5 class="optionhead">Omezen�</h5>
+            <h5>Omezen�</h5>
             <p>D�lka trv�n� tohoto procesu z�le�� na po�tu m�st, kter� je pot�eba geok�dovat. Google tak� omezuje po�et m�st na 2500 denn�. Z t�chto
                 d�vod� m��ete omezit po�et m�st, kter� maj� b�t ok�dov�na najednou.
                 V�choz� po�et je 100. Pokud zjist�te, �e prvn�ch 100 m�st prob�hlo rychle, m��ete v dal�� d�vce tento po�et zv��it.</p>
 
-            <h5 class="optionhead">Pokud bude pro jedno m�sto nalezeno v�ce v�sledk�:</h5>
+            <h5>Pokud bude pro jedno m�sto nalezeno v�ce v�sledk�:</h5>
             <p>Je-li n�zev m�sta nejednozna�n�, Google m��e vr�tit v�ce v�sledk�. V tomto p��pad� doporu�ujeme odm�tnout v�echny vr�cen� v�sledky
                 (tak�e m��ete
                 dohled�n� prov�st pozd�ji ru�n�), ale m��ete tak� zvolit, aby TNG akceptoval prvn� nalezen� v�sledek.</p>

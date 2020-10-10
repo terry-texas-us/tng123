@@ -29,7 +29,7 @@ echo help_header("Nápověda: Nastavení schémat");
         <td class="tngshadow">
             <a id="ped"><h4 class="subheadbold">Předkové</h4></a>
 
-            <h5 class="optionhead">Výchozí zobrazení</h5>
+            <h5>Výchozí zobrazení</h5>
             <p>Pomocí této volby nastavíte výchozí formát schématu předků. Je-li vybráno Standardně, všechna data narození, sňatku a úmrtí/pohřbu
                 (jsou-li k dispozici) budou vložena do skrytého vyskakovacího rámečku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou
                 data k dispozici,
@@ -42,60 +42,60 @@ echo help_header("Nápověda: Nastavení schémat");
                 Volba Svisle zobrazí výchozí osobu dole a předkové osoby budou zobrazeni nad ní.
                 Po zobrazení výchozího formátu má uživatel vždy možnost přepnout mezi jednotlivými typy.</p>
 
-            <h5 class="optionhead">Maximální počet generací</h5>
+            <h5>Maximální počet generací</h5>
             <p>Maximální počet generací, které povolíte uživateli zobrazit najednou.</p>
 
-            <h5 class="optionhead">Výchozí počet generací</h5>
+            <h5>Výchozí počet generací</h5>
             <p>Počet generací, které budou zobrazeny na začátku. Není-li nic specifikováno, bude tato hodnota nastavena na 4.</p>
 
-            <h5 class="optionhead">Partneři ve vyskakovacích oknech</h5>
+            <h5>Partneři ve vyskakovacích oknech</h5>
             <p>Používají-li se vyskakovací okna, zaškrtnutím této volby budou do vyskakovacích rámečků vloženy odkazy na partnery. Ve výchozím stavu
                 není zaškrtnuto.</p>
 
-            <h5 class="optionhead">Děti ve vyskakovacích oknech</h5>
+            <h5>Děti ve vyskakovacích oknech</h5>
             <p>Používají-li se vyskakovací okna a volba Partneři ve vyskakovacích oknech je zaškrtnuta, zaškrtnutím této volby budou do vyskakovacích
                 rámečků vloženy odkazy na děti. Ve výchozím stavu není zaškrtnuto.</p>
 
-            <h5 class="optionhead">Odkazy na schémata ve vyskakovacích oknech</h5>
+            <h5>Odkazy na schémata ve vyskakovacích oknech</h5>
             <p>Používají-li se vyskakovací okna (a volby Partneři nebo děti ve vyskakovacích oknech jsou zaškrtnuty), zaškrtnutím této volby budou do
                 vyskakovacích rámečků vloženy odkazy na schémata partnerů a dětí.
                 Ve výchozím stavu je zaškrtnuto.</p>
 
-            <h5 class="optionhead">Skrýt prázdné rámečky</h5>
+            <h5>Skrýt prázdné rámečky</h5>
             <p>Výběrem 'Ano' odstraníte ze schématu prázdné rámečky.</p>
 
-            <h5 class="optionhead">Šířka rámečku (bez vyskakovacích oken)</h5>
+            <h5>Šířka rámečku (bez vyskakovacích oken)</h5>
             <p>Pevná šířka všech rámečků schématu (v pixelech), nepoužívají-li se vyskakovací okna. Výchozí hodnota je 211. Bude-li zadání číslo menší
                 než 21, bude použito 21.
                 Použité číslo by mělo být vždy liché, takže bude-li vloženo sudé číslo, bude zvětšeno o 1.</p>
 
-            <h5 class="optionhead">Výška rámečku (bez vyskakovacích oken)</h5>
+            <h5>Výška rámečku (bez vyskakovacích oken)</h5>
             <p>Výška všech rámečků schématu (v pixelech), nepoužívají-li se vyskakovací okna, jestliže není specifikované nenulové posunutí výšky
                 rámečku (viz níže), v tomto případě je Výška rámečku
                 výškou prvního rámečku ve schématu. Výchozí hodnota je 121. Bude-li zadání číslo menší než 21, bude použito 21. Použité číslo by mělo
                 být vždy liché, takže bude-li vloženo sudé číslo, bude zvětšeno o 1.</p>
 
-            <h5 class="optionhead">Zarovnání rámečku (bez vyskakovacích oken)</h5>
+            <h5>Zarovnání rámečku (bez vyskakovacích oken)</h5>
             <p>Zarovnání údajů, které se objeví v zobrazeném vyskakovacím okně.
                 Pozn.: Data a místa budou vždy zarovnána doleva, ale blok, který je obsahuje, bude zarovnán podle tohoto nastavení.</p>
 
-            <h5 class="optionhead">Posunutí výšky rámečku (bez vyskakovacích oken)</h5>
+            <h5>Posunutí výšky rámečku (bez vyskakovacích oken)</h5>
             <p>Hodnota, podle které by se měla výška rámečků schématu měnit u dalších generací (v pixelech), když se nepoužívají vyskakovací okna.
                 Mělo by to být záporné číslo. Výchozí hodnota je -2. Je-li vložena hodnota 0, neobjeví se v rozměrech rámečku žádná změna.
                 Použité číslo by mělo být vždy liché, takže bude-li vloženo sudé číslo, bude zvětšeno o 1.</p>
 
             <h3>Svislé schéma</h3>
 
-            <h5 class="optionhead">Šířka rámečku</h5>
+            <h5>Šířka rámečku</h5>
             <p>Šířka rámečku se jménem v pixelech ve svislém schématu.</p>
 
-            <h5 class="optionhead">Výška rámečku</h5>
+            <h5>Výška rámečku</h5>
             <p>Výška rámečku se jménem v pixelech ve svislém schématu.</p>
 
-            <h5 class="optionhead">Vzdálenost mezi rámečky</h5>
+            <h5>Vzdálenost mezi rámečky</h5>
             <p>Vodorovná vzdálenost v pixelech mezi rámečky se jmény.</p>
 
-            <h5 class="optionhead">Velikost jména v rámečku</h5>
+            <h5>Velikost jména v rámečku</h5>
             <p>Velikost písma (v bodech) u jmen zobrazených ve svislém schématu.</p>
 
             <h3>Vějířový graf</h3>
@@ -110,7 +110,7 @@ echo help_header("Nápověda: Nastavení schémat");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="desc"><h4 class="subheadbold">Potomci</h4></a>
 
-            <h5 class="optionhead">Výchozí zobrazení</h5>
+            <h5>Výchozí zobrazení</h5>
             <p>Pomocí této volby nastavíte výchozí formát potomků. Je-li vybráno Standardně, všechna data narození, sňatku a úmrtí/pohřbu
                 (jsou-li k dispozici) budou vložena do skrytého vyskakovacího rámečku. Fotografie osoby bude zobrazena (pokud existuje). Tam, kde jsou
                 data k dispozici,
@@ -121,21 +121,21 @@ echo help_header("Nápověda: Nastavení schémat");
                 verze schématu potomků (žádné rámečky ani vyskakovací okna). Formát Registr zobrazí stejné informace ve stylu vyprávění.
                 Po zobrazení výchozího formátu má uživatel vždy možnost přepnout mezi jednotlivými typy.</p>
 
-            <h5 class="optionhead">Maximální počet generací</h5>
+            <h5>Maximální počet generací</h5>
             <p>Maximální počet generací, které povolíte uživateli zobrazit najednou.</p>
 
-            <h5 class="optionhead">Výchozí počet generací</h5>
+            <h5>Výchozí počet generací</h5>
             <p>Počet generací, které budou zobrazeny na začátku. Není-li nic specifikováno, bude tato hodnota nastavena na 4.</p>
 
-            <h5 class="optionhead">Spuštění schématu potomků</h5>
+            <h5>Spuštění schématu potomků</h5>
             <p>Vyberte, zda chcete spustit schémata potomků založená na textu se všemi generacemi rozbalenými nebo sbalenými. Uživatel bude mít vždy
                 možnost
                 rodiny sbalit nebo rozbalit.</p>
 
-            <h5 class="optionhead">Zobrazit poznámky v Registru</h5>
+            <h5>Zobrazit poznámky v Registru</h5>
             <p>Označuje, zda budou poznámky k osobě nebo rodině zobrazeny na stránce Registru.</p>
 
-            <h5 class="optionhead">Generace v Registru</h5>
+            <h5>Generace v Registru</h5>
             <p>Vyberte, zda chcete při zobrazení generace zobrazit všechny osoby nebo počet osob omezit výběrem "Odstranit osoby bez rodin".
                 Podle této volby budou zobrazeny pouze osoby, když se objeví jako děti. Nebudou však zobrazeny znovu,
                 když bude jejich celá generace popsána v reportu později.</p>
@@ -147,20 +147,20 @@ echo help_header("Nápověda: Nastavení schémat");
 
             <p style="float:right;"><a href="#top">Top</a></p>
             <a id="rel"><h4 class="subheadbold">Schéma příbuzenských vztahů</h4></a>
-            <h5 class="optionhead">Výchozí počet vztahů</h5>
+            <h5>Výchozí počet vztahů</h5>
             <p>Tato hodnota udává počet příbuzenských vztahů, které bude TNG hledat při prvním spuštění schématu příbuzenských vztahů. Po nalezení
                 tohoto
                 počtu vztahů se proces zastaví. Pokud váš strom neobsahuje komplikované příbuzenské vztahy, můžete tuto hodnotu nastavit
                 na 1, abyste ušetřili čas průběhu.</p>
 
-            <h5 class="optionhead">Maximální počet vztahů</h5>
+            <h5>Maximální počet vztahů</h5>
             <p>Pokud si uživatel myslí, že existuje více příbuzenských vztahů, může toto číslo zvýšit a TNG se je pokusí nalézt.
                 Toto číslo uvádí maximum vztahů, které povolíte programu hledat. Nenastavujte je na vyšší číslo,
                 než je úroveň složitosti vašeho stromu. Čím je číslo nižší, tím více času ušetříte lidem při zobrazení tohoto schématu.
                 Pokud např. mezi dvěma lidmi existuje pouze jeden příbuzenský vztah, ale vy jich budete hledat 5,
                 TNG bude po nalezení prvního vztahu dále hledat marně.</p>
 
-            <h5 class="optionhead">Maximální počet generací</h5>
+            <h5>Maximální počet generací</h5>
             <p>Maximální počet generací, které povolíte návštěvníkovi na stránce příbuzenských vztahů najednou prohledat. Může to být na této stránce
                 také výchozí počet.</p>
 
@@ -171,19 +171,19 @@ echo help_header("Nápověda: Nastavení schémat");
 
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="time"><h4 class="subheadbold">Schéma časové osy</h4></a>
-            <h5 class="optionhead">Výchozí šířka schématu</h5>
+            <h5>Výchozí šířka schématu</h5>
             <p>Výchozí šířka schématu délky života v pixelech. Návštěvníci si mohou šířku změnit na horním okraji obrazovky.</p>
 
-            <h5 class="optionhead">Povolit časovou linii Simile</h5>
+            <h5>Povolit časovou linii Simile</h5>
             <p>Výběrem volby "Ano" můžete vedle standardní časové linie TNG také na stejné stránce zobrazit schéma časové linie Simile. Více
                 informací o schématu časové linie Simile můžete najít na <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.
             </p>
 
-            <h5 class="optionhead">Výška schématu</h5>
+            <h5>Výška schématu</h5>
             <p>Výška časové osy událostí (Simile) v pixelech. Je-li zobrazeno mnoho událostí najednou, mohou být některé vytlačeny
                 mimo viditelnou oblast schématu. Pokud se vám zdá, že se to stalo, mohlo by zvýšení této hodnoty pomoci.</p>
 
-            <h5 class="optionhead">Které události zahrnout</h5>
+            <h5>Které události zahrnout</h5>
             <p>Ovlivní, které události budou v časové ose událostí zahrnuty. Můžete vybrat zobrazení všech událostí nebo jenom těch, které spadají
                 do období života osob ve schématu. Pokud máte mnoho událostí, výběrem zobrazení všech může mít za následek,
                 že se schéma poprvé zobrazí pomaleji.</p>
@@ -219,25 +219,25 @@ echo help_header("Nápověda: Nastavení schémat");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="common"><h4 class="subheadbold">Společné prvky</h4></a>
 
-            <h5 class="optionhead">Odsazení zleva</h5>
+            <h5>Odsazení zleva</h5>
             <p>Vodorovný posun, který bude použit u celého schématu (v pixelech). Lze tím např. zajistit, aby schéma nepřekrývalo
                 okraj obrázku, menu nebo textu, které by mohly být na levém okraji. Výchozí hodnota je 10. Zadáte-li zápornou hodnotu, bude použita
                 0.</p>
 
-            <h5 class="optionhead">Velikost jména v rámečku</h5>
+            <h5>Velikost jména v rámečku</h5>
             <p>Velikost (v bodech) všech jmen ve schématu. V žádném případě není možno snížit toto hodnotu na méně než
                 7 bodů. Výchozí hodnota je 12.</p>
 
-            <h5 class="optionhead">Velikost data v rámečku</h5>
+            <h5>Velikost data v rámečku</h5>
             <p>Velikost (v bodech) ostatních údajů ve schématu (data a místa). V žádném případě není možno snížit toto hodnotu na méně než
                 7 bodů. Výchozí hodnota je 10.</p>
 
-            <h5 class="optionhead">Barva rámečku</h5>
+            <h5>Barva rámečku</h5>
             <p>Barva pozadí, která bude použita ve všech rámečcích schématu, pokud není specifikována nenulová hodnota Posunu barvy, v tomto případě
                 je jedná o definici barvy
                 pozadí prvního rámečku ve schématu. Výchozí hodnota je #CCCC99 (khaki; bílá je #FFFFFF).</p>
 
-            <h5 class="optionhead">Posun barvy</h5>
+            <h5>Posun barvy</h5>
             <p>Hodnota v procentech, která definuje, jak by měla být hodnota barvy "posunuta" nahoru nebo dolů (k bílé nebo k černé) v rozsahu všech
                 zobrazených generací. Zadaná hodnota by měla být mezi -100 a 100. Zadáte-li hodnotu 0, rámečky v celém schématu (mimo ty, které jsou
                 prázdné &#151; viz Barva prázdných)
@@ -245,26 +245,26 @@ echo help_header("Nápověda: Nastavení schémat");
                 k bílé tak, jak
                 jsou rámečky zobrazeny od první generace k poslední (záporné hodnoty posunou barvu směrem k černé).</p>
 
-            <h5 class="optionhead">Barva prázdných rámečků</h5>
+            <h5>Barva prázdných rámečků</h5>
             <p>Barva pozadí, která bude použita ve všech rámečcích schématu, ve kterých nejsou žádné údaje. Výchozí hodnota je #CCCCCC (stříbrná).</p>
 
-            <h5 class="optionhead">Barva okraje</h5>
+            <h5>Barva okraje</h5>
             <p>Barva, která bude použita na okraje rámečků a spojnice. Výchozí hodnota je #000000 (černá).</p>
 
-            <h5 class="optionhead">Barva stínu</h5>
+            <h5>Barva stínu</h5>
             <p>Barva, která bude použita pro stíny. Výchozí hodnota je #999999 (šedá).</p>
 
-            <h5 class="optionhead">Posun stínu</h5>
+            <h5>Posun stínu</h5>
             <p>Posun, který bude použit pro vložení stínu rámečku a spojnice (v pixelech). Záporné číslo bude mít za následek,
                 že bude stín nahoře a vlevo od rámečků a linek. Kladné číslo způsobí, že bude stín dole a vpravo od rámečků a linek. Je-li zadaná
                 hodnota 0,
                 stíny se neobjeví (protože budou striktně pod rámečky a linkami). Výchozí hodnota je 4.</p>
 
-            <h5 class="optionhead">Vodorovné oddělení rámečků</h5>
+            <h5>Vodorovné oddělení rámečků</h5>
             <p>Pevné vodorovné oddělení rámečků schématu mezi jednotlivými generacemi (v pixelech). Výchozí hodnota je 31. Pokud je zadaná hodnota
                 menší než 7, bude použita 7. Použité číslo by mělo být vždy liché, takže bude-li vloženo sudé číslo, bude zvýšeno o 1.</p>
 
-            <h5 class="optionhead">Svislé oddělení rámečků</h5>
+            <h5>Svislé oddělení rámečků</h5>
             <p>Svislé oddělení rámečků schématu mezi jednotlivými generacemi (v pixelech), pokud není specifikována nenulová hodnota Posunutí výšky
                 rámečku, v tomto
                 případě bude Svislé oddělení rámečků pevným vodorovným oddělením rámečků schématu poslední zobrazené generace. Výchozí hodnota je 11.
@@ -273,25 +273,25 @@ echo help_header("Nápověda: Nastavení schémat");
                 výše uvedené
                 může být hodnota zvýšena, je-li to nutné pro zajištění více místa pro stíny a indikátory dalších informací.</p>
 
-            <h5 class="optionhead">Výchozí velikost stránky PDF</h5>
+            <h5>Výchozí velikost stránky PDF</h5>
             <p>Velikost papíru, která bude použita ve všech výstupech do PDF (návštěvníci ji mohou změnit před vytvořením každého výstupu).</p>
 
-            <h5 class="optionhead">Šířka čáry</h5>
+            <h5>Šířka čáry</h5>
             <p>Šířka čáry spojující rámečky ve schématu (v pixelech). Výchozí hodnota je 1. Pokud je zadaná hodnota menší než 1, bude použita 1.</p>
 
-            <h5 class="optionhead">Šířka okraje</h5>
+            <h5>Šířka okraje</h5>
             <p>Šířka okraje kolem rámečku ve schématu (v pixelech). Výchozí hodnota je 1. Pokud je zadaná hodnota menší než 1, bude použita 1.</p>
 
-            <h5 class="optionhead">Barva vyskakovacích oken</h5>
+            <h5>Barva vyskakovacích oken</h5>
             <p>Barva pozadí použitá ve vyskakovacích oknech. Pokud bude ponechána prázdná, bude použita barva, která bude posunuta o jednu barvu od
                 barvy rámečku. Výchozí hodnota je #DDDDDD (světle šedá). </p>
 
-            <h5 class="optionhead">Velikost textu ve vyskakovacích oknech</h5>
+            <h5>Velikost textu ve vyskakovacích oknech</h5>
             <p>Velikost (v bodech) ostatních údajů (data a místa) uvnitř vyskakovacích oken. V žádném případě není možno snížit toto hodnotu na méně
                 než
                 7 bodů. Výchozí hodnota je 10.</p>
 
-            <h5 class="optionhead">Časové zdržení vyskakovacích oken</h5>
+            <h5>Časové zdržení vyskakovacích oken</h5>
             <p>Pokud se používají vyskakovací okna, jde o počet milisekund, po které zůstane vyskakovací okno viditelné. Výchozí hodnota je 500 (1/2
                 sekundy). Dobu zobrazení vyskakovacího okna
                 mohou ovlivnit dvě podmínky. Za prvé, má-li se objevit další vyskakovací okno, musí to první viditelné zmizet. Za druhé, je-li kursor
@@ -299,33 +299,33 @@ echo help_header("Nápověda: Nastavení schémat");
                 zdržení, které je zde definováno, nebude použito, dokud se kursor nepřesune mimo vyskakovací okno. Znamená to, že vyskakovací okno lez
                 podržet viditelné po nedefinovanou dobu.</p>
 
-            <h5 class="optionhead">Zobrazení vyskakovacího okna</h5>
+            <h5>Zobrazení vyskakovacího okna</h5>
             <p>Akce myši, které jsou třeba pro zobrazení vyskakovacího okna. Tato akce je spojena se šipkou, která označuje, že jsou dostupné další
                 údaje. Je-li vybrána volba
                 Myš dolů, vyskakovací okno se zobrazí při kliknutí na šipku. Je-li vybrána volba Myš přes, vyskakovací okno se zobrazí, když se kursor
                 myši umístí na šipku.</p>
 
-            <h5 class="optionhead">Šířka rámečku (s vyskakovacím oknem)</h5>
+            <h5>Šířka rámečku (s vyskakovacím oknem)</h5>
             <p>Pevná šířka všech rámečků schématu (v pixelech), používají-li se vyskakovací okna. Výchozí hodnota je 151. Bude-li zadání číslo menší
                 než 21, bude použito 21.
                 Použité číslo by mělo být vždy liché, takže bude-li vloženo sudé číslo, bude zvětšeno o 1.</p>
 
-            <h5 class="optionhead">Výška rámečku (s vyskakovacím oknem)</h5>
+            <h5>Výška rámečku (s vyskakovacím oknem)</h5>
             <p>Výška všech rámečků schématu (v pixelech), používají-li se vyskakovací okna, jestliže není specifikované nenulové posunutí výšky
                 rámečku (viz níže), v tomto případě je Výška rámečku
                 výškou prvního rámečku ve schématu. Výchozí hodnota je 60. Bude-li zadáno číslo menší než 21, bude použito 21. Použité číslo by mělo
                 být vždy liché, takže bude-li vloženo sudé číslo, bude zvětšeno o 1.</p>
 
-            <h5 class="optionhead">Zarovnání rámečku (s vyskakovacím oknem)</h5>
+            <h5>Zarovnání rámečku (s vyskakovacím oknem)</h5>
             <p>Zarovnání údajů, které se objeví v rámečku, když se nepoužívají vyskakovací okna.
                 Pozn.: Data a místa budou vždy zarovnána doleva, ale blok, který je obsahuje, bude zarovnán podle tohoto nastavení.</p>
 
-            <h5 class="optionhead">Posunutí výšky rámečku (s vyskakovacím oknem)</h5>
+            <h5>Posunutí výšky rámečku (s vyskakovacím oknem)</h5>
             <p>Hodnota, podle které by se měla výška rámečků schématu měnit u dalších generací (v pixelech).
                 Mělo by to být záporné číslo. Výchozí hodnota je -2. Je-li vložena hodnota 0, neobjeví se v rozměrech rámečku žádná změna.
                 Použité číslo by mělo být vždy liché, takže bude-li vloženo sudé číslo, bude zvětšeno o 1.</p>
 
-            <h5 class="optionhead">Vložit fotografie</h5>
+            <h5>Vložit fotografie</h5>
             <p>Je-li zaškrtnuta tato volba, do rámečků ve schématech budou vloženy náhledy fotografií (používají-li se vyskakovací okna a soubory
                 obrázků byly nalezeny -- viz níže).
                 Výchozí volbou je nezaškrtnuto.</p>

@@ -51,7 +51,7 @@ echo help_header("Help: DNA Tests");
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                     time, click the box in the
                     <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use
@@ -71,47 +71,47 @@ echo help_header("Help: DNA Tests");
                     after it has been saved.</p>
                 <p>Note that fields can be left empty and will not be displayed in most cases.</p>
 
-                <h5 class="optionhead">Test Type</h5>
+                <h5>Test Type</h5>
                 <p>Select the type of DNA test this record refers to. (This is the only mandatory field)</p>
 
-                <h5 class="optionhead">Test Number/Name</h5>
+                <h5>Test Number/Name</h5>
                 <p>Enter the ID number or name associated with this test. If you can't find a number or the vendor didn't give you one, feel free to
                     make
                     up a new number or name. <br><strong>Note </strong> that if you do not enter a value for the Test
                     Number/Name field, you will not have a quick link to edit the DNA data from DNA report screens such as browse_dna_tests.php.</p>
 
-                <h5 class="optionhead">Vendor</h5>
+                <h5>Vendor</h5>
                 <p>Enter the name of the company that supplied the test.</p>
 
-                <h5 class="optionhead">Test Date</h5>
+                <h5>Test Date</h5>
                 <p>This is the date the DNA test was taken if known.</p>
 
-                <h5 class="optionhead">Match Date</h5>
+                <h5>Match Date</h5>
                 <p>This is the date on which your test was matched to the person who took the DNA test.</p>
 
-                <h5 class="optionhead">GEDmatch ID.</h5>
+                <h5>GEDmatch ID.</h5>
                 <p>The ID on GEDmatch web site for this test. Applies to atDNA tests only.</p>
 
-                <h5 class="optionhead">Keep Test Private.</h5>
+                <h5>Keep Test Private.</h5>
                 <p>If you enter Yes to keep this test private, the test display will be restricted to logged in users who have the <strong>Allow
                         Private</strong> privilege. This allows you to restrict access to DNA Tests that you marked as Keep Test Private.
                     The test will be viewable by the TNG Administrator</p>
 
-                <h5 class="optionhead">Person who took this test</h5>
+                <h5>Person who took this test</h5>
                 <p>This is the person who took the test. Select the tree and enter the person's ID, or click the magnifying glass to look up the
                     individual by name. OR you can enter the name of a person not in your database. You must select a tree, even if the
                     person is not in your database in order to resolve the Most Distant Ancestor and Most Common Recent Ancestor IDs.</p>
 
-                <h5 class="optionhead">Keep Name Private</h5>
+                <h5>Keep Name Private</h5>
                 <p>If this box is checked, the name assigned for "Test Taker" will display as "Private" publicly. The name will be viewable to the TNG
                     Administrator</p>
 
-                <h5 class="optionhead">Add Test To A Group</h5>
+                <h5>Add Test To A Group</h5>
                 <p>You can assign a test to a previously created DNA test group.<br>To create a DNA test group go to Admin >> DNA Tests >> and click
                     on
                     the DNA Groups tab. Then click on the Add New tab.</p>
 
-                <h5 class="optionhead">DNA Groups</h5>
+                <h5>DNA Groups</h5>
                 <p>DNA Groups are used to select or filter DNA tests or test_types in a list. You should consider creating your DNA Groups in a
                     meaningul
                     way to restrict the list of tests displayed. For example, you might create a group for your paternal line
@@ -120,7 +120,7 @@ echo help_header("Help: DNA Tests");
                     Note that you DNA Groups are now associated to the test type and you cannot use the same DNA Group name for
                     two different test types.</p>
 
-                <h5 class="optionhead">Haplogroup</h5>
+                <h5>Haplogroup</h5>
                 <p>A haplogroup is a genetic population of people who share a common ancestor on the patrilineal or matrilineal line. Haplogroups are
                     assigned letters of the alphabet (A-T), and refinements (SNPs) consist of additional number and letter
                     combinations. Two separate input fields are provided because some testing companies provide both as estimated haplogroups on atDNA
@@ -187,7 +187,7 @@ echo help_header("Help: DNA Tests");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="mtdna"><h4 class="subheadbold">mtDNA Test Result Fields</h4></a>
 
-                <p><h5 class="optionhead">Mitochondrial DNA (mtDNA) </h5> traces your ancestry from your mother to her mother, her mother's mother,
+                <p><h5>Mitochondrial DNA (mtDNA) </h5> traces your ancestry from your mother to her mother, her mother's mother,
                 and so forth and has two major parts, the control region and the coding region. The control region is often
                 called the hypervariable region (HVR) and is further divided into two hypervariable regions
                 <ul>
@@ -224,7 +224,7 @@ echo help_header("Help: DNA Tests");
                 </ul>
                 </p>
 
-                <p><h5 class="optionhead">HVR1/HVR2/Coding region Differences, Extra mutations</h5></p>
+                <p><h5>HVR1/HVR2/Coding region Differences, Extra mutations</h5></p>
                 <p>Enter your mtDNA test results in the provided input fields separated by commas.<br>For example,
                     "A16129G,T16187C,C16189T,T16223C,G16230A,T16278C,C16311T,C16519T".<br>You can also enter the results with a blank after the comma
                     for
@@ -239,7 +239,7 @@ echo help_header("Help: DNA Tests");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="atdna"><h4 class="subheadbold">atDNA Test Result Fields</h4></a>
 
-                <p><h5 class="optionhead">Autosomal DNA (atDNA) </h5> checks your autosomal chromosomes, that is the other 22 pairs beyond the
+                <p><h5>Autosomal DNA (atDNA) </h5> checks your autosomal chromosomes, that is the other 22 pairs beyond the
                 sex-linked X and Y chromosomes. Autosomal DNA tests may help identify relatives who share recent ancestors. The
                 more segments you share and the greater the length of those segments, the more closely related you are.</p>
 
@@ -291,18 +291,18 @@ echo help_header("Help: DNA Tests");
 
                 <p>The following fields are common to all test types>/p>
 
-                <h5 class="optionhead">Most distant ancestor</h5>
+                <h5>Most distant ancestor</h5>
                 <p>Enter the most distant paternal (Y-DNA) or maternal (mtDNA) ancestor's of the person taking the test. Different Y-DNA and mtDNA
                     testers
                     might have different most distant ancestors depending on how far back they have taken their paper
                     trail.</p>
 
-                <h5 class="optionhead">Most recent common ancestor</h5>
+                <h5>Most recent common ancestor</h5>
                 <p>Enter the personID of the most recent common ancestor(MRCA). The MRCA is the shared common ancestor between two or more test
                     takers.
                     The MRCA might be different depending where the lines meet between the test takers. </p>
 
-                <h5 class="optionhead">Ancestral surnames</h5>
+                <h5>Ancestral surnames</h5>
                 <p>This field applies to all test types and will be auto-filled with comma separated ancestral surnames of the person who took the
                     Y-DNA
                     and mtDNA tests only<br>The surnames returned depends on the test type and you may edit any way you
@@ -310,23 +310,23 @@ echo help_header("Help: DNA Tests");
                     UNKNOWN and an option to display the surnames in uppercase.<br>There is now also an option for how many
                     generations of your family tree the ancestral surnames will be returned for atDNA tests</p>
 
-                <h5 class="optionhead">Notes</h5>
+                <h5>Notes</h5>
                 <p>Enter any notes associated with the test, or any other information you might have.</p>
 
-                <h5 class="optionhead">Administrator notes</h5>
+                <h5>Administrator notes</h5>
                 <p>The same as notes but only displayed for users with administrator rights.</p>
 
-                <h5 class="optionhead">Relevant Links</h5>
+                <h5>Relevant Links</h5>
                 <p>If there are web sites or pages associated with this test, enter them here. Put each link on a new line. Enter the site or page
                     title
                     and the URL, separated by a comma. For example, "Ancestry.com,https://www.ancestry.com". If you don't
                     include the site or page title, the link itself will be used as the title.</p>
 
-                <h5 class="optionhead">Media</h5>
+                <h5>Media</h5>
                 <p>Here you can assign photos to a test by entering the mediaID of each photo.<br>Separate multiple entries with a comma. For example,
                     "4361,5992"</p>
 
-                <h5 class="optionhead">Test Information To Display</h5>
+                <h5>Test Information To Display</h5>
                 <p>Check the box next to any information you want displayed on a person's page (getperson.php).<br>All supplied info will be displayed
                     on
                     each test's page (show_dna_test.php).</p>
@@ -352,7 +352,7 @@ echo help_header("Help: DNA Tests");
                     to
                     that test.</p>
 
-                <h5 class="optionhead">Test Links</h5>
+                <h5>Test Links</h5>
                 <p>You can link this test to individuals in your database. For each link, first select the tree associated with the link entity.
                     Next, enter the ID number of the person to link then click on the "Add" button to create the link.</p>
 

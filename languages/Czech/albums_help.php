@@ -35,7 +35,7 @@ echo help_header("N�pov�da: Alba");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho alba v�m umo�n� upravit, vymazat nebo zobrazit n�hled tohoto alba.</p>
 
         </td>
@@ -52,21 +52,21 @@ echo help_header("N�pov�da: Alba");
                 kter� m� album obsahovat, a
                 odkazy na osobu, rodinu a jin� entity, m��ete p�idat po ulo�en� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">N�zev alba</h5>
+            <h5>N�zev alba</h5>
             <p>N�zev va�eho alba.</p>
 
-            <h5 class="optionhead">Popis</h5>
+            <h5>Popis</h5>
             <p>Kr�tk� popis alba nebo polo�ek, kter� obsahuje.</p>
 
-            <h5 class="optionhead">Kl��ov� slova</h5>
+            <h5>Kl��ov� slova</h5>
             <p>Jak�koli po�et kl��ov�ch slov mimo n�zev alba a popis, kter� maj� b�t pou�ita p�i vyhled�v�n� tohoto alba.</p>
 
-            <h5 class="optionhead">Aktivn�</h5>
+            <h5>Aktivn�</h5>
             <p>Je-li album ozna�eno jako "Aktivn�", bude zobrazeno na va�ich str�nk�ch ve ve�ejn�m seznamu. Je-li p��znak Aktivn� nastaven na "Ne",
                 n�v�t�vn�ci va�ich str�nek
                 toto album vid�t nebudou.</p>
 
-            <h5 class="optionhead">V�dy viditeln�</h5>
+            <h5>V�dy viditeln�</h5>
             <p>Je-li aktivn� album ozna�eno jako "V�dy viditeln�" a je p�ipojeno k osob�, rodin�, pramenu nebo �lo�i�ti pramen�, bude na str�nk�ch u
                 t�chto entit v�dy viditeln�, i kdy� je
                 p�ipojeno k �ij�c� osob� nebo rodin�. Jinak jsou aktivn� alba nebo m�dia, kter� jsou p�ipojen� k �ij�c�m osob�m, skryta pro
@@ -74,7 +74,7 @@ echo help_header("N�pov�da: Alba");
                 kte�� nemaj� opr�vn�n� prohl�et data �ij�c�ch osob.
             </p>
 
-            <h5 class="optionhead">Pole, kter� mus� b�t vypln�na:</h5>
+            <h5>Pole, kter� mus� b�t vypln�na:</h5>
             <p>N�zev alba je jedin� pole, kter� je nutn� vyplnit, ale je ve va�em z�jmu
                 vyplnit i ostatn� pole.</p>
         </td>
@@ -88,7 +88,7 @@ echo help_header("N�pov�da: Alba");
                 vedle tohoto alba.
                 V�znam n�sleduj�c�ch pol�, kter� nejsou na str�nce "P�idat nov� album":</p>
 
-            <h5 class="optionhead">M�dia v albu</h5>
+            <h5>M�dia v albu</h5>
             <p>Chcete-li do alba p�idat m�dia, klikn�te na tla��tko "P�idat m�dium", a pot� pou�ijte formul�� v zobrazen�m okn� pro v�b�r m�di� z
                 polo�ek, kter� obsahuje
                 va�e datab�ze. M��ete pou��t Kolekce a/nebo Strom (ob� volby jsou nepovinn�), pot� do pole "Naj�t" zapi�te ��st n�zvu alba nebo popisu
@@ -119,7 +119,7 @@ echo help_header("N�pov�da: Alba");
 
             <p>Kliknut�m na ikonu dvojit� �ipky napravo od oblasti "T�hnout" m��ete polo�ku p�esunout p��mo na �eln� m�sto seznamu.</p>
 
-            <h5 class="optionhead">Odkazy na album</h5>
+            <h5>Odkazy na album</h5>
             <p>Toto album m��ete p�ipojit k osob�, rodin�, pramenu, �lo�i�ti pramen� nebo m�stu. Pro ka�d� p�ipojen� nejprve vyberte strom spojen� s
                 entitou, kterou chci p�ipojit.
                 D�le vyberte typ propojen� (osoba, rodina, pramen, �lo�i�t� pramen� nebo m�st), a na z�v�r zapi�te ��slo ID nebo n�zev (pouze u m�st)
@@ -158,18 +158,18 @@ echo help_header("N�pov�da: Alba");
                 byla k t�to entit� p�ipojena. Chcete-li
                 toto po�ad� zm�nit, nov� po�ad� nastav�te na z�lo�ce Album/T��dit.</p>
 
-            <h5 class="optionhead">Strom, Typ odkazu, Kolekce:</h5>
+            <h5>Strom, Typ odkazu, Kolekce:</h5>
             <p>Vyberte strom spojen� s entitou, u kter� chcete t��dit alba. Pot� vyberte typ odkazu (osoba, rodina, pramen, �lo�i�t� pramen� nebo
                 m�sto) a
                 kolekci, kterou chcete t��dit.</p>
 
-            <h5 class="optionhead">ID:</h5>
+            <h5>ID:</h5>
             <p>Zapi�te ��slo ID nebo n�zev (pouze u m�sta) entity. Pokud nezn�te ID ��slo nebo p�esn� n�zev m�sta, klikn�te na ikonu lupy pro
                 vyhled�n� t�chto �daj�.
                 Po nalezen� po�adovan� entity klikn�te na odkaz "Vybrat" vedle t�to entity. Zobrazen� okno se uzav�e a vybran� ID ��slo se objev� v
                 poli ID ��slo.</p>
 
-            <h5 class="optionhead">Procedura �azen�</h5>
+            <h5>Procedura �azen�</h5>
             <p>Po v�b�ru nebo zaps�n� ID ��sla klikn�te na tla��tko "Pokra�ovat" pro zobrazen� v�ech alb pro vybranou entitu a kolekci v jejich
                 aktu�ln�m po�ad�.
                 Chcete-li v alba p�e�adit, klikn�te na oblast "T�hnout" u ur�it� polo�ky a p�i stisknut�m tla��tku my�i p�et�hn�te polo�ku na

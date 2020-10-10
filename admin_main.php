@@ -24,7 +24,7 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";
     $menu .= $iconstr;
     if ($number) {
-        $menu .= "<div class='admintotal' style='float: right;'><strong>" . number_format($number) . "</strong></div>\n";
+        $menu .= "<div class='admintotal float-right'><strong>" . number_format($number) . "</strong></div>\n";
     }
     $menu .= "<div class='adminsubhead'><strong>$label</strong></div>\n";
     $menu .= $msgstr;
@@ -242,7 +242,7 @@ tng_adminheader($admtext['administration'], "");
                 <div class="tngmsgarea">
                     <a href="#" onclick="return toggleMsg('msgs','plus0');" class="togglehead">
                         <img src="img/tng_expand.gif" title="toggle display" alt="toggle display" id="plus0">
-                        <strong class="th-indent adminsubhead"><?php echo $admtext['tasks']; ?></strong>
+                        <strong class="adminsubhead ml-1"><?php echo $admtext['tasks']; ?></strong>
                     </a>
                     <div id="msgs" style="display:none;">
                         <hr>

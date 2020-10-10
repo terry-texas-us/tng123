@@ -2,7 +2,7 @@
 ?>
 <table class="sntable">
     <tr>
-        <td class="sncol">
+        <td class="sncol align-top">
             <?php
             $wherestr = $tree ? "WHERE gedcom = '$tree'" : "";
             $treestr = $orgtree ? "&amp;tree=$tree" : "";
@@ -41,8 +41,8 @@
                     $num_in_col_ctr++;
                     if ($num_in_col_ctr == $num_in_col) {
                         echo "</td>\n";
-                        echo "<td class=\"table-dblgutter\">&nbsp;&nbsp;</td>\n";
-                        echo "<td class=\"sncol\">";
+                        echo "<td class='table-dblgutter'>&nbsp;&nbsp;</td>\n";
+                        echo "<td class='sncol align-top'>";
                         $num_in_col_ctr = 0;
                     }
                 }

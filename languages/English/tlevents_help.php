@@ -44,7 +44,7 @@ echo help_header("Help: Timeline Events");
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each search result allow you to edit or delete that result. To delete more than one timeline event at a
                     time, click the box in the
                     <strong>Select</strong> column for each event to be deleted, then click the "Delete Selected" button at the top of the list. Use
@@ -70,17 +70,17 @@ echo help_header("Help: Timeline Events");
                     the <a href="#search">Search</a> tab to locate the event, then click on the Edit icon next to that line.
                     When adding or editing a timeline event, take note of the following:</p>
 
-                <h5 class="optionhead">Start Date / End Date</h5>
+                <h5>Start Date / End Date</h5>
                 <p>Select all known components (day, month, year) of the event Start and End Dates. Only the year of the Start Date is required.
                     If any part of the End Date is entered, the year is required there as well.</p>
 
-                <h5 class="optionhead">Event Title</h5>
+                <h5>Event Title</h5>
                 <p>Enter a very short title for the event. For example, <em>Sinking of the Titanic</em> or <em>World War I</em>. This field was added
                     in
                     TNG 9.0. Timeline
                     events added prior to that version will not have a title. In those cases the EVent Detail will be used as the title.</p>
 
-                <h5 class="optionhead">Event Detail</h5>
+                <h5>Event Detail</h5>
                 <p>Enter a brief description of the event. It should not be more than few sentences long.</p>
 
             </td>

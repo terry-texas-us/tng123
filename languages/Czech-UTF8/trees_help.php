@@ -35,7 +35,7 @@ echo help_header("Nápověda: Stromy");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo přidat označení k tomuto stromu.</p>
 
         </td>
@@ -61,39 +61,39 @@ echo help_header("Nápověda: Stromy");
             <p>Chcete-li přidat nový strom, klikněte na záložku <strong>Přidat nový</strong> a pak vyplňte formulář.
                 Význam polí je následující:</p>
 
-            <h5 class="optionhead">ID číslo stromu</h5>
+            <h5>ID číslo stromu</h5>
             <p>Toto by měl být krátký, jednoznačný, jednoslovný identifikátor stromu. Musí obsahovat pouze alfanumerické znaky (číslice a písmena).
                 Nepoužívejte písmena
                 s diakritikou a mezery. Tento údaj se nikde nezobrazuje, s výjimkou řádku adresy ve vašem prohlížeči, takže může být zapsán pouze
                 malými písmeny. Později tento údaj nelze změnit.
                 Délka max. 20 znaků.</p>
 
-            <h5 class="optionhead">Název stromu:</h5>
+            <h5>Název stromu:</h5>
             <p>Krátký název nebo fráze, která se bude zobrazovat a identifikovat strom. Objeví se na všech místech výběru stromu a podle tohoto názvu
                 budou uživatelé strom znát.</p>
 
-            <h5 class="optionhead">Popis:</h5>
+            <h5>Popis:</h5>
             <p>Delší popis tohoto stromu nebo dat, která obsahuje.</p>
 
-            <h5 class="optionhead">Majitel:</h5>
+            <h5>Majitel:</h5>
             <p>Osoba nebo organizace, která vytvořila nebo shromáždila údaje v tomto stromě, nebo osoba či organizace odpovědná za správu těchto
                 údajů.</p>
 
-            <h5 class="optionhead">Email:</h5>
+            <h5>Email:</h5>
             <p>Emailová adresa majitele. Návrhy týkající se osob v tomto stromu budou posílány na tuto adresu, pokud existuje (jinak budou návrhy
                 posílány na adresu uvedenou v Základním nastavení).</p>
 
-            <h5 class="optionhead">Adresa/město/kraj/PSČ/země/telefon:</h5>
+            <h5>Adresa/město/kraj/PSČ/země/telefon:</h5>
             <p>Kontaktní údaje majitele.</p>
 
-            <h5 class="optionhead">Informace o majiteli zachovat neveřejné</h5>
+            <h5>Informace o majiteli zachovat neveřejné</h5>
             <p>Zaškrtnutím tohoto políčka skryjete emailovou adresu a jiné kontaktní údaje majitele tohoto stromu (pro návštěvníky ve veřejné
                 oblasti).</p>
 
-            <h5 class="optionhead">Nepovolit uživatelům stáhnutí souborů GEDCOM</h5>
+            <h5>Nepovolit uživatelům stáhnutí souborů GEDCOM</h5>
             <p>Zaškrtnutím tohoto políčka zabráníte uživatelům stáhnout z tohoto stromu soubory GEDCOM.</p>
 
-            <h5 class="optionhead">Nepovolit uživatelům tvorbu souborů PDF</h5>
+            <h5>Nepovolit uživatelům tvorbu souborů PDF</h5>
             <p>Zaškrtnutím tohoto políčka zabráníte uživatelům vytvořit z tohoto stromu soubory PDF.</p>
 
         </td>

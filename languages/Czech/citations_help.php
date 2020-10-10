@@ -51,7 +51,7 @@ echo help_header("N�pov�da: Citace");
 
             <p>P�i p�id�n� nebo �prav� citace si v�imn�te n�sleduj�c�ho:</p>
 
-            <h5 class="optionhead">ID ��slo pramenu</h5>
+            <h5>ID ��slo pramenu</h5>
             <p>Zapi�te ID ��slo pramenu, kter� m� b�t citov�n, nebo klikn�te na tla��tko "Naj�t" pro jeho nalezen�. Pokud pramen je�t� nebyl vytvo�en,
                 p�ejd�te do Admin/Prameny a vytvo�te pramen v p��slu�n�m strom�. Pot� se vra�te do seznamu citac� nebo m��ete kliknout na tla��tko
                 "Vytvo�it"
@@ -60,23 +60,23 @@ echo help_header("N�pov�da: Citace");
                 "Kop�rovat posledn�". Kliknut�
                 na toto tla��tko budou v�echna pole vypln�na stejn�mi �daji, jako jste pou�ili ve sv� minul� citaci.</p>
 
-            <!--<h5 class="optionhead">Description</h5>
+            <!--<h5>Description</h5>
         <p>If your desktop genealogy program does not assign ID numbers to your sources, your citation will have a Description instead. You will not see
         the Description field for a new citation.</p>-->
 
-            <h5 class="optionhead">Strana</h5>
+            <h5>Strana</h5>
             <p>Zapi�te str�nku, na kter� se ve vybran�m pramenu nach�z� tato ud�lost (voliteln�).</p>
 
-            <h5 class="optionhead">V�rohodnost</h5>
+            <h5>V�rohodnost</h5>
             <p>Vyberte ��slo (0-3), kter� ozna�uje, na kolik je tento pramen v�rohodn� (voliteln�). Vy��� ��sla ozna�uj� v�t�� v�rohodnost.</p>
 
-            <h5 class="optionhead">Datum citace</h5>
+            <h5>Datum citace</h5>
             <p>Datum spojen� s touto citac� (voliteln�).</p>
 
-            <h5 class="optionhead">Vlastn� text</h5>
+            <h5>Vlastn� text</h5>
             <p>Kr�tk� v��atek z materi�lu pramenu (voliteln�).</p>
 
-            <h5 class="optionhead">Pozn�mky</h5>
+            <h5>Pozn�mky</h5>
             <p>U�ite�n� pozn�mky, kter� se t�kaj� tohoto pramenu (voliteln�).</p>
 
         </td>

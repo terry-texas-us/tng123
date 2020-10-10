@@ -33,22 +33,22 @@ echo help_header("Nápověda: Hledá se");
                 kategorie přidat nový zápis,
                 klikněte na tlačítko "Přidat nový" pod příslušným nadpisem a poté vyplňte formulář. Význam polí je následující:</p>
 
-            <h5 class="optionhead">Titul</h5>
+            <h5>Titul</h5>
             <p>Vašemu zápisu dejte titul, který může být i otázkou. Např. <em>Kdo je tato osoba?</em> nebo <em>Kdo je otcem Josefa Nováka?</em></p>
 
-            <h5 class="optionhead">Popis</h5>
+            <h5>Popis</h5>
             <p>Vašemu zápisu dejte také krátký popis. Může obsahovat aktuální údaje, které jste shromáždili, překážky, na které jste narazili
                 nebo nějaké konkrétní informace, které hledáte.</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud chcete, můžete spojit tento zápis se stromem (nepovinné).</p>
 
-            <h5 class="optionhead">Osoba</h5>
+            <h5>Osoba</h5>
             <p>Je-li tento zápis úzce spojen s nějakou osobou, zapište ID číslo osoby nebo klikněte na ikonu lupy pro její vyhledání. Po nalezení
                 požadované
                 osoby klikněte na odkaz "Vybrat" a vrátíte se do formuláře Hledá se s vybraným ID číslem.</p>
 
-            <h5 class="optionhead">Vybrat fotografii</h5>
+            <h5>Vybrat fotografii</h5>
             <p>Je-li tento zápis úzce spojen s nějakou fotografií, klikněte na tlačítko "Vybrat fotografii" pro vyhledání této fotografie ze záznamů
                 fotografií
                 z vaší databáze. Po nalezení požadované fotografie klikněte na odkaz "Vybrat" a vrátíte se do formuláře Hledá se s vybraným ID

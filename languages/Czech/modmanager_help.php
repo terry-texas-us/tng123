@@ -145,26 +145,22 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <a id="files">
                 <p class="subheadbold">Konfigura�n� soubory
                 </p></a>
-            <span class="optionhead">Instalov�n� m�d�
-        </span>
+            <h5>Instalov�n� m�d�</h5>
             <p>Informace o pou�it�
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">konfigura�n�ch
                     soubor�</a> k instalaci m�d� najdete na TNG Wiki.
             </p>
-            <span class="optionhead">Interpretace stavu
-        </span>
+            <h5>Interpretace stavu</h5>
             <p>Informace o
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">interpretaci stavu</a>
                 najdete na TNG Wiki.
             </p>
-            <span class="optionhead">Syntaxe konfigura�n�ch soubor�
-        </span>
+            <h5>Syntaxe konfigura�n�ch soubor�</h5>
             <p>Informace o
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Config_File_Syntax" target="_blank">syntaxi konfigura�n�ch
                     soubor�</a> najdete na TNG Wiki.
             </p>
-            <span class="optionhead">Vytvo�en� konfigura�n�ho souboru
-        </span>
+            <h5>Vytvo�en� konfigura�n�ho souboru</h5>
             <p>Informace pro v�voj��e o
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvo�en� konfigura�n�ch
                     soubor�</a> najdete na TNG Wiki.

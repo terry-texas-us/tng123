@@ -40,18 +40,18 @@ echo help_header("Help: More");
                 filled in,
                 the More icon (plus sign) will have a green dot in the corner. Fields on the More Information screen include:</p>
 
-            <p><h5 class="optionhead">Age</h5>: The age of the individual at the time of the event.</p>
+            <p><h5>Age</h5>: The age of the individual at the time of the event.</p>
 
-            <p><h5 class="optionhead">Agency</h5>: The institution or individual having authority and/or responsibility at the time of the event.
+            <p><h5>Agency</h5>: The institution or individual having authority and/or responsibility at the time of the event.
             </p>
 
-            <p><h5 class="optionhead">Cause</h5>: The cause of the event (most often used with Death).</p>
+            <p><h5>Cause</h5>: The cause of the event (most often used with Death).</p>
 
-            <p><h5 class="optionhead">Address 1/Address 2/City/State/Province/Zip/Postal Code/Country/Phone/E-mail/Web Site</h5>: The address and
+            <p><h5>Address 1/Address 2/City/State/Province/Zip/Postal Code/Country/Phone/E-mail/Web Site</h5>: The address and
             other contact information
             associated with the event.</p>
 
-            <p><h5 class="optionhead">Required fields:</h5>
+            <p><h5>Required fields:</h5>
             None of the information here is required.</p>
         </td>
     </tr>

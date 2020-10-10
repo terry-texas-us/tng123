@@ -36,7 +36,7 @@ echo help_header("Pomoc: Repozytoria");
             <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
                 przywraca domyślne wartości i wszystkich wyszukiwań.</p>
 
-            <h5 class="optionhead">Czynność</h5>
+            <h5>Czynność</h5>
             <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
                 jeden rekord jednocześnie, kliknij pole w kolumnie
                 <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
@@ -56,11 +56,11 @@ echo help_header("Pomoc: Repozytoria");
                 dodatkowe wydarzenia)
                 mogą być dodane dopiero po kliknięciu na przycisk Zapisz i kontynuuj lub Zastosuj. Do dyspozycji są następujące pola:</p>
 
-            <h5 class="optionhead">Drzewo</h5>
+            <h5>Drzewo</h5>
             <p>Jeśli masz tylko jedno drzewo, zostanie ono zaznaczone automatycznie. W innym przypadku, należy wybrać drzewo na nowego
                 repozytorium.</p>
 
-            <h5 class="optionhead">ID Repozytorium</h5>
+            <h5>ID Repozytorium</h5>
             <p>ID repozytorium musi być unikalne w obrębie wybranego drzewa i może składać się ze skrótu <strong>REPO</strong> lub litery
                 <strong>R</strong> oraz następujących po nich cyfr (nie więcej niż 22 znaki w sumie).
                 Numer ID jest generowany automatycznie za każdym razem, gdy strona jest wyświetlana po raz pierwszy, ale można także w razie potrzeby
@@ -79,10 +79,10 @@ echo help_header("Pomoc: Repozytoria");
                 (na przykład <strong>I</strong> jest na końcu, nie na początku), możesz zmodyfikować plik "prefixes.php" tak, aby przyjmował inne
                 prefiksy.</p>
 
-            <h5 class="optionhead">Nazwa</h5>
+            <h5>Nazwa</h5>
             <p>Krótka nazwa repozytorium.</p>
 
-            <h5 class="optionhead">Adres 1, Adres 2, Miasto, Województwo, Kod pocztowy, Kraj</h5>
+            <h5>Adres 1, Adres 2, Miasto, Województwo, Kod pocztowy, Kraj</h5>
             <p>Lokalizacja repozytorium (jeśli dotyczy; wszystkie dane opcjonalne).</p>
 
         </td>
@@ -95,14 +95,14 @@ echo help_header("Pomoc: Repozytoria");
             <p>Aby wprowadzić zmiany dotyczące istniejącego repozytorium, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jego
                 zlokalizowania, a następnie kliknąć na ikonkę "Edycja" obok wybranego repozytorium.</p>
 
-            <h5 class="optionhead">Notatki</h5>
+            <h5>Notatki</h5>
             <p>Notatki możesz łączyć z wydarzeniami lub repozytorium klikając na ikony łączy u góry strony lub obok każdego wydarzenia.
                 "Więcej" informacji dla wydarzenia można dodać klikając na ikonkę "Plus ". Jeśli w którejś z kategorii istnieją już jakieś elementy,
                 odpowiednie ikonki oznaczone są zielonymi kropkami w prawym górnym rogu. Aby uzyskać więcej informacji na temat każdej z kategorii,
                 zobacz <em>Pomoc</em> w okienkach,
                 które stają się widoczne, gdy ikona zostanie naciśnięta.</p>
 
-            <h5 class="optionhead">Inne wydarzenia</h5>
+            <h5>Inne wydarzenia</h5>
             <p>Aby dodać lub zarządzać dodatkowymi wydarzeniami, kliknij na przycisk "Dodaj nowe" obok <strong>Inne wydarzenia</strong>. Klikając <a
                     href="events_help.php">Pomoc</a> znajdziesz więcej informacji na temat dodawania nowych wydarzeń.
                 Gdy wydarzenie zostało dodane, pod polem "Dodaj nowe" pokaże się krótkie streszczenie. Przyciski w polu "Czynność" dla każdego
@@ -141,7 +141,7 @@ echo help_header("Pomoc: Repozytoria");
                 przycisk "Scalanie".
                 Użytkownik decyduje, czy dwa zapisy są identyczne, czy też nie.</p>
 
-            <h5 class="optionhead">Szukaj zgodności</h5>
+            <h5>Szukaj zgodności</h5>
             <p>Po pierwsze, wybierz drzewo. Nie możesz połączyć repozytoriów z różnych drzew, tak więc tylko jedno drzewo może zostać wybrane. Dalej,
                 masz możliwość
                 wyboru źródła jako punkt wyjściowy dla Twojego szukania (Repozytorium 1), albo zezwolić TNG na szukanie pierwszej zgodności za Ciebie.
@@ -152,7 +152,7 @@ echo help_header("Pomoc: Repozytoria");
                 szukanie duplikatów dla Repozytorium 1,
                 pozostawiając pole ID Repozytorium 2 puste.</p>
 
-            <h5 class="optionhead">Inne opcje</h5>
+            <h5>Inne opcje</h5>
             <p><em>Połącz notatki</em> znaczy, że notatki z Repozytorium 2 będą dodane do notatek z Repozytorium 1 we wszystkich polach. Jeśli ta
                 możliwość nie zostanie wybrana,
                 notatki dotyczące Repozytorium 2 zostaną utracone, ponieważ zostaną skasowane przez te, odpowiadające polu Repozytorium 1.</p>
@@ -161,26 +161,26 @@ echo help_header("Pomoc: Repozytoria");
                 nie zostanie wybrana,
                 media dotyczące Repozytorium 2 zostaną utracone, ponieważ zostaną skasowane przez te, odpowiadające polu Repozytorium 1.</p>
 
-            <p><h5 class="optionhead">Ostrzeżenie!</h5> Raz wykonane scalanie nie może zostać cofnięte! Proszę rozważyć wykonanie kopii zapasowej
+            <p><h5>Ostrzeżenie!</h5> Raz wykonane scalanie nie może zostać cofnięte! Proszę rozważyć wykonanie kopii zapasowej
             tabel bazy danych zanim dokonasz operacji scalania na wypadek,
             gdybyś scalił niechcąco niewłaściwe osoby.</p>
 
-            <h5 class="optionhead">Następna zgodność</h5>
+            <h5>Następna zgodność</h5>
             <p>Znajdź następną możliwą zgodność, która nie wymaga podania Repozytorium 1. TNG zmienia listę możliwych repozytoriów w przyporządkowany
                 ID repozytorium ciąg znaków.
                 To znaczy, że "10" następuje po "1" ale przed "2".</p>
 
-            <h5 class="optionhead">Następny duplikat</h5>
+            <h5>Następny duplikat</h5>
             <p>Znajdź następny możliwy duplikat dla Repozytorium 1. Jeśli ta operacja zakończy się brakiem zapisu dla Repozytorium 2, znaczy, że
                 duplikat nie został znaleziony.</p>
 
-            <h5 class="optionhead">Porównaj / odśwież.</h5>
+            <h5>Porównaj / odśwież.</h5>
             <p>Porównanie Repozytoriów 1 i 2. Jeśli to porównanie jest już widoczne, kliknięcie na ten przycisk spowoduje odświeżenie strony.</p>
 
-            <h5 class="optionhead">Przełącz</h5>
+            <h5>Przełącz</h5>
             <p>Zamiana - Repozytorium 1 staje się Repozytorium 2 i vice versa.</p>
 
-            <h5 class="optionhead">Scalanie</h5>
+            <h5>Scalanie</h5>
             <p>Repozytorium 2 jest scalane z Repozytorium 1. ID Repozytorium 1 zostanie zachowane, podobnie jak wszystkie inne dane Repozytorium 1
                 chyba, że dla Repozytorium 2 zostało
                 zaznaczone odpowiednie pole(a). Na przykład, jeśli zaznaczyłeś pole autor dla Repozytorium 2, dane w tym polu będą podczas scalania
@@ -190,7 +190,7 @@ echo help_header("Pomoc: Repozytoria");
                 ID Repozytorium 1 zostanie zachowane. Jeśli pole danych dla Repozytorium 1 lub 2 jest puste, znaczy, że nie istnieją żadne dane dla
                 któregokolwiek repozytorium.</p>
 
-            <h5 class="optionhead">Edycja</h5>
+            <h5>Edycja</h5>
             <p>Edytuj indywidualny zapis dla tego repozytorium w nowym oknie. Jeśli dokonałeś zmian, musisz kliknąć Porównaj / odśwież by zobaczyć
                 zmiany w widoku scalania.</p>
 

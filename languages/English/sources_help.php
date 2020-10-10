@@ -47,7 +47,7 @@ echo help_header("Help: Sources");
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <h5 class="optionhead">Actions</h5>
+            <h5>Actions</h5>
             <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                 time, click the box in the
                 <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -68,10 +68,10 @@ echo help_header("Help: Sources");
             <p>To add a new source, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes and
                 additional events) can be added after saving or locking the record. Take note of the following:</p>
 
-            <h5 class="optionhead">Tree</h5>
+            <h5>Tree</h5>
             <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new source.</p>
 
-            <h5 class="optionhead">Source ID</h5>
+            <h5>Source ID</h5>
             <p>The Source ID must be unique within the selected Tree and should consist of an upper case <strong>S</strong> followed by a number (no
                 more than 21 digits).
                 An available, unique ID will be supplied when the page is first displayed and whenever a different tree is selected, but you may enter
@@ -91,21 +91,21 @@ echo help_header("Help: Sources");
                 the
                 <strong>S</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
 
-            <h5 class="optionhead">Short Title</h5>
+            <h5>Short Title</h5>
             <p>An abbreviated title for the source.</p>
 
-            <h5 class="optionhead">Long Title</h5>
+            <h5>Long Title</h5>
             <p>A more formal, longer title for the source.</p>
 
-            <h5 class="optionhead">Author, Call Number, Publisher</h5>
+            <h5>Author, Call Number, Publisher</h5>
             <p>Additional information related to the source (if available).</p>
 
-            <h5 class="optionhead">Repository</h5>
+            <h5>Repository</h5>
             <p>Select the repository where the source resides (if known). If the repository does not yet exist in the database, go to
                 Admin/Repositories and
                 add it there, then come back and select it here.</p>
 
-            <h5 class="optionhead">Actual Text</h5>
+            <h5>Actual Text</h5>
             <p>A quote from or a portion of the source material (optional).</p>
 
         </td>
@@ -118,13 +118,13 @@ echo help_header("Help: Sources");
             <p>To make changes to an existing source, use the <a href="#search">Search</a> tab to locate the source, then click on the Edit icon next
                 to that source.</p>
 
-            <h5 class="optionhead">Notes</h5>
+            <h5>Notes</h5>
             <p>Notes may be linked to events or to the source in general by clicking on the Notes icon at the top of the page
                 or next to each event under "Other Events". When notes already exist for an event, the Notes icon will feature a green dot in the
                 upper right corner.
                 For more information on Notes, see the <a href="notes_help.php">Help</a> link visible in the Notes area.</p>
 
-            <h5 class="optionhead">Other Events</h5>
+            <h5>Other Events</h5>
             <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
                     href="events_help.php">Help</a> link there for more
                 information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New"
@@ -161,7 +161,7 @@ echo help_header("Help: Sources");
             <p>Click on this tab to review and merge sources that may be slightly different but refer to the same material.
                 You will decide whether multiple records are the same or not.</p>
 
-            <h5 class="optionhead">Find Matches</h5>
+            <h5>Find Matches</h5>
             <p>First, select a tree. You cannot merge sources from different trees, so only one tree can be selected. After that, you have the option
                 of selecting
                 a source as the starting point for your search (Source ID 1), or letting TNG find the first match for you. If you'd rather let TNG
@@ -172,14 +172,14 @@ echo help_header("Help: Sources");
                 for Source ID 1,
                 leave Source ID 2 blank.</p>
 
-            <h5 class="optionhead">Match the following fields</h5>
+            <h5>Match the following fields</h5>
             <p>These are the criteria TNG will use in determining possible matches. By default, Short Title and (Long) Title are selected, meaning
                 that those fields
                 must match in order for two records to be considered a possible match. If you also select Author, Publisher, Repository, or Actual
                 Text, then those fields
                 must also match.</p>
 
-            <h5 class="optionhead">Other Options</h5>
+            <h5>Other Options</h5>
             <p><em>Ignore Blanks</em> means that blank fields will not be considered. For example, a source with a Short Title but no Title
                 will not match any other records if Title is among the selected criteria.</p>
 
@@ -197,22 +197,22 @@ echo help_header("Help: Sources");
                 performing any merge operations, just
                 in case you merge two individuals unintentionally.</p>
 
-            <h5 class="optionhead">Next Match</h5>
+            <h5>Next Match</h5>
             <p>Find the next possible match that does not involve Source 1. TNG traverses the list of possible sources as ordered by Source ID in
                 string format.
                 This means that "10" comes after "1" but before "2".</p>
 
-            <h5 class="optionhead">Next Duplicate</h5>
+            <h5>Next Duplicate</h5>
             <p>Find the next possible duplicate for Source 1. If this results in no record being displayed for Source 2, it means that a duplicate was
                 not found.</p>
 
-            <h5 class="optionhead">Compare/Refresh</h5>
+            <h5>Compare/Refresh</h5>
             <p>Compare Source 1 and Source 2. If that comparison is already displayed, clicking this button will cause the page to refresh.</p>
 
-            <h5 class="optionhead">Switch</h5>
+            <h5>Switch</h5>
             <p>Source 1 becomes Source 2 and vice versa.</p>
 
-            <h5 class="optionhead">Merge</h5>
+            <h5>Merge</h5>
             <p>Source 2 is merged into Source 1. The ID for Source 1 will be retained, as will all other data for Source 1 unless the corresponding
                 box(es)
                 for are checked for Source 2. For example, if the box next to Author is checked for Source 2, this data in this field will be copied
@@ -223,7 +223,7 @@ echo help_header("Help: Sources");
                 in that field
                 for either individual.</p>
 
-            <h5 class="optionhead">Edit</h5>
+            <h5>Edit</h5>
             <p>Edit the record for that source in a new window. If changes are made, you must click "Compare/Refresh" in order to see the changes
                 in on the Merge screen.</p>
 

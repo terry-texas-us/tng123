@@ -30,7 +30,7 @@ echo help_header("Help: Map Settings");
 
 		</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-		<h5 class="optionhead">Map Key</h5>
+		<h5>Map Key</h5>
 		<p>As of June 2016, you must get a map <strong>key</strong> from Google in order to use Google Maps on your site. You can obtain a key here:
 		<a href="https://developers.google.com/maps/documentation/javascript/get-api-key#key" target="_blank">https://developers.google.com/maps/documentation/javascript/get-api-key#key</a>. Some key points:</p>
 
@@ -44,49 +44,49 @@ echo help_header("Help: Map Settings");
 		with Google Maps can be found on the TNG Wiki: <a href="https://tng.lythgoes.net/wiki/index.php/Google_Maps_-_Getting_Started"
                                                           target="_blank">https://tng.lythgoes.net/wiki/index.php/Google_Maps_-_Getting_Started</a>.</p>
 
-		<h5 class="optionhead">Map Type</h5>
+		<h5>Map Type</h5>
 		<p>Choose which type of map will be displayed first: Terrain, Road Map, Satellite or Hybrid (a satellite image with streets laid out
 		on top).</p>
 
-		<h5 class="optionhead">Starting Latitude, Starting Longitude</h5>
+		<h5>Starting Latitude, Starting Longitude</h5>
 		<p>These coordinates determine where the default "center" of the map is for any place that does not yet have any assigned coordinates. The pin
 		will start at that location.</p>
 
-		<h5 class="optionhead">Starting Zoom</h5>
+		<h5>Starting Zoom</h5>
 		<p>This number indicates how close up or far away new Google Maps in the Admin area should be displayed to begin with. Lower numbers mean that the
 		view is farther away, while higher numbers mean the view is closer. Once the zoom is saved for a particular map, it will be saved with that map.</p>
 
-		<h5 class="optionhead">Location Zoom</h5>
+		<h5>Location Zoom</h5>
 		<p>This number indicates how close up or far away a Google Map in the Admin area should be displayed after a location is searched for and located.</p>
 
-		<h5 class="optionhead">Dimensions, Individual Page</h5>
+		<h5>Dimensions, Individual Page</h5>
 		<p>Enter the dimensions (width must be in pixels with "px" at the end, or as a percentage; height must be in pixels with "px" at the end) for the map
 		displayed on each person's individual page.	For example, to make the map be 500 pixels high, set the <strong>Height</strong> to 500px. To make the map reach 80 percent
 		of the way across the allotted area, set the <strong>Width</strong> to 80%.</p>
 
-		<h5 class="optionhead">Dimensions, Headstones Pages</h5>
+		<h5>Dimensions, Headstones Pages</h5>
 		<p>Enter the dimensions for the maps displayed on all headstone-related pages (width must be in pixels with "px" at the end, or as a percentage;
 		height must be in pixels with "px" at the end)</p>
 
-		<h5 class="optionhead">Dimensions, Admin Pages</h5>
+		<h5>Dimensions, Admin Pages</h5>
 		<p>Enter the dimensions for the maps displayed on all Admin pages (width must be in pixels with "px" at the end, or as a percentage; height
 		must be in pixels with "px" at the end).</p>
 
-		<h5 class="optionhead">Hide Admin Maps to Start</h5>
+		<h5>Hide Admin Maps to Start</h5>
 		<p>To hide the maps on the Admin pages until the <span class="emphasis">Show/Hide</span> button is clicked, select <span
                 class="choice">Yes</span> here. To
 		have the maps displayed by default when the pages are displayed, select <span class="choice">No</span>.</p>
 
-		<h5 class="optionhead">Hide Public Maps to Start</h5>
+		<h5>Hide Public Maps to Start</h5>
 		<p>To delay loading the map on the individual person pages until the user calls for it, select <span class="choice">Yes</span> here. This will allow
 		the page to load more quickly. The map will be loaded as soon as the <span class="emphasis">Show the map</span> button is clicked.  
 		If you select <span class="choice">No</span>, then the map on the person page will always load be shown when the page loads.</p>
 
-		<h5 class="optionhead">Consolidate Duplicate Pins</h5>
+		<h5>Consolidate Duplicate Pins</h5>
 		<p>If multiple events for an individual occurred at the same location, setting this option to <span class="emphasis">Yes</span> will prevent duplicate pins from being
 		created for non-unique place names. Note: Setting this option to <span class="emphasis">No</span> will cause duplicate pins to obstruct each other.</p>
 
-		<h5 class="optionhead">Place Levels Pins: Labels and Colors</h5>
+		<h5>Place Levels Pins: Labels and Colors</h5>
 		<p>Each geocode location can be associated with one of six <strong>Place Levels</strong> (e.g., Location, Town/City, County/Shire, etc.). The labels for these
 		levels can be found in the "alltext.php" file in each language folder, and you may override them in your "cust_text.php" file (also in each language folder).</p>
 

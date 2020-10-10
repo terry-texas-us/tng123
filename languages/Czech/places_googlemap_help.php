@@ -41,7 +41,7 @@ echo help_header("N�pov�da: Google Maps");
                 Pro vyhled�n� sou�adnic m��ete tak� vyu��t aplikaci Streetmap (<a href="http://www.streetmap.co.uk" target="_blank">http://www.streetmap.co.uk</a>).
             </p>
 
-            <h5 class="optionhead">Geok�dovat um�st�n�</h5>
+            <h5>Geok�dovat um�st�n�</h5>
             <p>Pokud ji� bylo m�sto zavedeno v TNG, obsahuje pole Geok�dovat um�st�n� n�zev tohoto m�sta. P�i p�id�n� nov�ho m�sta bude do pole
                 Geok�dovat um�st�n�
                 dopln�n n�zev m�sta z TNG. P�i p�id�n� h�bitov� nebo m�di� nejsou n�zvy m�st dopln�ny. </p>
@@ -50,7 +50,7 @@ echo help_header("N�pov�da: Google Maps");
                 jako sou��st n�zv� m�st v USA, ani si neporad� s novoz�landsk�mi provinciemi. Jako vstup m��ete tak� cht�t vlo�it pouze n�zev m�sta a
                 zemi.
                 N�zev zem� m��ete tak� zapsat v angli�tin�.</p>
-            <h5 class="optionhead">P��klady n�zv� m�st</h5>
+            <h5>P��klady n�zv� m�st</h5>
             <p>N�sleduj� p��klady, jak maj� b�t zaps�na m�sta, aby v�sledek obsahoval spr�vn� �daje o zem�pisn� ���ce a d�lce:
             <ul>
                 <li>1102 Shipwatch Circle, Tampa, Florida</li>
@@ -68,7 +68,7 @@ echo help_header("N�pov�da: Google Maps");
             <p>Geocoder nem��e pracovat s mapami n�kter�ch st�t� z n�rodnostn�ch nebo licen�n�ch d�vod�.
                 Pro tyto st�ty mus�te pou��t odkaz <a href="http://maps.google.com/" target="_blank">Pln� vyhled�v�n� v Google Maps</a>.</p>
 
-            <h5 class="optionhead">Zem�pisn� ���ka a d�lka</h5>
+            <h5>Zem�pisn� ���ka a d�lka</h5>
             <p>P�i p�ijet� sou�adnic zem�pisn� ���ky a d�lky, kter� v�m nab�z� vyhled�v�n� v map�, mus�te b�t velmi pe�liv�. P�inejmen��m byste m�li
                 alespo� trochu
                 v�d�t, kde se dan� m�sto nach�z� a co o�ek�v�te p�ed t�m, ne� p�ijmete v�sledek z hled�n� v map�. Pokud se �pendl�k na map�
@@ -79,12 +79,12 @@ echo help_header("N�pov�da: Google Maps");
             <p>P�ijatou zem�pisnou ���ku a d�lku byste m�li tak� otestovat kliknut�m na ikonu Test v seznamu m�st a pot� kliknut�m na �pendl�k ov��it
                 na extern� map�, �e um�st�n� je spr�vn�.</p>
 
-            <h5 class="optionhead">P�ibl�en�</h5>
+            <h5>P�ibl�en�</h5>
             <p>Nen�-li m�sto na map� v po�adovan�m p�ibl�en�, m��ete pou��t n�e popsan� ovlada� p�ibl�en� k p�izp�soben� zobrazen�
                 mapy, zvlṻe pro omezen� chybov�ch hl�en�, �e Google neobsahuje mapu v t�to �rovni p�ibl�en�. Hodnota v�sledn�ho p�ibl�en� bude
                 ulo�ena ve va�� datab�zi TNG.</p>
 
-            <h5 class="optionhead">�rove� s�dla</h5>
+            <h5>�rove� s�dla</h5>
             <p>Rozbalovac� seznam �rove� s�dla m��ete pou��t k v�b�ru �rovn� �len�n� s�dla zastoupen�ho n�zvem m�sta. K dispozici je �est �rovn� v
                 rozsahu od adresy po zemi,
                 kde adresa je nejpodrobn�j��. P�epsat obsah prom�nn� $admtext pro �rovn� 1 a� 6, kter� jsou v souboru alltext.php, m��ete ve sv�m
@@ -103,18 +103,18 @@ echo help_header("N�pov�da: Google Maps");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="controls"><h4 class="subheadbold">Ovl�dac� prvky Google Maps</h4></a>
 
-            <h5 class="optionhead">Bod / Klik</h5>
+            <h5>Bod / Klik</h5>
             <p>Chcete-li zp�esnit �daj o zem�pisn� ���ce a d�lce u dan�ho m�sta, klikn�te v Google Maps na bod, kde si mysl�te, �e se m�sto nach�z�.
                 Pro obdr�en� lep��ch �daj�
                 o zem�pisn� ���ce a d�lce pro n�zev m�sta v TNG m��ete tak� v Google Maps pou��t tla��tka Mapa nebo Satelitn�. </p>
 
-            <h5 class="optionhead">T�hnout a posunout</h5>
+            <h5>T�hnout a posunout</h5>
             <p>Mapy se daj� posunovat, tak�e m��ete pou��t my� nebo sm�rov� �ipky pro posun doleva, doprava, nahoru nebo dol� pro zobrazen� oblast�,
                 kter� jsou skryt�
                 mimo obrazovku. Mo�nost t�hnout a posunout znamen�, �e nemus�te klikat ani �ekat na nov� na�ten� grafiky poka�d�, kdy� chcete vid�t
                 p�ilehl� ��sti mapy.</p>
 
-            <h5 class="optionhead">P�ibl�en�</h5>
+            <h5>P�ibl�en�</h5>
             <p>Zna�ky plus (+) a minus (-) nebo posuvn�k p�ibl�en� m��ete pou��t pro p�ibl�en� nebo odd�len� mapy. P�i p�ibl�en� mapy m��ete pou��t
                 sm�rov� �ipky
                 pro vylep�en� pozice na map�. Zm�n�te-li �rove� p�ibl�en�, hodnota p�ibl�en� bude ulo�ena v tabulce TNG.</p>

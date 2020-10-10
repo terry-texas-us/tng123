@@ -28,16 +28,16 @@ echo help_header("Pomoc: Więcej");
                 tych pól jest wypełnione, ikonka "Więcej" (znak plus)
                 będzie miała zieloną kropkę w rogu. Pola w okienku "Więcej informacji" obejmują:</p>
 
-            <p><h5 class="optionhead">Wiek</h5>: Wiek osoby w czasie wydarzenia.</p>
+            <p><h5>Wiek</h5>: Wiek osoby w czasie wydarzenia.</p>
 
-            <p><h5 class="optionhead">Urząd</h5>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
+            <p><h5>Urząd</h5>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
 
-            <p><h5 class="optionhead">Przyczyna</h5>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
+            <p><h5>Przyczyna</h5>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
 
-            <p><h5 class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</h5>: Adres oraz inne
+            <p><h5>Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</h5>: Adres oraz inne
             informacje kontaktowe związane z wydarzeniem..</p>
 
-            <p><h5 class="optionhead">Wymagane pola:</h5>
+            <p><h5>Wymagane pola:</h5>
             <p>Żadna z tych informacji nie jest wymagana.</p>
             <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
                     ewentualne błędy lub niejasności.</p></li>

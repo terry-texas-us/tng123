@@ -43,7 +43,7 @@ echo help_header("N�pov�da: Pozn�mky");
 
             <p>Chcete-li pozn�mky p�et��dit, klikn�te kamkoli na ��dek (ne na ikonu) a p�et�hn�te pozn�mku nahoru nebo dol�.</p>
 
-            <h5 class="optionhead">Neve�ejn�</h5>
+            <h5>Neve�ejn�</h5>
             <p>Za�krtnut�m tohoto pol��ka zamez�te zobrazen� pozn�mky ve ve�ejn� oblasti. Nez�vis� to na ozna�en� Neve�ejn�, kter� m��e b�t spojeno s
                 osobou
                 nebo rodinou.</p>

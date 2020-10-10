@@ -152,7 +152,7 @@ if (!empty($where)) {
                         $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="getperson.php?personID=' . $row['personID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
 
                         if (strpos($date, "-00")) {
-                            $html = '<span class="nw">' . $html . '</span>';
+                            $html = '<span class="text-nowrap">' . $html . '</span>';
                         }
                         $events[$date][$key][$row['gedcom']][$row['personID']] = $html;
                     }
@@ -234,7 +234,7 @@ if (!empty($where)) {
                         $html = '<img src="' . 'img/' . $val . '" class="calIcon" alt=""><a href="familygroup.php?familyID=' . $row['familyID'] . '&amp;tree=' . $row['gedcom'] . '" class="calEvent" title="' . $longname . '">' . $name . '</a>' . $year;
 
                         if (strpos($date, "-00")) {
-                            $html = '<span class="nw">' . $html . '</span>';
+                            $html = '<span class="text-nowrap">' . $html . '</span>';
                         }
                         $events[$date][$key][$row['gedcom']][$row['familyID']] = $html;
                     }
@@ -532,7 +532,7 @@ if ($allow_living) {
                 }
 
                 $args = "?living=$showLiving&amp;hide=" . implode(',', $toHide) . "&amp;tree=$thisTree&amp;m=$thisMonth&amp;year=$thisYear";
-                echo '<li class="flat nw"><a href="' . $args . '" class="' . $class . '" id="cal_' . $key . '">' . $checkbox . '<img src="' . 'img/' . $val . '" class="calIcon" alt="">' . $text[$key . 'date'] . '</a></li>' . "\n";
+                echo '<li class="flat text-nowrap"><a href="' . $args . '" class="' . $class . '" id="cal_' . $key . '">' . $checkbox . '<img src="' . 'img/' . $val . '" class="calIcon" alt="">' . $text[$key . 'date'] . '</a></li>' . "\n";
             }
 
             ?>

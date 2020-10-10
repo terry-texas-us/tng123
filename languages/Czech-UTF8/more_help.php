@@ -27,16 +27,16 @@ echo help_header("Nápověda: Více");
             <p>Tato obrazovka vám umožní zapsat další údaje spojené se standardními typy událostí. Pokud je některé z těchto polí vyplněno,
                 ikona Více (znaménko plus) bude mít v roku zelenou tečku. Pole na obrazovce Více informací jsou tato:</p>
 
-            <p><h5 class="optionhead">Věk</h5>: Věk osoby v době události.</p>
+            <p><h5>Věk</h5>: Věk osoby v době události.</p>
 
-            <p><h5 class="optionhead">Instituce</h5>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
+            <p><h5>Instituce</h5>: Instituce nebo osoba, která měla v době události autoritu nebo odpovědnost.</p>
 
-            <p><h5 class="optionhead">Příčina</h5>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
+            <p><h5>Příčina</h5>: Příčina události (nejčastěji použita s událostí Úmrtí).</p>
 
-            <p><h5 class="optionhead">Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</h5>: Adresa a ostatní
+            <p><h5>Adresa 1/Adresa 2/Město/Kraj/provincie/PSČ/Země/Telefon/Email/Internetové stránky</h5>: Adresa a ostatní
             kontaktní údaje spojené s událostí.</p>
 
-            <h5 class="optionhead">Povinná pole:</h5>
+            <h5>Povinná pole:</h5>
             Žádný z těchto údajů není povinný.</p>
         </td>
     </tr>

@@ -44,7 +44,7 @@ function showCustEvents($id) {
                 $actionstr .= "<a href='#' onclick=\"return showCitations('{$event['eventID']}','$id');\" title=\"{$admtext['sources']}\" id=\"citesicon{$event['eventID']}\" class=\"smallicon $citesicon\"></a>";
             }
             echo "<tr id=\"row_{$event['eventID']}\">\n";
-            echo "<td class='lightback nw'>$actionstr</td>\n";
+            echo "<td class='lightback text-nowrap'>$actionstr</td>\n";
             echo "<td class='lightback'>$displayval</td>\n";
             echo "<td class='lightback'>{$event['eventdate']}</td>\n";
             echo "<td class='lightback'>{$event['eventplace']}</td>\n";

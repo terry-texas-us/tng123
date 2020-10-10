@@ -265,7 +265,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
     }
     $body .= $header;
-    $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback center fieldname\" style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
+    $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class='fieldnameback text-center fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
     $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}</th>";
     $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback fieldname\">&nbsp;{$text['status']}</th>";
     $body .= "<th data-tablesaw-priority='4' class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
@@ -327,7 +327,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $description = $hs['description'];
         $notes = $hs['notes'];
 
-        $body .= "<tr><td class='databack center' style=\"width:$thumbmaxw" . "px;\">";
+        $body .= "<tr><td class='databack text-center' style=\"width:$thumbmaxw" . "px;\">";
         $hs['mediatypeID'] = "headstones";
         $hs['allow_living'] = 1;
         $imgsrc = getSmallPhoto($hs);

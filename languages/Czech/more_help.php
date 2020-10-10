@@ -27,16 +27,16 @@ echo help_header("N�pov�da: V�ce");
             <p>Tato obrazovka v�m umo�n� zapsat dal�� �daje spojen� se standardn�mi typy ud�lost�. Pokud je n�kter� z t�chto pol� vypln�no,
                 ikona V�ce (znam�nko plus) bude m�t v roku zelenou te�ku. Pole na obrazovce V�ce informac� jsou tato:</p>
 
-            <p><h5 class="optionhead">V�k</h5>: V�k osoby v dob� ud�losti.</p>
+            <p><h5>V�k</h5>: V�k osoby v dob� ud�losti.</p>
 
-            <p><h5 class="optionhead">Instituce</h5>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
+            <p><h5>Instituce</h5>: Instituce nebo osoba, kter� m�la v dob� ud�losti autoritu nebo odpov�dnost.</p>
 
-            <p><h5 class="optionhead">P���ina</h5>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
+            <p><h5>P���ina</h5>: P���ina ud�losti (nej�ast�ji pou�ita s ud�lost� �mrt�).</p>
 
-            <p><h5 class="optionhead">Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</h5>: Adresa a ostatn�
+            <p><h5>Adresa 1/Adresa 2/M�sto/Kraj/provincie/PS�/Zem�/Telefon/Email/Internetov� str�nky</h5>: Adresa a ostatn�
             kontaktn� �daje spojen� s ud�lost�.</p>
 
-            <h5 class="optionhead">Povinn� pole:</h5>
+            <h5>Povinn� pole:</h5>
             ��dn� z t�chto �daj� nen� povinn�.</p>
         </td>
     </tr>

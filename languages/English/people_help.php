@@ -48,7 +48,7 @@ echo help_header("Help: People");
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                     time, click the box in the
                     <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use
@@ -66,11 +66,11 @@ echo help_header("Help: People");
                     associations and
                     additional events) can be added after saving or locking the record. Take note of the following:</p>
 
-                <h5 class="optionhead">Tree</h5>
+                <h5>Tree</h5>
                 <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new
                     individual.</p>
 
-                <h5 class="optionhead">Branch (optional)</h5>
+                <h5>Branch (optional)</h5>
                 <p>Assigning a person to a "Branch" limits access to the person's data to users who are also assigned to the same Branch. If at least
                     one
                     Branch has been
@@ -82,7 +82,7 @@ echo help_header("Help: People");
                     more than one branch. When you're done making your selection, move your mouse pointer out of the editing box and it will
                     disappear.</p>
 
-                <h5 class="optionhead">Person ID</h5>
+                <h5>Person ID</h5>
                 <p>The Person ID must be unique within the selected Tree and should consist of an upper case <strong>I</strong> followed by a number
                     (no
                     more than 21 digits).
@@ -109,7 +109,7 @@ echo help_header("Help: People");
                     the
                     <strong>I</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
 
-                <h5 class="optionhead">Name</h5>
+                <h5>Name</h5>
                 <p>Enter the individual's First/Given Name(s) and/or Last/Surname. Middle names should be included with First/Given Name(s). If you
                     have
                     elected to support
@@ -117,7 +117,7 @@ echo help_header("Help: People");
                     Surname Prefix.
                     <strong>Note:</strong> If this box is not visible, go to Setup/General Settings and check the option to use surname prefixes.</p>
 
-                <h5 class="optionhead">Gender / Nickname / Title / Prefix / Suffix / Name Order</h5>
+                <h5>Gender / Nickname / Title / Prefix / Suffix / Name Order</h5>
                 <p>Enter as much of this information as you have available. A <strong>Nickname</strong> is an informal name sometimes associated with
                     the
                     individual.
@@ -129,17 +129,17 @@ echo help_header("Help: People");
                     change how this name should be displayed.
                     You can change the Name Order for all people in your database under Setup/General Settings.</p>
 
-                <h5 class="optionhead">Living</h5>
+                <h5>Living</h5>
                 <p>If this person is alive, or if you wish to restrict access to this person's data to users who are logged in with rights to see
                     living
                     data,
                     check this box.</p>
 
-                <h5 class="optionhead">Private</h5>
+                <h5>Private</h5>
                 <p>Whether this person is alive or not, you can still restrict access to this person's data by checking this option. Only
                     users with rights to see private data will be able to see information associated with a "private" person.</p>
 
-                <h5 class="optionhead">Events</h5>
+                <h5>Events</h5>
                 <p>Enter dates and places for the standard events listed (if known). Additional events can be added after the record is saved or
                     locked.
                     Always enter
@@ -151,7 +151,7 @@ echo help_header("Help: People");
                     you
                     entered in the place name.</p>
 
-                <h5 class="optionhead">LDS Data (Baptism, Confirmation, Initiatory, Endowment)</h5>
+                <h5>LDS Data (Baptism, Confirmation, Initiatory, Endowment)</h5>
                 <p>These events are associated with ordinances practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented
                     the
                     GEDCOM standard).
@@ -169,7 +169,7 @@ echo help_header("Help: People");
                     icon
                     next to that individual.</p>
 
-                <h5 class="optionhead">Notes / Citations / Associations / "More"</h5>
+                <h5>Notes / Citations / Associations / "More"</h5>
                 <p>Notes, citations and associations may be linked to events or to the person in general by clicking on the associated icons at the
                     top of
                     the page
@@ -181,7 +181,7 @@ echo help_header("Help: People");
                     Help links that
                     become visible when the icons are clicked.</p>
 
-                <h5 class="optionhead">Other Events</h5>
+                <h5>Other Events</h5>
                 <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
                         href="events_help.php">Help</a> link there for more
                     information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New"
@@ -200,7 +200,7 @@ echo help_header("Help: People");
                     the page. The Tree and
                     Person ID cannot be changed.</p>
 
-                <h5 class="optionhead">Parents</h5>
+                <h5>Parents</h5>
                 <p>If the current individual has parents, a <strong>Parents</strong> section will be present under the Events section. It will start
                     out
                     collapsed and will indicate the number
@@ -222,7 +222,7 @@ echo help_header("Help: People");
                 <p>You can also add new parents by selecting the option "Go to new family with current individual as child" at the bottom of
                     the page.</p>
 
-                <h5 class="optionhead">Spouses/Partners</h5>
+                <h5>Spouses/Partners</h5>
                 <p>If the current individual has at least one spouse or partner, a <strong>Spouses/Partners</strong> section will be present under the
                     Parents section. It will start out collapsed and will indicate the number
                     of spouses/partners in parentheses. To expand the section and view all spouses or partners, click on the words "Spouses/Parters"
@@ -241,7 +241,7 @@ echo help_header("Help: People");
                 <p>You can also add new a new spouse by selecting the option "Go to new family with current individual as spouse" at the bottom of
                     the page.</p>
 
-                <h5 class="optionhead">Sorting Parents or Spouses</h5>
+                <h5>Sorting Parents or Spouses</h5>
                 <p>If more than one spouse or set of parents exists,
                     you may change the order by "dragging" the blocks up and down. To drag, click your mouse on the "Drag" box and hold down the
                     button,
@@ -273,7 +273,7 @@ echo help_header("Help: People");
                     No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are
                     present.</p>
 
-                <h5 class="optionhead">Select Event and Action</h5>
+                <h5>Select Event and Action</h5>
                 <p>Locate the line in the table that describes the event you wish to review or delete. You can narrow the list of results by selecting
                     a
                     User (the person
@@ -282,7 +282,7 @@ echo help_header("Help: People");
                     the left of that line. To review and
                     possibly incorporate the changes, choose <em>Review</em>. To discard the proposed change, choose <em>Delete</em>.</p>
 
-                <h5 class="optionhead">Review</h5>
+                <h5>Review</h5>
                 <p>On the Review screen, make any additional changes, including any to notes or sources you find necessary, then click "Save and
                     Delete"
                     to
@@ -299,7 +299,7 @@ echo help_header("Help: People");
                 <a id="merge"><h4 class="subheadbold">Merging People</h4></a>
                 <p>To review and merge duplicate records, click on the "Merge" tab. You will decide whether two records are the same or not.</p>
 
-                <h5 class="optionhead">Find Matches</h5>
+                <h5>Find Matches</h5>
                 <p>First, select a tree. You cannot merge individuals from different trees, so only one tree can be selected. After that, you have the
                     option of selecting an individual as
                     the starting point for your search (Person 1), or letting TNG find the first match for you. If you'd rather let TNG find all
@@ -309,7 +309,7 @@ echo help_header("Help: People");
                     duplicates
                     for Person 1, leave Person ID 2 blank.</p>
 
-                <h5 class="optionhead">Match the following fields</h5>
+                <h5>Match the following fields</h5>
                 <p>These are the criteria TNG will use in determining possible matches. By default, First Name and Last Name are selected, meaning
                     that
                     those fields
@@ -317,7 +317,7 @@ echo help_header("Help: People");
                     and/or
                     Death Place, those fields must also match.</p>
 
-                <h5 class="optionhead">Other Options</h5>
+                <h5>Other Options</h5>
                 <p><em>Ignore Blanks</em> means that blank fields will not be considered. For example, someone with a Last Name but no First Name
                     will not match any other records if First Name is among the selected criteria.</p>
 
@@ -337,29 +337,29 @@ echo help_header("Help: People");
                     deleted
                     after the merge.</p>
 
-                <h5 class="optionhead">Warning!</h5>
+                <h5>Warning!</h5>
                 <p>Once a merge has taken place, it cannot be undone! <em>Please consider backing up your database
                         tables before
                         performing any merge operations</em>, just in case you merge two individuals unintentionally.</p>
 
-                <h5 class="optionhead">Next Match</h5>
+                <h5>Next Match</h5>
                 <p>Find the next possible match that does not involve Person 1. TNG traverses the list of possible individuals as ordered by Person ID
                     in
                     string format.
                     This means that "10" comes after "1" but before "2".</p>
 
-                <h5 class="optionhead">Next Duplicate</h5>
+                <h5>Next Duplicate</h5>
                 <p>Find the next possible duplicate for Person 1. If this results in no record being displayed for Person 2, it means that a duplicate
                     was
                     not found.</p>
 
-                <h5 class="optionhead">Compare/Refresh.</h5>
+                <h5>Compare/Refresh.</h5>
                 <p>Compare Person 1 and Person 2. If that comparison is already displayed, clicking this button will cause the page to refresh.</p>
 
-                <h5 class="optionhead">Switch</h5>
+                <h5>Switch</h5>
                 <p>Person 1 becomes Person 2 and vice versa.</p>
 
-                <h5 class="optionhead">Merge</h5>
+                <h5>Merge</h5>
                 <p>Person 2 is merged into Person 1. The ID for Person 1 will be retained, as will all other data for Person 1 unless the
                     corresponding
                     box(es) for
@@ -370,7 +370,7 @@ echo help_header("Help: People");
                     corresponding data exists for Person 1. If
                     a data field is not displayed for either Person 1 or Person 2, then no data exists in that field for either individual.</p>
 
-                <h5 class="optionhead">Edit</h5>
+                <h5>Edit</h5>
                 <p>Edit the individual record for that individual in a new window. If changes are made, you must click Compare/Refresh in order to see
                     the
                     changes

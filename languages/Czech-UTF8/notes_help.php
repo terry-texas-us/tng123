@@ -43,7 +43,7 @@ echo help_header("Nápověda: Poznámky");
 
             <p>Chcete-li poznámky přetřídit, klikněte kamkoli na řádek (ne na ikonu) a přetáhněte poznámku nahoru nebo dolů.</p>
 
-            <h5 class="optionhead">Neveřejné</h5>
+            <h5>Neveřejné</h5>
             <p>Zaškrtnutím tohoto políčka zamezíte zobrazení poznámky ve veřejné oblasti. Nezávisí to na označení Neveřejné, které může být spojeno s
                 osobou
                 nebo rodinou.</p>

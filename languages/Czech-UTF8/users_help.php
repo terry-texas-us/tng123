@@ -38,7 +38,7 @@ echo help_header("Nápověda: Uživatelé");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit nebo odstranit tento výsledek. Chcete-li najednou odstranit více
                 záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, který má být odstraněn a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu.
@@ -66,42 +66,42 @@ echo help_header("Nápověda: Uživatelé");
                 existujícího uživatele, klikněte na ikonu Upravit vedle tohoto uživatele.
                 Význam polí při přidání nebo úpravě uživatele je následující:</p>
 
-            <h5 class="optionhead">Popis</h5>
+            <h5>Popis</h5>
             <p>Vašemu uživateli můžete přidat stručný popis, abyste věděli, o koho jde. Můžete např. zapsat "Administrátor stránek" nebo "Teta
                 Marta".</p>
 
-            <h5 class="optionhead">Uživatelské jméno</span></h5>
+            <h5>Uživatelské jméno</span></h5>
             <p>Jednoznačný jednoslovný identifikátor tohoto uživatele (stejné uživatelské jméno nemohou mít dva uživatelé). Uživatel bude při
                 přihlášení požádán o zadání svého uživatelského jména v délce max. 20 znaků.</p>
 
-            <h5 class="optionhead">Heslo</h5>
+            <h5>Heslo</h5>
             <p>Důvěrné slovo nebo řetězec znaků (bez mezer), které tento uživatel musí také při přihlášení zadat. Při zápisu do tohoto pole budou
                 zapisované znaky
                 na obrazovce pro zachování utajení nahrazovány hvězdičkami nebo jinými podobnými znaky. Délka max. 20 znaků. Heslo je v databázi
                 zašifrováno
                 a nelze jej nikým zobrazit, ani tímto uživatelem nebo programem Next Generation.</p>
 
-            <h5 class="optionhead">Skutečné jméno</h5>
+            <h5>Skutečné jméno</h5>
             <p>Aktuální jméno (pokud je platné) uživatele, které odpovídá těmto údajům.</p>
 
-            <h5 class="optionhead">Telefon, email, internetové stránky, adresa, město, kraj/provincie, PSČ, země, poznámky</h5>
+            <h5>Telefon, email, internetové stránky, adresa, město, kraj/provincie, PSČ, země, poznámky</h5>
             <p>Nepovinné údaje, které se týkají uživatele.</p>
 
-            <h5 class="optionhead">Neposílat tomuto uživateli hromadné emaily</h5>
+            <h5>Neposílat tomuto uživateli hromadné emaily</h5>
             <p>Toto políčko zaškrtněte, pokud nechcete, aby tomuto uživateli byly posílány hromadné emaily (viz níže).</p>
 
-            <h5 class="optionhead">Strom / ID číslo osoby</h5>
+            <h5>Strom / ID číslo osoby</h5>
             <p>Pokud tento uživatel odpovídá některé osobě z vaší databáze, můžete zde označit strom a ID číslo osoby jeho záznamu.
                 Umožní to zobrazit tomuto uživateli všechny údaje ze svého záznamu, i když tento záznam není obsažen v připojeném stromu nebo
                 větvi.</p>
 
-            <h5 class="optionhead">Zakázat přístup</h5>
+            <h5>Zakázat přístup</h5>
             <p>Zaškrtnutím tohoto políčka zabráníte tomuto uživateli přihlásit se, aniž byste vymazali jeho celý uživatelský účet.</p>
 
-            <h5 class="optionhead">Role a přístupová práva</h5>
+            <h5>Role a přístupová práva</h5>
             <p>Viz <a href="#rights">níže, kde jsou uvedeny podrobnosti o rolích a přístupových právech</a>, která mohou být uživateli přidělena.</p>
 
-            <p><h5 class="optionhead">Povinná pole:</h5> Musíte zadat uživatelské jméno, heslo a popis uživatele. Všechna ostatní pole jsou
+            <p><h5>Povinná pole:</h5> Musíte zadat uživatelské jméno, heslo a popis uživatele. Všechna ostatní pole jsou
             nepovinná, ale doporučujeme
             zadat emailovou adresu pro případ, že zapomenete své uživatelské jméno nebo heslo.</p>
 
@@ -132,7 +132,7 @@ echo help_header("Nápověda: Uživatelé");
                 úpravě záznamu nového uživatele
                 si povšimněte následujícího:</p>
 
-            <h5 class="optionhead">Vyrozumět tohoto uživatele, že byl účet aktivován</h5>
+            <h5>Vyrozumět tohoto uživatele, že byl účet aktivován</h5>
             <p>Zaškrtnutím tohoto políčka pošlete emailem novému uživateli informaci o aktivaci účtu (po uložení stránky). Text zprávy se objeví v
                 poli pod
                 touto volbou. Před odesláním můžete provést změny tohoto textu.</p>
@@ -154,58 +154,58 @@ echo help_header("Nápověda: Uživatelé");
 
             <p>Uživateli mohou být připojena následující přístupová práva:</p>
 
-            <h5 class="optionhead">Povolit přidávat nové záznamy</h5>
+            <h5>Povolit přidávat nové záznamy</h5>
             <p>Uživatel může v administrátorské oblasti přidat nové záznamy, včetně médií.</p>
 
-            <h5 class="optionhead">Povolit přidávat pouze média</h5>
+            <h5>Povolit přidávat pouze média</h5>
             <p>Uživatel může v administrátorské oblasti přidat nová média, nic jiného.</p>
 
-            <h5 class="optionhead">Bez práv přidávat</h5>
+            <h5>Bez práv přidávat</h5>
             <p>Uživatel nesmí přidávat žádné nové údaje.</p>
 
-            <h5 class="optionhead">Povolit úpravy existujících záznamů</h5>
+            <h5>Povolit úpravy existujících záznamů</h5>
             <p>Uživatel může v administrátorské oblasti upravovat existující záznamy, včetně médií.</p>
 
-            <h5 class="optionhead">Povolit úpravy pouze médií</h5>
+            <h5>Povolit úpravy pouze médií</h5>
             <p>Uživatel může v administrátorské oblasti upravovat existující média, nic jiného.</p>
 
-            <h5 class="optionhead">Povolit předložit úpravy pro přezkoumání administrátorem</h5>
+            <h5>Povolit předložit úpravy pro přezkoumání administrátorem</h5>
             <p>Uživatel nemůže v administrátorské oblasti záznamy upravovat. Předběžné změny může udělat ve veřejné oblasti kliknutím na malou ikonu
                 Upravit vedle příslušných událostí na stránkách osoby a rodiny. Změny se nestanou trvalými, dokud nebudou schváleny
                 administrátorem.</p>
 
-            <h5 class="optionhead">Bez práv upravovat</h5>
+            <h5>Bez práv upravovat</h5>
             <p>Uživatel nesmí provádět úpravy existujících záznamů.</p>
 
-            <h5 class="optionhead">Povolit vymazat existující záznamy</h5>
+            <h5>Povolit vymazat existující záznamy</h5>
             <p>Uživatel může v administrátorské oblasti vymazat existující záznamy, včetně médií.</p>
 
-            <h5 class="optionhead">Povolit vymazat pouze média</h5>
+            <h5>Povolit vymazat pouze média</h5>
             <p>Uživatel může v administrátorské oblasti vymazat média, nic jiného.</p>
 
-            <h5 class="optionhead">Bez práv vymazat</h5>
+            <h5>Bez práv vymazat</h5>
             <p>Uživatel nesmí vymazat žádné existující záznamy.</p>
 
             <p>Následující přístupová práva jsou nezávislá na zvolené roli:</p>
 
-            <h5 class="optionhead">Povolit prohlížení údajů žijících osob</h5>
+            <h5>Povolit prohlížení údajů žijících osob</h5>
             <p>Uživatel může ve veřejné oblasti prohlížet údaje žijících osob.</p>
 
-            <h5 class="optionhead">Povolit prohlížení údajů osob označených jako neveřejné</h5>
+            <h5>Povolit prohlížení údajů osob označených jako neveřejné</h5>
             <p>Uživatel může ve veřejné oblasti prohlížet údaje osob označených jako neveřejné.</p>
 
-            <h5 class="optionhead">Povolit stažení souboru GEDCOM</h5>
+            <h5>Povolit stažení souboru GEDCOM</h5>
             <p>Uživatel může ve veřejné oblasti použít záložku GEDCOM ke stažení souboru GEDCOM. Toto potlačí nastavení pro každý strom v
                 Administrace/Stromy.</p>
 
-            <h5 class="optionhead">Povolit stažení souboru PDF</h5>
+            <h5>Povolit stažení souboru PDF</h5>
             <p>Uživatel může ve veřejné oblasti na různých stránkách použít volbu PDF pro vytvoření souboru PDF. Toto potlačí nastavení pro každý
                 strom v Administrace/Stromy.</p>
 
-            <h5 class="optionhead">Povolit prohlížení údajů CJKSpd</h5>
+            <h5>Povolit prohlížení údajů CJKSpd</h5>
             <p>Uživatel může ve veřejné oblasti prohlížet údaje CJKSpd.</p>
 
-            <h5 class="optionhead">Povolit úpravy uživatelského profilu</h5>
+            <h5>Povolit úpravy uživatelského profilu</h5>
             <p>Uživatel může z odkazu ve veřejné oblasti upravovat svůj uživatelský profil (uživatelské jméno, heslo, atd.).</p>
 
         </td>
@@ -220,13 +220,13 @@ echo help_header("Nápověda: Uživatelé");
                 nejsou nutná žádná práva
                 nebo omezení přístupů.</p>
 
-            <h5 class="optionhead">Omezit na strom/větev</h5>
+            <h5>Omezit na strom/větev</h5>
             <p>Chcete-li omezit přístupové právo uživatele na určitý strom, vyberte tento strom zde. Chcete-li omezit přístupová práva na určitou
                 větev
                 ve vybraném stromě, vyberte tuto větev také. Připojením větve k uživateli nezabráníte tomuto uživateli zobrazit jiné osoby, které
                 nejsou součástí této větve.</p>
 
-            <h5 class="optionhead">Uplatnit práva na více stromů</h5>
+            <h5>Uplatnit práva na více stromů</h5>
             <p>Chcete-li omezit práva uživatele na více stromů, vyberte tuto možnost a poté pomocí klávesy Ctrl tyto stromy vyberte. Když se uživatel
                 poprvé přihlásí,
                 bude vybrán první strom z tohoto seznamu. Uživatel se může přepínat mezi stromy pomocí rozbalovací nabídky v horní části stránky v
@@ -244,16 +244,16 @@ echo help_header("Nápověda: Uživatelé");
             <a id="email"><h4 class="subheadbold">Email</h4></a>
             <p>tato záložka umožňuje poslat email všem uživatelům nebo všem uživatelům připojeným k určitému stromu/větvi.</p>
 
-            <h5 class="optionhead">Předmět</h5>
+            <h5>Předmět</h5>
             <p>Předmět vašeho emailu.</p>
 
-            <h5 class="optionhead">Text</h5>
+            <h5>Text</h5>
             <p>Tělo vaší emailové zprávy.</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud chcete poslat tuto zprávu pouze uživatelům připojeným k určitému stromu, tento strom vyberte zde.</p>
 
-            <h5 class="optionhead">Větev</h5>
+            <h5>Větev</h5>
             <p>Pokud chcete poslat tuto zprávu pouze uživatelům připojeným k určité větvi uvnitř vybraného stromu, tuto větev vyberte zde.</p>
 
         </td>

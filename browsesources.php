@@ -127,8 +127,8 @@ echo $header;
     <thead>
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">&nbsp;# </span></th>
-        <th data-tablesaw-priority="3" class="fieldnameback nw"><span class="fieldname">&nbsp;<?php echo $text['sourceid']; ?>&nbsp;</span></th>
-        <th data-tablesaw-priority="1" class="fieldnameback nw"><span class="fieldname">&nbsp;<?php echo $text['title'] . ", " . $text['author']; ?>&nbsp;</span></th>
+        <th data-tablesaw-priority="3" class="fieldnameback text-nowrap"><span class="fieldname">&nbsp;<?php echo $text['sourceid']; ?>&nbsp;</span></th>
+        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap"><span class="fieldname">&nbsp;<?php echo $text['title'] . ", " . $text['author']; ?>&nbsp;</span></th>
         <?php if ($numtrees > 1) { ?>
             <th data-tablesaw-priority="3" class="fieldnameback"><span class="fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</span></th><?php } ?>
     </tr>
@@ -142,7 +142,7 @@ while ($row = tng_fetch_assoc($result)) {
     echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
     echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
     if ($numtrees > 1) {
-        echo "<td class='databack nw'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+        echo "<td class='databack text-nowrap'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
     }
     echo "</tr>\n";
     $i++;

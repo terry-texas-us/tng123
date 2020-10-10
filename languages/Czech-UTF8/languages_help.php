@@ -32,7 +32,7 @@ echo help_header("Nápověda: Jazyky");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit nebo odstranit tento jazyk.</p>
 
         </td>
@@ -52,21 +52,21 @@ echo help_header("Nápověda: Jazyky");
             <p>Chcete-li přidat nový jazyk, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář.
                 Význam jednotlivých polí je následující:</p>
 
-            <h5 class="optionhead">Složka jazyku</h5>
+            <h5>Složka jazyku</h5>
             <p>Pro výběr umístění souboru pro jazyk použijte rozbalovací seznam. Pokud váš nový jazyk potřebuje znakovou sadu UTF-8, vyberte složku s
                 "UTF8" v názvu.
                 Chcete-li podporovat nový jazyk, který ještě není podporován programem TNG, přidejte do složky TNG jazyků složku pro tento jazyk, a
                 pak se vraťte na tuto stránku a vyberte ji.</p>
 
-            <h5 class="optionhead">Název tohoto jazyku, jak bude zobrazen návštěvníkům</h5>
+            <h5>Název tohoto jazyku, jak bude zobrazen návštěvníkům</h5>
             <p>Zadejte název jazyku, jak bude zobrazen návštěvníkům v poli pro výběr jazyků. Je vhodné vložit tento název v tomto příslušném jazyce,
                 aby jej mohli návštěvníci snáze identifikovat. Např. použijte "English" místo "Angličtina".</p>
 
-            <h5 class="optionhead">Znaková sada</h5>
+            <h5>Znaková sada</h5>
             <p>Znaková sada použitá pro tento jazyk. Necháte-li toto pole prázdné, bude použita znaková sada ISO-8859-1. Čeština používá znakovou sadu
                 ISO-8859-2 nebo UTF-8</p>
 
-            <h5 class="optionhead">Povinná pole:</h5> Zadat musíte název jazyku pro zobrazení a zvolit musíte název složky jazyku.</p>
+            <h5>Povinná pole:</h5> Zadat musíte název jazyku pro zobrazení a zvolit musíte název složky jazyku.</p>
 
             <p><strong>DŮLEŽITÉ:</strong> Pokud uvažujete o umožnění dynamického přepínání jazyků, <strong>musíte nastavit váš výchozí jazyk</strong>
                 (v Nastavení/Základní nastavení) jako jazyk těchto stránek.

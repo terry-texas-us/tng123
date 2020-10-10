@@ -103,17 +103,17 @@ if (isMobile()) {
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;
         </td>
-        <th data-tablesaw-priority="1" class="fieldnameback nw fieldname"><?php echo $text['treename']; ?></th>
-        <th data-tablesaw-priority="2" class="fieldnameback nw fieldname"><?php echo $text['description']; ?></th>
-        <th data-tablesaw-priority="3" class="fieldnameback nw fieldname"><?php echo $text['individuals']; ?></th>
-        <th data-tablesaw-priority="4" class="fieldnameback nw fieldname"><?php echo $text['families']; ?></th>
-        <th data-tablesaw-priority="5" class="fieldnameback nw fieldname"><?php echo $text['sources']; ?></th>
+        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap fieldname"><?php echo $text['treename']; ?></th>
+        <th data-tablesaw-priority="2" class="fieldnameback text-nowrap fieldname"><?php echo $text['description']; ?></th>
+        <th data-tablesaw-priority="3" class="fieldnameback text-nowrap fieldname"><?php echo $text['individuals']; ?></th>
+        <th data-tablesaw-priority="4" class="fieldnameback text-nowrap fieldname"><?php echo $text['families']; ?></th>
+        <th data-tablesaw-priority="5" class="fieldnameback text-nowrap fieldname"><?php echo $text['sources']; ?></th>
         <?php
         $trees = explode(',', $_SESSION['availabletrees']);
         $numtrees = count($trees);
         if ($numtrees > 1) {
             ?>
-            <th data-tablesaw-priority="5" class="fieldnameback nw fieldname">&nbsp;</th>
+            <th data-tablesaw-priority="5" class="fieldnameback text-nowrap fieldname">&nbsp;</th>
         <?php } ?>
     </tr>
     </thead>

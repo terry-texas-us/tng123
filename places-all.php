@@ -89,7 +89,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
         ?>
         <table class="sntable">
             <tr>
-                <td class="plcol">
+                <td class="plcol align-top">
                     <?php
                     $query = "SELECT TRIM(SUBSTRING_INDEX(place, ',', -$offset)) AS myplace, COUNT(place) AS placecount, gedcom ";
                     $query .= "FROM $places_table ";
@@ -151,7 +151,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                             if ($num_in_col_ctr == $num_in_col) {
                                 echo "</td>\n";
                                 echo "<td>&nbsp;&nbsp;</td>\n";
-                                echo "<td class=\"plcol\">";
+                                echo "<td class='plcol align-top'>";
                                 $num_in_col_ctr = 0;
                             }
                         }

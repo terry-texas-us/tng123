@@ -105,13 +105,13 @@ echo $header;
     <thead>
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
         <?php if ($numtrees > 1) { ?>
-            <th data-tablesaw-priority="2" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="2" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
         <?php } ?>
-        <th data-tablesaw-priority="3" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['startingind']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="4" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['individuals']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="5" class="fieldnameback nw fieldname">&nbsp;<?php echo $text['families']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="3" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['startingind']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="4" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['individuals']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="5" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['families']; ?>&nbsp;</th>
     </tr>
     </thead>
 <?php

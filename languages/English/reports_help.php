@@ -44,7 +44,7 @@ echo help_header("Help: Reports");
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <h5 class="optionhead">Actions</h5>
+            <h5>Actions</h5>
             <p>The Action buttons next to each Report allow you to edit, delete or preview that Report. To delete more than one Report at a time,
                 click the box in the
                 <strong>Select</strong> column for each Report to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -67,24 +67,24 @@ echo help_header("Help: Reports");
                 the <a href="#search">Search</a> tab to locate the record, then click on the Edit icon next to that line.
                 When adding or editing a Report, take note of the following:</p>
 
-            <h5 class="optionhead">Report Name</h5>
+            <h5>Report Name</h5>
             <p>You must give your report a name. This will appear as the title when the report is displayed.</p>
 
-            <h5 class="optionhead">Description</h5>
+            <h5>Description</h5>
             <p>Give your report a short description. This will appear under the title when the report is displayed. It should explain briefly what the
                 report shows using
                 what criteria.</p>
 
-            <h5 class="optionhead">Rank/Priority</h5>
+            <h5>Rank/Priority</h5>
             <p>Reports will normally sort alphabetically according to name, unless you give each one a ranking or priority. Lower numbers sort first.
                 No rank sorts before any number.</p>
 
-            <h5 class="optionhead">Active</h5>
+            <h5>Active</h5>
             <p>Your new report will not be visible to regular site visitors until you indicate here that it is active. It's a good idea to save and
                 test your report to make sure the
                 output looks as you expected it before making active.</p>
 
-            <h5 class="optionhead">Choose Fields to Display</h5>
+            <h5>Choose Fields to Display</h5>
             <p>Indicate which fields to display in your report by copying them from the lefthand box to the empty box on the right. You can do this by
                 selecting a field and then clicking the <em>Add >></em> button, or by simply double-clicking on the field name (IE only). </p>
 
@@ -96,7 +96,7 @@ echo help_header("Help: Reports");
                 change the order of the display fields, select a field in the righthand box and move it up or down within the list by clicking on the
                 <em>Move Up</em> and <em>Move Down</em> buttons.</p>
 
-            <h5 class="optionhead">Choose Criteria</h5>
+            <h5>Choose Criteria</h5>
             <p>Indicate which people to include in your report by choosing criteria. People who do not match the criteria will not be included in the
                 report. Criteria statements are
                 well-formed when they include a field name and a condition. For example, "Last Name = 'Lythgoe' " or "Birth Place contains 'England'
@@ -145,7 +145,7 @@ echo help_header("Help: Reports");
                     Up</em>
                 and <em>Move Down</em> buttons.</p>
 
-            <h5 class="optionhead">Choose Sort Order</h5>
+            <h5>Choose Sort Order</h5>
             <p>Indicate how the matching records should be sorted by choosing one or more fields to determine a sort order.
                 If the first field in the list can not determine the order of any two matching records, the next field in the list will be used, and
                 so forth. If no sort order is indicated, matching
@@ -161,18 +161,18 @@ echo help_header("Help: Reports");
                 <i>Last Name<br>
                     Descending (Prev)</i></p>
 
-            <h5 class="optionhead">Miscellaneous</h5>
+            <h5>Miscellaneous</h5>
             <p>You can remove any field from the righthand box by selecting it and then clicking the <em><< Remove</em> button, or by simply
                 double-clicking on the field name (IE only).
                 To change the order of the fields in the list, select a field and move it up or down within the list by clicking on the <em>Move
                     Up</em> and <em>Move Down</em> buttons.</p>
 
-            <h5 class="optionhead">Custom SQL Query</h5>
+            <h5>Custom SQL Query</h5>
             <p>If you know structured query language (SQL) and you're familiar with TNG's table structure, you may leave the Display, Criteria and
                 Sort areas blank and instead enter your direct
                 SQL SELECT statement in the box at the bottom of the screen.</p>
 
-            <h5 class="optionhead">Save Report vs. Save and Exit</h5>
+            <h5>Save Report vs. Save and Exit</h5>
             <p>When you're ready to save your report, click "Save Report" to save and stay on the same page and continue editing. Click "Save and
                 Exit" to save and return to the Reports
                 menu.</p>

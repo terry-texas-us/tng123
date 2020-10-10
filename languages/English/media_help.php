@@ -50,10 +50,10 @@ echo help_header("Help: Media");
                     Searching with no options selected and no value in the search box will find all media in your database. Search options include:
                 </p>
 
-                <h5 class="optionhead">Tree</h5>
+                <h5>Tree</h5>
                 <p>Restrict the results to media assigned to the selected tree.</p>
 
-                <h5 class="optionhead">Collection</h5>
+                <h5>Collection</h5>
                 <p>Restrict the results to media of the selected Collection type. To add a new Collection, click on the "Add Collection" button, then
                     fill
                     out the form in
@@ -61,25 +61,25 @@ echo help_header("Help: Media");
                     "Same setup as" field
                     allows you to indicate which one of the basic Collection types your new Collection should emulate.</p>
 
-                <h5 class="optionhead">File ext.</h5>
+                <h5>File ext.</h5>
                 <p>Enter a file extension (e.g., "jpg" or "gif") prior to clicking the Search button to restrict the results to media with
                     file names matching that extension.</p>
 
-                <h5 class="optionhead">Unlinked only</h5>
+                <h5>Unlinked only</h5>
                 <p>Check this box prior to clicking the Search button to restrict the results to media that are not linked to any individuals,
                     families, sources, repositories or places.</p>
 
-                <h5 class="optionhead">Status</h5>
+                <h5>Status</h5>
                 <p><strong>(Headstones only)</strong> Select a status from this list prior to clicking the Search button to show all headstone records
                     with the same status.</p>
 
-                <h5 class="optionhead">Cemetery</h5>
+                <h5>Cemetery</h5>
                 <p>Select a cemetery from this list prior to clicking the Search button to show all headstones assigned to the selected cemetery.</p>
 
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                     time, click the box in the
                     <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use
@@ -101,24 +101,24 @@ echo help_header("Help: Media");
                     location information, and
                     links to people, families and other entities, can be added after saving or locking the record. Take note of the following:</p>
 
-                <h5 class="optionhead">Collection</h5>
+                <h5>Collection</h5>
                 <p>Choose what type of media your item is (e.g., Photos, Documents, Headstones, Histories, Recordings or Videos). There is no
                     restriction
                     on file type for any of these media <span class="emphasis">collections</span>.</p>
 
-                <h5 class="optionhead">This media comes from an external source</h5>
+                <h5>This media comes from an external source</h5>
                 <p>Check this box if this image resides somewhere on the Internet other than on your server. You must supply
                     an absolute web address (for example, <em>http://www.thatsite.com/image.jpg</em>) in the field labeled "Media URL", and
                     you must provide your own thumbnail if you wish to have one (TNG will not create one).</p>
 
-                <h5 class="optionhead">Media File</h5>
+                <h5>Media File</h5>
                 <p>Select a physical file (either from your local computer or from your web site) for this media item.</p>
 
-                <h5 class="optionhead">File to Upload</h5>
+                <h5>File to Upload</h5>
                 <p>If your new media item has not yet been uploaded to your web site, click the "Browse" button and locate it on your hard drive.
                     If the item is already on your site, leave this field blank.</p>
 
-                <h5 class="optionhead">File name on site / Media URL</h5>
+                <h5>File name on site / Media URL</h5>
                 <p>If you had previously uploaded your media item, enter the path and file name of your item as it exists within the corresponding
                     collection folder on your web site,
                     or click on the "Select" button to locate the file within the proper Collection folder. If you are uploading
@@ -135,7 +135,7 @@ echo help_header("Help: Media");
                     sites).
                 </p>
 
-                <h5 class="optionhead">OR Body Text</h5>
+                <h5>OR Body Text</h5>
                 <p>Instead of uploading a physical file, you can type or paste the text or HTML code into this box. You can
                     also use the controls at the top of the Body Text field to add formatting to your text. Hold your mouse pointer over the various
                     control icons to see what you
@@ -143,7 +143,7 @@ echo help_header("Help: Media");
 
                 <p><strong>NOTE:</strong> If you are using HTML, do <strong>not</strong> include the HTML or BODY tags.</p>
 
-                <h5 class="optionhead">Thumbnail Image File</h5>
+                <h5>Thumbnail Image File</h5>
                 <p>You can select an existing physical file (either from your local computer or from your web site) to act as a "thumbnail" (smaller
                     image) for this media item,
                     or you can have TNG create one for you. You can also allow TNG to use a default thumbnail image by not selecting either option.
@@ -158,7 +158,7 @@ echo help_header("Help: Media");
                     (especially
                     older PDFs).</p>
 
-                <h5 class="optionhead">Specify image/Create from original</h5>
+                <h5>Specify image/Create from original</h5>
                 <p>If your server supports the GD image library, you will see an option here to supply your own
                     thumbnail or to have TNG create it for you from the original. If you choose the latter, by default the name of the new file will
                     be
@@ -173,7 +173,7 @@ echo help_header("Help: Media");
                     thumbnail created for an image that is very
                     large (more than a Mb or so).</p>
 
-                <h5 class="optionhead">File to Upload</h5>
+                <h5>File to Upload</h5>
                 <p>When an individual's genealogy is requested, thumbnail images of each photo linked to the individual are displayed on the same
                     page. If
                     a thumbnail
@@ -185,7 +185,7 @@ echo help_header("Help: Media");
                     web site, leave this
                     field blank.</p>
 
-                <h5 class="optionhead">File name on site</h5>
+                <h5>File name on site</h5>
                 <p>If you had previously uploaded your thumbnail image, enter the path and file name of your thumbnail as it exists within the
                     corresponding collection folder
                     on your web site (hint: you could put thumbnails in a subfolder if you want them to be kept separate or have the same names as the
@@ -202,23 +202,23 @@ echo help_header("Help: Media");
                     sites).
                 </p>
 
-                <h5 class="optionhead">Store files in: Multimedia Folder / Collection Folder</h5>
+                <h5>Store files in: Multimedia Folder / Collection Folder</h5>
                 <p>You may choose to store this media item in a folder corresponding to the collection selected above (the default option), or you can
                     put
                     it in the general
                     Multimedia folder.</p>
 
-                <h5 class="optionhead">Title</h5>
+                <h5>Title</h5>
                 <p>This should be short &#151; just a few words to identify your media item. It will be used as a link to the page displaying your
                     item.</p>
 
-                <h5 class="optionhead">Description</h5>
+                <h5>Description</h5>
                 <p>Include more detail here if necessary, including information about who or what is pictured or described, etc. This will be
                     displayed as
                     a blurb
                     accompanying your short description link (see previous field).</p>
 
-                <h5 class="optionhead">Width, Height</h5>
+                <h5>Width, Height</h5>
                 <p><strong>(Videos only)</strong> Some video players (e.g., Quicktime) require that the width and height of the video be specified. If
                     these are not specified, then the video may be cropped
                     too tightly and some portions of the video will not be visible. It is therefore recommended that you enter the size of your video
@@ -226,41 +226,41 @@ echo help_header("Help: Media");
                     in pixels. Please
                     also remember to leave about 16 vertical pixels for the video controller (the play/stop/volume controls, etc.).</p>
 
-                <h5 class="optionhead">Owner/Source, Date Taken</h5>
+                <h5>Owner/Source, Date Taken</h5>
                 <p>These are optional. If you know this information, enter it in the appropriate areas.</p>
 
-                <h5 class="optionhead">Tree</h5>
+                <h5>Tree</h5>
                 <p>If you would like to associate this media item with a particular tree, select that tree here. This will affect users who only have
                     permissions to edit
                     items associated with their assigned tree.</p>
 
-                <h5 class="optionhead">Cemetery</h5>
+                <h5>Cemetery</h5>
                 <p><strong>(Headstones only)</strong> The cemetery where the headstone is located. You must first add the cemetery
                     (under Admin/Cemeteries) before it will be visible in this box.</p>
 
-                <h5 class="optionhead">Plot</h5>
+                <h5>Plot</h5>
                 <p><strong>(Headstones only)</strong> The plot where the headstone is located (optional).</p>
 
-                <h5 class="optionhead">Status</h5>
+                <h5>Status</h5>
                 <p><strong>(Headstones only)</strong> Select from the dropdown list the word or phrase that best describes the condition of the
                     physical
                     headstone in question.</p>
 
-                <h5 class="optionhead">Always viewable</h5>
+                <h5>Always viewable</h5>
                 <p>Check this box if you want this media item to be displayed for the linked individuals at all times, regardless of their living
                     status
                     and user permissions.</p>
 
-                <h5 class="optionhead">Open in new window</h5>
+                <h5>Open in new window</h5>
                 <p>To cause the item to open in a new window when its link is clicked, check this box.</p>
 
-                <h5 class="optionhead">Link this media directly to the selected cemetery</h5>
+                <h5>Link this media directly to the selected cemetery</h5>
                 <p><strong>(Headstones only)</strong> Check this box to associate this headstone image with the cemetery itself. When the cemetery
                     page is
                     displayed, any media items
                     associated with the cemetery in this manner will be displayed at the top of the page.</p>
 
-                <h5 class="optionhead">Show cemetery map and media whenever this item is displayed</h5>
+                <h5>Show cemetery map and media whenever this item is displayed</h5>
                 <p><strong>(Headstones only)</strong> If the cemetery where this headstone is located has an accompanying map or photo, check this box
                     to
                     display the map or photo as well whenever the
@@ -277,7 +277,7 @@ echo help_header("Help: Media");
                     that item.
                     Take note of the following items that are not on the "Add New Media" page:</p>
 
-                <h5 class="optionhead">Media Links</h5>
+                <h5>Media Links</h5>
                 <p>You can link this media item to individuals, families, sources, repositories or places. For each link, first select the tree
                     associated
                     with the link entity.
@@ -308,26 +308,26 @@ echo help_header("Help: Media");
 
                 <p><strong>WARNING</strong>: Links to specific events created within TNG may be overwritten by subsequent GEDCOM imports.</p>
 
-                <h5 class="optionhead">Make Default</h5>
+                <h5>Make Default</h5>
                 <p>Check this box to use the thumbnail for this media item on the pedigree chart and at the top of other pages related to the
                     individual
                     or entity to which
                     the item is being linked.</p>
 
-                <h5 class="optionhead">Show</h5>
+                <h5>Show</h5>
                 <p>Uncheck this box if you don't want the thumbnail for this media item to show on the individual's page. You might choose to do this
                     if
                     the image was already
                     part of an album that was linked to the same individual.</p>
 
-                <h5 class="optionhead">Place Taken/Created</h5>
+                <h5>Place Taken/Created</h5>
                 <p>
                 <p>This section will start out collapsed. To expand, click on the "Place Taken/Created" header, or the arrow next to it. If you know
                     the
                     name of the place
                     where the photo was taken, enter it in the field labeled "Place Taken/Created".</p>
 
-                <h5 class="optionhead">Latitude, Longitude</h5>
+                <h5>Latitude, Longitude</h5>
                 <p>If there are latitude and/or longitude coordinates associated with your media item, enter them here to help others more accurately
                     pinpoint the location.
                     Alternatively, you can use the Google Map geocode function above to set the latitude and longitude for the media location. Click
@@ -335,7 +335,7 @@ echo help_header("Help: Media");
                     the "Show/hide clickable map"
                     button to reveal the Google Map.</p>
 
-                <h5 class="optionhead">Zoom</h5>
+                <h5>Zoom</h5>
                 <p>Enter the zoom level or adjust the zoom controls on the Google Map above to set the zoom level. This option is only available if
                     you
                     have received a "key"
@@ -345,7 +345,7 @@ echo help_header("Help: Media");
                     any
                     map in the public area.</p>
 
-                <h5 class="optionhead">Image Map</h5>
+                <h5>Image Map</h5>
                 <p>This section will start out collapsed. To expand, click on the "Image Map" header, or the arrow next to it. This section allows you
                     to
                     link
@@ -428,20 +428,20 @@ echo help_header("Help: Media");
                     entity. To change that
                     order, you must indicate a new order on the Media/Sort tab.</p>
 
-                <h5 class="optionhead">Tree, Link Type, Collection:</h5>
+                <h5>Tree, Link Type, Collection:</h5>
                 <p>Select the Tree associated with the entity for which you would like to sort media. Next, select a Link Type (Person, Family,
                     Source,
                     Repository or Place) and
                     the Collection you would like to sort.</p>
 
-                <h5 class="optionhead">ID:</h5>
+                <h5>ID:</h5>
                 <p>Enter the ID number or name (Places only) of the entity. If you don't know the ID number or exact place name, click the magnifying
                     glass icon to search for it.
                     When you find the desired entity, click on the "Select" link next to that entity. The popup will close and the selected ID will
                     appear
                     in the ID field.</p>
 
-                <h5 class="optionhead">Link to specific event</h5>
+                <h5>Link to specific event</h5>
                 <p>If you wish to sort only the media items attached to a specific event associated with the link entity, check the box marked "Link
                     to
                     specific event" AFTER
@@ -450,7 +450,7 @@ echo help_header("Help: Media");
                     will select the
                     specific event (optional).</p>
 
-                <h5 class="optionhead">Sorting Procedure</h5>
+                <h5>Sorting Procedure</h5>
                 <p>After selecting or entering an ID, click on the "Continue" button to display all media for the selected entity and Collection in
                     their
                     current order.
@@ -467,7 +467,7 @@ echo help_header("Help: Media");
                 <p>You can also move any item directly to the top of the list by clicking on the double up arrow icon to the right of the "Drag"
                     area.</p>
 
-                <h5 class="optionhead">Default Photos</h5>
+                <h5>Default Photos</h5>
                 <p>While sorting, you may also select any of the displayed photos as the current entity's <strong>Default Photo</strong>. That means
                     that
                     the thumbnail for the
@@ -487,7 +487,7 @@ echo help_header("Help: Media");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="thumbs"><h4 class="subheadbold">Thumbnails</h4></a>
 
-                <h5 class="optionhead">Generate Thumbnails</h5>
+                <h5>Generate Thumbnails</h5>
                 <p>When you click on the "Generate" button under this option, TNG will automatically create thumbnails for all JPG, GIF or
                     PNG images that do not already have an existing thumbnail. By default, the name of the new image will be the same as the larger
                     image
@@ -502,7 +502,7 @@ echo help_header("Help: Media");
 
                 <p><strong>NOTE</strong>: If you do not see the Generate Thumbnails section, your server does not support the GD image library.</p>
 
-                <h5 class="optionhead">Assign Default Photos</h5>
+                <h5>Assign Default Photos</h5>
                 <p>This option allows you to make the first photo for each individual, family and source be that entity's Default
                     Photo (the one displayed on pedigree charts, family group sheets, and at the top of other pages assigned to that entity). The
                     assignment can be
@@ -519,11 +519,11 @@ echo help_header("Help: Media");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="import"><h4 class="subheadbold">Importing Media</h4></a>
 
-                <h5 class="optionhead">Purpose</h5>
+                <h5>Purpose</h5>
                 <p>Create a media record for each physical file in any of your TNG media folders, with the file name becoming the title of each
                     record.</p>
 
-                <h5 class="optionhead">Usage</h5>
+                <h5>Usage</h5>
                 <p>To perform the import, first select a Collection (or add a new collection first) and a Tree (if the incoming items should be
                     associated
                     with a tree), then click the "Import"
@@ -543,13 +543,13 @@ echo help_header("Help: Media");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="upload"><h4 class="subheadbold">Uploading Media</h4></a>
 
-                <h5 class="optionhead">Purpose</h5>
+                <h5>Purpose</h5>
                 <p>Upload multiple media items at once, then give them better titles and descriptions, plus link them to individuals, families,
                     sources or
                     places
                     directly from this screen.</p>
 
-                <h5 class="optionhead">Usage</h5>
+                <h5>Usage</h5>
                 <p>To use, first select a Collection and a Tree (if the incoming items should be associated with a tree), then click "Add Files" and
                     select one or more files from your computer to upload. Most browsers (not Internet Explorer) will also allow
                     you to drag and drop files
@@ -565,13 +565,13 @@ echo help_header("Help: Media");
                     Once the upload has finished, you may add a new title or description, or link the item to entities in your database, or delete it
                     altogether.</p>
 
-                <h5 class="optionhead">Changing Title and Description</h5>
+                <h5>Changing Title and Description</h5>
                 <p>After a file is uploaded, fields for Title and Description are displayed. To change the default values, type in the new information
                     and
                     click "Save" in
                     the immediate area. Other information can be added later from the Edit Media screen.</p>
 
-                <h5 class="optionhead">Add Links</h5>
+                <h5>Add Links</h5>
                 <p>To link a particular media item to entities in your database, wait until the upload for that item has finished, then click the
                     "Media
                     Links" button on the same row.

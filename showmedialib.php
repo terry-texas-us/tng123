@@ -540,7 +540,7 @@ function showMediaSource($imgrow, $ss = false) {
                         echo "<div id='loadingdiv2' class='rounded10' style='position:static;'>{$text['loading']}</div>";
                         echo "<iframe name='iframe1' id='iframe1' src=\"img_viewer.php?mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width='100%' height='1' onload=\"calcHeight($calcHeight)\" frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>";
                     } else {
-                        echo "<div class='titlebox mediaalign' id='imgdiv'><img src='$mediasrc' id='theimage' $mapstr alt='$description'></div>\n";
+                        echo "<div class='titlebox text-center' id='imgdiv'><img src='$mediasrc' id='theimage' $mapstr alt='$description'></div>\n";
                     }
                 }
             } elseif (in_array($imgrow['form'], $videotypes) || in_array($imgrow['form'], $recordingtypes)) {

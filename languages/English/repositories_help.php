@@ -47,7 +47,7 @@ echo help_header("Help: Repositories");
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                     time, click the box in the
                     <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use
@@ -67,11 +67,11 @@ echo help_header("Help: Repositories");
                 <p>To add a new repository, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes and
                     additional events) can be added after saving or locking the record. Take note of the following:</p>
 
-                <h5 class="optionhead">Tree</h5>
+                <h5>Tree</h5>
                 <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new
                     repository.</p>
 
-                <h5 class="optionhead">Repository ID</h5>
+                <h5>Repository ID</h5>
                 <p>The Repository ID must be unique within the selected Tree and should consist of an upper case <strong>REPO</strong> or
                     <strong>R</strong> followed by a number (no more than 22 total characters).
                     An available, unique ID will be supplied when the page is first displayed and whenever a different tree is selected, but you may
@@ -98,10 +98,10 @@ echo help_header("Help: Repositories");
                     the
                     <strong>R</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
 
-                <h5 class="optionhead">Name</h5>
+                <h5>Name</h5>
                 <p>An short title for the repository.</p>
 
-                <h5 class="optionhead">Address 1, Address 2, City, State/Province, Zip/Postal Code, Country</h5>
+                <h5>Address 1, Address 2, City, State/Province, Zip/Postal Code, Country</h5>
                 <p>The repository's location (if applicable; all parts are optional).</p>
 
             </td>
@@ -115,13 +115,13 @@ echo help_header("Help: Repositories");
                     Edit
                     icon next to that repository.</p>
 
-                <h5 class="optionhead">Notes</h5>
+                <h5>Notes</h5>
                 <p>Notes may be linked to events or to the repository in general by clicking on the Notes icon at the top of the page
                     or next to each event under "Other Events". When notes already exist for an event, the Notes icon will feature a green dot in the
                     upper right corner.
                     For more information on Notes, see the <a href="notes_help.php">Help</a> link visible in the Notes area.</p>
 
-                <h5 class="optionhead">Other Events</h5>
+                <h5>Other Events</h5>
                 <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
                         href="events_help.php">Help</a> link there for more
                     information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New"
@@ -161,7 +161,7 @@ echo help_header("Help: Repositories");
                 <p>Click on this tab to review and merge repositories that may be slightly different but refer to the same material.
                     You will decide whether multiple records are the same or not.</p>
 
-                <h5 class="optionhead">Find Matches</h5>
+                <h5>Find Matches</h5>
                 <p>First, select a tree. You cannot merge repositories from different trees, so only one tree can be selected. After that, you have
                     the
                     option of
@@ -175,7 +175,7 @@ echo help_header("Help: Repositories");
                     duplicates
                     for Repository ID 1, leave Repository ID 2 blank.</p>
 
-                <h5 class="optionhead">Other Options</h5>
+                <h5>Other Options</h5>
                 <p><em>Combine Notes</em> means that notes from Repository 2 will be added to the notes
                     from Repository 1 for all merged fields. If this option is not selected and a field from Repository 2 is checked, the notes from
                     Repository 2 for that field will overwrite those
@@ -190,23 +190,23 @@ echo help_header("Help: Repositories");
                     performing any merge operations, just
                     in case you merge two individuals unintentionally.</p>
 
-                <h5 class="optionhead">Next Match</h5>
+                <h5>Next Match</h5>
                 <p>Find the next possible match that does not involve Repository 1. TNG traverses the list of possible repositories as ordered by
                     Repository ID in string format.
                     This means that "10" comes after "1" but before "2".</p>
 
-                <h5 class="optionhead">Next Duplicate</h5>
+                <h5>Next Duplicate</h5>
                 <p>Find the next possible duplicate for Repository 1. If this results in no record being displayed for Repository 2, it means that a
                     duplicate was not found.</p>
 
-                <h5 class="optionhead">Compare/Refresh</h5>
+                <h5>Compare/Refresh</h5>
                 <p>Compare Repository 1 and Repository 2. If that comparison is already displayed, clicking this button will cause the page to
                     refresh.</p>
 
-                <h5 class="optionhead">Switch</h5>
+                <h5>Switch</h5>
                 <p>Repository 1 becomes Repository 2 and vice versa.</p>
 
-                <h5 class="optionhead">Merge</h5>
+                <h5>Merge</h5>
                 <p>Repository 2 is merged into Repository 1. The ID for Repository 1 will be retained, as will all other data for Repository 1 unless
                     the
                     corresponding box(es) for
@@ -218,7 +218,7 @@ echo help_header("Help: Repositories");
                     a data field is not displayed for either Repository 1 or Repository 2, then no data exists in that field for either
                     individual.</p>
 
-                <h5 class="optionhead">Edit</h5>
+                <h5>Edit</h5>
                 <p>Edit the record for that repository in a new window. If changes are made, you must click "Compare/Refresh" in order to see the
                     changes
                     in on the Merge screen.</p>

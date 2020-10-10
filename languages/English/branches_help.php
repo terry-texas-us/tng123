@@ -64,7 +64,7 @@ echo help_header("Help: Branches");
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <h5 class="optionhead">Actions</h5>
+            <h5>Actions</h5>
             <p>The Action buttons next to each search result allow you to edit, delete or add labels to that Branch. To delete more than one Branch at
                 a time, click the box in the
                 <strong>Select</strong> column for each Branch to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -81,15 +81,15 @@ echo help_header("Help: Branches");
             <p>To add a new Branch, click on the <strong>Add New</strong> tab, then fill out the form.
                 Take note of the following:</p>
 
-            <h5 class="optionhead">Branch ID</h5>
+            <h5>Branch ID</h5>
             <p>This should be a short, unique, one-word identifier for the Branch. Do not include non-alphanumeric characters (stick to numbers and
                 letters), and do not use spaces.
                 This information will not appear anywhere, so it can be all lowercase. 20 character max.</p>
 
-            <h5 class="optionhead">Description:</h5>
+            <h5>Description:</h5>
             <p>This can be a longer description of this Branch or the data it contains.</p>
 
-            <h5 class="optionhead">Starting Individual</h5>
+            <h5>Starting Individual</h5>
             <p>Enter or find the ID of the individual with whom your branch begins. All
                 partial branches are defined by a starting individual and a number of ancestral or descendant generations from that individual. You
                 can add additional names
@@ -97,7 +97,7 @@ echo help_header("Help: Branches");
                 Individual will be remembered,
                 but all labels added previously will not be affected.</p>
 
-            <h5 class="optionhead">Number of Generations</h5>
+            <h5>Number of Generations</h5>
             <p>Indicate the number of generations back (Ancestors) or forward (Descendants) from the starting individual that you wish to label. When
                 labeling ancestors, you can also indicate how many descendant generations to label in from each ancestor.</p>
 
@@ -126,18 +126,18 @@ echo help_header("Help: Branches");
                 then follow the instructions in the window you see next. After selecting options, click the "Add labels" button at the bottom. Options
                 on that page include:</p>
 
-            <h5 class="optionhead">Action</h5>
+            <h5>Action</h5>
             <p>Choose whether you'll be adding new labels or clearing out existing ones. If you're clearing labels, then you will also choose whether
                 this action will clear
                 the branch label from All members of your tree or just clear the labels based on the criteria selected. </p>
 
-            <h5 class="optionhead">Existing labels</h5>
+            <h5>Existing labels</h5>
             <p>Your selection here determines what to do if any of the people you selected
                 for labeling already have a branch label. You may elect to leave the existing label(s) untouched, you may
                 choose to overwrite what's there, or you can decide to append the new label. If you choose the last option,
                 the affected individual(s) will now belong to multiple branches.</p>
 
-            <h5 class="optionhead">Show people with this tree/branch (label):</h5>
+            <h5>Show people with this tree/branch (label):</h5>
             <p>Click this button to display all individuals who already have
                 the selected branch label within the selected tree. From the display, click the Add Labels link
                 to return to the previous page, or click on any individual to edit their personal record.</p>

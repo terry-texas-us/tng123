@@ -66,7 +66,7 @@ $title = getTemplateMessage('t11_maintitle');
                                         <div class="art-postcontent">
 
                                             <div class="left-indent">
-                                                <div class="center">
+                                                <div class="text-center">
                                                     <br>
                                                     <img alt="" class="rounded10"
                                                         src="<?php echo $templatepath . $tmp['t11_mainimage']; ?>" id="mainphoto">

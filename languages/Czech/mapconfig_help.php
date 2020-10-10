@@ -20,7 +20,7 @@ echo help_header("N�pov�da: Nastaven� mapy");
     <tr class="databack">
         <td class="tngshadow"><span class="normal">
 
-		<h5 class="optionhead">Kl�� k map�</h5>
+		<h5>Kl�� k map�</h5>
 		<p>Pro pou�it� map z Google Maps na va�ich internetov�ch str�nk�ch mus�te od �ervna 2016 z�skat od Google tzv. <strong>kl��</strong> k map�. Tento kl�� m��ete obdr�et zde:<br>
 		<a href="https://developers.google.com/maps/documentation/javascript/get-api-key#key" target="_blank">https://developers.google.com/maps/documentation/javascript/get-api-key#key</a>. N�kter� kl��ov� body:</p>
 
@@ -33,52 +33,52 @@ echo help_header("N�pov�da: Nastaven� mapy");
 		kl�� z tohoto pole jednodu�e odstra�te a mapy a pole s mapami spojen� se v�m ji� nebudou zobrazovat. V�ce informac� o pr�ci s Google Maps najdete na TNG Wiki: 
     <a href="http://tng.lythgoes.net/wiki/index.php/Google_Maps_-_Getting_Started" target="_blank">http://tng.lythgoes.net/wiki/index.php/Google_Maps_-_Getting_Started</a>.</p>
 
-		<h5 class="optionhead">Umo�nit mapy</h5>
+		<h5>Umo�nit mapy</h5>
 		<p>Chcete-li na va�ich str�nk�ch tam, kde jsou sou�adnice zem�pisn� ���ky a d�lky, zobrazit Google Maps, nastavte tuto volby na "Ano" (jin�mi slovy, i kdy� jste umo�nili
 		tuto volby, mapu neuvid�te, pokud z�znamy va�ich m�st neobsahuj� sou�adnice zem�pisn� ���ky a d�lky (nebyly tzv. geok�dov�ny)).</p>
 
-		<h5 class="optionhead">Typ mapy</h5>
+		<h5>Typ mapy</h5>
 		<p>Vyberte, kter� typ mapy bude zobrazen nejd��ve: Ter�nn�, Cestovn� mapa, Satelitn� nebo Hybridn� (satelitn� mapa s ulicemi na povrchu).</p>
 
-		<h5 class="optionhead">V�choz� zem�pisn� ���ka, V�choz� zem�pisn� d�lka</h5>
+		<h5>V�choz� zem�pisn� ���ka, V�choz� zem�pisn� d�lka</h5>
 		<p>Tyto sou�adnice ur�uj�, kde je v�choz� "st�ed" mapy u m�st, kter� je�t� nemaj� p�ipojeny zem�pisn� sou�adnice. �pendl�k bude zobrazen
 		v tomto m�st�.</p>
 
-		<h5 class="optionhead">V�choz� p�ibl�en�</h5>
+		<h5>V�choz� p�ibl�en�</h5>
 		<p>Toto ��slo ozna�uje, jak bl�zko nebo daleko bude p�i zah�jen� zobrazena v administr�torsk� oblasti nov� mapa. Ni��� ��slo znamen�, �e
 		pohled bude d�l, zat�mco je-li ��slo vy���, pohled bude bl�. Pokud bude p�ibl�en� ulo�eno s ur�itou mapou, bude s touto mapou ulo�eno.</p>
 
-		<h5 class="optionhead">P�ibl�en� m�sta</h5>
+		<h5>P�ibl�en� m�sta</h5>
 		<p>Toto ��slo ozna�uje, jak bl�zko nebo daleko bude na Google Maps zobrazeno v administr�torsk� oblasti m�sto, po jeho vyhled�n� a nalezen�.</p>
 
-		<h5 class="optionhead">Rozm�ry na str�nk�ch osob</h5>
+		<h5>Rozm�ry na str�nk�ch osob</h5>
 		<p>Zadejte rozm�ry (���ka mus� b�t v pixelech s ozna�en�m "px" na konci nebo v procentech; v��ka mus� b�t v pixelech s ozna�en�m "px" na konci) map
 		zobrazen�ch na str�nk�ch osob. Nap�. chcete-li vytvo�it mapu vysokou 500 pixel�, nastavte <strong>v��ku</strong> na 500px. Chcete-li vytvo�it mapu, kter� m� obs�hnout 80 procent
 		m�sta z p�id�len� oblasti, nastavte <strong>���ku</strong> na 80%.</p>
 
-		<h5 class="optionhead">Rozm�ry na str�nk�ch n�hrobk�</h5>
+		<h5>Rozm�ry na str�nk�ch n�hrobk�</h5>
 		<p>Zadejte rozm�ry (���ka mus� b�t v pixelech s ozna�en�m "px" na konci nebo v procentech; v��ka mus� b�t v pixelech s ozna�en�m "px" na konci) map
 		zobrazen�ch na v�ech str�nk�ch, kter� jsou spojeny s n�hrobky.</p>
 
-		<h5 class="optionhead">Rozm�ry na str�nk�ch administr�tora</h5>
+		<h5>Rozm�ry na str�nk�ch administr�tora</h5>
 		<p>Zadejte rozm�ry (���ka mus� b�t v pixelech s ozna�en�m "px" na konci nebo v procentech; v��ka mus� b�t v pixelech s ozna�en�m "px" na konci) map
 		zobrazen�ch na v�ech administr�torsk�ch str�nk�ch.</p>
 
-		<h5 class="optionhead">Skr�t na za��tku mapy v administr�torsk� oblasti</h5>
+		<h5>Skr�t na za��tku mapy v administr�torsk� oblasti</h5>
 		<p>Chcete-li na str�nk�ch administr�tora skr�t mapy, dokud jste neklikli na tla��tko <span class="emphasis">Zobrazit/Skr�t</span>, vyberte zde volbu <span
                 class="choice">Ano</span>.
 		Chcete-li zobrazit mapy ihned po zobrazen� t�chto str�nek, vyberte volbu <span class="choice">Ne</span>.</p>
 
-		<h5 class="optionhead">Skr�t na za��tku mapy ve ve�ejn� oblasti</h5>
+		<h5>Skr�t na za��tku mapy ve ve�ejn� oblasti</h5>
 		<p>Chcete-li zpozdit zobrazen� mapy na str�nk�ch osoby, dokud je u�ivatel nezavol�, vyberte zde volbu <span class="choice">Ano</span>. Umo�n� to
 		na��st str�nku rychleji. Mapa pak bude na�tena po kliknut� na tla��tko <span class="emphasis">Zobrazit mapu</span>.  
 		Pokud vyberete volbu <span class="choice">Ne</span>, mapa na str�nce osoby bude na�tena hned po zobrazen� t�to str�nky.</p>
 
-		<h5 class="optionhead">Slou�it duplicitn� �pendl�ky</h5>
+		<h5>Slou�it duplicitn� �pendl�ky</h5>
 		<p>Pokud se na stejn�m m�st� objev� v�ce ud�lost�, nastaven�m t�to volby na <span class="emphasis">Ano</span> zabr�n�m vytvo�en� duplicitn�ch �pendl�k�
 		u nejednozna�n�ch n�zv� m�st. Pozn.: Nastaven�m t�to volby na <span class="emphasis">Ne</span> zp�sob�, �e si duplicitn� �pendl�ky budou vz�jemn� p�ek�et.</p>
 
-		<h5 class="optionhead">�pendl�ky �rovn� s�del: Ozna�en� a barvy</h5>
+		<h5>�pendl�ky �rovn� s�del: Ozna�en� a barvy</h5>
 		<p>Ka�d� m�sto se zem�pisn�mi sou�adnicemi m��e b�t spojeno s jedn�m ze �esti <strong>�rovn� s�dla</strong> (nap�. M�sto, M�sto/obec, Okres, atd.). Ozna�en� pro tyto �rovn�
 		naleznete v souboru "alltext.php", kter� se nach�z� ve slo�ce p��slu�n�ho jazyka a p�epsat je m��ete ve va�em souboru "cust_text.php" (tak� v ka�d� jazykov� slo�ce).</p>
 

@@ -99,14 +99,14 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                 ?>
                 <table class="normal">
                     <tr>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['action']; ?></th>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['id']; ?></th>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['treename']; ?></th>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['description']; ?></th>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['people']; ?></th>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['owner']; ?></th>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['lastimport']; ?></th>
-                        <th class="fieldnameback fieldname nw"><?php echo $admtext['importfilename']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['action']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['id']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['treename']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['description']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['people']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['owner']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['lastimport']; ?></th>
+                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['importfilename']; ?></th>
                     </tr>
 
                     <?php
@@ -135,13 +135,13 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
 
                         echo "<tr id=\"row_{$row['gedcom']}\">";
                         echo "<td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
-                        echo "<td class='lightback nw'>&nbsp;$gedcom&nbsp;</td>\n";
+                        echo "<td class='lightback text-nowrap'>&nbsp;$gedcom&nbsp;</td>\n";
                         echo "<td class='lightback'>&nbsp;{$row['treename']}&nbsp;</td>\n";
                         echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";
-                        echo "<td class='lightback nw' align=\"right\">&nbsp;$pcount&nbsp;</td>\n";
-                        echo "<td class='lightback nw'>&nbsp;{$row['owner']}&nbsp;</td>\n";
-                        echo "<td class='lightback nw'>&nbsp;{$row['lastimportdate']}&nbsp;</td>\n";
-                        echo "<td class='lightback nw'>&nbsp;{$row['importfilename']}&nbsp;</td>\n";
+                        echo "<td class='lightback text-nowrap' align=\"right\">&nbsp;$pcount&nbsp;</td>\n";
+                        echo "<td class='lightback text-nowrap'>&nbsp;{$row['owner']}&nbsp;</td>\n";
+                        echo "<td class='lightback text-nowrap'>&nbsp;{$row['lastimportdate']}&nbsp;</td>\n";
+                        echo "<td class='lightback text-nowrap'>&nbsp;{$row['importfilename']}&nbsp;</td>\n";
                         echo "</tr>\n";
                     }
                     tng_free_result($result);

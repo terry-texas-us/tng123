@@ -37,12 +37,12 @@ echo help_header("Pomoc: Notatki");
 
             <p>Podczas dodawania lub edycji notatek dostępne są następujące pola:</p>
 
-            <h5 class="optionhead">Notatka</h5>
+            <h5>Notatka</h5>
             <p>Wpisz swoją notatkę, lub dokonaj zmian w dużym polu <strong>Notatek</strong> i kliknij przycisk "Zapisz".
                 Notatka zostanie zapisana, nawet jeśli inne informacje dla aktywnego podmiotu nie są aktywne. Można tu wprowadzić kod HTML. Kody PHP i
                 Javascript nie będą działać.</p>
 
-            <h5 class="optionhead">Informacja prywatna</h5>
+            <h5>Informacja prywatna</h5>
             <p>Zaznacz to pole aby zapobiec wyświetlaniu notatki w obszarze publicznym.</p>
 
         </td>

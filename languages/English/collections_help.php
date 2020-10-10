@@ -56,21 +56,21 @@ echo help_header("Help: Collections");
                 Media screens).
                 When the small popup appears, fill out the form. Take note of the following:</p>
 
-            <h5 class="optionhead">Collection ID</h5>
+            <h5>Collection ID</h5>
             <p>A very short string of characters to be an identifier for this collection. It should not contain spaces or any characters that are not
                 alphanumeric,
                 and ideally it should be 10 characters or less. For example, if you were creating a collection for military records, you might put
                 "military" in this field.
                 This value will not be displayed anywhere, so what you name it doesn't really matter, just as long as it is unique.</p>
 
-            <h5 class="optionhead">Export as</h5>
+            <h5>Export as</h5>
             <p>When you export a GEDCOM file that includes media, the file will contain a line for each item indicating what type of media it is. This
                 should be
                 a single word in uppercase. For example, a photo will be exported with the type "PHOTO". If you are creating a new Collection called
                 "Newspapers",
                 you may want to put "NEWSPAPER" in this field.</p>
 
-            <h5 class="optionhead">Display title</h5>
+            <h5>Display title</h5>
             <p>This is the name that will be displayed wherever collections are listed, and whenever items of this collection are shown. The Display
                 Title can be slightly
                 longer than the Collection ID, but it should still be relatively short. Using the same example, you might put "Military Records" in
@@ -87,7 +87,7 @@ echo help_header("Help: Collections");
                 or ID ("military") should
                 not be translated.</p>
 
-            <h5 class="optionhead">Folder name</h5>
+            <h5>Folder name</h5>
             <p>The name of the physical folder or directory on your web site where items in this collection will be stored. It should be relatively
                 short, with no spaces
                 and only alphanumeric characters (e.g., "military"). After entering a value, you can click on the "Make Folder" button to try and
@@ -98,7 +98,7 @@ echo help_header("Help: Collections");
                 and other collection folder.
                 Make sure the actual name matches the name you put here exactly ("Military" does not match "military").</p>
 
-            <h5 class="optionhead">Local path(s)</h5>
+            <h5>Local path(s)</h5>
             <p>This field helps you determine how much of your local media path names need to be stored on your site during a GEDCOM import by
                 removing the parts that are
                 unique to your home computer. Enter the base path or paths (separate multiple entries with commas) where files from this collection
@@ -117,23 +117,23 @@ echo help_header("Help: Collections");
                 TNG will automatically strip everything
                 but the file names.</p>
 
-            <h5 class="optionhead">Icon file</h5>
+            <h5>Icon file</h5>
             <p>You must create your own icon, or use one of the existing ones, and enter the name of the icon file here. The icon file can located in
                 the main TNG folder,
                 or you can put it in the "img" folder along with the other standard media icons (like "tng_photo.gif" or "tng_doc.gif"). If you put it
                 in the "img" folder,
                 you must prefix the icon file name with "img/".</p>
 
-            <h5 class="optionhead">Thumbnail file</h5>
+            <h5>Thumbnail file</h5>
             <p>This is the name of the default thumbnail image for this collection. In other words, if you create a media item in this collection and
                 do not supply a thumbnail
                 for that specific item, the image designated here will be used as the thumbnail. The thumbnail must be placed in the "img" folder.</p>
 
-            <h5 class="optionhead">Display order</h5>
+            <h5>Display order</h5>
             <p>Enter a whole number here to indicate the order in which your custom Collection types will be displayed in the public dropdown menus.
                 Lower numbers appear first.</p>
 
-            <h5 class="optionhead">Same setup as</h5>
+            <h5>Same setup as</h5>
             <p>You may have noticed that the Add Media and Edit Media screens change slightly depending on which Collection you choose. This "same
                 setup as" field allows you
                 to indicate which of the standard Collection types your new Collection should resemble most, with regard to the layout of those

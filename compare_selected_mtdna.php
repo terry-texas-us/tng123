@@ -102,15 +102,15 @@ echo $header;
 
             <?php
             if ($allow_edit || $showtestnumbers) { ?>
-                <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
             <?php } ?>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="3" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['hvr1_values']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['hvr2_values']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="3" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr1_values']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr2_values']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
             <?php
             global $numtrees;
             if (!$assignedtree && ($numtrees > 1)) { ?>
@@ -191,8 +191,8 @@ echo $header;
                     $seq = "RSRS";
                 }
                 echo "<td class=\"$databack\">&nbsp;$seq</td>";
-                echo "<td class=\"$databack  nw\">&nbsp;{$row['hvr1_results']}</td>";
-                echo "<td class=\"$databack  nw\">&nbsp;{$row['hvr2_results']}</td>";
+                echo "<td class='$databack  text-nowrap'>&nbsp;{$row['hvr1_results']}</td>";
+                echo "<td class='$databack  text-nowrap'>&nbsp;{$row['hvr2_results']}</td>";
 
                 $mrcanc_namestr = "";
                 $anc_namestr = "";
@@ -232,7 +232,7 @@ echo $header;
                 $group = $row['dna_group_desc'] ? $row['dna_group_desc'] : $text['none'];
                 echo "<td class=\"$databack\">$group</td>";
                 if (!$assignedtree && ($numtrees > 1)) {
-                    echo "<td class=\"$databack nw\"><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class='$databack text-nowrap'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                 }
                 echo "</tr>\n";
                 $i++;

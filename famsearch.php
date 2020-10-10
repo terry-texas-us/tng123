@@ -347,19 +347,19 @@ echo $header;
     <thead>
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname"># </span></th>
-        <th data-tablesaw-priority="3" class="fieldnameback fieldname nw"><?php echo $text['familyid']; ?></th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw"><?php echo $fnamesort; ?></th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw"><?php echo $mnamesort; ?></th>
-        <th data-tablesaw-priority="2" class="fieldnameback fieldname nw"><?php echo $marrsort; ?></th>
+        <th data-tablesaw-priority="3" class="fieldnameback fieldname text-nowrap"><?php echo $text['familyid']; ?></th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap"><?php echo $fnamesort; ?></th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap"><?php echo $mnamesort; ?></th>
+        <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap"><?php echo $marrsort; ?></th>
         <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
         <?php if ($mydivplace || $mydivyear) { ?>
-            <th data-tablesaw-priority="3" class="fieldnameback fieldname nw"><?php echo $divsort; ?></th>
+            <th data-tablesaw-priority="3" class="fieldnameback fieldname text-nowrap"><?php echo $divsort; ?></th>
             <th data-tablesaw-priority="5" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
             <?php
         }
         if ($numtrees > 1) {
             ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname nw"><?php echo $text['tree']; ?></th>
+            <th data-tablesaw-priority="5" class="fieldnameback fieldname text-nowrap"><?php echo $text['tree']; ?></th>
         <?php } ?>
     </tr>
     </thead>

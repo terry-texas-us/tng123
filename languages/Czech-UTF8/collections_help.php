@@ -43,20 +43,20 @@ echo help_header("Nápověda: Kolekce");
                 Upravit média).
                 Po zobrazení malého okna vyplňte formulář. Význam jednotlivých polí je následující:</p>
 
-            <h5 class="optionhead">ID číslo kolekce</h5>
+            <h5>ID číslo kolekce</h5>
             <p>Velmi krátký řetězec znaků, který slouží jako identifikátor této kolekce. Neměl by obsahovat mezery ani žádné znaky, které nejsou
                 alfanumerické,
                 a měl mít maximálně 10 znaků. Např. pokud jste vytvořili kolekci pro vojenské záznamy, do tohoto pole byste měli zapsat "military".
                 Tato hodnota se nikde nezobrazí, takže není důležité, jak ji pojmenujete, ale musí být jednoznačná.</p>
 
-            <h5 class="optionhead">Exportovat jako</h5>
+            <h5>Exportovat jako</h5>
             <p>Když exportujete soubor GEDCOM, který obsahuje média, soubor bude obsahovat řádek pro každou položku označující, o jaký typ média jde.
                 Mělo by to být
                 jedno slovo zapsané velkými písmeny. Např. fotografie se bude exportovat s typem "PHOTO". Pokud jste vytvořili novou kolekci nazvanou
                 "Noviny",
                 do tohoto pole můžete vložit "NEWSPAPER".</p>
 
-            <h5 class="optionhead">Zobrazený titul</h5>
+            <h5>Zobrazený titul</h5>
             <p>Jde o název, který bude zobrazen kdekoli je zmíněna kolekce a kdekoli je zobrazena položka z této kolekce. Zobrazený titul může být o
                 něco delší
                 než ID číslo kolekce, ale měl by být také relativně krátký. Při použití stejného příkladu můžete do tohoto pole vložit "Vojenské
@@ -72,7 +72,7 @@ echo help_header("Nápověda: Kolekce");
                 by neměl
                 být přeložen.</p>
 
-            <h5 class="optionhead">Název složky</h5>
+            <h5>Název složky</h5>
             <p>Název fyzické složky nebo adresáře na vašich webových stránkách, kde budou položky z této kolekce uloženy. Měl by být relativně krátký,
                 bez mezer
                 a s pouze alfanumerickými znaky (např. "military"). Po zápisu hodnoty můžete kliknout na tlačítko "Vytvořit složku". Měli byste
@@ -82,7 +82,7 @@ echo help_header("Nápověda: Kolekce");
                 "histories" a dalších.
                 Aktuální název musí přesně odpovídat názvu, který jste zapsali ("Military" není stejné jako "military").</p>
 
-            <h5 class="optionhead">Lokální umístění</h5>
+            <h5>Lokální umístění</h5>
             <p>Toto pole vám pomůže stanovit, jak velkou část názvu lokálního umístění vašich médií je třeba uložit na vašich stránkách během importu
                 souboru GEDCOM
                 pomocí odebrání části názvu, která je jedinečná pro váš domácí počítač. Zadejte základní cestu nebo cesty (více položek oddělte
@@ -99,25 +99,25 @@ echo help_header("Nápověda: Kolekce");
                 automaticky odstraní všechno mimo názvů souborů.
             </p>
 
-            <h5 class="optionhead">Soubor s ikonou</h5>
+            <h5>Soubor s ikonou</h5>
             <p>Musíte vytvořit svoji vlastní ikonu nebo použít nějakou existující a název souboru s ikonou zapsat do tohoto pole. Soubor s ikonou může
                 být umístěn v hlavní složce TNG
                 nebo jej můžete uložit do složky "img" spolu s ostatními standardními ikonami (jako "tng_photo.gif" nebo "tng_doc.gif"). Pokud jej
                 uložíte do složky "img",
                 musíte k názvu souboru přidat příponu "img/".</p>
 
-            <h5 class="optionhead">Soubor náhledu</h5>
+            <h5>Soubor náhledu</h5>
             <p>Toto je název výchozího obrázku náhledu této kolekce. Jinými slovy, pokud vytvoříte v této kolekci mediální položku a pro tuto
                 specifickou položku nepoužijete
                 náhled, obrázek zapsaný zde bude použit jako náhled. Obrázek náhledu může být uložen v hlavní složce TNG
                 nebo jej můžete uložit do složky "img" spolu s ostatními standardními ikonami. Pokud jej uložíte do složky "img",
                 musíte k názvu souboru přidat příponu "img/".</p>
 
-            <h5 class="optionhead">Pořadí v zobrazení</h5>
+            <h5>Pořadí v zobrazení</h5>
             <p>Zde zapište celé číslo, které bude udávat pořadí, ve které bude vaše vlastní kolekce zobrazena v rozbalovacích nabídkách ve veřejné
                 oblasti. Nižší čísla se objeví jako první.</p>
 
-            <h5 class="optionhead">Stejné nastavení jako</h5>
+            <h5>Stejné nastavení jako</h5>
             <p>Možná jste si všimli, že se obrazovky Přidat médium a Upravit médium trošku mění v závislosti na zvolené kolekci. Toto pole "stejné
                 nastavení jako" vám umožní
                 označit, kterou standardní kolekci vaše nová kolekce nejvíce připomíná, s ohledem na uspořádání těchto obrazovek.</p>

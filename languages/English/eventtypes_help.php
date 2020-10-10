@@ -45,21 +45,21 @@ echo help_header("Help: Custom Event Types");
                 Searching with no options selected and no value in the search box will find all Custom Event Types in your database. Search options
                 include:</p>
 
-            <p><h5 class="optionhead">Associated with</h5>
+            <p><h5>Associated with</h5>
             Choose an option from this dropdown box to limit the search to Custom Event Types associated with
             individuals, families, sources or repositories.</p>
 
-            <p><h5 class="optionhead">Accept/Ignore/All</h5>
+            <p><h5>Accept/Ignore/All</h5>
             Select one of these options to limit the search to Custom Event Types that are being <strong>accepted</strong> or those
             that are being <strong>ignored</strong>. Choosing <strong>All</strong> will not restrict the search results.</p>
 
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <p><h5 class="optionhead">Delete/Accept/Ignore/Collapse Selected</h5>
+            <p><h5>Delete/Accept/Ignore/Collapse Selected</h5>
             Click the checkbox next to one or more event types, then use these buttons to perform the action on all selected event types at once.</p>
 
-            <h5 class="optionhead">Actions</h5>
+            <h5>Actions</h5>
             <p>The Action buttons next to each search result allow you to edit or delete that result. To delete more than one record at a time, click
                 the box in the
                 <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -88,50 +88,50 @@ echo help_header("Help: Custom Event Types");
                 the <a href="#search">Search</a> tab to locate the record, then click on the Edit icon next to that line.
                 When adding or editing a Custom Event Type, take note of the following:</p>
 
-            <h5 class="optionhead">Associated with</h5>
+            <h5>Associated with</h5>
             <p>Choose an option from this dropdown box to associate this custom event type with individuals, families, sources
                 or repositories. A single custom event type may not be associated with more than one of these options. The
                 choice made here will dictate what options show in the Tag dropdown box.</p>
 
-            <h5 class="optionhead">Select Tag or enter</h5>
+            <h5>Select Tag or enter</h5>
             <p>This is a 3 or 4 character abbreviation (all uppercase) or mnemonic code.
                 Many common non-standard event types are listed in the Tag select box. If you do not see the desired tag here, enter it in the box
                 directly beneath. If you select a tag from the list
                 AND enter one in the box, the tag you entered in the box will be accepted and the tag selected from the list will be ignored.</p>
 
-            <h5 class="optionhead">Type/Description</h5>
+            <h5>Type/Description</h5>
             <p>This should match the "Type" output by your PC/Mac genealogy program for this event type. NOTE: This field will only be displayed if
                 you
                 choose "EVEN" for your tag. For all other tags, this field should be left blank.</p>
 
-            <h5 class="optionhead">Display</h5>
+            <h5>Display</h5>
             <p>This will appear in the column to the left of the event data when it is displayed for public viewing. If you have set up multiple
                 languages,
                 you will see a section below this field titled "Other Languages". If you click on the plus sign, a separate
                 Display box will be presented for each language supported. To have the same label display for every language,
                 fill in the Display box above and leave the language-specific display boxes blank.</p>
 
-            <h5 class="optionhead">Display Order</h5>
+            <h5>Display Order</h5>
             <p>Events with associated dates are always sorted chronologically. Those events without dates are sorted within
                 that list, in the order they appear in the database. The order of this sublist can be affected by assigning
                 a Display Order here. A lower number will cause an event to be sorted higher.</p>
 
-            <h5 class="optionhead">Event Data</h5>
+            <h5>Event Data</h5>
             <p>To accept imported data corresponding to this custom event type, select <em>Accept</em>. To reject data corresponding to this type and
                 cause it to not
                 be imported, choose <em>Ignore</em>. Once an event of this type is imported, you may still elect not to
                 display it by setting this option back to Ignore.</p>
 
-            <h5 class="optionhead">Collapse Event</h5>
+            <h5>Collapse Event</h5>
             <p>If the information for this event results in more than one row of data on the Individual page, all rows after the first will start off
                 in the collapsed
                 position. Visitors can expand the event and view the hidden information by clicking on the downward-facing triangle next to the event
                 label.</p>
 
-            <h5 class="optionhead">LDS Event</h5>
+            <h5>LDS Event</h5>
             <p>If this event type should be subject to the same privacy rules that govern other LDS events, choose "Yes" here.</p>
 
-            <p><h5 class="optionhead">Required fields:</h5> You must select or enter a GEDCOM tag for your event. If you choose "EVEN" (generic
+            <p><h5>Required fields:</h5> You must select or enter a GEDCOM tag for your event. If you choose "EVEN" (generic
             custom event) for
             your Tag, you must also enter a Type/Description. If you do not choose EVEN as your Tag, you must leave the Type/Description field
             blank. You must also enter a Display

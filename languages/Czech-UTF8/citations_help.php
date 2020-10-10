@@ -51,7 +51,7 @@ echo help_header("Nápověda: Citace");
 
             <p>Při přidání nebo úpravě citace si všimněte následujícího:</p>
 
-            <h5 class="optionhead">ID číslo pramenu</h5>
+            <h5>ID číslo pramenu</h5>
             <p>Zapište ID číslo pramenu, který má být citován, nebo klikněte na tlačítko "Najít" pro jeho nalezení. Pokud pramen ještě nebyl vytvořen,
                 přejděte do Admin/Prameny a vytvořte pramen v příslušném stromě. Poté se vraťte do seznamu citací nebo můžete kliknout na tlačítko
                 "Vytvořit"
@@ -60,23 +60,23 @@ echo help_header("Nápověda: Citace");
                 "Kopírovat poslední". Kliknutí
                 na toto tlačítko budou všechna pole vyplněna stejnými údaji, jako jste použili ve své minulé citaci.</p>
 
-            <!--<h5 class="optionhead">Description</h5>
+            <!--<h5>Description</h5>
         <p>If your desktop genealogy program does not assign ID numbers to your sources, your citation will have a Description instead. You will not see
         the Description field for a new citation.</p>-->
 
-            <h5 class="optionhead">Strana</h5>
+            <h5>Strana</h5>
             <p>Zapište stránku, na které se ve vybraném pramenu nachází tato událost (volitelné).</p>
 
-            <h5 class="optionhead">Věrohodnost</h5>
+            <h5>Věrohodnost</h5>
             <p>Vyberte číslo (0-3), které označuje, na kolik je tento pramen věrohodný (volitelné). Vyšší čísla označují větší věrohodnost.</p>
 
-            <h5 class="optionhead">Datum citace</h5>
+            <h5>Datum citace</h5>
             <p>Datum spojené s touto citací (volitelné).</p>
 
-            <h5 class="optionhead">Vlastní text</h5>
+            <h5>Vlastní text</h5>
             <p>Krátký výňatek z materiálu pramenu (volitelné).</p>
 
-            <h5 class="optionhead">Poznámky</h5>
+            <h5>Poznámky</h5>
             <p>Užitečné poznámky, které se týkají tohoto pramenu (volitelné).</p>
 
         </td>

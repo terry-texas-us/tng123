@@ -35,7 +35,7 @@ echo help_header("Pomoc: Miejsca");
             <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
                 przywraca domyślne wartości i wszystkich wyszukiwań.</p>
 
-            <h5 class="optionhead">Czynność</h5>
+            <h5>Czynność</h5>
             <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
                 jeden rekord jednocześnie, kliknij pole w kolumnie
                 <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
@@ -59,17 +59,17 @@ echo help_header("Pomoc: Miejsca");
                 należy użyć przycisku <a href="#search">Szukaj</a> aby zlokalizować miejsce,
                 a następnie kliknąć na ikonkę Edycja obok wybranej linii. Podczas dodawania lub edycji miejsca dostępne są następujące elementy:</p>
 
-            <h5 class="optionhead">Drzewo</h5>
+            <h5>Drzewo</h5>
             <p>Wybierz jedno z istniejących drzew. Każde miejsce musi być przypisane do drzewa. <strong> Uwaga: </strong> Drzewo nie może być
                 zmieniane dla raz utworzonego miejsca (zamiast tego możesz usunąć miejsce i dodać go ponownie dla innego drzewa).
             </p>
 
-            <h5 class="optionhead">Miejsce</h5>
+            <h5>Miejsce</h5>
             <p>Podaj nazwę miejsca w kolejności do najmniejszej miejscowości do największej. Wszystkie miejscowości powinny być oddzielone
                 przecinkami. Na przykład <em>Jabłoń, Pisz, piski, warmińsko-mazurskie, Polska</em>.
                 Nie używaj niejednoznacznych lub mało znanych skrótów.</p>
 
-            <h5 class="optionhead">Pokaż/ukryj mapę Google</h5>
+            <h5>Pokaż/ukryj mapę Google</h5>
             <p>Kliknij przycisk "Pokaż / Ukryj mapę Google", aby pokazać mapę. Ta opcja jest dostępna tylko jeśli masz "klucz mapy" z Google i
                 wpisałeś go w Administracja/Ustawienia i konfiguracja/Ustawienia mapy (patrz <a href="mapsettings_help.php">Pomoc:
                     Ustawienia mapy</a>). Kliknij przycisk ponownie, aby ukryć mapę. Aby wyszukać
@@ -79,23 +79,23 @@ echo help_header("Pomoc: Miejsca");
                 <a href="places_googlemap_help.php">Pomoc: Mapy Google</a> aby uzyskać więcej informacji. W celu uzyskania informacji na temat
                 domyślnych ustawień mapy patrz również <a href="mapsettings_help.php">Pomoc: Ustawienia mapy</a>.</p>
 
-            <h5 class="optionhead">Szerokość/długość (geograficzna)</h5>
+            <h5>Szerokość/długość (geograficzna)</h5>
             <p>Wprowadź szerokość i długość geograficzną lokalizacji miejsca lub kliknij na wybrany punkt na mapie aby ustawić te wartości
                 (opcjonalnie, patrz wyżej).</p>
 
-            <h5 class="optionhead">Zoom</h5>
+            <h5>Zoom</h5>
             <p>Wpisz poziom powiększenia mapy, lub dostosuj poziom przy pomocy suwaka na mapie Google. Ta opcja jest dostępna tylko jeśli masz "klucz
                 mapy" z Google i
                 wpisałeś go w Administracja/Ustawienia i konfiguracja/Ustawienia mapy.</p>
 
-            <h5 class="optionhead">Poziom miejsca</h5></p>
+            <h5>Poziom miejsca</h5></p>
             <p>Wybierz poziom miejsca, który najlepiej opisuje poziom lokalizacji reprezentujący nazwę miejsca. Może to pomóc odwiedzającym , jak
                 można było dokładne identyfikować umiejscowienie "szpilki" .</p>
 
-            <h5 class="optionhead">Notatki</h5>
+            <h5>Notatki</h5>
             <p> Jeśli do opisania cmentarza lub jego lokalizacji potrzebne są dodatkowe informacje, wprowadź je tutaj (opcjonalnie).</p>
 
-            <h5 class="optionhead">Zmień w nazwy miejsca w istniejących wydarzeniach</h5>
+            <h5>Zmień w nazwy miejsca w istniejących wydarzeniach</h5>
             <p>Zaznaczenie tego pola (widoczne tylko podczas edycji istniejącego miejsca) spowoduje, że wszystkie wydarzenia, w których to miejsce
                 jest wykorzystywane będą uaktualniane podczas zapisywania zmian.</p>
 
@@ -126,14 +126,14 @@ echo help_header("Pomoc: Miejsca");
             Aby dokonać scalenia nazw miejsc, które mogą być nieco inne, lecz odnosić się do tej samej lokalizacji, kliknij na "Scalanie".
             Użytkownik decyduje, czy dwa zapisy są takie same, czy też nie.</p>
 
-            <h5 class="optionhead">Znajdż kandydatów do scalenia</h5>
+            <h5>Znajdż kandydatów do scalenia</h5>
             <p>Najpierw wybierz drzewo. Nie można scalać miejsc z różnych drzew, a więc możesz wybrać tylko jedno drzewo. Wprowadź kryteria
                 wyszukiwania,
                 które będą wspólne dla wszystkich potencjalnych duplikatów, a następnie kliknij przycisk "Kontynuuj" (na przykład, możesz wpisać <em>Salt
                     Lake</em> aby znaleźć
                 <em>Salt Lake</em> i <em>Salt Lake City</em>).</p>
 
-            <h5 class="optionhead">Wybierz miejsca do scalenia</h5>
+            <h5>Wybierz miejsca do scalenia</h5>
             <p>Na tej karcie można będzie zobaczyć listę miejsc pasującą do kryteriów wyszukiwania. Jeśli którykolwiek z nich odnosi się do tej samej
                 lokalizacji, zaznacz pole
                 "scal te (usuń)" po lewej stronie dla każdego z nich. Każdy wybrany wiersz będzie podświetli się na czerwono. Następnie kliknij kółko

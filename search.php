@@ -477,9 +477,9 @@ echo $header;
     <thead>
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">#</span></th>
-        <th data-tablesaw-priority="1" class="fieldnameback nw"><span class="fieldname"><?php echo $namesort; ?></span></th>
+        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap"><span class="fieldname"><?php echo $namesort; ?></span></th>
         <?php if (!isMobile()) { ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname nw"><?php echo $text['personid']; ?></th>
+            <th data-tablesaw-priority="5" class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
             <?php if ($myprefix) { ?>
                 <th class="fieldnameback fieldname"><?php echo $text['prefix']; ?></th><?php } ?>
             <?php if ($mysuffix) { ?>
@@ -489,20 +489,20 @@ echo $header;
             <?php if ($mynickname) { ?>
                 <th class="fieldnameback fieldname"><?php echo $text['nickname']; ?></th><?php } ?>
         <?php } ?>
-        <th data-tablesaw-priority="2" class="fieldnameback fieldname nw"><?php echo $birthsort; ?></th>
+        <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap"><?php echo $birthsort; ?></th>
         <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
         <?php if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) { ?>
-            <th data-tablesaw-priority="6" class="fieldnameback fieldname nw"><?php echo $deathsort; ?></th>
+            <th data-tablesaw-priority="6" class="fieldnameback fieldname text-nowrap"><?php echo $deathsort; ?></th>
             <th data-tablesaw-priority="5" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
         <?php } ?>
         <?php if ($showspouse) { ?>
             <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['spouse']; ?></th>
         <?php } ?>
         <?php if (isMobile()) { ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname nw"><?php echo $text['personid']; ?></th>
+            <th data-tablesaw-priority="5" class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
         <?php } ?>
         <?php if ($numtrees > 1 || $numbranches) { ?>
-            <th data-tablesaw-priority="6" class="fieldnameback fieldname nw">
+            <th data-tablesaw-priority="6" class="fieldnameback fieldname text-nowrap">
                 <?php echo $text['tree']; ?><?php if ($numbranches) {
                     echo " | " . $text['branch'];
                 } ?>
@@ -552,7 +552,7 @@ while ($row = tng_fetch_assoc($result)) {
     }
     echo "<td class='databack align-top'>$i</td>\n";
     $i++;
-    echo "<td class='databack nw align-top'>\n";
+    echo "<td class='databack text-nowrap align-top'>\n";
     if (!isMobile()) {
         echo "<div class='person-img' id='mi{$row['gedcom']}_{$row['personID']}'>\n";
         echo "<div class='person-prev' id='prev{$row['gedcom']}_{$row['personID']}'></div>\n";

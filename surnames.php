@@ -109,7 +109,7 @@ if ($result) {
         }
         $linkstr2col[$col] .= "<tr>";
         $linkstr2col[$col] .= "<td class='snlink'>$count.</td>";
-        $linkstr2col[$col] .= "<td class=\"nw\"><a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a> ($tally_fmt)</td>";
+        $linkstr2col[$col] .= "<td class='text-nowrap'><a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a> ($tally_fmt)</td>";
         if (!$col) {
             $linkstr2col[$col] .= "<td class=\"bar-holder\">";
             $linkstr2col[$col] .= "<div style=\"width:{$thiswidth}%;\" class=\"bar rightround\" title=\"{$surname['lowername']} ($tally_fmt)\">";

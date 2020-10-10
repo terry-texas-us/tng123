@@ -204,29 +204,29 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             ?>
             <?php
             if ($allow_edit || $showtestnumbers) { ?>
-                <th colspan="4" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
+                <th colspan="4" class="fieldnameback fieldname text-center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
                 <?php
             } else { ?>
-                <th colspan="3" class="fieldnameback fieldname center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
+                <th colspan="3" class="fieldnameback fieldname text-center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
             <?php } ?>
             // TODO the following for lines are likely mangled. Test if dna ever entered.
-            <th class="center nw" colspan="11" style="<?php echo $style12 ?>"> {$text['12markers']} "</th>
-            <th class="center nw" colspan="9" style="<?php echo $style25 ?>"> {$text['25markers']} "</th>
-            <th class="center nw" colspan="10" style="<?php echo $style37 ?>"> {$text['37markers']} "</th>
+            <th class="text-center text-nowrap" colspan="11" style="<?php echo $style12 ?>"> {$text['12markers']} "</th>
+            <th class="text-center text-nowrap" colspan="9" style="<?php echo $style25 ?>"> {$text['25markers']} "</th>
+            <th class="text-center text-nowrap" colspan="10" style="<?php echo $style37 ?>"> {$text['37markers']} "</th>
             <?php if ($columnCount > '37') { ?>
-                <th class="center nw" colspan="28" style="<?php echo $style67 ?>"> {$text['67markers']} "</th>
+                <th class="text-center text-nowrap" colspan="28" style="<?php echo $style67 ?>"> {$text['67markers']} "</th>
             <?php } ?>
             <?php if ($columnCount > '67') { ?>
-                <th class="center nw" colspan="44" style="<?php echo $style111 ?>">{$text['111markers']} "</th>
+                <th class="text-center text-nowrap" colspan="44" style="<?php echo $style111 ?>">{$text['111markers']} "</th>
             <?php } ?>
         </tr>
         <tr>
             <?php if ($allow_edit || $showtestnumbers) { ?>
-                <th class=" fieldnameback center nw" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th class=" fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
             <?php } ?>
-            <th class="fieldnameback center nw" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th class="fieldnameback center nw" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
-            <th class="fieldnameback center nw" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
             <?php
 
             /* moved up so that we can control whether to show Markers m68-111 heading
@@ -321,14 +321,14 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
         <?php
         echo "<tr>";
         $col_span = ($allow_edit || $showtestnumbers) ? 4 : 3;
-        echo "<td colspan=$col_span class=\"align-top center nw\" style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
+        echo "<td colspan=$col_span class='align-top text-center text-nowrap' style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
 
         // the following builds the mode values row in the table
         $i = 0;
         while ($i <= $columnCount - 1) {
             $modestr = $mode[$i];
             $col_span = 1;
-            echo "<td colspan=$col_span class=\"center nw\" style=\"$modestyle\">$modestr</td>";
+            echo "<td colspan=$col_span class='text-center text-nowrap' style=\"$modestyle\">$modestr</td>";
             $i++;
         }
         echo "</tr>\n";
@@ -371,9 +371,9 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     $databack = "databack";
                 }
                 if ($allow_edit || $showtestnumbers) {
-                    echo "<td class=\"$databack nw\">&nbsp;{$row['test_number']}&nbsp;</td>";
+                    echo "<td class='$databack text-nowrap'>&nbsp;{$row['test_number']}&nbsp;</td>";
                 }
-                echo "<td class=\"$databack nw\">&nbsp;$dna_namestr&nbsp;</td>";
+                echo "<td class='$databack text-nowrap'>&nbsp;$dna_namestr&nbsp;</td>";
                 $anc_namestr = "";
                 if ($row['MD_ancestorID']) {
                     $dna_anc_result = getPersonSimple($row['gedcom'], $row['MD_ancestorID']);
@@ -388,7 +388,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
 
                     tng_free_result($dna_anc_result);
                 }
-                echo "<td class=\"$databack nw\">&nbsp;$anc_namestr</td>";
+                echo "<td class='$databack text-nowrap'>&nbsp;$anc_namestr</td>";
                 if ($row['ydna_haplogroup']) {
                     if ($row['ydna_confirmed']) {
                         $haplogroup = "<span class='confirmed_haplogroup'>" . $row['ydna_haplogroup'] . " - " . $text['confirmed'] . "</span>";
@@ -396,7 +396,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                         $haplogroup = "<span class='predicted_haplogroup'>" . $row['ydna_haplogroup'] . " - " . $text['predicted'] . "</span>";
                     }
                 }
-                echo "<td class=\"$databack nw\">&nbsp;$haplogroup</td>";
+                echo "<td class='$databack text-nowrap'>&nbsp;$haplogroup</td>";
 
                 $resultscsv = $row['y_results'];
                 $yresultsarr = explode(',', $resultscsv);
@@ -419,7 +419,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 while ($j <= $columnCount - 1) {
                     $col_span = 1;
                     $displaystr = ($yresultsarr[$j] != $mode[$j]) ? "<span class=\"deviationback\">{$yresultsarr[$j]}</span>" : "<span class=\"blackchars\">{$yresultsarr[$j]}</span>";
-                    echo "<td colspan=$col_span class=\"$databack center nw\">$displaystr</td>";
+                    echo "<td colspan=$col_span class='$databack text-center text-nowrap'>$displaystr</td>";
                     $j++;
                 }
                 echo "</tr>\n";

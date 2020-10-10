@@ -305,8 +305,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                             $actionstr .= "<a href='#' onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width=\"15\" height=\"15\" class=\"oldicon\"></a>";
                                         }
                                         echo "<tr id=\"row_{$cemrow['cemeteryID']}\">";
-                                        echo "<td class=\"nw\">$actionstr</td>";
-                                        echo "<td class=\"nw\">$location</td>";
+                                        echo "<td class='text-nowrap'>$actionstr</td>";
+                                        echo "<td class='text-nowrap'>$location</td>";
                                         echo "</tr>\n";
                                     }
                                     ?>

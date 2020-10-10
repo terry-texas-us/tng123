@@ -38,11 +38,11 @@ echo help_header("Nápověda: Nastavení");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="diag"><h4 class="subheadbold">Diagnostika</h4></a>
 
-            <h5 class="optionhead">Spustit diagnostiku</h5>
+            <h5>Spustit diagnostiku</h5>
             <p>Tato stránka zobrazí informace o nastavení vašeho webového serveru, včetně varování týkajícího se nastavení, která mohou ovlivnit běh
                 TNG.</p>
 
-            <h5 class="optionhead">Informace o PHP</h5>
+            <h5>Informace o PHP</h5>
             <p>Tato stránka zobrazí informace o instalaci PHP. Zobrazení těchto informací je funkcí PHP, nikoli TNG. Stránka je rozdělena do bloků,
                 které popisují jednotlivé oblasti konfigurace. Pokud se nejste schopni připojit k databázi MySQL, podívejte se na tuto stránku a
                 vyhledejte odstavec "mysql".
@@ -56,13 +56,13 @@ echo help_header("Nápověda: Nastavení");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="tables"><h4 class="subheadbold">Vytvoření tabulek</h4></a>
 
-            <h5 class="optionhead">Vytvořit tabulky</h5>
+            <h5>Vytvořit tabulky</h5>
             <p>Na toto tlačítko klikněte <strong>POUZE</strong>, když vaši stránku nastavujete poprvé, protože zde budou vytvořeny databázové tabulky
                 potřebné
                 k uložení vašich údajů. <strong>Pozn.: Pokud tabulky již existují, všechna data budou ztracena!</strong> Tuto operaci můžete provést,
                 pokud byla vaše data poškozena a mají být po novém vytvoření tabulek obnovena ze zálohy.</p>
 
-            <h5 class="optionhead">Porovnávání</h5>
+            <h5>Porovnávání</h5>
             <p>Pokud používáte znakovou sadu UTF-8, můžete do tohoto pole před vytvořením tabulek zadat utf8_unicode_ci, utf8_general_ci nebo
                 utf8_czech_ci.
                 V ostatních případech, ponecháte-li toto pole prázdné, přijmete výchozí porovnávání.</p>

@@ -14,7 +14,7 @@ tng_header($sitename ? "" : $text['ourpages'], $flags);
 ?>
     <div id="homepage" class="content">
         <div id="leftsection" class="leftsection"><br>
-            <div id="randomphoto" class="center">
+            <div id="randomphoto" class="text-center">
                 <?php
                 if ($tmp['t20_photoption'] == "random") {
                     $rp_maxwidth = $tmp['t20_randomphotowidth'];  //  width 350 is needed to allow display in 1024 screen width

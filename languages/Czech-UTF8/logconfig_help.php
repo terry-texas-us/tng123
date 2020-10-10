@@ -19,37 +19,37 @@ echo help_header("Nápověda: Nastavení protokolování");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <h5 class="optionhead">Název souboru protokolu</h5>
+            <h5>Název souboru protokolu</h5>
             <p>Název souboru protokolu je soubor, kam jsou zaznamenávány akce návštěvníků. Původní název "genlog.txt" byste neměli měnit.</p>
 
-            <h5 class="optionhead">Maximální počet řádků v protokolu</h5>
+            <h5>Maximální počet řádků v protokolu</h5>
             <p>Maximální počet řádků v protokolu určuje, kolik akcí by měl protokol aktuálně uchovávat.
                 Je-li toto číslo příliš velké, může se objevit ke snížení výkonu.</p>
 
-            <h5 class="optionhead">Vyloučit názvy hostitele</h5>
+            <h5>Vyloučit názvy hostitele</h5>
             <p>Před provedením zápisu do protokolu TNG tento seznam otestuje. Pokud hostitel návštěvníka podléhají případnému zápisu do protokolu
                 je v seznamu, nebude proveden žádný zápis. Názvy hostitelů by měly být odděleny čárkami (bez mezer) a mají obsahovat úplný
                 název hostitele, IP adresu nebo části obou. Např. "googlebot" bude blokovat "crawler4.googlebot.com".</p>
 
-            <h5 class="optionhead">Vyloučit uživatelská jména</h5>
+            <h5>Vyloučit uživatelská jména</h5>
             <p>Před provedením zápisu do protokolu TNG tento seznam otestuje také. Pokud je přihlášený uživatel
                 v seznamu, nebude proveden žádný zápis. Uživatelská jména by měla být oddělena čárkami (bez mezer).</p>
 
-            <h5 class="optionhead">Název souboru protokolu (Admin)</h5>
+            <h5>Název souboru protokolu (Admin)</h5>
             <p>Název souboru protokolu, kam jsou zaznamenávány akce z administrátorské oblasti. Původní název "adminlog.txt" byste neměli měnit.</p>
 
-            <h5 class="optionhead">Maximální počet řádků v protokolu (Admin)</h5>
+            <h5>Maximální počet řádků v protokolu (Admin)</h5>
             <p>Maximální počet řádků v protokolu určuje, kolik akcí by měl protokol administrátora aktuálně uchovávat. Je-li toto číslo příliš velké,
                 může se objevit ke snížení výkonu.</p>
 
-            <h5 class="optionhead">Zablokovat návrhy nebo nové uživatelské registrace</h5></p>
+            <h5>Zablokovat návrhy nebo nové uživatelské registrace</h5></p>
 
-            <h5 class="optionhead">Adresa obsahuje</h5>
+            <h5>Adresa obsahuje</h5>
             <p>Blokuje všechny příchozí návrhy nebo nové uživatelské registrace, kde emailová adresa odesílatele obsahuje nějaké ze zapsaných slov
                 nebo částí slov.
                 Více slov oddělujte čárkou.</p>
 
-            <h5 class="optionhead">Zpráva obsahuje</h5>
+            <h5>Zpráva obsahuje</h5>
             <p>Blokuje všechny příchozí návrhy nebo nové uživatelské registrace, kde tělo zprávy obsahuje nějaké ze zapsaných slov nebo částí slov.
                 Více slov oddělujte čárkou.</p>
         </td>

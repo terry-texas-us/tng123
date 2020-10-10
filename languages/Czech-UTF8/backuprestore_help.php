@@ -36,7 +36,7 @@ echo help_header("Nápověda: Obslužné programy");
                     určitým
                     měřítkem může být počet 50 000 osob ve vašem stromě.</em></p>
 
-            <h5 class="optionhead">Záloha</h5>
+            <h5>Záloha</h5>
             <p>Chcete-li zálohovat jednotlivou tabulku, klikněte na ikonu Zálohovat ve sloupci Akcí vedle tabulky, kterou chcete zálohovat. Na pravé
                 straně řádku se vám
                 zobrazí hlášení o dokončení této akce. Aktualizován bude také obsah sloupce Poslední záloha, stejně jako velikost výsledného souboru.
@@ -52,7 +52,7 @@ echo help_header("Nápověda: Obslužné programy");
                 není nutné zálohovat tabulky osob, dětí a rodin, protože by tyto zálohy mohly být dost velké a mohly by zabírat cenné místo.
                 Pokud by došlo ke ztrátě dat, můžete pak tyto tabulky jednoduše obnovit novým importem vašeho souboru GEDCOM.</p>
 
-            <h5 class="optionhead">Obnova</h5>
+            <h5>Obnova</h5>
             <p>Chcete-li obnovit jednotlivou tabulku, klikněte na ikonu Obnovit ve sloupci Akcí vedle tabulky, kterou chcete obnovit. Na pravé straně
                 řádku se vám
                 zobrazí hlášení o dokončení této akce. Není-li ikona Obnovit vedle názvu příslušné tabulky vidět, není pro tuto tabulku k dispozici
@@ -61,7 +61,7 @@ echo help_header("Nápověda: Obslužné programy");
                 neodpovídá struktuře, která byla v době, kdy byla vytvořena poslední záloha. Zřejmě jste zálohu vytvořili před aktualizací, která
                 změnila strukturu tabulky.</p>
 
-            <h5 class="optionhead">Optimalizace</h5>
+            <h5>Optimalizace</h5>
             <p>Chcete-li optimalizovat jednotlivou tabulku, klikněte na ikonu Optimalizovat ve sloupci Akcí vedle tabulky, kterou chcete
                 optimalizovat. Na pravé straně řádku se vám
                 zobrazí hlášení o dokončení této akce. Tabulka by měla být optimalizována, pokud jste vymazali velkou část tabulky, od doby vaší
@@ -71,14 +71,14 @@ echo help_header("Nápověda: Obslužné programy");
                 výsledkem bývá obvykle zlepšený výkon. S optimalizací velkých tabulek jsou spojena některá nebezpečí, takže své tabulky před
                 optimalizací raději zazálohujte.</p>
 
-            <h5 class="optionhead">Zálohovat vybrané / Obnovit vybrané / Optimalizovat vybrané / Vymazat vybrané</h5>
+            <h5>Zálohovat vybrané / Obnovit vybrané / Optimalizovat vybrané / Vymazat vybrané</h5>
             <p>Chcete-li zálohovat, obnovit nebo optimalizovat více tabulek najednou, nebo vymazat záložní soubory, zaškrtněte políčko ve sloupci
                 Vybrat vedle požadovaných tabulek, a poté vyberte
                 z rozbalovacího seznamu "S vybranými" v horní části stránky vyberte příslušnou akci. Pokud chcete pro některou operaci vybrat všechny
                 tabulky, klikněte na tlačítko "Vybrat vše".
                 Podobně můžete všechny výběry zrušit kliknutím na tlačítko "Vyčistit vše".</p>
 
-            <h5 class="optionhead">Další doporučení</h5>
+            <h5>Další doporučení</h5>
             <p>Po vytvoření zálohy bude záložní soubor uložen ve složce Backups (podle definice ve vašem Základním nastavení). Doporučujeme, abyste si
                 tyto soubory zkopírovali
                 do svého počítače, protože katastrofická událost, která může postihnout vaše databázové tabulky, může také postihnout záložní soubory
@@ -124,14 +124,14 @@ echo help_header("Nápověda: Obslužné programy");
 
             <p>Volby na této stránce jsou následující:</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Strom musíte vybrat. Tuto operaci můžete provést pouze v jednom stromě.</p>
 
-            <h5 class="optionhead">Typ ID čísla</h5>
+            <h5>Typ ID čísla</h5>
             <p>Volby jsou osoby, rodiny, prameny nebo úložiště pramenů. Přečíslování jednoho typu, aniž byste provedli totéž s jinými typy, by nemělo
                 mít žádné nežádoucí účinky, které jsou obsahem výše uvedeného varování.</p>
 
-            <h5 class="optionhead">Minimální počet číslic</h5>
+            <h5>Minimální počet číslic</h5>
             <p>Toto číslo určuje, jak budou vaše nová ID čísla dlouhá. Je-li číslo dané osoby menší než minimální počet číslic, zbývající čísla
                 budou doplněna nulami zleva. Např. pokud je váš minimální počet číslic roven 5, vaše nejmenší čísla budou I00001, I00002, I00003, atd.
                 Nechcete-li nuly zleva,

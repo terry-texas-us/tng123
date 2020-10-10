@@ -54,7 +54,7 @@ echo help_header("Help: Notes");
 
             <p>To sort notes, click anywhere in the row (not on one of the icons) and drag the note up or down.</p>
 
-            <h5 class="optionhead">Private</h5>
+            <h5>Private</h5>
             <p>Check this box to prevent the note from being displayed in the public area. This is independent of any Private tag you may have
                 associated with a person
                 or family.</p>

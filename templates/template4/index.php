@@ -24,7 +24,7 @@ $title2 = getTemplateMessage('t4_headtitle2');
 $title = "$title1 $title2";
 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
 ?>
-    <div class="center">
+    <div class="text-center">
         <table class="indexpage">
             <tr>
                 <td colspan="4" class="line"></td>

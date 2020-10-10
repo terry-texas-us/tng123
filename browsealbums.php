@@ -236,7 +236,7 @@ tng_free_result($result);
 
 if (!$thumbcount) {
     $header = str_replace("<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
-    $albumtext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $albumtext);
+    $albumtext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $albumtext);
 }
 echo $header . $albumtext;
 ?>

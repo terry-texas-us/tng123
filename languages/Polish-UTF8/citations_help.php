@@ -51,27 +51,27 @@ echo help_header("Pomoc: Cytaty");
 
             <p>Podczas dodawania lub edycji cytatów dostępne są następujące pola:</p>
 
-            <h5 class="optionhead">Źródło</h5>
+            <h5>Źródło</h5>
             <p>Wybierz istniejące źródło do cytowania. Jeśli źródło, które chcemy cytować nie pojawia się na liście źródeł, to znaczy że
                 albo nie zostało jeszcze utworzone albo istnieje w innym drzewie. Najpierw przejdź do Administracja / Źródła i utwórz źródło
                 dla właściwego drzewa, a następnie wrócić do listy cytatów i wybierz źródło.</p>
 
-            <!--<h5 class="optionhead">Opis</h5>
+            <!--<h5>Opis</h5>
         <p>Jeśli Twój program genealogiczny nie przydziela numerów ID swoim źródłom, cytaty będą miały swój opis. Nie zobaczysz pola do opisu nowych cytatów.</p>-->
 
-            <h5 class="optionhead">Strona</h5>
+            <h5>Strona</h5>
             <p>Podaj stronę z wybranego źródła odnoszącą się do tego wydarzenia (opcjonalne).</p>
 
-            <h5 class="optionhead">Wiarygodność</h5>
+            <h5>Wiarygodność</h5>
             <p>Wybierz cyfrę (0-3) wskazującą, jak wiarygodne jest źródło (opcjonalnie). Wyższe cyfry oznaczają większą wiarygodność.</p>
 
-            <h5 class="optionhead">Data cytatu</h5>
+            <h5>Data cytatu</h5>
             <p>Data związana z tym cytatem (opcjonalne).</p>
 
-            <h5 class="optionhead">Faktyczny tekst</h5>
+            <h5>Faktyczny tekst</h5>
             <p>Krótki fragment z materiału źródłowego (opcjonalne).</p>
 
-            <h5 class="optionhead">Notatki</h5>
+            <h5>Notatki</h5>
             <p>Wszelkie uwagi pomocnicze dotyczące tego źródła (opcjonalne).</p><br>
             <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać
                     ewentualne błędy lub niejasności.</p></li>

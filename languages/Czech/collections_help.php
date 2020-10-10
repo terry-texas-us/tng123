@@ -43,20 +43,20 @@ echo help_header("N�pov�da: Kolekce");
                 Upravit m�dia).
                 Po zobrazen� mal�ho okna vypl�te formul��. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">ID ��slo kolekce</h5>
+            <h5>ID ��slo kolekce</h5>
             <p>Velmi kr�tk� �et�zec znak�, kter� slou�� jako identifik�tor t�to kolekce. Nem�l by obsahovat mezery ani ��dn� znaky, kter� nejsou
                 alfanumerick�,
                 a m�l m�t maxim�ln� 10 znak�. Nap�. pokud jste vytvo�ili kolekci pro vojensk� z�znamy, do tohoto pole byste m�li zapsat "military".
                 Tato hodnota se nikde nezobraz�, tak�e nen� d�le�it�, jak ji pojmenujete, ale mus� b�t jednozna�n�.</p>
 
-            <h5 class="optionhead">Exportovat jako</h5>
+            <h5>Exportovat jako</h5>
             <p>Kdy� exportujete soubor GEDCOM, kter� obsahuje m�dia, soubor bude obsahovat ��dek pro ka�dou polo�ku ozna�uj�c�, o jak� typ m�dia jde.
                 M�lo by to b�t
                 jedno slovo zapsan� velk�mi p�smeny. Nap�. fotografie se bude exportovat s typem "PHOTO". Pokud jste vytvo�ili novou kolekci nazvanou
                 "Noviny",
                 do tohoto pole m��ete vlo�it "NEWSPAPER".</p>
 
-            <h5 class="optionhead">Zobrazen� titul</h5>
+            <h5>Zobrazen� titul</h5>
             <p>Jde o n�zev, kter� bude zobrazen kdekoli je zm�n�na kolekce a kdekoli je zobrazena polo�ka z t�to kolekce. Zobrazen� titul m��e b�t o
                 n�co del��
                 ne� ID ��slo kolekce, ale m�l by b�t tak� relativn� kr�tk�. P�i pou�it� stejn�ho p��kladu m��ete do tohoto pole vlo�it "Vojensk�
@@ -72,7 +72,7 @@ echo help_header("N�pov�da: Kolekce");
                 by nem�l
                 b�t p�elo�en.</p>
 
-            <h5 class="optionhead">N�zev slo�ky</h5>
+            <h5>N�zev slo�ky</h5>
             <p>N�zev fyzick� slo�ky nebo adres��e na va�ich webov�ch str�nk�ch, kde budou polo�ky z t�to kolekce ulo�eny. M�l by b�t relativn� kr�tk�,
                 bez mezer
                 a s pouze alfanumerick�mi znaky (nap�. "military"). Po z�pisu hodnoty m��ete kliknout na tla��tko "Vytvo�it slo�ku". M�li byste
@@ -82,7 +82,7 @@ echo help_header("N�pov�da: Kolekce");
                 "histories" a dal��ch.
                 Aktu�ln� n�zev mus� p�esn� odpov�dat n�zvu, kter� jste zapsali ("Military" nen� stejn� jako "military").</p>
 
-            <h5 class="optionhead">Lok�ln� um�st�n�</h5>
+            <h5>Lok�ln� um�st�n�</h5>
             <p>Toto pole v�m pom��e stanovit, jak velkou ��st n�zvu lok�ln�ho um�st�n� va�ich m�di� je t�eba ulo�it na va�ich str�nk�ch b�hem importu
                 souboru GEDCOM
                 pomoc� odebr�n� ��sti n�zvu, kter� je jedine�n� pro v� dom�c� po��ta�. Zadejte z�kladn� cestu nebo cesty (v�ce polo�ek odd�lte
@@ -99,25 +99,25 @@ echo help_header("N�pov�da: Kolekce");
                 automaticky odstran� v�echno mimo n�zv� soubor�.
             </p>
 
-            <h5 class="optionhead">Soubor s ikonou</h5>
+            <h5>Soubor s ikonou</h5>
             <p>Mus�te vytvo�it svoji vlastn� ikonu nebo pou��t n�jakou existuj�c� a n�zev souboru s ikonou zapsat do tohoto pole. Soubor s ikonou m��e
                 b�t um�st�n v hlavn� slo�ce TNG
                 nebo jej m��ete ulo�it do slo�ky "img" spolu s ostatn�mi standardn�mi ikonami (jako "tng_photo.gif" nebo "tng_doc.gif"). Pokud jej
                 ulo��te do slo�ky "img",
                 mus�te k n�zvu souboru p�idat p��ponu "img/".</p>
 
-            <h5 class="optionhead">Soubor n�hledu</h5>
+            <h5>Soubor n�hledu</h5>
             <p>Toto je n�zev v�choz�ho obr�zku n�hledu t�to kolekce. Jin�mi slovy, pokud vytvo��te v t�to kolekci medi�ln� polo�ku a pro tuto
                 specifickou polo�ku nepou�ijete
                 n�hled, obr�zek zapsan� zde bude pou�it jako n�hled. Obr�zek n�hledu m��e b�t ulo�en v hlavn� slo�ce TNG
                 nebo jej m��ete ulo�it do slo�ky "img" spolu s ostatn�mi standardn�mi ikonami. Pokud jej ulo��te do slo�ky "img",
                 mus�te k n�zvu souboru p�idat p��ponu "img/".</p>
 
-            <h5 class="optionhead">Po�ad� v zobrazen�</h5>
+            <h5>Po�ad� v zobrazen�</h5>
             <p>Zde zapi�te cel� ��slo, kter� bude ud�vat po�ad�, ve kter� bude va�e vlastn� kolekce zobrazena v rozbalovac�ch nab�dk�ch ve ve�ejn�
                 oblasti. Ni��� ��sla se objev� jako prvn�.</p>
 
-            <h5 class="optionhead">Stejn� nastaven� jako</h5>
+            <h5>Stejn� nastaven� jako</h5>
             <p>Mo�n� jste si v�imli, �e se obrazovky P�idat m�dium a Upravit m�dium tro�ku m�n� v z�vislosti na zvolen� kolekci. Toto pole "stejn�
                 nastaven� jako" v�m umo�n�
                 ozna�it, kterou standardn� kolekci va�e nov� kolekce nejv�ce p�ipom�n�, s ohledem na uspo��d�n� t�chto obrazovek.</p>

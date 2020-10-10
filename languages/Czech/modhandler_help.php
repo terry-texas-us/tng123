@@ -185,19 +185,19 @@ echo help_header("N�pov�da: Mana�er m�d�");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="files"><h4 class="subheadbold">Konfigura�n� soubory</h4></a>
 
-            <h5 class="optionhead">Instalov�n� m�d�</h5>
+            <h5>Instalov�n� m�d�</h5>
             <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">instalaci
                     konfigura�n�ch soubor� (v angli�tin�)</a> k instalaci m�d� najdete na TNG Wiki.</p>
 
-            <h5 class="optionhead">Interpretace stavu</h5>
+            <h5>Interpretace stavu</h5>
             <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Interpreting_Status" target="_blank">interpretaci
                     stavu (v angli�tin�)</a> najdete na TNG Wiki.</p>
 
-            <h5 class="optionhead">Syntaxe konfigura�n�ch soubor�</h5>
+            <h5>Syntaxe konfigura�n�ch soubor�</h5>
             <p>Informace o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_Syntax" target="_blank">syntaxi mana�eru m�d� (v
                     angli�tin�)</a> najdete na TNG Wiki.</p>
 
-            <h5 class="optionhead">Vytvo�en� konfigura�n�ho souboru</h5>
+            <h5>Vytvo�en� konfigura�n�ho souboru</h5>
             <p>Informace pro v�voj��e o <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvo�en�
                     konfigura�n�ch soubor� (v angli�tin�)</a> najdete na TNG Wiki.</p>
         </td>

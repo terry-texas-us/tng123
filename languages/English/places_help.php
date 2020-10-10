@@ -55,7 +55,7 @@ echo help_header("Help: Places");
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                     time, click the box in the
                     <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use
@@ -82,7 +82,7 @@ echo help_header("Help: Places");
                     the <a href="#search">Search</a> tab to locate the Place, then click on the Edit icon next to that line.
                     When adding or editing a Place, take note of the following:</p>
 
-                <h5 class="optionhead">Tree</h5>
+                <h5>Tree</h5>
                 <p>If your General Settings are configured so that Places are assigned to Trees, you will see a Tree selection box here. If that's the
                     case, then select one of your existing trees,
                     as each Place must be assigned to a tree. <strong>Note:</strong> The tree assignment may not be changed once a Place
@@ -90,12 +90,12 @@ echo help_header("Help: Places");
                     Admin/Setup/General Settings/Miscellaneous to
                     change that.</p>
 
-                <h5 class="optionhead">Place</h5>
+                <h5>Place</h5>
                 <p>Enter the name of your Place with the smallest locality first and the largest locality last. All localities should be separated by
                     commas. For example,
                     <em>Sandy, Salt Lake, Utah, USA</em>. Do not use ambiguous or little-known abbreviations.</p>
 
-                <h5 class="optionhead">Show/Hide Clickable Map</h5>
+                <h5>Show/Hide Clickable Map</h5>
                 <p>Click the "Show/Hide Clickable Map" button to show the Google Map. This feature is only active if you have received a "key" from
                     Google
                     and entered it in your
@@ -112,17 +112,17 @@ echo help_header("Help: Places");
                         Settings Help</a>
                     for information on default settings for your maps.</p>
 
-                <h5 class="optionhead">Latitude/Longitude</h5>
+                <h5>Latitude/Longitude</h5>
                 <p>Enter the latitude and longitude coordinates of the Place or use the Clickable Google Map to set the values (optional, see
                     above).</p>
 
-                <h5 class="optionhead">Zoom</h5>
+                <h5>Zoom</h5>
                 <p>Enter the zoom level or adjust the zoom controls on the Google Map above to set the zoom level. This option is only available if
                     you
                     have received a "key"
                     from Google and entered it in your TNG Map Settings.</p>
 
-                <h5 class="optionhead">Place Level</h5></p>
+                <h5>Place Level</h5></p>
                 <p>Select the Place Level that best describes the granularity level of the location represented by the place name. This can help your
                     visitors know how
                     exact you were intending to be with your pin placements. For example, if you want to put a pin in France but you don't care where,
@@ -130,7 +130,7 @@ echo help_header("Help: Places");
                     would select
                     "Country" for this option to let your visitors know that the exact location of the pin within France does not matter.</p>
 
-                <h5 class="optionhead">Cemeteries</h5>
+                <h5>Cemeteries</h5>
                 <p>To associate one or more cemeteries to the current place, click the <strong>Add New</strong> button here.
                     In the small window that opens, choose a cemetery from a list of those you already created in Admin/Cemeteries,
                     then click on the Go button. To delete a cemetery already associated with the current place, click the small
@@ -139,10 +139,10 @@ echo help_header("Help: Places");
                 <p>When a cemetery is associated with a place, information about the cemetery will show on the place page, and a list of
                     burials associated with the place will be listed on the cemetery page.</p>
 
-                <h5 class="optionhead">Notes</h5>
+                <h5>Notes</h5>
                 <p>Enter any notes about this place relevant to your associated data.</p>
 
-                <h5 class="optionhead">Make changes to place name in existing events</h5>
+                <h5>Make changes to place name in existing events</h5>
                 <p>The checked box (only visible when editing an existing Place) indicates that all event instances where this Place is used will be
                     updated when you
                     save the changes.</p>
@@ -178,7 +178,7 @@ echo help_header("Help: Places");
                 whether two
                 records are the same or not.</p>
 
-                <h5 class="optionhead">Find Merge Candidates</h5>
+                <h5>Find Merge Candidates</h5>
                 <p>If your General Settings are configured so that Places are assigned to Trees, you will see a Tree selection box here. If that's the
                     case, then select a tree.
                     You cannot merge places from different trees, so only one tree can be selected. After that, enter the search criteria that
@@ -189,7 +189,7 @@ echo help_header("Help: Places");
                     the best approach would be to enter <em>PA</em>
                     on one line and part of <em>Pennsylvania</em> on the other. After entering the criteria, click "Continue".</p>
 
-                <h5 class="optionhead">Select Places to Merge</h5>
+                <h5>Select Places to Merge</h5>
                 <p>Under this heading you will see a list of matches for your search criteria. If any of them refer to the same location,
                     check the box labeled "Merge these (delete)" to the left for each one. Each selected row will turn red. Next, click the circle in
                     the
@@ -219,7 +219,7 @@ echo help_header("Help: Places");
                 <p>The Geocode tool may be used to find and store latitude and longitude coordinates for Places that do not already have that
                     information.</p>
 
-                <h5 class="optionhead">Limit</h5>
+                <h5>Limit</h5>
                 <p>Depending on how many Places you have that need geocoding, this process may take a long time. Google also limits you to 2,500
                     places
                     per day, so for
@@ -228,7 +228,7 @@ echo help_header("Help: Places");
                     the
                     next batch.</p>
 
-                <h5 class="optionhead">If multiple results are found:</h5>
+                <h5>If multiple results are found:</h5>
                 <p>If a place name is ambiguous, Google may return more than one match. The recommended action in this case is to ignore all the
                     returned
                     matches (so that you can

@@ -38,7 +38,7 @@
     </div>
 </div>
 <footer>
-    <p class="center">
+    <p class="text-center">
         <a href="index.php"><?php echo getTemplateMessage('t19_maintitle'); ?></a> &copy;
         <script>document.write((new Date()).getFullYear());</script>
     </p>

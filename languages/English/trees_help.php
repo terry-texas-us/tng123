@@ -46,7 +46,7 @@ echo help_header("Help: Trees");
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <h5 class="optionhead">Actions</h5>
+            <h5>Actions</h5>
             <p>The Action buttons next to each search result allow you to edit, delete or clear that Tree.</p>
 
         </td>
@@ -71,39 +71,39 @@ echo help_header("Help: Trees");
             <p>To add a new Tree, click on the <strong>Add New</strong> tab, then fill out the form.
                 Take note of the following:</p>
 
-            <h5 class="optionhead">Tree ID</h5>
+            <h5>Tree ID</h5>
             <p>A short, unique, one-word identifier for the tree. Do not include non-alphanumeric characters (stick to numbers and letters), and do
                 not use spaces.
                 This information will not appear anywhere except in the address line of your browser, so it can be all lowercase. You will not be able
                 to change this later.
                 20 character max.</p>
 
-            <h5 class="optionhead">Tree Name</h5>
+            <h5>Tree Name</h5>
             <p>A short display name or phrase to identify this tree. This will appear in all tree selection boxes, and will be the name by which
                 visitors know this tree.</p>
 
-            <h5 class="optionhead">Description:</h5>
+            <h5>Description:</h5>
             <p>A longer description of this tree or the data it contains.</p>
 
-            <h5 class="optionhead">Owner:</h5>
+            <h5>Owner:</h5>
             <p>The person or organization who created or assembled the data in this tree, or the person or organization responsible for maintaining
                 it.</p>
 
-            <h5 class="optionhead">E-mail:</h5>
+            <h5>E-mail:</h5>
             <p>The owner's e-mail address. Suggestions pertaining to people in this tree will be sent to this address, if it exists (otherwise,
                 suggestions
                 will be sent to the address listed in the General Settings).</p>
 
-            <h5 class="optionhead">Address/City/State/ZIP/Postal Code/Country/Phone:</h5>
+            <h5>Address/City/State/ZIP/Postal Code/Country/Phone:</h5>
             <p>The owner's contact information.</p>
 
-            <h5 class="optionhead">Keep owner information private</h5>
+            <h5>Keep owner information private</h5>
             <p>Check this box to hide the e-mail address and other contact information for this tree's owner (for visitors in the public area).</p>
 
-            <h5 class="optionhead">Don't allow users to download GEDCOM files</h5>
+            <h5>Don't allow users to download GEDCOM files</h5>
             <p>Check this box to prevent visitors from downloading GEDCOM files from this tree.</p>
 
-            <h5 class="optionhead">Don't allow users to create PDF files</h5>
+            <h5>Don't allow users to create PDF files</h5>
             <p>Check this box to prevent visitors from creating PDF files from this tree.</p>
 
         </td>

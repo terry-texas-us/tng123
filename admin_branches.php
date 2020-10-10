@@ -179,7 +179,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         </p>
                     <?php } ?>
                     <table class="normal">
-                        <tr class="fieldnameback fieldname nw">
+                        <tr class="fieldnameback fieldname text-nowrap">
                             <th><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
                                 <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>

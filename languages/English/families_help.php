@@ -50,7 +50,7 @@ echo help_header("Help: Families");
             <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                 values and searches again.</p>
 
-            <h5 class="optionhead">Actions</h5>
+            <h5>Actions</h5>
             <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                 time, click the box in the
                 <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use the
@@ -71,10 +71,10 @@ echo help_header("Help: Families");
             <p>To add a new family, click on the <strong>Add New</strong> tab, then fill out the form. Some information (notes, citations and
                 additional events) can be added after saving or locking the record. Take note of the following:</p>
 
-            <h5 class="optionhead">Tree</h5>
+            <h5>Tree</h5>
             <p>If you have only one Tree, that tree will already be selected. Otherwise, please select the desired tree for the new family.</p>
 
-            <h5 class="optionhead">Branch (optional)</h5>
+            <h5>Branch (optional)</h5>
             <p>Assigning a family to a "Branch" limits access to the family's data to users who are also assigned to the same Branch. If at least one
                 Branch has been
                 defined and your user account is not assigned to a particular branch, you may elect to assign the new family to one or more of the
@@ -84,7 +84,7 @@ echo help_header("Help: Families");
                 more than one branch. When you're done making your selection, move your mouse pointer out of the editing box and it will
                 disappear.</p>
 
-            <p><h5 class="optionhead">Family ID</h5>
+            <p><h5>Family ID</h5>
             <p>The Family ID must be unique within the selected Tree and should consist of an upper case <strong>F</strong> followed by a number (no
                 more than 21 digits).
                 An available, unique ID will be supplied when the page is first displayed and whenever a different tree is selected, but you may enter
@@ -104,7 +104,7 @@ echo help_header("Help: Families");
                 the
                 <strong>F</strong> is at the end, not the beginning), you can change the convention TNG uses in the General Settings.</p>
 
-            <h5 class="optionhead">Spouses/Partners</h5>
+            <h5>Spouses/Partners</h5>
             <p>Select existing individuals to be the <strong>Father</strong> or <strong>Mother</strong> in this family by clicking "Find...", or
                 create new individuals by
                 clicking "Create". If you choose Create, you will be allowed to enter information for the new person without leaving the current page.
@@ -113,16 +113,16 @@ echo help_header("Help: Families");
                 database),
                 click the "Remove" button. To edit the spouse's individual record, click the "Edit" button.</p>
 
-            <h5 class="optionhead">Living</h5>
+            <h5>Living</h5>
             <p>If one of the spouses is alive, or if you wish to restrict access to this family's data to users who are logged in with rights to see
                 living data,
                 check this box.</p>
 
-            <h5 class="optionhead">Private</h5>
+            <h5>Private</h5>
             <p>Whether this family is tagged as Living or not, you can still restrict access to this family's data by checking this option. Only
                 users with rights to see private data will be able to see information associated with a "private" family.</p>
 
-            <h5 class="optionhead">Events</h5>
+            <h5>Events</h5>
             <p>Enter dates and places for the standard events listed (if known). Additional events can be added after the record is saved or locked.
                 Always enter
                 dates in the standard genealogical format, DD MMM YYYY (for example, <em>18 Feb 2008</em>). List place information from local to
@@ -132,7 +132,7 @@ echo help_header("Help: Families");
                 To limit the number of results found, enter part of the place name before clicking the Find icon. All results will contain what you
                 entered in the place name.</p>
 
-            <p><h5 class="optionhead">LDS Data (Sealed to Spouse)</h5>
+            <p><h5>LDS Data (Sealed to Spouse)</h5>
             This event is associated with an ordinance practiced in The Church of Jesus Christ of Latter-day Saints (the LDS church invented the
             GEDCOM standard).
             <strong>Note:</strong> If you prefer not to see the LDS fields, go to Setup/General Settings and turn them off there (requires that
@@ -148,7 +148,7 @@ echo help_header("Help: Families");
             <p>To make changes to an existing family, use the <a href="#search">Search</a> tab to locate the family, then click on the Edit icon next
                 to that family.</p>
 
-            <h5 class="optionhead">Notes / Citations / "More"</h5>
+            <h5>Notes / Citations / "More"</h5>
             <p>Notes and citations may be linked to events or to the family in general by clicking on the associated icons at the top of the page
                 or next to each event. "More" information for an event may also be added for an event by clicking on the "Plus" icon. When items exist
                 in any of these
@@ -156,7 +156,7 @@ echo help_header("Help: Families");
                 Help links that
                 become visible when the icons are clicked.</p>
 
-            <h5 class="optionhead">Other Events</h5>
+            <h5>Other Events</h5>
             <p>To add or manage additional events, click on the "Add New" button next to <strong>Other Events</strong>. See the <a
                     href="events_help.php">Help</a> link there for more
                 information on adding new events. Once an event has been added, a short summary will be displayed in a table under the "Add New"
@@ -171,7 +171,7 @@ echo help_header("Help: Families");
                 the page. The Tree and
                 Family ID cannot be changed.</p>
 
-            <p><h5 class="optionhead">Children</h5>
+            <p><h5>Children</h5>
             <p>Select existing individuals to be children in this family by clicking "Find", or create new children by clicking
                 "Create". If you choose Create, you will be allowed to enter information for the new person without leaving the current page.
                 After an individual is selected or created, the person's Name, ID and birth date will appear in the Children list. That list cannot be
@@ -180,7 +180,7 @@ echo help_header("Help: Families");
                 also use the "Delete" link to delete the child from the database entirely. You can use the "Delete" button to delete a
                 child from the database, or the "Edit" button to modify the child's individual record.</p>
 
-            <h5 class="optionhead">Sorting Parents or Spouses</h5>
+            <h5>Sorting Parents or Spouses</h5>
             <p>If more than one child exists,
                 you may change the order by "dragging" the blocks up and down. To drag, click your mouse on the "Drag" box and hold down the button,
                 then move your mouse up or
@@ -213,14 +213,14 @@ echo help_header("Help: Families");
             No e-mail message is sent when tentative edits are submitted, but an asterisk (*) will appear on the Review tab if new edits are
             present.</p>
 
-            <h5 class="optionhead">Select Event and Action</h5>
+            <h5>Select Event and Action</h5>
             <p>Locate the line in the table that describes the event you wish to review or delete. You can narrow the list of results by selecting a
                 User (the person
                 responsible for the proposed change) and/or the Tree. When the results are displayed, click on one of the possible actions listed at
                 the left of that line. To review and
                 possibly incorporate the changes, choose <em>Review</em>. To discard the proposed change, choose <em>Delete</em>.</p>
 
-            <h5 class="optionhead">Review</h5>
+            <h5>Review</h5>
             <p>On the Review screen, make any additional changes, including any to notes or sources you find necessary, then click "Save and Delete"
                 to
                 make the changes permanent and remove the tentative record. You may also choose to remove the tentative record without saving by

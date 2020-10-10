@@ -17,9 +17,9 @@ if (isset($parentset)) {
 
 function showBlank($pedborder) {
     echo "<td $pedborder><span class='normal'>&nbsp;</span></td>\n";
-    echo "<td class=\"nw\"><span class='normal'>&nbsp;</span></td>\n</tr>\n";
+    echo "<td class='text-nowrap'><span class='normal'>&nbsp;</span></td>\n</tr>\n";
     echo "<tr>\n<td $pedborder><span class='normal'>&nbsp;</span></td>\n";
-    echo "<td class=\"nw\"><span class='normal'>&nbsp;</span></td>\n</tr>\n";
+    echo "<td class='text-nowrap'><span class='normal'>&nbsp;</span></td>\n</tr>\n";
 }
 
 function displayIndividual($key, $generation, $slot) {

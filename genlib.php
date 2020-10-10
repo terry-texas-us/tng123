@@ -252,7 +252,7 @@ function tng_basicfooter($flags) {
             $gotover = "mobile";
             $message = $text['switchm'];
         }
-        $footer .= "<p class='smaller center'>\n";
+        $footer .= "<p class='smaller text-center'>\n";
         $footer .= "<a href='$thispage{$con}sitever=$gotover' class='fieldnameback lightlink2 rounded4'>&nbsp;{$message}&nbsp;</a>\n";
         $footer .= "</p><br>\n";
     }

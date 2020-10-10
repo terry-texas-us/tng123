@@ -45,7 +45,7 @@ echo help_header("Help: Cemeteries");
                 <p>Your search criteria for this page will be remembered until you click the <strong>Reset</strong> button, which restores all default
                     values and searches again.</p>
 
-                <h5 class="optionhead">Actions</h5>
+                <h5>Actions</h5>
                 <p>The Action buttons next to each search result allow you to edit, delete or preview that result. To delete more than one record at a
                     time, click the box in the
                     <strong>Select</strong> column for each record to be deleted, then click the "Delete Selected" button at the top of the list. Use
@@ -73,18 +73,18 @@ echo help_header("Help: Cemeteries");
                     the <a href="#search">Search</a> tab to locate the cemetery, then click on the Edit icon next to that line.
                     When adding or editing a cemetery, take note of the following:</p>
 
-                <h5 class="optionhead">Cemetery Name</h5>
+                <h5>Cemetery Name</h5>
                 <p>Include the full, proper name for the cemetery. For example, the Salt Lake City Cemetery should be entered as <em>Salt Lake City
                         Cemetery</em>, not just <em>Salt
                         Lake City</em> or <em>Salt Lake</em>.</p>
 
-                <h5 class="optionhead">Map Image to Upload</h5>
+                <h5>Map Image to Upload</h5>
                 <p>If you have a map or other photo of this cemetery and it has not yet been uploaded to your web site, click the "Browse" button and
                     locate it on your hard drive.
                     If the photo is already in the Headstones folder on your site, leave this field blank and use the "Map File Name within headstones
                     folder" field instead.</p>
 
-                <h5 class="optionhead">Map File Name within Headstones folder</h5>
+                <h5>Map File Name within Headstones folder</h5>
                 <p>If you had previously uploaded your map or photo to the Headstones folder, enter the path and file name as it exists within the
                     Headstones folder on your web site,
                     or click on the Select button to locate the file. If you are uploading
@@ -92,7 +92,7 @@ echo help_header("Help: Cemeteries");
                     suggested path and file name will be prepopulated
                     for you.</p>
 
-                <h5 class="optionhead">NOTE</h5>
+                <h5>NOTE</h5>
                 <p>If you are uploading now, the directory you indicate here
                     must already exist and must be writeable. You may be able to use the "Make Folder" button in the General Settings to create the
                     folder
@@ -100,7 +100,7 @@ echo help_header("Help: Cemeteries");
                     it does not already exist.
                     If that fails, use an FTP program or online file manager.</p>
 
-                <h5 class="optionhead">Associated Place</h5>
+                <h5>Associated Place</h5>
                 <p>To link this cemetery to a place, enter the place name here as it exists in your database, or proceed to fill
                     out the City, County/Parish, State/Province/Shire, Country information below and click the <strong>Fill Place</strong>
                     button. Clicking that button will take values you've entered for the other fields and use them to populate the
@@ -109,7 +109,7 @@ echo help_header("Help: Cemeteries");
                 <p>When a cemetery is associated with a place, information about the cemetery will show on the place page, and a list of
                     burials associated with the place will be listed on the cemetery page.</p>
 
-                <h5 class="optionhead">City, County/Parish, State/Province/Shire, Country</h5>
+                <h5>City, County/Parish, State/Province/Shire, Country</h5>
                 <p>Enter as much information as you know about the location of this cemetery. The Country is required, but each of the
                     other fields is optional.</p>
 
@@ -118,7 +118,7 @@ echo help_header("Help: Cemeteries");
                     entry is not present, use the "Add New" button to add it to the list. If an
                     entry in the list does not belong there, first select it and then click on the "Delete Selected" button.</p>
 
-                <h5 class="optionhead">Show/Hide Clickable Map</h5>
+                <h5>Show/Hide Clickable Map</h5>
                 <p>Click the "Show/Hide Clickable Map" button to show the Google Map. This feature is only active if you have received a "key" from
                     Google
                     and entered it in your
@@ -135,17 +135,17 @@ echo help_header("Help: Cemeteries");
                         Settings Help</a>
                     for information on default settings for your maps.</p>
 
-                <h5 class="optionhead">Latitude/Longitude</h5>
+                <h5>Latitude/Longitude</h5>
                 <p>Enter the latitude and longitude coordinates of the cemetery or use the Clickable Google Map to set the values (optional, see
                     above).</p>
 
-                <h5 class="optionhead">Zoom</h5>
+                <h5>Zoom</h5>
                 <p>Enter the zoom level or adjust the zoom controls on the Google Map above to set the zoom level. This option is only available if
                     you
                     have received a "key"
                     from Google and entered it in your TNG Map Settings.</p>
 
-                <h5 class="optionhead">Notes</h5>
+                <h5>Notes</h5>
                 <p>If additional information is needed to describe the cemetery or its location, enter it here (optional).</p>
 
             </td>

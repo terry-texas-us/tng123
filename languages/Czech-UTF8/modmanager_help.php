@@ -145,26 +145,22 @@ echo help_header("Nápověda: Manažer módů");
             <a id="files">
                 <p class="subheadbold">Konfigurační soubory
                 </p></a>
-            <span class="optionhead">Instalování módů
-        </span>
+            <h5>Instalování módů</h5>
             <p>Informace o použití
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Installing_Config_Files" target="_blank">konfiguračních
                     souborů</a> k instalaci módů najdete na TNG Wiki.
             </p>
-            <span class="optionhead">Interpretace stavu
-        </span>
+            <h5>Interpretace stavu</h5>
             <p>Informace o
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">interpretaci stavu</a>
                 najdete na TNG Wiki.
             </p>
-            <span class="optionhead">Syntaxe konfiguračních souborů
-        </span>
+            <h5>Syntaxe konfiguračních souborů</h5>
             <p>Informace o
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Config_File_Syntax" target="_blank">syntaxi konfiguračních
                     souborů</a> najdete na TNG Wiki.
             </p>
-            <span class="optionhead">Vytvoření konfiguračního souboru
-        </span>
+            <h5>Vytvoření konfiguračního souboru</h5>
             <p>Informace pro vývojáře o
                 <a href="https://tng.lythgoes.net/wiki/index.php?title=Mod_Manager_-_Creating_Config_Files" target="_blank">vytvoření konfiguračních
                     souborů</a> najdete na TNG Wiki.

@@ -210,20 +210,20 @@ class modlister extends modparser
 
         // SHOW LEFT-SIDE SELECTION BOX HEADING IF A FILTER IS APPLIED
         if ($this->filter != self::F_ALL) {
-            echo "<th class=\"fieldnameback fieldname center colselct\">";
+            echo "<th class=\"fieldnameback fieldname text-center colselct\">";
             echo "<div class=\"mminner\">&nbsp;{$this->admtext['choose']}</div>";
             echo "</th>";
         }
 
         // DISPLAY THE MOD LISTING ROW HEADINGS
-        echo "<th class=\"fieldnameback fieldname center colmodnm\">{$this->admtext['modname']}&nbsp;&nbsp;$namesort</th>";
-        echo "<th class=\"fieldnameback fieldname center colcfgnm\">{$this->admtext['cfgname']}&nbsp;&nbsp;$filesort</th>";
-        echo "<th class=\"fieldnameback fieldname center colversn\">{$this->admtext['version']}</th>";
-        echo "<th class=\"fieldnameback fieldname center colwiki\">";
+        echo "<th class='fieldnameback fieldname text-center colmodnm'>{$this->admtext['modname']}&nbsp;&nbsp;$namesort</th>";
+        echo "<th class='fieldnameback fieldname text-center colcfgnm'>{$this->admtext['cfgname']}&nbsp;&nbsp;$filesort</th>";
+        echo "<th class='fieldnameback fieldname text-center colversn'>{$this->admtext['version']}</th>";
+        echo "<th class='fieldnameback fieldname text-center colwiki'>";
         echo "<div class=\"mminner\">{$this->admtext['wiki']}</div>";
         echo "</th>";
-        echo "<th class=\"fieldnameback fieldname center colstatus\">{$this->admtext['status']}</th>";
-        echo "<th class=\"fieldnameback fieldname center colaflist\"><strong>{$this->admtext['aflist']}</strong></th>";
+        echo "<th class='fieldnameback fieldname text-center colstatus'>{$this->admtext['status']}</th>";
+        echo "<th class='fieldnameback fieldname text-center colaflist'><strong>{$this->admtext['aflist']}</strong></th>";
         echo "<tr>";
 
         $id = 0;
@@ -714,8 +714,8 @@ class modlister extends modparser
                 $wiki = $this->wikibase . $this->wikipage;
 
                 $wikilink = "
-            <div class=\"mminner center\">
-               <a href=\"$wiki\" target='_blank'><img class=\"center\" src=\"classes/wiki16.png\"></a>
+            <div class='mminner text-center'>
+               <a href=\"$wiki\" target='_blank'><img class='text-center' src=\"classes/wiki16.png\"></a>
             </div>";
             }
             if (!$this->use_striping) {
@@ -736,7 +736,7 @@ class modlister extends modparser
             if ($this->filter != self::F_ALL) {
                 echo "
 		<td class=\"mmcell $dbclass\">
-         <div class=\"mminner center checkpad\">
+         <div class='mminner text-center checkpad'>
             <input class=\"sbox\" type='checkbox' name=\"mods[$ix][selected]\" value='1'>
             <input type='hidden' name=\"mods[$ix][file]\" value=\"$this->cfgfile\">
          </div>
@@ -771,13 +771,13 @@ class modlister extends modparser
             $filestr
          </div>
       </td>
-      <td id=\"flinkc{$id}\" class=\"flink mmcell $dbclass center\">
+      <td id=\"flinkc{$id}\" class='flink mmcell $dbclass text-center'>
          <div class=\"mminner mmcellpad\">";
             echo ltrim($this->version, "vV");
             echo "
          </div>
       </td>
-      <td class=\"mmcell $dbclass center mmcellpad\">
+      <td class='mmcell $dbclass text-center mmcellpad'>
          $wikilink
       </td>
       <td class=\"stcell\">
@@ -1308,7 +1308,7 @@ class modlister extends modparser
     // RETURN AFFECTED FILES POPUP LIST
     protected function affected_files_listing($id, $cfgfile, $modname, $aff_files) {
         $retstr = "
-         <div class=\"descpop1 nw imgcenter\" title=''>
+         <div class='descpop1 imgcenter text-nowrap' title=''>
 
             <img src=\"img/tng_more.gif\" width=\"16\" alt=''>
 
@@ -1348,7 +1348,7 @@ class modlister extends modparser
         }
         $retstr .= "
                   <tr>
-                     <td class=\"normal fieldnameback fieldname align-top nw\">$label</td>
+                     <td class='normal fieldnameback fieldname align-top text-nowrap'>$label</td>
                      <td class='normal databack w100 mmpadleft'>";
         foreach ($file_array as $listing) {
             if ($listing == 'files') {

@@ -37,22 +37,22 @@ echo help_header("N�pov�da: Hled� se");
                 kategorie p�idat nov� z�pis,
                 klikn�te na tla��tko "P�idat nov�" pod p��slu�n�m nadpisem a pot� vypl�te formul��. V�znam pol� je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Titul</h5>
+            <h5>Titul</h5>
             <p>Va�emu z�pisu dejte titul, kter� m��e b�t i ot�zkou. Nap�. <em>Kdo je tato osoba?</em> nebo <em>Kdo je otcem Josefa Nov�ka?</em></p>
 
-            <h5 class="optionhead">Popis</h5>
+            <h5>Popis</h5>
             <p>Va�emu z�pisu dejte tak� kr�tk� popis. M��e obsahovat aktu�ln� �daje, kter� jste shrom�dili, p�ek�ky, na kter� jste narazili
                 nebo n�jak� konkr�tn� informace, kter� hled�te.</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud chcete, m��ete spojit tento z�pis se stromem (nepovinn�).</p>
 
-            <h5 class="optionhead">Osoba</h5>
+            <h5>Osoba</h5>
             <p>Je-li tento z�pis �zce spojen s n�jakou osobou, zapi�te ID ��slo osoby nebo klikn�te na ikonu lupy pro jej� vyhled�n�. Po nalezen�
                 po�adovan�
                 osoby klikn�te na odkaz "Vybrat" a vr�t�te se do formul��e Hled� se s vybran�m ID ��slem.</p>
 
-            <h5 class="optionhead">Vybrat fotografii</h5>
+            <h5>Vybrat fotografii</h5>
             <p>Je-li tento z�pis �zce spojen s n�jakou fotografi�, klikn�te na tla��tko "Vybrat fotografii" pro vyhled�n� t�to fotografie ze z�znam�
                 fotografi�
                 z va�� datab�ze. Po nalezen� po�adovan� fotografie klikn�te na odkaz "Vybrat" a vr�t�te se do formul��e Hled� se s vybran�m ID

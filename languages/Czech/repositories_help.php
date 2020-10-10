@@ -36,7 +36,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, vymazat nebo otestovat v�sledek. Chcete-li najednou vymazat v�ce
                 z�znam�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n, a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu.
@@ -56,10 +56,10 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
                 (pozn�mky a
                 dal�� ud�losti) m��ete p�idat po ulo�en� a zamknut� z�znamu. V�znam jednotliv�ch pol� je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud m�te pouze jeden strom, vybr�n bude v�dy tento strom. Jinak, pros�m, pro nov� �lo�i�t� pramen� vyberte po�adovan� strom.</p>
 
-            <h5 class="optionhead">ID ��slo �lo�i�t�</h5>
+            <h5>ID ��slo �lo�i�t�</h5>
             <p>ID ��slo �lo�i�t� mus� b�t jednozna�n� uvnit� vybran�ho stromu a m�lo by se skl�dat z velk�ch p�smen <strong>REPO</strong> nebo
                 <strong>R</strong> n�sledovan�ho ��slem (nejv�ce 22 znak� celkem).
                 P�i prvn�m zobrazen� str�nky a kdykoli je vybr�n jin� strom, bude dopln�no voln� a jednozna�n� ��slo, ale pokud chcete, m��ete vlo�it
@@ -78,10 +78,10 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
                 odkaz� na va�e m�dia. Pokud v� prim�rn� program vytv��� ID ��sla, kter� neodpov�daj� tradi�n�m standard�m (nap�.
                 <strong>R</strong> je na konci a ne na za��tku), m��ete konvence, kter� TNG pou��v�, zm�nit v Z�kladn�m nastaven�.</p>
 
-            <h5 class="optionhead">N�zev</h5>
+            <h5>N�zev</h5>
             <p>Kr�tk� n�zev �lo�i�t�.</p>
 
-            <h5 class="optionhead">Adresa 1, Adresa 2, M�sto, Kraj/provincie, PS�, Zem�</h5>
+            <h5>Adresa 1, Adresa 2, M�sto, Kraj/provincie, PS�, Zem�</h5>
             <p>Um�st�n� �lo�i�t� (p�i vyu�it� t�chto pol� jsou v�echny ��sti voliteln�).</p>
 
         </td>
@@ -94,13 +94,13 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
             <p>Chcete-li upravit existuj�c� �lo�i�t� pramen�, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� �lo�i�t� pramen�, a pot�
                 klikn�te na ikonu Upravit vedle �lo�i�t�.</p>
 
-            <h5 class="optionhead">Pozn�mky</h5>
+            <h5>Pozn�mky</h5>
             <p>Pozn�mky lze p�ipojit k ud�losti nebo �lo�i�ti pramen� obecn� kliknut�m na ikonu Pozn�mky v horn� ��sti str�nky
                 nebo vedle ka�d� ud�losti pod "Dal�� ud�losti". Pokud pro ud�lost ji� existuj� pozn�mky, na ikon� Pozn�mky se v horn�m prav�m rohu
                 zobraz� zelen� te�ka.
                 V�ce informac� o pozn�mk�ch najdete v odkazu <a href="notes_help.php">N�pov�da</a> v oblasti Pozn�mky.</p>
 
-            <h5 class="optionhead">Dal�� ud�losti</h5>
+            <h5>Dal�� ud�losti</h5>
             <p>Chcete-li p�idat nebo spravovat dal�� ud�losti, klikn�te na tla��tko "P�idat nov�" vedle <strong>Dal��ch ud�lost�</strong>. Viz odkaz
                 <a href="events_help.php">N�pov�da</a> v tomto okn� pro v�ce
                 informac� o p�id�n� nov�ch ud�lost�. Po p�id�n� ud�losti se v tabulce pod tla��tkem "P�idat nov�" zobraz� kr�tk� shrnut�. Ak�n�
@@ -137,7 +137,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
             <p>Kliknut�m na tuto z�lo�ku lze p�ezkoumat a slou�it �lo�i�t� pramen�, kter� jsou lehce odli�n�, ale odkazuj� na stejn� materi�l.
                 Mus�te rozhodnout, zda jsou tyto z�znamy toto�n� nebo ne.</p>
 
-            <h5 class="optionhead">Naj�t shodu</h5>
+            <h5>Naj�t shodu</h5>
             <p>Vyberte nejprve strom. Nelze slu�ovat �lo�i�t� pramen� z r�zn�ch strom�, vybr�n mus� b�t pouze jeden strom. Potom m�te mo�nost vybrat
                 �lo�i�t� pramen� jako
                 v�choz� bod va�eho hled�n� (ID ��slo �lo�i�t� 1) nebo nechat, aby prvn� shodu osob za v�s nalezl TNG. Chcete-li, aby TNG nalezl
@@ -146,7 +146,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
             <p>Pokud jste vybrali �lo�i�t� pramen� jako ID ��slo �lo�i�t� 1, m��ete tak� ru�n� vybrat ID ��slo �lo�i�t� 2. Chcete-li, aby duplicity
                 �lo�i�t� pramen� 1 nalezl TNG, nechte pole ID ��slo �lo�i�t� 2 pr�zdn�.</p>
 
-            <h5 class="optionhead">Jin� mo�nosti</h5>
+            <h5>Jin� mo�nosti</h5>
             <p><em>Slou�it pozn�mky</em> znamen�, �e pozn�mky z �lo�i�t� pramen� 2 budou p�id�ny k pozn�mk�m
                 �lo�i�t� pramen� 1 u v�ech slu�ovan�ch pol�. Nen�-li tato volba vybr�na a pole �lo�i�t� pramen� 2 je za�krtnuto, pozn�mky �lo�i�t�
                 pramen� 2 k tomuto poli budou p�eps�ny
@@ -156,27 +156,27 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
                 u �lo�i�t� pramen� 1, pokud budou tyto dv� �lo�i�t� pramen� slou�eny. Nen�-li tato volba vybr�na, v�echny odkazy na m�dia �lo�i�t�
                 pramen� 2 budou po slou�en� odstran�ny.</p>
 
-            <p><h5 class="optionhead">Varov�n�!</h5> Pokud prob�hlo slou�en�, nelze jej vz�t zp�t! <em>P�ed zah�jen�m operace slu�ov�n� proto v�dy
+            <p><h5>Varov�n�!</h5> Pokud prob�hlo slou�en�, nelze jej vz�t zp�t! <em>P�ed zah�jen�m operace slu�ov�n� proto v�dy
                 zaz�lohujte sv� datab�zov� tabulky</em>
             pro p��pad, �e byste dv� �lo�i�t� pramen� slou�ili omylem.</p>
 
-            <h5 class="optionhead">Dal�� shoda</h5>
+            <h5>Dal�� shoda</h5>
             <p>Najde dal�� mo�n� porovn�n�, kter� nezahrne �lo�i�t� pramen� 1. TNG postoup� seznamem mo�n�ch �lo�i�� pramen� v t��d�n� podle ID ��sla
                 �lo�i�t� v textov�m form�tu.
                 Znamen� to, �e "10" bude po "1", ale p�ed "2".</p>
 
-            <h5 class="optionhead">Dal�� duplicita</h5>
+            <h5>Dal�� duplicita</h5>
             <p>Najde dal�� mo�nou duplicitu k �lo�i�t� pramen� 1. Pokud v�sledkem nen� z�znam, kter� byl zobrazen u �lo�i�t� pramen� 2, znamen� to, �e
                 duplicita nebyla nalezena.</p>
 
-            <h5 class="optionhead">Porovnat/Obnovit</h5>
+            <h5>Porovnat/Obnovit</h5>
             <p>Porovn�n� �lo�i�t� pramen� 1 a �lo�i�t� pramen� 2. Je-li toto porovn�n� ji� zobrazeno, kliknut� na toto tla��tko zp�sob� obnoven�
                 str�nky.</p>
 
-            <h5 class="optionhead">Prohodit</h5>
+            <h5>Prohodit</h5>
             <p>�lo�i�t� pramen� 1 se stane �lo�i�t�m pramen� 2 a naopak.</p>
 
-            <h5 class="optionhead">Slou�it</h5>
+            <h5>Slou�it</h5>
             <p>�lo�i�t� pramen� 2 bude slou�eno s �lo�i�t�m pramen� 1. ID ��slo �lo�i�t� 1 bude zachov�no, stejn� jako ostatn� �daje �lo�i�t� pramen�
                 1, pokud nejsou za�krtnuta odpov�daj�c� pol��ka
                 u �lo�i�t� pramen� 2. Nap�. pokud je u �lo�i�t� pramen� 2 za�krtnuto pol��ko vedle autora, bude b�hem slou�en� �daj z tohoto pole
@@ -185,7 +185,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
                 nejsou odpov�daj�c� �daje. Nen�-li
                 pole zobrazeno ani u jednoho �lo�i�t� pramen�, pak v tomto poli neexistuje ��dn� �daj.</p>
 
-            <h5 class="optionhead">Upravit</h5>
+            <h5>Upravit</h5>
             <p>�prava z�znamu �lo�i�t� pramen� v nov�m okn�. Po proveden� zm�n mus�te kliknout na Porovnat/Obnovit, aby se zm�ny projevily na
                 obrazovce Slou�en�.</p>
 

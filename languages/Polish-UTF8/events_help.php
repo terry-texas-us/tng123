@@ -60,37 +60,37 @@ echo help_header("Pomoc: Wydarzenia");
 
             <p>Podczas dodawania lub edycji notatki dostępne są następujące pola:</p>
 
-            <h5 class="optionhead">Rodzaj wydarzenia</h5>
+            <h5>Rodzaj wydarzenia</h5>
             <p>Wybierz rodzaj wydarzenia (nie można zmienić rodzaju wydarzenia dla istniejącego wydarzenia). Jeśli potrzebnego rodzaju wydarzenia nie
                 ma w polu wyboru, przejdź najpierw do
                 Administracja / Niestandardowe rodzaje wydarzeń i ustaw rodzaj wydarzenia, a następnie powrócić na tę kartę, aby je wybrać.</p>
 
-            <h5 class="optionhead">Data wydarzenia</h5>
+            <h5>Data wydarzenia</h5>
             <p>Rzeczywista lub zbliżona data związana z wydarzeniem.</p>
 
-            <h5 class="optionhead">Miejsce wydarzenia</h5>
+            <h5>Miejsce wydarzenia</h5>
             <p>Miejsce, gdzie nastąpiło wydarzenie. Podaj nazwę miejsca lub kliknij ikonkę "Znajdź" (lupka), aby zlokalizować wprowadzone wcześniej
                 miejsce.</p>
 
-            <h5 class="optionhead">Szczegóły</h5>
+            <h5>Szczegóły</h5>
             <p>Wszelkie dodatkowe wyjaśnienia w przypadku, jeśli jest to konieczne. Jeśli nie ma miejsca lub daty związanych z wydarzeniem, pole
                 "szczegóły" powinno zawierać informacje dotyczące tych brakujących danych.</p>
 
-            <h5 class="optionhead">Więcej</h5>
+            <h5>Więcej</h5>
             <p>Więcej rzadziej używanych informacji można dodać do każdego wydarzenia klikając na napis "Więcej" lub strzałkę obok niego. W ten sposób
                 pojawią dodatkowe pola. Pola te możesz ukryć przez ponowne kliknięcie
                 na napis lub strzałkę. Ukrywanie pól nie usuwa zapisanych informacji. Te dodatkowe pola to:</p>
 
-            <p><h5 class="optionhead">Wiek</h5>: Wiek osoby w czasie wydarzenia.</p>
+            <p><h5>Wiek</h5>: Wiek osoby w czasie wydarzenia.</p>
 
-            <p><h5 class="optionhead">Urząd</h5>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
+            <p><h5>Urząd</h5>: Kompetentny i / lub odpowiedzialny w momencie wydarzenia organ lub instytucja.</p>
 
-            <p><h5 class="optionhead">Przyczyna</h5>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
+            <p><h5>Przyczyna</h5>: Przyczyna zdarzenia (najczęściej używane ze śmiercią).</p>
 
-            <p><h5 class="optionhead">Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</h5>: Adres oraz inne informacje
+            <p><h5>Adres 1/Adres 2/Miasto/Województwo/Kod pocztowy/Kraj/Telefon/E-mail/Strona Web</h5>: Adres oraz inne informacje
             kontaktowe związane z wydarzeniem..</p>
 
-            <h5 class="optionhead">Wymagane pola:</h5>
+            <h5>Wymagane pola:</h5>
             <p>Musisz wybrać rodzaj wydarzenia i wpisać coś w co najmniej jednym z następujących pól: <strong>data wydarzenia</strong>, <strong>miejsce
                     wydarzenia</strong>,
                 lub <strong>szczególy</strong>. Wszystkie inne informacje są opcjonalne.</p>

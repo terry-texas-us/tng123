@@ -2,7 +2,7 @@
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicback">
 
-<div class="center">
+<div class="text-center">
     <table class="page">
         <tr>
             <td colspan="4" class="line"></td>

@@ -347,11 +347,11 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     <table class="normal">
                         <tbody id="linktable">
                         <tr>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['action']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['linktype']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['name'] . ", " . $admtext['id']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['tree']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['event']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['action']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['linktype']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['name'] . ", " . $admtext['id']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['tree']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['event']; ?></th>
                         </tr>
                         <?php
                         $oldlinks = 0;

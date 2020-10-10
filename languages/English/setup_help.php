@@ -50,11 +50,11 @@ echo help_header("Help: Setup");
             <p style="float:right;"><a href="#top">Top</a></p>
             <a id="diag"><h4 class="subheadbold">Diagnostics</h4></a>
 
-            <h5 class="optionhead">Run Diagnostics</h5>
+            <h5>Run Diagnostics</h5>
             <p>This page shows information about your web server setup, including warnings about settings that may interfere with TNG's
                 performance.</p>
 
-            <h5 class="optionhead">PHP Info Screen</h5>
+            <h5>PHP Info Screen</h5>
             <p>This page shows information about your PHP installation. The display of this information is a function of PHP, not TNG. The page is
                 divided into blocks
                 that describe separate areas of the configuration. If you are not able to connect to the MySQL database, check this page and look for
@@ -70,14 +70,14 @@ echo help_header("Help: Setup");
             <p style="float:right;"><a href="#top">Top</a></p>
             <a id="tables"><h4 class="subheadbold">Table Creation</h4></a>
 
-            <h5 class="optionhead">Create Tables</h5>
+            <h5>Create Tables</h5>
             <p>Click on this button <strong>ONLY</strong> when setting up your site for the first time, as this will create the database tables needed
                 to
                 hold your data. <strong>Note: If the tables already exist, any and all previous data will be lost!</strong> You may want to perform
                 this operation anyway
                 if your data has been corrupted and you can be restored from backups after recreating the tables.</p>
 
-            <h5 class="optionhead">Collation</h5>
+            <h5>Collation</h5>
             <p>If you're using UTF-8 as your character set, you might need to enter utf8_unicode_ci, utf8_general_ci or similar in this field prior to
                 creating the tables.
                 Otherwise, just leave this field blank to accept the default collation.</p>

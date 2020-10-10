@@ -3,7 +3,7 @@
 global $text, $tmp;
 ?>
 <body>
-<div class="center">
+<div class="text-center">
     <table class="page">
         <tr class="row60">
             <td colspan="4" class="headertitle">

@@ -153,19 +153,19 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             <?php if ($allow_delete) { ?>
                                 <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <?php } ?>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['username']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['description']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['realname'] . " / " . $admtext['email']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['tree']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['branch']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['role']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['living']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['text_private']; ?></th>
-                            <th class="fieldnameback fieldname nw">GED</th>
-                            <th class="fieldnameback fieldname nw">PDF</th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['lds']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['lastlogin']; ?></th>
-                            <th class="fieldnameback fieldname nw"><?php echo $admtext['disabled']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['username']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['description']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['realname'] . " / " . $admtext['email']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['tree']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['branch']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['role']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['living']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['text_private']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap">GED</th>
+                            <th class="fieldnameback fieldname text-nowrap">PDF</th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['lds']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['lastlogin']; ?></th>
+                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['disabled']; ?></th>
                         </tr>
 
                         <?php
@@ -203,16 +203,16 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                             $rolestr = 'usr' . ($row['role'] ? $row['role'] : 'custom');
                             echo "<a href=\"mailto:" . $row['email'] . "\">" . $row['email'] . "</a></td>\n";
 
-                            echo "<td class='lightback nw'>{$row['gedcom']}</td>\n";
-                            echo "<td class='lightback nw'>{$row['branch']}</td>\n";
-                            echo "<td class='lightback nw'>{$admtext[$rolestr]}</td>\n";
-                            echo "<td class='lightback nw'>$form_allow_living</td>\n";
-                            echo "<td class='lightback nw'>$form_allow_private</td>\n";
-                            echo "<td class='lightback nw'>$form_allow_ged</td>\n";
-                            echo "<td class='lightback nw'>$form_allow_pdf</td>\n";
-                            echo "<td class='lightback nw'>$form_allow_lds</td>\n";
-                            echo "<td class='lightback nw'>{$row['lastlogin']}</td>\n";
-                            echo "<td class='lightback nw'>$form_disabled</td>\n";
+                            echo "<td class='lightback text-nowrap'>{$row['gedcom']}</td>\n";
+                            echo "<td class='lightback text-nowrap'>{$row['branch']}</td>\n";
+                            echo "<td class='lightback text-nowrap'>{$admtext[$rolestr]}</td>\n";
+                            echo "<td class='lightback text-nowrap'>$form_allow_living</td>\n";
+                            echo "<td class='lightback text-nowrap'>$form_allow_private</td>\n";
+                            echo "<td class='lightback text-nowrap'>$form_allow_ged</td>\n";
+                            echo "<td class='lightback text-nowrap'>$form_allow_pdf</td>\n";
+                            echo "<td class='lightback text-nowrap'>$form_allow_lds</td>\n";
+                            echo "<td class='lightback text-nowrap'>{$row['lastlogin']}</td>\n";
+                            echo "<td class='lightback text-nowrap'>$form_disabled</td>\n";
                             echo "</tr>\n";
                         }
                         ?>

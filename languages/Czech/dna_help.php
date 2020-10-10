@@ -38,7 +38,7 @@ echo help_header("N�pov�da: Testy DNA");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat
                 v�ce z�znam�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
@@ -56,50 +56,50 @@ echo help_header("N�pov�da: Testy DNA");
                 osob� v datab�zi.</p>
             <p>Pole mohou z�stat pr�zdn� a nebudou ve v�t�in� p��pad� zobrazeny.</p>
 
-            <h5 class="optionhead">Typ testu</h5>
+            <h5>Typ testu</h5>
             <p>Vyberte typ testu DNA, na kter� tento z�znam odkazuje. (Toto je jedin� povinn� pole)</p>
 
-            <h5 class="optionhead">��slo testu/n�zev</h5>
+            <h5>��slo testu/n�zev</h5>
             <p>Zapi�te ID ��slo spojen� s t�mto testem. Pokud nem��ete ��slo naj�t nebo v�m jej dodavatel nedal, nebojte se vytvo�it ��slo nov�.
                 <br><strong>V�imn�te si, </strong>�e pokud nezad�te hodnotu do pole ��slo testu/n�zev, nebudete m�t k
                 dispozici rychl� odkaz pro �pravu dat DNA z obrazovky prohl�en� DNA, jako je browse_dna_tests.php.</p>
 
-            <h5 class="optionhead">Dodavatel</h5>
+            <h5>Dodavatel</h5>
             <p>Zadejte n�zev spole�nosti, kter� test provedla.</p>
 
-            <h5 class="optionhead">Datum testu</h5>
+            <h5>Datum testu</h5>
             <p>Toto je datum, kdy byl test DNA proveden.</p>
 
-            <h5 class="optionhead">Datum shody</h5>
+            <h5>Datum shody</h5>
             <p>Toto je datum, kdy byla zji�t�na shoda va�eho testu s osobou, kter� byl test DNA proveden.</p>
 
-            <h5 class="optionhead">GEDmatch ID</h5>
+            <h5>GEDmatch ID</h5>
             <p>��slo ID tohoto testu na webu GEDmatch. Plat� pouze pro testy atDNA.</p>
 
-            <h5 class="optionhead">Ponechat test neve�ejn�</h5>
+            <h5>Ponechat test neve�ejn�</h5>
             <p>Pokud zad�te do pole Ponechat test neve�ejn� Ano, zobrazen� testu bude omezeno pouze na p�ihl�en� u�ivatele, kte�� maj� p��stupov�
                 pr�va nastaven� na <strong>Povolit neve�ejn�</strong>. To umo�n� omezit p��stup k test�m DNA, kter� jste
                 ozna�ili jako Ponechat test neve�ejn�. Test bude viditeln� pro administr�tora TNG.</p>
 
-            <h5 class="optionhead">Testovan� osoba</h5>
+            <h5>Testovan� osoba</h5>
             <p>Jedn� se o osobu, kter� pat�� test. Vyberte strom a zapi�te ID osoby nebo klikn�te na lupu a vyhledejte osobu podle jm�na. NEBO m��ete
                 zadat jm�no osoby, kter� nen� ve va�� datab�zi.</p>
 
-            <h5 class="optionhead">Ponechat jm�no neve�ejn�</h5>
+            <h5>Ponechat jm�no neve�ejn�</h5>
             <p>Pokud je za�krtnuto toto pol��ko, jm�no uveden� jako "testovan� osoba" se bude zobrazovat jako "Neve�ejn�". Jm�no bude viditeln� pro
                 administr�tora TNG.</p>
 
-            <h5 class="optionhead">P�idat test ke skupin�</h5>
+            <h5>P�idat test ke skupin�</h5>
             <p>Test m��ete p�i�adit ke d��ve vytvo�en� skupin� test� DNA.<br>Chcete-li vytvo�it skupinu test� DNA, p�ejd�te na str�nku Administrace >>
                 Testy DNA >> a klikn�te na kartu Skupiny DNA. Pot� klikn�te na z�lo�ku P�idat skupinu.</p>
 
-            <h5 class="optionhead">Skupiny DNA</h5>
+            <h5>Skupiny DNA</h5>
             <p>Skupiny DNA se pou��vaj� k v�b�ru nebo filtrov�n� test� DNA nebo typ� test� v seznamu. M��ete nap��klad vytvo�it skupinu pro va�i
                 otcovskou linii a dal�� skupinu pro mate�skou linii. Skupiny DNA jsou jen zp�sob, jak filtrovat seznam test�.
                 Propojen� test� se skupinou je nepovinn�. Pov�imn�te si, �e skupiny DNA jsou nyn� spojeny s typem testu a pro dva r�zn� typy test�
                 nem��ete pou��t stejn� n�zev skupiny DNA.</p>
 
-            <h5 class="optionhead">Haploskupina</h5>
+            <h5>Haploskupina</h5>
             <p>Haploskupina je genetick� populace lid�, kte�� sd�lej� spole�n�ho p�edka v otcovsk� nebo mate�sk� linii. Haploskupiny jsou ozna�eny
                 p�smeny abecedy (A-T) a jejich up�esn�n� (SNP) obsahuje dal�� kombinace ��slic a p�smen. K dispozici jsou dv�
                 samostatn� vstupn� pole, proto�e n�kter� testovac� spole�nosti poskytuj� u test� atDNA ob� odhadovan� haploskupiny nebo si testovan�
@@ -133,7 +133,7 @@ echo help_header("N�pov�da: Testy DNA");
                 25, 37, 44, 67, 91, 101 nebo 111 marker�.<br>Vzhledem k tomu, �e Family Tree DNA je v sou�asn� dob� jedin�m dodavatelem nab�zej�c�m
                 testy Y-DNA, je ve porovn�vac�m reportu Y-DNA pou�ito 12, 25, 37, 67 a 111 marker�.</p>
 
-            <h5 class="optionhead">Hodnoty marker�</h5>
+            <h5>Hodnoty marker�</h5>
             <p>Zadejte hodnoty va�eho Y-DNA markeru odd�len� ��rkou. Nap��klad:
                 "13,24,14,10,11-14,12,12,12,13,14,30,17,9-10,11,11,24,15,19,30,15-15-16-17" (bez uvozovek).<br>nebo s mezerami za ��rkou pro lep��
                 �itelnost, "13, 24, 14, 10, 11-14, 12, 12,
@@ -164,7 +164,7 @@ echo help_header("N�pov�da: Testy DNA");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="mtdna"><h4 class="subheadbold">Pole v�sledk� test� mtDNA</h4></a>
 
-            <p>Mate�skou linii p�edk� lze stopovat pomoc� <h5 class="optionhead">mitochondri�ln� DNA (mtDNA)</h5>. Dle sou�asn�ch konvenc� je
+            <p>Mate�skou linii p�edk� lze stopovat pomoc� <h5>mitochondri�ln� DNA (mtDNA)</h5>. Dle sou�asn�ch konvenc� je
             mtDNA rozd�lena do t�� oblast�. T�mi jsou k�duj�c� oblast a dv� hypervariabiln� oblasti (HVR1 a HVR2)
 
             <ul>
@@ -193,7 +193,7 @@ echo help_header("N�pov�da: Testy DNA");
             </ul>
             </p>
 
-            <p><h5 class="optionhead">Rozd�ly HVR1/HVR2/K�duj�c� oblast, Zvl�tn� mutace</h5></p>
+            <p><h5>Rozd�ly HVR1/HVR2/K�duj�c� oblast, Zvl�tn� mutace</h5></p>
             <p>Zadejte v�sledky sv�ho testu mtDNA odd�len� ��rkou.<br>Nap��klad:
                 "A16129G,T16187C,C16189T,T16223C,G16230A,T16278C,C16311T,C16519T".<br>V�sledek m��ete tak� zadat s mezerami za ��rkou pro lep��
                 �itelnost, nap��klad "A16129G, T16187C,
@@ -207,7 +207,7 @@ echo help_header("N�pov�da: Testy DNA");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="atdna"><h4 class="subheadbold">Pole v�sledk� test� atDNA</h4></a>
 
-            <p><h5 class="optionhead">Autozom�ln� DNA (atDNA) </h5> testuje va�e autozom�ln� chromoz�my, co� je dal��ch 22 p�r� za pohlavn�mi
+            <p><h5>Autozom�ln� DNA (atDNA) </h5> testuje va�e autozom�ln� chromoz�my, co� je dal��ch 22 p�r� za pohlavn�mi
             chromozomy X a Y. Testy autozom�ln� DNA mohou pomoci identifikovat p��buzn�, kte�� sd�lej� ned�vn� p�edky. ��m
             v�ce segment� sd�l�te a ��m v�t�� je d�lka t�chto segment�, t�m v�ce jste sp��zn�ni.</p>
 
@@ -258,39 +258,39 @@ echo help_header("N�pov�da: Testy DNA");
 
             <p>N�sleduj�c� pole jsou spole�n� pro v�echny typy test�</p>
 
-            <h5 class="optionhead">Nejvzd�len�j�� p�edek</h5>
+            <h5>Nejvzd�len�j�� p�edek</h5>
             <p>Zadejte nejvzd�len�j��ho otcovsk�ho (Y-DNA) nebo mate�sk�ho (mtDNA) p�edka testovan� osoby. R�zn� osoby s testy Y-DNA a mtDNA mohou m�t
                 r�zn� nejvzd�len�j�� p�edky v z�vislosti na tom, jak daleko do minulosti existuje jejich pap�rov�
                 stopa.</p>
 
-            <h5 class="optionhead">Nejbli��� spole�n� p�edek</h5>
+            <h5>Nejbli��� spole�n� p�edek</h5>
             <p>Zadejte ID osoby nejbli���ho spole�n�ho p�edka (MRCA). MRCA je sd�len� spole�n� p�edek mezi dv�mi nebo v�ce testovan�mi osobami. MRCA
                 se m��e li�it v z�vislosti na tom, kde se mezi testovan�mi osobami setkaj� jejich linie.</p>
 
-            <h5 class="optionhead">Rodov� p��jmen�</h5>
+            <h5>Rodov� p��jmen�</h5>
             <p>Toto pole se vztahuje na v�echny typy test� a bude automaticky vypln�no rodov�mi p��jmen�mi osoby, u kter� byly provedeny testy Y-DNA a
                 mtDNA, odd�len�mi ��rkami<br>Dopln�n� p��jmen� z�vis� na typu testu a m��ete je jak�mkoli zp�sobem
                 upravit. <br>V Administrace >> Nastaven� >> Konfigurace >> Z�kladn� nastaven� >> Testy DNA je mo�nost vylou�en� p��jmen� jako je
                 nezn�m� nebo NEZN�M�, a mo�nost zobrazit p��jmen� velk�mi p�smeny.<br>Nyn� je tak� mo�nost zvolit, z kolika
                 generac� va�eho rodokmenu se u test� atDNA vr�t� rodov� p��jmen�.</p>
 
-            <h5 class="optionhead">Pozn�mky</h5>
+            <h5>Pozn�mky</h5>
             <p>Zapi�te pozn�mky spojen� s t�mto testem nebo jak�koli jin� informace.</p>
 
-            <h5 class="optionhead">Pozn�mky administr�tora</h5>
+            <h5>Pozn�mky administr�tora</h5>
             <p>Tot� jako pozn�mky, ale pouze pro zobrazen� u�ivatel�m s pr�vy administr�tora.</p>
 
-            <h5 class="optionhead">Odpov�daj�c� odkazy</h5>
+            <h5>Odpov�daj�c� odkazy</h5>
             <p>Pokud existuj� webov� str�nky spojen� s t�mto testem, zadejte je zde. Ka�d� odkaz zadejte na nov� ��dek. Zapi�te str�nky nebo n�zev
                 str�nek a adresu URL,
                 odd�len� ��rkou. Nap��klad, "Ancestry.com, https://www.ancestry.com". Pokud nevlo��te str�nky nebo n�zev str�nek, bude odkaz samo o
                 sob� pou�it jako n�zev.</p>
 
-            <h5 class="optionhead">M�dia</h5>
+            <h5>M�dia</h5>
             <p>Zde m��ete k testu p�i�adit fotografie zad�n�m mediaID pro ka�dou fotografii.<br>V�ce z�znam� odd�lte ��rkou. Nap��klad: "4361,5992"
             </p>
 
-            <h5 class="optionhead">Informace o testu k zobrazen�</h5>
+            <h5>Informace o testu k zobrazen�</h5>
             <p>Vedle informac� za�krtn�te pol��ko, kter� chcete zobrazit na str�nce osoby (getperson.php).<br>Na str�nce ka�d�ho testu se zobraz�
                 v�echny zapsan� informace (show_dna_test.php).</p>
 
@@ -313,7 +313,7 @@ echo help_header("N�pov�da: Testy DNA");
             <p>Chcete-li upravit existuj�c� test, pou�ijte z�lo�ku <a href="#search">Hledat</a> pro nalezen� testu, a pot� klikn�te na ikonu Upravit
                 vedle tohoto testu.</p>
 
-            <h5 class="optionhead">Odkazy na test</h5>
+            <h5>Odkazy na test</h5>
             <p>Tento test m��ete p�ipojit k osob�m ve va�� datab�zi. U ka�d�ho p�ipojen� zvolte nejprve strom, ke kter�mu je jedinec p�ipojen.
                 Pot� zadejte ID ��slo osoby, ke kter� chcete test p�ipojit, a pak kliknut�m na tla��tko "P�idat" vytvo��te spojen�.</p>
 

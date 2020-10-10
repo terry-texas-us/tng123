@@ -149,14 +149,14 @@ if ($result2) {
     <table cellpadding="3" cellspacing="1" id="linktable" class="normal">
         <tbody>
         <tr>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['linktype']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['name'] . ", " . $admtext['id']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['event']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['alttd']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['defphoto']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname nw">&nbsp;<b><?php echo $admtext['show']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['linktype']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['name'] . ", " . $admtext['id']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['event']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['alttd']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['defphoto']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['show']; ?></b>&nbsp;</td>
         </tr>
         <?php echo $linkrows; ?>
         </tbody>

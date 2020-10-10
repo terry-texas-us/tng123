@@ -161,7 +161,7 @@ echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             }
             echo "</div>";
             echo "&nbsp;</td>";
-            echo "<td class='lightback center' id=\"thumbcell_{$row['mediaID']}\">";
+            echo "<td class='lightback text-center' id=\"thumbcell_{$row['mediaID']}\">";
             if ($row['thumbpath'] && file_exists("$rootpath$usefolder/$treestr" . $row['thumbpath'])) {
                 $size = @GetImageSize("$rootpath$usefolder/$treestr" . $row['thumbpath']);
                 echo "<a href=\"admin_editmedia.php?mediaID={$row['mediaID']}\" target='_blank'><img border=0 src=\"$usefolder/$treestr" . str_replace("%2F", "/", rawurlencode($row['thumbpath'])) . "\" $size[3]></a>\n";

@@ -19,52 +19,52 @@ echo help_header("N�pov�da: Nastaven� importu dat");
     </tr>
     <tr class="databack">
         <td class="tngshadow">
-            <h5 class="optionhead">Slo�ka souboru GEDCOM (Import/Export)</h5>
+            <h5>Slo�ka souboru GEDCOM (Import/Export)</h5>
             <p>N�zev slo�ky, ze kter� bude TNG importovat soubory GEDCOM a m�sto, kam bude TNG ukl�dat exportovan� soubory GEDCOM.</p>
 
-            <h5 class="optionhead">Ulo�it stav importu</h5>
+            <h5>Ulo�it stav importu</h5>
             <p>Pokud import nebo export z n�jak�ho d�vodu sel�e a nebude dokon�en, vyberte tuto mo�nost a spus�te import/export znovu. Pokud proces
                 op�t nedob�hne do konce, klikn�te na odkaz pokra�ovat a import/export bude pokra�ovat z m�sta, kde byl p�eru�en.
                 V p��pad� importu pracuje tato volba pouze, je-li v� soubor GEDCOM ve va�� slo�ce GEDCOM (nepracuje se soubory, kter� jsou nahr�v�ny a
                 importov�ny
                 p��mo z obrazovky Import dat).</p>
 
-            <h5 class="optionhead">Po�et z�znam� reportu</h5>
+            <h5>Po�et z�znam� reportu</h5>
             <p>Toto je po�et z�znam�, kter� TNG provede mezi reporty na obrazovce. Aby v� import b�el rychleji, zadejte tento po�et
                 o n�co vy��� (kolem ��sla 100). Pokud v� import sel�e nebo li�ta pr�b�hu p�estane ukazovat n�jak� pokrok,
                 budete muset toto ��slo sn�it, co� zp�sob�, �e TNG bude reportovat m�n� �asto a obrazovkov� pam� se bude plnit rychleji.</p>
 
-            <h5 class="optionhead">Interval pr�b�hu (ms)</h5>
+            <h5>Interval pr�b�hu (ms)</h5>
             <p>Jedn� se o po�et milisekund, kdy TNG p�eru�� testy, aby vid�l, zda bylo reportov�no v�ce importovan�ch z�znam�.</p>
 
-            <h5 class="optionhead">V�choz� volba Nahrazen�</h5>
+            <h5>V�choz� volba Nahrazen�</h5>
             <p>Toto ovlivn�, kter� volba importu "Nahradit" bude vybr�na jako v�choz� na str�nce importu.</p>
 
-            <h5 class="optionhead">Pokud je 'Datum zm�ny' pr�zdn�</h5>
+            <h5>Pokud je 'Datum zm�ny' pr�zdn�</h5>
             <p>Pokud v� z�znam osoby, rodiny nebo pramene nem� p�ipojeno datum posledn� zm�ny, kter� ozna�uje, kdy byl z�znam
                 naposledy aktualizov�n, TNG tuto hodnotu napln� podle t�to volby. M��ete pou��t dne�n� datum nebo toto pole
                 nechat pr�zdn�. Ponech�te-li je pr�zdn�, toto pole nep�ep�e existuj�c� datum zm�ny.</p>
 
-            <h5 class="optionhead">Pokud chyb� datum narozen�, p�edpokl�dat, �e</h5>
+            <h5>Pokud chyb� datum narozen�, p�edpokl�dat, �e</h5>
             <p>TNG ozna�� v�echny p��choz� z�znamy osob jako �ij�c� nebo ne. Pokud osoba nem� datum �mrt� nebo poh�bu nebo m�sto,
                 toto ozna�en� bude zalo�eno na dob�, kter� uplynula od narozen� osoby. Pokud tato osoba nem� datum narozen�,
                 TNG to m��e interpretovat r�zn�mi zp�soby. Vyberte, zda maj� tyto osoby b�t ozna�eny jako zesnul� nebo �ij�c�.</p>
 
-            <h5 class="optionhead">Pokud chyb� datum �mrt�, p�edpokl�dat, �e osoba zem�ela, je-li star�� ne�</h5>
+            <h5>Pokud chyb� datum �mrt�, p�edpokl�dat, �e osoba zem�ela, je-li star�� ne�</h5>
             <p>Pokud osoba nem� datum �mrt� nebo poh�bu nebo m�sto, ozna�en� �ij�c� bude zalo�eno na dob�,
                 kter� uplynula od narozen� osoby. Osoby mlad�� ne� v�k ozna�en� v tomto poli budou pova�ov�ny za �ij�c�.
                 V�choz� nastaven� maxim�ln�ho v�ku pro �ij�c� osoby je 110 let.</p>
 
-            <h5 class="optionhead">Osoba je neve�ejn�, pokud zem�ela p�ed m�n� ne� tolika lety</h5>
+            <h5>Osoba je neve�ejn�, pokud zem�ela p�ed m�n� ne� tolika lety</h5>
             <p>TNG nastav� u osoby b�hem importu ozna�en� Neve�ejn�, pokud tato osoba zem�ela p�ed m�n� ne� tolika lety. Toto pole
                 nechte pr�zdn� nebo jej nastavte na hodnotu 0, nechcete-li ozna�en� Neve�ejn� nastavovat t�mto zp�sobem.</p>
 
-            <h5 class="optionhead">Osoba je �ij�c�, pokud zem�ela p�ed m�n� ne� tolika lety</h5>
+            <h5>Osoba je �ij�c�, pokud zem�ela p�ed m�n� ne� tolika lety</h5>
             <p>Podobn� jako v p�edchoz� volb� nastav� TNG b�hem importu souboru GEDCOM ozna�en� �ij�c� u osoby, pokud zem�ela p�ed m�n� ne� tolika
                 lety.
                 Toto pole nechte pr�zdn� nebo jej nastavte na hodnotu 0, nechcete-li ozna�en� �ij�c� nastavovat t�mto zp�sobem.</p>
 
-            <h5 class="optionhead">Vkl�dan� m�dia</h5>
+            <h5>Vkl�dan� m�dia</h5>
             <p>Pokud za�krtnete pol��ko "Nechat TNG pojmenovat vkl�dan� m�dia", TNG bude ignorovat um�st�n� a n�zvy soubor� spojen�ch s va�imi
                 vkl�dan�mi m�dii a p�ipoj�
                 nov� n�zev souboru zalo�en� na konvenci ID ��slo stromu + ID ��slo m�dia + p��pona m�dia. Tento soubor pak bude ulo�en do slo�ky
@@ -74,7 +74,7 @@ echo help_header("N�pov�da: Nastaven� importu dat");
                 n�zvy d��ve importovan�ch m�di� pojmenovali pomoc� TNG a nyn� importujete n�zvy m�di� bez t�to vybran� volby, budete m�t duplicitn�
                 soubory.</p>
 
-            <h5 class="optionhead">Lok�ln� um�st�n� soubor� fotografi�</h5>
+            <h5>Lok�ln� um�st�n� soubor� fotografi�</h5>
             <p>Zapi�te z�kladn� um�st�n� (v�ce z�znam� odd�lujte ��rkou), kde jsou na va�em po��ta�i um�st�ny fotografie. M�lo by to odpov�dat TNG
                 slo�ce fotografi�
                 na va�ich webov�ch str�nk�ch. Jin�mi slovy, pokud jsou fotografie na va�em po��ta�i um�st�ny "C:\MyGenealogy\MyPhotos", m�li byste
@@ -84,7 +84,7 @@ echo help_header("N�pov�da: Nastaven� importu dat");
                 Pokud chcete, aby v�echny fotografie byly ve stejn�m um�st�n�
                 (TNG slo�ka Photos), nechte toto pole pr�zdn� a za�krtn�te "Importovat pouze n�zev souboru" jako posledn� volbu na t�to str�nce.</p>
 
-            <h5 class="optionhead">Lok�ln� um�st�n� soubor� vypr�v�n�</h5>
+            <h5>Lok�ln� um�st�n� soubor� vypr�v�n�</h5>
             <p>Zapi�te z�kladn� um�st�n� (v�ce z�znam� odd�lujte ��rkou), kde jsou na va�em po��ta�i um�st�na vypr�v�n�. M�lo by to odpov�dat TNG
                 slo�ce vypr�v�n�
                 na va�ich webov�ch str�nk�ch. Jin�mi slovy, pokud jsou vypr�v�n� na va�em po��ta�i um�st�na "C:\MyGenealogy\MyHistories", m�li byste
@@ -95,7 +95,7 @@ echo help_header("N�pov�da: Nastaven� importu dat");
                 (TNG slo�ka Histories), nechte toto pole pr�zdn� a za�krtn�te "Importovat pouze n�zev souboru" jako posledn� volbu na t�to
                 str�nce.</p>
 
-            <h5 class="optionhead">Lok�ln� um�st�n� soubor� dokument�</h5>
+            <h5>Lok�ln� um�st�n� soubor� dokument�</h5>
             <p>Zapi�te z�kladn� um�st�n� (v�ce z�znam� odd�lujte ��rkou), kde jsou na va�em po��ta�i um�st�ny dokumenty. M�lo by to odpov�dat TNG
                 slo�ce dokument�
                 na va�ich webov�ch str�nk�ch. Jin�mi slovy, pokud jsou dokumenty na va�em po��ta�i um�st�ny "C:\MyGenealogy\MyDocuments", m�li byste
@@ -106,7 +106,7 @@ echo help_header("N�pov�da: Nastaven� importu dat");
                 (TNG slo�ka Documents), nechte toto pole pr�zdn� a za�krtn�te "Importovat pouze n�zev souboru" jako posledn� volbu na t�to
                 str�nce.</p>
 
-            <h5 class="optionhead">Lok�ln� um�st�n� soubor� n�hrobk�</h5>
+            <h5>Lok�ln� um�st�n� soubor� n�hrobk�</h5>
             <p>Zapi�te z�kladn� um�st�n� (v�ce z�znam� odd�lujte ��rkou), kde jsou na va�em po��ta�i um�st�ny n�hrobky. M�lo by to odpov�dat TNG
                 slo�ce n�hrobk�
                 na va�ich webov�ch str�nk�ch. Jin�mi slovy, pokud jsou n�hrobky na va�em po��ta�i um�st�ny "C:\MyGenealogy\MyHeadstones", m�li byste
@@ -117,7 +117,7 @@ echo help_header("N�pov�da: Nastaven� importu dat");
                 (TNG slo�ka Headstones), nechte toto pole pr�zdn� a za�krtn�te "Importovat pouze n�zev souboru" jako posledn� volbu na t�to
                 str�nce.</p>
 
-            <h5 class="optionhead">Lok�ln� um�st�n� soubor� ostatn�ch m�di�</h5>
+            <h5>Lok�ln� um�st�n� soubor� ostatn�ch m�di�</h5>
             <p>Zapi�te z�kladn� um�st�n� (v�ce z�znam� odd�lujte ��rkou), kde jsou na va�em po��ta�i um�st�ny ostatn� m�dia (nap�. videa nebo zvukov�
                 z�znamy). M�lo by to odpov�dat TNG slo�ce multim�di�
                 na va�ich webov�ch str�nk�ch. Jin�mi slovy, pokud jsou videa nebo zvukov� z�znamy na va�em po��ta�i um�st�ny
@@ -129,14 +129,14 @@ echo help_header("N�pov�da: Nastaven� importu dat");
                 (TNG slo�ka Multimedia), nechte toto pole pr�zdn� a za�krtn�te "Importovat pouze n�zev souboru" jako posledn� volbu na t�to
                 str�nce.</p>
 
-            <h5 class="optionhead">Pokud lok�ln� um�st�n� neodpov�d�</h5>
+            <h5>Pokud lok�ln� um�st�n� neodpov�d�</h5>
             <p>Pokud je importov�na fotografie nebo vypr�v�n� a um�st�n� souboru neodpov�d� ani jednomu z lok�ln�ch um�st�n� ozna�en�ch v��e, TNG m��e
                 bu� importovat cel� um�st�n� "tak, jak je" (doporu�eno, pokud
                 jsou v�echna va�e um�st�n� relativn� a chcete, aby va�e lok�ln� struktura odpov�dala va�� TNG struktu�e slo�ek fotografi�/vypr�v�n�)
                 nebo m��e o��znout �daj o um�st�n� pouze na n�zev souboru
                 (doporu�eno, pokud nechcete, aby byla va�e m�dia vlo�ena do podslo�ek TNG slo�ek Photos nebo Histories).</p>
 
-            <h5 class="optionhead">P�edpona pro neve�ejn� pozn�mky</h5>
+            <h5>P�edpona pro neve�ejn� pozn�mky</h5>
             <p>Pokud chcete, aby byly n�kter� va�e pozn�mky p�i importu ozna�eny jako "neve�ejn�" a nebyly zobrazeny ve ve�ejn� oblasti, TNG tak m��e
                 u�init, pokud v�echny
                 pozn�mky, kter� maj� tomuto popisu odpov�dat, za��naj� stejn�m znakem. Pro tyto ��ely se obvykle pou��v� znak tilda (~) nebo vyk�i�n�k

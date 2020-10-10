@@ -33,7 +33,7 @@ echo help_header("N�pov�da: Reporty");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo otestovat tento v�sledek. Chcete-li najednou vymazat
                 v�ce z�znam�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t vymaz�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
@@ -57,23 +57,23 @@ echo help_header("N�pov�da: Reporty");
                 z�lo�ku <a href="#search">Hledat</a> pro nalezen� reportu, a pot� klikn�te na ikonu Upravit vedle tohoto ��dku.</p>
             V�znam jednotliv�ch pol� p�i p�id�n� nebo �prav� reportu je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">N�zev reportu</h5>
+            <h5>N�zev reportu</h5>
             <p>Sv�mu reportu mus�te d�t n�zev. P�i zobrazen� reportu se objev� jako jeho titul.</p>
 
-            <h5 class="optionhead">Popis</h5>
+            <h5>Popis</h5>
             <p>Sv�j report stru�n� popi�te. Tento popis se objev� p�i zobrazen� reportu pod titulem. Popis by m�l stru�n� vysv�tlit, co report
                 zobrazuje a p�i
                 pou�it� jak�ch krit�ri�.</p>
 
-            <h5 class="optionhead">Po�ad�/Priorita</h5>
+            <h5>Po�ad�/Priorita</h5>
             <p>Reporty budou t��d�ny alfabeticky podle n�zvu, pokud ka�d�mu nep�id�l�te po�ad� nebo prioritu. Nejd��ve se �ad� ni��� ��sla. Pr�zdn�
                 po�ad� se dostane p�ed ��slo.</p>
 
-            <h5 class="optionhead">Aktivn�</h5>
+            <h5>Aktivn�</h5>
             <p>V� nov� report nebude na str�nk�ch n�v�t�vn�k� viditeln�, dokud jej neozna��te zde jako aktivn�. Je dobr� p�ed aktivac� nov� report
                 ulo�it a otestovat, zda pracuje tak, jak chcete.</p>
 
-            <h5 class="optionhead">Zvolte pole pro zobrazen�</h5>
+            <h5>Zvolte pole pro zobrazen�</h5>
             <p>Zkop�rov�n�m z lev� ��sti do prav� ozna�te, kter� pole chcete ve sv�m reportu zobrazit. Prov�st to m��ete
                 v�b�rem pole a kliknut�m na tla��tko <em>P�idat >></em> nebo jednodu�e dvojklikem na n�zev pole (pouze IE). </p>
 
@@ -84,7 +84,7 @@ echo help_header("N�pov�da: Reporty");
                 m��ete v�b�rem pole v prav� ��sti a kliknut�m na tla��tka <em>Posunout nahoru</em> a <em>Posunout dol�</em> m��ete pole posunout
                 nahoru nebo dol�.</p>
 
-            <h5 class="optionhead">Vyberte krit�ria</h5>
+            <h5>Vyberte krit�ria</h5>
             <p>Volbou krit�ri� ozna�te osoby, kter� chcete vlo�it do sv�ho reportu. Osoby, kter� krit�ri�m neodpov�daj�, v reportu nebudou obsa�eny.
                 P��kazy pro krit�ria jsou
                 dob�e zformulov�ny, kdy� obsahuj� n�zev pole a podm�nku. Nap�. "P��jmen� = 'Nov�k' " nebo "M�sto narozen� obsahuje 'Olomouc' ". V�ce
@@ -134,7 +134,7 @@ echo help_header("N�pov�da: Reporty");
                     nahoru</em>
                 nebo <em>Posunout dol�</em>.</p>
 
-            <h5 class="optionhead">Vybrat t��d�n�</h5>
+            <h5>Vybrat t��d�n�</h5>
             <p>V�b�rem jednoho nebo v�ce pol� ur��te, jak maj� b�t odpov�daj�c� z�znamy t��d�ny.
                 Pokud nelze ur�it po�ad� z�znam� podle prvn�ho pole v seznamu, bude pou�ito druh� pole ze seznamu, a tak d�le. Nen�-li ur�eno ��dn�
                 t��d�n�, odpov�daj�c�
@@ -150,18 +150,18 @@ echo help_header("N�pov�da: Reporty");
                 <i>P��jmen�<br>
                     Sestupn� (P�edchoz�)</i></p>
 
-            <h5 class="optionhead">R�zn�</h5>
+            <h5>R�zn�</h5>
             <p>Odstranit jakoukoli polo�ku z prav� ��sti m��ete jej�m v�b�rem a kliknut�m na tla��tko <em><< Odstranit</em> nebo jednodu�e dvojklikem
                 na polo�ku (pouze IE).
                 Chcete-li zm�nit po�ad� polo�ek v seznamu, vyberte polo�ku a p�esu�te ji nahoru nebo dol� kliknut�m na tla��tka <em>Posunout
                     nahoru</em> nebo <em>Posunout dol�</em>.</p>
 
-            <h5 class="optionhead">Vlastn� SQL dotaz</h5>
+            <h5>Vlastn� SQL dotaz</h5>
             <p>Pokud zn�te SQL (structured query language) a zn�te strukturu tabulek TNG, m��ete nechat oblasti Zobrazit, Krit�ria a T��d�n� pr�zdn� a
                 m�sto toho zapsat do r�me�ku na konci obrazovky p��mo
                 SQL p��kaz SELECT.</p>
 
-            <h5 class="optionhead">Ulo�it report vs. Ulo�it a ukon�it</h5>
+            <h5>Ulo�it report vs. Ulo�it a ukon�it</h5>
             <p>Chcete-li report ulo�it, kliknite na "Ulo�it report" a z�stanete na stejn� str�nce a m��ete pokra�ovat v editaci. Kliknut�m na "Ulo�it
                 a ukon�it" report ulo��te a vr�t�te se na menu Reporty.</p>
 

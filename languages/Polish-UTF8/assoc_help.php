@@ -49,10 +49,10 @@ echo help_header("Pomoc: Związki");
 
             <p>Podczas dodawania lub edycji związków dostępne są następujące pola:</p>
 
-            <h5 class="optionhead">ID osoby</h5>
+            <h5>ID osoby</h5>
             <p>Wprowadź ID osoby, które mają być związane z wybraną osobą, lub kliknij ikonę "Znajdź" aby wyszukać jej ID.</p>
 
-            <h5 class="optionhead">Wzajemny stosunek</h5>
+            <h5>Wzajemny stosunek</h5>
             <p>Wprowadź charakter związku między dwoma osobami. Na przykład, <em>ojciec chrzestny</em>, <em>świadek</em> itp.</p>
 
             <p>Po dodaniu, edycji lub usunięciu związków tej osoby, kliknij przycisk "Koniec", aby zamknąć okno.</p>

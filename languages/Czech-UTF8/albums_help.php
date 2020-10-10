@@ -35,7 +35,7 @@ echo help_header("Nápověda: Alba");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého alba vám umožní upravit, vymazat nebo zobrazit náhled tohoto alba.</p>
 
         </td>
@@ -52,21 +52,21 @@ echo help_header("Nápověda: Alba");
                 která má album obsahovat, a
                 odkazy na osobu, rodinu a jiné entity, můžete přidat po uložení záznamu. Význam jednotlivých polí je následující:</p>
 
-            <h5 class="optionhead">Název alba</h5>
+            <h5>Název alba</h5>
             <p>Název vašeho alba.</p>
 
-            <h5 class="optionhead">Popis</h5>
+            <h5>Popis</h5>
             <p>Krátký popis alba nebo položek, které obsahuje.</p>
 
-            <h5 class="optionhead">Klíčová slova</h5>
+            <h5>Klíčová slova</h5>
             <p>Jakýkoli počet klíčových slov mimo název alba a popis, která mají být použita při vyhledávání tohoto alba.</p>
 
-            <h5 class="optionhead">Aktivní</h5>
+            <h5>Aktivní</h5>
             <p>Je-li album označeno jako "Aktivní", bude zobrazeno na vašich stránkách ve veřejném seznamu. Je-li příznak Aktivní nastaven na "Ne",
                 návštěvníci vašich stránek
                 toto album vidět nebudou.</p>
 
-            <h5 class="optionhead">Vždy viditelné</h5>
+            <h5>Vždy viditelné</h5>
             <p>Je-li aktivní album označeno jako "Vždy viditelné" a je připojeno k osobě, rodině, pramenu nebo úložišti pramenů, bude na stránkách u
                 těchto entit vždy viditelné, i když je
                 připojeno k žijící osobě nebo rodině. Jinak jsou aktivní alba nebo média, která jsou připojená k žijícím osobám, skryta pro
@@ -74,7 +74,7 @@ echo help_header("Nápověda: Alba");
                 kteří nemají oprávnění prohlížet data žijících osob.
             </p>
 
-            <h5 class="optionhead">Pole, která musí být vyplněna:</h5>
+            <h5>Pole, která musí být vyplněna:</h5>
             <p>Název alba je jediné pole, které je nutné vyplnit, ale je ve vašem zájmu
                 vyplnit i ostatní pole.</p>
 
@@ -89,7 +89,7 @@ echo help_header("Nápověda: Alba");
                 vedle tohoto alba.
                 Význam následujících polí, která nejsou na stránce "Přidat nové album":</p>
 
-            <h5 class="optionhead">Média v albu</h5>
+            <h5>Média v albu</h5>
             <p>Chcete-li do alba přidat média, klikněte na tlačítko "Přidat médium", a poté použijte formulář v zobrazeném okně pro výběr médií z
                 položek, které obsahuje
                 vaše databáze. Můžete použít Kolekce a/nebo Strom (obě volby jsou nepovinné), poté do pole "Najít" zapište část názvu alba nebo popisu
@@ -120,7 +120,7 @@ echo help_header("Nápověda: Alba");
 
             <p>Kliknutím na ikonu dvojité šipky napravo od oblasti "Táhnout" můžete položku přesunout přímo na čelní místo seznamu.</p>
 
-            <h5 class="optionhead">Odkazy na album</h5>
+            <h5>Odkazy na album</h5>
             <p>Toto album můžete připojit k osobě, rodině, pramenu, úložišti pramenů nebo místu. Pro každé připojení nejprve vyberte strom spojený s
                 entitou, kterou chci připojit.
                 Dále vyberte typ propojení (osoba, rodina, pramen, úložiště pramenů nebo míst), a na závěr zapište číslo ID nebo název (pouze u míst)
@@ -159,18 +159,18 @@ echo help_header("Nápověda: Alba");
                 byla k této entitě připojena. Chcete-li
                 toto pořadí změnit, nové pořadí nastavíte na záložce Album/Třídit.</p>
 
-            <h5 class="optionhead">Strom, Typ odkazu, Kolekce:</h5>
+            <h5>Strom, Typ odkazu, Kolekce:</h5>
             <p>Vyberte strom spojený s entitou, u které chcete třídit alba. Poté vyberte typ odkazu (osoba, rodina, pramen, úložiště pramenů nebo
                 místo) a
                 kolekci, kterou chcete třídit.</p>
 
-            <h5 class="optionhead">ID:</h5>
+            <h5>ID:</h5>
             <p>Zapište číslo ID nebo název (pouze u místa) entity. Pokud neznáte ID číslo nebo přesný název místa, klikněte na ikonu lupy pro
                 vyhledání těchto údajů.
                 Po nalezení požadované entity klikněte na odkaz "Vybrat" vedle této entity. Zobrazené okno se uzavře a vybrané ID číslo se objeví v
                 poli ID číslo.</p>
 
-            <h5 class="optionhead">Procedura řazení</h5>
+            <h5>Procedura řazení</h5>
             <p>Po výběru nebo zapsání ID čísla klikněte na tlačítko "Pokračovat" pro zobrazení všech alb pro vybranou entitu a kolekci v jejich
                 aktuálním pořadí.
                 Chcete-li v alba přeřadit, klikněte na oblast "Táhnout" u určité položky a při stisknutém tlačítku myši přetáhněte položku na

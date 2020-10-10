@@ -206,7 +206,7 @@ include_once "eventlib.php";
 
                     <table class="normal topbuffer">
                         <tr>
-                            <td class="nw">
+                            <td class="text-nowrap">
                                 <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
@@ -249,7 +249,7 @@ include_once "eventlib.php";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class=\"nw\">(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
                                 <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                      onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
@@ -452,7 +452,7 @@ include_once "eventlib.php";
         echo "<td colspan='2'>&nbsp;</td>";
         echo "</tr>\n";
         echo "<tr>\n";
-        echo "<td class=\"align-top nw\" style=\"width:110px;\">" . $admtext['SLGC'] . ":</td>\n";
+        echo "<td class='align-top text-nowrap' style='width:110px;'>" . $admtext['SLGC'] . ":</td>\n";
         echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
         echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
         echo "<td>\n";

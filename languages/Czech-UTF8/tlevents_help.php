@@ -33,7 +33,7 @@ echo help_header("Nápověda: Události časové osy");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
                 více záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
@@ -57,16 +57,16 @@ echo help_header("Nápověda: Události časové osy");
                 záložku <a href="#search">Hledat</a> pro nalezení události, a poté klikněte na ikonu Upravit vedle tohoto řádku.</p>
             Význam jednotlivých polí při přidání nebo úpravě události časové osy je následující:</p>
 
-            <h5 class="optionhead">Počáteční datum / Konečné datum</h5>
+            <h5>Počáteční datum / Konečné datum</h5>
             <p>Vyberte všechny známé složky (den, měsíc, rok) počátečního a konečného data události. Povinný je pouze rok počátečního data.
                 Zapíšete-li nějakou složku konečného data, pak je také zde povinný rok.</p>
 
-            <h5 class="optionhead">Titul události</h5>
+            <h5>Titul události</h5>
             <p>Zadejte velmi krátký titul události. Např. <em>Potopení Titanicu</em> nebo <em>1. světová válka</em>. Toto pole bylo zavedeno v TNG
                 9.0. Události
                 časové osy přidané před touto verzí nemají titul. V tomto případě budou jako Titul události použity Podrobnosti události.</p>
 
-            <h5 class="optionhead">Podrobnosti události</h5>
+            <h5>Podrobnosti události</h5>
             <p>Zapište stručný popis události. Měl by obsahovat pouze několik vět.</p>
 
         </td>

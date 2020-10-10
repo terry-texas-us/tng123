@@ -66,14 +66,14 @@ echo help_header("Help: Associations");
 
             <p>While adding or editing an association, take note of the following:</p>
 
-            <h5 class="optionhead">Person ID or Family ID</h5>
+            <h5>Person ID or Family ID</h5>
             <p>Enter the ID of the person or family to be associated with the active person or family, or click the Find icon to search for the
                 ID.</p>
 
-            <h5 class="optionhead">Relationship</h5>
+            <h5>Relationship</h5>
             <p>Enter the nature of the association. For example, <em>Godfather</em>, <em>Mentor</em> or <em>Witness</em>.</p>
 
-            <h5 class="optionhead">Reverse Association?</h5>
+            <h5>Reverse Association?</h5>
             <p>Sometimes an association goes both ways. For example, an association relationship of <em>Friend</em> could apply in both directions. If
                 that
                 is true and you want to create a second association going in the reverse direction, then check this box. If the relationship doesn't

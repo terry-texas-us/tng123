@@ -36,7 +36,7 @@ echo help_header("Nápověda: Prameny");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více
                 záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu.
@@ -57,10 +57,10 @@ echo help_header("Nápověda: Prameny");
             <p>Chcete-li přidat nový pramen, klikněte na záložku <strong>Přidat nový</strong> a poté vyplňte formulář. Některé informace (poznámky a
                 další události) můžete přidat po uložení a zamknutí záznamu. Význam jednotlivých polí je následující:</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud máte pouze jeden strom, vybrán bude vždy tento strom. Jinak, prosím, pro novou rodinu vyberte požadovaný strom.</p>
 
-            <h5 class="optionhead">ID číslo pramenu</h5>
+            <h5>ID číslo pramenu</h5>
             <p>ID číslo pramenu musí být jednoznačné uvnitř vybraného stromu a mělo by se skládat z velkého písmene <strong>S</strong> následovaného
                 číslem (nejvíce 21 číslic).
                 Při prvním zobrazení stránky a kdykoli je vybrán jiný strom, bude doplněno volné a jednoznačné číslo, ale pokud chcete, můžete vložit
@@ -79,21 +79,21 @@ echo help_header("Nápověda: Prameny");
                 odkazů na vaše média. Pokud váš primární program vytváří ID čísla, která neodpovídají tradičním standardům (např.
                 <strong>S</strong> je na konci a ne na začátku), můžete konvence, které TNG používá, změnit v Základním nastavení.</p>
 
-            <h5 class="optionhead">Krátký název</h5>
+            <h5>Krátký název</h5>
             <p>Zkrácený název pramenu.</p>
 
-            <h5 class="optionhead">Dlouhý název</h5>
+            <h5>Dlouhý název</h5>
             <p>Dlouhý název pramene.</p>
 
-            <h5 class="optionhead">Autor, archivační číslo, vydavatel</h5>
+            <h5>Autor, archivační číslo, vydavatel</h5>
             <p>Další informace spojené s pramenem (pokud existují).</p>
 
-            <h5 class="optionhead">Úložiště pramenů</h5>
+            <h5>Úložiště pramenů</h5>
             <p>Vyberte úložiště pramenů, ve kterém se pramen nachází (je-li tato skutečnost známa). Pokud dané úložiště pramenů ještě v databázi
                 neexistuje, jděte na Administrace/Úložiště pramenů a
                 kde jej založte, pak se vraťte a zde jej vyberte.</p>
 
-            <h5 class="optionhead">Vlastní text</h5>
+            <h5>Vlastní text</h5>
             <p>Citace z materiálu pramene (volitelné).</p>
 
         </td>
@@ -106,13 +106,13 @@ echo help_header("Nápověda: Prameny");
             <p>Chcete-li upravit existující pramen, použijte záložku <a href="#search">Hledat</a> pro nalezení pramenu, a poté klikněte na ikonu
                 Upravit vedle pramenu.</p>
 
-            <h5 class="optionhead">Poznámky</h5>
+            <h5>Poznámky</h5>
             <p>Poznámky lze připojit k událostem nebo pramenu obecně kliknutím na ikonu Poznámky v horní části stránky
                 nebo vedle každé události pod "Další události". Pokud pro událost již existují poznámky, na ikoně Poznámky se v horním pravém rohu
                 zobrazí zelená tečka.
                 Více informací o poznámkách najdete v odkazu <a href="notes_help.php">Nápověda</a> v oblasti Poznámky.</p>
 
-            <h5 class="optionhead">Další události</h5>
+            <h5>Další události</h5>
             <p>Chcete-li přidat nebo spravovat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Dalších událostí</strong>. Viz odkaz
                 <a href="events_help.php">Nápověda</a> v tomto okně pro více
                 informací o přidání nových událostí. Po přidání události se v tabulce pod tlačítkem "Přidat nové" zobrazí krátké shrnutí. Akční
@@ -148,7 +148,7 @@ echo help_header("Nápověda: Prameny");
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit prameny, které jsou lehce odlišné, ale odkazují na stejný materiál.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>
 
-            <h5 class="optionhead">Najít shodu</h5>
+            <h5>Najít shodu</h5>
             <p>Vyberte nejprve strom. Nelze slučovat prameny z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat pramen
                 jako
                 výchozí bod vašeho hledání (ID číslo pramenu 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl všechny
@@ -157,13 +157,13 @@ echo help_header("Nápověda: Prameny");
             <p>Pokud jste vybrali pramen jako ID číslo pramenu 1, můžete také ručně vybrat ID číslo pramenu 2. Chcete-li, aby duplicity Pramenu 1
                 nalezl TNG, nechte pole ID číslo pramenu 2 prázdné.</p>
 
-            <h5 class="optionhead">Porovnat následující pole</h5>
+            <h5>Porovnat následující pole</h5>
             <p>Toto jsou kritéria, která TNG používá k určení možných duplicit. Standardně jsou vybrány krátký název a (dlouhý) název, což znamená, že
                 tato pole
                 musí být shodná, aby mohly být dva záznamy považovány za potenciálně duplicitní. Vyberete-li také pole autor, vydavatel, úložiště
                 pramenů nebo vlastní text, musí být také tato pole shodná.</p>
 
-            <h5 class="optionhead">Jiné možnosti</h5>
+            <h5>Jiné možnosti</h5>
             <p><em>Odmítnout prázdné</em> znamená, že prázdná pole nebudou brána v potaz. Např. pramen s krátkým názvem, ale bez titulu
                 nebude brán jako shodný s jiným záznamem, pokud je titul mezi vybranými kritérii.</p>
 
@@ -176,26 +176,26 @@ echo help_header("Nápověda: Prameny");
                 u pramenu 1, pokud budou tyto dva prameny sloučeny. Není-li tato volba vybrána, všechny odkazy na média pramenu 2 budou po sloučení
                 odstraněny.</p>
 
-            <p><h5 class="optionhead">Varování!</h5> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy
+            <p><h5>Varování!</h5> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy
                 zazálohujte své databázové tabulky</em>
             pro případ, že byste dva prameny sloučili omylem.</p>
 
-            <h5 class="optionhead">Další shoda</h5>
+            <h5>Další shoda</h5>
             <p>Najde další možné porovnání, která nezahrne pramen 1. TNG postoupí seznamem možných pramenů v třídění podle ID čísla v textovém
                 formátu.
                 Znamená to, že "10" bude po "1", ale před "2".</p>
 
-            <h5 class="optionhead">Další duplicita</h5>
+            <h5>Další duplicita</h5>
             <p>Najde další možnou duplicitu k pramenu 1. Pokud výsledkem není záznam, který byl zobrazen u pramenu 2, znamená to, že duplicita nebyla
                 nalezena.</p>
 
-            <h5 class="optionhead">Porovnat/Obnovit</h5>
+            <h5>Porovnat/Obnovit</h5>
             <p>Porovnání pramenu 1 a pramenu 2. Je-li toto porovnání již zobrazeno, kliknutí na toto tlačítko způsobí obnovení stránky.</p>
 
-            <h5 class="optionhead">Prohodit</h5>
+            <h5>Prohodit</h5>
             <p>Pramen 1 se stane pramenem 2 a naopak.</p>
 
-            <h5 class="optionhead">Sloučit</h5>
+            <h5>Sloučit</h5>
             <p>Pramen 2 bude sloučen s pramenem 1. ID číslo pramene 1 bude zachováno, stejně jako ostatní údaje pramenu 1, pokud nejsou zaškrtnuta
                 odpovídající políčka
                 u pramenu 2. Např. pokud je u pramenu 2 zaškrtnuto políčko vedle autora, bude během sloučení údaj z tohoto pole zkopírován ze záznamu
@@ -204,7 +204,7 @@ echo help_header("Nápověda: Prameny");
                 Není-li
                 pole zobrazeno ani u jednoho pramenu, pak v tomto poli neexistuje žádný údaj.</p>
 
-            <h5 class="optionhead">Upravit</h5>
+            <h5>Upravit</h5>
             <p>Úprava záznamu pramenu v novém okně. Po provedení změn musíte kliknout na Porovnat/Obnovit, aby se změny projevily na obrazovce
                 Sloučení.</p>
 

@@ -36,7 +36,7 @@ echo help_header("Nápověda: Úložiště pramenů");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, vymazat nebo otestovat výsledek. Chcete-li najednou vymazat více
                 záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být vymazán, a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu.
@@ -56,10 +56,10 @@ echo help_header("Nápověda: Úložiště pramenů");
                 (poznámky a
                 další události) můžete přidat po uložení a zamknutí záznamu. Význam jednotlivých polí je následující:</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud máte pouze jeden strom, vybrán bude vždy tento strom. Jinak, prosím, pro nové úložiště pramenů vyberte požadovaný strom.</p>
 
-            <h5 class="optionhead">ID číslo úložiště</h5>
+            <h5>ID číslo úložiště</h5>
             <p>ID číslo úložiště musí být jednoznačné uvnitř vybraného stromu a mělo by se skládat z velkých písmen <strong>REPO</strong> nebo
                 <strong>R</strong> následovaného číslem (nejvíce 22 znaků celkem).
                 Při prvním zobrazení stránky a kdykoli je vybrán jiný strom, bude doplněno volné a jednoznačné číslo, ale pokud chcete, můžete vložit
@@ -78,10 +78,10 @@ echo help_header("Nápověda: Úložiště pramenů");
                 odkazů na vaše média. Pokud váš primární program vytváří ID čísla, která neodpovídají tradičním standardům (např.
                 <strong>R</strong> je na konci a ne na začátku), můžete konvence, které TNG používá, změnit v Základním nastavení.</p>
 
-            <h5 class="optionhead">Název</h5>
+            <h5>Název</h5>
             <p>Krátký název úložiště.</p>
 
-            <h5 class="optionhead">Adresa 1, Adresa 2, Město, Kraj/provincie, PSČ, Země</h5>
+            <h5>Adresa 1, Adresa 2, Město, Kraj/provincie, PSČ, Země</h5>
             <p>Umístění úložiště (při využití těchto polí jsou všechny části volitelné).</p>
 
         </td>
@@ -94,13 +94,13 @@ echo help_header("Nápověda: Úložiště pramenů");
             <p>Chcete-li upravit existující úložiště pramenů, použijte záložku <a href="#search">Hledat</a> pro nalezení úložiště pramenů, a poté
                 klikněte na ikonu Upravit vedle úložiště.</p>
 
-            <h5 class="optionhead">Poznámky</h5>
+            <h5>Poznámky</h5>
             <p>Poznámky lze připojit k události nebo úložišti pramenů obecně kliknutím na ikonu Poznámky v horní části stránky
                 nebo vedle každé události pod "Další události". Pokud pro událost již existují poznámky, na ikoně Poznámky se v horním pravém rohu
                 zobrazí zelená tečka.
                 Více informací o poznámkách najdete v odkazu <a href="notes_help.php">Nápověda</a> v oblasti Poznámky.</p>
 
-            <h5 class="optionhead">Další události</h5>
+            <h5>Další události</h5>
             <p>Chcete-li přidat nebo spravovat další události, klikněte na tlačítko "Přidat nové" vedle <strong>Dalších událostí</strong>. Viz odkaz
                 <a href="events_help.php">Nápověda</a> v tomto okně pro více
                 informací o přidání nových událostí. Po přidání události se v tabulce pod tlačítkem "Přidat nové" zobrazí krátké shrnutí. Akční
@@ -137,7 +137,7 @@ echo help_header("Nápověda: Úložiště pramenů");
             <p>Kliknutím na tuto záložku lze přezkoumat a sloučit úložiště pramenů, která jsou lehce odlišná, ale odkazují na stejný materiál.
                 Musíte rozhodnout, zda jsou tyto záznamy totožné nebo ne.</p>
 
-            <h5 class="optionhead">Najít shodu</h5>
+            <h5>Najít shodu</h5>
             <p>Vyberte nejprve strom. Nelze slučovat úložiště pramenů z různých stromů, vybrán musí být pouze jeden strom. Potom máte možnost vybrat
                 úložiště pramenů jako
                 výchozí bod vašeho hledání (ID číslo úložiště 1) nebo nechat, aby první shodu osob za vás nalezl TNG. Chcete-li, aby TNG nalezl
@@ -146,7 +146,7 @@ echo help_header("Nápověda: Úložiště pramenů");
             <p>Pokud jste vybrali úložiště pramenů jako ID číslo úložiště 1, můžete také ručně vybrat ID číslo úložiště 2. Chcete-li, aby duplicity
                 úložiště pramenů 1 nalezl TNG, nechte pole ID číslo úložiště 2 prázdné.</p>
 
-            <h5 class="optionhead">Jiné možnosti</h5>
+            <h5>Jiné možnosti</h5>
             <p><em>Sloučit poznámky</em> znamená, že poznámky z úložiště pramenů 2 budou přidány k poznámkám
                 úložiště pramenů 1 u všech slučovaných polí. Není-li tato volba vybrána a pole úložiště pramenů 2 je zaškrtnuto, poznámky úložiště
                 pramenů 2 k tomuto poli budou přepsány
@@ -156,27 +156,27 @@ echo help_header("Nápověda: Úložiště pramenů");
                 u úložiště pramenů 1, pokud budou tyto dvě úložiště pramenů sloučeny. Není-li tato volba vybrána, všechny odkazy na média úložiště
                 pramenů 2 budou po sloučení odstraněny.</p>
 
-            <p><h5 class="optionhead">Varování!</h5> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy
+            <p><h5>Varování!</h5> Pokud proběhlo sloučení, nelze jej vzít zpět! <em>Před zahájením operace slučování proto vždy
                 zazálohujte své databázové tabulky</em>
             pro případ, že byste dvě úložiště pramenů sloučili omylem.</p>
 
-            <h5 class="optionhead">Další shoda</h5>
+            <h5>Další shoda</h5>
             <p>Najde další možné porovnání, která nezahrne úložiště pramenů 1. TNG postoupí seznamem možných úložišť pramenů v třídění podle ID čísla
                 úložiště v textovém formátu.
                 Znamená to, že "10" bude po "1", ale před "2".</p>
 
-            <h5 class="optionhead">Další duplicita</h5>
+            <h5>Další duplicita</h5>
             <p>Najde další možnou duplicitu k úložiště pramenů 1. Pokud výsledkem není záznam, který byl zobrazen u úložiště pramenů 2, znamená to, že
                 duplicita nebyla nalezena.</p>
 
-            <h5 class="optionhead">Porovnat/Obnovit</h5>
+            <h5>Porovnat/Obnovit</h5>
             <p>Porovnání úložiště pramenů 1 a úložiště pramenů 2. Je-li toto porovnání již zobrazeno, kliknutí na toto tlačítko způsobí obnovení
                 stránky.</p>
 
-            <h5 class="optionhead">Prohodit</h5>
+            <h5>Prohodit</h5>
             <p>Úložiště pramenů 1 se stane úložištěm pramenů 2 a naopak.</p>
 
-            <h5 class="optionhead">Sloučit</h5>
+            <h5>Sloučit</h5>
             <p>Úložiště pramenů 2 bude sloučeno s úložištěm pramenů 1. ID číslo úložiště 1 bude zachováno, stejně jako ostatní údaje úložiště pramenů
                 1, pokud nejsou zaškrtnuta odpovídající políčka
                 u úložiště pramenů 2. Např. pokud je u úložiště pramenů 2 zaškrtnuto políčko vedle autora, bude během sloučení údaj z tohoto pole
@@ -185,7 +185,7 @@ echo help_header("Nápověda: Úložiště pramenů");
                 nejsou odpovídající údaje. Není-li
                 pole zobrazeno ani u jednoho úložiště pramenů, pak v tomto poli neexistuje žádný údaj.</p>
 
-            <h5 class="optionhead">Upravit</h5>
+            <h5>Upravit</h5>
             <p>Úprava záznamu úložiště pramenů v novém okně. Po provedení změn musíte kliknout na Porovnat/Obnovit, aby se změny projevily na
                 obrazovce Sloučení.</p>
 

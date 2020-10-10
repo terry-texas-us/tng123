@@ -187,9 +187,9 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
             <table class="whiteback w-100" cellpadding="3" cellspacing="1">
                 <tr>
                     <td class="fieldnameback"><span class="fieldname">&nbsp;</span></td>
-                    <td class="fieldnameback"><span class="fieldname nw">&nbsp;<b><?php echo $namestr; ?></b>&nbsp;</span></td>
+                    <td class="fieldnameback"><span class="fieldname text-nowrap">&nbsp;<b><?php echo $namestr; ?></b>&nbsp;</span></td>
                     <td class="fieldnameback" colspan="2"><span class="fieldname">&nbsp;<b><?php echo $datestr; ?></b>&nbsp;</span></td>
-                    <td class="fieldnameback"><span class="fieldname nw">&nbsp;<b><?php echo $text[$idtext]; ?></b>&nbsp;</span></td>
+                    <td class="fieldnameback"><span class="fieldname text-nowrap">&nbsp;<b><?php echo $text[$idtext]; ?></b>&nbsp;</span></td>
                     <?php if ($numtrees > 1) { ?>
                         <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $text['tree']; ?></b>&nbsp;</span></td>
                     <?php } ?>

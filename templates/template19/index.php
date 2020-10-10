@@ -95,11 +95,11 @@ if (!isMobile()) {
 <br>
 <!-- Parallax block area  -->
 <section class="fancybox">
-    <h1 class="center"><?php echo getTemplateMessage('t19_headline'); ?></h1>
-    <h5 class="center"><?php echo getTemplateMessage('t19_subhead1'); ?></h5>
+    <h1 class="text-center"><?php echo getTemplateMessage('t19_headline'); ?></h1>
+    <h5 class="text-center"><?php echo getTemplateMessage('t19_subhead1'); ?></h5>
     <div class="container">
         <article class="contentBox4a">
-            <h6 class="center"><?php echo getTemplateMessage('t19_sniptitle-1'); ?></h6>
+            <h6 class="text-center"><?php echo getTemplateMessage('t19_sniptitle-1'); ?></h6>
             <figure class="snip2">
                 <img src="<?php echo $templatepath . $tmp['t19_snipimage-1']; ?>" alt="<?php echo getTemplateMessage('t19_snipname-1'); ?>"/>
                 <figcaption>
@@ -111,7 +111,7 @@ if (!isMobile()) {
             </figure>
         </article>
         <article class="contentBox4b">
-            <h6 class="center"><?php echo getTemplateMessage('t19_sniptitle-2'); ?></h6>
+            <h6 class="text-center"><?php echo getTemplateMessage('t19_sniptitle-2'); ?></h6>
             <figure class="snip2">
                 <img src="<?php echo $templatepath . $tmp['t19_snipimage-2']; ?>" alt="<?php echo getTemplateMessage('t19_snipname-2'); ?>"/>
                 <figcaption>
@@ -123,7 +123,7 @@ if (!isMobile()) {
             </figure>
         </article>
         <article class="contentBox4c">
-            <h6 class="center"><?php echo getTemplateMessage('t19_sniptitle-3'); ?></h6>
+            <h6 class="text-center"><?php echo getTemplateMessage('t19_sniptitle-3'); ?></h6>
             <figure class="snip2">
                 <img src="<?php echo $templatepath . $tmp['t19_snipimage-3']; ?>" alt="<?php echo getTemplateMessage('t19_snipname-3'); ?>"/>
                 <figcaption>
@@ -135,7 +135,7 @@ if (!isMobile()) {
             </figure>
         </article>
         <article class="contentBox4d">
-            <h6 class="center"><?php echo getTemplateMessage('t19_sniptitle-4'); ?></h6>
+            <h6 class="text-center"><?php echo getTemplateMessage('t19_sniptitle-4'); ?></h6>
             <figure class="snip2">
                 <img src="<?php echo $templatepath . $tmp['t19_snipimage-4']; ?>" alt="<?php echo getTemplateMessage('t19_snipname-4'); ?>"/>
                 <figcaption>
@@ -161,39 +161,39 @@ if (!isMobile()) {
 
     <article class="contentBox3b">
         <h6><?php echo getTemplateMessage('t19_quotehead'); ?></h6>
-        <p class="center"><i><?php echo getTemplateMessage('t19_quotesubhead'); ?></i></p>
+        <p class="text-center"><i><?php echo getTemplateMessage('t19_quotesubhead'); ?></i></p>
         <ul id="ticker">
             <li>
                 <div class="testimonial">
-                    <div class="tcontent center">
+                    <div class="tcontent text-center">
                         <!-- Edit quote --><?php echo getTemplateMessage('t19_quote-1'); ?></div>
                     <div class="author">~ <?php echo getTemplateMessage('t19_author-1'); ?></div>
                 </div>
             </li>
             <li>
                 <div class="testimonial">
-                    <div class="tcontent center">
+                    <div class="tcontent text-center">
                         <!-- Edit quote --><?php echo getTemplateMessage('t19_quote-2'); ?></div>
                     <div class="author">~ <?php echo getTemplateMessage('t19_author-2'); ?></div>
                 </div>
             </li>
             <li>
                 <div class="testimonial">
-                    <div class="tcontent center">
+                    <div class="tcontent text-center">
                         <!-- Edit quote --><?php echo getTemplateMessage('t19_quote-3'); ?></div>
                     <div class="author">~ <?php echo getTemplateMessage('t19_author-3'); ?></div>
                 </div>
             </li>
             <li>
                 <div class="testimonial">
-                    <div class="tcontent center">
+                    <div class="tcontent text-center">
                         <!-- Edit quote --><?php echo getTemplateMessage('t19_quote-4'); ?></div>
                     <div class="author">~ <?php echo getTemplateMessage('t19_author-4'); ?></div>
                 </div>
             </li>
             <li>
                 <div class="testimonial">
-                    <div class="tcontent center">
+                    <div class="tcontent text-center">
                         <!-- Edit quote --><?php echo getTemplateMessage('t19_quote-5'); ?></div>
                     <div class="author">~ <?php echo getTemplateMessage('t19_author-5'); ?></div>
                 </div>

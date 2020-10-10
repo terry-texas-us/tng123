@@ -21,7 +21,7 @@ if ($tngconfig['maint']) {
 }
 $title = getTemplateMessage('t3_maintitle');
 ?>
-    <div class="center">
+    <div class="text-center">
         <div class="indexpage" style="display: table;">
             <?php if ($tmp['t3_titlechoice'] == "text" || isMobile()) { ?>
                 <div style="padding:10px;">

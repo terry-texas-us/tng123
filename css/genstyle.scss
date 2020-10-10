@@ -195,10 +195,6 @@ ul.nopad {
   border-bottom: 1px solid #bbb;
 }
 
-.adminbody {
-  margin: 0;
-}
-
 .adminbody, .admincorner {
   background: url(../img/background.gif);
 }
@@ -286,10 +282,6 @@ ul.nopad {
 
 .adminsubmsg, .admintotal {
   color: #ddd;
-}
-
-.admintotal {
-  float: right;
 }
 
 .adminsubmsg, .smaller {
@@ -579,10 +571,6 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
   top: 2px;
 }
 
-.th-indent {
-  margin-left: 5px;
-}
-
 .tsh-indent {
   margin-left: 18px;
 }
@@ -603,10 +591,6 @@ input:hover, select:hover, textarea:hover {
   border-color: #fc3;
 }
 
-textarea {
-  margin-left: 0;
-}
-
 select {
   padding: 1px 4px;
 }
@@ -619,10 +603,6 @@ button, input[type=button], input[type=password], input[type=reset], input[type=
   border: 1px solid #808080;
   border-radius: 5px;
   padding: 3px 6px;
-}
-
-button, input[type=button], input[type=reset], input[type=submit] {
-  cursor: pointer;
 }
 
 select {
@@ -824,10 +804,6 @@ input.minibutton {
   padding-bottom: 5px;
 }
 
-.nw {
-  white-space: nowrap;
-}
-
 .snlink {
   padding: 5px;
   border-bottom: 1px solid #999;
@@ -916,10 +892,6 @@ p a.snlink {
 .largeheader {
   font-size: 32px;
   color: #fff;
-}
-
-.optionhead {
-  font-weight: 700;
 }
 
 .helpbody {
@@ -1046,10 +1018,6 @@ td.unhighlightedchild {
 
 .othersearch {
   margin: 2px 0 0 -15px;
-}
-
-form {
-  margin: 0;
 }
 
 .lefttop {
@@ -1347,10 +1315,6 @@ a.admincell:hover, a.leftlink:hover {
 
 .mwblock {
   max-width: 800px;
-}
-
-.center, .mediaalign {
-  text-align: center;
 }
 
 .tfixed {
@@ -1817,10 +1781,6 @@ ul.tngdd ul li a .menu-icon {
 
 .sncol {
   width: 20%;
-}
-
-.plcol, .sncol {
-  vertical-align: top;
 }
 
 .plcol {

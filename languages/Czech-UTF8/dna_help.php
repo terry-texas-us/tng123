@@ -38,7 +38,7 @@ echo help_header("Nápověda: Testy DNA");
             <p>Vyhledávací kritéria, která zadáte na této stránce, budou uchována, dokud nekliknete na tlačítko <strong>Obnovit</strong>, které znovu
                 obnoví všechny výchozí hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tlačítko Akce vedle každého výsledku hledání vám umožní upravit, odstranit nebo otestovat tento výsledek. Chcete-li najednou vymazat
                 více záznamů, zaškrtněte políčko ve sloupci
                 <strong>Vybrat</strong> u každého záznamu, která má být vymazán a poté klikněte na tlačítko "Vymazat označené" na začátku seznamu. Pro
@@ -56,50 +56,50 @@ echo help_header("Nápověda: Testy DNA");
                 osobě v databázi.</p>
             <p>Pole mohou zůstat prázdné a nebudou ve většině případů zobrazeny.</p>
 
-            <h5 class="optionhead">Typ testu</h5>
+            <h5>Typ testu</h5>
             <p>Vyberte typ testu DNA, na který tento záznam odkazuje. (Toto je jediné povinné pole)</p>
 
-            <h5 class="optionhead">Číslo testu/název</h5>
+            <h5>Číslo testu/název</h5>
             <p>Zapište ID číslo spojené s tímto testem. Pokud nemůžete číslo najít nebo vám jej dodavatel nedal, nebojte se vytvořit číslo nové.
                 <br><strong>Všimněte si, </strong>že pokud nezadáte hodnotu do pole Číslo testu/název, nebudete mít k
                 dispozici rychlý odkaz pro úpravu dat DNA z obrazovky prohlížení DNA, jako je browse_dna_tests.php.</p>
 
-            <h5 class="optionhead">Dodavatel</h5>
+            <h5>Dodavatel</h5>
             <p>Zadejte název společnosti, která test provedla.</p>
 
-            <h5 class="optionhead">Datum testu</h5>
+            <h5>Datum testu</h5>
             <p>Toto je datum, kdy byl test DNA proveden.</p>
 
-            <h5 class="optionhead">Datum shody</h5>
+            <h5>Datum shody</h5>
             <p>Toto je datum, kdy byla zjištěna shoda vašeho testu s osobou, které byl test DNA proveden.</p>
 
-            <h5 class="optionhead">GEDmatch ID</h5>
+            <h5>GEDmatch ID</h5>
             <p>Číslo ID tohoto testu na webu GEDmatch. Platí pouze pro testy atDNA.</p>
 
-            <h5 class="optionhead">Ponechat test neveřejný</h5>
+            <h5>Ponechat test neveřejný</h5>
             <p>Pokud zadáte do pole Ponechat test neveřejný Ano, zobrazení testu bude omezeno pouze na přihlášené uživatele, kteří mají přístupová
                 práva nastavená na <strong>Povolit neveřejné</strong>. To umožní omezit přístup k testům DNA, které jste
                 označili jako Ponechat test neveřejný. Test bude viditelný pro administrátora TNG.</p>
 
-            <h5 class="optionhead">Testovaná osoba</h5>
+            <h5>Testovaná osoba</h5>
             <p>Jedná se o osobu, které patří test. Vyberte strom a zapište ID osoby nebo klikněte na lupu a vyhledejte osobu podle jména. NEBO můžete
                 zadat jméno osoby, která není ve vaší databázi.</p>
 
-            <h5 class="optionhead">Ponechat jméno neveřejné</h5>
+            <h5>Ponechat jméno neveřejné</h5>
             <p>Pokud je zaškrtnuto toto políčko, jméno uvedené jako "testovaná osoba" se bude zobrazovat jako "Neveřejné". Jméno bude viditelné pro
                 administrátora TNG.</p>
 
-            <h5 class="optionhead">Přidat test ke skupině</h5>
+            <h5>Přidat test ke skupině</h5>
             <p>Test můžete přiřadit ke dříve vytvořené skupině testů DNA.<br>Chcete-li vytvořit skupinu testů DNA, přejděte na stránku Administrace >>
                 Testy DNA >> a klikněte na kartu Skupiny DNA. Poté klikněte na záložku Přidat skupinu.</p>
 
-            <h5 class="optionhead">Skupiny DNA</h5>
+            <h5>Skupiny DNA</h5>
             <p>Skupiny DNA se používají k výběru nebo filtrování testů DNA nebo typů testů v seznamu. Můžete například vytvořit skupinu pro vaši
                 otcovskou linii a další skupinu pro mateřskou linii. Skupiny DNA jsou jen způsob, jak filtrovat seznam testů.
                 Propojení testů se skupinou je nepovinné. Povšimněte si, že skupiny DNA jsou nyní spojeny s typem testu a pro dva různé typy testů
                 nemůžete použít stejný název skupiny DNA.</p>
 
-            <h5 class="optionhead">Haploskupina</h5>
+            <h5>Haploskupina</h5>
             <p>Haploskupina je genetická populace lidí, kteří sdílejí společného předka v otcovské nebo mateřské linii. Haploskupiny jsou označeny
                 písmeny abecedy (A-T) a jejich upřesnění (SNP) obsahuje další kombinace číslic a písmen. K dispozici jsou dvě
                 samostatná vstupní pole, protože některé testovací společnosti poskytují u testů atDNA obě odhadované haploskupiny nebo si testovaná
@@ -133,7 +133,7 @@ echo help_header("Nápověda: Testy DNA");
                 25, 37, 44, 67, 91, 101 nebo 111 markerů.<br>Vzhledem k tomu, že Family Tree DNA je v současné době jediným dodavatelem nabízejícím
                 testy Y-DNA, je ve porovnávacím reportu Y-DNA použito 12, 25, 37, 67 a 111 markerů.</p>
 
-            <h5 class="optionhead">Hodnoty markerů</h5>
+            <h5>Hodnoty markerů</h5>
             <p>Zadejte hodnoty vašeho Y-DNA markeru oddělené čárkou. Například:
                 "13,24,14,10,11-14,12,12,12,13,14,30,17,9-10,11,11,24,15,19,30,15-15-16-17" (bez uvozovek).<br>nebo s mezerami za čárkou pro lepší
                 čitelnost, "13, 24, 14, 10, 11-14, 12, 12,
@@ -164,7 +164,7 @@ echo help_header("Nápověda: Testy DNA");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="mtdna"><h4 class="subheadbold">Pole výsledků testů mtDNA</h4></a>
 
-            <p>Mateřskou linii předků lze stopovat pomocí <h5 class="optionhead">mitochondriální DNA (mtDNA)</h5>. Dle současných konvencí je
+            <p>Mateřskou linii předků lze stopovat pomocí <h5>mitochondriální DNA (mtDNA)</h5>. Dle současných konvencí je
             mtDNA rozdělena do tří oblastí. Těmi jsou kódující oblast a dvě hypervariabilní oblasti (HVR1 a HVR2)
 
             <ul>
@@ -193,7 +193,7 @@ echo help_header("Nápověda: Testy DNA");
             </ul>
             </p>
 
-            <p><h5 class="optionhead">Rozdíly HVR1/HVR2/Kódující oblast, Zvláštní mutace</h5></p>
+            <p><h5>Rozdíly HVR1/HVR2/Kódující oblast, Zvláštní mutace</h5></p>
             <p>Zadejte výsledky svého testu mtDNA oddělené čárkou.<br>Například:
                 "A16129G,T16187C,C16189T,T16223C,G16230A,T16278C,C16311T,C16519T".<br>Výsledek můžete také zadat s mezerami za čárkou pro lepší
                 čitelnost, například "A16129G, T16187C,
@@ -207,7 +207,7 @@ echo help_header("Nápověda: Testy DNA");
             <p style="float:right;"><a href="#top">Nahoru</a></p>
             <a id="atdna"><h4 class="subheadbold">Pole výsledků testů atDNA</h4></a>
 
-            <p><h5 class="optionhead">Autozomální DNA (atDNA) </h5> testuje vaše autozomální chromozómy, což je dalších 22 párů za pohlavními
+            <p><h5>Autozomální DNA (atDNA) </h5> testuje vaše autozomální chromozómy, což je dalších 22 párů za pohlavními
             chromozomy X a Y. Testy autozomální DNA mohou pomoci identifikovat příbuzné, kteří sdílejí nedávné předky. Čím
             více segmentů sdílíte a čím větší je délka těchto segmentů, tím více jste spřízněni.</p>
 
@@ -258,39 +258,39 @@ echo help_header("Nápověda: Testy DNA");
 
             <p>Následující pole jsou společná pro všechny typy testů</p>
 
-            <h5 class="optionhead">Nejvzdálenější předek</h5>
+            <h5>Nejvzdálenější předek</h5>
             <p>Zadejte nejvzdálenějšího otcovského (Y-DNA) nebo mateřského (mtDNA) předka testované osoby. Různé osoby s testy Y-DNA a mtDNA mohou mít
                 různé nejvzdálenější předky v závislosti na tom, jak daleko do minulosti existuje jejich papírová
                 stopa.</p>
 
-            <h5 class="optionhead">Nejbližší společný předek</h5>
+            <h5>Nejbližší společný předek</h5>
             <p>Zadejte ID osoby nejbližšího společného předka (MRCA). MRCA je sdílený společný předek mezi dvěmi nebo více testovanými osobami. MRCA
                 se může lišit v závislosti na tom, kde se mezi testovanými osobami setkají jejich linie.</p>
 
-            <h5 class="optionhead">Rodová příjmení</h5>
+            <h5>Rodová příjmení</h5>
             <p>Toto pole se vztahuje na všechny typy testů a bude automaticky vyplněno rodovými příjmeními osoby, u které byly provedeny testy Y-DNA a
                 mtDNA, oddělenými čárkami<br>Doplněná příjmení závisí na typu testu a můžete je jakýmkoli způsobem
                 upravit. <br>V Administrace >> Nastavení >> Konfigurace >> Základní nastavení >> Testy DNA je možnost vyloučení příjmení jako je
                 neznámé nebo NEZNÁMÉ, a možnost zobrazit příjmení velkými písmeny.<br>Nyní je také možnost zvolit, z kolika
                 generací vašeho rodokmenu se u testů atDNA vrátí rodové příjmení.</p>
 
-            <h5 class="optionhead">Poznámky</h5>
+            <h5>Poznámky</h5>
             <p>Zapište poznámky spojené s tímto testem nebo jakékoli jiné informace.</p>
 
-            <h5 class="optionhead">Poznámky administrátora</h5>
+            <h5>Poznámky administrátora</h5>
             <p>Totéž jako poznámky, ale pouze pro zobrazení uživatelům s právy administrátora.</p>
 
-            <h5 class="optionhead">Odpovídající odkazy</h5>
+            <h5>Odpovídající odkazy</h5>
             <p>Pokud existují webové stránky spojené s tímto testem, zadejte je zde. Každý odkaz zadejte na nový řádek. Zapište stránky nebo název
                 stránek a adresu URL,
                 oddělené čárkou. Například, "Ancestry.com, https://www.ancestry.com". Pokud nevložíte stránky nebo název stránek, bude odkaz samo o
                 sobě použit jako název.</p>
 
-            <h5 class="optionhead">Média</h5>
+            <h5>Média</h5>
             <p>Zde můžete k testu přiřadit fotografie zadáním mediaID pro každou fotografii.<br>Více záznamů oddělte čárkou. Například: "4361,5992"
             </p>
 
-            <h5 class="optionhead">Informace o testu k zobrazení</h5>
+            <h5>Informace o testu k zobrazení</h5>
             <p>Vedle informací zaškrtněte políčko, které chcete zobrazit na stránce osoby (getperson.php).<br>Na stránce každého testu se zobrazí
                 všechny zapsané informace (show_dna_test.php).</p>
 
@@ -313,7 +313,7 @@ echo help_header("Nápověda: Testy DNA");
             <p>Chcete-li upravit existující test, použijte záložku <a href="#search">Hledat</a> pro nalezení testu, a poté klikněte na ikonu Upravit
                 vedle tohoto testu.</p>
 
-            <h5 class="optionhead">Odkazy na test</h5>
+            <h5>Odkazy na test</h5>
             <p>Tento test můžete připojit k osobám ve vaší databázi. U každého připojení zvolte nejprve strom, ke kterému je jedinec připojen.
                 Poté zadejte ID číslo osoby, ke které chcete test připojit, a pak kliknutím na tlačítko "Přidat" vytvoříte spojení.</p>
 

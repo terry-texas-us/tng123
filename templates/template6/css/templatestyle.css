@@ -311,9 +311,6 @@ div.icons-rt a, div.icons a {
   .section {
     display: inline;
   }
-  .section p.center {
-    text-align: left;
-  }
 }
 
 @media (max-width: 560px) {

@@ -394,9 +394,9 @@ if ($cemetery['place']) {
         $body .= $header;
         $body .= "<thead><tr>\n";
         $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback nbrcol\"><span class='fieldname'>&nbsp;#&nbsp;</span></th>\n";
-        $body .= "<th data-tablesaw-priority='1' class='fieldnameback'><span class=\"fieldname nw\">&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
+        $body .= "<th data-tablesaw-priority='1' class='fieldnameback'><span class='fieldname text-nowrap'>&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
         $body .= "<th data-tablesaw-priority='2' colspan='2' class='fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
-        $body .= "<th data-tablesaw-priority='3' class='fieldnameback'><span class=\"fieldname nw\">&nbsp;{$text['personid']}&nbsp;</span></th>\n";
+        $body .= "<th data-tablesaw-priority='3' class='fieldnameback'><span class='fieldname text-nowrap'>&nbsp;{$text['personid']}&nbsp;</span></th>\n";
         if ($numtrees > 1) {
             $body .= "<th data-tablesaw-priority='3' class='fieldnameback'><span class='fieldname'>&nbsp;{$text['tree']}&nbsp;</span></th>\n";
         }

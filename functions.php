@@ -278,7 +278,7 @@ function doMedia($mediatypeID) {
     }
     if (!$thumbcount) {
         $mediaheader = str_replace("<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
-        $mediatext = str_replace("<td class='databack center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
+        $mediatext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
     tng_free_result($mediaresult);
     return $mediatext ? $mediaheader . $mediatext . $footer . "</div>\n<br>\n" : "";

@@ -38,7 +38,7 @@ $title = getTemplateMessage('t2_maintitle');
         }
     </script>
 
-    <div class="center">
+    <div class="text-center">
         <table class="indexpage rounded10" style="padding:0;">
             <tr>
                 <td class='align-top'>

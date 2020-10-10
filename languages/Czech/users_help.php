@@ -38,7 +38,7 @@ echo help_header("N�pov�da: U�ivatel�");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit nebo odstranit tento v�sledek. Chcete-li najednou odstranit v�ce
                 z�znam�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d�ho z�znamu, kter� m� b�t odstran�n a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu.
@@ -66,42 +66,42 @@ echo help_header("N�pov�da: U�ivatel�");
                 existuj�c�ho u�ivatele, klikn�te na ikonu Upravit vedle tohoto u�ivatele.
                 V�znam pol� p�i p�id�n� nebo �prav� u�ivatele je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Popis</h5>
+            <h5>Popis</h5>
             <p>Va�emu u�ivateli m��ete p�idat stru�n� popis, abyste v�d�li, o koho jde. M��ete nap�. zapsat "Administr�tor str�nek" nebo "Teta
                 Marta".</p>
 
-            <h5 class="optionhead">U�ivatelsk� jm�no</span></h5>
+            <h5>U�ivatelsk� jm�no</span></h5>
             <p>Jednozna�n� jednoslovn� identifik�tor tohoto u�ivatele (stejn� u�ivatelsk� jm�no nemohou m�t dva u�ivatel�). U�ivatel bude p�i
                 p�ihl�en� po��d�n o zad�n� sv�ho u�ivatelsk�ho jm�na v d�lce max. 20 znak�.</p>
 
-            <h5 class="optionhead">Heslo</h5>
+            <h5>Heslo</h5>
             <p>D�v�rn� slovo nebo �et�zec znak� (bez mezer), kter� tento u�ivatel mus� tak� p�i p�ihl�en� zadat. P�i z�pisu do tohoto pole budou
                 zapisovan� znaky
                 na obrazovce pro zachov�n� utajen� nahrazov�ny hv�zdi�kami nebo jin�mi podobn�mi znaky. D�lka max. 20 znak�. Heslo je v datab�zi
                 za�ifrov�no
                 a nelze jej nik�m zobrazit, ani t�mto u�ivatelem nebo programem Next Generation.</p>
 
-            <h5 class="optionhead">Skute�n� jm�no</h5>
+            <h5>Skute�n� jm�no</h5>
             <p>Aktu�ln� jm�no (pokud je platn�) u�ivatele, kter� odpov�d� t�mto �daj�m.</p>
 
-            <h5 class="optionhead">Telefon, email, internetov� str�nky, adresa, m�sto, kraj/provincie, PS�, zem�, pozn�mky</h5>
+            <h5>Telefon, email, internetov� str�nky, adresa, m�sto, kraj/provincie, PS�, zem�, pozn�mky</h5>
             <p>Nepovinn� �daje, kter� se t�kaj� u�ivatele.</p>
 
-            <h5 class="optionhead">Nepos�lat tomuto u�ivateli hromadn� emaily</h5>
+            <h5>Nepos�lat tomuto u�ivateli hromadn� emaily</h5>
             <p>Toto pol��ko za�krtn�te, pokud nechcete, aby tomuto u�ivateli byly pos�l�ny hromadn� emaily (viz n�e).</p>
 
-            <h5 class="optionhead">Strom / ID ��slo osoby</h5>
+            <h5>Strom / ID ��slo osoby</h5>
             <p>Pokud tento u�ivatel odpov�d� n�kter� osob� z va�� datab�ze, m��ete zde ozna�it strom a ID ��slo osoby jeho z�znamu.
                 Umo�n� to zobrazit tomuto u�ivateli v�echny �daje ze sv�ho z�znamu, i kdy� tento z�znam nen� obsa�en v p�ipojen�m stromu nebo
                 v�tvi.</p>
 
-            <h5 class="optionhead">Zak�zat p��stup</h5>
+            <h5>Zak�zat p��stup</h5>
             <p>Za�krtnut�m tohoto pol��ka zabr�n�te tomuto u�ivateli p�ihl�sit se, ani� byste vymazali jeho cel� u�ivatelsk� ��et.</p>
 
-            <h5 class="optionhead">Role a p��stupov� pr�va</h5>
+            <h5>Role a p��stupov� pr�va</h5>
             <p>Viz <a href="#rights">n�e, kde jsou uvedeny podrobnosti o rol�ch a p��stupov�ch pr�vech</a>, kter� mohou b�t u�ivateli p�id�lena.</p>
 
-            <p><h5 class="optionhead">Povinn� pole:</h5> Mus�te zadat u�ivatelsk� jm�no, heslo a popis u�ivatele. V�echna ostatn� pole jsou
+            <p><h5>Povinn� pole:</h5> Mus�te zadat u�ivatelsk� jm�no, heslo a popis u�ivatele. V�echna ostatn� pole jsou
             nepovinn�, ale doporu�ujeme
             zadat emailovou adresu pro p��pad, �e zapomenete sv� u�ivatelsk� jm�no nebo heslo.</p>
 
@@ -132,7 +132,7 @@ echo help_header("N�pov�da: U�ivatel�");
                 �prav� z�znamu nov�ho u�ivatele
                 si pov�imn�te n�sleduj�c�ho:</p>
 
-            <h5 class="optionhead">Vyrozum�t tohoto u�ivatele, �e byl ��et aktivov�n</h5>
+            <h5>Vyrozum�t tohoto u�ivatele, �e byl ��et aktivov�n</h5>
             <p>Za�krtnut�m tohoto pol��ka po�lete emailem nov�mu u�ivateli informaci o aktivaci ��tu (po ulo�en� str�nky). Text zpr�vy se objev� v
                 poli pod
                 touto volbou. P�ed odesl�n�m m��ete prov�st zm�ny tohoto textu.</p>
@@ -154,58 +154,58 @@ echo help_header("N�pov�da: U�ivatel�");
 
             <p>U�ivateli mohou b�t p�ipojena n�sleduj�c� p��stupov� pr�va:</p>
 
-            <h5 class="optionhead">Povolit p�id�vat nov� z�znamy</h5>
+            <h5>Povolit p�id�vat nov� z�znamy</h5>
             <p>U�ivatel m��e v administr�torsk� oblasti p�idat nov� z�znamy, v�etn� m�di�.</p>
 
-            <h5 class="optionhead">Povolit p�id�vat pouze m�dia</h5>
+            <h5>Povolit p�id�vat pouze m�dia</h5>
             <p>U�ivatel m��e v administr�torsk� oblasti p�idat nov� m�dia, nic jin�ho.</p>
 
-            <h5 class="optionhead">Bez pr�v p�id�vat</h5>
+            <h5>Bez pr�v p�id�vat</h5>
             <p>U�ivatel nesm� p�id�vat ��dn� nov� �daje.</p>
 
-            <h5 class="optionhead">Povolit �pravy existuj�c�ch z�znam�</h5>
+            <h5>Povolit �pravy existuj�c�ch z�znam�</h5>
             <p>U�ivatel m��e v administr�torsk� oblasti upravovat existuj�c� z�znamy, v�etn� m�di�.</p>
 
-            <h5 class="optionhead">Povolit �pravy pouze m�di�</h5>
+            <h5>Povolit �pravy pouze m�di�</h5>
             <p>U�ivatel m��e v administr�torsk� oblasti upravovat existuj�c� m�dia, nic jin�ho.</p>
 
-            <h5 class="optionhead">Povolit p�edlo�it �pravy pro p�ezkoum�n� administr�torem</h5>
+            <h5>Povolit p�edlo�it �pravy pro p�ezkoum�n� administr�torem</h5>
             <p>U�ivatel nem��e v administr�torsk� oblasti z�znamy upravovat. P�edb�n� zm�ny m��e ud�lat ve ve�ejn� oblasti kliknut�m na malou ikonu
                 Upravit vedle p��slu�n�ch ud�lost� na str�nk�ch osoby a rodiny. Zm�ny se nestanou trval�mi, dokud nebudou schv�leny
                 administr�torem.</p>
 
-            <h5 class="optionhead">Bez pr�v upravovat</h5>
+            <h5>Bez pr�v upravovat</h5>
             <p>U�ivatel nesm� prov�d�t �pravy existuj�c�ch z�znam�.</p>
 
-            <h5 class="optionhead">Povolit vymazat existuj�c� z�znamy</h5>
+            <h5>Povolit vymazat existuj�c� z�znamy</h5>
             <p>U�ivatel m��e v administr�torsk� oblasti vymazat existuj�c� z�znamy, v�etn� m�di�.</p>
 
-            <h5 class="optionhead">Povolit vymazat pouze m�dia</h5>
+            <h5>Povolit vymazat pouze m�dia</h5>
             <p>U�ivatel m��e v administr�torsk� oblasti vymazat m�dia, nic jin�ho.</p>
 
-            <h5 class="optionhead">Bez pr�v vymazat</h5>
+            <h5>Bez pr�v vymazat</h5>
             <p>U�ivatel nesm� vymazat ��dn� existuj�c� z�znamy.</p>
 
             <p>N�sleduj�c� p��stupov� pr�va jsou nez�visl� na zvolen� roli:</p>
 
-            <h5 class="optionhead">Povolit prohl�en� �daj� �ij�c�ch osob</h5>
+            <h5>Povolit prohl�en� �daj� �ij�c�ch osob</h5>
             <p>U�ivatel m��e ve ve�ejn� oblasti prohl�et �daje �ij�c�ch osob.</p>
 
-            <h5 class="optionhead">Povolit prohl�en� �daj� osob ozna�en�ch jako neve�ejn�</h5>
+            <h5>Povolit prohl�en� �daj� osob ozna�en�ch jako neve�ejn�</h5>
             <p>U�ivatel m��e ve ve�ejn� oblasti prohl�et �daje osob ozna�en�ch jako neve�ejn�.</p>
 
-            <h5 class="optionhead">Povolit sta�en� souboru GEDCOM</h5>
+            <h5>Povolit sta�en� souboru GEDCOM</h5>
             <p>U�ivatel m��e ve ve�ejn� oblasti pou��t z�lo�ku GEDCOM ke sta�en� souboru GEDCOM. Toto potla�� nastaven� pro ka�d� strom v
                 Administrace/Stromy.</p>
 
-            <h5 class="optionhead">Povolit sta�en� souboru PDF</h5>
+            <h5>Povolit sta�en� souboru PDF</h5>
             <p>U�ivatel m��e ve ve�ejn� oblasti na r�zn�ch str�nk�ch pou��t volbu PDF pro vytvo�en� souboru PDF. Toto potla�� nastaven� pro ka�d�
                 strom v Administrace/Stromy.</p>
 
-            <h5 class="optionhead">Povolit prohl�en� �daj� CJKSpd</h5>
+            <h5>Povolit prohl�en� �daj� CJKSpd</h5>
             <p>U�ivatel m��e ve ve�ejn� oblasti prohl�et �daje CJKSpd.</p>
 
-            <h5 class="optionhead">Povolit �pravy u�ivatelsk�ho profilu</h5>
+            <h5>Povolit �pravy u�ivatelsk�ho profilu</h5>
             <p>U�ivatel m��e z odkazu ve ve�ejn� oblasti upravovat sv�j u�ivatelsk� profil (u�ivatelsk� jm�no, heslo, atd.).</p>
 
         </td>
@@ -220,13 +220,13 @@ echo help_header("N�pov�da: U�ivatel�");
                 nejsou nutn� ��dn� pr�va
                 nebo omezen� p��stup�.</p>
 
-            <h5 class="optionhead">Omezit na strom/v�tev</h5>
+            <h5>Omezit na strom/v�tev</h5>
             <p>Chcete-li omezit p��stupov� pr�vo u�ivatele na ur�it� strom, vyberte tento strom zde. Chcete-li omezit p��stupov� pr�va na ur�itou
                 v�tev
                 ve vybran�m strom�, vyberte tuto v�tev tak�. P�ipojen�m v�tve k u�ivateli nezabr�n�te tomuto u�ivateli zobrazit jin� osoby, kter�
                 nejsou sou��st� t�to v�tve.</p>
 
-            <h5 class="optionhead">Uplatnit pr�va na v�ce strom�</h5>
+            <h5>Uplatnit pr�va na v�ce strom�</h5>
             <p>Chcete-li omezit pr�va u�ivatele na v�ce strom�, vyberte tuto mo�nost a pot� pomoc� kl�vesy Ctrl tyto stromy vyberte. Kdy� se u�ivatel
                 poprv� p�ihl�s�,
                 bude vybr�n prvn� strom z tohoto seznamu. U�ivatel se m��e p�ep�nat mezi stromy pomoc� rozbalovac� nab�dky v horn� ��sti str�nky v
@@ -244,16 +244,16 @@ echo help_header("N�pov�da: U�ivatel�");
             <a id="email"><h4 class="subheadbold">Email</h4></a>
             <p>tato z�lo�ka umo��uje poslat email v�em u�ivatel�m nebo v�em u�ivatel�m p�ipojen�m k ur�it�mu stromu/v�tvi.</p>
 
-            <h5 class="optionhead">P�edm�t</h5>
+            <h5>P�edm�t</h5>
             <p>P�edm�t va�eho emailu.</p>
 
-            <h5 class="optionhead">Text</h5>
+            <h5>Text</h5>
             <p>T�lo va�� emailov� zpr�vy.</p>
 
-            <h5 class="optionhead">Strom</h5>
+            <h5>Strom</h5>
             <p>Pokud chcete poslat tuto zpr�vu pouze u�ivatel�m p�ipojen�m k ur�it�mu stromu, tento strom vyberte zde.</p>
 
-            <h5 class="optionhead">V�tev</h5>
+            <h5>V�tev</h5>
             <p>Pokud chcete poslat tuto zpr�vu pouze u�ivatel�m p�ipojen�m k ur�it� v�tvi uvnit� vybran�ho stromu, tuto v�tev vyberte zde.</p>
 
         </td>

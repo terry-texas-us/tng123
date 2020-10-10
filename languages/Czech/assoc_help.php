@@ -52,14 +52,14 @@ echo help_header("N�pov�da: Spojen�");
 
             <p>P�i p�id�n� nebo �prav� spojen� m�jte na pam�ti n�sleduj�c�:</p>
 
-            <h5 class="optionhead">ID ��sla osoby nebo rodiny</h5>
+            <h5>ID ��sla osoby nebo rodiny</h5>
             <p>Zapi�te ID ��slo osoby nebo rodiny, kter� m� b�t spojena s aktivn� osobou nebo rodinou, nebo klikn�te na ikonu Naj�t a vyhledejte ID
                 ��slo.</p>
 
-            <h5 class="optionhead">Vztah</h5>
+            <h5>Vztah</h5>
             <p>Zapi�te povahu spojen�. Nap�. <em>Kmotr</em>, <em>U�itel</em> nebo <em>Sv�dek</em>.</p>
 
-            <h5 class="optionhead">Obr�cen� spojen�?</h5>
+            <h5>Obr�cen� spojen�?</h5>
             <p>N�kdy jde spojen� ob�ma sm�ry. Nap�. vztah <em>P��tel</em> m��e m�t p�sobnost ob�ma sm�ry. Je-li to pravda,
                 a chcete vytvo�it druh� spojen� jdouc� opa�n�m sm�rem, pak klikn�te na tuto volbu. Pokud povaha vztahu nen� takov�, �e by
                 platila i v opa�n�m sm�ru (nap�. <em>Kmotr</em> nebo <em>U�itel</em>), pak byste m�li vytvo�it jin� spojen�, za��naj�c�

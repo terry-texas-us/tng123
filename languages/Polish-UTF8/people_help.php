@@ -36,7 +36,7 @@ echo help_header("Pomoc: Osoby");
             <p>Twoje kryteria wyszukiwania na tej stronie zostaną zapamiętane dopóki nie naciśniesz przycisku <strong>Zerowanie</strong>, który
                 przywraca domyślne wartości i wszystkich wyszukiwań.</p>
 
-            <h5 class="optionhead">Czynność</h5>
+            <h5>Czynność</h5>
             <p>Ikonki w polu "czynność" obok każdego wyniku wyszukiwania pozwalają na edycję, usuwanie lub podgląd tego wyniku. Aby usunąć więcej niż
                 jeden rekord jednocześnie, kliknij pole w kolumnie
                 <strong>Wybierz</strong> dla każdego rekordu, który ma zostać usunięty, a następnie kliknąć przycisk "Usuń wybrane" znajdujący się na
@@ -54,10 +54,10 @@ echo help_header("Pomoc: Osoby");
                 związki i dodatkowe wydarzenia)
                 mogą być dodane dopiero po kliknięciu na przycisk <strong>Zapisz i kontynuuj</strong>. Do dyspozycji są następujące pola:</p>
 
-            <h5 class="optionhead">Drzewo</h5>
+            <h5>Drzewo</h5>
             <p>Jeśli masz tylko jedno drzewo, zostanie ono zaznaczone automatycznie. W innym przypadku, należy dla nowej osoby wybrać drzewo.</p>
 
-            <h5 class="optionhead">Gałąź (opcjonalnie)</h5>
+            <h5>Gałąź (opcjonalnie)</h5>
             <p>Przypisanie "Gałęzi" do osoby ogranicza dostęp do jej danych do użytkowników którzy są przypisani do tej samej gałęzi. Jeśli co
                 najmniej jedna gałąź została
                 zdefiniowana i konto użytkownika nie jest przypisane do danej gałęzi, może on przypisać nową osobę do jednej lub większej liczby
@@ -66,7 +66,7 @@ echo help_header("Pomoc: Osoby");
                 (Mac), aby wybrać więcej niż jedną gałąź.
                 Po dokonaniu wyboru przenieś wskaźnik myszy na pole edycji, a pole wyboru zniknie.</p>
 
-            <h5 class="optionhead">ID osoby</h5>
+            <h5>ID osoby</h5>
             <p>ID osoby musi być unikalne w obrębie wybranego drzewa i powinno składać się z litery <strong>I</strong> oraz następujących po niej cyfr
                 (nie więcej niż 21).
                 Numer ID jest generowany automatycznie za każdym razem, gdy strona jest wyświetlana po raz pierwszy, ale można także w razie potrzeby
@@ -86,14 +86,14 @@ echo help_header("Pomoc: Osoby");
                 (na przykład <strong>I</strong> jest na końcu, nie na początku), możesz zmodyfikować plik "prefixes.php" tak, aby przyjmował inne
                 prefiksy.</p>
 
-            <h5 class="optionhead">Imię i nzwisko</h5>
+            <h5>Imię i nzwisko</h5>
             <p>Podaj dla osoby imię oraz / albo nazwisko. Jeśli zdecydowałeś, by poprzeć prefiksy (np. van, de itp.) i nazwiska jako rozłączną całość
                 (będą one
                 ignorowane podczas sortowania), podaj prefiks w polu nazwanym Prefiks do nazwiska.
                 <strong>Uwaga:</strong> Jeśli to pole nie jest widoczne, przejdź do Ustawienia i konfiguracja / Ustawienia główne i ustaw odpowiednią
                 opcję, aby można było użyć prefiksów nazwisk.</p>
 
-            <h5 class="optionhead">Płeć / Przydomek / Tytuł / Prefix / Suffix / Kolejność nazwisko/imię</h5>
+            <h5>Płeć / Przydomek / Tytuł / Prefix / Suffix / Kolejność nazwisko/imię</h5>
             <p>Podaj tutaj jak najwięcej informacji o osobie. <strong>Pseudonim</strong> jest nieformalnym imieniem czasami łączonym z osobą.
                 <strong>Tytuł</strong> jest używany przed imieniem lub nazwiskiem (np., <em>Hr.</em> albo <em>Prof.</em>) ale nie jest jego częścią.
                 <strong>Prefix</strong> używany jest przed nazwiskiem i jest zwykle uważany za jego część.
@@ -101,11 +101,11 @@ echo help_header("Pomoc: Osoby");
                 kolejność w jakiej powinny być wyświetlane.
                 Kolejność nazwisko/imię możesz zmienić dla wszystkich osób w bazie danych pod Ustawienia i konfiguracja / Ustawienia główne.</p>
 
-            <h5 class="optionhead">Żyjący</h5>
+            <h5>Żyjący</h5>
             <p>Zaznacz to pole, jeśli ta osoba żyje lub jeśli chcesz ograniczyć widok danych tej osoby (np. data urodzenia, zdjęcia) tylko do
                 użytkowników, którzy są zalogowani z dostatecznymi uprawnieniami.</p>
 
-            <h5 class="optionhead">Wydarzenia</h5>
+            <h5>Wydarzenia</h5>
             <p>Wprowadź daty i miejsca dla wymienionych standardowych wydarzeń (jeśli je znasz).Jeśli nie znasz jakiejś daty, wpisz w odpowiednie pole
                 literkę <strong>Y</strong> (wyświetli się "data nieznana").
                 Jeśli pole przeznaczone dla daty pozostanie puste, użytkownicy z uprawnieniami <em>Zgoda na składanie komentarzy do podglądu
@@ -119,7 +119,7 @@ echo help_header("Pomoc: Osoby");
                 Aby ograniczyć ilość wyświetleń, podaj przed kliknięciem część nazwy miejsca. Wyświetlą się wszystkie miejsca zawierające w nazwie
                 podane hasło.</p>
 
-            <p><h5 class="optionhead">Dane LDS (Baptism, Endowment) Może być niewidoczne!</h5>
+            <p><h5>Dane LDS (Baptism, Endowment) Może być niewidoczne!</h5>
             Te zdarzenia są związane z nakazami praktykowanymi przez Mormonów w Kościele Jezusa Chrystusa Świętych w Dniach Ostatnich (kościół LDS
             wymyślił standard GEDCOM).
             <strong>Uwaga:</strong> Jeśli nie chcesz, aby dane LDS były widoczne, przejdź do <em>Ustawienia i konfiguracja/Ustawienia główne</em>
@@ -135,14 +135,14 @@ echo help_header("Pomoc: Osoby");
             <p>Aby wprowadzić zmiany dotyczące istniejącej osoby, należy kliknąć przycisk <a href="#search">Szukaj</a> w celu jej zlokalizowania, a
                 następnie kliknąć na ikonkę "Edycja" obok wybranej osoby.</p>
 
-            <h5 class="optionhead">Notatki / Cytaty / Związki / "Więcej"</h5>
+            <h5>Notatki / Cytaty / Związki / "Więcej"</h5>
             <p>Notatki, cytaty i związki możesz łączyć z wydarzeniami lub osobami klikając na ikony łączy u góry strony lub obok każdego wydarzenia.
                 "Więcej" informacji dla wydarzenia można dodać klikając na ikonkę "Plus ". Jeśli w którejś z kategorii istnieją już jakieś elementy,
                 odpowiednie ikonki oznaczone są zielonymi kropkami w prawym górnym rogu. Aby uzyskać więcej informacji na temat każdej z kategorii,
                 zobacz <em>Pomoc</em> w okienkach,
                 które stają się widoczne, gdy ikona zostanie naciśnięta.</p>
 
-            <h5 class="optionhead">Inne wydarzenia</h5>
+            <h5>Inne wydarzenia</h5>
             <p>Aby dodać lub zarządzać dodatkowymi wydarzeniami, kliknij na przycisk "Dodaj nowe" obok <strong>Inne wydarzenia</strong>. Klikając <a
                     href="events_help.php">Pomoc</a> znajdziesz więcej informacji na temat dodawania nowych wydarzeń.
                 Gdy wydarzenie zostało dodane, pod polem "Dodaj nowe" pokaże się krótkie streszczenie. Przyciski w polu "Czynność" dla każdego
@@ -157,7 +157,7 @@ echo help_header("Pomoc: Osoby");
                 strony,
                 lub klikając na ikonkę "Zapisz" u góry strony. Drzewo oraz ID osoby nie mogą zostać zmienione.</p>
 
-            <h5 class="optionhead">Rodzice</h5>
+            <h5>Rodzice</h5>
             <p>Jeśli dana osoba ma rodziców, sekcja <strong>Rodzice</strong> będzie widoczna w sekcji Wydarzenia. Ta sekcja jest zamknięta i wskazuje
                 w nawiasie liczbę (par) rodziców.
                 Aby rozwinąć sekcję i wyświetlić wszystkich rodziców, kliknij na napis "Rodzice" lub strzałkę obok niego. Niektóre informacje,
@@ -166,7 +166,7 @@ echo help_header("Pomoc: Osoby");
                 <strong>Usuń łącze</strong>
                 Kliknij, aby usunąć łącze danej osoby z tą parą rodziców.</p>
 
-            <h5 class="optionhead">Małżonkowie/partnerzy</h5>
+            <h5>Małżonkowie/partnerzy</h5>
             <p>Jeśli dana osoba posiada co najmniej jednego współmałżonka lub partnera, sekcja <strong>Małżonkowie/partnerzy</strong> będzie widoczna
                 w sekcji Rodzice. Ta sekcja jest zamknięta i wskazuje liczbę małżonków / partnerów w nawiasie.
                 Aby rozwinąć sekcję i wyświetlić wszystkich małżonków lub partnerów, kliknij na napis "Małżonkowie / partnerzy" lub strzałkę obok
@@ -174,7 +174,7 @@ echo help_header("Pomoc: Osoby");
                 opcja <strong>Usuń łącze</strong>.
                 Kliknij, aby usunąć łącze danej osoby z jej współmałżonkiem lub partnerem.</p>
 
-            <h5 class="optionhead">Sortowanie rodziców lub małżonów</h5>
+            <h5>Sortowanie rodziców lub małżonów</h5>
             <p>Jeżeli istnieje więcej niż jeden małżonek lub para rodziców, można zmienić kolejność przez "przeciąganie" bloków w górę i w dół. Aby to
                 zrobić kliknij myszą na pole "Przeciągnij" i przytrzymaj
                 przycisk, a następnie przesuń w górę lub w dół na stronie. Gdy blok znajdzie się w wybranym miejscu zwolnij przycisk myszy. Zmiany
@@ -205,14 +205,14 @@ echo help_header("Pomoc: Osoby");
                 Możesz zadecydować o tym, czy przyjąć czy też usunąć proponowane zmiany. W celu przeglądania możesz wybrać pole drzewa, użytkownika
                 lub oba.</p>
 
-            <h5 class="optionhead">Wybierz wydarzenie i czynność</h5>
+            <h5>Wybierz wydarzenie i czynność</h5>
             <p>Zlokalizuj wiersz w tabeli, która opisuje zdarzenie, które chcesz obejrzeć usunąć. Listę wyników możesz zawęzić przez wybranie
                 użytkownika (osoby odpowiedzialnej za
                 proponowaną zmianę) oraz / lub drzewa. Kiedy wyniki zostaną wyświetlone, kliknij na jedną z opcji widocznych z lewej strony wiersza.
                 Aby sprawdzić i ewentualnie nanieść zmiany wybierz <em>Przegląd zmian</em>. Aby odrzucić proponowane zmiany, wybierz <em>Usuń</em>.
             </p>
 
-            <h5 class="optionhead">Przegląd zmian</h5>
+            <h5>Przegląd zmian</h5>
             <p>Na tej karcie możesz dokonywać różnych dodatkowych zmian, w tym dotyczących notatek lub źródeł, a następnie kliknąć przycisk "Zapisz i
                 Usuń",
                 aby zapisać zmiany i usunąć wpis. Można również zdecydować się na usunięcie propozycji klikając przycisk "Ignoruj i Usuń",
@@ -228,7 +228,7 @@ echo help_header("Pomoc: Osoby");
             Aby znaleźć i scalić dwa powtarzające się zapisy, kliknij na przycisk "Scalanie". Użytkownik decyduje, czy dwa zapisy są identyczne, czy
             też nie.</p>
 
-            <h5 class="optionhead">Szukaj zgodności</h5>
+            <h5>Szukaj zgodności</h5>
             <p>Po pierwsze, wybierz drzewo. Nie możesz połączyć osób z różnych drzew, tak więc tylko jedno drzewo może zostać wybrane. Dalej, masz
                 możliwość wybrać osobę jako punkt wyjściowy
                 dla Twojego szukania (Osoba 1), albo zezwolić TNG na szukanie pierwszej zgodności za Ciebie. Jeśli zdecydowałeś, że TNG wyszukuje
@@ -236,13 +236,13 @@ echo help_header("Pomoc: Osoby");
             <p>Jeśli wybrałeś osobę jako Osoba 1, możesz też wybrać ręcznie ID Osoby 2. Wskazane jest jednak, aby pozwolić TNG na szukanie duplikatów
                 dla Osoby 1, pozostawiając pole ID Osoby 2 puste.</p>
 
-            <h5 class="optionhead">Zgodność następujących pozycji</h5>
+            <h5>Zgodność następujących pozycji</h5>
             <p>Te kryteria TNG służą do określania możliwych zgodności. Imię i nazwisko są wybrane jako domyślne. To oznacza, że te pola muszą zgadzać
                 się w obydwóch zapisach, aby zostały wzięte pod uwagę
                 jako możliwe zgodności. Jeśli wybierzesz też datę urodzenia, miejsce urodzenia, datę oraz / lub miejsce zgonu, to te pola muszą się
                 też zgadzać.</p>
 
-            <h5 class="optionhead">Inne opcje</h5>
+            <h5>Inne opcje</h5>
             <p><em>Ignoruj puste pola</em> znaczy, że puste pola nie będą brane pod uwagę. Na przykład, ktoś z nazwiskiem ale bez imienia nie zostanie
                 uwzględniony, jeśli imię będzie wśród zaznaczonych kryteriów.</p>
 
@@ -257,25 +257,25 @@ echo help_header("Pomoc: Osoby");
                 zostanie wybrana, media dotyczące Osoby 2
                 zostaną utracone, ponieważ zostaną skasowane przez te, odpowiadające polu Osoby 1.</p>
 
-            <p><h5 class="optionhead">Ostrzeżenie!</h5> Raz wykonane scalanie nie może zostać cofnięte! Proszę rozważyć wykonanie kopii zapasowej
+            <p><h5>Ostrzeżenie!</h5> Raz wykonane scalanie nie może zostać cofnięte! Proszę rozważyć wykonanie kopii zapasowej
             tabel bazy danych zanim dokonasz operacji scalania na wypadek,
             gdybyś scalił niechcący niewłaściwe osoby.</p>
 
-            <h5 class="optionhead">Następna zgodność</h5>
+            <h5>Następna zgodność</h5>
             <p>Znajdź następną możliwą zgodność, która nie wymaga podania Osoby 1. TNG zmienia listę możliwych osób w przyporządkowany ID osoby ciąg
                 znaków. To znaczy, że "10" następuje po "1" ale przed "2".</p>
 
-            <h5 class="optionhead">Następny duplikat</h5>
+            <h5>Następny duplikat</h5>
             <p>Znajdź następny możliwy duplikat dla Osoby 1. Jeśli ta operacja zakończy się brakiem zapisu dla Osoby 2, znaczy, że duplikat nie został
                 znaleziony.</p>
 
-            <h5 class="optionhead">Porównaj / odśwież.</h5>
+            <h5>Porównaj / odśwież.</h5>
             <p>Porównanie osób 1 i 2. Jeśli to porównanie jest już widoczne, kliknięcie na ten przycisk spowoduje odświeżenie strony.</p>
 
-            <h5 class="optionhead">Przełącz</h5>
+            <h5>Przełącz</h5>
             <p>Zamiana - Osoba 1 staje się Osobą 2 i vice versa.</p>
 
-            <h5 class="optionhead">Scalanie</h5>
+            <h5>Scalanie</h5>
             <p>Osoba 2 jest scalana z osobą 1. ID Osoby 1 oraz jej wszystkie inne dane zostaną zachowane, chyba, że dla Osoby 2 zostało zaznaczone
                 odpowiednie pole(a).
                 Na przykład, jeśli zaznaczyłeś pole obok daty urodzenia Osoby 2, dane w tym polu będą podczas scalania skopiowane od Osoby 2 do Osoby
@@ -283,7 +283,7 @@ echo help_header("Pomoc: Osoby");
                 Pola dla Osoby 2 są znaczone automatycznie, jeśli żadne odpowiadające im dane nie istnieją dla Osoby 1. Jeśli pole danych dla Osoby 1
                 lub 2 jest puste, znaczy, że nie istnieją żadne dane dla którejkolwiek osoby.</p>
 
-            <h5 class="optionhead">Edycja</h5>
+            <h5>Edycja</h5>
             <p>Edytuj indywidualny zapis dla tej osoby w nowym oknie. Jeśli dokonałeś zmian, musisz kliknąć Porównaj / odśwież by zobaczyć zmiany w
                 widoku scalania.</p>
             <li><p>Uwagi dotyczące polskiego tłumaczenia: <a href="mailto:januszkielak@gmail.com">januszkielak@gmail.com</a>. Prosimy zgłaszać

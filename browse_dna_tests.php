@@ -276,7 +276,7 @@ if ($test_type == "mtDNA") {
 }
 ?>
 <form action="<?php echo $compare_url; ?>" method="post" name="form2">
-    <p class="nw">
+    <p class="text-nowrap">
         <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
         <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
         <input type="submit" name="cdnaaction" value="<?php echo $text['compareselected']; ?>">&nbsp;&nbsp;
@@ -288,16 +288,16 @@ if ($test_type == "mtDNA") {
         <?php if ($test_type && $test_type != "X-DNA") { ?>
             <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $admtext['select']; ?>&nbsp;</th>
         <?php } ?>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['test_type']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_type']; ?>&nbsp;</th>
         <?php
         if ($allow_edit || $showtestnumbers) { ?>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
         <?php } ?>
-        <th data-tablesaw-priority="2" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname nw">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
+        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
         <?php if ($numtrees > 1) { ?>
             <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
     </tr>
@@ -349,7 +349,7 @@ if ($test_type == "mtDNA") {
                     $haplogroup .= "mt = " . $row['mtdna_haplogroup'];
                 }
             }
-            echo "<td class='databack nw'>&nbsp;$haplogroup</td>";
+            echo "<td class='databack text-nowrap'>&nbsp;$haplogroup</td>";
 
             $dna_pers_result = getPersonDataPlusDates($row['gedcom'], $row['personID']);
             $dprow = tng_fetch_assoc($dna_pers_result);
@@ -476,7 +476,7 @@ if ($test_type == "mtDNA") {
             echo "<td class='databack'>&nbsp;$mrcanc_namestr</td>";
             echo "<td class='databack'>$group</td>";
             if ($numtrees > 1) {
-                echo "<td class='databack nw'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                echo "<td class='databack text-nowrap'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
             }
             echo "</tr>\n";
             $i++;

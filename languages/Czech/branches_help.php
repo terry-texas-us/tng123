@@ -53,7 +53,7 @@ echo help_header("N�pov�da: V�tve");
             <p>Vyhled�vac� krit�ria, kter� zad�te na t�to str�nce, budou uchov�na, dokud nekliknete na tla��tko <strong>Obnovit</strong>, kter� znovu
                 obnov� v�echny v�choz� hodnoty.</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Tla��tko Akce vedle ka�d�ho v�sledku hled�n� v�m umo�n� upravit, odstranit nebo p�idat ozna�en� k t�to v�tvi. Chcete-li najednou
                 odstranit v�ce v�tv�, za�krtn�te pol��ko ve sloupci
                 <strong>Vybrat</strong> u ka�d� v�tve, kter� m� b�t odstran�na a pot� klikn�te na tla��tko "Vymazat ozna�en�" na za��tku seznamu. Pro
@@ -70,15 +70,15 @@ echo help_header("N�pov�da: V�tve");
             <p>Chcete-li p�idat novou v�tev, klikn�te na z�lo�ku <strong>P�idat nov�</strong> a pak vypl�te formul��.
                 V�znam pol� je n�sleduj�c�:</p>
 
-            <h5 class="optionhead">ID ��slo v�tve</h5>
+            <h5>ID ��slo v�tve</h5>
             <p>Toto by m�l b�t kr�tk�, jednozna�n�, jednoslovn� identifik�tor v�tve. Mus� obsahovat pouze alfanumerick� znaky (��slice a p�smena).
                 Nepou��vejte p�smena
                 s diakritikou a mezery. Tento �daj se nikde nezobrazuje, tak�e m��e b�t zaps�n pouze mal�mi p�smeny v d�lce max. 20 znak�.</p>
 
-            <h5 class="optionhead">Popis:</h5>
+            <h5>Popis:</h5>
             <p>Toto m��e b�t del�� popis v�tve nebo �daj�, kter� v�tev obsahuje.</p>
 
-            <h5 class="optionhead">Starting Individual</h5>
+            <h5>Starting Individual</h5>
             <p>Enter or find the ID of the individual with whom your branch begins. All
                 partial branches are defined by a starting individual and a number of ancestral or descendant generations from that individual. You
                 can add additional names
@@ -86,13 +86,13 @@ echo help_header("N�pov�da: V�tve");
                 Individual will be remembered,
                 but all labels added previously will not be affected.</p>
 
-            <h5 class="optionhead">V�choz� osoba</h5>
+            <h5>V�choz� osoba</h5>
             <p>Zapi�te nebo vyhledejte ID ��slo osoby, kterou va�e v�tev za��n�. V�echny
                 d�l�� v�tve jsou definov�ny v�choz� osobou a po�tem generac� p�edk� nebo potomk� po��naje touto osobou. Dal�� jm�na m��ete p�idat
                 pozd�ji zopakov�n�m tohoto procesu a volbou jin� "V�choz� osoby". Po ulo�en� v�tve bude zapamatov�na pouze posledn� v�choz� osoba,
                 v�echny d��ve p�idan� zna�ky ale nebudou ovlivn�ny.</p>
 
-            <h5 class="optionhead">Po�et generac�</h5>
+            <h5>Po�et generac�</h5>
             <p>Zvolte po�et generac� od v�choz� osoby sm�rem zp�t (p�edkov�) nebo dop�edu (potomci), kter� si p�ejete ozna�it. P�i
                 ozna�ov�n� p�edk� m��ete tak� zvolit, kolik m� b�t ozna�eno generac� potomk� od ka�d�ho p�edka.</p>
 
@@ -121,18 +121,18 @@ echo help_header("N�pov�da: V�tve");
                 a pokra�ujte podle instrukc� v okn�, kter� se objev�. Po proveden� v�b�ru klikn�te na tla��tko "P�idat zna�ku" ve spodn� ��sti.
                 Mo�nosti na t�to str�nce jsou n�sleduj�c�:</p>
 
-            <h5 class="optionhead">Akce</h5>
+            <h5>Akce</h5>
             <p>Zvolte, zda chcete p�idat nov� zna�ky nebo vymazat existuj�c�. Pokud chcete vymazat existuj�c� zna�ky, mus�te tak� zvolit, zda m� tato
                 akce vymazat zna�ky v�tve u v�ech �len�
                 va�eho stromu nebo vymazat pouze zna�ky, kter� odpov�daj� vybran�m krit�ri�m.</p>
 
-            <h5 class="optionhead">Existuj�c� zna�ku</h5>
+            <h5>Existuj�c� zna�ku</h5>
             <p>Touto volbou ur��te, co d�lat, kdy� n�kter� osoba, kterou jste vybrali pro ozna�en�,
                 ji� u sebe m� zaznamen�n p��znak jin� v�tve. Existuj�c� zna�ku m��ete nechat netknutou, m��ete ji p�epsat
                 nebo se m��ete rozhodnout p�idat novou zna�ku. Pokud vyberete posledn� mo�nost,
                 posti�en� osoby budou nyn� pat�it k v�ce v�tv�m.</p>
 
-            <h5 class="optionhead">Zobrazit osoby s t�mto stromem/v�tv� (ozna�en�):</h5>
+            <h5>Zobrazit osoby s t�mto stromem/v�tv� (ozna�en�):</h5>
             <p>Kliknut�m na toto tla��tko zobraz�te v�echny osoby, kter� ji� maj� vybranou v�tev
                 vybran�ho stromu. V tomto zobrazen� se kliknut�m na odkaz Zna�ka v�tve m��ete
                 vr�t�t na p�edchoz� str�nku nebo kliknut�m na osobu m��ete �pravit jej� osobn� z�znam.</p>

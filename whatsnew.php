@@ -96,7 +96,7 @@ $header1 = $tableStartTag;
 
 $header1 .= "<thead>";
 $header1 .= "<tr>\n";
-$header1 .= "<th data-tablesaw-priority = 'persist' class = 'fieldnameback center thumbnails fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
+$header1 .= "<th data-tablesaw-priority = 'persist' class = 'fieldnameback text-center thumbnails fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
 $header1 .= "<th data-tablesaw-priority = '1' class = 'fieldnameback fieldname'>&nbsp;{$text['description']}&nbsp;</th>\n";
 $hsheader = "<th data-tablesaw-priority = '2' class = 'fieldnameback fieldname'>&nbsp;{$text['cemetery']}&nbsp;</th>\n";
 $hsheader .= "<th data-tablesaw-priority = '3' class = 'fieldnameback fieldname'>&nbsp;{$text['status']}&nbsp;</th>\n";
@@ -196,14 +196,14 @@ if (tng_num_rows($result)) {
                 echo "</div>\n";
             }
             echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
-            echo "<td class='databack nw'>$birthdate&nbsp;</td>";
+            echo "<td class='databack text-nowrap'>$birthdate&nbsp;</td>";
             echo "<td class='databack'>&nbsp;$birthplacestr&nbsp;</td>";
             if ($numtrees > 1) {
                 echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
             }
             $changedby = $row['changedby'];
             $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class='databack nw'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
+            echo "<td class='databack text-nowrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
             echo "</tr>\n";
         }
         tng_free_result($result);
@@ -315,7 +315,7 @@ if (tng_num_rows($famresult)) {
             }
             $changedby = $row['changedby'];
             $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class='databack nw'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
+            echo "<td class='databack text-nowrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
         }
         tng_free_result($famresult);
         echo "</table>\n";

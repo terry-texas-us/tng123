@@ -43,7 +43,7 @@ echo help_header("Help: Chart Settings");
 
                 <a id="ped"><h4 class="subheadbold">Pedigree Chart</h4></a>
 
-                <h5 class="optionhead">Initial Display</h5>
+                <h5>Initial Display</h5>
                 <p>This option determines which pedigree format is initially displayed. When Standard is selected, all birth, marriage, and
                     death/burial
                     dates
@@ -59,35 +59,35 @@ echo help_header("Help: Chart Settings");
                     above them.
                     The user will always have the option to switch among these display types after viewing the initial display.</p>
 
-                <h5 class="optionhead">Max Generations</h5>
+                <h5>Max Generations</h5>
                 <p>The maximum number of generations you will allow visitors to request at one time.</p>
 
-                <h5 class="optionhead">Initial Generations</h5>
+                <h5>Initial Generations</h5>
                 <p>The number of generations that will be displayed to start with. If nothing is specified here, then this value will default to
                     four.</p>
 
-                <h5 class="optionhead">Popup Spouses</h5>
+                <h5>Popup Spouses</h5>
                 <p>If popups are being used, checking this option will result in spouse links being included in popups. Default is not checked.</p>
 
-                <h5 class="optionhead">Popup Children</h5>
+                <h5>Popup Children</h5>
                 <p>If popups are being used and Popup Spouses is checked, checking this option will result in children links being included in popups.
                     Default is not checked.</p>
 
-                <h5 class="optionhead">Popup Chart Links</h5>
+                <h5>Popup Chart Links</h5>
                 <p>If popups are being used (and either Popup Spouses or Popup Kids has been checked), checking this option will cause links to
                     pedigree
                     chart pages to be included for
                     spouses and children in popups. Default is on.</p>
 
-                <h5 class="optionhead">Hide Empty Boxes</h5>
+                <h5>Hide Empty Boxes</h5>
                 <p>Select 'Yes' to remove unpopulated boxes from the chart.</p>
 
-                <h5 class="optionhead">Box Width (w/o popups)</h5>
+                <h5>Box Width (w/o popups)</h5>
                 <p>Fixed width of all pedigree boxes (in pixels) when popup boxes are not in use. Default value is 211. If a number less than 21 is
                     entered, 21 will
                     be used. The number used will always be an odd number, so if an even number is entered, it will be increased by 1.</p>
 
-                <h5 class="optionhead">Box Height (w/o popups)</h5>
+                <h5>Box Height (w/o popups)</h5>
                 <p>Height of all pedigree boxes (in pixels) when popup boxes are not in use, unless a non-zero boxheightshift is specified (see
                     below), in
                     which case Box Height is the
@@ -96,27 +96,27 @@ echo help_header("Help: Chart Settings");
                     used will
                     always be an odd number, so if an even number is entered, it will be increased by 1.</p>
 
-                <h5 class="optionhead">Box Alignment (w/o popups)</h5>
+                <h5>Box Alignment (w/o popups)</h5>
                 <p>The alignment of data appearing within the box when popup boxes are in use.
                     Note: Dates and places will always be aligned left, but the block containing them will follow this alignment.</p>
 
-                <h5 class="optionhead">Box Height Shift (w/o popups)</h5>
+                <h5>Box Height Shift (w/o popups)</h5>
                 <p>The value by which the height of pedigree boxes should be altered for successive generations (in pixels) when popup boxes are not
                     in use. This should be a negative number. Default value is -2. If zero is entered, no change in box sizes
                     will occur. The number used will always be an even number, so if an odd number is entered, it will be increased by 1.</p>
 
                 <h3>Vertical Chart</h3>
 
-                <h5 class="optionhead">Box Width</h5>
+                <h5>Box Width</h5>
                 <p>The width in pixels of each name box on the vertical chart.</p>
 
-                <h5 class="optionhead">Box Height</h5>
+                <h5>Box Height</h5>
                 <p>The height in pixels of each name box on this chart.</p>
 
-                <h5 class="optionhead">Spacing</h5>
+                <h5>Spacing</h5>
                 <p>The horizontal distance in pixels between name boxes.</p>
 
-                <h5 class="optionhead">Box Name Size</h5>
+                <h5>Box Name Size</h5>
                 <p>The font size (in points) for names displayed on the vertical chart.</p>
             </td>
         </tr>
@@ -126,7 +126,7 @@ echo help_header("Help: Chart Settings");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="desc"><h4 class="subheadbold">Descendancy Chart</h4></a>
 
-                <h5 class="optionhead">Initial Display</h5>
+                <h5>Initial Display</h5>
                 <p>This option determines which descendancy format is initially displayed. When Standard is selected, all birth and death/burial dates
                     (when available) will be included in a hidden popup box. A photo of the individual is displayed if present. An image file (i.e.,
                     ArrowDown.gif) will be placed below the bottom
@@ -138,21 +138,21 @@ echo help_header("Help: Chart Settings");
                     narrative
                     style. The user will always have the option to switch among these display types after viewing the initial display.</p>
 
-                <h5 class="optionhead">Max Generations</h5>
+                <h5>Max Generations</h5>
                 <p>The maximum number of generations you will allow visitors to request at one time.</p>
 
-                <h5 class="optionhead">Initial Generations</h5>
+                <h5>Initial Generations</h5>
                 <p>The number of generations that will be displayed to start with. If nothing is specified here, then this value will default to
                     four.</p>
 
-                <h5 class="optionhead">Start Descendancy</h5>
+                <h5>Start Descendancy</h5>
                 <p>Choose to start the text-based descendancy chart with all generations expanded or collapsed. The user will always have the option
                     to expand or collapse individual families.</p>
 
-                <h5 class="optionhead">Show Notes on Register</h5>
+                <h5>Show Notes on Register</h5>
                 <p>Indicates whether notes for individuals and families will be displayed on the Register page.</p>
 
-                <h5 class="optionhead">Register Generations</strong></h5>
+                <h5>Register Generations</strong></h5>
                 Choose to always show each person when displaying a generation, or avoid redundancy by electing to "Remove individuals
                 with no family." That option will only display those individuals when they appear as children. They will not be
                 redisplayed when their entire generation is outlined later in the report.</p>
@@ -164,19 +164,19 @@ echo help_header("Help: Chart Settings");
 
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="rel"><h4 class="subheadbold">Relationship Chart</h4></a>
-                <h5 class="optionhead">Initial Relationships</h5>
+                <h5>Initial Relationships</h5>
                 <p>When a new Relationship chart is requested, this is how many relationships TNG will try to find. As soon as that many
                     relationships are found, the process will stop. If your tree contains no complicated relationships, you may want to set
                     this to 1 in order to save processing time.</p>
 
-                <h5 class="optionhead">Max Relationships</h5>
+                <h5>Max Relationships</h5>
                 <p>If the user believes that more relationships exist, they may want to increase the number of relationships TNG will
                     try to find. This number represents to most relationships you will allow the program to search for. Try not to set it
                     higher than the level of complexity in your tree. The lower this number is, the more time you will save people as
                     they view this chart. For example, if only one relationship exists between two people but you are searching for five,
                     TNG will continue searching in vain after the first relationship is found.</p>
 
-                <h5 class="optionhead">Max Generations</h5>
+                <h5>Max Generations</h5>
                 <p>The maximum number of generations you will allow visitors to search at one time on the Relationship page. This will also be the
                     initial
                     default on that page.</p>
@@ -188,20 +188,20 @@ echo help_header("Help: Chart Settings");
 
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="time"><h4 class="subheadbold">Timeline Chart</h4></a>
-                <h5 class="optionhead">Starting chart width</h5>
+                <h5>Starting chart width</h5>
                 <p>The initial width in pixels of the lifespan timeline. Visitors can change the width for themselves only at the top
                     of the page.</p>
 
-                <h5 class="optionhead">Enable Simile timeline</h5>
+                <h5>Enable Simile timeline</h5>
                 <p>Along with the standard TNG timeline, you can also display a Simile timeline chart on the same page by choosing "Yes" here. More
                     information on the Simile timeline chart can be found at <a href="http://www.simile-widgets.org/timeline/">http://www.simile-widgets.org/timeline/</a>.
                 </p>
 
-                <h5 class="optionhead">Chart height</h5>
+                <h5>Chart height</h5>
                 <p>Height in pixels of the event (Simile) timeline. If many events are charted at the same time, some could get pushed
                     down off the chart's visible area. If that seems to be happening, it could help to increase this value.</p>
 
-                <h5 class="optionhead">Events to include</h5>
+                <h5>Events to include</h5>
                 <p>Controls which events will be dislayed on the event timeline. Choose to display all events, or only those that fall
                     within the lifespans of the individuals on the chart. If you have a lot of events, choosing to display them all may
                     cause the chart to be slighly slower in its initial display.</p>
@@ -219,7 +219,7 @@ echo help_header("Help: Chart Settings");
                 <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="common"><h4 class="subheadbold">Common Elements</h4></a>
 
-                <h5 class="optionhead">Left Indent</h5>
+                <h5>Left Indent</h5>
                 <p>Horizontal offset to be used for the entire pedigree chart (in pixels). This may be needed, for example, to ensure that the chart
                     does
                     not
@@ -227,21 +227,21 @@ echo help_header("Help: Chart Settings");
                     will be
                     used.</p>
 
-                <h5 class="optionhead">Box Name Size</h5>
+                <h5>Box Name Size</h5>
                 <p>The size (in points) of all names on the chart. In no case will the font size be permitted to
                     decrease to less than 7 points. Default value is 12 (72 points are in one inch).</p>
 
-                <h5 class="optionhead">Box Date Size</h5>
+                <h5>Box Date Size</h5>
                 <p>The size (in points) of other chart information (dates and places). In no case will the font size be permitted to
                     decrease to less than 7 points. Default value is 10 (72 points are in one inch).</p>
 
-                <h5 class="optionhead">Box Color</h5>
+                <h5>Box Color</h5>
                 <p>The background color to be used in all pedigree boxes, unless a non-zero colorshift is specified, in which case this will define
                     the
                     background
                     color of the first pedigree box on the chart. Default value is #CCCC99 (khaki; white is #FFFFFF).</p>
 
-                <h5 class="optionhead">Color Shift</h5>
+                <h5>Color Shift</h5>
                 <p>A percentage value that defines how the color values should be "shifted" up or down (towards white or towards black) over the range
                     of
                     all generations shown. The value entered should be between -100 and 100. If zero is entered, all pedigree boxes (except perhaps
@@ -252,29 +252,29 @@ echo help_header("Help: Chart Settings");
                     original color to white as
                     the boxes go from the first generation to the last generation displayed (negative values will fade toward black).</p>
 
-                <h5 class="optionhead">Empty Color</h5>
+                <h5>Empty Color</h5>
                 <p>The background color to be used in all pedigree boxes for which no data exists. Default value is #ccc (silver).</p>
 
-                <h5 class="optionhead">Border Color</h5>
+                <h5>Border Color</h5>
                 <p>The color to be used for the borders around pedigree boxes and the connector lines. Default is #000 (black).</p>
 
-                <h5 class="optionhead">Shadow Color</h5>
+                <h5>Shadow Color</h5>
                 <p>The color to be used for shadows. Default value is #999 (gray).</p>
 
-                <h5 class="optionhead">Shadow Offset</h5>
+                <h5>Shadow Offset</h5>
                 <p>The offset to be used for including box and connector line shadows (in pixels). A negative number will result in
                     shadows that are above, and to the left of boxes and lines. A positive number will result in shadows that are below, and to the
                     right
                     of boxes and lines. If the number entered is
                     zero, the shadows will not be evident (as they will lie strictly below the boxes and lines. Default value is 4.</p>
 
-                <h5 class="optionhead">Box Horizontal Separation</h5>
+                <h5>Box Horizontal Separation</h5>
                 <p>Fixed horizontal separation between generations of pedigree boxes (in pixels). Default value is 31. If a
                     number less than 7 is entered, 7 will be used. The number used will always be an odd number, so if an even number is entered, it
                     will
                     be increased by 1.</p>
 
-                <h5 class="optionhead">Box Vertical Separation</h5>
+                <h5>Box Vertical Separation</h5>
                 <p>Vertical separation between generations of pedigree boxes (in pixels), unless a non-zero Box Height Shift is specified, in
                     which case Box Vertical Separation is the fixed horizontal separation between boxes in the last displayed generation. Default
                     value is
@@ -284,24 +284,24 @@ echo help_header("Help: Chart Settings");
                     the value may be increased, if necessary, to ensure there is room between pedigree boxes for shadows and additional information
                     indicators.</p>
 
-                <h5 class="optionhead">Default PDF Page Size</h5>
+                <h5>Default PDF Page Size</h5>
                 <p>The paper size that will be assumed for all PDF reports (visitors may change this before each report created).</p>
 
-                <h5 class="optionhead">Line Width</h5>
+                <h5>Line Width</h5>
                 <p>Width of lines connecting pedigree boxes (in pixels). Default value is 1. If a number less than 1 is entered, 1 will be used.</p>
 
-                <h5 class="optionhead">Border Width</h5>
+                <h5>Border Width</h5>
                 <p>Width of the border around pedigree boxes (in pixels). Default is 1. If a number less than 1 is entered, 1 will be used.</p>
 
-                <h5 class="optionhead">Popup Color</h5>
+                <h5>Popup Color</h5>
                 <p>The background color used with popups boxes. If left blank, popup boxes will be one color shift removed from the box color. Default
                     value is #DDDDDD (light gray). </p>
 
-                <h5 class="optionhead">Popup Info Size</h5>
+                <h5>Popup Info Size</h5>
                 <p>The size (in points) of other chart information (dates and places) inside a popup. In no case will the font size be permitted to
                     decrease to less than 7 points. Default value is 10 (72 points are in one inch).</p>
 
-                <h5 class="optionhead">Popup Timer</h5>
+                <h5>Popup Timer</h5>
                 <p>If popups are being used, the number of milliseconds a popup should remain visible. Default value is 500 (1/2 second). There are
                     two
                     conditions
@@ -312,7 +312,7 @@ echo help_header("Help: Chart Settings");
                     popup visible for an indefinite period of
                     time.</p>
 
-                <h5 class="optionhead">Popup Event</h5>
+                <h5>Popup Event</h5>
                 <p>The mouse event required to display the popup. This event is associated with the arrow indicating that additional information is
                     available. If
                     Mouse Down is selected, clicking on the arrow will display the popup. If Mouse Over is selected, the popup will be displayed when
@@ -320,13 +320,13 @@ echo help_header("Help: Chart Settings");
                     mouse pointer is positioned over the
                     arrow.</p>
 
-                <h5 class="optionhead">Box Width (w/popups)</h5>
+                <h5>Box Width (w/popups)</h5>
                 <p>Fixed width of all pedigree boxes (in pixels) when popup boxes are in use. Default value is 151. If a number less than 21 is
                     entered,
                     21 will
                     be used. The number used will always be an odd number, so if an even number is entered, it will be increased by 1.</p>
 
-                <h5 class="optionhead">Box Height (w/popups)</h5>
+                <h5>Box Height (w/popups)</h5>
                 <p>Height of all pedigree boxes (in pixels) when popup boxes are in use, unless a non-zero Box Height Shift is specified (see below),
                     in
                     which case Box Height is the
@@ -335,16 +335,16 @@ echo help_header("Help: Chart Settings");
                     used will
                     always be an odd number, so if an even number is entered, it will be increased by 1.</p>
 
-                <h5 class="optionhead">Box Alignment (w/popups)</h5>
+                <h5>Box Alignment (w/popups)</h5>
                 <p>The alignment of data appearing within the box when popup boxes are not in use.
                     Note: Dates and places will always be aligned left, but the block containing them will follow this alignment.</p>
 
-                <h5 class="optionhead">Box Height Shift (w/popups)</h5>
+                <h5>Box Height Shift (w/popups)</h5>
                 <p>The value by which the height of pedigree boxes should be altered for successive generations (in pixels).
                     This should be a negative number. Default value is -2. If zero is entered, no change in box sizes
                     will occur. The number used will always be an even number, so if an odd number is entered, it will be increased by 1.</p>
 
-                <h5 class="optionhead">Include Photos</h5>
+                <h5>Include Photos</h5>
                 <p>If this option is checked, thumbnail photos will be included in the pedigree boxes (when popups are used and the image file can be
                     found -- see below).
                     Default is not checked.</p>

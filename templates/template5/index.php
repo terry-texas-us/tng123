@@ -22,7 +22,7 @@ if ($tngconfig['maint']) {
 $title = getTemplateMessage('t5_maintitle');
 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
 ?>
-    <div class="center">
+    <div class="text-center">
         <table class="maintable">
             <tr>
                 <td class="row-5" colspan="4"></td>

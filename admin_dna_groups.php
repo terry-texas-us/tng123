@@ -164,14 +164,14 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                 echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedgroup.php" method="post" name="form2">
-                    <p class="nw">
+                    <p class="text-nowrap">
                         <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                         <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
                         <input type="submit" name="xdnagroupaction" value="<?php echo $admtext['deleteselected']; ?>"
                                onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
                     </p>
                     <table class="normal">
-                        <tr class="fieldnameback fieldname nw">
+                        <tr class="fieldnameback fieldname text-nowrap">
                             <th><?php echo $admtext['action']; ?></th>
                             <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
                             <th><?php echo $admtext['groupid']; ?></th>
