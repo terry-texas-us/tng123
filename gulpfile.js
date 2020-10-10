@@ -1,43 +1,62 @@
-const gulp = require('gulp');
-
-const autoprefixer = require('gulp-autoprefixer');
-const browserSync = require('browser-sync').create();
+const {src, dest, watch, series, parallel} = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
-// const rename = require('gulp-rename');
 const sass = require('gulp-sass');
-// const postcss = require('gulp-postcss');
-const cssnano = require('gulp-cssnano');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const replace = require('gulp-replace');
 
-function defaultTask(cb) {
-    // body ommitted
-    cb();
+// const browserSync = require('browser-sync').create();
+// const rename = require('gulp-rename');
+
+const files = {
+    scssPath: 'css/**/*.scss',
+    jsPath: 'js/**/*.js'
 }
 
-exports.default = defaultTask
-
-function processCSS() {
-    return gulp.src('css/*.scss')
+function scssTask() {
+    return src(files.scssPath)
         .pipe(sourcemaps.init())
-        .pipe(autoprefixer())
-        .pipe(cssnano({zindex: false, colormin: false}))
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        // .pipe(rename({extname: '.css'}))
+        .pipe(sass())
+        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./css'));
+        .pipe(dest('.')
+        );
 }
 
-exports.processCSS = processCSS;
-
-
-function processTemplates() {
-    return gulp.src('templates/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(autoprefixer())
-        .pipe(cssnano({zindex: false, colormin: false}))
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        // .pipe(rename({extname: '.css'}))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./templates'));
+function jsTask() {
+    return src([
+        files.jsPath
+        //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
+    ])
+        .pipe(concat('all.js'))
+        .pipe(uglify())
+        .pipe(dest('dist')
+        );
 }
 
-exports.processTemplates = processTemplates;
+function cacheBustTask() {
+    var cbString = new Date().getTime();
+    return src(['index.html'])
+        .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
+        .pipe(dest('.'));
+}
+
+function watchTask() {
+    watch([files.scssPath, files.jsPath],
+        series(
+            parallel(scssTask, jsTask),
+            cacheBustTask
+        )
+    );
+}
+
+exports.scssTask = scssTask;
+
+exports.default = series(
+    parallel(scssTask, jsTask),
+    cacheBustTask,
+    watchTask
+);
