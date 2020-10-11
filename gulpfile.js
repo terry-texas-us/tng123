@@ -12,7 +12,7 @@ const replace = require('gulp-replace');
 // const rename = require('gulp-rename');
 
 const files = {
-    scssPath: 'css/**/*.scss',
+    scssPath: 'scss/**/*.scss',
     jsPath: 'js/**/*.js'
 }
 
@@ -21,8 +21,8 @@ function scssTask() {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest('.')
+        // .pipe(sourcemaps.write('./css/maps'))
+        .pipe(dest('./css')
         );
 }
 
