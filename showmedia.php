@@ -151,7 +151,6 @@ if (!$personID) {
 }
 
 $flags['tabs'] = $tngconfig['tabs'];
-$flags['link'] = "<link href='css/media.css' rel='stylesheet'>\n";
 if (!$tngprint) {
     $flags['scripting'] = "<script src=\"js/slideshow.js\"></script>\n";
     $flags['scripting'] .= "<script>\n";

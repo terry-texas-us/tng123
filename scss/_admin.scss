@@ -1,0 +1,84 @@
+.adminbody, .admincorner {
+  background: url(../img/background.gif);
+}
+
+.admincorner {
+  float: left;
+  padding: 2px 2px 2px 5px;
+  width: 154px;
+  height: 50px;
+  text-align: center;
+}
+
+.admindivider {
+  width: 80%;
+  float: left;
+}
+
+.admintitle {
+  padding: 0;
+  margin: 7px 0 0;
+}
+
+.admintop {
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+.topbanner {
+  position: fixed;
+  top: 0;
+  height: 55px;
+  margin: 0;
+  width: 100%;
+  line-height: 1.4;
+  z-index: 1;
+}
+
+.leftmenu {
+  width: 150px;
+  height: 100%;
+  padding: 60px 6px 0;
+  position: fixed;
+  line-height: 1.25;
+  overflow: auto;
+}
+
+#adminslidebar {
+  position: absolute;
+  right: 6px;
+  height: 600px;
+  width: 15px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.sideback {
+  background-color: #336;
+}
+
+.mainback {
+  padding: 60px 0 0 166px;
+}
+
+.mainbox {
+  border: 1px solid #c0c0c0;
+  background-color: #fff;
+  padding: 1px;
+  margin: auto;
+  width: 100%;
+  max-width: 992px;
+}
+
+.adminsubhead {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.adminsubmsg, .admintotal {
+  color: #ddd;
+}
+
+.adminsubmsg {
+  font-size: 11px;
+}

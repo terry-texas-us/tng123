@@ -10,7 +10,7 @@ body {
   font-size: 12px;
 }
 
-.fieldname, .header, .plainheader, .whiteheader, .whitesubhead, .whitetext {
+.fieldname, .header, .plainheader, .whiteheader, .whitetext {
   color: #262626;
 }
 
@@ -478,7 +478,7 @@ ul.tngdd .topline {
   filter: dropshadow(color=#000, offx=0, offy=0);
 }
 
-.whiteheader, .whitesubhead {
+.whiteheader {
   text-shadow: 1px 1px 0 #333;
   filter: dropshadow(color=#333, offx=1, offy=1);
 }

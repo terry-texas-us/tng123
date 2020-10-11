@@ -21,7 +21,7 @@ function scssTask() {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss([autoprefixer(), cssnano()]))
-        // .pipe(sourcemaps.write('./css/maps'))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('./css')
         );
 }

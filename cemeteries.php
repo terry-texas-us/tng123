@@ -21,8 +21,6 @@ preparebookmark($logstring);
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['link'] = "<link href='css/cemeteries.css' rel='stylesheet'>\n";
-
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
 
@@ -165,14 +163,14 @@ while ($i < $numrows) {
         }
         $linectr++;     //Add extra line to allow for the <br> at the end
         $txt = $cemetery['country'] ? @htmlspecialchars($cemetery['country'], ENT_QUOTES, $session_charset) : $text['nocountry'];
-        echo "<div class='databack cemcountry subhead rounded4'><strong><a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;tree=$tree\">$txt</a></strong></div>\n";
+        echo "<div class='databack cemcountry subhead rounded'><strong><a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;tree=$tree\">$txt</a></strong></div>\n";
         $orphan = true;
     }
 }
 tng_free_result($cemresult);
 
 if ($numhs) {
-    echo "<br><div class='databack cemcountry subhead rounded4'><strong><a href=\"headstones.php?tree=$tree\">{$text['nocemetery']}</a></strong></div>\n";
+    echo "<br><div class='databack cemcountry subhead rounded'><strong><a href=\"headstones.php?tree=$tree\">{$text['nocemetery']}</a></strong></div>\n";
 }
 
 echo "</div>\n";    //colx

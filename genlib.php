@@ -253,7 +253,7 @@ function tng_basicfooter($flags) {
             $message = $text['switchm'];
         }
         $footer .= "<p class='smaller text-center'>\n";
-        $footer .= "<a href='$thispage{$con}sitever=$gotover' class='fieldnameback lightlink2 rounded4'>&nbsp;{$message}&nbsp;</a>\n";
+        $footer .= "<a href='$thispage{$con}sitever=$gotover' class='fieldnameback lightlink2 rounded'>&nbsp;{$message}&nbsp;</a>\n";
         $footer .= "</p><br>\n";
     }
     include "stdsitecredit.php";
@@ -469,7 +469,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
         }
         $menu .= $newbrowser ? "</ul>\n" : "</div>\n";
         $menu .= "</div>\n";
-        $menu .= "<div id=\"pub-innermenu\" class=\"fieldnameback fieldname smaller rounded4\">\n";
+        $menu .= "<div id=\"pub-innermenu\" class=\"fieldnameback fieldname smaller rounded\">\n";
         $menu .= $innermenu;
         $menu .= "</div><br>\n";
 

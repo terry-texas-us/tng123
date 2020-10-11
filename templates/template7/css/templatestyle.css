@@ -128,10 +128,6 @@ a.admincell:hover, a.leftlink:hover {
   background-color: #666;
 }
 
-.whitesubhead {
-  font-weight: 700;
-}
-
 a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited {
   color: #fff;
   font-size: 14px;

@@ -1,3 +1,5 @@
+$border-color: #5576be;
+
 #calHeader {
   font-size: 14pt;
 }
@@ -9,7 +11,7 @@
 
 #calLegend {
   background-color: #d6e7ff;
-  border: 1px solid #5576be;
+  border: 1px solid $border-color;
   font-size: 9pt;
   margin-top: 8px;
   padding: 4px;
@@ -63,7 +65,7 @@ img.calIcon {
 
 table.calTip {
   background-color: #fff;
-  border: 1px solid #5576be;
+  border: 1px solid $border-color;
   padding: 0;
 }
 
@@ -75,10 +77,10 @@ table.calendar {
 
 td.calDay {
   background-color: #fff;
-  border-top: 1px solid #5576be;
-  border-left: 1px solid #5576be;
-  border-bottom: 2px solid #5576be;
-  border-right: 2px solid #5576be;
+  border-top: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-bottom: 2px solid $border-color;
+  border-right: 2px solid $border-color;
   height: 110px;
   margin: 4px;
   padding: 2px;
@@ -101,10 +103,10 @@ td.calSkip, td.calToday {
 
 td.calToday {
   background-color: #fff5e4;
-  border-top: 1px solid #5576be;
-  border-left: 1px solid #5576be;
-  border-bottom: 2px solid #5576be;
-  border-right: 2px solid #5576be;
+  border-top: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-bottom: 2px solid $border-color;
+  border-right: 2px solid $border-color;
   margin: 4px;
   padding: 2px;
   text-align: left;

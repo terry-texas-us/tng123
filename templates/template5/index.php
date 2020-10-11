@@ -112,7 +112,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                 </div>
                                 <div class="rightcontent">
                                     <form action="search.php" method="get">
-                                        <table class="indexbox rounded4" id="searchbox">
+                                        <table class="indexbox rounded" id="searchbox">
                                             <tr>
                                                 <td class="padding">
                                                     <label><?php echo $text['mnufirstname']; ?>:<br>

@@ -47,7 +47,6 @@ echo "<html lang='en'>\n";
 
 $flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
-$flags['link'] = "<link href='css/verticalchart.css' rel='stylesheet'>\n";
 
 tng_header($text['pedigreefor'] . " " . $row['name'], $flags);
 

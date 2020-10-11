@@ -10,8 +10,8 @@ body {
     font-size: 12px;
 }
 
-.fieldname, .header, .plainheader, .whiteheader, .whitesubhead, .whitetext {
-  color: #262626;
+.fieldname, .header, .plainheader, .whiteheader, .whitetext {
+    color: #262626;
 }
 
 .lightlink:link, .lightlink:visited {
@@ -477,9 +477,9 @@ ul.tngdd .topline {
   filter: dropshadow(color=#000, offx=0, offy=0);
 }
 
-.whiteheader, .whitesubhead {
-  text-shadow: 1px 1px 0 #333;
-  filter: dropshadow(color=#333, offx=1, offy=1);
+.whiteheader {
+    text-shadow: 1px 1px 0 #333;
+    filter: dropshadow(color=#333, offx=1, offy=1);
 }
 
 .leftlink {
