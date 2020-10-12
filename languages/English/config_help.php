@@ -159,21 +159,6 @@ echo help_header("Help: General Settings");
                     header and footer named
                     topmenu.php and footer.php respectively.</p>
 
-                <h5>Tab Style Sheet</h5>
-                <p>The file that dictates the style of tabs displayed on many of the public pages. The default style (tngtabs1.css) features slanted
-                    tabs,
-                    but
-                    an alternate style with "squarish" tabs (tngtabs2.css) also comes with TNG. To view tabs with this style, enter "tngtabs2.css"
-                    in this field and click "Save" at the bottom of the page, then look up any individual in the public area. The default style
-                    (tngtabs1.css) makes use of two images, "tngtab.png" (inactive
-                    tabs) and "tngtabactive.png" (active tabs). To change the color of these images, you may use any image editor, or click on the
-                    link at
-                    the end of this paragraph. On the next page,
-                    enter <strong>decimal</strong> values for the red, green and blue components of the desired new color, then click Submit. You will
-                    then see a new image, which you can save on your site as either
-                    tngtab.gif or tngtabactive.png. <a
-                        href="http://lythgoes.net/genealogy/switchcolor.php">http://lythgoes.net/genealogy/switchcolor.php</a></p>
-
                 <h5>Menu Location</h5>
                 <p>The TNG menu may be located on the top left of every page, just above the individual's name or other page heading, or on the top
                     right

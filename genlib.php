@@ -415,12 +415,12 @@ function getFirstNameOnly($row) {
  */
 function tng_menu($enttype, $currpage, $entityID, $innermenu) {
     global $tree, $text, $disallowgedcreate, $allow_edit;
-    global $rightbranch, $allow_ged, $emailaddr, $newbrowser, $tngconfig, $tngprint, $flags;
+    global $rightbranch, $allow_ged, $emailaddr, $newbrowser, $tngconfig, $tngprint;
 
     $nexttab = 0;
     if (!$tngprint) {
-        $menu = "<div id=\"tngmenu\">\n";
-        $menu .= $newbrowser ? "<ul id=\"tngnav\">\n" : "<div id=\"tabs\">\n";
+        $menu = "<div id='tngmenu'>\n";
+        $menu .= $newbrowser ? "<ul id='tngnav'>\n" : "<div id='tabs'>\n";
         $choices = "";
         if ($enttype == "I") {
             $choices .= doMenuItem($nexttab++, "getperson.php?personID=$entityID&amp;tree=$tree", "ind", $text['indinfo'], $currpage, "person");
@@ -463,7 +463,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
             $choices .= doMenuItem($nexttab, "suggest.php?enttype=$enttype&amp;ID=$entityID&amp;tree=$tree", "sugg", $text['suggest'], $currpage, "suggest");
         }
         if (isMobile()) {
-            $menu .= "<li>\n<a class=\"here\">\n<select id=\"tngtabselect\" onchange=\"window.location.href=this.options[this.selectedIndex].value\">\n$choices</select>\n</a>\n</li>\n";
+            $menu .= "<li>\n<a class='here'>\n<select id=\"tngtabselect\" onchange=\"window.location.href=this.options[this.selectedIndex].value\">\n$choices</select>\n</a>\n</li>\n";
         } else {
             $menu .= $choices;
         }
@@ -473,22 +473,9 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
         $menu .= $innermenu;
         $menu .= "</div><br>\n";
 
-        if ($flags['tabs'] == "tngtabs1.css") {
-            $more = "";
-            for ($i = 7; $i <= $nexttab; $i++) {
-                $offset = 140 + ($i - 6) * 25;
-                $more .= "\t#a$i {left: -{$offset}px;}\n";
-                $more .= "\t#tngnav a#a$i {left: -{$offset}px;}\n";
-            }
-            if ($more) {
-                if (!isset($flags['more'])) $flags['more'] = "";
-                $flags['more'] .= "\n<style>\n\t<!--\n$more\t-->\n</style>\n";
-            }
-        }
     } else {
         $menu = "";
     }
-
     return $menu;
 }
 

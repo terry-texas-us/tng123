@@ -8,7 +8,6 @@ $color = substr($_GET["rgbcolor"], 0, 1) == "#" ? substr($_GET["rgbcolor"], 1) :
 $red = hexdec(substr($color, 0, 2));
 $green = hexdec(substr($color, 2, 2));
 $blue = hexdec(substr($color, 4, 2));
-$im = imageCreateFromPng("img/tngtab.png");
 $rgb = ImageColorAt($im, 100, 10);
 imagecolorset($im, $rgb, $red, $green, $blue);
 

@@ -141,19 +141,6 @@ echo help_header("Nápověda: Základní nastavení");
                 zápatí mít nazvaná
                 jako topmenu.php a footer.php.</p>
 
-            <h5>Styl záložek</h5>
-            <p>Soubor, který určuje styl záložek zobrazených na většině veřejných stránek. Výchozí styl (tngtabs1.css) používá "šikmé" záložky, ale
-                TNG dodává také alternativní styl s "hranatými" záložkami (tngtabs2.css). Chcete-li zobrazit záložky v tomto stylu, zapište do tohoto
-                pole "tngtabs2.css"
-                a klikněte na "Uložit" ve spodní části stránek, a poté zkuste vyhledat nějakou osobu ve veřejném prostředí. Výchozí styl
-                (tngtabs1.css) využívá dva obrázky, "tngtab.png" (neaktivní
-                záložky) a "tngtabactive.png" (aktivní záložky). Chcete-li změnit barvu těchto obrázků, můžete použít jakýkoli obrazový editor nebo
-                kliknout na odkaz na konci tohoto odstavce. Na další stránce
-                zapište <strong>decimální</strong> hodnoty červené, zelené a modré komponenty uvažované nové barvy, a pak klikněte na Potvrdit. Potom
-                uvidíte nový obrázek, který můžete uložit na vaše stránky jako
-                tngtab.png nebo tngtabactive.png. <a href="http://lythgoes.net/genealogy/switchcolor.php">http://lythgoes.net/genealogy/switchcolor.php</a>
-            </p>
-
             <h5>Umístění menu</h5>
             <p>TNG menu může být na každé stránce umístěno nahoře vlevo nad jménem osoby nebo jiným číslem stránky, nebo na každé stránce nahoře
                 vpravo, přímo proti jménu nebo

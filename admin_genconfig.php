@@ -660,21 +660,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['tabstyle']; ?>:</td>
-                            <td>
-                                <select name="tng_tabs">
-                                    <option value="tngtabs1.css"<?php if ($tngconfig['tabs'] == "tngtabs1.css") {
-                                        echo " selected";
-                                    } ?>>tngtabs1.css
-                                    </option>
-                                    <option value="tngtabs2.css"<?php if ($tngconfig['tabs'] == "tngtabs2.css") {
-                                        echo " selected";
-                                    } ?>>tngtabs2.css
-                                    </option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
                             <td><?php echo $admtext['iconloc']; ?>:</td>
                             <td>
                                 <select name="tng_menu">

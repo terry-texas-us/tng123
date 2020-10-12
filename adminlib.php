@@ -15,7 +15,7 @@ $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $htt
 $isConnected = isConnected();
 
 function tng_adminheader($title, $flags) {
-    global $session_charset, $sitename, $templatepath, $text, $tngdomain, $tngconfig, $isConnected;
+    global $session_charset, $sitename, $templatenum, $text, $tngdomain, $tngconfig, $isConnected;
 
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
@@ -30,18 +30,14 @@ function tng_adminheader($title, $flags) {
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
 
     echo "<link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>\n";
-    echo "<link href='css/genstyle.css' rel='stylesheet'>\n";
+    echo "<link href='build/genstyle.css' rel='stylesheet'>\n";
     if (isset($flags['modmgr'])) {
         echo "<link href='css/modmanager.css' rel='stylesheet'>\n";
     }
+    echo "<link href='build/template{$templatenum}/styles/templatestyle.css' rel='stylesheet'>\n";
     if (isMobile()) {
         echo "<link href='css/tngmobile.css' rel='stylesheet'>\n";
     }
-    if (isset($flags['tabs'])) {
-        echo "<link href='{$templatepath}css/{$flags['tabs']}' rel='stylesheet'>\n";
-    }
-    echo "<link href='{$templatepath}css/templatestyle.css' rel='stylesheet'>\n";
-    echo "<link href='{$templatepath}css/mytngstyle.css' rel='stylesheet'>\n";
     if (!isMobile()) {
         echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     }

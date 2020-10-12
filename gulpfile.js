@@ -7,33 +7,63 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const replace = require('gulp-replace');
+const newer = require('gulp-newer');
+const size = require('gulp-size');
+const imagemin = require('gulp-imagemin');
 
 // const browserSync = require('browser-sync').create();
 // const rename = require('gulp-rename');
 
-const files = {
-    scssPath: 'scss/**/*.scss',
-    jsPath: 'js/**/*.js'
+function imagesTask() {
+    return src('img/*')
+        .pipe(newer('./build/img'))
+        .pipe(imagemin({
+            optimizationLevel: 5
+        }))
+        .pipe(size({showFiles: true}))
+        .pipe(dest('./build/img'));
+
+}
+
+function imagesTemplatesTask() {
+    return src('templates/**/img/*')
+        .pipe(newer('./build'))
+        .pipe(imagemin({
+            optimizationLevel: 5
+        }))
+        .pipe(size({showFiles: true}))
+        .pipe(dest('./build'));
+
 }
 
 function scssTask() {
-    return src(files.scssPath)
+    return src('scss/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'expanded'}))
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
-        .pipe(dest('./css')
+        .pipe(dest('./build')
+        );
+}
+
+function scssTemplatesTask() {
+    return src('templates/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'expanded'}))
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('./build')
         );
 }
 
 function jsTask() {
     return src([
-        files.jsPath
+        'js/**/*.js'
         //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
     ])
         .pipe(concat('all.js'))
         .pipe(uglify())
-        .pipe(dest('dist')
+        .pipe(dest('./build')
         );
 }
 
@@ -45,7 +75,7 @@ function cacheBustTask() {
 }
 
 function watchTask() {
-    watch([files.scssPath, files.jsPath],
+    watch(['scss/**/*.scss', 'js/**/*.js'],
         series(
             parallel(scssTask, jsTask),
             cacheBustTask
@@ -53,7 +83,10 @@ function watchTask() {
     );
 }
 
+exports.imagesTask = imagesTask;
+exports.imagesTemplatesTask = imagesTemplatesTask;
 exports.scssTask = scssTask;
+exports.scssTemplatesTask = scssTemplatesTask;
 
 exports.default = series(
     parallel(scssTask, jsTask),

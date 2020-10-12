@@ -217,7 +217,7 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
 
 .tngsmallicon, .tngsmallicon2 {
   height: 15px;
-  background: url(../img/tng_small_icon_sprites.gif) no-repeat;
+  background: url(img/tng_small_icon_sprites.gif) no-repeat;
   text-decoration: none;
   float: left;
 }
@@ -331,7 +331,7 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
   display: table-cell;
   line-height: 50px;
   vertical-align: middle;
-  background: transparent url(../img/media-prevbg.png) no-repeat 0 0;
+  background: transparent url(img/media-prevbg.png) no-repeat 0 0;
 }
 
 .media-prev img {
@@ -358,7 +358,7 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
 }
 
 * html .media-prev {
-  background: url(../img/media-prevbg.gif) no-repeat 0 0;
+  background: url(img/media-prevbg.gif) no-repeat 0 0;
 }
 
 #slideshow {
@@ -424,7 +424,7 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
   display: table-cell;
   font-size: 11px;
   overflow: hidden;
-  background: transparent url(../img/person-prevbg.png) no-repeat 0 0;
+  background: transparent url(img/person-prevbg.png) no-repeat 0 0;
   visibility: hidden;
 }
 
@@ -442,7 +442,7 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
 }
 
 * html .person-prev {
-  background: url(../img/media-prevbg.gif) no-repeat 0 0;
+  background: url(img/media-prevbg.gif) no-repeat 0 0;
   width: 520px;
   height: 520px;
 }
@@ -587,7 +587,7 @@ input.minibutton {
   height: 20px;
   display: block;
   float: left;
-  background: url(../img/admin_icon_sprites.png) no-repeat;
+  background: url(img/admin_icon_sprites.png) no-repeat;
   padding: 0;
 }
 
@@ -788,7 +788,7 @@ p a.snlink {
 }
 
 .helpbody {
-  background-image: url(../img/background.gif);
+  background-image: url(img/background.gif);
 }
 
 .tblback {
@@ -1337,7 +1337,7 @@ ul.tngdd .menulink {
   padding: 3px 2px 3px 30px;
   font-weight: 700;
   height: 16px;
-  background: #e0e0f7 url(../img/ArrowDown.gif) 2px 8px no-repeat;
+  background: #e0e0f7 url(img/ArrowDown.gif) 2px 8px no-repeat;
   width: 70px;
   line-height: 1.5;
 }
@@ -1351,7 +1351,7 @@ ul.tngdd .menuhover, ul.tngdd .menulink:hover {
   border-bottom: 1px solid #444;
   border-right: 1px solid #444;
   color: #fff;
-  background: #336 url(../img/arrowdown2.gif) 2px 8px no-repeat;
+  background: #336 url(img/arrowdown2.gif) 2px 8px no-repeat;
 }
 
 ul.tngdd .langmenu {
@@ -1378,13 +1378,13 @@ div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {
 }
 
 ul.tngdd .sub {
-  background: #d1d1d1 url(../img/arrow.gif) 146px 7px no-repeat;
+  background: #d1d1d1 url(img/arrow.gif) 146px 7px no-repeat;
 }
 
 .headericon, .menu-icon {
   width: 20px;
   height: 20px;
-  background: url(../img/tng_icon_sprites.png) no-repeat;
+  background: url(img/tng_icon_sprites.png) no-repeat;
   float: left;
   padding: 0;
   border: 0;
@@ -2224,10 +2224,3 @@ sup {
 
 //@import "tngmobile";
 //@import "tngprint";
-
-//@import "tngtabs1";
-//@import "tngtabs2";
-
-//@import "mytngstyle";
-//@import "templatestyle";
-

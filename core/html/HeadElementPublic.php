@@ -150,22 +150,18 @@ class HeadElementPublic
      * @return array
      */
     public function getLinkElements(): array {
-        global $responsivetables, $templatepath, $tngconfig, $tngdomain, $tngprint;
+        global $responsivetables, $templatenum, $tngconfig, $tngdomain, $tngprint;
         $links = [];
         $links[] = "<link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>";
+        $links[] = "<link href='build/genstyle.css' rel='stylesheet'>";
         if (isMobile() && $responsivetables) {
             $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
         }
-        $links[] = "<link href='css/genstyle.css' rel='stylesheet'>";
-        if (isset($this->flags['tabs'])) {
-            $links[] = "<link href='{$templatepath}css/{$this->flags['tabs']}' rel='stylesheet'>";
-        }
-        $links[] = "<link href='{$templatepath}css/templatestyle.css' rel='stylesheet'>";
+        $links[] = "<link href='build/template{$templatenum}/styles/templatestyle.css' rel='stylesheet'>";
         if (isMobile()) {
             $links[] = "<link href='css/tngmobile.css' rel='stylesheet'>";
-            $links[] = "<link href='{$templatepath}css/tngmobile.css' rel='stylesheet'>";
+            $links[] = "<link href='build/template{$templatenum}/styles/tngmobile.css' rel='stylesheet'>";
         }
-        $links[] = "<link href='{$templatepath}css/mytngstyle.css' rel='stylesheet'>";
         if (isset($this->flags['link'])) {
             $links[] = $this->flags['link'];
         }

@@ -28,18 +28,9 @@
                                                                                                                 width="19"
                                                                                                                 height="17" border="0"></A></td></tr>
     </table>
-    <input type="radio" name="filename" value="tngtabactive.png" checked>
-    Active tab
-    <input type="radio" name="filename" value="tngtab.png">
-    Inactive tab
     <input type="submit" name="choice" value="Display new tab">
     <input type="submit" name="choice" value="Save new tab">
     <br><br>
-    <p>If you choose "Save new tab", the tab will be saved in your "photos" folder. You must use an FTP program or a
-        web-based file manager to move the file (tngtab.png or tngtabactive.png) to the "img" folder within your main TNG folder or your template
-        folder.</p>
-    <p>If you choose "Display new tab, right-click the image and save it as "tngtabactive.png" (active tab) or "tngtab.png" (inactive tab) in the
-        "img" folder within your main TNG folder.</p>
     <p>If no image appears, you may not have the GD image library installed on your server.
         Try this link instead: <a href="http://lythgoes.net/genealogy/switchcolor.php">http://lythgoes.net/genealogy/switchcolor.php</a>.</p>
 </form>

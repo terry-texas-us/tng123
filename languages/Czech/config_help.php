@@ -141,19 +141,6 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 z�pat� m�t nazvan�
                 jako topmenu.php a footer.php.</p>
 
-            <h5>Styl z�lo�ek</h5>
-            <p>Soubor, kter� ur�uje styl z�lo�ek zobrazen�ch na v�t�in� ve�ejn�ch str�nek. V�choz� styl (tngtabs1.css) pou��v� "�ikm�" z�lo�ky, ale
-                TNG dod�v� tak� alternativn� styl s "hranat�mi" z�lo�kami (tngtabs2.css). Chcete-li zobrazit z�lo�ky v tomto stylu, zapi�te do tohoto
-                pole "tngtabs2.css"
-                a klikn�te na "Ulo�it" ve spodn� ��sti str�nek, a pot� zkuste vyhledat n�jakou osobu ve ve�ejn�m prost�ed�. V�choz� styl
-                (tngtabs1.css) vyu��v� dva obr�zky, "tngtab.png" (neaktivn�
-                z�lo�ky) a "tngtabactive.png" (aktivn� z�lo�ky). Chcete-li zm�nit barvu t�chto obr�zk�, m��ete pou��t jak�koli obrazov� editor nebo
-                kliknout na odkaz na konci tohoto odstavce. Na dal�� str�nce
-                zapi�te <strong>decim�ln�</strong> hodnoty �erven�, zelen� a modr� komponenty uva�ovan� nov� barvy, a pak klikn�te na Potvrdit. Potom
-                uvid�te nov� obr�zek, kter� m��ete ulo�it na va�e str�nky jako
-                tngtab.png nebo tngtabactive.png. <a href="http://lythgoes.net/genealogy/switchcolor.php">http://lythgoes.net/genealogy/switchcolor.php</a>
-            </p>
-
             <h5>Um�st�n� menu</h5>
             <p>TNG menu m��e b�t na ka�d� str�nce um�st�no naho�e vlevo nad jm�nem osoby nebo jin�m ��slem str�nky, nebo na ka�d� str�nce naho�e
                 vpravo, p��mo proti jm�nu nebo
