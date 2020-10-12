@@ -85,7 +85,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
 ?>
 
 <div class="lightback pad2">
-    <div class="databack normal pad5">
+    <div class="databack normal p-1">
 
         <?php
         function getCitations($persfamID) {

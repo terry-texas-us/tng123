@@ -395,7 +395,7 @@ $menu = doMenu($branchtabs, "label", $innermenu);
 echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);
 ?>
 <div class="lightback pad2">
-    <div class="databack normal pad5">
+    <div class="databack normal p-1">
 
         <?php
         if ($branchaction == "clear") {

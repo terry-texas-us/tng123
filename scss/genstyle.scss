@@ -141,15 +141,8 @@ a:visited {
   border-radius: 10px;
 }
 
-div.pad5 img {
+div.p-1 img {
   border-radius: 4px;
-}
-
-.botbrdr {
-  border-bottom: 1px solid #fff;
-}
-
-.adminicon, div.pad5 img {
   box-shadow: 1px 1px 2px 0 #333;
 }
 
@@ -469,15 +462,6 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
 
 .tngbotshadow, .tngshadow {
   border-bottom: 1px solid #bbb;
-}
-
-.togglehead {
-  text-decoration: none;
-  color: #000;
-}
-
-.togglehead img {
-  top: 2px;
 }
 
 .tsh-indent {
@@ -1064,73 +1048,22 @@ p.menu {
   line-height: 1.6em;
 }
 
-.adminicon {
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin: 1px 9px 0 3px;
-  border-radius: 4px;
-}
-
-.admincol {
-  vertical-align: top;
-  width: 50%;
-  min-width: 300px;
-  max-width: 500px;
-}
-
-.admincol-mobile {
-  vertical-align: top;
-  width: 100%;
-  min-width: 354px;
-}
-
-a.admincell, div.tngmsgarea {
-  color: #fff;
-  padding: 8px;
-  margin: 2px 3px 4px;
-  display: block;
-  border-radius: 4px;
-}
-
-.tngmsgarea {
-  background-color: #999;
-  color: #fff;
-  border-right: 1px solid #444;
-  border-bottom: 1px solid #444;
-  min-height: 20px;
-}
-
-.tngmsgarea a, .tngmsgarea a:active, .tngmsgarea a:link, .tngmsgarea a:visited {
-  color: #fff;
-  text-decoration: none;
-}
-
-.tngmsgarea a:hover {
-  color: #fc3;
-}
-
 .leftlink {
   padding: 4px 4px 4px 6px;
   display: block;
   border-radius: 6px;
 }
 
-.leftlink, .tngmsgarea, .whiteheader, .whitetext, a.admincell {
+.leftlink, .whiteheader, .whitetext {
   text-shadow: 1px 1px 1px #000;
   filter: dropshadow(color=#000, offx=1, offy=1);
 }
 
-a.admincell:hover, a.leftlink:hover {
+a.leftlink:hover {
   background-color: #336399;
 }
 
-#adm-innermenu {
-  margin: 0 2px 2px;
-  padding: .2em 0 .3em .7em;
-}
-
-#adm-innermenu, #pub-innermenu {
+#pub-innermenu {
   clear: both;
   border-right: 1px solid #777;
   border-bottom: 1px solid #777;
@@ -1201,10 +1134,6 @@ a.admincell:hover, a.leftlink:hover {
 
 .mapballoon {
   width: 240px;
-}
-
-.mappad5, .pad5 {
-  padding: 5px;
 }
 
 .pad2 {

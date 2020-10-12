@@ -27,10 +27,10 @@ $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/second_help.php')
 $menu = doMenu($datatabs, "second", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarymaint'] . " &gt;&gt; " . $secaction, "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
-<div class="lightback pad2">
-    <div class="databack normal pad5">
+    <div class="lightback pad2">
+        <div class="databack normal p-1">
 
-        <?php
+            <?php
         @set_time_limit(0);
         $wherestr = "";
         if ($secaction == $admtext['sortchildren']) {

@@ -219,7 +219,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                             if ($numbranches > 8) {
                                 $select = $admtext['scrollbranch'] . "<br>";
                             }
-                            $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"8\">\n";
+                            $select .= "<select name=\"branch[]\" id='branch' multiple size=\"8\">\n";
                             $select .= "	<option value=\"\"";
                             if ($row['branch'] == "") {
                                 $select .= " selected";
@@ -229,14 +229,14 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['addnewfamil
                             $select .= "$options</select>\n";
                             echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                             ?>
-                            <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
-                                 onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
+                            <div id="branchedit" class="lightback p-1" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
+                                onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                                 <?php
                                 echo $select;
                                 echo "</div>\n";
                                 }
                                 else {
-                                    echo "<input type='hidden' name=\"branch\" value=\"$assignedbranch\">$assdesc ($assignedbranch)";
+                                    echo "<input type='hidden' name='branch' value=\"$assignedbranch\">$assdesc ($assignedbranch)";
                                 }
                                 ?>
                         </td>

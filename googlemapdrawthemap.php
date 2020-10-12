@@ -7,7 +7,7 @@
 // Google's own pages.
 echo "<input type='button' onclick=\"return divbox('mapcontainer');\" value=\"{$admtext['showhidemap']}\" class=\"align-middle\"> <span class='normal'>{$admtext['getcoords']}</span>\n";
 
-echo "<div id=\"mapcontainer\" style=\"display:none; width:{$map['admw']};\" class=\"mappad5 rounded10\">\n";
+echo "<div id=\"mapcontainer\" style=\"display:none; width:{$map['admw']};\" class=\"p-1 rounded10\">\n";
 $searchstring = $row['place'] ? $row['place'] : $admtext['searchstring'];
 echo "<span class='normal'>{$admtext['googleplace']}: ";
 

@@ -469,7 +469,7 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
         }
         $menu .= $newbrowser ? "</ul>\n" : "</div>\n";
         $menu .= "</div>\n";
-        $menu .= "<div id=\"pub-innermenu\" class=\"fieldnameback fieldname smaller rounded\">\n";
+        $menu .= "<div id='pub-innermenu' class='fieldnameback fieldname smaller rounded'>\n";
         $menu .= $innermenu;
         $menu .= "</div><br>\n";
 

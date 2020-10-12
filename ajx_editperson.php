@@ -241,7 +241,7 @@ include_once "eventlib.php";
                                 }
                                 $selectnum = $totbranches < 8 ? $totbranches : 8;
                                 $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
-                                $select .= "<select name=\"branch[]\" id=\"branch\" multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
+                                $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                 $select .= "	<option value=\"\"";
                                 if ($row['branch'] == "") {
                                     $select .= " selected";
@@ -251,14 +251,14 @@ include_once "eventlib.php";
                                 $select .= "$options</select>\n";
                                 echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
-                                <div id="branchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
-                                     onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
+                                <div id="branchedit" class="lightback p-1" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
+                                    onmouseout="closeBranchEdit('branch','branchedit','branchlist');">
                                     <?php
                                     echo $select;
                                     echo "</div>\n";
                                     }
                                     else {
-                                        echo "<input type='hidden' name=\"branch\" value=\"{$row['branch']}\">";
+                                        echo "<input type='hidden' name='branch' value=\"{$row['branch']}\">";
                                     }
                                     echo "<input type='hidden' name=\"orgbranch\" value=\"{$row['branch']}\">";
                                     ?>

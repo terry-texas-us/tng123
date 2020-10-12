@@ -146,14 +146,14 @@ include_once "eventlib.php";
                                 $select .= "$options</select>\n";
                                 echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('fbranchedit'); quitBranchEdit('fbranchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                                 ?>
-                                <div id="fbranchedit" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
-                                     onmouseout="closeBranchEdit('fbranch','fbranchedit','fbranchlist');">
+                                <div id="fbranchedit" class="lightback p-1" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
+                                    onmouseout="closeBranchEdit('fbranch','fbranchedit','fbranchlist');">
                                     <?php
                                     echo $select;
                                     echo "</div>\n";
                                     }
                                     else {
-                                        echo "<input type='hidden' name=\"branch\" value=\"$assignedbranch\">";
+                                        echo "<input type='hidden' name='branch' value=\"$assignedbranch\">";
                                     }
                                     ?>
                             </td>

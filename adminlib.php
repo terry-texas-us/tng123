@@ -291,7 +291,7 @@ function displayToggle($id, $state, $target, $headline, $subhead, $append = "") 
  */
 function displayHeadline($headline, $icon, $menu, $message) {
     $rval = "<div class='lightback'>\n";
-    $rval .= "<div class='pad5'>\n";
+    $rval .= "<div class='p-1'>\n";
     $rval .= "<img src='$icon' width='40' height='40' align='left' title='$headline' alt='$headline' style='margin-right: 10px;'>";
     $rval .= "<span class='plainheader'>$headline</span>\n";
     $rval .= "</div><br>\n";

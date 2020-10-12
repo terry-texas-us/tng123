@@ -458,7 +458,7 @@ while ($treerow = tng_fetch_assoc($treeresult)) {
 $query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"{$row['gedcom']}\" ORDER BY description";
 $branchresult = tng_query($query);
 
-echo "<select name=\"branch\" id=\"branch\" size=\"$selectnum\">\n";
+echo "<select name='branch' id='branch' size=\"$selectnum\">\n";
 echo "	<option value=\"\">{$admtext['allbranches']}</option>\n";
 while ($branch = tng_fetch_assoc($branchresult)) {
     echo "	<option value=\"{$branch['branch']}\"";

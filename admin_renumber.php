@@ -32,7 +32,7 @@ $headline = $admtext['backuprestore'] . " &gt;&gt; " . $admtext['renumber'];
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 <div class="lightback pad2">
-    <div class="databack normal pad5">
+    <div class="databack normal p-1">
 
         <h3 class="subhead"><?php echo $admtext['renumber']; ?></h3>
 

@@ -398,7 +398,7 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
                         </div>
                         <?php
                     } else {
-                        echo "<b>{$text['firstuser']}</b><input type='hidden' name=\"gedcom\" value=\"\"><input type='hidden' name=\"branch\" value=\"\">";
+                        echo "<b>{$text['firstuser']}</b><input type='hidden' name=\"gedcom\" value=\"\"><input type='hidden' name='branch' value=\"\">";
                     }
                     if ($numlangs <= 1) {
                         echo "<input type='hidden' name=\"preflang\" value='0'>\n";

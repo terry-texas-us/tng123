@@ -166,13 +166,13 @@ header("Content-type:text/html; charset=" . $session_charset);
                     $select .= "$options</select>\n";
                     echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
                     ?>
-                    <div id="branchedit2" class="lightback pad5" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch2','branchedit2','branchlist2');">
+                    <div id="branchedit2" class="lightback p-1" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch2','branchedit2','branchlist2');">
                         <?php
                         echo $select;
                         echo "</div>\n";
                         }
                         else {
-                            echo "<input type='hidden' name=\"branch\" value=\"$assignedbranch\">$assdesc ($assignedbranch)";
+                            echo "<input type='hidden' name='branch' value=\"$assignedbranch\">$assdesc ($assignedbranch)";
                         }
                         ?>
                 </td>
