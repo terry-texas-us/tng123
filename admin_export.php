@@ -37,7 +37,6 @@ $branchresult = tng_query($query);
 
 $helplang = findhelp("data_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['gedexport'], $flags);
 ?>
 <script>

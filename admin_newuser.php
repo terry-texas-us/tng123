@@ -30,7 +30,6 @@ tng_free_result($revresult);
 
 $helplang = findhelp("users_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewuser'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

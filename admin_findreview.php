@@ -119,7 +119,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['review'], $flags);
 ?>
 <script>

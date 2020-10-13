@@ -41,7 +41,6 @@ while ($note = tng_fetch_assoc($notelinks)) {
 
 $helplang = findhelp("repositories_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyrepo'], $flags);
 $photo = showSmallPhoto($repoID, $row['reponame'], 1, 0, "R");
 include_once "eventlib.php";

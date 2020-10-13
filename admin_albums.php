@@ -69,7 +69,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("albums_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['albums'], $flags);
 
 echo "</head>\n";

@@ -83,7 +83,6 @@ function showDiv(string $type) {
     echo "</div>\n";
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['mostwanted'], $flags);
 ?>
     <script src="js/mostwanted.js"></script>

@@ -14,7 +14,6 @@ require "adminlog.php";
 
 $helplang = findhelp("second_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['secondarymaint'], $flags);
 
 echo "</head>\n";

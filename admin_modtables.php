@@ -27,7 +27,6 @@ if (!isset($options['show_developer'])) $options['show_developer'] = "0";
 if (!isset($options['show_updates'])) $options['show_updates'] = "0";
 $headclass = $options['fix_header'] == YES && $sitever != 'mobile' ? 'mmhead-fixed' : 'mmhead-scroll';
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 

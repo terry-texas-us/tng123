@@ -20,7 +20,6 @@ $contents = @file($file);
 
 $helplang = findhelp("misc_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['whatsnew'], $flags);
 ?>
 <script>

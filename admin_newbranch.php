@@ -25,7 +25,6 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $helplang = findhelp("branches_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewbranch'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

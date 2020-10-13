@@ -154,7 +154,6 @@ while ($cerow = tng_fetch_assoc($ceresult)) {
 
 $helplang = findhelp("reports_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyreport'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

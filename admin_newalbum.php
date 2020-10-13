@@ -15,7 +15,6 @@ if (!$allow_media_add) {
 
 $helplang = findhelp("albums_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewalbum'], $flags);
 ?>
 <script>

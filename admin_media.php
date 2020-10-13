@@ -134,7 +134,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("media_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['media'], $flags);
 
 $standardtypes = [];

@@ -35,7 +35,6 @@ tng_free_result($treeresult);
 
 $helplang = findhelp("media_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewmedia'], $flags);
 
 $lastcoll = isset($_COOKIE['lastcoll']) ? $_COOKIE['lastcoll'] : "";

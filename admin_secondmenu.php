@@ -18,7 +18,6 @@ $result = tng_query($query);
 
 $helplang = findhelp("second_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['secondary'], $flags);
 
 echo "</head>\n";

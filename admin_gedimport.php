@@ -111,7 +111,6 @@ function getAlbumLinksToSave() {
     return $albumlinks;
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
 
 echo "</head>\n";

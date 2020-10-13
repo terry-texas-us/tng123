@@ -25,7 +25,6 @@ $treerow = getTree($trees_table, $tree);
 
 $helplang = findhelp("branches_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytree'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

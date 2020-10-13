@@ -25,7 +25,6 @@ $treerow = getTree($trees_table, $tree);
 
 $helplang = findhelp("dna_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifygroup'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

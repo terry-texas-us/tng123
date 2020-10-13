@@ -14,6 +14,21 @@ const imagemin = require('gulp-imagemin');
 // const browserSync = require('browser-sync').create();
 // const rename = require('gulp-rename');
 
+const purgecss = require('gulp-purgecss')
+
+function purgecssTask() {
+    return src('build/genstyle.css')
+        .pipe(purgecss({
+            content: ['**/*.php']
+        }))
+        .pipe(purgecss({
+            content: ['**/*.js']
+        }))
+        .pipe(dest('build/purged'))
+}
+
+exports.purgecssTask = purgecssTask;
+
 function imagesTask() {
     return src('img/*')
         .pipe(newer('./build/img'))

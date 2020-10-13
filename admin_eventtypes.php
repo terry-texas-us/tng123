@@ -91,7 +91,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 }
 $helplang = findhelp("eventtypes_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['eventtypes'], $flags);
 ?>
 <script>

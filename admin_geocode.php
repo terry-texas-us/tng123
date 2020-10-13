@@ -18,7 +18,6 @@ if ($resetignore) {
     $result = tng_query($query);
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['places'], $flags);
 
 echo "</head>\n";

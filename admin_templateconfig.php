@@ -41,7 +41,6 @@ tng_free_result($treeresult);
 
 $helplang = findhelp("templateconfig_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytemplatesettings'], $flags);
 ?>
 <script src="js/mediautils.js"></script>

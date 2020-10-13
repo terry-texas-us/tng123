@@ -117,13 +117,13 @@ tng_adminheader($admtext['administration'], "");
 <script>
     jQuery(document).ready(function () {
         let tngadminmsg = getCookie('tngadminmsg');
-        if (tngadminmsg != "hide" && $('#msgs').length)
+        if (tngadminmsg !== "hide" && $('#msgs').length)
             toggleSection('msgs', 'plus0');
         //php: if no msg, then insert javascript to unset the cookie
     });
 
     function toggleMsg(section, img, display) {
-        if (jQuery('#' + section).css('display') == "none")
+        if (jQuery('#' + section).css('display') === "none")
             setCookie('tngadminmsg', "", 365);
         else
             setCookie('tngadminmsg', "hide", 365);
@@ -144,8 +144,8 @@ tng_adminheader($admtext['administration'], "");
         let ca = document.cookie.split(';');
         for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1);
-            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            while (c.charAt(0) === ' ') c = c.substring(1);
+            if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
         }
         return "";
     }
@@ -192,7 +192,7 @@ tng_adminheader($admtext['administration'], "");
             if ($review_people) {
                 $messages .= "<li><a href='admin_findreview.php?type=I'>{$admtext['task_revind']} ($review_people)</a></li>\n";
             }
-            $review_families = getTotal("$families_table, $temp_events_table", "$families_table.familyID = $temp_events_table.familyID AND $families_table.gedcom = $temp_events_table.gedcom AND type = 'F\"");
+            $review_families = getTotal("$families_table, $temp_events_table", "$families_table.familyID = $temp_events_table.familyID AND $families_table.gedcom = $temp_events_table.gedcom AND type = 'F'");
             if ($review_families) {
                 $messages .= "<li><a href='admin_findreview.php?type=F'>{$admtext['task_revfam']} ($review_families)</a></li>\n";
             }

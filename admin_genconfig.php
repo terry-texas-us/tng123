@@ -53,7 +53,6 @@ $tngconfig['footermsg'] = preg_replace("/\"/", "&#34;", $tngconfig['footermsg'])
 
 $helplang = findhelp("config_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifysettings'], $flags);
 ?>
 <script>

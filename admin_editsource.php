@@ -47,7 +47,6 @@ while ($note = tng_fetch_assoc($notelinks)) {
 
 $helplang = findhelp("sources_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifysource'], $flags);
 $photo = showSmallPhoto($sourceID, $sourcename, 1, 0, "S");
 include_once "eventlib.php";

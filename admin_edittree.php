@@ -50,7 +50,6 @@ tng_free_result($nresult);
 
 $helplang = findhelp("trees_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytree'], $flags);
 ?>
     <script>

@@ -17,7 +17,6 @@ $row['evdetail'] = preg_replace("/\"/", "&#34;", $row['evdetail']);
 
 $helplang = findhelp("tlevents_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifytlevent'], $flags);
 ?>
 <script>

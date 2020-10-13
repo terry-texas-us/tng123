@@ -150,7 +150,6 @@ if (!$personID) {
     preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;medialinkID=$medialinkID\">$mediatypeIDstr: $description ($mediaID)</a>");
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 if (!$tngprint) {
     $flags['scripting'] = "<script src=\"js/slideshow.js\"></script>\n";
     $flags['scripting'] .= "<script>\n";

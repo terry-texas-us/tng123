@@ -85,7 +85,6 @@ tng_free_result($result);
 writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
 preparebookmark("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $namestr ($personID)</a>");
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 if (empty($tngconfig['hidedna'])) {
     $flags['scripting'] .= "<script language = 'javascript'>

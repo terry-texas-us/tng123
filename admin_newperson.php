@@ -27,7 +27,6 @@ $helplang = findhelp("people_help.php");
 
 $revstar = checkReview("I");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewperson'], $flags);
 include_once "eventlib.php";
 include_once "eventlib_js.php";

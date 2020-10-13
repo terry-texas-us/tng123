@@ -26,7 +26,6 @@ if (!$badtables) {
     adminwritelog($admtext['createtables']);
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['tablecreation'], $flags);
 
 echo "</head>\n";

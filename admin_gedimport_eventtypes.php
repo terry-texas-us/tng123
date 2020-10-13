@@ -27,7 +27,6 @@ $today = date("Y-m-d H:i:s");
 global $prefix;
 $helplang = findhelp("data_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
 
 echo "</head>\n";

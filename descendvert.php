@@ -624,7 +624,6 @@ tng_free_result($treeResult);
 writelog("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">" . xmlcharacters($text['descendfor'] . " $logname ($personID)") . "</a>");
 preparebookmark("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">{$text['descendfor']} " . $row['name'] . " ($personID)</a>");
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<style>
 .desc {
 	margin: 0 0 10px 0;

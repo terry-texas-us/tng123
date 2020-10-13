@@ -24,7 +24,6 @@ if ($link) {
 
 $helplang = findhelp("logconfig_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifylogsettings'], $flags);
 
 echo "</head>\n";

@@ -266,7 +266,6 @@ $helplang = findhelp("people_help.php");
 
 $revstar = checkReview("I");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['people'], $flags);
 ?>
     <script>

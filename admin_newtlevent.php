@@ -15,7 +15,6 @@ if (!$allow_add) {
 
 $helplang = findhelp("tlevents_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewtlevent'], $flags);
 ?>
 <script>

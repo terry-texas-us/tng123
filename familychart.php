@@ -484,7 +484,6 @@ function doheader($tree, $family) {
     echo "<!doctype html>\n";
     echo "<html lang='en'>\n";
 
-    $flags['tabs'] = $tngconfig['tabs'];
     $flags['scripting'] = famStylesheet();
 
     tng_header($text['family'] . " " . $familyname . " ($familyID)", $flags);

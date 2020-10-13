@@ -16,7 +16,6 @@ if (!$allow_add) {
 
 $helplang = findhelp("eventtypes_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewevtype'], $flags);
 ?>
 <script src="js/eventtypes.js"></script>

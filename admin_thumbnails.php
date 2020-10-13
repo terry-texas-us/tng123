@@ -16,7 +16,6 @@ if (!$allow_media_edit) {
 
 $helplang = findhelp("media_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
 <script src="js/mediautils.js"></script>

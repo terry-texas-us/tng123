@@ -266,7 +266,6 @@ preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;ge
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 tng_header($text['pedigreefor'] . " $pedname", $flags);

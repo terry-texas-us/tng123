@@ -23,7 +23,6 @@ $mhuser = isset($_SESSION['currentuserdesc']) ? $_SESSION['currentuser'] : "";
 
 require "config/mmconfig.php";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 

@@ -23,10 +23,7 @@ $text['dnatestscompare_mtdna'] .= ": " . $test_group;
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 tng_header($text['dnatestscompare_mtdna'], $flags);
-
 
 $comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
 $innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target='_blank' class='lightlink'>{$text['help']}</a>";

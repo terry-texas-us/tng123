@@ -25,7 +25,6 @@ $row['note'] = preg_replace("/\"/", "&#34;", $row['note']);
 
 $helplang = findhelp("misc_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifynote'], $flags);
 ?>
 <script>

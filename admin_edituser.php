@@ -47,7 +47,6 @@ tng_free_result($revresult);
 
 $helplang = findhelp("users_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyuser'], $flags);
 
 $style->addSelector("table", ["width" => "100%", "border-collapse" => "separate", "border-spacing" => "2px"]);

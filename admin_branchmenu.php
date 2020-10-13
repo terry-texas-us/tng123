@@ -30,7 +30,6 @@ tng_free_result($result);
 
 $helplang = findhelp("branches_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['labelbranches'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

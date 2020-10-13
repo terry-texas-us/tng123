@@ -51,7 +51,6 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $helplang = findhelp("places_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['mergeplaces'], $flags);
 ?>
 <script src="js/mergeplaces.js"></script>

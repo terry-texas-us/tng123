@@ -311,8 +311,6 @@ if ($nextperson) {
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 tng_header($descname, $flags);
 
 $photostr = showSmallPhoto($personID, $descname, $rights['both'], 0, false, $row['sex']);

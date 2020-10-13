@@ -132,7 +132,6 @@ $helplang = findhelp("people_help.php");
 
 $revstar = checkReview("I");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyperson'], $flags);
 $photo = showSmallPhoto($personID, $namestr, 1, 0, "I", $row['sex']);
 

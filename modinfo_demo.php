@@ -34,7 +34,6 @@ $authors = $oMod->get_authors();
 $filenames = $oMod->get_modfile_names();
 $private = $oMod->get_private();
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 

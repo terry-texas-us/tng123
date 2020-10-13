@@ -16,7 +16,6 @@ define('NO', "0");
 
 if (!isset($sub)) $sub = "tables";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['showlogfile'], $flags);
 

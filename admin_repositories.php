@@ -110,7 +110,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("repositories_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['repositories'], $flags);
 ?>
 <script>

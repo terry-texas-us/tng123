@@ -13,7 +13,6 @@ $helplang = findhelp("misc_help.php");
 
 $orderedTreesList = new OrderedTreesList($trees_table, $assignedtree);
 
-$flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
 tng_adminheader(_todo_('Validation'), $flags);
 ?>

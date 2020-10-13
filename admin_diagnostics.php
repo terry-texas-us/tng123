@@ -21,7 +21,6 @@ $red = "<img src='img/tng_close.gif'>";
 $orange = "<img src='img/orange.gif'>";
 $green = "<img src='img/tng_check.gif'>";
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['diagnostics'], $flags);
 
 echo "</head>\n";

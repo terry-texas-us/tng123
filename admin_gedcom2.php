@@ -41,7 +41,6 @@ if (empty($exportmedia)) {
     $exportmedia = 0;
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['gedexport'], $flags);
 
 if (empty($tree)) {

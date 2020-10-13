@@ -691,7 +691,6 @@ $helplang = findhelp("people_help.php");
 
 $revstar = checkReview("I");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['merge'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

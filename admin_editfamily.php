@@ -83,7 +83,6 @@ $helplang = findhelp("families_help.php");
 
 $revstar = checkReview("F");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyfamily'], $flags);
 $photo = showSmallPhoto($familyID, $namestr, 1, 0, "F");
 include_once "eventlib.php";

@@ -35,7 +35,6 @@ if ($localdocpathdisplay && !$locimppath['histories']) {
 
 $helplang = findhelp("importconfig_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyimportsettings'], $flags);
 
 echo "</head>\n";

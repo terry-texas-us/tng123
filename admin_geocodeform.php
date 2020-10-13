@@ -11,7 +11,6 @@ include "version.php";
 $orgtree = $tree;
 $helplang = findhelp("places_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['places'], $flags);
 
 echo "</head>\n";

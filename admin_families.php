@@ -164,7 +164,6 @@ $helplang = findhelp("families_help.php");
 
 $revstar = checkReview("F");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['families'], $flags);
 ?>
 <script>

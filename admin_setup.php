@@ -53,7 +53,6 @@ $helplang = findhelp("setup_help.php");
 if (!$sub) {
     $sub = "configuration";
 }
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['setup'], $flags);
 
 echo "</head>\n";

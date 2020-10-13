@@ -38,7 +38,6 @@ switch ($row['type']) {
 
 $helplang = findhelp("eventtypes_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyeventtype'], $flags);
 ?>
 <script src="js/eventtypes.js"></script>

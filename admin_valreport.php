@@ -17,7 +17,6 @@ if (!$report || !in_array($report, $reports)) {
 $helplang = findhelp("misc_help.php");
 $orgtree = $tree;
 
-$flags['tabs'] = $tngconfig['tabs'];
 // TODO text ['validation'] was not defined in any language. Manually added here.
 tng_adminheader(_todo_('Validation'), $flags);
 

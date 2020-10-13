@@ -87,7 +87,6 @@ $numlinks = tng_num_rows($result2);
 
 $helplang = findhelp("dna_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifydna'], $flags);
 
 echo "</head>\n";

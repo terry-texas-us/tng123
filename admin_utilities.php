@@ -62,7 +62,6 @@ if (empty($sub)) {
     $sub = "tables";
 }
 if (!isset($message)) $message = "";
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['backuprestore'], $flags);
 ?>
 <script>

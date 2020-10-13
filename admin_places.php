@@ -171,7 +171,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("places_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['places'], $flags);
 ?>
 <script>

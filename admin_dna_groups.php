@@ -92,7 +92,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("dna_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['dna_groups'], $flags);
 ?>
 <script>

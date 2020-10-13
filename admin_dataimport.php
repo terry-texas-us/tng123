@@ -42,7 +42,6 @@ tng_free_result($result);
 
 $helplang = findhelp("data_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['datamaint'], $flags);
 ?>
 <script src="js/mediautils.js"></script>

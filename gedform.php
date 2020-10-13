@@ -27,7 +27,6 @@ if (($disallowgedcreate && (!$allow_ged || !$rightbranch)) || !$personID) {
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script>
 function validateForm() {
 	if( document.gedform.email.value == \"\" ) {

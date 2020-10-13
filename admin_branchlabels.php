@@ -381,7 +381,6 @@ function doDescendants($personID, $gender, $gen, $maxgen) {
 
 $helplang = findhelp("branches_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['labelbranches'], $flags);
 
 echo "</head>\n";

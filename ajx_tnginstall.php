@@ -377,7 +377,6 @@ if ($saveconfig) {
     fwrite($fp, "\$customheader = \"$customheader\";\n");
     fwrite($fp, "\$customfooter = \"$customfooter\";\n");
     fwrite($fp, "\$custommeta = \"$custommeta\";\n");
-    fwrite($fp, "\$tngconfig['tabs'] = \"{$tngconfig['tabs']}\";\n");
     fwrite($fp, "\$tngconfig['menu'] = \"{$tngconfig['menu']}\";\n");
     fwrite($fp, "\$tngconfig['icons'] = \"{$tngconfig['icons']}\";\n");
     fwrite($fp, "\$tngconfig['istart'] = \"{$tngconfig['istart']}\";\n");

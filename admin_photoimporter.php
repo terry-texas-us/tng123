@@ -66,7 +66,6 @@ function importFrom($tngpath, $orgpath, $needsubdirs) {
 $helplang = findhelp("data_help.php");
 adminwritelog($admtext['media'] . " &gt;&gt; " . $admtext['import'] . " ($mediatypeID): $tree");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader(_todo_('Photo Import'), $flags);
 
 $tngpath = $mediatypes_assoc[$mediatypeID];

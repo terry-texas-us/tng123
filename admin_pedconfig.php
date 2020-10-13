@@ -18,7 +18,6 @@ if ($link) {
 
 $helplang = findhelp("pedconfig_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifypedsettings'], $flags);
 ?>
 <script src="js/popupwindow.js"></script>

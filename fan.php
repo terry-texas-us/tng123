@@ -55,8 +55,6 @@ preparebookmark("<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parents
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
-
 tng_header("{$text['fanchart']}: {$perName[0]}  Generations: {$generations}", $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);

@@ -19,7 +19,6 @@ require_once "config/mmconfig.php";
 define("YES", 1);
 define("NO", 0);
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 

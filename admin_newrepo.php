@@ -23,7 +23,6 @@ if ($assignedtree) {
 
 $helplang = findhelp("repositories_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewrepo'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

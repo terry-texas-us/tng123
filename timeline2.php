@@ -351,7 +351,6 @@ $totalspan = $latest - $earliest;
 $ratio = $totalspan ? $chartwidth / $totalspan : 0;
 $spanheight = 30 + count($keeparray) * 29;
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script src=\"js/selectutils.js\"></script>\n";
 $personID = $primaryID;
 

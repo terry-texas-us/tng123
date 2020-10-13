@@ -46,7 +46,6 @@ if (!isset($options['adjust_headers'])) $options['adjust_headers'] = NO;
 if (!isset($options['delete_support'])) $options['delete_support'] = NO;
 if (!isset($sub)) $sub = "tables";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 

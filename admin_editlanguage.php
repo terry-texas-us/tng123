@@ -20,7 +20,6 @@ tng_free_result($result);
 
 $helplang = findhelp("languages_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifylanguage'], $flags);
 ?>
     <script>

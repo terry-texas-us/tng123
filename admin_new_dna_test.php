@@ -22,7 +22,6 @@ if ($assignedtree) {
 
 $helplang = findhelp("dna_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addnewdna'], $flags);
 
 echo "</head>\n";

@@ -69,7 +69,6 @@ preparebookmark("<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree\">" 
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 tng_header($row['name'], $flags);

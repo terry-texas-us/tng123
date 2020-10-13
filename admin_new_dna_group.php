@@ -25,7 +25,6 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $helplang = findhelp("dna_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['addgroup'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

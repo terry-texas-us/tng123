@@ -18,7 +18,6 @@ if ($link) {
 
 $helplang = findhelp("mapconfig_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifymapsettings'], $flags);
 ?>
 <script>

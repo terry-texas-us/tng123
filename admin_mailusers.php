@@ -9,7 +9,6 @@ include "checklogin.php";
 include "version.php";
 $helplang = findhelp("users_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['emailusers'], $flags);
 ?>
 <script src="js/selectutils.js"></script>

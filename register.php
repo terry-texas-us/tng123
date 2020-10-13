@@ -50,7 +50,6 @@ preparebookmark("<a href=\"register.php?personID=$personID&amp;tree=$tree\">{$te
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 tng_header($row['name'], $flags);

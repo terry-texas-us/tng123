@@ -60,7 +60,6 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $helplang = findhelp("albums_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyalbum'], $flags);
 
 $photo = "";

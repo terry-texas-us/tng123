@@ -18,7 +18,6 @@ $result = tng_query($query);
 
 $helplang = findhelp("backuprestore_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['backuprestore'], $flags);
 
 echo "</head>\n";

@@ -116,7 +116,6 @@ if (!$numrows) {
 
 $helplang = findhelp("media_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($sortstr, $flags);
 
 ?>

@@ -158,7 +158,6 @@ fwrite($fp, "\$tngconfig['favicon'] = \"$favicon\";\n");
 fwrite($fp, "\$customheader = \"$customheader\";\n");
 fwrite($fp, "\$customfooter = \"$customfooter\";\n");
 fwrite($fp, "\$custommeta = \"$custommeta\";\n");
-fwrite($fp, "\$tngconfig['tabs'] = \"$tng_tabs\";\n");
 fwrite($fp, "\$tngconfig['menu'] = \"$tng_menu\";\n");
 fwrite($fp, "\$tngconfig['istart'] = \"$tng_istart\";\n");
 fwrite($fp, "\$tngconfig['showhome'] = \"$showhome\";\n");

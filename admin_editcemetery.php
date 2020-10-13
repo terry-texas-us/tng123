@@ -32,7 +32,6 @@ $countryresult = tng_query($query);
 
 $helplang = findhelp("cemeteries_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifycemetery'], $flags);
 
 if ($map['key'] && $isConnected) {

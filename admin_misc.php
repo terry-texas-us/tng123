@@ -15,7 +15,6 @@ if ($assignedtree) {
 
 $helplang = findhelp("misc_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['misc'], $flags);
 
 echo "</head>\n";

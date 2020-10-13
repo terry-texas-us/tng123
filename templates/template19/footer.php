@@ -48,7 +48,6 @@
     ?>
 </footer>
 
-<link href="<?php echo $templatepath; ?>css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
 <script src="<?php echo $templatepath; ?>javascripts/jquery.nivo.slider.js" type="text/javascript"></script>
 <script src="<?php echo $templatepath; ?>javascripts/main.js" type="text/javascript"></script>
 <script src="<?php echo $templatepath; ?>javascripts/wow.min.js"></script>

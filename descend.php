@@ -668,7 +668,6 @@ preparebookmark("<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;dis
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['style'] = "<style>\n";
 $flags['style'] .= ".desc {margin: 0 0 10px 0;}\n";
 $flags['style'] .= ".spouse {width: 100%;}\n";

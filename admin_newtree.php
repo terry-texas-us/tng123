@@ -25,7 +25,6 @@ if ($beforeimport == "yes") { // ajax html excludes html and body tags
     echo "<h3 class='subhead'>{$admtext['addnewtree']} |\n";
     echo "<a href='#' onclick=\"return openHelp('{$helplang}/trees_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();\">{$admtext['help']}></a></h3>";
 } else {
-    $flags['tabs'] = $tngconfig['tabs'];
     tng_adminheader($admtext['addnewtree'], $flags);
     ?>
     <script>

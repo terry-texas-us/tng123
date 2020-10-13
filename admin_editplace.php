@@ -48,7 +48,6 @@ if (!$tngconfig['places1tree']) {
 
 $helplang = findhelp("places_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['modifyplace'], $flags);
 
 if ($map['key'] && $isConnected) {

@@ -157,7 +157,6 @@ if (isset($newlist)) {
     $filter = 0;
 }
 
-$flags['tabs'] = $tngconfig['tabs'];
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 

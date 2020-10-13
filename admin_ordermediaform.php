@@ -23,7 +23,6 @@ $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treen
 
 $helplang = findhelp("media_help.php");
 
-$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader($admtext['sortmedia'], $flags);
 ?>
 <script src="js/mediafind.js"></script>
