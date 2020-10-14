@@ -52,7 +52,7 @@ $dna_groups_table = "tng_dna_groups";
 $templates_table = "tng_templates";
 
 $rootpath = "C:/Apache24/htdocs/tng123/";
-$templatenum = "19";
+$templatenum = "";
 $templateswitching = "1";
 $homepage = "index.php";
 $tngdomain = "http://localhost/tng123";
@@ -62,7 +62,7 @@ $target = "_self";
 $language = "English-UTF8";
 $charset = "UTF-8";
 $norels = "";
-$maxsearchresults = "50";
+$maxsearchresults = "10";
 $lineendingdisplay = "\\r\\n";
 $lineending = "\r\n";
 $gendexfile = "gendex";

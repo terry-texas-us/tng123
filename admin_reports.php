@@ -131,16 +131,12 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                     </table>
                     <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br>
-
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_reports.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
 
                 <table class="normal">
@@ -180,7 +176,7 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                 </table>
             <?php
             echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+            echo "<span class='adminnav'>$pagenav</span></p>";
             }
             else {
                 echo $admtext['norecords'];

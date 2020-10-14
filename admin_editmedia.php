@@ -154,14 +154,14 @@ $menu = doMenu($mediatabs, "edit", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediainfo'], "img/photos_icon.gif", $menu, "");
 ?>
 
-<form action="admin_updatemedia.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onsubmit="return validateForm();">
-    <table class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table cellpadding="0" cellspacing="0" class="normal">
-                    <tr>
-                        <td class='align-top'>
-                            <div id="thumbholder" style="margin-right: 5px;<?php if (!$photo) {
+    <form action="admin_updatemedia.php" method="post" name="form1" id="form1" enctype="multipart/form-data" onsubmit="return validateForm();">
+        <table class="lightback">
+            <tr class="databack">
+                <td class="tngshadow">
+                    <table cellpadding="0" cellspacing="0" class="normal">
+                        <tr>
+                            <td class='align-top'>
+                                <div id="thumbholder" style="margin-right: 5px;<?php if (!$photo) {
                                 echo "display: none";
                             } ?>"><?php echo $photo; ?></div>
                         </td>

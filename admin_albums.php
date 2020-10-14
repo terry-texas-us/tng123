@@ -112,7 +112,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                 }
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_albums.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
 
                 <table class="normal">
@@ -218,7 +218,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                 </table>
             <?php
             echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+            echo "<span class='adminnav'>$pagenav</span></p>";
             }
             else {
                 echo "</table>\n" . $admtext['norecords'];

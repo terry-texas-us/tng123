@@ -14,6 +14,10 @@ $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $htt
 
 $isConnected = isConnected();
 
+/**
+ * @param $title
+ * @param $flags
+ */
 function tng_adminheader($title, $flags) {
     global $session_charset, $sitename, $templatenum, $text, $tngdomain, $tngconfig, $isConnected;
 
@@ -135,16 +139,21 @@ function tng_adminlayout($args = "") {
  * @return string
  */
 function tng_adminfooter() {
-    global $tng_title, $tng_version;
-
     $html = "</div>\n";
     $html .= "</div>\n";
+
     $html .= "</body>\n";
     $html .= "</html>\n";
 
     return $html;
 }
 
+/**
+ * @param $type
+ * @param $field
+ * @param $table
+ * @return int|mixed
+ */
 function getNewNumericID($type, $field, $table) {
     global $tree, $tngconfig;
 
@@ -164,6 +173,10 @@ function getNewNumericID($type, $field, $table) {
     return $maxrow['newID'] ? $maxrow['newID'] + 1 : 0;
 }
 
+/**
+ * @param $helpfile
+ * @return string
+ */
 function findhelp($helpfile) {
     global $mylanguage, $language;
 
@@ -178,6 +191,12 @@ function findhelp($helpfile) {
     return $helplang;
 }
 
+/**
+ * @param $tabs
+ * @param $currtab
+ * @param int $innermenu
+ * @return string
+ */
 function doMenu($tabs, $currtab, $innermenu = 0) {
     global $newbrowser;
 
@@ -209,6 +228,10 @@ function doMenu($tabs, $currtab, $innermenu = 0) {
     return $menu;
 }
 
+/**
+ * @param $type
+ * @return string
+ */
 function checkReview($type) {
     global $people_table, $families_table, $temp_events_table, $assignedbranch, $assignedtree, $admtext;
 
@@ -233,6 +256,10 @@ function checkReview($type) {
     return $revrow['tcount'] ? " *" : "";
 }
 
+/**
+ * @param $noteID
+ * @param $flag
+ */
 function deleteNote($noteID, $flag) {
     global $notelinks_table, $xnotes_table;
 
@@ -302,12 +329,25 @@ function displayHeadline($headline, $icon, $menu, $message) {
     return $rval;
 }
 
+/**
+ * @param $start
+ * @param $pagetotal
+ * @param $grandtotal
+ * @return string
+ */
 function displayListLocation($start, $pagetotal, $grandtotal) {
     global $admtext, $text;
 
-    return "<p>{$admtext['matches']}: " . number_format($start) . " {$text['to']} <span class='pagetotal'>" . number_format($pagetotal) . "</span> {$text['of']} <span class='restotal'>" . number_format($grandtotal) . "</span>";
+    return "<p class='m-2'>{$admtext['matches']}: " . number_format($start) . " {$text['to']} <span class='pagetotal'>" . number_format($pagetotal) . "</span> {$text['of']} <span class='restotal'>" . number_format($grandtotal) . "</span><br>";
 }
 
+/**
+ * @param $datefield
+ * @param $placefield
+ * @param $label
+ * @param $persfamID
+ * @return string
+ */
 function showEventRow($datefield, $placefield, $label, $persfamID) {
     global $admtext, $gotmore, $gotnotes, $gotcites, $row, $noclass, $currentform;
 
@@ -345,10 +385,19 @@ function showEventRow($datefield, $placefield, $label, $persfamID) {
     return $tr;
 }
 
+/**
+ * @param $id
+ * @return string|string[]|null
+ */
 function cleanID($id) {
     return preg_replace('/[^a-z0-9_-]/', '', strtolower($id));
 }
 
+/**
+ * @param $row
+ * @param $table
+ * @return bool
+ */
 function determineConflict($row, $table) {
     global $currentuser, $tngconfig;
 
@@ -373,6 +422,11 @@ function determineConflict($row, $table) {
     return $editconflict;
 }
 
+/**
+ * @param $tree
+ * @param $personID
+ * @return int
+ */
 function getHasKids($tree, $personID) {
     global $families_table, $children_table;
 

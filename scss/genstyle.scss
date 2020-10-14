@@ -2010,8 +2010,8 @@ thead th {
   margin: auto;
   padding: .25em;
   writing-mode: vertical-rl;
-  -o-transform: rotate(90deg);
-  -o-transform-origin: 0 0;
+  transform: rotate(90deg);
+  transform-origin: 0 0;
 }
 
 .nbrcol {

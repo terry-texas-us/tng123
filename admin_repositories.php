@@ -8,6 +8,8 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 
+require_once "./core/html/addCriteria.php";
+
 if ($newsearch) {
     $exptime = 0;
     setcookie("tng_search_repos_post[search]", $searchstring, $exptime);
@@ -54,27 +56,6 @@ if ($assignedtree) {
 }
 $orgtree = $tree;
 
-function addCriteria($field, $value, $operator) {
-    $criteria = "";
-
-    if ($operator == "=") {
-        $criteria = " OR $field $operator '$value'";
-    } else {
-        $innercriteria = "";
-        $terms = explode(' ', $value);
-        foreach ($terms as $term) {
-            if ($innercriteria) {
-                $innercriteria .= " AND ";
-            }
-            $innercriteria .= "$field $operator '%$term%'";
-        }
-        if ($innercriteria) {
-            $criteria = " OR ($innercriteria)";
-        }
-    }
-
-    return $criteria;
-}
 if ($tree) {
     $allwhere = "$repositories_table.gedcom = '$tree' AND $repositories_table.gedcom = $trees_table.gedcom";
 } else {
@@ -166,16 +147,12 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                     <input type="hidden" name="findrepo" value="1">
                     <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br>
-
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_repositories.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -231,7 +208,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

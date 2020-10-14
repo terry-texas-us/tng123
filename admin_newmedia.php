@@ -70,8 +70,8 @@ $menu = doMenu($mediatabs, "addmedia", $innermenu);
 echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'], "img/photos_icon.gif", $menu, "");
 ?>
 
-<form action="admin_addmedia.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onSubmit="return validateForm();">
-    <input type="hidden" name="link_personID" value="<?php echo $personID; ?>">
+    <form action="admin_addmedia.php" method="post" name="form1" id="form1" enctype="multipart/form-data" onSubmit="return validateForm();">
+        <input type="hidden" name="link_personID" value="<?php echo $personID; ?>">
     <input type="hidden" name="link_tree" value="<?php echo $tree; ?>">
     <input type="hidden" name="link_linktype" value="<?php echo $linktype; ?>">
     <table class="lightback">

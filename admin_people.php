@@ -7,6 +7,9 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
+
+require_once "./core/html/addCriteria.php";
+
 $varlist = ['newsearch', 'searchstring', 'tree', 'living', 'private', 'exactmatch', 'nokids', 'noparents', 'nospouse'];
 foreach ($varlist as $myvar) {
     if (!isset(${$myvar})) ${$myvar} = "";
@@ -60,12 +63,13 @@ if ($newsearch) {
 $searchstring_noquotes = preg_replace("/\"/", "&#34;", $searchstring);
 $searchstring = addslashes($searchstring);
 
-if (!empty($order))
+if (!empty($order)) {
     setcookie("tng_search_people_post[order]", $order, $exptime);
-else
+} else {
     $order = isset($_COOKIE['tng_search_people_post']['order']) ? $_COOKIE['tng_search_people_post']['order'] : "name";
-
+}
 if (!isset($offset)) $offset = 0;
+
 if ($offset) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
@@ -88,24 +92,6 @@ $uresult = tng_query($uquery) or die ($admtext['cannotexecutequery'] . ": $uquer
 $urow = tng_fetch_assoc($uresult);
 $numusers = $urow['ucount'];
 tng_free_result($uresult);
-
-function addCriteria($field, $value, $operator) {
-    $criteria = "";
-
-    if ($operator == "=") {
-        $criteria = " OR $field $operator '$value'";
-    } else {
-        $innercriteria = "";
-        $terms = explode(' ', $value);
-        foreach ($terms as $term) {
-            if ($innercriteria) $innercriteria .= " AND ";
-            $innercriteria .= "$field $operator '%$term%'";
-        }
-        if ($innercriteria) $criteria = " OR ($innercriteria)";
-    }
-
-    return $criteria;
-}
 
 if ($tree) {
     $allwhere = "people.gedcom = '$tree' AND people.gedcom = trees.gedcom ";
@@ -301,13 +287,13 @@ if (!isset($message)) $message = '';
 echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message);
 ?>
 
-    <table class="lightback w-100" cellpadding="10" cellspacing="2" border="0">
+    <table class="lightback w-100" cellspacing="2" border="0">
         <tr class="databack">
             <td class="tngshadow">
                 <div class="normal">
 
                     <form action="admin_people.php" name="form1">
-                        <table>
+                        <table class="m-2">
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                                 <td>
@@ -336,14 +322,13 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                         <input type="hidden" name="findperson" value="1">
                         <input type="hidden" name="newsearch" value="1">
                     </form>
-                    <br>
 
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) $offsetplus = 0;
                     echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                     $pagenav = get_browseitems_nav($totrows, "admin_people.php?searchstring=$searchstring&amp;living=$living&amp;private=$private&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                    echo "<span class='adminnav'>$pagenav</span></p>";
                     ?>
                     <form action="admin_deleteselected.php" method="post" name="form2">
                         <?php if ($allow_delete) { ?>
@@ -439,7 +424,7 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                         </table>
                     <?php
                     echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                    echo "<span class='adminnav'>$pagenav</span></p>";
                     }
                     else
                         echo "</table>\n" . $admtext['norecords'];

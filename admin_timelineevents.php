@@ -81,16 +81,12 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                         <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
                         <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="align-top">
                     </form>
-                    <br>
-
                     <?php
                     $numrowsplus = $numrows + $offset;
-                    if (!$numrowsplus) {
-                        $offsetplus = 0;
-                    }
+                    if (!$numrowsplus) $offsetplus = 0;
                     echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                     $pagenav = get_browseitems_nav($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                    echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -136,7 +132,7 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo $admtext['norecords'];

@@ -92,8 +92,8 @@ function cacheBustTask() {
 function watchTask() {
     watch(['scss/**/*.scss', 'js/**/*.js'],
         series(
-            parallel(scssTask, jsTask),
-            cacheBustTask
+            parallel(scssTask, scssTemplatesTask),
+            // cacheBustTask
         )
     );
 }
@@ -104,7 +104,7 @@ exports.scssTask = scssTask;
 exports.scssTemplatesTask = scssTemplatesTask;
 
 exports.default = series(
-    parallel(scssTask, jsTask),
-    cacheBustTask,
+    parallel(scssTask, scssTemplatesTask),
+    // cacheBustTask,
     watchTask
 );

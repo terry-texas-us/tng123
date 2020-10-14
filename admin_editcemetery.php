@@ -89,7 +89,7 @@ if ($map['key'] && $isConnected) {
     $menu = doMenu($cemtabs, "edit", $innermenu);
     echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['modifycemetery'], "img/cemeteries_icon.gif", $menu, $message);
     ?>
-    <form action="admin_updatecemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onSubmit="return validateForm();">
+    <form action="admin_updatecemetery.php" method="post" name="form1" id="form1" enctype="multipart/form-data" onSubmit="return validateForm();">
         <table class="lightback">
             <tr class="databack">
                 <td class="tngshadow">

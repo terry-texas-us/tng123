@@ -227,15 +227,12 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                     <input type="hidden" name="findtest" value="1">
                     <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br>
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_dna_tests.php?searchstring=$searchstring&amp;test_type=$test_type&amp;test_group=$test_group&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselecteddna.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
@@ -361,7 +358,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

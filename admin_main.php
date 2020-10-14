@@ -12,6 +12,14 @@ $admin_login = 2;
 include "checklogin.php";
 include "version.php";
 
+/**
+ * @param $destination
+ * @param $label
+ * @param $number
+ * @param $message
+ * @param $icon
+ * @return string
+ */
 function adminMenuItem($destination, $label, $number, $message, $icon) {
     $menu = "";
     if (isMobile()) {
@@ -34,6 +42,11 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     return $menu;
 }
 
+/**
+ * @param $table
+ * @param string $where
+ * @return mixed|string
+ */
 function getTotal($table, $where = "") {
     global $assignedtree, $assignedbranch, $tngconfig;
 
@@ -154,7 +167,7 @@ tng_adminheader($admtext['administration'], "");
 
 <?php echo tng_adminlayout("mainback"); ?>
 
-<table class="mainbox" cellspacing="0" cellpadding="0">
+<table class="mainbox">
     <?php
     //no users?
     $messages = "";

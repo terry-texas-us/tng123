@@ -173,15 +173,12 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                     <input type="hidden" name="findeventtype" value="1">
                     <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br>
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_eventtypes.php?searchstring=$searchstring&amp;etype=$etype&amp;stype=$stype&amp;onimport=$onimport&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedeventtypes.php" method="post" name="form2">
                     <p>
@@ -263,7 +260,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

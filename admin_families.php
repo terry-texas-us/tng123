@@ -7,6 +7,9 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
+
+require_once "./core/html/addCriteria.php";
+
 if ($newsearch) {
     $exptime = 0;
     setcookie("tng_search_families_post[search]", $searchstring, $exptime);
@@ -69,28 +72,6 @@ $uresult = tng_query($uquery) or die ($admtext['cannotexecutequery'] . ": $uquer
 $urow = tng_fetch_assoc($uresult);
 $numusers = $urow['ucount'];
 tng_free_result($uresult);
-
-function addCriteria($field, $value, $operator) {
-    $criteria = "";
-
-    if ($operator == "=") {
-        $criteria = " OR $field $operator '$value'";
-    } else {
-        $innercriteria = "";
-        $terms = explode(' ', $value);
-        foreach ($terms as $term) {
-            if ($innercriteria) {
-                $innercriteria .= " AND ";
-            }
-            $innercriteria .= "$field $operator '%$term%'";
-        }
-        if ($innercriteria) {
-            $criteria = " OR ($innercriteria)";
-        }
-    }
-
-    return $criteria;
-}
 
 $allwhere = "$families_table.gedcom = $trees_table.gedcom";
 $allwhere2 = "";
@@ -233,16 +214,12 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                     <input type="hidden" name="findfamily" value="1">
                     <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br>
-
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_families.php?searchstring=$searchstring&amp;spousename=$spousename&amp;living=$living&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -328,10 +305,10 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                             echo "</tr>\n";
                         }
                         ?>
-                    </table><br>
+                    </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

@@ -80,13 +80,13 @@ $menu = doMenu($cemtabs, "addcemetery", $innermenu);
 echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcemetery'], "img/cemeteries_icon.gif", $menu, $message);
 ?>
 
-    <form action="admin_addcemetery.php" method="post" name="form1" id="form1" ENCTYPE="multipart/form-data" onsubmit="return validateForm();">
+    <form action="admin_addcemetery.php" method="post" name="form1" id="form1" enctype="multipart/form-data" onsubmit="return validateForm();">
         <table class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <table class="normal w-100">
-                    <tr>
-                        <td><?php echo $admtext['cemeteryname']; ?>:</td>
+            <tr class="databack">
+                <td class="tngshadow">
+                    <table class="normal w-100">
+                        <tr>
+                            <td><?php echo $admtext['cemeteryname']; ?>:</td>
                         <td width="80%">
                             <input type="text" name="cemname" id="cemname" size="40">
                         </td>

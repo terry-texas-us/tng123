@@ -201,9 +201,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 }
 
 $numrowsplus = $numrows + $offset;
-if (!$numrowsplus) {
-    $offsetplus = 0;
-}
+if (!$numrowsplus) $offsetplus = 0;
 ?>
 
 <table class="lightback">
@@ -213,7 +211,7 @@ if (!$numrowsplus) {
             <?php
             echo displayListLocation($offsetplus, $numrowsplus, $totrows);
             $pagenav = get_browseitems_nav($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 5);
-            echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+            echo "<span class='adminnav'>$pagenav</span></p>";
             ?>
             <table cellpadding="5" cellspacing="1" class="normal">
                 <tr>
@@ -249,7 +247,7 @@ if (!$numrowsplus) {
                     }
                     echo "</table>\n";
                     echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                    echo "<span class='adminnav'>$pagenav</span></p>";
                 } else {
                     echo "</table>\n" . $admtext['norecords'];
                 }

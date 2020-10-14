@@ -8,6 +8,9 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
+
+require_once "./core/html/addCriteria.php";
+
 $tng_search_cemeteries = $_SESSION['tng_search_cemeteries'] = 1;
 if ($newsearch) {
     $exptime = 0;
@@ -38,28 +41,6 @@ if ($offset) {
     $offsetplus = 1;
     $newoffset = "";
     $tngpage = 1;
-}
-
-function addCriteria($field, $value, $operator) {
-    $criteria = "";
-
-    if ($operator == "=") {
-        $criteria = " OR $field $operator '$value'";
-    } else {
-        $innercriteria = "";
-        $terms = explode(' ', $value);
-        foreach ($terms as $term) {
-            if ($innercriteria) {
-                $innercriteria .= " AND ";
-            }
-            $innercriteria .= "$field $operator '%$term%'";
-        }
-        if ($innercriteria) {
-            $criteria = " OR ($innercriteria)";
-        }
-    }
-
-    return $criteria;
 }
 
 $frontmod = "LIKE";
@@ -132,15 +113,13 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                     <input type="hidden" name="findcemetery" value="1">
                     <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br>
+
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_cemeteries.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -237,7 +216,7 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo $admtext['norecords'];

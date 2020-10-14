@@ -67,6 +67,12 @@ if ($assignedtree && !$tngconfig['places1tree']) {
     $wherestr = "";
 }
 
+/**
+ * @param $field
+ * @param $value
+ * @param $operator
+ * @return string
+ */
 function addCriteria($field, $value, $operator) {
 
     if ($operator == "=") {
@@ -76,6 +82,7 @@ function addCriteria($field, $value, $operator) {
     }
     return $criteria;
 }
+
 if ($tree) {
     $allwhere = "$places_table.gedcom = '$tree'";
 } else {
@@ -267,16 +274,12 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                     <input type="hidden" name="findplace" value="1">
                     <input type="hidden" name="newsearch" value="1">
                 </form>
-                <br>
-
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_places.php?searchstring=" . stripslashes($searchstring) . "&amp;exactmatch=$exactmatch&amp;noocords=$nocoords&amp;temples=$temples&amp;noevents=$noevents&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -354,7 +357,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                     </table>
                 <?php
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
+                echo "<span class='adminnav'>$pagenav</span></p>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

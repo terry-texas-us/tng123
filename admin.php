@@ -163,7 +163,7 @@ tng_adminheader($admtext['administration'], "");
 
 <?php echo tng_adminlayout(); ?>
 
-    <table class="mainbox border-0" cellpadding="0">
+    <table class="mainbox">
         <?php
 
         $messages = "";

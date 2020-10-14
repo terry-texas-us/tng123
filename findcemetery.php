@@ -6,6 +6,8 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 
+require_once "./core/html/addCriteria.php";
+
 $tng_search_cemeteries = $_SESSION['tng_search_cemeteries'];
 $tng_search_cemeteries_post = $_SESSION['tng_search_cemeteries_post'];
 if ($findcemetery) {
@@ -17,28 +19,6 @@ if ($findcemetery) {
             ${$key} = $value;
         }
     }
-}
-
-function addCriteria($field, $value, $operator) {
-    $criteria = "";
-
-    if ($operator == "=") {
-        $criteria = " OR $field $operator '$value'";
-    } else {
-        $innercriteria = "";
-        $terms = explode(' ', $value);
-        foreach ($terms as $term) {
-            if ($innercriteria) {
-                $innercriteria .= " AND ";
-            }
-            $innercriteria .= "$field $operator '%$term%'";
-        }
-        if ($innercriteria) {
-            $criteria = " OR ($innercriteria)";
-        }
-    }
-
-    return $criteria;
 }
 
 if ($exactmatch == "yes") {

@@ -110,12 +110,12 @@ $menu = doMenu($datatabs, "import", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
 
-<form action="admin_gedimport.php" target="results" name="form1" method="post" ENCTYPE="multipart/form-data" onsubmit="return checkFile(this);">
-    <table class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <div class="normal">
-                    <em><?php echo $admtext['addreplacedata']; ?></em><br><br>
+    <form action="admin_gedimport.php" target="results" name="form1" method="post" enctype="multipart/form-data" onsubmit="return checkFile(this);">
+        <table class="lightback">
+            <tr class="databack">
+                <td class="tngshadow">
+                    <div class="normal">
+                        <em><?php echo $admtext['addreplacedata']; ?></em><br><br>
 
                     <h3 class="subhead"><?php echo $admtext['importgedcom']; ?>:</h3>
                     <table cellpadding="1" class="normal">
