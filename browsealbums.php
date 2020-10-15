@@ -83,9 +83,8 @@ $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $tabletype = "columntoggle";
-    }
+    if ($tabletype == "toggle") $tabletype = "columntoggle";
+
     $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
     $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
@@ -125,9 +124,8 @@ while ($row = tng_fetch_assoc($result)) {
     $query .= "LEFT JOIN $sources_table sources ON album2entities.entityID = sources.sourceID AND album2entities.gedcom = sources.gedcom ";
     $query .= "LEFT JOIN $repositories_table repositories ON (album2entities.entityID = repositories.repoID AND album2entities.gedcom = repositories.gedcom) ";
     $query .= "WHERE albumID = '{$row['albumID']}'";
-    if ($tree) {
-        $query .= " AND album2entities.gedcom = '$tree'";
-    }
+    if ($tree) $query .= " AND album2entities.gedcom = '$tree'";
+
     $query .= "ORDER BY lastname, lnprefix, firstname, personID ";
     $query .= "LIMIT $maxplus";
     $presult = tng_query($query);
@@ -137,12 +135,10 @@ while ($row = tng_fetch_assoc($result)) {
     $foundprivate = 0;
     $count = 0;
     while ($prow = tng_fetch_assoc($presult)) {
-        if ($prow['fbranch'] != NULL) {
-            $prow['branch'] = $prow['fbranch'];
-        }
-        if ($prow['fliving'] != NULL) {
-            $prow['living'] = $prow['fliving'];
-        }
+        if ($prow['fbranch'] != NULL) $prow['branch'] = $prow['fbranch'];
+
+        if ($prow['fliving'] != NULL) $prow['living'] = $prow['fliving'];
+
         if ($prow['fprivate'] != NULL) {
             $prow['private'] = $prow['fprivate'];
         }
@@ -153,9 +149,8 @@ while ($row = tng_fetch_assoc($result)) {
             $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
             $presult2 = tng_query($query);
             $prow2 = tng_fetch_assoc($presult2);
-            if ($prow2['ccount']) {
-                $prow['living'] = 1;
-            }
+            if ($prow2['ccount']) $prow['living'] = 1;
+
             tng_free_result($presult2);
         }
         if ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
@@ -164,9 +159,8 @@ while ($row = tng_fetch_assoc($result)) {
             $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = families.familyID AND citations.gedcom = families.gedcom AND living = '1'";
             $presult2 = tng_query($query);
             $prow2 = tng_fetch_assoc($presult2);
-            if ($prow2['ccount']) {
-                $prow['living'] = 1;
-            }
+            if ($prow2['ccount']) $prow['living'] = 1;
+
             tng_free_result($presult2);
         }
 
@@ -174,12 +168,10 @@ while ($row = tng_fetch_assoc($result)) {
         $prow['allow_living'] = $rights['living'];
         $prow['allow_private'] = $rights['private'];
 
-        if (!$rights['living']) {
-            $foundliving = 1;
-        }
-        if (!$rights['private']) {
-            $foundprivate = 1;
-        }
+        if (!$rights['living']) $foundliving = 1;
+
+        if (!$rights['private']) $foundprivate = 1;
+
 
         if ($prow['personID2'] != NULL) {
             $medialinktext .= "<li><a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
@@ -198,9 +190,8 @@ while ($row = tng_fetch_assoc($result)) {
         }
         $count++;
     }
-    if ($medialinktext) {
-        $medialinktext = "<ul>$medialinktext</ul>\n";
-    }
+    if ($medialinktext) $medialinktext = "<ul>$medialinktext</ul>\n";
+
     tng_free_result($presult);
 
     $showAlbumInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);

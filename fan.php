@@ -19,12 +19,10 @@ if (!$generations) {
         $generations = 3;
     }
 }
-if ($generations > $fan_gen_max) {
-    $generations = $fan_gen_max;
-}
-if ($generations < $fan_gen_min) {
-    $generations = $fan_gen_min;
-}
+if ($generations > $fan_gen_max) $generations = $fan_gen_max;
+
+if ($generations < $fan_gen_min) $generations = $fan_gen_min;
+
 
 $result = getPersonFullPlusDates($tree, $personID);
 if (!tng_num_rows($result)) {
@@ -158,9 +156,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = $fan_gen_min; $i <= $fan_gen_max; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";

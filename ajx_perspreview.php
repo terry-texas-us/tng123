@@ -83,9 +83,8 @@ if ($parents && tng_num_rows($parents)) {
             } else {
                 $fatherlink = "";
             }
-            if ($frights['both']) {
-                $fatherlink .= $birthinfo;
-            }
+            if ($frights['both']) $fatherlink .= $birthinfo;
+
             $persontext .= showEvent(["text" => $text['father'], "fact" => $fatherlink]);
             if ($rights['both'] && $parent['frel']) {
                 $rel = $parent['frel'];
@@ -108,9 +107,8 @@ if ($parents && tng_num_rows($parents)) {
             } else {
                 $motherlink = "";
             }
-            if ($mrights['both']) {
-                $motherlink .= $birthinfo;
-            }
+            if ($mrights['both']) $motherlink .= $birthinfo;
+
             $persontext .= showEvent(["text" => $text['mother'], "fact" => $motherlink]);
             if ($rights['both'] && $parent['mrel']) {
                 $rel = $parent['mrel'];
@@ -163,9 +161,8 @@ $marrcount = 1;
 while ($marriagerow = tng_fetch_assoc($marriages)) {
     $stdexf = getStdExtras($marriagerow['familyID']);
     if ($marriagerow['marrtype']) {
-        if (!is_array($stdexf['MARR'])) {
-            $stdexf['MARR'] = [];
-        }
+        if (!is_array($stdexf['MARR'])) $stdexf['MARR'] = [];
+
         array_unshift($stdexf['MARR'], $text['type'] . ": " . $marriagerow['marrtype']);
     }
 
@@ -186,9 +183,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         } else {
             $spouselink = "";
         }
-        if ($srights['both']) {
-            $spouselink .= $birthinfo;
-        }
+        if ($srights['both']) $spouselink .= $birthinfo;
+
     } else {
         $spouselink = "";
     }
@@ -236,9 +232,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
                 $persontext .= "<tr>";
                 $persontext .= "<td class='align-top'>$ifkids</td>";
                 $persontext .= "<td class=\"unhighlightedchild\" id=\"child{$child['personID']}\">$kidcount. $childname";
-                if ($crights['both']) {
-                    $persontext .= $birthinfo;
-                }
+                if ($crights['both']) $persontext .= $birthinfo;
+
                 $persontext .= "</td>";
                 $persontext .= "</tr>\n";
                 $kidcount++;

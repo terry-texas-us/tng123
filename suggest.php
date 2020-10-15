@@ -188,9 +188,8 @@ if ($message) {
     echo "<p class='normal'><strong style='color: #f00;'>$newmessage</strong></p>\n";
 }
 
-if ($enttype) {
-    echo "<h3 class='subhead'>$headline</h3>\n";
-}
+if ($enttype) echo "<h3 class='subhead'>$headline</h3>\n";
+
 @include "TNG_captcha.php";
 
 $formstr = getFORM("tngsendmail", "post\" onsubmit=\"return validateForm();", "suggest", "suggest");

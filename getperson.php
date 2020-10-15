@@ -46,9 +46,8 @@ $rightbranch = $righttree ? checkbranch($row['branch']) : false;
 $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
 $row['allow_living'] = $rights['living'];
 $row['allow_private'] = $rights['private'];
-if (!$rightbranch) {
-    $tentative_edit = "";
-}
+if (!$rightbranch) $tentative_edit = "";
+
 $org_rightbranch = $rightbranch;
 $namestr = getName($row);
 $nameformap = $namestr;
@@ -71,14 +70,12 @@ if ($row['branch']) {
         $brresult = getBranchesSimple($tree, $branch);
         $brrow = tng_fetch_assoc($brresult);
         $branchstr .= $brrow['description'] ? $brrow['description'] : $branch;
-        if ($count < count($branches)) {
-            $branchstr .= ", ";
-        }
+        if ($count < count($branches)) $branchstr .= ", ";
+
         tng_free_result($brresult);
     }
-    if ($branchstr) {
-        $treestr = $treestr . " | $branchstr";
-    }
+    if ($branchstr) $treestr = $treestr . " | $branchstr";
+
 }
 tng_free_result($result);
 
@@ -126,15 +123,13 @@ if ($rights['both']) {
     if ($row['birthdate']) {
         $headstr .= " {$text['birthabbr']} " . displayDate($row['birthdate']);
     }
-    if ($row['birthplace']) {
-        $headstr .= " " . $row['birthplace'];
-    }
+    if ($row['birthplace']) $headstr .= " " . $row['birthplace'];
+
     if ($row['deathdate']) {
         $headstr .= " {$text['deathabbr']} " . displayDate($row['deathdate']);
     }
-    if ($row['deathplace']) {
-        $headstr .= " " . $row['deathplace'];
-    }
+    if ($row['deathplace']) $headstr .= " " . $row['deathplace'];
+
 }
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
@@ -260,9 +255,8 @@ $persontext .= showEvent(["text" => $text['personid'], "date" => $personID, "pla
 if ($row['changedate'] || ($allow_edit && $rightbranch)) {
     $row['changedate'] = displayDate($row['changedate'], false);
     if ($allow_edit && $rightbranch) {
-        if ($row['changedate']) {
-            $row['changedate'] .= " | ";
-        }
+        if ($row['changedate']) $row['changedate'] .= " | ";
+
         $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
     }
     $persontext .= showEvent(["text" => $text['lastmodified'], "fact" => $row['changedate']]);
@@ -304,9 +298,8 @@ if ($parents && tng_num_rows($parents)) {
                 $fatherlink .= $birthinfo;
                 if ($fatherlink) {
                     $age = age($fathrow);
-                    if ($age) {
-                        $fatherlink .= " &nbsp;({$text['age']} $age)";
-                    }
+                    if ($age) $fatherlink .= " &nbsp;({$text['age']} $age)";
+
                 }
             }
             $label = $fathrow['sex'] == "F" ? $text['mother'] : $text['father'];
@@ -337,9 +330,8 @@ if ($parents && tng_num_rows($parents)) {
                 $motherlink .= $birthinfo;
                 if ($motherlink) {
                     $age = age($mothrow);
-                    if ($age) {
-                        $motherlink .= " &nbsp;({$text['age']} $age)";
-                    }
+                    if ($age) $motherlink .= " &nbsp;({$text['age']} $age)";
+
                 }
             }
             $label = $mothrow['sex'] == "M" ? $text['father'] : $text['mother'];
@@ -374,9 +366,8 @@ if ($parents && tng_num_rows($parents)) {
                     if (!isset($stdexf['MARR'])) $stdexf['MARR'] = '';
                     if (!isset($stdexf['DIV'])) $stdexf['DIV'] = '';
                     if (!empty($parent['marrtype'])) {
-                        if (!is_array($stdexf['MARR'])) {
-                            $stdexf['MARR'] = [];
-                        }
+                        if (!is_array($stdexf['MARR'])) $stdexf['MARR'] = [];
+
                         array_unshift($stdexf['MARR'], $text['type'] . ": " . $parent['marrtype']);
                     }
                 }
@@ -449,9 +440,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     if (!isset($stdexf['SLGS'])) $stdexf['SLGS'] = '';
 
     if ($marriagerow['marrtype']) {
-        if (!is_array($stdexf['MARR'])) {
-            $stdexf['MARR'] = [];
-        }
+        if (!is_array($stdexf['MARR'])) $stdexf['MARR'] = [];
+
         array_unshift($stdexf['MARR'], $text['type'] . ": " . $marriagerow['marrtype']);
     }
 
@@ -473,9 +463,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             $spouselink .= $birthinfo;
             if ($spouselink) {
                 $age = age($spouserow);
-                if ($age) {
-                    $spouselink .= " &nbsp;({$text['age']} $age)";
-                }
+                if ($age) $spouselink .= " &nbsp;({$text['age']} $age)";
+
             }
         }
         tng_free_result($spouseresult);
@@ -559,9 +548,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
                 if ($crights['both']) {
                     $persontext .= $birthinfo;
                     $age = age($child);
-                    if ($age) {
-                        $persontext .= " &nbsp;({$text['age']} $age)";
-                    }
+                    if ($age) $persontext .= " &nbsp;({$text['age']} $age)";
+
 
                     $frel = strtolower($child['frel']);
                     $frelstr = isset($admtext[$frel]) ? $admtext[$frel] : $child['frel'];
@@ -569,9 +557,8 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
                     $mrel = strtolower($child['mrel']);
                     $mrelstr = isset($admtext[$mrel]) ? $admtext[$mrel] : $child['mrel'];
 
-                    if ($child['frel']) {
-                        $persontext .= " &nbsp;[$frelstr]";
-                    }
+                    if ($child['frel']) $persontext .= " &nbsp;[$frelstr]";
+
                     if ($child['mrel'] && $child['mrel'] != $child['frel']) {
                         $persontext .= " &nbsp;[$mrelstr]";
                     }
@@ -642,9 +629,8 @@ if ($map['key'] && $locations2map) {
         } else {
             $nonzeroplaces++;
         }
-        if (!$pinplacelevel) {
-            $pinplacelevel = $pinplacelevel0;
-        }
+        if (!$pinplacelevel) $pinplacelevel = $pinplacelevel0;
+
         $lat = $val['lat'];
         $long = $val['long'];
         $zoom = $val['zoom'] ? $val['zoom'] : 10;
@@ -684,9 +670,8 @@ if ($map['key'] && $locations2map) {
                 $persontext .= "&nbsp;";
             }
             $persontext .= "</td><td class='databack'><span class='smaller'><strong>$event</strong>";
-            if ($description) {
-                $persontext .= " - $description";
-            }
+            if ($description) $persontext .= " - $description";
+
             $persontext .= " - $dateforeventtable - $place</span></td>\n";
             $persontext .= "<td class='databack' valign=\"middle\"><a href=\"googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"img/earth.gif\" alt=\"{$text['googleearthlink']}\" width=\"15\" height=\"15\"></a></td></tr>\n";
             if ($val['notes']) {
@@ -756,15 +741,13 @@ if ($citedispctr) {
     $count = count($citestring);
     foreach ($citestring as $cite) {
         $persontext .= "<li class='normal'><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
-        if ($citectr < $count) {
-            $persontext .= "<br>";
-        }
+        if ($citectr < $count) $persontext .= "<br>";
+
         $persontext .= "</li>\n";
     }
     $persontext .= "</ol>";
-    if (!empty($tngconfig['scrollcite'])) {
-        $persontext .= "</div>";
-    }
+    if (!empty($tngconfig['scrollcite'])) $persontext .= "</div>";
+
     $persontext .= "</td>\n</tr>\n</table>\n";
     $persontext .= "<br>\n";
     $persontext .= endSection("citations");
@@ -839,9 +822,8 @@ echo tng_menu("I", "person", $personID, $innermenu);
                 if (!empty($media)) {
                     echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
                 }
-                if ($notes) {
-                    echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
-                }
+                if ($notes) echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
+
                 if ($citedispctr) {
                     echo "innerToggle(part,\"citations\",\"tng_clink\");\n";
                 }

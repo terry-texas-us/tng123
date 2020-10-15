@@ -65,9 +65,8 @@ function getTotal($table, $where = "") {
 
         $query = "SELECT COUNT(*) AS num FROM $table";
 
-        if ($where) {
-            $query .= " WHERE $where";
-        }
+        if ($where) $query .= " WHERE $where";
+
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         $total = $row['num'];

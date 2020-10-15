@@ -45,9 +45,8 @@ SimileAjax.JSON = new Object();
                 if (f) {
                     v = f(v);
                     if (typeof v == 'string') {
-                        if (b) {
-                            a[a.length] = ',';
-                        }
+                        if (b) a[a.length] = ',';
+
                         a[a.length] = v;
                         b = true;
                     }
@@ -67,9 +66,8 @@ SimileAjax.JSON = new Object();
         },
         object: function (x) {
             if (x) {
-                if (x instanceof Array) {
-                    return s.array(x);
-                }
+                if (x instanceof Array) return s.array(x);
+
                 var a = ['{'], b, f, i, v;
                 for (i in x) {
                     v = x[i];
@@ -77,9 +75,8 @@ SimileAjax.JSON = new Object();
                     if (f) {
                         v = f(v);
                         if (typeof v == 'string') {
-                            if (b) {
-                                a[a.length] = ',';
-                            }
+                            if (b) a[a.length] = ',';
+
                             a.push(s.string(i), ':', v);
                             b = true;
                         }
@@ -94,9 +91,7 @@ SimileAjax.JSON = new Object();
             if (/["\\\x00-\x1f]/.test(x)) {
                 x = x.replace(/([\x00-\x1f\\"])/g, function (a, b) {
                     var c = m[b];
-                    if (c) {
-                        return c;
-                    }
+                    if (c) return c;
                     c = b.charCodeAt();
                     return '\\u00' +
                         Math.floor(c / 16).toString(16) +

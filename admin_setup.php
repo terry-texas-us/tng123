@@ -19,9 +19,8 @@ if (isset($sitever)) {
 }
 
 include_once "siteversion.php";
-if (!$sitever) {
-    $sitever = getSiteVersion();
-}
+if (!$sitever) $sitever = getSiteVersion();
+
 
 session_start();
 $session_language = $_SESSION['session_language'];
@@ -50,9 +49,8 @@ $error_reporting = ((int)ini_get('error_reporting')) & E_NOTICE;
 
 $helplang = findhelp("setup_help.php");
 
-if (!$sub) {
-    $sub = "configuration";
-}
+if (!$sub) $sub = "configuration";
+
 tng_adminheader($admtext['setup'], $flags);
 
 echo "</head>\n";

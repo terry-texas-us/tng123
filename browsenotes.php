@@ -35,12 +35,10 @@ if ($offset) {
 $query = "SELECT xnotes.ID AS ID, xnotes.note AS note, notelinks.persfamID AS personID, xnotes.gedcom AS gedcom ";
 $query .= "FROM ($xnotes_table xnotes, $notelinks_table notelinks) ";
 $query .= "WHERE xnotes.ID = notelinks.xnoteID ";
-if ($tree) {
-    $query .= "AND xnotes.gedcom = '$tree' ";
-}
-if (!$allow_private) {
-    $query .= "AND notelinks.secret != '1' ";
-}
+if ($tree) $query .= "AND xnotes.gedcom = '$tree' ";
+
+if (!$allow_private) $query .= "AND notelinks.secret != '1' ";
+
 if ($notesearch) {
     $notesearch2 = addslashes($notesearch);
     $notesearch = cleanIt(stripslashes($notesearch));
@@ -94,13 +92,11 @@ echo doNoteSearch(1, $pagenav);
 echo "<br>\n";
 
 if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $tabletype = "columntoggle";
-    }
+    if ($tabletype == "toggle") $tabletype = "columntoggle";
+
     $tableStartTag = "<table class = 'tablesaw whiteback normal' data-tablesaw-mode = '$tabletype'";
-    if ($enableminimap) {
-        $tableStartTag .= " data-tablesaw-minimap";
-    }
+    if ($enableminimap) $tableStartTag .= " data-tablesaw-minimap";
+
     if ($enablemodeswitch) {
         $tableStartTag .= " data-tablesaw-mode-switch";
     }
@@ -126,9 +122,8 @@ while ($nrow = tng_fetch_assoc($result)) {
     $noneprivate = 1;
     $query2 = $query;
 
-    if ($nrow['secret']) {
-        $nrow['private'] = 1;
-    }
+    if ($nrow['secret']) $nrow['private'] = 1;
+
     if (!$notelinktext) {
         $query = "SELECT * FROM $people_table WHERE personID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
         $result2 = tng_query($query);
@@ -152,12 +147,10 @@ while ($nrow = tng_fetch_assoc($result)) {
             $row2['allow_living'] = $nrights['living'];
             $row2['allow_private'] = $nrights['private'];
 
-            if (!$row2['allow_private']) {
-                $noneprivate = 0;
-            }
-            if (!$row2['allow_living']) {
-                $noneliving = 0;
-            }
+            if (!$row2['allow_private']) $noneprivate = 0;
+
+            if (!$row2['allow_living']) $noneliving = 0;
+
 
             $notelinktext .= "<a href=\"getperson.php?personID={$row2['personID']}&tree={$row2['gedcom']}\">" . getNameRev($row2) . " ({$row2['personID']})</a>\n<br>\n";
             tng_free_result($result2);
@@ -173,12 +166,10 @@ while ($nrow = tng_fetch_assoc($result)) {
             $row2['allow_living'] = $nrights['living'];
             $row2['allow_private'] = $nrights['private'];
 
-            if (!$row2['allow_private']) {
-                $noneprivate = 0;
-            }
-            if (!$row2['allow_living']) {
-                $noneliving = 0;
-            }
+            if (!$row2['allow_private']) $noneprivate = 0;
+
+            if (!$row2['allow_living']) $noneliving = 0;
+
             $notelinktext .= "<a href=\"familygroup.php?familyID={$row2['familyID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['family']} {$row2['familyID']}</a>\n<br>\n";
             tng_free_result($result2);
         }

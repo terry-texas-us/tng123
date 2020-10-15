@@ -103,9 +103,8 @@ echo $formstr;
         <h3 class="subhead">
             <?php
             echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']}";
-            if (isset($_GET['offset'])) {
-                echo " ({$text['numoccurrences']}):";
-            }
+            if (isset($_GET['offset'])) echo " ({$text['numoccurrences']}):";
+
             ?>
         </h3>
         <p class="smaller"><?php echo $text['showmatchingplaces']; ?> <a href="<?php echo "heatmap.php?" . $treestr . $heatargs; ?>" class="snlink"><?php echo $text['heatmap']; ?></a></p>

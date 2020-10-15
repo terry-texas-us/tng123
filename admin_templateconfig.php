@@ -177,9 +177,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     <?php
                     foreach ($entries as $entry) {
                         echo "<option value=\"$entry\"";
-                        if ($templatenum == $entry) {
-                            echo " selected";
-                        }
+                        if ($templatenum == $entry) echo " selected";
+
                         $tprefix = is_numeric($entry) ? $admtext['template'] . " " : "";
                         echo ">$tprefix$entry</option>\n";
                     }
@@ -247,22 +246,19 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     $sections[$n] .= "<select name=\"form_$key\" id=\"form_$key\">\n";
                     for ($j = 1; $j <= $treenum; $j++) {
                         $sections[$n] .= "	<option value=\"$trees[$j]\"";
-                        if ($value == $trees[$j]) {
-                            $sections[$n] .= " selected";
-                        }
+                        if ($value == $trees[$j]) $sections[$n] .= " selected";
+
                         $sections[$n] .= ">$treename[$j]</option>\n";
                     }
                     $sections[$n] .= "</select>\n";
                 } elseif ($label == "titlechoice") {
                     $sections[$n] .= "<input type='radio' name=\"form_$key\" id=\"form_{$key}_image\" value=\"image\"";
-                    if ($value == "image") {
-                        $sections[$n] .= " checked";
-                    }
+                    if ($value == "image") $sections[$n] .= " checked";
+
                     $sections[$n] .= "> <label for=\"form_{$key}_image\">{$admtext['ttitleimage']}</label> &nbsp;";
                     $sections[$n] .= "<input type='radio' name=\"form_$key\" id=\"form_{$key}_text\" value=\"text\"";
-                    if ($value == "text") {
-                        $sections[$n] .= " checked";
-                    }
+                    if ($value == "text") $sections[$n] .= " checked";
+
                     $sections[$n] .= "> <label for=\"form_{$key}_text\">{$admtext['ttitletext']}</label> &nbsp;";
                 } else {
                     $sections[$n] .= "<input type='text' class='longfield' name=\"form_$key\" id=\"form_$key\" value='$value'>\n";
@@ -283,9 +279,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     }
                 }
                 if ($languageList && !isset($parts[2]) && in_array($label, $needtrans)) {
-                    if ($type == "textarea") {
-                        $sections[$n] .= "<br>";
-                    }
+                    if ($type == "textarea") $sections[$n] .= "<br>";
+
                     $sections[$n] .= "{$admtext['createcopy']}: \n<select id=\"lang_$key\">\n$languageList\n</select> <input type='button' value=\"{$admtext['go']}\" onclick=\"return insertLangRow('$key','$type');\" >\n";
                 }
                 $sections[$n] .= "</td>\n</tr>\n";

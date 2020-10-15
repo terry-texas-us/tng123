@@ -84,14 +84,12 @@ if ($rights['both']) {
         setMinEvent(["date" => $famrow['sealdate'], "place" => $famrow['sealplace'], "event" => "SLGS"], $famrow['sealdatetr']);
     }
 
-    if ($fullevents) {
-        doCustomEvents($familyID, "F");
-    }
+    if ($fullevents) doCustomEvents($familyID, "F");
+
 }
 $eventstr = processEvents($events);
-if ($eventstr) {
-    $family .= "," . $eventstr;
-}
+if ($eventstr) $family .= "," . $eventstr;
+
 
 //for each child
 $query = "SELECT $people_table.personID AS personID, branch, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, famc, sex, birthdate, birthplace,
@@ -105,9 +103,8 @@ if ($children && tng_num_rows($children)) {
     $childcount = 0;
     $family .= ",\"children\":[";
     while ($childrow = tng_fetch_assoc($children)) {
-        if ($childcount) {
-            $family .= ",";
-        }
+        if ($childcount) $family .= ",";
+
         $childcount++;
 
         $crights = determineLivingPrivateRights($childrow, $righttree);

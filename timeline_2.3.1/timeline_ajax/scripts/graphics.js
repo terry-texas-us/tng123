@@ -135,12 +135,10 @@ SimileAjax.Graphics.bubbleConfig = {
  */
 SimileAjax.Graphics.createBubbleForContentAndPoint = function (
     div, pageX, pageY, contentWidth, orientation, maxHeight) {
-    if (typeof contentWidth != "number") {
-        contentWidth = 300;
-    }
-    if (typeof maxHeight != "number") {
-        maxHeight = 0;
-    }
+    if (typeof contentWidth != "number") contentWidth = 300;
+
+    if (typeof maxHeight != "number") maxHeight = 0;
+
 
     div.style.position = "absolute";
     div.style.left = "-5000px";

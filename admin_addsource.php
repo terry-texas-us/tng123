@@ -35,9 +35,8 @@ if ($session_charset != "UTF-8") {
 
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 
-if (!$repoID) {
-    $repoID = 0;
-}
+if (!$repoID) $repoID = 0;
+
 $template = "sssssssssss";
 $query = "INSERT INTO $sources_table (sourceID,shorttitle,title,author,callnum,publisher,repoID,actualtext,changedate,gedcom,changedby,type,other,comments) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', '', '')";
 $params = [&$template, &$sourceID, &$shorttitle, &$title, &$author, &$callnum, &$publisher, &$repoID, &$actualtext, &$newdate, &$tree1, &$currentuser];

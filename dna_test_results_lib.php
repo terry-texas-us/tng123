@@ -21,18 +21,15 @@ $pquery = "SELECT $dna_tests_table.testID, $dna_tests_table.personID AS tpersonI
 $priv_results = tng_query($pquery);
 $dnarow = tng_fetch_assoc($priv_results);    // added for Private Test check
 $num_private = tng_num_rows($priv_results);    // added for Private Test check
-if ($debug) {
-    echo "Number of Private DNA Tests - $num_private<br>";
-}
+if ($debug) echo "Number of Private DNA Tests - $num_private<br>";
+
 
 $totnum_tests = $num_tests;
 
-if (!$allow_private) {
-    $totnum_tests = ($num_tests - $num_private);
-}
-if ($debug) {
-    echo "Number of total DNA Tests - $totnum_tests<br>";
-}
+if (!$allow_private) $totnum_tests = ($num_tests - $num_private);
+
+if ($debug) echo "Number of total DNA Tests - $totnum_tests<br>";
+
 if ($totnum_tests) {
     $toggleicon = "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon2\" style=\"cursor:pointer; float:right; padding-top:4px;\" title=\"{$text['expand']}\" alt=\"\" onclick=\"togglednaicon(); \">";
     $displaystyle = "display:none";
@@ -77,9 +74,8 @@ if ($totnum_tests) {
     while ($dna_test = tng_fetch_assoc($dna_results)) {
         if ($dna_test['private_test'] && ($allow_private) || (!$dna_test['private_test'])) {
             $dna_pers_result = getPersonSimple($dna_test['tgedcom'], $dna_test['tpersonID']);
-            if ($dna_pers_result) {
-                $dprow = tng_fetch_assoc($dna_pers_result);
-            }
+            if ($dna_pers_result) $dprow = tng_fetch_assoc($dna_pers_result);
+
             $dna_righttree = checktree($dna_test['tgedcom']);
             $dna_rightbranch = $dna_righttree ? checkbranch($dprow['branch']) : false;
             $dprights = determineLivingPrivateRights($dprow, $dna_righttree, $dna_rightbranch);
@@ -200,9 +196,8 @@ if ($totnum_tests) {
             }
             if ($dna_test['urls']) {// Get Relevant Links
                 $urls = showLinks($dna_test['urls'], true);
-                if ($urls) {
-                    $urls = "<ul>$urls</ul>";
-                }
+                if ($urls) $urls = "<ul>$urls</ul>";
+
             } else {
                 $urls = "";
             }
@@ -238,12 +233,10 @@ if ($totnum_tests) {
                 if ($test_type == "mtDNA") {
                     if ($ref_seq) {
                         $persontext .= "<br><strong>" . $admtext['ref_seq'] . ":</strong><br>";
-                        if ($ref_seq == "rsrs") {
-                            $persontext .= "{$admtext['rsrs']}";
-                        }
-                        if ($ref_seq == "rcrs") {
-                            $persontext .= "{$admtext['rcrs']}";
-                        }
+                        if ($ref_seq == "rsrs") $persontext .= "{$admtext['rsrs']}";
+
+                        if ($ref_seq == "rcrs") $persontext .= "{$admtext['rcrs']}";
+
                         $persontext .= "<br>";
                     }
                     if ($hvr1_results || $hvr2_results) {

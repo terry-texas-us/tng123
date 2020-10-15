@@ -24,9 +24,8 @@ if ($link) {
 require "adminlog.php";
 
 $fp = @fopen("config/mapconfig.php", "w", 1);
-if (!$fp) {
-    die ($admtext['cannotopen'] . " mapconfig.php");
-}
+if (!$fp) die ($admtext['cannotopen'] . " mapconfig.php");
+
 
 flock($fp, LOCK_EX);
 

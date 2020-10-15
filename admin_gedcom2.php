@@ -37,15 +37,13 @@ $xnotes = [];
 $citations = [];
 $placelist = [];
 $branchmedia = [];
-if (empty($exportmedia)) {
-    $exportmedia = 0;
-}
+if (empty($exportmedia)) $exportmedia = 0;
+
 
 tng_adminheader($admtext['gedexport'], $flags);
 
-if (empty($tree)) {
-    $tree = "";
-}
+if (empty($tree)) $tree = "";
+
 $righttree = checktree($tree);
 
 foreach ($mediatypes as $mediatype) {
@@ -110,9 +108,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if (is_array($citelist)) {
                 foreach ($citelist as $cite) {
                     if ($cite['sourceID']) {
-                        if ($branch) {
-                            array_push($allsources, $cite['sourceID']);
-                        }
+                        if ($branch) array_push($allsources, $cite['sourceID']);
+
                         $citestr .= "$level SOUR @" . trim($cite['sourceID']) . "@$lineending";
                         if ($cite['citedate'] || $cite['citetext']) {
                             $levelplus2 = $level + 2;
@@ -148,9 +145,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             global $tree, $address_table, $lineending;
 
             $fact = "";
-            if ($row['age']) {
-                $fact .= "$level AGE {$row['age']}$lineending";
-            }
+            if ($row['age']) $fact .= "$level AGE {$row['age']}$lineending";
+
             if ($row['agency']) {
                 $fact .= "$level AGNC {$row['agency']}$lineending";
             }
@@ -189,9 +185,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 if ($addr['email']) {
                     $fact .= "$level EMAIL {$addr['email']}$lineending";
                 }
-                if ($addr['www']) {
-                    $fact .= "$level WWW {$addr['www']}$lineending";
-                }
+                if ($addr['www']) $fact .= "$level WWW {$addr['www']}$lineending";
+
             }
             return $fact;
         }
@@ -249,9 +244,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             while ($notelink = tng_fetch_assoc($notelinks)) {
                 $eventid = $notelink['eventID'] ? $notelink['eventID'] : "-x--general--x-";
                 $newnote = $notelink['noteID'] ? "@{$notelink['noteID']}@" : $notelink['note'];
-                if (!is_array($notearray[$eventid])) {
-                    $notearray[$eventid] = [];
-                }
+                if (!is_array($notearray[$eventid])) $notearray[$eventid] = [];
+
                 $innerarray = [];
                 $innerarray['text'] = $newnote;
                 $innerarray['id'] = "N" . $notelink['ID'];
@@ -326,9 +320,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             foreach ($notes as $note) {
                 $noteinfo .= getNoteLine($level, "CONT", $note, 0);
             }
-            if ($private) {
-                $noteinfo .= getNoteLine($level, "_PRIVATE", "Y", 0);
-            }
+            if ($private) $noteinfo .= getNoteLine($level, "_PRIVATE", "Y", 0);
+
 
             $savestate['ncount']++;
             if ($savestate['ncount'] % 10 == 0) {
@@ -454,9 +447,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                         $prow['title'] = $prow['altdescription'] ? $prow['altdescription'] : $prow['description'];
 
                         $prow['notes'] = $prow['altnotes'] ? $prow['altnotes'] : $prow['notes'];
-                        if (!is_array($allmedia[$eventID])) {
-                            $allmedia[$eventID] = [];
-                        }
+                        if (!is_array($allmedia[$eventID])) $allmedia[$eventID] = [];
+
                         array_push($allmedia[$eventID], $prow);
                     }
                 }
@@ -508,9 +500,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                                     if (substr($exportas, -1) == "S") {
                                         $exportas = substr($exportas, 0, -1);
                                     }
-                                    if ($exportas == "HISTORIE") {
-                                        $exportas = "HISTORY";
-                                    }
+                                    if ($exportas == "HISTORIE") $exportas = "HISTORY";
+
                                 }
                                 $linktxt .= "$newlevel _TYPE $exportas$lineending";
                                 $linktxt .= writeNote($newlevel, "NOTE", $media['notes']);
@@ -555,9 +546,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             if (strlen($tok) == 5) {
                                 $info .= "2 TEMP $tok$lineending";
                                 $tok = strtok(" ");
-                                if ($tok) {
-                                    $info .= writePlace($tok, 2);
-                                }
+                                if ($tok) $info .= writePlace($tok, 2);
+
                             } else {
                                 $info .= writePlace($child['sealplace'], 2);
                             }
@@ -585,15 +575,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 if ($deathdate != "0000-00-00") {
                     $deathinfo = explode("-", $deathdate);
                     $deathyeardiff = date("Y") - $deathinfo[0];
-                    if ($deathyeardiff > 1 || ($deathyeardiff && (date("m") > $deathinfo[1] || (date("m") == $deathinfo[1] && date("d") > $deathinfo[2])))) {
-                        $rval = 1;
-                    }
+                    if ($deathyeardiff > 1 || ($deathyeardiff && (date("m") > $deathinfo[1] || (date("m") == $deathinfo[1] && date("d") > $deathinfo[2])))) $rval = 1;
+
                 } else {
                     $birthinfo = explode("-", $birthdate);
                     $birthyeardiff = date("Y") - $birthinfo[0];
-                    if ($birthyeardiff > 110 || ($birthyeardiff == 110 && (date("m") > $birthinfo[1] || (date("m") == $birthinfo[1] && date("d") > $birthinfo[2])))) {
-                        $rval = 1;
-                    }
+                    if ($birthyeardiff > 110 || ($birthyeardiff == 110 && (date("m") > $birthinfo[1] || (date("m") == $birthinfo[1] && date("d") > $birthinfo[2])))) $rval = 1;
+
                 }
             }
 
@@ -605,9 +593,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if ($notes[$tag]) {
                 $rval .= writeNote($level, "NOTE", $notes[$tag]);
             }
-            if ($media[$tag]) {
-                $rval .= writeMediaLinks($media[$tag], $level);
-            }
+            if ($media[$tag]) $rval .= writeMediaLinks($media[$tag], $level);
+
 
             return $rval;
         }
@@ -638,14 +625,12 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             $rights['both'] = $ind['allow_private'] && $ind['allow_living'];
             $doit = !$templeready;
 
-            if (!$doit && ((!$ind['baptdate'] && !$ind['baptplace']) || (!$ind['confdate'] && !$ind['confplace']) || (!$ind['initdate'] && !$ind['initplace']) || (!$ind['endldate'] && !$ind['endlplace']))) {
-                $doit = 1;
-            }
+            if (!$doit && ((!$ind['baptdate'] && !$ind['baptplace']) || (!$ind['confdate'] && !$ind['confplace']) || (!$ind['initdate'] && !$ind['initplace']) || (!$ind['endldate'] && !$ind['endlplace']))) $doit = 1;
+
 
             //check eligibility
-            if ($doit && $templeready) {
-                $doit = getEligibility($ind);
-            }
+            if ($doit && $templeready) $doit = getEligibility($ind);
+
 
             $spousedata = "";
             if ($ind['sex'] == "M") {
@@ -662,9 +647,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             $result2 = tng_query($query);
             while ($spouse = tng_fetch_assoc($result2)) {
                 $spousedata .= "1 FAMS @{$spouse['familyID']}@$lineending";
-                if (!$doit && !$spouse['sealdate'] && !$spouse['sealplace'] && $spouse['marrplace'] && $spouse['marrdatetr'] > "1500-00-00") {
-                    $doit = 1;
-                }
+                if (!$doit && !$spouse['sealdate'] && !$spouse['sealplace'] && $spouse['marrplace'] && $spouse['marrdatetr'] > "1500-00-00") $doit = 1;
+
                 //if $doit still false, loop through children to see if sealing needs to be done for any of them
                 if (!$doit) {
                     $query = "SELECT personID, sealdate, sealplace FROM $children_table WHERE gedcom = '$tree' AND familyID = \"{$spouse['familyID']}\"";
@@ -695,9 +679,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if ($children) {
                 while ($child = tng_fetch_assoc($children)) {
                     $childdata .= appendParents($child);
-                    if (!$doit && !$child['sealdate'] && !$child['sealplace']) {
-                        $doit = 1;
-                    }
+                    if (!$doit && !$child['sealdate'] && !$child['sealplace']) $doit = 1;
+
                 }
                 tng_free_result($children);
             }
@@ -725,9 +708,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     if ($lnprefixes && $ind['lnprefix']) {
                         $info .= "2 SPFX {$ind['lnprefix']}$lineending";
                     }
-                    if ($ind['lastname']) {
-                        $info .= "2 SURN {$ind['lastname']}$lineending";
-                    }
+                    if ($ind['lastname']) $info .= "2 SURN {$ind['lastname']}$lineending";
+
 
                     $info .= doNotesAndMedia($indnotes, $indmedia, "NAME", 2);
 
@@ -759,12 +741,10 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                         }
                     }
                     $info .= "1 SEX {$ind['sex']}$lineending";
-                    if ($ind['living']) {
-                        $info .= "1 _LIVING Y$lineending";
-                    }
-                    if ($ind['private']) {
-                        $info .= "1 _PRIVATE Y$lineending";
-                    }
+                    if ($ind['living']) $info .= "1 _LIVING Y$lineending";
+
+                    if ($ind['private']) $info .= "1 _PRIVATE Y$lineending";
+
                     if ($citations['-x--general--x-']) {
                         $info .= writeCitation($citations['-x--general--x-'], 1);
                     }
@@ -912,17 +892,15 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     if (strlen($tok) == 5) {
                         $event .= "2 TEMP $tok$lineending";
                         $tok = strtok(" ");
-                        if ($tok) {
-                            $event .= writePlace($tok, 2);
-                        }
+                        if ($tok) $event .= writePlace($tok, 2);
+
                     } else {
                         $event .= writePlace($row[$key . 'place'], 2);
                     }
                 }
                 $event .= doNotesAndMedia($notes, $media, $tag, 2);
-                if ($citations) {
-                    $event .= writeCitation($citations, 2);
-                }
+                if ($citations) $event .= writeCitation($citations, 2);
+
                 $event .= $extras;
             }
             return $event;
@@ -935,9 +913,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             $familyID = $family['familyID'];
             $doit = !$templeready;
 
-            if (!$doit && !$family['sealdate'] && !$family['sealplace'] && $family['marrplace'] && $family['marrdatetr'] > "1500-00-00") {
-                $doit = 1;
-            }
+            if (!$doit && !$family['sealdate'] && !$family['sealplace'] && $family['marrplace'] && $family['marrdatetr'] > "1500-00-00") $doit = 1;
+
 
             $childdata = "";
             $query = "SELECT personID, sealdate, sealplace, mrel, frel FROM $children_table WHERE familyID = \"$familyID\" AND personID != \"\" AND gedcom = '$tree' ORDER BY ordernum";
@@ -951,9 +928,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     if ($child['mrel']) {
                         $childdata .= "2 _MREL " . ucfirst($child['mrel']) . "$lineending";
                     }
-                    if (!$doit && !$child['sealdate'] && !$child['sealplace']) {
-                        $doit = 1;
-                    }
+                    if (!$doit && !$child['sealdate'] && !$child['sealplace']) $doit = 1;
+
                 }
             }
             tng_free_result($result);
@@ -1057,9 +1033,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                                 if (strlen($tok) == 5) {
                                     $info .= "2 TEMP $tok$lineending";
                                     $tok = strtok(" ");
-                                    if ($tok) {
-                                        $info .= writePlace($tok, 2);
-                                    }
+                                    if ($tok) $info .= writePlace($tok, 2);
+
                                 } else {
                                     $info .= writePlace($family['sealplace'], 2);
                                 }
@@ -1257,9 +1232,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if ($repo['reponame']) {
                 $repostr .= "1 NAME {$repo['reponame']}$lineending";
             }
-            if ($repo['addressID']) {
-                $repostr .= getFact($repo, 1);
-            }
+            if ($repo['addressID']) $repostr .= getFact($repo, 1);
+
 
             $query = "SELECT tag, description, eventdate, eventplace, info FROM $events_table, $eventtypes_table WHERE persfamID = \"{$repo['repoID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND type = \"R\" AND gedcom = '$tree' AND keep = '1' ORDER BY ordernum";
             $custevents = tng_query($query);
@@ -1465,9 +1439,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             $fp = @fopen($filename, "r+");
             fseek($fp, $savestate['offset']);
         } else {
-            if (file_exists($filename)) {
-                unlink($filename);
-            }
+            if (file_exists($filename)) unlink($filename);
+
             $fp = @fopen($filename, "w");
             $savestate['lasttype'] = 1;
             $savestate['icount'] = 0;
@@ -1479,9 +1452,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             $savestate['pcount'] = 0;
             $savestate['media'] = $exportmedia;
         }
-        if (!$fp) {
-            die ($admtext['cannotopen'] . " " . $filename);
-        }
+        if (!$fp) die ($admtext['cannotopen'] . " " . $filename);
+
         flock($fp, LOCK_EX);
 
         //if saving is enabled, write out new information after each person/family/source/repo

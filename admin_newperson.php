@@ -97,9 +97,8 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                                 <?php
                                 while ($row = tng_fetch_assoc($result)) {
                                     echo "		<option value=\"{$row['gedcom']}\"";
-                                    if ($firsttree == $row['gedcom']) {
-                                        echo " selected";
-                                    }
+                                    if ($firsttree == $row['gedcom']) echo " selected";
+
                                     echo ">{$row['treename']}</option>\n";
                                 }
                                 ?>
@@ -125,14 +124,12 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                             }
                             echo "<span id=\"branchlist\"></span>";
                             if (!$assignedbranch) {
-                            if ($numbranches > 8) {
-                                $select = $admtext['scrollbranch'] . "<br>";
-                            }
+                            if ($numbranches > 8) $select = $admtext['scrollbranch'] . "<br>";
+
                             $select .= "<select name=\"branch[]\" id='branch' multiple size=\"8\">\n";
                             $select .= "	<option value=\"\"";
-                            if ($row['branch'] == "") {
-                                $select .= " selected";
-                            }
+                            if ($row['branch'] == "") $select .= " selected";
+
                             $select .= ">{$admtext['nobranch']}</option>\n";
 
                             $select .= "$options</select>\n";
@@ -170,11 +167,7 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                     <table class="normal topmarginsmall">
                         <tr>
                             <td><?php echo $admtext['firstgivennames']; ?></td>
-                            <?php
-                            if ($lnprefixes) {
-                                echo "<td>{$admtext['lnprefix']}</td>\n";
-                            }
-                            ?>
+                            <?php if ($lnprefixes) echo "<td>{$admtext['lnprefix']}</td>\n"; ?>
                             <td><?php echo $admtext['lastsurname']; ?></td>
                         </tr>
                         <tr>

@@ -37,9 +37,8 @@ header("Content-type:text/html; charset=" . $session_charset);
             <td>
                 <?php
                 echo "<input type='checkbox' name=\"private\" value='1'";
-                if ($row['secret']) {
-                    echo " checked";
-                }
+                if ($row['secret']) echo " checked";
+
                 echo "> " . $admtext['text_private'];
                 ?>
             </td>

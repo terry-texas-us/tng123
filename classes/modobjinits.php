@@ -1,12 +1,10 @@
 <?php
 // MODHANDLER
 // avoid PHP notices
-if (!isset($extspath)) {
-    $extspath = '';
-}
-if (!isset($modspath)) {
-    $modspath = '';
-}
+if (!isset($extspath)) $extspath = '';
+
+if (!isset($modspath)) $modspath = '';
+
 $objinits = [
     'rootpath' => $rootpath,
     'modspath' => $modspath,

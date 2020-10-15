@@ -15,9 +15,8 @@ function checkForNoteLinks(string $id, string $tree): array {
     $notelinks = tng_query($query);
 
     while ($notelink = tng_fetch_assoc($notelinks)) {
-        if (!$notelink['eventID']) {
-            $notelink['eventID'] = "general";
-        }
+        if (!$notelink['eventID']) $notelink['eventID'] = "general";
+
         $gotnotes[$notelink['eventID']] = "*";
     }
     tng_free_result($notelinks);

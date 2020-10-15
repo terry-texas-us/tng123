@@ -21,26 +21,18 @@ if ($link) {
 require "adminlog.php";
 
 $fp = @fopen("config/importconfig.php", "w", 1);
-if (!$fp) {
-    die ($admtext['cannotopen'] . " importconfig.php");
-}
+if (!$fp) die ($admtext['cannotopen'] . " importconfig.php");
+
 
 $localphotopathdisplay = addslashes($localphotopathdisplay);
 $localhistorypathdisplay = addslashes($localhistorypathdisplay);
 $localdocumentpathdisplay = addslashes($localdocumentpathdisplay);
 $localotherpathdisplay = addslashes($localotherpathdisplay);
 $localhspathdisplay = addslashes($localhspathdisplay);
+if (!$readmsecs) $readmsecs = 750;
 
-if (!$readmsecs) {
-    $readmsecs = 750;
-}
-
-if (!$rrnum) {
-    $rrnum = 100;
-}
-
+if (!$rrnum) $rrnum = 100;
 flock($fp, LOCK_EX);
-
 fwrite($fp, "<?php\n");
 fwrite($fp, "\$gedpath = \"$gedpath\";\n");
 fwrite($fp, "\$saveimport = \"$saveimport\";\n");

@@ -49,9 +49,8 @@ $dna_group_desc = $dna_group ? $descrow['description'] : "";
 
 $test_date = convertDate($test_date);
 $match_date = convertDate($match_date);
-if (!$personID && !$person_name) {
-    $mynewgedcom = "";
-}
+if (!$personID && !$person_name) $mynewgedcom = "";
+
 
 $query = "UPDATE $dna_tests_table SET test_type=\"$test_type\", test_number=\"$test_number\", notes=\"$notes\", vendor=\"$vendor\", test_date=\"$test_date\", match_date=\"$match_date\",personID='$personID',
 	gedcom=\"$mynewgedcom\", urls=\"$urls\", markers=\"$markers\", y_results=\"$y_results\", hvr1_results=\"$hvr1_results\", hvr2_results=\"$hvr2_results\", person_name = \"$person_name\",

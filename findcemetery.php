@@ -126,21 +126,18 @@ echo "<p>{$admtext['matches']}: $numrows</p>";
                         $rowcount++;
                         $location = $row['city'];
                         if ($row['county']) {
-                            if ($location) {
-                                $location .= ", ";
-                            }
+                            if ($location) $location .= ", ";
+
                             $location .= $row['county'];
                         }
                         if ($row['state']) {
-                            if ($location) {
-                                $location .= ", ";
-                            }
+                            if ($location) $location .= ", ";
+
                             $location .= $row['state'];
                         }
                         if ($row['country']) {
-                            if ($location) {
-                                $location .= ", ";
-                            }
+                            if ($location) $location .= ", ";
+
                             $location .= $row['country'];
                         }
 

@@ -134,12 +134,10 @@ class modparser extends modbase
                 preg_match("#\s*%(\w+):(.*)$#", $value, $matches);
 
                 // suppress warnings if not set
-                if (!isset($matches[1])) {
-                    $matches[1] = '';
-                }
-                if (!isset($matches[2])) {
-                    $matches[2] = '';
-                }
+                if (!isset($matches[1])) $matches[1] = '';
+
+                if (!isset($matches[2])) $matches[2] = '';
+
 
                 // matches[0] - original line
                 // matches[1] - tag name
@@ -272,9 +270,7 @@ class modparser extends modbase
             $j = 0;
             for ($i = 0; isset($parts[$i]); $i++) {
                 // NEXT PART IF NOT TAG NAME FORMAT
-                if (!preg_match("#^\w+(:\w+)?$#", $parts[$i][0])) {
-                    continue;
-                }
+                if (!preg_match("#^\w+(:\w+)?$#", $parts[$i][0])) continue;
                 switch ($parts[$i][0]) {
                     // DISCARD - NOT NEEDED AS PRIMARY TAG IN TABLE
                     case 'label':
@@ -299,9 +295,8 @@ class modparser extends modbase
                         $splits = explode("%", $parts[$i][0]);
                         $label = $splits[0];
                         $i = $this->_goto($parts, $i, $label, $line);
-                        if ($i == self::ERROR) {
-                            break 2; // stop parsing and emit error
-                        }
+                        if ($i == self::ERROR) break 2; // stop parsing and emit error
+
                         $tags[$j]['arg3'] = 'goto ' . $parts[$i][1];
                         $j++;
                         break;
@@ -317,9 +312,8 @@ class modparser extends modbase
                         $tags[$j]['arg1'] = $parts[$i + 1][0];
 
                         $i = $this->_tng_version($parts, $i, $line);
-                        if ($i == self::ERROR) {
-                            break 2; // stop parsing and emit error
-                        }
+                        if ($i == self::ERROR) break 2; // stop parsing and emit error
+
                         $tags[$j]['arg2'] = $this->conditional . " (" . $this->tng_version . ")";
                         if ($this->conditional == 'false') {
                             $tags[$j]['arg3'] = 'goto ' . $parts[$i + 1][1];
@@ -339,9 +333,8 @@ class modparser extends modbase
                         $tags[$j]['name'] = $parts[$i][0];
                         $tags[$j]['arg1'] = $parts[$i + 1][0];
                         $i = $this->_file_exists($parts, $i, $line);
-                        if ($i == self::ERROR) {
-                            break 2; // stop parsing and emit error
-                        }
+                        if ($i == self::ERROR) break 2; // stop parsing and emit error
+
 
                         $tags[$j]['arg2'] = $this->conditional;
                         if ($this->conditional == 'false') {
@@ -366,11 +359,8 @@ class modparser extends modbase
                         $tags[$j]['line'] = $line;
                         $tags[$j]['name'] = $parts[$i][0];
                         $tags[$j]['arg1'] = $parts[$i + 1][0];
-
                         $i = $this->_text_exists($open_target, $parts, $i, $line);
-                        if ($i == self::ERROR) {
-                            break 2;
-                        }
+                        if ($i == self::ERROR) break 2;
                         $tags[$j]['arg2'] = $this->conditional;
                         if ($this->conditional == 'false') {
                             $tags[$j]['arg3'] = 'goto ' . $parts[$i + 2][1];
@@ -458,9 +448,8 @@ class modparser extends modbase
                             $this->parse_error['text'] = self::NOEND; // index into admtext[]
                             break;
                         }
-                        if (empty($tags[$j])) {
-                            $tags[$j] = $this->init_tag();
-                        }
+                        if (empty($tags[$j])) $tags[$j] = $this->init_tag();
+
                         $tags[$j]['line'] = $parts[$i][1];
                         $tags[$j]['name'] = $parts[$i][0];
 
@@ -535,23 +524,18 @@ class modparser extends modbase
                         // use last set of parens - can have other sets inside the desc
                         $arg2 = end($matches);
                         ///1/// Trying to access array offset on value of type bool
-                        if ($arg2) {
-                            $tags[$j]['arg2'] = $arg2[1];
-                        }
+                        if ($arg2) $tags[$j]['arg2'] = $arg2[1];
+
                         $j++;
                         break;
 
                     // TWO ARGS - FILENAME (FIX) + FILEOPTIONAL
                     case 'target':
-
-                        if (false !== strpos($parts[$i + 1][0], 'files', 0)) {
-                            break;
-                        }
+                        if (false !== strpos($parts[$i + 1][0], 'files', 0)) break;
                         $tags[$j] = $this->init_tag();
                         $tags[$j]['line'] = $parts[$i][1];
                         $tags[$j]['name'] = $parts[$i][0];
                         $i++;
-
                         // special note
                         if (strpos($parts[$i][0], ":")) {
                             $args = explode(":", $parts[$i][0]);
@@ -705,9 +689,7 @@ class modparser extends modbase
         }
         // finally all the rest of the tags in order
         for ($i = 0; isset($table[$i]); $i++) {
-            if (!$table[$i]['name']) {
-                continue;
-            }
+            if (!$table[$i]['name']) continue;
             $newtable[] = $table[$i];
         }
         return $newtable;
@@ -863,9 +845,7 @@ class modparser extends modbase
             if ($parts[$i][0] == 'label') {
                 $i++;
                 $arg = explode("%", $parts[$i][0]);
-                if ($arg[0] == $label) {
-                    return $i;
-                }
+                if ($arg[0] == $label) return $i;
             }
         }
         // label not found
@@ -1017,7 +997,6 @@ class modparser extends modbase
             $this->parse_error['text'] = self::MISSING;
             return self::ERROR;
         }
-
         if (empty($text)) {
             $this->parse_error['line'] = $refline;
             $this->parse_error['tag'] = "%textexists: {$this->admtext['searchfor']}";
@@ -1026,17 +1005,11 @@ class modparser extends modbase
         }
         // need flag
         // if file !exists return 'don't process this tag'
-        if (!file_exists($open_target)) {
-            return $i;
-        }
-
-
+        if (!file_exists($open_target)) return $i;
         $buffer = $this->read_file_buffer($open_target);
-
         // if target text is ambiguous the mod listing should catch it
         // so just check for presence here
         $p = strpos($buffer, $text);
-
         unset($buffer);
         if (false !== $p) {
             $this->conditional = 'true';
@@ -1049,9 +1022,7 @@ class modparser extends modbase
     public function find_label($parts, $index, $label) {
 
         for ($i = $index; isset($parts[$i]); $i++) {
-            if ($parts[$i][0] == 'label' && $parts[$i + 1][0] == $label) {
-                return true;
-            }
+            if ($parts[$i][0] == 'label' && $parts[$i + 1][0] == $label) return true;
         }
         return false;
     }
@@ -1059,9 +1030,7 @@ class modparser extends modbase
     public function count_args($argstring) {  // index for tag name
         $s = explode("%", $argstring, $limit = 2);
         $args = trim($s[0]);
-        if (empty($args)) {
-            return 0;
-        }
+        if (empty($args)) return 0;
         return 1 + substr_count($args, ":");
     }
 } // modparser class

@@ -22,9 +22,8 @@ $result = tng_query($query);
 
 $imgrow = tng_fetch_assoc($result);
 $title = isset($imgrow['altdescription']) && $imgrow['altdescription'] ? $imgrow['altdescription'] : $imgrow['description'];
-if ($title) {
-    $title = "<strong>$title</strong>";
-}
+if ($title) $title = "<strong>$title</strong>";
+
 $desc = truncateIt(isset($imgrow['altnotes']) && $imgrow['altnotes'] ? $imgrow['altnotes'] : $imgrow['notes'], 200);
 $caption = $title && $desc ? $title . "<br>" . $desc : $title . $desc;
 tng_free_result($result);

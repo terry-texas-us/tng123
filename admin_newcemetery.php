@@ -62,11 +62,7 @@ if ($map['key'] && $isConnected) {
             dest.value = source.value.slice(lastslash);
     }
 </script>
-<?php
-if ($map['key']) {
-    include "googlemaplib2.php";
-}
-?>
+<?php if ($map['key']) include "googlemaplib2.php"; ?>
     </head>
 
 <?php

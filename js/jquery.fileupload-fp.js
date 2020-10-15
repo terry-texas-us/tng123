@@ -86,9 +86,8 @@
                     loadImage(
                         file,
                         function (img) {
-                            if (!img.src) {
-                                return dfd.rejectWith(that, [data]);
-                            }
+                            if (!img.src) return dfd.rejectWith(that, [data]);
+
                             data.img = img;
                             dfd.resolveWith(that, [data]);
                         }
@@ -119,9 +118,8 @@
             // inplace at data.index of data.files:
             save: function (data, options) {
                 // Do nothing if no processing has happened:
-                if (!data.canvas) {
-                    return data;
-                }
+                if (!data.canvas) return data;
+
                 var that = this,
                     file = data.files[data.index],
                     name = file.name,

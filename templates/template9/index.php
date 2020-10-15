@@ -198,14 +198,12 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                 $loginContent = "<a href='login.php'>{$text['mnulogon']}</a>";
                                             }
                                             if (!$tngconfig['disallowreg']) {
-                                                if ($loginContent) {
-                                                    $loginContent .= " | ";
-                                                }
+                                                if ($loginContent) $loginContent .= " | ";
+
                                                 $loginContent .= "<a href='newacctform.php'>{$text['mnuregister']}</a>";
                                             }
-                                            if ($loginContent) {
-                                                echo "<p class='subhead'>$loginContent</p>\n";
-                                            }
+                                            if ($loginContent) echo "<p class='subhead'>$loginContent</p>\n";
+
                                         }
                                         echo getTemplateMessage('t9_mainpara');
                                         ?>

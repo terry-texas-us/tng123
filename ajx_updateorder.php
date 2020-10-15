@@ -223,9 +223,8 @@ switch ($action) {
         $query = "SELECT thumbpath, usecollfolder, mediatypeID FROM $media_table
 			WHERE mediaID = \"$media\"";
         $result = @tng_query($query);
-        if ($result) {
-            $row = tng_fetch_assoc($result);
-        }
+        if ($result) $row = tng_fetch_assoc($result);
+
         $thismediatypeID = $row['mediatypeID'];
         $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$thismediatypeID] : $mediapath;
         tng_free_result($result);
@@ -268,9 +267,8 @@ switch ($action) {
 				WHERE personID = \"$entity\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
         }
         $result = @tng_query($query);
-        if ($result) {
-            $row = tng_fetch_assoc($result);
-        }
+        if ($result) $row = tng_fetch_assoc($result);
+
 
         $thismediatypeID = $row['mediatypeID'];
         $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$thismediatypeID] : $mediapath;
@@ -317,27 +315,23 @@ switch ($action) {
         $cemrow = tng_fetch_assoc($result);
         $location = $cemrow['cemname'];
         if ($cemrow['city']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
+
             $location .= $cemrow['city'];
         }
         if ($cemrow['county']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
+
             $location .= $cemrow['county'];
         }
         if ($cemrow['state']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
+
             $location .= $cemrow['state'];
         }
         if ($cemrow['country']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
+
             $location .= $cemrow['country'];
         }
         $rval = "{\"location\":\"$location\"}";

@@ -42,9 +42,8 @@ if ($result) {
     $initialchar = 1;
 
     while ($place = tng_fetch_assoc($result)) {
-        if ($initialchar != 1) {
-            $linkstr .= " ";
-        }
+        if ($initialchar != 1) $linkstr .= " ";
+
         if ($place['firstchar'] != "" && $place['firstchar'] != "_") {
             $linkstr .= "<a href=\"#char$initialchar\" class='snlink'>{$place['firstchar']}</a> ";
             $firstchars[$initialchar] = $place['firstchar'];

@@ -56,12 +56,10 @@ if ($maxwidth && $photowtouse > $maxwidth) {
 }
 
 //these lines restrict the table width so the caption will not be wider than the photo
-if ($maxwidth) {
-    $width = "width=\"$maxwidth\"";
-}
-if ($maxheight) {
-    $height = "height=\"$maxheight\"";
-}
+if ($maxwidth) $width = "width=\"$maxwidth\"";
+
+if ($maxheight) $height = "height=\"$maxheight\"";
+
 
 echo "<table $width $height>\n";
 echo "<tr><td class='text-center'><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}\"><img src=\"$usefolder/" . str_replace("%2F", "/", rawurlencode($imgrow['path'])) . "\" width=\"$photowtouse\" height=\"$photohtouse\" alt=\"{$imgrow['description']}\" title=\"{$imgrow['description']}\"></a></td></tr>\n";

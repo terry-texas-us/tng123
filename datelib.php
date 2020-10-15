@@ -17,9 +17,8 @@ function convertDate($olddate) {
         $newyear = $newmonth = $newday = 0;
 
         $found = array_search("TO", $dateparts);
-        if (!$found) {
-            $found = array_search("AND", $dateparts);
-        }
+        if (!$found) $found = array_search("AND", $dateparts);
+
         $ptr = $found ? $found - 1 : count($dateparts) - 1;
 
         $newparts = explode($preferred_separator, $dateparts[$ptr]);
@@ -42,20 +41,17 @@ function convertDate($olddate) {
             $century = substr($wholeyear1, 0, $len1 + $len);
             $year1 = substr($wholeyear1, $len1 + $len);
             $year2 = $wholeyear2;
-            if ($year1 > $year2) {
-                $century++;
-            }
+            if ($year1 > $year2) $century++;
+
             $tempyear = $century . $year2;
         } else {
             $len = -1 * strlen($dateparts[$ptr]);
-            if ($len < -4) {
-                $len = -4;
-            }
+            if ($len < -4) $len = -4;
+
             $tempyear = trim(substr($dateparts[$ptr], $len));
             $dash = strpos($tempyear, "-");
-            if ($dash !== false) {
-                $tempyear = substr($tempyear, $dash + 1);
-            }
+            if ($dash !== false) $tempyear = substr($tempyear, $dash + 1);
+
         }
         if (is_numeric($tempyear)) {
             $newyear = $tempyear;
@@ -96,9 +92,8 @@ function convertDate($olddate) {
                         $newday++;
                         if ($newday > $lastday[$newmonth - 1]) {
                             $newday = 0;
-                            if ($newmonth == 12) {
-                                $newyear++;
-                            }
+                            if ($newmonth == 12) $newyear++;
+
                             $newmonth = $newmonth < 12 ? $newmonth + 1 : 1;
                         }
                     } else {
@@ -111,9 +106,8 @@ function convertDate($olddate) {
                     $tempday2 = substr(strtoupper($tempday), 0, 3);
                     $newday = 0;
                     if (in_array($tempday2, $aftarray)) {
-                        if ($newmonth == 12) {
-                            $newyear++;
-                        }
+                        if ($newmonth == 12) $newyear++;
+
                         $newmonth = $newmonth < 12 ? $newmonth + 1 : 1;
                     } elseif (in_array($tempday2, $befarray)) {
                         $befstringused = true;
@@ -121,9 +115,8 @@ function convertDate($olddate) {
                 }
             } elseif ($foundit == 2) {
                 //Hebrew
-                if (!$tempday) {
-                    $tempday = 1;
-                }
+                if (!$tempday) $tempday = 1;
+
                 $gregoriandate = JDtoGregorian(JewishToJD($newmonth, $tempday, $newyear));
                 $newdate = explode("/", $gregoriandate);
                 $newyear = $newdate[2];

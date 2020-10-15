@@ -12,17 +12,14 @@ if (empty($row['latitude'])) {
     $startlat = $row['latitude'];
     $startlong = $row['longitude'];
 }
-if (!$startzoom) {
-    $startzoom = 2;
-}
-$foundzoom = $map['foundzoom'] ? $map['foundzoom'] : 13;
-if (!$map['displaytype']) {
-    $map['displaytype'] = "TERRAIN";
-}
+if (!$startzoom) $startzoom = 2;
 
-if (empty($row['placelevel'])) {
-    $placelevel = 1;
-}
+$foundzoom = $map['foundzoom'] ? $map['foundzoom'] : 13;
+if (!$map['displaytype']) $map['displaytype'] = "TERRAIN";
+
+
+if (empty($row['placelevel'])) $placelevel = 1;
+
 $mcharsetstr = "&amp;oe=$session_charset";
 ?>
 

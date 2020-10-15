@@ -15,9 +15,7 @@ SimileAjax.Debug.log = function (msg) {
         }
     } else {
         f = function (msg2) {
-            if (!SimileAjax.Debug.silent) {
-                alert(msg2);
-            }
+            if (!SimileAjax.Debug.silent) alert(msg2);
         }
     }
     SimileAjax.Debug.log = f;
@@ -32,9 +30,8 @@ SimileAjax.Debug.warn = function (msg) {
         }
     } else {
         f = function (msg2) {
-            if (!SimileAjax.Debug.silent) {
-                alert(msg2);
-            }
+            if (!SimileAjax.Debug.silent) alert(msg2);
+
         }
     }
     SimileAjax.Debug.warn = f;

@@ -54,9 +54,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                     $cresult = tng_query($query);
                 }
                 $fcount++;
-                if ($fcount % 100 == 0) {
-                    echo "<strong>$fcount</strong> ";
-                }
+                if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
+
                 tng_free_result($fresult);
             }
             tng_free_result($result);
@@ -87,9 +86,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                     $cresult = tng_query($query);
                 }
                 $fcount++;
-                if ($fcount % 100 == 0) {
-                    echo "<strong>$fcount</strong> ";
-                }
+                if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
+
                 tng_free_result($fresult);
             }
             tng_free_result($result);
@@ -111,9 +109,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                     $cresult = tng_query($query);
                 }
                 $fcount++;
-                if ($fcount % 100 == 0) {
-                    echo "<strong>$fcount</strong> ";
-                }
+                if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
+
                 tng_free_result($fresult);
             }
             tng_free_result($result);
@@ -150,9 +147,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             if ($result) {
                 //open file (overwrite any contents)
                 $fp2 = @fopen($gendexout, "w");
-                if (!$fp2) {
-                    die ($admtext['cannotopen'] . " $gendexout");
-                }
+                if (!$fp2) die ($admtext['cannotopen'] . " $gendexout");
+
 
                 flock($fp2, LOCK_EX);
                 $tcount = 0;
@@ -166,15 +162,13 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                         } else {
                             $line = $person['personID'] . "&tree={$person['gedcom']}|$uclast|{$person['firstname']} /$uclast/|$info\n";
                         }
-                        if ($session_charset == "UTF-8") {
-                            $line = utf8_decode($line);
-                        }
+                        if ($session_charset == "UTF-8") $line = utf8_decode($line);
+
                         fwrite($fp2, "$line");
 
                         $tcount++;
-                        if ($tcount % 100 == 0) {
-                            echo "<strong>$tcount</strong> ";
-                        }
+                        if ($tcount % 100 == 0) echo "<strong>$tcount</strong> ";
+
                     }
                 }
                 flock($fp2, LOCK_UN);
@@ -197,9 +191,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             echo $admtext['families'] . ":<br>\n";
 
             $query = "UPDATE $children_table SET haskids = 0";
-            if ($tree != "--all--") {
-                $query .= " WHERE gedcom = '$tree'";
-            }
+            if ($tree != "--all--") $query .= " WHERE gedcom = '$tree'";
+
             $result2 = tng_query($query);
 
             $fcount = 0;
@@ -218,18 +211,16 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                     $result2 = tng_query($query);
                 }
                 $fcount++;
-                if ($fcount % 100 == 0) {
-                    echo "<strong>$fcount</strong> ";
-                }
+                if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
+
             }
             tng_free_result($result);
             echo "<br><br>{$admtext['finishedtracking']}<br>";
         } elseif ($secaction == $admtext['relabelbranches']) {
             $fcount = 0;
             echo "<p>" . $admtext['relabeling'] . "</p>";
-            if ($tree != "--all--") {
-                $wherestr = "WHERE gedcom = '$tree'";
-            }
+            if ($tree != "--all--") $wherestr = "WHERE gedcom = '$tree'";
+
             $query = "SELECT branch, persfamID, gedcom FROM $branchlinks_table $wherestr";
             $result = tng_query($query);
             while ($branch = tng_fetch_assoc($result)) {
@@ -278,9 +269,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                 }
                 if ($success) {
                     $fcount++;
-                    if ($fcount % 100 == 0) {
-                        echo "<strong>$fcount</strong> ";
-                    }
+                    if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
+
                 }
             }
             tng_free_result($result);
@@ -312,9 +302,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
         } elseif ($secaction == $admtext['refreshliving']) {
             $changedToLiving = $changedToDeceased = $counted = 0;
 
-            if ($tree != "--all--") {
-                $wherestr = "WHERE gedcom = '$tree'";
-            }
+            if ($tree != "--all--") $wherestr = "WHERE gedcom = '$tree'";
+
 
             $query = "SELECT ID, birthdate, birthdatetr, altbirthdatetr, deathdate, deathplace, deathdatetr, burialdate, burialplace, burialdatetr, living, personID, gedcom FROM $people_table $wherestr";
             $result = tng_query($query);
@@ -332,9 +321,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                         //if there's a birth
                         if ($birth != "0000-00-00") {
                             $birthyear = substr($birth, 0, 4);
-                            if ($tngimpcfg['maxlivingage'] && date("Y") - $birthyear < $tngimpcfg['maxlivingage']) {
-                                $living = 1;
-                            }
+                            if ($tngimpcfg['maxlivingage'] && date("Y") - $birthyear < $tngimpcfg['maxlivingage']) $living = 1;
+
                         } //no death and no birth
                         elseif ($tngimpcfg['livingreqbirth']) {
                             $living = 1;
@@ -381,9 +369,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                         echo "-<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\">{$row['personID']}</a> ";
                     }
                 }
-                if ($counted % 100 == 0) {
-                    echo "I$counted ";
-                }
+                if ($counted % 100 == 0) echo "I$counted ";
+
             }
             tng_free_result($result);
             echo "<br><br>{$admtext['finished']}<br>$changedToDeceased {$admtext['chtodeceased']}, $changedToLiving {$admtext['chtoliving']}.";
@@ -391,9 +378,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             if ($tngimpcfg['maxprivyrs']) {
                 $peopleMadePrivate = $familiesMadePrivate = $counted = 0;
 
-                if ($tree != "--all--") {
-                    $wherestr = "AND gedcom = '$tree'";
-                }
+                if ($tree != "--all--") $wherestr = "AND gedcom = '$tree'";
+
 
                 $query = "SELECT ID, personID, gedcom, deathdatetr, burialdatetr, private FROM $people_table WHERE private != '1' AND living != '1' $wherestr";
                 $result = tng_query($query);
@@ -415,16 +401,14 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
 
                         $peopleMadePrivate++;
                     }
-                    if ($counted % 100 == 0) {
-                        echo "I$counted ";
-                    }
+                    if ($counted % 100 == 0) echo "I$counted ";
+
                 }
                 tng_free_result($result);
             }
 
-            if (!$peopleMadePrivate) {
-                $peopleMadePrivate = "0";
-            }
+            if (!$peopleMadePrivate) $peopleMadePrivate = "0";
+
             echo "<br><br>{$admtext['finished']}<br>$peopleMadePrivate {$admtext['chtoprivate']}.";
         }
 

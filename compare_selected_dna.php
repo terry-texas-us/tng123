@@ -8,9 +8,8 @@ if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
     header("Location: thispagedoesnotexist.html");
     exit;
 }
-if (!$_SESSION["ttree"]) {
-    $_SESSION["ttree"] = "-x--all--x-";
-}
+if (!$_SESSION["ttree"]) $_SESSION["ttree"] = "-x--all--x-";
+
 $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $_SESSION["ttree"] . "&amp;testsearch=" . $_SESSION["tsearch"] . "&amp;test_type=" . $_SESSION["ttype"] . "&amp;test_group=" . $_SESSION["tgroup"];
 
 $headline = "{$text['dnatestscompare']}";
@@ -156,18 +155,13 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     $resultscsv = str_replace('-', ',', $rrow['y_results']);
                     $resultsarr[$i] = explode(',', $resultscsv);
                     $markercount[$i] = count($resultsarr[$i]);
-                    if ($markercount[$i] > '12') {
-                        $ii++;
-                    }
-                    if ($markercount[$i] > '25') {
-                        $iii++;
-                    }
+                    if ($markercount[$i] > '12') $ii++;
+                    if ($markercount[$i] > '25') $iii++;
                     $i++;
                 }
             }
-            if ($rresult) {
-                tng_free_result($rresult);
-            }
+            if ($rresult) tng_free_result($rresult);
+
 
             $mode = [];
             $modesarr = [[]];
@@ -187,40 +181,32 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             while ($l <= $columnCount - 1) {
                 $alvals = array_column($modesarr, $l);
                 $values = array_count_values($alvals);
-                if ($values) {
-                    $mode[$l] = array_search(max($values), $values);
-                }
+                if ($values) $mode[$l] = array_search(max($values), $values);
+
                 $l++;
             }
 
             $j = '0';
             $jj = '0';
             $dashcount = $columnCount >= '38' ? '9' : '7';
-            if ($columnCount <= '25') {
-                $dashcount = '6';
-            }
-            if ($columnCount <= '12') {
-                $dashcount = '2';
-            }
+            if ($columnCount <= '25') $dashcount = '6';
+
+            if ($columnCount <= '12') $dashcount = '2';
+
             while ($j <= ($columnCount - $dashcount)) {
                 $title = "";
                 $class = "";
                 $style = "";
-                if ($j >= 0) {
-                    $style = "background-color:$bg1_12; color:$txt1_12;";
-                }
-                if ($j > 10) {
-                    $style = "background-color:$bg13_25; color:$txt13_25;";
-                }
-                if ($j > 19) {
-                    $style = "background-color:$bg26_37; color:$txt26_37;";
-                }
-                if ($j > 30) {
-                    $style = "background-color:$bg38_67; color:$txt38_67;";
-                }
-                if ($j > 58) {
-                    $style = "background-color:$bg111; color:$txt111;";
-                }
+                if ($j >= 0) $style = "background-color:$bg1_12; color:$txt1_12;";
+
+                if ($j > 10) $style = "background-color:$bg13_25; color:$txt13_25;";
+
+                if ($j > 19) $style = "background-color:$bg26_37; color:$txt26_37;";
+
+                if ($j > 30) $style = "background-color:$bg38_67; color:$txt38_67;";
+
+                if ($j > 58) $style = "background-color:$bg111; color:$txt111;";
+
                 $jj = 0;
                 $col_span = 1;
                 while ($jj <= 5) {
@@ -392,9 +378,8 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 echo "</tr>\n";
             }
         }
-        if ($result) {
-            tng_free_result($result);
-        }
+        if ($result) tng_free_result($result);
+
         ?>
     </table>
 </div>

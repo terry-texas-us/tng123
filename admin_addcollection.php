@@ -5,9 +5,7 @@ $textpart = "photos";
 include "$mylanguage/admintext.php";
 
 include "checklogin.php";
-if (!$allow_add) {
-    exit;
-}
+if (!$allow_add) exit;
 
 require "adminlog.php";
 

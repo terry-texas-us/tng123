@@ -22,9 +22,8 @@ function showDivs($type) {
     $query .= "LEFT JOIN $media_table media ON mostwanted.mediaID = media.mediaID ";
     $query .= "LEFT JOIN $people_table people ON mostwanted.personID = people.personID AND mostwanted.gedcom = people.gedcom ";
     $query .= "WHERE mwtype = '$type' ";
-    if ($tree) {
-        $query .= " AND mostwanted.gedcom = '$tree' ";
-    }
+    if ($tree) $query .= " AND mostwanted.gedcom = '$tree' ";
+
     $query .= "ORDER BY ordernum";
     $result = tng_query($query);
 

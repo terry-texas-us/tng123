@@ -196,9 +196,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                 } else {
                     echo "<select name=\"tree\">";
                     echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                    if ($row['gedcom']) {
-                        $tree = $row['gedcom'];
-                    }
+                    if ($row['gedcom']) $tree = $row['gedcom'];
+
 
                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                     while ($treerow = tng_fetch_assoc($treeresult)) {
@@ -271,9 +270,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     echo "	<option value=\"{$treerow['gedcom']}\"";
-                                    if ($treerow['gedcom'] == $tree) {
-                                        echo " selected";
-                                    }
+                                    if ($treerow['gedcom'] == $tree) echo " selected";
+
                                     echo ">{$treerow['treename']}</option>\n";
                                 }
                                 tng_free_result($treeresult);

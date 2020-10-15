@@ -6,14 +6,12 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 
-if ($assignedtree) {
-    $tree = $assignedtree;
-}
+if ($assignedtree) $tree = $assignedtree;
+
 $treequery = "SELECT gedcom, treename ";
 $treequery .= "FROM $trees_table ";
-if ($assignedtree) {
-    $treequery .= "WHERE gedcom = '$assignedtree' ";
-}
+if ($assignedtree) $treequery .= "WHERE gedcom = '$assignedtree' ";
+
 $treequery .= "ORDER BY treename";
 
 initMediaTypes();
@@ -50,9 +48,8 @@ header("Content-type:text/html; charset=" . $session_charset);
                         $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                         while ($treerow = tng_fetch_assoc($treeresult)) {
                             echo "	<option value=\"{$treerow['gedcom']}\"";
-                            if ($treerow['gedcom'] == $tree) {
-                                echo " selected";
-                            }
+                            if ($treerow['gedcom'] == $tree) echo " selected";
+
                             echo ">{$treerow['treename']}</option>\n";
                         }
                         tng_free_result($treeresult);

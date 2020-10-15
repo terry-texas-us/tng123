@@ -32,9 +32,8 @@ $row['map'] = preg_replace("/\"/", "&#34;", $row['map']);
 $row['map'] = preg_replace("/>/", "&gt;", $row['map']);
 $row['map'] = preg_replace("/</", "&lt;", $row['map']);
 
-if ($row['usenl']) {
-    $row['bodytext'] = nl2br($row['bodytext']);
-}
+if ($row['usenl']) $row['bodytext'] = nl2br($row['bodytext']);
+
 if ($row['abspath']) {
     $row['path'] = preg_replace("/&/", "&amp;", $row['path']);
 }
@@ -85,9 +84,8 @@ foreach ($mediatypes as $mediatype) {
     }
     $msgID = $mediatype['ID'];
     $moptions .= "	<option value=\"$msgID\"";
-    if ($msgID == $mediatypeID) {
-        $moptions .= " selected";
-    }
+    if ($msgID == $mediatypeID) $moptions .= " selected";
+
     $moptions .= ">" . $mediatype['display'] . "</option>\n";
     $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
 }
@@ -122,9 +120,8 @@ if ($map['key'] && $isConnected) {
 ?>
 <?php
 $onload = $onunload = "";
-if ($isphoto && !$row['abspath']) {
-    $onload = "init();";
-}
+if ($isphoto && !$row['abspath']) $onload = "init();";
+
 $placeopen = 0;
 if ($map['key']) {
     include "googlemaplib2.php";
@@ -133,9 +130,8 @@ if ($map['key']) {
         $placeopen = 1;
     }
 }
-if ($onload) {
-    $onload = " onload='$onload'";
-}
+if ($onload) $onload = " onload='$onload'";
+
 echo "</head>\n";
 
 echo tng_adminlayout($onload);
@@ -195,9 +191,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                     foreach ($mediatypes as $mediatype) {
                                         $msgID = $mediatype['ID'];
                                         echo "	<option value=\"$msgID\"";
-                                        if ($msgID == $mediatypeID) {
-                                            echo " selected";
-                                        }
+                                        if ($msgID == $mediatypeID) echo " selected";
+
                                         echo ">" . $mediatype['display'] . "</option>\n";
                                     }
                                     ?>
@@ -370,9 +365,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                                 } else {
                                     echo "<select name='tree' onchange=\"$('#microtree').val($(this).val());\">";
                                     echo "	<option value=''>{$admtext['alltrees']}</option>\n";
-                                    if ($row['gedcom']) {
-                                        $tree = $row['gedcom'];
-                                    }
+                                    if ($row['gedcom']) $tree = $row['gedcom'];
+
                                     echo $orderedTreesList->getSelectOptionsHtml($row['gedcom']);
                                 }
                                 ?>
@@ -721,9 +715,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
     bkLib.onDomLoaded(function () {
         new nicEditor({fullPanel: true}).panelInstance('bodytext');
         <?php
-        if ($isphoto && !$row['abspath']) {
-            echo "init();\n";
-        }
+        if ($isphoto && !$row['abspath']) echo "init();\n";
+
         if ($map['key'] && !$map['startoff']) {
             echo "divbox('mapcontainer');\n";
         }

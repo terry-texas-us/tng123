@@ -11,20 +11,15 @@ if ($assignedbranch || !$allow_add) {
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
-
 require "adminlog.php";
 setcookie("tng_tree", $tree, 0);
-
-if (!$dospouses) {
-    $dospouses = 0;
-}
+if (!$dospouses) $dospouses = 0;
 $template = "ssssssss";
 $query = "INSERT INTO $branches_table (gedcom,branch,description,personID,agens,dgens,dagens,inclspouses,action) VALUES (?, ?, ?, ?, ?, ?, ?, ?,'2')";
 $params = [&$template, &$tree, &$branch, &$description, &$personID, &$agens, &$dgens, &$dagens, &$dospouses];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
     $message = $admtext['branch'] . " $description {$admtext['succadded']}.";
-
     adminwritelog($admtext['addnewbranch'] . " : $gedcom/$description");
 } else {
     $message = $admtext['branch'] . " $description {$admtext['idexists']}.";

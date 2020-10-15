@@ -27,27 +27,23 @@ $result = tng_query($query);
                             while ($cemrow = tng_fetch_assoc($result)) {
                                 $location = $cemrow['country'];
                                 if ($cemrow['state']) {
-                                    if ($location) {
-                                        $location .= ", ";
-                                    }
+                                    if ($location) $location .= ", ";
+
                                     $location .= $cemrow['state'];
                                 }
                                 if ($cemrow['county']) {
-                                    if ($location) {
-                                        $location .= ", ";
-                                    }
+                                    if ($location) $location .= ", ";
+
                                     $location .= $cemrow['county'];
                                 }
                                 if ($cemrow['city']) {
-                                    if ($location) {
-                                        $location .= ", ";
-                                    }
+                                    if ($location) $location .= ", ";
+
                                     $location .= $cemrow['city'];
                                 }
                                 if ($cemrow['cemname']) {
-                                    if ($location) {
-                                        $location .= ", ";
-                                    }
+                                    if ($location) $location .= ", ";
+
                                     $location .= $cemrow['cemname'];
                                 }
                                 echo "<option value=\"{$cemrow['cemeteryID']}\">$location</option>\n";

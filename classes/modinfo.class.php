@@ -58,9 +58,8 @@ class modinfo extends modlister
     public function get_target_files() {
         $targets = [];
         foreach ($this->tags as $tag) {
-            if ($tag['name'] == 'target') {
-                $targets[] = $tag['arg1'];
-            }
+            if ($tag['name'] == 'target') $targets[] = $tag['arg1'];
+
         }
         return $targets;
     }

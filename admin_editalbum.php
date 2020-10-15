@@ -46,9 +46,8 @@ $query3 .= "ORDER BY alinkID DESC";
 $result3 = tng_query($query3) or die ($admtext['cannotexecutequery'] . ": $query3");
 $numlinks = tng_num_rows($result3);
 
-if (!$thumbmaxw) {
-    $thumbmaxw = 50;
-}
+if (!$thumbmaxw) $thumbmaxw = 50;
+
 
 if ($assignedtree) {
     $wherestr = "WHERE gedcom = '$assignedtree'";
@@ -68,9 +67,8 @@ $query = "SELECT alwayson, thumbpath, media.mediaID AS mediaID, usecollfolder, m
 $query .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
 $query .= "WHERE albumID = \"$albumID\" AND media.mediaID = albumlinks.mediaID AND defphoto = '1'";
 $defresult = tng_query($query);
-if ($defresult) {
-    $drow = tng_fetch_assoc($defresult);
-}
+if ($defresult) $drow = tng_fetch_assoc($defresult);
+
 $thismediatypeID = $drow['mediatypeID'];
 $usefolder = $drow['usecollfolder'] ? $mediatypes_assoc[$thismediatypeID] : $mediapath;
 $treestr = $tngconfig['mediatrees'] && $drow['gedcom'] ? $drow['gedcom'] . "/" : "";
@@ -157,9 +155,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     <span class="plainheader"><?php echo $row['albumname'] . ": </span><br>" . $row['description']; ?></div>
                 <?php
                 echo "<a href='#' onclick=\"return removeDefault();\" class='smaller' id=\"removedefault\"";
-                if (!$photo) {
-                    echo " style=\"visibility:hidden\"";
-                }
+                if (!$photo) echo " style=\"visibility:hidden\"";
+
                 echo ">{$admtext['removedef']}</a>\n";
                 ?>
             </td>
@@ -282,11 +279,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                         ?>
                     </div>
                     <div id="nomedia" class="normal" style="margin-left:3px;">
-                        <?php
-                        if (!$numrows) {
-                            echo $admtext['nomedia'];
-                        }
-                        ?>
+                        <?php if (!$numrows) echo $admtext['nomedia']; ?>
                     </div>
             </td>
         </tr>
@@ -310,9 +303,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "		<option value=\"{$treerow['gedcom']}\"";
-                                        if ($firsttree == $treerow['gedcom']) {
-                                            echo " selected";
-                                        }
+                                        if ($firsttree == $treerow['gedcom']) echo " selected";
+
                                         echo ">{$treerow['treename']}</option>\n";
                                     }
                                     tng_free_result($treeresult);
@@ -391,9 +383,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                     $wife['allow_private'] = $wrights['private'];
                                     $wifename = getName($wife);
                                     if ($wifename) {
-                                        if ($name) {
-                                            $name .= ", ";
-                                        }
+                                        if ($name) $name .= ", ";
+
                                         $name .= $wifename;
                                     }
                                     $id = " (" . $plink['familyID'] . ")";
@@ -431,11 +422,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                         </tbody>
                     </table>
                     <div id="nolinks" class="normal" style="margin-left:3px;">
-                        <?php
-                        if (!$oldlinks) {
-                            echo $admtext['nolinks'];
-                        }
-                        ?>
+                        <?php if (!$oldlinks) echo $admtext['nolinks']; ?>
                     </div>
                 </div>
             </td>

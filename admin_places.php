@@ -25,9 +25,8 @@ if ($newsearch) {
     if (!$searchstring) {
         $searchstring = stripslashes($_COOKIE['tng_search_places_post']['search']);
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_tree'];
+
     if (!$exactmatch) {
         $exactmatch = $_COOKIE['tng_search_places_post']['exactmatch'];
     }
@@ -135,9 +134,8 @@ if ($nolevel) {
     $allwhere .= " AND (placelevel IS NULL OR placelevel = \"\" OR placelevel = '0')";
 }
 
-if ($temples) {
-    $allwhere .= " AND temple = 1";
-}
+if ($temples) $allwhere .= " AND temple = 1";
+
 
 if ($searchstring) {
     $allwhere .= " AND (1=0";
@@ -231,11 +229,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                         <tr>
                             <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
                             <td>
-                                <?php
-                                if (!$tngconfig['places1tree']) {
-                                    include "treequery.php";
-                                }
-                                ?>
+                                <?php if (!$tngconfig['places1tree']) include "treequery.php"; ?>
                                 <input class="verylongfield" name="searchstring" type="search" value="<?php echo stripslashes($searchstring_noquotes); ?>">
                             </td>
                             <td>
@@ -261,9 +255,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                                 <?php
                                 if (determineLDSRights()) {
                                     echo "<input type='checkbox' name=\"temples\" value=\"yes\"";
-                                    if ($temples == "yes") {
-                                        echo " checked";
-                                    }
+                                    if ($temples == "yes") echo " checked";
                                     echo "> " . $admtext['findtemples'];
                                 }
                                 ?>
@@ -321,9 +313,8 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                             $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
                         }
                         $actionstr .= "<a href=\"placesearch.php?psearch=zzz";
-                        if (!$tngconfig['places1tree']) {
-                            $actionstr .= "&amp;tree=yyy";
-                        }
+                        if (!$tngconfig['places1tree']) $actionstr .= "&amp;tree=yyy";
+
                         $actionstr .= "\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {

@@ -60,12 +60,10 @@ class SingleMediaCard
             $foundliving = 0;
             $foundprivate = 0;
             while ($prow = tng_fetch_assoc($presult)) {
-                if ($prow['fbranch'] != NULL) {
-                    $prow['branch'] = $prow['fbranch'];
-                }
-                if ($prow['fliving'] != NULL) {
-                    $prow['living'] = $prow['fliving'];
-                }
+                if ($prow['fbranch'] != NULL) $prow['branch'] = $prow['fbranch'];
+
+                if ($prow['fliving'] != NULL) $prow['living'] = $prow['fliving'];
+
                 if ($prow['fprivate'] != NULL) {
                     $prow['private'] = $prow['fprivate'];
                 }
@@ -75,9 +73,8 @@ class SingleMediaCard
                     $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
                     $presult2 = tng_query($query);
                     $prow2 = tng_fetch_assoc($presult2);
-                    if ($prow2['ccount']) {
-                        $prow['living'] = 1;
-                    }
+                    if ($prow2['ccount']) $prow['living'] = 1;
+
                     tng_free_result($presult2);
                 }
 
@@ -85,12 +82,10 @@ class SingleMediaCard
                 $prow['allow_living'] = $rights['living'];
                 $prow['allow_private'] = $rights['private'];
 
-                if (!$rights['living']) {
-                    $foundliving = 1;
-                }
-                if (!$rights['private']) {
-                    $foundprivate = 1;
-                }
+                if (!$rights['living']) $foundliving = 1;
+
+                if (!$rights['private']) $foundprivate = 1;
+
             }
             tng_free_result($presult);
 

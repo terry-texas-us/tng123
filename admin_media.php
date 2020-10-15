@@ -37,15 +37,13 @@ if ($newsearch) {
     if (!$unlinked) {
         $unlinked = $_COOKIE['tng_search_media_post']['unlinked'];
     }
-    if (!$hsstat) {
-        $hsstat = $_COOKIE['tng_search_media_post']['hsstat'];
-    }
+    if (!$hsstat) $hsstat = $_COOKIE['tng_search_media_post']['hsstat'];
+
     if (!$cemeteryID) {
         $cemeteryID = $_COOKIE['tng_search_media_post']['cemeteryID'];
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_tree'];
+
     if (!isset($offset)) {
         $tngpage = $_COOKIE['tng_search_media_post']['tngpage'];
         $offset = $_COOKIE['tng_search_media_post']['offset'];
@@ -71,9 +69,8 @@ if ($assignedtree) {
     $wherestr2 = " AND medialinks.gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
-    if ($tree) {
-        $wherestr2 = " AND medialinks.gedcom = '$tree'";
-    }
+    if ($tree) $wherestr2 = " AND medialinks.gedcom = '$tree'";
+
 }
 $orgwherestr = $wherestr;
 $orgtree = $tree;
@@ -107,9 +104,8 @@ if ($unlinked) {
     $medialinkID = "medialinkID,";
     $wherestr .= $wherestr ? " AND medialinkID is NULL" : "medialinkID is NULL";
 }
-if ($wherestr) {
-    $wherestr = "WHERE $wherestr";
-}
+if ($wherestr) $wherestr = "WHERE $wherestr";
+
 
 $query = "SELECT media.mediaID AS mediaID, $medialinkID description, notes, thumbpath, mediatypeID, usecollfolder, latitude, longitude, zoom, media.gedcom ";
 $query .= "FROM $media_table media $join ";
@@ -262,9 +258,8 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     foreach ($mediatypes as $mediatype) {
                                         $msgID = $mediatype['ID'];
                                         echo "	<option value=\"$msgID\"";
-                                        if ($msgID == $mediatypeID) {
-                                            echo " selected";
-                                        }
+                                        if ($msgID == $mediatypeID) echo " selected";
+
                                         echo ">" . $mediatype['display'] . "</option>\n";
                                     }
                                     ?>
@@ -371,9 +366,8 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     echo "<select name=\"albumID\" style=\"vertical-align:top;\">\n";
                                     while ($albumrow = tng_fetch_assoc($albumresult)) {
                                         echo "	<option value=\"{$albumrow['albumID']}\"";
-                                        if ($albumrow['albumID'] == $albumID) {
-                                            echo " selected";
-                                        }
+                                        if ($albumrow['albumID'] == $albumID) echo " selected";
+
                                         echo ">{$albumrow['albumname']}</option>\n";
                                     }
                                     echo "</select>\n";
@@ -447,15 +441,13 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     $geo .= $admtext['latitude'] . ": " . number_format($row['latitude'], 3);
                                 }
                                 if ($row['longitude']) {
-                                    if ($geo) {
-                                        $geo .= "<br>";
-                                    }
+                                    if ($geo) $geo .= "<br>";
+
                                     $geo .= $admtext['longitude'] . ": " . number_format($row['longitude'], 3);
                                 }
                                 if ($row['zoom']) {
-                                    if ($geo) {
-                                        $geo .= "<br>";
-                                    }
+                                    if ($geo) $geo .= "<br>";
+
                                     $geo .= $admtext['zoom'] . ": " . $row['zoom'];
                                 }
                                 echo "$geo&nbsp;</span></td>\n";

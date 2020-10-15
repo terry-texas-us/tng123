@@ -25,11 +25,9 @@ SimileAjax.WindowManager = {
 };
 
 SimileAjax.WindowManager.initialize = function () {
-    if (SimileAjax.WindowManager._initialized) {
-        return;
-    }
+    if (SimileAjax.WindowManager._initialized) return;
 
-    SimileAjax.DOM.registerEvent(document.body, "mousedown", SimileAjax.WindowManager._onBodyMouseDown);
+SimileAjax.DOM.registerEvent(document.body, "mousedown", SimileAjax.WindowManager._onBodyMouseDown);
     SimileAjax.DOM.registerEvent(document.body, "mousemove", SimileAjax.WindowManager._onBodyMouseMove);
     SimileAjax.DOM.registerEvent(document.body, "mouseup", SimileAjax.WindowManager._onBodyMouseUp);
     SimileAjax.DOM.registerEvent(document, "keydown", SimileAjax.WindowManager._onBodyKeyDown);
@@ -138,18 +136,14 @@ SimileAjax.WindowManager._popToLayer = function (level) {
     while (level + 1 < SimileAjax.WindowManager._layers.length) {
         try {
             var layer = SimileAjax.WindowManager._layers.pop();
-            if (layer.onPop != null) {
-                layer.onPop();
-            }
+            if (layer.onPop != null) layer.onPop();
         } catch (e) {
         }
     }
 };
 
 SimileAjax.WindowManager._canProcessEventAtLayer = function (layer) {
-    if (layer.index == (SimileAjax.WindowManager._layers.length - 1)) {
-        return true;
-    }
+    if (layer.index === (SimileAjax.WindowManager._layers.length - 1)) return true;
     for (var i = layer.index + 1; i < SimileAjax.WindowManager._layers.length; i++) {
         if (!SimileAjax.WindowManager._layers[i].ephemeral) {
             return false;
@@ -233,9 +227,8 @@ SimileAjax.WindowManager._onBodyMouseMove = function (elmt, evt, target) {
         if (!SimileAjax.WindowManager._dragging) {
             if (Math.abs(diffX) > 5 || Math.abs(diffY) > 5) {
                 try {
-                    if ("onDragStart" in callback) {
-                        callback.onDragStart();
-                    }
+                    if ("onDragStart" in callback) callback.onDragStart();
+
 
                     if ("ghost" in callback && callback.ghost) {
                         var draggedElmt = SimileAjax.WindowManager._draggedElement;
@@ -268,9 +261,8 @@ SimileAjax.WindowManager._onBodyMouseMove = function (elmt, evt, target) {
             try {
                 SimileAjax.WindowManager._lastCoords = {x: evt.clientX, y: evt.clientY};
 
-                if ("onDragBy" in callback) {
-                    callback.onDragBy(diffX, diffY);
-                }
+                if ("onDragBy" in callback) callback.onDragBy(diffX, diffY);
+
 
                 if ("_ghostElmt" in callback) {
                     var ghostElmt = callback._ghostElmt;
@@ -350,9 +342,8 @@ SimileAjax.WindowManager._onBodyMouseUp = function (elmt, evt, target) {
         try {
             if (SimileAjax.WindowManager._dragging) {
                 var callback = SimileAjax.WindowManager._draggedElementCallback;
-                if ("onDragEnd" in callback) {
-                    callback.onDragEnd();
-                }
+                if ("onDragEnd" in callback) callback.onDragEnd();
+
                 if ("droppable" in callback && callback.droppable) {
                     var dropped = false;
 
@@ -361,17 +352,12 @@ SimileAjax.WindowManager._onBodyMouseUp = function (elmt, evt, target) {
                         if ((!("canDropOn" in callback) || callback.canDropOn(target)) &&
                             (!("canDrop" in target) || target.canDrop(SimileAjax.WindowManager._draggedElement))) {
 
-                            if ("onDropOn" in callback) {
-                                callback.onDropOn(target);
-                            }
+                            if ("onDropOn" in callback) callback.onDropOn(target);
+
                             target.ondrop(SimileAjax.WindowManager._draggedElement, SimileAjax.WindowManager._draggingMode);
 
                             dropped = true;
                         }
-                    }
-
-                    if (!dropped) {
-                        // TODO: do holywood explosion here
                     }
                 }
             }
@@ -413,9 +399,7 @@ SimileAjax.WindowManager._cancelDragging = function () {
 
 SimileAjax.WindowManager._findDropTarget = function (elmt) {
     while (elmt != null) {
-        if ("ondrop" in elmt && (typeof elmt.ondrop) == "function") {
-            break;
-        }
+        if ("ondrop" in elmt && (typeof elmt.ondrop) == "function") break;
         elmt = elmt.parentNode;
     }
     return elmt;

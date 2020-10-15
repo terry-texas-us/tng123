@@ -24,9 +24,8 @@ if ($result) {
                 $birthdate = "{$text['chrabbr']} " . displayDate($row['altbirthdate']);
             }
         }
-        if ($birthdate) {
-            $birthdate = "($birthdate)";
-        }
+        if ($birthdate) $birthdate = "($birthdate)";
+
         $namestrplus = " $birthdate - $primaryID";
     } else {
         $namestrplus = " - $primaryID";
@@ -133,9 +132,8 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                                     $dorels = $dorels ? $dorels : $initrels;
                                     for ($i = 1; $i <= $maxrels; $i++) {
                                         echo "<option value=\"$i\"";
-                                        if ($i == $dorels) {
-                                            echo " selected";
-                                        }
+                                        if ($i == $dorels) echo " selected";
+
                                         echo ">$i</option>\n";
                                     }
                                     ?>
@@ -152,14 +150,12 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                                     <?php
                                     $dospouses = $dospouses ? $dospouses : 1;
                                     echo "<option value='0'";
-                                    if ($dospouses) {
-                                        echo " selected";
-                                    }
+                                    if ($dospouses) echo " selected";
+
                                     echo ">{$admtext['yes']}</option>\n";
                                     echo "<option value='1'";
-                                    if (!$dospouses) {
-                                        echo " selected";
-                                    }
+                                    if (!$dospouses) echo " selected";
+
                                     echo ">{$admtext['no']}</option>\n";
                                     ?>
                                 </select> <?php //echo $text['sometimes']; ?>
@@ -177,9 +173,8 @@ $newstr = preg_replace("/xxx/", $maxupgen, $text['findrelinstr']);
                                     $maxgens = $pedigree['maxupgen'] ? $pedigree['maxupgen'] : 15;
                                     for ($i = 1; $i <= $maxgens; $i++) {
                                         echo "<option value=\"$i\"";
-                                        if ($i == $dogens) {
-                                            echo " selected";
-                                        }
+                                        if ($i == $dogens) echo " selected";
+
                                         echo ">$i</option>\n";
                                     }
                                     ?>

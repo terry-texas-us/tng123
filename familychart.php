@@ -20,9 +20,8 @@ if ($tngprint) {
     }      #between family column centres
 }
 
-if (!($familyID || $personID)) {
-    die("no args\n");
-}
+if (!($familyID || $personID)) die("no args\n");
+
 
 if (!($family = getfamily($tree, $familyID, $personID))) {
     $family = [];
@@ -61,12 +60,10 @@ if ($famsize + $parentorder + 1 > max($patsize, $matsize))  #minimize overall he
 {
     $parentorder = max(0, max($patsize, $matsize) - $famsize - 1);
 }
-if (!$patgrand) {
-    $patorder = $parentorder;
-}
-if (!$matgrand) {
-    $matorder = $parentorder;
-}
+if (!$patgrand) $patorder = $parentorder;
+
+if (!$matgrand) $matorder = $parentorder;
+
 
 $colsep = $familychart['colsep'];
 $boxheight = $familychart['boxheight'];
@@ -83,9 +80,8 @@ $famx = $hpad + floor(($boxwidth + $hsep) / 2); #position of parent boxes
 $famy = $vpad + $boxheight + $parentorder * $pheight + 2 * $familychart['halfgenheight'];
 $chartheight = 2 * ($vpad + $boxheight + $familychart['halfgenheight']) - $vsep
     + $pheight * max($patsize, $matsize, $famsize + $parentorder);
-if ($chartheight < 300) {
-    $chartheight = 300;
-}
+if ($chartheight < 300) $chartheight = 300;
+
 
 echo "<div align='left' id='outer' style='position:relative;padding-top:8px;width:100%;height:{$chartheight}px;'>\n";
 $famfx = $fammx = $hpad;
@@ -154,9 +150,8 @@ function getfamily($tree, $familyID, $personID) {
 
 function familyorder(&$family, $personID) {
     #return position of a person in a family and number of children
-    if (!$family) {
-        return [0, 0, 0];
-    }
+    if (!$family) return [0, 0, 0];
+
     if ($family['husband'] || $family['wife']) {
         $parents = 1;
     }
@@ -180,9 +175,8 @@ function getresult($result, $multiple = 0) {
     }
     $row = tng_fetch_array($result);
     tng_free_result($result);
-    if ($multiple) {
-        return $row;
-    }
+    if ($multiple) return $row;
+
     return $row[0];
 }
 
@@ -196,9 +190,7 @@ function doUpArrow($left,$top,$person) {
 function setoutparentfamily($family, $childID, $left, $top, $width, $height, $swap) {
     #set parent family omitting the child who is the parent, which is done elsewhere
     global $familychart;
-    if (!$family) {
-        return;
-    }
+    if (!$family) return;
     $hsep = $familychart['boxHsep'];
     $vsep = $familychart['boxVsep'];
     $x = $left + floor(($width + $hsep) / 2);
@@ -206,7 +198,6 @@ function setoutparentfamily($family, $childID, $left, $top, $width, $height, $sw
     $y = $top + $height;
     $husband = $family['husband'];
     $wife = $family['wife'];
-
     if ($husband && $wife) {
         doBox($husband, $left, $top, 'fambox', 'child');
 
@@ -439,9 +430,8 @@ function getChild($family, $personID) {
     if (isset($family['children'])) {
         $kids = $family['children'];
         foreach ($kids as $kid)
-            if ($kid['personID'] == $personID) {
-                return $kid;
-            }
+            if ($kid['personID'] == $personID) return $kid;
+
     }
     return '';
 }

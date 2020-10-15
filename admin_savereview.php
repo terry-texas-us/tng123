@@ -150,9 +150,8 @@ if ($choice != $admtext['postpone']) {
     $query = "DELETE FROM $temp_events_table WHERE tempID=\"$tempID\"";
     $result = tng_query($query);
 
-    if ($choice == $admtext['igndel']) {
-        $succmsg = $admtext['tentdel'];
-    }
+    if ($choice == $admtext['igndel']) $succmsg = $admtext['tentdel'];
+
 } else {
     $succmsg = "";
     $message = "";

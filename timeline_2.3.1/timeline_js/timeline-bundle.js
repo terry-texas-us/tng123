@@ -152,22 +152,18 @@ Timeline._Band.prototype.getTimeline = function () {
 };
 Timeline._Band.prototype.updateEventTrackInfo = function (B, A) {
     this._eventTrackIncrement = A;
-    if (B > this._eventTracksNeeded) {
-        this._eventTracksNeeded = B;
-    }
+    if (B > this._eventTracksNeeded) this._eventTracksNeeded = B;
+
 };
 Timeline._Band.prototype.checkAutoWidth = function () {
-    if (!this._timeline.autoWidth) {
-        return;
-    }
+    if (!this._timeline.autoWidth) return;
     var A = this._eventPainter.getType() == "overview";
     var C = A ? this._theme.event.overviewTrack.autoWidthMargin : this._theme.event.track.autoWidthMargin;
     var B = Math.ceil((this._eventTracksNeeded + C) * this._eventTrackIncrement);
     B += A ? this._theme.event.overviewTrack.offset : this._theme.event.track.offset;
     var D = this._bandInfo;
-    if (B != D.width) {
-        D.width = B;
-    }
+    if (B != D.width) D.width = B;
+
 };
 Timeline._Band.prototype.layout = function () {
     this.paint();
@@ -302,9 +298,7 @@ Timeline._Band.prototype.showBubbleForEvent = function (C) {
     }
 };
 Timeline._Band.prototype.zoom = function (F, A, E, C) {
-    if (!this._zoomSteps) {
-        return;
-    }
+    if (!this._zoomSteps) return;
     A += this._viewOffset;
     var D = this._ether.pixelOffsetToDate(A);
     var B = this._ether.zoom(F);
@@ -348,21 +342,17 @@ Timeline._Band.prototype._onMouseScroll = function (G, I, E) {
         if (I.wheelDelta) {
             H = I.wheelDelta / 120;
         } else {
-            if (I.detail) {
-                H = -I.detail / 3;
-            }
+            if (I.detail) H = -I.detail / 3;
+
         }
         var F = this._theme.mouseWheel;
         if (this._zoomSteps || F === "zoom") {
             var D = SimileAjax.DOM.getEventRelativeCoordinates(I, G);
             if (H != 0) {
                 var C;
-                if (H > 0) {
-                    C = true;
-                }
-                if (H < 0) {
-                    C = false;
-                }
+                if (H > 0) C = true;
+                if (H < 0) C = false;
+
                 this._timeline.zoom(C, D.x, D.y, G);
             }
         } else {
@@ -372,13 +362,11 @@ Timeline._Band.prototype._onMouseScroll = function (G, I, E) {
             }
         }
     }
-    if (I.stopPropagation) {
-        I.stopPropagation();
-    }
+    if (I.stopPropagation) I.stopPropagation();
+
     I.cancelBubble = true;
-    if (I.preventDefault) {
-        I.preventDefault();
-    }
+    if (I.preventDefault) I.preventDefault();
+
     I.returnValue = false;
 };
 Timeline._Band.prototype._onDblClick = function (B, A, D) {
@@ -444,9 +432,7 @@ Timeline._Band.prototype._autoScroll = function (D, C) {
 };
 Timeline._Band.prototype._moveEther = function (A) {
     this.closeBubble();
-    if (!this._timeline.shiftOK(this._index, A)) {
-        return;
-    }
+    if (!this._timeline.shiftOK(this._index, A)) return;
     this._viewOffset += A;
     this._ether.shiftPixels(-A);
     if (this._timeline.isHorizontal()) {
@@ -503,9 +489,8 @@ Timeline._Band.prototype._positionHighlight = function () {
     if (this._syncWithBand) {
         var A = this._syncWithBand.getMinVisibleDate();
         var B = this._syncWithBand.getMaxVisibleDate();
-        if (this._highlight) {
-            this._etherPainter.setHighlight(A, B);
-        }
+        if (this._highlight) this._etherPainter.setHighlight(A, B);
+
     }
 };
 Timeline._Band.prototype._recenterDiv = function () {
@@ -542,8 +527,6 @@ Timeline._Band.prototype._softPaintDecorators = function () {
 Timeline._Band.prototype.closeBubble = function () {
     SimileAjax.WindowManager.cancelPopups();
 };
-
-
 /* compact-painter.js */
 Timeline.CompactEventPainter = function (A) {
     this._params = A;
@@ -589,9 +572,7 @@ Timeline.CompactEventPainter.prototype.setHighlightMatcher = function (A) {
 };
 Timeline.CompactEventPainter.prototype.paint = function () {
     var P = this._band.getEventSource();
-    if (P == null) {
-        return;
-    }
+    if (P == null) return;
     this._eventIdToElmt = {};
     this._prepareForPainting();
     var Q = this._params.theme;
@@ -675,9 +656,8 @@ Timeline.CompactEventPainter.prototype.paint = function () {
     } else {
         while (H.hasNext()) {
             var E = H.next();
-            if (R(E)) {
-                this.paintEvent(E, I, this._params.theme, F(E));
-            }
+            if (R(E)) this.paintEvent(E, I, this._params.theme, F(E));
+
         }
     }
     this._highlightLayer.style.display = "block";
@@ -703,14 +683,12 @@ Timeline.CompactEventPainter.prototype._prepareForPainting = function () {
     }
     this._highlightLayer = B.createLayerDiv(105, "timeline-band-highlights");
     this._highlightLayer.style.display = "none";
-    if (this._lineLayer != null) {
-        B.removeLayerDiv(this._lineLayer);
-    }
+    if (this._lineLayer != null) B.removeLayerDiv(this._lineLayer);
+
     this._lineLayer = B.createLayerDiv(110, "timeline-band-lines");
     this._lineLayer.style.display = "none";
-    if (this._eventLayer != null) {
-        B.removeLayerDiv(this._eventLayer);
-    }
+    if (this._eventLayer != null) B.removeLayerDiv(this._eventLayer);
+
     this._eventLayer = B.createLayerDiv(115, "timeline-band-events");
     this._eventLayer.style.display = "none";
 };
@@ -1036,9 +1014,8 @@ Timeline.CompactEventPainter.prototype.paintTapeIconLabel = function (a, M, d, E
             B = -Math.floor(E.width / 2);
         }
         U = B + E.width + V.iconLabelGap;
-        if (O > 0) {
-            b[O - 1].end = Math.max(b[O - 1].end, U);
-        }
+        if (O > 0) b[O - 1].end = Math.max(b[O - 1].end, U);
+
         var J = E.height + V.iconBottomMargin + N;
         while (J > 0) {
             b.push({start: B, end: U});
@@ -1049,9 +1026,8 @@ Timeline.CompactEventPainter.prototype.paintTapeIconLabel = function (a, M, d, E
     var G = this._frc.computeSize(P);
     var C = G.height + V.labelBottomMargin + N;
     var F = U + G.width + V.labelRightMargin;
-    if (O > 0) {
-        b[O - 1].end = Math.max(b[O - 1].end, F);
-    }
+    if (O > 0) b[O - 1].end = Math.max(b[O - 1].end, F);
+
     for (var W = 0;
          C > 0;
          W++) {
@@ -1096,9 +1072,7 @@ Timeline.CompactEventPainter.prototype._fitTracks = function (A, F) {
                 break;
             }
         }
-        if (E) {
-            break;
-        }
+        if (E) break;
     }
     for (var D = 0;
          D < F.length;
@@ -1244,8 +1218,6 @@ Timeline.CompactEventPainter.prototype._fireOnSelect = function (B) {
         this._onSelectListeners[A](B);
     }
 };
-
-
 /* decorators.js */
 Timeline.SpanHighlightDecorator = function (A) {
     this._unit = A.unit != null ? A.unit : SimileAjax.NativeDateUnit;
@@ -1285,12 +1257,10 @@ Timeline.SpanHighlightDecorator.prototype.paint = function () {
         };
         var B = I.createElement("div");
         B.className = "timeline-highlight-decorator";
-        if (this._cssClass) {
-            B.className += " " + this._cssClass;
-        }
-        if (this._color != null) {
-            B.style.backgroundColor = this._color;
-        }
+        if (this._cssClass) B.className += " " + this._cssClass;
+
+        if (this._color != null) B.style.backgroundColor = this._color;
+
         if (this._opacity < 100) {
             SimileAjax.Graphics.setOpacity(B, this._opacity);
         }
@@ -1299,17 +1269,15 @@ Timeline.SpanHighlightDecorator.prototype.paint = function () {
         J.className = "timeline-highlight-label timeline-highlight-label-start";
         var G = J.rows[0].cells[0];
         G.innerHTML = this._startLabel;
-        if (this._cssClass) {
-            G.className = "label_" + this._cssClass;
-        }
+        if (this._cssClass) G.className = "label_" + this._cssClass;
+
         this._layerDiv.appendChild(J);
         var A = H();
         A.className = "timeline-highlight-label timeline-highlight-label-end";
         var E = A.rows[0].cells[0];
         E.innerHTML = this._endLabel;
-        if (this._cssClass) {
-            E.className = "label_" + this._cssClass;
-        }
+        if (this._cssClass) E.className = "label_" + this._cssClass;
+
         this._layerDiv.appendChild(A);
         if (this._timeline.isHorizontal()) {
             B.style.left = D + "px";
@@ -1360,9 +1328,8 @@ Timeline.PointHighlightDecorator.prototype.paint = function () {
         var F = D.createElement("div");
         F.className = "timeline-highlight-point-decorator";
         F.className += " " + this._cssClass;
-        if (this._color != null) {
-            F.style.backgroundColor = this._color;
-        }
+        if (this._color != null) F.style.backgroundColor = this._color;
+
         if (this._opacity < 100) {
             SimileAjax.Graphics.setOpacity(F, this._opacity);
         }
@@ -1379,8 +1346,6 @@ Timeline.PointHighlightDecorator.prototype.paint = function () {
 };
 Timeline.PointHighlightDecorator.prototype.softPaint = function () {
 };
-
-
 /* detailed-painter.js */
 Timeline.DetailedEventPainter = function (A) {
     this._params = A;
@@ -1429,9 +1394,7 @@ Timeline.DetailedEventPainter.prototype.setHighlightMatcher = function (A) {
 };
 Timeline.DetailedEventPainter.prototype.paint = function () {
     var B = this._band.getEventSource();
-    if (B == null) {
-        return;
-    }
+    if (B == null) return;
     this._eventIdToElmt = {};
     this._prepareForPainting();
     var I = this._params.theme.event;
@@ -1457,9 +1420,8 @@ Timeline.DetailedEventPainter.prototype.paint = function () {
     var D = B.getEventReverseIterator(C, A);
     while (D.hasNext()) {
         var H = D.next();
-        if (J(H)) {
-            this.paintEvent(H, F, this._params.theme, E(H));
-        }
+        if (J(H)) this.paintEvent(H, F, this._params.theme, E(H));
+
     }
     this._highlightLayer.style.display = "block";
     this._lineLayer.style.display = "block";
@@ -1486,14 +1448,12 @@ Timeline.DetailedEventPainter.prototype._prepareForPainting = function () {
     }
     this._highlightLayer = B.createLayerDiv(105, "timeline-band-highlights");
     this._highlightLayer.style.display = "none";
-    if (this._lineLayer != null) {
-        B.removeLayerDiv(this._lineLayer);
-    }
+    if (this._lineLayer != null) B.removeLayerDiv(this._lineLayer);
+
     this._lineLayer = B.createLayerDiv(110, "timeline-band-lines");
     this._lineLayer.style.display = "none";
-    if (this._eventLayer != null) {
-        B.removeLayerDiv(this._eventLayer);
-    }
+    if (this._eventLayer != null) B.removeLayerDiv(this._eventLayer);
+
     this._eventLayer = B.createLayerDiv(110, "timeline-band-events");
     this._eventLayer.style.display = "none";
 };
@@ -1668,9 +1628,7 @@ Timeline.DetailedEventPainter.prototype._findFreeTrackForSolid = function (B, A)
          D++) {
         if (D < this._lowerTracks.length) {
             var C = this._lowerTracks[D];
-            if (Math.min(C.solid, C.text) > B && (!(A) || C.line > A)) {
-                return D;
-            }
+            if (Math.min(C.solid, C.text) > B && (!(A) || C.line > A)) return D;
         } else {
             this._lowerTracks.push({solid: Number.POSITIVE_INFINITY, text: Number.POSITIVE_INFINITY, line: Number.POSITIVE_INFINITY});
             return D;
@@ -1744,9 +1702,7 @@ Timeline.DetailedEventPainter.prototype._findFreeLowerTrackForText = function (A
         A < this._lowerTracks.length;
         A++) {
         var B = this._lowerTracks[A];
-        if (Math.min(B.solid, B.text) >= C) {
-            break;
-        }
+        if (Math.min(B.solid, B.text) >= C) break;
     }
     return A;
 };
@@ -1755,9 +1711,7 @@ Timeline.DetailedEventPainter.prototype._findFreeUpperTrackForText = function (A
         A < this._upperTracks.length;
         A++) {
         var B = this._upperTracks[A];
-        if (Math.min(B.solid, B.text) >= C) {
-            break;
-        }
+        if (Math.min(B.solid, B.text) >= C) break;
     }
     return A;
 };
@@ -1795,9 +1749,8 @@ Timeline.DetailedEventPainter.prototype._paintEventIcon = function (I, E, B, F, 
     A.style.top = G + "px";
     A.appendChild(C);
     A.style.cursor = "pointer";
-    if (I._title != null) {
-        A.title = I._title;
-    }
+    if (I._title != null) A.title = I._title;
+
     this._eventLayer.appendChild(A);
     return {left: B, top: G, width: F.iconWidth, height: F.iconHeight, elmt: A};
 };
@@ -1819,16 +1772,13 @@ Timeline.DetailedEventPainter.prototype._paintEventLabel = function (H, I, B, F,
     E.style.top = F + "px";
     E.innerHTML = I;
     E.style.cursor = "pointer";
-    if (H._title != null) {
-        E.title = H._title;
-    }
+    if (H._title != null) E.title = H._title;
+
     var C = H.getTextColor();
-    if (C == null) {
-        C = H.getColor();
-    }
-    if (C != null) {
-        E.style.color = C;
-    }
+    if (C == null) C = H.getColor();
+
+    if (C != null) E.style.color = C;
+
     this._eventLayer.appendChild(E);
     return {left: B, top: F, width: A, height: J, elmt: E};
 };
@@ -1846,9 +1796,8 @@ Timeline.DetailedEventPainter.prototype._paintEventTape = function (L, H, E, A, 
     K.style.backgroundColor = C;
     K.style.overflow = "hidden";
     K.style.cursor = "pointer";
-    if (L._title != null) {
-        K.title = L._title;
-    }
+    if (L._title != null) K.title = L._title;
+
     SimileAjax.Graphics.setOpacity(K, G);
     this._eventLayer.appendChild(K);
     return {left: E, top: J, width: B, height: D, elmt: K};
@@ -1913,8 +1862,6 @@ Timeline.DetailedEventPainter.prototype._fireOnSelect = function (B) {
         this._onSelectListeners[A](B);
     }
 };
-
-
 /* ether-painters.js */
 Timeline.GregorianEtherPainter = function (A) {
     this._params = A;
@@ -1945,9 +1892,8 @@ Timeline.GregorianEtherPainter.prototype.paint = function () {
     this._markerLayer = this._band.createLayerDiv(100);
     this._markerLayer.setAttribute("name", "ether-markers");
     this._markerLayer.style.display = "none";
-    if (this._lineLayer) {
-        this._band.removeLayerDiv(this._lineLayer);
-    }
+    if (this._lineLayer) this._band.removeLayerDiv(this._lineLayer);
+
     this._lineLayer = this._band.createLayerDiv(1);
     this._lineLayer.setAttribute("name", "ether-lines");
     this._lineLayer.style.display = "none";
@@ -1974,9 +1920,7 @@ Timeline.GregorianEtherPainter.prototype.paint = function () {
 Timeline.GregorianEtherPainter.prototype.softPaint = function () {
 };
 Timeline.GregorianEtherPainter.prototype.zoom = function (A) {
-    if (A != 0) {
-        this._unit += A;
-    }
+    if (A != 0) this._unit += A;
 };
 Timeline.HotZoneGregorianEtherPainter = function (G) {
     this._params = G;
@@ -2035,9 +1979,8 @@ Timeline.HotZoneGregorianEtherPainter.prototype.paint = function () {
     this._markerLayer = this._band.createLayerDiv(100);
     this._markerLayer.setAttribute("name", "ether-markers");
     this._markerLayer.style.display = "none";
-    if (this._lineLayer) {
-        this._band.removeLayerDiv(this._lineLayer);
-    }
+    if (this._lineLayer) this._band.removeLayerDiv(this._lineLayer);
+
     this._lineLayer = this._band.createLayerDiv(1);
     this._lineLayer.setAttribute("name", "ether-lines");
     this._lineLayer.style.display = "none";
@@ -2055,16 +1998,12 @@ Timeline.HotZoneGregorianEtherPainter.prototype.paint = function () {
     };
     var C = 0;
     while (C < this._zones.length) {
-        if (D.getTime() < this._zones[C].endTime) {
-            break;
-        }
+        if (D.getTime() < this._zones[C].endTime) break;
         C++;
     }
     var E = this._zones.length - 1;
     while (E >= 0) {
-        if (A.getTime() > this._zones[E].startTime) {
-            break;
-        }
+        if (A.getTime() > this._zones[E].startTime) break;
         E--;
     }
     for (var H = C;
@@ -2090,9 +2029,8 @@ Timeline.HotZoneGregorianEtherPainter.prototype.zoom = function (B) {
         for (var A = 0;
              A < this._zones.length;
              ++A) {
-            if (this._zones[A]) {
-                this._zones[A].unit += B;
-            }
+            if (this._zones[A]) this._zones[A].unit += B;
+
         }
     }
 };
@@ -2125,9 +2063,8 @@ Timeline.YearCountEtherPainter.prototype.paint = function () {
     this._markerLayer = this._band.createLayerDiv(100);
     this._markerLayer.setAttribute("name", "ether-markers");
     this._markerLayer.style.display = "none";
-    if (this._lineLayer) {
-        this._band.removeLayerDiv(this._lineLayer);
-    }
+    if (this._lineLayer) this._band.removeLayerDiv(this._lineLayer);
+
     this._lineLayer = this._band.createLayerDiv(1);
     this._lineLayer.setAttribute("name", "ether-lines");
     this._lineLayer.style.display = "none";
@@ -2186,9 +2123,8 @@ Timeline.QuarterlyEtherPainter.prototype.paint = function () {
     this._markerLayer = this._band.createLayerDiv(100);
     this._markerLayer.setAttribute("name", "ether-markers");
     this._markerLayer.style.display = "none";
-    if (this._lineLayer) {
-        this._band.removeLayerDiv(this._lineLayer);
-    }
+    if (this._lineLayer) this._band.removeLayerDiv(this._lineLayer);
+
     this._lineLayer = this._band.createLayerDiv(1);
     this._lineLayer.setAttribute("name", "ether-lines");
     this._lineLayer.style.display = "none";
@@ -2258,9 +2194,8 @@ Timeline.EtherIntervalMarkerLayout = function (M, L, C, E, H) {
         if (H && b != SimileAjax.DateTime.WEEK) {
             var V = M.getDocument().createElement("div");
             V.className = "timeline-ether-lines";
-            if (I.opacity < 100) {
-                SimileAjax.Graphics.setOpacity(V, I.opacity);
-            }
+            if (I.opacity < 100) SimileAjax.Graphics.setOpacity(V, I.opacity);
+
             if (A) {
                 V.style.left = U + "px";
             } else {
@@ -2277,9 +2212,8 @@ Timeline.EtherIntervalMarkerLayout = function (M, L, C, E, H) {
             var R = Math.max(1, S - X);
             var P = M.getDocument().createElement("div");
             P.className = "timeline-ether-weekends";
-            if (B.opacity < 100) {
-                SimileAjax.Graphics.setOpacity(P, B.opacity);
-            }
+            if (B.opacity < 100) SimileAjax.Graphics.setOpacity(P, B.opacity);
+
             if (A) {
                 P.style.left = X + "px";
                 P.style.width = R + "px";
@@ -2293,9 +2227,8 @@ Timeline.EtherIntervalMarkerLayout = function (M, L, C, E, H) {
         var O = M.getDocument().createElement("div");
         O.innerHTML = Y.text;
         O.className = "timeline-date-label";
-        if (Y.emphasized) {
-            O.className += " timeline-date-label-em";
-        }
+        if (Y.emphasized) O.className += " timeline-date-label-em";
+
         this.positionDiv(O, U);
         c.appendChild(O);
         return O;
@@ -2310,9 +2243,8 @@ Timeline.EtherHighlight = function (C, E, D, B) {
             this._highlightDiv.setAttribute("name", "ether-highlight");
             this._highlightDiv.className = "timeline-ether-highlight";
             var F = D.ether.highlightOpacity;
-            if (F < 100) {
-                SimileAjax.Graphics.setOpacity(this._highlightDiv, F);
-            }
+            if (F < 100) SimileAjax.Graphics.setOpacity(this._highlightDiv, F);
+
             B.appendChild(this._highlightDiv);
         }
     };
@@ -2332,8 +2264,6 @@ Timeline.EtherHighlight = function (C, E, D, B) {
         }
     };
 };
-
-
 /* ethers.js */
 Timeline.LinearEther = function (A) {
     this._params = A;
@@ -2380,12 +2310,10 @@ Timeline.LinearEther.prototype.zoom = function (D) {
     var B = 0;
     var A = this._band._zoomIndex;
     var C = A;
-    if (D && (A > 0)) {
-        C = A - 1;
-    }
-    if (!D && (A < (this._band._zoomSteps.length - 1))) {
-        C = A + 1;
-    }
+    if (D && (A > 0)) C = A - 1;
+
+    if (!D && (A < (this._band._zoomSteps.length - 1))) C = A + 1;
+
     this._band._zoomIndex = C;
     this._interval = SimileAjax.DateTime.gregorianUnitLengths[this._band._zoomSteps[C].unit];
     this._pixelsPerInterval = this._band._zoomSteps[C].pixelsPerInterval;
@@ -2465,12 +2393,10 @@ Timeline.HotZoneEther.prototype.zoom = function (D) {
     var B = 0;
     var A = this._band._zoomIndex;
     var C = A;
-    if (D && (A > 0)) {
-        C = A - 1;
-    }
-    if (!D && (A < (this._band._zoomSteps.length - 1))) {
-        C = A + 1;
-    }
+    if (D && (A > 0)) C = A - 1;
+
+    if (!D && (A < (this._band._zoomSteps.length - 1))) C = A + 1;
+
     this._band._zoomIndex = C;
     this._interval = SimileAjax.DateTime.gregorianUnitLengths[this._band._zoomSteps[C].unit];
     this._pixelsPerInterval = this._band._zoomSteps[C].pixelsPerInterval;
@@ -2485,9 +2411,7 @@ Timeline.HotZoneEther.prototype._dateDiffToPixelOffset = function (I, D) {
     if (this._unit.compare(H, C) < 0) {
         var G = 0;
         while (G < this._zones.length) {
-            if (this._unit.compare(H, this._zones[G].endTime) < 0) {
-                break;
-            }
+            if (this._unit.compare(H, this._zones[G].endTime) < 0) break;
             G++;
         }
         while (this._unit.compare(H, C) < 0) {
@@ -2500,9 +2424,7 @@ Timeline.HotZoneEther.prototype._dateDiffToPixelOffset = function (I, D) {
     } else {
         var G = this._zones.length - 1;
         while (G >= 0) {
-            if (this._unit.compare(H, this._zones[G].startTime) > 0) {
-                break;
-            }
+            if (this._unit.compare(H, this._zones[G].startTime) > 0) break;
             G--;
         }
         while (this._unit.compare(H, C) > 0) {
@@ -2521,9 +2443,7 @@ Timeline.HotZoneEther.prototype._pixelOffsetToDate = function (H, C) {
     if (H > 0) {
         var F = 0;
         while (F < this._zones.length) {
-            if (this._unit.compare(E, this._zones[F].endTime) < 0) {
-                break;
-            }
+            if (this._unit.compare(E, this._zones[F].endTime) < 0) break;
             F++;
         }
         while (H > 0) {
@@ -2547,9 +2467,7 @@ Timeline.HotZoneEther.prototype._pixelOffsetToDate = function (H, C) {
     } else {
         var F = this._zones.length - 1;
         while (F >= 0) {
-            if (this._unit.compare(E, this._zones[F].startTime) > 0) {
-                break;
-            }
+            if (this._unit.compare(E, this._zones[F].startTime) > 0) break;
             F--;
         }
         H = -H;
@@ -2577,14 +2495,11 @@ Timeline.HotZoneEther.prototype._pixelOffsetToDate = function (H, C) {
 Timeline.HotZoneEther.prototype._getScale = function () {
     return this._interval / this._pixelsPerInterval;
 };
-
-
 /* event-utils.js */
 Timeline.EventUtils = {};
 Timeline.EventUtils.getNewEventID = function () {
-    if (this._lastEventID == null) {
-        this._lastEventID = 0;
-    }
+    if (this._lastEventID == null) this._lastEventID = 0;
+
     this._lastEventID += 1;
     return "e" + this._lastEventID;
 };
@@ -2602,8 +2517,6 @@ Timeline.EventUtils.decodeEventElID = function (B) {
 Timeline.EventUtils.encodeEventElID = function (C, D, B, A) {
     return B + "-tl-" + C.timelineID + "-" + D.getIndex() + "-" + A.getID();
 };
-
-
 /* labellers.js */
 Timeline.GregorianDateLabeller = function (A, B) {
     this._locale = A;
@@ -2677,8 +2590,6 @@ Timeline.GregorianDateLabeller.prototype.defaultLabelInterval = function (B, F) 
     }
     return {text: C, emphasized: E};
 };
-
-
 /* original-painter.js */
 Timeline.OriginalEventPainter = function (A) {
     this._params = A;
@@ -2741,9 +2652,7 @@ Timeline.OriginalEventPainter.prototype.setHighlightMatcher = function (A) {
 };
 Timeline.OriginalEventPainter.prototype.paint = function () {
     var B = this._band.getEventSource();
-    if (B == null) {
-        return;
-    }
+    if (B == null) return;
     this._eventIdToElmt = {};
     this._fireEventPaintListeners("paintStarting", null, null);
     this._prepareForPainting();
@@ -2772,9 +2681,8 @@ Timeline.OriginalEventPainter.prototype.paint = function () {
     var D = B.getEventReverseIterator(C, A);
     while (D.hasNext()) {
         var H = D.next();
-        if (J(H)) {
-            this.paintEvent(H, F, this._params.theme, E(H));
-        }
+        if (J(H)) this.paintEvent(H, F, this._params.theme, E(H));
+
     }
     this._highlightLayer.style.display = "block";
     this._lineLayer.style.display = "block";
@@ -2801,14 +2709,12 @@ Timeline.OriginalEventPainter.prototype._prepareForPainting = function () {
     }
     this._highlightLayer = B.createLayerDiv(105, "timeline-band-highlights");
     this._highlightLayer.style.display = "none";
-    if (this._lineLayer != null) {
-        B.removeLayerDiv(this._lineLayer);
-    }
+    if (this._lineLayer != null) B.removeLayerDiv(this._lineLayer);
+
     this._lineLayer = B.createLayerDiv(110, "timeline-band-lines");
     this._lineLayer.style.display = "none";
-    if (this._eventLayer != null) {
-        B.removeLayerDiv(this._eventLayer);
-    }
+    if (this._eventLayer != null) B.removeLayerDiv(this._eventLayer);
+
     this._eventLayer = B.createLayerDiv(115, "timeline-band-events");
     this._eventLayer.style.display = "none";
 };
@@ -2857,9 +2763,8 @@ Timeline.OriginalEventPainter.prototype.paintPreciseInstantEvent = function (M, 
     SimileAjax.DOM.registerEvent(B.elmt, "mousedown", J);
     SimileAjax.DOM.registerEvent(P.elmt, "mousedown", J);
     var G = this._createHighlightDiv(R, B, S, M);
-    if (G != null) {
-        F.push(G);
-    }
+    if (G != null) F.push(G);
+
     this._fireEventPaintListeners("paintedEvent", M, F);
     this._eventIdToElmt[M.getID()] = B.elmt;
     this._tracks[O] = K;
@@ -2895,9 +2800,8 @@ Timeline.OriginalEventPainter.prototype.paintImpreciseInstantEvent = function (P
     SimileAjax.DOM.registerEvent(F.elmt, "mousedown", L);
     SimileAjax.DOM.registerEvent(S.elmt, "mousedown", L);
     var I = this._createHighlightDiv(V, C, Y, P);
-    if (I != null) {
-        H.push(I);
-    }
+    if (I != null) H.push(I);
+
     this._fireEventPaintListeners("paintedEvent", P, H);
     this._eventIdToElmt[P.getID()] = C.elmt;
     this._tracks[R] = M;
@@ -2928,9 +2832,8 @@ Timeline.OriginalEventPainter.prototype.paintPreciseDurationEvent = function (L,
     SimileAjax.DOM.registerEvent(D.elmt, "mousedown", J);
     SimileAjax.DOM.registerEvent(O.elmt, "mousedown", J);
     var G = this._createHighlightDiv(R, D, T, L);
-    if (G != null) {
-        F.push(G);
-    }
+    if (G != null) F.push(G);
+
     this._fireEventPaintListeners("paintedEvent", L, F);
     this._eventIdToElmt[L.getID()] = D.elmt;
     this._tracks[N] = B;
@@ -2966,9 +2869,8 @@ Timeline.OriginalEventPainter.prototype.paintImpreciseDurationEvent = function (
     SimileAjax.DOM.registerEvent(D.elmt, "mousedown", L);
     SimileAjax.DOM.registerEvent(Q.elmt, "mousedown", L);
     var I = this._createHighlightDiv(V, D, Y, N);
-    if (I != null) {
-        F.push(I);
-    }
+    if (I != null) F.push(I);
+
     this._fireEventPaintListeners("paintedEvent", N, F);
     this._eventIdToElmt[N.getID()] = D.elmt;
     this._tracks[P] = C;
@@ -2978,16 +2880,12 @@ Timeline.OriginalEventPainter.prototype._encodeEventElID = function (B, A) {
 };
 Timeline.OriginalEventPainter.prototype._findFreeTrack = function (E, A) {
     var D = E.getTrackNum();
-    if (D != null) {
-        return D;
-    }
+    if (D != null) return D;
     for (var C = 0;
          C < this._tracks.length;
          C++) {
         var B = this._tracks[C];
-        if (B > A) {
-            break;
-        }
+        if (B > A) break;
     }
     return C;
 };
@@ -3008,9 +2906,8 @@ Timeline.OriginalEventPainter.prototype._paintEventIcon = function (J, F, B, G, 
     A.style.left = B + "px";
     A.style.top = H + "px";
     A.appendChild(D);
-    if (J._title != null) {
-        A.title = J._title;
-    }
+    if (J._title != null) A.title = J._title;
+
     this._eventLayer.appendChild(A);
     return {left: B, top: H, width: G.iconWidth, height: G.iconHeight, elmt: A};
 };
@@ -3023,16 +2920,13 @@ Timeline.OriginalEventPainter.prototype._paintEventLabel = function (J, K, C, H,
     G.style.width = A + "px";
     G.style.top = H + "px";
     G.innerHTML = K;
-    if (J._title != null) {
-        G.title = J._title;
-    }
+    if (J._title != null) G.title = J._title;
+
     var D = J.getTextColor();
-    if (D == null) {
-        D = J.getColor();
-    }
-    if (D != null) {
-        G.style.color = D;
-    }
+    if (D == null) D = J.getColor();
+
+    if (D != null) G.style.color = D;
+
     if (E.event.highlightLabelBackground && B >= 0) {
         G.style.background = this._getHighlightColor(B, E);
     }
@@ -3050,12 +2944,10 @@ Timeline.OriginalEventPainter.prototype._paintEventTape = function (N, I, F, A, 
     M.style.width = B + "px";
     M.style.height = E + "px";
     M.style.top = K + "px";
-    if (N._title != null) {
-        M.title = N._title;
-    }
-    if (C != null) {
-        M.style.backgroundColor = C;
-    }
+    if (N._title != null) M.title = N._title;
+
+    if (C != null) M.style.backgroundColor = C;
+
     var L = N.getTapeImage();
     var D = N.getTapeRepeat();
     D = D != null ? D : "repeat";
@@ -3073,9 +2965,8 @@ Timeline.OriginalEventPainter.prototype._getLabelDivClassName = function (A) {
 Timeline.OriginalEventPainter.prototype._getElClassName = function (B, A, D) {
     var E = A.getClassName(), C = [];
     if (E) {
-        if (D) {
-            C.push(D + "-" + E + " ");
-        }
+        if (D) C.push(D + "-" + E + " ");
+
         C.push(E + " ");
     }
     C.push(B);
@@ -3155,8 +3046,6 @@ Timeline.OriginalEventPainter.prototype._fireEventPaintListeners = function (D, 
         this._eventPaintListeners[B](this._band, D, A, C);
     }
 };
-
-
 /* overview-painter.js */
 Timeline.OverviewEventPainter = function (A) {
     this._params = A;
@@ -3200,9 +3089,7 @@ Timeline.OverviewEventPainter.prototype.setHighlightMatcher = function (A) {
 };
 Timeline.OverviewEventPainter.prototype.paint = function () {
     var B = this._band.getEventSource();
-    if (B == null) {
-        return;
-    }
+    if (B == null) return;
     this._prepareForPainting();
     var H = this._params.theme.event;
     var F = {trackOffset: H.overviewTrack.offset, trackHeight: H.overviewTrack.height, trackGap: H.overviewTrack.gap, trackIncrement: H.overviewTrack.height + H.overviewTrack.gap};
@@ -3217,9 +3104,8 @@ Timeline.OverviewEventPainter.prototype.paint = function () {
     var D = B.getEventReverseIterator(C, A);
     while (D.hasNext()) {
         var G = D.next();
-        if (I(G)) {
-            this.paintEvent(G, F, this._params.theme, E(G));
-        }
+        if (I(G)) this.paintEvent(G, F, this._params.theme, E(G));
+
     }
     this._highlightLayer.style.display = "block";
     this._eventLayer.style.display = "block";
@@ -3235,9 +3121,8 @@ Timeline.OverviewEventPainter.prototype._prepareForPainting = function () {
     }
     this._highlightLayer = A.createLayerDiv(105, "timeline-band-highlights");
     this._highlightLayer.style.display = "none";
-    if (this._eventLayer != null) {
-        A.removeLayerDiv(this._eventLayer);
-    }
+    if (this._eventLayer != null) A.removeLayerDiv(this._eventLayer);
+
     this._eventLayer = A.createLayerDiv(110, "timeline-band-events");
     this._eventLayer.style.display = "none";
 };
@@ -3269,9 +3154,7 @@ Timeline.OverviewEventPainter.prototype.paintDurationEvent = function (L, K, J, 
     for (;
         I < this._tracks.length;
         I++) {
-        if (E < this._tracks[I]) {
-            break;
-        }
+        if (E < this._tracks[I]) break;
     }
     this._tracks[I] = E;
     var H = L.getColor(), G = L.getClassName();
@@ -3289,19 +3172,16 @@ Timeline.OverviewEventPainter.prototype._paintEventTape = function (L, B, C, K, 
     var M = H.trackHeight;
     var J = this._timeline.getDocument().createElement("div");
     J.className = "timeline-small-event-tape";
-    if (D) {
-        J.className += " small-" + D;
-    }
+    if (D) J.className += " small-" + D;
+
     J.style.left = C + "px";
     J.style.width = A + "px";
     J.style.top = I + "px";
     J.style.height = M + "px";
-    if (E) {
-        J.style.backgroundColor = E;
-    }
-    if (G < 100) {
-        SimileAjax.Graphics.setOpacity(J, G);
-    }
+    if (E) J.style.backgroundColor = E;
+
+    if (G < 100) SimileAjax.Graphics.setOpacity(J, G);
+
     this._eventLayer.appendChild(J);
     return {left: C, top: I, width: A, height: M, elmt: J};
 };
@@ -3314,12 +3194,10 @@ Timeline.OverviewEventPainter.prototype._paintEventTick = function (J, B, D, F, 
     I.style.left = B + "px";
     I.style.top = H + "px";
     var C = J.getClassName();
-    if (C) {
-        I.className += " small-" + C;
-    }
-    if (F < 100) {
-        SimileAjax.Graphics.setOpacity(I, F);
-    }
+    if (C) I.className += " small-" + C;
+
+    if (F < 100) SimileAjax.Graphics.setOpacity(I, F);
+
     this._eventLayer.appendChild(I);
     return {left: B, top: H, width: A, height: K, elmt: I};
 };
@@ -3341,8 +3219,6 @@ Timeline.OverviewEventPainter.prototype._createHighlightDiv = function (A, C, E)
 };
 Timeline.OverviewEventPainter.prototype.showBubble = function (A) {
 };
-
-
 /* sources.js */
 Timeline.DefaultEventSource = function (A) {
     this._events = (A instanceof Object) ? A : new SimileAjax.EventIndex();
@@ -3408,9 +3284,8 @@ Timeline.DefaultEventSource.prototype.loadXML = function (G, A) {
         }
         D = D.nextSibling;
     }
-    if (I) {
-        this._fire("onAddMany", []);
-    }
+    if (I) this._fire("onAddMany", []);
+
 };
 Timeline.DefaultEventSource.prototype.loadJSON = function (G, B) {
     var D = this._getBaseURL(B);
@@ -3456,17 +3331,14 @@ Timeline.DefaultEventSource.prototype.loadJSON = function (G, B) {
             J = true;
         }
     }
-    if (J) {
-        this._fire("onAddMany", []);
-    }
+    if (J) this._fire("onAddMany", []);
+
 };
 Timeline.DefaultEventSource.prototype.loadSPARQL = function (H, A) {
     var D = this._getBaseURL(A);
     var F = "iso8601";
     var G = this._events.getUnit().getParser(F);
-    if (H == null) {
-        return;
-    }
+    if (H == null) return;
     var E = H.documentElement.firstChild;
     while (E != null && (E.nodeType != 1 || E.nodeName != "results")) {
         E = E.nextSibling;
@@ -3525,9 +3397,8 @@ Timeline.DefaultEventSource.prototype.loadSPARQL = function (H, A) {
         }
         E = E.nextSibling;
     }
-    if (K) {
-        this._fire("onAddMany", []);
-    }
+    if (K) this._fire("onAddMany", []);
+
 };
 Timeline.DefaultEventSource.prototype.add = function (A) {
     this._events.add(A);
@@ -3650,9 +3521,8 @@ Timeline.DefaultEventSource.Event = function (A) {
     }
     this._eventID = D("eventID");
     this._text = (A.text != null) ? SimileAjax.HTML.deEntify(A.text) : "";
-    if (B.length > 0) {
-        this._text += " PROBLEM: " + B.join(", ");
-    }
+    if (B.length > 0) this._text += " PROBLEM: " + B.join(", ");
+
     this._description = SimileAjax.HTML.deEntify(A.description);
     this._image = D("image");
     this._link = D("link");
@@ -3723,16 +3593,11 @@ Timeline.DefaultEventSource.Event.prototype = {
         A.innerHTML = this._description;
     }, fillWikiInfo: function (D) {
         D.style.display = "none";
-        if (this._wikiURL == null || this._wikiSection == null) {
-            return;
-        }
+        if (this._wikiURL == null || this._wikiSection == null) return;
         var C = this.getProperty("wikiID");
-        if (C == null || C.length == 0) {
-            C = this.getText();
-        }
-        if (C == null || C.length == 0) {
-            return;
-        }
+        if (C == null || C.length == 0) C = this.getText();
+
+        if (C == null || C.length == 0) return;
         D.style.display = "inline";
         C = C.replace(/\s/g, "_");
         var B = this._wikiURL + this._wikiSection.replace(/\s/g, "_") + "/" + C;
@@ -3800,19 +3665,15 @@ Timeline.DefaultEventSource.Event.prototype = {
         A.appendChild(F);
     }
 };
-
-
 /* themes.js */
 Timeline.ClassicTheme = new Object();
 Timeline.ClassicTheme.implementations = [];
 Timeline.ClassicTheme.create = function (A) {
-    if (A == null) {
-        A = Timeline.getDefaultLocale();
-    }
+    if (A == null) A = Timeline.getDefaultLocale();
+
     var B = Timeline.ClassicTheme.implementations[A];
-    if (B == null) {
-        B = Timeline.ClassicTheme._Impl;
-    }
+    if (B == null) B = Timeline.ClassicTheme._Impl;
+
     return new B();
 };
 Timeline.ClassicTheme._Impl = function () {
@@ -3847,8 +3708,6 @@ Timeline.ClassicTheme._Impl = function () {
     };
     this.mouseWheel = "scroll";
 };
-
-
 /* timeline.js */
 Timeline.version = "2.3.1";
 Timeline.ajax_lib_version = SimileAjax.version;
@@ -3861,9 +3720,8 @@ Timeline.getDefaultLocale = function () {
     return Timeline.clientLocale;
 };
 Timeline.create = function (D, C, B, F) {
-    if (Timeline.timelines == null) {
-        Timeline.timelines = [];
-    }
+    if (Timeline.timelines == null) Timeline.timelines = [];
+
     var A = Timeline.timelines.length;
     Timeline.timelines[A] = null;
     var E = new Timeline._Impl(D, C, B, F, A);
@@ -3881,12 +3739,10 @@ Timeline.createBandInfo = function (D) {
             I[A] = D.eventPainterParams[A];
         }
     }
-    if ("trackHeight" in D) {
-        I.trackHeight = D.trackHeight;
-    }
-    if ("trackGap" in D) {
-        I.trackGap = D.trackGap;
-    }
+    if ("trackHeight" in D) I.trackHeight = D.trackHeight;
+
+    if ("trackGap" in D) I.trackGap = D.trackGap;
+
     var H = ("overview" in D && D.overview) ? "overview" : ("layout" in D ? D.layout : "original");
     var C;
     if ("eventPainter" in D) {
@@ -3916,12 +3772,10 @@ Timeline.createHotZoneBandInfo = function (D) {
             I[A] = D.eventPainterParams[A];
         }
     }
-    if ("trackHeight" in D) {
-        I.trackHeight = D.trackHeight;
-    }
-    if ("trackGap" in D) {
-        I.trackGap = D.trackGap;
-    }
+    if ("trackHeight" in D) I.trackHeight = D.trackHeight;
+
+    if ("trackGap" in D) I.trackGap = D.trackGap;
+
     var H = ("overview" in D && D.overview) ? "overview" : ("layout" in D ? D.layout : "original");
     var C;
     if ("eventPainter" in D) {
@@ -4118,9 +3972,7 @@ Timeline._Impl.prototype._autoWidthCheck = function (C) {
     function F() {
         var I = 0;
         var G = E.getPixelWidth();
-        if (E._autoResizing) {
-            return;
-        }
+        if (E._autoResizing) return;
         for (var H = 0;
              H < E._bands.length;
              H++) {
@@ -4134,9 +3986,7 @@ Timeline._Impl.prototype._autoWidthCheck = function (C) {
         }
     }
 
-    if (!E.autoWidth) {
-        return;
-    }
+    if (!E.autoWidth) return;
     F();
 };
 Timeline._Impl.prototype._initialize = function () {
@@ -4228,9 +4078,7 @@ Timeline._Impl.prototype.shiftOK = function (D, B) {
          F++) {
         G = this._bands[F].busy();
     }
-    if (G) {
-        return (true);
-    }
+    if (G) return (true);
     if ((C && this.timeline_at_start) || (A && this.timeline_at_stop)) {
         return (false);
     }
@@ -4258,16 +4106,12 @@ Timeline._Impl.prototype.zoom = function (G, B, F, D) {
     var C = new RegExp("^timeline-band-([0-9]+)$");
     var E = null;
     var A = C.exec(D.id);
-    if (A) {
-        E = parseInt(A[1]);
-    }
-    if (E != null) {
-        this._bands[E].zoom(G, B, F, D);
-    }
+    if (A) E = parseInt(A[1]);
+
+    if (E != null) this._bands[E].zoom(G, B, F, D);
+
     this.paint();
 };
-
-
 /* units.js */
 Timeline.NativeDateUnit = new Object();
 Timeline.NativeDateUnit.createLabeller = function (A, B) {
@@ -4280,9 +4124,8 @@ Timeline.NativeDateUnit.cloneValue = function (A) {
     return new Date(A.getTime());
 };
 Timeline.NativeDateUnit.getParser = function (A) {
-    if (typeof A == "string") {
-        A = A.toLowerCase();
-    }
+    if (typeof A == "string") A = A.toLowerCase();
+
     return (A == "iso8601" || A == "iso 8601") ? Timeline.DateTime.parseIso8601DateTime : Timeline.DateTime.parseGregorianDateTime;
 };
 Timeline.NativeDateUnit.parseFromObject = function (A) {

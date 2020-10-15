@@ -37,9 +37,8 @@ function reorderMedia($query, $plink, $mediatypeID) {
 }
 
 $thumbquality = 80;
-if (function_exists('imageJpeg')) {
-    include "imageutils.php";
-}
+if (function_exists('imageJpeg')) include "imageutils.php";
+
 
 $usefolder = $usecollfolder ? $mediatypes_assoc[$mediatypeID] : $mediapath;
 $treestr = $tngconfig['mediatrees'] ? $tree . "/" : "";
@@ -66,58 +65,34 @@ $plot = addslashes($plot);
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
 $imagemap = trim($imagemap);
-if ($latitude && $longitude && !$zoom) {
-    $zoom = 13;
-}
+if ($latitude && $longitude && !$zoom) $zoom = 13;
 $fileparts = pathinfo($path);
 $form = strtoupper($fileparts['extension']);
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
-
 if ($abspath) {
     $path = $mediaurl;
 } else {
     $abspath = 0;
 }
-if (!$showmap) {
-    $showmap = "0";
-}
-if (!$usenl) {
-    $usenl = 0;
-}
-if (!$alwayson) {
-    $alwayson = 0;
-}
-if (!$newwindow) {
-    $newwindow = 0;
-}
-if (!$usecollfolder) {
-    $usecollfolder = 0;
-}
-if (!$width) {
-    $width = 0;
-}
-if (!$height) {
-    $height = 0;
-}
-if (!$cemeteryID) {
-    $cemeteryID = 0;
-}
-if (!$linktocem) {
-    $linktocem = 0;
-}
-if (!$zoom) {
-    $zoom = 0;
-}
+if (!$showmap) $showmap = "0";
+if (!$usenl) $usenl = 0;
+if (!$alwayson) $alwayson = 0;
+if (!$newwindow) $newwindow = 0;
+if (!$usecollfolder) $usecollfolder = 0;
 
+if (!$width) $width = 0;
+if (!$height) $height = 0;
+if (!$cemeteryID) $cemeteryID = 0;
+if (!$linktocem) $linktocem = 0;
+if (!$zoom) $zoom = 0;
 if ($usecollfolder && $mediatypeID != $mediatypeID_org) {
     $oldmediapath = $mediatypes_assoc[$mediatypeID_org] . $treestr;
     $newmediapath = $mediatypes_assoc[$mediatypeID] . $treestr;
     if ($path_org) {
         $oldpath = "$rootpath$oldmediapath/$path_org";
         $newpath = "$rootpath$newmediapath/$path";
-        if (file_exists($oldpath)) {
-            @rename($oldpath, $newpath);
-        }
+        if (file_exists($oldpath)) @rename($oldpath, $newpath);
+
     }
 
     if ($thumbpath_org) {
@@ -130,13 +105,11 @@ if ($usecollfolder && $mediatypeID != $mediatypeID_org) {
 }
 
 $mediakey = $path && $path != $path_org ? "$usefolder/$path" : $mediakey_org;
-if (!$mediakey) {
-    $mediakey = time();
-}
+if (!$mediakey) $mediakey = time();
 
-if (substr($path, 0, 1) == "/") {
-    $path = substr($path, 1);
-}
+
+if (substr($path, 0, 1) == "/") $path = substr($path, 1);
+
 $newpath = "$rootpath$usefolder/$treestr$path";
 
 if ($newfile && $newfile != "none") {

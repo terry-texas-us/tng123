@@ -4,9 +4,8 @@ include "tng_begin.php";
 
 include "config/pedconfig.php";
 
-if (!$generations) {
-    $generations = 12;
-}
+if (!$generations) $generations = 12;
+
 
 function displayIndividual($key, $generation, $slot, $column) {
     global $columns, $tree, $pedmax, $text, $media_table, $medialinks_table, $col1fam, $col2fam;
@@ -73,20 +72,17 @@ function displayIndividual($key, $generation, $slot, $column) {
             if ($parents) {
                 $parentscount = tng_num_rows($parents);
                 if ($parentscount > 0) {
-                    if ($locparentset > $parentscount) {
-                        $locparentset = $parentscount;
-                    }
+                    if ($locparentset > $parentscount) $locparentset = $parentscount;
+
                     $i = 0;
                     while ($parentrow = tng_fetch_assoc($parents)) {
                         $i++;
-                        if ($i == $locparentset) {
-                            $parentfamID = $parentrow['familyID'];
-                        }
+                        if ($i == $locparentset) $parentfamID = $parentrow['familyID'];
+
                         $parentfamIDs[$i] = $parentrow['familyID'];
                     }
-                    if (!$parentfamID) {
-                        $parentfamID = $row['famc'];
-                    }
+                    if (!$parentfamID) $parentfamID = $row['famc'];
+
                 }
                 tng_free_result($parents);
             }
@@ -148,18 +144,16 @@ $photostr = showSmallPhoto($personID, $pedname, $rights['both'], 0, false, $row[
 echo tng_DrawHeading($photostr, $pedname, getYears($row));
 
 $innermenu = $text['generations'] . ": &nbsp;";
-if (!$pedigree['maxgen']) {
-    $pedigree['maxgen'] = 6;
-}
+if (!$pedigree['maxgen']) $pedigree['maxgen'] = 6;
+
 if ($generations > $pedigree['maxgen']) {
     $generations = $pedigree['maxgen'];
 }
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='extrastree.php?personID=$personID&amp;tree=$tree&amp;showall=$showall&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";

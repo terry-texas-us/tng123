@@ -61,9 +61,8 @@ function getFamilyRecord($familyID, $prevlevel) {
                         }
                     } else {
                         $info[$tag] = getMoreInfo($familyID, $lineinfo['level'], $tag, "");
-                        if (isset($info[$tag]['NOTES'])) {
-                            dumpnotes($info[$tag]['NOTES']);
-                        }
+                        if (isset($info[$tag]['NOTES'])) dumpnotes($info[$tag]['NOTES']);
+
                         if (!empty($info[$tag]['FACT']) && empty($info[$tag]['DATE']) && empty($info[$tag]['PLAC'])) {
                             $info[$tag]['DATE'] = $info[$tag]['FACT'];
                         }
@@ -210,9 +209,8 @@ function getFamilyRecord($familyID, $prevlevel) {
             $result = @tng_query($query);
             $famrow = tng_fetch_assoc($result);
             $goahead = $inschangedt > $famrow['changedate'] ? 1 : 0;
-            if ($result) {
-                tng_free_result($result);
-            }
+            if ($result) tng_free_result($result);
+
         } else {
             $goahead = 1;
         }
@@ -238,9 +236,8 @@ function getFamilyRecord($familyID, $prevlevel) {
             saveCustEvents($prefix, $familyID, $events, $custeventctr);
         }
 
-        if (isset($cite)) {
-            processCitations($familyID, "", $cite);
-        }
+        if (isset($cite)) processCitations($familyID, "", $cite);
+
         foreach ($fciteevents as $citeevent) {
             if (isset($info[$citeevent]['SOUR'])) {
                 processCitations($familyID, $citeevent, $info[$citeevent]['SOUR']);
@@ -263,9 +260,8 @@ function getFamilyRecord($familyID, $prevlevel) {
             }
         }
 
-        if ($mmcount) {
-            processMedia($mmcount, $mminfo, $familyID, "");
-        }
+        if ($mmcount) processMedia($mmcount, $mminfo, $familyID, "");
+
 
         //do event-based media
         foreach ($fciteevents as $stdevtype) {

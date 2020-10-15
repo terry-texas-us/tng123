@@ -141,11 +141,7 @@ if ($map['key'] && $isConnected) {
         return false;
     }
 </script>
-<?php
-if ($map['key']) {
-    include "googlemaplib2.php";
-}
-?>
+<?php if ($map['key']) include "googlemaplib2.php"; ?>
     </head>
 
 <?php
@@ -209,9 +205,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                         echo "<tr>";
                         echo "<td>&nbsp;</td>";
                         echo "<td><input type='checkbox' name=\"temple\" value='1'";
-                        if ($row['temple']) {
-                            echo " checked";
-                        }
+                        if ($row['temple']) echo " checked";
+
                         echo "> {$admtext['istemple']}</td>";
                         echo "</tr>\n";
                     }
@@ -255,9 +250,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                     <?php
                                     for ($i = 1; $i < 7; $i++) {
                                         echo "<option value=\"$i\"";
-                                        if ($i == $row['placelevel']) {
-                                            echo " selected";
-                                        }
+                                        if ($i == $row['placelevel']) echo " selected";
+
                                         echo ">" . $admtext['level' . $i] . "</option>\n";
                                     }
                                     ?>
@@ -276,27 +270,23 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                     while ($cemrow = tng_fetch_assoc($cemresult)) {
                                         $location = $cemrow['cemname'];
                                         if ($cemrow['city']) {
-                                            if ($location) {
-                                                $location .= ", ";
-                                            }
+                                            if ($location) $location .= ", ";
+
                                             $location .= $cemrow['city'];
                                         }
                                         if ($cemrow['county']) {
-                                            if ($location) {
-                                                $location .= ", ";
-                                            }
+                                            if ($location) $location .= ", ";
+
                                             $location .= $cemrow['county'];
                                         }
                                         if ($cemrow['state']) {
-                                            if ($location) {
-                                                $location .= ", ";
-                                            }
+                                            if ($location) $location .= ", ";
+
                                             $location .= $cemrow['state'];
                                         }
                                         if ($cemrow['country']) {
-                                            if ($location) {
-                                                $location .= ", ";
-                                            }
+                                            if ($location) $location .= ", ";
+
                                             $location .= $cemrow['country'];
                                         }
                                         $actionstr = $allow_delete ? "<a href='#' onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";

@@ -171,9 +171,8 @@ echo $formstr;
                         $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($ffnqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($ffnqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -189,9 +188,8 @@ echo $formstr;
                         $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($flnqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($flnqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -210,9 +208,8 @@ echo $formstr;
                         $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($mfnqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($mfnqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -228,9 +225,8 @@ echo $formstr;
                         $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($mlnqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($mlnqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -249,9 +245,8 @@ echo $formstr;
                         $item_array = [[$text['equals'], "equals"], [$text['contains'], "contains"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($fidqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($fidqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -267,9 +262,8 @@ echo $formstr;
                         $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($mpqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($mpqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -285,9 +279,8 @@ echo $formstr;
                         $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($myqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($myqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -303,9 +296,8 @@ echo $formstr;
                         $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($dvpqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($dvpqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -321,9 +313,8 @@ echo $formstr;
                         $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                         foreach ($item2_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($dvyqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($dvyqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -342,9 +333,8 @@ echo $formstr;
                         $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
                         foreach ($item_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($mtqualify == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($mtqualify == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -457,9 +447,8 @@ echo $formstr;
                         $item3_array = [[$text['cap_and'], "AND"], [$text['cap_or'], "OR"]];
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($mybool == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($mybool == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>
@@ -475,9 +464,8 @@ echo $formstr;
                         $item3_array = [[50, 50], [100, 100], [150, 150], [200, 200]];
                         foreach ($item3_array as $item) {
                             echo "<option value=\"$item[1]\"";
-                            if ($nr == $item[1]) {
-                                echo " selected";
-                            }
+                            if ($nr == $item[1]) echo " selected";
+
                             echo ">$item[0]</option>\n";
                         }
                         ?>

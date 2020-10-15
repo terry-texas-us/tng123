@@ -38,9 +38,8 @@ SimileAjax.DOM.getPageCoordinates = function (elmt) {
     var left = 0;
     var top = 0;
 
-    if (elmt.nodeType != 1) {
-        elmt = elmt.parentNode;
-    }
+    if (elmt.nodeType != 1) elmt = elmt.parentNode;
+
 
     var elmt2 = elmt;
     while (elmt2 != null) {
@@ -141,9 +140,8 @@ SimileAjax.DOM._hittest = function (elmt, x, y, except) {
     outer: for (var i = 0; i < childNodes.length; i++) {
         var childNode = childNodes[i];
         for (var j = 0; j < except.length; j++) {
-            if (childNode == except[j]) {
-                continue outer;
-            }
+            if (childNode == except[j]) continue outer;
+
         }
 
         if (childNode.offsetWidth == 0 && childNode.offsetHeight == 0) {
@@ -152,9 +150,8 @@ SimileAjax.DOM._hittest = function (elmt, x, y, except) {
              *  they have children like DIVs that cover non-zero areas.
              */
             var hitNode = SimileAjax.DOM._hittest(childNode, x, y, except);
-            if (hitNode != childNode) {
-                return hitNode;
-            }
+            if (hitNode != childNode) return hitNode;
+
         } else {
             var top = 0;
             var left = 0;
@@ -173,9 +170,8 @@ SimileAjax.DOM._hittest = function (elmt, x, y, except) {
                  *  Table row might have cells that span several rows.
                  */
                 var childNode2 = SimileAjax.DOM._hittest(childNode, x, y, except);
-                if (childNode2 != childNode) {
-                    return childNode2;
-                }
+                if (childNode2 != childNode) return childNode2;
+
             }
         }
     }
@@ -185,17 +181,14 @@ SimileAjax.DOM._hittest = function (elmt, x, y, except) {
 SimileAjax.DOM.cancelEvent = function (evt) {
     evt.returnValue = false;
     evt.cancelBubble = true;
-    if ("preventDefault" in evt) {
-        evt.preventDefault();
-    }
+    if ("preventDefault" in evt) evt.preventDefault();
+
 };
 
 SimileAjax.DOM.appendClassName = function (elmt, className) {
     var classes = elmt.className.split(" ");
     for (var i = 0; i < classes.length; i++) {
-        if (classes[i] == className) {
-            return;
-        }
+        if (classes[i] == className) return;
     }
     classes.push(className);
     elmt.className = classes.join(" ");
@@ -217,19 +210,11 @@ SimileAjax.DOM.createDOMFromTemplate = function (template) {
 
 SimileAjax.DOM._createDOMFromTemplate = function (templateNode, result, parentElmt) {
     if (templateNode == null) {
-        /*
-        var node = doc.createTextNode("--null--");
-        if (parentElmt != null) {
-            parentElmt.appendChild(node);
-        }
-        return node;
-        */
         return null;
     } else if (typeof templateNode != "object") {
         var node = document.createTextNode(templateNode);
-        if (parentElmt != null) {
-            parentElmt.appendChild(node);
-        }
+        if (parentElmt != null) parentElmt.appendChild(node);
+
         return node;
     } else {
         var elmt = null;
@@ -247,15 +232,13 @@ SimileAjax.DOM._createDOMFromTemplate = function (templateNode, result, parentEl
                     SimileAjax.DOM.createInputElement(templateNode.type) :
                     document.createElement(tag);
 
-                if (parentElmt != null) {
-                    parentElmt.appendChild(elmt);
-                }
+                if (parentElmt != null) parentElmt.appendChild(elmt);
+
             }
         } else {
             elmt = templateNode.elmt;
-            if (parentElmt != null) {
-                parentElmt.appendChild(elmt);
-            }
+            if (parentElmt != null) parentElmt.appendChild(elmt);
+
         }
 
         for (var attribute in templateNode) {

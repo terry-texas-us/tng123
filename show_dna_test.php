@@ -261,9 +261,8 @@ if ($dnarow['surnames']) {
 
 if ($dnarow['urls']) {
     $urls = showLinks($dnarow['urls']);
-    if ($urls) {
-        $urls = "<ul>$urls</ul>";
-    }
+    if ($urls) $urls = "<ul>$urls</ul>";
+
     $dnatext .= "<tr>\n";
     $dnatext .= "<td class=\"fieldnameback fieldname align-top\">{$text['links']}&nbsp;</td>\n";
     $dnatext .= "<td class='databack' colspan='2'>$urls</td>\n";
@@ -308,15 +307,13 @@ $query = "SELECT $dna_links_table.personID, lastname, lnprefix, firstname, birth
 	ORDER BY birth DESC, lastname, firstname LIMIT $soffsetstr" . ($maxsearchresults + 1);
 $presult = tng_query($query);
 $numrows = tng_num_rows($presult);
-if (!$numrows) {
-    $rightbranch = true;
-}
+if (!$numrows) $rightbranch = true;
+
 
 $dnalinktext = "";
 while ($prow = tng_fetch_assoc($presult)) {
-    if ($dnalinktext) {
-        $dnalinktext .= "\n";
-    }
+    if ($dnalinktext) $dnalinktext .= "\n";
+
     $righttree = checktree($prow['gedcom']);
     $rightbranch = $righttree ? checkbranch($prow['branch']) : false;
     $rights = determineLivingPrivateRights($prow, $righttree, $rightbranch);

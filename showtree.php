@@ -35,9 +35,8 @@ tng_header($text['tree'] . ": " . $row['treename'], $flags);
 
     <table cellspacing="1" cellpadding="4" class="whiteback normal">
         <?php
-        if ($row['treename']) {
-            showFact($text['treename'], $row['treename']);
-        }
+        if ($row['treename']) showFact($text['treename'], $row['treename']);
+
         if ($row['description']) {
             showFact($text['description'], $row['description']);
         }
@@ -57,30 +56,23 @@ tng_header($text['tree'] . ": " . $row['treename'], $flags);
         showFact($text['sources'], $srcrow['scount'], true);
 
         if (!$row['secret']) {
-            if ($row['owner']) {
-                showFact($text['owner'], $row['owner']);
-            }
-            if ($row['address']) {
-                showFact($text['address'], $row['address']);
-            }
-            if ($row['city']) {
-                showFact($text['city'], $row['city']);
-            }
-            if ($row['state']) {
-                showFact($text['state'], $row['state']);
-            }
-            if ($row['zip']) {
-                showFact($text['zip'], $row['zip']);
-            }
-            if ($row['country']) {
-                showFact($text['country'], $row['country']);
-            }
+            if ($row['owner']) showFact($text['owner'], $row['owner']);
+
+            if ($row['address']) showFact($text['address'], $row['address']);
+
+            if ($row['city']) showFact($text['city'], $row['city']);
+
+            if ($row['state']) showFact($text['state'], $row['state']);
+
+            if ($row['zip']) showFact($text['zip'], $row['zip']);
+
+            if ($row['country']) showFact($text['country'], $row['country']);
+
             if ($row['email']) {
                 showFact($text['email'], "<a href=\"mailto:{$row['email']}\">{$row['email']}</a>");
             }
-            if ($row['phone']) {
-                showFact($text['phone'], $row['phone']);
-            }
+            if ($row['phone']) showFact($text['phone'], $row['phone']);
+
         }
         ?>
     </table>

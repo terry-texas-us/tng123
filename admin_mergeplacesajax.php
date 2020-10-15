@@ -6,9 +6,7 @@ include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";
-if (!$allow_edit) {
-    exit;
-}
+if (!$allow_edit) exit;
 
 require "adminlog.php";
 
@@ -33,9 +31,8 @@ $mergelist = explode(',', $places);
 $treestr = $tngconfig['places1tree'] ? "" : "AND gedcom = '$tree'";
 
 foreach ($mergelist as $val) {
-    if ($addtoquery) {
-        $addtoquery .= " OR ";
-    }
+    if ($addtoquery) $addtoquery .= " OR ";
+
     $addtoquery .= "ID=\"$val\"";
 
     $query = "SELECT place, notes$latlongstr FROM $places_table WHERE ID = \"$val\"";
@@ -47,18 +44,15 @@ foreach ($mergelist as $val) {
     if ($oldplace) {
         if ($latlongstr) {
             if ($row['latitude'] || $row['longitude'] || $row['placelevel'] || $row['zoom']) {
-                if (!$keeplat && $row['latitude']) {
-                    $keeplat = $row['latitude'];
-                }
-                if (!$keeplong && $row['longitude']) {
-                    $keeplong = $row['longitude'];
-                }
+                if (!$keeplat && $row['latitude']) $keeplat = $row['latitude'];
+
+                if (!$keeplong && $row['longitude']) $keeplong = $row['longitude'];
+
                 if (!$keeplevel && $row['placelevel']) {
                     $keeplevel = $row['placelevel'];
                 }
-                if (!$keepzoom && $row['zoom']) {
-                    $keepzoom = $row['zoom'];
-                }
+                if (!$keepzoom && $row['zoom']) $keepzoom = $row['zoom'];
+
                 $query = "UPDATE $places_table SET latitude = \"$keeplat\", longitude = \"$keeplong\", placelevel = \"$keeplevel\", zoom = \"$keepzoom\" WHERE ID = \"$keep\"";
                 $result = tng_query($query);
                 $latlongstr = "";  //just do the first one we get
@@ -120,9 +114,8 @@ foreach ($mergelist as $val) {
 }
 if ($addtoquery) {
     $dquery .= $addtoquery;
-    if (!$tngconfig['places1tree']) {
-        $dquery .= ")";
-    }
+    if (!$tngconfig['places1tree']) $dquery .= ")";
+
     $result = tng_query($dquery) or die ($admtext['cannotexecutequery'] . ": $dquery");
 
     adminwritelog($admtext['mergeplaces'] . ": $newplace");

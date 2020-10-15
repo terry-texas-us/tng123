@@ -13,9 +13,8 @@ if ($session_charset != "UTF-8") {
 }
 
 $allwhere = "gedcom = '$tree'";
-if ($personID) {
-    $allwhere .= " AND personID = \"$personID\"";
-}
+if ($personID) $allwhere .= " AND personID = \"$personID\"";
+
 if ($myfirstname) {
     $allwhere .= " AND firstname LIKE \"%" . trim($myfirstname) . "%\"";
 }

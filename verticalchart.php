@@ -56,9 +56,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
@@ -211,18 +210,16 @@ function close_parents(&$gens) {
                             $new_distance = $gens[$loop][$right]['xpos'];
                         }
                         if (isset($new_distance)) {
-                            if ($new_distance < $distance) {
-                                $distance = $new_distance;
-                            }
+                            if ($new_distance < $distance) $distance = $new_distance;
+
                             unset ($new_distance);
                         }
                         if ($distance == 0) // If or we've already established we can't move this person, there's no point continuing
                         {
                             break;
                         }
-                        if ($loop < $max_generations) {
-                            $this_person = ($this_person * 2) - 1;
-                        }
+                        if ($loop < $max_generations) $this_person = ($this_person * 2) - 1;
+
                     }
                     move_left($gens, $gen_num, $num, $distance);
                     $child['spacer_xwidth'] = $child['spacer_xwidth'] - $distance;
@@ -281,9 +278,7 @@ function move_left(&$gens, $gen_num, $num, $distance) {
 
 function move_descendant(&$gens, $gen_num, $num) {
     global $width, $spacing;
-    if ($gen_num == 1) {
-        return;
-    }
+    if ($gen_num == 1) return;
     $child = &$gens[$gen_num - 1][ceil($num / 2)];
     $father = $gens[$gen_num][(ceil($num / 2) * 2) - 1];
     $mother = $gens[$gen_num][ceil($num / 2) * 2];
@@ -440,9 +435,7 @@ function do_chart($gens, $output = false) {
 	<div id="vcontainer">';
     $html .= implode("\r\n", $row);
     $html .= '	</div>';
-    if ($output) {
-        echo $html;
-    }
+    if ($output) echo $html;
 }
 
 tng_footer($flags);

@@ -45,9 +45,8 @@ switch ($linktype) {
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['source']}: $personID";
-        if ($person['title']) {
-            $namestr .= ", " . $person['title'];
-        }
+        if ($person['title']) $namestr .= ", " . $person['title'];
+
         $person['branch'] = "";
         tng_free_result($result2);
         $test_url = "showsource.php?";
@@ -58,9 +57,8 @@ switch ($linktype) {
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['repository']}: $personID";
-        if ($person['reponame']) {
-            $namestr .= ", " . $person['reponame'];
-        }
+        if ($person['reponame']) $namestr .= ", " . $person['reponame'];
+
         $person['branch'] = "";
         tng_free_result($result2);
         $test_url = "showrepo.php?";
@@ -88,9 +86,8 @@ $query = "SELECT alwayson, thumbpath, media.mediaID AS mediaID, usecollfolder, m
 $query .= "FROM ($media_table media, $medialinks_table medialinks) ";
 $query .= "WHERE personID = \"$personID\" AND medialinks.gedcom = '$tree' AND media.mediaID = medialinks.mediaID AND defphoto = '1'";
 $result = tng_query($query);
-if ($result) {
-    $row = tng_fetch_assoc($result);
-}
+if ($result) $row = tng_fetch_assoc($result);
+
 $thismediatypeID = $row['mediatypeID'];
 tng_free_result($result);
 
@@ -166,9 +163,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
             <br style="clear: left;">
             <?php
             echo "<p class=\"smaller\" id=\"removedefault\"";
-            if (!$photo) {
-                echo " style='display: none;'";
-            }
+            if (!$photo) echo " style='display: none;'";
+
             echo "><a href='#' onclick=\"return removeDefault();\">{$admtext['removedef']}</a></p>\n";
             ?>
             <table id="ordertbl" class="fieldname normal">

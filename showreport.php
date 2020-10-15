@@ -5,9 +5,8 @@ include "tng_begin.php";
 include "functions.php";
 if (!isset($csv)) $csv = false;
 
-if (!is_numeric($reportID)) {
-    die ("Sorry!");
-}
+if (!is_numeric($reportID)) die ("Sorry!");
+
 
 function processfield($field) {
     global $need_families, $cejoins, $evfields, $people_table, $events_table, $familyfields_nonss;
@@ -44,9 +43,8 @@ if ($offset) {
 }
 
 $query = "SELECT * FROM $reports_table WHERE reportID = $reportID";
-if (!$test && $assignedtree) {
-    $query .= " and active > 0";
-}
+if (!$test && $assignedtree) $query .= " and active > 0";
+
 $testurl = $test ? "&amp;test=$test" : "";
 $result = tng_query($query);
 $rrow = tng_fetch_assoc($result);
@@ -94,9 +92,8 @@ if ($rrow['sqlselect']) {
             $tempmsg = substr($tempmsg, $gotas + 4);
         } else {
             $gotperiod = strpos($tempmsg, ".");
-            if ($gotperiod) {
-                $tempmsg = substr($tempmsg, $gotperiod + 1);
-            }
+            if ($gotperiod) $tempmsg = substr($tempmsg, $gotperiod + 1);
+
         }
         $dfield = $tempmsg = trim($tempmsg);
         if ($dfield == "personID") {
@@ -105,15 +102,12 @@ if ($rrow['sqlselect']) {
         } else {
             $gotpersonid = false;
         }
-        if (!$displaymsg) {
-            $displaymsg = $text[$dfield];
-        }
-        if (!$displaymsg) {
-            $displaymsg = $text[strtolower($dfield)];
-        }
-        if (!$displaymsg) {
-            $displaymsg = $dfield;
-        }
+        if (!$displaymsg) $displaymsg = $text[$dfield];
+
+        if (!$displaymsg) $displaymsg = $text[strtolower($dfield)];
+
+        if (!$displaymsg) $displaymsg = $dfield;
+
         $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class='fieldname'><strong>$displaymsg</strong></span></td>\n";
 
         $newds[$newdsctr] = $tempmsg;
@@ -161,9 +155,8 @@ if ($rrow['sqlselect']) {
         $displaymsg = "";
 
         if ($dfield != "personID" && (determineLDSRights() || !in_array($dfield, $ldsfields))) {
-            if ($displaystr) {
-                $displaystr .= ",";
-            }
+            if ($displaystr) $displaystr .= ",";
+
             if (in_array($dfield, $familyfields_nonss)) {
                 if ($dfield == "marrdatetr" || $dfield == "divdatetr" || $dfield == "ssealdatetr") {
                     $displayfields[$i] = "if(sex='M',DATE_FORMAT(families1." . $dfield . ",'%d %b %Y'),DATE_FORMAT(families2." . $dfield . ",'%d %b %Y'))";
@@ -218,18 +211,15 @@ if ($rrow['sqlselect']) {
                 $displaystr .= $displayfields[$i];
             }
         }
-        if (!$displaymsg) {
-            $displaymsg = $text[$dfield];
-        }
-        if (!$displaymsg) {
-            $displaymsg = $text[strtolower($dfield)];
-        }
+        if (!$displaymsg) $displaymsg = $text[$dfield];
+
+        if (!$displaymsg) $displaymsg = $text[strtolower($dfield)];
+
         $displaytext .= $csv ? ($displaytext ? ",\"$displaymsg\"" : "\"$displaymsg\"") : "<td class='fieldnameback'><span class='fieldname'><strong>$displaymsg</strong></span></td>\n";
     }
     if ($dtreestr) {
-        if ($treestr) {
-            $treestr .= " AND";
-        }
+        if ($treestr) $treestr .= " AND";
+
         $treestr .= $dtreestr;
     }
     $displaystr .= ", $people_table.personID, $people_table.gedcom, nameorder";
@@ -240,9 +230,8 @@ if ($rrow['sqlselect']) {
     $symbols = ["=", "!=", ">", ">=", "<", "<="];
     for ($i = 0; $i < count($criteriafields) - 1; $i++) {
         $table = "";
-        if ($criteriastr) {
-            $criteriastr .= " ";
-        }
+        if ($criteriastr) $criteriastr .= " ";
+
         if (in_array($criteriafields[$i], $familyfields)) {
             $need_families = 1;
         }
@@ -326,9 +315,8 @@ if ($rrow['sqlselect']) {
                             $newcriteria = "$people_table." . $newcriteria;
                         } else {
                             $position = array_search($newcriteria, $mnemonics);
-                            if ($position !== false) {
-                                $newcriteria = $symbols[$position];
-                            }
+                            if ($position !== false) $newcriteria = $symbols[$position];
+
                         }
                     }
                 }
@@ -404,14 +392,12 @@ if ($rrow['sqlselect']) {
 
     $more = getLivingPrivateRestrictions($people_table, null, null);
     if ($more) {
-        if ($criteriastr) {
-            $criteriastr = "($criteriastr) AND ";
-        }
+        if ($criteriastr) $criteriastr = "($criteriastr) AND ";
+
         $criteriastr .= $more;
     }
-    if ($criteriastr) {
-        $criteriastr = "WHERE ($criteriastr)";
-    }
+    if ($criteriastr) $criteriastr = "WHERE ($criteriastr)";
+
 
     $orderbystr = "";
     $orderbyfields = explode($lineending, $rrow['orderby']);
@@ -471,9 +457,8 @@ if ($rrow['sqlselect']) {
             }
         }
     }
-    if ($orderbystr) {
-        $orderbystr = "ORDER BY $orderbystr";
-    }
+    if ($orderbystr) $orderbystr = "ORDER BY $orderbystr";
+
 
     if ($need_families) {
         $families_join = "LEFT JOIN $families_table AS families1 ON ($people_table.gedcom = families1.gedcom AND $people_table.personID = families1.husband) ";
@@ -483,9 +468,8 @@ if ($rrow['sqlselect']) {
     }
     if ($need_children) {
         $children_join = "LEFT JOIN $children_table ON $people_table.personID = $children_table.personID AND $people_table.gedcom = $children_table.gedcom";
-        if ($childrentreestr) {
-            $treestr .= " AND $childrentreestr";
-        }
+        if ($childrentreestr) $treestr .= " AND $childrentreestr";
+
     } else {
         $children_join = "";
     }
@@ -599,9 +583,8 @@ if (!$result) {
     $treestr = $tngconfig['places1tree'] ? "" : "tree=$tree&amp;";
     $savetree = $tree;
     while ($row = tng_fetch_assoc($result)) {
-        if (!$savetree) {
-            $tree = $row['gedcom'];
-        }
+        if (!$savetree) $tree = $row['gedcom'];
+
         $rowcount++;
 
         $rights = determineLivingPrivateRights($row);
@@ -673,16 +656,14 @@ if (!$result) {
                     }
                 }
             }
-            if ($csv) {
-                $data = str_replace("\"", "\"\"", $data);
-            }
+            if ($csv) $data = str_replace("\"", "\"\"", $data);
+
             $datastr .= $csv ? ($datastr ? ",\"$data\"" : "\"$data\"") : "<td class='databack'><span class='normal'>$data&nbsp;</span></td>\n";
         }
         echo $datastr . $lineending;
 
-        if (!$csv) {
-            echo "</tr>\n";
-        }
+        if (!$csv) echo "</tr>\n";
+
     }
     tng_free_result($result);
     if (!$csv) {
@@ -695,7 +676,6 @@ if (!$result) {
     }
 }
 
-if (!$csv) {
-    tng_footer("");
-}
+if (!$csv) tng_footer("");
+
 ?>

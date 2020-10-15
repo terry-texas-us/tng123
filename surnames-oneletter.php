@@ -36,14 +36,12 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames
                     $treestr = $orgtree ? "&amp;tree=$tree" : "";
 
                     $more = getLivingPrivateRestrictions($people_table, false, false);
-                    if ($more) {
-                        $wherestr .= " AND " . $more;
-                    }
+                    if ($more) $wherestr .= " AND " . $more;
+
 
                     $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
-                    if ($tngconfig['ucsurnames']) {
-                        $surnamestr = "UCASE($surnamestr)";
-                    }
+                    if ($tngconfig['ucsurnames']) $surnamestr = "UCASE($surnamestr)";
+
                     $firstchar = $firstchar == "\"" ? "\\\"" : $firstchar;
                     $query = "SELECT UCASE($binary $surnamestr) AS lastname, $surnamestr AS lowername, UCASE($binary lastname) AS binlast, count(UCASE($binary lastname)) AS lncount ";
                     $query .= "FROM $people_table ";

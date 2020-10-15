@@ -32,19 +32,15 @@ function doRow($field, $textmsg, $boxname) {
     if ($field == "addressID") {
         if ($r1row[$field]) {
             $r1field = "";
-            if ($r1row['address1']) {
-                $r1field .= $r1row['address1'] . "<br>";
-            }
-            if ($r1row['address2']) {
-                $r1field .= $r1row['address2'] . "<br>";
-            }
-            if ($r1row['city']) {
-                $r1field .= $r1row['city'];
-            }
+            if ($r1row['address1']) $r1field .= $r1row['address1'] . "<br>";
+
+            if ($r1row['address2']) $r1field .= $r1row['address2'] . "<br>";
+
+            if ($r1row['city']) $r1field .= $r1row['city'];
+
             if ($r1row['state']) {
-                if ($r1row['city']) {
-                    $r1field .= ", ";
-                }
+                if ($r1row['city']) $r1field .= ", ";
+
                 $r1field .= $r1row['state'];
             }
             if ($r1row['country']) {
@@ -53,25 +49,20 @@ function doRow($field, $textmsg, $boxname) {
                 }
                 $r1field .= $r1row['country'];
             }
-            if (!$r1field) {
-                $r1field = $r1row['addressID'];
-            }
+            if (!$r1field) $r1field = $r1row['addressID'];
+
         }
         if (isset($r2row[$field])) {
             $r2field = "";
-            if ($r2row['address1']) {
-                $r2field .= $r2row['address1'] . "<br>";
-            }
-            if ($r2row['address2']) {
-                $r2field .= $r2row['address2'] . "<br>";
-            }
-            if ($r2row['city']) {
-                $r2field .= $r2row['city'];
-            }
+            if ($r2row['address1']) $r2field .= $r2row['address1'] . "<br>";
+
+            if ($r2row['address2']) $r2field .= $r2row['address2'] . "<br>";
+
+            if ($r2row['city']) $r2field .= $r2row['city'];
+
             if ($r2row['state']) {
-                if ($r2row['city']) {
-                    $r2field .= ", ";
-                }
+                if ($r2row['city']) $r2field .= ", ";
+
                 $r2field .= $r2row['state'];
             }
             if ($r2row['country']) {
@@ -80,9 +71,8 @@ function doRow($field, $textmsg, $boxname) {
                 }
                 $r2field .= $r2row['country'];
             }
-            if (!$r2field) {
-                $r2field = $r2row['addressID'];
-            }
+            if (!$r2field) $r2field = $r2row['addressID'];
+
         }
     } else {
         $r1field = $r1row[$field];
@@ -133,9 +123,8 @@ function doNotes($persfam1, $persfam2, $varname) {
     global $ccombinenotes, $notelinks_table, $tree;
 
     if ($varname) {
-        if ($varname == "general") {
-            $varname = "";
-        }
+        if ($varname == "general") $varname = "";
+
         $wherestr = "AND eventID = '$varname'";
     } else {
         $wherestr = "";
@@ -203,9 +192,8 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
                 tng_free_result($result);
             }
         } while ($numrows && $still_looking);
-        if (!$repoID2) {
-            $repoID1 = $r1row = "";
-        }
+        if (!$repoID2) $repoID1 = $r1row = "";
+
     } else {
         //search with repoID1 for next duplicate
         $wherestr2 = $repoID2 ? " AND repoID > '$repoID2'" : "";
@@ -382,9 +370,8 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                                 $trees = "";
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     $trees .= "			<option value='{$treerow['gedcom']}'";
-                                    if ($treerow['gedcom'] == $tree) {
-                                        $trees .= " selected";
-                                    }
+                                    if ($treerow['gedcom'] == $tree) $trees .= " selected";
+
                                     $trees .= ">{$treerow['treename']}</option>\n";
                                 }
                                 echo $trees;

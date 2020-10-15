@@ -2333,6 +2333,5 @@ $admtext['author'] = "作者";
 $admtext['living'] = "活着";
 
 @include_once "alltext.php";
-if (!$alltextloaded) {
-    getAllTextPath();
-}
+if (!$alltextloaded) getAllTextPath();
+

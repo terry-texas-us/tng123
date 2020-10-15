@@ -240,9 +240,7 @@ MarkerClusterer.prototype.draw = function () {
  * @private
  */
 MarkerClusterer.prototype.setupStyles_ = function () {
-    if (this.styles_.length) {
-        return;
-    }
+    if (this.styles_.length) return;
 
     for (var i = 0, size; size = this.sizes[i]; i++) {
         this.styles_.push({
@@ -404,9 +402,8 @@ MarkerClusterer.prototype.addMarkers = function (markers, opt_nodraw) {
     for (var i = 0, marker; marker = markers[i]; i++) {
         this.pushMarkerTo_(marker);
     }
-    if (!opt_nodraw) {
-        this.redraw();
-    }
+    if (!opt_nodraw) this.redraw();
+
 };
 
 
@@ -439,9 +436,8 @@ MarkerClusterer.prototype.pushMarkerTo_ = function (marker) {
  */
 MarkerClusterer.prototype.addMarker = function (marker, opt_nodraw) {
     this.pushMarkerTo_(marker);
-    if (!opt_nodraw) {
-        this.redraw();
-    }
+    if (!opt_nodraw) this.redraw();
+
 };
 
 
@@ -676,9 +672,8 @@ MarkerClusterer.prototype.resetViewport = function (opt_hide) {
     // Reset the markers to not be added and to be invisible.
     for (var i = 0, marker; marker = this.markers_[i]; i++) {
         marker.isAdded = false;
-        if (opt_hide) {
-            marker.setMap(null);
-        }
+        if (opt_hide) marker.setMap(null);
+
     }
 
     this.clusters_ = [];
@@ -721,19 +716,15 @@ MarkerClusterer.prototype.redraw = function () {
  * @private
  */
 MarkerClusterer.prototype.distanceBetweenPoints_ = function (p1, p2) {
-    if (!p1 || !p2) {
-        return 0;
-    }
-
-    var R = 6371; // Radius of the Earth in km
-    var dLat = (p2.lat() - p1.lat()) * Math.PI / 180;
-    var dLon = (p2.lng() - p1.lng()) * Math.PI / 180;
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    if (!p1 || !p2) return 0;
+    const R = 6371; // Radius of the Earth in km
+    const dLat = (p2.lat() - p1.lat()) * Math.PI / 180;
+    const dLon = (p2.lng() - p1.lng()) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(p1.lat() * Math.PI / 180) * Math.cos(p2.lat() * Math.PI / 180) *
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c;
-    return d;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
 };
 
 
@@ -774,11 +765,9 @@ MarkerClusterer.prototype.addToClosestCluster_ = function (marker) {
  * @private
  */
 MarkerClusterer.prototype.createClusters_ = function () {
-    if (!this.ready_) {
-        return;
-    }
+    if (!this.ready_) return;
 
-    // Get our current map view bounds.
+// Get our current map view bounds.
     // Create a new bounds object so we don't affect the map.
     var mapBounds = new google.maps.LatLngBounds(this.map_.getBounds().getSouthWest(),
         this.map_.getBounds().getNorthEast());
@@ -824,9 +813,7 @@ Cluster.prototype.isMarkerAlreadyAdded = function (marker) {
         return this.markers_.indexOf(marker) != -1;
     } else {
         for (var i = 0, m; m = this.markers_[i]; i++) {
-            if (m == marker) {
-                return true;
-            }
+            if (m == marker) return true;
         }
     }
     return false;
@@ -873,9 +860,8 @@ Cluster.prototype.addMarker = function (marker) {
         }
     }
 
-    if (len >= this.minClusterSize_) {
-        marker.setMap(null);
-    }
+    if (len >= this.minClusterSize_) marker.setMap(null);
+
 
     this.updateIcon();
     return true;
@@ -1119,9 +1105,8 @@ ClusterIcon.prototype.draw = function () {
  * Hide the icon.
  */
 ClusterIcon.prototype.hide = function () {
-    if (this.div_) {
-        this.div_.style.display = 'none';
-    }
+    if (this.div_) this.div_.style.display = 'none';
+
     this.visible_ = false;
 };
 
@@ -1171,9 +1156,8 @@ ClusterIcon.prototype.setSums = function (sums) {
     this.sums_ = sums;
     this.text_ = sums.text;
     this.index_ = sums.index;
-    if (this.div_) {
-        this.div_.innerHTML = sums.text;
-    }
+    if (this.div_) this.div_.innerHTML = sums.text;
+
 
     this.useStyle();
 };

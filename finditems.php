@@ -49,14 +49,12 @@ function showAction($entityID, $num = null) {
     $lines .= "<div id=\"link_$id\" class='normal' style=\"text-align:center;width:50px;";
     if ($albumID || $mediaID) {
         $gotit = in_array($entityID, $alreadygot);
-        if ($gotit) {
-            $lines .= "display:none";
-        }
+        if ($gotit) $lines .= "display:none";
+
         $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . str_replace("&#39;", "\\'", $entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
         $lines .= "<div id=\"linked_$id\" style=\"text-align:center;width:50px;";
-        if (!$gotit) {
-            $lines .= "display:none";
-        }
+        if (!$gotit) $lines .= "display:none";
+
         $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
@@ -76,9 +74,8 @@ switch ($type) {
         $myflastname = trim($myflastname);
         $myfpersonID = trim($myfpersonID);
         $allwhere = "gedcom = '$tree'";
-        if ($branch) {
-            $allwhere .= " AND branch LIKE \"%$branch%\"";
-        }
+        if ($branch) $allwhere .= " AND branch LIKE \"%$branch%\"";
+
         if ($myfpersonID) {
             $myfpersonID = strtoupper($myfpersonID);
             if ($f != "%" && substr($myfpersonID, 0, 1) != $tngconfig['personprefix']) {
@@ -149,9 +146,8 @@ switch ($type) {
                 }
                 $namestr = getName($row);
                 $lines .= "<tr id=\"linkrow_{$row['personID']}\">\n";
-                if ($mediaquery) {
-                    $lines .= showAction($row['personID']);
-                }
+                if ($mediaquery) $lines .= showAction($row['personID']);
+
                 $lines .= "<td class='lightback'>{$row['personID']}</td>\n";
                 $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['personID']}');\" id=\"item_{$row['personID']}\">$namestr</a></td>\n";
                 $lines .= "<td class='lightback'><span id=\"birth_{$row['personID']}\">$birthdate</span></td>\n";
@@ -165,9 +161,8 @@ switch ($type) {
         $mywifename = trim($mywifename);
         $myfamilyID = trim($myfamilyID);
         $allwhere = "families.gedcom = '$tree'";
-        if ($branch) {
-            $allwhere .= " AND families.branch LIKE '%$branch%'";
-        }
+        if ($branch) $allwhere .= " AND families.branch LIKE '%$branch%'";
+
         if ($myfamilyID) {
             $myfamilyID = strtoupper($myfamilyID);
             if ($f != "%" && substr($myfamilyID, 0, 1) != $tngconfig['familyprefix']) {
@@ -185,24 +180,21 @@ switch ($type) {
         if ($mywifename) {
             $terms = explode(' ', $mywifename);
             foreach ($terms as $term) {
-                if ($allwhere2) {
-                    $allwhere2 .= " AND ";
-                }
+                if ($allwhere2) $allwhere2 .= " AND ";
+
                 $allwhere2 .= "CONCAT_WS(' ',wifepeople.firstname,TRIM(CONCAT_WS(' ',wifepeople.lnprefix,wifepeople.lastname))) LIKE \"$f$term%\"";
             }
         }
         if ($myhusbname) {
             $terms = explode(' ', $myhusbname);
             foreach ($terms as $term) {
-                if ($allwhere2) {
-                    $allwhere2 .= " AND ";
-                }
+                if ($allwhere2) $allwhere2 .= " AND ";
+
                 $allwhere2 .= "CONCAT_WS(' ',husbpeople.firstname,TRIM(CONCAT_WS(' ',husbpeople.lnprefix,husbpeople.lastname))) LIKE \"$f$term%\"";
             }
         }
-        if ($allwhere2) {
-            $allwhere2 = "AND $allwhere2";
-        }
+        if ($allwhere2) $allwhere2 = "AND $allwhere2";
+
 
         $query = "SELECT familyID, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, wifepeople.living AS wliving, wifepeople.private AS wprivate, wifepeople.branch AS wbranch, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder, husbpeople.living AS hliving, husbpeople.private AS hprivate, husbpeople.branch AS hbranch ";
         $query .= "FROM $families_table families ";
@@ -238,9 +230,8 @@ switch ($type) {
                     $thishusb = getName($person);
                 }
                 if ($row['wpersonID']) {
-                    if ($thisfamily) {
-                        $thisfamily .= "<br>";
-                    }
+                    if ($thisfamily) $thisfamily .= "<br>";
+
                     $person['firstname'] = $row['wfirstname'];
                     $person['lnprefix'] = $row['wlnprefix'];
                     $person['lastname'] = $row['wlastname'];
@@ -255,9 +246,8 @@ switch ($type) {
                     $thiswife = getName($person);
                 }
                 $lines .= "<tr id=\"linkrow_{$row['familyID']}\">\n";
-                if ($mediaquery) {
-                    $lines .= showAction($row['familyID']);
-                }
+                if ($mediaquery) $lines .= showAction($row['familyID']);
+
                 $lines .= "<td class='lightback'>" . $row['familyID'] . "</td>\n";
                 $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['familyID']}');\" id=\"item_{$row['familyID']}\">$thishusb</a></td>\n";
                 $lines .= "<td class='lightback'>$thiswife</td></tr>\n";
@@ -281,9 +271,8 @@ switch ($type) {
 
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['sourceID']}\">\n";
-                if ($mediaquery) {
-                    $lines .= showAction($row['sourceID']);
-                }
+                if ($mediaquery) $lines .= showAction($row['sourceID']);
+
                 $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
                 $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['sourceID']}');\" id=\"item_{$row['sourceID']}\">" . truncateIt($title, 100) . "</a></td>\n";
@@ -315,9 +304,8 @@ switch ($type) {
 
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['citationID']}\">\n";
-                if ($mediaquery) {
-                    $lines .= showAction($row['citationID']);
-                }
+                if ($mediaquery) $lines .= showAction($row['citationID']);
+
                 $lines .= "<td class='lightback'>" . $row['citationID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
                 $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
@@ -342,9 +330,8 @@ switch ($type) {
 
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['repoID']}\">\n";
-                if ($mediaquery) {
-                    $lines .= showAction($row['repoID']);
-                }
+                if ($mediaquery) $lines .= showAction($row['repoID']);
+
                 $lines .= "<td class='lightback'>" . $row['repoID'] . "</td>\n";
                 $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['repoID']}');\" id=\"item_{$row['repoID']}\">" . truncateIt($row['reponame'], 75) . "</a></td>\n";
                 $lines .= "</tr>\n";
@@ -353,12 +340,10 @@ switch ($type) {
         break;
     case "L":
         $allwhere = $tree && !$tngconfig['places1tree'] ? "gedcom = '$tree'" : "1=1";
-        if ($criteria) {
-            $allwhere .= " AND place LIKE \"$f$criteria%\"";
-        }
-        if ($temple) {
-            $allwhere .= " AND temple = 1";
-        }
+        if ($criteria) $allwhere .= " AND place LIKE \"$f$criteria%\"";
+
+        if ($temple) $allwhere .= " AND temple = 1";
+
         $query = "SELECT ID, place, temple, notes FROM $places_table WHERE $allwhere ORDER BY place LIMIT " . MODAL_FIND_RESULTS_LIMIT;
         $result = tng_query($query);
 
@@ -374,9 +359,8 @@ switch ($type) {
                 $notes = $row['temple'] && $row['notes'] ? " (" . truncateIt($row['notes'], 75) . ")" : "";
                 $place_slashed = addslashes(preg_replace("/[^A-Za-z0-9]/", "_", $row['place']));
                 $lines .= "<tr id=\"linkrow_{$row['ID']}\">\n";
-                if ($mediaquery) {
-                    $lines .= showAction($row['place'], $num);
-                }
+                if ($mediaquery) $lines .= showAction($row['place'], $num);
+
                 $lines .= "<td class='lightback'><a href='#' onclick='return retItem(\"{$row['ID']}\",true);' class=\"rplace\" id=\"item_{$row['ID']}\">{$row['place']}</a>$notes</td>\n";
                 $lines .= "</tr>\n";
                 $num++;

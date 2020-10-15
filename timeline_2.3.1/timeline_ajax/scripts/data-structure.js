@@ -126,9 +126,7 @@ SimileAjax.Set.prototype.toArray = function () {
  */
 SimileAjax.Set.prototype.visit = function (f) {
     for (var o in this._hash) {
-        if (f(o) == true) {
-            break;
-        }
+        if (f(o) == true) break;
     }
 }
 
@@ -253,16 +251,14 @@ SimileAjax.EventIndex.prototype.getCount = function () {
 };
 
 SimileAjax.EventIndex.prototype.getIterator = function (startDate, endDate) {
-    if (!this._indexed) {
-        this._index();
-    }
+    if (!this._indexed) this._index();
+
     return new SimileAjax.EventIndex._Iterator(this._events, startDate, endDate, this._unit);
 };
 
 SimileAjax.EventIndex.prototype.getReverseIterator = function (startDate, endDate) {
-    if (!this._indexed) {
-        this._index();
-    }
+    if (!this._indexed) this._index();
+
     return new SimileAjax.EventIndex._ReverseIterator(this._events, startDate, endDate, this._unit);
 };
 
@@ -277,13 +273,8 @@ SimileAjax.EventIndex.prototype.getEarliestDate = function () {
 
 SimileAjax.EventIndex.prototype.getLatestDate = function () {
     var evt = this._events.getLast();
-    if (evt == null) {
-        return null;
-    }
-
-    if (!this._indexed) {
-        this._index();
-    }
+    if (evt == null) return null;
+    if (!this._indexed) this._index();
 
     var index = evt._earliestOverlapIndex;
     var date = this._events.elementAt(index).getEnd();

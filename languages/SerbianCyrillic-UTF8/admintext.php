@@ -2343,6 +2343,5 @@ $admtext['author'] = "Аутор";
 $admtext['living'] = "Жив";
 
 @include_once "alltext.php";
-if (!$alltextloaded) {
-    getAllTextPath();
-}
+if (!$alltextloaded) getAllTextPath();
+

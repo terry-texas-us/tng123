@@ -85,9 +85,8 @@ $sresult = tng_query($query);
 $numrows = tng_num_rows($sresult);
 $repolinktext = "";
 while ($srow = tng_fetch_assoc($sresult)) {
-    if ($repolinktext) {
-        $repolinktext .= "\n";
-    }
+    if ($repolinktext) $repolinktext .= "\n";
+
     $title = $srow['shorttitle'] ? $srow['shorttitle'] : $srow['title'];
     $repolinktext .= "<a href=\"showsource.php?sourceID={$srow['sourceID']}&amp;tree=$tree\">$title</a>";
 }
@@ -185,12 +184,10 @@ echo tng_menu("R", "repo", $repoID, $innermenu);
             } else {
                 innerToggle(part, "info", "tng_plink");
                 <?php
-                if ($media) {
-                    echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
-                }
-                if ($notes) {
-                    echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
-                }
+                if ($media) echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
+
+                if ($notes) echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
+
                 ?>
                 jQuery('#tng_alink').attr('class', 'lightlink');
             }

@@ -6,9 +6,7 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 
-if (!$allow_edit) {
-    exit;
-}
+if (!$allow_edit) exit;
 
 require "adminlog.php";
 

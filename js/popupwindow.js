@@ -93,12 +93,8 @@ function PopupWindow_showPopup(anchorname) {
     } else {
         if (this.popupWindow == null || this.popupWindow.closed) {
             // If the popup window will go off-screen, move it so it doesn't
-            if (this.x < 0) {
-                this.x = 0;
-            }
-            if (this.y < 0) {
-                this.y = 0;
-            }
+            if (this.x < 0) this.x = 0;
+            if (this.y < 0) this.y = 0;
             if (screen && screen.availHeight) {
                 if ((this.y + this.height) > screen.availHeight) {
                     this.y = screen.availHeight - this.height;
@@ -149,18 +145,15 @@ function PopupWindow_isClicked(e) {
         } else if (document.all) { // Need to hard-code this to trap IE for error-handling
             var t = window.event.srcElement;
             while (t.parentElement != null) {
-                if (t.id == this.divName) {
-                    return true;
-                }
+                if (t.id == this.divName) return true;
+
                 t = t.parentElement;
             }
             return false;
         } else if (this.use_gebi && e) {
             var t = e.originalTarget;
             while (t.parentNode != null) {
-                if (t.id == this.divName) {
-                    return true;
-                }
+                if (t.id == this.divName) return true;
                 t = t.parentNode;
             }
             return false;
@@ -194,9 +187,8 @@ function PopupWindow_hidePopupWindows(e) {
 
 // Run this immediately to attach the event listener
 function PopupWindow_attachListener() {
-    if (document.layers) {
-        document.captureEvents(Event.MOUSEUP);
-    }
+    if (document.layers) document.captureEvents(Event.MOUSEUP);
+
     window.popupWindowOldEventListener = document.onmouseup;
     if (window.popupWindowOldEventListener != null) {
         document.onmouseup = new Function("window.popupWindowOldEventListener(); PopupWindow_hidePopupWindows();");
@@ -208,9 +200,8 @@ function PopupWindow_attachListener() {
 // CONSTRUCTOR for the PopupWindow object
 // Pass it a DIV name to use a DHTML popup, otherwise will default to window popup
 function PopupWindow() {
-    if (!window.popupWindowIndex) {
-        window.popupWindowIndex = 0;
-    }
+    if (!window.popupWindowIndex) window.popupWindowIndex = 0;
+
     if (!window.popupWindowObjects) {
         window.popupWindowObjects = new Array();
     }

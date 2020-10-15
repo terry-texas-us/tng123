@@ -17,12 +17,10 @@ if ($session_charset != "UTF-8") {
 }
 
 $allwhere = $tree ? "gedcom = '$tree'" : "1=1";
-if ($myplace) {
-    $allwhere .= " AND place LIKE \"%$myplace%\"";
-}
-if ($temple) {
-    $allwhere .= " AND temple = 1";
-}
+if ($myplace) $allwhere .= " AND place LIKE \"%$myplace%\"";
+
+if ($temple) $allwhere .= " AND temple = 1";
+
 $query = "SELECT ID, place, temple, notes FROM $places_table WHERE $allwhere ORDER BY place LIMIT 250";
 $result = tng_query($query);
 

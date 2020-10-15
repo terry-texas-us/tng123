@@ -83,16 +83,14 @@ while ($i < $numrows) {
                 while (($i < $numrows) && ($cemetery['county'] == $lastcounty) && ($cemetery['state'] == $laststate) && ($cemetery['country'] == $lastcountry)) { // display all cemeteries in the current county
                     if ($cemetery['city'] != $lastcity) {
                         //end last city if $lastcity != dummy
-                        if ($lastcity != DUMMYPLACE) {
-                            echo "</div>\n";
-                        }
+                        if ($lastcity != DUMMYPLACE) echo "</div>\n";
+
 
                         //start a new city
                         $lastcity = $cemetery['city'];
                         $divctr++;
-                        if (!$hiding) {
-                            $linectr++;
-                        }
+                        if (!$hiding) $linectr++;
+
                         $divname = "city$divctr";
                         if ($cemetery['city'] || !$tngconfig['cemblanks']) {
                             $txt = $cemetery['city'] ? @htmlspecialchars($cemetery['city'], ENT_QUOTES, $session_charset) : $text['nocity'];
@@ -108,9 +106,8 @@ while ($i < $numrows) {
                     $cemetery = tng_fetch_assoc($cemresult);
                     $i++;
                 }
-                if ($lastcity != DUMMYPLACE) {
-                    echo "</div>\n";
-                }
+                if ($lastcity != DUMMYPLACE) echo "</div>\n";
+
                 echo "</div>\n";                    // displayed all cemeteries in the county
 
             } else {                                // display the county
@@ -158,9 +155,8 @@ while ($i < $numrows) {
         $laststate = DUMMYPLACE;
         $lastcounty = DUMMYPLACE;
         $hiding = false;
-        if ($linectr) {
-            echo "<br>";
-        }
+        if ($linectr) echo "<br>";
+
         $linectr++;     //Add extra line to allow for the <br> at the end
         $txt = $cemetery['country'] ? @htmlspecialchars($cemetery['country'], ENT_QUOTES, $session_charset) : $text['nocountry'];
         echo "<div class='databack cemcountry subhead rounded'><strong><a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;tree=$tree\">$txt</a></strong></div>\n";

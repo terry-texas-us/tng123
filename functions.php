@@ -1,8 +1,7 @@
 <?php
 function get_item_id($result, $offset, $itemname) {
-    if (!tng_data_seek($result, $offset)) {
-        return (0);
-    }
+    if (!tng_data_seek($result, $offset)) return (0);
+
     $row = tng_fetch_assoc($result);
 
     return $row[$itemname];
@@ -12,9 +11,8 @@ function get_item_id_pair($result, $offset, $itemname, $needamp) {
     $item = get_item_id($result, $offset, $itemname);
     if ($item) {
         $str = $itemname . "=" . $item;
-        if ($needamp) {
-            $str = "&amp;" . $str;
-        }
+        if ($needamp) $str = "&amp;" . $str;
+
     } else {
         $str = "";
     }
@@ -32,13 +30,10 @@ function get_media_offsets($result, $mediaID) {
             break;
         }
     }
-    if (!$found && $i) {
-        $i--;
-    }
+    if (!$found && $i) $i--;
     $nexttolast = tng_num_rows($result) - 1;
     $prev = $i ? $i - 1 : $nexttolast;
     $next = $i < $nexttolast ? $i + 1 : 0;
-
     return [$i, $prev, $next, $nexttolast];
 }
 
@@ -55,9 +50,8 @@ function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $al
         $href .= $albumlinkID ? "&amp;albumlinkID=" . $albumlinkID : "";
         $href .= $cemeteryID ? "&amp;cemeteryID=" . get_item_id($result, $page - 1, "cemeteryID") : "";
         $href .= $allstr . "&amp;tngpage=$page";
-        if (substr($href, 0, 5) == "&amp;") {
-            $href = substr($href, 5);
-        }
+        if (substr($href, 0, 5) == "&amp;") $href = substr($href, 5);
+
         $link = " <a href=\"$address$href\" class='snlink' title=\"$title\">$label</a> ";
     } else {
         $link = " <a href='#' class='snlink' onclick=\"return $jumpfunc('$mediaID','$medialinkID','$albumlinkID')\" title=\"$title\">$label</a> ";
@@ -113,9 +107,8 @@ function doMedia($mediatypeID) {
         $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
 
         $status = $row['status'];
-        if ($status && $text[$status]) {
-            $row['status'] = $text[$status];
-        }
+        if ($status && $text[$status]) $row['status'] = $text[$status];
+
 
         $query = "SELECT medialinkID, medialinks.personID AS personID, medialinks.eventID, people.personID AS personID2, familyID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.gedcom AS gedcom, treename, sources.title, sources.sourceID, repositories.repoID,reponame, deathdate, burialdate, linktype ";
         $query .= "FROM $medialinks_table medialinks ";
@@ -131,12 +124,10 @@ function doMedia($mediatypeID) {
         $foundprivate = 0;
         $medialinktext = "";
         while ($prow = tng_fetch_assoc($presult)) {
-            if ($prow['fbranch'] != NULL) {
-                $prow['branch'] = $prow['fbranch'];
-            }
-            if ($prow['fliving'] != NULL) {
-                $prow['living'] = $prow['fliving'];
-            }
+            if ($prow['fbranch'] != NULL) $prow['branch'] = $prow['fbranch'];
+
+            if ($prow['fliving'] != NULL) $prow['living'] = $prow['fliving'];
+
             if ($prow['fprivate'] != NULL) {
                 $prow['private'] = $prow['fprivate'];
             }
@@ -146,9 +137,8 @@ function doMedia($mediatypeID) {
 					AND (living = '1' OR private = '1')";
                 $presult2 = tng_query($query);
                 $prow2 = tng_fetch_assoc($presult2);
-                if ($prow2['ccount']) {
-                    $prow['living'] = 1;
-                }
+                if ($prow2['ccount']) $prow['living'] = 1;
+
                 tng_free_result($presult2);
             }
 
@@ -156,12 +146,10 @@ function doMedia($mediatypeID) {
             $prow['allow_living'] = $rights['living'];
             $prow['allow_private'] = $rights['private'];
 
-            if (!$rights['living']) {
-                $foundliving = 1;
-            }
-            if (!$rights['private']) {
-                $foundprivate = 1;
-            }
+            if (!$rights['living']) $foundliving = 1;
+
+            if (!$rights['private']) $foundprivate = 1;
+
 
             $hstext = "";
             if ($prow['personID2'] != NULL) {
@@ -203,9 +191,8 @@ function doMedia($mediatypeID) {
             $medialinktext .= "</a>$hstext\n</li>\n";
         }
         tng_free_result($presult);
-        if ($medialinktext) {
-            $medialinktext = "<ul>$medialinktext</ul>\n";
-        }
+        if ($medialinktext) $medialinktext = "<ul>$medialinktext</ul>\n";
+
 
         $showPhotoInfo = $row['allow_living'] = $row['alwayson'] || (!$foundprivate && !$foundliving);
 
@@ -253,13 +240,11 @@ function doMedia($mediatypeID) {
 
         $mediatext .= "$description<br>$notes&nbsp;</td>";
         if ($mediatypeID == "headstones") {
-            if (!$row['cemname']) {
-                $row['cemname'] = $row['city'];
-            }
+            if (!$row['cemname']) $row['cemname'] = $row['city'];
+
             $mediatext .= "<td class='databack'><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
-            if ($row['plot']) {
-                $mediatext .= "<br>";
-            }
+            if ($row['plot']) $mediatext .= "<br>";
+
             $mediatext .= nl2br($row['plot']) . "&nbsp;</td>";
             $mediatext .= "<td class='databack'>{$row['status']}&nbsp;</td>";
             $mediatext .= "<td class='databack'>\n";

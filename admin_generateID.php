@@ -32,9 +32,8 @@ function getNewID($type, $table) {
         } else {
             $lastid = 1;
         }
-        if (!trim($lastid)) {
-            $lastid = 0;
-        }
+        if (!trim($lastid)) $lastid = 0;
+
         $found = false;
 
         $typestr = $type . "ID";

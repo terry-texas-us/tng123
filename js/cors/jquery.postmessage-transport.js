@@ -106,9 +106,8 @@
                     }).appendTo(document.body);
                 },
                 abort: function () {
-                    if (iframe) {
-                        iframe.remove();
-                    }
+                    if (iframe) iframe.remove();
+
                 }
             };
         }

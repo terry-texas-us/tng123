@@ -36,9 +36,7 @@ if (typeof SimileAjax == "undefined") {
                 if (node.nodeType == 1 && node.tagName.toLowerCase() == "script") {
                     var url = node.src;
                     var i = url.indexOf(substring);
-                    if (i >= 0) {
-                        return url;
-                    }
+                    if (i >= 0) return url;
                 }
                 node = node.nextSibling;
             }
@@ -66,9 +64,8 @@ if (typeof SimileAjax == "undefined") {
             }
             script.setAttribute("onerror", onerror);
         }
-        if (charset) {
-            script.setAttribute("charset", charset);
-        }
+        if (charset) script.setAttribute("charset", charset);
+
         script.type = "text/javascript";
         script.language = "JavaScript";
         script.src = url;
@@ -126,16 +123,11 @@ if (typeof SimileAjax == "undefined") {
     SimileAjax.parseURLParameters = function (url, to, types) {
         to = to || {};
         types = types || {};
+        if (typeof url == "undefined") url = location.href;
 
-        if (typeof url == "undefined") {
-            url = location.href;
-        }
         var q = url.indexOf("?");
-        if (q < 0) {
-            return to;
-        }
+        if (q < 0) return to;
         url = (url + "#").slice(q + 1, url.indexOf("#")); // toss the URL fragment
-
         var params = url.split("&"), param, parsed = {};
         var decode = window.decodeURIComponent || unescape;
         for (var i = 0; param = params[i]; i++) {
@@ -153,9 +145,7 @@ if (typeof SimileAjax == "undefined") {
             if (!parsed.hasOwnProperty(i)) continue;
             var type = types[i] || String;
             var data = parsed[i];
-            if (!(data instanceof Array)) {
-                data = [data];
-            }
+            if (!(data instanceof Array)) data = [data];
             if (type === Boolean && data[0] == "false") {
                 to[i] = false; // because Boolean("false") === true
             } else {

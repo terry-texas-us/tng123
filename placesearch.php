@@ -1,19 +1,15 @@
 <?php
+
 $textpart = "search";
 $needMap = true;
 include "tng_begin.php";
 require_once "./admin/trees.php";
-
-if (!$psearch) {
-    exit;
-}
+if (!$psearch) exit;
 include "personlib.php";
-
 @set_time_limit(0);
 $psearch = preg_replace("/[<>{};!=]/", '', $psearch);
 $psearchns = $psearch;
 $psearch = addslashes($psearch);
-
 $querystring = $psearchns;
 $cutoffstr = "personID = '$psearch'";
 $whatsnew = 0;
@@ -69,14 +65,12 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
     $successcount = 0;
 
     $allwhere = "$alias.gedcom = trees.gedcom";
-    if ($tree) {
-        $allwhere .= " AND $alias.gedcom = '$tree'";
-    }
+    if ($tree) $allwhere .= " AND $alias.gedcom = '$tree'";
+
     $more = getLivingPrivateRestrictions($alias, false, false);
     if ($more) {
-        if ($allwhere) {
-            $allwhere .= " AND ";
-        }
+        if ($allwhere) $allwhere .= " AND ";
+
         $allwhere .= $more;
     }
     $max_browsesearch_pages = 5;
@@ -178,9 +172,8 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
             echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
 
             $pagenav = get_browseitems_nav($totrows, "placesearch.php?$urlstring&amp;psearch=" . urlencode($psearchns) . "&amp;order=$order&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-            if ($pagenav) {
-                echo "<p>$pagenav</p>";
-            }
+            if ($pagenav) echo "<p>$pagenav</p>";
+
             $namestr = preg_replace("/xxx/", $text[$namefield], $namesort);
             $datestr = preg_replace("/yyy/", $placetxt, $datesort);
             ?>
@@ -233,9 +226,8 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
             </table>
 
             <?php
-            if ($pagenav) {
-                echo "<p>$pagenav</p><br>";
-            }
+            if ($pagenav) echo "<p>$pagenav</p><br>";
+
             echo "</div>\n";
         }
     }
@@ -429,9 +421,8 @@ if ($ldsOK) {
 }
 $successcount += processEvents("F", $stdevents, $displaymsgs);
 
-if (!$successcount) {
-    echo "<p>{$text['noresults']}.</p>";
-}
+if (!$successcount) echo "<p>{$text['noresults']}.</p>";
+
 
 tng_footer("");
 ?>

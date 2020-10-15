@@ -2,7 +2,6 @@
 // Author: Matt Kruse <matt@mattkruse.com>
 // WWW: http://www.mattkruse.com/
 // ===================================================================
-
 // ------------------------------------------------------------------
 // These functions use the same 'format' strings as the
 // java.text.SimpleDateFormat class, with minor exceptions.
@@ -32,7 +31,6 @@
 //                      9/2/00
 //  "MMM dd, yyyy hh:mm:ssa" matches: "January 01, 2000 12:30:45AM"
 // ------------------------------------------------------------------
-
 var MONTH_NAMES = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
 var DAY_NAMES = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
 
@@ -49,9 +47,8 @@ function LZ(x) {
 // ------------------------------------------------------------------
 function isDate(val, format) {
     var date = getDateFromFormat(val, format);
-    if (date == 0) {
-        return false;
-    }
+    if (date == 0) return false;
+
     return true;
 }
 
@@ -95,9 +92,8 @@ function formatDate(date, format) {
     var yyyy, yy, MMM, MM, dd, hh, h, mm, ss, ampm, HH, H, KK, K, kk, k;
     // Convert real date parts into formatted versions
     var value = new Object();
-    if (y.length < 3 || y < 0) {
-        y = "" + (y - 0 + 1900);
-    }
+    if (y.length < 3 || y < 0) y = "" + (y - 0 + 1900);
+
     value["y"] = "" + y;
     value["yyyy"] = y;
     value["yy"] = y.substring(2, 4);
@@ -167,12 +163,9 @@ function _isInteger(val) {
 function _getInt(str, i, minlength, maxlength) {
     for (var x = maxlength; x >= minlength; x--) {
         var token = str.substring(i, i + x);
-        if (token.length < minlength) {
-            return null;
-        }
-        if (_isInteger(token)) {
-            return token;
-        }
+        if (token.length < minlength) return null;
+        if (_isInteger(token)) return token;
+
     }
     return null;
 }
@@ -201,7 +194,6 @@ function getDateFromFormat(val, format) {
     var mm = now.getMinutes();
     var ss = now.getSeconds();
     var ampm = "";
-
     while (i_format < format.length) {
         // Get next token from format string
         c = format.charAt(i_format);
@@ -224,9 +216,7 @@ function getDateFromFormat(val, format) {
                 y = 4;
             }
             year = _getInt(val, i_val, x, y);
-            if (year == null) {
-                return 0;
-            }
+            if (year == null) return 0;
             i_val += year.length;
             if (year.length == 2) {
                 if (year > 20) {
@@ -242,17 +232,13 @@ function getDateFromFormat(val, format) {
                 if (val.substring(i_val, i_val + month_name.length).toLowerCase() == month_name.toLowerCase()) {
                     if (token == "MMM" || (token == "NNN" && i > 11)) {
                         month = i + 1;
-                        if (month > 12) {
-                            month -= 12;
-                        }
+                        if (month > 12) month -= 12;
                         i_val += month_name.length;
                         break;
                     }
                 }
             }
-            if ((month < 1) || (month > 12)) {
-                return 0;
-            }
+            if ((month < 1) || (month > 12)) return 0;
         } else if (token == "EE" || token == "E") {
             for (var i = 0; i < DAY_NAMES.length; i++) {
                 var day_name = DAY_NAMES[i];
@@ -263,52 +249,36 @@ function getDateFromFormat(val, format) {
             }
         } else if (token == "MM" || token == "M") {
             month = _getInt(val, i_val, token.length, 2);
-            if (month == null || (month < 1) || (month > 12)) {
-                return 0;
-            }
+            if (month == null || (month < 1) || (month > 12)) return 0;
             i_val += month.length;
         } else if (token == "dd" || token == "d") {
             date = _getInt(val, i_val, token.length, 2);
-            if (date == null || (date < 1) || (date > 31)) {
-                return 0;
-            }
+            if (date == null || (date < 1) || (date > 31)) return 0;
             i_val += date.length;
         } else if (token == "hh" || token == "h") {
             hh = _getInt(val, i_val, token.length, 2);
-            if (hh == null || (hh < 1) || (hh > 12)) {
-                return 0;
-            }
+            if (hh == null || (hh < 1) || (hh > 12)) return 0;
             i_val += hh.length;
         } else if (token == "HH" || token == "H") {
             hh = _getInt(val, i_val, token.length, 2);
-            if (hh == null || (hh < 0) || (hh > 23)) {
-                return 0;
-            }
+            if (hh == null || (hh < 0) || (hh > 23)) return 0;
             i_val += hh.length;
         } else if (token == "KK" || token == "K") {
             hh = _getInt(val, i_val, token.length, 2);
-            if (hh == null || (hh < 0) || (hh > 11)) {
-                return 0;
-            }
+            if (hh == null || (hh < 0) || (hh > 11)) return 0;
             i_val += hh.length;
         } else if (token == "kk" || token == "k") {
             hh = _getInt(val, i_val, token.length, 2);
-            if (hh == null || (hh < 1) || (hh > 24)) {
-                return 0;
-            }
+            if (hh == null || (hh < 1) || (hh > 24)) return 0;
             i_val += hh.length;
             hh--;
         } else if (token == "mm" || token == "m") {
             mm = _getInt(val, i_val, token.length, 2);
-            if (mm == null || (mm < 0) || (mm > 59)) {
-                return 0;
-            }
+            if (mm == null || (mm < 0) || (mm > 59)) return 0;
             i_val += mm.length;
         } else if (token == "ss" || token == "s") {
             ss = _getInt(val, i_val, token.length, 2);
-            if (ss == null || (ss < 0) || (ss > 59)) {
-                return 0;
-            }
+            if (ss == null || (ss < 0) || (ss > 59)) return 0;
             i_val += ss.length;
         } else if (token == "a") {
             if (val.substring(i_val, i_val + 2).toLowerCase() == "am") {
@@ -328,26 +298,18 @@ function getDateFromFormat(val, format) {
         }
     }
     // If there are any trailing characters left in the value, it doesn't match
-    if (i_val != val.length) {
-        return 0;
-    }
+    if (i_val != val.length) return 0;
     // Is date valid for month?
     if (month == 2) {
         // Check for leap year
         if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) { // leap year
-            if (date > 29) {
-                return 0;
-            }
+            if (date > 29) return 0;
         } else {
-            if (date > 28) {
-                return 0;
-            }
+            if (date > 28) return 0;
         }
     }
     if ((month == 4) || (month == 6) || (month == 9) || (month == 11)) {
-        if (date > 30) {
-            return 0;
-        }
+        if (date > 30) return 0;
     }
     // Correct hours value
     if (hh < 12 && ampm == "PM") {
@@ -378,9 +340,8 @@ function parseDate(val, checkList) {
         var l = window[checkList[i]];
         for (var j = 0; j < l.length; j++) {
             d = getDateFromFormat(val, l[j]);
-            if (d != 0) {
-                return new Date(d);
-            }
+            if (d != 0) return new Date(d);
+
         }
     }
     return null;
@@ -394,7 +355,6 @@ function checkDate(field) {
     dateFirst = new Array('d/M/y', 'd-M-y', 'd.M.y');
     var checkList = new Array('generalFormats', preferEuro ? 'dateFirst' : 'monthFirst', preferEuro ? 'monthFirst' : 'dateFirst');
     var newFormat = preferDateFormat ? preferDateFormat : 'd NNN yyyy';
-
     field.value = field.value.replace(/^\s*|\s*$/g, "");
     var orgval = field.value;
     var newval = parseDate(orgval, checkList);

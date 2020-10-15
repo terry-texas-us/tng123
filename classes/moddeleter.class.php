@@ -37,7 +37,6 @@ class moddeleter extends modbase
 
         $this->new_logevent("{$this->admtext['deleting']} <strong>$cfgfile</strong>");
 
-
         // SEE IF WE HAVE A SUPPORT FOLDER TO DELETE FROM THE MODS DIRECTORY
         if ($this->delete_support) {
 
@@ -52,23 +51,16 @@ class moddeleter extends modbase
                 $args[0] = trim($args[0], " /");
 
                 // only delete source folder in the mods dir
-                if (false !== strpos($args[0], "../")) {
-                    continue;
-                }
+                if (false !== strpos($args[0], "../")) continue;
 
                 // if just file name ignore it
                 $pos = strpos($args[0], "/");
-                if ($pos === false) {
-                    continue;
-                }
+                if ($pos === false) continue;
 
                 // need to delete top level folder
                 $parts = explode("/", $args[0], $limit = 2);
                 $support_folder = trim($parts[0]);
-
-                if (empty($support_folder)) {
-                    continue;
-                }
+                if (empty($support_folder)) continue;
 
                 $support_folder = $this->rootpath . $this->modspath . $support_folder;
 
@@ -105,23 +97,24 @@ class moddeleter extends modbase
         return $success;
     }
 
-// SUPPORTING FUNCTIONS
-
+    /**
+     * @param $cfgpathlist
+     * @return bool
+     */
     public function batch_delete($cfgpathlist) {
         foreach ($cfgpathlist as $cfgpath) {
-            if (!$this->delete_mod($cfgpath)) {
-                $this->batch_error = true;
-            }
+            if (!$this->delete_mod($cfgpath)) $this->batch_error = true;
+
         }
         return !$this->batch_error;
     }
 
+    /**
+     * @param $dir
+     * @return bool
+     */
     private function delTree($dir) {
-
-        if (!file_exists($dir)) {
-            return true;
-        }
-
+        if (!file_exists($dir)) return true;
         $files = array_diff(scandir($dir), ['.', '..']);
         foreach ($files as $file) {
             (is_dir("$dir/$file") && !is_link($dir)) ? $this->delTree("$dir/$file") : unlink("$dir/$file");

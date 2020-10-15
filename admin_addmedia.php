@@ -20,15 +20,13 @@ setcookie("lastcoll", $mediatypeID, $exptime);
 setcookie("tng_tree", $tree, $exptime);
 
 $thumbquality = 80;
-if (function_exists('imageJpeg')) {
-    include "imageutils.php";
-}
+if (function_exists('imageJpeg')) include "imageutils.php";
+
 
 $path = stripslashes($path);
 $thumbpath = stripslashes($thumbpath);
-if (substr($path, 0, 1) == "/") {
-    $path = substr($path, 1);
-}
+if (substr($path, 0, 1) == "/") $path = substr($path, 1);
+
 
 $usefolder = $usecollfolder ? $mediatypes_assoc[$mediatypeID] : $mediapath;
 $treestr = $tngconfig['mediatrees'] ? $tree . "/" : "";
@@ -76,46 +74,23 @@ if (function_exists('imageJpeg') && $thumbcreate == "auto") {
         }
     }
 }
-
-if ($latitude && $longitude && !$zoom) {
-    $zoom = 13;
-}
+if ($latitude && $longitude && !$zoom) $zoom = 13;
 if ($abspath) {
     $path = $mediaurl;
 } else {
     $abspath = 0;
 }
-if (!$showmap) {
-    $showmap = "0";
-}
-if (!$usenl) {
-    $usenl = 0;
-}
-if (!$alwayson) {
-    $alwayson = 0;
-}
-if (!$newwindow) {
-    $newwindow = 0;
-}
-if (!$usecollfolder) {
-    $usecollfolder = 0;
-}
-if (!$width) {
-    $width = 0;
-}
-if (!$height) {
-    $height = 0;
-}
-if (!$cemeteryID) {
-    $cemeteryID = 0;
-}
-if (!$linktocem) {
-    $linktocem = 0;
-}
-if (!$zoom) {
-    $zoom = 0;
-}
+if (!$showmap) $showmap = "0";
+if (!$usenl) $usenl = 0;
+if (!$alwayson) $alwayson = 0;
+if (!$newwindow) $newwindow = 0;
+if (!$usecollfolder) $usecollfolder = 0;
 
+if (!$width) $width = 0;
+if (!$height) $height = 0;
+if (!$cemeteryID) $cemeteryID = 0;
+if (!$linktocem) $linktocem = 0;
+if (!$zoom) $zoom = 0;
 $fileparts = pathinfo($path);
 $form = strtoupper($fileparts['extension']);
 $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));

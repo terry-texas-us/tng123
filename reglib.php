@@ -108,9 +108,8 @@ function getSpouseParents($personID, $sex) {
                     if ($mothrow['name'] == $admtext['text_private']) {
                         $mothrow['firstname'] = $admtext['text_private'];
                     }
-                    if ($parentstr) {
-                        $parentstr .= " {$text['text_and']} ";
-                    }
+                    if ($parentstr) $parentstr .= " {$text['text_and']} ";
+
                     $parentstr .= "<a href='#' onclick=\"if(jQuery('#p{$mothrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$mothrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$mothrow['personID']}&amp;tree=$tree';} return false;\">$mothname</a>";
                 }
                 tng_free_result($gotmother);
@@ -122,9 +121,8 @@ function getSpouseParents($personID, $sex) {
         }
         tng_free_result($parents);
     }
-    if ($allparents) {
-        $allparents = "($allparents)";
-    }
+    if ($allparents) $allparents = "($allparents)";
+
 
     return $allparents;
 }
@@ -143,9 +141,8 @@ function getVitalDates($row, $needparents = null) {
             }
         }
         if ($row['altbirthdate'] || $row['altbirthplace']) {
-            if ($vitalinfo) {
-                $vitalinfo .= ";";
-            }
+            if ($vitalinfo) $vitalinfo .= ";";
+
             $christenedmsg = ($row['sex'] == "F") ? $text['waschristened_female'] : $text['waschristened_male'];
             $vitalinfo .= " " . $christenedmsg . printDate($row['altbirthdate'], $row['altbirthdatetr']);
             if ($row['altbirthplace']) {
@@ -154,15 +151,13 @@ function getVitalDates($row, $needparents = null) {
         }
         if ($needparents) {
             $spparents = getSpouseParents($row['personID'], $row['sex']);
-            if ($spparents) {
-                $vitalinfo .= " " . $spparents;
-            }
+            if ($spparents) $vitalinfo .= " " . $spparents;
+
         }
 
         if ($row['deathdate'] || $row['deathplace']) {
-            if ($vitalinfo) {
-                $vitalinfo .= ";";
-            }
+            if ($vitalinfo) $vitalinfo .= ";";
+
             $diedmsg = ($row['sex'] == "F") ? $text['died_female'] : $text['died_male'];
             if ($row['deathdate'] == "Y") {
                 $vitalinfo .= " " . $text['and'] . $diedmsg;
@@ -174,9 +169,8 @@ function getVitalDates($row, $needparents = null) {
             }
         }
         if ($row['burialdate'] || $row['burialplace']) {
-            if ($vitalinfo) {
-                $vitalinfo .= ";";
-            }
+            if ($vitalinfo) $vitalinfo .= ";";
+
             $buriedmsg = ($row['sex'] == "F") ? $text['wasburied_female'] : $text['wasburied_male'];
             $crematedmsg = ($row['sex'] == "F") ? $text['wascremated_female'] : $text['wascremated_male'];
             $burialmsg = $row['burialtype'] ? $crematedmsg : $buriedmsg;
@@ -191,9 +185,8 @@ function getVitalDates($row, $needparents = null) {
             }
         }
     }
-    if ($vitalinfo) {
-        $vitalinfo .= ". ";
-    }
+    if ($vitalinfo) $vitalinfo .= ". ";
+
     return $vitalinfo;
 }
 
@@ -205,9 +198,8 @@ function getSpouseDates($row, $personsex) {
     if ($row['allow_living'] && $row['allow_private']) {
         if ($row['marrdate'] || $row['marrplace'] || $row['marrtype']) {
             $spouseinfo .= printDate($row['marrdate'], $row['marrdatetr']);
-            if ($row['marrtype']) {
-                $spouseinfo .= " ({$row['marrtype']})";
-            }
+            if ($row['marrtype']) $spouseinfo .= " ({$row['marrtype']})";
+
             if (($row['marrdate'] || $row['marrtype']) && $row['marrplace']) {
                 $spouseinfo .= $text['inplace'];
             }
@@ -227,9 +219,8 @@ function getSpouseDates($row, $personsex) {
             }
         }
     }
-    if ($spouseinfo) {
-        $spouseinfo .= ".";
-    }
+    if ($spouseinfo) $spouseinfo .= ".";
+
     return $spouseinfo;
 }
 
@@ -257,16 +248,14 @@ function getOtherEvents($row) {
             $fact = (count($fact) && $fact[0] != "") ? array_merge($fact, $extras) : $extras;
             $thisEvent = $custevent['eventdate'] ? displayDate($custevent['eventdate']) : "";
             if ($custevent['eventplace']) {
-                if ($thisEvent) {
-                    $thisEvent .= ", ";
-                }
+                if ($thisEvent) $thisEvent .= ", ";
+
                 $thisEvent .= $custevent['eventplace'];
             }
             if (count($fact)) {
                 foreach ($fact as $f) {
-                    if ($thisEvent) {
-                        $thisEvent .= "; ";
-                    }
+                    if ($thisEvent) $thisEvent .= "; ";
+
                     $thisEvent .= $f;
                 }
             }
@@ -314,9 +303,8 @@ function getRegNotes($persfamID, $flag) {
     $currevent = "";
     $type = 0;
     while ($note = tng_fetch_assoc($notelinks)) {
-        if (!$note['eventID']) {
-            $note['eventID'] = "--x-general-x--";
-        }
+        if (!$note['eventID']) $note['eventID'] = "--x-general-x--";
+
         if ($note['eventID'] != $currevent) {
             $currevent = $note['eventID'];
             $currtitle = "";
@@ -358,9 +346,8 @@ function getRegNotes($persfamID, $flag) {
                 $precustnotes[$currevent]['text'] .= nl2br($note['note']) . "\n";
                 break;
             case 2:
-                if ($custnotes[$key]['text']) {
-                    $custnotes[$key]['text'] .= "<br><br>";
-                }
+                if ($custnotes[$key]['text']) $custnotes[$key]['text'] .= "<br><br>";
+
                 $custnotes[$key]['text'] .= nl2br($note['note']) . "\n";
                 break;
             case 3:
@@ -380,12 +367,10 @@ function getRegNotes($persfamID, $flag) {
 function buildRegNotes($notearray) {
     $notes = "";
     foreach ($notearray as $key => $note) {
-        if ($notes) {
-            $notes .= "<br><br>\n";
-        }
-        if ($note['title']) {
-            $notes .= $note['title'] . ":<br>\n";
-        }
+        if ($notes) $notes .= "<br><br>\n";
+
+        if ($note['title']) $notes .= $note['title'] . ":<br>\n";
+
         $notes .= $note['text'] . "\n";
     }
     return $notes;

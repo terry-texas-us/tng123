@@ -88,9 +88,8 @@ function ControllerMagUp(e) {
     haveZoomed = true;
 
     // if the zoom is 100% or greater, we need to force pan mode
-    if (magzoom >= 5) {
-        this.parentNode.buttonPan.onclick();
-    }
+    if (magzoom >= 5) this.parentNode.buttonPan.onclick();
+
 }
 
 // handles pushing the zoom level down button
@@ -281,25 +280,19 @@ function sizeController(frameHeight) {
     // determine the height and width of our iframe first
     var subOffset = true;
     img.bodyw = document.body.offsetWidth;
-
     // if the frame height is specified, we can go ahead and set the height
-    if (frameHeight > 1) {
-        img.bodyh = frameHeight;
-    }
+    if (frameHeight > 1) img.bodyh = frameHeight;
 
     // now lets do one final resize of the image now that we know the actual iframe width
     zoom = img.bodyw / img.fullWidth;
     //zoom = (img.bodyh - canvas.offsetTop) / img.fullHeight;
-    if (zoom > 1) {
-        zoom = 1;
-    }
+    if (zoom > 1) zoom = 1;
     canvas.zoom = zoom;
     img.origZoom = zoom;
     img.width = Math.round(img.fullWidth * zoom);
     img.height = Math.round(img.fullHeight * zoom);
     img.fitWidth = img.width;
     img.fitHeight = img.height;
-
     if (frameHeight == 1) {
         subOffset = false;
         img.bodyh = img.height;
@@ -652,9 +645,8 @@ function handleMouseUp(e) {
         lastLeft = parseInt(img.style.left);
         lastTop = parseInt(img.style.top);
 
-        if (navigator.appName == 'Netscape') {
-            img.style.cursor = '-moz-grab';
-        }
+        if (navigator.appName == 'Netscape') img.style.cursor = '-moz-grab';
+
     } else {
         var mag = this.magnifier;
         mag.shadow.style.display = 'none';
@@ -728,35 +720,24 @@ function handleMouseMove(e) {
         if (this.mode == 'pan') {
             var img = this.image;
             if (img.canPan) {
-
                 // compute top and left coordinates
                 var top = lastTop + (e.clientY - lastY);
-                if (top > 0) {
-                    top = 0;
-                }
+                if (top > 0) top = 0;
                 var left = lastLeft + (e.clientX - lastX);
-                if (left > 0) {
-                    left = 0;
-                }
-
+                if (left > 0) left = 0;
                 if (img.panH == true)
-                    if (img.width + left < img.bodyw) {
-                        left = img.bodyw - img.width;
-                    }
+                    if (img.width + left < img.bodyw) left = img.bodyw - img.width;
 
                 if (img.panV == true)
-                    if (img.height + top < img.bodyh) {
-                        top = img.bodyh - img.height;
-                    }
+                    if (img.height + top < img.bodyh) top = img.bodyh - img.height;
+
                 //document.getElementById('debug').innerHTML = 'DEBUG: ('+top+')('+img.width+')('+img.height+')('+img.bodyw+')('+img.bodyh+')('+this.offsetTop+')';
 
                 // pan the image
-                if (img.panV) {
-                    img.style.top = top + 'px';
-                }
-                if (img.panH) {
-                    img.style.left = left + 'px';
-                }
+                if (img.panV) img.style.top = top + 'px';
+
+                if (img.panH) img.style.left = left + 'px';
+
             }
         } else {
             var magnifier = this.magnifier;

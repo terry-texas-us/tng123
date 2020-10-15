@@ -66,9 +66,8 @@ if (!empty($_POST)) {
     if (!empty($submit)) {
         if (!empty($mods)) {
             foreach ($mods as $mod) {
-                if (isset($mod['selected'])) {
-                    $modlist[] = $cfgfolder . $mod['file'];
-                }
+                if (isset($mod['selected'])) $modlist[] = $cfgfolder . $mod['file'];
+
             }
         }
         if ($submit == "installall") {

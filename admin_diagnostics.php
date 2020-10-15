@@ -158,12 +158,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
                     $posixgroup = '';
                 }
 
-                if ($myuserid != $posixmyuserid) {
-                    $myuserid = $posixmyuserid;
-                }
-                if ($mygroupid != $posixmygroupid) {
-                    $mygroupid = $posixmygroupid;
-                }
+                if ($myuserid != $posixmyuserid) $myuserid = $posixmyuserid;
+
+                if ($mygroupid != $posixmygroupid) $mygroupid = $posixmygroupid;
+
 
                 $text = '';
                 $ftext = '';
@@ -267,9 +265,8 @@ function fileReadWrite($myuserid, $mygroupid, $fileref) {
             }
         }
     } elseif ($mygroupid == $groupid) {
-        if (substr($perms, 5, 1) == 'w') {
-            $rval = true;
-        }
+        if (substr($perms, 5, 1) == 'w') $rval = true;
+
     } elseif (substr($perms, 8, 1) == 'w') {
         $rval = true;
     }
@@ -306,9 +303,8 @@ function dirReadWrite($myuserid, $mygroupid, $dirref) {
             }
         }
     } elseif ($mygroupid == $groupid) {
-        if (substr($perms, 5, 1) == 'w') {
-            $rval = true;
-        }
+        if (substr($perms, 5, 1) == 'w') $rval = true;
+
     } elseif (substr($perms, 8, 1) == 'w') {
         $rval = true;
     }

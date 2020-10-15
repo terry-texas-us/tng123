@@ -66,24 +66,15 @@ class modinstaller extends modparser
 
         // PROCESS PARSE TABLE TO INSTALL THE CURRENT MOD
         for ($j = 0; isset($tags[$j]); $j++) {
-
             // IGNORE TAGS THAT WON'T BE INSTALLED IN TARGET FILE
-            if ($this->is_infotag($tags[$j]['name'])) {
-                continue;
-            }
-
+            if ($this->is_infotag($tags[$j]['name'])) continue;
             /*************************************************************************
              * TARGETS
              *************************************************************************/
             if ($tags[$j]['name'] == 'target') {
                 $flag = $tags[$j]['flag'];
-
                 // DEPLOYED FILES WILL BE INSTALLED IN ORDER FOUND IN CFG SO IGNORE THIS
-                if ($tags[$j]['arg1'] == 'files') {
-                    continue;
-                }
-
-
+                if ($tags[$j]['arg1'] == 'files') continue;
                 // NEW TARGET FILE? SAVE CURRENT TARGET BUFFER IF ANY;
                 if (!empty($active_target_file) && !empty($target_file_contents)) {
                     if (false === $this->write_file_buffer($active_target_file, $target_file_contents)) {
@@ -155,12 +146,9 @@ class modinstaller extends modparser
              * LOCATIONS
              *************************************************************************/
             if ($tags[$j]['name'] == 'location') {
-                if (!$istarget) {
-                    continue;
-                }
+                if (!$istarget) continue;
                 $locations_required++;
                 $logstring = "{$this->admtext['line']} {$tags[$j]['line']}: <span class=\"tag\">%location:%</span>&nbsp;";
-
                 // TARGET FILE NOT OPENED FOR SOME REASON - NO POINT PROCESSING LOCATIONS
                 if (empty($active_target_file)) {
                     if ($tags[$j]['flag'] == self::FLAG_OPTIONAL) {
@@ -488,9 +476,8 @@ class modinstaller extends modparser
 
     public function batch_install($cfgpathlist) {
         foreach ($cfgpathlist as $cfgpath) {
-            if (!$this->install($cfgpath)) {
-                $this->batch_error = true;
-            }
+            if (!$this->install($cfgpath)) $this->batch_error = true;
+
         }
         return !$this->batch_error;
     }

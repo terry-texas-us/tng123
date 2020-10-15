@@ -2,9 +2,8 @@
 @ini_set("magic_quotes_runtime", "0");
 @ini_set("auto_detect_line_endings", "1");
 $umfs = substr(ini_get("upload_max_filesize"), 0, -1);
-if ($umfs < 10) {
-    @ini_set("upload_max_filesize", "10M");
-}
+if ($umfs < 10) @ini_set("upload_max_filesize", "10M");
+
 
 include "begin.php";
 include "adminlib.php";
@@ -50,9 +49,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         @set_time_limit(0);
         if ($remotefile && $remotefile != "none") {
             $fp = @fopen($remotefile, "r");
-            if ($fp === false) {
-                die ($admtext['cannotopen'] . " $remotefile");
-            }
+            if ($fp === false) die ($admtext['cannotopen'] . " $remotefile");
+
             echo "$remotefile {$admtext['opened']}<br>\n";
             $savestate['filename'] = $remotefile;
         } else {
@@ -66,9 +64,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                 $savestate['filename'] = $localfile;
             }
         }
-        if ($savestate['filename']) {
-            $tree = $tree1; //selected
-        }
+        if ($savestate['filename']) $tree = $tree1; //selected
+
         ?>
         <p class="normal"><strong><?php echo $admtext['importinggedcom']; ?></strong></p>
         <?php
@@ -105,9 +102,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                 $lineinfo['tag'] = "";
                 $lineinfo['rest'] = "";
             }
-            if (!$lineinfo['tag'] && !feof($fp)) {
-                $lineinfo = getLine();
-            }
+            if (!$lineinfo['tag'] && !feof($fp)) $lineinfo = getLine();
+
 
             return $lineinfo;
         }

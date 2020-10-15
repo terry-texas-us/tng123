@@ -21,9 +21,8 @@ net.ContentLoader = function (url, onload, onerror, method, params, contentType)
 }
 
 net.ContentLoader.prototype.loadXMLDoc = function (url, method, params, contentType) {
-    if (!method) {
-        method = "GET";
-    }
+    if (!method) method = "GET";
+
     if (!contentType && method == "POST") {
         contentType = 'application/x-www-form-urlencoded';
     }
@@ -177,9 +176,7 @@ function checkEmail(email) {
 if (!Array.prototype.indexOf) {
     Array.prototype.indexOf = function (obj, start) {
         for (var i = (start || 0), j = this.length; i < j; i++) {
-            if (this[i] === obj) {
-                return i;
-            }
+            if (this[i] === obj) return i;
         }
         return -1;
     }

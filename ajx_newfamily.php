@@ -38,9 +38,8 @@ if ($newperson) {
 if ($husband) {
     $husbstr = getName($newpersonrow) . " - $husband";
 } else {
-    if ($wife) {
-        $wifestr = getName($newpersonrow) . " - $wife";
-    }
+    if ($wife) $wifestr = getName($newpersonrow) . " - $wife";
+
 }
 if (!isset($husbstr)) $husbstr = $admtext['clickfind'];
 if (!isset($wifestr)) $wifestr = $admtext['clickfind'];
@@ -133,14 +132,12 @@ include_once "eventlib.php";
                                 }
                                 echo "<span id=\"fbranchlist\"></span>";
                                 if (!$assignedbranch) {
-                                if ($numbranches > 8) {
-                                    $select = "{$admtext['scrollbranch']}<br>";
-                                }
+                                if ($numbranches > 8) $select = "{$admtext['scrollbranch']}<br>";
+
                                 $select .= "<select name=\"branch[]\" id=\"fbranch\" multiple size=\"8\">\n";
                                 $select .= "	<option value=\"\"";
-                                if ($row['branch'] == "") {
-                                    $select .= " selected";
-                                }
+                                if ($row['branch'] == "") $select .= " selected";
+
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";

@@ -7,9 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 
-if (!$allow_edit) {
-    exit;
-}
+if (!$allow_edit) exit;
 
 initMediaTypes();
 
@@ -44,9 +42,8 @@ foreach ($mediatypes_assoc as $type => $path) {
             if ($action) {
                 //move to tree folders
                 $dest = $rootpath . $usefolder . "/" . $row['gedcom'] . "/";
-                if (!file_exists($dest)) {
-                    @mkdir($dest, 0755);
-                }
+                if (!file_exists($dest)) @mkdir($dest, 0755);
+
                 $source = $rootpath . $usefolder . "/";
             } else {
                 //move from tree folders

@@ -73,12 +73,10 @@ function drawBox($person, $box) {
     }
     if ($person['allow_living'] && $person['allow_private']) {
         if ($person['birth'] || $person['death']) {
-            if (!$person['birth']) {
-                $person['birth'] = "";
-            }
-            if (!$person['death']) {
-                $person['death'] = "";
-            }
+            if (!$person['birth']) $person['birth'] = "";
+
+            if (!$person['death']) $person['death'] = "";
+
             $nameinfo .= "<br>" . getYears($person);
         }
     }
@@ -230,29 +228,16 @@ function getBox($childcount, $totkids, $thisisit, $gotnext) {
 
 function getColor($shifts) {
     global $pedigree;
-
     $shiftval = $shifts * $pedigree['colorshift'];
     $R = $pedigree['baseR'] + $shiftval;
     $G = $pedigree['baseG'] + $shiftval;
     $B = $pedigree['baseB'] + $shiftval;
-    if ($R > 255) {
-        $R = 255;
-    }
-    if ($R < 0) {
-        $R = 0;
-    }
-    if ($G > 255) {
-        $G = 255;
-    }
-    if ($G < 0) {
-        $G = 0;
-    }
-    if ($B > 255) {
-        $B = 255;
-    }
-    if ($B < 0) {
-        $B = 0;
-    }
+    if ($R > 255) $R = 255;
+    if ($R < 0) $R = 0;
+    if ($G > 255) $G = 255;
+    if ($G < 0) $G = 0;
+    if ($B > 255) $B = 255;
+    if ($B < 0) $B = 0;
     $R = str_pad(dechex($R), 2, "0", STR_PAD_LEFT);
     $G = str_pad(dechex($G), 2, "0", STR_PAD_LEFT);
     $B = str_pad(dechex($B), 2, "0", STR_PAD_LEFT);
@@ -280,9 +265,8 @@ $pedigree['puboxheight'] += 14;
 
 $pedigree['halfwidth'] = floor($pedigree['puboxwidth'] / 2) + 6;
 $pedigree['phototree'] = $tree;
-if ($tree) {
-    $pedigree['phototree'] .= ".";
-}
+if ($tree) $pedigree['phototree'] .= ".";
+
 
 $items = explode(",", $trail);
 $personID = $nextperson = array_shift($items);
@@ -317,12 +301,10 @@ $photostr = showSmallPhoto($personID, $descname, $rights['both'], 0, false, $row
 echo tng_DrawHeading($photostr, $descname, getYears($row));
 $row['deathdatetr'] = $row['burialdatetr'] = "0000-00-00"; //this is to suppress the age calculation on the chart
 
-if (!$pedigree['maxdesc']) {
-    $pedigree['maxdesc'] = 12;
-}
-if (!$pedigree['initdescgens']) {
-    $pedigree['initdescgens'] = 8;
-}
+if (!$pedigree['maxdesc']) $pedigree['maxdesc'] = 12;
+
+if (!$pedigree['initdescgens']) $pedigree['initdescgens'] = 8;
+
 if (!$generations) {
     $generations = $pedigree['initdescgens'] > 8 ? 8 : $pedigree['initdescgens'];
 } else {
@@ -381,9 +363,8 @@ echo "</form>\n";
                         if ($result2) {
                             echo "<table border='0' cellspacing='0' cellpadding='0'>\n<tr>\n";
                             $totkids = tng_num_rows($result2);
-                            if ($more) {
-                                $totkids++;
-                            }
+                            if ($more) $totkids++;
+
                             $childcount = 0;
                             while ($row = tng_fetch_assoc($result2)) {
                                 $childcount++;

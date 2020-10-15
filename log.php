@@ -1,24 +1,15 @@
 <?php
 function writelog($string) {
     global $text, $currentuser, $currentuserdesc, $_SERVER, $time_offset, $exusers, $badhosts, $charset;
-
     require "config/logconfig.php";
-
     if (!isset($_SERVER['REMOTE_HOST'])) $_SERVER['REMOTE_HOST'] = '';
-
     $string = str_replace(["\n", "\r"], " ", $string);
-    if (strpos($string, "http") !== false || strpos($string, "www") !== false) {
-        return;
-    }
+    if (strpos($string, "http") !== false || strpos($string, "www") !== false) return;
     $string = strip_tags($string, "<a>");
-
     if ($exusers) {
         $users = explode(",", $exusers);
-        if (in_array($currentuser, $users)) {
-            return;
-        }
+        if (in_array($currentuser, $users)) return;
     }
-
     $remhost = $_SERVER['REMOTE_HOST'];
     if (!$remhost) {
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -27,19 +18,15 @@ function writelog($string) {
             $remip = $_SERVER['REMOTE_ADDR'];
         }
         $remhost = @gethostbyaddr($remip);
-        if (!$remhost) {
-            $remhost = $remip;
-        }
+        if (!$remhost) $remhost = $remip;
+
     }
 
     if ($badhosts && $remhost) {
         $terms = explode(",", $badhosts);
         foreach ($terms as $term) {
-            if ($term) {
-                if (strstr($remhost, trim($term))) {
-                    return;
-                }
-            }
+            if ($term) if (strstr($remhost, trim($term))) return;
+
         }
     }
 

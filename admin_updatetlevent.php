@@ -11,29 +11,16 @@ if (!$allow_edit) {
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
-
 require "adminlog.php";
-
 $evdetail = addslashes($evdetail);
 $evtitle = addslashes($evtitle);
-
-if (!$evday) {
-    $evday = "0";
-}
-if (!$evmonth) {
-    $evmonth = "0";
-}
-if (!$endday) {
-    $endday = "0";
-}
-if (!$endmonth) {
-    $endmonth = "0";
-}
+if (!$evday) $evday = "0";
+if (!$evmonth) $evmonth = "0";
+if (!$endday) $endday = "0";
+if (!$endmonth) $endmonth = "0";
 $query = "UPDATE $tlevents_table SET evday=\"$evday\", evmonth=\"$evmonth\", evyear=\"$evyear\",endday=\"$endday\", endmonth=\"$endmonth\", endyear=\"$endyear\",evtitle=\"$evtitle\",evdetail=\"$evdetail\" WHERE tleventID=\"$tleventID\"";
 $result = tng_query($query);
-
 adminwritelog($admtext['modifytlevent'] . ": $tleventID");
-
 if ($newscreen == "return") {
     header("Location: admin_edittlevent.php?tleventID=$tleventID");
 } else {

@@ -19,9 +19,8 @@ $treerow = tng_fetch_assoc($treeresult);
 $numtrees = $treerow['treecount'];
 tng_free_result($treeresult);
 
-if (!$thumbmaxw) {
-    $thumbmaxw = 80;
-}
+if (!$thumbmaxw) $thumbmaxw = 80;
+
 
 if ($offset) {
     $offsetplus = $offset + 1;
@@ -46,27 +45,23 @@ if ($cemeteryID) {
 
     $location = $cemetery['cemname'];
     if ($cemetery['city']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['city'];
     }
     if ($cemetery['county']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['county'];
     }
     if ($cemetery['state']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['state'];
     }
     if ($cemetery['country']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['country'];
     }
 } else {
@@ -117,12 +112,9 @@ if ($cemeteryID) {
         $lat = $cemetery['latitude'];
         $long = $cemetery['longitude'];
         $zoom = $cemetery['zoom'] ? $cemetery['zoom'] : 10;
-        if (!$zoom) {
-            $zoom = 10;
-        }
+        if (!$zoom) $zoom = 10;
         //RM - set placeleve = 2 to provide this value to the map for all cemeteries
         $pinplacelevel = $pinplacelevel2;
-
         // if we have one, add it
         if ($lat && $long) {
             $cemeteryplace = "{$cemetery['city']}, {$cemetery['county']}, {$cemetery['state']}, {$cemetery['country']}";
@@ -223,9 +215,8 @@ if ($numrows) {
     }
 
     $pagenav = get_browseitems_nav($totrows, "showmap.php?cemeteryID=$cemeteryID&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
-    if ($pagenav) {
-        $body .= "<p>$pagenav</p>";
-    }
+    if ($pagenav) $body .= "<p>$pagenav</p>";
+
 
     $header = $headerr = "";
     $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
@@ -257,9 +248,8 @@ if ($numrows) {
         $usefolder = $hs['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
 
         $status = $hs['status'];
-        if ($status && $text[$status]) {
-            $hs['status'] = $text[$status];
-        }
+        if ($status && $text[$status]) $hs['status'] = $text[$status];
+
 
         $query = "SELECT medialinkID, medialinks.personID AS personID, people.personID AS personID2, familyID, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.gedcom AS gedcom, treename, sources.title, sources.sourceID, repositories.repoID,reponame, deathdate, burialdate, linktype ";
         $query .= "FROM ($medialinks_table medialinks, $trees_table trees) ";
@@ -279,12 +269,10 @@ if ($numrows) {
                 $prow['allow_living'] = $prights['living'];
                 $prow['allow_private'] = $prights['private'];
 
-                if (!$prow['allow_living']) {
-                    $noneliving = 0;
-                }
-                if (!$prow['allow_private']) {
-                    $noneprivate = 0;
-                }
+                if (!$prow['allow_living']) $noneliving = 0;
+
+                if (!$prow['allow_private']) $noneprivate = 0;
+
 
                 $hslinktext .= "<a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
                 $hslinktext .= getName($prow);
@@ -303,12 +291,10 @@ if ($numrows) {
                 $prow['allow_living'] = $prights['living'];
                 $prow['allow_private'] = $prights['private'];
 
-                if (!$prow['allow_living']) {
-                    $noneliving = 0;
-                }
-                if (!$prow['allow_private']) {
-                    $noneprivate = 0;
-                }
+                if (!$prow['allow_living']) $noneliving = 0;
+
+                if (!$prow['allow_private']) $noneprivate = 0;
+
 
                 $hslinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
@@ -351,9 +337,8 @@ if ($numrows) {
         $body .= "<td class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
         $body .= "<td class='databack'><span class='normal'>" . nl2br($hs['plot']);
         if ($hs['latitude'] || $hs['longitude']) {
-            if ($hs['plot']) {
-                $body .= "<br>";
-            }
+            if ($hs['plot']) $body .= "<br>";
+
             $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
         }
         $body .= "&nbsp;</span></td>\n";
@@ -361,9 +346,8 @@ if ($numrows) {
         $body .= "</tr>\n";
     }
     $body .= "</table>\n";
-    if ($pagenav) {
-        $body .= "<p>$pagenav</p>";
-    }
+    if ($pagenav) $body .= "<p>$pagenav</p>";
+
     $body .= "</div>\n";
 }
 tng_free_result($hsresult);

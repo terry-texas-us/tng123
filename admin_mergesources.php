@@ -116,9 +116,7 @@ function doNotes($persfam1, $persfam2, $varname) {
     global $ccombinenotes, $notelinks_table, $tree;
 
     if ($varname) {
-        if ($varname == "general") {
-            $varname = "";
-        }
+        if ($varname == "general") $varname = "";
         $wherestr = "AND eventID = \"$varname\"";
     } else {
         $wherestr = "";
@@ -187,9 +185,8 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
                 tng_free_result($result);
             }
         } while ($numrows && $still_looking);
-        if (!$sourceID2) {
-            $sourceID1 = $s1row = "";
-        }
+        if (!$sourceID2) $sourceID1 = $s1row = "";
+
     } else {
         //search with sourceID1 for next duplicate
         $wherestr2 = $sourceID2 ? " AND sourceID > \"$sourceID2\"" : "";
@@ -298,9 +295,8 @@ if ($mergeaction == $admtext['merge']) {
         $query = "DELETE FROM $medialinks_table WHERE personID = \"$sourceID2\" AND gedcom = '$tree'";
         $mediaresult = tng_query($query);
 
-        if (file_exists($defaultphoto2)) {
-            unlink($defaultphoto2);
-        }
+        if (file_exists($defaultphoto2)) unlink($defaultphoto2);
+
     }
     $sourceID2 = "";
     $s2row = "";
@@ -368,9 +364,8 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                                     $trees = "";
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         $trees .= "			<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) {
-                                            $trees .= " selected";
-                                        }
+                                        if ($treerow['gedcom'] == $tree) $trees .= " selected";
+
                                         $trees .= ">{$treerow['treename']}</option>\n";
                                     }
                                     echo $trees;

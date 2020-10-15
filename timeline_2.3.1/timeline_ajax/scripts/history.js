@@ -43,11 +43,9 @@ SimileAjax.History.formatHistoryEntryTitle = function (actionLabel) {
 };
 
 SimileAjax.History.initialize = function () {
-    if (SimileAjax.History._initialized) {
-        return;
-    }
+    if (SimileAjax.History._initialized) return;
 
-    if (SimileAjax.History.enabled) {
+if (SimileAjax.History.enabled) {
         var iframe = document.createElement("iframe");
         iframe.id = "simile-ajax-history";
         iframe.style.position = "absolute";

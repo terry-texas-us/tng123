@@ -142,9 +142,8 @@
                             .unbind('load')
                             .prop('src', 'javascript'.concat(':false;'));
                     }
-                    if (form) {
-                        form.remove();
-                    }
+                    if (form) form.remove();
+
                 }
             };
         }

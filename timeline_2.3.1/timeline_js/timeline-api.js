@@ -79,11 +79,9 @@
     ;
 
     var loadMe = function () {
-        if ("Timeline" in window) {
-            return;
-        }
+        if ("Timeline" in window) return;
 
-        window.Timeline = new Object();
+window.Timeline = new Object();
         window.Timeline.DateTime = window.SimileAjax.DateTime; // for backward compatibility
 
         var bundle = false;
@@ -169,9 +167,8 @@
                             if (i >= 0) {
                                 Timeline.urlPrefix = url.substr(0, i);
                                 var q = url.indexOf("?");
-                                if (q > 0) {
-                                    parseURLParameters(url.substr(q + 1));
-                                }
+                                if (q > 0) parseURLParameters(url.substr(q + 1));
+
                                 return;
                             }
                         }
@@ -214,15 +211,11 @@
                 return false;
             }
             var tryLocale = function (locale) {
-                if (tryExactLocale(locale)) {
-                    return locale;
-                }
-
+                if (tryExactLocale(locale)) return locale;
                 var dash = locale.indexOf("-");
                 if (dash > 0 && tryExactLocale(locale.substr(0, dash))) {
                     return locale.substr(0, dash);
                 }
-
                 return null;
             }
 

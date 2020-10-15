@@ -44,19 +44,13 @@
         };
     }(), ajax = function (url, callback) {
         var req = xmlHttp();
-        if (!req) {
-            return;
-        }
+        if (!req) return;
         req.open("GET", url, true);
         req.onreadystatechange = function () {
-            if (req.readyState !== 4 || req.status !== 200 && req.status !== 304) {
-                return;
-            }
+            if (req.readyState !== 4 || req.status !== 200 && req.status !== 304) return;
             callback(req.responseText);
         };
-        if (req.readyState === 4) {
-            return;
-        }
+        if (req.readyState === 4) return;
         req.send(null);
     }, isUnsupportedMediaQuery = function (query) {
         return query.replace(respond.regex.minmaxwh, "").match(respond.regex.other);
@@ -77,9 +71,7 @@
         other: /\([^\)]*\)/g
     };
     respond.mediaQueriesSupported = w.matchMedia && w.matchMedia("only all") !== null && w.matchMedia("only all").matches;
-    if (respond.mediaQueriesSupported) {
-        return;
-    }
+    if (respond.mediaQueriesSupported) return;
     var doc = w.document, docElem = doc.documentElement, mediastyles = [], rules = [], appendedEls = [], parsedSheets = {}, resizeThrottle = 30, head = doc.getElementsByTagName("head")[0] || docElem, base = doc.getElementsByTagName("base")[0],
         links = head.getElementsByTagName("link"), lastCall, resizeDefer, eminpx, getEmValue = function () {
             var ret, div = doc.createElement("div"), body = doc.body, originalHTMLFontSize = docElem.style.fontSize, originalBodyFontSize = body && body.style.fontSize, fakeUsed = false;
@@ -91,9 +83,8 @@
             docElem.style.fontSize = "100%";
             body.style.fontSize = "100%";
             body.appendChild(div);
-            if (fakeUsed) {
-                docElem.insertBefore(body, docElem.firstChild);
-            }
+            if (fakeUsed) docElem.insertBefore(body, docElem.firstChild);
+
             ret = div.offsetWidth;
             if (fakeUsed) {
                 docElem.removeChild(body);
@@ -160,12 +151,9 @@
             var repUrls = function (css) {
                 return css.replace(respond.regex.urls, "$1" + href + "$2$3");
             }, useMedia = !ql && media;
-            if (href.length) {
-                href += "/";
-            }
-            if (useMedia) {
-                ql = 1;
-            }
+            if (href.length) href += "/";
+
+            if (useMedia) ql = 1;
             for (var i = 0; i < ql; i++) {
                 var fullq, thisq, eachq, eql;
                 if (useMedia) {
@@ -179,9 +167,7 @@
                 eql = eachq.length;
                 for (var j = 0; j < eql; j++) {
                     thisq = eachq[j];
-                    if (isUnsupportedMediaQuery(thisq)) {
-                        continue;
-                    }
+                    if (isUnsupportedMediaQuery(thisq)) continue;
                     mediastyles.push({
                         media: thisq.split("(")[0].match(respond.regex.only) && RegExp.$2 || "all",
                         rules: rules.length - 1,

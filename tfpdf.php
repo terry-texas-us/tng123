@@ -170,9 +170,8 @@ class tFPDF
         // Set left, top and right margins
         $this->lMargin = $left;
         $this->tMargin = $top;
-        if ($right === null) {
-            $right = $left;
-        }
+        if ($right === null) $right = $left;
+
         $this->rMargin = $right;
     }
 
@@ -226,41 +225,36 @@ class tFPDF
 
     public function SetTitle($title, $isUTF8 = false) {
         // Title of document
-        if ($isUTF8) {
-            $title = $this->_UTF8toUTF16($title);
-        }
+        if ($isUTF8) $title = $this->_UTF8toUTF16($title);
+
         $this->title = utf8_decode($title);
     }
 
     public function SetSubject($subject, $isUTF8 = false) {
         // Subject of document
-        if ($isUTF8) {
-            $subject = $this->_UTF8toUTF16($subject);
-        }
+        if ($isUTF8) $subject = $this->_UTF8toUTF16($subject);
+
         $this->subject = $subject;
     }
 
     public function SetAuthor($author, $isUTF8 = false) {
         // Author of document
-        if ($isUTF8) {
-            $author = $this->_UTF8toUTF16($author);
-        }
+        if ($isUTF8) $author = $this->_UTF8toUTF16($author);
+
         $this->author = $author;
     }
 
     public function SetKeywords($keywords, $isUTF8 = false) {
         // Keywords of document
-        if ($isUTF8) {
-            $keywords = $this->_UTF8toUTF16($keywords);
-        }
+        if ($isUTF8) $keywords = $this->_UTF8toUTF16($keywords);
+
         $this->keywords = $keywords;
     }
 
     public function SetCreator($creator, $isUTF8 = false) {
         // Creator of document
-        if ($isUTF8) {
-            $creator = $this->_UTF8toUTF16($creator);
-        }
+        if ($isUTF8) $creator = $this->_UTF8toUTF16($creator);
+
         $this->creator = $creator;
     }
 
@@ -281,12 +275,9 @@ class tFPDF
 
     public function Close() {
         // Terminate document
-        if ($this->state == 3) {
-            return;
-        }
-        if ($this->page == 0) {
-            $this->AddPage();
-        }
+        if ($this->state == 3) return;
+        if ($this->page == 0) $this->AddPage();
+
         // Page footer
         $this->InFooter = true;
         $this->Footer();
@@ -299,9 +290,8 @@ class tFPDF
 
     public function AddPage($orientation = '', $size = '') {
         // Start a new page
-        if ($this->state == 0) {
-            $this->Open();
-        }
+        if ($this->state == 0) $this->Open();
+
         $family = $this->FontFamily;
         $style = $this->FontStyle . ($this->underline ? 'U' : '');
         $fontsize = $this->FontSizePt;
@@ -326,18 +316,15 @@ class tFPDF
         $this->LineWidth = $lw;
         $this->_out(sprintf('%.2F w', $lw * $this->k));
         // Set font
-        if ($family) {
-            $this->SetFont($family, $style, $fontsize);
-        }
+        if ($family) $this->SetFont($family, $style, $fontsize);
+
         // Set colors
         $this->DrawColor = $dc;
-        if ($dc != '0 G') {
-            $this->_out($dc);
-        }
+        if ($dc != '0 G') $this->_out($dc);
+
         $this->FillColor = $fc;
-        if ($fc != '0 g') {
-            $this->_out($fc);
-        }
+        if ($fc != '0 g') $this->_out($fc);
+
         $this->TextColor = $tc;
         $this->ColorFlag = $cf;
         // Page header
@@ -350,9 +337,8 @@ class tFPDF
             $this->_out(sprintf('%.2F w', $lw * $this->k));
         }
         // Restore font
-        if ($family) {
-            $this->SetFont($family, $style, $fontsize);
-        }
+        if ($family) $this->SetFont($family, $style, $fontsize);
+
         // Restore colors
         if ($this->DrawColor != $dc) {
             $this->DrawColor = $dc;
@@ -386,9 +372,8 @@ class tFPDF
         } else {
             $this->DrawColor = sprintf('%.3F %.3F %.3F RG', $r / 255, $g / 255, $b / 255);
         }
-        if ($this->page > 0) {
-            $this->_out($this->DrawColor);
-        }
+        if ($this->page > 0) $this->_out($this->DrawColor);
+
     }
 
     public function SetFillColor($r, $g = null, $b = null) {
@@ -399,9 +384,8 @@ class tFPDF
             $this->FillColor = sprintf('%.3F %.3F %.3F rg', $r / 255, $g / 255, $b / 255);
         }
         $this->ColorFlag = ($this->FillColor != $this->TextColor);
-        if ($this->page > 0) {
-            $this->_out($this->FillColor);
-        }
+        if ($this->page > 0) $this->_out($this->FillColor);
+
     }
 
     public function SetTextColor($r, $g = null, $b = null) {
@@ -476,9 +460,8 @@ class tFPDF
     public function AddFont($family, $style = '', $file = '', $uni = false) {
         // Add a TrueType, OpenType or Type1 font
         $ucFamily = $family;
-        if (!$uni) {
-            $family = strtolower($family);
-        }
+        if (!$uni) $family = strtolower($family);
+
         $style = strtoupper($style);
         if ($file == '') {
             if ($uni) {
@@ -488,11 +471,9 @@ class tFPDF
             }
         }
         $fontkey = $family . $style;
-        if (isset($this->fonts[$fontkey])) {
-            return;
-        }
+        if (isset($this->fonts[$fontkey])) return;
 
-        if ($uni) {
+if ($uni) {
             if (defined("_SYSTEM_TTFONTS") && file_exists(_SYSTEM_TTFONTS . $file)) {
                 $ttffilename = _SYSTEM_TTFONTS . $file;
             } else {
@@ -586,9 +567,8 @@ class tFPDF
 
     public function SetFont($family, $style = '', $size = 0) {
         // Select a font; size given in points
-        if ($family == '') {
-            $family = $this->FontFamily;
-        }
+        if ($family == '') $family = $this->FontFamily;
+
         if ($this->charset != "UTF-8") {
             $style = strtoupper($style);
             if (strpos($style, 'U') !== false) {
@@ -597,33 +577,26 @@ class tFPDF
             } else {
                 $this->underline = false;
             }
-            if ($style == 'IB') {
-                $style = 'BI';
-            }
-            if ($size == 0) {
-                $size = $this->FontSizePt;
-            }
+            if ($style == 'IB') $style = 'BI';
+
+            if ($size == 0) $size = $this->FontSizePt;
+
         }
         // Test if font is already selected
-        if ($this->FontFamily == $family && $this->FontStyle == $style && $this->FontSizePt == $size) {
-            return;
-        }
+        if ($this->FontFamily == $family && $this->FontStyle == $style && $this->FontSizePt == $size) return;
         // Test if font is already loaded
         $fontkey = $family . $style;
-
         if (!isset($this->fonts[$fontkey])) {
             // Test if one of the core fonts
-            if ($family == 'arial') {
-                $family = 'helvetica';
-            }
+            if ($family == 'arial') $family = 'helvetica';
+
             if (in_array($family, $this->CoreFonts)) {
                 if ($family == 'symbol' || $family == 'zapfdingbats') {
                     $style = '';
                 }
                 $fontkey = $family . $style;
-                if (!isset($this->fonts[$fontkey])) {
-                    $this->AddFont($family, $style);
-                }
+                if (!isset($this->fonts[$fontkey])) $this->AddFont($family, $style);
+
             } else {
                 $this->Error('Undefined font: ' . $family . ' ' . $style);
             }
@@ -646,9 +619,7 @@ class tFPDF
 
     public function SetFontSize($size) {
         // Set font size in points
-        if ($this->FontSizePt == $size) {
-            return;
-        }
+        if ($this->FontSizePt == $size) return;
         $this->FontSizePt = $size;
         $this->FontSize = $size / $this->k;
         if ($this->page > 0) {
@@ -665,12 +636,10 @@ class tFPDF
 
     public function SetLink($link, $y = 0, $page = -1) {
         // Set destination of internal link
-        if ($y == -1) {
-            $y = $this->y;
-        }
-        if ($page == -1) {
-            $page = $this->page;
-        }
+        if ($y == -1) $y = $this->y;
+
+        if ($page == -1) $page = $this->page;
+
         $this->links[$link] = [$page, $y];
     }
 
@@ -692,9 +661,8 @@ class tFPDF
         if ($this->underline && $txt != '') {
             $s .= ' ' . $this->_dounderline($x, $y, $txt);
         }
-        if ($this->ColorFlag) {
-            $s = 'q ' . $this->TextColor . ' ' . $s . ' Q';
-        }
+        if ($this->ColorFlag) $s = 'q ' . $this->TextColor . ' ' . $s . ' Q';
+
         $this->_out($s);
     }
 
@@ -721,9 +689,8 @@ class tFPDF
                 $this->_out(sprintf('%.3F Tw', $ws * $k));
             }
         }
-        if ($w == 0) {
-            $w = $this->w - $this->rMargin - $this->x;
-        }
+        if ($w == 0) $w = $this->w - $this->rMargin - $this->x;
+
         $s = '';
         if ($fill || $border == 1) {
             if ($fill) {
@@ -757,9 +724,8 @@ class tFPDF
             } else {
                 $dx = $this->cMargin;
             }
-            if ($this->ColorFlag) {
-                $s .= 'q ' . $this->TextColor . ' ';
-            }
+            if ($this->ColorFlag) $s .= 'q ' . $this->TextColor . ' ';
+
 
             // If multibyte, Tw has no effect - do word spacing using an adjustment before each space
             if ($this->ws && $this->unifontSubset) {
@@ -793,23 +759,19 @@ class tFPDF
             if ($this->underline) {
                 $s .= ' ' . $this->_dounderline($this->x + $dx, $this->y + .5 * $h + .3 * $this->FontSize, $txt);
             }
-            if ($this->ColorFlag) {
-                $s .= ' Q';
-            }
+            if ($this->ColorFlag) $s .= ' Q';
             if ($link) {
                 $this->Link($this->x + $dx, $this->y + .5 * $h - .5 * $this->FontSize, $this->GetStringWidth($txt), $this->FontSize, $link);
             }
         }
-        if ($s) {
-            $this->_out($s);
-        }
+        if ($s) $this->_out($s);
+
         $this->lasth = $h;
         if ($ln > 0) {
             // Go to next line
             $this->y += $h;
-            if ($ln == 1) {
-                $this->x = $this->lMargin;
-            }
+            if ($ln == 1) $this->x = $this->lMargin;
+
         } else {
             $this->x += $w;
         }
@@ -818,9 +780,8 @@ class tFPDF
     public function MultiCell($w, $h, $txt, $border = 0, $align = 'J', $fill = false) {
         // Output text with automatic or explicit line breaks
         $cw = &$this->CurrentFont['cw'];
-        if ($w == 0) {
-            $w = $this->w - $this->rMargin - $this->x;
-        }
+        if ($w == 0) $w = $this->w - $this->rMargin - $this->x;
+
         $wmax = ($w - 2 * $this->cMargin);
         $s = str_replace("\r", '', $txt);
         if ($this->unifontSubset) {
@@ -828,9 +789,7 @@ class tFPDF
             while ($nb > 0 && mb_substr($s, $nb - 1, 1, 'utf-8') == "\n") $nb--;
         } else {
             $nb = strlen($s);
-            if ($nb > 0 && $s[$nb - 1] == "\n") {
-                $nb--;
-            }
+            if ($nb > 0 && $s[$nb - 1] == "\n") $nb--;
         }
         $b = 0;
         if ($border) {
@@ -840,12 +799,8 @@ class tFPDF
                 $b2 = 'LR';
             } else {
                 $b2 = '';
-                if (strpos($border, 'L') !== false) {
-                    $b2 .= 'L';
-                }
-                if (strpos($border, 'R') !== false) {
-                    $b2 .= 'R';
-                }
+                if (strpos($border, 'L') !== false) $b2 .= 'L';
+                if (strpos($border, 'R') !== false) $b2 .= 'R';
                 $b = (strpos($border, 'T') !== false) ? $b2 . 'T' : $b2;
             }
         }
@@ -879,9 +834,7 @@ class tFPDF
                 $l = 0;
                 $ns = 0;
                 $nl++;
-                if ($border && $nl == 2) {
-                    $b = $b2;
-                }
+                if ($border && $nl == 2) $b = $b2;
                 continue;
             }
             if ($c == ' ') {
@@ -899,9 +852,7 @@ class tFPDF
             if ($l > $wmax) {
                 // Automatic line break
                 if ($sep == -1) {
-                    if ($i == $j) {
-                        $i++;
-                    }
+                    if ($i == $j) $i++;
                     if ($this->ws > 0) {
                         $this->ws = 0;
                         $this->_out('0 Tw');
@@ -928,9 +879,7 @@ class tFPDF
                 $l = 0;
                 $ns = 0;
                 $nl++;
-                if ($border && $nl == 2) {
-                    $b = $b2;
-                }
+                if ($border && $nl == 2) $b = $b2;
             } else {
                 $i++;
             }
@@ -940,9 +889,7 @@ class tFPDF
             $this->ws = 0;
             $this->_out('0 Tw');
         }
-        if ($border && strpos($border, 'B') !== false) {
-            $b .= 'B';
-        }
+        if ($border && strpos($border, 'B') !== false) $b .= 'B';
         if ($this->unifontSubset) {
             $this->Cell($w, $h, mb_substr($s, $j, $i - $j, 'UTF-8'), $b, 2, $align, $fill);
         } else {
@@ -998,16 +945,12 @@ class tFPDF
                 $nl++;
                 continue;
             }
-            if ($c == ' ') {
-                $sep = $i;
-            }
-
+            if ($c == ' ') $sep = $i;
             if ($this->unifontSubset) {
                 $l += $this->GetStringWidth($c);
             } else {
                 $l += $cw[$c] * $this->FontSize / 1000;
             }
-
             if ($l > $wmax) {
                 // Automatic line break
                 if ($sep == -1) {
@@ -1021,9 +964,7 @@ class tFPDF
                         $nl++;
                         continue;
                     }
-                    if ($i == $j) {
-                        $i++;
-                    }
+                    if ($i == $j) $i++;
                     if ($this->unifontSubset) {
                         $this->Cell($w, $h, mb_substr($s, $j, $i - $j, 'UTF-8'), 0, 2, '', 0, $link);
                     } else {
@@ -1082,9 +1023,8 @@ class tFPDF
                 $type = substr($file, $pos + 1);
             }
             $type = strtolower($type);
-            if ($type == 'jpeg') {
-                $type = 'jpg';
-            }
+            if ($type == 'jpeg') $type = 'jpg';
+
             $mtd = '_parse' . $type;
             if (!method_exists($this, $mtd)) {
                 $this->Error('Unsupported image type: ' . $type);
@@ -1102,18 +1042,14 @@ class tFPDF
             $w = -96;
             $h = -96;
         }
-        if ($w < 0) {
-            $w = -$info['w'] * 72 / $w / $this->k;
-        }
-        if ($h < 0) {
-            $h = -$info['h'] * 72 / $h / $this->k;
-        }
-        if ($w == 0) {
-            $w = $h * $info['w'] / $info['h'];
-        }
-        if ($h == 0) {
-            $h = $w * $info['h'] / $info['w'];
-        }
+        if ($w < 0) $w = -$info['w'] * 72 / $w / $this->k;
+
+        if ($h < 0) $h = -$info['h'] * 72 / $h / $this->k;
+
+        if ($w == 0) $w = $h * $info['w'] / $info['h'];
+
+        if ($h == 0) $h = $w * $info['h'] / $info['w'];
+
 
         // Flowing mode
         if ($y === null) {
@@ -1127,13 +1063,11 @@ class tFPDF
             $this->y += $h;
         }
 
-        if ($x === null) {
-            $x = $this->x;
-        }
+        if ($x === null) $x = $this->x;
+
         $this->_out(sprintf('q %.2F 0 0 %.2F %.2F %.2F cm /I%d Do Q', $w * $this->k, $h * $this->k, $x * $this->k, ($this->h - ($y + $h)) * $this->k, $info['i']));
-        if ($link) {
-            $this->Link($x, $y, $w, $h, $link);
-        }
+        if ($link) $this->Link($x, $y, $w, $h, $link);
+
     }
 
     public function GetX() {
@@ -1173,9 +1107,8 @@ class tFPDF
 
     public function Output($name = '', $dest = '') {
         // Output PDF to some destination
-        if ($this->state < 3) {
-            $this->Close();
-        }
+        if ($this->state < 3) $this->Close();
+
         $dest = strtoupper($dest);
         if ($dest == '') {
             if ($name == '') {
@@ -1210,9 +1143,8 @@ class tFPDF
             case 'F':
                 // Save to local file
                 $f = fopen($name, 'wb');
-                if (!$f) {
-                    $this->Error('Unable to create output file: ' . $name);
-                }
+                if (!$f) $this->Error('Unable to create output file: ' . $name);
+
                 fwrite($f, $this->buffer, strlen($this->buffer));
                 fclose($f);
                 break;
@@ -1244,9 +1176,8 @@ class tFPDF
             $this->Error('mbstring overloading must be disabled');
         }
         // Ensure runtime magic quotes are disabled
-        if (get_magic_quotes_runtime()) {
-            @set_magic_quotes_runtime(0);
-        }
+        if (get_magic_quotes_runtime()) @set_magic_quotes_runtime(0);
+
     }
 
     public function _getfontpath() {
@@ -1393,9 +1324,8 @@ class tFPDF
         if (!$a) {
             $this->Error('Missing or incorrect image file: ' . $file);
         }
-        if ($a[2] != 2) {
-            $this->Error('Not a JPEG file: ' . $file);
-        }
+        if ($a[2] != 2) $this->Error('Not a JPEG file: ' . $file);
+
         if (!isset($a['channels']) || $a['channels'] == 3) {
             $colspace = 'DeviceRGB';
         } elseif ($a['channels'] == 4) {
@@ -1411,9 +1341,8 @@ class tFPDF
     public function _parsepng($file) {
         // Extract info from a PNG file
         $f = fopen($file, 'rb');
-        if (!$f) {
-            $this->Error('Can\'t open image file: ' . $file);
-        }
+        if (!$f) $this->Error('Can\'t open image file: ' . $file);
+
         $info = $this->_parsepngstream($f, $file);
         fclose($f);
         return $info;
@@ -1433,9 +1362,8 @@ class tFPDF
         $w = $this->_readint($f);
         $h = $this->_readint($f);
         $bpc = ord($this->_readstream($f, 1));
-        if ($bpc > 8) {
-            $this->Error('16-bit depth not supported: ' . $file);
-        }
+        if ($bpc > 8) $this->Error('16-bit depth not supported: ' . $file);
+
         $ct = ord($this->_readstream($f, 1));
         if ($ct == 0 || $ct == 4) {
             $colspace = 'DeviceGray';
@@ -1478,9 +1406,8 @@ class tFPDF
                     $trns = [ord(substr($t, 1, 1)), ord(substr($t, 3, 1)), ord(substr($t, 5, 1))];
                 } else {
                     $pos = strpos($t, chr(0));
-                    if ($pos !== false) {
-                        $trns = [$pos];
-                    }
+                    if ($pos !== false) $trns = [$pos];
+
                 }
                 $this->_readstream($f, 4);
             } elseif ($type == 'IDAT') {
@@ -1532,9 +1459,8 @@ class tFPDF
             unset($data);
             $data = gzcompress($color);
             $info['smask'] = gzcompress($alpha);
-            if ($this->PDFVersion < '1.4') {
-                $this->PDFVersion = '1.4';
-            }
+            if ($this->PDFVersion < '1.4') $this->PDFVersion = '1.4';
+
         }
         $info['data'] = $data;
         return $info;
@@ -1545,15 +1471,13 @@ class tFPDF
         $res = '';
         while ($n > 0 && !feof($f)) {
             $s = fread($f, $n);
-            if ($s === false) {
-                $this->Error('Error while reading stream');
-            }
+            if ($s === false) $this->Error('Error while reading stream');
+
             $n -= strlen($s);
             $res .= $s;
         }
-        if ($n > 0) {
-            $this->Error('Unexpected end of stream');
-        }
+        if ($n > 0) $this->Error('Unexpected end of stream');
+
         return $res;
     }
 
@@ -1590,9 +1514,8 @@ class tFPDF
         } else {
             // Use temporary file
             $tmp = tempnam('.', 'gif');
-            if (!$tmp) {
-                $this->Error('Unable to create a temporary file');
-            }
+            if (!$tmp) $this->Error('Unable to create a temporary file');
+
             if (!imagepng($im, $tmp)) {
                 $this->Error('Error while saving to temporary file');
             }
@@ -1711,9 +1634,8 @@ class tFPDF
                 $this->FontFiles[$file]['n'] = $this->n;
                 $font = '';
                 $f = fopen($this->_getfontpath() . $file, 'rb', 1);
-                if (!$f) {
-                    $this->Error('Font file not found');
-                }
+                if (!$f) $this->Error('Font file not found');
+
                 while (!feof($f))
                     $font .= fread($f, 8192);
                 fclose($f);
@@ -1730,9 +1652,8 @@ class tFPDF
                     }
                 }
                 $this->_out('<</Length ' . strlen($font));
-                if ($compressed) {
-                    $this->_out('/Filter /FlateDecode');
-                }
+                if ($compressed) $this->_out('/Filter /FlateDecode');
+
                 $this->_out('/Length1 ' . $info['length1']);
                 if (isset($info['length2'])) {
                     $this->_out('/Length2 ' . $info['length2'] . ' /Length3 0');
@@ -1964,16 +1885,10 @@ class tFPDF
                     fclose($fh);
                 }
             }
-            if ($font['cw'][$cid * 2] == "\00" && $font['cw'][$cid * 2 + 1] == "\00") {
-                continue;
-            }
+            if ($font['cw'][$cid * 2] == "\00" && $font['cw'][$cid * 2 + 1] == "\00") continue;
             $width = (ord($font['cw'][$cid * 2]) << 8) + ord($font['cw'][$cid * 2 + 1]);
-            if ($width == 65535) {
-                $width = 0;
-            }
-            if ($cid > 255 && (!isset($font['subset'][$cid]) || !$font['subset'][$cid])) {
-                continue;
-            }
+            if ($width == 65535) $width = 0;
+            if ($cid > 255 && (!isset($font['subset'][$cid]) || !$font['subset'][$cid])) continue;
             if (!isset($font['dw']) || (isset($font['dw']) && $width != $font['dw'])) {
                 if ($cid == ($prevcid + 1)) {
                     if ($width == $prevwidth) {
@@ -2016,9 +1931,8 @@ class tFPDF
         foreach ($range as $k => $ws) {
             $cws = count($ws);
             if (($k == $nextk) and (!$prevint) and ((!isset($ws['interval'])) or ($cws < 4))) {
-                if (isset($range[$k]['interval'])) {
-                    unset($range[$k]['interval']);
-                }
+                if (isset($range[$k]['interval'])) unset($range[$k]['interval']);
+
                 $range[$prevk] = array_merge($range[$prevk], $range[$k]);
                 unset($range[$k]);
             } else {
@@ -2072,9 +1986,8 @@ class tFPDF
             }
         }
         $this->_out('/BitsPerComponent ' . $info['bpc']);
-        if (isset($info['f'])) {
-            $this->_out('/Filter /' . $info['f']);
-        }
+        if (isset($info['f'])) $this->_out('/Filter /' . $info['f']);
+
         if (isset($info['dp'])) {
             $this->_out('/DecodeParms <<' . $info['dp'] . '>>');
         }
@@ -2225,9 +2138,8 @@ class tFPDF
 // Converts UTF-8 strings to UTF16-BE.
     public function UTF8ToUTF16BE($str, $setbom = true) {
         $outstr = "";
-        if ($setbom) {
-            $outstr .= "\xFE\xFF"; // Byte Order Mark (BOM)
-        }
+        if ($setbom) $outstr .= "\xFE\xFF"; // Byte Order Mark (BOM)
+
         $outstr .= mb_convert_encoding($str, 'UTF-16BE', 'UTF-8');
         return $outstr;
     }
@@ -2253,9 +2165,8 @@ class tFPDF
                         | (ord($str[++$i]) & 0x3F);
                 }
             }
-            if ($uni >= 0) {
-                $out[] = $uni;
-            }
+            if ($uni >= 0) $out[] = $uni;
+
         }
         return $out;
     }

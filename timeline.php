@@ -3,14 +3,12 @@ $textpart = "timeline";
 include "tng_begin.php";
 
 $timeline = $_SESSION['timeline'];
-if (!is_array($timeline)) {
-    $timeline = [];
-}
+if (!is_array($timeline)) $timeline = [];
+
 
 $tng_message = $_SESSION['tng_message'] = "";
-if ($newwidth) {
-    $_SESSION['timeline_chartwidth'] = $newwidth;
-}
+if ($newwidth) $_SESSION['timeline_chartwidth'] = $newwidth;
+
 
 if ($primaryID) {
     $newentry = "timeperson=$primaryID&timetree=$tree";

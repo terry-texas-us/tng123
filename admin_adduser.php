@@ -17,54 +17,42 @@ if ($assignedtree || !$allow_add) {
 
 if ($gedcom_mult) {
     $gedcom2 = implode(',', $gedcom_mult);
-    if ($gedcom2) {
-        $gedcom = $gedcom2;
-    }
+    if ($gedcom2) $gedcom = $gedcom2;
+
 }
 
 $orgpwd = $password;
 $password = PasswordEncode($password);
 $password_type = PasswordType();
 
-if (!$form_allow_add) {
-    $form_allow_add = 0;
-}
-if (!$form_allow_delete) {
-    $form_allow_delete = 0;
-}
+if (!$form_allow_add) $form_allow_add = 0;
+
+if (!$form_allow_delete) $form_allow_delete = 0;
+
 if ($form_allow_edit == 2) {
     $form_tentative_edit = 1;
     $form_allow_edit = 0;
 } else {
     $form_tentative_edit = 0;
 }
-if (!$form_allow_ged) {
-    $form_allow_ged = 0;
-}
-if (!$form_allow_pdf) {
-    $form_allow_pdf = 0;
-}
-if (!$form_allow_living) {
-    $form_allow_living = 0;
-}
-if (!$form_allow_private) {
-    $form_allow_private = 0;
-}
-if (!$form_allow_lds) {
-    $form_allow_lds = 0;
-}
-if (!$form_allow_profile) {
-    $form_allow_profile = 0;
-}
-if (!$no_email) {
-    $no_email = 0;
-}
-if (!$disabled) {
-    $disabled = 0;
-}
-if (!$preflang) {
-    $preflang = 0;
-}
+if (!$form_allow_ged) $form_allow_ged = 0;
+
+if (!$form_allow_pdf) $form_allow_pdf = 0;
+
+if (!$form_allow_living) $form_allow_living = 0;
+
+if (!$form_allow_private) $form_allow_private = 0;
+
+if (!$form_allow_lds) $form_allow_lds = 0;
+
+if (!$form_allow_profile) $form_allow_profile = 0;
+
+if (!$no_email) $no_email = 0;
+
+if (!$disabled) $disabled = 0;
+
+if (!$preflang) $preflang = 0;
+
 
 $today = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 $dt_consent = $consented == 1 ? $today : "";
@@ -73,14 +61,12 @@ $duplicate = false;
 
 $query = "SELECT username FROM $users_table ";
 $query .= "WHERE LOWER(username) = LOWER('$username')";
-if ($email) {
-    $query .= " OR LOWER(email) = LOWER('$email')";
-}
+if ($email) $query .= " OR LOWER(email) = LOWER('$email')";
+
 $result = tng_query($query);
 
-if ($result && tng_num_rows($result)) {
-    $duplicate = true;
-}
+if ($result && tng_num_rows($result)) $duplicate = true;
+
 
 if (!$duplicate) {
     $template = "ssssssssssssssssssssssssssssssssss";

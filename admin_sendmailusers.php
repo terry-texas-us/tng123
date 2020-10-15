@@ -16,9 +16,8 @@ if ($assignedtree) {
 }
 if ($gedcom) {
     $wherestr = " AND gedcom=\"$gedcom\"";
-    if ($branch) {
-        $wherestr .= " AND branch='$branch'";
-    }
+    if ($branch) $wherestr .= " AND branch='$branch'";
+
 }
 
 $recipientquery = "SELECT realname, email FROM $users_table WHERE allow_living != '-1' AND email != \"\" AND (no_email is NULL or no_email != '1') $wherestr";

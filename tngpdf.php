@@ -85,22 +85,18 @@ if (!class_exists('TNGPDF')) {
                 $w = $info['w'] / $this->k;
                 $h = $info['h'] / $this->k;
             }
-            if ($w == 0) {
-                $w = $h * $info['w'] / $info['h'];
-            }
-            if ($h == 0) {
-                $h = $w * $info['h'] / $info['w'];
-            }
+            if ($w == 0) $w = $h * $info['w'] / $info['h'];
+
+            if ($h == 0) $h = $w * $info['h'] / $info['w'];
+
             $this->_out(sprintf('q %.2f 0 0 %.2f %.2f %.2f cm /I%d Do Q', $w * $this->k, $h * $this->k, $x * $this->k, ($this->h - ($y + $h)) * $this->k, $info['i']));
-            if ($link) {
-                $this->Link($x, $y, $w, $h, $link);
-            }
+            if ($link) $this->Link($x, $y, $w, $h, $link);
+
         }
 
         public function WriteLongIndent($h, $txt, $link = '', $indent = 0, $rows = 0, $textheight = 0) {
-            if ($textheight == 0) {
-                $textheight = $h;
-            }
+            if ($textheight == 0) $textheight = $h;
+
 
             //Output text in flowing mode
             $cw =& $this->CurrentFont['cw'];
@@ -125,9 +121,8 @@ if (!class_exists('TNGPDF')) {
                     $l = 0;
                     if ($nl == 1) {
                         $this->indentRowCount++;
-                        if ($this->indentRowCount >= $rows) {
-                            $indent = 0;
-                        }
+                        if ($this->indentRowCount >= $rows) $indent = 0;
+
                         $this->x = $this->lMargin + $indent;
                         $w = $this->w - $this->rMargin - $this->x - $startx - $indent;
                         $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
@@ -135,18 +130,15 @@ if (!class_exists('TNGPDF')) {
                     $nl++;
                     continue;
                 }
-                if ($c == ' ') {
-                    $sep = $i;
-                }
+                if ($c == ' ') $sep = $i;
                 $l += $cw[$c];
                 if ($l > $wmax) {
                     //Automatic line break
                     if ($sep == -1) {
                         if ($this->x > $this->lMargin) {
                             $this->indentRowCount++;
-                            if ($this->indentRowCount >= $rows) {
-                                $indent = 0;
-                            }
+                            if ($this->indentRowCount >= $rows) $indent = 0;
+
                             //Move to next line
                             $this->x = $this->lMargin + $indent;
                             $this->y += $h;
@@ -156,9 +148,7 @@ if (!class_exists('TNGPDF')) {
                             $nl++;
                             continue;
                         }
-                        if ($i == $j) {
-                            $i++;
-                        }
+                        if ($i == $j) $i++;
                         if ($textheight != $h) {
                             $this->Cell($w, $textheight, substr($s, $j, $i - $j), 0, 0, '', 0, $link);
                             $this->Cell($w, $h, '', 0, 2, '', 0, $link);
@@ -179,9 +169,8 @@ if (!class_exists('TNGPDF')) {
                     $l = 0;
                     if ($nl == 1) {
                         $this->indentRowCount++;
-                        if ($this->indentRowCount >= $rows) {
-                            $indent = 0;
-                        }
+                        if ($this->indentRowCount >= $rows) $indent = 0;
+
                         $this->x = $this->lMargin + $indent;
                         $w = $this->w - $this->rMargin - $this->x - $indent;
                         $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
@@ -199,9 +188,8 @@ if (!class_exists('TNGPDF')) {
 
         public function WriteHTML($html, $indent = 0, $rows = 0) {
             $this->indentRowCount = 0;
-            if ($indent > 0) {
-                $this->SetX($this->GetX() + $indent);
-            }
+            if ($indent > 0) $this->SetX($this->GetX() + $indent);
+
             $html = str_replace("\n", '', $html);
             $a = preg_split('/<(.*)\/?>/U', $html, -1, PREG_SPLIT_DELIM_CAPTURE);
             $height = $this->FontSize + 0.03;
@@ -213,9 +201,8 @@ if (!class_exists('TNGPDF')) {
                     if ($e[0] == '/') {
                         $tag = strtoupper(substr($e, 1));
                         $this->CloseTag($tag);
-                        if ($tag == 'SUP') {
-                            $textheight = 0;
-                        }
+                        if ($tag == 'SUP') $textheight = 0;
+
                     } else {
                         $a2 = explode(' ', $e);
                         $tag = strtoupper(array_shift($a2));
@@ -226,9 +213,8 @@ if (!class_exists('TNGPDF')) {
                             }
                         }
                         $this->OpenTag($tag, $attr);
-                        if ($tag == 'SUP') {
-                            $textheight = $height / 2;
-                        }
+                        if ($tag == 'SUP') $textheight = $height / 2;
+
                     }
                 }
             }
@@ -239,15 +225,12 @@ if (!class_exists('TNGPDF')) {
             if ($tag == 'B' or $tag == 'I' or $tag == 'U') {
                 $this->SetStyle($tag, true);
             }
-            if ($tag == 'A') {
-                $this->HREF = $attr['HREF'];
-            }
-            if ($tag == 'SUP') {
-                $this->SetFontSize($this->FontSizePt - 4);
-            }
-            if ($tag == 'BR') {
-                $this->Ln($this->FontSize + 0.03);
-            }
+            if ($tag == 'A') $this->HREF = $attr['HREF'];
+
+            if ($tag == 'SUP') $this->SetFontSize($this->FontSizePt - 4);
+
+            if ($tag == 'BR') $this->Ln($this->FontSize + 0.03);
+
         }
 
         public function CloseTag($tag) {
@@ -255,15 +238,12 @@ if (!class_exists('TNGPDF')) {
             if ($tag == 'B' or $tag == 'I' or $tag == 'U') {
                 $this->SetStyle($tag, false);
             }
-            if ($tag == 'SUP') {
-                $this->SetFontSize($this->FontSizePt + 4);
-            }
-            if ($tag == 'A') {
-                $this->HREF = '';
-            }
-            if ($tag == 'P') {
-                $this->Ln($this->FontSize + 0.03);
-            }
+            if ($tag == 'SUP') $this->SetFontSize($this->FontSizePt + 4);
+
+            if ($tag == 'A') $this->HREF = '';
+
+            if ($tag == 'P') $this->Ln($this->FontSize + 0.03);
+
         }
 
         public function SetStyle($tag, $enable) {
@@ -271,9 +251,8 @@ if (!class_exists('TNGPDF')) {
             $this->$tag += ($enable ? 1 : -1);
             $style = '';
             foreach (['B', 'I', 'U'] as $s)
-                if ($this->$s > 0) {
-                    $style .= $s;
-                }
+                if ($this->$s > 0) $style .= $s;
+
             $this->SetFont('', $style);
         }
 
@@ -294,27 +273,21 @@ if (!class_exists('TNGPDF')) {
                 $this->SetFont('', '', $fontsize);
             }
             $size = $this->FontSize;
-            if ($font != '') {
-                $this->SetFont($origfamily);
-            }
-            if ($fontsize != '') {
-                $this->SetFont('', '', $origsize);
-            }
+            if ($font != '') $this->SetFont($origfamily);
+
+            if ($fontsize != '') $this->SetFont('', '', $origsize);
+
 
             return $size;
         }
 
         public function Header() {
             global $titleConfig, $rootpath;
-
-            if ($this->page == 1 && $titleConfig['skipFirst'] == 'true') {
-                return;
-            }
+            if ($this->page == 1 && $titleConfig['skipFirst'] == 'true') return;
             $this->SetFont($titleConfig['font'], $this->bold, $titleConfig['fontSize']);
             $origlMargin = $this->lMargin;
             $this->lMargin = $titleConfig['lMargin'];
             $this->SetX($titleConfig['lMargin']);
-
             if ($titleConfig['image'] && $this->page == 1) {
                 $thumbHeight = 0.9;
                 $this->Image($rootpath . urldecode($titleConfig['image']), $titleConfig['lMargin'], $this->y, 0, $thumbHeight);
@@ -365,11 +338,9 @@ if (!class_exists('TNGPDF')) {
             global $footerConfig;
             global $tngdomain, $sitename, $dbowner, $text;
 
-            if ($this->page == 1 && $footerConfig['skipFirst'] == 'true') {
-                return;
-            }
+            if ($this->page == 1 && $footerConfig['skipFirst'] == 'true') return;
 
-            $origlMargin = $this->lMargin;
+$origlMargin = $this->lMargin;
             $this->SetLeftMargin($footerConfig['lMargin']);
             $this->SetFont($footerConfig['font'], '', $footerConfig['fontSizeSmall']);
             $h1 = $this->FontSize;
@@ -378,9 +349,8 @@ if (!class_exists('TNGPDF')) {
 
             //build up our footer text
             $txt = "{$text['maintby']} $dbowner";
-            if ($sitename != '') {
-                $txt = "$sitename - $txt";
-            }
+            if ($sitename != '') $txt = "$sitename - $txt";
+
 
             $this->SetY((-1 * $footerConfig['bMargin']) - $h1 - $h2);
             $this->Cell(0, $h2, $txt, 0, 0, 'L');
@@ -420,13 +390,11 @@ if (!class_exists('TNGPDF')) {
             $str_width = $this->GetStringWidth($txt);
 
             //Calculate ratio to fit cell
-            if ($w == 0) {
-                $w = $this->w - $this->rMargin - $this->x;
-            }
+            if ($w == 0) $w = $this->w - $this->rMargin - $this->x;
+
             $ratio = 0;
-            if ($str_width != 0) {
-                $ratio = ($w - $this->cMargin * 2) / $str_width;
-            }
+            if ($str_width != 0) $ratio = ($w - $this->cMargin * 2) / $str_width;
+
 
             $fit = ($ratio < 1 || ($ratio > 1 && $force == 1));
             if ($fit) {

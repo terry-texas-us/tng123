@@ -9,9 +9,8 @@ require_once "./admin/trees.php";
 require_once "./public/people.php";
 require_once "./public/families.php";
 
-if (!$familyID) {
-    die("no args");
-}
+if (!$familyID) die("no args");
+
 
 $textpart = "families";
 include "$mylanguage/admintext.php";
@@ -31,9 +30,8 @@ function getBirth($row) {
             $birthdate = "{$admtext['chrabbr']} " . displayDate($row['altbirthdate']);
         }
     }
-    if ($birthdate) {
-        $birthdate = " ($birthdate)";
-    }
+    if ($birthdate) $birthdate = " ($birthdate)";
+
     return $birthdate;
 }
 
@@ -217,16 +215,14 @@ include_once "eventlib.php";
                                     echo "<span id=\"branchlist\">$desclist</span>";
                                     if (!$assignedbranch) {
                                     $totbranches = tng_num_rows($branchresult) + 1;
-                                    if ($totbranches < 2) {
-                                        $totbranches = 2;
-                                    }
+                                    if ($totbranches < 2) $totbranches = 2;
+
                                     $selectnum = $totbranches < 8 ? $totbranches : 8;
                                     $select = $totbranches >= 8 ? "{$admtext['scrollbranch']}<br>" : "";
                                     $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                     $select .= "	<option value=\"\"";
-                                    if ($row['branch'] == "") {
-                                        $select .= " selected";
-                                    }
+                                    if ($row['branch'] == "") $select .= " selected";
+
                                     $select .= ">{$admtext['nobranch']}</option>\n";
 
                                     $select .= "$options</select>\n";

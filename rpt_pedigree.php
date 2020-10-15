@@ -104,9 +104,8 @@ function drawIndInfo($ind, $x, $y, $w, $listwhat, $xh = 0) {
             if ($listwhat == 2) {
                 $list = ['birthdate', 'deathdate'];
             } else {
-                if ($listwhat == 3) {
-                    $list = ['birthdate'];
-                }
+                if ($listwhat == 3) $list = ['birthdate'];
+
             }
         }
     }
@@ -600,9 +599,8 @@ function drawHusbWifeCombo($w, $num, $fh, $mh, $hsp, $vsp, $endspace = 0, $drawl
         drawBox($x, $y, $w, $fh, $num, $charlisth);
         $y1 = $y + ($fh / 2);                    // save the location of the first horiz line
     } else {
-        if ($boxmode == 1) {
-            $y1 = drawBoxLine($x, $y, $w, $num, $charlisth);
-        }
+        if ($boxmode == 1) $y1 = drawBoxLine($x, $y, $w, $num, $charlisth);
+
     }
 
     if ($drawlines) {

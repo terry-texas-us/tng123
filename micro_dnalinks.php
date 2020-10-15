@@ -30,9 +30,8 @@ if ($result2) {
                     <?php
                     for ($j = 1; $j <= $treenum; $j++) {
                         echo "	<option value=\"{$trees[$j]}\"";
-                        if ($trees[$j] == $usetree) {
-                            echo " selected";
-                        }
+                        if ($trees[$j] == $usetree) echo " selected";
+
                         echo ">$treename[$j]</option>\n";
                     }
                     ?>
@@ -62,10 +61,6 @@ if ($result2) {
         </tbody>
     </table>
     <div id="nolinks" class="normal" style="margin-left:3px;">
-        <?php
-        if (!$oldlinks) {
-            echo $admtext['nolinks'];
-        }
-        ?>
+        <?php if (!$oldlinks) echo $admtext['nolinks']; ?>
     </div>
 </div>

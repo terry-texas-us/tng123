@@ -182,9 +182,8 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                                     $dagens = $row['dagens'] != "" ? $row['dagens'] : 1;
                                     for ($i = 0; $i < 6; $i++) {
                                         echo "<option value=\"$i\"";
-                                        if ($i == $dagens) {
-                                            echo " selected";
-                                        }
+                                        if ($i == $dagens) echo " selected";
+
                                         echo ">$i</option>";
                                     }
                                     ?>

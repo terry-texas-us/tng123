@@ -71,9 +71,8 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['modifytleve
                                     <?php
                                     for ($i = 1; $i <= 31; $i++) {
                                         echo "<option value=\"$i\"";
-                                        if ($row[$dayname] == $i) {
-                                            echo " selected";
-                                        }
+                                        if ($row[$dayname] == $i) echo " selected";
+
                                         echo ">$i</option>\n";
                                     }
                                     ?>

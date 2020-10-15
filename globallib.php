@@ -43,37 +43,30 @@ function debugPrint($obj) {
  * @return string|string[]|null
  */
 function constructName($firstnames, $lastnames, $title, $suffix, $order) {
-    if ($title) {
-        $title .= " ";
-    }
-    if ($firstnames) {
-        $firstnames .= " ";
-    }
+    if ($title) $title .= " ";
+
+    if ($firstnames) $firstnames .= " ";
+
 
     switch ($order) {
         case "3":
-            if ($lastnames && $firstnames) {
-                $lastnames .= ",";
-            }
-            if ($lastnames) {
-                $lastnames .= " ";
-            }
+            if ($lastnames && $firstnames) $lastnames .= ",";
+
+            if ($lastnames) $lastnames .= " ";
+
             $namestr = trim("$lastnames $title$firstnames$suffix");
             break;
         case "2":
-            if ($lastnames) {
-                $lastnames .= " ";
-            }
+            if ($lastnames) $lastnames .= " ";
+
             $namestr = trim("$title$lastnames$firstnames");
-            if ($suffix) {
-                $namestr .= ", $suffix";
-            }
+            if ($suffix) $namestr .= ", $suffix";
+
             break;
         default:
             $namestr = trim("$title$firstnames$lastnames");
-            if ($suffix) {
-                $namestr .= ", $suffix";
-            }
+            if ($suffix) $namestr .= ", $suffix";
+
             break;
     }
 
@@ -101,9 +94,8 @@ function getNameRev($row, $hcard = null) {
     global $nameorder;
 
     $locnameorder = !empty($row['nameorder']) ? $row['nameorder'] : (!empty($nameorder) ? $nameorder : 1);
-    if ($locnameorder != 2) {
-        $locnameorder = 3;
-    }
+    if ($locnameorder != 2) $locnameorder = 3;
+
     return getNameUniversal($row, $locnameorder, $hcard);
 }
 
@@ -146,9 +138,8 @@ function getNameUniversal($row, $order, $hcard = null) {
         $namestr = constructName($firstname, $lastname, $title, $suffix, $order);
     }
 
-    if ($hcard) {
-        $namestr = "<span class=\"n\">$namestr</span>";
-    }
+    if ($hcard) $namestr = "<span class=\"n\">$namestr</span>";
+
     return $namestr;
 }
 
@@ -194,9 +185,8 @@ function initials($name): string {
     global $session_charset;
 
     $newname = "";
-    if ($session_charset == "UTF-8") {
-        $name = utf8_decode($name);
-    }
+    if ($session_charset == "UTF-8") $name = utf8_decode($name);
+
 
     $token = strtok($name, " ");
     do {
@@ -266,18 +256,10 @@ function getURL($destination, $args, $ext = ".php") {
 function getFORM($action, $method, $name, $id, $onsubmit = null) {
     $url = $action ? $action . ".php" : "";
     $formstr = "<form action=\"$url\"";
-    if ($method) {
-        $formstr .= " method=\"$method\"";
-    }
-    if ($name) {
-        $formstr .= " name=\"$name\"";
-    }
-    if ($id) {
-        $formstr .= " id=\"$id\"";
-    }
-    if ($onsubmit) {
-        $formstr .= " onsubmit=\"$onsubmit\"";
-    }
+    if ($method) $formstr .= " method=\"$method\"";
+    if ($name) $formstr .= " name=\"$name\"";
+    if ($id) $formstr .= " id=\"$id\"";
+    if ($onsubmit) $formstr .= " onsubmit=\"$onsubmit\"";
     $formstr .= ">\n";
     return $formstr;
 }
@@ -457,9 +439,8 @@ function getLivingPrivateRestrictions($table, $firstname, $allOtherInput) {
     global $livedefault, $nonames, $tngconfig, $allow_living, $allow_private, $assignedtree, $assignedbranch, $people_table;
 
     $query = "";
-    if ($table) {
-        $table .= ".";
-    }
+    if ($table) $table .= ".";
+
     $limitedLivingRights = $allow_living && !$livedefault;
     $limitedPrivateRights = $allow_private;
     $allLivingRights = $livedefault == 2 || ($allow_living && !$assignedtree);
@@ -633,9 +614,8 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     if ($total <= $perpage) return "";
 
     $totalpages = ceil($total / $perpage);
-    if ($tngpage > $totalpages) {
-        $tngpage = $totalpages;
-    }
+    if ($tngpage > $totalpages) $tngpage = $totalpages;
+
     if ($tngpage > 1) {
         $prevpage = $tngpage - 1;
         $navoffset = (($prevpage * $perpage) - $perpage);
@@ -917,9 +897,8 @@ function getYears($row) {
         if ($displaybirth || $displaydeath) {
             $years .= " $displaybirth - $displaydeath";
             $age = age($row);
-            if ($age) {
-                $years .= " &nbsp;($age)";
-            }
+            if ($age) $years .= " &nbsp;($age)";
+
         }
     }
 
@@ -1082,9 +1061,8 @@ function age($row) {
                     if ($age > 99999 && $age < 1000000) {
                         $age = substr($age, 0, 2);
                     } else {
-                        if ($age > 999999) {
-                            $age = substr($age, 0, 3);
-                        }
+                        if ($age > 999999) $age = substr($age, 0, 3);
+
                     }
                 }
             }
@@ -1097,18 +1075,15 @@ function age($row) {
             if (($sign1 == "~") || ($sign2 == "~")) {
                 $sign = "~";
             } else {
-                if ($sign1 && $sign1 <> " ") {
-                    $sign = $sign1;
-                }
-                if ($sign2 && $sign2 <> " ") {
-                    $sign = $sign2;
-                }
+                if ($sign1 && $sign1 <> " ") $sign = $sign1;
+
+                if ($sign2 && $sign2 <> " ") $sign = $sign2;
+
             }
         }
 
-        if ($age && $sign <> "") {
-            $age = $sign . " " . $age;
-        }
+        if ($age && $sign <> "") $age = $sign . " " . $age;
+
 
     }
 
@@ -1427,9 +1402,8 @@ function attachPrefixSuffix($entityID, $type) {
  * @return false|mixed|string
  */
 function formatInternalDate($truedate) {
-    if ($truedate == "0000-00-00") {
-        return "";
-    }
+    if ($truedate == "0000-00-00") return "";
+
     $parts = explode("-", $truedate);
     $newdate = "";
     $numparts = 0;
@@ -1439,9 +1413,8 @@ function formatInternalDate($truedate) {
         } elseif ($part == "00") {
             $part = "01";
         }
-        if ($newdate) {
-            $newdate .= "-";
-        }
+        if ($newdate) $newdate .= "-";
+
         $newdate .= $part;
     }
 

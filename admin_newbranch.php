@@ -70,9 +70,8 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['addnewbranc
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     echo "		<option value=\"{$treerow['gedcom']}\"";
-                                    if ($firsttree == $treerow['gedcom']) {
-                                        echo " selected";
-                                    }
+                                    if ($firsttree == $treerow['gedcom']) echo " selected";
+
                                     echo ">{$treerow['treename']}</option>\n";
                                 }
                                 tng_free_result($treeresult);

@@ -2,9 +2,8 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-if (!$personID) {
-    die("no args");
-}
+if (!$personID) die("no args");
+
 
 include "config/pedconfig.php";
 include "personlib.php";
@@ -76,9 +75,8 @@ tng_header($row['name'], $flags);
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $row['name'], getYears($row));
 
-if (!$pedigree['maxgen']) {
-    $pedigree['maxgen'] = 6;
-}
+if (!$pedigree['maxgen']) $pedigree['maxgen'] = 6;
+
 if ($generations > $pedigree['maxgen']) {
     $generations = intval($pedigree['maxgen']);
 } elseif (!$generations) {
@@ -91,9 +89,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
@@ -203,20 +200,17 @@ echo "</form>\n";
         if ($parents) {
             $parentscount = tng_num_rows($parents);
             if ($parentscount > 0) {
-                if ($locparentset > $parentscount) {
-                    $locparentset = $parentscount;
-                }
+                if ($locparentset > $parentscount) $locparentset = $parentscount;
+
                 $i = 0;
                 while ($parentrow = tng_fetch_assoc($parents)) {
                     $i++;
-                    if ($i == $locparentset) {
-                        $parentfamID = $parentrow['familyID'];
-                    }
+                    if ($i == $locparentset) $parentfamID = $parentrow['familyID'];
+
                     $parentfamIDs[$i] = $parentrow['familyID'];
                 }
-                if (!$parentfamID) {
-                    $parentfamID = $row['famc'];
-                }
+                if (!$parentfamID) $parentfamID = $row['famc'];
+
             }
             tng_free_result($parents);
         }

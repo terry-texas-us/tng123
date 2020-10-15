@@ -26,9 +26,8 @@ if ($ID) {
 }
 
 $helplang = findhelp("mostwanted_help.php");
-if ($row['mwtype']) {
-    $mwtype = $row['mwtype'];
-}
+if ($row['mwtype']) $mwtype = $row['mwtype'];
+
 $typemsg = $mwtype == "person" ? $admtext['mysperson'] : $admtext['mysphoto'];
 
 header("Content-type:text/html; charset=" . $session_charset);
@@ -68,9 +67,8 @@ header("Content-type:text/html; charset=" . $session_charset);
                         $trees = "";
                         while ($treerow = tng_fetch_assoc($treeresult)) {
                             echo "<option value=\"{$treerow['gedcom']}\"";
-                            if ($firsttree == $treerow['gedcom']) {
-                                echo " selected";
-                            }
+                            if ($firsttree == $treerow['gedcom']) echo " selected";
+
                             echo ">{$treerow['treename']}";
                             echo "</option>\n";
                         }

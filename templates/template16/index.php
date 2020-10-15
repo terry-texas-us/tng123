@@ -159,14 +159,12 @@ $search .= "</form>\n";
                                         $loginContent = "<a href='login.php'>{$text['mnulogon']}</a>";
                                     }
                                     if (!$tngconfig['disallowreg']) {
-                                        if ($loginContent) {
-                                            $loginContent .= " | ";
-                                        }
+                                        if ($loginContent) $loginContent .= " | ";
+
                                         $loginContent .= "<a href='newacctform.php'>{$text['mnuregister']}</a>";
                                     }
-                                    if ($loginContent) {
-                                        echo "<p>$loginContent</p>\n";
-                                    }
+                                    if ($loginContent) echo "<p>$loginContent</p>\n";
+
                                 }
                                 echo getTemplateMessage('t16_mainpara');
                                 ?>
@@ -175,11 +173,7 @@ $search .= "</form>\n";
                                     <img src="<?php echo $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?>
                                 </p>
 
-                                <?php
-                                if (isMobile()) {
-                                    echo $search;
-                                }
-                                ?>
+                                <?php if (isMobile()) echo $search; ?>
                             </div>
                             <div style="clear:both;"></div>
                         </div>

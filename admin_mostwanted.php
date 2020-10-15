@@ -66,9 +66,8 @@ function showDiv(string $type) {
         echo "<div id=\"del_{$lrow['mwID']}\" class='smaller' style=\"color:gray;visibility:hidden;\">";
         if ($allow_edit) {
             echo "<a href='#' onclick=\"return openMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['edit']}</a>";
-            if ($allow_delete) {
-                echo " | ";
-            }
+            if ($allow_delete) echo " | ";
+
         }
         if ($allow_delete) {
             echo "<a href='#' onclick=\"return removeFromMostWanted('{$lrow['mwtype']}','{$lrow['mwID']}');\">{$admtext['text_delete']}</a>";

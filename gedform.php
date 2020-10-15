@@ -84,9 +84,8 @@ echo $formstr;
             <td class="databack"><span class="normal">
 <select name="maxgcgen">
 <?php
-if ($maxgedcom < 1) {
-    $maxgedcom = 1;
-}
+if ($maxgedcom < 1) $maxgedcom = 1;
+
 for ($i = 1; $i <= $maxgedcom; $i++)
     echo "<option value=\"$i\">$i</option>\n";
 ?>

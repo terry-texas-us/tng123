@@ -35,9 +35,8 @@ if ($branchsearch) {
 } else {
     $wherestr = "";
 }
-if ($tree) {
-    $wherestr .= " AND branches.gedcom = '$tree'";
-}
+if ($tree) $wherestr .= " AND branches.gedcom = '$tree'";
+
 
 $query = "SELECT branches.branch, branches.gedcom, branches.description, treename, personID ";
 $query .= "FROM ($branches_table branches, $trees_table trees) ";
@@ -93,9 +92,8 @@ $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $tabletype = "columntoggle";
-    }
+    if ($tabletype == "toggle") $tabletype = "columntoggle";
+
     $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
     $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
@@ -117,13 +115,11 @@ echo $header;
 <?php
 $i = $offsetplus;
 $peoplewhere = getLivingPrivateRestrictions($people_table, false, false);
-if ($peoplewhere) {
-    $peoplewhere = "AND " . $peoplewhere;
-}
+if ($peoplewhere) $peoplewhere = "AND " . $peoplewhere;
+
 $familywhere = getLivingPrivateRestrictions($families_table, false, false);
-if ($familywhere) {
-    $familywhere = "AND " . $familywhere;
-}
+if ($familywhere) $familywhere = "AND " . $familywhere;
+
 
 while ($row = tng_fetch_assoc($result)) {
     $query = "SELECT count(familyID) AS fcount FROM $families_table WHERE branch LIKE \"%{$row['branch']}%\" $familywhere";
@@ -161,9 +157,8 @@ tng_free_result($result);
     </table>
 
 <?php
-if ($pagenav || $treesearch) {
-    echo doBranchSearch(2, $pagenav);
-}
+if ($pagenav || $treesearch) echo doBranchSearch(2, $pagenav);
+
 
 tng_footer("");
 ?>

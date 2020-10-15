@@ -200,9 +200,8 @@ class modbase
                 $this->$key = $value;
             }
             // if visitor is mobile don't use fixed headers
-            if ($this->sitever == 'mobile') {
-                $this->fix_header = 0;
-            }
+            if ($this->sitever == 'mobile') $this->fix_header = 0;
+
         }
         $this->int_version = $this->version2integer($this->tng_version);
 
@@ -363,13 +362,11 @@ class modbase
         $linecount = 0;
         foreach ($lines as $line) {
             trim($line);
-            if ($line) {
-                fwrite($fp, $line);
-            }
+            if ($line) fwrite($fp, $line);
+
             $linecount++;
-            if ($linecount == $this->maxloglines) {
-                break;
-            }
+            if ($linecount == $this->maxloglines) break;
+
         }
         flock($fp, LOCK_UN);
         fclose($fp);
@@ -399,9 +396,8 @@ class modbase
 
         $mod_list = [];
 
-        if (!is_dir($this->modspath)) {
-            return self::NOPATH;
-        }
+        if (!is_dir($this->modspath)) return self::NOPATH;
+
         // get file list -- look up names & add to list
         $modfiles = $this->get_modfile_names();
 
@@ -420,9 +416,8 @@ class modbase
                 $mod_list[$modfile] = '';
             }
         }
-        if (!count($mod_list)) {
-            return self::NOMODS;
-        }
+        if (!count($mod_list)) return self::NOMODS;
+
         // Natrually sorted by file name - resort by mod name
         if ($this->sortby == self::NAMECOL) {
             // use temporary array because we can't actually change file name

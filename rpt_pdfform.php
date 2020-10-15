@@ -69,9 +69,8 @@ function doGenOptions($generations, $first, $last) {
     echo '<select name="genperpage">';
     for ($i = $first; $i <= $last; $i++) {
         echo "<option value=\"$i\"";
-        if ($i == $generations) {
-            echo " selected";
-        }
+        if ($i == $generations) echo " selected";
+
         echo ">$i</option>\n";
     }
     echo '</select>';
@@ -85,9 +84,8 @@ function doFontOptions($field, $default = 'helvetica') {
     sort($fonts);
     foreach ($fonts as $font) {
         echo "<option value=\"$font\"";
-        if ($font == $default) {
-            print " selected";
-        }
+        if ($font == $default) print " selected";
+
         echo ">$font_list[$font]</option>";
     }
     echo '</select>';
@@ -101,9 +99,8 @@ function doFontSizeOptions($field, $options, $default) {
         echo "<select name=\"$field\">";
         foreach ($options as $size) {
             echo "<option value=\"$size\"";
-            if ($default == $size) {
-                print " selected";
-            }
+            if ($default == $size) print " selected";
+
             echo ">$size</option>";
         }
         echo '</select> pt';
@@ -172,12 +169,10 @@ header("Content-type:text/html; charset=" . $session_charset);
     echo getFORM($dest, "post", "pdfform", "pdfform");
     // determine if we need to draw a generations option
     if ($genmin > 0 || $genmax > 0) {
-        if ($generations < $genmin) {
-            $generations = $genmin;
-        }
-        if ($generations > $genmax) {
-            $generations = $genmax;
-        }
+        if ($generations < $genmin) $generations = $genmin;
+
+        if ($generations > $genmax) $generations = $genmax;
+
         ?>
         <table id="genselect" cellpadding="0" class="normal">
             <tr>

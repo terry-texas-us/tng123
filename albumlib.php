@@ -31,17 +31,14 @@ function getAlbumPhoto($albumID, $albumname) {
             $query .= "LEFT JOIN $people_table people ON medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom ";
             $query .= "LEFT JOIN $families_table families ON medialinks.personID = families.familyID AND medialinks.gedcom = families.gedcom ";
             $query .= "WHERE mediaID = '$mediaID'";
-            if ($tree) {
-                $query .= " AND medialinks.gedcom = '$tree'";
-            }
+            if ($tree) $query .= " AND medialinks.gedcom = '$tree'";
+
             $presult = tng_query($query);
             while ($prow = tng_fetch_assoc($presult)) {
-                if ($prow['fbranch'] != NULL) {
-                    $prow['branch'] = $prow['fbranch'];
-                }
-                if ($prow['fliving'] != NULL) {
-                    $prow['living'] = $prow['fliving'];
-                }
+                if ($prow['fbranch'] != NULL) $prow['branch'] = $prow['fbranch'];
+
+                if ($prow['fliving'] != NULL) $prow['living'] = $prow['fliving'];
+
                 if ($prow['fprivate'] != NULL) {
                     $prow['private'] = $prow['fprivate'];
                 }
@@ -58,9 +55,8 @@ function getAlbumPhoto($albumID, $albumname) {
                     $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND living = '1'";
                     $presult2 = tng_query($query);
                     $prow2 = tng_fetch_assoc($presult2);
-                    if ($prow2['ccount']) {
-                        $prow['living'] = 1;
-                    }
+                    if ($prow2['ccount']) $prow['living'] = 1;
+
                     tng_free_result($presult2);
                 } elseif ($prow['living'] == NULL && $prow['private'] == NULL && $prow['linktype'] == 'F') {
                     $query = "SELECT count(familyID) as ccount ";
@@ -68,9 +64,8 @@ function getAlbumPhoto($albumID, $albumname) {
                     $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = families.familyID AND citations.gedcom = families.gedcom AND living = '1'";
                     $presult2 = tng_query($query);
                     $prow2 = tng_fetch_assoc($presult2);
-                    if ($prow2['ccount']) {
-                        $prow['living'] = 1;
-                    }
+                    if ($prow2['ccount']) $prow['living'] = 1;
+
                     tng_free_result($presult2);
                 }
                 if ($prow['living'] && !$rights['living']) {

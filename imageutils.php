@@ -38,9 +38,8 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
     if (file_exists($src) && isset($dest)) {
         $destInfo = pathInfo($dest);
         $srcInfo = pathInfo($src);
-        if ($session_charset == "UTF-8") {
-            $dest = utf8_decode($dest);
-        }
+        if ($session_charset == "UTF-8") $dest = utf8_decode($dest);
+
 
         $isPDF = false;
         if (strtoupper($srcInfo['extension']) == "PDF") {
@@ -53,9 +52,8 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
                     $isPDF = true;
                 }
             }
-            if (!$isPDF) {
-                return false;
-            }
+            if (!$isPDF) return false;
+
         } else {
             $isPDF = false;
             $srcSize = @getImageSize($src);
@@ -66,12 +64,10 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
         } else {
             return false;
         }
-        if (!$maxWidth) {
-            $maxWidth = 50;
-        }
-        if (!$maxHeight) {
-            $maxHeight = 50;
-        }
+        if (!$maxWidth) $maxWidth = 50;
+
+        if (!$maxHeight) $maxHeight = 50;
+
         $destRatio = $maxWidth / $maxHeight;
         if ($destRatio > $srcRatio) {
             $destSize[1] = $maxHeight;
@@ -120,9 +116,8 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
                 default:
                     return false;
             }
-            if (!$srcImage) {
-                return false;
-            }
+            if (!$srcImage) return false;
+
 
             // resampling
             if ($gd2 && function_exists('imageCopyResampled')) {
@@ -178,9 +173,8 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
                     }
                     break;
                 case 3:
-                    if (!@imagePng($destImage, $dest)) {
-                        return false;
-                    }
+                    if (!@imagePng($destImage, $dest)) return false;
+
                     break;
             }
         }
@@ -192,12 +186,10 @@ function image_createThumb($src, $dest, $maxWidth, $maxHeight, $quality) {
 }
 
 function tngImageFlip($image, $x = 0, $y = 0, $width = null, $height = null) {
-    if ($width < 1) {
-        $width = imagesx($image);
-    }
-    if ($height < 1) {
-        $height = imagesy($image);
-    }
+    if ($width < 1) $width = imagesx($image);
+
+    if ($height < 1) $height = imagesy($image);
+
 
     // truecolor provides better results, if possible.
     if (function_exists('imageistruecolor') && imageistruecolor($image)) {

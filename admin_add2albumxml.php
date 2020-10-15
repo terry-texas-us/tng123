@@ -12,22 +12,12 @@ initMediaTypes();
 
 function get_album_nav($total, $perpage, $pagenavpages) {
     global $page, $totalpages, $text, $orgtree, $albumID, $searchstring, $mediatypeID, $hsstat, $cemeteryID;
-
-    if (!$page) {
-        $page = 1;
-    }
-    if (!$perpage) {
-        $perpage = 50;
-    }
-
-    if ($total <= $perpage) {
-        return "";
-    }
-
+    if (!$page) $page = 1;
+    if (!$perpage) $perpage = 50;
+    if ($total <= $perpage) return "";
     $totalpages = ceil($total / $perpage);
-    if ($page > $totalpages) {
-        $page = $totalpages;
-    }
+    if ($page > $totalpages) $page = $totalpages;
+
 
     if ($page > 1) {
         $prevpage = $page - 1;
@@ -78,9 +68,8 @@ if ($hsstat) {
 if ($cemeteryID) {
     $wherestr .= $wherestr ? " AND cemeteryID = \"$cemeteryID\"" : "cemeteryID = \"$cemeteryID\"";
 }
-if ($wherestr) {
-    $wherestr = "WHERE $wherestr";
-}
+if ($wherestr) $wherestr = "WHERE $wherestr";
+
 
 if (isset($offset) && $offset != 0) {
     $offsetplus = $offset + 1;
@@ -143,9 +132,8 @@ echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";
             echo "<tr id=\"addrow_{$row['mediaID']}\"><td class='lightback text-center'>";
             echo "<div id=\"add_{$row['mediaID']}\" class=\"normal\"";
             $gotit = in_array($row['mediaID'], $alreadygot);
-            if ($gotit) {
-                echo " style='display: none;'";
-            }
+            if ($gotit) echo " style='display: none;'";
+
             if ($albumID) {
                 echo "><a href='#' onclick=\"return addToAlbum('{$row['mediaID']}');\">" . $admtext['add'] . "</a></div>";
             } else {

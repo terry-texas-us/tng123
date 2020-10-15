@@ -12,9 +12,8 @@ $_SESSION['tng_mediasearch'] = "";
 
 $flags['imgprev'] = true;
 
-if (!$change_cutoff) {
-    $change_cutoff = 0;
-}
+if (!$change_cutoff) $change_cutoff = 0;
+
 $pastxdays = $change_cutoff ? " " . preg_replace("/xx/", $change_cutoff, $text['pastxdays']) : "";
 $whatsnew = 1;
 
@@ -47,9 +46,8 @@ tng_header($text['whatsnew'] . " " . $pastxdays, $flags);
 $query = "SELECT username, description FROM $users_table WHERE allow_living != '-1' AND (allow_edit = '1' OR allow_add = '1')";
 $result = tng_query($query);
 $userlist = [];
-if (tng_num_rows($result) == 1) {
-    $currentuser = "";
-}
+if (tng_num_rows($result) == 1) $currentuser = "";
+
 if ($currentuser) {
     while ($row = tng_fetch_assoc($result)) {
         if ($row['description']) {
@@ -78,13 +76,11 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'whatsnew
 $nametitle = isMobile() ? $text['name'] : $text['lastfirst'];
 
 if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $tabletype = "columntoggle";
-    }
+    if ($tabletype == "toggle") $tabletype = "columntoggle";
+
     $tableStartTag = "<table class = 'tablesaw whiteback normal' data-tablesaw-mode = '$tabletype'";
-    if ($enableminimap) {
-        $tableStartTag .= " data-tablesaw-minimap";
-    }
+    if ($enableminimap) $tableStartTag .= " data-tablesaw-minimap";
+
     if ($enablemodeswitch) {
         $tableStartTag .= " data-tablesaw-mode-switch";
     }
@@ -113,17 +109,15 @@ if ($tree) {
     $wherestr = $wherestr2 = "";
 }
 
-if (!$change_limit) {
-    $change_limit = 10;
-}
+if (!$change_limit) $change_limit = 10;
+
 //check for custom message
 $file = $rootpath . "whatsnew.txt";
 if (file_exists($file)) {
     $contents = file($file);
     foreach ($contents as $line) {
-        if (trim($line)) {
-            echo "<p>$line</p>";
-        }
+        if (trim($line)) echo "<p>$line</p>";
+
     }
 }
 
@@ -136,9 +130,8 @@ foreach ($mediatypes as $mediatype) {
 //select from people where date later than cutoff, order by changedate descending, limit = 10
 $query = "SELECT people.personID, lastname, lnprefix, firstname, birthdate, prefix, suffix, nameorder, living, private, branch, DATE_FORMAT(changedate,'%e %b %Y') AS changedatef, changedby, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1), 4, '0') AS birthyear, birthplace, altbirthdate, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1), 4, '0') AS altbirthyear, altbirthplace, people.gedcom AS gedcom, treename ";
 $query .= "FROM $people_table people, $trees_table trees WHERE people.gedcom = trees.gedcom ";
-if ($tree) {
-    $query .= "AND people.gedcom = '$tree' ";
-}
+if ($tree) $query .= "AND people.gedcom = '$tree' ";
+
 if ($change_cutoff) {
     $query .= "AND TO_DAYS(NOW()) - TO_DAYS(changedate) <= $change_cutoff ";
 }
@@ -220,9 +213,8 @@ $query .= "FROM ($families_table families, $trees_table trees) ";
 $query .= "LEFT JOIN $people_table hpeople ON hpeople.gedcom = families.gedcom AND hpeople.personID = husband ";
 $query .= "LEFT JOIN $people_table wpeople ON wpeople.gedcom = families.gedcom AND wpeople.personID = wife ";
 $query .= "WHERE families.gedcom = trees.gedcom ";
-if ($tree) {
-    $query .= "AND families.gedcom = '$tree' ";
-}
+if ($tree) $query .= "AND families.gedcom = '$tree' ";
+
 if ($change_cutoff) {
     $query .= "AND TO_DAYS(NOW()) - TO_DAYS(families.changedate) <= $change_cutoff ";
 }
@@ -305,9 +297,8 @@ if (tng_num_rows($famresult)) {
                 $rights = determineLivingPrivateRights($row);
                 $row['allow_living'] = $rights['living'];
                 $row['allow_private'] = $rights['private'];
-                if ($rights['both']) {
-                    echo displayDate($row['marrdate']);
-                }
+                if ($rights['both']) echo displayDate($row['marrdate']);
+
             }
             echo "&nbsp;</td>\n";
             if ($numtrees > 1) {

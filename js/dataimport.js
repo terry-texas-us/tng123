@@ -202,9 +202,8 @@ function getBranches(treeselect, selected) {
                 dataType: 'html',
                 success: function (req) {
                     branchcounts[treeidx] = req == "0" ? 0 : 1;
-                    if (branchcounts[treeidx]) {
-                        branches[treeidx] = req;
-                    }
+                    if (branchcounts[treeidx]) branches[treeidx] = req;
+
                     showBranches(treeidx);
                 }
             });

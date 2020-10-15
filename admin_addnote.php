@@ -5,15 +5,12 @@ $textpart = "notes";
 include "$mylanguage/admintext.php";
 
 include "checklogin.php";
-if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
-    exit;
-}
+if (!$allow_add || ($assignedtree && $assignedtree != $tree)) exit;
 
 require "adminlog.php";
 
-if ($session_charset != "UTF-8") {
-    $note = tng_utf8_decode($note);
-}
+if ($session_charset != "UTF-8") $note = tng_utf8_decode($note);
+
 $orgnote = preg_replace("/$lineending/", " ", stripslashes($note));
 
 $template = "ss";
@@ -22,9 +19,8 @@ $params = [&$template, &$tree, &$note];
 tng_execute($query, $params);
 $xnoteID = tng_insert_id();
 
-if (!$private) {
-    $private = "0";
-}
+if (!$private) $private = "0";
+
 $template = "sssss";
 $query = "INSERT INTO $notelinks_table (persfamID, gedcom, xnoteID, eventID, secret, ordernum) VALUES (?, ?, ?, ?, ?, 999)";
 $params = [&$template, &$persfamID, &$tree, &$xnoteID, &$eventID, &$private];

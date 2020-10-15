@@ -121,9 +121,8 @@ function PasswordTypeList($ReturnPart = null, $Force_No_Hash = false) {
 
         $type_list[] = 'md5'; // always have at least md5
 
-        if (function_exists('sha1')) {
-            $type_list[] = 'sha1';
-        }
+        if (function_exists('sha1')) $type_list[] = 'sha1';
+
 
         if (function_exists('hash') && !$Force_No_Hash) {
             $type_list[] = 'sha256';

@@ -87,9 +87,8 @@ $title = getTemplateMessage('t1_maintitle');
                 <td class="normal std-only align-top">
                     <h2><?php echo $text['welcome']; ?></h2>
                     <?php
-                    if ($mainpara) {
-                        echo "<div>$mainpara</div>\n";
-                    }
+                    if ($mainpara) echo "<div>$mainpara</div>\n";
+
                     ?>
                     <h2><?php echo $text['mnufeatures']; ?></h2>
                     <table class="w-100">

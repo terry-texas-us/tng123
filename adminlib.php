@@ -81,9 +81,8 @@ function tng_adminlayout($args = "") {
 
     $helplang = findhelp("index_help.php");
 
-    if (isMobile()) {
-        $tng_title = $tng_abbrev;
-    }
+    if (isMobile()) $tng_title = $tng_abbrev;
+
     $output = "<body class='adminbody m-0'$args>\n";
 
     $output .= "<div class='topbanner sideback whiteheader'>\n";
@@ -409,9 +408,8 @@ function determineConflict($row, $table) {
         }
         $expiretime = $row['edittime'] + (intval($tngconfig['edit_timeout']) * 60);
 
-        if ($expiretime > $currenttime) {
-            $editconflict = true;
-        }
+        if ($expiretime > $currenttime) $editconflict = true;
+
     }
 
     if (!$editconflict) {

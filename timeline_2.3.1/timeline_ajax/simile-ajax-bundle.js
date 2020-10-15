@@ -21,9 +21,8 @@
                     } else {
                         var elem = document.getElementById(match[3]);
                         if (elem) {
-                            if (elem.id != match[3]) {
-                                return jQuery().find(selector);
-                            }
+                            if (elem.id != match[3]) return jQuery().find(selector);
+
                             return jQuery(elem);
                         }
                         selector = [];
@@ -108,9 +107,7 @@
             });
         }, append: function () {
             return this.domManip(arguments, true, false, function (elem) {
-                if (this.nodeType == 1) {
-                    this.appendChild(elem);
-                }
+                if (this.nodeType == 1) this.appendChild(elem);
             });
         }, prepend: function () {
             return this.domManip(arguments, true, true, function (elem) {
@@ -144,15 +141,11 @@
                 }
             });
             var clone = ret.find("*").andSelf().each(function () {
-                if (this[expando] != undefined) {
-                    this[expando] = null;
-                }
+                if (this[expando] != undefined) this[expando] = null;
             });
             if (events === true) {
                 this.find("*").andSelf().each(function (i) {
-                    if (this.nodeType == 3) {
-                        return;
-                    }
+                    if (this.nodeType == 3) return;
                     var events = jQuery.data(this, "events");
                     for (var type in events) {
                         for (var handler in events[type]) {
@@ -190,18 +183,14 @@
                     var elem = this[0];
                     if (jQuery.nodeName(elem, "select")) {
                         var index = elem.selectedIndex, values = [], options = elem.options, one = elem.type == "select-one";
-                        if (index < 0) {
-                            return null;
-                        }
+                        if (index < 0) return null;
                         for (var i = one ? index : 0, max = one ? index + 1 : options.length;
                              i < max;
                              i++) {
                             var option = options[i];
                             if (option.selected) {
                                 value = jQuery.browser.msie && !option.attributes.value.specified ? option.text : option.value;
-                                if (one) {
-                                    return value;
-                                }
+                                if (one) return value;
                                 values.push(value);
                             }
                         }
@@ -212,13 +201,9 @@
                 }
                 return undefined;
             }
-            if (value.constructor == Number) {
-                value += "";
-            }
+            if (value.constructor == Number) value += "";
             return this.each(function () {
-                if (this.nodeType != 1) {
-                    return;
-                }
+                if (this.nodeType != 1) return;
                 if (value.constructor == Array && /radio|checkbox/.test(this.type)) {
                     this.checked = (jQuery.inArray(this.value, value) >= 0 || jQuery.inArray(this.name, value) >= 0);
                 } else {
@@ -227,9 +212,7 @@
                         jQuery("option", this).each(function () {
                             this.selected = (jQuery.inArray(this.value, values) >= 0 || jQuery.inArray(this.text, values) >= 0);
                         });
-                        if (!values.length) {
-                            this.selectedIndex = -1;
-                        }
+                        if (!values.length) this.selectedIndex = -1;
                     } else {
                         this.value = value;
                     }
@@ -272,9 +255,7 @@
             return this.each(function () {
                 if (!elems) {
                     elems = jQuery.clean(args, this.ownerDocument);
-                    if (reverse) {
-                        elems.reverse();
-                    }
+                    if (reverse) elems.reverse();
                 }
                 var obj = this;
                 if (table && jQuery.nodeName(this, "table") && jQuery.nodeName(elems[0], "tr")) {
@@ -304,9 +285,8 @@
         } else {
             jQuery.globalEval(elem.text || elem.textContent || elem.innerHTML || "");
         }
-        if (elem.parentNode) {
-            elem.parentNode.removeChild(elem);
-        }
+        if (elem.parentNode) elem.parentNode.removeChild(elem);
+
     }
 
     function now() {
@@ -315,15 +295,13 @@
 
     jQuery.extend = jQuery.fn.extend = function () {
         var target = arguments[0] || {}, i = 1, length = arguments.length, deep = false, options;
-        if (target.constructor == Boolean) {
+        if (target.constructor === Boolean) {
             deep = target;
             target = arguments[1] || {};
             i = 2;
         }
-        if (typeof target != "object" && typeof target != "function") {
-            target = {};
-        }
-        if (length == i) {
+        if (typeof target != "object" && typeof target != "function") target = {};
+        if (length === i) {
             target = this;
             --i;
         }
@@ -333,15 +311,11 @@
             if ((options = arguments[i]) != null) {
                 for (var name in options) {
                     var src = target[name], copy = options[name];
-                    if (target === copy) {
-                        continue;
-                    }
+                    if (target === copy) continue;
                     if (deep && copy && typeof copy == "object" && !copy.nodeType) {
                         target[name] = jQuery.extend(deep, src || (copy.length != null ? [] : {}), copy);
                     } else {
-                        if (copy !== undefined) {
-                            target[name] = copy;
-                        }
+                        if (copy !== undefined) target[name] = copy;
                     }
                 }
             }
@@ -352,9 +326,7 @@
     jQuery.extend({
         noConflict: function (deep) {
             window.$ = _$;
-            if (deep) {
-                window.jQuery = _jQuery;
-            }
+            if (deep) window.jQuery = _jQuery;
             return jQuery;
         }, isFunction: function (fn) {
             return !!fn && typeof fn != "string" && !fn.nodeName && fn.constructor != Array && /^[\s[]?function/.test(fn + "");
@@ -378,15 +350,11 @@
         }, cache: {}, data: function (elem, name, data) {
             elem = elem == window ? windowData : elem;
             var id = elem[expando];
-            if (!id) {
-                id = elem[expando] = ++uuid;
-            }
-            if (name && !jQuery.cache[id]) {
-                jQuery.cache[id] = {};
-            }
-            if (data !== undefined) {
-                jQuery.cache[id][name] = data;
-            }
+            if (!id) id = elem[expando] = ++uuid;
+
+            if (name && !jQuery.cache[id]) jQuery.cache[id] = {};
+            if (data !== undefined) jQuery.cache[id][name] = data;
+
             return name ? jQuery.cache[id][name] : id;
         }, removeData: function (elem, name) {
             elem = elem == window ? windowData : elem;
@@ -398,17 +366,14 @@
                     for (name in jQuery.cache[id]) {
                         break;
                     }
-                    if (!name) {
-                        jQuery.removeData(elem);
-                    }
+                    if (!name) jQuery.removeData(elem);
                 }
             } else {
                 try {
                     delete elem[expando];
                 } catch (e) {
-                    if (elem.removeAttribute) {
-                        elem.removeAttribute(expando);
-                    }
+                    if (elem.removeAttribute) elem.removeAttribute(expando);
+
                 }
                 delete jQuery.cache[id];
             }
@@ -417,25 +382,19 @@
             if (args) {
                 if (length == undefined) {
                     for (name in object) {
-                        if (callback.apply(object[name], args) === false) {
-                            break;
-                        }
+                        if (callback.apply(object[name], args) === false) break;
                     }
                 } else {
                     for (;
                         i < length;
                     ) {
-                        if (callback.apply(object[i++], args) === false) {
-                            break;
-                        }
+                        if (callback.apply(object[i++], args) === false) break;
                     }
                 }
             } else {
                 if (length == undefined) {
                     for (name in object) {
-                        if (callback.call(object[name], name, object[name]) === false) {
-                            break;
-                        }
+                        if (callback.call(object[name], name, object[name]) === false) break;
                     }
                 } else {
                     for (var value = object[0];
@@ -446,9 +405,8 @@
             }
             return object;
         }, prop: function (elem, value, type, i, name) {
-            if (jQuery.isFunction(value)) {
-                value = value.call(elem, i);
-            }
+            if (jQuery.isFunction(value)) value = value.call(elem, i);
+
             return value && value.constructor == Number && type == "curCSS" && !exclude.test(name) ? value + "px" : value;
         }, className: {
             add: function (elem, classNames) {
@@ -502,9 +460,7 @@
             var ret, style = elem.style;
 
             function color(elem) {
-                if (!jQuery.browser.safari) {
-                    return false;
-                }
+                if (!jQuery.browser.safari) return false;
                 var ret = defaultView.getComputedStyle(elem, null);
                 return !ret || ret.getPropertyValue("color") == "";
             }
@@ -518,16 +474,12 @@
                 style.outline = "0 solid black";
                 style.outline = save;
             }
-            if (name.match(/float/i)) {
-                name = styleFloat;
-            }
+            if (name.match(/float/i)) name = styleFloat;
             if (!force && style && style[name]) {
                 ret = style[name];
             } else {
                 if (defaultView.getComputedStyle) {
-                    if (name.match(/float/i)) {
-                        name = "float";
-                    }
+                    if (name.match(/float/i)) name = "float";
                     name = name.replace(/([A-Z])/g, "-$1").toLowerCase();
                     var computedStyle = defaultView.getComputedStyle(elem, null);
                     if (computedStyle && !color(elem)) {
@@ -551,14 +503,11 @@
                         for (i = 0;
                              i < swap.length;
                              i++) {
-                            if (swap[i] != null) {
-                                stack[i].style.display = swap[i];
-                            }
+                            if (swap[i] != null) stack[i].style.display = swap[i];
+
                         }
                     }
-                    if (name == "opacity" && ret == "") {
-                        ret = "1";
-                    }
+                    if (name == "opacity" && ret == "") ret = "1";
                 } else {
                     if (elem.currentStyle) {
                         var camelCase = name.replace(/\-(\w)/g, function (all, letter) {
@@ -584,12 +533,8 @@
                 context = context.ownerDocument || context[0] && context[0].ownerDocument || document;
             }
             jQuery.each(elems, function (i, elem) {
-                if (!elem) {
-                    return;
-                }
-                if (elem.constructor == Number) {
-                    elem += "";
-                }
+                if (!elem) return;
+                if (elem.constructor == Number) elem += "";
                 if (typeof elem == "string") {
                     elem = elem.replace(/(<(\w+)[^>]*?)\/>/g, function (all, front, tag) {
                         return tag.match(/^(abbr|br|col|img|input|link|meta|param|hr|area|embed)$/i) ? all : front + "></" + tag + ">";
@@ -615,9 +560,7 @@
                     }
                     elem = jQuery.makeArray(div.childNodes);
                 }
-                if (elem.length === 0 && (!jQuery.nodeName(elem, "form") && !jQuery.nodeName(elem, "select"))) {
-                    return;
-                }
+                if (elem.length === 0 && (!jQuery.nodeName(elem, "form") && !jQuery.nodeName(elem, "select"))) return;
                 if (elem[0] == undefined || jQuery.nodeName(elem, "form") || elem.options) {
                     ret.push(elem);
                 } else {
@@ -651,9 +594,8 @@
                 if (msie && notxml && name == "style") {
                     return jQuery.attr(elem.style, "cssText", value);
                 }
-                if (set) {
-                    elem.setAttribute(name, "" + value);
-                }
+                if (set) elem.setAttribute(name, "" + value);
+
                 var attr = msie && notxml && special ? elem.getAttribute(name, 2) : elem.getAttribute(name);
                 return attr === null ? undefined : attr;
             }
@@ -667,9 +609,7 @@
             name = name.replace(/-([a-z])/ig, function (all, letter) {
                 return letter.toUpperCase();
             });
-            if (set) {
-                elem[name] = value;
-            }
+            if (set) elem[name] = value;
             return elem[name];
         }, trim: function (text) {
             return (text || "").replace(/^\s+|\s+$/g, "");
@@ -690,18 +630,14 @@
             for (var i = 0, length = array.length;
                  i < length;
                  i++) {
-                if (array[i] === elem) {
-                    return i;
-                }
+                if (array[i] === elem) return i;
             }
             return -1;
         }, merge: function (first, second) {
             var i = 0, elem, pos = first.length;
             if (jQuery.browser.msie) {
                 while (elem = second[i++]) {
-                    if (elem.nodeType != 8) {
-                        first[pos++] = elem;
-                    }
+                    if (elem.nodeType != 8) first[pos++] = elem;
                 }
             } else {
                 while (elem = second[i++]) {
@@ -730,9 +666,7 @@
             for (var i = 0, length = elems.length;
                  i < length;
                  i++) {
-                if (!inv != !callback(elems[i], i)) {
-                    ret.push(elems[i]);
-                }
+                if (!inv != !callback(elems[i], i)) ret.push(elems[i]);
             }
             return ret;
         }, map: function (elems, callback) {
@@ -741,9 +675,7 @@
                  i < length;
                  i++) {
                 var value = callback(elems[i], i);
-                if (value != null) {
-                    ret[ret.length] = value;
-                }
+                if (value != null) ret[ret.length] = value;
             }
             return ret.concat.apply([], ret);
         }
@@ -805,9 +737,8 @@
     jQuery.each({
         removeAttr: function (name) {
             jQuery.attr(this, name, "");
-            if (this.nodeType == 1) {
-                this.removeAttribute(name);
-            }
+            if (this.nodeType == 1) this.removeAttribute(name);
+
         }, addClass: function (classNames) {
             jQuery.className.add(this, classNames);
         }, removeClass: function (classNames) {
@@ -820,9 +751,8 @@
                     jQuery.event.remove(this);
                     jQuery.removeData(this);
                 });
-                if (this.parentNode) {
-                    this.parentNode.removeChild(this);
-                }
+                if (this.parentNode) this.parentNode.removeChild(this);
+
             }
         }, empty: function () {
             jQuery(">*", this).remove();
@@ -935,12 +865,8 @@
             }
             return cur;
         }, find: function (t, context) {
-            if (typeof t != "string") {
-                return [t];
-            }
-            if (context && context.nodeType != 1 && context.nodeType != 9) {
-                return [];
-            }
+            if (typeof t != "string") return [t];
+            if (context && context.nodeType != 1 && context.nodeType != 9) return [];
             context = context || document;
             var ret = [context], done = [], last, nodeName;
             while (t && last != t) {
@@ -956,16 +882,12 @@
                         for (var c = ret[i].firstChild;
                              c;
                              c = c.nextSibling) {
-                            if (c.nodeType == 1 && (nodeName == "*" || c.nodeName.toUpperCase() == nodeName)) {
-                                r.push(c);
-                            }
+                            if (c.nodeType == 1 && (nodeName == "*" || c.nodeName.toUpperCase() == nodeName)) r.push(c);
                         }
                     }
                     ret = r;
                     t = t.replace(re, "");
-                    if (t.indexOf(" ") == 0) {
-                        continue;
-                    }
+                    if (t.indexOf(" ") == 0) continue;
                     foundToken = true;
                 } else {
                     re = /^([>+~])\s*(\w*)/i;
@@ -983,18 +905,12 @@
                                 n = n.nextSibling) {
                                 if (n.nodeType == 1) {
                                     var id = jQuery.data(n);
-                                    if (m == "~" && merge[id]) {
-                                        break;
-                                    }
+                                    if (m == "~" && merge[id]) break;
                                     if (!nodeName || n.nodeName.toUpperCase() == nodeName) {
-                                        if (m == "~") {
-                                            merge[id] = true;
-                                        }
+                                        if (m == "~") merge[id] = true;
                                         r.push(n);
                                     }
-                                    if (m == "+") {
-                                        break;
-                                    }
+                                    if (m == "+") break;
                                 }
                             }
                         }
@@ -1005,9 +921,7 @@
                 }
                 if (t && !foundToken) {
                     if (!t.indexOf(",")) {
-                        if (context == ret[0]) {
-                            ret.shift();
-                        }
+                        if (context == ret[0]) ret.shift();
                         done = jQuery.merge(done, ret);
                         r = ret = [context];
                         t = " " + t.substr(1, t.length);
@@ -1038,9 +952,8 @@
                                 }
                                 r = jQuery.merge(r, ret[i].getElementsByTagName(tag));
                             }
-                            if (m[1] == ".") {
-                                r = jQuery.classFilter(r, m[2]);
-                            }
+                            if (m[1] == ".") r = jQuery.classFilter(r, m[2]);
+
                             if (m[1] == "#") {
                                 var tmp = [];
                                 for (var i = 0;
@@ -1064,12 +977,8 @@
                     t = jQuery.trim(val.t);
                 }
             }
-            if (t) {
-                ret = [];
-            }
-            if (ret && context == ret[0]) {
-                ret.shift();
-            }
+            if (t) ret = [];
+            if (ret && context == ret[0]) ret.shift();
             done = jQuery.merge(done, ret);
             return done;
         }, classFilter: function (r, m, not) {
@@ -1079,9 +988,7 @@
                  r[i];
                  i++) {
                 var pass = (" " + r[i].className + " ").indexOf(m) >= 0;
-                if (!not && pass || not && !pass) {
-                    tmp.push(r[i]);
-                }
+                if (!not && pass || not && !pass) tmp.push(r[i]);
             }
             return tmp;
         }, filter: function (t, r, not) {
@@ -1099,9 +1006,7 @@
                         break;
                     }
                 }
-                if (!m) {
-                    break;
-                }
+                if (!m) break;
                 if (m[1] == ":" && m[2] == "not") {
                     r = isSimple.test(m[3]) ? jQuery.filter(m[3], r, true).r : jQuery(r).not(m[3]);
                 } else {
@@ -1117,9 +1022,7 @@
                                 if (z == null || /href|src|selected/.test(m[2])) {
                                     z = jQuery.attr(a, m[2]) || "";
                                 }
-                                if ((type == "" && !!z || type == "=" && z == m[5] || type == "!=" && z != m[5] || type == "^=" && z && !z.indexOf(m[5]) || type == "$=" && z.substr(z.length - m[5].length) == m[5] || (type == "*=" || type == "~=") && z.indexOf(m[5]) >= 0) ^ not) {
-                                    tmp.push(a);
-                                }
+                                if ((type == "" && !!z || type == "=" && z == m[5] || type == "!=" && z != m[5] || type == "^=" && z && !z.indexOf(m[5]) || type == "$=" && z.substr(z.length - m[5].length) == m[5] || (type == "*=" || type == "~=") && z.indexOf(m[5]) >= 0) ^ not) tmp.push(a);
                             }
                             r = tmp;
                         } else {
@@ -1134,32 +1037,22 @@
                                         for (var n = parentNode.firstChild;
                                              n;
                                              n = n.nextSibling) {
-                                            if (n.nodeType == 1) {
-                                                n.nodeIndex = c++;
-                                            }
+                                            if (n.nodeType == 1) n.nodeIndex = c++;
                                         }
                                         merge[id] = true;
                                     }
                                     var add = false;
                                     if (first == 0) {
-                                        if (node.nodeIndex == last) {
-                                            add = true;
-                                        }
+                                        if (node.nodeIndex == last) add = true;
                                     } else {
-                                        if ((node.nodeIndex - last) % first == 0 && (node.nodeIndex - last) / first >= 0) {
-                                            add = true;
-                                        }
+                                        if ((node.nodeIndex - last) % first == 0 && (node.nodeIndex - last) / first >= 0) add = true;
                                     }
-                                    if (add ^ not) {
-                                        tmp.push(node);
-                                    }
+                                    if (add ^ not) tmp.push(node);
                                 }
                                 r = tmp;
                             } else {
                                 var fn = jQuery.expr[m[1]];
-                                if (typeof fn == "object") {
-                                    fn = fn[m[2]];
-                                }
+                                if (typeof fn == "object") fn = fn[m[2]];
                                 if (typeof fn == "string") {
                                     fn = eval("false||function(a,i){return " + fn + ";}");
                                 }
@@ -1175,9 +1068,7 @@
         }, dir: function (elem, dir) {
             var matched = [], cur = elem[dir];
             while (cur && cur != document) {
-                if (cur.nodeType == 1) {
-                    matched.push(cur);
-                }
+                if (cur.nodeType == 1) matched.push(cur);
                 cur = cur[dir];
             }
             return matched;
@@ -1187,9 +1078,7 @@
             for (;
                 cur;
                 cur = cur[dir]) {
-                if (cur.nodeType == 1 && ++num == result) {
-                    break;
-                }
+                if (cur.nodeType == 1 && ++num == result) break;
             }
             return cur;
         }, sibling: function (n, elem) {
@@ -1197,24 +1086,19 @@
             for (;
                 n;
                 n = n.nextSibling) {
-                if (n.nodeType == 1 && n != elem) {
-                    r.push(n);
-                }
+                if (n.nodeType == 1 && n != elem) r.push(n);
             }
             return r;
         }
     });
     jQuery.event = {
         add: function (elem, types, handler, data) {
-            if (elem.nodeType == 3 || elem.nodeType == 8) {
-                return;
-            }
+            if (elem.nodeType == 3 || elem.nodeType == 8) return;
             if (jQuery.browser.msie && elem.setInterval) {
                 elem = window;
             }
-            if (!handler.guid) {
-                handler.guid = this.guid++;
-            }
+            if (!handler.guid) handler.guid = this.guid++;
+
             if (data != undefined) {
                 var fn = handler;
                 handler = this.proxy(fn, function () {
@@ -1239,9 +1123,8 @@
                         if (elem.addEventListener) {
                             elem.addEventListener(type, handle, false);
                         } else {
-                            if (elem.attachEvent) {
-                                elem.attachEvent("on" + type, handle);
-                            }
+                            if (elem.attachEvent) elem.attachEvent("on" + type, handle);
+
                         }
                     }
                 }
@@ -1250,9 +1133,7 @@
             });
             elem = null;
         }, guid: 1, global: {}, remove: function (elem, types, handler) {
-            if (elem.nodeType == 3 || elem.nodeType == 8) {
-                return;
-            }
+            if (elem.nodeType == 3 || elem.nodeType == 8) return;
             var events = jQuery.data(elem, "events"), ret, index;
             if (events) {
                 if (types == undefined || (typeof types == "string" && types.charAt(0) == ".")) {
@@ -1301,9 +1182,7 @@
                 }
                 if (!ret) {
                     var handle = jQuery.data(elem, "handle");
-                    if (handle) {
-                        handle.elem = null;
-                    }
+                    if (handle) handle.elem = null;
                     jQuery.removeData(elem, "events");
                     jQuery.removeData(elem, "handle");
                 }
@@ -1332,24 +1211,16 @@
                     data[0][expando] = true;
                 }
                 data[0].type = type;
-                if (exclusive) {
-                    data[0].exclusive = true;
-                }
+                if (exclusive) data[0].exclusive = true;
+
                 var handle = jQuery.data(elem, "handle");
-                if (handle) {
-                    val = handle.apply(elem, data);
-                }
-                if ((!fn || (jQuery.nodeName(elem, "a") && type == "click")) && elem["on" + type] && elem["on" + type].apply(elem, data) === false) {
-                    val = false;
-                }
-                if (event) {
-                    data.shift();
-                }
+                if (handle) val = handle.apply(elem, data);
+
+                if ((!fn || (jQuery.nodeName(elem, "a") && type == "click")) && elem["on" + type] && elem["on" + type].apply(elem, data) === false) val = false;
+                if (event) data.shift();
                 if (extra && jQuery.isFunction(extra)) {
                     ret = extra.apply(elem, val == null ? data : data.concat(val));
-                    if (ret !== undefined) {
-                        val = ret;
-                    }
+                    if (ret !== undefined) val = ret;
                 }
                 if (fn && donative !== false && val !== false && !(jQuery.nodeName(elem, "a") && type == "click")) {
                     this.triggered = true;
@@ -1375,9 +1246,7 @@
                     event.handler = handler;
                     event.data = handler.data;
                     ret = handler.apply(this, arguments);
-                    if (val !== false) {
-                        val = ret;
-                    }
+                    if (val !== false) val = ret;
                     if (ret === false) {
                         event.preventDefault();
                         event.stopPropagation();
@@ -1386,9 +1255,7 @@
             }
             return val;
         }, fix: function (event) {
-            if (event[expando] == true) {
-                return event;
-            }
+            if (event[expando] == true) return event;
             var originalEvent = event;
             event = {originalEvent: originalEvent};
             var props = "altKey attrChange attrName bubbles button cancelable charCode clientX clientY ctrlKey currentTarget data detail eventPhase fromElement handler keyCode metaKey newValue originalTarget pageX pageY prevValue relatedNode relatedTarget screenX screenY shiftKey srcElement target timeStamp toElement type view wheelDelta which".split(" ");
@@ -1399,21 +1266,18 @@
             }
             event[expando] = true;
             event.preventDefault = function () {
-                if (originalEvent.preventDefault) {
-                    originalEvent.preventDefault();
-                }
+                if (originalEvent.preventDefault) originalEvent.preventDefault();
+
                 originalEvent.returnValue = false;
             };
             event.stopPropagation = function () {
-                if (originalEvent.stopPropagation) {
-                    originalEvent.stopPropagation();
-                }
+                if (originalEvent.stopPropagation) originalEvent.stopPropagation();
+
                 originalEvent.cancelBubble = true;
             };
             event.timeStamp = event.timeStamp || now();
-            if (!event.target) {
-                event.target = event.srcElement || document;
-            }
+            if (!event.target) event.target = event.srcElement || document;
+
             if (event.target.nodeType == 3) {
                 event.target = event.target.parentNode;
             }
@@ -1428,9 +1292,8 @@
             if (!event.which && ((event.charCode || event.charCode === 0) ? event.charCode : event.keyCode)) {
                 event.which = event.charCode || event.keyCode;
             }
-            if (!event.metaKey && event.ctrlKey) {
-                event.metaKey = event.ctrlKey;
-            }
+            if (!event.metaKey && event.ctrlKey) event.metaKey = event.ctrlKey;
+
             if (!event.which && event.button) {
                 event.which = (event.button & 1 ? 1 : (event.button & 2 ? 3 : (event.button & 4 ? 2 : 0)));
             }
@@ -1448,41 +1311,29 @@
                 }
             }, mouseenter: {
                 setup: function () {
-                    if (jQuery.browser.msie) {
-                        return false;
-                    }
+                    if (jQuery.browser.msie) return false;
                     jQuery(this).bind("mouseover", jQuery.event.special.mouseenter.handler);
                     return true;
                 }, teardown: function () {
-                    if (jQuery.browser.msie) {
-                        return false;
-                    }
+                    if (jQuery.browser.msie) return false;
                     jQuery(this).unbind("mouseover", jQuery.event.special.mouseenter.handler);
                     return true;
                 }, handler: function (event) {
-                    if (withinElement(event, this)) {
-                        return true;
-                    }
+                    if (withinElement(event, this)) return true;
                     event.type = "mouseenter";
                     return jQuery.event.handle.apply(this, arguments);
                 }
             }, mouseleave: {
                 setup: function () {
-                    if (jQuery.browser.msie) {
-                        return false;
-                    }
+                    if (jQuery.browser.msie) return false;
                     jQuery(this).bind("mouseout", jQuery.event.special.mouseleave.handler);
                     return true;
                 }, teardown: function () {
-                    if (jQuery.browser.msie) {
-                        return false;
-                    }
+                    if (jQuery.browser.msie) return false;
                     jQuery(this).unbind("mouseout", jQuery.event.special.mouseleave.handler);
                     return true;
                 }, handler: function (event) {
-                    if (withinElement(event, this)) {
-                        return true;
-                    }
+                    if (withinElement(event, this)) return true;
                     event.type = "mouseleave";
                     return jQuery.event.handle.apply(this, arguments);
                 }
@@ -1553,18 +1404,14 @@
     var readyBound = false;
 
     function bindReady() {
-        if (readyBound) {
-            return;
-        }
+        if (readyBound) return;
         readyBound = true;
         if (document.addEventListener && !jQuery.browser.opera) {
             document.addEventListener("DOMContentLoaded", jQuery.ready, false);
         }
         if (jQuery.browser.msie && window == top) {
             (function () {
-                if (jQuery.isReady) {
-                    return;
-                }
+                if (jQuery.isReady) return;
                 try {
                     document.documentElement.doScroll("left");
                 } catch (error) {
@@ -1576,9 +1423,7 @@
         }
         if (jQuery.browser.opera) {
             document.addEventListener("DOMContentLoaded", function () {
-                if (jQuery.isReady) {
-                    return;
-                }
+                if (jQuery.isReady) return;
                 for (var i = 0;
                      i < document.styleSheets.length;
                      i++) {
@@ -1593,9 +1438,7 @@
         if (jQuery.browser.safari) {
             var numStyles;
             (function () {
-                if (jQuery.isReady) {
-                    return;
-                }
+                if (jQuery.isReady) return;
                 if (document.readyState != "loaded" && document.readyState != "complete") {
                     setTimeout(arguments.callee, 0);
                     return;
@@ -1634,9 +1477,7 @@
     });
     jQuery.fn.extend({
         _load: jQuery.fn.load, load: function (url, params, callback) {
-            if (typeof url != "string") {
-                return this._load(url);
-            }
+            if (typeof url != "string") return this._load(url);
             var off = url.indexOf(" ");
             if (off >= 0) {
                 var selector = url.slice(off, url.length);
@@ -1757,9 +1598,8 @@
                         delete window[jsonp];
                     } catch (e) {
                     }
-                    if (head) {
-                        head.removeChild(script);
-                    }
+                    if (head) head.removeChild(script);
+
                 };
             }
             if (s.dataType == "script" && s.cache == null) {
@@ -1782,9 +1622,8 @@
                 var head = document.getElementsByTagName("head")[0];
                 var script = document.createElement("script");
                 script.src = s.url;
-                if (s.scriptCharset) {
-                    script.charset = s.scriptCharset;
-                }
+                if (s.scriptCharset) script.charset = s.scriptCharset;
+
                 if (!jsonp) {
                     var done = false;
                     script.onload = script.onreadystatechange = function () {
@@ -1807,9 +1646,8 @@
                 xhr.open(type, s.url, s.async);
             }
             try {
-                if (s.data) {
-                    xhr.setRequestHeader("Content-Type", s.contentType);
-                }
+                if (s.data) xhr.setRequestHeader("Content-Type", s.contentType);
+
                 if (s.ifModified) {
                     xhr.setRequestHeader("If-Modified-Since", jQuery.lastModified[s.url] || "Thu, 01 Jan 1970 00:00:00 GMT");
                 }
@@ -1822,9 +1660,8 @@
                 xhr.abort();
                 return false;
             }
-            if (s.global) {
-                jQuery.event.trigger("ajaxSend", [xhr, s]);
-            }
+            if (s.global) jQuery.event.trigger("ajaxSend", [xhr, s]);
+
             var onreadystatechange = function (isTimeout) {
                 if (!requestDone && xhr && (xhr.readyState == 4 || isTimeout == "timeout")) {
                     requestDone = true;
@@ -1846,19 +1683,14 @@
                             modRes = xhr.getResponseHeader("Last-Modified");
                         } catch (e) {
                         }
-                        if (s.ifModified && modRes) {
-                            jQuery.lastModified[s.url] = modRes;
-                        }
-                        if (!jsonp) {
-                            success();
-                        }
+                        if (s.ifModified && modRes) jQuery.lastModified[s.url] = modRes;
+
+                        if (!jsonp) success();
                     } else {
                         jQuery.handleError(s, xhr, status);
                     }
                     complete();
-                    if (s.async) {
-                        xhr = null;
-                    }
+                    if (s.async) xhr = null;
                 }
             };
             if (s.async) {
@@ -1867,9 +1699,8 @@
                     setTimeout(function () {
                         if (xhr) {
                             xhr.abort();
-                            if (!requestDone) {
-                                onreadystatechange("timeout");
-                            }
+                            if (!requestDone) onreadystatechange("timeout");
+
                         }
                     }, s.timeout);
                 }
@@ -1879,26 +1710,18 @@
             } catch (e) {
                 jQuery.handleError(s, xhr, null, e);
             }
-            if (!s.async) {
-                onreadystatechange();
-            }
+            if (!s.async) onreadystatechange();
 
             function success() {
-                if (s.success) {
-                    s.success(data, status);
-                }
-                if (s.global) {
-                    jQuery.event.trigger("ajaxSuccess", [xhr, s]);
-                }
+                if (s.success) s.success(data, status);
+                if (s.global) jQuery.event.trigger("ajaxSuccess", [xhr, s]);
+
             }
 
             function complete() {
-                if (s.complete) {
-                    s.complete(xhr, status);
-                }
-                if (s.global) {
-                    jQuery.event.trigger("ajaxComplete", [xhr, s]);
-                }
+                if (s.complete) s.complete(xhr, status);
+                if (s.global) jQuery.event.trigger("ajaxComplete", [xhr, s]);
+
                 if (s.global && !--jQuery.active) {
                     jQuery.event.trigger("ajaxStop");
                 }
@@ -1907,12 +1730,9 @@
             return xhr;
         },
         handleError: function (s, xhr, status, e) {
-            if (s.error) {
-                s.error(xhr, status, e);
-            }
-            if (s.global) {
-                jQuery.event.trigger("ajaxError", [xhr, s, e]);
-            }
+            if (s.error) s.error(xhr, status, e);
+            if (s.global) jQuery.event.trigger("ajaxError", [xhr, s, e]);
+
         },
         active: 0,
         httpSuccess: function (xhr) {
@@ -1935,15 +1755,11 @@
             if (xml && data.documentElement.tagName == "parsererror") {
                 throw"parsererror";
             }
-            if (filter) {
-                data = filter(data, type);
-            }
-            if (type == "script") {
-                jQuery.globalEval(data);
-            }
-            if (type == "json") {
-                data = eval("(" + data + ")");
-            }
+            if (filter) data = filter(data, type);
+
+            if (type == "script") jQuery.globalEval(data);
+            if (type == "json") data = eval("(" + data + ")");
+
             return data;
         },
         param: function (a) {
@@ -1973,9 +1789,8 @@
                 if (jQuery.css(this, "display") == "none") {
                     var elem = jQuery("<" + this.tagName + " />").appendTo("body");
                     this.style.display = elem.css("display");
-                    if (this.style.display == "none") {
-                        this.style.display = "block";
-                    }
+                    if (this.style.display == "none") this.style.display = "block";
+
                     elem.remove();
                 }
             }).end();
@@ -2003,9 +1818,7 @@
         }, animate: function (prop, speed, easing, callback) {
             var optall = jQuery.speed(speed, easing, callback);
             return this[optall.queue === false ? "each" : "queue"](function () {
-                if (this.nodeType != 1) {
-                    return false;
-                }
+                if (this.nodeType != 1) return false;
                 var opt = jQuery.extend({}, optall), p, hidden = jQuery(this).is(":hidden"), self = this;
                 for (p in prop) {
                     if (prop[p] == "hide" && hidden || prop[p] == "show" && !hidden) {
@@ -2016,9 +1829,8 @@
                         opt.overflow = this.style.overflow;
                     }
                 }
-                if (opt.overflow != null) {
-                    this.style.overflow = "hidden";
-                }
+                if (opt.overflow != null) this.style.overflow = "hidden";
+
                 opt.curAnim = jQuery.extend({}, prop);
                 jQuery.each(prop, function (name, val) {
                     var e = new jQuery.fx(self, opt, name);
@@ -2033,9 +1845,8 @@
                                 start = ((end || 1) / e.cur(true)) * start;
                                 self.style[name] = start + unit;
                             }
-                            if (parts[1]) {
-                                end = ((parts[1] == "-=" ? -1 : 1) * end) + start;
-                            }
+                            if (parts[1]) end = ((parts[1] == "-=" ? -1 : 1) * end) + start;
+
                             e.custom(start, end, unit);
                         } else {
                             e.custom(start, val, "");
@@ -2057,31 +1868,23 @@
                     queue(this, type, fn);
                 } else {
                     queue(this, type).push(fn);
-                    if (queue(this, type).length == 1) {
-                        fn.call(this);
-                    }
+                    if (queue(this, type).length == 1) fn.call(this);
                 }
             });
         }, stop: function (clearQueue, gotoEnd) {
             var timers = jQuery.timers;
-            if (clearQueue) {
-                this.queue([]);
-            }
+            if (clearQueue) this.queue([]);
             this.each(function () {
                 for (var i = timers.length - 1;
                      i >= 0;
                      i--) {
                     if (timers[i].elem == this) {
-                        if (gotoEnd) {
-                            timers[i](true);
-                        }
+                        if (gotoEnd) timers[i](true);
                         timers.splice(i, 1);
                     }
                 }
             });
-            if (!gotoEnd) {
-                this.dequeue();
-            }
+            if (!gotoEnd) this.dequeue();
             return this;
         }
     });
@@ -2100,9 +1903,7 @@
         return this.each(function () {
             var q = queue(this, type);
             q.shift();
-            if (q.length) {
-                q[0].call(this);
-            }
+            if (q.length) q[0].call(this);
         });
     };
     jQuery.extend({
@@ -2111,12 +1912,8 @@
             opt.duration = (opt.duration && opt.duration.constructor == Number ? opt.duration : jQuery.fx.speeds[opt.duration]) || jQuery.fx.speeds.def;
             opt.old = opt.complete;
             opt.complete = function () {
-                if (opt.queue !== false) {
-                    jQuery(this).dequeue();
-                }
-                if (jQuery.isFunction(opt.old)) {
-                    opt.old.call(this);
-                }
+                if (opt.queue !== false) jQuery(this).dequeue();
+                if (jQuery.isFunction(opt.old)) opt.old.call(this);
             };
             return opt;
         }, easing: {
@@ -2129,9 +1926,7 @@
             this.options = options;
             this.elem = elem;
             this.prop = prop;
-            if (!options.orig) {
-                options.orig = {};
-            }
+            if (!options.orig) options.orig = {};
         }
     });
     jQuery.fx.prototype = {
@@ -2171,9 +1966,7 @@
                     for (var i = 0;
                          i < timers.length;
                          i++) {
-                        if (!timers[i]()) {
-                            timers.splice(i--, 1);
-                        }
+                        if (!timers[i]()) timers.splice(i--, 1);
                     }
                     if (!timers.length) {
                         clearInterval(jQuery.timerId);
@@ -2202,9 +1995,7 @@
                 this.options.curAnim[this.prop] = true;
                 var done = true;
                 for (var i in this.options.curAnim) {
-                    if (this.options.curAnim[i] !== true) {
-                        done = false;
-                    }
+                    if (this.options.curAnim[i] !== true) done = false;
                 }
                 if (done) {
                     if (this.options.display != null) {
@@ -2214,18 +2005,16 @@
                             this.elem.style.display = "block";
                         }
                     }
-                    if (this.options.hide) {
-                        this.elem.style.display = "none";
-                    }
+                    if (this.options.hide) this.elem.style.display = "none";
+
                     if (this.options.hide || this.options.show) {
                         for (var p in this.options.curAnim) {
                             jQuery.attr(this.elem.style, p, this.options.orig[p]);
                         }
                     }
                 }
-                if (done) {
-                    this.options.complete.call(this.elem);
-                }
+                if (done) this.options.complete.call(this.elem);
+
                 return false;
             } else {
                 var n = t - this.startTime;
@@ -2327,9 +2116,7 @@
     jQuery.each(["Left", "Top"], function (i, name) {
         var method = "scroll" + name;
         jQuery.fn[method] = function (val) {
-            if (!this[0]) {
-                return;
-            }
+            if (!this[0]) return;
             return val != undefined ? this.each(function () {
                 this == window || this == document ? window.scrollTo(!i ? val : jQuery(window).scrollLeft(), i ? val : jQuery(window).scrollTop()) : this[method] = val;
             }) : this[0] == window || this[0] == document ? self[i ? "pageYOffset" : "pageXOffset"] || jQuery.boxModel && document.documentElement[method] || document.body[method] : this[0][method];
@@ -2345,8 +2132,6 @@
         };
     });
 })();
-
-
 /* platform.js */
 SimileAjax.version = "pre 2.3.0";
 SimileAjax.jQuery = jQuery.noConflict(true);
@@ -2379,27 +2164,23 @@ SimileAjax.Platform.browser = {isIE: false, isNetscape: false, isMozilla: false,
     };
     if (SimileAjax.Platform.browser.isMozilla) {
         var D = A.indexOf("mozilla/");
-        if (D >= 0) {
-            E(A.substring(D + 8, B(A, " ", D)));
-        }
+        if (D >= 0) E(A.substring(D + 8, B(A, " ", D)));
+
     }
     if (SimileAjax.Platform.browser.isIE) {
         var D = A.indexOf("msie ");
-        if (D >= 0) {
-            E(A.substring(D + 5, B(A, ";", D)));
-        }
+        if (D >= 0) E(A.substring(D + 5, B(A, ";", D)));
+
     }
     if (SimileAjax.Platform.browser.isNetscape) {
         var D = A.indexOf("rv:");
-        if (D >= 0) {
-            E(A.substring(D + 3, B(A, ")", D)));
-        }
+        if (D >= 0) E(A.substring(D + 3, B(A, ")", D)));
+
     }
     if (SimileAjax.Platform.browser.isFirefox) {
         var D = A.indexOf("firefox/");
-        if (D >= 0) {
-            E(A.substring(D + 8, B(A, " ", D)));
-        }
+        if (D >= 0) E(A.substring(D + 8, B(A, " ", D)));
+
     }
     if (!("localeCompare" in String.prototype)) {
         String.prototype.localeCompare = function (F) {
@@ -2418,8 +2199,6 @@ SimileAjax.Platform.browser = {isIE: false, isNetscape: false, isMozilla: false,
 SimileAjax.Platform.getDefaultLocale = function () {
     return SimileAjax.Platform.clientLocale;
 };
-
-
 /* ajax.js */
 SimileAjax.ListenerQueue = function (A) {
     this._listeners = [];
@@ -2462,8 +2241,6 @@ SimileAjax.ListenerQueue.prototype.fire = function (B, A) {
         }
     }
 };
-
-
 /* data-structure.js */
 SimileAjax.Set = function (A) {
     this._hash = {};
@@ -2475,9 +2252,7 @@ SimileAjax.Set = function (A) {
             this.add(A[B]);
         }
     } else {
-        if (A instanceof SimileAjax.Set) {
-            this.addSet(A);
-        }
+        if (A instanceof SimileAjax.Set) this.addSet(A);
     }
 };
 SimileAjax.Set.prototype.add = function (A) {
@@ -2529,9 +2304,7 @@ SimileAjax.Set.prototype.toArray = function () {
 };
 SimileAjax.Set.prototype.visit = function (A) {
     for (var B in this._hash) {
-        if (A(B) == true) {
-            break;
-        }
+        if (A(B) == true) break;
     }
 };
 SimileAjax.SortedArray = function (B, A) {
@@ -2626,15 +2399,11 @@ SimileAjax.EventIndex.prototype.getCount = function () {
     return this._events.length();
 };
 SimileAjax.EventIndex.prototype.getIterator = function (A, B) {
-    if (!this._indexed) {
-        this._index();
-    }
+    if (!this._indexed) this._index();
     return new SimileAjax.EventIndex._Iterator(this._events, A, B, this._unit);
 };
 SimileAjax.EventIndex.prototype.getReverseIterator = function (A, B) {
-    if (!this._indexed) {
-        this._index();
-    }
+    if (!this._indexed) this._index();
     return new SimileAjax.EventIndex._ReverseIterator(this._events, A, B, this._unit);
 };
 SimileAjax.EventIndex.prototype.getAllIterator = function () {
@@ -2646,12 +2415,8 @@ SimileAjax.EventIndex.prototype.getEarliestDate = function () {
 };
 SimileAjax.EventIndex.prototype.getLatestDate = function () {
     var A = this._events.getLast();
-    if (A == null) {
-        return null;
-    }
-    if (!this._indexed) {
-        this._index();
-    }
+    if (A == null) return null;
+    if (!this._indexed) this._index();
     var C = A._earliestOverlapIndex;
     var B = this._events.elementAt(C).getEnd();
     for (var D = C + 1;
@@ -2788,8 +2553,6 @@ SimileAjax.EventIndex._AllIterator.prototype = {
         return this._index < this._events.length() ? this._events.elementAt(this._index++) : null;
     }
 };
-
-
 /* date-time.js */
 SimileAjax.DateTime = new Object();
 SimileAjax.DateTime.MILLISECOND = 0;
@@ -2826,9 +2589,8 @@ SimileAjax.DateTime._timezoneRegexp = new RegExp("Z|(([-+])([0-9]{2})(:?([0-9]{2
 SimileAjax.DateTime._timeRegexp = new RegExp("^([0-9]{2})(:?([0-9]{2})(:?([0-9]{2})(.([0-9]+))?)?)?$");
 SimileAjax.DateTime.setIso8601Date = function (H, F) {
     var I = F.match(SimileAjax.DateTime._dateRegexp);
-    if (!I) {
-        throw new Error("Invalid date string: " + F);
-    }
+    if (!I) throw new Error("Invalid date string: " + F);
+
     var B = (I[1] == "-") ? -1 : 1;
     var J = B * I[2];
     var G = I[5];
@@ -2857,9 +2619,7 @@ SimileAjax.DateTime.setIso8601Date = function (H, F) {
                 H.setUTCDate(1);
                 H.setUTCMonth(G - 1);
             }
-            if (C) {
-                H.setUTCDate(C);
-            }
+            if (C) H.setUTCDate(C);
         }
     }
     return H;
@@ -2898,9 +2658,8 @@ SimileAjax.DateTime.setIso8601 = function (B, A) {
         }
         SimileAjax.DateTime.setIso8601Time(B, E[1]);
     }
-    if (D == null) {
-        D = B.getTimezoneOffset();
-    }
+    if (D == null) D = B.getTimezoneOffset();
+
     B.setTime(B.getTime() + D * 60000);
     return B;
 };
@@ -2915,9 +2674,7 @@ SimileAjax.DateTime.parseGregorianDateTime = function (G) {
     if (G == null) {
         return null;
     } else {
-        if (G instanceof Date) {
-            return G;
-        }
+        if (G instanceof Date) return G;
     }
     var B = G.toString();
     if (B.length > 0 && B.length < 8) {
@@ -2925,9 +2682,7 @@ SimileAjax.DateTime.parseGregorianDateTime = function (G) {
         if (C > 0) {
             var A = parseInt(B.substr(0, C));
             var E = B.substr(C + 1);
-            if (E.toLowerCase() == "bc") {
-                A = 1 - A;
-            }
+            if (E.toLowerCase() == "bc") A = 1 - A;
         } else {
             var A = parseInt(B);
         }
@@ -3067,8 +2822,6 @@ SimileAjax.DateTime.getTimezone = function () {
     var A = new Date().getTimezoneOffset();
     return A / -60;
 };
-
-
 /* debug.js */
 SimileAjax.Debug = {silent: false};
 SimileAjax.Debug.log = function (B) {
@@ -3079,9 +2832,7 @@ SimileAjax.Debug.log = function (B) {
         };
     } else {
         A = function (C) {
-            if (!SimileAjax.Debug.silent) {
-                alert(C);
-            }
+            if (!SimileAjax.Debug.silent) alert(C);
         };
     }
     SimileAjax.Debug.log = A;
@@ -3095,9 +2846,7 @@ SimileAjax.Debug.warn = function (B) {
         };
     } else {
         A = function (C) {
-            if (!SimileAjax.Debug.silent) {
-                alert(C);
-            }
+            if (!SimileAjax.Debug.silent) alert(C);
         };
     }
     SimileAjax.Debug.warn = A;
@@ -3158,8 +2907,6 @@ SimileAjax.Debug._objectToString = function (D, A) {
         }
     }
 };
-
-
 /* dom.js */
 SimileAjax.DOM = new Object();
 SimileAjax.DOM.registerEventWithObject = function (C, A, D, B) {
@@ -3188,9 +2935,7 @@ SimileAjax.DOM.registerEvent = function (C, B, D) {
 SimileAjax.DOM.getPageCoordinates = function (B) {
     var E = 0;
     var D = 0;
-    if (B.nodeType != 1) {
-        B = B.parentNode;
-    }
+    if (B.nodeType != 1) B = B.parentNode;
     var C = B;
     while (C != null) {
         E += C.offsetLeft;
@@ -3210,12 +2955,8 @@ SimileAjax.DOM.getPageCoordinates = function (B) {
 SimileAjax.DOM.getSize = function (B) {
     var A = this.getStyle(B, "width");
     var C = this.getStyle(B, "height");
-    if (A.indexOf("px") > -1) {
-        A = A.replace("px", "");
-    }
-    if (C.indexOf("px") > -1) {
-        C = C.replace("px", "");
-    }
+    if (A.indexOf("px") > -1) A = A.replace("px", "");
+    if (C.indexOf("px") > -1) C = C.replace("px", "");
     return {w: A, h: C};
 };
 SimileAjax.DOM.getStyle = function (B, A) {
@@ -3266,15 +3007,11 @@ SimileAjax.DOM._hittest = function (C, L, K, H) {
         for (var F = 0;
              F < H.length;
              F++) {
-            if (A == H[F]) {
-                continue outer;
-            }
+            if (A == H[F]) continue outer;
         }
         if (A.offsetWidth == 0 && A.offsetHeight == 0) {
             var B = SimileAjax.DOM._hittest(A, L, K, H);
-            if (B != A) {
-                return B;
-            }
+            if (B != A) return B;
         } else {
             var J = 0;
             var E = 0;
@@ -3289,9 +3026,7 @@ SimileAjax.DOM._hittest = function (C, L, K, H) {
             } else {
                 if (A.nodeType == 1 && A.tagName == "TR") {
                     var I = SimileAjax.DOM._hittest(A, L, K, H);
-                    if (I != A) {
-                        return I;
-                    }
+                    if (I != A) return I;
                 }
             }
         }
@@ -3301,18 +3036,14 @@ SimileAjax.DOM._hittest = function (C, L, K, H) {
 SimileAjax.DOM.cancelEvent = function (A) {
     A.returnValue = false;
     A.cancelBubble = true;
-    if ("preventDefault" in A) {
-        A.preventDefault();
-    }
+    if ("preventDefault" in A) A.preventDefault();
 };
 SimileAjax.DOM.appendClassName = function (C, D) {
     var B = C.className.split(" ");
     for (var A = 0;
          A < B.length;
          A++) {
-        if (B[A] == D) {
-            return;
-        }
+        if (B[A] == D) return;
     }
     B.push(D);
     C.className = B.join(" ");
@@ -3333,9 +3064,7 @@ SimileAjax.DOM._createDOMFromTemplate = function (A, I, E) {
     } else {
         if (typeof A != "object") {
             var D = document.createTextNode(A);
-            if (E != null) {
-                E.appendChild(D);
-            }
+            if (E != null) E.appendChild(D);
             return D;
         } else {
             var C = null;
@@ -3345,22 +3074,17 @@ SimileAjax.DOM._createDOMFromTemplate = function (A, I, E) {
                     if (J == "tr") {
                         C = E.insertRow(E.rows.length);
                     } else {
-                        if (J == "td") {
-                            C = E.insertCell(E.cells.length);
-                        }
+                        if (J == "td") C = E.insertCell(E.cells.length);
+
                     }
                 }
                 if (C == null) {
                     C = J == "input" ? SimileAjax.DOM.createInputElement(A.type) : document.createElement(J);
-                    if (E != null) {
-                        E.appendChild(C);
-                    }
+                    if (E != null) E.appendChild(C);
                 }
             } else {
                 C = A.elmt;
-                if (E != null) {
-                    E.appendChild(C);
-                }
+                if (E != null) E.appendChild(C);
             }
             for (var B in A) {
                 var G = A[B];
@@ -3394,9 +3118,7 @@ SimileAjax.DOM._createDOMFromTemplate = function (A, I, E) {
                                                 SimileAjax.DOM._createDOMFromTemplate(G[F], I, C);
                                             }
                                         } else {
-                                            if (B != "tag" && B != "elmt") {
-                                                C.setAttribute(B, G);
-                                            }
+                                            if (B != "tag" && B != "elmt") C.setAttribute(B, G);
                                         }
                                     }
                                 }
@@ -3452,8 +3174,6 @@ SimileAjax.DOM._processDOMChildrenConstructedFromString = function (E, B, D) {
         C = A;
     }
 };
-
-
 /* graphics.js */
 SimileAjax.Graphics = new Object();
 SimileAjax.Graphics.pngIsTranslucent = (!SimileAjax.Platform.browser.isIE) || (SimileAjax.Platform.browser.majorVersion > 6);
@@ -3463,9 +3183,8 @@ if (!SimileAjax.Graphics.pngIsTranslucent) {
 SimileAjax.Graphics._createTranslucentImage1 = function (A, C) {
     var B = document.createElement("img");
     B.setAttribute("src", A);
-    if (C != null) {
-        B.style.verticalAlign = C;
-    }
+    if (C != null) B.style.verticalAlign = C;
+
     return B;
 };
 SimileAjax.Graphics._createTranslucentImage2 = function (A, C) {
@@ -3508,12 +3227,8 @@ SimileAjax.Graphics.bubbleConfig = {
     extraPadding: 20
 };
 SimileAjax.Graphics.createBubbleForContentAndPoint = function (F, D, C, A, B, E) {
-    if (typeof A != "number") {
-        A = 300;
-    }
-    if (typeof E != "number") {
-        E = 0;
-    }
+    if (typeof A != "number") A = 300;
+    if (typeof E != "number") E = 0;
     F.style.position = "absolute";
     F.style.left = "-5000px";
     F.style.top = "0px";
@@ -3788,9 +3503,8 @@ SimileAjax.Graphics._FontRenderingContext = function (A, B) {
     if (typeof B == "string") {
         this._elmt.style.width = B;
     } else {
-        if (typeof B == "number") {
-            this._elmt.style.width = B + "px";
-        }
+        if (typeof B == "number") this._elmt.style.width = B + "px";
+
     }
 };
 SimileAjax.Graphics._FontRenderingContext.prototype.dispose = function () {
@@ -3811,8 +3525,6 @@ SimileAjax.Graphics._FontRenderingContext.prototype.computeSize = function (D, C
 SimileAjax.Graphics._FontRenderingContext.prototype.getLineHeight = function () {
     return this._lineHeight;
 };
-
-
 /* history.js */
 SimileAjax.History = {
     maxHistoryLength: 10,
@@ -3829,9 +3541,7 @@ SimileAjax.History.formatHistoryEntryTitle = function (A) {
     return SimileAjax.History._plainDocumentTitle + " {" + A + "}";
 };
 SimileAjax.History.initialize = function () {
-    if (SimileAjax.History._initialized) {
-        return;
-    }
+    if (SimileAjax.History._initialized) return;
     if (SimileAjax.History.enabled) {
         var A = document.createElement("iframe");
         A.id = "simile-ajax-history";
@@ -3954,8 +3664,6 @@ SimileAjax.History.getNextRedoAction = function () {
         return null;
     }
 };
-
-
 /* html.js */
 SimileAjax.HTML = new Object();
 SimileAjax.HTML._e2uHash = {};
@@ -4223,8 +3931,6 @@ SimileAjax.HTML.deEntify = function (C) {
     }
     return C;
 };
-
-
 /* json.js */
 SimileAjax.JSON = new Object();
 (function () {
@@ -4240,9 +3946,7 @@ SimileAjax.JSON = new Object();
                 if (f) {
                     v = f(v);
                     if (typeof v == "string") {
-                        if (b) {
-                            a[a.length] = ",";
-                        }
+                        if (b) a[a.length] = ",";
                         a[a.length] = v;
                         b = true;
                     }
@@ -4258,9 +3962,7 @@ SimileAjax.JSON = new Object();
             return isFinite(x) ? String(x) : "null";
         }, object: function (x) {
             if (x) {
-                if (x instanceof Array) {
-                    return s.array(x);
-                }
+                if (x instanceof Array) return s.array(x);
                 var a = ["{"], b, f, i, v;
                 for (i in x) {
                     v = x[i];
@@ -4268,9 +3970,7 @@ SimileAjax.JSON = new Object();
                     if (f) {
                         v = f(v);
                         if (typeof v == "string") {
-                            if (b) {
-                                a[a.length] = ",";
-                            }
+                            if (b) a[a.length] = ",";
                             a.push(s.string(i), ":", v);
                             b = true;
                         }
@@ -4284,9 +3984,7 @@ SimileAjax.JSON = new Object();
             if (/["\\\x00-\x1f]/.test(x)) {
                 x = x.replace(/([\x00-\x1f\\"])/g, function (a, b) {
                     var c = m[b];
-                    if (c) {
-                        return c;
-                    }
+                    if (c) return c;
                     c = b.charCodeAt();
                     return "\\u00" + Math.floor(c / 16).toString(16) + (c % 16).toString(16);
                 });
@@ -4313,8 +4011,6 @@ SimileAjax.JSON = new Object();
         }
     };
 })();
-
-
 /* string.js */
 String.prototype.trim = function () {
     return this.replace(/^\s+|\s+$/g, "");
@@ -4347,13 +4043,10 @@ String.substitute = function (B, D) {
             }
         }
     }
-    if (F < B.length) {
-        A += B.substring(F);
-    }
+    if (F < B.length) A += B.substring(F);
+
     return A;
 };
-
-
 /* units.js */
 SimileAjax.NativeDateUnit = new Object();
 SimileAjax.NativeDateUnit.makeDefaultValue = function () {
@@ -4363,9 +4056,8 @@ SimileAjax.NativeDateUnit.cloneValue = function (A) {
     return new Date(A.getTime());
 };
 SimileAjax.NativeDateUnit.getParser = function (A) {
-    if (typeof A == "string") {
-        A = A.toLowerCase();
-    }
+    if (typeof A == "string") A = A.toLowerCase();
+
     return (A == "iso8601" || A == "iso 8601") ? SimileAjax.DateTime.parseIso8601DateTime : SimileAjax.DateTime.parseGregorianDateTime;
 };
 SimileAjax.NativeDateUnit.parseFromObject = function (A) {
@@ -4400,14 +4092,10 @@ SimileAjax.NativeDateUnit.later = function (B, A) {
 SimileAjax.NativeDateUnit.change = function (A, B) {
     return new Date(A.getTime() + B);
 };
-
-
 /* window-manager.js */
 SimileAjax.WindowManager = {_initialized: false, _listeners: [], _draggedElement: null, _draggedElementCallback: null, _dropTargetHighlightElement: null, _lastCoords: null, _ghostCoords: null, _draggingMode: "", _dragging: false, _layers: []};
 SimileAjax.WindowManager.initialize = function () {
-    if (SimileAjax.WindowManager._initialized) {
-        return;
-    }
+    if (SimileAjax.WindowManager._initialized) return;
     SimileAjax.DOM.registerEvent(document.body, "mousedown", SimileAjax.WindowManager._onBodyMouseDown);
     SimileAjax.DOM.registerEvent(document.body, "mousemove", SimileAjax.WindowManager._onBodyMouseMove);
     SimileAjax.DOM.registerEvent(document.body, "mouseup", SimileAjax.WindowManager._onBodyMouseUp);
@@ -4442,9 +4130,8 @@ SimileAjax.WindowManager.registerEventWithObject = function (D, A, E, B, C) {
     }, C);
 };
 SimileAjax.WindowManager.registerEvent = function (D, B, E, C) {
-    if (C == null) {
-        C = SimileAjax.WindowManager.getHighestLayer();
-    }
+    if (C == null) C = SimileAjax.WindowManager.getHighestLayer();
+
     var A = function (G, F, I) {
         if (SimileAjax.WindowManager._canProcessEventAtLayer(C)) {
             SimileAjax.WindowManager._popToLayer(C.index);
@@ -4486,17 +4173,13 @@ SimileAjax.WindowManager._popToLayer = function (C) {
     while (C + 1 < SimileAjax.WindowManager._layers.length) {
         try {
             var A = SimileAjax.WindowManager._layers.pop();
-            if (A.onPop != null) {
-                A.onPop();
-            }
+            if (A.onPop != null) A.onPop();
         } catch (B) {
         }
     }
 };
 SimileAjax.WindowManager._canProcessEventAtLayer = function (B) {
-    if (B.index == (SimileAjax.WindowManager._layers.length - 1)) {
-        return true;
-    }
+    if (B.index == (SimileAjax.WindowManager._layers.length - 1)) return true;
     for (var A = B.index + 1;
          A < SimileAjax.WindowManager._layers.length;
          A++) {
@@ -4514,9 +4197,7 @@ SimileAjax.WindowManager.cancelPopups = function (A) {
         if (D.elmt != null) {
             var C = D.elmt;
             var B = SimileAjax.DOM.getPageCoordinates(C);
-            if (F.x >= B.left && F.x < (B.left + C.offsetWidth) && F.y >= B.top && F.y < (B.top + C.offsetHeight)) {
-                break;
-            }
+            if (F.x >= B.left && F.x < (B.left + C.offsetWidth) && F.y >= B.top && F.y < (B.top + C.offsetHeight)) break;
         }
         E--;
     }
@@ -4571,9 +4252,7 @@ SimileAjax.WindowManager._onBodyMouseMove = function (A, N, H) {
         if (!SimileAjax.WindowManager._dragging) {
             if (Math.abs(M) > 5 || Math.abs(J) > 5) {
                 try {
-                    if ("onDragStart" in P) {
-                        P.onDragStart();
-                    }
+                    if ("onDragStart" in P) P.onDragStart();
                     if ("ghost" in P && P.ghost) {
                         var K = SimileAjax.WindowManager._draggedElement;
                         SimileAjax.WindowManager._ghostCoords = SimileAjax.DOM.getPageCoordinates(K);
@@ -4599,9 +4278,7 @@ SimileAjax.WindowManager._onBodyMouseMove = function (A, N, H) {
         } else {
             try {
                 SimileAjax.WindowManager._lastCoords = {x: N.clientX, y: N.clientY};
-                if ("onDragBy" in P) {
-                    P.onDragBy(M, J);
-                }
+                if ("onDragBy" in P) P.onDragBy(M, J);
                 if ("_ghostElmt" in P) {
                     var O = P._ghostElmt;
                     SimileAjax.WindowManager._ghostCoords.left += M;
@@ -4625,9 +4302,7 @@ SimileAjax.WindowManager._onBodyMouseMove = function (A, N, H) {
                             }
                             var F = false;
                             if (H != null) {
-                                if ((!("canDropOn" in P) || P.canDropOn(H)) && (!("canDrop" in H) || H.canDrop(SimileAjax.WindowManager._draggedElement))) {
-                                    F = true;
-                                }
+                                if ((!("canDropOn" in P) || P.canDropOn(H)) && (!("canDrop" in H) || H.canDrop(SimileAjax.WindowManager._draggedElement))) F = true;
                             }
                             if (F) {
                                 var C = 4;
@@ -4662,22 +4337,16 @@ SimileAjax.WindowManager._onBodyMouseUp = function (B, A, C) {
         try {
             if (SimileAjax.WindowManager._dragging) {
                 var E = SimileAjax.WindowManager._draggedElementCallback;
-                if ("onDragEnd" in E) {
-                    E.onDragEnd();
-                }
+                if ("onDragEnd" in E) E.onDragEnd();
                 if ("droppable" in E && E.droppable) {
                     var D = false;
                     var C = SimileAjax.WindowManager._potentialDropTarget;
                     if (C != null) {
                         if ((!("canDropOn" in E) || E.canDropOn(C)) && (!("canDrop" in C) || C.canDrop(SimileAjax.WindowManager._draggedElement))) {
-                            if ("onDropOn" in E) {
-                                E.onDropOn(C);
-                            }
+                            if ("onDropOn" in E) E.onDropOn(C);
                             C.ondrop(SimileAjax.WindowManager._draggedElement, SimileAjax.WindowManager._draggingMode);
                             D = true;
                         }
-                    }
-                    if (!D) {
                     }
                 }
             }
@@ -4714,15 +4383,11 @@ SimileAjax.WindowManager._cancelDragging = function () {
 };
 SimileAjax.WindowManager._findDropTarget = function (A) {
     while (A != null) {
-        if ("ondrop" in A && (typeof A.ondrop) == "function") {
-            break;
-        }
+        if ("ondrop" in A && (typeof A.ondrop) == "function") break;
         A = A.parentNode;
     }
     return A;
 };
-
-
 /* xmlhttp.js */
 SimileAjax.XmlHttp = new Object();
 SimileAjax.XmlHttp._onReadyStateChange = function (A, D, B) {
@@ -4730,13 +4395,10 @@ SimileAjax.XmlHttp._onReadyStateChange = function (A, D, B) {
         case 4:
             try {
                 if (A.status == 0 || A.status == 200) {
-                    if (B) {
-                        B(A);
-                    }
+                    if (B) B(A);
                 } else {
-                    if (D) {
-                        D(A.statusText, A.status, A);
-                    }
+                    if (D) D(A.statusText, A.status, A);
+
                 }
             } catch (C) {
                 SimileAjax.Debug.exception("XmlHttp: Error handling onReadyStateChange", C);

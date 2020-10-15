@@ -14,9 +14,8 @@ function checkForCitations(string $id, string $tree): array {
     $result = tng_query($query) or die ($text . ": $query");
     $citations = [];
     while ($citation = tng_fetch_assoc($result)) {
-        if (!$citation['eventID']) {
-            $citation['eventID'] = "general";
-        }
+        if (!$citation['eventID']) $citation['eventID'] = "general";
+
         $citations[$citation['eventID']] = "*";
     }
     tng_free_result($result);

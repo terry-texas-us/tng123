@@ -117,9 +117,8 @@ var tnglitbox;
                         that._adjustMaxNumberOfFiles(-data.files.length);
                         data.maxNumberOfFilesAdjusted = true;
                     }
-                    if (!that._validate(data.files)) {
-                        return false;
-                    }
+                    if (!that._validate(data.files)) return false;
+
                 }
                 if (data.context && data.dataType &&
                     data.dataType.substr(0, 6) === 'iframe') {
@@ -149,9 +148,8 @@ var tnglitbox;
                         var file = files[index] ||
                             {error: 'Empty file upload result'},
                             deferred = that._addFinishedDeferreds();
-                        if (file.error) {
-                            that._adjustMaxNumberOfFiles(1);
-                        }
+                        if (file.error) that._adjustMaxNumberOfFiles(1);
+
                         that._transition($(this)).done(
                             function () {
                                 var node = $(this);
@@ -339,9 +337,8 @@ var tnglitbox;
         },
 
         _addFinishedDeferreds: function (deferred) {
-            if (!deferred) {
-                deferred = $.Deferred();
-            }
+            if (!deferred) deferred = $.Deferred();
+
             this._finishedUploads.push(deferred);
             return deferred;
         },
@@ -387,31 +384,24 @@ var tnglitbox;
         },
 
         _formatFileSize: function (bytes) {
-            if (typeof bytes !== 'number') {
-                return '';
-            }
+            if (typeof bytes !== 'number') return '';
             if (bytes >= 1000000000) {
                 return (bytes / 1000000000).toFixed(2) + ' GB';
             }
-            if (bytes >= 1000000) {
-                return (bytes / 1000000).toFixed(2) + ' MB';
-            }
+            if (bytes >= 1000000) return (bytes / 1000000).toFixed(2) + ' MB';
+
             return (bytes / 1000).toFixed(2) + ' KB';
         },
 
         _formatBitrate: function (bits) {
-            if (typeof bits !== 'number') {
-                return '';
-            }
+            if (typeof bits !== 'number') return '';
             if (bits >= 1000000000) {
                 return (bits / 1000000000).toFixed(2) + ' Gbit/s';
             }
-            if (bits >= 1000000) {
-                return (bits / 1000000).toFixed(2) + ' Mbit/s';
-            }
-            if (bits >= 1000) {
-                return (bits / 1000).toFixed(2) + ' kbit/s';
-            }
+            if (bits >= 1000000) return (bits / 1000000).toFixed(2) + ' Mbit/s';
+
+            if (bits >= 1000) return (bits / 1000).toFixed(2) + ' kbit/s';
+
             return bits.toFixed(2) + ' bit/s';
         },
 
@@ -442,9 +432,8 @@ var tnglitbox;
         },
 
         _hasError: function (file) {
-            if (file.error) {
-                return file.error;
-            }
+            if (file.error) return file.error;
+
             // The number of added files is subtracted from
             // maxNumberOfFiles before validation, so we check if
             // maxNumberOfFiles is below 0 (instead of below 1):
@@ -474,25 +463,21 @@ var tnglitbox;
                 valid = !!files.length;
             $.each(files, function (index, file) {
                 file.error = that._hasError(file);
-                if (file.error) {
-                    valid = false;
-                }
+                if (file.error) valid = false;
+
             });
             return valid;
         },
 
         _renderTemplate: function (func, files) {
-            if (!func) {
-                return $();
-            }
+            if (!func) return $();
             var result = func({
                 files: files,
                 formatFileSize: this._formatFileSize,
                 options: this.options
             });
-            if (result instanceof $) {
-                return result;
-            }
+            if (result instanceof $) return result;
+
             return $(this.options.templatesContainer).html(result).children();
         },
 
@@ -796,9 +781,8 @@ var tnglitbox;
 
         enable: function () {
             var wasDisabled = false;
-            if (this.options.disabled) {
-                wasDisabled = true;
-            }
+            if (this.options.disabled) wasDisabled = true;
+
             this._super();
             if (wasDisabled) {
                 this.element.find('input, button').prop('disabled', false);

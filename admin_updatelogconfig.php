@@ -24,9 +24,8 @@ if ($link) {
 require "adminlog.php";
 
 $fp = @fopen("config/logconfig.php", "w", 1);
-if (!$fp) {
-    die ($admtext['cannotopen'] . " logconfig.php");
-}
+if (!$fp) die ($admtext['cannotopen'] . " logconfig.php");
+
 
 flock($fp, LOCK_EX);
 
@@ -46,15 +45,13 @@ flock($fp, LOCK_UN);
 fclose($fp);
 
 $fp = fopen($rootpath . $logname, "c");
-if (!$fp) {
-    die ("{$admtext['cannotopen']} $logname");
-}
+if (!$fp) die ("{$admtext['cannotopen']} $logname");
+
 fclose($fp);
 
 $fp = fopen($rootpath . $adminlogfile, "c");
-if (!$fp) {
-    die ("{$admtext['cannotopen']} $adminlogfile");
-}
+if (!$fp) die ("{$admtext['cannotopen']} $adminlogfile");
+
 fclose($fp);
 
 adminwritelog($admtext['modifylogsettings']);

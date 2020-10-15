@@ -210,16 +210,13 @@ class modeditor extends modparser
     public function update_parameter($param) {
 
         while (empty($param['quot'])) {
-            if (is_numeric($param['val']) && is_numeric($param['def'])) {
-                break;
-            }
+            if (is_numeric($param['val']) && is_numeric($param['def'])) break;
+
             $val = strtolower($param['val']);
             $def = strtolower($param['def']);
 
             if ($def == 'true' || $def == 'false') {
-                if ($val == 'true' || $val == 'false') {
-                    break;
-                }
+                if ($val == 'true' || $val == 'false') break;
             }
 
             if ($param['def'] != '') {
@@ -337,18 +334,12 @@ class modeditor extends modparser
     public function restore_parameter($param) {
 
         while (empty($param['quot'])) {
-            if (is_numeric($param['val']) && is_numeric($param['def'])) {
-                break;
-            }
+            if (is_numeric($param['val']) && is_numeric($param['def'])) break;
             $val = strtolower($param['val']);
             $def = strtolower($param['def']);
-
             if ($def == 'true' || $def == 'false') {
-                if ($val == 'true' || $val == 'false') {
-                    break;
-                }
+                if ($val == 'true' || $val == 'false') break;
             }
-
             if ($param['def'] != '') {
                 $param['val'] = $param['def'];
                 break;

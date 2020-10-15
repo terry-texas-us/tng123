@@ -12,9 +12,8 @@ function buildTemplateArray(mysqli_result $result) {
     $tmp = [];
     while ($row = tng_fetch_assoc($result)) {
         $key = "t" . $row['template'] . "_" . $row['keyname'];
-        if ($row['language']) {
-            $key .= "_" . $row['language'];
-        }
+        if ($row['language']) $key .= "_" . $row['language'];
+
         $tmp[$key] = $row['value'];
     }
     tng_free_result($result);

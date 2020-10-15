@@ -222,9 +222,8 @@ if ($secondpersonID) {
 }
 $secondpersonID = strtoupper($secondpersonID);
 
-if ($altprimarypersonID) {
-    $primarypersonID = $altprimarypersonID;
-}
+if ($altprimarypersonID) $primarypersonID = $altprimarypersonID;
+
 
 if (is_numeric($primarypersonID)) {
     $primarypersonID = $tngconfig['personprefix'] . $primarypersonID . $tngconfig['personsuffix'];
@@ -283,9 +282,8 @@ if (file_exists("img/Chart.gif")) {
     $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
 }
 $pedigree['phototree'] = $tree;
-if ($tree) {
-    $pedigree['phototree'] .= ".";
-}
+if ($tree) $pedigree['phototree'] .= ".";
+
 
 if ($pedigree['usepopups'] == 1) {
     $pedigree['display'] = "standard";
@@ -436,9 +434,8 @@ function doMultSpouse($prispouse1, $prispouse2, $otherspouse) {
 function finishRelationship($couple) {
     global $pedigree, $totalRelationships, $needmore, $gens, $maxrels, $session_norels;
 
-    if ($totalRelationships) {
-        echo "<hr><br><br>\n";
-    }
+    if ($totalRelationships) echo "<hr><br><br>\n";
+
 
     echo "<div id=\"tngchart\" align=\"left\" style=\"position:relative;\">\n";
 
@@ -495,15 +492,13 @@ function finishRelationship($couple) {
         $pedigree['leftindent'] = $saveindent;
     }
 
-    if (!$session_norels) {
-        $gens->printRelationshipSentence();
-    }
+    if (!$session_norels) $gens->printRelationshipSentence();
+
 
     $gens->reset();
     $totalRelationships++;
-    if ($totalRelationships >= $maxrels) {
-        $needmore = false;
-    }
+    if ($totalRelationships >= $maxrels) $needmore = false;
+
 
     echo "</div>\n";
 }
@@ -633,9 +628,8 @@ function checkpersonup($nextcouple) {
             $nextcouple = $gens->uplist[$gensup][$gens->upptr];
         }
 
-        if ($nextcouple) {
-            checkpersonup($nextcouple);
-        }
+        if ($nextcouple) checkpersonup($nextcouple);
+
     }
 }
 
@@ -731,29 +725,16 @@ function checkpersondown($checkpersonID) {
 
 function getColor($shifts) {
     global $pedigree;
-
     $shiftval = $shifts * $pedigree['colorshift'];
     $R = $pedigree['baseR'] + $shiftval;
     $G = $pedigree['baseG'] + $shiftval;
     $B = $pedigree['baseB'] + $shiftval;
-    if ($R > 255) {
-        $R = 255;
-    }
-    if ($R < 0) {
-        $R = 0;
-    }
-    if ($G > 255) {
-        $G = 255;
-    }
-    if ($G < 0) {
-        $G = 0;
-    }
-    if ($B > 255) {
-        $B = 255;
-    }
-    if ($B < 0) {
-        $B = 0;
-    }
+    if ($R > 255) $R = 255;
+    if ($R < 0) $R = 0;
+    if ($G > 255) $G = 255;
+    if ($G < 0) $G = 0;
+    if ($B > 255) $B = 255;
+    if ($B < 0) $B = 0;
     $R = str_pad(dechex($R), 2, "0", STR_PAD_LEFT);
     $G = str_pad(dechex($G), 2, "0", STR_PAD_LEFT);
     $B = str_pad(dechex($B), 2, "0", STR_PAD_LEFT);
@@ -785,9 +766,8 @@ $innermenu = $text['rels'] . ": &nbsp;";
 $innermenu .= "<select name=\"maxrels\" class=\"verysmall\">\n";
 for ($i = 1; $i <= $pedigree['maxrels']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $maxrels) {
-        $innermenu .= " selected";
-    }
+    if ($i == $maxrels) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
@@ -795,14 +775,12 @@ $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 $innermenu .= $text['dospouses2'] . ": &nbsp;";
 $innermenu .= "<select name=\"disallowspouses\" class=\"verysmall\">\n";
 $innermenu .= "<option value='0'";
-if (!$disallowspouses) {
-    $innermenu .= " selected";
-}
+if (!$disallowspouses) $innermenu .= " selected";
+
 $innermenu .= ">{$admtext['yes']}</option>\n";
 $innermenu .= "<option value='1'";
-if ($disallowspouses) {
-    $innermenu .= " selected";
-}
+if ($disallowspouses) $innermenu .= " selected";
+
 $innermenu .= ">{$admtext['no']}</option>\n";
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 
@@ -810,9 +788,8 @@ $innermenu .= $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\">\n";
 for ($i = 1; $i <= $pedigree['maxupgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";

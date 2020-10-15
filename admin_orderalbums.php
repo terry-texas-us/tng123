@@ -40,9 +40,8 @@ switch ($linktype) {
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['source']}: $personID";
-        if ($person['title']) {
-            $namestr .= ", " . $person['title'];
-        }
+        if ($person['title']) $namestr .= ", " . $person['title'];
+
         $person['branch'] = "";
         tng_free_result($result2);
         break;
@@ -51,9 +50,8 @@ switch ($linktype) {
         $result2 = tng_query($query);
         $person = tng_fetch_assoc($result2);
         $namestr = "{$admtext['repository']}: $personID";
-        if ($person['reponame']) {
-            $namestr .= ", " . $person['reponame'];
-        }
+        if ($person['reponame']) $namestr .= ", " . $person['reponame'];
+
         $person['branch'] = "";
         tng_free_result($result2);
         break;
@@ -77,9 +75,8 @@ $photo = "";
 $query = "SELECT alwayson, thumbpath, $media_table.mediaID AS mediaID, usecollfolder, mediatypeID, medialinkID FROM ($media_table, $medialinks_table)
 	WHERE personID = \"$personID\" AND $medialinks_table.gedcom = '$tree' AND $media_table.mediaID = $medialinks_table.mediaID AND defphoto = '1'";
 $result = tng_query($query);
-if ($result) {
-    $row = tng_fetch_assoc($result);
-}
+if ($result) $row = tng_fetch_assoc($result);
+
 $thismediatypeID = $row['mediatypeID'];
 $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$thismediatypeID] : $mediapath;
 tng_free_result($result);

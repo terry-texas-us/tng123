@@ -4,16 +4,13 @@ $textpart = "pedigree";
 include "tng_begin.php";
 
 include "config/pedconfig.php";
-if (!$personID) {
-    die("no args");
-}
+if (!$personID) die("no args");
 
-if (isset($generations)) {
-    $generations = intval($generations);
-}
-if (isset($parentset)) {
-    $parentset = intval($parentset);
-}
+
+if (isset($generations)) $generations = intval($generations);
+
+if (isset($parentset)) $parentset = intval($parentset);
+
 
 function showBlank($pedborder) {
     echo "<td $pedborder><span class='normal'>&nbsp;</span></td>\n";
@@ -49,9 +46,8 @@ function displayIndividual($key, $generation, $slot) {
         }
     }
 
-    if ($slot > 1 && $slot % 2 != 0) {
-        echo "</tr>\n<tr>\n";
-    }
+    if ($slot > 1 && $slot % 2 != 0) echo "</tr>\n<tr>\n";
+
 
     $rowspan = pow(2, $generations - $generation);
     if ($rowspan == 1) {
@@ -186,20 +182,17 @@ function displayIndividual($key, $generation, $slot) {
             if ($parents) {
                 $parentscount = tng_num_rows($parents);
                 if ($parentscount > 0) {
-                    if ($locparentset > $parentscount) {
-                        $locparentset = $parentscount;
-                    }
+                    if ($locparentset > $parentscount) $locparentset = $parentscount;
+
                     $i = 0;
                     while ($parentrow = tng_fetch_assoc($parents)) {
                         $i++;
-                        if ($i == $locparentset) {
-                            $parentfamID = $parentrow['familyID'];
-                        }
+                        if ($i == $locparentset) $parentfamID = $parentrow['familyID'];
+
                         $parentfamIDs[$i] = $parentrow['familyID'];
                     }
-                    if (!$parentfamID) {
-                        $parentfamID = $row['famc'];
-                    }
+                    if (!$parentfamID) $parentfamID = $row['famc'];
+
                 }
                 tng_free_result($parents);
             }
@@ -245,9 +238,8 @@ $disallowgedcreate = $treerow['disallowgedcreate'];
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
-if (!$pedigree['maxgen']) {
-    $pedigree['maxgen'] = 6;
-}
+if (!$pedigree['maxgen']) $pedigree['maxgen'] = 6;
+
 if ($generations > $pedigree['maxgen']) {
     $generations = intval($pedigree['maxgen']);
 } elseif (!$generations) {
@@ -277,9 +269,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";

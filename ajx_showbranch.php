@@ -41,9 +41,8 @@ header("Content-type:text/html; charset=" . $session_charset);
     $brresult = tng_query($query);
     $numfresults = tng_num_rows($brresult);
 
-    if ($numresults) {
-        $names .= "<br>\n";
-    }
+    if ($numresults) $names .= "<br>\n";
+
     while ($row = tng_fetch_assoc($brresult)) {
         $rights = determineLivingPrivateRights($row, true, true);
         $row['allow_living'] = $rights['living'];

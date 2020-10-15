@@ -41,11 +41,9 @@ function setMediaType($newtype) {
 function initMediaTypes() {
     global $photopath, $documentpath, $headstonepath, $historypath, $mediapath, $mediatypes_table, $mediatypes;
 
-    if (count($mediatypes)) {
-        return;
-    }
+    if (count($mediatypes)) return;
 
-    if (!isset($mediatypes_table)) return;
+if (!isset($mediatypes_table)) return;
     $query = "SELECT * FROM $mediatypes_table ORDER BY ordernum, display";
     $result = @tng_query($query);
 

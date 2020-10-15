@@ -5,9 +5,8 @@ if ($result2) {
     $oldlinks = 0;
     while ($plink = tng_fetch_assoc($result2)) {
         $oldlinks++;
-        if (!$usetree) {
-            $usetree = $plink['gedcom'];
-        }
+        if (!$usetree) $usetree = $plink['gedcom'];
+
         $rights = determineLivingPrivateRights($plink);
         $plink['allow_living'] = $rights['living'];
         $plink['allow_private'] = $rights['private'];
@@ -38,9 +37,8 @@ if ($result2) {
             $wifename = getName($wife);
 
             if ($wifename) {
-                if ($name) {
-                    $name .= ", ";
-                }
+                if ($name) $name .= ", ";
+
                 $name .= $wifename;
             }
             $entityID = $plink['familyID'];
@@ -162,10 +160,6 @@ if ($result2) {
         </tbody>
     </table>
     <div id="nolinks" class="normal" style="margin-left:3px;">
-        <?php
-        if (!$oldlinks) {
-            echo $admtext['nolinks'];
-        }
-        ?>
+        <?php if (!$oldlinks) echo $admtext['nolinks']; ?>
     </div>
 </div>

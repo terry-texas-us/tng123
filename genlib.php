@@ -9,9 +9,8 @@ checkMaintenanceMode(0);
 if (!empty($needMap)) {
     include "config/mapconfig.php";
     $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
-    if ($map['key']) {
-        include_once "googlemaplib.php";
-    }
+    if ($map['key']) include_once "googlemaplib.php";
+
 }
 $flags = [];
 @include "tngrobots.php";
@@ -25,9 +24,8 @@ $newbrowser = preg_match("/msie/", $http_user_agent) && preg_match("/mac/", $htt
 $gotlastpage = false;
 $flags['error'] = $error;
 
-if (empty($tree)) {
-    $tree = "";
-}
+if (empty($tree)) $tree = "";
+
 if ($requirelogin && $treerestrict && $_SESSION['assignedtree']) {
     if (!$tree) {
         $tree = $_SESSION['assignedtree'];
@@ -182,9 +180,8 @@ function tng_footer($flags = ['basicfooter' => true]) {
     if ($tngprint) {
         $printfooter = $sitename;
         if ($dbowner) {
-            if ($printfooter) {
-                $printfooter .= " - ";
-            }
+            if ($printfooter) $printfooter .= " - ";
+
             if ($tngconfig['dataprotect'] && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
                 $data_protection_link = " | <a href='data_protection_policy.php' class='footer' title='{$text['dataprotect']}' target='_blank'>{$text['dataprotect']}</a>.\n";
             } else {
@@ -211,12 +208,10 @@ function tng_footer($flags = ['basicfooter' => true]) {
         }
     }
     if ($needtherest) {
-        if (isset($flags['more'])) {
-            echo $flags['more'];
-        }
-        if (!$tngprint) {
-            echo "<script src='js/litbox.js'></script>\n";
-        }
+        if (isset($flags['more'])) echo $flags['more'];
+
+        if (!$tngprint) echo "<script src='js/litbox.js'></script>\n";
+
         if (!empty($map['key']) && !empty($map['pins'])) {
             tng_map_pins();
         }
@@ -373,9 +368,8 @@ function getSurnameOnly($row) {
     $nonames = showNames($row);
     if ($row['allow_living'] || $nonames != 1) {
         $namestr = trim($row['lnprefix'] . " " . $row['lastname']);
-        if ($tngconfig['ucsurnames']) {
-            $namestr = tng_strtoupper($namestr);
-        }
+        if ($tngconfig['ucsurnames']) $namestr = tng_strtoupper($namestr);
+
     } elseif ($row['private']) {
         $namestr = $admtext['text_private'];
     } else {
@@ -444,9 +438,8 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
             $choices .= doMenuItem($nexttab++, "showrepo.php?repoID=$entityID&amp;tree=$tree", "ged", $text['repository'], $currpage, "repo");
             $editstr = "admin_editrepo.php?repo";
         } elseif ($enttype == "D") {
-            if (!$_SESSION["ttree"]) {
-                $_SESSION["ttree"] = "-x--all--x-";
-            }
+            if (!$_SESSION["ttree"]) $_SESSION["ttree"] = "-x--all--x-";
+
             $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $_SESSION["ttree"] . "&amp;test_type=" . $_SESSION["ttype"] . "&amp;test_group=" . $_SESSION["tgroup"] . "&amp;testsearch=" . $_SESSION["tsearch"];
             $choices .= doMenuItem($nexttab++, "$browse_dna_tests_url", "ged", $text['all_dna_tests'], $currpage, "alldna");
             $choices .= doMenuItem($nexttab++, "show_dna_test.php?testID=$entityID", "ged", $text['dna_test'], $currpage, "dna");
@@ -598,9 +591,8 @@ function tng_getFindMenu() {
     $tngconfig['menucount'] += 8;
 
     global $findmenulinks;
-    if (isset($findmenulinks)) {
-        $menu .= custom_links($findmenulinks);
-    }
+    if (isset($findmenulinks)) $menu .= custom_links($findmenulinks);
+
 
     return $menu;
 }
@@ -623,9 +615,8 @@ function tng_getMediaMenu() {
     $tngconfig['menucount'] += 2;
 
     global $mediamenulinks;
-    if (isset($mediamenulinks)) {
-        $menu .= custom_links($mediamenulinks);
-    }
+    if (isset($mediamenulinks)) $menu .= custom_links($mediamenulinks);
+
 
     return $menu;
 }
@@ -658,9 +649,8 @@ function tng_getInfoMenu($title) {
     $tngconfig['menucount'] += 10;  //everything except the 2 admin links
 
     global $infomenulinks;
-    if (isset($infomenulinks)) {
-        $menu .= custom_links($infomenulinks);
-    }
+    if (isset($infomenulinks)) $menu .= custom_links($infomenulinks);
+
 
     return $menu;
 }
@@ -794,9 +784,8 @@ function tng_mobileicons($title) {
         $tngconfig['mmenustyle'] .= get_menustyle("info", $tngconfig['menucount']);
     }
     $tngconfig['menucount'] = 0;
-    if (isset($custommobilemenu)) {
-        eval($custommobilemenu);
-    }
+    if (isset($custommobilemenu)) eval($custommobilemenu);
+
     elseif (isset($custmenu)) {
         $items = custom_links($custommenulinks);
         $menuitems .= custom_menu($custmenu, $items, true);
@@ -879,9 +868,8 @@ function tng_icons($instance, $title = "") {
 
         $outermenu = $rightmenu = "";
 
-        if ($tngconfig['menu'] != 1) {
-            $outermenu .= $left_icons;
-        }
+        if ($tngconfig['menu'] != 1) $outermenu .= $left_icons;
+
 
         if ($menu) {
             $outermenu .= "<ul class='tngdd $iconalign' id='tngdd'>\n";
@@ -931,9 +919,8 @@ function tng_icons($instance, $title = "") {
             }
         }
 
-        if ($tngconfig['menu'] == 1) {
-            $fullmenu .= $left_icons;
-        }
+        if ($tngconfig['menu'] == 1) $fullmenu .= $left_icons;
+
 
         $sharemenu = "";
         if (!empty($tngconfig['showshare']) && !isMobile()) {
@@ -943,9 +930,8 @@ function tng_icons($instance, $title = "") {
             $sharemenu .= "<span class='st_twitter_hcount' displayText='Tweet'></span>\n";
             $sharemenu .= "<span class='st_pinterest_hcount' displayText='Pinterest'></span>\n";
             $sharemenu .= "<span class='st_googleplus_hcount' displayText='Google +'></span>\n";
-            if (isset($customshare)) {
-                eval($customshare);
-            }
+            if (isset($customshare)) eval($customshare);
+
             $sharemenu .= "</div>\n";
         }
 
@@ -1037,9 +1023,7 @@ function treeDropdown($forminfo) {
             if ($tree) {
                 $foundtree = true;
                 while ($row = tng_fetch_assoc($treeresult)) {
-                    if ($row['gedcom'] == $tree) {
-                        break;
-                    }
+                    if ($row['gedcom'] == $tree) break;
                 }
             }
         } else {
@@ -1080,16 +1064,14 @@ function treeSelect($treeresult, $formname = null, $onchange = null) {
     }
     $ret .= ">\n";
     $ret .= "<option value=\"-x--all--x-\" ";
-    if (!$tree) {
-        $ret .= "selected";
-    }
+    if (!$tree) $ret .= "selected";
+
     $ret .= ">{$text['alltrees']}</option>\n";
 
     while ($row = tng_fetch_assoc($treeresult)) {
         $ret .= "<option value=\"{$row['gedcom']}\"";
-        if ($tree && $row['gedcom'] == $tree) {
-            $ret .= " selected";
-        }
+        if ($tree && $row['gedcom'] == $tree) $ret .= " selected";
+
         $ret .= ">{$row['treename']}</option>\n";
     }
     $ret .= "</select>\n";
@@ -1153,9 +1135,8 @@ function insertLinks($notes) {
         $pos = 0;
         $notepos = [];
         while (($pos = strpos($notes, "http", $pos)) !== FALSE) {
-            if ($pos) {
-                $prevchar = substr($notes, $pos - 1, 1);
-            }
+            if ($pos) $prevchar = substr($notes, $pos - 1, 1);
+
             if ($pos == 0 || ($prevchar != "\"" && $prevchar != "=")) {
                 $notepos[] = $pos++;
             } else {
@@ -1203,9 +1184,8 @@ function getTemplateMessage($key) {
 function showLinks($linkList, $newtab = false, $class = null, $inner_html = null) {
     $links = explode("\r", $linkList);
     $finishedList = "";
-    if (count($links) == 1) {
-        $links = explode("\n", $linkList);
-    }
+    if (count($links) == 1) $links = explode("\n", $linkList);
+
     foreach ($links as $link) {
         $parts = explode(",", $link);
         $len = count($parts);
@@ -1225,9 +1205,8 @@ function showLinks($linkList, $newtab = false, $class = null, $inner_html = null
         }
         $target = $newtab ? " target='_blank'" : "";
         $finishedList .= "<li";
-        if ($class) {
-            $finishedList .= " class=\"$class\"";
-        }
+        if ($class) $finishedList .= " class=\"$class\"";
+
         if ($inner_html) {
             $html = preg_replace("/xxx/", $title, $inner_html);
         } else {
@@ -1308,32 +1287,23 @@ function custom_links($linkdefs) {
     $menustr = '';
     for ($i = 0; isset($linkdefs[$i]); $i++) {
         if (isset($linkdefs[$i]['admin']) && $linkdefs[$i]['admin']) {
-            if (!$allow_admin) {
-                continue;
-            }
+            if (!$allow_admin) continue;
             $query = "SELECT role FROM $users_table WHERE username='$currentuser'";
             $result = tng_query($query) or die("cannot execute query: $query");
             $row = tng_fetch_assoc($result);
-            if ($row['role'] != 'admin') {
-                continue;
-            }
+            if ($row['role'] != 'admin') continue;
         }
-
-        if (isset($linkdefs[$i]['user']) && $linkdefs[$i]['user'] === true && !$currentuser) {
-            continue;
-        }
+        if (isset($linkdefs[$i]['user']) && $linkdefs[$i]['user'] === true && !$currentuser) continue;
         if (!isset($linkdefs[$i]['target'])) continue;
         $target = $linkdefs[$i]['target'];
-
         // add options to target section
         if (!empty($linkdefs[$i]['tip_text'])) {
             $target .= "\" title=\"{$linkdefs[$i]['tip_text']}";
         } elseif (isset($linkdefs[$i]['tip_index'])) {
             $target .= "\" title=\"{$text[$linkdefs[$i]['tip_index']]}";
         }
-        if (isset($linkdefs[$i]['newwin'])) {
-            $target .= "\" target=\"_blank";
-        }
+        if (isset($linkdefs[$i]['newwin'])) $target .= "\" target=\"_blank";
+
         // set label for the link
         if (isset($linkdefs[$i]['label_text'])) {
             $label = $linkdefs[$i]['label_text'];
@@ -1351,12 +1321,10 @@ function custom_links($linkdefs) {
                 $literal = false;
             }
         }
-        if (empty($linkdefs[$i]['sprite'])) {
-            $linkdefs[$i]['sprite'] = '';
-        }
-        if (empty($linkdefs[$i]['icon'])) {
-            $linkdefs[$i]['icon'] = '';
-        }
+        if (empty($linkdefs[$i]['sprite'])) $linkdefs[$i]['sprite'] = '';
+
+        if (empty($linkdefs[$i]['icon'])) $linkdefs[$i]['icon'] = '';
+
         $menustr .= tngddrow(
             $target,
             $linkdefs[$i]['sprite'],

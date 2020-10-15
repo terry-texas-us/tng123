@@ -139,12 +139,10 @@ class UploadHandler
                 ]
             ]
         ];
-        if ($options) {
-            $this->options = array_merge($this->options, $options);
-        }
-        if ($initialize) {
-            $this->initialize();
-        }
+        if ($options) $this->options = array_merge($this->options, $options);
+
+        if ($initialize) $this->initialize();
+
     }
 
     protected function initialize() {
@@ -219,9 +217,8 @@ class UploadHandler
         }
         if ($this->options['download_via_php']) {
             $url = 'admin_mediauploader.php?file=' . rawurlencode($file_name);
-            if ($version) {
-                $url .= '&version=' . rawurlencode($version);
-            }
+            if ($version) $url .= '&version=' . rawurlencode($version);
+
             return $url . '&download=1';
         }
         $version_path = empty($version) ? '' : ($folder ? rawurlencode($folder) . '/' : "");
@@ -242,25 +239,22 @@ class UploadHandler
     // Fix for overflowing signed 32 bit integers,
     // works for sizes up to 2^32-1 bytes (4 GiB - 1):
     protected function fix_integer_overflow($size) {
-        if ($size < 0) {
-            $size += 2.0 * (PHP_INT_MAX + 1);
-        }
+        if ($size < 0) $size += 2.0 * (PHP_INT_MAX + 1);
+
         return $size;
     }
 
     protected function get_file_size($file_path, $clear_stat_cache = false) {
-        if ($clear_stat_cache) {
-            clearstatcache(true, $file_path);
-        }
+        if ($clear_stat_cache) clearstatcache(true, $file_path);
+
         return $this->fix_integer_overflow(filesize($file_path));
 
     }
 
     protected function is_valid_file_object($file_name) {
         $file_path = $this->get_upload_path($file_name);
-        if (is_file($file_path) && $file_name[0] !== '.') {
-            return true;
-        }
+        if (is_file($file_path) && $file_name[0] !== '.') return true;
+
         return false;
     }
 
@@ -291,9 +285,8 @@ class UploadHandler
 
     protected function get_file_objects($iteration_method = 'get_file_object') {
         $upload_dir = $this->get_upload_path();
-        if (!is_dir($upload_dir)) {
-            return [];
-        }
+        if (!is_dir($upload_dir)) return [];
+
         return array_values(array_filter(array_map(
             [$this, $iteration_method],
             scandir($upload_dir)
@@ -328,9 +321,8 @@ class UploadHandler
             $new_file_path = $file_path;
         }
         list($img_width, $img_height) = @getimagesize($file_path);
-        if (!$img_width || !$img_height) {
-            return false;
-        }
+        if (!$img_width || !$img_height) return false;
+
         $scale = min(
             $options['max_width'] / $img_width,
             $options['max_height'] / $img_height
@@ -510,9 +502,8 @@ class UploadHandler
             return false;
         }
         $exif = @exif_read_data($file_path);
-        if ($exif === false) {
-            return false;
-        }
+        if ($exif === false) return false;
+
         $orientation = intval(@$exif['Orientation']);
         if (!in_array($orientation, [3, 6, 8])) {
             return false;
@@ -574,9 +565,8 @@ class UploadHandler
             $file_size = $this->get_file_size($file_path, $append_file);
             $thumbpath = "";
             if ($file_size === $file->size) {
-                if ($this->options['orient_image']) {
-                    $this->orient_image($file_path);
-                }
+                if ($this->options['orient_image']) $this->orient_image($file_path);
+
                 $file->url = $this->get_download_url($file->name);
                 foreach ($this->options['image_versions'] as $version => $options) {
                     if ($this->create_scaled_image($file->name, $version, $options)) {
@@ -858,9 +848,8 @@ class UploadHandler
             foreach ($this->options['image_versions'] as $version => $options) {
                 if (!empty($version)) {
                     $file = $this->get_upload_path($file_name, $version, $options);
-                    if (is_file($file)) {
-                        unlink($file);
-                    }
+                    if (is_file($file)) unlink($file);
+
                 }
             }
         }
@@ -879,9 +868,8 @@ if ($lastslash !== false) {
 }
 $endslash = strpos($tngdomain, strlen($tngdomain)) == "/" ? "" : "/";
 $mediafolder = $mediatypes_assoc[$mediatypeID];
-if ($folder) {
-    $mediafolder .= "/$folder";
-}
+if ($folder) $mediafolder .= "/$folder";
+
 $options = [
     'mediapath' => $rootpath . $endrootpath . $mediafolder . "/",
     'mediaurl' => $tngdomain . $endslash . $mediafolder . "/",

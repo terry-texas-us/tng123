@@ -6,9 +6,7 @@ include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";
-if (!$allow_edit && !$allow_add) {
-    exit;
-}
+if (!$allow_edit && !$allow_add) exit;
 
 require "adminlog.php";
 
@@ -16,18 +14,13 @@ if ($session_charset != "UTF-8") {
     $title = tng_utf8_decode($title);
     $description = tng_utf8_decode($description);
 }
-
 $title = addslashes($title);
 $description = addslashes($description);
-
 $cleaned = cleanIt($description);
 $truncated = substr($cleaned, 0, 90);
 $truncated = strlen($cleaned) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $cleaned;
 $cleantitle = cleanIt($title);
-if ($mediaID == "") {
-    $mediaID = 0;
-}
-
+if ($mediaID == "") $mediaID = 0;
 if ($ID) {
     $query = "UPDATE $mostwanted_table SET title=\"$title\", description=\"$description\", personID='$personID', mediaID=\"$mediaID\", gedcom=\"$mwtree\" WHERE ID='$ID'";
     $result = tng_query($query);

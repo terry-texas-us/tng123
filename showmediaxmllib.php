@@ -12,9 +12,8 @@ if ($medialinkID) {
     $ordernum = $row['ordernum'];
     $mediatypeID = $row['mediatypeID'];
     $linktype = $row['linktype'];
-    if ($linktype == "P") {
-        $linktype = "I";
-    }
+    if ($linktype == "P") $linktype = "I";
+
     $eventID = $row['eventID'];
 } else {
     if ($albumlinkID) {
@@ -37,15 +36,12 @@ if ($medialinkID) {
     }
 }
 //redirect if we're not supposed to be here
-if ($requirelogin && $treerestrict && $assignedtree && $row['gedcom'] && $row['gedcom'] != $assignedtree) {
-    exit;
-}
+if ($requirelogin && $treerestrict && $assignedtree && $row['gedcom'] && $row['gedcom'] != $assignedtree) exit;
 if (!tng_num_rows($result)) {
     tng_free_result($result);
     header("Location: thispagedoesnotexist.html");
     exit;
 }
-
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
 $ordernum = $info['ordernum'];
 $mediaID = $info['mediaID'];

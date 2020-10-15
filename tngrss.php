@@ -53,12 +53,10 @@ function doMedia($mediatypeID) {
         $foundprivate = 0;
         $hstext = "";
         while ($prow = tng_fetch_assoc($presult)) {
-            if ($prow['fbranch'] != NULL) {
-                $prow['branch'] = $prow['fbranch'];
-            }
-            if ($prow['fliving'] != NULL) {
-                $prow['living'] = $prow['fliving'];
-            }
+            if ($prow['fbranch'] != NULL) $prow['branch'] = $prow['fbranch'];
+
+            if ($prow['fliving'] != NULL) $prow['living'] = $prow['fliving'];
+
             if ($prow['fprivate'] != NULL) {
                 $prow['private'] = $prow['fprivate'];
             }
@@ -68,9 +66,8 @@ function doMedia($mediatypeID) {
                 $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
                 $presult2 = tng_query($query);
                 $prow2 = tng_fetch_assoc($presult2);
-                if ($prow2['ccount']) {
-                    $prow['living'] = 1;
-                }
+                if ($prow2['ccount']) $prow['living'] = 1;
+
                 tng_free_result($presult2);
             }
 
@@ -80,9 +77,8 @@ function doMedia($mediatypeID) {
             if ($prow['living'] && $livedefault != 2) {
                 $foundliving = 1;
             }
-            if ($prow['private']) {
-                $foundprivate = 1;
-            }
+            if ($prow['private']) $foundprivate = 1;
+
 
             if ($prow['personID2'] != NULL) {
                 $medialink = "getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}";
@@ -202,12 +198,10 @@ echo $item;
 //you will need to define $rsslang in your customconfig.php file before you can use this
 
 $text['pastxdays'] = preg_replace("/xx/", "$change_cutoff", $text['pastxdays']);
-if (!$change_cutoff) {
-    $change_cutoff = 0;
-}
-if (!$change_limit) {
-    $change_limit = 10;
-}
+if (!$change_cutoff) $change_cutoff = 0;
+
+if (!$change_limit) $change_limit = 10;
+
 $cutoffstr = $change_cutoff ? "TO_DAYS(NOW()) - TO_DAYS(changedate) <= $change_cutoff" : "1=1";
 
 if (!$personID && !$familyID) {             // only feed the changes when not monitoring an person or a family
@@ -226,9 +220,8 @@ if ($tree) {
 }
 
 $more = getLivingPrivateRestrictions("people", false, false);
-if ($more) {
-    $allwhere .= " AND " . $more;
-}
+if ($more) $allwhere .= " AND " . $more;
+
 
 if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a personID or the What's New
 //select from people where date later than cutoff, order by changedate descending, limit = 10

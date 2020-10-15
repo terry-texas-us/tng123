@@ -7,9 +7,8 @@ include "datelib.php";
 
 header('Content-Type: application/xml');
 echo "<?xml version=\"1.0\"";
-if ($session_charset) {
-    echo " encoding=\"$session_charset\"";
-}
+if ($session_charset) echo " encoding=\"$session_charset\"";
+
 echo "?>\n";
 echo "<data>\n";
 
@@ -19,20 +18,17 @@ $tlresult = tng_query($tlquery) or die ($text['cannotexecutequery'] . ": $tlquer
 $tlevents = [];
 $tlevents2 = [];
 while ($tlrow = tng_fetch_assoc($tlresult)) {
-    if ($tlrow['evday'] == "0") {
-        $tlrow['evday'] = "1";
-    }
-    if ($tlrow['evmonth'] == "0") {
-        $tlrow['evmonth'] = "1";
-    }
+    if ($tlrow['evday'] == "0") $tlrow['evday'] = "1";
+
+    if ($tlrow['evmonth'] == "0") $tlrow['evmonth'] = "1";
+
 
     $beg_date = strftime("%b %d " . $tlrow['evyear'], gmmktime(12, 0, 0, $tlrow['evmonth'], $tlrow['evday'], 2000));
     $beg_date_gmt = $beg_date . " GMT";
     $end_date = "";
     if ($tlrow['endyear']) {
-        if ($tlrow['endmonth'] == "0") {
-            $tlrow['endmonth'] = "12";
-        }
+        if ($tlrow['endmonth'] == "0") $tlrow['endmonth'] = "12";
+
         if ($tlrow['endday'] == "0") {
             $tlrow['endday'] = cal_days_in_month(CAL_GREGORIAN, $tlrow['endmonth'], $tlrow['endyear']);
         }
@@ -46,12 +42,10 @@ while ($tlrow = tng_fetch_assoc($tlresult)) {
         $isduration = "";
     }
     $date_info = $beg_date;
-    if ($end_date) {
-        $date_info .= " - $end_date";
-    }
-    if ($date_info) {
-        $date_info = " ($date_info)";
-    }
+    if ($end_date) $date_info .= " - $end_date";
+
+    if ($date_info) $date_info = " ($date_info)";
+
 
     $evtitle = $tlrow['evtitle'] ? $tlrow['evtitle'] : $tlrow['evdetail'];
     echo "<event start=\"" . $beg_date_gmt . "\" end=\"" . $end_date_gmt . "\" $isduration icon=\"img/red-circle.png\" title=\" " . htmlspecialchars($evtitle, ENT_QUOTES, $session_charset) . "\">" . htmlspecialchars($tlrow['evdetail'] . $date_info, ENT_QUOTES, $session_charset) . "</event>\n";

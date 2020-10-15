@@ -131,8 +131,7 @@ function updateHasKidsFamily($familyID) {
     if ($famrow['husband']) {
         updateHasKids($famrow['husband'], 'husband');
     }
-    if ($famrow['wife']) {
-        updateHasKids($famrow['wife'], 'wife');
-    }
+    if ($famrow['wife']) updateHasKids($famrow['wife'], 'wife');
+
 }
 

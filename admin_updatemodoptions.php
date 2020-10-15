@@ -31,9 +31,8 @@ if ($assignedtree || !$allow_edit) {
 }
 
 // when saving options revert to sort order specified in options
-if (isset($_SESSION['sortby'])) {
-    unset($_SESSION['sortby']);
-}
+if (isset($_SESSION['sortby'])) unset($_SESSION['sortby']);
+
 
 require "adminlog.php";
 $optionsfile = "config/mmconfig.php";

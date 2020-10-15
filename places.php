@@ -51,9 +51,8 @@ if ($result) {
     $initialchar = 1;
 
     while ($place = tng_fetch_assoc($result)) {
-        if ($initialchar != 1) {
-            $linkstr .= " ";
-        }
+        if ($initialchar != 1) $linkstr .= " ";
+
         if ($place['firstchar'] != "") {
             $urlfirstchar = urlencode($place['firstchar']);
             $countstr = $text['placesstarting'] . ": " . $place['firstchar'] . " (" . number_format($place['placecount']) . " " . $text['totalnames'] . ")";
@@ -81,9 +80,8 @@ if ($result) {
     while ($place = tng_fetch_assoc($result)) {
         $place2 = urlencode($place['myplace']);
         if ($place2 != "") {
-            if (!$maxcount) {
-                $maxcount = $place['placecount'];
-            }
+            if (!$maxcount) $maxcount = $place['placecount'];
+
             $tally = $place['placecount'];
             $tally_fmt = number_format($tally);
             $thiswidth = floor($tally / $maxcount * 100);
@@ -97,12 +95,9 @@ if ($result) {
             $countrow = tng_fetch_assoc($result2);
             $specificcount = $countrow['placecount'];
             tng_free_result($result2);
-
             $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
             $name = $place['placecount'] > 1 || !$specificcount ? "<a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\">" . str_replace(["<", ">"], ["&lt;", "&gt;"], $place['myplace']) . "</a> ($tally_fmt)" : $place['myplace'];
-            if (($count - 1) % $collen == 0) {
-                $col++;
-            }
+            if (($count - 1) % $collen == 0) $col++;
             $chartstr = $col ? "" : "<td width=\"400\"><div style=\"width:{$thiswidth}%;\" class=\"bar rightround\"><a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\" title=\"{$place['myplace']} ($tally_fmt)\"></a></div></td>";
             $linkstr2col[$col] .= "<tr>";
             $linkstr2col[$col] .= "<td class='snlink' align=\"right\">$count.</td>";
@@ -146,9 +141,8 @@ if ($result) {
             <tr>
                 <?php
                 for ($i = 0; $i < $cols; $i++) {
-                    if ($i) {
-                        echo "<td class=\"table-gutter\">&nbsp;</td>\n";
-                    }
+                    if ($i) echo "<td class=\"table-gutter\">&nbsp;</td>\n";
+
                     ?>
                     <td class="align-top">
                         <table class="normal table-histogram">

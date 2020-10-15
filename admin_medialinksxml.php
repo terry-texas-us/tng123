@@ -26,14 +26,12 @@ function showAction($entityID, $num = null) {
     $lines .= "<div id=\"link_$id\" class='normal' style=\"text-align:center;width:50px;";
     if ($albumID || $mediaID) {
         $gotit = in_array($entityID, $alreadygot);
-        if ($gotit) {
-            $lines .= "display:none";
-        }
+        if ($gotit) $lines .= "display:none";
+
         $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . urlencode($entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
         $lines .= "<div id=\"linked_$id\" style=\"text-align:center;width:50px;";
-        if (!$gotit) {
-            $lines .= "display:none";
-        }
+        if (!$gotit) $lines .= "display:none";
+
         $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
@@ -132,9 +130,8 @@ function doFamilies($husbname, $wifename) {
     if ($wifename) {
         $terms = explode(' ', $wifename);
         foreach ($terms as $term) {
-            if ($allwhere2) {
-                $allwhere2 .= " AND ";
-            }
+            if ($allwhere2) $allwhere2 .= " AND ";
+
             $allwhere2 .= "CONCAT_WS(' ',wifepeople.firstname,TRIM(CONCAT_WS(' ',wifepeople.lnprefix,wifepeople.lastname))) LIKE '%$term%'";
         }
     }
@@ -142,15 +139,13 @@ function doFamilies($husbname, $wifename) {
     if ($husbname) {
         $terms = explode(' ', $husbname);
         foreach ($terms as $term) {
-            if ($allwhere2) {
-                $allwhere2 .= " AND ";
-            }
+            if ($allwhere2) $allwhere2 .= " AND ";
+
             $allwhere2 .= "CONCAT_WS(' ',husbpeople.firstname,TRIM(CONCAT_WS(' ',husbpeople.lnprefix,husbpeople.lastname))) LIKE '%$term%'";
         }
     }
-    if ($allwhere2) {
-        $allwhere2 = "AND $allwhere2";
-    }
+    if ($allwhere2) $allwhere2 = "AND $allwhere2";
+
 
     $query = "SELECT familyID, wifepeople.personID AS wpersonID, wifepeople.firstname AS wfirstname, wifepeople.lnprefix AS wlnprefix, wifepeople.lastname AS wlastname, wifepeople.prefix AS wprefix, wifepeople.suffix AS wsuffix, wifepeople.nameorder AS wnameorder, husbpeople.personID AS hpersonID, husbpeople.firstname AS hfirstname, husbpeople.lnprefix AS hlnprefix, husbpeople.lastname AS hlastname, husbpeople.prefix AS hprefix, husbpeople.suffix AS hsuffix, husbpeople.nameorder AS hnameorder ";
     $query .= "FROM $families_table families ";
@@ -247,9 +242,8 @@ function doPlaces($place) {
     $lines .= "</tr>\n";
 
     $allwhere = "gedcom = '$tree'";
-    if ($place) {
-        $allwhere .= " AND place LIKE \"%$place%\"";
-    }
+    if ($place) $allwhere .= " AND place LIKE \"%$place%\"";
+
     $query = "SELECT ID, place FROM $places_table WHERE $allwhere ORDER BY place LIMIT $maxsearchresults";
     $result = tng_query($query);
 

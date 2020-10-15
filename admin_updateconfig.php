@@ -42,15 +42,13 @@ $doctype = addslashes($doctype);
 require "adminlog.php";
 
 $fp = @fopen("config/config.php", "w", 1);
-if (!$fp) {
-    die ($admtext['cannotopen'] . " config.php");
-}
+if (!$fp) die ($admtext['cannotopen'] . " config.php");
+
 
 flock($fp, LOCK_EX);
 
-if ($new_database_username) {
-    $tng_notinstalled = "";
-}
+if ($new_database_username) $tng_notinstalled = "";
+
 
 fwrite($fp, "<?php\n");
 fwrite($fp, "\$database_host = \"$new_database_host\";\n");
@@ -119,9 +117,8 @@ fwrite($fp, "\$homepage = \"$homepage\";\n");
 fwrite($fp, "\$tngdomain = \"$tngdomain\";\n");
 fwrite($fp, "\$sitename = \"$sitename\";\n");
 fwrite($fp, "\$site_desc = \"$site_desc\";\n");
-if (!$target) {
-    $target = "_self";
-}
+if (!$target) $target = "_self";
+
 fwrite($fp, "\$target = \"$target\";\n");
 fwrite($fp, "\$language = \"$language\";\n");
 fwrite($fp, "\$charset = \"$charset\";\n");

@@ -51,7 +51,6 @@ if (!$editconflict) {
     } else {
         $husbliving = 0;
     }
-
     $wife = ucfirst(trim($wife));
     if ($wife) {
         $spquery = "SELECT living FROM $people_table WHERE personID = \"$wife\" AND gedcom = '$tree'";
@@ -62,17 +61,12 @@ if (!$editconflict) {
         $wifeliving = 0;
     }
     $familyliving = $living ? $living : 0;
-    if (!$private) {
-        $private = 0;
-    }
-
+    if (!$private) $private = 0;
     $newdate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
-
     if (is_array($branch)) {
         foreach ($branch as $b) {
-            if ($b) {
-                $allbranches = $allbranches ? "$allbranches,$b" : $b;
-            }
+            if ($b) $allbranches = $allbranches ? "$allbranches,$b" : $b;
+
         }
     } else {
         $allbranches = $branch;

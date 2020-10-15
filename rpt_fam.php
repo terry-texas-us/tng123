@@ -104,9 +104,8 @@ if ($blankform == 1) {
     }
     parentLine($text['father'], '', $text['mother'], '', '', '');
     dateLine($text['married'], '', '');
-    if ($ldsOK) {
-        dateLine($text['sealedslds'], '', '');
-    }
+    if ($ldsOK) dateLine($text['sealedslds'], '', '');
+
     nameLine($text['wife'], '', 1, '');
     dateLine($text['born'], '', '', '');
     dateLine($text['christened'], '', '', '');
@@ -170,12 +169,10 @@ else {
         $lasttitle = '---';
         foreach ($famnotes as $key => $note) {
             if ($note['title'] != $lasttitle) {
-                if ($notes) {
-                    $notes .= "\n\n";
-                }
-                if ($note['title']) {
-                    $notes .= $note['title'] . "\n";
-                }
+                if ($notes) $notes .= "\n\n";
+
+                if ($note['title']) $notes .= $note['title'] . "\n";
+
             }
             $notes .= $note['text'];
         }
@@ -230,9 +227,8 @@ function displayChild($personID, $childcount) {
 
     $label = $ind['sex'] != "F" ? $text['husband'] : $text['wife'];
 
-    if ($citesources && $rights['both']) {
-        getCitations($personID, 0);
-    }
+    if ($citesources && $rights['both']) getCitations($personID, 0);
+
 
     // name
     $cite = reorderCitation($personID . "_NAME", 0);
@@ -321,9 +317,8 @@ function displayChild($personID, $childcount) {
         if ($frights['both']) {
             $marrplace = $fam['marrdate'];
             if (!empty($fam['marrplace'])) {
-                if ($marrplace != '') {
-                    $marrplace .= ' - ';
-                }
+                if ($marrplace != '') $marrplace .= ' - ';
+
                 $marrplace .= $fam['marrplace'];
             }
         }
@@ -360,9 +355,8 @@ function displayIndividual($personID, $showparents, $showmarriage) {
 
     $label = $ind['sex'] != "F" ? $text['husband'] : $text['wife'];
 
-    if ($citesources && $rights['both']) {
-        getCitations($personID, 0);
-    }
+    if ($citesources && $rights['both']) getCitations($personID, 0);
+
 
     // name
     $cite = reorderCitation($personID . "_NAME", 0);

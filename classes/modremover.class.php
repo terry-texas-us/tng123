@@ -61,23 +61,15 @@ class modremover extends modparser
 
         // PROCESS PARSE TABLE TO REMOVE THE CURRENT MOD
         for ($j = 0; isset($tags[$j]); $j++) {
-
             // IGNORE TAGS THAT WON'T BE FOUND IN TARGET FILE
-            if ($this->is_infotag($tags[$j]['name'])) {
-                continue;
-            }
-
+            if ($this->is_infotag($tags[$j]['name'])) continue;
             /****************************************************************
              * TARGETS
              ****************************************************************/
             if ($tags[$j]['name'] == 'target') {
                 $flag = $tags[$j]['flag'];
-
                 // DEPLOYED FILES WILL BE DELETED IN ORDER FOUND IN CFG SO IGNORE THIS
-                if ($tags[$j]['arg1'] == 'files') {
-                    continue;
-                }
-
+                if ($tags[$j]['arg1'] == 'files') continue;
                 // NEW TARGET FILE? SAVE CURRENT TARGET BUFFER IF ANY;
                 if (!empty($active_target_file) && !empty($target_file_contents)) {
                     if (false === $this->write_file_buffer($active_target_file, $target_file_contents)) {
@@ -156,9 +148,8 @@ class modremover extends modparser
 
                 // NO TARGET FILE OPEN - NO POINT PROCESSING LOCATIONS
                 if (empty($active_target_file)) {
-                    if ($fileoptional) {
-                        $locations_installed--;
-                    }
+                    if ($fileoptional) $locations_installed--;
+
                     continue;
                 } else {
                     // TARGET FILE OPEN AND READY FOR MODIFICATION
@@ -343,17 +334,13 @@ class modremover extends modparser
                     // GET TERMINATOR
                     while (isset($buffer[$qpos + 1])) {
                         $qpos++;
-                        if ($buffer[$qpos] == " " || $buffer[$qpos] == "\t") {
-                            continue;
-                        }
+                        if ($buffer[$qpos] == " " || $buffer[$qpos] == "\t") continue;
                         if ($buffer[$qpos] == "'") {
                             $terminator = "';";
                             break;
                         }
-                        if ($buffer[$qpos] == '"') {
-                            $terminator = '";';
+                        if ($buffer[$qpos] == '"') $terminator = '";';
 
-                        }
                         $terminator = ";";
                         break;
                     }
@@ -372,9 +359,8 @@ class modremover extends modparser
     public function batch_remove($cfgpathlist) {
         $this->batch_error = false;
         foreach ($cfgpathlist as $cfgpath) {
-            if (!$this->remove($cfgpath)) {
-                $this->batch_error = true;
-            }
+            if (!$this->remove($cfgpath)) $this->batch_error = true;
+
         }
         return !$this->batch_error;
     }

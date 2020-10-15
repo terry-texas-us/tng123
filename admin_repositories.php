@@ -21,9 +21,8 @@ if ($newsearch) {
     if (!$searchstring) {
         $searchstring = stripslashes($_COOKIE['tng_search_repos_post']['search']);
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_tree'];
+
     if (!$exactmatch) {
         $exactmatch = $_COOKIE['tng_search_repos_post']['exactmatch'];
     }

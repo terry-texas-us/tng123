@@ -63,11 +63,7 @@ include_once "eventlib.php";
                     <table class="normal topmarginsmall">
                         <tr>
                             <td><?php echo $admtext['firstgivennames']; ?></td>
-                            <?php
-                            if ($lnprefixes) {
-                                echo "<td>{$admtext['lnprefix']}</td>\n";
-                            }
-                            ?>
+                            <?php if ($lnprefixes) echo "<td>{$admtext['lnprefix']}</td>\n"; ?>
                             <td><?php echo $admtext['lastsurname']; ?></td>
                         </tr>
                         <tr>
@@ -150,14 +146,12 @@ include_once "eventlib.php";
                                 }
                                 echo "<span id=\"pbranchlist\"></span>";
                                 if (!$assignedbranch) {
-                                if ($numbranches > 8) {
-                                    $select = "{$admtext['scrollbranch']}<br>";
-                                }
+                                if ($numbranches > 8) $select = "{$admtext['scrollbranch']}<br>";
+
                                 $select .= "<select name=\"branch[]\" id=\"pbranch\" multiple size=\"8\">\n";
                                 $select .= "	<option value=\"\"";
-                                if ($row['branch'] == "") {
-                                    $select .= " selected";
-                                }
+                                if ($row['branch'] == "") $select .= " selected";
+
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";

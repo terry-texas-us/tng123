@@ -74,9 +74,8 @@ if ($map['key'] && $isConnected) {
         }
     </script>
     <?php
-    if ($map['key']) {
-        include "googlemaplib2.php";
-    }
+    if ($map['key']) include "googlemaplib2.php";
+
     echo "</head>\n";
     $onload = $map['key'] && !$map['startoff'] ? " onload=\"divbox('mapcontainer');\"" : "";
     echo tng_adminlayout($onload);

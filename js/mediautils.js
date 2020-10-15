@@ -107,11 +107,8 @@ function prepopulateThumb() {
 }
 
 function switchOnType(mtypeIndex) {
-    var mediatypeID = like[mtypeIndex];
-    if (mediatypeID == "photos") {
-    } else {
-    }
-    if (mediatypeID == "headstones") {
+    const mediatypeID = like[mtypeIndex];
+    if (mediatypeID === "headstones") {
         jQuery('#maprow').fadeIn(200);
         jQuery('#linktocemrow').fadeIn(200);
         //new Effect.Appear('cemrow',{duration:.2});
@@ -125,25 +122,21 @@ function switchOnType(mtypeIndex) {
         jQuery('#hsplotrow').fadeOut(200);
         jQuery('#hsstatrow').fadeOut(200);
     }
-    if (mediatypeID == "documents") {
-    } else {
-    }
-    if (mediatypeID == "recordings") {
-    } else {
-    }
-    if (mediatypeID == "videos") {
+    if (mediatypeID === "videos") {
         jQuery('#vidrow1').fadeIn(200);
         jQuery('#vidrow2').fadeIn(200);
     } else {
         jQuery('#vidrow1').fadeOut(200);
         jQuery('#vidrow2').fadeOut(200);
     }
-    if (mtypeIndex && stmediatypes.indexOf(mtypeIndex) == -1) {
-        if (jQuery('#editmediatype').length) jQuery('#editmediatype').show();
-        if (jQuery('#delmediatype').length) jQuery('#delmediatype').show();
+    const $editMediaTypeSelection = jQuery('#editmediatype');
+    const $delMediaTypeSelection = jQuery('#delmediatype');
+    if (mtypeIndex && stmediatypes.indexOf(mtypeIndex) === -1) {
+        if ($editMediaTypeSelection.length) jQuery('#editmediatype').show();
+        if ($delMediaTypeSelection.length) jQuery('#delmediatype').show();
     } else {
-        if (jQuery('#editmediatype').length) jQuery('#editmediatype').hide();
-        if (jQuery('#delmediatype').length) jQuery('#delmediatype').hide();
+        if ($editMediaTypeSelection.length) jQuery('#editmediatype').hide();
+        if ($delMediaTypeSelection.length) jQuery('#delmediatype').hide();
     }
 }
 

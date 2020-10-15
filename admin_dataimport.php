@@ -17,9 +17,8 @@ if (!$allow_add || !$allow_edit || $assignedbranch) {
     exit;
 }
 
-if ($assignedtree) {
-    $wherestr = "WHERE gedcom = '$assignedtree'";
-}
+if ($assignedtree) $wherestr = "WHERE gedcom = '$assignedtree'";
+
 else {
     $wherestr = "";
 }
@@ -96,9 +95,8 @@ if (!$allow_ged && $assignedtree) {
     $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = '$assignedtree'";
     $disresult = tng_query($query);
     $row = tng_fetch_assoc($disresult);
-    if ($row['disallowgedcreate']) {
-        $allow_export = 0;
-    }
+    if ($row['disallowgedcreate']) $allow_export = 0;
+
     tng_free_result($disresult);
 }
 
@@ -157,9 +155,8 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                         <td>
                             <select name="tree1" id="tree1" onchange="getBranches(this,this.selectedIndex);">
                                 <?php
-                                if ($numtrees != 1) {
-                                    echo "	<option value=''></option>\n";
-                                }
+                                if ($numtrees != 1) echo "	<option value=''></option>\n";
+
                                 $treectr = 0;
                                 for ($i = 0; $i < $treenum; $i++) {
                                     echo "<option value='{$trees[$treectr]}'";

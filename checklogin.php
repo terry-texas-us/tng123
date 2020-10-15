@@ -31,9 +31,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && (!$
             echo "$currentuser" . " is not a valid user";
             exit;
         }
-        if ($result) {
-            tng_free_result($result);
-        }
+        if ($result) tng_free_result($result);
+
     }
     $allow_admin = $_SESSION['allow_admin'];
     $allow_edit = $_SESSION['allow_edit'];
@@ -119,9 +118,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && (!$
             $_SESSION['session_rp'] = $rootpath;
         }
     }
-    if ($result) {
-        tng_free_result($result);
-    }
+    if ($result) tng_free_result($result);
+
 
     //set session vars here if not previously logged in
     $_SESSION['allow_admin'] = $allow_admin;
@@ -140,9 +138,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['session_rp'] == $rootpath && (!$
     $_SESSION['allow_profile'] = $allow_profile;
 }
 
-if ($need_assigned_tree) {
-    $tree = $assignedtree;
-}
+if ($need_assigned_tree) $tree = $assignedtree;
+
 
 $postvars = $_SESSION['postvars'] = "";
 unset($_SESSION['postvars']);

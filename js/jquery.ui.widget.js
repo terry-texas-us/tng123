@@ -60,9 +60,8 @@
 
             // allow instantiation without initializing for simple inheritance
             // must use "new" keyword (the code above always passes args)
-            if (arguments.length) {
-                this._createWidget(options, element);
-            }
+            if (arguments.length) this._createWidget(options, element);
+
         };
         // extend with the existing constructor to carry over any static properties
         $.extend(constructor, existingConstructor, {
@@ -250,9 +249,8 @@
                 $.data(element, this.widgetFullName, this);
                 this._on(this.element, {
                     remove: function (event) {
-                        if (event.target === element) {
-                            this.destroy();
-                        }
+                        if (event.target === element) this.destroy();
+
                     }
                 });
                 this.document = $(element.style ?
@@ -472,9 +470,8 @@
             orig = event.originalEvent;
             if (orig) {
                 for (prop in orig) {
-                    if (!(prop in event)) {
-                        event[prop] = orig[prop];
-                    }
+                    if (!(prop in event)) event[prop] = orig[prop];
+
                 }
             }
 
@@ -487,9 +484,8 @@
 
     $.each({show: "fadeIn", hide: "fadeOut"}, function (method, defaultEffect) {
         $.Widget.prototype["_" + method] = function (element, options, callback) {
-            if (typeof options === "string") {
-                options = {effect: options};
-            }
+            if (typeof options === "string") options = {effect: options};
+
             var hasOptions,
                 effectName = !options ?
                     method :
@@ -497,14 +493,12 @@
                         defaultEffect :
                         options.effect || defaultEffect;
             options = options || {};
-            if (typeof options === "number") {
-                options = {duration: options};
-            }
+            if (typeof options === "number") options = {duration: options};
+
             hasOptions = !$.isEmptyObject(options);
             options.complete = callback;
-            if (options.delay) {
-                element.delay(options.delay);
-            }
+            if (options.delay) element.delay(options.delay);
+
             if (hasOptions && $.effects && ($.effects.effect[effectName] || $.uiBackCompat !== false && $.effects[effectName])) {
                 element[method](options);
             } else if (effectName !== method && element[effectName]) {
@@ -512,9 +506,8 @@
             } else {
                 element.queue(function (next) {
                     $(this)[method]();
-                    if (callback) {
-                        callback.call(element[0]);
-                    }
+                    if (callback) callback.call(element[0]);
+
                     next();
                 });
             }

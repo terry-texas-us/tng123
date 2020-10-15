@@ -59,9 +59,8 @@ $restrictions = [];
 if ($searchstring) {
     array_push($restrictions, "(tag LIKE '%$searchstring%' OR description LIKE '%$searchstring%' OR display LIKE '%$searchstring%')");
 }
-if ($etype) {
-    array_push($restrictions, "type = '$etype'");
-}
+if ($etype) array_push($restrictions, "type = '$etype'");
+
 if ($onimport || $onimport === "0") {
     array_push($restrictions, "keep = '$onimport'");
 }
@@ -70,9 +69,8 @@ if (!empty($restrictions)) {
 }
 $query .= "GROUP BY eventtypeID ";
 $query .= "ORDER BY ";
-if ($stype == "E") {
-    $query .= "total_events DESC, ";
-}
+if ($stype == "E") $query .= "total_events DESC, ";
+
 $query .= "tag, description ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);

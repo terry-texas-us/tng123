@@ -39,9 +39,8 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
                     $treestr = $orgtree ? "&amp;tree=$tree" : "";
 
                     $more = getLivingPrivateRestrictions($people_table, false, false);
-                    if ($more) {
-                        $wherestr .= " AND " . $more;
-                    }
+                    if ($more) $wherestr .= " AND " . $more;
+
 
                     $firstnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,firstname) )" : "firstname";
                     if ($tngconfig['ucfirstnames']) {

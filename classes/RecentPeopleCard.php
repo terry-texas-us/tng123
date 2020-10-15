@@ -31,9 +31,8 @@ class RecentPeopleCard
         $query = "SELECT personID, lastname, lnprefix, firstname, birthdate, prefix, suffix, nameorder, living, private, branch, $changedatef, changedby, $birthyear, birthplace, altbirthdate, $altbirthyear, altbirthplace, people.gedcom AS gedcom, treename ";
         $query .= "FROM $people people, $trees trees ";
         $query .= "WHERE people.gedcom = trees.gedcom ";
-        if ($tree) {
-            $query .= "AND people.gedcom = '$tree'";
-        }
+        if ($tree) $query .= "AND people.gedcom = '$tree'";
+
         $livingPrivateRestrictions = getLivingPrivateRestrictions('people', false, false);
         if ($livingPrivateRestrictions) {
             $query .= "AND " . $livingPrivateRestrictions;
@@ -61,13 +60,11 @@ class RecentPeopleCard
                     $content .= "<br>";
                     if ($birthdate) {
                         $content .= "$birthdate";
-                        if ($birthplace) {
-                            $content .= "<br>";
-                        }
+                        if ($birthplace) $content .= "<br>";
+
                     }
-                    if ($birthplace) {
-                        $content .= $birthplace;
-                    }
+                    if ($birthplace) $content .= $birthplace;
+
                 }
                 $content .= "</div>\n";
             }

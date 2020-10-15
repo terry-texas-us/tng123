@@ -78,18 +78,16 @@ if ($totrows) {
 }
 
 $pagenav = get_browseitems_nav($totrows, "browsetrees.php?treesearch=$treesearch&amp;offset", $maxsearchresults, $max_browsetree_pages);
-if ($pagenav || $treesearch) {
-    echo doTreeSearch(1, $pagenav);
-}
+if ($pagenav || $treesearch) echo doTreeSearch(1, $pagenav);
+
 
 $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $tabletype = "columntoggle";
-    }
+    if ($tabletype == "toggle") $tabletype = "columntoggle";
+
     $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
     $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
@@ -170,13 +168,10 @@ if ($totrows > 1) {
                     <?php
                     $count = 1;
                     foreach ($treenames as $key => $val) {
-                        if ($count > 1) {
-                            echo ",\n";
-                        }
+                        if ($count > 1) echo ",\n";
+
                         echo "['data{$count}', {$val}]";
-                        if ($count == 10) {
-                            break;
-                        }
+                        if ($count == 10) break;
                         $count++;
                     }
                     ?>
@@ -186,14 +181,11 @@ if ($totrows > 1) {
                     <?php
                     $count = 1;
                     foreach ($treenames as $key => $val) {
-                        if ($count > 1) {
-                            echo ",\n";
-                        }
+                        if ($count > 1) echo ",\n";
+
                         $numnames = number_format($val);
                         echo "data{$count}: '{$key} ({$numnames})'";
-                        if ($count == 10) {
-                            break;
-                        }
+                        if ($count == 10) break;
                         $count++;
                     }
                     ?>

@@ -18,9 +18,8 @@ function getGroupCount($tree, $group, $table) {
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $count = $row['count'];
-    if (!$count) {
-        $count = "0";
-    }
+    if (!$count) $count = "0";
+
     tng_free_result($result);
 
     return $count;
@@ -33,9 +32,8 @@ if ($newsearch) {
     setcookie("tng_search_groups_post[tngpage]", 1, $exptime);
     setcookie("tng_search_groups_post[offset]", 0, $exptime);
 } else {
-    if (!$tree) {
-        $tree = $_COOKIE['tng_search_groups_post']['tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_search_groups_post']['tree'];
+
     if (!isset($offset)) {
         $tngpage = $_COOKIE['tng_search_groups_post']['tngpage'];
         $offset = $_COOKIE['tng_search_groups_post']['offset'];
@@ -65,9 +63,8 @@ $orgtree = $tree;
 $treequery = "SELECT gedcom, treename FROM $trees_table $wherestr ORDER BY treename";
 
 $wherestr = "";
-if ($tree) {
-    $wherestr .= "WHERE dna_groups.gedcom = '$tree'";
-}
+if ($tree) $wherestr .= "WHERE dna_groups.gedcom = '$tree'";
+
 $query = "SELECT dna_groups.gedcom AS gedcom, dna_group, dna_groups.description AS description, test_type, treename ";
 $query .= "FROM $dna_groups_table dna_groups ";
 $query .= "LEFT JOIN $trees_table trees ON trees.gedcom = dna_groups.gedcom ";
@@ -132,9 +129,8 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "	<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) {
-                                            echo " selected";
-                                        }
+                                        if ($treerow['gedcom'] == $tree) echo " selected";
+
                                         echo ">{$treerow['treename']}</option>\n";
                                     }
                                     tng_free_result($treeresult);

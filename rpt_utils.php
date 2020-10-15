@@ -154,9 +154,8 @@ function titleLine($label1) {
 function pageBox($thisy = -1) {
     global $pdf, $lftmrg, $paperdim, $rtmrg, $botmrg;
 
-    if ($thisy == -1) {
-        $thisy = $pdf->GetY();
-    }
+    if ($thisy == -1) $thisy = $pdf->GetY();
+
     $oldy = $y;
     $pdf->Rect($lftmrg, $thisy, $paperdim['w'] - $lftmrg - $rtmrg, $paperdim['h'] - $botmrg - $thisy - $pdf->GetFooterHeight() - 0.15);
     $y = $oldy;
@@ -169,9 +168,8 @@ function getMaxStringWidth($strings, $font, $style, $size, $append = '', $oldmax
     $pdf->SetFont($font, $style, $size);
     foreach ($strings as $string) {
         $width = $pdf->GetStringWidth($string . $append);
-        if ($width > $max) {
-            $max = $width;
-        }
+        if ($width > $max) $max = $width;
+
     }
     return $max;
 }

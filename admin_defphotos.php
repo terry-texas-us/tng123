@@ -34,9 +34,8 @@ while ($distinctplink = tng_fetch_assoc($result)) {
             $defsexist = 1;
         } else {
             $oldstylephoto = $tree ? "$rootpath$photopath/$tree.{$distinctplink['personID']}.$photosext" : "$rootpath$photopath/{$distinctplink['personID']}.$photosext";
-            if (file_exists($oldstylephoto)) {
-                $defsexist = 1;
-            }
+            if (file_exists($oldstylephoto)) $defsexist = 1;
+
         }
         tng_free_result($result3);
     }

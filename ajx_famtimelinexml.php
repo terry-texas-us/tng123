@@ -5,20 +5,17 @@ include "tng_begin.php";
 include "datelib.php";
 
 $timeline = $_SESSION['timeline'];
-if (!is_array($timeline)) {
-    $timeline = [];
-}
+if (!is_array($timeline)) $timeline = [];
+
 
 function getTimelineDate($date) {
     $ret = [];
 
     preg_match('/(\d\d\d\d)-(\d\d)-(\d\d).*/', $date, $matches);
-    if ($matches[2] == "00") {
-        $matches[2] = "01";
-    }
-    if ($matches[3] == "00") {
-        $matches[3] = "01";
-    }
+    if ($matches[2] == "00") $matches[2] = "01";
+
+    if ($matches[3] == "00") $matches[3] = "01";
+
     $ret['year'] = $matches[1];
     $ret['date_gmt'] = strftime("%b %d {$ret['year']}", gmmktime(12, 0, 0, $matches[2], $matches[3], 2000)) . " GMT";
 
@@ -27,9 +24,8 @@ function getTimelineDate($date) {
 
 header('Content-Type: application/xml');
 echo "<?xml version=\"1.0\"";
-if ($session_charset) {
-    echo " encoding=\"$session_charset\"";
-}
+if ($session_charset) echo " encoding=\"$session_charset\"";
+
 echo "?>\n";
 echo "<data>\n";
 

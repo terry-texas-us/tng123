@@ -162,9 +162,8 @@ class HeadElementPublic
             $links[] = "<link href='css/tngmobile.css' rel='stylesheet'>";
             $links[] = "<link href='build/template{$templatenum}/styles/tngmobile.css' rel='stylesheet'>";
         }
-        if (isset($this->flags['link'])) {
-            $links[] = $this->flags['link'];
-        }
+        if (isset($this->flags['link'])) $links[] = $this->flags['link'];
+
         if (isMobile()) {
             $links[] = "<link rel='apple-touch-icon-precomposed' sizes='144x144' href='$tngdomain/img/tng-apple-icon-144.png'>";
             $links[] = "<link rel='apple-touch-icon-precomposed' sizes='114x114' href='$tngdomain/img/tng-apple-icon-114.png'>";

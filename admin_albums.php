@@ -19,9 +19,8 @@ if ($newsearch) {
     if (!$searchstring) {
         $searchstring = stripslashes($_COOKIE['tng_search_album_post']['search']);
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_search_album_post']['tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_search_album_post']['tree'];
+
     if (!isset($offset)) {
         $tngpage = $_COOKIE['tng_search_album_post']['tngpage'];
         $offset = $_COOKIE['tng_search_album_post']['offset'];
@@ -43,9 +42,8 @@ if ($offset) {
     $tngpage = 1;
 }
 
-if ($assignedtree) {
-    $tree = $assignedtree;
-}
+if ($assignedtree) $tree = $assignedtree;
+
 
 $query = "SELECT * ";
 $query .= "FROM $albums_table ";

@@ -2,9 +2,8 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-if (!$personID) {
-    die("no args");
-}
+if (!$personID) die("no args");
+
 include "config/pedconfig.php";
 include "personlib.php";
 include "reglib.php";
@@ -57,12 +56,10 @@ tng_header($row['name'], $flags);
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $row['name'], getYears($row));
 
-if (!$pedigree['maxdesc']) {
-    $pedigree['maxdesc'] = 12;
-}
-if (!$pedigree['initdescgens']) {
-    $pedigree['initdescgens'] = 4;
-}
+if (!$pedigree['maxdesc']) $pedigree['maxdesc'] = 12;
+
+if (!$pedigree['initdescgens']) $pedigree['initdescgens'] = 4;
+
 if (!$generations) {
     $generations = $pedigree['initdescgens'];
 } else {
@@ -84,9 +81,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='register.php?personID=$personID&amp;tree=$tree&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
@@ -134,9 +130,8 @@ echo "</form>\n";
                 $firstfirstname = getFirstNameOnly($row);
                 $personsex = $row['sex'];
                 $newlist = $row['number'] . ".<a href='#' onclick=\"jQuery('#p{$row['personID']}').animate({scrollTop: -200},'slow'); return false;\">$firstfirstname</a><sup style=\"font-size:8px;top:-2px;\">$generation</sup>";
-                if ($row['genlist']) {
-                    $newlist .= ", " . $row['genlist'];
-                }
+                if ($row['genlist']) $newlist .= ", " . $row['genlist'];
+
                 while ($spouserow = array_shift($row['spouses'])) {
                     $marriagemsg = ($personsex == "F") ? $text['wasmarried_female'] : $text['wasmarried_male'];
                     if ($spouserow['marrdate'] || $spouserow['marrplace']) {

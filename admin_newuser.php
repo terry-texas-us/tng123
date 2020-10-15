@@ -425,9 +425,8 @@ echo displayHeadline($admtext['users'] . " &gt;&gt; " . $admtext['addnewuser'], 
 <?php if ($row['ucount']) { ?>
     <script>
         let tree = getTree();
-        if (tree) {
-            <?php echo $swapbranches; ?>
-        }
+        if (tree) <?php echo $swapbranches; ?>
+
     </script>
 <?php } ?>
 

@@ -30,9 +30,8 @@ if ($newsearch) {
     if (!$private) {
         $private = $_COOKIE['tng_search_notes_post']['private'];
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_tree'];
+
     if (!isset($offset)) {
         $tngpage = $_COOKIE['tng_search_notes_post']['tngpage'];
         $offset = $_COOKIE['tng_search_notes_post']['offset'];
@@ -53,20 +52,17 @@ if ($offset) {
 
 $treequery = "SELECT gedcom, treename ";
 $treequery .= "FROM $trees_table ";
-if ($assignedtree) {
-    $treequery .= "WHERE gedcom = '$assignedtree' ";
-}
+if ($assignedtree) $treequery .= "WHERE gedcom = '$assignedtree' ";
+
 $treequery .= "ORDER BY treename";
 
 $query = "SELECT xnotes.ID AS ID, xnotes.note AS note, xnotes.gedcom AS gedcom ";
 $query .= "FROM $xnotes_table xnotes, $notelinks_table notelinks ";
 $query .= "WHERE xnotes.ID = notelinks.xnoteID ";
-if ($tree) {
-    $query .= "AND xnotes.gedcom = '$tree' ";
-}
-if ($private) {
-    $query .= "AND notelinks.secret != 0 ";
-}
+if ($tree) $query .= "AND xnotes.gedcom = '$tree' ";
+
+if ($private) $query .= "AND notelinks.secret != 0 ";
+
 if ($searchstring) {
     $query .= "AND (xnotes.note LIKE '%$searchstring%') ";
 }
@@ -142,9 +138,8 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "	<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) {
-                                            echo " selected";
-                                        }
+                                        if ($treerow['gedcom'] == $tree) echo " selected";
+
                                         echo ">{$treerow['treename']}</option>\n";
                                     }
                                     tng_free_result($treeresult);
@@ -278,9 +273,8 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                             if (($allow_edit && !$assignedtree) || !$row['secret']) {
                                 $notetext = cleanIt($row['note']);
                                 $notetext = truncateIt($notetext, 500);
-                                if (!$notetext) {
-                                    $notetext = "&nbsp;";
-                                }
+                                if (!$notetext) $notetext = "&nbsp;";
+
                             } else {
                                 $notetext = $admtext['text_private'];
                             }

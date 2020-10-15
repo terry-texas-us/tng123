@@ -9,9 +9,8 @@ include "functions.php";
 
 $flags['imgprev'] = true;
 
-if (!$thumbmaxw) {
-    $thumbmaxw = 80;
-}
+if (!$thumbmaxw) $thumbmaxw = 80;
+
 
 $max_pages = 5;
 if (!isset($max_cemeteries)) $max_cemeteries = 5;
@@ -118,9 +117,8 @@ if ($location && $country) {
 }
 
 $titlestr = $text['cemeteriesheadstones'];
-if ($location) {
-    $titlestr .= " {$text['in']} $location";
-}
+if ($location) $titlestr .= " {$text['in']} $location";
+
 $logstring = "<a href=\"headstones.php?country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;cemeteryID=$cemeteryID&amp;tree=$tree\">$titlestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
@@ -257,9 +255,8 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
         $status = $hs['status'];
         $hs['cemeteryID'] = $cemetery['cemeteryID'];
-        if ($status && $text[$status]) {
-            $hs['status'] = $text[$status];
-        }
+        if ($status && $text[$status]) $hs['status'] = $text[$status];
+
 
         $query = "SELECT medialinkID, medialinks.personID AS personID, people.personID AS personID2, familyID, people.living AS living, people.private AS private, people.branch AS branch, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.gedcom AS gedcom, treename, sources.title, sources.sourceID, repositories.repoID,reponame, deathdate, burialdate, linktype ";
         $query .= "FROM ($medialinks_table medialinks, $trees_table trees) ";
@@ -330,9 +327,8 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $body .= "<td class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
         $body .= "<td class='databack'><span class='normal'>" . nl2br($hs['plot']);
         if ($hs['latitude'] || $hs['longitude']) {
-            if ($hs['plot']) {
-                $body .= "<br>";
-            }
+            if ($hs['plot']) $body .= "<br>";
+
             $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
         }
         $body .= "&nbsp;</span></td>\n";
@@ -341,14 +337,10 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     }
     $cemcount++;
     $body .= "</table>\n";
-    if ($pagenav) {
-        $body .= "<br>$pagenav";
-    }
-    $body .= "</div>\n<br>\n";
+    if ($pagenav) $body .= "<br>$pagenav";
 
-    if ($subquery == "done") {
-        break;
-    }
+    $body .= "</div>\n<br>\n";
+    if ($subquery == "done") break;
 }
 
 if ($map['key'] && $map['pins']) {
@@ -360,9 +352,8 @@ if ($toppagenav) {
 } else {
     echo $body;
 }
-if ($cemresult) {
-    tng_free_result($cemresult);
-}
+if ($cemresult) tng_free_result($cemresult);
+
 
 tng_footer($flags);
 ?>

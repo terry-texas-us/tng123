@@ -30,11 +30,7 @@ echo getFORM("", "GET", "searchsite", "", $onsubmit);
             <input id="GoogleText" class="<?php echo $fieldclass; ?>" name="s" type="search" placeholder="<?php echo $text['searchsite']; ?> ...">
         </div>
 
-        <?php
-        if (!isMobile()) {
-            echo "<br><br>\n";
-        }
-        ?>
+        <?php if (!isMobile()) echo "<br><br>\n"; ?>
         <p style="max-width:400px;"><?php echo $text['searchnote']; ?></p>
     </div>
 

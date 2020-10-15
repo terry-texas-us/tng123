@@ -77,13 +77,11 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                 $firsttree = "";
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
-                                    if (!$firsttree) {
-                                        $firsttree = $treerow['gedcom'];
-                                    }
+                                    if (!$firsttree) $firsttree = $treerow['gedcom'];
+
                                     echo "	<option value=\"{$treerow['gedcom']}\"";
-                                    if ($treerow['gedcom'] == $tree) {
-                                        echo " selected";
-                                    }
+                                    if ($treerow['gedcom'] == $tree) echo " selected";
+
                                     echo ">{$treerow['treename']}</option>\n";
                                 }
                                 tng_free_result($treeresult);

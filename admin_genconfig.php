@@ -43,9 +43,8 @@ if (!$lineendingdisplay) {
     }
 }
 if (!isset($tngconfig['maxdesc'])) $tngconfig['maxdesc'] = $maxdesc;
-if (!$tngconfig['backupdays']) {
-    $tngconfig['backupdays'] = 30;
-}
+if (!$tngconfig['backupdays']) $tngconfig['backupdays'] = 30;
+
 $sitename = preg_replace("/\"/", "&#34;", $sitename);
 $site_desc = preg_replace("/\"/", "&#34;", $site_desc);
 $dbowner = preg_replace("/\"/", "&#34;", $dbowner);
@@ -1762,9 +1761,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     <?php
                                     for ($i = "4"; $i <= "15"; $i++) {
                                         echo "<option value=\"$i\"";
-                                        if ($i == $numgens) {
-                                            echo " selected";
-                                        }
+                                        if ($i == $numgens) echo " selected";
+
                                         echo ">$i</option>\n";
                                     }
                                     ?>

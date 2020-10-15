@@ -43,7 +43,6 @@ class surname_cloud
             $wherestr .= $wherestr ? " AND " . $treeString : "WHERE " . $treeString;
             $treeBranchUrlString .= "&amp;tree=$surnameTree";
         }
-
         // Get all unique surnames
         $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
         $query = "SELECT UCASE(binary $surnamestr) AS surnameuc, $surnamestr AS surname, count(UCASE(binary lastname)) AS count, lastname ";
@@ -52,11 +51,7 @@ class surname_cloud
         $query .= "GROUP BY surname ";
         $query .= "ORDER by lastname";
         $result = tng_query($query) or die ("{$text['cannotexecutequery']}: $query");
-
-        if (!$result) {
-            return "";
-        }
-
+        if (!$result) return "";
         // Fetch all surnames into an array
         $surnames = [];
         $idx = 0;

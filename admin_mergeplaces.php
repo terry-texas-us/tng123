@@ -7,9 +7,8 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-if (!$tree) {
-    $tree = $_COOKIE['tng_search_places_post']['tree'];
-}
+if (!$tree) $tree = $_COOKIE['tng_search_places_post']['tree'];
+
 if ($place) {
     $useplace = addslashes($place);
     setcookie("tng_merge_places_post[place]", $useplace, 0);
@@ -32,9 +31,8 @@ if ($place) {
     $result = tng_query($query);
 
     $numrows = tng_num_rows($result);
-    if (!$numrows) {
-        $message = $admtext['noresults'];
-    }
+    if (!$numrows) $message = $admtext['noresults'];
+
 } else {
     $numrows = 0;
     if ($_COOKIE['tng_merge_search_post']['search']) {
@@ -95,9 +93,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['mergeplaces']
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "		<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) {
-                                            echo " selected";
-                                        }
+                                        if ($treerow['gedcom'] == $tree) echo " selected";
+
                                         echo ">{$treerow['treename']}</option>\n";
                                     }
                                     tng_free_result($treeresult);

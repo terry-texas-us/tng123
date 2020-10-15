@@ -20,9 +20,7 @@ SimileAjax.XmlHttp._onReadyStateChange = function (xmlhttp, fError, fDone) {
                 if (xmlhttp.status == 0     // file:// urls, works on Firefox
                     || xmlhttp.status == 200   // http:// urls
                 ) {
-                    if (fDone) {
-                        fDone(xmlhttp);
-                    }
+                    if (fDone) fDone(xmlhttp);
                 } else {
                     if (fError) {
                         fError(

@@ -114,9 +114,8 @@ if ($searchstring) {
     $allwhere .= addCriteria("CONCAT_WS(' ',TRIM(firstname)" . ($lnprefixes ? ",TRIM(lnprefix)" : "") . ",TRIM(lastname))", $searchstring, $frontmod);
     $allwhere .= ")";
 }
-if ($living == "yes") {
-    $allwhere .= " AND people.living = '1'";
-}
+if ($living == "yes") $allwhere .= " AND people.living = '1'";
+
 if ($private == "yes") {
     $allwhere .= " AND people.private = '1'";
 }

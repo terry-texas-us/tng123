@@ -71,9 +71,8 @@ if (!$editconflict) {
 
     if (is_array($branch)) {
         foreach ($branch as $b) {
-            if ($b) {
-                $allbranches = $allbranches ? "$allbranches,$b" : $b;
-            }
+            if ($b) $allbranches = $allbranches ? "$allbranches,$b" : $b;
+
         }
     } else {
         $allbranches = $branch;
@@ -145,23 +144,15 @@ if (!$editconflict) {
             eval("\$mrel = \$mrel{$parent['familyID']};");
             $query = "UPDATE $children_table SET sealdate=\"$sealpdate\", sealdatetr=\"$sealpdatetr\", sealplace=\"$sealpplace\", frel=\"$frel\", mrel=\"$mrel\" WHERE familyID = \"{$parent['familyID']}\" AND personID = \"$personID\" AND gedcom = '$tree'";
             $result2 = @tng_query($query);
-            if (!$famc) {
-                $famc = $parent['familyID'];
-            }
+            if (!$famc) $famc = $parent['familyID'];
+
         }
         tng_free_result($parents);
     }
-
     $famcstr = $famc ? ", famc = \"$famc\"" : "";
-    if (!$living) {
-        $living = 0;
-    }
-    if (!$private) {
-        $private = 0;
-    }
-    if (!$burialtype) {
-        $burialtype = 0;
-    }
+    if (!$living) $living = 0;
+    if (!$private) $private = 0;
+    if (!$burialtype) $burialtype = 0;
     $meta = metaphone($lnprefix . $lastname);
     $query = "UPDATE $people_table SET firstname=\"$firstname\", lnprefix=\"$lnprefix\", lastname=\"$lastname\", nickname=\"$nickname\", prefix=\"$prefix\", suffix=\"$suffix\", title=\"$title\", nameorder=\"$pnameorder\",
                  living=\"$living\", private=\"$private\", birthdate=\"$birthdate\", birthdatetr=\"$birthdatetr\", birthplace=\"$birthplace\", sex=\"$sex\", altbirthdate=\"$altbirthdate\", altbirthdatetr=\"$altbirthdatetr\",

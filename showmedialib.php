@@ -31,13 +31,10 @@ function output_iptc_data($info) {
                         $iptc[$key][0] = str_replace("\000", "", $iptc[$key][0]);
                     }
                     if ($newkey != "000") {
-                        if ($tempkey == "1#090") {
-                            continue;
-                        }
+                        if ($tempkey == "1#090") continue;
                         $newkey = "iptc" . $newkey;
                         $keytext = $text[$newkey] ? $text[$newkey] : $key;
                         $fact = $iptc[$key][$i];
-
                         if ($enc == "UTF-8" && $ucharset != "UTF-8") {
                             $fact = utf8_decode($fact);
                             $str = ", decoded";
@@ -64,9 +61,8 @@ function getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID,
 
     $wherestr3 = $requirelogin && $treerestrict && $assignedtree ? " AND (media.gedcom = '$tree' || media.gedcom = '')" : "";
     if ($albumlinkID) {
-        if ($tnggallery) {
-            $wherestr = " AND thumbpath != ''";
-        }
+        if ($tnggallery) $wherestr = " AND thumbpath != ''";
+
         $query = "SELECT media.mediaID, albumlinkID, ordernum, path, map, description, notes, width, height, datetaken, placetaken, owner, alwayson, abspath, usecollfolder, status, plot, cemeteryID, showmap, bodytext, form, newwindow, usenl, latitude, longitude, mediatypeID, gedcom ";
         $query .= "FROM ($albumlinks_table albumlinks, $media_table media) ";
         $query .= "WHERE albumID = '$albumID' AND albumlinks.mediaID = media.mediaID $wherestr $wherestr3 ";
@@ -99,9 +95,8 @@ function getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID,
         if ($mediasearch) {
             $wherestr .= " AND (media.description LIKE \"%$mediasearch%\" OR media.notes LIKE \"%$mediasearch%\" OR bodytext LIKE \"%$mediasearch%\")";
         }
-        if ($tnggallery) {
-            $wherestr .= " AND thumbpath != \"\"";
-        }
+        if ($tnggallery) $wherestr .= " AND thumbpath != \"\"";
+
 
         $cemwhere = $cemeteryID ? " AND cemeteryID = \"$cemeteryID\"" : "";
 
@@ -128,9 +123,8 @@ function getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID,
         $result = tng_query($query);
         $offsets = get_media_offsets($result, $mediaID);
         $info['page'] = $offsets[0] + 1;
-        if ($result) {
-            tng_data_seek($result, $offsets[0]);
-        }
+        if ($result) tng_data_seek($result, $offsets[0]);
+
 
         $imgrow = tng_fetch_assoc($result);
         $info['mediaID'] = $imgrow['mediaID'];
@@ -172,40 +166,32 @@ function findLivingPrivate($mediaID, $tree) {
     $info['private'] = $info['living'] = "";
 
     while ($prow = tng_fetch_assoc($presult)) {
-        if ($prow['private']) {
-            $info['private'] = 1;
-        }
-        if ($prow['living']) {
-            $info['living'] = 1;
-        }
-        if ($prow['fbranch']) {
-            $prow['branch'] = $prow['fbranch'];
-        }
-        if ($prow['fliving'] == 1) {
-            $prow['living'] = $prow['fliving'];
-        }
-        if ($prow['fprivate'] == 1) {
-            $prow['private'] = $prow['fprivate'];
-        }
+        if ($prow['private']) $info['private'] = 1;
+
+        if ($prow['living']) $info['living'] = 1;
+
+        if ($prow['fbranch']) $prow['branch'] = $prow['fbranch'];
+
+        if ($prow['fliving'] == 1) $prow['living'] = $prow['fliving'];
+
+        if ($prow['fprivate'] == 1) $prow['private'] = $prow['fprivate'];
+
         if (!$prow['living'] && !$prow['private'] && $prow['linktype'] == 'I') {
             $query = "SELECT count(*) AS ccount ";
             $query .= "FROM $citations_table citations, $people_table people ";
             $query .= "WHERE citations.sourceID = '{$prow['personID']}' AND citations.persfamID = people.personID AND citations.gedcom = people.gedcom AND (living = '1' OR private = '1')";
             $presult2 = tng_query($query);
             $prow2 = tng_fetch_assoc($presult2);
-            if ($prow2['ccount']) {
-                $prow['living'] = 1;
-            }
+            if ($prow2['ccount']) $prow['living'] = 1;
+
             tng_free_result($presult2);
         }
         $prights = determineLivingPrivateRights($prow);
         if (!$prights['both']) {
-            if ($prow['private']) {
-                $noneprivate = 0;
-            }
-            if ($prow['living']) {
-                $noneliving = 0;
-            }
+            if ($prow['private']) $noneprivate = 0;
+
+            if ($prow['living']) $noneliving = 0;
+
             break;
         }
     }
@@ -255,14 +241,12 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
     $total = tng_num_rows($result);
 
-    if (!$page) {
-        $page = 1;
-    }
+    if (!$page) $page = 1;
+
     if ($total > $mediaperpage) {
         $totalpages = ceil($total / $mediaperpage);
-        if ($page > $totalpages) {
-            $page = $totalpages;
-        }
+        if ($page > $totalpages) $page = $totalpages;
+
         $allstr = $all ? "&amp;all=1" : "";
 
         if ($page > 1) {
@@ -307,9 +291,8 @@ function getAlbumLinkText($mediaID) {
     $query .= "WHERE mediaID = '$mediaID' AND albumlinks.albumID = albums.albumID";
     $result = tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
-        if ($albumlinktext) {
-            $albumlinktext .= ", ";
-        }
+        if ($albumlinktext) $albumlinktext .= ", ";
+
         $albumlinktext .= "<a href=\"showalbum.php?albumID={$row['albumID']}\">" . $row['albumname'] . "</a>";
     }
     tng_free_result($result);
@@ -347,18 +330,15 @@ function getMediaLinkText($mediaID, $ioffset) {
     $citelinks = [];
     $need_semicolon = false;
     while ($count < $maxsearchresults && $prow = tng_fetch_assoc($presult)) {
-        if ($prow['fbranch'] != NULL) {
-            $prow['branch'] = $prow['fbranch'];
-        }
-        if ($prow['fliving'] != NULL) {
-            $prow['living'] = $prow['fliving'];
-        }
+        if ($prow['fbranch'] != NULL) $prow['branch'] = $prow['fbranch'];
+
+        if ($prow['fliving'] != NULL) $prow['living'] = $prow['fliving'];
+
         if ($prow['fprivate'] != NULL) {
             $prow['private'] = $prow['fprivate'];
         }
-        if ($need_semicolon) {
-            $medialinktext .= "; ";
-        }
+        if ($need_semicolon) $medialinktext .= "; ";
+
         $need_semicolon = true;
 
         $prights = determineLivingPrivateRights($prow);
@@ -429,9 +409,8 @@ function getMediaLinkText($mediaID, $ioffset) {
                 $event = $erow['display'] && is_numeric($prow['eventID']) ? getEventDisplay($erow['display']) : ($admtext[$prow['eventID']] ? $admtext[$prow['eventID']] : $prow['eventID']);
             }
             tng_free_result($eresult);
-            if ($event) {
-                $medialinktext .= " ($event)";
-            }
+            if ($event) $medialinktext .= " ($event)";
+
         }
         $count++;
     }
@@ -447,18 +426,16 @@ function showMediaSource($imgrow, $ss = false) {
     global $text, $usefolder, $size, $imagetypes, $htmldocs, $tngconfig, $videotypes, $recordingtypes;
     global $description, $medialinkID, $albumlinkID, $mediatypes_like;
 
-    if (isMobile()) {
-        $ss = false;
-    }
+    if (isMobile()) $ss = false;
+
     if ($imgrow['form']) {
         $imgrow['form'] = strtoupper($imgrow['form']);
     } else {
         preg_match("/\.(.+)$/", $imgrow['path'], $matches);
         $imgrow['form'] = strtoupper($matches[1]);
     }
-    if ($ss) {
-        echo "<div class='lightback slidepane rounded10'>\n";
-    }
+    if ($ss) echo "<div class='lightback slidepane rounded10'>\n";
+
     if (!$ss && $imgrow['map']) {
         echo "<map name=\"tngmap_{$imgrow['mediaID']}\" id=\"tngmap_{$imgrow['mediaID']}\">{$imgrow['map']}</map>\n";
         $mapstr = " usemap=\"#tngmap_{$imgrow['mediaID']}\"";
@@ -523,9 +500,8 @@ function showMediaSource($imgrow, $ss = false) {
                 } elseif ($ss) {
                     $height = $maxh;
                 }
-                if ($width && $width != "0") {
-                    $widthstr = "width=\"$width\"";
-                }
+                if ($width && $width != "0") $widthstr = "width=\"$width\"";
+
                 if ($height && $height != "0") {
                     $heightstr = "height=\"$height\"";
                 }
@@ -582,14 +558,12 @@ function showMediaSource($imgrow, $ss = false) {
         }
     }
     if ($imgrow['bodytext']) {
-        if ($imgrow['path']) {
-            echo "<br><br>\n";
-        }
+        if ($imgrow['path']) echo "<br><br>\n";
+
         echo "<div class='normal'>" . ($imgrow['usenl'] ? nl2br($imgrow['bodytext']) : $imgrow['bodytext']) . "</div>";
     }
-    if ($ss) {
-        echo "</div>\n";
-    }
+    if ($ss) echo "</div>\n";
+
 }
 
 function tableRow($label, $fact) {
@@ -653,27 +627,23 @@ function doCemPlusMap($imgrow, $tree) {
     echo "<h3 class='subhead'>\n";
     $location = $cemetery['cemname'];
     if ($cemetery['city']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['city'];
     }
     if ($cemetery['county']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['county'];
     }
     if ($cemetery['state']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['state'];
     }
     if ($cemetery['country']) {
-        if ($location) {
-            $location .= ", ";
-        }
+        if ($location) $location .= ", ";
+
         $location .= $cemetery['country'];
     }
     echo "<a href=\"showmap.php?cemeteryID={$imgrow['cemeteryID']}&amp;tree=$tree\">$location</a>";

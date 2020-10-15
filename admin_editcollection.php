@@ -23,9 +23,8 @@ if (!$exportas) {
     if (substr($exportas, -1) == "S") {
         $exportas = substr($exportas, 0, -1);
     }
-    if ($exportas == "HISTORIE") {
-        $exportas = "HISTORY";
-    }
+    if ($exportas == "HISTORIE") $exportas = "HISTORY";
+
 }
 
 $helplang = findhelp("collections_help.php");
@@ -103,9 +102,8 @@ foreach ($mediatypes as $mediatype) {
     if (!$mediatype['type']) {
         $msgID = $mediatype['ID'];
         echo "	<option value=\"$msgID\"";
-        if ($msgID == $row['liketype']) {
-            echo " selected";
-        }
+        if ($msgID == $row['liketype']) echo " selected";
+
         echo ">" . $mediatype['display'] . "</option>\n";
     }
 }

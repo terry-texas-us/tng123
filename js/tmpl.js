@@ -45,9 +45,8 @@
             }[s] || "\\" + s;
         }
         if (p2) { // interpolation: {%=prop%}, or unescaped: {%#prop%}
-            if (p2 === "=") {
-                return "'+_e(" + p3 + ")+'";
-            }
+            if (p2 === "=") return "'+_e(" + p3 + ")+'";
+
             return "'+(" + p3 + "||'')+'";
         }
         if (p4) { // evaluation start tag: {%

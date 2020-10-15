@@ -15,29 +15,15 @@ if ($link) {
         exit;
     }
 }
-
 require "adminlog.php";
-
 $fp = @fopen("config/pedconfig.php", "w", 1);
-if (!$fp) {
-    die ($admtext['cannotopen'] . " pedconfig.php");
-}
+if (!$fp) die ($admtext['cannotopen'] . " pedconfig.php");
 
-if (!$vwidth) {
-    $vwidth = 100;
-}
-if (!$vheight) {
-    $vheight = 42;
-}
-if (!$vspacing) {
-    $vspacing = 20;
-}
-if (!$vfontsize) {
-    $vfontsize = 7;
-}
-
+if (!$vwidth) $vwidth = 100;
+if (!$vheight) $vheight = 42;
+if (!$vspacing) $vspacing = 20;
+if (!$vfontsize) $vfontsize = 7;
 flock($fp, LOCK_EX);
-
 fwrite($fp, "<?php\n");
 fwrite($fp, "\$pedigree['leftindent'] = \"$leftindent\";\n");
 fwrite($fp, "\$pedigree['boxnamesize'] = \"$boxnamesize\";\n");
@@ -80,46 +66,26 @@ fwrite($fp, "\$pedigree['initpedgens'] = \"$initpedgens\";\n");
 fwrite($fp, "\$pedigree['maxupgen'] = \"$maxupgen\";\n");
 fwrite($fp, "\$pedigree['maxrels'] = \"$maxrels\";\n");
 fwrite($fp, "\$pedigree['initrels'] = \"$initrels\";\n");
-
 fwrite($fp, "\$pedigree['maxdesc'] = \"$maxdesc\";\n");
 fwrite($fp, "\$pedigree['initdescgens'] = \"$initdescgens\";\n");
 fwrite($fp, "\$pedigree['defdesc'] = \"$defdesc\";\n");
 fwrite($fp, "\$pedigree['stdesc'] = \"$stdesc\";\n");
 fwrite($fp, "\$pedigree['regnotes'] = \"$regnotes\";\n");
 fwrite($fp, "\$pedigree['regnosp'] = \"$regnosp\";\n");
+if (!$tcwidth) $tcwidth = 800;
+if (!$tcheight) $tcheight = 200;
+if (!$mpct) $mpct = 0;
+if (!$ypct) $ypct = 100 - $mpct;
 
-if (!$tcwidth) {
-    $tcwidth = 800;
-}
-if (!$tcheight) {
-    $tcheight = 200;
-}
-if (!$mpct) {
-    $mpct = 0;
-}
-if (!$ypct) {
-    $ypct = 100 - $mpct;
-}
-if (!$ypixels) {
-    $ypixels = 10;
-}
-if (!$ymult) {
-    $ymult = 10;
-}
-if (!$mpixels) {
-    $mpixels = 50;
-}
-if (!$tcevents) {
-    $tcevents = 0;
-}
-
+if (!$ypixels) $ypixels = 10;
+if (!$ymult) $ymult = 10;
+if (!$mpixels) $mpixels = 50;
+if (!$tcevents) $tcevents = 0;
 fwrite($fp, "\$pedigree['tcwidth'] = \"$tcwidth\";\n");
 fwrite($fp, "\$pedigree['simile'] = \"$simile\";\n");
 fwrite($fp, "\$pedigree['tcheight'] = \"$tcheight\";\n");
 fwrite($fp, "\$pedigree['tcevents'] = \"$tcevents\";\n");
-
 fwrite($fp, "?>\n");
-
 flock($fp, LOCK_UN);
 fclose($fp);
 

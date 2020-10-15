@@ -112,16 +112,12 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
         }
 
         while ($row = tng_fetch_assoc($result)) {
-            if ($row['num'] < $nextnum) {
-                break;
-            }
+            if ($row['num'] < $nextnum) break;
             if ($row['num'] >= $nextnum) {
                 $newID = $digits ? ($prefix . str_pad($nextnum, $digits, "0", STR_PAD_LEFT) . $suffix) : ($prefix . $nextnum . $suffix);
-
                 $query = "SELECT ID FROM $table WHERE gedcom='$tree' AND $id=\"$newID\"";
                 $result1 = tng_query($query);
                 if (!tng_num_rows($result1)) {
-
                     //change ID in people to match next #
                     $query = "UPDATE $table SET $id=\"$newID\" WHERE ID=\"{$row['ID']}\"";
                     $result2 = tng_query($query);
@@ -214,9 +210,8 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
                     $result2 = tng_query($query);
 
                     $count++;
-                    if ($count % 10 == 0) {
-                        echo "<strong>$count</strong> ";
-                    }
+                    if ($count % 10 == 0) echo "<strong>$count</strong> ";
+
                 }
                 tng_free_result($result1);
             }

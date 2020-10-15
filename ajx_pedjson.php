@@ -42,20 +42,17 @@ function xmlPerson($currperson, $backperson, $generation) {
     if ($parents) {
         $parentscount = tng_num_rows($parents);
         if ($parentscount > 0) {
-            if ($locparentset > $parentscount) {
-                $locparentset = $parentscount;
-            }
+            if ($locparentset > $parentscount) $locparentset = $parentscount;
+
             $i = 0;
             while ($parentrow = tng_fetch_assoc($parents)) {
                 $i++;
-                if ($i == $locparentset) {
-                    $parentfamID = $parentrow['familyID'];
-                }
+                if ($i == $locparentset) $parentfamID = $parentrow['familyID'];
+
                 $parentfamIDs[$i] = $parentrow['familyID'];
             }
-            if (!$parentfamID) {
-                $parentfamID = $row['famc'];
-            }
+            if (!$parentfamID) $parentfamID = $row['famc'];
+
         }
         tng_free_result($parents);
     }
@@ -117,9 +114,8 @@ function xmlPerson($currperson, $backperson, $generation) {
     if ($parentscount > 1) {
         $parents = "";
         for ($i = 1; $i <= $parentscount; $i++) {
-            if ($parents) {
-                $parents .= ",";
-            }
+            if ($parents) $parents .= ",";
+
             $parents .= "{";
             $parentinfo = getParentInfo($parentfamIDs[$i]);
             $parents .= "\"famID\":\"" . $parentfamIDs[$i] . "\",";
@@ -174,9 +170,8 @@ function xmlPerson($currperson, $backperson, $generation) {
     if ($spouseorder) {
         $spfams = "";
         while ($spouserow = tng_fetch_assoc($spouseresults)) {
-            if ($spfams) {
-                $spfams .= ",";
-            }
+            if ($spfams) $spfams .= ",";
+
             $spfams .= "{";
             $sp = "";
             if ($spouserow[$spouse]) {
@@ -221,9 +216,8 @@ function getChildren($familyID): string {
         $childrenresults = getChildrenSimple($tree, $familyID);
         if ($childrenresults && tng_num_rows($childrenresults)) {
             while ($child = tng_fetch_assoc($childrenresults)) {
-                if ($children) {
-                    $children .= ",\n";
-                }
+                if ($children) $children .= ",\n";
+
                 $rightbranch = $righttree ? checkbranch($child['branch']) : false;
                 $rights = determineLivingPrivateRights($child, $righttree, $rightbranch);
                 $child['allow_living'] = $rights['living'];
@@ -262,9 +256,8 @@ function getFamily($famrow) {
     $family .= "\"mabbr\":\"$marrabbr\"";
 
     $children = getChildren($famrow['familyID']);
-    if ($children) {
-        $family .= "," . $children;
-    }
+    if ($children) $family .= "," . $children;
+
     $family .= "}";
 
     return $family;
@@ -323,9 +316,8 @@ function getParentInfo($famid) {
 $righttree = checktree($tree);
 
 // how many generations to show?
-if (!$pedigree['maxgen']) {
-    $pedigree['maxgen'] = 6;
-}
+if (!$pedigree['maxgen']) $pedigree['maxgen'] = 6;
+
 if ($generations > $pedigree['maxgen']) {
     $generations = $pedigree['maxgen'];
 } else {
@@ -340,9 +332,8 @@ if ($generations > $pedigree['maxgen']) {
 $parentset = $parentset ? intval($parentset) : 0;
 
 $pedigree['phototree'] = $tree;
-if ($tree) {
-    $pedigree['phototree'] .= ".";
-}
+if ($tree) $pedigree['phototree'] .= ".";
+
 
 $people = [];
 $families = [];
@@ -370,9 +361,7 @@ if ($personID) {
 $numfamilies = count($families);
 if (count($people)) {
     echo "\"people\":[" . implode(",\n", $people) . "]";
-    if ($numfamilies) {
-        echo ",";
-    }
+    if ($numfamilies) echo ",";
     echo "\n";
 }
 if ($numfamilies) {

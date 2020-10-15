@@ -43,9 +43,8 @@ function doRow($table_name, $display_name) {
     echo "<a href='#' onclick=\"return startBackup('$table_name');\" title=\"{$admtext['backup']}\" class=\"smallicon admin-save-icon\"></a>";
     $fileflag = $table_name && file_exists("$rootpath$backuppath/$table_name.bak");
     echo "<a href='#' id=\"rst_$table_name\" onclick=\"if( confirm('{$admtext['surerestore']}') ) {startRestore('$table_name') ;} return false;\" title=\"{$admtext['restore']}\" class=\"smallicon admin-rest-icon\"";
-    if (!$fileflag) {
-        echo " style=\"visibility:hidden\"";
-    }
+    if (!$fileflag) echo " style=\"visibility:hidden\"";
+
     echo "></a>";
     echo "</div></td>";
     echo "<td class='lightback normal text-center'><input type='checkbox' class=\"tablechecks\" name=\"$table_name\" value='1' style=\"margin: 0; padding: 0;\"></td>\n";
@@ -58,9 +57,8 @@ function doRow($table_name, $display_name) {
 
 $helplang = findhelp("backuprestore_help.php");
 
-if (empty($sub)) {
-    $sub = "tables";
-}
+if (empty($sub)) $sub = "tables";
+
 if (!isset($message)) $message = "";
 tng_adminheader($admtext['backuprestore'], $flags);
 ?>
@@ -81,9 +79,8 @@ tng_adminheader($admtext['backuprestore'], $flags);
         var checks = jQuery('.tablechecks');
         var totalchecked = 0;
         checks.each(function (index, item) {
-            if (item.checked) {
-                totalchecked = 1;
-            }
+            if (item.checked) totalchecked = 1;
+
         });
         if (totalchecked) {
             var selval = sel.options[sel.selectedIndex].value;

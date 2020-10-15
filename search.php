@@ -264,9 +264,8 @@ if ($myburialyear || $bryqualify == "exists" || $bryqualify == "dnexist") {
     buildYearCriteria("p.burialdatetr", "myburialyear", "bryqualify", "", $bryqualify, $myburialyear, $text['burialdatetr']);
 }
 if ($mygender) {
-    if ($mygender == "N") {
-        $mygender = "";
-    }
+    if ($mygender == "N") $mygender = "";
+
     buildCriteria("p.sex", "mygender", "gequalify", $gequalify, $mygender, $text['gender']);
 }
 
@@ -274,23 +273,20 @@ $dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX"];
 $cejoin = doCustomEvents("I");
 
 if ($tree) {
-    if ($urlstring) {
-        $urlstring .= "&amp;";
-    }
+    if ($urlstring) $urlstring .= "&amp;";
+
     $urlstring .= "tree=$tree";
 
-    if ($querystring) {
-        $querystring .= " {$text['cap_and']} ";
-    }
+    if ($querystring) $querystring .= " {$text['cap_and']} ";
+
 
     require_once "./admin/trees.php";
     $treerow = getTree($trees_table, $tree);
 
     $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
 
-    if ($allwhere) {
-        $allwhere = "($allwhere) AND";
-    }
+    if ($allwhere) $allwhere = "($allwhere) AND";
+
     $allwhere .= " p.gedcom='$tree'";
 
     if ($branch) {
@@ -340,9 +336,8 @@ if ($allwhere) {
     $querystring = $text['text_for'] . " $querystring";
 }
 
-if ($orderstr) {
-    $orderstr = "ORDER BY $orderstr";
-}
+if ($orderstr) $orderstr = "ORDER BY $orderstr";
+
 
 $max_browsesearch_pages = 5;
 if ($offset) {
@@ -603,9 +598,8 @@ while ($row = tng_fetch_assoc($result)) {
         echo "<td class='databack'>$deathdate &nbsp;</td>";
         echo "<td class='databack'>$deathplace &nbsp;</td>";
     }
-    if ($showspouse) {
-        echo "<td class='databack'>$spousestr</td>";
-    }
+    if ($showspouse) echo "<td class='databack'>$spousestr</td>";
+
     if (isMobile()) {
         echo "<td class='databack'>{$row['personID']} </td>";
     }
@@ -626,9 +620,8 @@ while ($row = tng_fetch_assoc($result)) {
                     $branchnames[$key] = $branchname;
                     tng_free_result($brresult);
                 }
-                if ($branchstr) {
-                    $branchstr .= ", ";
-                }
+                if ($branchstr) $branchstr .= ", ";
+
                 if ($branchname) {
                     $branchstr .= $branchname;
                 } else {

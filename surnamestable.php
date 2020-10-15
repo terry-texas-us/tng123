@@ -14,9 +14,8 @@
 
             $topnum = $topnum ? $topnum : 100;
             $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
-            if ($tngconfig['ucsurnames']) {
-                $surnamestr = "UCASE($surnamestr)";
-            }
+            if ($tngconfig['ucsurnames']) $surnamestr = "UCASE($surnamestr)";
+
             $wherestr .= $wherestr ? " AND lastname != \"\"" : "WHERE lastname != \"\"";
             $query = "SELECT UCASE( $binary $surnamestr ) AS lastname, $surnamestr AS lowername, count( UCASE($binary lastname) ) AS lncount FROM $people_table $wherestr GROUP BY lowername ORDER by lncount DESC, lastname LIMIT $topnum";
 

@@ -75,20 +75,14 @@ class PasswordHash
         do {
             $value = ord($input[$i++]);
             $output .= $this->itoa64[$value & 0x3f];
-            if ($i < $count) {
-                $value |= ord($input[$i]) << 8;
-            }
+            if ($i < $count) $value |= ord($input[$i]) << 8;
+
             $output .= $this->itoa64[($value >> 6) & 0x3f];
-            if ($i++ >= $count) {
-                break;
-            }
-            if ($i < $count) {
-                $value |= ord($input[$i]) << 16;
-            }
+            if ($i++ >= $count) break;
+            if ($i < $count) $value |= ord($input[$i]) << 16;
+
             $output .= $this->itoa64[($value >> 12) & 0x3f];
-            if ($i++ >= $count) {
-                break;
-            }
+            if ($i++ >= $count) break;
             $output .= $this->itoa64[($value >> 18) & 0x3f];
         } while ($i < $count);
 
@@ -112,9 +106,8 @@ class PasswordHash
 
         $id = substr($setting, 0, 3);
         # We use "$P$", phpBB3 uses "$H$" for the same thing
-        if ($id != '$P$' && $id != '$H$') {
-            return $output;
-        }
+        if ($id != '$P$' && $id != '$H$') return $output;
+
 
         $count_log2 = strpos($this->itoa64, $setting[3]);
         if ($count_log2 < 7 || $count_log2 > 30) {
@@ -124,9 +117,8 @@ class PasswordHash
         $count = 1 << $count_log2;
 
         $salt = substr($setting, 4, 8);
-        if (strlen($salt) != 8) {
-            return $output;
-        }
+        if (strlen($salt) != 8) return $output;
+
 
         # We're kind of forced to use MD5 here since it's the only
         # cryptographic primitive available in all versions of PHP
@@ -214,33 +206,24 @@ class PasswordHash
 
         if (CRYPT_BLOWFISH == 1 && !$this->portable_hashes) {
             $random = $this->get_random_bytes(16);
-            $hash =
-                crypt($password, $this->gensalt_blowfish($random));
-            if (strlen($hash) == 60) {
-                return $hash;
-            }
+            $hash = crypt($password, $this->gensalt_blowfish($random));
+            if (strlen($hash) == 60) return $hash;
+
         }
 
         if (CRYPT_EXT_DES == 1 && !$this->portable_hashes) {
-            if (strlen($random) < 3) {
-                $random = $this->get_random_bytes(3);
-            }
-            $hash =
-                crypt($password, $this->gensalt_extended($random));
-            if (strlen($hash) == 20) {
-                return $hash;
-            }
+            if (strlen($random) < 3) $random = $this->get_random_bytes(3);
+
+            $hash = crypt($password, $this->gensalt_extended($random));
+            if (strlen($hash) == 20) return $hash;
+
         }
 
-        if (strlen($random) < 6) {
-            $random = $this->get_random_bytes(6);
-        }
-        $hash =
-            $this->crypt_private($password,
-                $this->gensalt_private($random));
-        if (strlen($hash) == 34) {
-            return $hash;
-        }
+        if (strlen($random) < 6) $random = $this->get_random_bytes(6);
+
+        $hash = $this->crypt_private($password, $this->gensalt_private($random));
+        if (strlen($hash) == 34) return $hash;
+
 
         # Returning '*' on error is safe here, but would _not_ be safe
         # in a crypt(3)-like function used _both_ for generating new
@@ -250,9 +233,8 @@ class PasswordHash
 
     public function CheckPassword($password, $stored_hash) {
         $hash = $this->crypt_private($password, $stored_hash);
-        if ($hash[0] == '*') {
-            $hash = crypt($password, $stored_hash);
-        }
+        if ($hash[0] == '*') $hash = crypt($password, $stored_hash);
+
 
         return $hash == $stored_hash;
     }

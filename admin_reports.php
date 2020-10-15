@@ -54,14 +54,12 @@ if ($searchstring) {
     $wherestr .= "(reportname LIKE \"%$searchstring%\" OR reportdesc LIKE \"%$searchstring%\")";
 }
 if ($activeonly) {
-    if ($wherestr) {
-        $wherestr .= " AND ";
-    }
+    if ($wherestr) $wherestr .= " AND ";
+
     $wherestr .= "active = '1'";
 }
-if ($wherestr) {
-    $wherestr = "WHERE " . $wherestr;
-}
+if ($wherestr) $wherestr = "WHERE " . $wherestr;
+
 
 $query = "SELECT reportID, reportname, reportdesc, ranking, active FROM $reports_table $wherestr ORDER BY ranking, reportname, reportID LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);

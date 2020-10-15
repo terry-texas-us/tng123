@@ -190,9 +190,8 @@ LITBox.prototype = {
             this.d2.style.top = parseInt(this.options.top) + 'px';
         }
         /*}*/
-        if (this.d) {
-            this.d.style.height = yScroll + "px";
-        }
+        if (this.d) this.d.style.height = yScroll + "px";
+
     },
     remove: function () {
         if (this.temp) this.temp();

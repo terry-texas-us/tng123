@@ -14,21 +14,17 @@ function adminwritelog($string) {
     array_unshift($lines, "$updated $string.\n");
 
     $fp = @fopen($adminlogfile, "w");
-    if (!$fp) {
-        die ("{$admtext['cannotopen']} $adminlogfile");
-    }
+    if (!$fp) die ("{$admtext['cannotopen']} $adminlogfile");
+
 
     flock($fp, LOCK_EX);
     $linecount = 0;
     foreach ($lines as $line) {
         trim($line);
-        if ($line) {
-            fwrite($fp, $line);
-        }
+        if ($line) fwrite($fp, $line);
+
         $linecount++;
-        if ($linecount == $adminmaxloglines) {
-            break;
-        }
+        if ($linecount == $adminmaxloglines) break;
     }
     flock($fp, LOCK_UN);
     fclose($fp);

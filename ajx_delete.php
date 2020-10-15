@@ -6,9 +6,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 
-if (!$allow_media_delete) {
-    exit;
-}
+if (!$allow_media_delete) exit;
 
 require "adminlog.php";
 require "deletelib.php";
@@ -98,9 +96,7 @@ switch ($t) {
         $personID = $row['personID'];
         $tree = $row['gedcom'];
 
-        if (($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
-            exit;
-        }
+        if (($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) exit;
 
         $query = "DELETE FROM $people_table WHERE ID=\"$id\"";
         $result = @tng_query($query);
@@ -114,9 +110,7 @@ switch ($t) {
         $familyID = $row['familyID'];
         $tree = $row['gedcom'];
 
-        if (($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
-            exit;
-        }
+        if (($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) exit;
 
         $query = "DELETE FROM $families_table WHERE ID=\"$id\"";
         $result = @tng_query($query);
@@ -139,11 +133,9 @@ switch ($t) {
         $logmsg = $admtext['deleted'] . ": {$admtext['family']} $tree/$familyID";
         break;
     case "source":
-        if ($assignedtree && $assignedtree != $tree) {
-            exit;
-        }
+        if ($assignedtree && $assignedtree != $tree) exit;
 
-        $row = getID("sourceID, gedcom", $sources_table, $id);
+$row = getID("sourceID, gedcom", $sources_table, $id);
         $sourceID = $row['sourceID'];
         $tree = $row['gedcom'];
 
@@ -162,11 +154,9 @@ switch ($t) {
         $logmsg = $admtext['deleted'] . ": {$admtext['source']} $sourceID";
         break;
     case "repository":
-        if ($assignedtree && $assignedtree != $tree) {
-            exit;
-        }
+        if ($assignedtree && $assignedtree != $tree) exit;
 
-        $row = getID("repoID, gedcom", $repositories_table, $id);
+$row = getID("repoID, gedcom", $repositories_table, $id);
         $repoID = $row['repoID'];
         $tree = $row['gedcom'];
 
@@ -196,11 +186,9 @@ switch ($t) {
         $place = $row['place'];
         $tree = $row['gedcom'];
 
-        if (!$tngconfig['places1tree'] && $assignedtree && $assignedtree != $tree) {
-            exit;
-        }
+        if (!$tngconfig['places1tree'] && $assignedtree && $assignedtree != $tree) exit;
 
-        $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
+$query = "DELETE FROM $places_table WHERE ID=\"$id\"";
         $result = @tng_query($query);
 
         deleteMediaLinks($place, $tree);
@@ -375,7 +363,6 @@ switch ($t) {
         $result = @tng_query($query);
         break;
 }
-if ($logmsg) {
-    adminwritelog($logmsg);
-}
+if ($logmsg) adminwritelog($logmsg);
+
 echo $id;

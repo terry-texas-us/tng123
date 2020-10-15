@@ -22,9 +22,8 @@ $badtables = "";
 $collation = "";
 include "tabledefs.php";
 
-if (!$badtables) {
-    adminwritelog($admtext['createtables']);
-}
+if (!$badtables) adminwritelog($admtext['createtables']);
+
 
 tng_adminheader($admtext['tablecreation'], $flags);
 

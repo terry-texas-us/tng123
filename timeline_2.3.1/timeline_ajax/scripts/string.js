@@ -36,8 +36,7 @@ String.substitute = function (s, objects) {
         }
     }
 
-    if (start < s.length) {
-        result += s.substring(start);
-    }
+    if (start < s.length) result += s.substring(start);
+
     return result;
 };

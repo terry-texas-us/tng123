@@ -21,28 +21,18 @@ $longitude = addslashes($longitude);
 $zoom = addslashes($zoom);
 $notes = addslashes($notes);
 $orgplace = addslashes($orgplace);
-
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
-if ($latitude && $longitude && $placelevel && !$zoom) {
-    $zoom = 13;
-}
-if (!$zoom) {
-    $zoom = 0;
-}
-if (!$placelevel) {
-    $placelevel = 0;
-}
-if (!$temple) {
-    $temple = 0;
-}
+if ($latitude && $longitude && $placelevel && !$zoom) $zoom = 13;
+if (!$zoom) $zoom = 0;
+if (!$placelevel) $placelevel = 0;
+if (!$temple) $temple = 0;
 if (!$tngconfig['places1tree'] && $newtree) {
     $newtreestr = ",gedcom=\"$newtree\"";
     $tree = $newtree;
 } else {
     $newtreestr = "";
 }
-
 $query = "UPDATE $places_table SET place=\"$place\",placelevel=\"$placelevel\",temple=\"$temple\",latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\",notes=\"$notes\",geoignore='0'$newtreestr WHERE ID='$ID'";
 $result = @tng_query_noerror($query);
 if (!$result) {

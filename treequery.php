@@ -9,9 +9,8 @@ if ($numtrees > 1) {
     }
     while ($treerow = tng_fetch_assoc($treeresult)) {
         echo "	<option value='{$treerow['gedcom']}'";
-        if ($treerow['gedcom'] == $tree) {
-            echo " selected";
-        }
+        if ($treerow['gedcom'] == $tree) echo " selected";
+
         echo ">{$treerow['treename']}</option>\n";
     }
     echo "</select>\n";

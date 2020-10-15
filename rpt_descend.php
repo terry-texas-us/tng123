@@ -131,9 +131,8 @@ for ($i = 0; $i < $personcount; $i++) {
         $namestring = $infoDescend[$i]['name'] . ' ' . $infoDescend[$i]['vitals'];
         $pdf->SetX($x);
         $sep = '-';
-        if ($numbering == 0) {
-            $sep = '';
-        }
+        if ($numbering == 0) $sep = '';
+
         $pdf->MultiCell(0, $dy, $infoDescend[$i]['number'] . $sep . $namestring, 0, 'L', 0, $x + $hangind);
 
         // print spouse info
@@ -166,11 +165,9 @@ function getIndividual($key, $sex, $level, $trail, $num) {
     global $tree, $genperpage, $text;
     global $numgen, $startnum, $righttree;
 
-    if (is_null($j)) {
-        $j = 1;
-    }
+    if (is_null($j)) $j = 1;
 
-    if ($sex == 'M') {
+if ($sex == 'M') {
         $self = 'husband';
         $spouse = 'wife';
         $spouseorder = 'husborder';
@@ -213,18 +210,16 @@ function getIndividual($key, $sex, $level, $trail, $num) {
                         if ($henrynum == 10) {
                             $henrynum = 'X';
                         } else {
-                            if ($henrynum > 10) {
-                                $henrynum = chr($henrynum + 55);
-                            }
+                            if ($henrynum > 10) $henrynum = chr($henrynum + 55);
+
                         }
                         $infoDescend[$j]['number'] = $henrynum;
                     } else {
                         if ($numbering == 3) {
                             $infoDescend[$j]['number'] = $num;
                         } else {
-                            if ($numbering == 4) {
-                                $infoDescend[$j]['number'] = $num;
-                            }
+                            if ($numbering == 4) $infoDescend[$j]['number'] = $num;
+
                         }
                     }
                 }
@@ -259,9 +254,8 @@ function getIndividual($key, $sex, $level, $trail, $num) {
                                 if ($henrynum == 10) {
                                     $henrynum = 'X';
                                 } else {
-                                    if ($henrynum > 10) {
-                                        $henrynum = chr($henrynum + 55);
-                                    }
+                                    if ($henrynum > 10) $henrynum = chr($henrynum + 55);
+
                                 }
                                 $infoDescend[$j]['number'] = "${henrynum}${n}";
                             } else {
@@ -287,9 +281,8 @@ function getIndividual($key, $sex, $level, $trail, $num) {
                     $j++;
 
                     // keep track of highest number of generations for report (using $level on gives generation of last person)
-                    if ($numgen < $level) {
-                        $numgen = $level;
-                    }
+                    if ($numgen < $level) $numgen = $level;
+
                     if ($level < $genperpage) {
                         getIndividual($crow['personID'], $crow['sex'], $level + 1, $newtrail, $infoDescend[$j - 1]['number']);
                     }
@@ -310,17 +303,13 @@ function getIndividual($key, $sex, $level, $trail, $num) {
 
 function getVitalDates($row) {
     global $getPlace, $text;
-
-    if ($getPlace == 2) {
-        return;
-    }
+    if ($getPlace == 2) return;
     $vitalinfo = "";
     if ($row['allow_living'] && $row['allow_private']) {
         if ($row['birthdate']) {
             $vitalinfo .= $text['birthabbr'] . ' ' . displayDate($row['birthdate']) . ', ';
-            if ($row['birthplace']) {
-                $vitalinfo .= $row['birthplace'] . ', ';
-            }
+            if ($row['birthplace']) $vitalinfo .= $row['birthplace'] . ', ';
+
         }
         if ((!$row['birthdate'] || $getPlace == 3) && $row['altbirthdate']) {
             $vitalinfo .= $text['chrabbr'] . ' ' . displayDate($row['altbirthdate']) . ', ';
@@ -331,15 +320,13 @@ function getVitalDates($row) {
 
         if ($row['deathdate']) {
             $vitalinfo .= $text['deathabbr'] . ' ' . displayDate($row['deathdate']) . ', ';
-            if ($row['deathplace']) {
-                $vitalinfo .= $row['deathplace'] . ', ';
-            }
+            if ($row['deathplace']) $vitalinfo .= $row['deathplace'] . ', ';
+
         }
         if ((!$row['deathdate'] || $getPlace == 3) && $row['burialdate']) {
             $vitalinfo .= $text['burialabbr'] . ' ' . displayDate($row['burialdate']) . ', ';
-            if ($row['burialplace']) {
-                $vitalinfo .= $row['burialplace'];
-            }
+            if ($row['burialplace']) $vitalinfo .= $row['burialplace'];
+
         }
     }
 

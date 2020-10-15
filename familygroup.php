@@ -63,9 +63,8 @@ function showDatePlace($event) {
     $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td class='databack'";
     if ($allow_lds_this && $event['ldstext']) {
-        if ($event['eventlds'] == "div") {
-            $dptext .= " colspan='4'";
-        }
+        if ($event['eventlds'] == "div") $dptext .= " colspan='4'";
+
     }
     $dptext .= "><span class='normal'>{$event['place']}$pcitestr&nbsp;";
     if ($event['place']) {
@@ -130,9 +129,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $indtext .= "<tr><td>";
     $indtext .= showSmallPhoto($ind['personID'], $namestr, $rights['both'], 0, false, $ind['sex']);
     $indtext .= "<span class='normal'>$label | $sex</span><br><h3 class='subhead'>";
-    if ($ind['haskids']) {
-        $indtext .= "+ ";
-    }
+    if ($ind['haskids']) $indtext .= "+ ";
+
     $indtext .= "<a href=\"getperson.php?personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
 
     if ($allow_edit && $rightbranch) {
@@ -396,9 +394,8 @@ preparebookmark($logstring);
 
 $famname .= " ($familyID)";
 $namestr = $text['family'] . ": " . $famname;
-if (!$rightbranch) {
-    $tentative_edit = "";
-}
+if (!$rightbranch) $tentative_edit = "";
+
 
 $famnotes = getNotes($familyID, "F");
 
@@ -522,9 +519,8 @@ if ($rights['both']) {
         $count = count($citestring);
         foreach ($citestring as $cite) {
             $famtext .= "<li class='normal'><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
-            if ($citectr < $count) {
-                $famtext .= "<br>";
-            }
+            if ($citectr < $count) $famtext .= "<br>";
+
             $famtext .= "</li>\n";
         }
         $famtext .= "</ol></td>\n";
@@ -627,15 +623,13 @@ echo tng_menu("F", "family", $familyID, $innermenu);
             } else {
                 innerToggle(part, "info", "tng_plink");
                 <?php
-                if ($media) {
-                    echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
-                }
+                if ($media) echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
+
                 if ($assoctext) {
                     echo "innerToggle(part,\"assoc\",\"tng_xlink\");\n";
                 }
-                if ($notes) {
-                    echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
-                }
+                if ($notes) echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
+
                 if ($citedispctr) {
                     echo "innerToggle(part,\"citations\",\"tng_clink\");\n";
                 }

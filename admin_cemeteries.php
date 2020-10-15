@@ -160,21 +160,18 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                         while ($row = tng_fetch_assoc($result)) {
                             $location = $row['city'];
                             if ($row['county']) {
-                                if ($location) {
-                                    $location .= ", ";
-                                }
+                                if ($location) $location .= ", ";
+
                                 $location .= $row['county'];
                             }
                             if ($row['state']) {
-                                if ($location) {
-                                    $location .= ", ";
-                                }
+                                if ($location) $location .= ", ";
+
                                 $location .= $row['state'];
                             }
                             if ($row['country']) {
-                                if ($location) {
-                                    $location .= ", ";
-                                }
+                                if ($location) $location .= ", ";
+
                                 $location .= $row['country'];
                             }
 
@@ -195,15 +192,13 @@ echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $
                                     $geo .= "&nbsp;{$admtext['latitude']}: " . number_format($row['latitude'], 3);
                                 }
                                 if ($row['longitude']) {
-                                    if ($geo) {
-                                        $geo .= "<br>";
-                                    }
+                                    if ($geo) $geo .= "<br>";
+
                                     $geo .= "&nbsp;{$admtext['longitude']}: " . number_format($row['longitude'], 3);
                                 }
                                 if ($row['zoom']) {
-                                    if ($geo) {
-                                        $geo .= "<br>";
-                                    }
+                                    if ($geo) $geo .= "<br>";
+
                                     $geo .= "&nbsp;{$admtext['zoom']}: " . $row['zoom'];
                                 }
                                 echo "$geo&nbsp;</td>\n";

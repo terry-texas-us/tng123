@@ -73,9 +73,8 @@ function handleSource($persfamID, $prevlevel) {
         }
     }
 
-    if ($mmcount) {
-        $cite['MEDIA'] = $mminfo;
-    }
+    if ($mmcount) $cite['MEDIA'] = $mminfo;
+
 
     return $cite;
 }
@@ -179,9 +178,8 @@ function getSourceRecord($sourceID, $prevlevel) {
                     break;
                 case "REPO":
                     preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
-                    if (!empty($matches[1])) {
-                        $info['REPO'] = $matches[1];
-                    }
+                    if (!empty($matches[1])) $info['REPO'] = $matches[1];
+
                     $lineinfo = getLine();
                     if ($lineinfo['tag'] == "CALN") {
                         $info['CALN'] = addslashes($lineinfo['rest']);
@@ -211,9 +209,8 @@ function getSourceRecord($sourceID, $prevlevel) {
             $result = @tng_query($query);
             $srcrow = tng_fetch_assoc($result);
             $goahead = $inschangedt > $srcrow['changedate'] ? 1 : 0;
-            if ($result) {
-                tng_free_result($result);
-            }
+            if ($result) tng_free_result($result);
+
         } else {
             $goahead = 1;
         }
@@ -237,9 +234,8 @@ function getSourceRecord($sourceID, $prevlevel) {
             for ($notectr = 1; $notectr <= $notecount; $notectr++)
                 saveNote($sourceID, $stdnotes[$notectr]['TAG'], $stdnotes[$notectr]);
         }
-        if ($mmcount) {
-            processMedia($mmcount, $mminfo, $sourceID, "");
-        }
+        if ($mmcount) processMedia($mmcount, $mminfo, $sourceID, "");
+
 
         incrCounter($prefix);
     }
@@ -257,21 +253,18 @@ function getRestOfSource($sourceID, $prevlevel) {
             if ($lineinfo['tag'] == "CONC") {
                 $continued .= addslashes($lineinfo['rest']);
             } elseif ($lineinfo['tag'] == "CONT") {
-                if ($continued) {
-                    $lineinfo['rest'] = "\n" . $lineinfo['rest'];
-                }
+                if ($continued) $lineinfo['rest'] = "\n" . $lineinfo['rest'];
+
                 $continued .= addslashes($lineinfo['rest']);
             } else {
                 if ($lineinfo['tag'] != $lasttag) {
-                    if ($continued) {
-                        $continued .= $lineending;
-                    }
+                    if ($continued) $continued .= $lineending;
+
                     $continued .= $lineinfo['tag'] . ":";
                     $lasttag = $lineinfo['tag'];
                 }
-                if ($continued) {
-                    $lineinfo['rest'] = "\n" . $lineinfo['rest'];
-                }
+                if ($continued) $lineinfo['rest'] = "\n" . $lineinfo['rest'];
+
                 $continued .= addslashes($lineinfo['rest']);
             }
         }
@@ -376,9 +369,8 @@ function getRepoRecord($repoID, $prevlevel) {
             $result = @tng_query($query);
             $reporow = tng_fetch_assoc($result);
             $goahead = $inschangedt > $reporow['changedate'] ? 1 : 0;
-            if ($result) {
-                tng_free_result($result);
-            }
+            if ($result) tng_free_result($result);
+
         } else {
             $goahead = 1;
         }
@@ -403,9 +395,8 @@ function getRepoRecord($repoID, $prevlevel) {
             for ($notectr = 1; $notectr <= $notecount; $notectr++)
                 saveNote($repoID, $stdnotes[$notectr]['TAG'], $stdnotes[$notectr]);
         }
-        if ($mmcount) {
-            processMedia($mmcount, $mminfo, $repoID, "");
-        }
+        if ($mmcount) processMedia($mmcount, $mminfo, $repoID, "");
+
         if (!empty($address)) {
             $query = "INSERT INTO $address_table (gedcom, address1, address2, city, state, zip, country, www, email, phone) VALUES('$tree', \"{$address['ADR1']}\", \"{$address['ADR2']}\", \"{$address['CITY']}\", \"{$address['STAE']}\", \"{$address['POST']}\",  \"{$address['CTRY']}\", \"{$address['WWW']}\", \"{$address['EMAIL']}\", \"{$address['PHON']}\")";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");

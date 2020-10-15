@@ -84,9 +84,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $indtext .= "<td colspan='$totcols'>";
     $indtext .= "<span class='normal'>$label | $sex</span><br>";
     $indtext .= "<h3 class='subhead'>";
-    if ($ind['haskids']) {
-        $indtext .= "> ";
-    }
+    if ($ind['haskids']) $indtext .= "> ";
+
     $indtext .= "$namestr";
     $indtext .= "</h3>\n";
     $indtext .= "</td>\n";

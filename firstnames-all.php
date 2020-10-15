@@ -27,9 +27,8 @@ $linkstr = "";
 $nofirstname = urlencode($text['nofirstname']);
 $query = "SELECT UCASE(LEFT(firstname, 1)) AS firstchar, UCASE($binary LEFT(firstname, 1) ) AS binfirstchar ";
 $query .= "FROM $people_table ";
-if ($tree) {
-    $query .= "WHERE gedcom = '$tree' ";
-}
+if ($tree) $query .= "WHERE gedcom = '$tree' ";
+
 if ($livingPrivateRestrictions) {
     $query .= $tree ? "AND $livingPrivateRestrictions" : "WHERE $livingPrivateRestrictions ";
 }
@@ -40,9 +39,8 @@ if ($result) {
     $initialchar = 1;
 
     while ($firstname = tng_fetch_assoc($result)) {
-        if ($initialchar != 1) {
-            $linkstr .= " ";
-        }
+        if ($initialchar != 1) $linkstr .= " ";
+
         if ($firstname['firstchar'] == "") {
             $firstname['firstchar'] = $text['nofirstname'];
             $linkstr .= "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>{$text['nofirstname']}</a> ";
@@ -83,9 +81,8 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                     $query = "SELECT UCASE( $binary $firstnamestr ) AS firstname, $firstnamestr AS lowername, UCASE($binary firstname) AS binlast, count(UCASE($binary firstname) ) AS lncount ";
                     $query .= "FROM $people_table ";
                     $query .= "WHERE UCASE($binary TRIM(firstname)) LIKE \"$urlfirstchar%\" ";
-                    if ($tree) {
-                        $query .= "AND gedcom = '$tree' ";
-                    }
+                    if ($tree) $query .= "AND gedcom = '$tree' ";
+
                     if ($livingPrivateRestrictions) {
                         $query .= "AND $livingPrivateRestrictions ";
                     }

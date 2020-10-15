@@ -43,9 +43,8 @@
             var childWidth = (childWidth === 0) ? child.attr('width') : child.width(),
                 childHeight = (childHeight === 0) ? child.attr('height') : child.height();
 
-            if (link !== '') {
-                link.css('display', 'none');
-            }
+            if (link !== '') link.css('display', 'none');
+
             child.css('display', 'none');
             vars.totalSlides++;
         });
@@ -130,9 +129,8 @@
             slider.append('<div class="nivo-directionNav"><a class="nivo-prevNav">' + settings.prevText + '</a><a class="nivo-nextNav">' + settings.nextText + '</a></div>');
 
             $(slider).on('click', 'a.nivo-prevNav', function () {
-                if (vars.running) {
-                    return false;
-                }
+                if (vars.running) return false;
+
                 clearInterval(timer);
                 timer = '';
                 vars.currentSlide -= 2;
@@ -140,9 +138,8 @@
             });
 
             $(slider).on('click', 'a.nivo-nextNav', function () {
-                if (vars.running) {
-                    return false;
-                }
+                if (vars.running) return false;
+
                 clearInterval(timer);
                 timer = '';
                 nivoRun(slider, kids, settings, 'next');
@@ -157,9 +154,8 @@
                 if (settings.controlNavThumbs) {
                     vars.controlNavEl.addClass('nivo-thumbs-enabled');
                     var child = kids.eq(i);
-                    if (!child.is('img')) {
-                        child = child.find('img:first');
-                    }
+                    if (!child.is('img')) child = child.find('img:first');
+
                     if (child.attr('data-thumb')) vars.controlNavEl.append('<a class="nivo-control" rel="' + i + '"><img src="' + child.attr('data-thumb') + '" alt="" /></a>');
                 } else {
                     vars.controlNavEl.append('<a class="nivo-control" rel="' + i + '">' + (i + 1) + '</a>');
@@ -201,9 +197,8 @@
             vars.running = false;
             // Hide child links
             $(kids).each(function () {
-                if ($(this).is('a')) {
-                    $(this).css('display', 'none');
-                }
+                if ($(this).is('a')) $(this).css('display', 'none');
+
             });
             // Show current link
             if ($(kids[vars.currentSlide]).is('a')) {
@@ -306,9 +301,8 @@
             }
 
             // Stop
-            if ((!vars || vars.stop) && !nudge) {
-                return false;
-            }
+            if ((!vars || vars.stop) && !nudge) return false;
+
 
             // Trigger the beforeChange callback
             settings.beforeChange.call(this);
@@ -364,18 +358,16 @@
                 anims = new Array('sliceDownRight', 'sliceDownLeft', 'sliceUpRight', 'sliceUpLeft', 'sliceUpDown', 'sliceUpDownLeft', 'fold', 'fade',
                     'boxRandom', 'boxRain', 'boxRainReverse', 'boxRainGrow', 'boxRainGrowReverse');
                 currentEffect = anims[Math.floor(Math.random() * (anims.length + 1))];
-                if (currentEffect === undefined) {
-                    currentEffect = 'fade';
-                }
+                if (currentEffect === undefined) currentEffect = 'fade';
+
             }
 
             // Run random effect from specified set (eg: effect:'fold,fade')
             if (settings.effect.indexOf(',') !== -1) {
                 anims = settings.effect.split(',');
                 currentEffect = anims[Math.floor(Math.random() * (anims.length))];
-                if (currentEffect === undefined) {
-                    currentEffect = 'fade';
-                }
+                if (currentEffect === undefined) currentEffect = 'fade';
+
             }
 
             // Custom transition as defined by "data-transition" attribute

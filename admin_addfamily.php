@@ -107,29 +107,23 @@ if ($wife) {
     $wiferesult = tng_query($query);
     $wiferow = tng_fetch_assoc($wiferesult);
     tng_free_result($wiferesult);
-
     $wifeorder = $wiferow['wifeorder'] + 1;
 } else {
     $wifeliving = 0;
     $wifeorder = 0;
 }
 $familyliving = ($living || $husbliving || $wifeliving) ? 1 : 0;
-if (!$private) {
-    $private = 0;
-}
-
+if (!$private) $private = 0;
 if (is_array($branch)) {
     foreach ($branch as $b) {
-        if ($b) {
-            $allbranches = $allbranches ? "$allbranches,$b" : $b;
-        }
+        if ($b) $allbranches = $allbranches ? "$allbranches,$b" : $b;
+
     }
 } else {
     $allbranches = $branch;
 }
-if (!$allbranches) {
-    $allbranches = "";
-}
+if (!$allbranches) $allbranches = "";
+
 $query = "INSERT INTO $families_table (familyID,husband,husborder,wife,wifeorder,living,private,marrdate,marrdatetr,marrplace,marrtype,divdate,divdatetr,divplace,sealdate,sealdatetr,sealplace,changedate,gedcom,branch,changedby,status,edituser,edittime) 
 	VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', '', '0')";
 $template = "sssssssssssssssssssss";

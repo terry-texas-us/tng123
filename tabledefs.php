@@ -731,9 +731,8 @@ foreach ($tmp as $key => $value) {
     }
     $keyname = $keyparts[1];
     $num_keyparts = count($keyparts);
-    if ($values) {
-        $values .= ", ";
-    }
+    if ($values) $values .= ", ";
+
     $values .= "(\"$template\",\"{$orders[$template]}\",\"$keyname\",\"\",\"" . addslashes($value) . "\")";
 }
 $query .= $values;

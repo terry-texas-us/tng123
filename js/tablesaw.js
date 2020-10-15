@@ -7,9 +7,8 @@
         $doc = $(document.documentElement);
 
     div.innerHTML = '<!--[if lte IE 8]><i></i><![endif]-->';
-    if (all[0]) {
-        $doc.addClass('ie-lte8');
-    }
+    if (all[0]) $doc.addClass('ie-lte8');
+
 
     // Cut the mustard
     if (!('querySelector' in document) ||
@@ -45,9 +44,8 @@ if (typeof Tablesaw === "undefined") {
         }
     };
 }
-if (!Tablesaw.config) {
-    Tablesaw.config = {};
-}
+if (!Tablesaw.config) Tablesaw.config = {};
+
 
 ;(function ($) {
     var pluginName = "table",
@@ -63,9 +61,8 @@ if (!Tablesaw.config) {
         initSelector = "table[data-tablesaw-mode],table[data-tablesaw-sortable]";
 
     var Table = function (element) {
-        if (!element) {
-            throw new Error("Tablesaw requires an element.");
-        }
+        if (!element) throw new Error("Tablesaw requires an element.");
+
 
         this.table = element;
         this.$table = $(element);
@@ -135,9 +132,8 @@ if (!Tablesaw.config) {
         }
         this.$toolbar = $toolbar;
 
-        if (this.mode) {
-            this.$toolbar.addClass('mode-' + this.mode);
-        }
+        if (this.mode) this.$toolbar.addClass('mode-' + this.mode);
+
     };
 
     Table.prototype.destroy = function () {
@@ -163,11 +159,9 @@ if (!Tablesaw.config) {
         return this.each(function () {
             var $t = $(this);
 
-            if ($t.data(pluginName)) {
-                return;
-            }
+            if ($t.data(pluginName)) return;
 
-            var table = new Table(this);
+var table = new Table(this);
             $t.data(pluginName, table);
         });
     };
@@ -213,11 +207,9 @@ if (!Tablesaw.config) {
     Stack.prototype.init = function (colstart) {
         this.$table.addClass(classes.stackTable);
 
-        if (this.labelless) {
-            return;
-        }
+        if (this.labelless) return;
 
-        // get headers in reverse order so that top-level headers are appended last
+// get headers in reverse order so that top-level headers are appended last
         var reverseHeaders = $(this.allHeaders);
         var hideempty = this.hideempty;
 
@@ -305,9 +297,8 @@ if (!Tablesaw.config) {
 
                     opts.each(function () {
                         var opt = this;
-                        if (opt.selected) {
-                            label = document.createTextNode(opt.text);
-                        }
+                        if (opt.selected) label = document.createTextNode(opt.text);
+
                     });
 
                     children = oEl.childNodes;
@@ -315,9 +306,8 @@ if (!Tablesaw.config) {
                         for (var i = 0, l = children.length; i < l; i++) {
                             el = children[i];
 
-                            if (el && el.nodeType === 3) {
-                                oEl.replaceChild(label, el);
-                            }
+                            if (el && el.nodeType === 3) oEl.replaceChild(label, el);
+
                         }
                     }
                 };
@@ -455,11 +445,9 @@ if (!Tablesaw.config) {
 
         function closePopup(event) {
             // Click came from inside the popup, ignore.
-            if (event && $(event.target).closest("." + self.classes.popup).length) {
-                return;
-            }
+            if (event && $(event.target).closest("." + self.classes.popup).length) return;
 
-            $(document).unbind('click.' + tableId);
+$(document).unbind('click.' + tableId);
             $menuButton.removeClass('up').addClass('down');
             $btnContain.removeClass('visible');
         }
@@ -684,11 +672,9 @@ if (!Tablesaw.config) {
         }
 
         function fakeBreakpoints() {
-            if (!matchesMedia()) {
-                return;
-            }
+            if (!matchesMedia()) return;
 
-            var extraPaddingPixels = 20,
+var extraPaddingPixels = 20,
                 containerWidth = $table.parent().width(),
                 persist = [],
                 sum = 0,
@@ -728,9 +714,8 @@ if (!Tablesaw.config) {
                 }
             });
 
-            if (!isIE8) {
-                unmaintainWidths();
-            }
+            if (!isIE8) unmaintainWidths();
+
             $table.trigger('tablesawcolumns');
         }
 
@@ -745,9 +730,8 @@ if (!Tablesaw.config) {
                     }
                 }
 
-                if (!isIE8) {
-                    maintainWidths();
-                }
+                if (!isIE8) maintainWidths();
+
 
                 hideColumn($headerCellsNoPersist.get(pair[0]));
                 showColumn($headerCellsNoPersist.get(pair[1]));
@@ -868,9 +852,8 @@ if (!Tablesaw.config) {
             _create: function (o) {
                 return $(this).each(function () {
                     var init = $(this).data("init" + pluginName);
-                    if (init) {
-                        return false;
-                    }
+                    if (init) return false;
+
                     $(this)
                         .data("init" + pluginName, true)
                         .trigger("beforecreate." + pluginName)
@@ -907,11 +890,9 @@ if (!Tablesaw.config) {
                         });
                     },
                     headsOnAction = function (e) {
-                        if ($(e.target).is('a[href]')) {
-                            return;
-                        }
+                        if ($(e.target).is('a[href]')) return;
 
-                        e.stopPropagation();
+e.stopPropagation();
                         var head = $(this).parent(),
                             v = e.data.col,
                             newSortValue = heads.index(head);
@@ -934,9 +915,8 @@ if (!Tablesaw.config) {
                         $.each(heads, function (idx, el) {
                             var $el = $(el);
                             if ($el.is("[" + attrs.defaultCol + "]")) {
-                                if (!$el.hasClass(classes.descend)) {
-                                    $el.addClass(classes.ascend);
-                                }
+                                if (!$el.hasClass(classes.descend)) $el.addClass(classes.ascend);
+
                             }
                         });
                     },
@@ -1100,9 +1080,8 @@ if (!Tablesaw.config) {
     $.extend($.fn[pluginName].prototype, methods);
 
     $(document).on("tablesawcreate", function (e, Tablesaw) {
-        if (Tablesaw.$table.is(initSelector)) {
-            Tablesaw.$table[pluginName]();
-        }
+        if (Tablesaw.$table.is(initSelector)) Tablesaw.$table[pluginName]();
+
     });
 
 }(jQuery));
@@ -1207,15 +1186,9 @@ if (!Tablesaw.config) {
 
                     html.push('<span class="btn btn-small">&#160;<select>');
                     for (var j = 0, k = S.modes.length; j < k; j++) {
-                        if (ignoreMode && ignoreMode.toLowerCase() === S.modes[j]) {
-                            continue;
-                        }
-
+                        if (ignoreMode && ignoreMode.toLowerCase() === S.modes[j]) continue;
                         isSelected = dataMode === S.modes[j];
-
-                        if (isSelected) {
-                            modeVal = S.modes[j];
-                        }
+                        if (isSelected) modeVal = S.modes[j];
 
                         html.push('<option' +
                             (isSelected ? ' selected' : '') +

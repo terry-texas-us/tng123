@@ -15,9 +15,8 @@ if ($assignedtree) {
     $file = "$rootpath/whatsnew.txt";
     //write to file
     $fp = @fopen($file, "w");
-    if (!$fp) {
-        die ($admtext['cannotopen'] . " $file");
-    }
+    if (!$fp) die ($admtext['cannotopen'] . " $file");
+
 
     flock($fp, LOCK_EX);
     fwrite($fp, $whatsnewmsg);

@@ -291,12 +291,10 @@ foreach ($timeline as $timeentry) {
 //get all events that fall in time period
 //loop through and use year as index in array
 //append if duplicate years
-if (!$latest) {
-    $latest = 0;
-}
-if (!$earliest) {
-    $earliest = 0;
-}
+if (!$latest) $latest = 0;
+
+if (!$earliest) $earliest = 0;
+
 $tlquery = "SELECT evday, evmonth, evyear, evtitle, evdetail, endday, endmonth, endyear
 	FROM $tlevents_table
 	WHERE (evyear * 1 <= $latest * 1 AND endyear * 1 >= $earliest * 1) OR (endyear = \"\" AND (evyear BETWEEN \"$earliest\" AND \"$latest\"))
@@ -307,18 +305,14 @@ $tlevents = [];
 $tlevents2 = [];
 while ($tlrow = tng_fetch_assoc($tlresult)) {
     $evyear = $tlrow['evyear'];
-    if ($evyear < $earliest) {
-        $earliest = $evyear;
-    }
-    if ($tlrow['endyear'] > $latest) {
-        $latest = $tlrow['endyear'];
-    }
-    if ($tlrow['evday'] == "0") {
-        $tlrow['evday'] = "";
-    }
-    if ($tlrow['endday'] == "0") {
-        $tlrow['endday'] = "";
-    }
+    if ($evyear < $earliest) $earliest = $evyear;
+
+    if ($tlrow['endyear'] > $latest) $latest = $tlrow['endyear'];
+
+    if ($tlrow['evday'] == "0") $tlrow['evday'] = "";
+
+    if ($tlrow['endday'] == "0") $tlrow['endday'] = "";
+
 
     $daymonth = trim($tlrow['evday'] . " " . $tlmonths[$tlrow['evmonth']]);
     $daymonth .= $daymonth ? " " . $evyear : $evyear;
@@ -327,9 +321,8 @@ while ($tlrow = tng_fetch_assoc($tlresult)) {
     $enddate = $enddate ? "&mdash;$enddate" : "";
 
     $newentry = $tlevents[$evyear] ? $tlevents[$evyear] . "\n - " : " - ";
-    if ($daymonth || $enddate) {
-        $newentry .= $daymonth . $enddate . " ";
-    }
+    if ($daymonth || $enddate) $newentry .= $daymonth . $enddate . " ";
+
     if ($tlrow['evtitle']) {
         $evtitle = $tlrow['evtitle'];
         $evdetail = $tlrow['evdetail'] ? "<br>" . $tlrow['evdetail'] : "";
@@ -344,9 +337,8 @@ while ($tlrow = tng_fetch_assoc($tlresult)) {
 tng_free_result($tlresult);
 
 
-if (!$latest && !count($timeline)) {
-    $latest = $earliest;
-}
+if (!$latest && !count($timeline)) $latest = $earliest;
+
 $totalspan = $latest - $earliest;
 $ratio = $totalspan ? $chartwidth / $totalspan : 0;
 $spanheight = 30 + count($keeparray) * 29;
@@ -529,9 +521,8 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
                 echo "<select name=\"nexttree$x\">\n";
                 while ($treerow = tng_fetch_assoc($treeresult)) {
                     echo "	<option value=\"{$treerow['gedcom']}\"";
-                    if ($treerow['gedcom'] == $tree) {
-                        echo " selected";
-                    }
+                    if ($treerow['gedcom'] == $tree) echo " selected";
+
                     echo ">{$treerow['treename']}</option>\n";
                 }
                 echo "</select>\n";
@@ -541,9 +532,8 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
                 $treestr = "'" . $tree . "'";
             }
             echo "<input type='text' name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type='button' name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";
-            if ($x < 5) {
-                $treeresult = tng_query($query);
-            }
+            if ($x < 5) $treeresult = tng_query($query);
+
         }
         ?>
         <input type="hidden" name="tree" value="<?php echo $tree; ?>">
@@ -603,9 +593,8 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
 
         function hidePopup(slot) {
             var ref = document.all ? document.all["popup" + slot] : document.getElementById ? document.getElementById("popup" + slot) : null;
-            if (ref) {
-                ref.style.visibility = "hidden";
-            }
+            if (ref) ref.style.visibility = "hidden";
+
             eval("timer" + slot + "=false;");
         }
 
@@ -621,9 +610,8 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
             var ref = document.all ? document.all["popup" + slot] : document.getElementById ? document.getElementById("popup" + slot) : null;
 
             //ref.innerHTML = getPopup(slot);
-            if (ref) {
-                ref = ref.style;
-            }
+            if (ref) ref = ref.style;
+
 
             if (ref.visibility != "show" && ref.visibility != "visible") {
                 ref.zIndex = 8;

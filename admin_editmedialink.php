@@ -125,11 +125,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">
         <input type="button" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();">
         <p class="normal">
-            <?php
-            if ($type != "album") {
-                echo "*{$admtext['defphotonote']}\n";
-            }
-            ?>
+            <?php if ($type != "album") echo "*{$admtext['defphotonote']}\n"; ?>
         </p>
     </form>
 </div>

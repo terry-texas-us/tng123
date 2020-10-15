@@ -10,20 +10,15 @@ if (!$allow_add) {
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
-
 require "adminlog.php";
-
 if ($tag2) {
     $tag = $tag2;
 } else {
     $tag = $tag1;
 }
-if (!$ordernum) {
-    $ordernum = 0;
-}
-if (!$display) {
-    $display = $defdisplay;
-}
+if (!$ordernum) $ordernum = 0;
+if (!$display) $display = $defdisplay;
+
 $template = "ssssssss";
 $query = "INSERT INTO $eventtypes_table (tag,description,display,type,keep,collapse,ordernum,ldsevent) 
 	VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

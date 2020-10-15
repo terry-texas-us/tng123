@@ -10,9 +10,8 @@ require_once "./admin/notelinks.php";
 require_once "./admin/trees.php";
 require_once "./public/people.php";
 
-if (!$personID) {
-    die("no args");
-}
+if (!$personID) die("no args");
+
 
 $textpart = "people";
 include "$mylanguage/admintext.php";
@@ -118,11 +117,7 @@ include_once "eventlib.php";
                     <table class="normal topmarginsmall">
                         <tr>
                             <td><?php echo $admtext['firstgivennames']; ?></td>
-                            <?php
-                            if ($lnprefixes) {
-                                echo "<td>{$admtext['lnprefix']}</td>\n";
-                            }
-                            ?>
+                            <?php if ($lnprefixes) echo "<td>{$admtext['lnprefix']}</td>\n"; ?>
                             <td><?php echo $admtext['lastsurname']; ?></td>
                             <td>&nbsp;</td>
                         </tr>
@@ -236,16 +231,14 @@ include_once "eventlib.php";
                                 echo "<span id=\"branchlist\">$desclist</span>";
                                 if (!$assignedbranch) {
                                 $totbranches = tng_num_rows($branchresult) + 1;
-                                if ($totbranches < 2) {
-                                    $totbranches = 2;
-                                }
+                                if ($totbranches < 2) $totbranches = 2;
+
                                 $selectnum = $totbranches < 8 ? $totbranches : 8;
                                 $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
                                 $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                 $select .= "	<option value=\"\"";
-                                if ($row['branch'] == "") {
-                                    $select .= " selected";
-                                }
+                                if ($row['branch'] == "") $select .= " selected";
+
                                 $select .= ">{$admtext['nobranch']}</option>\n";
 
                                 $select .= "$options</select>\n";

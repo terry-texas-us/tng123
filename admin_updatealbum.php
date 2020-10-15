@@ -11,24 +11,16 @@ if (!$allow_media_edit) {
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
-
 require "adminlog.php";
-
 $albumname = addslashes($albumname);
 $description = addslashes($description);
 $keywords = addslashes($keywords);
-
-if (!$alwayson) {
-    $alwayson = 0;
-}
-
+if (!$alwayson) $alwayson = 0;
 $query = "UPDATE $albums_table SET albumname=\"$albumname\",description=\"$description\",keywords=\"$keywords\",active=\"$active\",alwayson=\"$alwayson\" WHERE albumID=\"$albumID\"";
 $result = tng_query($query);
-
 //cycle through all ph fields
 //delete if requested
 adminwritelog($admtext['modifyalbum'] . ": $albumID");
-
 if ($newscreen == "return") {
     header("Location: admin_editalbum.php?albumID=$albumID");
 } else {

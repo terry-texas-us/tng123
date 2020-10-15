@@ -15,9 +15,8 @@ if ($medialinkID) {
     $ordernum = $row['ordernum'];
     $mediatypeID = $row['mediatypeID'];
     $linktype = $row['linktype'];
-    if ($linktype == "P") {
-        $linktype = "I";
-    }
+    if ($linktype == "P") $linktype = "I";
+
     $eventID = $row['eventID'];
 } else {
     $query = "SELECT mediatypeID, gedcom FROM $media_table WHERE mediaID = \"$mediaID\"";

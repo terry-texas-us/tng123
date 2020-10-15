@@ -35,9 +35,8 @@ if ($medialinkID) {
     $ordernum = $row['ordernum'];
     $mediatypeID = $row['mediatypeID'];
     $linktype = $row['linktype'];
-    if ($linktype == "P") {
-        $linktype = "I";
-    }
+    if ($linktype == "P") $linktype = "I";
+
     $eventID = $row['eventID'];
 } else {
     if ($albumlinkID) {
@@ -262,9 +261,8 @@ if ($noneliving || $imgrow['alwayson']) {
         echo "<br><br>";
     }
 
-    if (!$show_on_top) {
-        showMediaSource($imgrow);
-    }
+    if (!$show_on_top) showMediaSource($imgrow);
+
 
     if ($mediatypeID == "headstones" && ($imgrow['status'] || $imgrow['plot'])) {
         echo "<p class='normal'>";
@@ -276,9 +274,8 @@ if ($noneliving || $imgrow['alwayson']) {
             echo "<b>{$text['status']}:</b> {$imgrow['status']}";
         }
         if ($imgrow['plot']) {
-            if ($imgrow['status']) {
-                echo "<br>";
-            }
+            if ($imgrow['status']) echo "<br>";
+
             echo "<b>{$text['plot']}:</b> " . nl2br($imgrow['plot']);
         }
         echo "</p>";
@@ -294,9 +291,8 @@ if ($noneliving || $imgrow['alwayson']) {
 
     //do cemetery name here for headstones
     //do map here for headstones
-    if ($imgrow['cemeteryID']) {
-        doCemPlusMap($imgrow, $tree);
-    }
+    if ($imgrow['cemeteryID']) doCemPlusMap($imgrow, $tree);
+
 
     if (!$tngprint) {
         echo "<br><p class='normal'>$pagenav$sscontrols</p><br>\n";
@@ -319,9 +315,8 @@ if (!$tngprint && !$tngconfig['ssdisabled']) {
     $flags['more'] .= "var minussecsmsg = \"{$text['minussecs']}\";\n";
     $flags['more'] .= "var slidesecsmsg = \"{$text['slidesecs']}\";\n";
 
-    if ($ss) {
-        $flags['more'] .= "jQuery(document).ready(start);\n";
-    }
+    if ($ss) $flags['more'] .= "jQuery(document).ready(start);\n";
+
     if ($imgviewer && !in_array($imgrow['mediatypeID'], $mediatypes_like[$imgviewer])) {
         $flags['more'] .= "jQuery(document).ready(adjustWidth);\n";
         $flags['more'] .= "\nfunction adjustWidth() {\nif(jQuery('#imgdiv').length && jQuery('#theimage').width() > document.getElementById('imgdiv').clientWidth) \njQuery('#imgdiv').width(jQuery('#theimage').width() + \"px\");\n}\n";

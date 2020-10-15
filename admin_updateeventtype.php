@@ -23,9 +23,8 @@ if ($tag2) {
 } else {
     $tag = $tag1;
 }
-if (!$display) {
-    $display = $defdisplay;
-}
+if (!$display) $display = $defdisplay;
+
 $query = "UPDATE $eventtypes_table SET tag=\"$tag\",type=\"$type\",description=\"$description\",display=\"$display\",keep=\"$keep\",collapse=\"$collapse\",ordernum=\"$ordernum\",ldsevent=\"$ldsevent\" WHERE eventtypeID=\"$eventtypeID\"";
 $result = tng_query($query);
 

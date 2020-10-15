@@ -14,18 +14,14 @@ if (!$allow_add) {
 
 require "adminlog.php";
 
-if (!$evday) {
-    $evday = "0";
-}
-if (!$evmonth) {
-    $evmonth = "0";
-}
-if (!$endday) {
-    $endday = "0";
-}
-if (!$endmonth) {
-    $endmonth = "0";
-}
+if (!$evday) $evday = "0";
+
+if (!$evmonth) $evmonth = "0";
+
+if (!$endday) $endday = "0";
+
+if (!$endmonth) $endmonth = "0";
+
 $template = "ssssssss";
 $query = "INSERT INTO $tlevents_table (evday,evmonth,evyear,endday,endmonth,endyear,evtitle,evdetail) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$evday, &$evmonth, &$evyear, &$endday, &$endmonth, &$endyear, &$evtitle, &$evdetail];

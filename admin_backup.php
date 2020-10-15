@@ -23,9 +23,8 @@ function backup($table) {
     $writeflds = TRUE;
 
     $filename = "$rootpath$backuppath/$table.bak";
-    if (file_exists($filename)) {
-        unlink($filename);
-    }
+    if (file_exists($filename)) unlink($filename);
+
     $fp = @fopen($filename, "w");
     if ($fp) {
         flock($fp, LOCK_EX);
@@ -75,9 +74,8 @@ function delbackup($table) {
     global $rootpath, $backuppath;
 
     $filename = "$rootpath$backuppath/$table.bak";
-    if (file_exists($filename)) {
-        unlink($filename);
-    }
+    if (file_exists($filename)) unlink($filename);
+
 }
 
 function getfiletime($filename) {
@@ -114,13 +112,11 @@ foreach ($tablelist as $tablecheck) if (!isset(${$tablecheck})) {
 
 if ($table == "struct") {
     $filename = "$rootpath$backuppath/tng_tablestructure.bak";
-    if (file_exists($filename)) {
-        unlink($filename);
-    }
+    if (file_exists($filename)) unlink($filename);
+
     $fp = @fopen($filename, "w");
-    if (!$fp) {
-        die ($admtext['cannotopen'] . " $filename");
-    }
+    if (!$fp) die ($admtext['cannotopen'] . " $filename");
+
     flock($fp, LOCK_EX);
 
     foreach ($tablelist as $table) {
@@ -143,9 +139,8 @@ if ($table == "struct") {
 
     foreach ($tablelist as $table) {
         eval("\$dothistable = \"\$$table\";");
-        if ($dothistable) {
-            delbackup($table);
-        }
+        if ($dothistable) delbackup($table);
+
     }
 } else {
     if ($table == "all") {

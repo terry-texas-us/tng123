@@ -21,9 +21,8 @@ initMediaTypes();
 
 $thumbquality = 80;
 $maxsizeallowed = 4096; // in kilobytes
-if (function_exists('imageJpeg')) {
-    include "imageutils.php";
-}
+if (function_exists('imageJpeg')) include "imageutils.php";
+
 
 $query = "SELECT mediaID, path, thumbpath, mediatypeID, usecollfolder, form, description FROM $media_table where path != \"\"";
 $result = tng_query($query);
@@ -56,19 +55,16 @@ while ($row = tng_fetch_assoc($result)) {
         //insert prefix in path directly before file name
         $thumbparts = pathinfo($row['path']);
         $thumbpath = $thumbparts['dirname'];
-        if ($thumbpath == ".") {
-            $thumbpath = "";
-        }
-        if ($thumbpath) {
-            $thumbpath .= "/";
-        }
+        if ($thumbpath == ".") $thumbpath = "";
+
+        if ($thumbpath) $thumbpath .= "/";
+
         $lastperiod = strrpos($thumbparts['basename'], ".");
         $base = substr($thumbparts['basename'], 0, $lastperiod);
         $thumbpath .= $thumbprefix . $base . $thumbsuffix . "." . $thumbparts['extension'];
         $newthumbpath = "$rootpath$usefolder/$thumbpath";
-        if (file_exists($newthumbpath)) {
-            $newthumbpath = "";
-        }
+        if (file_exists($newthumbpath)) $newthumbpath = "";
+
         $needsupdate = 1;
     }
     if ($newthumbpath) {

@@ -211,18 +211,16 @@ function doICounter() {
     global $counter;
 
     $counter++;
-    if ($counter % 10 == 0) {
-        echo "<strong>I$counter</strong> ";
-    }
+    if ($counter % 10 == 0) echo "<strong>I$counter</strong> ";
+
 }
 
 function doFCounter() {
     global $fcounter;
 
     $fcounter++;
-    if ($fcounter % 10 == 0) {
-        echo "<strong>F$fcounter</strong> ";
-    }
+    if ($fcounter % 10 == 0) echo "<strong>F$fcounter</strong> ";
+
 }
 
 function setFamilyLabel($personID, $gender) {
@@ -316,9 +314,8 @@ function doAncestors($personID, $gender, $gen) {
 
     setPersonLabel($personID);
     setFamilyLabel($personID, $gender);
-    if ($dospouses) {
-        setSpousesLabel($personID, $gender);
-    }
+    if ($dospouses) setSpousesLabel($personID, $gender);
+
 
     $spouses = [];
     if ($gen <= $agens) {
@@ -428,20 +425,16 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
             } else {
                 setPersonLabel($personID);
                 setFamilyLabel($personID, $gender);
-                if ($dospouses) {
-                    setSpousesLabel($personID, $gender);
-                }
+                if ($dospouses) setSpousesLabel($personID, $gender);
+
             }
-            if ($dagens > $dgens) {
-                $dgens = $dagens;
-            }
-            if ($dgens > 0) {
-                doDescendants($personID, $gender, 1, $dgens);
-            }
+            if ($dagens > $dgens) $dgens = $dagens;
+
+            if ($dgens > 0) doDescendants($personID, $gender, 1, $dgens);
+
         }
-        if ($counter || $fcounter) {
-            echo "<br><br>";
-        }
+        if ($counter || $fcounter) echo "<br><br>";
+
         echo "<span class='normal'>{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</span>";
 
         adminwritelog($admtext['labelbranches'] . ": $tree/$branch ($branchaction/$set)");

@@ -445,9 +445,8 @@ if ($markermap) {
         }
 
         function displayMap() {
-            if (jQuery('#map').length) {
-                ShowTheMap();
-            }
+            if (jQuery('#map').length) ShowTheMap();
+
         }
 
         window.onload = displayMap;

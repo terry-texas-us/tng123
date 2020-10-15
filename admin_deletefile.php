@@ -12,9 +12,8 @@ if (!$allow_delete) {
 }
 
 $deleted = false;
-if (file_exists($filename)) {
-    $deleted = unlink($filename);
-}
+if (file_exists($filename)) $deleted = unlink($filename);
+
 
 echo $deleted ? $admtext['deleted'] . "&nbsp;<img src=\"img/tng_check.gif\">" : $admtext['notdeleted'];
 

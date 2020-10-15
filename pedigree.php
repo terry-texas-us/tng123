@@ -144,15 +144,13 @@ if ($display == "compact") {
     $pedigree['boxnamesize'] = $pedigree['boxnamesize'] > 13 ? $pedigree['boxnamesize'] : 11;
     $pedigree['usepopups_real'] = 1;
     $pedigree['cellpad'] = 5;
-    if ($pedigree['boxheight'] < 21) {
-        $pedigree['boxheight'] = 21;
-    }
+    if ($pedigree['boxheight'] < 21) $pedigree['boxheight'] = 21;
+
     if ($pedigree['boxheightshift'] > 0) {
         $pedigree['boxheightshift'] = -1 * $pedigree['boxheightshift'];
     }
-    if ($pedigree['boxHsep'] < 7) {
-        $pedigree['boxHsep'] = 7;
-    }
+    if ($pedigree['boxHsep'] < 7) $pedigree['boxHsep'] = 7;
+
     if ($pedigree['boxVsep'] < 3 + $pedigree['shadowoffset'] + (2 * $pedigree['borderwidth']) + ($pedigree['downarrow'] ? $pedigree['downarrowh'] : 15)) {
         $pedigree['boxVsep'] = 3 + $pedigree['shadowoffset'] + (2 * $pedigree['borderwidth']) + ($pedigree['downarrow'] ? $pedigree['downarrowh'] : 15);
     }
@@ -160,43 +158,33 @@ if ($display == "compact") {
 }
 if ($tngprint) {
     $pedigree['boxnamesize'] = 9;
-    if ($pedigree['boxHsep'] > 21) {
-        $pedigree['boxHsep'] = 21;
-    }
-    if ($pedigree['boxwidth'] > 141) {
-        $pedigree['boxwidth'] = 141;
-    }
+    if ($pedigree['boxHsep'] > 21) $pedigree['boxHsep'] = 21;
+
+    if ($pedigree['boxwidth'] > 141) $pedigree['boxwidth'] = 141;
+
 }
 
 // MOST OF THIS COULD BE HANDLED WITH JAVASCRIPT VALIDATION IN editpedconfig.php
 // set boundary values if needed    
-if ($pedigree['leftindent'] < 0) {
-    $pedigree['leftindent'] = 0;
-}
-if ($pedigree['boxwidth'] < 21) {
-    $pedigree['boxwidth'] = 21;
-}
-if ($pedigree['borderwidth'] < 1) {
-    $pedigree['borderwidth'] = 1;
-}
-if ($pedigree['linewidth'] < 1) {
-    $pedigree['linewidth'] = 1;
-}
+if ($pedigree['leftindent'] < 0) $pedigree['leftindent'] = 0;
+
+if ($pedigree['boxwidth'] < 21) $pedigree['boxwidth'] = 21;
+
+if ($pedigree['borderwidth'] < 1) $pedigree['borderwidth'] = 1;
+
+if ($pedigree['linewidth'] < 1) $pedigree['linewidth'] = 1;
+
 
 // negative numbers ok for $pedigree['shadowoffset'], $pedigree['colorshift'], $fontshift)
 // some values should be odd numbers ...    
-if ($pedigree['boxwidth'] % 2 == 0) {
-    $pedigree['boxwidth']++;
-}
-if ($pedigree['boxheight'] % 2 == 0) {
-    $pedigree['boxheight']++;
-}
-if ($pedigree['boxHsep'] % 2 == 0) {
-    $pedigree['boxHsep']++;
-}
-if ($pedigree['boxVsep'] % 2 == 0) {
-    $pedigree['boxVsep']++;
-}
+if ($pedigree['boxwidth'] % 2 == 0) $pedigree['boxwidth']++;
+
+if ($pedigree['boxheight'] % 2 == 0) $pedigree['boxheight']++;
+
+if ($pedigree['boxHsep'] % 2 == 0) $pedigree['boxHsep']++;
+
+if ($pedigree['boxVsep'] % 2 == 0) $pedigree['boxVsep']++;
+
 // and some even ...
 if ($pedigree['boxheightshift'] % 2 != 0) {
     $pedigree['boxheightshift']++;
@@ -214,15 +202,13 @@ if ($pedigree['boxheightshift'] && ($pedigree['boxheight'] < -16 * $pedigree['bo
 }
 
 // how many generations to show?
-if (!$pedigree['maxgen']) {
-    $pedigree['maxgen'] = 6;
-}
+if (!$pedigree['maxgen']) $pedigree['maxgen'] = 6;
+
 if ($generations > $pedigree['maxgen']) {
     $generations = intval($pedigree['maxgen']);
 } elseif (!$generations) {
-    if (isMobile()) {
-        $pedigree['initpedgens'] = 3;
-    }
+    if (isMobile()) $pedigree['initpedgens'] = 3;
+
     $generations = $pedigree['initpedgens'] >= 2 ? intval($pedigree['initpedgens']) : 2;
 } else {
     $generations = intval($generations);
@@ -252,40 +238,25 @@ if ($pedigree['colorshift'] > 0) {
 }
 $pedigree['colorshift'] = round($pedigree['colorshift'] / 100 * $extreme / ($generations + 1));
 $pedigree['phototree'] = $tree;
-if ($tree) {
-    $pedigree['phototree'] .= ".";
-}
+if ($tree) $pedigree['phototree'] .= ".";
+
 
 $pedigree['bullet'] = "&bull;";
-if (!$pedigree['hideempty']) {
-    $pedigree['hideempty'] = 0;
-}
+if (!$pedigree['hideempty']) $pedigree['hideempty'] = 0;
+
 
 function getColor($shifts) {
     global $pedigree;
-
     $shiftval = $shifts * $pedigree['colorshift'];
     $R = $pedigree['baseR'] + $shiftval;
     $G = $pedigree['baseG'] + $shiftval;
     $B = $pedigree['baseB'] + $shiftval;
-    if ($R > 255) {
-        $R = 255;
-    }
-    if ($R < 0) {
-        $R = 0;
-    }
-    if ($G > 255) {
-        $G = 255;
-    }
-    if ($G < 0) {
-        $G = 0;
-    }
-    if ($B > 255) {
-        $B = 255;
-    }
-    if ($B < 0) {
-        $B = 0;
-    }
+    if ($R > 255) $R = 255;
+    if ($R < 0) $R = 0;
+    if ($G > 255) $G = 255;
+    if ($G < 0) $G = 0;
+    if ($B > 255) $B = 255;
+    if ($B < 0) $B = 0;
     $R = str_pad(dechex($R), 2, "0", STR_PAD_LEFT);
     $G = str_pad(dechex($G), 2, "0", STR_PAD_LEFT);
     $B = str_pad(dechex($B), 2, "0", STR_PAD_LEFT);
@@ -340,15 +311,12 @@ function showBox($generation, $slot) {
     $namefontsztouse = intval($pedigree['boxnamesize'] + ($generation - 1) * $pedigree['namesizeshift']);
     $datesfontsztouse = intval($pedigree['boxdatessize'] + ($generation - 1) * $pedigree['datessizeshift']);
     $popupinfosizetouse = intval($pedigree['popupinfosize'] + ($generation - 1) * $pedigree['popupinfosizeshift']);
-    if ($namefontsztouse < 7) {
-        $namefontsztouse = 7;
-    }
-    if ($datesfontsztouse < 7) {
-        $datesfontsztouse = 7;
-    }
-    if ($popupinfosizetouse < 7) {
-        $popupinfosizetouse = 7;
-    }
+    if ($namefontsztouse < 7) $namefontsztouse = 7;
+
+    if ($datesfontsztouse < 7) $datesfontsztouse = 7;
+
+    if ($popupinfosizetouse < 7) $popupinfosizetouse = 7;
+
 
     //... include trace (maybe)
     $boxes .= "\n<!-- box for slot $slot -->\n";
@@ -435,9 +403,8 @@ function showBox($generation, $slot) {
     }
 }
 
-if (!$tngprint) {
-    $tngprint = 0;
-}
+if (!$tngprint) $tngprint = 0;
+
 $flags['scripting'] .= "<script>\n//<![CDATA[\n";
 $flags['scripting'] .= "var lastpopup = '';\n";
 $flags['scripting'] .= "var tree = '$tree';\n";
@@ -523,9 +490,8 @@ echo "<html lang='en'>\n";
 
 tng_header($text['pedigreefor'] . " $pedname", $flags);
 
-if ($allow_edit || $allow_add) {
-    include "eventlib_js.php";
-}
+if ($allow_edit || $allow_add) include "eventlib_js.php";
+
 
 $photostr = showSmallPhoto($personID, $pedname, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $pedname, getYears($row));
@@ -534,9 +500,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='pedigree.php?personID=' + firstperson + '&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";

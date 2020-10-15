@@ -17,18 +17,14 @@ include "geocodelib.php";
 
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
-if ($latitude && $longitude && $placelevel && !$zoom) {
-    $zoom = 13;
-}
-if (!$zoom) {
-    $zoom = 0;
-}
-if (!$placelevel) {
-    $placelevel = 0;
-}
-if (!$temple) {
-    $temple = 0;
-}
+if ($latitude && $longitude && $placelevel && !$zoom) $zoom = 13;
+
+if (!$zoom) $zoom = 0;
+
+if (!$placelevel) $placelevel = 0;
+
+if (!$temple) $temple = 0;
+
 if ($tngconfig['places1tree']) {
     $tree = "";
 } else {
@@ -41,9 +37,8 @@ $params = [&$template, &$tree, &$place, &$placelevel, &$temple, &$latitude, &$lo
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows) {
     $placeID = tng_insert_id();
-    if ($tngconfig['autogeo']) {
-        $message = geocode($place, 0, $placeID);
-    }
+    if ($tngconfig['autogeo']) $message = geocode($place, 0, $placeID);
+
     adminwritelog("<a href=\"admin_editplace.php?ID=$placeID\">{$admtext['addnewplace']}: $placeID - " . stripslashes($place) . "</a>");
 
     $message = $admtext['place'] . " " . stripslashes($place) . " {$admtext['succadded']}.";

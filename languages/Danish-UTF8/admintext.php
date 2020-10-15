@@ -2333,6 +2333,5 @@ $admtext['author'] = "Forfatter";
 $admtext['living'] = "Nulevende";
 
 @include_once "alltext.php";
-if (!$alltextloaded) {
-    getAllTextPath();
-}
+if (!$alltextloaded) getAllTextPath();
+

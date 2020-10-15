@@ -209,9 +209,8 @@
             if (typeof options.formData === 'function') {
                 return options.formData(options.form);
             }
-            if ($.isArray(options.formData)) {
-                return options.formData;
-            }
+            if ($.isArray(options.formData)) return options.formData;
+
             if (options.formData) {
                 formData = [];
                 $.each(options.formData, function (name, value) {
@@ -383,9 +382,8 @@
         _initDataSettings: function (options) {
             if (this._isXHRUpload(options)) {
                 if (!this._chunkedUpload(options, true)) {
-                    if (!options.data) {
-                        this._initXHRData(options);
-                    }
+                    if (!options.data) this._initXHRData(options);
+
                     this._initProgressListener(options);
                 }
                 if (options.postMessage) {
@@ -508,9 +506,8 @@
                 options.data) {
                 return false;
             }
-            if (testOnly) {
-                return true;
-            }
+            if (testOnly) return true;
+
             if (ub >= fs) {
                 file.error = 'Uploaded bytes exceed file size';
                 return this._getXHRPromise(
@@ -709,9 +706,8 @@
                 pipe.abort = function () {
                     aborted = [undefined, 'abort', 'abort'];
                     if (!jqXHR) {
-                        if (slot) {
-                            slot.rejectWith(options.context, aborted);
-                        }
+                        if (slot) slot.rejectWith(options.context, aborted);
+
                         return send();
                     }
                     return jqXHR.abort();
@@ -741,9 +737,8 @@
                 for (i = 0; i < data.files.length; i += limit) {
                     fileSet.push(data.files.slice(i, i + limit));
                     paramNameSlice = paramName.slice(i, i + limit);
-                    if (!paramNameSlice.length) {
-                        paramNameSlice = paramName;
-                    }
+                    if (!paramNameSlice.length) paramNameSlice = paramName;
+
                     paramNameSet.push(paramNameSlice);
                 }
             } else {
@@ -778,25 +773,22 @@
             // elements set with the clone, which has been copied including
             // event handlers:
             this.options.fileInput = this.options.fileInput.map(function (i, el) {
-                if (el === input[0]) {
-                    return inputClone[0];
-                }
+                if (el === input[0]) return inputClone[0];
+
                 return el;
             });
             // If the widget has been initialized on the file input itself,
             // override this.element with the file input clone:
-            if (input[0] === this.element[0]) {
-                this.element = inputClone;
-            }
+            if (input[0] === this.element[0]) this.element = inputClone;
+
         },
 
         _handleFileTreeEntry: function (entry, path) {
             var that = this,
                 dfd = $.Deferred(),
                 errorHandler = function (e) {
-                    if (e && !e.entry) {
-                        e.entry = entry;
-                    }
+                    if (e && !e.entry) e.entry = entry;
+
                     // Since $.when returns immediately if one
                     // Deferred is rejected, we use resolve instead.
                     // This allows valid files and invalid items
@@ -886,9 +878,8 @@
             files = $.makeArray(fileInput.prop('files'));
             if (!files.length) {
                 value = fileInput.prop('value');
-                if (!value) {
-                    return $.Deferred().resolve([]).promise();
-                }
+                if (!value) return $.Deferred().resolve([]).promise();
+
                 // If the files property is not available, the browser does not
                 // support the File API and we add a pseudo File object with
                 // the input value as name with path information removed:
@@ -941,9 +932,8 @@
                 data = {files: []};
             $.each(items, function (index, item) {
                 var file = item.getAsFile && item.getAsFile();
-                if (file) {
-                    data.files.push(file);
-                }
+                if (file) data.files.push(file);
+
             });
             if (this._trigger('paste', e, data) === false ||
                 this._onAdd(e, data) === false) {
@@ -1000,9 +990,8 @@
 
         _setOption: function (key, value) {
             var refresh = $.inArray(key, this._refreshOptionsList) !== -1;
-            if (refresh) {
-                this._destroyEventHandlers();
-            }
+            if (refresh) this._destroyEventHandlers();
+
             this._super(key, value);
             if (refresh) {
                 this._initSpecialOptions();
@@ -1047,9 +1036,7 @@
         // .fileupload('add', {files: filesList});
         add: function (data) {
             var that = this;
-            if (!data || this.options.disabled) {
-                return;
-            }
+            if (!data || this.options.disabled) return;
             if (data.fileInput && !data.files) {
                 this._getFileInputFiles(data.fileInput).always(function (files) {
                     data.files = files;
@@ -1076,17 +1063,14 @@
                         aborted;
                     promise.abort = function () {
                         aborted = true;
-                        if (jqXHR) {
-                            return jqXHR.abort();
-                        }
+                        if (jqXHR) return jqXHR.abort();
+
                         dfd.reject(null, 'abort', 'abort');
                         return promise;
                     };
                     this._getFileInputFiles(data.fileInput).always(
                         function (files) {
-                            if (aborted) {
-                                return;
-                            }
+                            if (aborted) return;
                             data.files = files;
                             jqXHR = that._onSend(null, data).then(
                                 function (result, textStatus, jqXHR) {
@@ -1101,9 +1085,8 @@
                     return this._enhancePromise(promise);
                 }
                 data.files = $.makeArray(data.files);
-                if (data.files.length) {
-                    return this._onSend(null, data);
-                }
+                if (data.files.length) return this._onSend(null, data);
+
             }
             return this._getXHRPromise(false, data && data.context);
         }

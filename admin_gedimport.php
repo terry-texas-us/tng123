@@ -147,9 +147,8 @@ function tng_extract($gedfilename) {
                     break;
                 }
             }
-            if ($zip->numFiles) {
-                $zip->close();
-            }
+            if ($zip->numFiles) $zip->close();
+
         }
     }
     return $gedfilename;
@@ -238,9 +237,8 @@ if ($savestate['filename']) {
             $albumlinks = getAlbumLinksToSave();
             $num_albumlinks = count($albumlinks);
         }
-        if ($del == "yes") {
-            ClearData($tree);
-        }
+        if ($del == "yes") ClearData($tree);
+
     }
 
     $savestate['icount'] = 0;
@@ -296,9 +294,8 @@ if ($savestate['filename']) {
         $savestate['media'] = ($row['media'] > 9) ? 1 : 0;
         $savestate['latlong'] = $row['media'] % 2;
         $savestate['branch'] = $row['branch'];
-        if ($savestate['del'] == "yes") {
-            $savestate['del'] = "match";
-        }
+        if ($savestate['del'] == "yes") $savestate['del'] = "match";
+
         $gedfilename = $savestate['filename'];
         $fp = fopen($savestate['filename'], "r");
         if ($fp !== false) {
@@ -397,9 +394,7 @@ if (!empty($old)) {
 }
 
 //now kill it on purpose so TNG will restart and be able to show the progress bar.
-if (!empty($old) && !$resuming && !$num_medialinks && !$num_albumlinks) {
-    exit;
-}
+if (!empty($old) && !$resuming && !$num_medialinks && !$num_albumlinks) exit;
 
 if ($fp !== false) {
     @ob_flush();

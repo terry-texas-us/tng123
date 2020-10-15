@@ -45,11 +45,7 @@ if ($map['key'] && $isConnected) {
         return rval;
     }
 </script>
-<?php
-if ($map['key']) {
-    include "googlemaplib2.php";
-}
-?>
+<?php if ($map['key']) include "googlemaplib2.php"; ?>
     </head>
 
 <?php
@@ -78,9 +74,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace']
                                     <?php
                                     while ($row = tng_fetch_assoc($result)) {
                                         echo "		<option value=\"{$row['gedcom']}\"";
-                                        if ($firsttree == $row['gedcom']) {
-                                            echo " selected";
-                                        }
+                                        if ($firsttree == $row['gedcom']) echo " selected";
+
                                         echo ">{$row['treename']}</option>\n";
                                     }
                                     tng_free_result($result);

@@ -12,21 +12,15 @@ $citations = [];
 $private = [];
 $indarray = [];
 $gotfamily = [];
-
 $righttree = checktree($tree);
 $ldsOK = determineLDSRights();
-
 $query = "SELECT disallowgedcreate, email, owner FROM $trees_table WHERE gedcom = '$tree'";
 $treeresult = tng_query($query);
 $treerow = tng_fetch_assoc($treeresult);
-if ($treerow['disallowgedcreate'] && (!$allow_ged || !$righttree)) {
-    exit;
-}
+if ($treerow['disallowgedcreate'] && (!$allow_ged || !$righttree)) exit;
 tng_free_result($treeresult);
-
 function getAncestor($person, $generation) {
     global $tree, $maxgcgen, $indarray, $people_table;
-
     $query = "SELECT personID, famc FROM $people_table WHERE personID = \"$person\" AND gedcom = '$tree'";
     $result = tng_query($query);
     if ($result) {
@@ -35,9 +29,8 @@ function getAncestor($person, $generation) {
         if (!array_key_exists($ind['personID'], $indarray)) {
             $indarray[$ind['personID']] = writeIndividual($ind['personID']);
         }
-        if ($generation == 1) {
-            getDescendant($ind['personID'], 0);
-        }
+        if ($generation == 1) getDescendant($ind['personID'], 0);
+
 
         if ($ind['famc'] && ($generation < $maxgcgen)) {
             getFamily($person, $ind['famc'], $generation + 1);
@@ -109,9 +102,8 @@ function getFact($row, $level) {
     global $tree, $address_table, $lineending;
 
     $fact = "";
-    if ($row['age']) {
-        $fact .= "$level AGE {$row['age']}$lineending";
-    }
+    if ($row['age']) $fact .= "$level AGE {$row['age']}$lineending";
+
     if ($row['agency']) {
         $fact .= "$level AGNC {$row['agency']}$lineending";
     }
@@ -150,9 +142,8 @@ function getFact($row, $level) {
         if ($addr['email']) {
             $fact .= "$level EMAIL {$addr['email']}$lineending";
         }
-        if ($addr['www']) {
-            $fact .= "$level WWW {$addr['www']}$lineending";
-        }
+        if ($addr['www']) $fact .= "$level WWW {$addr['www']}$lineending";
+
     }
     return $fact;
 }
@@ -210,9 +201,8 @@ function getNotes($id) {
     while ($notelink = tng_fetch_assoc($notelinks)) {
         $eventid = $notelink['eventID'] ? $notelink['eventID'] : "-x--general--x-";
         $newnote = $notelink['noteID'] ? "@{$notelink['noteID']}@" : $notelink['note'];
-        if (!is_array($notearray[$eventid])) {
-            $notearray[$eventid] = [];
-        }
+        if (!is_array($notearray[$eventid])) $notearray[$eventid] = [];
+
         $innerarray = [];
         $innerarray['text'] = $newnote;
         $innerarray['id'] = "N" . $notelink['ID'];
@@ -288,9 +278,8 @@ function doNote($level, $label, $notetxt, $private = "") {
     foreach ($notes as $note) {
         $noteinfo .= getNoteLine($level, "CONT", $note, 0);
     }
-    if ($private) {
-        $noteinfo .= getNoteLine($level, "_PRIVATE", "Y", 0);
-    }
+    if ($private) $noteinfo .= getNoteLine($level, "_PRIVATE", "Y", 0);
+
 
     return $noteinfo;
 }
@@ -439,9 +428,8 @@ function appendParents($child) {
                     if (strlen($tok) == 5) {
                         $info .= "2 TEMP $tok$lineending";
                         $tok = strtok(" ");
-                        if ($tok) {
-                            $info .= "2 PLAC $tok$lineending";
-                        }
+                        if ($tok) $info .= "2 PLAC $tok$lineending";
+
                     } else {
                         $info .= "2 PLAC {$child['sealplace']}$lineending";
                     }
@@ -465,9 +453,8 @@ function writeIndividual($person) {
     $result = tng_query($query);
     if ($result) {
         $ind = tng_fetch_assoc($result);
-        if ($ind['private']) {
-            array_push($private, $person);
-        }
+        if ($ind['private']) array_push($private, $person);
+
         $rights = determineLivingPrivateRights($ind, $righttree);
         $ind['allow_living'] = $rights['living'];
         $ind['allow_private'] = $rights['private'];
@@ -490,9 +477,8 @@ function writeIndividual($person) {
             if ($lnprefixes && $ind['lnprefix']) {
                 $info .= "2 SPFX {$ind['lnprefix']}$lineending";
             }
-            if ($ind['lastname']) {
-                $info .= "2 SURN {$ind['lastname']}$lineending";
-            }
+            if ($ind['lastname']) $info .= "2 SURN {$ind['lastname']}$lineending";
+
 
             if ($indnotes['NAME']) {
                 $info .= writeNote(2, "NOTE", $indnotes['NAME']);
@@ -525,12 +511,10 @@ function writeIndividual($person) {
                 }
             }
             $info .= "1 SEX {$ind['sex']}$lineending";
-            if ($ind['living']) {
-                $info .= "1 _LIVING Y$lineending";
-            }
-            if ($ind['private']) {
-                $info .= "1 _PRIVATE Y$lineending";
-            }
+            if ($ind['living']) $info .= "1 _LIVING Y$lineending";
+
+            if ($ind['private']) $info .= "1 _PRIVATE Y$lineending";
+
             if ($citations['-x--general--x-']) {
                 $info .= writeCitation($citations['-x--general--x-'], 1);
             }
@@ -575,9 +559,8 @@ function writeIndividual($person) {
                         $info .= "2 PLAC {$ind['altbirthplace']}$lineending";
                     }
                 }
-                if ($indnotes['CHR']) {
-                    $info .= writeNote(2, "NOTE", $indnotes['CHR']);
-                }
+                if ($indnotes['CHR']) $info .= writeNote(2, "NOTE", $indnotes['CHR']);
+
                 if ($citations['CHR']) {
                     $info .= writeCitation($citations['CHR'], 2);
                 }
@@ -684,19 +667,16 @@ function doLDSEvent($tag, $key, $notes, $citations, $extras, $row) {
             if (strlen($tok) == 5) {
                 $event .= "2 TEMP $tok$lineending";
                 $tok = strtok(" ");
-                if ($tok) {
-                    $event .= "2 PLAC $tok$lineending";
-                }
+                if ($tok) $event .= "2 PLAC $tok$lineending";
+
             } else {
                 $info .= "2 PLAC {$row[$key.'place']}$lineending";
             }
         }
-        if ($notes) {
-            $event .= writeNote(2, "NOTE", $notes);
-        }
-        if ($citations) {
-            $event .= writeCitation($citations, 2);
-        }
+        if ($notes) $event .= writeNote(2, "NOTE", $notes);
+
+        if ($citations) $event .= writeCitation($citations, 2);
+
         $event .= $extras;
     }
     return $event;
@@ -706,9 +686,8 @@ function writeFamily($family) {
     global $tree, $ldsOK, $events_table, $eventtypes_table, $citations, $lineending, $famarray, $private, $righttree;
 
     $familyID = $family['familyID'];
-    if ($famarray[$familyID]) {
-        return $famarray[$familyID];
-    }
+    if ($famarray[$familyID]) return $famarray[$familyID];
+
 
     $frights = determineLivingPrivateRights($family, $righttree);
     $family['allow_living'] = $frights['living'];
@@ -767,9 +746,8 @@ function writeFamily($family) {
                         $info .= "2 PLAC {$family['divplace']}$lineending";
                     }
                 }
-                if ($famnotes['DIV']) {
-                    $info .= writeNote(2, "NOTE", $famnotes['DIV']);
-                }
+                if ($famnotes['DIV']) $info .= writeNote(2, "NOTE", $famnotes['DIV']);
+
                 if ($citations['DIV']) {
                     $info .= writeCitation($citations['DIV'], 2);
                 }
@@ -801,9 +779,8 @@ function writeFamily($family) {
                         if (strlen($tok) == 5) {
                             $info .= "2 TEMP $tok$lineending";
                             $tok = strtok(" ");
-                            if ($tok) {
-                                $info .= "2 PLAC $tok$lineending";
-                            }
+                            if ($tok) $info .= "2 PLAC $tok$lineending";
+
                         } else {
                             $info .= "2 PLAC {$fam['sealplace']}$lineending";
                         }
@@ -917,9 +894,8 @@ function doSources() {
             if ($srcresult) {
                 $source = tng_fetch_assoc($srcresult);
                 echo "0 @{$source['sourceID']}@ SOUR$lineending";
-                if ($source['title']) {
-                    echo "1 TITL {$source['title']}$lineending";
-                }
+                if ($source['title']) echo "1 TITL {$source['title']}$lineending";
+
                 if ($source['shorttitle']) {
                     echo "1 ABBR {$source['shorttitle']}$lineending";
                 }
@@ -975,9 +951,8 @@ function doRepositories() {
                 if ($repo['reponame']) {
                     echo "1 NAME {$repo['reponame']}$lineending";
                 }
-                if ($repo['addressID']) {
-                    echo getFact($repo, 1);
-                }
+                if ($repo['addressID']) echo getFact($repo, 1);
+
 
                 $query = "SELECT tag, description, eventdate, eventplace, info FROM $events_table, $eventtypes_table WHERE persfamID = \"{$repo['repoID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID AND type = \"R\" AND gedcom = '$tree' AND keep = '1' ORDER BY ordernum";
                 $custevents = tng_query($query);
@@ -996,9 +971,8 @@ function doRepositories() {
 }
 
 if ($maxgcgen > 0 || $type == "all") {
-    if ($maxgcgen > 999) {
-        $maxgcgen = 999;
-    }
+    if ($maxgcgen > 999) $maxgcgen = 999;
+
 
     $query = "SELECT firstname, lnprefix, lastname, suffix, living, private, branch FROM $people_table WHERE personID = \"$personID\" AND $people_table.gedcom = '$tree'";
     $result = tng_query($query) or die ("Cannot execute query: $query");

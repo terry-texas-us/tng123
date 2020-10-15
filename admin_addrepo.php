@@ -30,9 +30,8 @@ if ($address1 || $address2 || $city || $state || $zip || $country || $phone || $
     $addressID = "";
 }
 
-if (!$addressID) {
-    $addressID = 0;
-}
+if (!$addressID) $addressID = 0;
+
 $template = "ssssss";
 $query = "INSERT INTO $repositories_table (repoID,reponame,addressID,changedate,gedcom,changedby) VALUES (?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$repoID, &$reponame, &$addressID, &$newdate, &$tree1, &$currentuser];

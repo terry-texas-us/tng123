@@ -120,17 +120,14 @@ function get_ancestor_surnames($personID, $tree, $type) {
             array_push($surnamesarr, $surrow['lastname']);
         }
         $pass1 = false;
-        if ($father) {
-            get_ancestor_surnames($father, $tree, $type);
-        }
-        if ($mother) {
-            get_ancestor_surnames($mother, $tree, $type);
-        }
+        if ($father) get_ancestor_surnames($father, $tree, $type);
+
+        if ($mother) get_ancestor_surnames($mother, $tree, $type);
+
     }
     tng_free_result($result);
-    if ($type == "atDNA") {
-        sort($surnamesarr);
-    }
+    if ($type == "atDNA") sort($surnamesarr);
+
     return implode(', ', $surnamesarr);
 }
 
@@ -579,9 +576,8 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                                 $ancestorstr = $row['surnames'];
                             }
                         }
-                        if ($ancsurnameupper) {
-                            $ancestorstr = strtoupper($ancestorstr);
-                        }
+                        if ($ancsurnameupper) $ancestorstr = strtoupper($ancestorstr);
+
                         ?>
                         <tr>
                             <td class='align-top'><?php echo $admtext['ancestral_surnames']; ?>:</td>

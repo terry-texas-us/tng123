@@ -236,9 +236,8 @@ function doNotesCitations($persfam1, $persfam2, $varname) {
     global $ccombinenotes, $notelinks_table, $xnotes_table, $citations_table, $tree;
 
     if ($varname) {
-        if ($varname == "general") {
-            $varname = "";
-        }
+        if ($varname == "general") $varname = "";
+
         $wherestr = "AND eventID = \"$varname\"";
     } else {
         $wherestr = "";
@@ -358,9 +357,8 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
                 tng_free_result($result);
             }
         } while ($numrows && $still_looking);
-        if (!$personID2) {
-            $personID1 = $p1row = "";
-        }
+        if (!$personID2) $personID1 = $p1row = "";
+
     } elseif (isset($p1row['personID'])) {
         //search with personID1 for next duplicate
         $wherestr2 = $personID2 ? " AND personID > \"$personID2\"" : "";
@@ -775,9 +773,8 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                                     $trees = "";
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         $trees .= "			<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) {
-                                            $trees .= " selected";
-                                        }
+                                        if ($treerow['gedcom'] == $tree) $trees .= " selected";
+
                                         $trees .= ">{$treerow['treename']}</option>\n";
                                     }
                                     echo $trees;
@@ -974,9 +971,8 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                             echo "</tr>\n";
                             doRow("personID", "personid", "");
                             doRow("firstname", "firstgivennames", "p2firstname");
-                            if ($lnprefixes) {
-                                doRow("lnprefix", "lnprefix", "p2lnprefix");
-                            }
+                            if ($lnprefixes) doRow("lnprefix", "lnprefix", "p2lnprefix");
+
                             doRow("lastname", "lastsurname", "p2lastname");
                             doRow("nickname", "nickname", "p2nickname");
                             doRow("prefix", "prefix", "p2prefix");

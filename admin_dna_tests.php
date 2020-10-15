@@ -45,9 +45,8 @@ if ($newsearch) {
     if (!$test_group) {
         $test_group = $_COOKIE['tng_search_dna_post']['test_group'];
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_search_dna_post']['tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_search_dna_post']['tree'];
+
     if (!isset($offset)) {
         $tngpage = $_COOKIE['tng_search_dna_post']['tngpage'];
         $offset = $_COOKIE['tng_search_dna_post']['offset'];
@@ -72,9 +71,8 @@ if ($assignedtree) {
     $wherestr2 = " AND $dna_links_table.gedcom = '$assignedtree'";
 } else {
     $wherestr = "";
-    if ($tree) {
-        $wherestr2 = " AND $dna_links_table.gedcom = '$tree'";
-    }
+    if ($tree) $wherestr2 = " AND $dna_links_table.gedcom = '$tree'";
+
 }
 $orgwherestr = $wherestr;
 $orgtree = $tree;
@@ -93,9 +91,8 @@ if ($test_type) {
 if ($test_group) {
     $wherestr .= $wherestr ? " AND dna_group_desc = \"$test_group\"" : "dna_group_desc = \"$test_group\"";
 }
-if ($wherestr) {
-    $wherestr = "WHERE $wherestr";
-}
+if ($wherestr) $wherestr = "WHERE $wherestr";
+
 
 $query = "SELECT testID, test_type, test_date, match_date, ydna_haplogroup, mtdna_haplogroup, dna_tests.personID, dna_tests.gedcom, test_number, firstname, lastname, lnprefix, nameorder, suffix, prefix, title, person_name, mtdna_confirmed, ydna_confirmed, markeropt, notesopt, linksopt, surnamesopt, private_dna, private_test, dna_group, dna_group_desc, surnames, MD_ancestorID, MRC_ancestorID ";
 $query .= "FROM $dna_tests_table dna_tests ";
@@ -172,9 +169,8 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                     $ret = "";
                                     $ret .= "<select name='tree' id='tree' onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
                                     $ret .= "<option value=\"\" ";
-                                    if (!$tree) {
-                                        $ret .= "selected";
-                                    }
+                                    if (!$tree) $ret .= "selected";
+
                                     $ret .= ">{$admtext['alltrees']}</option>\n";
 
                                     while ($row2 = tng_fetch_assoc($treeresult)) {

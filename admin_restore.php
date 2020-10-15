@@ -106,9 +106,8 @@ if ($table == "struct") {
             eval("\$dothistable = \"\$$table\";");
             if ($dothistable) {
                 $msg = restore($table);
-                if ($msg) {
-                    $message = $message ? $message . "<br>" . $msg : $msg;
-                }
+                if ($msg) $message = $message ? $message . "<br>" . $msg : $msg;
+
             }
         }
         if (!$message) {

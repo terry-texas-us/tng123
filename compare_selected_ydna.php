@@ -148,18 +148,13 @@ foreach (array_keys($_POST) as $key) {
         $resultscsv = $rrow['y_results'];
         $resultsarr[$i] = explode(',', $resultscsv);
         $markercount[$i] = count($resultsarr[$i]);
-        if ($markercount[$i] > '12') {
-            $ii++;
-        }
-        if ($markercount[$i] > '25') {
-            $iii++;
-        }
+        if ($markercount[$i] > '12') $ii++;
+        if ($markercount[$i] > '25') $iii++;
         $i++;
     }
 }
-if (isset($rresult)) {
-    tng_free_result($rresult);
-}
+if (isset($rresult)) tng_free_result($rresult);
+
 
 $mode = [];
 $modesarr = [[]];
@@ -271,9 +266,8 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             while ($l <= $columnCount - 1) {
                 $alvals = array_column($modesarr, $l);
                 $values = array_count_values($alvals);
-                if ($values) {
-                    $mode[$l] = array_search(max($values), $values);
-                }
+                if ($values) $mode[$l] = array_search(max($values), $values);
+
                 $l++;
             }
 
@@ -283,21 +277,16 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 $title = "";
                 $class = "";
                 $style = "";
-                if ($j >= 0) {
-                    $style = "background-color:$bg1_12; color:$txt1_12;";
-                }
-                if ($j > 10) {
-                    $style = "background-color:$bg13_25; color:$txt13_25;";
-                }
-                if ($j > 19) {
-                    $style = "background-color:$bg26_37; color:$txt26_37;";
-                }
-                if ($j > 29) {
-                    $style = "background-color:$bg38_67; color:$txt38_67;";
-                }
-                if ($j > 57) {
-                    $style = "background-color:$bg111; color:$txt111;";
-                }
+                if ($j >= 0) $style = "background-color:$bg1_12; color:$txt1_12;";
+
+                if ($j > 10) $style = "background-color:$bg13_25; color:$txt13_25;";
+
+                if ($j > 19) $style = "background-color:$bg26_37; color:$txt26_37;";
+
+                if ($j > 29) $style = "background-color:$bg38_67; color:$txt38_67;";
+
+                if ($j > 57) $style = "background-color:$bg111; color:$txt111;";
+
                 $jj = 0;
                 $col_span = 1;
 
@@ -423,9 +412,8 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 echo "</tr>\n";
             }
         }
-        if ($result) {
-            tng_free_result($result);
-        }
+        if ($result) tng_free_result($result);
+
         ?>
     </table>
 </div>

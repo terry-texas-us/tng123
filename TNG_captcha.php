@@ -5,9 +5,7 @@
 // This update adds a feature to 'remember' if a visitor has successfully completed a reCAPTCHA challenge, no further challenges will be presented to that visitor during the visit.
 
 global $currentuser;
-if ($currentuser || $_SESSION['passedcaptcha']) {
-    return;
-}
+if ($currentuser || $_SESSION['passedcaptcha']) return;
 
 include_once "$mylanguage/admintext.php";
 require_once "recaptchalib.php";

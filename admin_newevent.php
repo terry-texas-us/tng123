@@ -39,9 +39,8 @@ while ($eventtype = tng_fetch_assoc($evresult)) {
     $option = $display . ($eventtype['tag'] != "EVEN" ? " ({$eventtype['tag']})" : "");
     $optionlen = strlen($option);
     $option = substr($option, 0, 40);
-    if ($optionlen > strlen($option)) {
-        $option .= "&hellip;";
-    }
+    if ($optionlen > strlen($option)) $option .= "&hellip;";
+
     $events[$display] = "<option value=\"{$eventtype['eventtypeID']}\">$option</option>\n";
 }
 tng_free_result($evresult);

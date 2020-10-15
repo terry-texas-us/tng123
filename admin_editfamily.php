@@ -391,16 +391,14 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                     echo "<span id=\"branchlist\">$desclist</span>";
                                     if (!$assignedbranch) {
                                     $totbranches = tng_num_rows($branchresult) + 1;
-                                    if ($totbranches < 2) {
-                                        $totbranches = 2;
-                                    }
+                                    if ($totbranches < 2) $totbranches = 2;
+
                                     $selectnum = $totbranches < 8 ? $totbranches : 8;
                                     $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
                                     $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                     $select .= "	<option value=\"\"";
-                                    if ($row['branch'] == "") {
-                                        $select .= " selected";
-                                    }
+                                    if ($row['branch'] == "") $select .= " selected";
+
                                     $select .= ">{$admtext['nobranch']}</option>\n";
 
                                     $select .= "$options</select>\n";

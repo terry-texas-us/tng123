@@ -15,9 +15,8 @@ if (!$allow_add) {
 require "adminlog.php";
 
 if ($newfile && $newfile != "none") {
-    if (substr($maplink, 0, 1) == "/") {
-        $maplink = substr($maplink, 1);
-    }
+    if (substr($maplink, 0, 1) == "/") $maplink = substr($maplink, 1);
+
     $newpath = "$rootpath$headstonepath/$maplink";
 
     if (@move_uploaded_file($newfile, $newpath)) {
@@ -31,12 +30,10 @@ if ($newfile && $newfile != "none") {
 
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
-if ($latitude && $longitude && !$zoom) {
-    $zoom = 13;
-}
-if (!$zoom) {
-    $zoom = 0;
-}
+if ($latitude && $longitude && !$zoom) $zoom = 13;
+
+if (!$zoom) $zoom = 0;
+
 $template = "sssssssssss";
 $query = "INSERT INTO $cemeteries_table (cemname,maplink,city,county,state,country,latitude,longitude,zoom,notes,place) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$cemname, &$maplink, &$city, &$county, &$state, &$country, &$latitude, &$longitude, &$zoom, &$notes, &$place];

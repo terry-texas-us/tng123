@@ -59,18 +59,16 @@ function api_person($row, $fullevents = false) {
             setMinEvent(["date" => $row['endldate'], "place" => $row['endlplace'], "event" => "ENDL"], $row['endldatetr']);
         }
 
-        if ($fullevents) {
-            doCustomEvents($personID, "I");
-        }
+        if ($fullevents) doCustomEvents($personID, "I");
+
 
         setMinEvent(["date" => $row['deathdate'], "place" => $row['deathplace'], "event" => "DEAT"], $row['deathdatetr']);
         setMinEvent(["date" => $row['burialdate'], "place" => $row['burialplace'], "event" => "BURI"], $row['burialdatetr']);
     }
 
     $eventstr = processEvents($events);
-    if ($eventstr) {
-        $person .= "," . $eventstr;
-    }
+    if ($eventstr) $person .= "," . $eventstr;
+
 
     return $person;
 }
@@ -82,9 +80,8 @@ function processEvents($events) {
         $output .= "\"events\":[";
         $counter = 0;
         foreach ($events as $event) {
-            if ($counter) {
-                $output .= ",";
-            }
+            if ($counter) $output .= ",";
+
             $output .= "{\"tag\":\"{$event['event']}\",\"type\":\"{$event['type']}\",\"date\":\"{$event['date']}\",\"place\":\"{$event['place']}\",\"fact\":\"{$event['fact']}\"}";
             $counter++;
         }

@@ -53,9 +53,8 @@ class OrderedTreesList
         foreach ($this->rows as $row) {
             $html .= "<option value='{$row['gedcom']}'";
 
-            if ($row['gedcom'] == $gedcom) {
-                $html .= " selected";
-            }
+            if ($row['gedcom'] == $gedcom) $html .= " selected";
+
             $html .= ">{$row['treename']}</option>\n";
         }
         return $html;

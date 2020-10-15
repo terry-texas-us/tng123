@@ -36,9 +36,8 @@ $livingPrivateRestrictions = getLivingPrivateRestrictions($people_table, false, 
 
 $query = "SELECT UCASE(LEFT(lastname, 1)) AS firstchar, UCASE($binary left(lastname, 1)) AS binfirstchar, count(UCASE(LEFT(lastname, 1))) AS lncount ";
 $query .= "FROM $people_table ";
-if ($tree) {
-    $query .= "WHERE gedcom = '$tree' ";
-}
+if ($tree) $query .= "WHERE gedcom = '$tree' ";
+
 if ($livingPrivateRestrictions) {
     $query .= $tree ? "AND $livingPrivateRestrictions " : "WHERE $livingPrivateRestrictions ";
 }
@@ -49,9 +48,8 @@ if ($result) {
     $initialchar = 1;
 
     while ($surname = tng_fetch_assoc($result)) {
-        if ($initialchar != 1) {
-            $linkstr .= " ";
-        }
+        if ($initialchar != 1) $linkstr .= " ";
+
         if ($session_charset == "UTF-8" && function_exists('mb_substr')) {
             $firstchar = mb_substr($surname['firstchar'], 0, 1, 'UTF-8');
         } else {
@@ -71,14 +69,12 @@ if ($result) {
 }
 
 $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ', lnprefix, lastname) )" : "lastname";
-if ($tngconfig['ucsurnames']) {
-    $surnamestr = "UCASE($surnamestr)";
-}
+if ($tngconfig['ucsurnames']) $surnamestr = "UCASE($surnamestr)";
+
 $query = "SELECT UCASE($binary $surnamestr) AS lastname, $surnamestr AS lowername, COUNT(UCASE($binary lastname)) AS lncount ";
 $query .= "FROM $people_table ";
-if ($tree) {
-    $query .= "WHERE gedcom = '$tree' ";
-}
+if ($tree) $query .= "WHERE gedcom = '$tree' ";
+
 if ($livingPrivateRestrictions) {
     $query .= $tree ? "AND $livingPrivateRestrictions " : "WHERE $livingPrivateRestrictions ";
 }
@@ -96,17 +92,14 @@ if ($result) {
     $col = -1;
     while ($surname = tng_fetch_assoc($result)) {
         $surname2 = urlencode($surname['lastname']);
-        if (!$maxcount) {
-            $maxcount = $surname['lncount'];
-        }
+        if (!$maxcount) $maxcount = $surname['lncount'];
+
         $tally = $surname['lncount'];
         $tally_fmt = number_format($tally);
         $names[$count - 1] = $surname['lowername'];
         $counts[$count - 1] = $tally;
         $thiswidth = floor($tally / $maxcount * 100);
-        if (($count - 1) % $collen == 0) {
-            $col++;
-        }
+        if (($count - 1) % $collen == 0) $col++;
         $linkstr2col[$col] .= "<tr>";
         $linkstr2col[$col] .= "<td class='snlink'>$count.</td>";
         $linkstr2col[$col] .= "<td class='text-nowrap'><a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a> ($tally_fmt)</td>";
@@ -139,9 +132,8 @@ if ($result) {
                 <tr>
                     <?php
                     for ($i = 0; $i < $cols; $i++) {
-                        if ($i) {
-                            echo "<td class=\"table-gutter\">&nbsp;</td>\n";
-                        }
+                        if ($i) echo "<td class=\"table-gutter\">&nbsp;</td>\n";
+
                         ?>
                         <td class="align-top">
                             <table class="normal table-histogram">
@@ -230,9 +222,7 @@ if ($result) {
                     for ($i = 0; $i < PIE_TOTAL; $i++) {
                         $counter = $i + 1;
                         echo "['data{$counter}', {$counts[$i]}]";
-                        if ($counter < $grtotal) {
-                            echo ", ";
-                        }
+                        if ($counter < $grtotal) echo ", ";
                     }
                     ?>
                 ],
@@ -243,9 +233,7 @@ if ($result) {
                         $counter = $i + 1;
                         $cfmt = number_format($counts[$i]);
                         echo "data{$counter}: \"{$names[$i]} ({$cfmt})\"";
-                        if ($counter < $grtotal) {
-                            echo ", ";
-                        }
+                        if ($counter < $grtotal) echo ", ";
                     }
                     ?>
                 }

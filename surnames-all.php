@@ -42,9 +42,8 @@ if ($result) {
     $initialchar = 1;
 
     while ($surname = tng_fetch_assoc($result)) {
-        if ($initialchar != 1) {
-            $linkstr .= " ";
-        }
+        if ($initialchar != 1) $linkstr .= " ";
+
         if ($surname['firstchar'] == "") {
             $surname['firstchar'] = $text['nosurname'];
             $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>{$text['nosurname']}</a> ";
@@ -78,9 +77,8 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                 <td class="sncol align-top">
                     <?php
                     $surnamestr = $lnprefixes ? "TRIM(CONCAT_WS(' ',lnprefix,lastname) )" : "lastname";
-                    if ($tngconfig['ucsurnames']) {
-                        $surnamestr = "UCASE($surnamestr)";
-                    }
+                    if ($tngconfig['ucsurnames']) $surnamestr = "UCASE($surnamestr)";
+
                     $query = "SELECT UCASE($binary $surnamestr) AS lastname, $surnamestr AS lowername, UCASE($binary lastname) AS binlast, count(UCASE($binary lastname)) AS lncount ";
                     $query .= "FROM $people_table ";
                     $query .= "WHERE UCASE($binary TRIM(lastname)) LIKE \"$urlfirstchar%\" $wherestr2 ";

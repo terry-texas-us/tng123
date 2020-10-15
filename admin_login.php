@@ -84,9 +84,8 @@ if (!isset($_SESSION['logged_in']) && isset($_COOKIE[$loggedin]) && !empty($rese
     $message = $admtext['sessexp'];
 }
 tng_adminheader($admtext['login'], "");
-if (!empty($reset)) {
-    $_COOKIE[$loggedin] = "";
-}
+if (!empty($reset)) $_COOKIE[$loggedin] = "";
+
 
 echo "</head>\n";
 echo tng_adminlayout();

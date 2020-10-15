@@ -15,9 +15,8 @@ function getLine() {
 
     $lineinfo = [];
     if ($line = ltrim(@fgets($fp, 1024))) {
-        if ($saveimport) {
-            $savestate['len'] = strlen($line);
-        }
+        if ($saveimport) $savestate['len'] = strlen($line);
+
         $patterns = ["/��.*��/", "/��.*/", "/.*��/", "/@@/"];
         $replacements = ["", "", "", "@"];
         $line = preg_replace($patterns, $replacements, $line);
@@ -32,9 +31,8 @@ function getLine() {
         $lineinfo['tag'] = "";
         $lineinfo['rest'] = "";
     }
-    if (!$lineinfo['tag'] && !@feof($fp)) {
-        $lineinfo = getLine();
-    }
+    if (!$lineinfo['tag'] && !@feof($fp)) $lineinfo = getLine();
+
 
     return $lineinfo;
 }
@@ -142,9 +140,8 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
                     $lineinfo = getLine();
                     break;
                 case "NOTE":
-                    if (!$notecnt) {
-                        $moreinfo['NOTES'] = [];
-                    }
+                    if (!$notecnt) $moreinfo['NOTES'] = [];
+
                     $notecnt++;
 
                     $moreinfo['NOTES'][$notecnt] = [];
@@ -165,9 +162,8 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
                     }
                     break;
                 case "SOUR":
-                    if (!$citecnt) {
-                        $moreinfo['SOUR'] = [];
-                    }
+                    if (!$citecnt) $moreinfo['SOUR'] = [];
+
                     $citecnt++;
                     $moreinfo['SOUR'][$citecnt] = handleSource($persfamID, $prevlevel);
                     break;
@@ -212,9 +208,8 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
                     }
                     break;
                 case "CREM":
-                    if ($lineinfo['rest'] == "Y") {
-                        $burialtype = CREMATION;
-                    }
+                    if ($lineinfo['rest'] == "Y") $burialtype = CREMATION;
+
                     $lineinfo = getLine();
                     break;
                 default:
@@ -226,9 +221,8 @@ function getMoreInfo($persfamID, $prevlevel, $prevtag, $prevtype) {
         }
     }
 
-    if ($mmcount) {
-        $moreinfo['MEDIA'] = $mminfo;
-    }
+    if ($mmcount) $moreinfo['MEDIA'] = $mminfo;
+
     if (isset($address) && is_array($address)) {
         $query = "INSERT INTO $address_table (gedcom, address1, address2, city, state, zip, country, www, email, phone) VALUES('$tree', \"{$address['ADR1']}\", \"{$address['ADR2']}\", \"{$address['CITY']}\", \"{$address['STAE']}\", \"{$address['POST']}\",  \"{$address['CTRY']}\", \"{$address['WWW']}\", \"{$address['EMAIL']}\", \"{$address['PHON']}\")";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
@@ -266,9 +260,8 @@ function handleCustomEvent($id, $prefix, $tag) {
                 }
             }
         }
-        if ($event['TYPE']) {
-            $lineinfo = getLine();
-        }
+        if ($event['TYPE']) $lineinfo = getLine();
+
         if ($lineinfo['level'] <= $savelevel) {
             $needmore = 0;
         } else {
@@ -284,9 +277,8 @@ function handleCustomEvent($id, $prefix, $tag) {
         if ($needmore) {
             $event['INFO'] = getMoreInfo($id, $lineinfo['level'], $tag, (isset($event['TYPE']) ? $event['TYPE'] : ""));
         }
-        if ($needfact) {
-            $event['INFO']['FACT'] = $fact;
-        }
+        if ($needfact) $event['INFO']['FACT'] = $fact;
+
     } elseif ($needmore) {
         $lineinfo = getLine();
     }
@@ -332,9 +324,8 @@ function handleAddress($prevlevel, $flag) {
             $addrtag = $addr[$counter];
             $address[$addrtag] = (isset($address[$addrtag]) ? $address[$addrtag] : "") . addslashes($lineinfo['rest']);
         } elseif ($lineinfo['tag'] == "CONT") {
-            if ($counter < 4) {
-                $counter++;
-            }
+            if ($counter < 4) $counter++;
+
             $addrtag = $addr[$counter];
             $address[$addrtag] = (isset($address[$addrtag]) ? $address[$addrtag] : "") . addslashes($lineinfo['rest']);
         } else {
@@ -356,9 +347,8 @@ function handleAddress($prevlevel, $flag) {
                     case "PHON":
                     case "EMAIL":
                         $address[$tag] = addslashes($lineinfo['rest']) . getContinued();
-                        if ($address[$tag]) {
-                            $gotaddr = 1;
-                        }
+                        if ($address[$tag]) $gotaddr = 1;
+
                         break;
                     default:
                         $lineinfo = getLine();
@@ -444,12 +434,10 @@ function getPlaceRecord($place, $prevlevel) {
                 case "NAME":
                     $place = addslashes($lineinfo['rest']);
                     $info = getPlaceRecord("", $lineinfo['level']);
-                    if ($info['NOTE']) {
-                        $note .= $info['NOTE'];
-                    }
-                    if ($info['MAP']) {
-                        $map = $info['MAP'];
-                    }
+                    if ($info['NOTE']) $note .= $info['NOTE'];
+
+                    if ($info['MAP']) $map = $info['MAP'];
+
                     if ($info['media']) {
                         $mminfo = array_merge($mminfo, $info['media']);
                         $mmcount = count($mminfo);
@@ -488,9 +476,8 @@ function getPlaceRecord($place, $prevlevel) {
     }
 
     if ($place) {
-        if (!empty($info['NAMC'])) {
-            $place .= $info['NAMC'];
-        }
+        if (!empty($info['NAMC'])) $place .= $info['NAMC'];
+
         $temple = isTemple($place);
         if (!empty($tngconfig['places1tree'])) {
             $treeval = $treecriteria = "";
@@ -504,9 +491,8 @@ function getPlaceRecord($place, $prevlevel) {
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
         $success = tng_affected_rows();
-        if ($success) {
-            incrCounter("P");
-        }
+        if ($success) incrCounter("P");
+
         if (!$success && $savestate['del'] != "no" && (($savestate['latlong'] && ($map['long'] || $map['lati'])) || $note)) {
             $query = "UPDATE $places_table SET temple=\"$temple\"";
             $query1 = "";
@@ -514,23 +500,20 @@ function getPlaceRecord($place, $prevlevel) {
                 if ($map['long'] || $map['lati']) {
                     $query1 .= ", longitude=\"{$map['long']}\", latitude=\"{$map['lati']}\"";
                 }
-                if ($map['zoom']) {
-                    $query1 .= ", zoom=\"{$map['zoom']}\"";
-                }
+                if ($map['zoom']) $query1 .= ", zoom=\"{$map['zoom']}\"";
+
                 if ($map['placelevel']) {
                     $query1 .= ", placelevel=\"{$map['placelevel']}\"";
                 }
             }
-            if ($note) {
-                $query1 .= ", notes=\"$note\"";
-            }
+            if ($note) $query1 .= ", notes=\"$note\"";
+
             $query = $query . $query1 . " WHERE place=\"$place\"$treecriteria";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             $success = 1;
         }
-        if ($mmcount) {
-            processMedia($mmcount, $mminfo, $place, "");
-        }
+        if ($mmcount) processMedia($mmcount, $mminfo, $place, "");
+
     } else {
         $info = [];
         $info['MAP'] = $map;
@@ -601,13 +584,11 @@ function getLatLong($value, $negdir) {
     if (count($degs) == 3) {
         $value = intval($degs[0]) + (intval($degs[1]) / 60) + (intval($degs[2]) / 3600);
     } else {
-        if (substr($value, 0, 1) == ".") {
-            $value = "0" . $value;
-        }
+        if (substr($value, 0, 1) == ".") $value = "0" . $value;
+
     }
-    if ($neednegative) {
-        $value = "-" . $value;
-    }
+    if ($neednegative) $value = "-" . $value;
+
 
     return $value;
 }
@@ -847,9 +828,7 @@ function getMediaCollection($mediaobj) {
                 }
             }
         }
-        if ($found) {
-            break;
-        }
+        if ($found) break;
     }
 
     if (!$mediatypeID && isset($mediaobj['FORM']) && $mediaobj['FORM']) {
@@ -935,9 +914,8 @@ function processMedia($mmcount, $mminfo, $persfamID, $eventID) {
             $mm['CHAN'] = $today;
         }
         $inschangedt = $mm['CHAN'] ? $mm['CHAN'] : ($tngimpcfg['chdate'] == "1" ? "0000-00-00 00:00:00" : $today);
-        if (!$mm['TITL']) {
-            $mm['TITL'] = $mm['FILE'];
-        }
+        if (!$mm['TITL']) $mm['TITL'] = $mm['FILE'];
+
         $query = "INSERT IGNORE INTO $media_table (gedcom, mediatypeID, mediakey, path, description, notes, form, usecollfolder, datetaken, changedate) VALUES('$tree', \"{$mm['mediatypeID']}\", \"{$mm['OBJE']}\", \"{$mm['FILE']}\", \"{$mm['TITL']}\", \"{$mm['NOTE']}\", \"{$mm['FORM']}\", '1', \"{$mm['datetaken']}\", \"{$mm['CHAN']}\")";
         $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
@@ -1175,15 +1153,13 @@ function getMultimediaRecord($objectID, $prevlevel) {
             }
 
             $thumbpath = "";
-            if (!$mminfo['mediatypeID']) {
-                $mminfo['mediatypeID'] = "photos";
-            }
+            if (!$mminfo['mediatypeID']) $mminfo['mediatypeID'] = "photos";
+
             $mminfo['ucf'] = ($mmpath && $mmpath == $mediapath) ? 0 : 1;
 
             //get the mediatypeID, hs & history items, mediakey--should it always be the file?
-            if (empty($mminfo['TITL'])) {
-                $mminfo['TITL'] = $mminfo['FILE'];
-            }
+            if (empty($mminfo['TITL'])) $mminfo['TITL'] = $mminfo['FILE'];
+
             $query = "INSERT IGNORE INTO $media_table (gedcom, mediakey, path, thumbpath, description, notes, form, mediatypeID, usecollfolder, datetaken, changedate) VALUES('$tree', \"{$mminfo['ID']}\", \"{$mminfo['FILE']}\", \"$thumbpath\", \"{$mminfo['TITL']}\", \"{$mminfo['NOTE']}\", \"{$mminfo['FORM']}\", \"{$mminfo['mediatypeID']}\", \"{$mminfo['ucf']}\", \"{$mminfo['datetaken']}\", \"$inschangedt\")";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
 
@@ -1359,9 +1335,8 @@ function saveCustEvents($prefix, $persfamID, $events, $totevents) {
             $display = $description;
         } else {
             $display = isset($admtext[$event]) ? $admtext[$event] : "";
-            if (!$display) {
-                $display = $event;
-            }
+            if (!$display) $display = $event;
+
         }
         $eventinfo = isset($eventptr['FACT']) ? $eventptr['FACT'] : "";
         $eventtype = strtoupper($prefix . "_" . $event . "_" . $description);

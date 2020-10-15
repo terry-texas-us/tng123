@@ -722,9 +722,8 @@ $maxheight += $pedigree['borderwidth'] + (2 * $pedigree['offpageimgw']) + 6 + $p
 
         function hidePopup(slot) {
             var ref = document.all ? document.all["popup" + slot] : document.getElementById ? document.getElementById("popup" + slot) : null;
-            if (ref) {
-                ref.style.visibility = "hidden";
-            }
+            if (ref) ref.style.visibility = "hidden";
+
             eval("timer" + slot + "=false;");
         }
 

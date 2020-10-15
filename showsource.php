@@ -123,20 +123,17 @@ $numrows = tng_num_rows($sresult);
 $sourcelinktext = "";
 $noneliving = $noneprivate = 1;
 while ($srow = tng_fetch_assoc($sresult)) {
-    if ($sourcelinktext) {
-        $sourcelinktext .= "\n";
-    }
+    if ($sourcelinktext) $sourcelinktext .= "\n";
+
 
     $srights = determineLivingPrivateRights($srow, $righttree);
     $srow['allow_living'] = $srights['living'];
     $srow['allow_private'] = $srights['private'];
 
-    if (!$srow['allow_living']) {
-        $noneliving = 0;
-    }
-    if (!$srow['allow_private']) {
-        $noneprivate = 0;
-    }
+    if (!$srow['allow_living']) $noneliving = 0;
+
+    if (!$srow['allow_private']) $noneprivate = 0;
+
 
     $sourcelinktext .= "<a href=\"getperson.php?personID={$srow['persfamID']}&amp;tree={$srow['gedcom']}\">";
     $sourcelinktext .= getName($srow);
@@ -160,20 +157,17 @@ $sresult = tng_query($query);
 $numrows = tng_num_rows($sresult);
 $noneliving = $noneprivate = 1;
 while ($srow = tng_fetch_assoc($sresult)) {
-    if ($sourcelinktext) {
-        $sourcelinktext .= "\n";
-    }
+    if ($sourcelinktext) $sourcelinktext .= "\n";
+
 
     $srights = determineLivingPrivateRights($srow, $righttree);
     $srow['allow_living'] = $srights['living'];
     $srow['allow_private'] = $srights['private'];
 
-    if (!$srow['allow_living']) {
-        $noneliving = 0;
-    }
-    if (!$srow['allow_private']) {
-        $noneprivate = 0;
-    }
+    if (!$srow['allow_living']) $noneliving = 0;
+
+    if (!$srow['allow_private']) $noneprivate = 0;
+
 
     $sourcelinktext .= "<a href=\"familygroup.php?familyID={$srow['familyID']}&amp;tree={$srow['gedcom']}\">{$text['family']}: " . getFamilyName($srow) . "</a>";
 }
@@ -270,12 +264,10 @@ echo tng_menu("S", "source", $sourceID, $innermenu);
             } else {
                 innerToggle(part, "info", "tng_plink");
                 <?php
-                if ($media) {
-                    echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
-                }
-                if ($notes) {
-                    echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
-                }
+                if ($media) echo "innerToggle(part,\"media\",\"tng_mlink\");\n";
+
+                if ($notes) echo "innerToggle(part,\"notes\",\"tng_nlink\");\n";
+
                 ?>
                 jQuery('#tng_alink').attr('class', 'lightlink');
             }

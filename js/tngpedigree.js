@@ -40,9 +40,8 @@ function showPopup(slot, tall, high) {
 
 function hidePopup(slot) {
     var ref = jQuery("#popup" + slot);
-    if (ref.length) {
-        ref.css('visibility', 'hidden');
-    }
+    if (ref.length) ref.css('visibility', 'hidden');
+
     eval("timer" + slot + "=false;");
 }
 

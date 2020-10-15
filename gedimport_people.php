@@ -74,15 +74,13 @@ function getIndividualRecord($personID, $prevlevel) {
                         $newname = "";
                         for ($i = 1; $i <= 3; $i++) {
                             if ($matches[$i]) {
-                                if ($newname) {
-                                    $newname .= " ";
-                                }
+                                if ($newname) $newname .= " ";
+
                                 $newname .= addslashes(trim($matches[$i]));
                             }
                         }
-                        if (!$newname) {
-                            $newname = addslashes(trim($lineinfo['rest']));
-                        }
+                        if (!$newname) $newname = addslashes(trim($lineinfo['rest']));
+
                         $custeventctr++;
                         $events[$custeventctr] = initEventHolder();
                         $events[$custeventctr]['TAG'] = "NAME";
@@ -169,9 +167,8 @@ function getIndividualRecord($personID, $prevlevel) {
                     $lineinfo = getLine();
                     break;
                 case "NICK":
-                    if ($info['NICK']) {
-                        $info['NICK'] .= ", ";
-                    }
+                    if ($info['NICK']) $info['NICK'] .= ", ";
+
                     $info['NICK'] .= addslashes(removeDelims($lineinfo['rest']));
                     $lineinfo = getLine();
                     break;
@@ -202,9 +199,8 @@ function getIndividualRecord($personID, $prevlevel) {
                         $events[$custeventctr]['INFO'] = getMoreInfo($personID, $lineinfo['level'], $tag, "");
                     } else {
                         $info[$tag] = getMoreInfo($personID, $lineinfo['level'], $tag, "");
-                        if (isset($info[$tag]['NOTES'])) {
-                            dumpnotes($info[$tag]['NOTES']);
-                        }
+                        if (isset($info[$tag]['NOTES'])) dumpnotes($info[$tag]['NOTES']);
+
                         if ($tag == "BIRT" && $info['BIRT']['TYPE'] == "stillborn") {
                             $info['BIRT']['NOTES'][] = ["NOTE" => "stillborn"];
                         }
@@ -259,17 +255,15 @@ function getIndividualRecord($personID, $prevlevel) {
                 case "FAMC":
                     preg_match("/^@(\S+)@/", $lineinfo['rest'], $matches);
                     $famc = adjustID($matches[1], $savestate['foffset']);
-                    if (!$prifamily) {
-                        $prifamily = $famc;
-                    }
+                    if (!$prifamily) $prifamily = $famc;
+
                     $lineinfo = getLine();
                     $relationship = $lineinfo['tag'] == "PEDI" ? strtolower($lineinfo['rest']) : "";
                     $query = "INSERT IGNORE INTO $children_table (gedcom, familyID, personID, mrel, frel, parentorder) VALUES( '$tree', \"$famc\", \"$personID\", \"$relationship\", \"$relationship\", \"$parentorder\" )";
                     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
                     $success = tng_affected_rows();
-                    if ($success) {
-                        $parentorder++;
-                    }
+                    if ($success) $parentorder++;
+
                     if ($relationship) {
                         if (!$success) {
                             $query = "UPDATE $children_table SET mrel = \"$relationship\", frel = \"$relationship\" WHERE gedcom = '$tree' AND familyID = \"$famc\" AND personID = \"$personID\"";
@@ -324,9 +318,8 @@ function getIndividualRecord($personID, $prevlevel) {
                     if ($savestate['del'] != "no") {
                         $slgcplace = trim((isset($info['SLGC']['TEMP']) ? $info['SLGC']['TEMP'] : "") . " " . (isset($info['SLGC']['PLAC']) ? $info['SLGC']['PLAC'] : ""));
                         if ($info['SLGC']['FAMC']) {
-                            if (!$info['SLGC']['DATETR']) {
-                                $info['SLGC']['DATETR'] = "0000-00-00";
-                            }
+                            if (!$info['SLGC']['DATETR']) $info['SLGC']['DATETR'] = "0000-00-00";
+
                             $query = "INSERT IGNORE INTO $children_table (gedcom, familyID, personID, sealdate, sealdatetr, sealplace ) VALUES( '$tree', \"" . $info['SLGC']['FAMC'] . "\", \"$personID\", \"" . $info['SLGC']['DATE'] . "\", \"" . $info['SLGC']['DATETR'] . "\", \"$slgcplace\" )";
                             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
                             $success = tng_affected_rows();
@@ -359,9 +352,8 @@ function getIndividualRecord($personID, $prevlevel) {
                         $mminfo[$mmcount] = getMoreMMInfo($lineinfo['level'], $mmcount);
                         $mminfo[$mmcount]['OBJE'] = !empty($matches[1]) ? $matches[1] : $mminfo[$mmcount]['FILE'];
                         $mminfo[$mmcount]['linktype'] = "I";
-                        if ($tag == "_PHOTO") {
-                            $mminfo[$mmcount]['defphoto'] = 1;
-                        }
+                        if ($tag == "_PHOTO") $mminfo[$mmcount]['defphoto'] = 1;
+
                     } else {
                         $lineinfo = getLine();
                     }
@@ -512,9 +504,8 @@ function getIndividualRecord($personID, $prevlevel) {
                     if (!$gotit) {
                         $fullprefix .= $fullprefix ? " $part" : $part;
                         $pfxcount++;
-                        if ($numparts == $pfxcount + 1 || $lnpfxnum == $pfxcount) {
-                            $gotit = 1;
-                        }
+                        if ($numparts == $pfxcount + 1 || $lnpfxnum == $pfxcount) $gotit = 1;
+
                     } else {
                         $fullsurname .= $fullsurname ? " $part" : $part;
                     }
@@ -550,9 +541,8 @@ function getIndividualRecord($personID, $prevlevel) {
             $result = @tng_query($query);
             $indrow = tng_fetch_assoc($result);
             $goahead = $inschangedt > $indrow['changedate'] ? 1 : 0;
-            if ($result) {
-                tng_free_result($result);
-            }
+            if ($result) tng_free_result($result);
+
         } else {
             $goahead = 1;
         }
@@ -570,9 +560,8 @@ function getIndividualRecord($personID, $prevlevel) {
 				initdate=\"" . $info['INIT']['DATE'] . "\", initdatetr=\"" . $info['INIT']['DATETR'] . "\", initplace=\"$initplace\",
 				endldate=\"" . $info['ENDL']['DATE'] . "\", endldatetr=\"" . $info['ENDL']['DATETR'] . "\", endlplace=\"$endlplace\",
 				changedby=\"$currentuser\" $chdatestr$branchstr";
-            if ($prifamily) {
-                $query .= ", famc=\"$prifamily\"";
-            }
+            if ($prifamily) $query .= ", famc=\"$prifamily\"";
+
             $query .= ", metaphone=\"$meta\" WHERE personID='$personID' AND gedcom = '$tree'";
             $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
             $success = 1;
@@ -608,9 +597,8 @@ function getIndividualRecord($personID, $prevlevel) {
         }
 
         //do citations
-        if (isset($cite)) {
-            processCitations($personID, "", $cite);
-        }
+        if (isset($cite)) processCitations($personID, "", $cite);
+
         foreach ($pciteevents as $citeevent) {
             if (isset($info[$citeevent]['SOUR'])) {
                 processCitations($personID, $citeevent, $info[$citeevent]['SOUR']);
@@ -638,17 +626,15 @@ function getIndividualRecord($personID, $prevlevel) {
                 $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
                 $success = tng_affected_rows();
                 if (!$success && ($uspousestr || $famlivingstr) && $savestate['del'] != "no") {
-                    if ($uspousestr && $famlivingstr) {
-                        $famlivingstr .= ",";
-                    }
+                    if ($uspousestr && $famlivingstr) $famlivingstr .= ",";
+
                     $query = "UPDATE $families_table SET $famlivingstr $uspousestr, changedby=\"$currentuser\" WHERE familyID='$familyID' AND gedcom = '$tree'";
                     $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
                 }
             }
         }
-        if ($mmcount) {
-            processMedia($mmcount, $mminfo, $personID, "");
-        }
+        if ($mmcount) processMedia($mmcount, $mminfo, $personID, "");
+
 
         //do event-based media
         foreach ($pciteevents as $stdevtype) {

@@ -99,70 +99,59 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
             <?php
             echo "<option value=\"\">&nbsp;</option>\n";
             echo "<option value=\"birth\"";
-            if ($tngevent == "birth") {
-                echo " selected";
-            }
+            if ($tngevent == "birth") echo " selected";
+
             echo ">{$text['born']}</option>\n";
 
             echo "<option value=\"altbirth\"";
-            if ($tngevent == "altbirth") {
-                echo " selected";
-            }
+            if ($tngevent == "altbirth") echo " selected";
+
             echo ">{$text['christened']}</option>\n";
 
             echo "<option value=\"death\"";
-            if ($tngevent == "death") {
-                echo " selected";
-            }
+            if ($tngevent == "death") echo " selected";
+
             echo ">{$text['died']}</option>\n";
 
             echo "<option value=\"burial\"";
-            if ($tngevent == "burial") {
-                echo " selected";
-            }
+            if ($tngevent == "burial") echo " selected";
+
             echo ">{$text['buried']}</option>\n";
 
             echo "<option value=\"marr\"";
-            if ($tngevent == "marr") {
-                echo " selected";
-            }
+            if ($tngevent == "marr") echo " selected";
+
             echo ">{$text['married']}</option>\n";
 
             echo "<option value=\"div\"";
-            if ($tngevent == "div") {
-                echo " selected";
-            }
+            if ($tngevent == "div") echo " selected";
+
             echo ">{$text['divorced']}</option>\n";
 
             if ($ldsOK) {
                 echo "<option value=\"bapt\"";
-                if ($tngevent == "bapt") {
-                    echo " selected";
-                }
+                if ($tngevent == "bapt") echo " selected";
+
                 echo ">{$text['baptizedlds']}</option>\n";
 
                 echo "<option value=\"conf\"";
-                if ($tngevent == "conf") {
-                    echo " selected";
-                }
+                if ($tngevent == "conf") echo " selected";
+
                 echo ">{$text['conflds']}</option>\n";
 
                 echo "<option value=\"init\"";
-                if ($tngevent == "init") {
-                    echo " selected";
-                }
+                if ($tngevent == "init") echo " selected";
+
                 echo ">{$text['initlds']}</option>\n";
 
                 echo "<option value=\"endl\"";
-                if ($tngevent == "endl") {
-                    echo " selected";
-                }
+                if ($tngevent == "endl") echo " selected";
+
                 echo ">{$text['endowedlds']}</option>\n";
 
                 echo "<option value=\"seal\"";
-                if ($tngevent == "seal") {
-                    echo " selected";
-                }
+                if ($tngevent == "seal") echo " selected";
+
                 echo ">{$text['sealedslds']}</option>\n";
             }
 
@@ -173,9 +162,8 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
             while ($row = tng_fetch_assoc($result)) {
                 if (!in_array($row['tag'], $dontdo)) {
                     echo "<option value=\"{$row['eventtypeID']}\"";
-                    if ($tngevent == $row['eventtypeID']) {
-                        echo " selected";
-                    }
+                    if ($tngevent == $row['eventtypeID']) echo " selected";
+
                     echo ">" . getEventDisplay($row['display']) . "</option>\n";
                 }
             }
@@ -191,9 +179,8 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
             <?php
             for ($i = 1; $i <= 31; $i++) {
                 echo "<option value=\"$i\"";
-                if ($i == $tngdaymonth) {
-                    echo " selected";
-                }
+                if ($i == $tngdaymonth) echo " selected";
+
                 echo ">$i</option>\n";
             }
             $tngkeywordsclean = preg_replace("/\"/", "&#34;", stripslashes($tngkeywords));
@@ -361,9 +348,8 @@ if ($tngneedresults) {
         if ($tngmonth) {
             $allwhere .= " AND MONTH($datefieldtr) = '$tngmonth'";
         }
-        if ($tngyear) {
-            $allwhere .= " AND YEAR($datefieldtr) = '$tngyear'";
-        }
+        if ($tngyear) $allwhere .= " AND YEAR($datefieldtr) = '$tngyear'";
+
         if ($tngkeywords) {
             $allwhere .= " AND $datefield LIKE '%$tngkeywords%'";
         }
@@ -372,14 +358,12 @@ if ($tngneedresults) {
         }
 
         if ($tree) {
-            if ($urlstring) {
-                $urlstring .= "&amp;";
-            }
+            if ($urlstring) $urlstring .= "&amp;";
+
             $urlstring .= "tree=$tree";
 
-            if ($allwhere) {
-                $allwhere = " AND (1=1 $allwhere)";
-            }
+            if ($allwhere) $allwhere = " AND (1=1 $allwhere)";
+
             if ($needfamilies) {
                 $allwhere .= " AND families.gedcom='$tree'";
             } else {
@@ -392,9 +376,8 @@ if ($tngneedresults) {
         } else {
             $more = getLivingPrivateRestrictions($people_table, false, true);
         }
-        if ($more) {
-            $allwhere .= " AND " . $more;
-        }
+        if ($more) $allwhere .= " AND " . $more;
+
 
         $max_browsesearch_pages = 5;
         if ($offset) {
@@ -455,18 +438,15 @@ if ($tngneedresults) {
             echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
 
             $pagenav = get_browseitems_nav($totrows, "anniversaries2.php?$urlstring&amp;tngevent=$tngsaveevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=1&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-            if ($pagenav) {
-                echo "<p>$pagenav</p>";
-            }
+            if ($pagenav) echo "<p>$pagenav</p>";
+
 
             if (isMobile()) {
-                if ($tabletype == "toggle") {
-                    $tabletype = "columntoggle";
-                }
+                if ($tabletype == "toggle") $tabletype = "columntoggle";
+
                 $tableStartTag = "<table class='tablesaw whiteback normal' data-tablesaw-mode='$tabletype'";
-                if ($enableminimap) {
-                    $tableStartTag .= " data-tablesaw-minimap";
-                }
+                if ($enableminimap) $tableStartTag .= " data-tablesaw-minimap";
+
                 if ($enablemodeswitch) {
                     $tableStartTag .= " data-tablesaw-mode-switch";
                 }
@@ -546,14 +526,12 @@ if ($tngneedresults) {
                         $row['allow_private'] = $rights['private'];
                         $wboth = $rights['both'];
                         $name = getNameRev($row);
-                        if ($personIDstr) {
-                            $personIDstr .= "<br>";
-                        }
+                        if ($personIDstr) $personIDstr .= "<br>";
+
                         $personIDstr .= $row['wpersonID'];
 
-                        if ($namestr) {
-                            $namestr .= "<br>";
-                        }
+                        if ($namestr) $namestr .= "<br>";
+
                         if (!isMobile()) {
                             $namestr .= "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\">\n";
                             $namestr .= "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div>\n";
@@ -600,15 +578,13 @@ if ($tngneedresults) {
             </table>
 
             <?php
-            if ($pagenav) {
-                echo "<p>$pagenav</p>";
-            }
+            if ($pagenav) echo "<p>$pagenav</p>";
+
             echo "</div><br>\n";
         }
     }
-    if (!$successcount) {
-        echo "<p>{$text['noresults']}.</p>";
-    }
+    if (!$successcount) echo "<p>{$text['noresults']}.</p>";
+
 } //end of $tng_needresults
 tng_footer("");
 ?>

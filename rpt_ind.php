@@ -109,9 +109,8 @@ if ($blankform == 1) {
     }
     singleLine($text['spouse'], '', "B");
     doubleLine($text['married'], '', $text['place'], '');
-    if ($ldsOK) {
-        doubleLine($text['sealedslds'], '', $text['place'], '');
-    }
+    if ($ldsOK) doubleLine($text['sealedslds'], '', $text['place'], '');
+
     childLine(1, '');
     childLine(2, '');
     childLine(3, '');
@@ -122,15 +121,13 @@ if ($blankform == 1) {
     titleLine($text['general']);
 } // create a filled in form
 else {
-    if ($citesources && $rights['both']) {
-        getCitations($personID, 0);
-    }
+    if ($citesources && $rights['both']) getCitations($personID, 0);
+
 
     $cite = reorderCitation($personID . "_", 0);
     $cite2 = reorderCitation($personID . "_NAME", 0);
-    if ($cite2) {
-        $cite .= $cite ? ", $cite2" : $cite2;
-    }
+    if ($cite2) $cite .= $cite ? ", $cite2" : $cite2;
+
     $gender = strtoupper($row['sex']);
     if ($gender == "M") {
         $gender = $text['male'];
@@ -146,9 +143,8 @@ else {
         }
     }
     nameLine($text['name'], $namestr, $text['gender'], $gender, $cite);
-    if ($row['nickname']) {
-        singleLine($text['nickname'], $row['nickname']);
-    }
+    if ($row['nickname']) singleLine($text['nickname'], $row['nickname']);
+
 
     // birth
     if ($rights['both']) {
@@ -248,9 +244,8 @@ else {
                 }
                 $cite = reorderCitation($fathrow['personID'] . "_", 0);
                 $cite2 = reorderCitation($fathrow['personID'] . "_NAME", 0);
-                if ($cite2) {
-                    $cite .= $cite ? ", $cite2" : $cite2;
-                }
+                if ($cite2) $cite .= $cite ? ", $cite2" : $cite2;
+
                 singleLine($text['father'], "$fathname $fathtext", '', $cite);
             } else {
                 singleLine($text['father'], '');
@@ -273,9 +268,8 @@ else {
                 }
                 $cite = reorderCitation($mothrow['personID'] . "_", 0);
                 $cite2 = reorderCitation($mothrow['personID'] . "_NAME", 0);
-                if ($cite2) {
-                    $cite .= $cite ? ", $cite2" : $cite2;
-                }
+                if ($cite2) $cite .= $cite ? ", $cite2" : $cite2;
+
                 singleLine($text['mother'], "$mothname $mothtext", '', $cite);
             } else {
                 singleLine($text['mother'], '');
@@ -343,9 +337,8 @@ else {
             }
             $cite = reorderCitation($marriagerow[$spouse] . "_", 0);
             $cite2 = reorderCitation($marriagerow[$spouse] . "_NAME", 0);
-            if ($cite2) {
-                $cite .= $cite ? ", $cite2" : $cite2;
-            }
+            if ($cite2) $cite .= $cite ? ", $cite2" : $cite2;
+
             singleLine($text['spouse'], "$namestr $spousetext", '', $cite);
         }
         if ($mrights['both']) {
@@ -374,9 +367,8 @@ else {
 
                 $namestr = getName($child);
                 $childtext = generateDates($child);
-                if ($citesources && $crights['both']) {
-                    getCitations($child['pID'], 0);
-                }
+                if ($citesources && $crights['both']) getCitations($child['pID'], 0);
+
                 $cite = reorderCitation($child['pID'] . "_NAME", 0);
                 childLine($childcnt, "$namestr $childtext", $cite);
                 $childcnt++;
@@ -399,12 +391,10 @@ else {
         $lasttitle = '---';
         foreach ($indnotes as $key => $note) {
             if ($note['title'] != $lasttitle) {
-                if ($notes) {
-                    $notes .= "\n\n";
-                }
-                if ($note['title']) {
-                    $notes .= $note['title'] . "\n";
-                }
+                if ($notes) $notes .= "\n\n";
+
+                if ($note['title']) $notes .= $note['title'] . "\n";
+
             }
             $notes .= $note['text'];
         }
@@ -480,9 +470,8 @@ function singleLine($label, $data, $datastyle = '', $cite = '') {
 
     $data = strip_tags($data);
 
-    if ($label) {
-        $label .= ":";
-    }
+    if ($label) $label .= ":";
+
 
     $spaceWidth = $paperdim['w'] - $lftmrg - $rtmrg - $labelwidth;
     $pdf->SetFont($rptFont, $datastyle, $rptFontSize);
@@ -500,9 +489,8 @@ function singleLine($label, $data, $datastyle = '', $cite = '') {
         $lowerY = $pdf->GetY();
         $diff = $lowerY - $topY;
         $pdf->SetY($topY);
-        if ($diff > 0) {
-            $pdf->Cell($labelwidth, $diff, "", 1, 0, 'L');
-        }
+        if ($diff > 0) $pdf->Cell($labelwidth, $diff, "", 1, 0, 'L');
+
         $pdf->SetY($lowerY);
         $lineWidth = $spaceWidth - .2;  //for citations
     } else {
@@ -514,9 +502,8 @@ function singleLine($label, $data, $datastyle = '', $cite = '') {
         $pdf->SetFont($rptFont, $datastyle, $rptFontSize - $citefontsub);
         $pdf->Cell(0, $lineheight / 2, " $cite");
     }
-    if ($stringWidth <= $spaceWidth) {
-        $pdf->Ln($lineheight);
-    }
+    if ($stringWidth <= $spaceWidth) $pdf->Ln($lineheight);
+
 }
 
 // nameLine

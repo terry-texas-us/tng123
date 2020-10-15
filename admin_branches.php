@@ -18,9 +18,8 @@ function getBranchCount($tree, $branch, $table) {
     $result = tng_query($query);
     $row = tng_fetch_assoc($result);
     $count = $row['count'];
-    if (!$count) {
-        $count = "0";
-    }
+    if (!$count) $count = "0";
+
     tng_free_result($result);
 
     return $count;
@@ -38,9 +37,8 @@ if ($newsearch) {
     if (!$searchstring) {
         $searchstring = $_COOKIE['tng_search_branches_post']['search'];
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_tree'];
+
     if (!isset($offset)) {
         $tngpage = $_COOKIE['tng_search_branches_post']['tngpage'];
         $offset = $_COOKIE['tng_search_branches_post']['offset'];
@@ -137,9 +135,8 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "	<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) {
-                                            echo " selected";
-                                        }
+                                        if ($treerow['gedcom'] == $tree) echo " selected";
+
                                         echo ">{$treerow['treename']}</option>\n";
                                     }
                                     tng_free_result($treeresult);

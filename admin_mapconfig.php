@@ -109,9 +109,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <?php
                                 for ($i = 0; $i <= 17; $i++) {
                                     echo "<option value=\"$i\"";
-                                    if ($map['stzoom'] == $i) {
-                                        echo " selected";
-                                    }
+                                    if ($map['stzoom'] == $i) echo " selected";
+
                                     echo ">$i</option>\n";
                                 }
                                 ?>
@@ -125,9 +124,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                 <?php
                                 for ($i = 0; $i <= 17; $i++) {
                                     echo "<option value=\"$i\"";
-                                    if ($map['foundzoom'] == $i) {
-                                        echo " selected";
-                                    }
+                                    if ($map['foundzoom'] == $i) echo " selected";
+
                                     echo ">$i</option>\n";
                                 }
                                 ?>

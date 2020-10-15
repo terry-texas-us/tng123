@@ -37,22 +37,19 @@ if (!class_exists('UFPDF')) {
         public function AddFont($family, $style = '', $file = '') {
             //Add a TrueType or Type1 font
             $family = strtolower($family);
-            if ($family == 'arial') {
-                $family = 'helvetica';
-            }
+            if ($family == 'arial') $family = 'helvetica';
+
             $style = strtoupper($style);
-            if ($style == 'IB') {
-                $style = 'BI';
-            }
+            if ($style == 'IB') $style = 'BI';
+
             if (isset($this->fonts[$family . $style])) {
                 $this->Error('Font already added: ' . $family . ' ' . $style);
             }
             if ($file == '') {
                 $file = str_replace(' ', '', $family) . strtolower($style) . '.php';
             }
-            if (defined('FPDF_FONTPATH')) {
-                $file = FPDF_FONTPATH . $file;
-            }
+            if (defined('FPDF_FONTPATH')) $file = FPDF_FONTPATH . $file;
+
             include $file;
             if (!isset($name)) {
                 $this->Error('Could not include font definition file');
@@ -74,9 +71,8 @@ if (!class_exists('UFPDF')) {
             if ($this->underline and $txt != '') {
                 $s .= ' ' . $this->_dounderline($x, $y, $this->GetStringWidth($txt), $txt);
             }
-            if ($this->ColorFlag) {
-                $s = 'q ' . $this->TextColor . ' ' . $s . ' Q';
-            }
+            if ($this->ColorFlag) $s = 'q ' . $this->TextColor . ' ' . $s . ' Q';
+
             $this->_out($s);
         }
 
@@ -103,9 +99,8 @@ if (!class_exists('UFPDF')) {
                     $this->_out(sprintf('%.3f Tw', $ws * $k));
                 }
             }
-            if ($w == 0) {
-                $w = $this->w - $this->rMargin - $this->x;
-            }
+            if ($w == 0) $w = $this->w - $this->rMargin - $this->x;
+
             $s = '';
             if ($fill == 1 or $border == 1) {
                 if ($fill == 1) {
@@ -140,31 +135,26 @@ if (!class_exists('UFPDF')) {
                 } else {
                     $dx = $this->cMargin;
                 }
-                if ($this->ColorFlag) {
-                    $s .= 'q ' . $this->TextColor . ' ';
-                }
+                if ($this->ColorFlag) $s .= 'q ' . $this->TextColor . ' ';
+
                 $txtstring = $this->_escapetext($txt);
                 $s .= sprintf('BT %.2f %.2f Td %s Tj ET', ($this->x + $dx) * $k, ($this->h - ($this->y + .5 * $h + .3 * $this->FontSize)) * $k, $txtstring);
                 if ($this->underline) {
                     $s .= ' ' . $this->_dounderline($this->x + $dx, $this->y + .5 * $h + .3 * $this->FontSize, $width, $txt);
                 }
-                if ($this->ColorFlag) {
-                    $s .= ' Q';
-                }
+                if ($this->ColorFlag) $s .= ' Q';
                 if ($link) {
                     $this->Link($this->x + $dx, $this->y + .5 * $h - .5 * $this->FontSize, $width, $this->FontSize, $link);
                 }
             }
-            if ($s) {
-                $this->_out($s);
-            }
+            if ($s) $this->_out($s);
+
             $this->lasth = $h;
             if ($ln > 0) {
                 //Go to next line
                 $this->y += $h;
-                if ($ln == 1) {
-                    $this->x = $this->lMargin;
-                }
+                if ($ln == 1) $this->x = $this->lMargin;
+
             } else {
                 $this->x += $w;
             }
@@ -219,9 +209,8 @@ if (!class_exists('UFPDF')) {
                 $file = $font['ctg'];
             }
             $size = filesize($file);
-            if (!$size) {
-                $this->Error('Font file not found');
-            }
+            if (!$size) $this->Error('Font file not found');
+
             $this->_out('<</Length ' . $size);
             if (substr($file, -2) == '.z') {
                 $this->_out('/Filter /FlateDecode');

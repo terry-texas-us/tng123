@@ -2,9 +2,8 @@
 $textpart = "pedigree";
 include "tng_begin.php";
 
-if (!$personID) {
-    die("no args");
-}
+if (!$personID) die("no args");
+
 include "config/pedconfig.php";
 
 $divctr = 1;
@@ -53,9 +52,8 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
         while ($row = tng_fetch_assoc($result)) {
             $spouserow = [];
             $spousestr = "";
-            if (!$spouse) {
-                $spouse = $row['husband'] == $key ? "wife" : "husband";
-            }
+            if (!$spouse) $spouse = $row['husband'] == $key ? "wife" : "husband";
+
             if ($row[$spouse]) {
                 $spouseresult = getPersonData($tree, $row[$spouse]);
                 if ($spouseresult) {
@@ -230,12 +228,10 @@ tng_header($text['descendfor'] . " $namestr", $flags);
 $photostr = showSmallPhoto($personID, $namestr, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $namestr, getYears($row));
 
-if (!$pedigree['maxdesc']) {
-    $pedigree['maxdesc'] = 12;
-}
-if (!$pedigree['initdescgens']) {
-    $pedigree['initdescgens'] = 4;
-}
+if (!$pedigree['maxdesc']) $pedigree['maxdesc'] = 12;
+
+if (!$pedigree['initdescgens']) $pedigree['initdescgens'] = 4;
+
 if (!$generations) {
     $generations = $pedigree['initdescgens'] > 8 ? 8 : $pedigree['initdescgens'];
 } else {
@@ -250,9 +246,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='descendtext.php?personID=$personID&amp;tree=$tree&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";

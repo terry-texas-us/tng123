@@ -43,9 +43,8 @@ if ($proceed && $username != $currentuser) {
     $query = "SELECT username FROM $users_table WHERE username = \"$username\"";
     $result = tng_query($query) or die ("{$admtext['cannotexecutequery']}: $query");
 
-    if ($result && tng_num_rows($result)) {
-        $proceed = false;
-    }
+    if ($result && tng_num_rows($result)) $proceed = false;
+
     tng_free_result($result);
 }
 

@@ -17,7 +17,6 @@ if (!$emailfield) {
 }
 eval("\$email = \$$emailfield;");
 $_SESSION['tng_email'] = "";
-
 if (preg_match("/\n[[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/i", $email) || !$valid_user_agent) {
     die("sorry!");
 }
@@ -27,10 +26,7 @@ if (preg_match("/\r/i", $email) || preg_match("/\n/i", $email) || !preg_match("/
 if (preg_match("/\n[[:space:]]*(to|bcc|cc|boundary)[[:space:]]*[:|=].*@/i", $username)) {
     die("sorry!");
 }
-if (preg_match("/\n/i", $username)) {
-    die("sorry!");
-}
-
+if (preg_match("/\n/i", $username)) die("sorry!");
 $username = filterString($username);
 $password = filterString($password);
 $realname = filterString($realname);
@@ -53,9 +49,7 @@ if ($addr_exclude) {
     $bad_addrs = explode(",", $addr_exclude);
     foreach ($bad_addrs as $bad_addr) {
         if ($bad_addr) {
-            if (strstr($email, trim($bad_addr))) {
-                die("sorry");
-            }
+            if (strstr($email, trim($bad_addr))) die("sorry");
         }
     }
 }

@@ -6,9 +6,8 @@ $textpart = "gedcom";
 include "getlang.php";
 include "$mylanguage/text.php";
 
-if ($enttype) {
-    include "checklogin.php";
-}
+if ($enttype) include "checklogin.php";
+
 include "config/logconfig.php";
 include "tngmaillib.php";
 

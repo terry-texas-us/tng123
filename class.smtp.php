@@ -211,9 +211,7 @@ class SMTP
      * @see SMTP::$Debugoutput
      */
     protected function edebug($str, $level = 0) {
-        if ($level > $this->do_debug) {
-            return;
-        }
+        if ($level > $this->do_debug) return;
         //Avoid clash with built-in function names
         if (!in_array($this->Debugoutput, ['error_log', 'html', 'echo']) and is_callable($this->Debugoutput)) {
             call_user_func($this->Debugoutput, $str, $level);
@@ -269,9 +267,8 @@ class SMTP
             $this->setError('Already connected to a server');
             return false;
         }
-        if (empty($port)) {
-            $port = self::DEFAULT_SMTP_PORT;
-        }
+        if (empty($port)) $port = self::DEFAULT_SMTP_PORT;
+
         // Connect to the SMTP server
         $this->edebug(
             "Connection: opening to $host:$port, timeout=$timeout, options=" . var_export($options, true),
@@ -327,9 +324,8 @@ class SMTP
         if (substr(PHP_OS, 0, 3) != 'WIN') {
             $max = ini_get('max_execution_time');
             // Don't bother if unlimited
-            if ($max != 0 && $timeout > $max) {
-                @set_time_limit($timeout);
-            }
+            if ($max != 0 && $timeout > $max) @set_time_limit($timeout);
+
             stream_set_timeout($this->smtp_conn, $timeout, 0);
         }
         // Get any announcement
@@ -462,9 +458,8 @@ class SMTP
             case 'XOAUTH2':
                 //If the OAuth Instance is not set. Can be a case when PHPMailer is used
                 //instead of PHPMailerOAuth
-                if (is_null($OAuth)) {
-                    return false;
-                }
+                if (is_null($OAuth)) return false;
+
                 $oauth = $OAuth->getOauth64();
 
                 // Start authentication
@@ -565,9 +560,8 @@ class SMTP
         // by Lance Rushing
 
         $bytelen = 64; // byte length for md5
-        if (strlen($key) > $bytelen) {
-            $key = pack('H*', md5($key));
-        }
+        if (strlen($key) > $bytelen) $key = pack('H*', md5($key));
+
         $key = str_pad($key, $bytelen, chr(0x00));
         $ipad = str_pad('', $bytelen, chr(0x36));
         $opad = str_pad('', $bytelen, chr(0x5c));
@@ -660,9 +654,8 @@ class SMTP
 
         foreach ($lines as $line) {
             $lines_out = [];
-            if ($in_headers and $line == '') {
-                $in_headers = false;
-            }
+            if ($in_headers and $line == '') $in_headers = false;
+
             //Break this line up into several smaller lines if it's too long
             //Micro-optimisation: isset($str[$len]) is faster than (strlen($str) > $len),
             while (isset($line[self::MAX_LINE_LENGTH])) {
@@ -682,9 +675,8 @@ class SMTP
                     $line = substr($line, $pos + 1);
                 }
                 //If processing headers add a LWSP-char to the front of new line RFC822 section 3.1.1
-                if ($in_headers) {
-                    $line = "\t" . $line;
-                }
+                if ($in_headers) $line = "\t" . $line;
+
             }
             $lines_out[] = $line;
 
@@ -756,9 +748,7 @@ class SMTP
         foreach ($lines as $n => $s) {
             //First 4 chars contain response code followed by - or space
             $s = trim(substr($s, 4));
-            if (empty($s)) {
-                continue;
-            }
+            if (empty($s)) continue;
             $fields = explode(' ', $s);
             if (!empty($fields)) {
                 if (!$n) {
@@ -771,9 +761,8 @@ class SMTP
                             $fields = ($fields ? $fields[0] : 0);
                             break;
                         case 'AUTH':
-                            if (!is_array($fields)) {
-                                $fields = [];
-                            }
+                            if (!is_array($fields)) $fields = [];
+
                             break;
                         default:
                             $fields = true;
@@ -1017,9 +1006,8 @@ class SMTP
 
         // the tight logic knot ;)
         if (!array_key_exists($name, $this->server_caps)) {
-            if ($name == 'HELO') {
-                return $this->server_caps['EHLO'];
-            }
+            if ($name == 'HELO') return $this->server_caps['EHLO'];
+
             if ($name == 'EHLO' || array_key_exists('EHLO', $this->server_caps)) {
                 return false;
             }
@@ -1050,24 +1038,20 @@ class SMTP
      */
     protected function get_lines() {
         // If the connection is bad, give up straight away
-        if (!is_resource($this->smtp_conn)) {
-            return '';
-        }
+        if (!is_resource($this->smtp_conn)) return '';
+
         $data = '';
         $endtime = 0;
         stream_set_timeout($this->smtp_conn, $this->Timeout);
-        if ($this->Timelimit > 0) {
-            $endtime = time() + $this->Timelimit;
-        }
+        if ($this->Timelimit > 0) $endtime = time() + $this->Timelimit;
+
         while (is_resource($this->smtp_conn) && !feof($this->smtp_conn)) {
             $str = @fgets($this->smtp_conn, 515);
             $this->edebug("SMTP -> get_lines(): \$data is \"$data\"", self::DEBUG_LOWLEVEL);
             $this->edebug("SMTP -> get_lines(): \$str is  \"$str\"", self::DEBUG_LOWLEVEL);
             $data .= $str;
             // If 4th character is a space, we are done reading, break the loop, micro-optimisation over strlen
-            if ((isset($str[3]) and $str[3] == ' ')) {
-                break;
-            }
+            if ((isset($str[3]) and $str[3] == ' ')) break;
             // Timed-out? Log and break
             $info = stream_get_meta_data($this->smtp_conn);
             if ($info['timed_out']) {
@@ -1198,9 +1182,8 @@ class SMTP
     public function getLastTransactionID() {
         $reply = $this->getLastReply();
 
-        if (empty($reply)) {
-            return null;
-        }
+        if (empty($reply)) return null;
+
 
         foreach ($this->smtp_transaction_id_patterns as $smtp_transaction_id_pattern) {
             if (preg_match($smtp_transaction_id_pattern, $reply, $matches)) {

@@ -114,9 +114,8 @@ function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier
             break;
         case "dnexist":
             $criteria = "YEAR($column) = \"\"";
-            if ($altcolumn) {
-                $criteria .= " AND YEAR($altcolumn) = \"\"";
-            }
+            if ($altcolumn) $criteria .= " AND YEAR($altcolumn) = \"\"";
+            
             $qualifystr = $text['dnexist'];
             break;
         default:
@@ -130,14 +129,12 @@ function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier
 function addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value) {
     global $allwhere, $mybool, $querystring, $urlstring, $mybooltext, $text;
 
-    if ($urlstring) {
-        $urlstring .= "&amp;";
-    }
+    if ($urlstring) $urlstring .= "&amp;";
+
     $urlstring .= "$colvar=" . urlencode($value) . "&amp;$qualifyvar=$qualifier";
 
-    if ($querystring) {
-        $querystring .= " $mybooltext ";
-    }
+    if ($querystring) $querystring .= " $mybooltext ";
+
 
     if ($textstr == $text['gender']) {
         switch ($value) {
@@ -159,9 +156,8 @@ function addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qual
     $querystring .= "$textstr $qualifystr " . stripslashes($value);
 
     if ($criteria) {
-        if ($allwhere) {
-            $allwhere .= " " . $mybool;
-        }
+        if ($allwhere) $allwhere .= " " . $mybool;
+
         $allwhere .= " " . $criteria;
     }
 }
@@ -237,9 +233,8 @@ function doCustomEvents($type) {
             if ($needce) {
                 if ($mybool == "AND") {
                     $cejoin .= "INNER JOIN $events_table as e$ecount ON $treefield = $tablepfx" . "gedcom AND $persfamfield = $tablepfx" . "persfamID ";
-                    if ($allwhere) {
-                        $allwhere .= " $mybool ";
-                    }
+                    if ($allwhere) $allwhere .= " $mybool ";
+
                     $allwhere .= $tablepfx . "eventtypeID = \"{$row['eventtypeID']}\" ";
                 } else {  //OR
                     $cejoin .= "LEFT JOIN $events_table as e$ecount ON $treefield = $tablepfx" . "gedcom AND $persfamfield = $tablepfx" . "persfamID AND $tablepfx" . "eventtypeID = \"{$row['eventtypeID']}\" ";

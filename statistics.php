@@ -28,9 +28,8 @@ tng_header($text['databasestatistics'], $flags);
         $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
         if (isMobile()) {
-            if ($tabletype == "toggle") {
-                $tabletype = "columntoggle";
-            }
+            if ($tabletype == "toggle") $tabletype = "columntoggle";
+
             $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' style=\"maxwidth: 350px;\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
         } else {
             $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0' width='500'>";
@@ -335,9 +334,8 @@ tng_header($text['databasestatistics'], $flags);
             if ($yearsold) {
                 echo number_format($yearsold) . " " . $text['years'];
             }
-            if ($daysold) {
-                echo " $daysold " . $text['days'];
-            }
+            if ($daysold) echo " $daysold " . $text['days'];
+
             echo " &nbsp;</span></td></tr>\n";
         }
         echo "</table>\n";

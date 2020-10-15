@@ -107,9 +107,8 @@ function frmFiles() {
         while ($file = readdir($handle)) {
             if (!$searchstring || strpos(strtoupper($file), strtoupper($searchstring)) === 0) {
                 if (is_file($file)) {
-                    if (!$folders) {
-                        $fnentries[$file] = filemtime($file);
-                    }
+                    if (!$folders) $fnentries[$file] = filemtime($file);
+
                 } else {
                     $dnentries[$file] = filemtime($file);
                 }
@@ -197,9 +196,8 @@ function frmFiles() {
                             array_pop($dirbreakdown);
                             array_pop($dirbreakdown);
                             $newsubdir = implode('/', $dirbreakdown) . '/';
-                            if ($newsubdir == '/') {
-                                $newsubdir = '';
-                            }
+                            if ($newsubdir == '/') $newsubdir = '';
+
                         }
                         ?>
                         <tr>
@@ -285,17 +283,15 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
         $firstNear = $nCurrentPage - 4;
         $lastNear = $nCurrentPage + 4;
 
-        if ($firstNear > 1) {
-            echo "... ";
-        }
+        if ($firstNear > 1) echo "... ";
+
 
         for ($i = $firstNear > 0 ? $firstNear : 1; $i <= ($lastNear < $nPages - 1 ? $lastNear : $nPages - 2); $i++) {
             mfpLink($i, $i + 1, $i == $nCurrentPage);
         }
 
-        if ($lastNear < $nPages - 2) {
-            echo "... ";
-        }
+        if ($lastNear < $nPages - 2) echo "... ";
+
 
         mfpLink($nPages - 1, $nPages, $nCurrentPage == $nPages - 1);
         if ($nCurrentPage + 1 != $nPages) {
@@ -355,9 +351,8 @@ function display_size($file_size) {
 function natksort(&$array, $reverse) {
     $keys = array_keys($array);
     natcasesort($keys);
-    if ($reverse) {
-        $keys = array_reverse($keys);
-    }
+    if ($reverse) $keys = array_reverse($keys);
+
 
     $new_array = [];
     foreach ($keys as $k) {

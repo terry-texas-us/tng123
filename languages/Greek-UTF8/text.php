@@ -1011,6 +1011,5 @@ $text['lastpage'] = "Τελευταία Σελίδα";
 
 @include_once "captcha_text.php";
 @include_once "alltext.php";
-if (!$alltextloaded) {
-    getAllTextPath();
-}
+if (!$alltextloaded) getAllTextPath();
+

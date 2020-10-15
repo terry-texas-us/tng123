@@ -3,18 +3,15 @@
 function tng_db_connect($dbhost, $dbname, $dbusername, $dbpassword, $dbport = null, $dbsocket = null) {
     global $textpart, $session_charset, $tng_notinstalled;
 
-    if (!trim($dbport)) {
-        $dbport = null;
-    }
-    if (!trim($dbsocket)) {
-        $dbsocket = null;
-    }
+    if (!trim($dbport)) $dbport = null;
+
+    if (!trim($dbsocket)) $dbsocket = null;
+
     $link = tng_connect($dbhost, $dbusername, $dbpassword, $dbname, $dbport, $dbsocket);
     if ($link && tng_select_db($link, $dbname)) {
         mysqli_query($link, "SET SESSION sql_mode = ''");
-        if ($session_charset == 'UTF-8') {
-            tng_set_charset($link, 'utf8');
-        }
+        if ($session_charset == 'UTF-8') tng_set_charset($link, 'utf8');
+
         return $link;
     } else {
         if ($textpart != "setup" && $textpart != "index") {

@@ -23,9 +23,8 @@ if ($newsearch) {
     if (!$searchstring) {
         $searchstring = stripslashes($_COOKIE['tng_search_families_post']['search']);
     }
-    if (!$tree) {
-        $tree = $_COOKIE['tng_tree'];
-    }
+    if (!$tree) $tree = $_COOKIE['tng_tree'];
+
     if (!$living) {
         $living = $_COOKIE['tng_search_families_post']['living'];
     }
@@ -34,9 +33,8 @@ if ($newsearch) {
     }
     if (!$spousename) {
         $spousename = $_COOKIE['tng_search_families_post']['spousename'];
-        if (!$spousename) {
-            $spousename = "husband";
-        }
+        if (!$spousename) $spousename = "husband";
+
     }
     if (!isset($offset)) {
         $tngpage = $_COOKIE['tng_search_families_post']['tngpage'];
@@ -120,9 +118,8 @@ if ($allwhere2) {
     $otherfields = "";
     $sortstr = "";
 }
-if ($tree) {
-    $allwhere .= " AND $families_table.gedcom = '$tree'";
-}
+if ($tree) $allwhere .= " AND $families_table.gedcom = '$tree'";
+
 if ($living == "yes") {
     $allwhere .= " AND $families_table.living = '1'";
 }

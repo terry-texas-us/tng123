@@ -181,12 +181,10 @@ echo $header;
                 }
                 echo "<td class=\"$databack\">&nbsp;$mtdna_haplogroup</td>";
                 $seq = $row['ref_seq'];
-                if ($seq == "rcrs") {
-                    $seq = "rCRS";
-                }
-                if ($seq == "rsrs") {
-                    $seq = "RSRS";
-                }
+                if ($seq == "rcrs") $seq = "rCRS";
+
+                if ($seq == "rsrs") $seq = "RSRS";
+
                 echo "<td class=\"$databack\">&nbsp;$seq</td>";
                 echo "<td class='$databack  text-nowrap'>&nbsp;{$row['hvr1_results']}</td>";
                 echo "<td class='$databack  text-nowrap'>&nbsp;{$row['hvr2_results']}</td>";
@@ -236,9 +234,8 @@ echo $header;
             }
 
         }
-        if (isset($result)) {
-            tng_free_result($result);
-        }
+        if (isset($result)) tng_free_result($result);
+
         ?>
     </table>
 </div>

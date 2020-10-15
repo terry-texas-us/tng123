@@ -39,9 +39,8 @@ $query = "SELECT DISTINCT eventID AS eventID FROM $notelinks_table WHERE persfam
 $notelinks = tng_query($query);
 $gotnotes = [];
 while ($note = tng_fetch_assoc($notelinks)) {
-    if (!$note['eventID']) {
-        $note['eventID'] = "general";
-    }
+    if (!$note['eventID']) $note['eventID'] = "general";
+
     $gotnotes[$note['eventID']] = "*";
 }
 

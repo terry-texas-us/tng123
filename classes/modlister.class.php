@@ -19,7 +19,6 @@ include_once 'classes/modparser.class.php';
 
 class modlister extends modparser
 {
-
     /*
        // filter
        const F_ALL = 0;
@@ -54,13 +53,10 @@ class modlister extends modparser
        const NOLOCATION  = 'nolocation';
        const NOACT       = 'noact';
     */
-
     protected $classID = "lister";
-
     public $filter = self::F_ALL;
     public $fbox_checked = false;
     public $modlist = [];
-
     protected $parameters = 0;
     protected $num_errors = 0;
     protected $num_required = 0;
@@ -82,12 +78,10 @@ class modlister extends modparser
     }
 
     public function list_mods() {
-
         // SEE IF USER'S MOD OPTIONS FILE NEEDS UPDATING
         if (!isset($this->delete_support)) {
             $sysmsg = $this->admtext['updateopts'];
         }
-
         // APPROVED LIST OF MODFILES PASSED BY FILTER FOR DISPLAY
         $selected_mods = [];
         if (!empty($this->modlist)) {
@@ -97,26 +91,20 @@ class modlister extends modparser
         }
         // fix capitalization in admtext array
         $this->admtext['line'] = strtolower($this->admtext['line']);
-
         /*******************************************************************
          * FILTER WHICH MODS ARE LISTED
          *******************************************************************/
         $lockit = "";
-
         // SET SELECTED VALUE FROM FILTER DROP DOWN LIST
         $s0 = $s1 = $s2 = $s3 = $s4 = $s5 = '';
         ${'s' . $this->filter} = "selected";
-
         // FIXED OR SCROLLING HEADER & FILTER BAR?
         $fbclass = $this->fix_header == self::YES ? "fbar-fixed" : "fbar-scroll";
         $mmlistclass = $this->fix_header == self::YES ? "mmlist-fixed" : "mmlist-scroll";
-
         // SET FILTER BAR ACTION BUTTONS
         $btnline = $this->setup_filter_line($this->filter);
-
         // FILTER LOCK AND BATCH OPERATIONS FILE SELECTOR
         if ($this->filter != self::F_ALL) {
-
             // set lock on by default for this filter
             if ($this->filter == self::F_SELECT) {
                 $cbchecked = 'checked';
@@ -126,7 +114,6 @@ class modlister extends modparser
             }
             $lockit .= "
             {$this->admtext['stayon']}&nbsp;&nbsp;<input type='checkbox' id=\"stayon\" $cbchecked>";
-
             $selectboxes = "
          <button type='button' id=\"selectAll\">
             {$this->admtext['selectall']}
@@ -144,7 +131,6 @@ class modlister extends modparser
         // MAKE ENGLISH CHOICES CONSISTENT IN FILTER STATUS DROPDOWN MENU
         $this->admtext['partinst'] = ucfirst($this->admtext['partinst']);
         $this->admtext['cantinst'] = ucfirst($this->admtext['cantinst']);
-
         // RETURN NEW FILTER STATUS TO MODHANDLER FOR REDISPLAY IF CHANGED BY USER
         echo "
 <form action=\"admin_modhandler.php\" method=\"POST\">
@@ -171,7 +157,6 @@ class modlister extends modparser
          * GET SORTED CFG FILE NAMES AND PREPARE COLUMN HEADER SORT ICONS
          *******************************************************************/
         $modlisting = $this->get_modlist_sorted();
-
         // DISPLAY BIG SYSTEM MESSAGE IF NO MODFILES ARE FOUND
         if (empty($this->modspath)) {
             $sysmsg = "<span class=\"msgerror\">\$modspath {$this->admtext['missing']}";
@@ -183,7 +168,6 @@ class modlister extends modparser
             $this->admtext['nomods'] = str_replace("xxx", "cfg", $this->admtext['nomods']);
             $sysmsg = "{$this->admtext['nomods']} - " . rtrim($this->modspath, "/");
         }
-
         // CONFIGURE COLUMN HEADER SORT ICONS
         $filesort = $namesort = '';
         if ($this->sortby == self::NAMECOL) {
@@ -197,7 +181,6 @@ class modlister extends modparser
             $filesort = "<img src=\"img/tng_sort_desc.gif\"
             width=\"15\" height=\"8\" border='0' alt=''>";
         }
-
         /*******************************************************************
          * SHOW MOD LIST HEADINGS
          *******************************************************************/
@@ -207,14 +190,12 @@ class modlister extends modparser
         echo "<td class=\"tngshadow\">";
         echo "<table class=\"tfixed normal\">";
         echo "<tr>";
-
         // SHOW LEFT-SIDE SELECTION BOX HEADING IF A FILTER IS APPLIED
         if ($this->filter != self::F_ALL) {
             echo "<th class=\"fieldnameback fieldname text-center colselct\">";
             echo "<div class=\"mminner\">&nbsp;{$this->admtext['choose']}</div>";
             echo "</th>";
         }
-
         // DISPLAY THE MOD LISTING ROW HEADINGS
         echo "<th class='fieldnameback fieldname text-center colmodnm'>{$this->admtext['modname']}&nbsp;&nbsp;$namesort</th>";
         echo "<th class='fieldnameback fieldname text-center colcfgnm'>{$this->admtext['cfgname']}&nbsp;&nbsp;$filesort</th>";
@@ -225,7 +206,6 @@ class modlister extends modparser
         echo "<th class='fieldnameback fieldname text-center colstatus'>{$this->admtext['status']}</th>";
         echo "<th class='fieldnameback fieldname text-center colaflist'><strong>{$this->admtext['aflist']}</strong></th>";
         echo "<tr>";
-
         $id = 0;
         $ix = 0;
         $dbx = 0;
@@ -239,10 +219,7 @@ class modlister extends modparser
          * LIST STATUS OF EACH MOD IN THE MOD DIRECTORY
          *******************************************************************/
         foreach ($modlisting as $cfgfile => $modname) {
-            if (!empty($selected_mods) && !in_array($cfgfile, $selected_mods)) {
-                continue;
-            }
-
+            if (!empty($selected_mods) && !in_array($cfgfile, $selected_mods)) continue;
             // INITIALIZE DYNAMIC ELEMENTS FOR THIS MOD
             // mod info
             $this->cfgfile = $cfgfile;
@@ -251,7 +228,6 @@ class modlister extends modparser
             $this->description = $this->note = $this->private = $this->wikipage = $wikilink = '';
             $istarget = false;
             $authors = [];
-
             // statistics
             $this->num_required = 0;
             $this->mods_required = 0;
@@ -267,7 +243,6 @@ class modlister extends modparser
             $this->num_errors = 0;
             $this->provisional_errors = 0;
             $this->init_status();
-
             // init data array for affected_files_listing() function
             $aff_files = [
                 'afchange' => [],
@@ -275,10 +250,8 @@ class modlister extends modparser
                 'afcopy2' => [],
                 'afcreate' => []
             ];
-
             $tags = $this->parse($this->cfgpath);
             $istarget = false;
-
             // PROCESS THE PARSE TABLE USING WHILE LOOP
             while (empty($this->parse_error)) {
                 $this->warning = '';
@@ -302,9 +275,7 @@ class modlister extends modparser
                     $this->parse_error['tag'] = '%description:';
                     $this->parse_error['text'] = self::NOCOMPS; // index into admtext[]
                 }
-                if (!empty($this->parse_error)) {
-                    break;
-                }
+                if (!empty($this->parse_error)) break;
                 /*************************************************************
                  * PROCESS THE PARSE TABLE FOR THE CURRENT MOD
                  *************************************************************/
@@ -320,7 +291,6 @@ class modlister extends modparser
                         case 'version':
                         case 'description':
                         case 'note':
-
                         case 'wikipage':
                             // create variable from the name and assign its value
                             $this->{$tags[$j]['name']} = $tags[$j]['arg1'];
@@ -359,36 +329,27 @@ class modlister extends modparser
                      **********************************************************/
                     if ($tags[$j]['name'] == 'target') {
                         $flag = $tags[$j]['flag'];
-                        if ($tags[$j]['arg1'] == 'files') {
-                            continue;
-                        }
+                        if ($tags[$j]['arg1'] == 'files') continue;
                         $target_location_count = 1;
                         $active_target_file = '';
                         $istarget = false;
-
                         // ONLY A RELATIVE PATH IS NEEDED FOR SCREEN DISPLAYS
                         $display_path = str_replace($this->rootpath, '', $tags[$j]['arg1']);
-
                         // MAINTAIN AFFECTED FILES LIST
                         $aff_files['afchange'][] = $display_path;
-
                         // SPECIAL NOTE ASSOCIATED WITH THIS TARGET?
                         if (!empty($tags[$j]['arg3'])) {
                             $notestr = "<div class=\"target-note\">{$tags[$j]['arg3']}</div><br>";
                         } else {
                             $notestr = '';
                         }
-
                         // INCORPORATE ROBIN RICHMOND'S CODE TO BREAK UP LONG LINES OF TEXT FOR DISPLAY
                         $display_path = $this->foldable_string($display_path);
-
                         $statstring = "$notestr<div class=\"list-indent\">{$this->admtext['line']} {$tags[$j]['line']}: <span class=\"target\">%<span class=\"tag\">target:</span><span class=\"tgtfile\">$flag$display_path</span>%</span>&nbsp;";
-
                         // GET CODE FROM TARGET FILE INTO BUFFER FOR EXAMINATION
                         // function increases global error count if unable to read
                         $target_file_contents = $this->read_file_buffer(
                             $tags[$j]['arg1'], $flag);
-
                         // NOTE FILE RETRIEVAL ERRORS IF ANY
                         if (is_numeric($target_file_contents)) {
                             switch ($target_file_contents) {
@@ -431,7 +392,6 @@ class modlister extends modparser
                         }
                         continue;
                     } // TARGETS
-
                     /**********************************************************
                      * PARAMETERS - JUST LOG THEM - MAKE SURE DESC TAG FOLLOWS
                      **********************************************************/
@@ -469,24 +429,19 @@ class modlister extends modparser
                             $this->parse_error['text'] = self::NOACT;
                             break 2; // break out of the entire processing loop
                         }
-
                         $this->num_required++;
                         $this->mods_required++;
-
                         // SPECIAL NOTE ASSOCIATED WITH THIS LOCATION?
                         $notestr = '';
-
                         if (!empty($tags[$j]['arg3'])) {
                             $notestr = "<span class=\"location-note\">{$tags[$j]['arg3']}</span><br>";
                         } else {
                             $notestr = '';
                         }
-
                         $statstring = "$notestr{$this->admtext['line']} {$tags[$j]['line']}: <span class=\"tag\">%location:% #$target_location_count</span>&nbsp;";
                         $tng_code = $tags[$j]['arg1']; // LOCATION CODE
                         $j++;
                         $new_code = $tags[$j]['arg1']; // OPTAG CODE
-
                         // CHECK FOR EMPTY OPTAG CODE -> CANNOT INSTALL
                         $nc = trim($new_code);
                         if (empty($nc)) {
@@ -495,7 +450,6 @@ class modlister extends modparser
                             $this->set_status($statstring);
                             continue;
                         }
-
                         $tng_code_trimmed = trim($tng_code, " \t");
                         $target_location_count++;
                         /*******************************************************
@@ -531,7 +485,6 @@ class modlister extends modparser
                             default:
                                 break;
                         }
-
                         // SET GLOBAL STATUS STRING FOR THIS LOCATION
                         $this->validate_location($target_file_contents,
                             $tngcode, $newcode, $optag, $statstring);
@@ -541,16 +494,13 @@ class modlister extends modparser
                      * FILE COPY OPERATIONS - TEST & REPORT STATUS
                      **********************************************************/
                     elseif ($tags[$j]['name'] == 'copyfile') {
-
                         // MAINTAIN AFFECTED FILES LIST - USE RELATIVE PATH
                         $aff_files['afcopy'][] = str_replace($this->rootpath, '', $tags[$j]['arg2']);
-
                         // SET GLOBAL STATUS STRING FOR THIS COPYFILE OP
                         $this->copyfile_status_check($tags[$j]);
                     } elseif ($tags[$j]['name'] == 'copyfile2') {
                         // MAINTAIN AFFECTED FILES LIST - USE RELATIVE PATH
                         $aff_files['afcopy2'][] = str_replace($this->rootpath, '', $tags[$j]['arg2']);
-
                         // SET GLOBAL STATUS STRING FOR THIS COPYFILE OP
                         $this->copyfile_status_check($tags[$j]);
                         continue;
@@ -558,10 +508,8 @@ class modlister extends modparser
                      * NEWFILE - TEST & REPORT STATUS
                      **********************************************************/
                     elseif ($tags[$j]['name'] == 'newfile') {
-
                         // MAINTAIN AFFECTED FILES LIST - USE RELATIVE PATH
                         $aff_files['afcreate'][] = str_replace($this->rootpath, '', $tags[$j]['arg1']);
-
                         // SET GLOBAL STATUS STRING FOR THIS NEWFILE
                         $this->newfile_status_check($tags[$j]);
                         continue;
@@ -569,22 +517,18 @@ class modlister extends modparser
                      * MKDIR - TEST & REPORT STATUS
                      **********************************************************/
                     elseif ($tags[$j]['name'] == 'mkdir') {
-
                         // SET GLOBAL STATUS STRING FOR THIS NEWFILE
                         $this->mkdir_status_check($tags[$j]);
                         continue;
                     }
-
                 } // TAGS TABLE PROCESSING
                 break;
             } // WHILE NO PARSE ERRORS LOOP
-
             /****************************************************************
              * ASSIGN FINAL STATUS TO MOD
              ****************************************************************/
             $status = '';
             $error = '';
-
 //Debug statistics
             /*
             echo __LINE__,'<br>';
@@ -602,7 +546,6 @@ class modlister extends modparser
             echo 'provisional_errors = ', $this->provisional_errors,'<br>';
             exit;
             */
-
             $status_header = '';
             // IF PARSE ERROR COMPLAIN AND QUIT
             if (!empty($this->parse_error)) {
@@ -618,12 +561,10 @@ class modlister extends modparser
                 // Mod uninstalled - no mkdir errors
                 // if the only thing installed is a directory which you may not
                 // be able to remove --- show as uninstalled?
-
                 if ($this->num_installed == $this->newdirs_installed) {
                     $this->num_installed = 0;
                     $this->newdirs_installed = 0;
                 }
-
                 // Mod installed
                 if ($this->num_installed > 0 && (
                         $this->num_installed < $this->num_required ||
@@ -649,34 +590,23 @@ class modlister extends modparser
                     }
                 }
             }
-
             // OUTPUT FILTERED HERE NOW THAT STATUS OF MOD IS KNOWN
             if ($this->filter == self::F_INSTALLED) {
-                if ($status_header != self::INSTALLED) {
-                    continue;
-                }
+                if ($status_header != self::INSTALLED) continue;
             } elseif ($this->filter == self::F_READY) {
-                if ($status_header != self::OK2INST) {
-                    continue;
-                }
+                if ($status_header != self::OK2INST) continue;
             } elseif ($this->filter == self::F_CLEAN) {
-                if ($status_header != self::PARTINST) {
-                    continue;
-                }
+                if ($status_header != self::PARTINST) continue;
             } elseif ($this->filter == self::F_BADCFG) {
-                if ($status_header != self::CANTINST) {
-                    continue;
-                }
+                if ($status_header != self::CANTINST) continue;
             }
             $id++;
-
             // HIDE STATUS DETAIL FOR OK TO INSTALL AND INSTALLED
             if ($status_header == self::OK2INST || $status_header == self::INSTALLED) {
                 $status .= "<div id='hiddenstatus$id' style='display:block;'>" . $this->get_status() . "</div>";
             } else {
                 $status .= $this->get_status();
             }
-
             // SET STYLES PER STATUS TYPE
             if ($status_header == self::PARTINST) {
                 $status = str_replace(
@@ -691,7 +621,6 @@ class modlister extends modparser
                     $status
                 );
             }
-
             //CREATE DISPLAY STRING FOR MOD AUTHOR(S)
             $author_str = '';
             if (count($authors) > 1) {
@@ -705,14 +634,12 @@ class modlister extends modparser
                 }
                 $author_str = rtrim($author_str, ' &') . '<br>';
             }
-
             // CONSTRUCT THE FOLDING STATUS DISPLAY
             $fstatus = $this->format_status($status_header, $error, $status, $author_str, $id);
             $aff_files = $this->affected_files_listing($id, $cfgfile, $modname, $aff_files);
             $wikilink = '';
             if (!empty($this->wikipage)) {
                 $wiki = $this->wikibase . $this->wikipage;
-
                 $wikilink = "
             <div class='mminner text-center'>
                <a href=\"$wiki\" target='_blank'><img class='text-center' src=\"classes/wiki16.png\"></a>
@@ -725,9 +652,7 @@ class modlister extends modparser
                     $dbclass = $dbclass == 'databack' ? "databackalt" : 'databack';
                 }
             }
-
             $dbx++;
-
             /****************************************************************
              * DISPLAY A LISTING LINE FOR THE MOD
              ****************************************************************/
@@ -752,7 +677,6 @@ class modlister extends modparser
             } else {
                 $namestr = $this->modname;
             }
-
             echo "
             $namestr
             </strong>
@@ -810,7 +734,6 @@ class modlister extends modparser
     }
 
     protected function validate_location($buffer, $tngcode, $newcode, $optag, $statstring) {
-
         // VINSERT VARIABLES (ANY VALUE) ALREADY INSTALLED
         if ($optag == 'vinsert:before' || $optag == 'vinsert:after') {
             $num_vars = 0;
@@ -851,7 +774,6 @@ class modlister extends modparser
                 return true;
             }
         }
-
         // NEW CODE ALREADY INSTALLED
         $already_installed = substr_count($buffer, $newcode);
         if ($already_installed) {
@@ -863,7 +785,6 @@ class modlister extends modparser
         }
         // NOT INSTALLED YET - CHECK TNG CODE
         $num_targets = substr_count($buffer, $tngcode);
-
         // INSERTING NEW CODE MIGHT RESULT IN 'NOT UNIQUE' CONDITION
         if ($num_targets == 1) {
             if ($optag != '%replace:%' && $optag != '%trimreplace:%') {
@@ -875,7 +796,6 @@ class modlister extends modparser
                 }
             }
         }
-
         // MORE THAN ONE TARGET - SO NOT UNIQUE
         if ($num_targets > 1) {
             $this->num_errors++;
@@ -883,7 +803,6 @@ class modlister extends modparser
             $this->set_status($statstring);
             return false;
         }
-
         // TNG CODE NOT FOUND - BAD TARGET
         if ($num_targets == 0) {
             $this->num_errors++;
@@ -891,7 +810,6 @@ class modlister extends modparser
             $this->set_status($statstring);
             return false;
         }
-
         // REPLACEMENT FRAGMENT ERROR?
         // If MM replaced a whole block of code based on a fragment, it would not be
         // able to restore it upon removal of the mod - so it is an error
@@ -902,16 +820,13 @@ class modlister extends modparser
                 $p = $i;
                 while ($p > 0) {
                     $p--;
-                    if ($buffer[$p] == "\n") {
-                        break;
-                    }
+                    if ($buffer[$p] == "\n") break;
                     // NOT WHITE-SPACE? HERE IS A FRAGMENT!
                     if ($buffer[$p] != " " && $buffer[$p] != "\t") {
                         $is_fragment = true;
                         break;
                     }
                 }
-
                 if (!$is_fragment) {
                     // CHECK EACH CHAR FOR NON-WHITE SPACE AFTER TARGET CODE ON LAST LINE
                     $p = $i + strlen($tngcode); // last position in target str
@@ -959,10 +874,8 @@ class modlister extends modparser
       <span class=\"copyfile\">
          $flag$reldestpath
       </span>&nbsp;";
-
         $this->num_required++;
         $this->copies_required++;
-
         // FILE ALREADY COPIED TO DESTINATION
         if (file_exists($destpath)) {
             if ($flag == self::FLAG_PROTECTED) {
@@ -977,7 +890,6 @@ class modlister extends modparser
             $this->set_status($statstring, $relsrcpath);
             return;
         }
-
         // SOURCE FILE FOR COPY MUST EXIST
         if (!file_exists($srcpath)) {
             $this->num_errors++;
@@ -985,7 +897,6 @@ class modlister extends modparser
             $this->set_status($statstring, $relsrcpath);
             return;
         }
-
         // DESTINATION FOLDER FOR COPY MUST EXIST IF NOT OPTIONAL OR NOFOUL
         $thefolder = pathinfo($destpath, PATHINFO_DIRNAME);
         if (!file_exists($thefolder)) {
@@ -1003,23 +914,18 @@ class modlister extends modparser
             $this->set_status($statstring, $relsrcpath);
             return;
         }
-
         $statstring .= "<span class=\"NCOPY\">{$this->admtext['notcopied']}</span>";
         $this->set_status($statstring, $relsrcpath);
-
     } // COPYFILE STATUS CHECK
 
     protected function newfile_status_check($tag) {
         $flag = $tag['flag'];
         $line = $tag['line'];
         $destpath = $tag['arg1'];
-
         // USE RELATIVE DESTINATION PATH FOR DISPLAYS
         $reldestpath = str_replace($this->rootpath, '', $tag['arg1']);
         $reldestpath = $this->foldable_string($reldestpath);
-
         $statstring = "<div class=\"list-indent\">{$this->admtext['line']} $line: <span class=\"tag\">%newfile: </span><span class=\"newfile\">$flag$reldestpath</span>&nbsp;";
-
         if ($flag == self::FLAG_PROTECTED) {
             if (file_exists($destpath)) {
                 $statstring .= "<span class=\"msgapproved\">{$this->admtext['protected']}</span>";
@@ -1027,10 +933,8 @@ class modlister extends modparser
                 return;
             }
         }
-
         $this->num_required++;
         $this->newfiles_required++;
-
         // warn if destination folder for new file does not exist
         $thefolder = pathinfo($destpath, PATHINFO_DIRNAME);
         if (!file_exists($thefolder)) {
@@ -1054,14 +958,12 @@ class modlister extends modparser
             }
             return;
         }
-
         // IF NEWFILE INSTALLED CHECK VERSION
         if (file_exists($destpath)) {
             if ($flag != self::FLAG_OPTIONAL) {
                 $this->num_installed++;
                 $this->newfiles_installed++;
             }
-
             // match cfg fileversion with installed newfile version
             if (!preg_match("#%version:" . $tag['arg3'] . "%#", $tag['arg2'])) {
                 $this->num_installed--;
@@ -1090,16 +992,12 @@ class modlister extends modparser
         $flag = $tag['flag'];
         $line = $tag['line'];
         $destpath = $tag['arg1'];
-
         // USE RELATIVE DESTINATION PATH FOR STATUS DISPLAYS
         $reldestpath = $flag . str_replace($this->rootpath, '', $tag['arg1']);
         $reldestpath = $this->foldable_string($reldestpath);
-
         $statstring = "<div class=\"list-indent>{$this->admtext['line']} $line: <span class=\"tag\">%mkdir: </span><span class=\"mkdir\">$reldestpath</span>&nbsp;";
-
         $this->num_required++;
         $this->newdirs_required++;
-
         // REPORT ON EXISTENCE OF FOLDER
         if (!file_exists($destpath)) {
             // no error
@@ -1125,7 +1023,6 @@ class modlister extends modparser
          class=\"msgapproved\" name=\"submit\" value=\"cleanupall\">{$this->admtext['cleanupall']}</button>";
         $buttons['selectall'] = "\r\n<button type='submit' id=\"btnChoose\"
          class=\"msgapproved\" name=\"submit\" value=\"selectall\">{$this->admtext['choose']}</button>";
-
         $btnline = "";
         switch ($filter) {
             case self::F_READY:
@@ -1153,20 +1050,14 @@ class modlister extends modparser
             default:
                 $btnline = "\r\n&nbsp;&nbsp;{$this->admtext['choosefilter']}";
                 break;
-
         }
         return $btnline;
     }
 
     protected function set_status($string, $relsrcpath = '') {
-
         // closes the status line div before inserting the table for the copyfile display
-        if (substr($string, 0, 4) == '<div') {
-            $string .= '</div>';
-        }
-
+        if (substr($string, 0, 4) == '<div') $string .= '</div>';
         if (!empty($relsrcpath)) {
-
             // In the <table> tag, add a left margin to replace the left margin from the parent <div>
             $string .= "
       <table style='margin-left:1em;'>
@@ -1176,13 +1067,10 @@ class modlister extends modparser
             </td>
          </tr>
       </table>";
-
         }
         // add <br> tag to end of $string before finalizing it
         // code that closed the status line div is now above the copyfile source path table
-        if (substr($string, 0, 4) != '<div') {
-            $string .= '<br>';
-        }
+        if (substr($string, 0, 4) != '<div') $string .= '<br>';
         $this->status_string .= $string;
     }
 
@@ -1198,32 +1086,24 @@ class modlister extends modparser
     protected function format_status($status_header, $error, $status, $author_str, $id) {
         $this->status_header = $status_header;
         $btn_install = "<button class=\"msgapproved\" type='button' onclick='window.location.href=\"?a=" . self::INSTALL . "&m=$this->cfgfile\"'>{$this->admtext['install']}</button>";
-
         $confirm = empty($this->delete_support) ?
             $this->admtext['confdelmod1'] :
             $this->admtext['confdelmod'];
-
         // javascript messages must contain a single quote character
         $confirm = str_replace("'", "\'", $confirm);
-
         $btn_delete = "<button class=\"msgerror\" type='button' onclick=\"if(confirm('{$confirm}')) {window.location.href='?a=" . self::DELETE . "&m=$this->cfgfile';}\">{$this->admtext['delete']}</button>";
-
         $btn_remove = "<button class=\"msgapproved\" type='button' onclick='window.location.href=\"?a=" . self::REMOVE . "&m=$this->cfgfile\"'>{$this->admtext['uninstall']}</button>";
-
         $btn_cleanup = "<button class=\"msgapproved\" type='button' onclick='window.location.href=\"?a=" . self::CLEANUP . "&m=$this->cfgfile\"'>{$this->admtext['cleanup']}</button>";
-
         $btn_edit = '';
         if ($this->parameters) {
             $btn_edit = "<button type='button' onclick='window.location.href=\"admin_modeditor.php?a=" . self::EDITP . "&m=$this->cfgfile\"'>{$this->admtext['edopts']}</button>";
         }
-
         // SHOW AVAILABLE FUNCTION BUTTONS IN OPENED STATUS AREA
         /*
               $btn_list = "";
         */
         $btn_list = "<button class=\"smallbutton\" type='button'  name=\"listlocation$id\" onclick=\"if(document.getElementById('hiddenstatus$id').style.display=='none') document.getElementById('hiddenstatus$id').style.display='block'; else document.getElementById('hiddenstatus$id').style.display='none';\">{$this->admtext['detail']}</button>";
         $options_link = '';
-
         $buttons = '';
         if ($status_header == self::OK2INST) {
             $status_header = $this->admtext[$status_header];
@@ -1263,19 +1143,15 @@ class modlister extends modparser
                   $btn_delete
                </div>";
         }
-
         if (isset($this->isprivate) && $this->isprivate) {
             $status_header .= "&nbsp;&nbsp;<span style=\"font-size:90%;\"><strong>{$this->admtext['privatemod']}</strong> $this->private</span>";
         }
-
         if (!empty($this->warning)) {
             $status_header .= "&nbsp;&nbsp;<strong><span style=\"font-size:90%;color:#990000;\"><strong>{$this->admtext['noeffect']}</strong></span>";
         }
-
         if (!empty($this->note)) {
             $status_header .= "&nbsp;&nbsp;<span style=\"font-size:90%;width:100%;\"> $this->note</span>";
         }
-
         if ($this->num_required > 0) {
             $summary = "<hr>
                <ul class=\"results fieldnameback fieldname\">
@@ -1288,7 +1164,6 @@ class modlister extends modparser
         } else {
             $summary = '';
         }
-
         return "<div class=\"$style\">
             <span class=\"modlink closed\" id=\"link{$id}\">
                $status_header
@@ -1320,20 +1195,17 @@ class modlister extends modparser
                      </td>
                   </tr>
                </table>";
-
         $filestr = '';
         $filestr .= $this->format_affrows($aff_files['afchange'], "{$this->admtext['target']}");
         $filestr .= $this->format_affrows($aff_files['afcreate'], "{$this->admtext['newfile']}");
         $filestr .= $this->format_affrows($aff_files['afcopy'], "{$this->admtext['copiesfile']}");
         $filestr .= $this->format_affrows($aff_files['afcopy2'], "{$this->admtext['copiesfile2']}");
-
         if (!empty($filestr)) {
             $retstr .= "
                <table class=\"whiteback normal cellspace1 mmpad2\">
                $filestr
                </table>";
         }
-
         $retstr .= "
             </div>
          </div>"; // descpop
@@ -1343,17 +1215,13 @@ class modlister extends modparser
     // CALLED BY GET AFFECTED FILES FUNCTION
     private function format_affrows($file_array, $label) {
         $retstr = '';
-        if (empty($file_array)) {
-            return $retstr;
-        }
+        if (empty($file_array)) return $retstr;
         $retstr .= "
                   <tr>
                      <td class='normal fieldnameback fieldname align-top text-nowrap'>$label</td>
                      <td class='normal databack w100 mmpadleft'>";
         foreach ($file_array as $listing) {
-            if ($listing == 'files') {
-                continue;
-            }
+            if ($listing == 'files') continue;
             $retstr .= "
                         $listing<br>";
         }

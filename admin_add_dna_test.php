@@ -28,9 +28,8 @@ $dna_group_desc = addslashes($group);
 $test_date = convertDate($test_date);
 $match_date = convertDate($match_date);
 
-if (!$personID && !$person_name) {
-    $mynewgedcom = "";
-}
+if (!$personID && !$person_name) $mynewgedcom = "";
+
 
 $template = "sssssssssssssssssssssssssssss";
 $query = "INSERT IGNORE INTO $dna_tests_table (test_type, test_number, notes, vendor, test_date, match_date, personID, gedcom, urls, markers, y_results, hvr1_results, hvr2_results, person_name, ydna_confirmed, mtdna_confirmed,markeropt, notesopt, linksopt, surnamesopt, private_dna, private_test, dna_group, dna_group_desc, surnames, mtdna_haplogroup, ydna_haplogroup, significant_snp, terminal_snp)

@@ -26,21 +26,14 @@ $state = addslashes($state);
 $country = addslashes($country);
 $zip = addslashes($zip);
 $phone = addslashes($phone);
+if (!$disallowgedcreate) $disallowgedcreate = 0;
 
-if (!$disallowgedcreate) {
-    $disallowgedcreate = 0;
-}
-if (!$disallowpdf) {
-    $disallowpdf = 0;
-}
-if (!$private) {
-    $private = 0;
-}
+if (!$disallowpdf) $disallowpdf = 0;
+
+if (!$private) $private = 0;
 $query = "UPDATE $trees_table SET treename=\"$treename\",description=\"$description\",owner=\"$owner\",email='$email',address=\"$address\",city=\"$city\",state=\"$state\",country=\"$country\",zip=\"$zip\",phone=\"$phone\",secret=\"$private\",disallowgedcreate=\"$disallowgedcreate\",disallowpdf=\"$disallowpdf\" WHERE gedcom = '$tree'";
 $result = tng_query($query);
-
 adminwritelog("<a href=\"admin_edittree.php?tree=$tree\">{$admtext['modifytree']}: $tree</a>");
-
 $message = $admtext['changestotree'] . " $treenamedisp {$admtext['succsaved']}.";
 header("Location: admin_trees.php?message=" . urlencode($message));
 

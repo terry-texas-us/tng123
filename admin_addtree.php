@@ -17,15 +17,12 @@ require "adminlog.php";
 $gedcom = preg_replace("/\s*/", "", $gedcom);
 $treenamedisp = stripslashes($treename);
 
-if (!$disallowgedcreate) {
-    $disallowgedcreate = 0;
-}
-if (!$disallowpdf) {
-    $disallowpdf = 0;
-}
-if (!$private) {
-    $private = 0;
-}
+if (!$disallowgedcreate) $disallowgedcreate = 0;
+
+if (!$disallowpdf) $disallowpdf = 0;
+
+if (!$private) $private = 0;
+
 $template = "ssssssssssssss";
 $query = "INSERT IGNORE INTO $trees_table (gedcom,treename,description,owner,email,address,city,state,country,zip,phone,secret,disallowgedcreate,disallowpdf) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $params = [&$template, &$gedcom, &$treename, &$description, &$owner, &$email, &$address, &$city, &$state, &$country, &$zip, &$phone, &$private, &$disallowgedcreate, &$disallowpdf];

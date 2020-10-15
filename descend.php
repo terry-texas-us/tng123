@@ -3,9 +3,8 @@ $textpart = "pedigree";
 include "tng_begin.php";
 
 include "config/pedconfig.php";
-if (!$personID) {
-    die("no args");
-}
+if (!$personID) die("no args");
+
 
 if ($display == "textonly" || (!$display && !$pedigree['defdesc'])) {
     header("Location: descendtext.php?personID=$personID&tree=$tree&generations=$generations");
@@ -17,9 +16,8 @@ if ($display == "textonly" || (!$display && !$pedigree['defdesc'])) {
 
 include "pedbox.php";
 
-if ($pedigree['defdesc'] == "") {
-    $pedigree['defdesc'] = 2;
-}
+if ($pedigree['defdesc'] == "") $pedigree['defdesc'] = 2;
+
 if (!$display) {
     if ($pedigree['defdesc'] == 2) {
         $display = "standard";
@@ -131,29 +129,16 @@ $pedigree['url'] = "pedigree.php?";
 
 function getColor($shifts) {
     global $pedigree;
-
     $shiftval = $shifts * $pedigree['colorshift'];
     $R = $pedigree['baseR'] + $shiftval;
     $G = $pedigree['baseG'] + $shiftval;
     $B = $pedigree['baseB'] + $shiftval;
-    if ($R > 255) {
-        $R = 255;
-    }
-    if ($R < 0) {
-        $R = 0;
-    }
-    if ($G > 255) {
-        $G = 255;
-    }
-    if ($G < 0) {
-        $G = 0;
-    }
-    if ($B > 255) {
-        $B = 255;
-    }
-    if ($B < 0) {
-        $B = 0;
-    }
+    if ($R > 255) $R = 255;
+    if ($R < 0) $R = 0;
+    if ($G > 255) $G = 255;
+    if ($G < 0) $G = 0;
+    if ($B > 255) $B = 255;
+    if ($B < 0) $B = 0;
     $R = str_pad(dechex($R), 2, "0", STR_PAD_LEFT);
     $G = str_pad(dechex($G), 2, "0", STR_PAD_LEFT);
     $B = str_pad(dechex($B), 2, "0", STR_PAD_LEFT);
@@ -218,9 +203,8 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         setTopMarker($level, 0, "initialize, 183");
     }
     $top = $topmarker[$level];
-    if ($top > $maxheight) {
-        $maxheight = $top;
-    }
+    if ($top > $maxheight) $maxheight = $top;
+
     $topmarker[$level] += $pedigree['diff'];
     $left = $pedigree['leftindent'] + ($pedigree['boxwidth'] + $pedigree['boxHsep'] + $spouseoffset) * ($level - 1);
     $farleft = $left + $pedigree['boxwidth'] + $pedigree['boxHsep'] + $spouseoffset;
@@ -231,9 +215,8 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         $botmarker[$level] = $top;
         $bgcolor = getColor(1);
     }
-    if ($farleft > $maxwidth) {
-        $maxwidth = $farleft;
-    }
+    if ($farleft > $maxwidth) $maxwidth = $farleft;
+
 
     $boxstr = "";
     if ($person['personID'] == $personID) {
@@ -465,9 +448,8 @@ function doIndividual($person, $level) {
                 setTopMarker($level, 0, "initialize, 183");
             }
             $top = $topmarker[$level];
-            if ($top > $maxheight) {
-                $maxheight = $top;
-            }
+            if ($top > $maxheight) $maxheight = $top;
+
             $topmarker[$level] += $pedigree['diff'];
         }
 
@@ -681,18 +663,15 @@ tng_header($text['descendfor'] . " " . $row['name'], $flags);
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $row['name'], getYears($row));
 
-if (!$pedigree['maxdesc']) {
-    $pedigree['maxdesc'] = 12;
-}
-if (!$pedigree['initdescgens']) {
-    $pedigree['initdescgens'] = 4;
-}
+if (!$pedigree['maxdesc']) $pedigree['maxdesc'] = 12;
+
+if (!$pedigree['initdescgens']) $pedigree['initdescgens'] = 4;
+
 if (!$generations) {
     $generations = $pedigree['initdescgens'] > 8 ? 8 : $pedigree['initdescgens'];
 }
-if (!$generations) {
-    $generations = 6;
-}
+if (!$generations) $generations = 6;
+
 if ($generations > $pedigree['maxdesc']) {
     $generations = $pedigree['maxdesc'];
 } else {
@@ -706,9 +685,8 @@ $innermenu = $text['generations'] . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='descend.php?personID=$personID&amp;tree=$tree&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= "<option value=\"$i\"";
-    if ($i == $generations) {
-        $innermenu .= " selected";
-    }
+    if ($i == $generations) $innermenu .= " selected";
+
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
@@ -764,9 +742,8 @@ $maxwidth += $pedigree['boxwidth'] + $pedigree['borderwidth'] + (2 * $pedigee['o
 
         function hidePopup(slot) {
             var ref = document.all ? document.all["popup" + slot] : document.getElementById ? document.getElementById("popup" + slot) : null;
-            if (ref) {
-                ref.style.visibility = "hidden";
-            }
+            if (ref) ref.style.visibility = "hidden";
+
             eval("timer" + slot + "=false;");
         }
         //]]>

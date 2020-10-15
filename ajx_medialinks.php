@@ -3,9 +3,8 @@ include "begin.php";
 include "adminlib.php";
 require_once "./admin/trees.php";
 
-if (!$mediaID) {
-    die("no args");
-}
+if (!$mediaID) die("no args");
+
 
 $textpart = "photos";
 include "$mylanguage/admintext.php";

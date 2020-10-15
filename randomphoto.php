@@ -26,16 +26,12 @@ while ($imgrow = tng_fetch_assoc($result)) {
             $presult = tng_query($query);
             $rows = tng_num_rows($presult);
             tng_free_result($presult);
-
             $query = "SELECT $medialinks_table.personID FROM ($medialinks_table, $families_table) WHERE $medialinks_table.personID = $families_table.familyID AND $medialinks_table.gedcom = $families_table.gedcom AND $medialinks_table.mediaID = {$imgrow['mediaID']} AND ($families_table.living = '1' OR $families_table.private = '1')";
             $presult = tng_query($query);
             $rows = $rows + tng_num_rows($presult);
             tng_free_result($presult);
-
             // if no rows are returned, there are no living on the photo, so let's display it
-            if ($rows == 0) {
-                break;
-            }
+            if ($rows == 0) break;
         }
     }
 }

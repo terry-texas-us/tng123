@@ -107,9 +107,8 @@ function ColorPicker() {
     cp_contents += "<table style='margin: auto;' border='1' cellspacing='1' cellpadding='0'>";
     var use_highlight = (document.getElementById || document.all) ? true : false;
     for (let i = 0; i < total; i++) {
-        if ((i % width) === 0) {
-            cp_contents += "<tr>";
-        }
+        if ((i % width) === 0) cp_contents += "<tr>";
+
         if (use_highlight) {
             var mo = 'onMouseOver="' + windowRef + 'ColorPicker_highlightColor(\'' + colors[i] + '\',window.document)"';
         } else {

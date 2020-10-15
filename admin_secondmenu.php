@@ -28,9 +28,8 @@ if (!$allow_ged && $assignedtree) {
     $query = "SELECT disallowgedcreate FROM $trees_table WHERE gedcom = '$assignedtree'";
     $disresult = tng_query($query);
     $row = tng_fetch_assoc($disresult);
-    if ($row['disallowgedcreate']) {
-        $allow_export = 0;
-    }
+    if ($row['disallowgedcreate']) $allow_export = 0;
+
     tng_free_result($disresult);
 }
 

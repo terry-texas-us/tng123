@@ -24,12 +24,10 @@ include "config/importconfig.php";
 $saveconfig = 0;
 $saveimportconfig = 0;
 $class = "red";
-if (!trim($database_port)) {
-    $database_port = null;
-}
-if (!trim($database_socket)) {
-    $database_socket = null;
-}
+if (!trim($database_port)) $database_port = null;
+
+if (!trim($database_socket)) $database_socket = null;
+
 $link = tng_connect($database_host, $database_username, $database_password, $database_name, $database_port, $database_socket);
 if ($link && tng_select_db($link, $database_name)) {
     include "checklogin.php";
@@ -67,9 +65,8 @@ switch ($_POST['subroutine']) {
                 $failed .= $failed ? ", $file" : $file;
             }
         }
-        if ($failed) {
-            $failed .= " (666 / rw-rw-rw-)";
-        }
+        if ($failed) $failed .= " (666 / rw-rw-rw-)";
+
 
         $folders = ["photos", "histories", "documents", "headstones", "media", "gendex", "backups", "gedcom", "mods", "extensions", "classes"];
         $failed2 = "";
@@ -80,9 +77,8 @@ switch ($_POST['subroutine']) {
                 $failed2 .= $failed2 ? ", $folder" : $folder;
             }
         }
-        if ($failed2) {
-            $failed2 .= " (755 / rwxr-xr-x)";
-        }
+        if ($failed2) $failed2 .= " (755 / rwxr-xr-x)";
+
 
         $failed .= $failed2;
 
@@ -123,9 +119,8 @@ switch ($_POST['subroutine']) {
         }
         if (!$tngdomain || $tngdomain == "http://www.yourdomain.com/genealogy") {
             $server = $_SERVER['SERVER_NAME'];
-            if (!$server) {
-                $server = $_SERVER['HTTP_HOST'];
-            }
+            if (!$server) $server = $_SERVER['HTTP_HOST'];
+
             $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
             $tngdomain = str_replace("\\", "/", $protocol . $server . dirname($_SERVER['REQUEST_URI']));
         }
@@ -136,12 +131,10 @@ switch ($_POST['subroutine']) {
         $new_database_password = $_POST['database_password'];
         $new_database_port = $_POST['database_port'];
         $new_database_socket = $_POST['database_socket'];
-        if (!trim($new_database_port)) {
-            $new_database_port = null;
-        }
-        if (!trim($new_database_socket)) {
-            $new_database_socket = null;
-        }
+        if (!trim($new_database_port)) $new_database_port = null;
+
+        if (!trim($new_database_socket)) $new_database_socket = null;
+
         $link = tng_connect($new_database_host, $new_database_username, $new_database_password, $new_database_name, $new_database_port, $new_database_socket);
         if ($link) {
             if (tng_select_db($link, $new_database_name)) {
@@ -180,12 +173,10 @@ switch ($_POST['subroutine']) {
         foreach ($_POST as $key => $value)
             eval("\$$key = '$value';");
 
-        if (!trim($database_port)) {
-            $database_port = null;
-        }
-        if (!trim($database_socket)) {
-            $database_socket = null;
-        }
+        if (!trim($database_port)) $database_port = null;
+
+        if (!trim($database_socket)) $database_socket = null;
+
         $link = tng_connect($database_host, $database_username, $database_password, $database_name, $database_port, $database_socket);
         if ($link && tng_select_db($link, $database_name)) {
             $badtables = createtables($collation);
@@ -290,9 +281,8 @@ switch ($_POST['subroutine']) {
 
 if ($saveconfig) {
     $fp = @fopen("config/config.php", "w", 1);
-    if (!$fp) {
-        die ($text['cannotopen'] . " config.php");
-    }
+    if (!$fp) die ($text['cannotopen'] . " config.php");
+
 
     flock($fp, LOCK_EX);
 
@@ -348,9 +338,8 @@ if ($saveconfig) {
     fwrite($fp, "\$templateswitching = \"$templateswitching\";\n");
     fwrite($fp, "\$homepage = \"$homepage\";\n");
     fwrite($fp, "\$tngdomain = \"$tngdomain\";\n");
-    if (!$target) {
-        $target = "_self";
-    }
+    if (!$target) $target = "_self";
+
     fwrite($fp, "\$target = \"$target\";\n");
     fwrite($fp, "\$language = \"$language\";\n");
     fwrite($fp, "\$charset = \"$charset\";\n");
@@ -440,9 +429,8 @@ if ($saveconfig) {
 
 if ($saveimportconfig) {
     $fp = @fopen("config/importconfig.php", "w", 1);
-    if (!$fp) {
-        die ($text['cannotopen'] . " importconfig.php");
-    }
+    if (!$fp) die ($text['cannotopen'] . " importconfig.php");
+
 
     flock($fp, LOCK_EX);
 
@@ -466,9 +454,8 @@ if ($saveimportconfig) {
 
 header('Content-Type: application/xml');
 echo "<?xml version=\"1.0\"";
-if ($session_charset) {
-    echo " encoding=\"$session_charset\"";
-}
+if ($session_charset) echo " encoding=\"$session_charset\"";
+
 echo "?>\n";
 echo "<install>\n";
 echo "<installElement>\n";

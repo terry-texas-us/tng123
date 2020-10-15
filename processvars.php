@@ -20,9 +20,8 @@ if ($_GET && is_array($_GET)) {
         if ($key == 'lang' || $key == 'mylanguage') {
             die("sorry!");
         }
-        if (is_string($value)) {
-            ${$key} = strip_tags($value);
-        }
+        if (is_string($value)) ${$key} = strip_tags($value);
+
     }
 }
 if ($_POST && is_array($_POST)) {

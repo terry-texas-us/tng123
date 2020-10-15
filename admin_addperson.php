@@ -121,25 +121,20 @@ foreach ($places as $place) {
 
 if (is_array($branch)) {
     foreach ($branch as $b) {
-        if ($b) {
-            $allbranches = $allbranches ? "$allbranches,$b" : $b;
-        }
+        if ($b) $allbranches = $allbranches ? "$allbranches,$b" : $b;
+
     }
 } else {
     $allbranches = $branch;
 }
-if (!$allbranches) {
-    $allbranches = "";
-}
-if (!$living) {
-    $living = 0;
-}
-if (!$private) {
-    $private = 0;
-}
-if (!$burialtype) {
-    $burialtype = 0;
-}
+if (!$allbranches) $allbranches = "";
+
+if (!$living) $living = 0;
+
+if (!$private) $private = 0;
+
+if (!$burialtype) $burialtype = 0;
+
 $meta = metaphone($lnprefix . $lastname);
 $query = "INSERT INTO $people_table (personID, firstname, lnprefix, lastname, nickname, prefix, suffix, title, nameorder, living, private, birthdate, birthdatetr, birthplace, sex, altbirthdate, altbirthdatetr, altbirthplace, deathdate, deathdatetr, deathplace, burialdate, burialdatetr, burialplace, burialtype, baptdate, baptdatetr, baptplace, confdate, confdatetr, confplace, initdate, initdatetr, initplace, endldate, endldatetr, endlplace, changedate, gedcom, branch, changedby, famc, metaphone, edituser, edittime) ";
 $query .= "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, '', '0')";

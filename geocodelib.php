@@ -52,9 +52,8 @@ function geocode($address, $multiples, $id) {
 
                     $message = "<strong>{$admtext['toomany']}</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>{$admtext['edit']}</a>";
                 }
-                if ($delay) {
-                    $delay -= 20000;
-                }
+                if ($delay) $delay -= 20000;
+
             } else {
                 if (strcmp($status, "OVER_QUERY_LIMIT") == 0 && $delay < 400000) {
                     // sent geocodes too fast
@@ -70,9 +69,8 @@ function geocode($address, $multiples, $id) {
                     $message = "<strong>{$admtext['nogeocode']} ($status)</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>{$admtext['edit']}</a>";
                 }
             }
-            if ($delay) {
-                usleep($delay);
-            }
+            if ($delay) usleep($delay);
+
         } else {
             $geocode_pending = false;
             $message = "<strong>Communication failed</strong>";

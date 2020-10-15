@@ -9,9 +9,7 @@ include "checklogin.php";
 require "adminlog.php";
 require "datelib.php";
 
-if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
-    exit;
-}
+if (!$allow_add || ($assignedtree && $assignedtree != $tree)) exit;
 
 include "deletelib.php";
 
@@ -107,28 +105,22 @@ if ($result && tng_num_rows($result)) {
 
     if (is_array($branch)) {
         foreach ($branch as $b) {
-            if ($b) {
-                $allbranches = $allbranches ? "$allbranches,$b" : $b;
-            }
+            if ($b) $allbranches = $allbranches ? "$allbranches,$b" : $b;
+
         }
     } else {
         $allbranches = $branch;
     }
-    if (!$allbranches) {
-        $allbranches = "";
-    }
-    if (!$living) {
-        $living = 0;
-    }
-    if (!$private) {
-        $private = 0;
-    }
-    if (!$burialtype) {
-        $burialtype = 0;
-    }
-    if ($type != "child") {
-        $familyID = "";
-    }
+    if (!$allbranches) $allbranches = "";
+
+    if (!$living) $living = 0;
+
+    if (!$private) $private = 0;
+
+    if (!$burialtype) $burialtype = 0;
+
+    if ($type != "child") $familyID = "";
+
     $meta = metaphone($lnprefix . $lastname);
     $query = "INSERT INTO $people_table (personID,firstname,lnprefix,lastname,nickname,prefix,suffix,title,nameorder,living,private,birthdate,birthdatetr,birthplace,sex,altbirthdate,altbirthdatetr,
 		altbirthplace,deathdate,deathdatetr,deathplace,burialdate,burialdatetr,burialplace,burialtype,baptdate,baptdatetr,baptplace,confdate,confdatetr,confplace,initdate,initdatetr,initplace,

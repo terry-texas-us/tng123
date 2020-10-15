@@ -91,9 +91,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     echo "	<option value=\"{$treerow['gedcom']}\"";
-                                    if ($treerow['gedcom'] == $tree) {
-                                        echo " selected";
-                                    }
+                                    if ($treerow['gedcom'] == $tree) echo " selected";
+
                                     echo ">{$treerow['treename']}</option>\n";
                                 }
                                 tng_free_result($treeresult);
@@ -115,9 +114,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                                 foreach ($mediatypes as $mediatype) {
                                     $msgID = $mediatype['ID'];
                                     echo "	<option value=\"$msgID\"";
-                                    if ($msgID == $mediatypeID) {
-                                        echo " selected";
-                                    }
+                                    if ($msgID == $mediatypeID) echo " selected";
+
                                     echo ">" . $mediatype['display'] . "</option>\n";
                                 }
                                 ?>

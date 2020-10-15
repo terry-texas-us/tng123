@@ -187,23 +187,20 @@ $dontdo = ["MARR", "DIV"];
 $cejoin = doCustomEvents("F");
 
 if ($tree) {
-    if ($urlstring) {
-        $urlstring .= "&amp;";
-    }
+    if ($urlstring) $urlstring .= "&amp;";
+
     $urlstring .= "tree=$tree";
 
-    if ($querystring) {
-        $querystring .= " AND ";
-    }
+    if ($querystring) $querystring .= " AND ";
+
 
     require_once "./admin/trees.php";
     $treerow = getTree($trees_table, $tree);
 
     $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
 
-    if ($allwhere) {
-        $allwhere = "($allwhere) AND";
-    }
+    if ($allwhere) $allwhere = "($allwhere) AND";
+
     $allwhere .= " f.gedcom = '$tree'";
 
     if ($branch) {

@@ -16,9 +16,8 @@ if (!$allow_edit) {
 require "adminlog.php";
 
 if ($newfile && $newfile != "none") {
-    if (substr($maplink, 0, 1) == "/") {
-        $maplink = substr($maplink, 1);
-    }
+    if (substr($maplink, 0, 1) == "/") $maplink = substr($maplink, 1);
+
     $newpath = "$rootpath$headstonepath/$maplink";
 
     if (@move_uploaded_file($newfile, $newpath)) {
@@ -43,12 +42,10 @@ $place = addslashes($place);
 
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
-if ($latitude && $longitude && !$zoom) {
-    $zoom = 13;
-}
-if (!$zoom) {
-    $zoom = 0;
-}
+if ($latitude && $longitude && !$zoom) $zoom = 13;
+
+if (!$zoom) $zoom = 0;
+
 $query = "UPDATE $cemeteries_table SET cemname=\"$cemname\",maplink=\"$maplink\",city=\"$city\",county=\"$county\",state=\"$state\",country=\"$country\",latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\",notes=\"$notes\",place=\"$place\" WHERE cemeteryID=\"$cemeteryID\"";
 $result = tng_query($query);
 

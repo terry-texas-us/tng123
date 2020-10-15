@@ -74,9 +74,8 @@ SimileAjax.DateTime.setIso8601Date = function (dateObject, string) {
      */
 
     var d = string.match(SimileAjax.DateTime._dateRegexp);
-    if (!d) {
-        throw new Error("Invalid date string: " + string);
-    }
+    if (!d) throw new Error("Invalid date string: " + string);
+
 
     var sign = (d[1] == "-") ? -1 : 1; // BC or AD
     var year = sign * d[2];
@@ -107,9 +106,8 @@ SimileAjax.DateTime.setIso8601Date = function (dateObject, string) {
             dateObject.setUTCDate(1);
             dateObject.setUTCMonth(month - 1);
         }
-        if (date) {
-            dateObject.setUTCDate(date);
-        }
+        if (date) dateObject.setUTCDate(date);
+
     }
 
     return dateObject;
@@ -232,9 +230,8 @@ SimileAjax.DateTime.parseGregorianDateTime = function (o) {
         if (space > 0) {
             var year = parseInt(s.substr(0, space));
             var suffix = s.substr(space + 1);
-            if (suffix.toLowerCase() == "bc") {
-                year = 1 - year;
-            }
+            if (suffix.toLowerCase() == "bc") year = 1 - year;
+
         } else {
             var year = parseInt(s);
         }

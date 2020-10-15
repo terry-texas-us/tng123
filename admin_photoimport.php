@@ -34,9 +34,8 @@ foreach ($mediatypes as $mediatype) {
     }
     $msgID = $mediatype['ID'];
     $moptions .= "	<option value=\"$msgID\"";
-    if ($msgID == $mediatypeID) {
-        $moptions .= " selected";
-    }
+    if ($msgID == $mediatypeID) $moptions .= " selected";
+
     $moptions .= ">" . $mediatype['display'] . "</option>\n";
     $likearray .= "like['$msgID'] = '{$mediatype['liketype']}';\n";
 }
@@ -91,9 +90,8 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img
                                 $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     echo "	<option value=\"{$treerow['gedcom']}\"";
-                                    if ($treerow['gedcom'] == $tree) {
-                                        echo " selected";
-                                    }
+                                    if ($treerow['gedcom'] == $tree) echo " selected";
+
                                     echo ">{$treerow['treename']}</option>\n";
                                 }
                                 tng_free_result($treeresult);

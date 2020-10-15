@@ -10,8 +10,7 @@ function getEvent(array $event): string {
         $dateAndPlace .= ", ";
     }
     $dateAndPlace .= $event['eventplace'];
-    if ($dateAndPlace && $event['info']) {
-        $dateAndPlace .= ". ";
-    }
+    if ($dateAndPlace && $event['info']) $dateAndPlace .= ". ";
+
     return "<strong>" . getEventDisplay($event['display']) . "</strong> " . $dateAndPlace . $event['info'] . "<br>\n";
 }
