@@ -4,6 +4,8 @@ include "tng_begin.php";
 
 include "functions.php";
 
+require_once "./core/sql/extractWhereClause.php";
+
 if (isset($mediatypeID)) {
     $mediatypeID = cleanIt(preg_replace("/[<>{};!=]/", '', $mediatypeID));
 }
@@ -147,17 +149,20 @@ if ($tnggallery) {
     $tablewidth = "";
     $header = "";
 } else {
-    $header = "<thead><tr><th data-tablesaw-priority=\"persist\" class=\"fieldnameback fieldname nbrcol\">&nbsp;#&nbsp;</td>\n";
-    $header .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname text-center' width=\"$thumbmaxw\">&nbsp;{$text['thumb']}&nbsp;</th>\n";
+    $header = "<thead>\n";
+    $header .= "<tr>\n";
+    $header .= "<th class='fieldnameback fieldname nbrcol' data-tablesaw-priority='persist'>#</th>\n";
+    $header .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname text-center' width=\"$thumbmaxw\">{$text['thumb']}</th>\n";
     $width = $mediatypeID == "headstones" ? "50%" : "75%";
-    $header .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}&nbsp;</th>\n";
+    $header .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname'>{$text['description']}</th>\n";
     if ($mediatypeID == "headstones") {
-        $header .= "<th data-tablesaw-priority='2' class=\"fieldnameback fieldname\">&nbsp;{$text['cemetery']}&nbsp;</th>\n";
-        $header .= "<th data-tablesaw-priority='3' class=\"fieldnameback fieldname\">&nbsp;{$text['status']}&nbsp;</th>\n";
+        $header .= "<th data-tablesaw-priority='2' class='fieldnameback fieldname'>{$text['cemetery']}</th>\n";
+        $header .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>{$text['status']}</th>\n";
     }
-    $header .= "<th data-tablesaw-priority='3' class=\"fieldnameback fieldname\">&nbsp;{$text['indlinked']}&nbsp;</th>\n";
-    $header .= "</tr></thead>\n";
-    $tablewidth = " style=\"width:100%;\"";
+    $header .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>{$text['indlinked']}</th>\n";
+    $header .= "</tr>\n";
+    $header .= "</thead>\n";
+    $tablewidth = " style='width: 100%;'";
 }
 
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
@@ -379,11 +384,14 @@ while ($row = tng_fetch_assoc($result)) {
             $i++;
         }
     } else {
-        $mediatext .= "<tr>";
-        $mediatext .= "<td class='databack'>$i</td>";
+        $mediatext .= "<tr>\n";
+        $mediatext .= "<td class='databack'>$i</td>\n";
         if ($imgsrc) {
-            $mediatext .= "<td class='databack text-center'>";
-            $mediatext .= "<div class=\"media-img\" id=\"mi{$row['mediaID']}\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
+            $mediatext .= "<td class='databack text-center'>\n";
+            $mediatext .= "<div class='media-img' id=\"mi{$row['mediaID']}\">\n";
+            $mediatext .= "<div class='media-prev' id=\"prev{$row['mediaID']}\" style='display: none;'>\n";
+            $mediatext .= "</div>\n";
+            $mediatext .= "</div>\n";
             if ($href && $row['allow_living']) {
                 $mediatext .= "<a href=\"$href\"";
                 $treestr2 = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
@@ -397,7 +405,7 @@ while ($row = tng_fetch_assoc($result)) {
             $mediatext .= "</td><td class='databack'>";
             $thumbcount++;
         } else {
-            $mediatext .= "<td class='databack text-center'>&nbsp;</td>";
+            $mediatext .= "<td class='databack text-center'></td>";
             $mediatext .= "<td class='databack'>";
         }
 
@@ -421,8 +429,8 @@ while ($row = tng_fetch_assoc($result)) {
 tng_free_result($result);
 if (!$tnggallery) {
     if (!$thumbcount) {
-        $header = str_replace("<td class=\"fieldnameback fieldname\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>", "", $header);
-        $mediatext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
+        $header = str_replace("<td class='fieldnameback fieldname'><strong>{$text['thumb']}</strong></td>", "", $header); // todo multiple tag search string has been mangled
+        $mediatext = str_replace("<td class='databack text-center'></td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }
 

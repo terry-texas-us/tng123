@@ -62,7 +62,7 @@ if ($totnum_tests) {
 
     $persontext .= "<tr>\n";
     $persontext .= "<td class=\"fieldnameback fieldname align-top\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
-    $persontext .= "<td colspan='4' class=\"fieldnameback fieldname\"><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
+    $persontext .= "<td colspan='4' class='fieldnameback fieldname'><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
     $persontext .= "<a href='#' title=\"{$text['dna_info_head']}\"><img src=\"img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
     $persontext .= "</td>\n";
     $persontext .= "</tr>\n";

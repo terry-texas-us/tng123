@@ -121,9 +121,7 @@ if ($albumID) {
 header("Content-type:text/html; charset=" . $session_charset);
 
 $numrowsplus = $numrows + $offset;
-if (!$numrowsplus) {
-    $offsetplus = 0;
-}
+if (!$numrowsplus) $offsetplus = 0;
 echo "<p class='normal'>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
 $pagenav = get_album_nav($totrows, $maxsearchresults, 5);
 echo " &nbsp; <span class='adminnav'>$pagenav</span></p>";

@@ -153,10 +153,10 @@ if (tng_num_rows($hsresult)) {
     $body .= "<div class='titlebox'>\n";
     $body .= "<h3 class='subhead'>{$text['cemphotos']}</h3>\n";
 
-    $body .= "<table cellpadding='3' cellspacing='1' border='0' class=\"whiteback w-100\">\n";
+    $body .= "<table cellpadding='3' cellspacing='1' border='0' class='whiteback w-100'>\n";
     $body .= "<tr><td class='fieldnameback' width=\"10\">&nbsp;</td>\n";
-    $body .= "<td class=\"fieldnameback fieldname\" width=\"$thumbmaxw\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>\n";
-    $body .= "<td class=\"fieldnameback fieldname\">&nbsp;<strong>{$text['description']}</strong>&nbsp;</td>\n";
+    $body .= "<td class='fieldnameback fieldname' width=\"$thumbmaxw\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>\n";
+    $body .= "<td class='fieldnameback fieldname'>&nbsp;<strong>{$text['description']}</strong>&nbsp;</td>\n";
 
     while ($hs = tng_fetch_assoc($hsresult)) {
         $mediatypeID = $hs['mediatypeID'];
@@ -388,19 +388,21 @@ if ($cemetery['place']) {
         } elseif ($tabletype == "swipe") {
             $header = $tabledef . "data-tablesaw-mode='swipe'" . $headerr;
         } else {
-            $header = "<table cellpadding='3' cellspacing='1' border='0' class=\"whiteback normal w-100\">\n" . $header;
+            $header = "<table class='whiteback normal w-100' cellpadding='3' cellspacing='1' border='0'>\n" . $header;
         }
 
         $body .= $header;
-        $body .= "<thead><tr>\n";
-        $body .= "<th data-tablesaw-priority=\"persist\" class=\"fieldnameback nbrcol\"><span class='fieldname'>&nbsp;#&nbsp;</span></th>\n";
+        $body .= "<thead>\n";
+        $body .= "<tr>\n";
+        $body .= "<th data-tablesaw-priority='persist' class='fieldnameback nbrcol'><span class='fieldname'>&nbsp;#&nbsp;</span></th>\n";
         $body .= "<th data-tablesaw-priority='1' class='fieldnameback'><span class='fieldname text-nowrap'>&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
         $body .= "<th data-tablesaw-priority='2' colspan='2' class='fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
         $body .= "<th data-tablesaw-priority='3' class='fieldnameback'><span class='fieldname text-nowrap'>&nbsp;{$text['personid']}&nbsp;</span></th>\n";
         if ($numtrees > 1) {
             $body .= "<th data-tablesaw-priority='3' class='fieldnameback'><span class='fieldname'>&nbsp;{$text['tree']}&nbsp;</span></th>\n";
         }
-        $body .= "</tr></thead>\n";
+        $body .= "</tr>\n";
+        $body .= "</thead>\n";
 
         $i = 1;
         while ($row = tng_fetch_assoc($result)) {
@@ -411,10 +413,11 @@ if ($cemetery['place']) {
             $row['allow_private'] = $rights['private'];
 
             $name = getNameRev($row);
-            $body .= "<tr><td class='databack'>$i.</td>\n";
+            $body .= "<tr>\n";
+            $body .= "<td class='databack'>$i.</td>\n";
             $body .= "<td class='databack'><a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
 
-            $placetxt = $row['burialplace'] . " <a href=\"placesearch.php?tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
+            $placetxt = $row['burialplace'] . " <a href=\"placesearch.php?tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width='9' height='9'></a>";
 
             $deathdate = $row['burialdate'] ? $row['burialdate'] : $row['deathdate'];
             if ($row['burialdate']) {
@@ -440,7 +443,7 @@ if ($cemetery['place']) {
 }
 
 if ($map['key'] && $map['pins']) {
-    echo "<div id=\"map\" class=\"rounded10 cemmap\"></div>\n";
+    echo "<div id='map' class='rounded10 cemmap'></div>\n";
 }
 echo $body;
 

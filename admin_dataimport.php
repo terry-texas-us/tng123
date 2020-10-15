@@ -117,15 +117,15 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                     <div class="normal">
                         <em><?php echo $admtext['addreplacedata']; ?></em><br><br>
 
-                    <h3 class="subhead"><?php echo $admtext['importgedcom']; ?>:</h3>
-                    <table cellpadding="1" class="normal">
-                        <tr>
-                            <td>&nbsp;&nbsp;<?php echo $admtext['fromyourcomputer']; ?>:</td>
-                            <td>
-                                <input type="file" name="remotefile" size="50">
-                            </td>
-                        </tr>
-                        <tr>
+                        <h3 class="subhead"><?php echo $admtext['importgedcom']; ?>:</h3>
+                        <table cellpadding="1" class="normal">
+                            <tr>
+                                <td>&nbsp;&nbsp;<?php echo $admtext['fromyourcomputer']; ?>:</td>
+                                <td>
+                                    <input type="file" name="remotefile" size="50">
+                                </td>
+                            </tr>
+                            <tr>
                             <td>&nbsp;&nbsp;<strong><?php echo $admtext['text_or']; ?></strong> &nbsp;<?php echo $admtext['onwebserver']; ?>:</td>
                             <td>
                                 <input type="text" name="database" id="database" size="50">

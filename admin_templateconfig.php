@@ -59,23 +59,23 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
             return cell;
         }
 
-    function insertLangRow(rowID, type) {
-        var language = jQuery('#lang_' + rowID);
-        var langVal = language.val();
-        if (langVal && !jQuery('#form_' + rowID + '_' + langVal).length) {
-            var row = document.getElementById(rowID);
-            var langElem = language[0];
-            var langDisplay = langElem.options[langElem.selectedIndex].innerHTML;
-            var table = row.parentNode;
-            var newtr = table.insertRow(row.rowIndex + 1);
-            var label = "&nbsp;&nbsp;" + jQuery('#' + rowID + ' :first-child').html();
-            insertCell(newtr, 0, label + "<br>&nbsp;&nbsp;&nbsp;(" + langDisplay + ")");
-            var inputstr = type === "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows='3' cols='80'></textarea>" : "<input type='text' class='longfield' name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\">";
-            insertCell(newtr, 1, inputstr);
-            insertCell(newtr, 2, "");
+        function insertLangRow(rowID, type) {
+            var language = jQuery('#lang_' + rowID);
+            var langVal = language.val();
+            if (langVal && !jQuery('#form_' + rowID + '_' + langVal).length) {
+                var row = document.getElementById(rowID);
+                var langElem = language[0];
+                var langDisplay = langElem.options[langElem.selectedIndex].innerHTML;
+                var table = row.parentNode;
+                var newtr = table.insertRow(row.rowIndex + 1);
+                var label = "&nbsp;&nbsp;" + jQuery('#' + rowID + ' :first-child').html();
+                insertCell(newtr, 0, label + "<br>&nbsp;&nbsp;&nbsp;(" + langDisplay + ")");
+                var inputstr = type === "textarea" ? "<textarea name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\" rows='3' cols='80'></textarea>" : "<input type='text' class='longfield' name=\"form_" + rowID + "_" + langVal + "\" id=\"form_" + rowID + "_" + langVal + "\">";
+                insertCell(newtr, 1, inputstr);
+                insertCell(newtr, 2, "");
+            }
+            return false;
         }
-        return false;
-    }
 
         function showUploadBox(key, folder) {
             jQuery('#div_' + key).html("<input type=\"file\" name=\"upload_" + key + "\" onchange=\"populateFileName(this,jQuery('#form_" + key + "'));\"> <?php echo $admtext['text_or']; ?> <input type='button' value=\"<?php echo $admtext['select']; ?>\" name=\"photoselect_" + key + "\" onclick=\"javascript:FilePicker('form_" + key + "','" + folder + "');\" >");

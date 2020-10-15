@@ -800,7 +800,7 @@ class modparser extends modbase
       <tr>";
             foreach ($hdrs as $hdr => $width) {
                 echo "
-         <th class=\"fieldnameback fieldname\" style=\"width:$width;\">
+         <th class='fieldnameback fieldname' style=\"width:$width;\">
             <div>
                $hdr
             </div>

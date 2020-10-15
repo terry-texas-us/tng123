@@ -219,7 +219,7 @@ if (!$numrowsplus) $offsetplus = 0;
                     //show headers
                     for ($i = 0; $i < count($display); $i++) {
                         $header = $admtext[$display[$i]];
-                        echo "<td class=\"fieldnameback fieldname\">&nbsp;<b>$header</b>&nbsp;</td>\n";
+                        echo "<td class='fieldnameback fieldname'>&nbsp;<b>$header</b>&nbsp;</td>\n";
                     }
                     ?>
                 </tr>

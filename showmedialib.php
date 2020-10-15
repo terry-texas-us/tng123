@@ -593,7 +593,7 @@ function showMediaSource($imgrow, $ss = false) {
 }
 
 function tableRow($label, $fact) {
-    return "<tr><td style=\"width:100px;\" class=\"fieldnameback fieldname\">$label</td><td class='databack'>" . insertLinks($fact) . "</td></tr>\n";
+    return "<tr><td style=\"width:100px;\" class='fieldnameback fieldname'>$label</td><td class='databack'>" . insertLinks($fact) . "</td></tr>\n";
 }
 
 function showTable($imgrow, $medialinktext, $albumlinktext) {

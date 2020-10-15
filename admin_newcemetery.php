@@ -87,16 +87,16 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
                     <table class="normal w-100">
                         <tr>
                             <td><?php echo $admtext['cemeteryname']; ?>:</td>
-                        <td width="80%">
-                            <input type="text" name="cemname" id="cemname" size="40">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['maptoupload']; ?>*:</td>
-                        <td>
-                            <input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.maplink);">
-                        </td>
-                    </tr>
+                            <td width="80%">
+                                <input type="text" name="cemname" id="cemname" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $admtext['maptoupload']; ?>*:</td>
+                            <td>
+                                <input type="file" name="newfile" size="60" onChange="populatePath(document.form1.newfile,document.form1.maplink);">
+                            </td>
+                        </tr>
                     <tr>
                         <td><?php echo $admtext['mapfilenamefolder']; ?>**:</td>
                         <td>

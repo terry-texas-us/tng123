@@ -107,9 +107,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
 
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo displayListLocation($offsetplus, $numrowsplus, $totrows);
                 $pagenav = get_browseitems_nav($totrows, "admin_albums.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
                 echo "<span class='adminnav'>$pagenav</span></p>";

@@ -162,16 +162,16 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                         <tr>
                             <td class='align-top'>
                                 <div id="thumbholder" style="margin-right: 5px;<?php if (!$photo) {
-                                echo "display: none";
-                            } ?>"><?php echo $photo; ?></div>
-                        </td>
-                        <td>
-                            <span class="plainheader"><?php echo $row['description']; ?></span><br>
-                            <?php echo $row['notes']; ?>
+                                    echo "display: none";
+                                } ?>"><?php echo $photo; ?></div>
+                            </td>
+                            <td>
+                                <span class="plainheader"><?php echo $row['description']; ?></span><br>
+                                <?php echo $row['notes']; ?>
 
-                            <div class="topbuffer bottombuffer smallest">
-                                <?php echo "<a href='#' onclick=\"document.form1.fsubmit.click();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n"; ?>
-                                <br><br>
+                                <div class="topbuffer bottombuffer smallest">
+                                    <?php echo "<a href='#' onclick=\"document.form1.fsubmit.click();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n"; ?>
+                                    <br><br>
                             </div>
 
                             <span class="smallest"><?php echo $admtext['lastmodified'] . ": " . $row['changedate'] . ($row['changedby'] ? " ({$row['changedby']})" : ""); ?></span>

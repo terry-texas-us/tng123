@@ -216,9 +216,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
 
                 <?php
                 $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) {
-                    $offsetplus = 0;
-                }
+                if (!$numrowsplus) $offsetplus = 0;
                 echo "<p>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
                 $pagenav = get_browseitems_nav($totrows, "admin_findreview.php?type=$type&amp;reviewuser=$reviewuser&amp;offset", $maxsearchresults, 5);
                 echo " &nbsp; $pagenav</p>";

@@ -12,28 +12,28 @@ function showCustEvents($id) {
     $evresult = tng_query($query);
     $eventcount = tng_num_rows($evresult);
 
-    echo "<table id=\"custeventstbl\" class='normal' cellpadding='3' cellspacing='1' border='0'";
-    if (!$eventcount) {
-        echo " style='display: none;'";
-    }
-    echo ">";
-    echo "<tbody id=\"custeventstblbody\">\n";
-    echo "<tr>\n";
-    echo "<th class=\"fieldnameback fieldname\">" . $admtext['action'] . "</th>\n";
-    echo "<th class=\"fieldnameback fieldname\">" . $admtext['event'] . "</th>\n";
-    echo "<th class=\"fieldnameback fieldname\">" . $admtext['eventdate'] . "</th>\n";
-    echo "<th class=\"fieldnameback fieldname\">" . $admtext['eventplace'] . "</th>\n";
-    echo "<th class=\"fieldnameback fieldname\">" . $admtext['detail'] . "</th>\n";
-    echo "</tr>\n";
+    echo "<table id='custeventstbl' class='normal' cellpadding='3' cellspacing='1' border='0'";
+    if (!$eventcount) echo " style='display: none;'";
+}
 
-    if ($evresult && $eventcount) {
-        while ($event = tng_fetch_assoc($evresult)) {
-            $displayval = getEventDisplay($event['display']);
-            $info = cleanIt($event['info']);
-            $truncated = substr($info, 0, 90);
-            $info = strlen($info) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $info;
+echo ">";
+echo "<tbody id='custeventstblbody'>\n";
+echo "<tr>\n";
+echo "<th class='fieldnameback fieldname'>" . $admtext['action'] . "</th>\n";
+echo "<th class='fieldnameback fieldname'>" . $admtext['event'] . "</th>\n";
+echo "<th class='fieldnameback fieldname'>" . $admtext['eventdate'] . "</th>\n";
+echo "<th class='fieldnameback fieldname'>" . $admtext['eventplace'] . "</th>\n";
+echo "<th class='fieldnameback fieldname'>" . $admtext['detail'] . "</th>\n";
+echo "</tr>\n";
 
-            $actionstr = $allow_edit ? "<a href='#' onclick=\"return editEvent({$event['eventID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>" : "";
+if ($evresult && $eventcount) {
+    while ($event = tng_fetch_assoc($evresult)) {
+        $displayval = getEventDisplay($event['display']);
+        $info = cleanIt($event['info']);
+        $truncated = substr($info, 0, 90);
+        $info = strlen($info) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $info;
+
+        $actionstr = $allow_edit ? "<a href='#' onclick=\"return editEvent({$event['eventID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>" : "";
             $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteEvent('{$event['eventID']}');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";
             if (isset($gotnotes)) {
                 $notesicon = $gotnotes[$event['eventID']] ? "admin-note-on-icon" : "admin-note-off-icon";

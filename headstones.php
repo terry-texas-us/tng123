@@ -38,34 +38,27 @@ if ($cemeteryID) {
         $page = 1;
     }
     $subquery = "";
-    if ($country) {
-        $subquery .= "country = '$country' ";
-    }
+    if ($country) $subquery .= "country = '$country' ";
     if ($state) {
-        if ($subquery) {
-            $subquery .= "AND ";
-        }
+        if ($subquery) $subquery .= "AND ";
         $subquery .= "state = '$state' ";
     }
     if ($county) {
-        if ($subquery) {
-            $subquery .= "AND ";
-        }
+        if ($subquery) $subquery .= "AND ";
         $subquery .= "county = '$county'";
     }
     if ($city) {
-        if ($subquery) {
-            $subquery .= "AND ";
-        }
+        if ($subquery) $subquery .= "AND ";
         $subquery .= "city = '$city'";
     }
-    if ($subquery) {
-        $subquery = "WHERE " . $subquery;
-    }
+    if ($subquery) $subquery = "WHERE " . $subquery;
 }
 
 if ($subquery) {
-    $query = "SELECT * FROM $cemeteries_table $subquery ORDER BY country, state, county, city, cemname LIMIT $cemnewoffset" . $max_cemeteries;
+    $query = "SELECT * FROM $cemeteries_table ";
+    $query .= "$subquery ";
+    $query .= "ORDER BY country, state, county, city, cemname ";
+    $query .= "LIMIT $cemnewoffset" . $max_cemeteries;
     $cemresult = tng_query($query);
 
     $numrows = tng_num_rows($cemresult);
@@ -140,7 +133,6 @@ echo "<html lang='en'>\n";
 
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
-
     <h2 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
         if ($location) {
             echo " {$text['in']} $location";
@@ -162,15 +154,13 @@ $body = "";
 $cemcount = 0;
 $gotImageJpeg = function_exists('imageJpeg');
 while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
-    if ($cemcount) {
-        $body .= "<br>\n";
-    }
+    if ($cemcount) $body .= "<br>\n";
     $body .= "<div class='titlebox'>\n";
     $thiscem = $subquery ? $cemetery['cemeteryID'] : "";
     $query = "SELECT DISTINCT media.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, form, mediatypeID, abspath, newwindow, latitude, longitude ";
     $query .= "FROM $media_table media ";
     $query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
-    $query .= "WHERE mediatypeID = \"headstones\" AND cemeteryID = \"$thiscem\" $wherestr ";
+    $query .= "WHERE mediatypeID = 'headstones' AND cemeteryID = '$thiscem' $wherestr ";
     $query .= "ORDER BY description ";
     $query .= "LIMIT $newoffset" . $maxsearchresults;
     if (!$subquery) {
@@ -185,7 +175,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $query = "SELECT count(DISTINCT media.mediaID) AS hscount ";
         $query .= "FROM $media_table media ";
         $query .= "LEFT JOIN $medialinks_table medialinks ON media.mediaID = medialinks.mediaID ";
-        $query .= "WHERE mediatypeID = \"headstones\" AND cemeteryID = \"$thiscem\" $wherestr";
+        $query .= "WHERE mediatypeID = 'headstones' AND cemeteryID = '$thiscem' $wherestr";
         $result2 = tng_query($query);
         $row = tng_fetch_assoc($result2);
         $totrows = $row['hscount'];
@@ -193,33 +183,26 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $totrows = $numrows;
     }
 
-    $body .= "<div><h3 class='subhead'>\n";
+    $body .= "<div>";
+    $body .= "<h3 class='subhead'>\n";
     if ($cemetery['cemname'] == $text['nocemetery']) {
         $location = $cemetery['cemname'];
     } else {
         $location = "<a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">" . $cemetery['cemname'];
         if ($cemetery['city']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
             $location .= $cemetery['city'];
         }
         if ($cemetery['county']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
             $location .= $cemetery['county'];
         }
         if ($cemetery['state']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
             $location .= $cemetery['state'];
         }
         if ($cemetery['country']) {
-            if ($location) {
-                $location .= ", ";
-            }
+            if ($location) $location .= ", ";
             $location .= $cemetery['country'];
         }
         $location .= "</a>";
@@ -231,7 +214,6 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $zoom = $cemetery['zoom'] ? $cemetery['zoom'] : 10;
         $pinplacelevel = $pinplacelevel2;
 
-        // if we have one, add it
         if ($lat && $long) {
             $cemeteryplace = "{$cemetery['city']}, {$cemetery['county']}, {$cemetery['state']}, {$cemetery['country']}";
             $localballooncemeteryname = @htmlspecialchars($cemetery['cemname'], ENT_QUOTES, $session_charset);
@@ -257,19 +239,17 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
     if (isMobile()) {
-        if ($tabletype == "toggle") {
-            $tabletype = "columntoggle";
-        }
+        if ($tabletype == "toggle") $tabletype = "columntoggle";
         $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
     } else {
         $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
     }
     $body .= $header;
-    $body .= "<thead><tr><th data-tablesaw-priority=\"persist\" class='fieldnameback text-center fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
-    $body .= "<th data-tablesaw-priority='1' class=\"fieldnameback fieldname\">&nbsp;{$text['description']}</th>";
-    $body .= "<th data-tablesaw-priority=\"6\" class=\"fieldnameback fieldname\">&nbsp;{$text['status']}</th>";
-    $body .= "<th data-tablesaw-priority='4' class=\"fieldnameback fieldname\">&nbsp;{$text['location']}</th>";
-    $body .= "<th data-tablesaw-priority='3' class=\"fieldnameback fieldname\">&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
+    $body .= "<thead><tr><th data-tablesaw-priority='persist' class='fieldnameback text-center fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
+    $body .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname'>&nbsp;{$text['description']}</th>";
+    $body .= "<th data-tablesaw-priority='6' class='fieldnameback fieldname'>&nbsp;{$text['status']}</th>";
+    $body .= "<th data-tablesaw-priority='4' class='fieldnameback fieldname'>&nbsp;{$text['location']}</th>";
+    $body .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
 
     while ($hs = tng_fetch_assoc($hsresult)) {
         $mediatypeID = $hs['mediatypeID'];
@@ -372,7 +352,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 }
 
 if ($map['key'] && $map['pins']) {
-    echo "<div id=\"map\" class=\"rounded10 cemmap\"></div>\n";
+    echo "<div id='map' class='rounded10 cemmap'></div>\n";
 }
 
 if ($toppagenav) {

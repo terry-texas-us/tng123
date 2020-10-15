@@ -72,16 +72,16 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['addnewmedia'],
 
     <form action="admin_addmedia.php" method="post" name="form1" id="form1" enctype="multipart/form-data" onSubmit="return validateForm();">
         <input type="hidden" name="link_personID" value="<?php echo $personID; ?>">
-    <input type="hidden" name="link_tree" value="<?php echo $tree; ?>">
-    <input type="hidden" name="link_linktype" value="<?php echo $linktype; ?>">
-    <table class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <?php echo displayToggle("plus0", 1, "mediafile", $admtext['imagefile'], $admtext['uplsel']); ?>
+        <input type="hidden" name="link_tree" value="<?php echo $tree; ?>">
+        <input type="hidden" name="link_linktype" value="<?php echo $linktype; ?>">
+        <table class="lightback">
+            <tr class="databack">
+                <td class="tngshadow">
+                    <?php echo displayToggle("plus0", 1, "mediafile", $admtext['imagefile'], $admtext['uplsel']); ?>
 
-                <div id="mediafile">
-                    <br>
-                    <table>
+                    <div id="mediafile">
+                        <br>
+                        <table>
                         <tr>
                             <td><span class="normal"><?php echo $admtext['mediatype']; ?>:</span></td>
                             <td>
