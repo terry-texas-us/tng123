@@ -152,7 +152,7 @@ class HeadElementPublic
     public function getLinkElements(): array {
         global $responsivetables, $templatenum, $tngconfig, $tngdomain, $tngprint;
         $links = [];
-        $links[] = "<link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>";
+//        $links[] = "<link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>";
         $links[] = "<link href='build/genstyle.css' rel='stylesheet'>";
         if (isMobile() && $responsivetables) {
             $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";

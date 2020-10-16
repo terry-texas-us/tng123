@@ -255,7 +255,7 @@ tng_adminheader($admtext['administration'], "");
 
             if ($result && tng_num_rows($result)) {
                 $switcher .= "<form action='admin_savelanguage.php' method='GET' target='_parent' name='language' style='display: inline-block;'>\n";
-                $switcher .= " &nbsp;<select name='newlanguage' class='normal' onChange='document.language.submit();'>\n";
+                $switcher .= " &nbsp;<select name='newlanguage' class='normal text-black' onChange='document.language.submit();'>\n";
 
                 while ($row = tng_fetch_assoc($result)) {
                     $switcher .= "<option value='{$row['languageID']}'";

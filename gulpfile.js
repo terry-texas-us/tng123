@@ -10,11 +10,10 @@ const replace = require('gulp-replace');
 const newer = require('gulp-newer');
 const size = require('gulp-size');
 const imagemin = require('gulp-imagemin');
-
 // const browserSync = require('browser-sync').create();
 // const rename = require('gulp-rename');
-
-const purgecss = require('gulp-purgecss')
+const purgecss = require('gulp-purgecss');
+const tailwindcss = require('tailwindcss');
 
 function purgecssTask() {
     return src('build/genstyle.css')
@@ -55,7 +54,7 @@ function scssTask() {
     return src('scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'expanded'}))
-        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(postcss([autoprefixer()/*, cssnano()*/]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('./build')
         );
@@ -65,7 +64,7 @@ function scssTemplatesTask() {
     return src('templates/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'expanded'}))
-        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(postcss([autoprefixer()/*, cssnano()*/]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('./build')
         );
