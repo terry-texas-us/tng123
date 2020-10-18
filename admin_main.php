@@ -25,8 +25,8 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     if (isMobile()) {
         $iconstr = $msgstr = "";
     } else {
-        $iconstr = "<img src=\"img/{$icon}_icon.gif\" alt='$label' class='adminicon'>\n";
-        $msgstr = "<div class='adminsubmsg'>{$message}</div>\n";
+        $iconstr = "<img src=\"img/{$icon}_icon.gif\" alt='$label' class='adminicon float-left rounded m-2 shadow'>\n";
+        $msgstr = "<div class='adminsubmsg text-sm'>{$message}</div>\n";
     }
 
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";
@@ -34,7 +34,7 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     if ($number) {
         $menu .= "<div class='admintotal float-right'><strong>" . number_format($number) . "</strong></div>\n";
     }
-    $menu .= "<div class='adminsubhead'><strong>$label</strong></div>\n";
+    $menu .= "<div class='adminsubhead text-base mb-1'><strong>$label</strong></div>\n";
     $menu .= $msgstr;
     $menu .= "<div style='clear: both;'></div>\n";
     $menu .= "</a>\n";
@@ -166,7 +166,7 @@ tng_adminheader($admtext['administration'], "");
 
 <?php echo tng_adminlayout("mainback"); ?>
 
-<table class="mainbox">
+<table class="mainbox m-auto w-full">
     <?php
     //no users?
     $messages = "";
@@ -250,11 +250,11 @@ tng_adminheader($admtext['administration'], "");
         $messages = "<ul>\n$messages</ul>\n";
         ?>
         <tr>
-            <td class="admincol" colspan="2">
+            <td class="admincol align-top" colspan="2">
                 <div class="tngmsgarea">
-                    <a href="#" onclick="return toggleMsg('msgs','plus0');" class="togglehead">
+                    <a href="#" onclick="return toggleMsg('msgs','plus0');" class="togglehead no-underline">
                         <img src="img/tng_expand.gif" title="toggle display" alt="toggle display" id="plus0">
-                        <strong class="adminsubhead ml-1"><?php echo $admtext['tasks']; ?></strong>
+                        <strong class="adminsubhead text-base mb-1 ml-1"><?php echo $admtext['tasks']; ?></strong>
                     </a>
                     <div id="msgs" style="display:none;">
                         <hr>
@@ -265,7 +265,7 @@ tng_adminheader($admtext['administration'], "");
         </tr>
     <?php } ?>
     <tr>
-        <td class="admincol">
+        <td class="admincol align-top">
             <?php
             if ($allow_edit || $allow_add || $allow_delete) {
                 echo adminMenuItem("admin_people.php", $admtext['people'], $total_people, $peoplemsg, "people");
@@ -291,7 +291,7 @@ tng_adminheader($admtext['administration'], "");
             if (!isMobile()) {
             ?>
         </td>
-        <td class="admincol">
+        <td class="admincol align-top">
             <?php
             }
             if ($allow_edit && $allow_add && $allow_delete && !$assignedbranch) {

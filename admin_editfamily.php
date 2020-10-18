@@ -447,18 +447,15 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                             }
                             echo showEventRow('divdate', 'divplace', 'DIV', $familyID);
                             ?>
-                        </table>
-                        <br>
-                        <table class="normal">
                             <tr>
-                                <td class='align-top'>
-                                    <h3 class="subhead" style="color:#000;"><?php echo $admtext['otherevents']; ?>:</h3>
-                                    <?php echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('F','$familyID','$tree');\"></p>\n"; ?>
-                                </td>
-                                <td class='align-top'>
-                                    <?php showCustEvents($familyID); ?>
+                                <td colspan="2">
+                                    <br/>
+                                    <p class="subhead font-medium">
+                                        <?php echo "{$admtext['otherevents']}: <input type='button' value=\" {$admtext['addnew']} \" onclick=\"newEvent('F', '$familyID', '$tree');\">\n"; ?>
+                                    </p>
                                 </td>
                             </tr>
+                            <?php showCustEvents($familyID); ?>
                         </table>
                     </div>
                 </td>

@@ -273,16 +273,15 @@ include_once "eventlib.php";
                             echo showEventRow('divdate', 'divplace', 'DIV', $familyID);
                             ?>
                             <tr>
-                                <td colspan="7">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class='align-top'><?php echo $admtext['otherevents']; ?>:</td>
-                                <td colspan="6">
-                                    <?php echo "<input type='button' value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('F','$familyID','$tree');\">&nbsp;\n"; ?>
+                                <td colspan="2">
+                                    <br/>
+                                    <p class="subhead font-medium">
+                                        <?php echo "{$admtext['otherevents']}: <input type='button' value=\" {$admtext['addnew']} \" onclick=\"newEvent('F', '$familyID', '$tree');\">\n"; ?>
+                                    </p>
                                 </td>
                             </tr>
+                            <?php showCustEvents($familyID); ?>
                         </table>
-                        <?php showCustEvents($familyID); ?>
                     </div>
                 </td>
             </tr>

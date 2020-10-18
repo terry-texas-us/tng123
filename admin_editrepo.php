@@ -170,18 +170,15 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                             <input type="text" name="www" size="50" value="<?php echo $row['www']; ?>">
                         </td>
                     </tr>
-                </table>
-                <br>
-                <table class="normal">
                     <tr>
-                        <td class='align-top'>
-                            <h3 class="subhead"><?php echo $admtext['otherevents']; ?>:</h3>
-                            <?php echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('R','$repoID','$tree');\"></p>\n"; ?>
-                        </td>
-                        <td class='align-top'>
-                            <?php showCustEvents($repoID); ?>
+                        <td colspan="2">
+                            <br/>
+                            <p class="subhead font-medium">
+                                <?php echo "{$admtext['otherevents']}: <input type='button' value=\" {$admtext['addnew']} \" onclick=\"newEvent('R', '$repoID', '$tree');\">\n"; ?>
+                            </p>
                         </td>
                     </tr>
+                    <?php showCustEvents($repoID); ?>
                 </table>
             </td>
         </tr>

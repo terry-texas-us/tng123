@@ -113,13 +113,13 @@ echo tng_adminlayout();
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['username']; ?>:</span></td>
                                 <td>
-                                    <input type="text" class="loginfont medfield" name="tngusername" size="20">
+                                    <input type="text" class="loginfont w-auto" name="tngusername" size="20">
                                 </td>
                             </tr>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['password']; ?>:</span></td>
                                 <td>
-                                    <input type="password" class="loginfont medfield" name="tngpassword" size="20">
+                                    <input type="password" class="loginfont w-auto" name="tngpassword" size="20">
                                 </td>
                             </tr>
                             <tr>
@@ -129,7 +129,7 @@ echo tng_adminlayout();
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <input type="submit" class="btn medfield" value="<?php echo $admtext['login']; ?>">
+                                    <input type="submit" class="btn" value="<?php echo $admtext['login']; ?>">
                                 </td>
                             </tr>
                         </table>

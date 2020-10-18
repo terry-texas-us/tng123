@@ -172,18 +172,15 @@ echo "<a href='#' onclick=\"return showNotes('', '$sourceID');\" id='notesicon' 
                         <td class='align-top'><?php echo $admtext['actualtext']; ?>:</td>
                         <td><textarea cols="50" rows="5" name="actualtext"><?php echo $row['actualtext']; ?></textarea></td>
                     </tr>
-                </table>
-                <br>
-                <table class="normal">
                     <tr>
-                        <td class='align-top'>
-                            <h3 class="subhead" style="color:#000;"><?php echo $admtext['otherevents']; ?>:</h3>
-                            <?php echo "<p><input type='button' value=\"  " . $admtext['addnew'] . "  \" onclick=\"newEvent('S','$sourceID','$tree');\"></p>\n"; ?>
-                        </td>
-                        <td class='align-top'>
-                            <?php showCustEvents($sourceID); ?>
+                        <td colspan="2">
+                            <br/>
+                            <p class="subhead font-medium">
+                                <?php echo "{$admtext['otherevents']}: <input type='button' value=\" {$admtext['addnew']} \" onclick=\"newEvent('S', '$sourceID', '$tree');\">\n"; ?>
+                            </p>
                         </td>
                     </tr>
+                    <?php showCustEvents($sourceID); ?>
                 </table>
             </td>
         </tr>

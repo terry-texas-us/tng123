@@ -370,16 +370,16 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="veryshortfield">
+                                    <input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="w-24">
                                 </td>
                                 <td>
-                                    <input type="text" value="<?php echo $row['title']; ?>" name="title" class="veryshortfield">
+                                    <input type="text" value="<?php echo $row['title']; ?>" name="title" class="w-24">
                                 </td>
                                 <td>
-                                    <input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="veryshortfield">
+                                    <input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="w-24">
                                 </td>
                                 <td>
-                                    <input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="veryshortfield">
+                                    <input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="w-24">
                                 </td>
                                 <td>
                                     <select name="pnameorder">
@@ -422,17 +422,18 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                     </div>
                 </td>
             </tr>
-            <tr class="databack"> <!-- Collapsible section - Events -->
+            <tr class="databack">
                 <td class="tngshadow">
                     <?php echo displayToggle("plus1", 1, "events", $admtext['events'], ""); ?>
+
                     <div id="events">
                         <p class="normal topmarginsmall"><?php echo $admtext['datenote']; ?></p>
-                        <table class="normal">
+                        <table class="normal" id="events_table">
                             <tr>
-                                <th>&nbsp;</th>
-                                <th><?php echo $admtext['date']; ?></th>
-                                <th><?php echo $admtext['place']; ?></th>
-                                <th colspan="4">&nbsp;</th>
+                                <td>&nbsp;</td>
+                                <td><?php echo $admtext['date']; ?></td>
+                                <td><?php echo $admtext['place']; ?></td>
+                                <td colspan="4">&nbsp;</td>
                             </tr>
                             <?php
                             echo showEventRow('birthdate', 'birthplace', 'BIRT', $personID);
@@ -444,9 +445,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             $checked = $row['burialtype'] == 1 ? " checked" : "";
                             echo "<tr>";
                             echo "<td></td>";
-                            echo "<td colspan='3'>";
-                            echo "<input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'$checked> <label for=\"burialtype\">{$admtext['cremated']}</label>";
-                            echo "</td>";
+                            echo "<td colspan='3'><input type='checkbox' name='burialtype' id='burialtype' value='1'{$checked}> <label for='burialtype'>{$admtext['cremated']}</label></td>";
                             echo "</tr>\n";
                             if ($rights['lds']) {
                                 echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
@@ -455,20 +454,15 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                                 echo showEventRow('endldate', 'endlplace', 'ENDL', $personID);
                             }
                             ?>
-                        </table>
-
-                        <table class="normal">
                             <tr>
-                                <td>
-                                    <h3 class="subhead"><?php echo $admtext['otherevents']; ?>:</h3>
-                                    <p>
-                                        <input type="button" value="  <?php echo $admtext['addnew'] ?>  " onclick="newEvent('I', '<?php echo $personID ?>', '<?php echo $tree ?>');">
+                                <td colspan="2">
+                                    <br>
+                                    <p class="subhead font-medium">
+                                        <?php echo "{$admtext['otherevents']}: <input type='button' value=\" {$admtext['addnew']} \" onclick=\"newEvent('I', '$personID', '$tree');\">\n"; ?>
                                     </p>
                                 </td>
-                                <td class='align-top'>
-                                    <?php showCustEvents($personID); ?>
-                                </td>
                             </tr>
+                            <?php showCustEvents($personID); ?>
                         </table>
                     </div>
                 </td>
@@ -515,7 +509,6 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             $citresult = tng_query($citquery) or die ($admtext['cannotexecutequery'] . ": $citquery");
                             $citesicon = tng_num_rows($citresult) ? "admin-cite-on-icon" : "admin-cite-off-icon";
                             tng_free_result($citresult);
-
                             echo "<tr>";
                             echo "<td>&nbsp;</td>";
                             echo "<td>" . $admtext['date'] . "</td>";
@@ -524,10 +517,10 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             echo "</tr>\n";
                             echo "<tr>\n";
                             echo "<td class='align-top text-nowrap' style='width:110px;'>" . $admtext['SLGC'] . ":</td>\n";
-                            echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
+                            echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength='50' class='w-32'></td>\n";
                             echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
-                            echo "<td><a href='#' onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "',1);\" title=\"{$admtext['find']}\" class=\"smallicon admin-temp-icon\"></a></td>\n";
-                            echo "<td><a href='#' onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\" title=\"{$admtext['sources']}\" id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon $citesicon\"></a></td>\n";
+                            echo "<td><a href='#' onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "',1);\" title=\"{$admtext['find']}\" class='smallicon admin-temp-icon'></a></td>\n";
+                            echo "<td><a href='#' onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\" title=\"{$admtext['sources']}\" id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class='smallicon $citesicon'></a></td>\n";
                             echo "</tr>\n";
                             echo "</table>\n";
                         } else {

@@ -913,7 +913,7 @@ function tng_icons($instance, $title = "") {
                 $fullmenu .= "<label for='searchlast' class='mr-2'>{$text['lastname']}:</label>";
                 $fullmenu .= "<input type='text' name='mylastname' id='searchlast'>\n";
                 $fullmenu .= "<label for='searchid' class='mr-2'>{$text['id']}:</label>";
-                $fullmenu .= "<input type='text' class='veryshortfield' name='mypersonid' id='searchid'>\n";
+                $fullmenu .= "<input type='text' class='w-24' name='mypersonid' id='searchid'>\n";
                 $fullmenu .= "<input type='hidden' name='idqualify' value='equals'>\n";
                 $fullmenu .= "<input type='submit' value='{$text['search']}'></form></div>";
             }

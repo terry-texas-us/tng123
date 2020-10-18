@@ -54,7 +54,7 @@ function scssTask() {
     return src('scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'expanded'}))
-        .pipe(postcss([autoprefixer()/*, cssnano()*/]))
+        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('./build')
         );
@@ -64,7 +64,7 @@ function scssTemplatesTask() {
     return src('templates/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'expanded'}))
-        .pipe(postcss([autoprefixer()/*, cssnano()*/]))
+        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('./build')
         );

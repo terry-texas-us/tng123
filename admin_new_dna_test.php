@@ -77,7 +77,7 @@ echo displayHeadline($admtext['dna_tests'] . " &gt;&gt; " . $admtext['addnewdna'
                         <tr>
                             <td><?php echo $admtext['match_date']; ?>:</td>
                             <td>
-                                <input type="text" name="match_date" class="medfield" onblur="checkDate(this);">
+                                <input type="text" name="match_date" class="w-64" onblur="checkDate(this);">
                             </td>
                         </tr>
                         <?php if ($test_type == "atDNA") { ?>

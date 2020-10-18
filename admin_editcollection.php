@@ -47,7 +47,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             <tr>
                 <td><?php echo $admtext['collexpas']; ?>:</td>
                 <td>
-                    <input type="text" name="exportas" id="exportas" class="veryshortfield" value="<?php echo $exportas; ?>">
+                    <input type="text" name="exportas" id="exportas" class="w-24" value="<?php echo $exportas; ?>">
                 </td>
             </tr>
             <tr>

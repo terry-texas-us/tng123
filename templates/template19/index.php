@@ -41,7 +41,7 @@ if (!isMobile()) {
                 <div style="display:inline-block;">
                     <label for="myfirstname"><?php echo $text['firstname']; ?></label>
                     <br>
-                    <input id="myfirstname" class="medfield" name="myfirstname" type="text" value="">
+                    <input id="myfirstname" class="w-medfield" name="myfirstname" type="text" value="">
                     <br>
                     <label for="mylastname"><?php echo $text['lastname']; ?></label>
                     <br>

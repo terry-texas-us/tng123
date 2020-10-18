@@ -52,8 +52,8 @@ header("Content-type:text/html; charset=" . $session_charset);
                            onkeyup="filterChanged(event, {form:'findform1',fieldId:'myflastname',myflastname:jQuery('#myflastname').val(),myffirstname:jQuery('#myffirstname').val(),myfpersonID:jQuery('#myfpersonID').val(),type:'I',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
                 </td>
                 <td>
-                    <input type="text" name="myfpersonID" id="myfpersonID" tabindex="3" class="veryshortfield"
-                           onkeyup="filterChanged(event, {form:'findform1',fieldId:'myfpersonID',myflastname:jQuery('#myflastname').val(),myffirstname:jQuery('#myffirstname').val(),myfpersonID:jQuery('#myfpersonID').val(),type:'I',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
+                    <input type="text" name="myfpersonID" id="myfpersonID" tabindex="3" class="w-24"
+                        onkeyup="filterChanged(event, {form:'findform1',fieldId:'myfpersonID',myflastname:jQuery('#myflastname').val(),myffirstname:jQuery('#myffirstname').val(),myfpersonID:jQuery('#myfpersonID').val(),type:'I',tree:'<?php echo $tree; ?>',branch:'<?php echo $branch; ?>',destdiv:'findresults'<?php echo $mediaoption; ?>});">
                     <input type="submit" value="<?php echo $admtext['search']; ?>">
                     <input type="button" value="<?php echo $bailtext; ?>" onclick="gotoSection(seclitbox, null);">
                 </td>

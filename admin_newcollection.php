@@ -29,13 +29,13 @@ header("Content-type:text/html; charset=" . $session_charset);
             <tr>
                 <td><?php echo $admtext['collid']; ?>:</td>
                 <td>
-                    <input type="text" name="collid" class="veryshortfield" onblur="if(!$('exportas').value) $('exportas').value = this.value.toUpperCase();">
+                    <input type="text" name="collid" class="w-24" onblur="if(!$('exportas').value) $('exportas').value = this.value.toUpperCase();">
                 </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['collexpas']; ?>:</td>
                 <td>
-                    <input type="text" name="exportas" id="exportas" class="veryshortfield" value="PHOTO">
+                    <input type="text" name="exportas" id="exportas" class="w-24" value="PHOTO">
                 </td>
             </tr>
             <tr>

@@ -171,16 +171,16 @@ include_once "eventlib.php";
                                 </select>
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="veryshortfield">
+                                <input type="text" value="<?php echo $row['nickname']; ?>" name="nickname" class="w-24">
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['title']; ?>" name="title" class="veryshortfield">
+                                <input type="text" value="<?php echo $row['title']; ?>" name="title" class="w-24">
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="veryshortfield">
+                                <input type="text" value="<?php echo $row['prefix']; ?>" name="prefix" class="w-24">
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="veryshortfield">
+                                <input type="text" value="<?php echo $row['suffix']; ?>" name="suffix" class="w-24">
                             </td>
                             <td>
                                 <select name="pnameorder">
@@ -283,7 +283,7 @@ include_once "eventlib.php";
                         $checked = $row['burialtype'] == 1 ? " checked" : "";
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan='3'><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'{$checked}> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+                        echo "<td colspan='3'><input type='checkbox' name='burialtype' id='burialtype' value='1'{$checked}> <label for='burialtype'>{$admtext['cremated']}</label></td>";
                         echo "</tr>\n";
                         if ($rights['lds']) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
@@ -293,16 +293,15 @@ include_once "eventlib.php";
                         }
                         ?>
                         <tr>
-                            <td colspan="7">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class='align-top'><?php echo $admtext['otherevents']; ?>:</td>
-                            <td colspan="6">
-                                <?php echo "<input type='button' value=\"  " . $admtext['addnew'] . "  \" onClick=\"newEvent('I','$personID','$tree');\">&nbsp;\n"; ?>
+                            <td colspan="2">
+                                <br>
+                                <p class="subhead font-medium">
+                                    <?php echo $admtext['otherevents'] . ": <input type='button' value=\"  {$admtext['addnew']} \" onClick=\"newEvent('I', '$personID', '$tree');\">\n"; ?>
+                                </p>
                             </td>
                         </tr>
+                        <?php showCustEvents($personID); ?>
                     </table>
-                    <?php showCustEvents($personID); ?>
                     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
                     <input type="hidden" name="personID" value="<?php echo "$personID"; ?>">
                     <input type="hidden" name="newfamily" value="ajax">
@@ -436,7 +435,6 @@ include_once "eventlib.php";
         $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
         $citesicon = "img/" . (tng_num_rows($citresult) ? "tng_cite_on.gif" : "tng_cite.gif");
         tng_free_result($citresult);
-
         echo "<table>";
         echo "<tr>";
         echo "<td>&nbsp;</td>";
@@ -446,11 +444,11 @@ include_once "eventlib.php";
         echo "</tr>\n";
         echo "<tr>\n";
         echo "<td class='align-top text-nowrap' style='width:110px;'>" . $admtext['SLGC'] . ":</td>\n";
-        echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength=\"50\" class=\"shortfield\"></td>\n";
-        echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class=\"longfield\"></td>\n";
+        echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength='50' class='w-32'></td>\n";
+        echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class='longfield'></td>\n";
         echo "<td>\n";
         echo "<a href='#' onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
-        echo "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class=\"smallicon\">\n";
+        echo "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class='smallicon'>\n";
         echo "</a>\n";
         echo "</td>\n";
         echo "<td>\n";

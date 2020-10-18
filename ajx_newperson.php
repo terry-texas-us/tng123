@@ -37,7 +37,7 @@ include_once "eventlib.php";
                 <div style="float:right;">
                     <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
                 </div>
-                <h3 class="subhead togglehead"><?php echo $admtext['addnewperson']; ?></h3>
+                <h3 class="subhead togglehead no-underline"><?php echo $admtext['addnewperson']; ?></h3>
 
                 <table class="normal">
                     <tr>
@@ -102,16 +102,16 @@ include_once "eventlib.php";
                                 </select>
                             </td>
                             <td>
-                                <input type="text" name="nickname" class="veryshortfield">
+                                <input type="text" name="nickname" class="w-24">
                             </td>
                             <td>
-                                <input type="text" name="title" class="veryshortfield">
+                                <input type="text" name="title" class="w-24">
                             </td>
                             <td>
-                                <input type="text" name="prefix" class="veryshortfield">
+                                <input type="text" name="prefix" class="w-24">
                             </td>
                             <td>
-                                <input type="text" name="suffix" class="veryshortfield">
+                                <input type="text" name="suffix" class="w-24">
                             </td>
                             <td>
                                 <select name="pnameorder">

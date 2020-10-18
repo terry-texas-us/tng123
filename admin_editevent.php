@@ -71,11 +71,11 @@ header("Content-type:text/html; charset=" . $session_charset);
                     <table class="normal" cellpadding="0">
                         <tr>
                             <td>
-                                <input type="text" name="dupIDs" id="dupIDs" value="<?php echo $row['personID']; ?>" class="medfield"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                                <input type="text" name="dupIDs" id="dupIDs" value="<?php echo $row['personID']; ?>" class="w-64"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             </td>
                             <td><a href="#" onclick="return findItem('<?php echo $row['type']; ?>','dupIDs','','<?php echo $row['gedcom']; ?>','<?php echo $assignedbranch; ?>');"
-                                   title="<?php echo $admtext['find']; ?>"
-                                   class="smallicon admin-find-icon"></a></td>
+                                    title="<?php echo $admtext['find']; ?>"
+                                    class="smallicon admin-find-icon"></a></td>
                         </tr>
                     </table>
                 </td>

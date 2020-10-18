@@ -191,7 +191,7 @@ function editEvent(eventID) {
 
 function newEvent(prefix, persfamID, tree) {
     tnglitbox = new LITBox('admin_newevent.php?prefix=' + prefix + '&persfamID=' + persfamID + '&tree=' + tree, {
-        width: 540, height: 500, doneLoading: function () {
+        width: 640, height: 500, doneLoading: function () {
             $('#eventtypeID').focus();
         }
     });

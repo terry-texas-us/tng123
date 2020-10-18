@@ -214,7 +214,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                 $folder = $mediatypes_assoc[$mediatypeID];
                 echo $admtext['folder'] . ": <span id=\"folderlabel\">$folder</span>/";
                 ?>
-                <input type="text" id="folder" name="folder" class="medfield">
+                <input type="text" id="folder" name="folder" class="w-64">
                 <input type="button" value="<?php echo $admtext['select'] . "..."; ?>" name="folderselect" onclick="FilePicker('folder',jQuery('#mediatypeID').val(),1);">
                 <br><br>
 

@@ -59,7 +59,7 @@ include_once "eventlib.php";
                 <div style="float:right;">
                     <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
                 </div>
-                <h3 class="subhead togglehead"><?php echo $admtext['addnewfamily']; ?></h3>
+                <h3 class="subhead togglehead no-underline"><?php echo $admtext['addnewfamily']; ?></h3>
 
                 <table class="normal">
                     <tr>

@@ -84,18 +84,16 @@ function tng_adminlayout($args = "") {
     if (isMobile()) $tng_title = $tng_abbrev;
 
     $output = "<body class='adminbody m-0'$args>\n";
-
-    $output .= "<div class='topbanner sideback whiteheader'>\n";
-
+    $output .= "<div class='topbanner fixed w-full m-0 leading-snug top-0 sideback whiteheader'>\n";
     if (!isMobile()) { // corner
-        $output .= "<div class='admincorner'>\n";
+        $output .= "<div class='admincorner float-left'>\n";
         $output .= "<a href='http://lythgoes.net/genealogy/software.php' target='_blank'>";
         $output .= "<img src='img/tnglogo.gif' alt='The Next Generation of Genealogy Sitebuilding' width='113' height='50' border='0'>";
         $output .= "</a>\n";
         $output .= "</div>\n";
     }
-    $output .= "<div class='admintop'>\n";
-    $output .= "<p class='admintitle text-nowrap'><strong>$tng_title, v.$tng_version</strong></p>\n";
+    $output .= "<div class='pl-3 overflow-hidden'>\n";
+    $output .= "<p class='my-1 text-nowrap'><strong>$tng_title, v.$tng_version</strong></p>\n";
     $output .= "<span class='whitetext normal text-nowrap'>\n";
     $output .= "<a href='admin.php' class='lightlink'>{$admtext['adminhome']}</a>\n";
     $output .= "&nbsp;|&nbsp; <a href='$homepage' class='lightlink'>{$admtext['publichome']}</a>\n";
@@ -123,7 +121,7 @@ function tng_adminlayout($args = "") {
             $leftoffset = " style='left: -135px'";
             $mainoffset = "style='padding-left: 26px'";
         }
-        $output .= "<div id='leftmenu' class='leftmenu sideback normal'$leftoffset>\n";
+        $output .= "<div id='leftmenu' class='leftmenu fixed h-full overflow-auto leading-tight sideback normal'$leftoffset>\n";
         include("admin_leftmenu.php");
         $output .= "</div>\n";
     } else {
@@ -293,8 +291,7 @@ function deleteNote($noteID, $flag) {
  */
 function displayToggle($id, $state, $target, $headline, $subhead, $append = "") {
     global $admtext;
-
-    $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='togglehead' style='color:#000;'><img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' title='{$admtext['toggle']}' alt='{$admtext['toggle']}' width='15' height='15' id='$id'>";
+    $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='togglehead no-underline' style='color:#000;'><img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' title='{$admtext['toggle']}' alt='{$admtext['toggle']}' width='15' height='15' id='$id'>";
     $rval .= "<strong class='ml-1'>$headline</strong></a> $append</span><br>\n";
     if ($subhead) {
         $rval .= "<span class='normal tsh-indent'><i>$subhead</i></span><br>\n";
@@ -360,25 +357,25 @@ function showEventRow($datefield, $placefield, $label, $persfamID) {
     $blurAction = ($label == "DEAT" || $label == "BURI") ? " updateLivingBox($currentform,this);" : "";
     $onblur = $blurAction ? " onblur='$blurAction'" : "";
 
-    $short = $noclass ? " style='width:100px'" : " class='shortfield'";
+    $short = $noclass ? " style='width:100px'" : " class='w-32'";
     $long = $noclass ? " style='width:270px'" : " class='longfield'";
     $tr = "<tr>\n";
     $tr .= "<td>" . $admtext[$label] . ":</td>\n";
     $tr .= "<td><input type='text' value='" . $row[$datefield] . "' name='$datefield' onblur='checkDate(this);{$blurAction}' maxlength='50'$short></td>\n";
     $tr .= "<td><input type='text' value='" . $row[$placefield] . "' name='$placefield' {$onblur}id='$placefield'$long></td>\n";
     if (in_array($label, $ldsarray)) {
-        $tr .= "<td><a href='#' onclick='return openFindPlaceForm('$placefield', 1);' title='{$admtext['find']}' class='smallicon admin-temp-icon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return openFindPlaceForm('$placefield', 1);\" title=\"{$admtext['find']}\" class='smallicon admin-temp-icon'></a></td>\n";
     } else {
-        $tr .= "<td><a href='#' onclick='return openFindPlaceForm('$placefield');' title='{$admtext['find']}' class='smallicon admin-find-icon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return openFindPlaceForm('$placefield');\" title=\"{$admtext['find']}\" class='smallicon admin-find-icon'></a></td>\n";
     }
     if (isset($gotmore)) {
-        $tr .= "<td><a href='#' onclick='return showMore('$label','$persfamID');' title='{$admtext['more']}' id='moreicon$label' class='smallicon $moreicon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return showMore('$label', '$persfamID');\" title=\"{$admtext['more']}\" id='moreicon$label' class='smallicon $moreicon'></a></td>\n";
     }
     if (isset($gotnotes)) {
-        $tr .= "<td><a href='#' onclick='return showNotes('$label','$persfamID');' title='{$admtext['notes']}' id='notesicon$label' class='smallicon $notesicon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return showNotes('$label', '$persfamID');\" title=\"{$admtext['notes']}\" id='notesicon$label' class='smallicon $notesicon'></a></td>\n";
     }
     if (isset($gotcites)) {
-        $tr .= "<td><a href='#' onclick='return showCitations('$label','$persfamID');' title='{$admtext['sources']}' id='citesicon$label' class='smallicon $citesicon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return showCitations('$label', '$persfamID');\" title=\"{$admtext['sources']}\" id='citesicon$label' class='smallicon $citesicon'></a></td>\n";
     }
     $tr .= "</tr>\n";
     return $tr;

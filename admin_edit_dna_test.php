@@ -211,15 +211,15 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                         <tr>
                             <td><?php echo $admtext['test_date']; ?>:</td>
                             <td>
-                                <input type="text" name="test_date" value="<?php echo formatInternalDate($row['test_date']); ?>" class="medfield"
-                                       onblur="checkDate(this);">
+                                <input type="text" name="test_date" value="<?php echo formatInternalDate($row['test_date']); ?>" class="w-64"
+                                    onblur="checkDate(this);">
                             </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['match_date']; ?>:</td>
                             <td>
                                 <input type="text" name="match_date" value="<?php echo formatInternalDate($row['match_date']); ?>" class="medfield"
-                                       onblur="checkDate(this);">
+                                    onblur="checkDate(this);">
                             </td>
                         </tr>
                         <?php if ($row['test_type'] == "atDNA") { ?>
@@ -329,9 +329,9 @@ function get_atdna_ancestor_surnames($personID, $tree, $type) {
                             <tr>
                                 <td><?php echo $admtext['mtdna_haplogroup']; ?>:</td>
                                 <td>
-                                    <input type="text" name="mtdna_haplogroup" value="<?php echo $row['mtdna_haplogroup']; ?>" class="medfield">&nbsp;&nbsp;<?php echo $text['confirmed']; ?>
+                                    <input type="text" name="mtdna_haplogroup" value="<?php echo $row['mtdna_haplogroup']; ?>" class="w-64">&nbsp;&nbsp;<?php echo $text['confirmed']; ?>
                                     :&nbsp;<input type="checkbox" name="mtdna_confirmed"
-                                                  value="1" <?php echo $mt_checkedstr; ?>>
+                                        value="1" <?php echo $mt_checkedstr; ?>>
                                 </td>
                             </tr>
                         <?php }

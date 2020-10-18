@@ -19,7 +19,7 @@ if ($msg) {
     echo "<h3 id='errormsg' class='msgerror subhead'>" . stripslashes(strip_tags($msg)) . "</h3>";
 }
 
-$fieldclass = isMobile() ? "medfield" : "longfield";
+$fieldclass = isMobile() ? "w-64" : "longfield";
 
 $onsubmit = "return searchGoogleWebSite('" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "')";
 echo getFORM("", "GET", "searchsite", "", $onsubmit);

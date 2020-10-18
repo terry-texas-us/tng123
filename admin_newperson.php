@@ -202,16 +202,16 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['addnewperson'
                                 </select>
                             </td>
                             <td>
-                                <input type="text" name="nickname" class="veryshortfield">
+                                <input type="text" name="nickname" class="w-24">
                             </td>
                             <td>
-                                <input type="text" name="title" class="veryshortfield">
+                                <input type="text" name="title" class="w-24">
                             </td>
                             <td>
-                                <input type="text" name="prefix" class="veryshortfield">
+                                <input type="text" name="prefix" class="w-24">
                             </td>
                             <td>
-                                <input type="text" name="suffix" class="veryshortfield">
+                                <input type="text" name="suffix" class="w-24">
                             </td>
                             <td>
                                 <select name="pnameorder">
