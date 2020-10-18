@@ -6,9 +6,9 @@ function editPerson(personID, slot, gender) {
         allow_cites = true;
         allow_notes = true;
         newpersongender = gender;
-        if (gender == "M")
+        if (gender === "M")
             spouseorder = "husborder";
-        else if (gender == "F")
+        else if (gender === "F")
             spouseorder = "wifeorder";
         persfamID = personID;
         tnglitbox = new LITBox(editperson_url + 'personID=' + personID + '&tree=' + tree + '&slot=' + slot, {
@@ -38,7 +38,7 @@ function newPerson(gender, type, father, familyID) {
 function addPerson(form) {
     var params = jQuery(form).serialize();
     var perstype = form.type.value;
-    if (perstype == "child") {
+    if (perstype === "child") {
         var childcount = parseInt(jQuery('#childcount').html());
         params += '&order=' + (childcount + 1);
     }
@@ -52,12 +52,12 @@ function addPerson(form) {
                 alert(vars.error);
             } else {
                 nplitbox.remove();
-                if (perstype == "child") {
+                if (perstype === "child") {
                     jQuery('#childrenlist').append(req);
                     jQuery('#child_' + form.personID.value).fadeIn(400);
                     jQuery('#childcount').html(childcount + 1);
                     startSortFamily();
-                } else if (perstype == "spouse") {
+                } else if (perstype === "spouse") {
                     updateNameBox(req);
                 }
             }
@@ -67,10 +67,10 @@ function addPerson(form) {
 }
 
 function updateNameBox(jsonvars) {
-    if (newpersongender == "M") {
+    if (newpersongender === "M") {
         activeidbox = "husband";
         activenamebox = "husbnameplusid";
-    } else if (newpersongender == "F") {
+    } else if (newpersongender === "F") {
         activeidbox = "wife";
         activenamebox = "wifenameplusid";
     }
@@ -156,7 +156,7 @@ function updateFamily(form, slot, script) {
                 dataType: 'html',
                 success: function (req) {
                     addNewPeople(req);
-                    if (script == "admin_addfamily.php")
+                    if (script === "admin_addfamily.php")
                         people[form.lastperson.value].famc = startfam;
                     else {
                         var notfound = true;
@@ -188,8 +188,6 @@ function startSortPerson() {
         jQuery('#parents').sortable({tag: 'div', update: updateParentsOrder});
     if (jQuery('div#spouses div').length > 1)
         jQuery('#spouses').sortable({tag: 'div', update: updateSpousesOrder});
-    //not sure if the following line needs to be converted to jQuery
-    //Position.includeScrollOffsets = true;
 }
 
 function updateParentsOrder(id) {
@@ -289,7 +287,7 @@ function removeSpouse(spouse, spousedisplay) {
 
 function validateFamily(form, slot) {
     form.familyID.value = TrimString(form.familyID.value);
-    if (form.familyID.value.length == 0) {
+    if (form.familyID.value.length === 0) {
         alert(enterfamilyid);
         return false;
     }
@@ -298,7 +296,7 @@ function validateFamily(form, slot) {
 
 function validatePerson(form) {
     form.personID.value = TrimString(form.personID.value);
-    if (form.personID.value.length == 0) {
+    if (form.personID.value.length === 0) {
         alert(enterpersonid);
         return false;
     }

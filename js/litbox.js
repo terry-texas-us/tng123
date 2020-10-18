@@ -1,5 +1,4 @@
-var IE6 = false /*@cc_on || @_jscript_version < 5.7 @*/;
-var selects = new Array();
+var selects = [];
 var selidx = 0;
 
 LITBox = function (url, options) {
@@ -18,7 +17,7 @@ LITBox = function (url, options) {
         top: false,
         doneLoading: null
     };
-    var winwidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const winwidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     jQuery.extend(this.options, options || {});
     if (winwidth < this.options.width) this.options.width = winwidth - 35;
 
@@ -34,26 +33,14 @@ LITBox.prototype = {
     },
     _setup: function () {
         var self = this;
-        if (jQuery('#searchdrop').length) jQuery('#searchdrop').hide();
+        const $searchDropSelection = jQuery('#searchdrop');
+        if ($searchDropSelection.length) $searchDropSelection.hide();
         this.rn = (Math.floor(Math.random() * 100000000 + 1));
         this.getWindow();
-
-        if (IE6) {
-            selects[selidx] = document.getElementsByTagName("select");
-            for (i = 0; i < selects[selidx].length; i++) {
-                selects[selidx][i].style.visibility = 'hidden';
-            }
-            selidx += 1;
-        }
-
         switch (this.options.type) {
             case 'window' :
-                var tempvar = this.getAjax(this.url);
+                const tempvar = this.getAjax(this.url);
                 this.d4.innerHTML = tempvar;
-                //jQuery.get(this.url, function(html) {
-                //jQuery(self.d4).html(html);
-                //self.display();
-                //});
                 break;
             case 'alert' :
                 this.d4.innerHTML = this.url;
@@ -80,21 +67,18 @@ LITBox.prototype = {
     },
     getWindow: function () {
         this.over = null;
-        if (this.options.overlay == true) {
+        if (this.options.overlay === true) {
             this.d = document.createElement('div');
             document.body.appendChild(this.d);
             this.d.className = 'LB_overlay';
-            //if($('LB_overlay')) this.d.style.backgroundColor = '#444';
             this.d.id = 'LB_overlay';
             this.d.style.display = 'block';
-            //this.d.onclick=this.remove;
         }
         this.d2 = document.createElement('div');
         document.body.appendChild(this.d2);
         this.d2.className = 'LB_window';
         this.d2.id = 'LB_window';
         this.d2.style.height = parseInt(this.options.height) + 'px';
-        //this.d2.style.position = 'absolute';
         this.d2.style.zIndex = '101';
 
         this.d3 = document.createElement('div');
@@ -122,14 +106,13 @@ LITBox.prototype = {
         this.d3.appendChild(this.d3text);
         this.d4 = document.createElement('div');
         this.d4.className = 'LB_content';
-        //this.d4.id = 'tlitbox';
         this.d4.style.height = parseInt(this.options.height) + 'px';
         this.d4.style.width = parseInt(this.options.width) + 'px';
         this.d2.appendChild(this.d4);
         this.clear = document.createElement('div');
         this.d2.appendChild(this.clear);
         this.clear.style.clear = 'both';
-        if (this.options.overlay == true) {
+        if (this.options.overlay === true) {
             this.d.d = this.d;
             this.d.d2 = this.d2;
         }
@@ -142,11 +125,8 @@ LITBox.prototype = {
     position: function () {
         var de = document.documentElement;
         var w = self.innerWidth || (de && de.clientWidth) || document.body.clientWidth;
-        //w = jQuery(window).width();
         var h = self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
-
-        //alert('wi='+window.innerHeight+', wsm='+window.scrollMaxY+', bsh='+document.body.scrollHeight+', boh='+document.body.offsetHeight);
-        var yScroll = 0;
+        let yScroll = 0;
         if (window.innerHeight) {
             yScroll = window.innerHeight;
             if (window.scrollMaxY)
@@ -168,28 +148,14 @@ LITBox.prototype = {
         } else {
             this.d2.style.left = parseInt(this.options.left) + 'px';
         }
-
-        var pagesize = this.getPageSize();
+        const pagesize = this.getPageSize();
         var arrayPageScroll = this.getPageScrollTop();
-        /*
-            if(this.d2.offsetHeight > h - 100){
-                if(!this.options.top || this.options.top < 0){
-                    this.d2.style.top = "45px";
-                }else{
-                    this.d2.style.top=parseInt(this.options.top)+'px';
-                }
-                this.d2.style.height=h-100 + 'px';
-                //this.d4.style.height=h-145 + 'px';
-                this.d4.style.overflow ='auto';
-            } else {
-        */
         if (!this.options.top || this.options.top < 0) {
             var newtop = arrayPageScroll[1] + ((pagesize[1] - this.d2.offsetHeight) / 2);
             this.d2.style.top = newtop > 0 ? newtop + "px" : "0px";
         } else {
             this.d2.style.top = parseInt(this.options.top) + 'px';
         }
-        /*}*/
         if (this.d) this.d.style.height = yScroll + "px";
 
     },
@@ -209,13 +175,6 @@ LITBox.prototype = {
             });
         }
 
-        if (IE6) {
-            selects[selidx] = document.getElementsByTagName("select");
-            for (i = 0; i < selects[selidx].length; i++) {
-                selects[selidx][i].style.visibility = 'visible';
-            }
-            selidx -= 1;
-        }
         return false;
     },
     parseQuery: function (query) {
@@ -233,7 +192,7 @@ LITBox.prototype = {
         return Params;
     },
     getPageScrollTop: function () {
-        var yScrolltop;
+        let yScrolltop;
         if (self.pageYOffset) {
             yScrolltop = self.pageYOffset;
         } else if (document.documentElement && document.documentElement.scrollTop) {    // Explorer 6 Strict
@@ -241,36 +200,19 @@ LITBox.prototype = {
         } else if (document.body) {// all other Explorers
             yScrolltop = document.body.scrollTop;
         }
-        arrayPageScroll = new Array('', yScrolltop)
-        return arrayPageScroll;
+        return ['', yScrolltop];
     },
     getPageSize: function () {
-        var de = document.documentElement;
-        var w = self.innerWidth || (de && de.clientWidth) || document.body.clientWidth;
-        var h = self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
-
-        arrayPageSize = new Array(w, h)
-        return arrayPageSize;
+        const de = document.documentElement;
+        const w = self.innerWidth || (de && de.clientWidth) || document.body.clientWidth;
+        const h = self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
+        return [w, h];
     },
     getAjax: function (url) {
-        var xmlhttp = false;
-        /*@cc_on @*/
-        /*@if (@_jscript_version >= 5)
-        // JScript gives us Conditional compilation, we can cope with old IE versions.
-        // and security blocked creation of the objects.
-          try {
-          xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-          } catch (e) {
-           try {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-           } catch (E) {
-            xmlhttp = false;
-           }
-          }
-        @end @*/
+        let xmlhttp = false;
         if (!xmlhttp && typeof XMLHttpRequest != 'undefined') xmlhttp = new XMLHttpRequest();
         if (xmlhttp.overrideMimeType) xmlhttp.overrideMimeType('text/xml');
-        if (url != "") {
+        if (url !== "") {
             xmlhttp.open("GET", url, false);
             xmlhttp.send(null);
             return xmlhttp.responseText;
@@ -279,15 +221,16 @@ LITBox.prototype = {
 }
 
 function openFind(form, findscript) {
-    var params = jQuery.param(form);
-    if (jQuery('#findspin').length) jQuery('#findspin').show();
+    const params = jQuery.param(form);
+    const $findSpinSelection = jQuery('#findspin');
+    if ($findSpinSelection.length) jQuery('#findspin').show();
     jQuery.ajax({
         url: findscript,
         data: params,
         dataType: 'html',
         success: function (req) {
             jQuery('#findresults').html(req);
-            if (jQuery('#findspin').length) jQuery('#findspin').hide();
+            if ($findSpinSelection.length) jQuery('#findspin').hide();
             jQuery('#finddiv').toggle(200, function () {
                 jQuery('#findresults').toggle(200);
             });
@@ -305,7 +248,7 @@ function reopenFindForm() {
 
 function clearForm(form) {
     jQuery(form).children(':input').each(function (index, element) {
-        if (element.type == 'text') element.value = '';
+        if (element.type === 'text') element.value = '';
     });
 }
 

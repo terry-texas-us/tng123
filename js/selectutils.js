@@ -181,7 +181,7 @@ function updateEvent(form) {
 
 function editEvent(eventID) {
     tnglitbox = new LITBox('admin_editevent.php?eventID=' + eventID, {
-        width: 540, height: 500, doneLoading: function () {
+        width: 640, height: 500, doneLoading: function () {
             $('#eventdate').focus();
         }
     });
