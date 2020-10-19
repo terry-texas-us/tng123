@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lusitana:400,700|Montserrat:400,500");
+
 #tmenu {
   margin-top: 30px;
   vertical-align: top;
@@ -307,7 +308,8 @@ ul.fancy_list, ul.home-menus {
   .linkcol {
     width: 40%;
   }
-  #tmenu ul {
+
+    #tmenu ul {
     margin-left: -15px;
   }
 }
@@ -320,22 +322,28 @@ ul.fancy_list, ul.home-menus {
   #tfooter, .tblock, .tblock-dark, .theader {
     padding: 5px 10px;
   }
-  #thomemast h1 {
+
+    #thomemast h1 {
     font-size: 18pt;
   }
-  #tmenu ul li {
+
+    #tmenu ul li {
     font-size: 9pt;
   }
-  #tmenu {
+
+    #tmenu {
     margin-top: 5px;
   }
-  .tsubtitle {
+
+    .tsubtitle {
     font-size: 9pt;
   }
-  .newspaper2 {
+
+    .newspaper2 {
     column-count: 2;
   }
-  #big-block-1 {
+
+    #big-block-1 {
     height: 150px;
   }
 }
@@ -344,12 +352,15 @@ ul.fancy_list, ul.home-menus {
   #tmenu ul li a {
     padding: 14px 10px;
   }
-  #tmenu ul {
-    margin-left: -10px;
-  }
-  .newspaper2, .two-cols {
-    column-count: 1;
-  }
+
+    #tmenu ul {
+        margin-left: -10px;
+    }
+
+    .newspaper2, .two-cols {
+        column-count: 1;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

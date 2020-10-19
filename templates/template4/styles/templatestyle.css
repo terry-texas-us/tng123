@@ -303,14 +303,17 @@ ul.tngdd .topline {
   .section {
     width: 100%;
   }
+
   .menuback, .spacercol {
     display: none;
   }
-  .leftsection, .rightsection {
+
+    .leftsection, .rightsection {
     width: 95%;
     float: none;
   }
-  .content > div:first-of-type {
+
+    .content > div:first-of-type {
     margin-left: 10px;
   }
 }
@@ -322,12 +325,15 @@ ul.tngdd .topline {
   .bigphoto, .indexpage {
     width: 100%;
   }
-  .titletop {
-    font-size: 20px;
-  }
-  .titlebottom {
-    font-size: 32px;
-  }
+
+    .titletop {
+        font-size: 20px;
+    }
+
+    .titlebottom {
+        font-size: 32px;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

@@ -253,6 +253,7 @@ a.footer:hover {
 }
 
 .searchimg {
+
     padding-left: 7px;
     border: 0;
     font-size: 18pt;
@@ -493,12 +494,9 @@ ul.tngdd .topline {
 .mainbox {
   border: 1px solid #c0c0c0;
   background-color: #b7cfe7;
-  padding: 1px;
 }
 
 .admincol {
-  vertical-align: top;
-  width: 50%;
   min-width: 400px;
 }
 
@@ -585,10 +583,11 @@ p {
   color: #fff;
 }
 
-#header ul li a.active, #header ul li a.active:hover {
-  color: #fff;
-  background: #000;
-  font-weight: 700;
+#header ul li a.active,
+#header ul li a.active:hover {
+    color: #fff;
+    background: #000;
+    font-weight: 700;
 }
 
 #header ul li a span {
@@ -615,10 +614,12 @@ p {
   width: 100%;
 }
 
-.col1, .col2, .col3 {
-  float: left;
-  position: relative;
-  padding: .5em;
+.col1,
+.col2,
+.col3 {
+    float: left;
+    position: relative;
+    padding: .5em;
 }
 
 .threecol {
@@ -770,6 +771,7 @@ p {
   .indexpage, .section {
     width: 100%;
   }
+
   .leftsection, .rightsection {
     width: 93%;
     float: none;
@@ -781,20 +783,24 @@ p {
   .titletop {
     font-size: 20px;
   }
+
   .titlebottom {
     font-size: 32px;
   }
-  .t20leftmenu .colleft {
+
+    .t20leftmenu .colleft {
     right: 100%;
   }
   .rightphoto, .t20leftmenu .colleft .col2 {
     display: none;
   }
-  .t20leftmenu .colleft .col1 {
+
+    .t20leftmenu .colleft .col1 {
     width: 100%;
     left: 100%;
   }
-  .content {
+
+    .content {
     width: 98%;
   }
 }
@@ -887,11 +893,12 @@ a.size0, a.size9, a.size9:link, a.size9:visited {
 }
 
 a.size0 {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 a.size0:link, a.size0:visited {
-  color: #000;
+    color: #000;
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2";
+@import "mytngstyle.ss";

@@ -1,6 +1,6 @@
 #mast {
     background-color: #68939b;
-    background-image: linear-gradient(180deg, #729fa7, #37717c);
+    background-image: linear-gradient(180deg, #729fa7 0, #37717c);
     border-top: 1px solid #9ec5cc;
 }
 
@@ -14,5 +14,3 @@
   border-top: 1px solid #9b8875;
   text-shadow: #000 1px 1px 0;
 }
-
-/*# sourceMappingURL=tngmobile.css.map */

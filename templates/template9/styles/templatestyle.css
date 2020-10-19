@@ -866,7 +866,7 @@ div.art-block img {
     margin: 0 !important;
     padding: 0 16px !important;
     overflow: visible;
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .art-button-wrapper, .art-button-wrapper img, .art-button img {
@@ -1128,11 +1128,12 @@ h2.art-postheader a.hovered, h2.art-postheader a:hover {
   text-align: center;
 }
 
-.art-footer-text a, .art-footer-text a:link {
-  color: #bcb4a9;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: none;
+.art-footer-text a,
+.art-footer-text a:link {
+    color: #bcb4a9;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .art-footer-text a:visited {
@@ -1494,15 +1495,18 @@ table.calendar, td.calDay, td.calToday {
   div.art-headerobject {
     width: 100%;
   }
+
   div.art-logo {
     left: 0;
     margin-left: 0;
     width: 100%;
     top: 0;
   }
-  div.art-headerobject {
+
+    div.art-headerobject {
     background-image: none;
   }
+
 }
 
 .fambackground {
@@ -1513,7 +1517,8 @@ table.calendar, td.calDay, td.calToday {
   .art-content-layout .art-sidebar1 {
     display: none;
   }
-  .art-sheet {
+
+    .art-sheet {
     min-width: 0;
     margin: 0;
     width: 100%;
@@ -1524,37 +1529,47 @@ table.calendar, td.calDay, td.calToday {
   .art-content-layout .art-layout-cell, .art-content-layout .art-layout-cell .art-content-layout .art-layout-cell {
     display: block;
   }
-  .art-content-layout .art-sidebar1 {
+
+    .art-content-layout .art-sidebar1 {
     display: none;
   }
-  h1.art-logo-name {
+
+    h1.art-logo-name {
     font-size: 22px;
     text-shadow: 1px 1px 3px #333;
   }
-  h2.art-logo-text {
+
+    h2.art-logo-text {
     font-size: 12px;
   }
-  div#art-header-bg, div.art-header, div.art-header-clip, div.art-header-jpeg {
+
+    div#art-header-bg, div.art-header, div.art-header-clip, div.art-header-jpeg {
     height: 100px;
   }
-  div#art-hmenu-bg {
+
+    div#art-hmenu-bg {
     top: 100px;
   }
-  .art-post {
+
+    .art-post {
     border: none;
   }
-  .temppreview {
+
+    .temppreview {
     width: 100%;
   }
-  .art-content-layout .art-sidebar2 {
+
+    .art-content-layout .art-sidebar2 {
     width: 100%;
-    background-color: transparent;
-  }
-  .art-sheet {
-    min-width: 0;
-    margin: 0;
-    width: 100%;
-  }
+        background-color: transparent;
+    }
+
+    .art-sheet {
+        min-width: 0;
+        margin: 0;
+        width: 100%;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

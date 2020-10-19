@@ -376,19 +376,24 @@ ul.tngdd .topline {
   .middlecol, .rightcontent {
     display: none;
   }
+
   #maintitle {
     font-size: 20px;
     line-height: 20px;
   }
-  .strip {
+
+    .strip {
     text-align: left;
-  }
-  .logo, .maincontent, .news, .rightcontent {
-    display: inline-block;
-  }
-  .logo {
-    width: 100%;
-  }
+    }
+
+    .logo, .maincontent, .news, .rightcontent {
+        display: inline-block;
+    }
+
+    .logo {
+        width: 100%;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2";
+@import "mytngstyle.css";

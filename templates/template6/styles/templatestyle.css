@@ -47,14 +47,15 @@ a:visited {
   color: #8b8776;
 }
 
-.fieldnameback, .tablesaw-cell-label {
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-right-color: #633;
-  border-bottom-color: #633;
-  background-image: url(../img/fieldbg.jpg);
+.fieldnameback,
+.tablesaw-cell-label {
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: #633;
+    border-bottom-color: #633;
+    background-image: url(../img/fieldbg.jpg);
 }
 
 .databack {
@@ -317,12 +318,15 @@ div.icons-rt a, div.icons a {
   .titlemid {
     display: none;
   }
-  .headertitle {
-    font-size: 30px;
-  }
-  .row60 {
-    height: 50px;
-  }
+
+    .headertitle {
+        font-size: 30px;
+    }
+
+    .row60 {
+        height: 50px;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

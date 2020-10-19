@@ -406,8 +406,9 @@ div.art-block img {
   text-align: center;
 }
 
-.art-footer-text a, .art-footer-text a:link {
-  text-decoration: none;
+.art-footer-text a,
+.art-footer-text a:link {
+    text-decoration: none;
 }
 
 .art-content-layout .art-sidebar1 {
@@ -415,8 +416,10 @@ div.art-block img {
   padding-left: 10px;
 }
 
-.header, .plainheader, .subhead {
-  color: #555;
+.header,
+.plainheader,
+.subhead {
+    color: #555;
 }
 
 a:active, a:link, div.icons a {
@@ -609,14 +612,17 @@ h2.site-head, h2.site-head a {
     margin: 0;
     width: 95%;
   }
+
   .art-content-layout .art-layout-cell, .art-content-layout .art-layout-cell .art-content-layout .art-layout-cell {
     display: block;
   }
-  .art-sheet-cc {
+
+    .art-sheet-cc {
     border: none;
     box-shadow: none;
   }
-  #tsearchbox {
+
+    #tsearchbox {
     box-shadow: none;
     width: 90%;
   }
@@ -626,32 +632,41 @@ h2.site-head, h2.site-head a {
   #linkarea, .dotted-line, .greenvine {
     display: none;
   }
-  .art-block {
+
+    .art-block {
     float: none;
     margin-left: 0;
   }
-  .big-header {
+
+    .big-header {
     font-size: 24pt;
   }
-  h2.site-head {
+
+    h2.site-head {
     padding-left: 0;
     font-size: 18pt;
   }
-  .art-sheet {
+
+    .art-sheet {
     margin: 0;
   }
-  .left-indent {
+
+    .left-indent {
     padding-left: 0;
   }
-  .art-post-body {
+
+    .art-post-body {
     padding: 10px 0;
-  }
-  #tsearchbox input[type=text] {
-    margin: 5px;
-  }
-  .art-sheet-body {
-    margin-bottom: 0;
-  }
+    }
+
+    #tsearchbox input[type=text] {
+        margin: 5px;
+    }
+
+    .art-sheet-body {
+        margin-bottom: 0;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

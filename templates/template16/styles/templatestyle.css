@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Rochester");
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300");
+
 #thomebody h2, #tmenu, #tsidebar h3, h1 {
     font-family: Quicksand, sans-serif;
 }
@@ -289,28 +290,35 @@ ul.tngdd .topline {
   .std-only {
     display: none;
   }
-  #thomemast h1 {
+
+    #thomemast h1 {
     font-size: 24pt;
     line-height: 24pt;
   }
-  #mainphoto {
+
+    #mainphoto {
     margin: 0 0 15px;
     float: none;
   }
-  #mainphoto img {
+
+    #mainphoto img {
     width: 100%;
   }
-  #tpage {
+
+    #tpage {
     width: 90%;
   }
-  .mainsection p {
+
+    .mainsection p {
     font-size: 11pt;
     line-height: 1.3em;
   }
-  .tablediv {
+
+    .tablediv {
     width: 92%;
   }
-  .tblock {
+
+    .tblock {
     padding: 13px;
   }
 }
@@ -321,12 +329,15 @@ ul.tngdd .topline {
     width: 92%;
     font-size: 11pt;
   }
-  #tsidebar {
-    display: none;
-  }
-  #thomebody {
-    width: 100%;
-  }
+
+    #tsidebar {
+        display: none;
+    }
+
+    #thomebody {
+        width: 100%;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

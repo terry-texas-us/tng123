@@ -179,6 +179,7 @@ a.topmenu:active, a.topmenu:hover {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
+
 }
 
 .indexbox {
@@ -205,6 +206,7 @@ a.topmenu:active, a.topmenu:hover {
   font-size: 12px;
   text-align: right;
   margin-right: 5px;
+
 }
 
 .padding {
@@ -357,36 +359,43 @@ ul.tngdd .topline {
   .imagesection, .spacercol {
     display: none;
   }
-  .indexheader {
+
+    .indexheader {
     font-size: 24px;
     text-align: left;
     padding-left: 10px;
   }
-  table.innertable div.header, table.innertable div.normal {
+
+    table.innertable div.header, table.innertable div.normal {
     margin-left: 5px;
     margin-right: 5px;
   }
-  .leftcontent {
+
+    .leftcontent {
     margin-left: 5px;
     width: 100%;
   }
-  .rightcontent {
+
+    .rightcontent {
     text-align: left;
   }
-  #searchbox {
+
+    #searchbox {
     width: 100%;
     float: none;
     margin-left: 0;
   }
-  #menubar {
-    text-align: left;
-  }
+
+    #menubar {
+        text-align: left;
+    }
 }
 
 @media (max-width: 500px) {
-  #menubar {
-    display: none;
-  }
+    #menubar {
+        display: none;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

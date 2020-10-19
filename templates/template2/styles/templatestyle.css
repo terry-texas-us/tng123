@@ -264,16 +264,14 @@ ul.tngdd .topline {
 }
 
 .maintitle {
-  font-size: 48px;
-  color: #676037;
-}
-
-.maintitle, .mmaintitle, .smalltitle {
+    font-size: 48px;
     font-family: Georgia, Arial, sans-serif;
+    color: #676037;
 }
 
 .mmaintitle, .smalltitle {
-  font-style: italic;
+    font-family: Georgia, Arial, sans-serif;
+    font-style: italic;
 }
 
 .smalltitle {
@@ -339,12 +337,15 @@ em.toptitle {
   #linktable {
     display: none;
   }
-  .maintitle {
-    font-size: 30px;
-  }
-  #mainphoto {
-    width: 100%;
-  }
+
+    .maintitle {
+        font-size: 30px;
+    }
+
+    #mainphoto {
+        width: 100%;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

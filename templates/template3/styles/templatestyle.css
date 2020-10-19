@@ -264,12 +264,14 @@ ul.tngdd .topline {
 }
 
 @media (max-width: 530px) {
-  .maintitle {
-    font-size: 30px;
-  }
-  .mainimg {
-    width: 100%;
-  }
+    .maintitle {
+        font-size: 30px;
+    }
+
+    .mainimg {
+        width: 100%;
+    }
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

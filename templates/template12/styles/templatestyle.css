@@ -129,15 +129,16 @@ html {
 }
 
 body {
+
   color: #000;
 }
 
 .publicbody {
-  padding: 0;
-  margin: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.11), rgba(158, 135, 110, 0.16) 250px) no-repeat, url(../img/page.png), linear-gradient(0deg, #181510, #846f58 250px) no-repeat;
-  -svg-background: linear-gradient(0deg, rgba(0, 0, 0, 0.11), rgba(158, 135, 110, 0.16) 250px) no-repeat, url(../img/page.png), linear-gradient(0deg, #181510, #846f58 250px) no-repeat;
-  background-attachment: fixed, fixed, fixed !important;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url(../img/page.png), linear-gradient(0deg, #181510 0, #846f58 250px) no-repeat;
+    -svg-background: linear-gradient(0deg, rgba(0, 0, 0, 0.11) 0, rgba(158, 135, 110, 0.16) 250px) no-repeat, url(../img/page.png), linear-gradient(0deg, #181510 0, #846f58 250px) no-repeat;
+    background-attachment: fixed, fixed, fixed !important;
 }
 
 .clearfix:after, .clearfix:before {
@@ -262,17 +263,19 @@ table.position {
 }
 
 .cb-nav {
-  background: #c3a979;
-  background: linear-gradient(0deg, #dbcbae, #b08e4f 87%, #a28349) no-repeat;
-  -svg-background: linear-gradient(0deg, #dbcbae, #b08e4f 87%, #a28349) no-repeat;
-  border-radius: 20px;
-  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.15);
-  padding: 3px;
-  margin: 10px auto 0;
-  position: relative;
-  z-index: 100;
-  font-size: 0;
-  text-align: left;
+    background: #c3a979;
+    background: linear-gradient(0deg, #dbcbae 0, #b08e4f 87%, #a28349) no-repeat;
+    -svg-background: linear-gradient(0deg, #dbcbae 0, #b08e4f 87%, #a28349) no-repeat;
+    border-radius: 20px;
+
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.15);
+
+    padding: 3px;
+    margin: 10px auto 0;
+    position: relative;
+    z-index: 100;
+    font-size: 0;
+    text-align: left;
 }
 
 ul.cb-hmenu a, ul.cb-hmenu a:hover, ul.cb-hmenu a:link, ul.cb-hmenu a:visited {
@@ -377,15 +380,15 @@ ul.cb-hmenu > li > a {
 }
 
 ul.cb-hmenu > li > a.active {
-  background: #b8a27f;
-  background: linear-gradient(0deg, #d4c6b0, #a4885b 84%, #947b51) no-repeat;
-  -svg-background: linear-gradient(0deg, #d4c6b0, #a4885b 84%, #947b51) no-repeat;
-  border-radius: 8px;
-  border: 1px solid #87704a;
-  padding: 0 12px;
-  margin: 0 auto;
-  color: #382d19;
-  text-decoration: none;
+    background: #b8a27f;
+    background: linear-gradient(0deg, #d4c6b0 0, #a4885b 84%, #947b51) no-repeat;
+    -svg-background: linear-gradient(0deg, #d4c6b0 0, #a4885b 84%, #947b51) no-repeat;
+    border-radius: 8px;
+    border: 1px solid #87704a;
+    padding: 0 12px;
+    margin: 0 auto;
+    color: #382d19;
+    text-decoration: none;
 }
 
 ul.cb-hmenu > li:hover > a, ul.cb-hmenu > li > a:hover, ul.cb-hmenu > li > a:visited {
@@ -393,13 +396,13 @@ ul.cb-hmenu > li:hover > a, ul.cb-hmenu > li > a:hover, ul.cb-hmenu > li > a:vis
 }
 
 .desktop ul.cb-hmenu > li:hover > a, ul.cb-hmenu > li > a:hover {
-  background: #b8a27f;
-  background: linear-gradient(0deg, #d4c6b0, #a4885b 84%, #947b51) no-repeat;
-  -svg-background: linear-gradient(0deg, #d4c6b0, #a4885b 84%, #947b51) no-repeat;
-  border-radius: 8px;
-  border: 1px solid #87704a;
-  padding: 0 12px;
-  margin: 0 auto;
+    background: #b8a27f;
+    background: linear-gradient(0deg, #d4c6b0 0, #a4885b 84%, #947b51) no-repeat;
+    -svg-background: linear-gradient(0deg, #d4c6b0 0, #a4885b 84%, #947b51) no-repeat;
+    border-radius: 8px;
+    border: 1px solid #87704a;
+    padding: 0 12px;
+    margin: 0 auto;
 }
 
 .desktop-nav ul.cb-hmenu > li:hover > a, ul.cb-hmenu > li > a:hover {
@@ -674,6 +677,7 @@ form.cb-search > input {
 td.cb-searchtext table tbody tr td input[type=submit] {
   background: url(../img/searchicon.png) 50% no-repeat;
   width: 24px;
+
   box-shadow: none;
   -o-box-shadow: none;
   border-color: transparent;
@@ -777,8 +781,9 @@ pre {
   text-align: center;
 }
 
-.cb-footer a, .cb-footer a:link {
-  color: #ad9a85;
+.cb-footer a,
+.cb-footer a:link {
+    color: #ad9a85;
 }
 
 .cb-footer a, .cb-footer a:link, .cb-footer a:visited {
@@ -959,14 +964,15 @@ a:active, a:link {
   background-color: #504034;
 }
 
-.fieldnameback, .tablesaw-cell-label {
-  background-color: #504034;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-right-color: #504034;
-  border-bottom-color: #504034;
+.fieldnameback,
+.tablesaw-cell-label {
+    background-color: #504034;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: #504034;
+    border-bottom-color: #504034;
 }
 
 .databack {
@@ -1104,12 +1110,16 @@ a.admincell:hover, a.leftlink:hover {
   .layout-item-1 img {
     width: 100%;
   }
-  .cb-content .cb-postcontent-0 .layout-item-0 {
-    border: none;
-  }
-  .cb-content .cb-postcontent-0 .layout-item-1 {
-    padding-top: 0;
-  }
+
+    .cb-content .cb-postcontent-0 .layout-item-0 {
+        border: none;
+    }
+
+    .cb-content .cb-postcontent-0 .layout-item-1 {
+        padding-top: 0;
+    }
+
 }
 
-/*# sourceMappingURL=templatestyle.css.map */
+@import "tngtabs2.css";
+@import "mytngstyle.css";

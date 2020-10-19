@@ -4,7 +4,7 @@ body {
 
 #mast {
     background-color: #9fbfdf;
-    background-image: linear-gradient(180deg, #9fbfdf, #2e5d85);
+    background-image: linear-gradient(180deg, #9fbfdf 0, #2e5d85);
     border-top: 1px solid #9fbfdf;
 }
 
@@ -22,5 +22,3 @@ body {
 .mapcol {
   width: 50%;
 }
-
-/*# sourceMappingURL=tngmobile.css.map */

@@ -4,7 +4,7 @@ body {
 
 #mast {
     background-color: #073d3c;
-    background-image: linear-gradient(180deg, #135c5a, #04302f);
+    background-image: linear-gradient(180deg, #135c5a 0, #04302f);
     border-top: 1px solid #217574;
 }
 
@@ -19,5 +19,3 @@ body {
   text-shadow: #fff 1px 1px 1px;
   color: #000;
 }
-
-/*# sourceMappingURL=tngmobile.css.map */
