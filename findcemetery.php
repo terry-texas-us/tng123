@@ -71,7 +71,6 @@ if (!$numrows) {
 $helplang = findhelp("cemeteries_help.html");
 
 tng_adminheader($admtext['modifycemetery'], "");
-
 echo "</head>\n";
 echo tng_adminlayout();
 ?>
@@ -80,7 +79,7 @@ echo tng_adminlayout();
         <tr class="fieldnameback">
             <td>
                 <img src="cemeteries_icon.gif" width="40" height="40" style="border-width=1px;border-style=solid;" align="right">
-                <span class="whiteheader" style="font-size: large; "><?php echo $admtext['modifycemetery']; ?></span>
+                <span class="whiteheader mt-0 text-base" style="font-size: large; "><?php echo $admtext['modifycemetery']; ?></span>
             </td>
         </tr>
         <?php if ($message) { ?>

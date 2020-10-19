@@ -100,7 +100,7 @@ function ColorPicker() {
         cp_contents += "<html lang='en'>";
         cp_contents += "<head>";
         cp_contents += "<title>Select Color</title>";
-        cp_contents += "<link href='css/genstyle.css' rel='stylesheet'>";
+        cp_contents += "<link href='css/style.css' rel='stylesheet'>";
         cp_contents += "</head>";
         cp_contents += "<body>";
     }

@@ -244,8 +244,8 @@ if ($notestogether == 1) {
 
     if ($notes) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class=\"fieldnameback align-top\" id=\"notes1\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
-        $persontext .= "<td class='databack' colspan='2'><div class=\"notearea\">$notes</div></td>\n";
+        $persontext .= "<td class='fieldnameback align-top' id=\"notes1\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='databack' colspan='2'><div class='notearea'>$notes</div></td>\n";
         $persontext .= "</tr>\n";
         $notes = ""; //wipe it out so we don't get a link at the top
     }
@@ -401,7 +401,7 @@ if ($parents && tng_num_rows($parents)) {
 
                     if ($famnotes2) {
                         $persontext .= "<tr>\n";
-                        $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+                        $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
                         $persontext .= "<td class='databack' colspan='2'><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
                         $persontext .= "</tr>\n";
                     }
@@ -515,7 +515,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
         if ($famnotes2) {
             $persontext .= "<tr>\n";
-            $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+            $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
             $persontext .= "<td class='databack' colspan='2'><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
             $persontext .= "</tr>\n";
         }
@@ -527,7 +527,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
     if ($children && tng_num_rows($children)) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['children']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>{$text['children']}&nbsp;</span></td>\n";
         $persontext .= "<td class='databack' colspan='2'>\n";
 
         $kidcount = 1;

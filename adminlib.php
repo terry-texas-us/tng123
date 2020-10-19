@@ -32,17 +32,12 @@ function tng_adminheader($title, $flags) {
     include "adminmeta.php";
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
-
-//    echo "<link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>\n";
-    echo "<link href='build/genstyle.css' rel='stylesheet'>\n";
-    if (isset($flags['modmgr'])) {
-        echo "<link href='css/modmanager.css' rel='stylesheet'>\n";
-    }
-    echo "<link href='build/template{$templatenum}/styles/templatestyle.css' rel='stylesheet'>\n";
+    echo "<link href='build/styles/style.css' rel='stylesheet'>\n";
+    if (isset($flags['modmgr'])) echo "<link href='build/styles/modmanager.css' rel='stylesheet'>\n";
+    if (is_numeric($templatenum)) echo "<link href='build/template{$templatenum}/styles/style.css' rel='stylesheet'>\n";
     if (isMobile()) {
-        echo "<link href='css/tngmobile.css' rel='stylesheet'>\n";
-    }
-    if (!isMobile()) {
+        echo "<link href='build/styles/tngmobile.css' rel='stylesheet'>\n";
+    } else {
         echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     }
     echo "<script>\n";
@@ -82,9 +77,8 @@ function tng_adminlayout($args = "") {
     $helplang = findhelp("index_help.php");
 
     if (isMobile()) $tng_title = $tng_abbrev;
-
     $output = "<body class='adminbody m-0'$args>\n";
-    $output .= "<div class='topbanner fixed w-full m-0 leading-snug top-0 sideback whiteheader'>\n";
+    $output .= "<div class='topbanner fixed w-full m-0 leading-snug top-0 sideback whiteheader text-base'>\n";
     if (!isMobile()) { // corner
         $output .= "<div class='admincorner float-left'>\n";
         $output .= "<a href='http://lythgoes.net/genealogy/software.php' target='_blank'>";

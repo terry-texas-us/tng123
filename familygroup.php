@@ -28,7 +28,7 @@ $factcols = $totcols - 1;
 function showFact($text, $fact) {
     global $factcols;
     $facttext = "<tr>\n";
-    $facttext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>" . $text . "&nbsp;</span></td>\n";
+    $facttext .= "<td class='fieldnameback align-top'><span class='fieldname'>" . $text . "&nbsp;</span></td>\n";
     $facttext .= "<td colspan=\"$factcols\" class='databack'><span class='normal'>$fact&nbsp;</span></td>\n";
     $facttext .= "</tr>\n";
 
@@ -59,7 +59,7 @@ function showDatePlace($event) {
 
     $dptext .= "<tr>\n";
     $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
-    $dptext .= "<td class=\"fieldnameback align-top\"$cellid><span class='fieldname'>" . $event['text'] . "&nbsp;$editicon</span></td>\n";
+    $dptext .= "<td class='fieldnameback align-top'$cellid><span class='fieldname'>" . $event['text'] . "&nbsp;$editicon</span></td>\n";
     $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td class='databack'";
     if ($allow_lds_this && $event['ldstext']) {
@@ -77,7 +77,7 @@ function showDatePlace($event) {
             $event['ID'] = $event['ID2'];
         }
         $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
-        $dptext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
+        $dptext .= "<td class='fieldnameback align-top'><span class='fieldname'>" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>{$event['ldsplace']}&nbsp;";
         if ($event['ldsplace'] && $event['ldsplace'] != $text['place']) {

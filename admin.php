@@ -26,7 +26,7 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
         $iconstr = $msgstr = "";
     } else {
         $iconstr = "<img src='img/{$icon}_icon.gif' alt='{$label}' class='adminicon float-left rounded m-2 shadow'>\n";
-        $msgstr = "<div class='adminsubmsg text-sm'>$message</div>\n";
+        $msgstr = "<div class='adminsubmsg text-xs'>$message</div>\n";
     }
 
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";

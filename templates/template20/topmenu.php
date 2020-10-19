@@ -143,7 +143,7 @@ echo "</script>\n";
                     </div>
 
                     <div class="arrowlistmenu">
-                        <p class="whiteheader menuheader expandable">
+                        <p class="whiteheader mt-0 text-base menuheader expandable">
                             <?php echo getTemplateMessage('t20_sidebarhead1'); ?>
                         </p>
                     </div>
@@ -213,7 +213,7 @@ echo "</script>\n";
                     </div>
 
                     <div class="arrowlistmenu">
-                        <p class="whiteheader menuheader expandable">
+                        <p class="whiteheader mt-0 text-base menuheader expandable">
                             <?php echo getTemplateMessage('t20_sidebarhead2'); ?>
                         </p>
                     </div>
@@ -232,7 +232,7 @@ echo "</script>\n";
                     </div>
 
                     <div class="arrowlistmenu">
-                        <p class="whiteheader menuheader expandable">
+                        <p class="whiteheader mt-0 text-base menuheader expandable">
                             <?php echo getTemplateMessage('t20_sidebarhead3'); ?>
                         </p>
                     </div>

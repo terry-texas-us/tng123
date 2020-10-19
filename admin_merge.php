@@ -70,11 +70,11 @@ function doRow($field, $textmsg, $boxname) {
 
     if ($p1field || $p2field) {
         echo "<tr>\n";
-        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
+        echo "<td width='15%' class='fieldnameback align-top' nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
         echo "<td class='lightback' width=\"31%\"><span class='normal'>$p1field&nbsp;</span></td>";
         if (is_array($p2row)) {
-            echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
+            echo "<td width='10%'>&nbsp;&nbsp;</td>";
+            echo "<td width='15%' class='fieldnameback align-top' nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
             echo "<td class='lightback' width='5'><span class='normal'>";
             //if it's a spouse and they're equal, do a hidden field for p1 & p2 and don't do the checkbox
             if ($textmsg == "spouse") {
@@ -103,8 +103,8 @@ function doRow($field, $textmsg, $boxname) {
             }
             echo "<td class='lightback' width=\"31%\"><span class='normal'>$p2field&nbsp;</span></td>";
         } else {
-            echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
+            echo "<td width='10%'>&nbsp;&nbsp;</td>";
+            echo "<td width='15%' class='fieldnameback align-top' nowrap><span class='fieldname'><strong>{$admtext[$textmsg]}:</strong></span></td>";
             echo "<td class='lightback' width='5'><span class='normal'>&nbsp;</span></td>";
             echo "<td class='lightback' width=\"31%\"><span class='normal'>&nbsp;</span></td>";
         }

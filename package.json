@@ -8,7 +8,6 @@
     "Firefox ESR"
   ],
   "dependencies": {
-    "bootstrap": "^5.0.0-alpha2",
     "postcss": "^8.1.1",
     "tailwindcss": "^1.9.2"
   },
@@ -22,7 +21,6 @@
     "gulp-postcss": "^9.0.0",
     "gulp-purgecss": "^3.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2"

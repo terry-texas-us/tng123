@@ -152,18 +152,14 @@ class HeadElementPublic
     public function getLinkElements(): array {
         global $responsivetables, $templatenum, $tngconfig, $tngdomain, $tngprint;
         $links = [];
-//        $links[] = "<link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>";
-        $links[] = "<link href='build/genstyle.css' rel='stylesheet'>";
-        if (isMobile() && $responsivetables) {
-            $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
-        }
-        $links[] = "<link href='build/template{$templatenum}/styles/templatestyle.css' rel='stylesheet'>";
+        $links[] = "<link href='build/styles/style.css' rel='stylesheet'>";
+        if (is_numeric($templatenum)) $links[] = "<link href='build/template{$templatenum}/styles/style.css' rel='stylesheet'>";
         if (isMobile()) {
-            $links[] = "<link href='css/tngmobile.css' rel='stylesheet'>";
-            $links[] = "<link href='build/template{$templatenum}/styles/tngmobile.css' rel='stylesheet'>";
+            if ($responsivetables) $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
+            $links[] = "<link href='build/styles/tngmobile.css' rel='stylesheet'>";
+            if (is_numeric($templatenum)) $links[] = "<link href='build/template{$templatenum}/styles/tngmobile.css' rel='stylesheet'>";
         }
         if (isset($this->flags['link'])) $links[] = $this->flags['link'];
-
         if (isMobile()) {
             $links[] = "<link rel='apple-touch-icon-precomposed' sizes='144x144' href='$tngdomain/img/tng-apple-icon-144.png'>";
             $links[] = "<link rel='apple-touch-icon-precomposed' sizes='114x114' href='$tngdomain/img/tng-apple-icon-114.png'>";
@@ -174,9 +170,7 @@ class HeadElementPublic
             $links[] = "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>";
         }
         $links[] = "<link rel='alternate' type='application/rss+xml' title='RSS' href='tngrss.php'>";
-        if ($tngprint) {
-            $links[] = "<link href='css/tngprint.css' rel='stylesheet'>";
-        }
+        if ($tngprint) $links[] = "<link href='build/styles/tngprint.css' rel='stylesheet'>";
         return $links;
     }
 

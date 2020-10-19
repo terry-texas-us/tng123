@@ -51,11 +51,11 @@ function doRow($field, $textmsg, $boxname) {
 
     if ($s1field || $s2field) {
         echo "<tr>\n";
-        echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
+        echo "<td width='15%' class='fieldnameback align-top' nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
         echo "<td width=\"31%\" class='lightback'><span class='normal'>$s1field&nbsp;</span></td>";
         if (is_array($s2row)) {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td width='15%' class='fieldnameback align-top' nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
             echo "<td width='5' class='lightback'><span class='normal'>";
             if ($boxname) {
                 if ($s2field) {
@@ -72,7 +72,7 @@ function doRow($field, $textmsg, $boxname) {
             echo "<td class='lightback' width=\"31%\"><span class='normal'>$s2field&nbsp;</span></td>";
         } else {
             echo "<td width=\"10\">&nbsp;&nbsp;</td>";
-            echo "<td width=\"15%\" class=\"fieldnameback align-top\" nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
+            echo "<td width=\"15%\" class='fieldnameback align-top' nowrap><span class='fieldname'><strong>$admtext[$textmsg]:</strong></span></td>";
             echo "<td class='lightback' width='5'><span class='normal'>&nbsp;</span></td>";
             echo "<td class='lightback' width=\"31%\"><span class='normal'>&nbsp;</span></td>";
         }

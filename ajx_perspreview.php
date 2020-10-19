@@ -216,7 +216,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
     if ($children && tng_num_rows($children)) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class=\"fieldnameback align-top\"><span class='fieldname'>{$text['children']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>{$text['children']}&nbsp;</span></td>\n";
         $persontext .= "<td class='databack' colspan='2'>\n";
 
         $kidcount = 1;

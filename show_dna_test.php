@@ -279,7 +279,7 @@ if ($dnarow['medialinks']) {
 if ($dnarow['notes']) {
     $dnatext .= "<tr>\n";
     $dnatext .= "<td class=\"fieldnameback fieldname align-top\">" . nl2br($text['notes']) . "&nbsp;</td>\n";
-    $dnatext .= "<td class='databack' colspan='2'><div class=\"notearea\">{$dnarow['notes']}</div></td>\n";
+    $dnatext .= "<td class='databack' colspan='2'><div class='notearea'>{$dnarow['notes']}</div></td>\n";
     $dnatext .= "</tr>\n";
 }
 if ($allow_admin && $dnarow['admin_notes']) {

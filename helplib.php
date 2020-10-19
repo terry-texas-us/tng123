@@ -9,13 +9,11 @@ function help_header($helptitle) {
     $header = "<!doctype html>\n";
     $header .= "<html lang='en'>\n";
     $header .= "<head>\n";
-    $header .= "<meta charset='utf-8'>\n";
     $header .= "<title>$helptitle</title>\n";
+    $header .= "<meta charset='utf-8'>\n";
     $header .= "<meta name='author' content='Darrin Lythgoe'>\n";
-    //    $header .= "<link href='{$relpath}css/bootstrap-reboot.min.css' rel='stylesheet'>\n";
-    $header .= "<link href='{$relpath}build/genstyle.css' rel='stylesheet'>\n";
-    $header .= "<link href='{$relpath}{$templatepath}css/templatestyle.css' rel='stylesheet'>\n";
-    $header .= "<link href='{$relpath}{$templatepath}css/mytngstyle.css' rel='stylesheet'>\n";
+    $header .= "<link href='{$relpath}build/styles/style.css' rel='stylesheet'>\n";
+    $header .= "<link href='{$relpath}{$templatepath}styles/style.css' rel='stylesheet'>\n";
     $header .= file_get_contents($relpath . "adminmeta.php");
     $header .= "</head>";
     return $header;

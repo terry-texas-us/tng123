@@ -85,16 +85,13 @@ if (!isset($_SESSION['logged_in']) && isset($_COOKIE[$loggedin]) && !empty($rese
 }
 tng_adminheader($admtext['login'], "");
 if (!empty($reset)) $_COOKIE[$loggedin] = "";
-
-
 echo "</head>\n";
 echo tng_adminlayout();
-
 ?>
 <table class="w-75 m-auto" cellpadding="10" bgcolor="#fff">
     <tr>
         <td class="fieldnameback rounded10">
-            <span class="whiteheader" style="font-size: large; "><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></span>
+            <span class="whiteheader mt-0 text-base" style="font-size: large; "><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></span>
         </td>
     </tr>
     <?php if (!empty($message)) { ?>

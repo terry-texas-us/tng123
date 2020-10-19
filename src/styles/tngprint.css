@@ -12,10 +12,6 @@ body {
   background: none;
 }
 
-.noprint {
-  display: none;
-}
-
 .databack, .fieldnameback, .snlink, .snlinkact {
   background-color: #fff;
   border: 1px solid #000;
