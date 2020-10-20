@@ -296,10 +296,6 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
   overflow: hidden;
 }
 
-#descendantchart {
-  text-align: left;
-}
-
 #descendantchart li {
   list-style-type: none;
   white-space: nowrap;
@@ -307,12 +303,6 @@ a.lightlink3:active, a.lightlink3:hover, a.lightlink3:link, a.lightlink3:visited
 
 #descendantchart ul {
   margin-left: 0;
-}
-
-#descendantchart ul.first {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
 }
 
 .media-prev {

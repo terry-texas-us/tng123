@@ -72,9 +72,10 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
             if ($numkids) {
                 $divname = "fc$divctr";
                 $divctr++;
-                $rval .= str_repeat("  ", ($level - 1) * 8 - 4) . "<li><img src='img/$excolimg.gif' width='9' height='9' hspace='0' vspace='0' border='0' title='$imgtitle' id='plusminus$divname' onclick=\"return toggleDescSection('$divname');\" class=\"fakelink\" alt=\"\"> $spousestr";
-                $rval .= str_repeat("  ", ($level - 1) * 8 - 2) . "<ul id=\"$divname\" class='normal' style=\"display:$display;\">\n";
-
+                $rval .= str_repeat("  ", ($level - 1) * 8 - 4);
+                $rval .= "<li><img src='img/$excolimg.gif' class='inline-block' width='9' height='9' hspace='0' vspace='0' border='0' title='$imgtitle' id='plusminus$divname' onclick=\"return toggleDescSection('$divname');\" class='fakelink' alt=''> $spousestr";
+                $rval .= str_repeat("  ", ($level - 1) * 8 - 2);
+                $rval .= "<ul id='$divname' class='normal' style='display: $display;'>\n";
                 while ($crow = tng_fetch_assoc($result2)) {
                     $childcounter++;
                     $newtrail = "$trail,{$row['familyID']},{$crow['personID']}";
@@ -84,7 +85,8 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
                     $cname = getName($crow);
                     $vitalinfo = getVitalDates($crow);
                     $newdab = $dab . "." . $childcounter;
-                    $rval .= str_repeat("  ", ($level - 1) * 8) . "<li>$level &nbsp;<a href=\"getperson.php?personID={$crow['personID']}&amp;tree=$tree\">$cname</a> <sup>[$newdab]</sup> &nbsp; <a href=\"desctracker.php?trail=$newtrail&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['graphdesc']}\"></a> $vitalinfo\n";
+                    $rval .= str_repeat("  ", ($level - 1) * 8);
+                    $rval .= "<li>$level<span class='px-3'><a href=\"getperson.php?personID={$crow['personID']}&amp;tree=$tree\">$cname</a><sup>[$newdab]</sup><a href=\"desctracker.php?trail=$newtrail&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src='img/dchart.gif' class='inline' width='10' height='9' alt=\"{$text['graphdesc']}\"></a></span>$vitalinfo\n";
                     if ($level < $generations) {
                         $ind = getIndividual($crow['personID'], $crow['sex'], $level + 1, $newtrail, $newdab);
                         if ($ind) {
@@ -93,7 +95,6 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
                         }
                     } else {
                         //do union to check for children where person is either husband or wife
-
                         $nxtfams = getSpouseFamilyMinimalUnion($tree, $crow['personID']);
                         $nxtkids = 0;
                         while ($nxtfam = tng_fetch_assoc($nxtfams)) {
@@ -259,26 +260,23 @@ if ($generations <= 12 && $allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=desc&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
 }
-
 echo getFORM("descend", "get", "form1", "form1");
 echo tng_menu("I", "descend", $personID, $innermenu);
 echo "</form>\n";
 ?>
     <div class="normal">
         <p>
-            (<?php echo "<img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"\"> = {$text['graphdesc']}, <img src=\"img/tng_plus.gif\" width=\"9\" height=\"9\" alt=\"\"> = {$text['expand']}, <img src=\"img/tng_minus.gif\" width=\"9\" height=\"9\" alt=\"\"> = {$text['collapse']}"; ?>
-            )</p>
-
-        <p><a href="#" onclick="return toggleAll('');"><?php echo $text['expandall']; ?></a> | <a href="#"
-                                                                                                  onclick="return toggleAll('none');"><?php echo $text['collapseall']; ?></a>
+            (<?php echo "<img src='img/dchart.gif' class='inline-block' width='10' height='9' alt=''> = {$text['graphdesc']}, <img src='img/tng_plus.gif' class='inline-block' width='9' height='9' alt=''> = {$text['expand']}, <img src='img/tng_minus.gif' class='inline-block' width='9' height='9' alt=''> = {$text['collapse']}"; ?>
+            )
         </p>
-
-        <div id="descendantchart" align="left">
+        <p>
+            <a href="#" onclick="return toggleAll('');"><?php echo $text['expandall']; ?></a> | <a href="#" onclick="return toggleAll('none');"><?php echo $text['collapseall']; ?></a>
+        </p>
+        <div id="descendantchart" class="text-left">
             <?php
             $vitalinfo = getVitalDates($row);
-            echo "<ul class=\"first\">\n";
-            echo "  <li>$level &nbsp;<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">$namestr</a> <sup>[1]</sup>&nbsp; $vitalinfo\n";
-
+            echo "<ul class='m-0 p-0 leading-normal'>\n";
+            echo "<li>$level<span class='px-3'><a href='getperson.php?personID=$personID&amp;tree=$tree'>$namestr</a><sup>[1]</sup></span>$vitalinfo\n";
             if ($generations > 1) {
                 $ind = getIndividual($key, $row['sex'], $level + 1, $personID, "1");
                 if ($ind) {

@@ -348,7 +348,7 @@ echo $formstr;
         <br>
         <hr>
         <h3 class="subhead"><?php echo $text['otherevents']; ?></h3>
-        <ul id="descendantchart" class="normal">
+        <ul id="descendantchart" class="normal text-left">
             <li id="expand" class="othersearch">
                 <a href="#" onclick="return toggleSection(1);" class="text-decoration-none"><img src="img/tng_expand.gif"
                         alt="" width="15"
