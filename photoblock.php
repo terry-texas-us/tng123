@@ -18,7 +18,7 @@ include "checklogin.php";
 
 <p>This page displays a random photo from your database. You can move this functionality to any other TNG page
     by copying the PHP code from this page to your destination.</p>
-<br style="clear: both;">
+<br class="clear-both">
 
 <?php
 //COPY EVERYTHING IN THIS BLOCK
@@ -67,7 +67,7 @@ echo "<tr><td class='text-center'><span class='normal'><a href=\"showmedia.php?m
 echo "</table>";
 ?>
 
-<br style="clear: both;">
+<br class="clear-both">
 <p>If you want to use this on a PHP page you created from scratch, you will need to include the PHP block
     at the top of this page as well.</p>
 

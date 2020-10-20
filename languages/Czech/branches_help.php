@@ -15,7 +15,7 @@ echo help_header("N�pov�da: V�tve");
                 <a href="eventtypes_help.php" class="lightlink">N�pov�da: Vlastn� typy ud�lost� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>V�tve</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Co to je?</a> &nbsp;|&nbsp;
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp;|&nbsp;

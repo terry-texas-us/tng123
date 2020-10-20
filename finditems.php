@@ -370,7 +370,7 @@ switch ($type) {
 }
 
 if (tng_num_rows($result)) {
-    echo "<table class='normal w-100'>\n$lines\n</table>\n";
+    echo "<table class='normal w-full'>\n$lines\n</table>\n";
 } else {
     echo $admtext['noresults'];
 }

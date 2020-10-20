@@ -1886,7 +1886,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td colspan="2"><?php echo $admtext['getcolorcodes']; ?> -> <a href="http://hnl.name/color-schemer-online/" class="snlink"
+                            <td colspan="2"><?php echo $admtext['getcolorcodes']; ?> -> <a href="http://hnl.name/color-schemer-online/" class="snlink rounded"
                                     target="_blank"><?php echo $admtext['colorschemer']; ?></a></td>
                         </tr>
                         <tr>

@@ -15,7 +15,7 @@ echo help_header("Help: Places");
                     <a href="places_googlemap_help.php" class="lightlink">Help: Google Maps &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>Places</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
                     <a href="#add" class="lightlink">Add or Edit</a> &nbsp;|&nbsp;
                     <a href="#delete" class="lightlink">Delete</a> &nbsp;|&nbsp;

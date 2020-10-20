@@ -202,7 +202,7 @@ tng_header($text['searchnames'], $flags);
     </script>
 
     <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchnames']; ?></h2>
-    <br style="clear: both;">
+    <br class="clear-both">
 <?php
 if (!empty($msg)) {
     echo "<h3 id='errormsg' class='msgerror subhead'>" . stripslashes(strip_tags($msg)) . "</h3>";
@@ -644,12 +644,12 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
             </p>
             <br><br>
             <p>
-                <a href="famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
-                <a href="searchsite.php" class="snlink">&raquo; <?php echo $text['searchsitemenu']; ?></a>
+                <a href="famsearchform.php" class="snlink rounded">&raquo; <?php echo $text['searchfams']; ?></a>
+                <a href="searchsite.php" class="snlink rounded">&raquo; <?php echo $text['searchsitemenu']; ?></a>
             </p>
         </div>
 
     </form>
-    <br style="clear: both;">
+    <br class="clear-both">
 
 <?php tng_footer(""); ?>

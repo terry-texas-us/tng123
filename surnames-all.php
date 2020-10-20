@@ -46,10 +46,10 @@ if ($result) {
 
         if ($surname['firstchar'] == "") {
             $surname['firstchar'] = $text['nosurname'];
-            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>{$text['nosurname']}</a> ";
+            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink rounded'>{$text['nosurname']}</a> ";
         } else {
             if ($surname['firstchar'] != "_") {
-                $linkstr .= "<a href=\"#char$initialchar\" class='snlink'>{$surname['firstchar']}</a>";
+                $linkstr .= "<a href=\"#char$initialchar\" class='snlink rounded'>{$surname['firstchar']}</a>";
                 $firstchars[$initialchar] = $surname['firstchar'];
                 $initialchar++;
             }
@@ -58,7 +58,7 @@ if ($result) {
     tng_free_result($result);
 }
 ?>
-    <div class="titlebox normal">
+    <div class="titlebox rounded-lg normal">
         <h3 class="subhead"><?php echo $text['surnamesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
         <br><?php echo "<a href='surnames.php'>{$text['mainsurnamepage']}</a>"; ?>
@@ -70,7 +70,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
     echo "<a id=\"char$scount\"></a>\n";
     $urlfirstchar = addslashes($firstchars[$scount]);
     ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <h2 class="header"><?php echo $firstchars[$scount]; ?></h2>
         <table class="sntable">
             <tr>

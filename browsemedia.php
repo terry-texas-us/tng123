@@ -37,9 +37,9 @@ if ($mediasearch) {
 if ($tnggallery) {
     $tnggallery = 1;
     $maxsearchresults *= 2;
-    $gallerymsg = "<a href=\"browsemedia.php?tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink'>&raquo; {$text['regphotos']}</a>";
+    $gallerymsg = "<a href=\"browsemedia.php?tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink rounded'>&raquo; {$text['regphotos']}</a>";
 } else {
-    $gallerymsg = "<a href=\"browsemedia.php?tnggallery=1&amp;tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink'>&raquo; {$text['gallery']}</a>";
+    $gallerymsg = "<a href=\"browsemedia.php?tnggallery=1&amp;tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink rounded'>&raquo; {$text['gallery']}</a>";
 }
 
 $_SESSION['tng_gallery'] = $tnggallery;
@@ -126,7 +126,7 @@ if ($orgmediatypeID) {
 }
 ?>
     <h2 class="header"><?php echo $icon . $titlestr; ?></h2>
-    <br style="clear: both;">
+    <br class="clear-both">
 <?php
 $hiddenfields[0] = ['name' => 'mediatypeID', 'value' => $orgmediatypeID];
 $hiddenfields[1] = ['name' => 'tnggallery', 'value' => $tnggallery];
@@ -143,7 +143,7 @@ $preheader = doMediaSearch(1, $pagenav);
 $preheader .= "<br>\n";
 
 if ($tnggallery) {
-    $preheader .= "<div class='titlebox'>\n";
+    $preheader .= "<div class='titlebox rounded-lg'>\n";
     $firstrow = 1;
     $tablewidth = "";
     $header = "";
@@ -423,7 +423,7 @@ if (!$tnggallery) {
 
 if (!$tngconfig['ssdisabled'] && $firsthref && $totrows > 1) {
     $ss = strpos($firsthref, "?") ? "&amp;ss=1" : "?ss=1";
-    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref$ss\" class='snlink'>&raquo; {$text['slidestart']}</a>";
+    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref$ss\" class='snlink rounded'>&raquo; {$text['slidestart']}</a>";
 }
 $toplinks .= "</p>";
 //print out the whole shootin' match right here, eh

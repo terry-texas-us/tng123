@@ -276,7 +276,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
     ?>
 
     <form action="admin_updateperson.php" method="post" name="form1" id="form1">
-        <table class="lightback normal w-100" cellpadding="10" cellspacing="2">
+        <table class="lightback normal w-full" cellpadding="10" cellspacing="2">
             <tr class="databack"> <!-- Form content Header -->
                 <td class="tngshadow">
                     <table cellpadding="0" cellspacing="0" class="normal">
@@ -292,7 +292,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                                     <?php
                                     if ($editconflict) {
                                         echo "<br><p>{$admtext['editconflict']}</p>\n";
-                                        echo "<p class='normal'><strong><a href=\"admin_editperson.php?personID=$personID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
+                                        echo "<p class='normal'><strong><a href='admin_editperson.php?personID=$personID&tree=$tree' class='rounded-lg whitebuttonlink tngshadow'>{$admtext['retry']}</a></strong></p>\n";
                                     } else {
                                         $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
                                         $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
@@ -483,10 +483,10 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                         <?php
                         while ($parent = tng_fetch_assoc($parents)) {
                         echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
-                        echo "<table class='w-100' cellpadding='5' cellspacing='1'>";
+                        echo "<table class='w-full' cellpadding='5' cellspacing='1'>";
                         echo "<tr>\n";
                         if ($parentcount > 1) {
-                            echo "<td class=\"dragarea normal\">";
+                            echo "<td class='dragarea rounded-lg normal'>";
                             echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                             echo "</td>\n";
                         }
@@ -567,17 +567,16 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             $spouse = "husband";
                         }
                     }
-
                     echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
-                    echo "<table class='w-100' cellpadding='5' cellspacing='1'>";
+                    echo "<table class='w-full' cellpadding='5' cellspacing='1'>";
                     echo "<tr>\n";
                     if ($marrcount > 1) {
-                        echo "<td class=\"dragarea normal\">";
+                        echo "<td class='dragarea rounded-lg normal'>";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
-                    echo "<table class='normal w-100'>";
+                    echo "<table class='normal w-full'>";
                     echo "<tr>";
                     echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td class='align-top' width=\"94%\">\n";

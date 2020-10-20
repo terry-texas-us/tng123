@@ -15,7 +15,7 @@ echo help_header("Help: Branches");
                 <a href="eventtypes_help.php" class="lightlink">Help: Custom Event Types &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Branches</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">What are they?</a> &nbsp;|&nbsp;
                 <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Add or Edit</a> &nbsp;|&nbsp;

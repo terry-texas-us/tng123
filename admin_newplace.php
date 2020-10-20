@@ -61,12 +61,12 @@ $menu = doMenu($placetabs, "addplace", $innermenu);
 echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['addnewplace'], "img/places_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_addplace.php" method="post" name="form1" onSubmit="return validateForm();">
-                <table class="normal w-100">
-                    <?php if (!$tngconfig['places1tree']) { ?>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <form action="admin_addplace.php" method="post" name="form1" onSubmit="return validateForm();">
+                    <table class="normal w-full">
+                        <?php if (!$tngconfig['places1tree']) { ?>
                         <tr>
                             <td><?php echo $admtext['tree']; ?>:</td>
                             <td width="90%">

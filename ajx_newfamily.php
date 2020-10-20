@@ -53,7 +53,7 @@ include_once "eventlib.php";
 
 <form action="" method="post" name="famform1" id="famform1" onsubmit="return validateFamily(this,'<?php echo $slot; ?>');">
     <input type="hidden" name="lastperson" value="<?php echo $child; ?>">
-    <table class="w-100" cellpadding="10" cellspacing="0">
+    <table class="w-full" cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">

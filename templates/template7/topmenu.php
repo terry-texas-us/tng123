@@ -3,10 +3,10 @@
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 
 <div>
-    <table class="headertitle w-100" cellspacing="0">
+    <table class="headertitle w-full" cellspacing="0">
         <tr class="row">
             <td>
-                <table class="w-100" cellspacing="0">
+                <table class="w-full" cellspacing="0">
                     <tr>
                         <?php if ($tmp['t7_titlechoice'] == "text") { ?>
                             <td class="logo" style="padding:10px;background:url(<?php echo $templatepath; ?>img/logoedge.gif) no-repeat right #DCD5B9;" width="400">
@@ -25,7 +25,7 @@
                     </tr>
                 </table>
                 <form action="search.php" method="get" style="margin:0;">
-                    <table class="w-100" cellspacing="0">
+                    <table class="w-full" cellspacing="0">
                         <tr class="strip">
                             <td class="fieldnameback">
                 <span class="fieldname">
@@ -42,7 +42,7 @@
         </tr>
     </table>
 
-    <table class="page w-100" cellspacing="0">
+    <table class="page w-full" cellspacing="0">
         <tr>
             <td class="section">
 
@@ -98,7 +98,7 @@
                 </table>
             </td>
             <td class='align-top'>
-                <table class="w-100" cellspacing="0">
+                <table class="w-full" cellspacing="0">
                     <tr>
                         <td colspan="2">
                             <div class="normal"><br>

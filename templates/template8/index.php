@@ -87,7 +87,7 @@ if (isMobile()) {
                 <h2 class="header"><?php echo $text['welcome']; ?></h2>
                 <?php include "randomphoto.php"; ?>
                 <?php echo getTemplateMessage('t8_mainpara'); ?>
-                <br style="clear: both;"><br>
+                <br class="clear-both"><br>
             </td>
             <td class="home_section" id="hs2">
                 <h2 class="header"><?php echo $text['features']; ?></h2>
@@ -102,10 +102,10 @@ if (isMobile()) {
                 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
                 echo $text['contactus_long'];
                 ?>
-                <br style="clear: both;"><br>
+                <br class="clear-both"><br>
             </td>
             <td class="home_section" id="hs3">
-                <div class="latest_news rounded10">
+                <div class="latest_news rounded-lg">
                     <h2 class="header"><?php echo $text['latestnews']; ?></h2>
                     <hr>
                     <?php echo getTemplateMessage('t8_latestnews'); ?>

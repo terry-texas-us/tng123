@@ -904,7 +904,7 @@ function tng_icons($instance, $title = "") {
             $fullmenu .= "</div>\n";
 
             if (empty($tngconfig['searchchoice']) && empty($tngconfig['showsearch'])) {
-                $fullmenu .= '<div id="searchdrop" class="slidedown" style="display:none;">';
+                $fullmenu .= '<div id="searchdrop" class="slidedown rounded-lg" style="display:none;">';
                 $fullmenu .= "<a href='#' class='float-right' onclick=\"jQuery('#searchdrop').slideUp(200); return false;\"><img src='img/tng_close.gif' alt=''></a>";
                 $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href='searchform.php'>{$text['mnuadvancedsearch']}</a> | <a href='famsearchform.php'>{$text['searchfams']}</a> | <a href='searchsite.php'>{$text['searchsitemenu']}</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
@@ -1235,7 +1235,7 @@ function showMediaLinks($linkList) {
         $usefolder = $thumbrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
         $thumb = "$usefolder/" . str_replace("%2F", "/", rawurlencode($thumbrow['thumbpath']));
         $title = !empty($thumbrow['altdescription']) ? $thumbrow['altdescription'] : $thumbrow['description'];
-        $imgsrc = "<img src=\"$thumb\" alt=\"$title\" title=\"$title\" class=\"thumb\">";
+        $imgsrc = "<img src=\"$thumb\" alt=\"$title\" title=\"$title\" class='thumb rounded'>";
         $href = getMediaHREF($thumbrow, 0);
         $finishedmedList .= "<br><a href=\"$href\" title=\"$title\" target='_blank'>" . $imgsrc . "</a>&nbsp;<a href=\"$href\" title=\"$title\" target='_blank' style=\"vertical-align:top;\">$title</a><br>";
     }

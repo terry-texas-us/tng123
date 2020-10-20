@@ -547,7 +547,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
 
 <?php if ($counter) { ?>
     <a name="events" id="events"></a>
-    <table class="whiteback w-100" cellpadding="3" cellspacing="1">
+    <table class="whiteback w-full" cellpadding="3" cellspacing="1">
         <tr>
             <td class="fieldnameback" width="20">&nbsp;</td>
             <td class="fieldnameback" width="50"><span class="fieldname"><strong>&nbsp;<?php echo $text['date']; ?></strong></span></td>

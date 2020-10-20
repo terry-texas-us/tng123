@@ -15,7 +15,7 @@ echo help_header("Help: Custom Event Types");
                 <a href="reports_help.php" class="lightlink">Help: Reports &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Custom Event Types</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Add or Edit</a> &nbsp;|&nbsp;
                 <a href="#accept" class="lightlink">Accept vs. Ignore</a> &nbsp;|&nbsp;

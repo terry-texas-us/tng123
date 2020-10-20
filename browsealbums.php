@@ -66,7 +66,7 @@ echo "<html lang='en'>\n";
 tng_header($text['albums'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h2>
-    <br style="clear: both;">
+    <br class="clear-both">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsealbums', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
@@ -84,8 +84,7 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") $tabletype = "columntoggle";
-
-    $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+    $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
 } else {
     $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
 }

@@ -15,7 +15,7 @@ echo help_header("Nápověda: Nastavení schémat");
                 <a href="logconfig_help.php" class="lightlink">Nápověda: Nastavení protokolování &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Nastavení schémat</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#ped" class="lightlink">Předkové</a> &nbsp;|&nbsp;
                 <a href="#desc" class="lightlink">Potomci</a> &nbsp;|&nbsp;
                 <a href="#rel" class="lightlink">Příbuzenské vztahy</a> &nbsp;|&nbsp;

@@ -23,7 +23,7 @@ tng_header($text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $
 $hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <div>
             <h3 class="subhead"><?php echo "{$text['allbeginningwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></h3>
             <p class="smaller"><?php echo $text['showmatchingsurnames'] . "&nbsp;&nbsp;&nbsp;<a href='surnames.php?tree=$tree'>{$text['mainsurnamepage']}</a> &nbsp;|&nbsp; <a href=\"surnames-all.php?tree=$tree\">{$text['showallsurnames']}</a>"; ?></p>

@@ -216,25 +216,25 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
     if ($showlinks) {
         if ($allow_admin && $allow_media_edit) {
-            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target='_blank' class='snlink'>&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target='_blank' class='snlink rounded'>&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
         }
 
         if ($albumlinkID) {
             $offset = floor($page / $maxsearchresults) * $maxsearchresults;
-            $pagenav .= "<a href=\"showalbum.php?albumID=$albumID&amp;offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink'>&raquo; $albumname</a>  &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"showalbum.php?albumID=$albumID&amp;offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink rounded'>&raquo; $albumname</a>  &nbsp;&nbsp;&nbsp;";
         } elseif (!$personID) {
             $offset = floor($page / $maxsearchresults) * $maxsearchresults;
-            $pagenav .= "<a href=\"browsemedia.php?" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink'>&raquo; {$text['showall']}</a>  &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"browsemedia.php?" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink rounded'>&raquo; {$text['showall']}</a>  &nbsp;&nbsp;&nbsp;";
         } else {
             if ($linktype == "F") {
-                $pagenav .= "<a href=\"familygroup.php?familyID=$personID&amp;tree=$tree\" class='snlink'>&raquo; {$text['groupsheet']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"familygroup.php?familyID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; {$text['groupsheet']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "S") {
-                $pagenav .= "<a href=\"showsource.php?sourceID=$personID&amp;tree=$tree\" class='snlink'>&raquo; {$text['source']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showsource.php?sourceID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; {$text['source']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "R") {
-                $pagenav .= "<a href=\"showrepo.php?repoID=$personID&amp;tree=$tree\" class='snlink'>&raquo; {$text['repository']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showrepo.php?repoID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; {$text['repository']}</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "L") {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree=$tree";
-                $pagenav .= "<a href=\"placesearch.php?psearch=$personID$treestr\" class='snlink'>&raquo; {$text['place']}: $personID</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"placesearch.php?psearch=$personID$treestr\" class='snlink rounded'>&raquo; {$text['place']}: $personID</a>  &nbsp;&nbsp;&nbsp;";
             }
         }
     }
@@ -269,7 +269,7 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
                 }
             } else {
                 if ($curpage == $page) {
-                    $numlinks .= " <span class=\"snlink snlinkact\">$curpage</span> ";
+                    $numlinks .= " <span class=\"snlink rounded snlinkact\">$curpage</span> ";
                 } else {
                     $numlinks .= get_media_link($result, "showmedia.php?", $curpage, "jump", $curpage, $curpage, $allstr, $showlinks);
                 }
@@ -427,14 +427,13 @@ function showMediaSource($imgrow, $ss = false) {
     global $description, $medialinkID, $albumlinkID, $mediatypes_like;
 
     if (isMobile()) $ss = false;
-
     if ($imgrow['form']) {
         $imgrow['form'] = strtoupper($imgrow['form']);
     } else {
         preg_match("/\.(.+)$/", $imgrow['path'], $matches);
         $imgrow['form'] = strtoupper($matches[1]);
     }
-    if ($ss) echo "<div class='lightback slidepane rounded10'>\n";
+    if ($ss) echo "<div class='lightback slidepane rounded-lg'>\n";
 
     if (!$ss && $imgrow['map']) {
         echo "<map name=\"tngmap_{$imgrow['mediaID']}\" id=\"tngmap_{$imgrow['mediaID']}\">{$imgrow['map']}</map>\n";
@@ -513,10 +512,10 @@ function showMediaSource($imgrow, $ss = false) {
                     if (!$imgviewer || in_array($imgrow['mediatypeID'], $mediatypes_like[$imgviewer])) {
                         $maxvh = $tngconfig['imgvheight'];
                         $calcHeight = $maxvh ? ($height > $maxvh ? $maxvh : $height) : 1;
-                        echo "<div id='loadingdiv2' class='rounded10' style='position:static;'>{$text['loading']}</div>";
+                        echo "<div id='loadingdiv2' class='rounded-lg' style='position:static;'>{$text['loading']}</div>";
                         echo "<iframe name='iframe1' id='iframe1' src=\"img_viewer.php?mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width='100%' height='1' onload=\"calcHeight($calcHeight)\" frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>";
                     } else {
-                        echo "<div class='titlebox text-center' id='imgdiv'><img src='$mediasrc' id='theimage' $mapstr alt='$description'></div>\n";
+                        echo "<div class='titlebox rounded-lg text-center' id='imgdiv'><img src='$mediasrc' id='theimage' $mapstr alt='$description'></div>\n";
                     }
                 }
             } elseif (in_array($imgrow['form'], $videotypes) || in_array($imgrow['form'], $recordingtypes)) {
@@ -575,7 +574,7 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
 
     $tabletext = "";
     $filename = $imgrow['abspath'] ? $imgrow['path'] : basename($imgrow['path']);
-    $tabletext .= "<table class='whiteback w-100' border='0' cellspacing='1' cellpadding='4'>\n";
+    $tabletext .= "<table class='whiteback w-full' border='0' cellspacing='1' cellpadding='4'>\n";
 
     if ($imgrow['owner']) {
         $tabletext .= tableRow($text['photoowner'], $imgrow['owner']);
@@ -665,10 +664,9 @@ function doCemPlusMap($imgrow, $tree) {
     $hsresult = tng_query($query);
     if (tng_num_rows($hsresult)) {
         $i = 1;
-        echo "<div class='titlebox'>\n";
+        echo "<div class='titlebox rounded-lg'>\n";
         echo "<h3 class='subhead'>{$text['cemphotos']}</h3>";
-
-        echo "<table class='whiteback w-100' cellpadding='3' cellspacing='1' border='0'>\n";
+        echo "<table class='whiteback w-full' cellpadding='3' cellspacing='1' border='0'>\n";
         echo "<tr><td class='fieldnameback' width=\"10\">&nbsp;</td>\n";
         echo "<td class='fieldnameback' width=\"$thumbmaxw\"><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
         echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td></tr>\n";

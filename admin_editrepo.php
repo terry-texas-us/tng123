@@ -88,7 +88,7 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                                 echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
                                 echo "<a href='#' onclick=\"return showNotes('', '$repoID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
                                 ?>
-                                <br style="clear: both;">
+                                <br class="clear-both">
                             </div>
                             <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>

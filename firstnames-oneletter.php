@@ -26,7 +26,7 @@ $hiddenfields[] = ['name' => 'firstchar', 'value' => $firstchar];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnames-oneletter', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
 ?>
 
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <div>
             <h3 class="subhead"><?php echo "{$text['allfirstbegwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></h3>
             <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"firstnames.php?tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"firstnames-all.php?tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>

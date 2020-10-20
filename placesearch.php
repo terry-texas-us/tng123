@@ -164,7 +164,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
 
         if ($numrows) {
             echo "<br>\n";
-            echo "<div class='titlebox'>\n";
+            echo "<div class='titlebox rounded-lg'>\n";
             echo "<h3 class='subhead'>" . $placetxt . "</h3>\n";
             $numrowsplus = $numrows + $offset;
             $successcount++;
@@ -177,7 +177,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
             $namestr = preg_replace("/xxx/", $text[$namefield], $namesort);
             $datestr = preg_replace("/yyy/", $placetxt, $datesort);
             ?>
-            <table class="whiteback w-100" cellpadding="3" cellspacing="1">
+            <table class="whiteback w-full" cellpadding="3" cellspacing="1">
                 <tr>
                     <td class="fieldnameback"><span class="fieldname">&nbsp;</span></td>
                     <td class="fieldnameback"><span class="fieldname text-nowrap">&nbsp;<b><?php echo $namestr; ?></b>&nbsp;</span></td>
@@ -189,8 +189,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                 </tr>
                 <?php
                 $i = $offsetplus;
-                $imageSize = @GetImageSize("img/Chart.gif");
-                $chartlink = "<img src=\"img/Chart.gif\" $imageSize[3] alt=\"\">";
+                $chartlink = "<img src='img/chart.gif' alt='' class='inline-block'>";
                 while ($row = tng_fetch_assoc($result)) {
                     $rights = determineLivingPrivateRights($row);
                     $row['allow_living'] = $rights['living'];
@@ -298,7 +297,7 @@ while ($prow = tng_fetch_assoc($presult)) {
     $foundtree = $prow['gedcom'];
     if ($prow['notes'] || $prow['latitude'] || $prow['longitude']) {
         if (($prow['latitude'] || $prow['longitude']) && $map['key'] && !$mapdrawn) {
-            echo "<br><div id=\"map\" style=\"width: {$map['hstw']}; height: {$map['hsth']}; margin-bottom:20px;\" class=\"rounded10\"></div>\n";
+            echo "<br><div id=\"map\" style=\"width: {$map['hstw']}; height: {$map['hsth']}; margin-bottom:20px;\" class='rounded-lg'></div>\n";
             $usedplaces = [];
             $mapdrawn = true;
         }
@@ -347,7 +346,7 @@ $placemedia = getMedia($psearch, "L");
 $placealbums = getAlbums($psearch, "L");
 $media = doMediaSection($psearch, $placemedia, $placealbums);
 if ($media) {
-    echo "<br>\n<div class='titlebox'>\n";
+    echo "<br>\n<div class='titlebox rounded-lg'>\n";
     echo "<h3 class='subhead'>{$text['media']}</h3>";
     echo "$media\n";
     echo "</div>\n";
@@ -387,9 +386,9 @@ while ($prow = tng_fetch_assoc($presult)) {
 }
 
 if ($cemdata) {
-    echo "<br>\n<div class='titlebox'>\n";
+    echo "<br>\n<div class='titlebox rounded-lg'>\n";
     echo "<h3 class='subhead'>{$text['cemeteries']}</h3>";
-    echo "<table class='whiteback w-100' cellpadding='3' cellspacing='1' border='0'>\n";
+    echo "<table class='whiteback w-full' cellpadding='3' cellspacing='1' border='0'>\n";
     echo "<tr>\n";
     echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;</span></td>\n";
     echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['name']}</b>&nbsp;</span></td>\n";

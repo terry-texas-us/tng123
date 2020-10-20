@@ -73,7 +73,7 @@ function displayIndividual($key, $generation, $slot) {
         echo "<td colspan='2'><img src=\"img/spacer.gif\" alt=\"\"  height=\"$vertfill\" width='1' vspace='0' hspace='0' border='0'></td>\n</tr>\n</table>\n";
     }
 
-    echo "<table class='w-100' border='0' cellpadding='0' cellspacing='0'>\n";
+    echo "<table class='w-full' border='0' cellpadding='0' cellspacing='0'>\n";
     echo "<tr>\n";
     $pedborder = $slot % 2 && $slot != 1 ? "class=\"nw pedborderleft\"" : "";
     echo "<td colspan='2' $pedborder><span class='normal'>&nbsp;$slot. <a href=\"getperson.php?personID=$key&amp;tree=$tree\">$name</a>&nbsp;</span></td>\n";
@@ -291,7 +291,7 @@ echo getFORM("pedigree", "", "form1", "form1");
 echo tng_menu("I", "pedigree", $personID, $innermenu);
 echo "</form>\n";
 ?>
-    <table class="w-100" border="0" cellspacing="0" cellpadding="0">
+    <table class="w-full" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <?php
             $slot = 1;

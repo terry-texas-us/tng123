@@ -43,10 +43,10 @@ if ($result) {
 
         if ($firstname['firstchar'] == "") {
             $firstname['firstchar'] = $text['nofirstname'];
-            $linkstr .= "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>{$text['nofirstname']}</a> ";
+            $linkstr .= "<a href=\"search.php?myfirstname=$nofirstname&amp;fnqualify=equals&amp;mybool=AND$treestr\" class='snlink rounded'>{$text['nofirstname']}</a> ";
         } else {
             if ($firstname['firstchar'] != "_") {
-                $linkstr .= "<a href=\"#char$initialchar\" class='snlink'>{$firstname['firstchar']}</a>";
+                $linkstr .= "<a href=\"#char$initialchar\" class='snlink rounded'>{$firstname['firstchar']}</a>";
                 $firstchars[$initialchar] = $firstname['firstchar'];
                 $initialchar++;
             }
@@ -56,7 +56,7 @@ if ($result) {
 }
 ?>
 
-    <div class="titlebox normal">
+    <div class="titlebox rounded-lg normal">
         <h3 class="subhead"><?php echo $text['firstnamesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
         <br><?php echo "<a href='firstnames.php'>{$text['mainfirstnamepage']}</a>"; ?>
@@ -68,7 +68,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
     echo "<a id=\"char$scount\"></a>\n";
     $urlfirstchar = addslashes($firstchars[$scount]);
     ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <h2 class="header"><?php echo $firstchars[$scount]; ?></h2>
         <table class="sntable">
             <tr>

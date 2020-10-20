@@ -17,7 +17,7 @@ tng_header($text['sitemaint'], $flags);
 ?>
 
 <h2 class="header"><?php echo $text['sitemaint']; ?></h2>
-<br style="clear: both;">
+<br class="clear-both">
 
 <?php
 echo "<p class='normal'>" . $text['standby'] . "</p><br><br>";

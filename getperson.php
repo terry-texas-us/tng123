@@ -531,7 +531,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         $persontext .= "<td class='databack' colspan='2'>\n";
 
         $kidcount = 1;
-        $persontext .= "<table class='w-100' cellpadding = '0' cellspacing = '0'>\n";
+        $persontext .= "<table class='w-full' cellpadding = '0' cellspacing = '0'>\n";
         while ($child = tng_fetch_assoc($children)) {
             $childID = $child['personID'];
             $child['gedcom'] = $tree;
@@ -605,7 +605,7 @@ if ($map['key'] && $locations2map) {
     $persontext .= "<col class=\"labelcol\"/><col class=\"mapcol\"/><col />\n";
     $persontext .= "<tr class='align-top'><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class='fieldname'>{$text['gmapevent']}</span></td>\n";
     $persontext .= "<td class='databack'>\n";
-    $persontext .= "<div id=\"map\" class=\"rounded10\" style=\"width: {$map['indw']}; height: {$map['indh']};\">";
+    $persontext .= "<div id='map' class='rounded-lg' style=\"width: {$map['indw']}; height: {$map['indh']};\">";
     if ($map['pstartoff']) {
         $persontext .= "<a href='#' onclick=\"ShowTheMap(); return false;\"><div class=\"loadmap\">{$text['loadmap']}<br><img src=\"img/loadmap.gif\" width=\"150\" height=\"150\" ></div></a>";
     }

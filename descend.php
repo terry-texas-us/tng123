@@ -26,7 +26,7 @@ if (!$display) {
     }
 }
 
-$rounded = $display == "compact" ? "rounded4" : "rounded10";
+$rounded = $display == "compact" ? "rounded" : "rounded-lg";
 $slot = 0;
 
 function setTopMarker($level, $value, $debug) {
@@ -106,11 +106,10 @@ if ($display == "compact") {
     $pedigree['diff'] = $pedigree['boxheight'] + $pedigree['boxVsep'] + $pedigree['linewidth'] + $pedigree['downarrowh'];
     $clinkstyle = "";
     $slinkstyle = "3";
-    if (file_exists("img/Chart.gif")) {
-        $imageSize = @GetImageSize("img/Chart.gif");
-        $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
+    if (file_exists("img/chart.gif")) {
+        $pedigree['chartlink'] = "<img src='img/chart.gif' alt='' title=\"{$text['popupnote2']}\" class='inline-block'>";
     } else {
-        $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
+        $pedigree['chartlink'] = "<span class='normal font-semibold'>P</span>";
     }
 }
 
@@ -228,7 +227,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             $boxstr .= "<a href=\"javascript:goBack();\">{$pedigree['leftarrowlink']}</a></div>\n";
             //set top
             $boxstr .= "<div id=\"popupleft\" class=\"popup\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; top:" . ($top + $pedigree['borderwidth'] + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2) + 1) . "px; left:$adjleft" . "px;z-index:8\" onmouseover=\"cancelTimer('left')\" onmouseout=\"setTimer('left')\">\n";
-            $boxstr .= "<div>\n<div class=\"tngshadow popinner\">\n<div class=\"pboxpopupdiv\">\n";
+            $boxstr .= "<div>\n<div class='tngshadow popinner rounded-lg'>\n<div class='pboxpopupdiv rounded-lg'>\n";
             $boxstr .= "<table><tr><td><table border='0' cellspacing='0' cellpadding='1'>\n";
             $boxstr .= "<tr><td class=\"normal pboxpopup\"><b>{$text['parents']}</b></td></tr>\n$parentinfo\n</table></td></tr></table>\n</div>\n</div>\n</div>\n</div>\n";
         }
@@ -252,7 +251,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         $photohtouse = $pedigree['boxheight'] - ($pedigree['cellpad'] * 2); // take cellpadding into account
         $photoInfo = getPhotoSrc($person['personID'], $person['allow_living'] && $person['allow_private'], $person['sex']);
         if ($photoInfo['ref']) {
-            $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px;\" alt=\"\" class=\"smallimg\">";
+            $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px;\" alt=\"\" class='smallimg rounded'>";
             if ($photoInfo['link']) {
                 $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
             }
@@ -278,10 +277,9 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         if ($vitalinfo) {
             $boxstr .= "<div style=\"position: absolute; top:" . ($top + $pedigree['boxheight'] + (2 * $pedigree['borderwidth']) + $pedigree['shadowoffset'] + 1) . "px;left:" . ($left + intval(($pedigree['boxwidth'] - $pedigree['downarroww']) / 2) - 1) . "px;z-index:7;\" class=\"fakelink\">";
             $boxstr .= "<a href='#' onmouse{$pedigree['event']}=\"showPopup($numboxes,$top," . $pedigree['boxheight'] . ")\">" . $pedigree['downarrow'] . "</a></div>";
-
             $boxstr .= "<div class=\"popup\" id=\"popup$numboxes\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; left:" . ($left - $pedigree['borderwidth'] + round($pedigree['shadowoffset'] / 2)) . "px;z-index:8\" onmouseover=\"cancelTimer($numboxes)\" onmouseout=\"setTimer($numboxes)\">\n";
-            $boxstr .= "<div><div class=\"tngshadow popinner\"><div class=\"pboxpopupdiv\">\n";
-            $boxstr .= "<table class='w-100' cellspacing='0' cellpadding='1' border='0'>\n";
+            $boxstr .= "<div><div class='tngshadow popinner rounded-lg'><div class='pboxpopupdiv rounded-lg'>\n";
+            $boxstr .= "<table class='w-full' cellspacing='0' cellpadding='1' border='0'>\n";
             $boxstr .= "$vitalinfo\n</table></div></div></div></div>\n";
         }
     }

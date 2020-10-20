@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Import dat");
                 <a href="second_help.php" class="lightlink">N�pov�da: Druhotn� procesy &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Import / Export</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp;|&nbsp;
                 <a href="#export" class="lightlink">GEDCOM Export</a>
             </p>

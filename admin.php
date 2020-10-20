@@ -252,19 +252,19 @@ tng_adminheader($admtext['administration'], "");
         if ($chooselang) {
             $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
             $result = @tng_query($query);
-
-            if ($result && tng_num_rows($result)) {
+            $languages = tng_fetch_all($result);
+            tng_free_result($result);
+            if (count($languages) > 1) {
                 $switcher .= "<form action='admin_savelanguage.php' method='GET' target='_parent' name='language' style='display: inline-block;'>\n";
-                $switcher .= " &nbsp;<select name='newlanguage' class='text-black normal' onChange='document.language.submit();'>\n";
-
-                while ($row = tng_fetch_assoc($result)) {
-                    $switcher .= "<option value='{$row['languageID']}'";
-                    if ($languages_path . $row['folder'] == $mylanguage)
+                $switcher .= "<select name='newlanguage' class='text-black normal ml-4' onChange='document.language.submit();'>\n";
+                foreach ($languages as $language) {
+                    $switcher .= "<option value='{$language['languageID']}'";
+                    if ($languages_path . $language['folder'] == $mylanguage)
                         $switcher .= " selected";
-                    $switcher .= ">{$row['display']}</option>\n";
+                    $switcher .= ">{$language['display']}</option>\n";
                 }
-                $switcher .= "</select>\n</form>\n";
-                tng_free_result($result);
+                $switcher .= "</select>\n";
+                $switcher .= "</form>\n";
             }
         }
 
@@ -280,14 +280,14 @@ tng_adminheader($admtext['administration'], "");
                                 <strong class="adminsubhead text-base mb-1 ml-1"><?php echo $admtext['tasks']; ?></strong>
                             </a>
                             <?php if ($switcher) { ?>
-                                <div style='float: right'><?php echo $switcher; ?></div>
+                                <div class='float-right'><?php echo $switcher; ?></div>
                             <?php } ?>
                             <div id="msgs" style="display: none;">
                                 <hr>
                                 <?php echo $messages; ?>
                             </div>
                         <?php } else { ?>
-                            <div style='float: right;'><?php echo $switcher; ?></div>
+                            <div class='float-right'><?php echo $switcher; ?></div>
                         <?php } ?>
                     </div>
                 </td>

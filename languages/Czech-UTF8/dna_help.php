@@ -15,7 +15,7 @@ echo help_header("Nápověda: Testy DNA");
                 <a href="languages_help.php" class="lightlink">Nápověda: Jazyky &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Testy DNA</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nový</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;

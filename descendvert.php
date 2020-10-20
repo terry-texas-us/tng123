@@ -10,13 +10,12 @@ $register_url = getURL("register", 1);
 
 include "pedbox.php";
 
-$rounded = "rounded10";
+$rounded = "rounded-lg";
 $slot = 0;
 
 function setLeftMarker($level, $value, $debug) {
     global $leftmarker;
 
-    //echo "level=$level, old=" . $leftmarker[$level] . ", new=$value ($debug)<br>";
     $leftmarker[$level] = $value;
 }
 
@@ -78,11 +77,11 @@ $spouseoffset = 40;
 $pedigree['diff'] = $pedigree['boxheight'] + $pedigree['boxVsep'] + $pedigree['linewidth'] + 5;
 $clinkstyle = "";
 $slinkstyle = "3";
-if (file_exists("img/Chart.gif")) {
-    $chartlinkimg = @GetImageSize("img/Chart.gif");
-    $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" border='0' $chartlinkimg[3] title=\"{$text['popupnote2']}\" alt=\"\" />";
-} else
-    $pedigree['chartlink'] = "<span class=\"normal\"><b>P</b></span>";
+if (file_exists("img/chart.gif")) {
+    $pedigree['chartlink'] = " class='inline-block' border='0'>";
+} else {
+    $pedigree['chartlink'] = "<span class='normal font-semibold'>P</span>";
+}
 
 $pedigree['baseR'] = hexdec(substr($pedigree['boxcolor'], 1, 2));
 $pedigree['baseG'] = hexdec(substr($pedigree['boxcolor'], 3, 2));
@@ -192,7 +191,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         if ($parentinfo) {
             //set top
             $boxstr .= "<div id=\"popuptop\" class=\"popup\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; left:" . ($left + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2)) . "px; top:$adjtop" . "px;z-index:10\" onmouseover=\"cancelTimer('top')\" onmouseout=\"setTimer('top')\">\n";
-            $boxstr .= "<div>\n<div class=\"tngshadow popvdescinner\">\n<div class=\"pboxpopupdiv\">\n";
+            $boxstr .= "<div>\n<div class='tngshadow popvdescinner'>\n<div class='pboxpopupdiv rounded-lg'>\n";
             $boxstr .= "<table><tr><td><table border='0' cellspacing='0' cellpadding='1'>\n";
             $boxstr .= "<tr><td class=\"normal pboxpopup\"><b>{$text['parents']}</b></td></tr>\n$parentinfo\n</table></td></tr></table>\n</div>\n</div>\n</div>\n</div>\n";
         }
@@ -214,10 +213,9 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             $mouseover .= "showPopup($numboxes,$left,{$pedigree['boxheight']});";
             $mouseout .= "setTimer($numboxes);";
             //$boxarrow = "<br>{$pedigree['rightarrow']}";
-
             $hiddenbox = "<div class=\"popup\" id=\"popup$numboxes\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; top:" . ($top - $pedigree['borderwidth'] + round($pedigree['shadowoffset'] / 2)) . "px;z-index:8\" onmouseover=\"cancelTimer($numboxes)\" onmouseout=\"setTimer($numboxes)\">\n";
-            $hiddenbox .= "<div><div class=\"tngshadow popvdescinner\"><div class=\"pboxpopupdiv\">\n";
-            $hiddenbox .= "<table class='w-100' cellspacing='0' cellpadding='1' border='0'>\n";
+            $hiddenbox .= "<div><div class='tngshadow popvdescinner'><div class='pboxpopupdiv rounded-lg'>\n";
+            $hiddenbox .= "<table class='w-full' cellspacing='0' cellpadding='1' border='0'>\n";
             $hiddenbox .= "$vitalinfo\n</table></div></div></div></div>\n";
         }
     }
@@ -236,7 +234,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         //$photoinfo = showSmallPhoto( $person['personID'], $person['name'], $person['allow_living'], $photohtouse );
         $photoInfo = getPhotoSrc($person['personID'], $person['allow_living'] && $person['allow_private'], $person['sex']);
         if ($photoInfo['ref']) {
-            $imagestr = "<img src=\"{$photoInfo['ref']}\" border='0' style=\"max-width: 100%; max-height: 70px; margin-bottom: 10px;\" alt=\"\" class=\"thumb\" />";
+            $imagestr = "<img src=\"{$photoInfo['ref']}\" border='0' style=\"max-width: 100%; max-height: 70px; margin-bottom: 10px;\" alt='' class='thumb rounded' />";
             if ($photoInfo['link'])
                 $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
             $boxstr .= "$imagestr<br>";

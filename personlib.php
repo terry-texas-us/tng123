@@ -18,7 +18,7 @@ function getBirthInfo($thisperson, $noicon = null) {
     $birthstring = "";
 
     if (!$noicon) {
-        $icon = "<img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\">";
+        $icon = "<img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'>";
 
         $treestr = !empty($tngconfig['places1tree']) ? "" : "tree=$tree&amp;";
 
@@ -715,7 +715,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
             $output .= $data['place'];
             if (!isset($data['np'])) {
                 $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
-                $output .= " <a href='placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'><img src='img/tng_search_small.gif' alt='" . FIND_PLACES . "' width='9' height='9'></a>$cite\n";
+                $output .= " <a href='placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'><img src='img/tng_search_small.gif' alt='" . FIND_PLACES . "' class='inline-block'></a>$cite\n";
             }
             $cite = "";
         }
@@ -744,7 +744,7 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
             $output .= ">" . $data['place'];
             if (!isset($data['np'])) {
                 $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
-                $output .= " <a href=\"placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "\" title=\"" . FIND_PLACES . "\"><img src=\"img/tng_search_small.gif\" alt=\"" . FIND_PLACES . "\" width=\"9\" height=\"9\"></a>$cite&nbsp;</td>\n";
+                $output .= " <a href=\"placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "\" title=\"" . FIND_PLACES . "\"><img src='img/tng_search_small.gif' alt=\"" . FIND_PLACES . "\" class='inline-block'></a>$cite&nbsp;</td>\n";
             } else {
                 $output .= "</td>\n";
             }

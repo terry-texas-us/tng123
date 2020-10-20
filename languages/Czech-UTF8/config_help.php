@@ -15,7 +15,7 @@ echo help_header("Nápověda: Základní nastavení");
                 <a href="pedconfig_help.php" class="lightlink">Nápověda: Nastavení schémat &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Základní nastavení</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#data" class="lightlink">Databáze</a> &nbsp;|&nbsp;
                 <a href="#table" class="lightlink">Tabulky</a> &nbsp;|&nbsp;
                 <a href="#path" class="lightlink">Umístění a složky</a> &nbsp;|&nbsp;

@@ -15,7 +15,7 @@ echo help_header("Help: Notes");
                     <a href="misc_help.php" class="lightlink">Help: Miscellaneous &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>Notes</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#notes" class="lightlink">Notes</a>
                 </p>
             </td>

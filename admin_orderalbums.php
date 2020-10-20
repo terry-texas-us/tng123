@@ -162,17 +162,15 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['text_sort'], 
                         $truncated = substr($row['description'], 0, 90);
                         $truncated = strlen($row['description']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['description'];
                         echo "<div class=\"sortrow\" id=\"orderdivs_{$row['alinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#md_{$row['albumID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['albumID']}').css('visibility','hidden');\">";
-                        echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
-                        echo "<td class=\"dragarea normal\">";
+                        echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
+                        echo "<td class='dragarea rounded-lg normal'>";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
-
                         echo "<td class='lightback smaller' style=\"width:35px;text-align:center;\">";
                         echo "<div style=\"padding-bottom:5px;\"><a href='#' onclick=\"return moveItemInList('{$row['alinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
                         echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$row['alinkID']}\" id=\"move{$row['alinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val(),event);\">\n";
                         echo "<a href='#' onclick=\"return moveItemInList('{$row['alinkID']}',jQuery('#move{$row['alinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";
-
                         echo "<td class='lightback' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;\">";
 
                         $query2 = "SELECT thumbpath, usecollfolder, mediatypeID FROM ($albumlinks_table, $media_table) WHERE albumID=\"{$row['albumID']}\" AND defphoto = '1' AND $albumlinks_table.mediaID = $media_table.mediaID";

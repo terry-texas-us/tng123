@@ -15,7 +15,7 @@ echo help_header("Nápověda: Jazyky");
                 <a href="backuprestore_help.php" class="lightlink">Nápověda: Obslužné programy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Jazyky</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>

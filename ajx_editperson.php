@@ -71,7 +71,7 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="form1" id="form1" onsubmit="return updatePerson(this, <?php echo $slot; ?>);">
-    <table class="w-100" cellpadding="10" cellspacing="2">
+    <table class="w-full" cellpadding="10" cellspacing="2">
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
@@ -100,7 +100,7 @@ include_once "eventlib.php";
                                     echo "<a href='#' onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
                                 }
                                 ?>
-                                <br style="clear: both;">
+                                <br class="clear-both">
 				            </div>
 				            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
@@ -331,11 +331,10 @@ include_once "eventlib.php";
                     $query .= "FROM $people_table people, $families_table families ";
                     $query .= "WHERE people.personID = families.husband AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = '$tree' AND families.gedcom = '$tree'";
                     $gotfather = tng_query($query);
-
                     echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinkp_{$parent['familyID']}').style.display='';\" onmouseout=\"$('unlinkp_{$parent['familyID']}').style.display='none';\">\n";
-                    echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
+                    echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($parentcount > 1) {
-                        echo "<td class=\"dragarea normal\">";
+                        echo "<td class='dragarea rounded-lg normal'>";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
                     }
@@ -507,14 +506,14 @@ include_once "eventlib.php";
                         $spouse = "husband";
                     }
                     echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinks_{$marriagerow['familyID']}').style.display='';\" onmouseout=\"$('unlinks_{$marriagerow['familyID']}').style.display='none';\">\n";
-                    echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
+                    echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class=\"dragarea normal\">";
                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
-                    echo "<table class='normal w-100'\n>";
+                    echo "<table class='normal w-full'\n>";
                     echo "<tr>\n";
                     echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
                     echo "<td class='align-top' width=\"94%\">\n";

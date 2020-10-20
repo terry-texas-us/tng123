@@ -275,11 +275,10 @@ $pedigree['cellpad'] = 5;
 if ($pedigree['inclphotos'] && (trim($photopath) == "" || trim($photosext) == "")) {
     $pedigree['inclphotos'] = false;
 }
-if (file_exists("img/Chart.gif")) {
-    $imageSize = @GetImageSize("img/Chart.gif");
-    $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"\">";
+if (file_exists("img/chart.gif")) {
+    $pedigree['chartlink'] = "<img src='img/chart.gif' alt='' title=\"{$text['popupnote2']}\" class='inline-block'>";
 } else {
-    $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
+    $pedigree['chartlink'] = "<span class='normal font-semibold'>P</span>";
 }
 $pedigree['phototree'] = $tree;
 if ($tree) $pedigree['phototree'] .= ".";
@@ -383,7 +382,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
             $iconactions = $iconlinks = "";
         }
         $shadow = $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowoffset'] . "px " . $pedigree['shadowcolor'];
-        echo "<div class=\"pedbox rounded10\" style=\"background-color:$boxcolortouse; box-shadow:$shadow;top:" . $gens->offsetV . "px; left:" . $gens->offsetH . "px; height:{$pedigree['puboxheight']}" . "px; width:{$pedigree['puboxwidth']}" . "px;border:{$pedigree['borderwidth']}px solid {$pedigree['bordercolor']};\"$iconactions>\n";
+        echo "<div class='pedbox rounded-lg' style=\"background-color:$boxcolortouse; box-shadow:$shadow;top:" . $gens->offsetV . "px; left:" . $gens->offsetH . "px; height:{$pedigree['puboxheight']}" . "px; width:{$pedigree['puboxwidth']}" . "px;border:{$pedigree['borderwidth']}px solid {$pedigree['bordercolor']};\"$iconactions>\n";
         $tableheight = $pedigree['puboxheight'];
         echo "$iconlinks<table border='0' cellpadding='5' cellspacing='0' align=\"{$pedigree['puboxalign']}\" class=\"pedboxtable\"><tr>";
 
@@ -392,7 +391,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
             $photohtouse = $pedigree['puboxheight'] - ($pedigree['cellpad'] * 2); // take cellpadding into account
             $photoInfo = getPhotoSrc($row['personID'], $rights['both'], $row['sex']);
             if ($photoInfo['ref']) {
-                $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px;\" alt=\"\" class=\"smallimg\">";
+                $imagestr = "<img src=\"{$photoInfo['ref']}\" style=\"max-height:{$photohtouse}px;max-width:{$photohtouse}px;\" alt='' class='smallimg rounded'>";
                 if ($photoInfo['link']) {
                     $imagestr = "<a href=\"{$photoInfo['link']}\">$imagestr</a>";
                 }

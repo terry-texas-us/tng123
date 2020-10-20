@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Obslu�n� programy");
                 <a href="modmanager_help.php" class="lightlink">N�pov�da: Mana�er m�d� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Obslu�n� programy</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#tables" class="lightlink">Z�loha - Obnova - Optimalizace</a> &nbsp;|&nbsp;
                 <a href="#structure" class="lightlink">Z�loha struktury tabulek</a> &nbsp;|&nbsp;
                 <a href="#ids" class="lightlink">P�e��slov�n� ID ��sel</a>

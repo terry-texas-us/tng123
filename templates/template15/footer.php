@@ -59,7 +59,7 @@
 </div>
 <footer class="site-footer" role="contentinfo">
     <div class="wrap">
-        <br style="clear: both;">
+        <br class="clear-both">
         <?php
         $flags['basicfooter'] = true;
         tng_footer($flags);

@@ -15,7 +15,7 @@ echo help_header("Nápověda: Hřbitovy");
                 <a href="places_help.php" class="lightlink">Nápověda: Místa &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Hřbitovy</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a>

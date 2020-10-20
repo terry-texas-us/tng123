@@ -15,7 +15,7 @@ echo help_header("Pomoc: Repozytoria");
                 <a href="assoc_help.php" class="lightlink">Pomoc: Związki &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Repozytoria</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp;|&nbsp;

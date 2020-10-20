@@ -57,11 +57,11 @@ if ($result) {
         }
         $firstchar = strtoupper($firstchar);
         if ($firstchar == "") {
-            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink'>" . $text['nosurname'] . "</a> ";
+            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink rounded'>" . $text['nosurname'] . "</a> ";
         } else {
             $urlfirstchar = $firstchar;
             $countstr = $text['surnamesstarting'] . ": " . $firstchar . " (" . number_format($surname['lncount']) . " " . $text['totalnames'] . ")";
-            $linkstr .= "<a href=\"surnames-oneletter.php?firstchar=$urlfirstchar$treestr\" class='snlink' title=\"$countstr\">{$firstchar}</a>";
+            $linkstr .= "<a href=\"surnames-oneletter.php?firstchar=$urlfirstchar$treestr\" class='snlink rounded' title=\"$countstr\">{$firstchar}</a>";
         }
         $initialchar++;
     }
@@ -101,11 +101,11 @@ if ($result) {
         $thiswidth = floor($tally / $maxcount * 100);
         if (($count - 1) % $collen == 0) $col++;
         $linkstr2col[$col] .= "<tr>";
-        $linkstr2col[$col] .= "<td class='snlink'>$count.</td>";
+        $linkstr2col[$col] .= "<td class='snlink rounded'>$count.</td>";
         $linkstr2col[$col] .= "<td class='text-nowrap'><a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a> ($tally_fmt)</td>";
         if (!$col) {
-            $linkstr2col[$col] .= "<td class=\"bar-holder\">";
-            $linkstr2col[$col] .= "<div style=\"width:{$thiswidth}%;\" class=\"bar rightround\" title=\"{$surname['lowername']} ($tally_fmt)\">";
+            $linkstr2col[$col] .= "<td class='bar-holder'>";
+            $linkstr2col[$col] .= "<div style='width: {$thiswidth}%;' class='bar rounded-r' title=\"{$surname['lowername']} ($tally_fmt)\">";
             $linkstr2col[$col] .= "</div>";
             $linkstr2col[$col] .= "</td>";
         }
@@ -115,13 +115,13 @@ if ($result) {
     tng_free_result($result);
 }
 ?>
-    <div class="titlebox normal">
+    <div class="titlebox rounded-lg normal">
         <h3 class="subhead"><?php echo $text['surnamesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
         <br><?php echo "<a href=\"surnames-all.php?tree=$tree\">{$text['showallsurnames']}</a> ({$text['sortedalpha']})"; ?>
     </div>
     <br>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <div style="display:inline-block; margin-right:50px;">
             <table class="table-top30">
                 <tr>

@@ -45,7 +45,7 @@ if ($result) {
         if ($initialchar != 1) $linkstr .= " ";
 
         if ($place['firstchar'] != "" && $place['firstchar'] != "_") {
-            $linkstr .= "<a href=\"#char$initialchar\" class='snlink'>{$place['firstchar']}</a> ";
+            $linkstr .= "<a href=\"#char$initialchar\" class='snlink rounded'>{$place['firstchar']}</a> ";
             $firstchars[$initialchar] = $place['firstchar'];
             $initialchar++;
         }
@@ -54,7 +54,7 @@ if ($result) {
 }
 ?>
 
-    <div class="titlebox normal">
+    <div class="titlebox rounded-lg normal">
         <h3 class="subhead"><?php echo $text['placesstarting']; ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
 
@@ -80,7 +80,7 @@ if ($result) {
 <?php
 for ($scount = 1; $scount < $initialchar; $scount++) {
     ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
     <?php
     $urlfirstchar = addslashes($firstchars[$scount]);
     if ($urlfirstchar) {
@@ -133,8 +133,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                             $countrow = tng_fetch_assoc($result2);
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
-
-                            $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                                 $name = "<a href=\"places-oneletter.php?" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {

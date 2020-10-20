@@ -15,7 +15,7 @@ echo help_header("Nápověda: Manažer módů");
                 <a href="index_help.php" class="lightlink">Nápověda: Začínáme &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Manažer módů</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#overview" class="lightlink">Přehled</a> &nbsp;|&nbsp;
                 <a href="#operation" class="lightlink">Operace</a> &nbsp;|&nbsp;
                 <a href="#status" class="lightlink">Stav</a> &nbsp;|&nbsp;

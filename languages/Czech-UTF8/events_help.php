@@ -16,7 +16,7 @@ echo help_header("Nápověda: Události");
                 <a href="more_help.php" class="lightlink">Nápověda: Více &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Události</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Standardní a vlastní</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nové</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;

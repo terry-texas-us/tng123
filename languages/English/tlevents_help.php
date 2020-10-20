@@ -15,7 +15,7 @@ echo help_header("Help: Timeline Events");
                     <a href="notes2_help.php" class="lightlink">Help: Notes &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>Timeline Events</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
                     <a href="#add" class="lightlink">Add or Edit</a> &nbsp;|&nbsp;
                     <a href="#delete" class="lightlink">Delete</a>

@@ -437,7 +437,7 @@ $numrowsplus = $numrows + $offset;
 echo "<p class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} " . number_format($totrows) . " $querystring</p>";
 
 $pagenav = get_browseitems_nav($totrows, "search.php?$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-$heatmap = !$cejoin && empty($mysplname) ? "<a href=\"heatmap.php?{$_SERVER['QUERY_STRING']}\" class='snlink'>{$text['heatmap']}</a>" : "";
+$heatmap = !$cejoin && empty($mysplname) ? "<a href=\"heatmap.php?{$_SERVER['QUERY_STRING']}\" class='snlink rounded'>{$text['heatmap']}</a>" : "";
 if ($pagenav && !$cejoin && empty($mysplname)) {
     $heatmap = " | " . $heatmap;
 }
@@ -456,11 +456,11 @@ if ($enableminimap) {
 }
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-100' data-tablesaw-mode='columntoggle'" . $headerr;
+        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-full' data-tablesaw-mode='columntoggle'" . $headerr;
     } elseif ($tabletype == "stack") {
-        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-100' data-tablesaw-mode='stack'" . $headerr;
+        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-full' data-tablesaw-mode='stack'" . $headerr;
     } elseif ($tabletype == "swipe") {
-        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-100' data-tablesaw-mode='swipe'" . $headerr;
+        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-full' data-tablesaw-mode='swipe'" . $headerr;
     } else {
         $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n";
     }
@@ -507,7 +507,7 @@ echo $header;
     </thead>
 <?php
 $i = $offsetplus;
-$chartlink = "<img src='img/Chart.gif' class='chartimg' alt=''>";
+$chartlink = "<img src='img/chart.gif' alt='' class='chartimg inline-block'>";
 while ($row = tng_fetch_assoc($result)) {
     $rights = determineLivingPrivateRights($row);
     $row['allow_living'] = $rights['living'];

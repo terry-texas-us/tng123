@@ -84,7 +84,7 @@ if ($tree && !$tngconfig['places1tree']) {
 $formstr = getFORM("places-oneletter", "get", "", "");
 echo $formstr;
 ?>
-<div class="titlebox">
+<div class="titlebox rounded-lg">
     <?php
     echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
     if ($tree && !$tngconfig['places1tree']) {
@@ -98,16 +98,15 @@ echo $formstr;
 </form>
 
 <br>
-<div class="titlebox">
+<div class="titlebox rounded-lg">
     <div>
         <h3 class="subhead">
             <?php
             echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']}";
             if (isset($_GET['offset'])) echo " ({$text['numoccurrences']}):";
-
             ?>
         </h3>
-        <p class="smaller"><?php echo $text['showmatchingplaces']; ?> <a href="<?php echo "heatmap.php?" . $treestr . $heatargs; ?>" class="snlink"><?php echo $text['heatmap']; ?></a></p>
+        <p class="smaller"><?php echo $text['showmatchingplaces']; ?> <a href="<?php echo "heatmap.php?" . $treestr . $heatargs; ?>" class="snlink rounded"><?php echo $text['heatmap']; ?></a></p>
     </div>
     <table class="sntable">
         <tr>
@@ -149,8 +148,7 @@ echo $formstr;
                             $countrow = tng_fetch_assoc($result2);
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
-
-                            $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr3}psearch=$place2\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : "";
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                                 $name = "<a href=\"$places_oneletter_url" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {

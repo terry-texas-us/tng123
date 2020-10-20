@@ -79,7 +79,7 @@ if (!is_writable($rootpath))
 
 if (!empty($message)) $message = "<span class='msgerror'>$message</span>";
 
-echo "<table id='m2table' border='0' cellpadding='10' cellspacing='2' class='lightback $tableclass w-100' style=\"padding: 0;\">";
+echo "<table id='m2table' border='0' cellpadding='10' cellspacing='2' class='lightback $tableclass w-full' style=\"padding: 0;\">";
 echo "<tr class='databack'>";
 echo "<td class='tngshadow'>";
 

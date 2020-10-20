@@ -15,7 +15,7 @@ echo help_header("N�pov�da: V�ce");
                 <a href="media_help.php" class="lightlink">N�pov�da: M�dia &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>V�ce</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#more" class="lightlink">V�ce informac�</a>
             </p>
         </td>

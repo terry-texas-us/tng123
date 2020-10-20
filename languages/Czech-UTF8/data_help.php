@@ -15,7 +15,7 @@ echo help_header("Nápověda: Import dat");
                 <a href="second_help.php" class="lightlink">Nápověda: Druhotné procesy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Import / Export</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#import" class="lightlink">GEDCOM Import</a> &nbsp;|&nbsp;
                 <a href="#export" class="lightlink">GEDCOM Export</a>
             </p>

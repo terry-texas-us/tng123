@@ -8,26 +8,21 @@ include "$mylanguage/text.php";
 include "functions.php";
 include "checklogin.php";
 include "showmedialib.php";
-
 //starting time between slides
 //now defined in slideshow.js
-
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack" id="slideshell">
 
     <div id="slideshow">
-        <div id="loadingdiv" class="rounded10" style="display:none;"><?php echo $text['loading']; ?></div>
+        <div id="loadingdiv" class="rounded-lg" style="display:none;"><?php echo $text['loading']; ?></div>
         <div id="div1" class="slide">
             <?php
             initMediaTypes();
-
             include "showmediaxmllib.php";
-
             echo "<p class=\"adminnav topmargin\">$pagenav</p>";
             echo "<h3 class='subhead'>" . truncateIt($description, 100) . "</h3>\n";
-
             if ($noneliving || $imgrow['alwayson']) {
                 showMediaSource($imgrow, true);
             } else {

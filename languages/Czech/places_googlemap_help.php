@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Google Maps");
                 <a href="tlevents_help.php" class="lightlink">N�pov�da: Ud�losti �asov� osy &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Google Maps</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#show" class="lightlink">Zobrazit</a> &nbsp;|&nbsp;
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#controls" class="lightlink">Ovl�d�n� mapy</a> &nbsp;|&nbsp;

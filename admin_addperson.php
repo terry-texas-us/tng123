@@ -203,9 +203,9 @@ if ($type == "child") {
 
     $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
     $rval .= " onmouseover=\"$('unlinkc_$personID').style.visibility='visible';\" onmouseout=\"$('unlinkc_$personID').style.visibility='hidden';\">\n";
-    $rval .= "<table class='w-100' cellpadding='5' cellspacing='1'>\n";
+    $rval .= "<table class='w-full' cellpadding='5' cellspacing='1'>\n";
     $rval .= "<tr>\n";
-    $rval .= "<td class=\"dragarea normal\">";
+    $rval .= "<td class=\"dragarea rounded-lg normal\">";
     $rval .= "<img src=\"img/admArrowUp.gif\" alt=''><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=''>\n";
     $rval .= "</td>\n";
     $rval .= "<td class='lightback normal childblock'>\n";

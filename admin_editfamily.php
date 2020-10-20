@@ -269,7 +269,7 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                 <?php
                                 if ($editconflict) {
                                     echo "<br><p>{$admtext['editconflict']}</p>\n";
-                                    echo "<p class='normal'><strong><a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree\" class=\"rounded10 whitebuttonlink tngshadow\">{$admtext['retry']}</a></strong></p>\n";
+                                    echo "<p class='normal'><strong><a href='admin_editfamily.php?familyID=$familyID&tree=$tree' class='rounded-lg whitebuttonlink tngshadow'>{$admtext['retry']}</a></strong></p>\n";
                                 } else {
                                     $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
                                     $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
@@ -490,12 +490,11 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                                             echo " onmouseover=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','hidden');\"";
                                         }
                                         echo ">\n";
-                                        echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
-                                        echo "<td class=\"dragarea normal\">";
+                                        echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
+                                        echo "<td class='dragarea rounded-lg normal'>";
                                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                                         echo "</td>\n";
                                         echo "<td class='lightback normal childblock'>\n";
-
                                         if ($allow_delete) {
                                             echo "<div id=\"unlinkc_{$child['pID']}\" $hidecode><a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">{$admtext['text_delete']}</a></div>";
                                         }

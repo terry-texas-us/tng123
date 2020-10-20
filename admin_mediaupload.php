@@ -242,7 +242,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                     <!-- The extended global progress information -->
                     <div class="progress-extended">&nbsp;</div>
                 </div>
-                <br style="clear: both;">
+                <br class="clear-both">
                 <!-- The loading indicator is shown during file processing -->
                 <div class="fileupload-loading"></div>
                 <br>

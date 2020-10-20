@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Administrace");
                 <a href="people_help.php" class="lightlink">N�pov�da: Osoby &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Za��n�me</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#gettingstarted" class="lightlink">Za��n�me</a> &nbsp;|&nbsp;
                 <a href="#notes" class="lightlink">Pozn�mky</a> &nbsp;|&nbsp;
                 <a href="#otherresources" class="lightlink">Jin� zdroje</a>

@@ -144,7 +144,7 @@ $query .= "LIMIT $change_limit";
 $result = tng_query($query);
 if (tng_num_rows($result)) {
     ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <h3 class="subhead"><?php echo $text['individuals']; ?></h3>
         <?php echo $tableStartTag; ?>
         <thead>
@@ -164,8 +164,7 @@ if (tng_num_rows($result)) {
         </thead>
 
         <?php
-        $imageSize = @GetImageSize("img/Chart.gif");
-        $chartlink = "<img src=\"img/Chart.gif\" alt=\"\" $imageSize[3]>";
+        $chartlink = "<img src='img/chart.gif' alt='' class='inline-block'>";
         while ($row = tng_fetch_assoc($result)) {
             $rights = determineLivingPrivateRights($row);
             $row['allow_living'] = $rights['living'];
@@ -178,7 +177,7 @@ if (tng_num_rows($result)) {
                 if (!$tngconfig['places1tree']) {
                     $birthplacestr .= "tree={$row['gedcom']}&amp;";
                 }
-                $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
+                $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src='img/tng_search_small.gif' alt='' class='inline-block'></a>";
             }
             echo "<tr>\n";
             echo "<td class='databack'><a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
@@ -227,7 +226,7 @@ $query .= "LIMIT $change_limit";
 $famresult = tng_query($query);
 if (tng_num_rows($famresult)) {
     ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <h3 class="subhead"><?php echo $text['families']; ?></h3>
         <?php echo $tableStartTag; ?>
         <thead>

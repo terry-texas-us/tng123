@@ -185,13 +185,13 @@ $menu = doMenu($reporttabs, "edit", $innermenu);
 echo displayHeadline($admtext['reports'] . " &gt;&gt; " . $admtext['modifyreport'], "img/reports_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback normal w-100" cellpadding="10" cellspacing="2">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updatereport.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-                <table>
-                    <tr>
-                        <td><span class="normal"><?php echo $admtext['reportname']; ?>:</span></td>
+    <table class="lightback normal w-full" cellpadding="10" cellspacing="2">
+        <tr class="databack">
+            <td class="tngshadow">
+                <form action="admin_updatereport.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+                    <table>
+                        <tr>
+                            <td><span class="normal"><?php echo $admtext['reportname']; ?>:</span></td>
                         <td>
                             <input type="text" name="reportname" size="50" maxlength="80" value="<?php echo $row['reportname']; ?>">
                             <input type="hidden" name="reportnameorg" value="<?php echo $row['reportname']; ?>">

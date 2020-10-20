@@ -15,7 +15,7 @@ echo help_header("Nápověda: Více");
                 <a href="media_help.php" class="lightlink">Nápověda: Média &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Více</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#more" class="lightlink">Více informací</a>
             </p>
         </td>

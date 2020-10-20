@@ -65,7 +65,7 @@ function updateMostWanted(form) {
                     var newcontent = '<div class="sortrow" id="order' + vars.mwtype + 'divs_' + vars.ID + '" style="clear:both;" onmouseover="showEditDelete(\'' + vars.ID + '\');" onmouseout="hideEditDelete(\'' + vars.ID + '\');">\n';
                     newcontent += '<table>\n';
                     newcontent += '<tr id="row_' + vars.ID + '">\n';
-                    newcontent += '<td class="dragarea normal" style="width: 4em;">\n';
+                    newcontent += '<td class="dragarea rounded-lg normal" style="width: 4em;">\n';
                     newcontent += '<img src="img/admArrowUp.gif" alt=""><br>' + drag + '<br><img src="img/admArrowDown.gif" alt="">\n';
                     newcontent += '</td>\n';
                     newcontent += '<td class="lightback" style="width:' + thumbwidth + 'px;">\n';

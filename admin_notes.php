@@ -82,7 +82,7 @@ $notecount = tng_num_rows($notelinks);
                     echo "<div class=\"sortrow\" id=\"notes_{$note['ID']}\">";
                     echo "<table class='normal' cellpadding='3' cellspacing='1' border='0'>";
                     echo "<tr id=\"row_{$note['ID']}\">";
-                    echo "<td class=\"dragarea\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
+                    echo "<td class='dragarea rounded-lg'><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
                     echo "<td class='lightback' width=\"80\">$actionstr</td>";
                     echo "<td class='lightback' width=\"435\">$truncated</td>";
                     echo "</tr></table></div>\n";

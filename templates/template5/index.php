@@ -34,7 +34,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                 </td>
                 <td class="content" colspan="2">
 
-                    <table class="innertable w-100" cellpadding="5" cellspacing="0">
+                    <table class="innertable w-full" cellpadding="5" cellspacing="0">
                         <tr>
                             <td colspan="2" class="indexheader">
                                 <?php echo $title; ?> <!-- Our Family History and Ancestry -->

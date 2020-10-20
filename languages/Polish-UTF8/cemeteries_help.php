@@ -15,7 +15,7 @@ echo help_header("Pomoc: Cmentarze");
                 <a href="places_help.php" class="lightlink">Pomoc: Miejsca &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Cmentarze</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Dodaj lub edytuj</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Usuń</a>

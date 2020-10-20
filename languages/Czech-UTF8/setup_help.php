@@ -15,7 +15,7 @@ echo help_header("Nápověda: Nastavení");
                 <a href="config_help.php" class="lightlink">Nápověda: Základní nastavení &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Nastavení</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#config" class="lightlink">Konfigurace</a> &nbsp;|&nbsp;
                 <a href="#diag" class="lightlink">Diagnostika</a> &nbsp;|&nbsp;
                 <a href="#tables" class="lightlink">Vytvoření tabulek</a>

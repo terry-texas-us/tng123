@@ -112,11 +112,11 @@ $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table class='tablesaw whiteback w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'" . $headerr;
+        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'" . $headerr;
     } elseif ($tabletype == "stack") {
-        $header = "<table class='tablesaw whiteback w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'" . $headerr;
+        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'" . $headerr;
     } elseif ($tabletype == "swipe") {
-        $header = "<table class='tablesaw whiteback w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'" . $headerr;
+        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'" . $headerr;
     }
 } else {
     $header = "<table cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n" . $header;

@@ -45,7 +45,7 @@ if ($tngconfig['maint']) {
         </tr>
     </table>
     <form action="search.php" method="get">
-        <table class="w-100" cellspacing="0">
+        <table class="w-full" cellspacing="0">
             <tr class="strip">
                 <td class="fieldnameback">
                     <span class="fieldname">
@@ -59,7 +59,7 @@ if ($tngconfig['maint']) {
         </table>
     </form>
 
-    <table class="page w-100" cellspacing="0">
+    <table class="page w-full" cellspacing="0">
         <tr>
             <td class="section">
 

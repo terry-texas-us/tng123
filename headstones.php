@@ -122,25 +122,25 @@ if ($location) $titlestr .= " {$text['in']} $location";
 $logstring = "<a href=\"headstones.php?country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;cemeteryID=$cemeteryID&amp;tree=$tree\">$titlestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
-
 if ($map['key'] && $isConnected) {
     $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
-    <h2 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
+    <h2 class="header">
+        <span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
         if ($location) {
             echo " {$text['in']} $location";
-        } ?></h2><br style="clear: both;">
+        } ?>
+    </h2>
+    <br class="clear-both">
 <?php
 $hiddenfields[] = ['name' => 'country', 'value' => $country];
 $hiddenfields[] = ['name' => 'state', 'value' => $state];
 $hiddenfields[] = ['name' => 'county', 'value' => $county];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'headstones', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
-
 if ($tree) {
     $wherestr = " AND ($media_table.gedcom = '$tree' || $media_table.gedcom = \"\")";
     $wherestr2 = " AND $medialinks_table.gedcom = '$tree'";
@@ -153,7 +153,7 @@ $cemcount = 0;
 $gotImageJpeg = function_exists('imageJpeg');
 while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     if ($cemcount) $body .= "<br>\n";
-    $body .= "<div class='titlebox'>\n";
+    $body .= "<div class='titlebox rounded-lg'>\n";
     $thiscem = $subquery ? $cemetery['cemeteryID'] : "";
     $query = "SELECT DISTINCT media.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, form, mediatypeID, abspath, newwindow, latitude, longitude ";
     $query .= "FROM $media_table media ";
@@ -238,7 +238,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
     if (isMobile()) {
         if ($tabletype == "toggle") $tabletype = "columntoggle";
-        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
     } else {
         $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
     }
@@ -344,7 +344,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 }
 
 if ($map['key'] && $map['pins']) {
-    echo "<div id='map' class='rounded10 cemmap'></div>\n";
+    echo "<div id='map' class='rounded-lg cemmap'></div>\n";
 }
 
 if ($toppagenav) {

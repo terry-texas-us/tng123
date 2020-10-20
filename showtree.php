@@ -31,7 +31,7 @@ echo "<html lang='en'>\n";
 tng_header($text['tree'] . ": " . $row['treename'], $flags);
 ?>
     <h2 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h2>
-    <br style="clear: both;">
+    <br class="clear-both">
 
     <table cellspacing="1" cellpadding="4" class="whiteback normal">
         <?php

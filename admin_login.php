@@ -90,7 +90,7 @@ echo tng_adminlayout();
 ?>
 <table class="w-75 m-auto" cellpadding="10" bgcolor="#fff">
     <tr>
-        <td class="fieldnameback rounded10">
+        <td class="fieldnameback rounded-lg">
             <span class="whiteheader mt-0 text-base" style="font-size: large; "><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></span>
         </td>
     </tr>
@@ -102,7 +102,7 @@ echo tng_adminlayout();
         </tr>
     <?php } ?>
     <tr>
-        <td class="databack tngshadow rounded10">
+        <td class="databack tngshadow rounded-lg">
             <div id="admlogintable" style="position:relative;">
                 <div class="altab" style="float:left;">
                     <form action="processlogin.php" name="form1" method="post">

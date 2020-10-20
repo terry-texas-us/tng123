@@ -230,7 +230,7 @@ function FillSlot(slot, currperson, lastperson) {
             toggleLines(slot, slotperson.famc, 'visible');
         }
         if (slotperson.photosrc && slotperson.photosrc != "-1") {
-            content = '<img src="' + slotperson.photosrc + '" id="img' + slot + '"' + ' class="smallimg">';
+            content = '<img src="' + slotperson.photosrc + '" id="img' + slot + '"' + ' class="smallimg rounded">';
             if (slotperson.photolink && slotperson.photolink != "-1")
                 content = '<a href="' + slotperson.photolink + '">' + content + '</a>';
             content = '<td class="lefttop">' + content + '</td>';
@@ -365,13 +365,12 @@ function getParams(personstr) {
 function needspouses(nextfamily) {
     let husb = families[nextfamily].husband;
     let wife = families[nextfamily].wife;
-
     return !husb || !wife || !people[husb] || !people[wife];
 }
 
 let tdclasstxt = 'class="normal pboxpopup  align-top"';
-let divtxt = '<div class="pboxpopupdiv">\n<table class="w-100" cellspacing="0" cellpadding="1" border="0">\n';
-let tabletxt = '<table class="w-100" cellspacing="0" cellpadding="1">\n';
+let divtxt = '<div class="pboxpopupdiv rounded-lg">\n<table class="w-full" cellspacing="0" cellpadding="1" border="0">\n';
+let tabletxt = '<table class="w-full" cellspacing="0" cellpadding="1">\n';
 
 function doRow(slot, slotabbr, slotevent1, slotevent2) {
     var rstr = "";
@@ -426,7 +425,7 @@ function getBackPopup() {
         popupcontent += "</table></div>\n";
     }
     if (popupcontent)
-        popupcontent = '<div><div class="tngshadow popinner">' + popupcontent + '</div></div>\n';
+        popupcontent = '<div><div class="tngshadow popinner rounded-lg">' + popupcontent + '</div></div>\n';
     return popupcontent;
 }
 
@@ -533,7 +532,7 @@ function getPopup(slot) {
     }
 
     if (popupcontent)
-        popupcontent = '<div><div class="tngshadow popinner">' + popupcontent + '</div></div>\n';
+        popupcontent = '<div><div class="tngshadow popinner rounded-lg">' + popupcontent + '</div></div>\n';
     return popupcontent;
 }
 

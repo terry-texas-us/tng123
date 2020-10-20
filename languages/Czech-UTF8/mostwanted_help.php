@@ -15,7 +15,7 @@ echo help_header("Nápověda: Hledá se");
                 <a href="data_help.php" class="lightlink">Nápověda: Import / Export &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Hledá se</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#add" class="lightlink">Přidat nový</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;
                 <a href="#sort" class="lightlink">Třídit</a> &nbsp;|&nbsp;

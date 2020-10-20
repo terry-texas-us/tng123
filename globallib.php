@@ -619,12 +619,12 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     if ($tngpage > 1) {
         $prevpage = $tngpage - 1;
         $navoffset = (($prevpage * $perpage) - $perpage);
-        $prevlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$prevpage\" class='snlink' title=\"{$text['text_prev']}\">&laquo;{$text['text_prev']}</a> ";
+        $prevlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$prevpage\" class='snlink rounded' title=\"{$text['text_prev']}\">&laquo;{$text['text_prev']}</a> ";
     }
     if ($tngpage < $totalpages) {
         $nextpage = $tngpage + 1;
         $navoffset = (($nextpage * $perpage) - $perpage);
-        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class='snlink' title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
+        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class='snlink rounded' title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
     }
     $curpage = 0;
     $pagenav = $firstlink = $lastlink = '';
@@ -633,21 +633,21 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
         $navoffset = (($curpage - 1) * $perpage);
         if (($curpage <= $tngpage - $pagenavpages || $curpage >= $tngpage + $pagenavpages) && $pagenavpages) {
             if ($curpage == 1) {
-                $firstlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink' title=\"{$text['firstpage']}\">&laquo;1</a> ... ";
+                $firstlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink rounded' title=\"{$text['firstpage']}\">&laquo;1</a> ... ";
             }
             if ($curpage == $totalpages) {
-                $lastlink = "... <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink' title=\"{$text['lastpage']}\">$totalpages&raquo;</a>";
+                $lastlink = "... <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink rounded' title=\"{$text['lastpage']}\">$totalpages&raquo;</a>";
             }
         } else {
             if ($curpage == $tngpage) {
-                $pagenav .= " <span class='snlink snlinkact'>$curpage</span> ";
+                $pagenav .= " <span class='snlink rounded snlinkact'>$curpage</span> ";
             } else {
-                $pagenav .= " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink'>$curpage</a> ";
+                $pagenav .= " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink rounded'>$curpage</a> ";
             }
         }
     }
     if ($firstlink || $lastlink) {
-        $gotolink = " <span class='snlink'>";
+        $gotolink = " <span class='snlink rounded'>";
         $gotolink .= "<input type='text' class='tngpage minifield text-sm w-16 border-none' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> ";
         $gotolink .= "<input type='button' value=\"{$text['go']}\" class='minibutton' onclick=\"goToPage(this,'$address','$orgtree',$perpage);\">";
         $gotolink .= "</span>";
@@ -1172,7 +1172,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
         } else {
             $photowtouse = intval($photohtouse * $photoinfo[0] / $photoinfo[1]);
         }
-        $photo = "$prefix<img src=\"$photoref\" style=\"border-width:{$border}px;border-style:solid;\" alt=\"" . str_replace("\"", "&#34;", $alttext) . "\" width=\"$photowtouse\" height=\"$photohtouse\" class=\"smallimg\"{$align}>$suffix";
+        $photo = "$prefix<img src=\"$photoref\" style=\"border-width:{$border}px;border-style:solid;\" alt=\"" . str_replace("\"", "&#34;", $alttext) . "\" width=\"$photowtouse\" height=\"$photohtouse\" class='smallimg rounded'{$align}>$suffix";
     }
     tng_free_result($result);
 
@@ -1184,7 +1184,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
  * @return string
  */
 function placeImage($place) {
-    return "<a href=\"placesearch.php?psearch=" . urlencode($place) . "\" class=\"pl\"><img src=\"img/tng_search_small.gif\" alt=\"\" class=\"placeimg\"></a>";
+    return "<a href=\"placesearch.php?psearch=" . urlencode($place) . "\" class='pl'><img src='img/tng_search_small.gif' alt='' class='placeimg inline-block'></a>";
 }
 
 /**

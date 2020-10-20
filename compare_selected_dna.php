@@ -132,7 +132,7 @@ $mainstyle = "background-color:$bgmain; color:$txtmain;";
 $modestyle = "background-color:$bgmode; color:$txtmode;";
 ?>
 <div class="overflowauto">
-    <table class="whiteback normal w-100" cellpadding="0" cellspacing="1">
+    <table class="whiteback normal w-full" cellpadding="0" cellspacing="1">
         <thead>
         <tr>
             <?php if ($allow_edit || $showtestnumbers) { ?>

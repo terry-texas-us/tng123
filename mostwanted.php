@@ -15,7 +15,7 @@ function showDivs($type) {
     global $text, $people_table, $media_table, $mostwanted_table, $mediatypes_assoc, $mediapath, $rootpath;
     global $gotImageJpeg, $maxmediafilesize, $tree;
 
-    $mediatext = "<table class='whiteback w-100' cellpadding=\"8\" cellspacing='2'>\n";
+    $mediatext = "<table class='whiteback w-full' cellpadding=\"8\" cellspacing='2'>\n";
 
     $query = "SELECT mostwanted.ID AS mwID, mwtype, thumbpath, abspath, form, usecollfolder, mediatypeID, path, media.description AS mtitle, mostwanted.personID, mostwanted.gedcom, mostwanted.mediaID, mostwanted.description as mwdesc, mostwanted.title as mwtitle, lastname, firstname, lnprefix, suffix, prefix, people.title as title, living, private, nameorder, branch ";
     $query .= "FROM $mostwanted_table mostwanted ";
@@ -90,15 +90,13 @@ $flags['imgprev'] = true;
     <br style="clear: left;">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'mostwanted', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
-
-echo "<div class=\"titlebox mwblock\">\n";
+echo "<div class=\"titlebox rounded-lg mwblock\">\n";
 echo "<h3 class='subhead'>" . $text['mysperson'] . "</h3>\n";
 echo showDivs("person");
 echo "</div>\n";
 
 echo "<br>\n";
-
-echo "<div class=\"titlebox mwblock\">\n";
+echo "<div class=\"titlebox rounded-lg mwblock\">\n";
 echo "<h3 class='subhead'>" . $text['mysphoto'] . "</h3>\n";
 echo showDivs("photo");
 echo "</div>\n";

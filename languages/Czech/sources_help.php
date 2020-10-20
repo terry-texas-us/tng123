@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Prameny");
                 <a href="repositories_help.php" class="lightlink">N�pov�da: �lo�i�t� pramen� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Prameny</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat nov�</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp;|&nbsp;

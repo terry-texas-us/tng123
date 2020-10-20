@@ -16,7 +16,7 @@ echo help_header("N�pov�da: Stromy");
                 <a href="branches_help.php" class="lightlink">N�pov�da: V�tve &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Stromy</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;

@@ -15,7 +15,7 @@ echo help_header("Help: More");
                 <a href="media_help.php" class="lightlink">Help: Media &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>More</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#more" class="lightlink">More Information</a>
             </p>
         </td>

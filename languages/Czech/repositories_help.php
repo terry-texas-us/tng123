@@ -15,7 +15,7 @@ echo help_header("N�pov�da: �lo�i�t� pramen�");
                 <a href="assoc_help.php" class="lightlink">N�pov�da: Spojen� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>�lo�i�t� pramen�</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat nov�</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Upravit existuj�c�</a> &nbsp;|&nbsp;

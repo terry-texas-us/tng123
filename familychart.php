@@ -324,7 +324,7 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     if ($others = $person['otherfamilies']) {
         echo "<div class='more' style='left:" . ($left - $familychart['chartHpad'] - $familychart['morew']) . "px; top:" .
             ($top + $familychart['boxheight'] - 15) . "px;'><img src='img/family_small_icon.gif' onclick='toggle(\"$thisPersonID\");' alt='{$text['otherfamilies']}' title='{$text['otherfamilies']}' >
-		<div id='$thisPersonID' class='rounded10 popup hiddenbox'>\n";
+		<div id='$thisPersonID' class='rounded-lg popup hiddenbox'>\n";
         while ($other = array_shift($others))
             echo "\t<a href='familychart.php?familyID={$other['familyID']}&amp;personID=$thisPersonID$andtree'>{$other['text']}</a><br>\n";
         echo "</div></div>\n";
@@ -348,7 +348,7 @@ function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
     if ($otherfamilies = getfamilyID($person, 'other')) {
         echo "<div class='more' style='left:{$left}px;top:{$top}px;'>
 		<img src='img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}'>
-		<div id='$spouse' class='rounded10 popup hiddenbox'>";
+		<div id='$spouse' class='rounded-lg popup rounded-lg hiddenbox'>";
         $tree = $person['gedcom'];
         $rev = $reverse ? '&amp;rev=1' : '';
         $sp = 0;

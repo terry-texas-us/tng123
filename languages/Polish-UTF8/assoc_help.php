@@ -15,7 +15,7 @@ echo help_header("Pomoc: Związki");
                 <a href="notes_help.php" class="lightlink">Pomoc: Notatki &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Związki</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Co to są związki?</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Dodaj/Edycja/Usuń</a>
             </p>

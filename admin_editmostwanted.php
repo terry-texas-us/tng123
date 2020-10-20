@@ -42,12 +42,12 @@ header("Content-type:text/html; charset=" . $session_charset);
             <tr>
                 <td><?php echo $admtext['title']; ?>:</td>
                 <td>
-                    <input type="text" name="title" size="60" maxlength="128" value="<?php echo $row['title']; ?>" style="width: 100%;">
+                    <input class="w-full" name="title" type="text" value="<?php echo $row['title']; ?>" size="60" maxlength="128">
                 </td>
             </tr>
             <tr>
                 <td><?php echo $admtext['description']; ?>:</td>
-                <td><textarea name="description" rows="4" cols="60" style="width: 100%;"><?php echo $row['description']; ?></textarea></td>
+                <td><textarea class="w-full" name="description" rows="4" cols="60"><?php echo $row['description']; ?></textarea></td>
             </tr>
             <tr>
                 <td><?php echo $admtext['tree']; ?>:</td>

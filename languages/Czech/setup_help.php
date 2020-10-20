@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Nastaven�");
                 <a href="config_help.php" class="lightlink">N�pov�da: Z�kladn� nastaven� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Nastaven�</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#config" class="lightlink">Konfigurace</a> &nbsp;|&nbsp;
                 <a href="#diag" class="lightlink">Diagnostika</a> &nbsp;|&nbsp;
                 <a href="#tables" class="lightlink">Vytvo�en� tabulek</a>

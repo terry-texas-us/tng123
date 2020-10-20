@@ -22,7 +22,7 @@ function drawBox($person, $box) {
     }
 
     //begin, entire square
-    echo "<td><table class='w-100' border='0' cellpadding='0' cellspacing='0'><tr>";
+    echo "<td><table class='w-full' border='0' cellpadding='0' cellspacing='0'><tr>";
 
     //box consists of three cells
     //left margin
@@ -58,7 +58,7 @@ function drawBox($person, $box) {
 
     //name section
     //outer table with border
-    echo "<div class=\"popup trackerbox\" style=\"width:{$boxwidth}px; height:{$boxheight}px; background-color:$bgcolor; padding: {$pedigree['cellpad']}px; overflow:hidden;\">\n";
+    echo "<div class='popup rounded-lg trackerbox' style=\"width:{$boxwidth}px; height:{$boxheight}px; background-color:$bgcolor; padding: {$pedigree['cellpad']}px; overflow:hidden;\">\n";
 
     //inner table
     echo "<table cellpadding='0' cellspacing='0' style=\"margin:0;\">\n";

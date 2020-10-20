@@ -15,7 +15,7 @@ echo help_header("Help: Setup");
                 <a href="config_help.php" class="lightlink">Help: General Settings &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Setup</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#config" class="lightlink">Configuration</a> &nbsp;|&nbsp;
                 <a href="#diag" class="lightlink">Diagnostics</a> &nbsp;|&nbsp;
                 <a href="#tables" class="lightlink">Table Creation</a>

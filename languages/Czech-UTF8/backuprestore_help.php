@@ -15,7 +15,7 @@ echo help_header("Nápověda: Obslužné programy");
                 <a href="modmanager_help.php" class="lightlink">Nápověda: Manažer módů &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Obslužné programy</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#tables" class="lightlink">Záloha - Obnova - Optimalizace</a> &nbsp;|&nbsp;
                 <a href="#structure" class="lightlink">Záloha struktury tabulek</a> &nbsp;|&nbsp;
                 <a href="#ids" class="lightlink">Přečíslování ID čísel</a>

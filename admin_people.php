@@ -286,7 +286,7 @@ if (!isset($message)) $message = '';
 echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message);
 ?>
 
-    <table class="lightback w-100" cellspacing="2" border="0">
+    <table class="lightback w-full" cellspacing="2" border="0">
         <tr class="databack">
             <td class="tngshadow">
                 <div class="normal">

@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Nastaven� sch�mat");
                 <a href="logconfig_help.php" class="lightlink">N�pov�da: Nastaven� protokolov�n� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Nastaven� sch�mat</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#ped" class="lightlink">P�edkov�</a> &nbsp;|&nbsp;
                 <a href="#desc" class="lightlink">Potomci</a> &nbsp;|&nbsp;
                 <a href="#rel" class="lightlink">P��buzensk� vztahy</a> &nbsp;|&nbsp;

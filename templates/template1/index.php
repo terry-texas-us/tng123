@@ -91,7 +91,7 @@ $title = getTemplateMessage('t1_maintitle');
 
                     ?>
                     <h2><?php echo $text['mnufeatures']; ?></h2>
-                    <table class="w-100">
+                    <table class="w-full">
                         <tr>
                             <td class="align-top" style="width: 30%;">
                                 <ul>

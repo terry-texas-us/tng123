@@ -15,7 +15,7 @@ echo help_header("Help: Media");
                     <a href="collections_help.php" class="lightlink">Help: Collections &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>Media</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
                     <a href="#add" class="lightlink">Add</a> &nbsp;|&nbsp;
                     <a href="#edit" class="lightlink">Edit</a> &nbsp;|&nbsp;

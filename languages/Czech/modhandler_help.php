@@ -16,7 +16,7 @@ echo help_header("N�pov�da: Mana�er m�d�");
             </p>
             <h2 class="largeheader">N�pov�da: Mana�er m�d�
             </h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#overview" class="lightlink">P�ehled</a> &nbsp;|&nbsp;
                 <a href="#operation" class="lightlink">Operace</a> &nbsp;|&nbsp;
                 <a href="#status" class="lightlink">Stav</a> &nbsp;|&nbsp;

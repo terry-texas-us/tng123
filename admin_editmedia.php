@@ -480,7 +480,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <div id="placeinfo"<?php if (!$placeopen) {
                     echo " style='display: none;'";
                 } ?>>
-                    <table class="topbuffer normal w-100">
+                    <table class="topbuffer normal w-full">
                         <tr>
                             <td width="150"><?php echo $admtext['placetaken']; ?>:</td>
                             <td>

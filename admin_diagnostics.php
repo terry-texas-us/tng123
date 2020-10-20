@@ -34,7 +34,7 @@ $menu = doMenu($setuptabs, "diagnostics", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'], "img/setup_icon.gif", $menu, "");
 ?>
 
-    <table class="lightback normal w-100" cellpadding="10" cellspacing="2">
+    <table class="lightback normal w-full" cellpadding="10" cellspacing="2">
         <tr>
             <td class="tngshadow databack" colspan="2"><em><?php echo $admtext['sysinfo']; ?></em></td>
         </tr>

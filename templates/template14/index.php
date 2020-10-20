@@ -77,7 +77,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                 <hr>
                                             </div>
 
-                                            <div class="art-block titlebox" id="tsearchbox">
+                                            <div class="art-block titlebox rounded-lg" id="tsearchbox">
                                                 <div class="art-block-body">
                                                     <div class="art-blockheader">
                                                         <h2 class="site-head"><?php echo $text['search']; ?></h2>
@@ -186,7 +186,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                             <div class="cleared"></div>
                         </div>
                         <div class="art-layout-cell art-sidebar1" id="sidebar">
-                            <img alt="" class="rounded10" src="<?php echo $templatepath . $tmp['t14_mainimage']; ?>" id="mainphoto"><br><br>
+                            <img src="<?php echo $templatepath . $tmp['t14_mainimage']; ?>" alt="" id="mainphoto" class="rounded-lg"><br><br>
                             <i><?php echo getTemplateMessage('t14_photocaption'); ?></i>
                         </div>
                     </div>

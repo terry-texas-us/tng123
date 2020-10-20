@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Vlastn� typy ud�lost�");
                 <a href="reports_help.php" class="lightlink">N�pov�da: Reporty &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Vlastn� typy ud�lost�</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat nebo upravit</a> &nbsp;|&nbsp;
                 <a href="#accept" class="lightlink">P�ijmout nebo odm�tnout</a> &nbsp;|&nbsp;

@@ -64,7 +64,7 @@ if (!$display) {
     }
 }
 
-$rounded = $display == "compact" ? "rounded4" : "rounded10";
+$rounded = $display == "compact" ? "rounded" : "rounded-lg";
 
 if ($display == "standard") {
     $slinkstyle = "3";
@@ -112,13 +112,10 @@ if (file_exists($arrltpath)) {
 } else {
     $pedigree['leftarrowlink'] = "<b>&lt;</b>";
 }
-
-// see if chart link image is present
-if (file_exists($rootpath . $endrootpath . "img/Chart.gif")) {
-    $imageSize = @GetImageSize($rootpath . $endrootpath . "img/Chart.gif");
-    $pedigree['chartlink'] = "<img src=\"img/Chart.gif\" $imageSize[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
+if (file_exists($rootpath . $endrootpath . "img/chart.gif")) {
+    $pedigree['chartlink'] = "<img src='img/chart.gif' alt=\"{$text['popupnote2']}\" title=\"{$text['popupnote2']}\" class='inline-block'>";
 } else {
-    $pedigree['chartlink'] = "<span class='normal'><b>P</b></span>";
+    $pedigree['chartlink'] = "<span class='normal font-semibold'>P</span>";
 }
 
 if ($display == "standard") {

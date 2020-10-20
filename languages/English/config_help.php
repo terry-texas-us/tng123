@@ -15,7 +15,7 @@ echo help_header("Help: General Settings");
                     <a href="pedconfig_help.php" class="lightlink">Help: Chart Settings &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>General Settings</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#data" class="lightlink">Database</a> &nbsp;|&nbsp;
                     <a href="#table" class="lightlink">Tables</a> &nbsp;|&nbsp;
                     <a href="#path" class="lightlink">Paths+Folders</a> &nbsp;|&nbsp;

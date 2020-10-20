@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Z�kladn� nastaven�");
                 <a href="pedconfig_help.php" class="lightlink">N�pov�da: Nastaven� sch�mat &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Z�kladn� nastaven�</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#data" class="lightlink">Datab�ze</a> &nbsp;|&nbsp;
                 <a href="#table" class="lightlink">Tabulky</a> &nbsp;|&nbsp;
                 <a href="#path" class="lightlink">Um�st�n� a slo�ky</a> &nbsp;|&nbsp;

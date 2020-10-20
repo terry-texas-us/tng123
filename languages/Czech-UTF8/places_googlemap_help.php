@@ -15,7 +15,7 @@ echo help_header("Nápověda: Google Maps");
                 <a href="tlevents_help.php" class="lightlink">Nápověda: Události časové osy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Google Maps</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#show" class="lightlink">Zobrazit</a> &nbsp;|&nbsp;
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#controls" class="lightlink">Ovládání mapy</a> &nbsp;|&nbsp;

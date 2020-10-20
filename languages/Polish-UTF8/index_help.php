@@ -15,7 +15,7 @@ echo help_header("Pomoc: Pierwsze kroki");
                 <a href="people_help.php" class="lightlink">Pomoc: Osoby &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Pierwsze kroki</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#gettingstarted" class="lightlink">Pierwsze kroki</a> &nbsp;|&nbsp;
                 <a href="#notes" class="lightlink">Notatki</a> &nbsp;|&nbsp;
                 <a href="#otherresources" class="lightlink">Inne dane</a>

@@ -89,24 +89,19 @@ function addToAlbum(media) {
 
 function finishAddToAlbum(req) {
     var newrow;
-
     var pairs = req.split('&');
     var media = parseInt(pairs[0]);
     var albumlink = parseInt(pairs[1]);
-
     var newnum = jQuery('.sortrow').length + 1;
-
-    newrow = '<table class="w-100" cellpadding="5" cellspacing="1"><tr>\n';
-    newrow += '<td class="dragarea normal">';
+    newrow = '<table class="w-full" cellpadding="5" cellspacing="1"><tr>\n';
+    newrow += '<td class="dragarea rounded-lg normal">';
     newrow += '<img src="img/admArrowUp.gif" alt=""><br>' + dragmsg + '<br><img src="img/admArrowDown.gif" alt="">\n';
     newrow += '</td>\n';
-
     newrow += '<td class="lightback smaller" style="width:35px;text-align:center;\">';
     newrow += '<div style=\"padding-bottom:5px;\"><a href="#" onclick="return moveItemInList(\'' + albumlink + '\',1);" title="' + movetopmsg + '"><img src="img/admArrowUp.gif" alt=""><br>Top</a></div>\n';
     newrow += '<input style="width:30px;" class="movefields" name="move' + albumlink + '" id="move' + albumlink + '" value="' + newnum + '" onkeypress="return handleMediaEnter(\'' + albumlink + '\',jQuery(\'#move' + albumlink + '\').val(),event);">\n';
     newrow += '<a href="#" onclick="return moveItemInList(\'' + albumlink + '\',jQuery(\'#move' + albumlink + '\').val());" title="' + movetopmsg + '">Go</a>';
     newrow += '</td>\n';
-
     newrow += '<td class="lightback" style="width:' + (thumbmaxw + 6) + 'px;text-align:center;">' + jQuery('#thumbcell_' + media).html() + '</td>\n';
     newrow += '<td class="lightback normal">' + jQuery('#desc_' + media).html();
     newrow += '<div id="del_' + albumlink + '" class="smaller" style="color: #808080; visibility: hidden;">';

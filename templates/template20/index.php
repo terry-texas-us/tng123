@@ -24,7 +24,7 @@ tng_header($sitename ? "" : $text['ourpages'], $flags);
                     include("randomphoto.php");
                 } else {
                     ?>
-                    <img src="<?php echo $templatepath; ?><?php echo $tmp['t20_mainimage']; ?>" alt="" class="bigphoto" style="width:100%"/><br>
+                    <img src="<?php echo $templatepath; ?><?php echo $tmp['t20_mainimage']; ?>" alt="" class="bigphoto w-full"><br>
                     <span class="smaller italic">
 	                	&nbsp;&nbsp;<?php echo getTemplateMessage('t20_photocaption'); ?><br>
 		            </span>

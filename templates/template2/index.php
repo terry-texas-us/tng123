@@ -39,10 +39,10 @@ $title = getTemplateMessage('t2_maintitle');
     </script>
 
     <div class="text-center">
-        <table class="indexpage rounded10" style="padding:0;">
+        <table class="indexpage p-0 rounded-lg">
             <tr>
                 <td class='align-top'>
-                    <div class="databack rounded10">
+                    <div class="databack rounded-lg">
                         <div style="float:left;display:inline;">
                             <?php if ($tmp['t2_titlechoice'] == "text" || isMobile()) { ?>
                                 <div id="titlecontainer">
@@ -50,7 +50,7 @@ $title = getTemplateMessage('t2_maintitle');
                                 </div>
                             <?php } else { ?>
                                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443"
-                                    height="114" class="noimgborder rounded10">
+                                    height="114" class="noimgborder rounded-lg">
                                 <?php
                             }
                             $mainpara = getTemplateMessage('t2_mainpara');
@@ -216,8 +216,7 @@ $title = getTemplateMessage('t2_maintitle');
                             </form>
                         </div>
                         <div style="display:inline;">
-                            <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" width="327"
-                                style="max-height:460px;" class="noimgborder rounded10" id="mainphoto"><br><br>
+                            <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" id="mainphoto" class="noimgborder rounded-lg" style="max-height: 460px;" width="327"><br><br>
                         </div>
                         <div style="clear:left;"></div>
                     </div>

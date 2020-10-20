@@ -80,7 +80,7 @@ $citationcount = tng_num_rows($citresult);
                     echo "<div class=\"sortrow\" id=\"citations_{$citation['citationID']}\">";
                     echo "<table class='normal' cellpadding='3' cellspacing='1' border='0'>";
                     echo "<tr id=\"row_{$citation['citationID']}\">";
-                    echo "<td class=\"dragarea\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
+                    echo "<td class='dragarea rounded-lg'><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
                     echo "<td class='lightback' width=\"70\">$actionstr</td>";
                     echo "<td class='lightback' width=\"445\">$truncated</td>";
                     echo "</tr></table></div>\n";

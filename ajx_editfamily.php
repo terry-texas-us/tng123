@@ -76,7 +76,7 @@ include_once "eventlib.php";
 ?>
 
 <form action="" onsubmit="return updateFamily(this,<?php echo $slot; ?>,'admin_updatefamily.php');" method="post" name="famform1" id="famform1">
-    <table class="w-100 " cellpadding="10" cellspacing="0">
+    <table class="w-full " cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
@@ -105,7 +105,7 @@ include_once "eventlib.php";
                                     echo "<a href='#' onclick=\"return showAssociations('$familyID','F');\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
                                 }
                                 ?>
-                                <br style="clear: both;">
+                                <br class="clear-both">
                             </div>
                             <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
@@ -309,12 +309,11 @@ include_once "eventlib.php";
                                             echo " onmouseover=\"$('unlinkc_{$child['pID']}').style.visibility='visible';\" onmouseout=\"$('unlinkc_{$child['pID']}').style.visibility='hidden';\"";
                                         }
                                         echo ">\n";
-                                        echo "<table class='w-100' cellpadding='5' cellspacing='1'><tr>\n";
-                                        echo "<td class=\"dragarea normal\">";
+                                        echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
+                                        echo "<td class='dragarea rounded-lg normal'>";
                                         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
                                         echo "</td>\n";
                                         echo "<td class='lightback normal childblock'>\n";
-
                                         if ($allow_delete) {
                                             echo "<div id=\"unlinkc_{$child['pID']}\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">{$admtext['text_delete']}</a></div>";
                                         }

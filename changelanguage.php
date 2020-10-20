@@ -17,7 +17,7 @@ tng_header($text['changelanguage'], $flags);
 ?>
 
 <h2 class="header"><?php echo $text['changelanguage']; ?></h2>
-<br style="clear: both;">
+<br class="clear-both">
 
 <?php
 if ($numrows) {

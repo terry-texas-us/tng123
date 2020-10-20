@@ -15,7 +15,7 @@ echo help_header("Nápověda: Vlastní typy událostí");
                 <a href="reports_help.php" class="lightlink">Nápověda: Reporty &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Vlastní typy událostí</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp;|&nbsp;
                 <a href="#accept" class="lightlink">Přijmout nebo odmítnout</a> &nbsp;|&nbsp;

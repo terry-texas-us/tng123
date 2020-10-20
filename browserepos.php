@@ -115,11 +115,11 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table class='tablesaw whiteback normal w-100' data-tablesaw-mode='columntoggle'{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-full' data-tablesaw-mode='columntoggle'{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table class='tablesaw whiteback normal w-100' data-tablesaw-mode='stack'{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-full' data-tablesaw-mode='stack'{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table class='tablesaw whiteback normal w-100' data-tablesaw-mode='swipe'{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-full' data-tablesaw-mode='swipe'{$headerr}>\n";
     }
 } else {
     $header = "<table class='whiteback normal'>";

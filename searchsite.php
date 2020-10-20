@@ -13,7 +13,7 @@ echo "<html lang='en'>\n";
 tng_header($text['searchnames'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="searchsite-hdr-icon"></span><?php echo $text['searchsitemenu']; ?></h2>
-    <br style="clear: both;">
+    <br class="clear-both">
 <?php
 if ($msg) {
     echo "<h3 id='errormsg' class='msgerror subhead'>" . stripslashes(strip_tags($msg)) . "</h3>";
@@ -41,11 +41,11 @@ echo getFORM("", "GET", "searchsite", "", $onsubmit);
         </p>
         <br><br>
         <p>
-            <a href="searchform.php" class="snlink">&raquo; <?php echo $text['searchnames']; ?></a>
-            <a href="famsearchform.php" class="snlink">&raquo; <?php echo $text['searchfams']; ?></a>
+            <a href="searchform.php" class="snlink rounded">&raquo; <?php echo $text['searchnames']; ?></a>
+            <a href="famsearchform.php" class="snlink rounded">&raquo; <?php echo $text['searchfams']; ?></a>
         </p>
     </div>
 <?php echo "</form>\n"; ?>
     <div style="height: 200px;"></div>
-    <br style="clear: both;">
+    <br class="clear-both">
 <?php tng_footer(""); ?>

@@ -250,7 +250,7 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
     </div>
 
     </form>
-    <br style="clear: both;">
+    <br class="clear-both">
     <br>
 
 <?php
@@ -430,7 +430,7 @@ if ($tngneedresults) {
         }
 
         if ($numrows) {
-            echo "<div class='titlebox'>\n";
+            echo "<div class='titlebox rounded-lg'>\n";
             echo "<h3 class='subhead'>$datetxt</h3>";
             $numrowsplus = $numrows + $offset;
             $successcount++;
@@ -470,8 +470,7 @@ if ($tngneedresults) {
 
             <?php
             $i = $offsetplus;
-            $imageSize = @GetImageSize("img/Chart.gif");
-            $chartlink = "<img src=\"img/Chart.gif\" alt=\"\" $imageSize[3]>";
+            $chartlink = "<img src='img/chart.gif' alt='' class='inline-block'>";
             $treestr = $tngconfig['places1tree'] ? "" : "tree=$tree&amp;";
             while ($row = tng_fetch_assoc($result)) {
                 echo "<tr>";
@@ -557,7 +556,7 @@ if ($tngneedresults) {
                 echo $namestr;
 
                 if ($rights['both']) {
-                    $placetxt = $row[$place] ? $row[$place] . " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($row[$place]) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>" : truncateIt($row['info'], 75);
+                    $placetxt = $row[$place] ? $row[$place] . " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($row[$place]) . "\" title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>" : truncateIt($row['info'], 75);
                     $dateval = $row[$datefield];
                 } else {
                     $dateval = $placetxt = "";

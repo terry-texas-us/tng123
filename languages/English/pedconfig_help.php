@@ -16,7 +16,7 @@ echo help_header("Help: Chart Settings");
                     <a href="logconfig_help.php" class="lightlink">Help: Log Settings &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>Chart Settings</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#ped" class="lightlink">Pedigree</a> &nbsp;|&nbsp;
                     <a href="#desc" class="lightlink">Descendancy</a> &nbsp;|&nbsp;
                     <a href="#rel" class="lightlink">Relationship</a> &nbsp;|&nbsp;

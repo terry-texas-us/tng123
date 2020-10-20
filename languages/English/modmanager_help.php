@@ -15,7 +15,7 @@ echo help_header("Help: Mod Manager");
                     <a href="index_help.php" class="lightlink">Help: Getting Started &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>Mod Manager</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#overview" class="lightlink">Overview</a> &nbsp;|&nbsp;
                     <a href="#operation" class="lightlink">Operation</a> &nbsp;|&nbsp;
                     <a href="#status" class="lightlink">Status</a> &nbsp;|&nbsp;

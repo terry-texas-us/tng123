@@ -15,7 +15,7 @@ echo help_header("N�pov�da: R�zn�");
                 <a href="mostwanted_help.php" class="lightlink">N�pov�da: Hled� se &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>R�zn�</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#whatsnew" class="lightlink">Co je nov�ho</a> &nbsp;|&nbsp;
                 <a href="#mostwanted" class="lightlink">Hled� se</a> &nbsp;|&nbsp;
                 <a href="#validation" class="lightlink">Ov��en� dat</a>

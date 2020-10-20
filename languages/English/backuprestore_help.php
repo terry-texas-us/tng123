@@ -15,7 +15,7 @@ echo help_header("Help: Utilities");
                 <a href="modmanager_help.php" class="lightlink">Help: Mod Manager &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Utilities</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#tables" class="lightlink">Backup - Restore - Optimize</a> &nbsp;|&nbsp;
                 <a href="#structure" class="lightlink">Backup Table Structure</a> &nbsp;|&nbsp;
                 <a href="#ids" class="lightlink">Resequence IDs</a>

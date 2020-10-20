@@ -22,7 +22,7 @@ if ($tngconfig['maint']) {
 
 if (!isMobile()) {
     ?>
-    <br style="clear: both;"><br>
+    <br class="clear-both"><br>
 <?php } ?>
     <div class="content-sidebar-wrap">
         <main class="content">
@@ -94,7 +94,7 @@ if (!isMobile()) {
                                     href="<?php echo $tmp['t15_featurelink4']; ?>"><?php echo getTemplateMessage('t15_featuretitle4'); ?></a></h2>
                         </header>
                         <?php echo getTemplateMessage('t15_featurepara4'); ?>
-                        <br style="clear: both;">
+                        <br class="clear-both">
                     </article>
                     <article class="post entry">
                         <a href="<?php echo $tmp['t15_featurelink5']; ?>" title="" class="alignleft"><img
@@ -105,7 +105,7 @@ if (!isMobile()) {
                                     href="<?php echo $tmp['t15_featurelink5']; ?>"><?php echo getTemplateMessage('t15_featuretitle5'); ?></a></h2>
                         </header>
                         <?php echo getTemplateMessage('t15_featurepara5'); ?>
-                        <br style="clear: both;">
+                        <br class="clear-both">
                     </article>
                     <article class="post entry">
                         <a href="<?php echo $tmp['t15_featurelink6']; ?>" title="" class="alignleft"><img
@@ -116,7 +116,7 @@ if (!isMobile()) {
                                     href="<?php echo $tmp['t15_featurelink6']; ?>"><?php echo getTemplateMessage('t15_featuretitle6'); ?></a></h2>
                         </header>
                         <?php echo getTemplateMessage('t15_featurepara6'); ?>
-                        <br style="clear: both;">
+                        <br class="clear-both">
                     </article>
                 </div>
             </section>
@@ -144,7 +144,7 @@ if (!isMobile()) {
             </section>
         </aside>
     </div>
-    <br style="clear: both;">
+    <br class="clear-both">
 
 <?php tng_footer($flags); ?>
 

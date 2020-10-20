@@ -43,10 +43,9 @@ class RecentPeopleCard
 
         $content = "";
         if (tng_num_rows($result)) {
-            $content .= "<div class='titlebox tablediv'>";
+            $content .= "<div class='titlebox rounded-lg tablediv'>";
             $content .= "<h3 class='subhead'>{$title}</h3>";
-            $imageSize = @GetImageSize("{$this->path}img/Chart.gif");
-            $chartlink = "<img src='{$this->path}img/Chart.gif' alt='' $imageSize[3]>";
+            $chartlink = "<img src='{$this->path}img/chart.gif' alt='' class='inline-block'>";
             while ($row = tng_fetch_assoc($result)) {
                 $rights = determineLivingPrivateRights($row);
                 $row['allow_living'] = $rights['living'];

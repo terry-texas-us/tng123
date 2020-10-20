@@ -15,7 +15,7 @@ echo help_header("Pomoc: Mapy Google");
                 <a href="tlevents_help.php" class="lightlink">Pomoc: Linia czasu wydarzeń &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Mapy Google</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#show" class="lightlink">Pokaż/Ukryj</a> &nbsp;|&nbsp;
                 <a href="#search" class="lightlink">Szukanie</a> &nbsp;|&nbsp;
                 <a href="#controls" class="lightlink">Sterowanie mapą Google</a> &nbsp;|&nbsp;

@@ -68,8 +68,7 @@ $title = getTemplateMessage('t11_maintitle');
                                             <div class="left-indent">
                                                 <div class="text-center">
                                                     <br>
-                                                    <img alt="" class="rounded10"
-                                                        src="<?php echo $templatepath . $tmp['t11_mainimage']; ?>" id="mainphoto">
+                                                    <img src="<?php echo $templatepath . $tmp['t11_mainimage']; ?>" alt="" id="mainphoto" class="rounded-lg">
                                                 </div>
                                                 <p class="big-header">
                                                     <img src="<?php echo $templatepath; ?>img/greenvine1.png"

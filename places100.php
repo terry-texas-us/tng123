@@ -31,7 +31,7 @@ if ($tree && !$tngconfig['places1tree']) {
 
 echo getFORM("places100", "get", "", "");
 ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <?php echo $text['showtop']; ?>&nbsp;
         <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="4" maxlength="4"> <?php echo $text['byoccurrence']; ?>&nbsp;
         <input type="submit" value="<?php echo $text['go']; ?>">
@@ -40,7 +40,7 @@ echo getFORM("places100", "get", "", "");
     <br>
 
 <?php echo getFORM("places-oneletter", "get", "", ""); ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <?php
         echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
         if ($tree && !$tngconfig['places1tree']) {
@@ -56,7 +56,7 @@ echo getFORM("places100", "get", "", "");
     </div>
 <?php echo "</form>\n"; ?>
     <br>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <div>
             <h3 class="subhead"><?php echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']} ({$text['numoccurrences']}):"; ?></h3>
             <p class="smaller"><?php echo $text['showmatchingplaces']; ?></p>
@@ -107,8 +107,7 @@ echo getFORM("places100", "get", "", "");
                             $countrow = tng_fetch_assoc($result2);
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
-
-                            $searchlink = $specificcount ? " <a href=\"placesearch.php?{$treestr}psearch=$place2\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>" : "";
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr}psearch=$place2'><img src='img/tng_search_small.gif' alt='' class='inline-block'></a>" : "";
                             if ($place['placecount'] > 1 || !$specificcount) {
                                 $name = "<a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\">{$place['myplace']}</a>";
                                 echo "$counter. $name ({$place['placecount']}) $searchlink<br>\n";

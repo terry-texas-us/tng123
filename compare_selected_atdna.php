@@ -81,11 +81,11 @@ $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 
 if (isMobile()) {
     if ($tabletype == "toggle") {
-        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'{$headerr}>\n";
     } elseif ($tabletype == "stack") {
-        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'{$headerr}>\n";
     } elseif ($tabletype == "swipe") {
-        $header = "<table class='tablesaw whiteback normal w-100' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'{$headerr}>\n";
+        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'{$headerr}>\n";
     }
 } else {
     $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
@@ -94,7 +94,7 @@ echo $header;
 ?>
 
 <div class="overflowauto">
-    <table class="whiteback normal w-100" cellpadding="0" cellspacing="1">
+    <table class="whiteback normal w-full" cellpadding="0" cellspacing="1">
         <thead>
         <tr>
             <?php

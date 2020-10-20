@@ -43,7 +43,7 @@ $result2 = tng_query($query);
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
-<table class="w-100" cellpadding="10" cellspacing="0">
+<table class="w-full" cellpadding="10" cellspacing="0">
     <tr class="databack">
         <td>
             <h3 class="subhead"><?php echo $admtext['medialinks']; ?></h3>

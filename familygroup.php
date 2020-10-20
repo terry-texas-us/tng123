@@ -5,12 +5,12 @@ include "tng_begin.php";
 include "personlib.php";
 
 $placelinkbegin = $tngconfig['places1tree'] ? "<a href=\"placesearch.php?psearch=" : "<a href=\"placesearch.php?tree=$tree&amp;psearch=";
-$placelinkend = "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width=\"9\" height=\"9\"></a>";
+$placelinkend = "\" title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>";
 
 $firstsection = 0;
 $tableid = "";
 $cellnumber = 0;
-$notestogether = 0; //so they always show at the bottom
+$notestogether = 0;
 $allow_lds_this = "";
 
 $flags['imgprev'] = true;
@@ -115,24 +115,20 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
     $namestr = getName($ind);
     $personID = $ind['personID'];
-
     //adjust for same-sex relationships
     if ($ind['sex'] == "M" && $label == $text['wife']) {
         $label = $text['husband'];
     } elseif ($ind['sex'] == "F" && $label == $text['husband']) {
         $label = $text['wife'];
     }
-
-    $indtext .= "<div class='titlebox'>\n";
-    $indtext .= "<table class='w-100' border='0' cellspacing='2' cellpadding='0'>\n";
+    $indtext .= "<div class='titlebox rounded-lg'>\n";
+    $indtext .= "<table class='w-full' border='0' cellspacing='2' cellpadding='0'>\n";
     //show photo & name
     $indtext .= "<tr><td>";
     $indtext .= showSmallPhoto($ind['personID'], $namestr, $rights['both'], 0, false, $ind['sex']);
     $indtext .= "<span class='normal'>$label | $sex</span><br><h3 class='subhead'>";
     if ($ind['haskids']) $indtext .= "+ ";
-
     $indtext .= "<a href=\"getperson.php?personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
-
     if ($allow_edit && $rightbranch) {
         $indtext .= " | <a href=\"admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>";
     }
@@ -479,8 +475,8 @@ if ($rights['both']) {
     tng_free_result($assocresult);
     if ($assoctext) {
         $famtext .= beginSection("assoc");
-        $famtext .= "<div class='titlebox'>\n";
-        $famtext .= "<table class='whiteback w-100' cellpadding='4' cellspacing='1' border='0'>\n";
+        $famtext .= "<div class='titlebox rounded-lg'>\n";
+        $famtext .= "<table class='whiteback w-full' cellpadding='4' cellspacing='1' border='0'>\n";
         $famtext .= "$assoctext\n";
         $famtext .= "</table>\n</div>\n<br>\n";
         $famtext .= endSection("assoc");
@@ -490,7 +486,7 @@ if ($rights['both']) {
 $media = doMediaSection($familyID, $fammedia, $famalbums);
 if ($media) {
     $famtext .= beginSection("media");
-    $famtext .= "<div class='titlebox'>\n$media\n</div>\n<br>\n";
+    $famtext .= "<div class='titlebox rounded-lg'>\n$media\n</div>\n<br>\n";
     $famtext .= endSection("media");
 }
 
@@ -499,8 +495,8 @@ if ($rights['both']) {
 
     if ($notes) {
         $famtext .= beginSection("notes");
-        $famtext .= "<div class='titlebox'>\n";
-        $famtext .= "<table class='whiteback w-100' cellpadding='4' cellspacing='1' border='0'>\n";
+        $famtext .= "<div class='titlebox rounded-lg'>\n";
+        $famtext .= "<table class='whiteback w-full' cellpadding='4' cellspacing='1' border='0'>\n";
         $famtext .= "<tr>\n";
         $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
         $famtext .= "<td class='databack' colspan='2'>$notes</td>\n";
@@ -510,8 +506,8 @@ if ($rights['both']) {
     }
     if ($citedispctr) {
         $famtext .= beginSection("citations");
-        $famtext .= "<div class='titlebox'>\n";
-        $famtext .= "<table class='whiteback w-100' cellpadding='4' cellspacing='1' border='0'>\n";
+        $famtext .= "<div class='titlebox rounded-lg'>\n";
+        $famtext .= "<table class='whiteback w-full' cellpadding='4' cellspacing='1' border='0'>\n";
         $famtext .= "<tr>\n";
         $famtext .= "<td class='fieldnameback indleftcol align-top' name=\"citations1\" id=\"citations1\" style=\"width:100px;\"><a name=\"sources\"><span class='fieldname'>{$text['sources']}&nbsp;</span></td>\n";
         $famtext .= "<td class='databack' colspan='2'><ol class=\"normal citeblock\">";
@@ -520,7 +516,6 @@ if ($rights['both']) {
         foreach ($citestring as $cite) {
             $famtext .= "<li class='normal'><a name=\"cite" . ++$citectr . "\"></a>$cite<br>";
             if ($citectr < $count) $famtext .= "<br>";
-
             $famtext .= "</li>\n";
         }
         $famtext .= "</ol></td>\n";
@@ -530,8 +525,8 @@ if ($rights['both']) {
     }
 } elseif ($rights['both']) {
     $famtext .= beginSection("notes");
-    $famtext .= "<div class='titlebox'>\n";
-    $famtext .= "<table class='whiteback w-100' cellpadding='4' cellspacing='1' border='0'>\n";
+    $famtext .= "<div class='titlebox rounded-lg'>\n";
+    $famtext .= "<table class='whiteback w-full' cellpadding='4' cellspacing='1' border='0'>\n";
     $famtext .= "<tr>\n";
     $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
     $famtext .= "<td class='databack' colspan='2'><span class='normal'>{$text['livingnote']}</span></td>\n";

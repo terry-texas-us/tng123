@@ -15,7 +15,7 @@ echo help_header("Help: Miscellaneous");
                     <a href="mostwanted_help.php" class="lightlink">Help: Most Wanted &raquo;</a>
                 </p>
                 <h2 class="largeheader">Help: <small>Miscellaneous</small></h2>
-                <p class="smaller menu" style="clear: both;">
+                <p class="smaller menu clear-both">
                     <a href="#whatsnew" class="lightlink">What's New</a> &nbsp;|&nbsp;
                     <a href="#mostwanted" class="lightlink">Most Wanted</a> &nbsp;|&nbsp;
                     <a href="#validation" class="lightlink">Data Validation</a>

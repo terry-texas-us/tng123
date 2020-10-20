@@ -49,7 +49,7 @@ if (!isMobile()) {
                     <br>
                     <input type="hidden" name="mybool" value="AND">
                 </div>
-                <div style="display:inline-block;vertical-align:top;padding:15px">
+                <div style="display: inline-block; vertical-align: top; padding: 15px;">
                     <input type="submit" id="search-submit" value="<?php echo $text['search']; ?>">
                     <ul class="home-menus">
                         <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
@@ -209,7 +209,7 @@ if (!isMobile()) {
     <div class="clear"></div>
 </div> </div>
 
-<br style="clear: both">
+<br class="clear-both">
 
 <?php echo tng_footer($flags); ?>
 

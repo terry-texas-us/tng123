@@ -15,7 +15,7 @@ echo help_header("Help: Reports");
                 <a href="dna_help.php" class="lightlink">Help: DNA Tests &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Reports</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Search</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Add or Edit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Delete</a> &nbsp;|&nbsp;

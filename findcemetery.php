@@ -75,7 +75,7 @@ echo "</head>\n";
 echo tng_adminlayout();
 ?>
 <div class="text-center">
-    <table class="lightback w-100" cellpadding="5">
+    <table class="lightback w-full" cellpadding="5">
         <tr class="fieldnameback">
             <td>
                 <img src="cemeteries_icon.gif" width="40" height="40" style="border-width=1px;border-style=solid;" align="right">

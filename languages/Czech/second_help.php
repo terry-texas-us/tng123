@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Druhotn� procesy");
                 <a href="setup_help.php" class="lightlink">N�pov�da: Nastaven� &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Druhotn� procesy</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Co to je?</a>
             </p>
         </td>

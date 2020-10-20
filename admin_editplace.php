@@ -172,7 +172,7 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
         <td class="tngshadow">
             <form action="admin_updateplace.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
                 <p class="plainheader"><?php echo $row['place']; ?></p>
-                <table class="normal w-100">
+                <table class="normal w-full">
                     <tr>
                         <td><?php echo $admtext['tree']; ?>:</td>
                         <td>

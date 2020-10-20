@@ -15,7 +15,7 @@ echo help_header("Nápověda: Alba");
                 <a href="cemeteries_help.php" class="lightlink">Nápověda: Hřbitovy &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Alba</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nové</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Upravit existující</a> &nbsp;|&nbsp;

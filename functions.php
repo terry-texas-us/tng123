@@ -52,9 +52,9 @@ function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $al
         $href .= $allstr . "&amp;tngpage=$page";
         if (substr($href, 0, 5) == "&amp;") $href = substr($href, 5);
 
-        $link = " <a href=\"$address$href\" class='snlink' title=\"$title\">$label</a> ";
+        $link = " <a href=\"$address$href\" class='snlink rounded' title=\"$title\">$label</a> ";
     } else {
-        $link = " <a href='#' class='snlink' onclick=\"return $jumpfunc('$mediaID','$medialinkID','$albumlinkID')\" title=\"$title\">$label</a> ";
+        $link = " <a href='#' class='snlink rounded' onclick=\"return $jumpfunc('$mediaID','$medialinkID','$albumlinkID')\" title=\"$title\">$label</a> ";
     }
 
     return $link;
@@ -94,9 +94,8 @@ function doMedia($mediatypeID) {
     }
     $query .= " LIMIT $change_limit";
     $mediaresult = tng_query($query);
-
     $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-    $mediaheader = "<div class='titlebox'><h3 class='subhead'>$titlemsg</h3>\n" . $header;
+    $mediaheader = "<div class='titlebox rounded-lg'><h3 class='subhead'>$titlemsg</h3>\n" . $header;
 
     $mediatext = "";
     $thumbcount = 0;

@@ -300,7 +300,7 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
 
         if ($firstNear > 1 || $lastNear < $nPages - 2) {
             $nextPageStr = "jQuery('#gotopage').prev('.tngpage').val()-1";
-            echo "<span class='snlink'>\n";
+            echo "<span class='snlink rounded'>\n";
             echo "<input type='text' class='tngpage minifield text-sm w-16 border-none' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {" . mfpGetUrl($nextPageStr) . "}\"> ";
             echo "<input type='button' id='gotopage' value=\"{$text['go']}\" class='minibutton' onclick=\"" . mfpGetUrl($nextPageStr) . "\">\n";
             echo "</span>";
@@ -311,9 +311,9 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
 
 function mfpLink($pagenum, $label, $active = false) {
     if (!$active) {
-        echo "<a href='#' onclick=\"return " . mfpGetUrl($pagenum) . "\" class='snlink'>$label</a>\n";
+        echo "<a href='#' onclick=\"return " . mfpGetUrl($pagenum) . "\" class='snlink rounded'>$label</a>\n";
     } else {
-        echo "<span class=\"snlink snlinkact\">$label</span>\n";
+        echo "<span class='snlink  rounded snlinkact'>$label</span>\n";
     }
 }
 

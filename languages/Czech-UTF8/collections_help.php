@@ -15,7 +15,7 @@ echo help_header("Nápověda: Kolekce");
                 <a href="albums_help.php" class="lightlink">Nápověda: Alba &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Kolekce</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Co to je?</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a>
             </p>

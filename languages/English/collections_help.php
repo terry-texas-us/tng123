@@ -15,7 +15,7 @@ echo help_header("Help: Collections");
                 <a href="albums_help.php" class="lightlink">Help: Albums &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Collections</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">What are they?</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Add</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Edit/Delete</a>

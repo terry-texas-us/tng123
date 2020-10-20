@@ -15,7 +15,7 @@ echo help_header("Help: Secondary Processes");
                 <a href="setup_help.php" class="lightlink">Help: Setup &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Secondary Processes</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">What are they?</a>
             </p>
         </td>

@@ -15,7 +15,7 @@ echo help_header("Pomoc: Rodziny");
                 <a href="sources_help.php" class="lightlink">Pomoc: Źródła &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Rodziny</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Szukaj</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Edytuj istniejące</a> &nbsp;|&nbsp;

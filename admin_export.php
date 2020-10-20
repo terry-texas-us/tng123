@@ -64,7 +64,7 @@ $menu = doMenu($datatabs, "export", $innermenu);
 echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'], "img/data_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback normal w-100" cellpadding="10" cellspacing="2">
+<table class="lightback normal w-full" cellpadding="10" cellspacing="2">
     <tr class="databack">
         <td class="tngshadow">
             <form action="admin_gedcom2.php" method="post" name="form1">

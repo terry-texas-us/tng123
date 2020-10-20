@@ -83,7 +83,7 @@ if ($map['key'] && $isConnected) {
 tng_header($location, $flags);
 ?>
     <h2 class="header"><span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $location; ?></h2>
-    <br style="clear: both;">
+    <br class="clear-both">
 <?php
 $hiddenfields[] = ['name' => 'cemeteryID', 'value' => $cemeteryID];
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showmap', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'hidden' => $hiddenfields]);
@@ -96,7 +96,7 @@ if ($cemeteryID) {
     }
 
     if ($allow_admin && $allow_edit) {
-        $infoblock .= "<p><a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target='_blank' class='snlink'>{$text['editcem']}</a></p>\n";
+        $infoblock .= "<p><a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID&amp;cw=1\" target='_blank' class='snlink rounded'>{$text['editcem']}</a></p>\n";
     }
 
     if ($cemetery['notes']) {
@@ -134,7 +134,7 @@ if ($cemeteryID) {
 }
 
 if ($infoblock) {
-    $body .= "<div class='titlebox'>$infoblock</div>\n<br>\n";
+    $body .= "<div class='titlebox rounded-lg'>$infoblock</div>\n<br>\n";
 }
 
 $query = "SELECT mediaID, thumbpath, description, notes, usecollfolder, mediatypeID, path, form, abspath, newwindow FROM $media_table WHERE cemeteryID = \"$cemeteryID\" AND (mediatypeID != \"headstones\" OR linktocem = '1') ORDER BY description";
@@ -142,10 +142,9 @@ $hsresult = tng_query($query);
 $gotImageJpeg = function_exists('imageJpeg');
 if (tng_num_rows($hsresult)) {
     $i = 1;
-    $body .= "<div class='titlebox'>\n";
+    $body .= "<div class='titlebox rounded-lg'>\n";
     $body .= "<h3 class='subhead'>{$text['cemphotos']}</h3>\n";
-
-    $body .= "<table cellpadding='3' cellspacing='1' border='0' class='whiteback w-100'>\n";
+    $body .= "<table cellpadding='3' cellspacing='1' border='0' class='whiteback w-full'>\n";
     $body .= "<tr><td class='fieldnameback' width=\"10\">&nbsp;</td>\n";
     $body .= "<td class='fieldnameback fieldname' width=\"$thumbmaxw\">&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</td>\n";
     $body .= "<td class='fieldnameback fieldname'>&nbsp;<strong>{$text['description']}</strong>&nbsp;</td>\n";
@@ -202,7 +201,7 @@ $hsresult = tng_query($query);
 
 $numrows = tng_num_rows($hsresult);
 if ($numrows) {
-    $body .= "<div class='titlebox'>\n";
+    $body .= "<div class='titlebox rounded-lg'>\n";
     $body .= "<h3 class='subhead'>{$text['headstone']}</h3>\n";
 
     if ($numrows == $maxsearchresults || $offsetplus > 1) {
@@ -221,7 +220,7 @@ if ($numrows) {
     $header = $headerr = "";
     $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
     $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-    $tabledef = "<table cellpadding='3' cellspacing='1' border='0' class=\"tablesaw whiteback w-100\" ";
+    $tabledef = "<table cellpadding='3' cellspacing='1' border='0' class=\"tablesaw whiteback w-full\" ";
 
     if ($tabletype == "toggle") {
         $header = $tabledef . "data-tablesaw-mode='columntoggle'" . $headerr;
@@ -230,7 +229,7 @@ if ($numrows) {
     } elseif ($tabletype == "swipe") {
         $header = $tabledef . "data-tablesaw-mode='swipe'" . $headerr;
     } else {
-        $header = "<table cellpadding='3' cellspacing='1' border='0' class=\"whiteback w-100\">\n" . $header;
+        $header = "<table cellpadding='3' cellspacing='1' border='0' class=\"whiteback w-full\">\n" . $header;
     }
 
     $body .= $header;
@@ -357,13 +356,13 @@ if ($cemetery['place']) {
     $query = "SELECT * FROM ($people_table, $trees_table) WHERE burialplace = \"" . addslashes($cemetery['place']) . "\" and $people_table.gedcom = $trees_table.gedcom $treestr ORDER BY lastname, firstname";
     $result = tng_query($query);
     if (tng_num_rows($result)) {
-        $body .= "<br><div class='titlebox'>\n";
+        $body .= "<br><div class='titlebox rounded-lg'>\n";
         $body .= "<h3 class='subhead'>{$text['allburials']}</h3>\n";
 
         $header = $headerr = "";
         $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
         $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-        $tabledef = "<table cellpadding='3' cellspacing='1' border='0' class=\"tablesaw whiteback normal w-100\" ";
+        $tabledef = "<table cellpadding='3' cellspacing='1' border='0' class=\"tablesaw whiteback normal w-full\" ";
 
         if ($tabletype == "toggle") {
             $header = $tabledef . "data-tablesaw-mode='columntoggle'" . $headerr;
@@ -372,7 +371,7 @@ if ($cemetery['place']) {
         } elseif ($tabletype == "swipe") {
             $header = $tabledef . "data-tablesaw-mode='swipe'" . $headerr;
         } else {
-            $header = "<table class='whiteback normal w-100' cellpadding='3' cellspacing='1' border='0'>\n" . $header;
+            $header = "<table class='whiteback normal w-full' cellpadding='3' cellspacing='1' border='0'>\n" . $header;
         }
 
         $body .= $header;
@@ -400,8 +399,7 @@ if ($cemetery['place']) {
             $body .= "<tr>\n";
             $body .= "<td class='databack'>$i.</td>\n";
             $body .= "<td class='databack'><a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
-
-            $placetxt = $row['burialplace'] . " <a href=\"placesearch.php?tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src=\"img/tng_search_small.gif\" alt=\"{$text['findplaces']}\" width='9' height='9'></a>";
+            $placetxt = $row['burialplace'] . " <a href=\"placesearch.php?tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>";
 
             $deathdate = $row['burialdate'] ? $row['burialdate'] : $row['deathdate'];
             if ($row['burialdate']) {
@@ -427,7 +425,7 @@ if ($cemetery['place']) {
 }
 
 if ($map['key'] && $map['pins']) {
-    echo "<div id='map' class='rounded10 cemmap'></div>\n";
+    echo "<div id='map' class='rounded-lg cemmap'></div>\n";
 }
 echo $body;
 

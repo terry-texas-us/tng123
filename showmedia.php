@@ -176,7 +176,7 @@ $size = @GetImageSize("$rootpath$usefolder/" . $imgrow['path'], $info);
 $adjheight = $size['1'] - 1;
 
 if (!$tngconfig['ssdisabled'] && !$tngprint && $numitems > 1) {
-    $sscontrols = " &nbsp;&nbsp;&nbsp; <a href='#' onclick=\"return start();\" class='snlink'>&raquo; {$text['slidestart']}</a>\n";
+    $sscontrols = " &nbsp;&nbsp;&nbsp; <a href='#' onclick=\"return start();\" class='snlink rounded'>&raquo; {$text['slidestart']}</a>\n";
 } else {
     $sscontrols = "";
 }

@@ -31,7 +31,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 </h3>
 
 <form action="" name="findassocform1" onSubmit="return updateAssociation(this);">
-    <table class="normal w-100" cellpadding="2">
+    <table class="normal w-full" cellpadding="2">
         <tr>
             <td colspan="2">
                 <input type="radio" name="reltype" value="I"<?php if ($row['reltype'] == "I") {

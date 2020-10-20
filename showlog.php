@@ -28,7 +28,7 @@ tng_header("$loglines {$text['mostrecentactions']}", $flags);
 ?>
 
     <h2 class="header"><?php echo "$loglines {$text['mostrecentactions']}"; ?></h2>
-    <br style="clear: both;">
+    <br class="clear-both">
 <?php
 if (isset($autorefresh)) {
     echo "<p class='normal'><a href=\"showlog.php?autorefresh=0\">{$text['refreshoff']}</a></p>\n";

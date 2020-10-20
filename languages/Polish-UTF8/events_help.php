@@ -15,7 +15,7 @@ echo help_header("Pomoc: Wydarzenia");
                 <a href="more_help.php" class="lightlink">Pomoc: Więcej &raquo;</a>
             </p>
             <h2 class="largeheader">Pomoc: <small>Wydarzenia</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Wydarzenia standardowe a niestandardowe</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Dodaj nowe</a> &nbsp;|&nbsp;
                 <a href="#edit" class="lightlink">Edycja istniejących</a> &nbsp;|&nbsp;

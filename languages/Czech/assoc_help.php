@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Spojen�");
                 <a href="notes_help.php" class="lightlink">N�pov�da: Pozn�mky &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Spojen�</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Co to je?</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat/Upravit/Odstranit</a>
             </p>

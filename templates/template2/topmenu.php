@@ -2,7 +2,7 @@
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> bodytopmenu">
 
-<table class="page w-100" cellspacing="0">
+<table class="page w-full" cellspacing="0">
     <tr>
         <td>&nbsp;</td>
         <td class='align-top'>
@@ -76,7 +76,7 @@
     </tr>
     <tr>
         <td colspan="4" class="tablebkground">
-            <table class="w-100" cellspacing="0" cellpadding="10">
+            <table class="w-full" cellspacing="0" cellpadding="10">
                 <tr>
                     <td>
                         <div class="normal">

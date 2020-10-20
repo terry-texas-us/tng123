@@ -25,7 +25,7 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
 $formstr = getFORM("firstnames100", "get", "", "");
 echo $formstr;
 ?>
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <?php echo $text['showtop']; ?>&nbsp;
         <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="5" maxlength="5"> <?php echo $text['byoccurrence']; ?>&nbsp;
         <input type="submit" value="<?php echo $text['go']; ?>">
@@ -33,7 +33,7 @@ echo $formstr;
     </form>
     <br>
 
-    <div class="titlebox">
+    <div class="titlebox rounded-lg">
         <h3 class="subhead"><?php echo "{$text['top30first']} ({$text['totalnames']}):"; ?></h3>
         <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"firstnames.php?tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"firstnames-all.php?tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
         <?php include "firstnamestable.php"; ?>

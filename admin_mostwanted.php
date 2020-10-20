@@ -45,7 +45,7 @@ function showDiv(string $type) {
         echo "<div class=\"sortrow\" id=\"order{$lrow['mwtype']}" . "divs_{$lrow['mwID']}\" style=\"clear:both\" onmouseover=\"showEditDelete('{$lrow['mwID']}');\" onmouseout=\"hideEditDelete('{$lrow['mwID']}');\">";
         echo "<table>\n";
         echo "<tr id=\"row_{$lrow['mwID']}\">\n";
-        echo "<td class=\"dragarea normal\" style=\"width: 4em;\">";
+        echo "<td class='dragarea rounded-lg normal' style=\"width: 4em;\">";
         echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
         echo "</td>\n";
         echo "<td class='lightback' style=\"width: {$thumbmaxw}px;\">";

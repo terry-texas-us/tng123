@@ -27,6 +27,6 @@
         </tr>
         <tr>
             <td>
-                <table class="w-100 border-0" cellspacing="0" cellpadding="7" border="0">
+                <table class="w-full border-0" cellspacing="0" cellpadding="7" border="0">
                     <tr>
                         <td style="border-collapse:separate;">

@@ -15,7 +15,7 @@ echo help_header("Nápověda: Místa");
                 <a href="places_googlemap_help.php" class="lightlink">Nápověda: Google Maps &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Místa</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nebo Upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;

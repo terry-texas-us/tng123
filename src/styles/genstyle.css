@@ -109,10 +109,6 @@ a:visited {
   box-shadow: 1px 1px 3px 0 #666;
 }
 
-.pboxpopupdiv, .popinner, .popup, .slidedown {
-  border-radius: 10px;
-}
-
 .pedbox {
   position: absolute;
   z-index: 5;
@@ -133,10 +129,6 @@ a:visited {
   height: 100%;
   float: left;
   padding: 5px;
-}
-
-.rounded10 {
-  border-radius: 10px;
 }
 
 div.p-1 img {
@@ -470,10 +462,6 @@ input:hover, select:hover, textarea:hover {
   border-color: #fc3;
 }
 
-select {
-  padding: 1px 4px;
-}
-
 .langmenu select option {
   padding: 0 5px 1px;
 }
@@ -481,11 +469,6 @@ select {
 button, input[type=button], input[type=password], input[type=reset], input[type=search], input[type=submit], input[type=text], select, textarea {
   border: 1px solid #808080;
   border-radius: 5px;
-  padding: 3px 6px;
-}
-
-select {
-  padding: 2px 4px;
 }
 
 button, input[type=button], input[type=reset], input[type=submit] {
@@ -545,7 +528,6 @@ input.minibutton {
   border-top: 1px solid #ccc;
   border-right: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
-  border-radius: 10px;
 }
 
 .oldicon {
@@ -657,10 +639,9 @@ input.minibutton {
   margin-right: 6px;
 }
 
-.adminthumb, .smallimg, .thumb {
-  border: 0;
-  box-shadow: 1px 1px 1px 0 #777;
-  border-radius: 5px;
+.smallimg, .thumb {
+    border: 0;
+    box-shadow: 1px 1px 1px 0 #777;
 }
 
 .dn2px {
@@ -682,7 +663,6 @@ input.minibutton {
   color: #000;
   font-weight: 700;
   text-decoration: none;
-  border-radius: 4px;
   text-align: right;
 }
 
@@ -907,7 +887,6 @@ td.unhighlightedchild {
   background-color: #f9f9f9;
   padding: 10px;
   margin: 1px;
-  border-radius: 8px;
 }
 
 .whiteback {
@@ -918,10 +897,6 @@ td.unhighlightedchild {
 .bar {
   height: 16px;
   background-color: #336;
-}
-
-.rightround {
-  border-radius: 0 4px 4px 0;
 }
 
 .loadmap {
@@ -1611,7 +1586,6 @@ ul.tngdd ul li a .menu-icon {
   margin-top: -10px;
   z-index: 20;
   background: #e0e0f7;
-  border-radius: 8px;
 }
 
 .login-options {

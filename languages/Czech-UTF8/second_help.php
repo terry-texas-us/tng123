@@ -15,7 +15,7 @@ echo help_header("Nápověda: Druhotné procesy");
                 <a href="setup_help.php" class="lightlink">Nápověda: Nastavení &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Druhotné procesy</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#what" class="lightlink">Co to je?</a>
             </p>
         </td>

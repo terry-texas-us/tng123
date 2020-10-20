@@ -446,14 +446,13 @@ if ($markermap) {
 
         function displayMap() {
             if (jQuery('#map').length) ShowTheMap();
-
         }
 
         window.onload = displayMap;
         //]]>
     </script>
 
-    <div id="map" class="rounded10" style="width: 100%; height: 500px;"></div>
+    <div id="map" class="rounded-lg w-full" style="height: 500px;"></div>
 <?php if ($markermap) { ?>
     <br>
     <div id="inline-actions">

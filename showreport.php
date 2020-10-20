@@ -558,7 +558,7 @@ if (!$result) {
 
         $numrowsplus = $numrows + $offset;
         if ($totrows) {
-            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp; <a href=\"showreport.php?reportID=$reportID&csv=1&tree=$tree\" target='_blank' class='snlink'>&raquo; {$text['csv']}</a></p>";
+            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp; <a href=\"showreport.php?reportID=$reportID&csv=1&tree=$tree\" target='_blank' class='snlink rounded'>&raquo; {$text['csv']}</a></p>";
         }
 
         $pagenav = get_browseitems_nav($totrows, "showreport.php?reportID=$reportID$testurl&amp;offset", $maxsearchresults, $max_browsesearch_pages);
@@ -645,7 +645,7 @@ if (!$result) {
                                     } else {
                                         $data = nl2br($row[$thisfield]);
                                         if (strpos($thisfield, "place") && $data && !$csv) {
-                                            $data .= " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($data) . "\"><img src=\"img/tng_search_small.gif\" alt=\"\" width=\"9\" height=\"9\"></a>";
+                                            $data .= " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($data) . "\"><img src='img/tng_search_small.gif' alt='' class='inline-block'></a>";
                                         }
                                     }
                                 } else {

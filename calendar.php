@@ -323,7 +323,7 @@ if ($allow_living) {
         ?>
     </div>
 <?php } ?>
-    <table align="center" class="calendar rounded10">
+    <table align="center" class="calendar rounded-lg">
         <tr>
             <?php
             // Weekday name headers
@@ -394,7 +394,7 @@ if ($allow_living) {
         </tr>
     </table>
 
-    <div id="calLegend" class="rounded10">
+    <div id="calLegend" class="rounded-lg">
         <ul class="flat">
             <?php
             // make sure the custom text key is set

@@ -15,7 +15,7 @@ echo help_header("N�pov�da: M�sta");
                 <a href="places_googlemap_help.php" class="lightlink">N�pov�da: Google Maps &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>M�sta</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">P�idat nebo Upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;

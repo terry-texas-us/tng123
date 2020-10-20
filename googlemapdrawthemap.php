@@ -7,7 +7,7 @@
 // Google's own pages.
 echo "<input type='button' onclick=\"return divbox('mapcontainer');\" value=\"{$admtext['showhidemap']}\" class=\"align-middle\"> <span class='normal'>{$admtext['getcoords']}</span>\n";
 
-echo "<div id=\"mapcontainer\" style=\"display:none; width:{$map['admw']};\" class=\"p-1 rounded10\">\n";
+echo "<div id='mapcontainer' style=\"display:none; width:{$map['admw']};\" class='p-1 rounded-lg'>\n";
 $searchstring = $row['place'] ? $row['place'] : $admtext['searchstring'];
 echo "<span class='normal'>{$admtext['googleplace']}: ";
 
@@ -17,8 +17,7 @@ if (!$row['place']) {
 }
 echo ">\n";
 echo "<input type='button' value=\"{$admtext['gobutton']}\" onclick=\"showAddress(document.form1.address.value); return false\"><br><br></span>\n";
-
-echo "<div id=\"map\" style=\"width: {$map['admw']}; height: {$map['admh']};\" class=\"rounded10\"></div>\n";
+echo "<div id=\"map\" style=\"width: {$map['admw']}; height: {$map['admh']};\" class='rounded-lg'></div>\n";
 $maphelplang = findhelp("places_googlemap_help.php");
 echo "<span class='normal'><br><a href=\"javascript:newwindow=window.open('{$http}://maps.google.com/maps?f=q" . $text['glang'] . "$mcharsetstr&q=" . $row['place'] . "', 'googlehelp'); newwindow.focus();\"> {$admtext['difficultmap']}</a> | <a href=\"javascript:newwindow=window.open('$maphelplang/places_googlemap_help.php', 'newwindow', 'height=500,width=600,resizable=yes,scrollbars=yes'); newwindow.focus();\">{$admtext['maphelp']}</a></span>\n";
 echo "</div>\n";

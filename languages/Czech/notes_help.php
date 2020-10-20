@@ -15,7 +15,7 @@ echo help_header("N�pov�da: Pozn�mky");
                 <a href="citations_help.php" class="lightlink">N�pov�da: Citace &raquo;</a>
             </p>
             <h2 class="largeheader">N�pov�da: <small>Pozn�mky</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#add" class="lightlink">P�idat/Upravit/Vymazat</a> &nbsp;|&nbsp;
                 <a href="#cite" class="lightlink">Citace</a>
             </p>

@@ -15,7 +15,7 @@ echo help_header("Nápověda: Poznámky");
                 <a href="misc_help.php" class="lightlink">Nápověda: Různé &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Poznámky</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#notes" class="lightlink">Poznámky</a>
             </p>
         </td>

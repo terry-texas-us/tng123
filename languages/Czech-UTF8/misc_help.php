@@ -15,7 +15,7 @@ echo help_header("Nápověda: Různé");
                 <a href="mostwanted_help.php" class="lightlink">Nápověda: Hledá se &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Různé</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#whatsnew" class="lightlink">Co je nového</a> &nbsp;|&nbsp;
                 <a href="#mostwanted" class="lightlink">Hledá se</a> &nbsp;|&nbsp;
                 <a href="#validation" class="lightlink">Ověření dat</a>

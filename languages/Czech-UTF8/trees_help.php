@@ -16,7 +16,7 @@ echo help_header("Nápověda: Stromy");
                 <a href="branches_help.php" class="lightlink">Nápověda: Větve &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Stromy</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#search" class="lightlink">Hledat</a> &nbsp;|&nbsp;
                 <a href="#add" class="lightlink">Přidat nebo upravit</a> &nbsp;|&nbsp;
                 <a href="#delete" class="lightlink">Vymazat</a> &nbsp;|&nbsp;

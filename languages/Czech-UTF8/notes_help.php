@@ -15,7 +15,7 @@ echo help_header("Nápověda: Poznámky");
                 <a href="citations_help.php" class="lightlink">Nápověda: Citace &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Poznámky</small></h2>
-            <p class="smaller menu" style="clear: both;">
+            <p class="smaller menu clear-both">
                 <a href="#add" class="lightlink">Přidat/Upravit/Vymazat</a> &nbsp;|&nbsp;
                 <a href="#cite" class="lightlink">Citace</a>
             </p>

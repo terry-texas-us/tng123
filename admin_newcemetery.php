@@ -80,7 +80,7 @@ echo displayHeadline($admtext['cemeteries'] . " &gt;&gt; " . $admtext['addnewcem
         <table class="lightback">
             <tr class="databack">
                 <td class="tngshadow">
-                    <table class="normal w-100">
+                    <table class="normal w-full">
                         <tr>
                             <td><?php echo $admtext['cemeteryname']; ?>:</td>
                             <td width="80%">

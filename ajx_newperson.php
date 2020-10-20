@@ -31,7 +31,7 @@ include_once "eventlib.php";
 ?>
 
 <form action="" method="post" name="persform1" id="persform1" onSubmit="return validatePerson(this);">
-    <table class="w-100" cellpadding="10" cellspacing="0">
+    <table class="w-full" cellpadding="10" cellspacing="0">
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">

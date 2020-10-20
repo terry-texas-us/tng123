@@ -75,8 +75,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                 </p>
                                                 <br>
                                                 <div class="photo-container">
-                                                    <img alt="" class="rounded10"
-                                                        src="<?php echo $templatepath . $tmp['t13_mainimage']; ?>" id="mainphoto">
+                                                    <img src="<?php echo $templatepath . $tmp['t13_mainimage']; ?>" alt="" id="mainphoto" class="rounded-lg">
                                                 </div>
                                                 <br>
                                             </div>

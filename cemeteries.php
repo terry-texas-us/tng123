@@ -53,7 +53,7 @@ tng_header($text['cemeteriesheadstones'], $flags);
 </script>
 
 <h2 class="header"><span class="headericon" id="cemeteries-hdr-icon"></span><?php echo $text['cemeteriesheadstones']; ?></h2>
-<br style="clear: both;">
+<br class="clear-both">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'cemeteries', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
@@ -65,9 +65,8 @@ $numrows = tng_num_rows($cemresult);
 $colsize = DEFAULT_COLUMN_LENGTH;
 $lastcountry = DUMMYPLACE;
 $divctr = $linectr = $colctr = $i = 0;
-
 echo "<div id=\"cemwrapper\">\n";
-echo "<p>&nbsp;&nbsp;<a href=\"browsemedia.php?mediatypeID=headstones\" class='snlink'>&raquo; {$text['showallhsr']}</a></p>\n";
+echo "<p>&nbsp;&nbsp;<a href=\"browsemedia.php?mediatypeID=headstones\" class='snlink rounded'>&raquo; {$text['showallhsr']}</a></p>\n";
 echo "<div id=\"cemcontainer\">\n";
 echo "<div id=\"col$colctr\">\n";
 
