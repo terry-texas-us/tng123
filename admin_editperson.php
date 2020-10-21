@@ -482,12 +482,12 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                     <div id="parents"><br>
                         <?php
                         while ($parent = tng_fetch_assoc($parents)) {
-                        echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
+                        echo "<div class='sortrow' id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
                         echo "<table class='w-full' cellpadding='5' cellspacing='1'>";
                         echo "<tr>\n";
                         if ($parentcount > 1) {
                             echo "<td class='dragarea rounded-lg normal'>";
-                            echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                            echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                             echo "</td>\n";
                         }
                         echo "<td class='lightback normal'>\n";
@@ -567,12 +567,12 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                             $spouse = "husband";
                         }
                     }
-                    echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
+                    echo "<div class='sortrow' id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
                     echo "<table class='w-full' cellpadding='5' cellspacing='1'>";
                     echo "<tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class='dragarea rounded-lg normal'>";
-                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";

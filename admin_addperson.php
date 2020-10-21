@@ -200,16 +200,14 @@ if ($type == "child") {
             $birthdate = "";
         }
     }
-
-    $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
+    $rval = "<div class='sortrow' id=\"child_$personID\" style=\"width:500px;clear:both;display:none;\"";
     $rval .= " onmouseover=\"$('unlinkc_$personID').style.visibility='visible';\" onmouseout=\"$('unlinkc_$personID').style.visibility='hidden';\">\n";
     $rval .= "<table class='w-full' cellpadding='5' cellspacing='1'>\n";
     $rval .= "<tr>\n";
-    $rval .= "<td class=\"dragarea rounded-lg normal\">";
-    $rval .= "<img src=\"img/admArrowUp.gif\" alt=''><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=''>\n";
+    $rval .= "<td class='dragarea rounded-lg normal'>";
+    $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
     $rval .= "</td>\n";
     $rval .= "<td class='lightback normal childblock'>\n";
-
     $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
     $personlink = getName($row);
     if ($newperson != "ajax") {

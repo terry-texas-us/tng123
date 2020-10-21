@@ -285,12 +285,12 @@ function deleteNote($noteID, $flag) {
  */
 function displayToggle($id, $state, $target, $headline, $subhead, $append = "") {
     global $admtext;
-    $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='togglehead no-underline' style='color:#000;'><img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' title='{$admtext['toggle']}' alt='{$admtext['toggle']}' width='15' height='15' id='$id'>";
+    $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='togglehead no-underline' style='color:#000;'>";
+    $rval .= "<img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' alt='{$admtext['toggle']}' id='$id' class='inline-block' title='{$admtext['toggle']}'>";
     $rval .= "<strong class='ml-1'>$headline</strong></a> $append</span><br>\n";
     if ($subhead) {
-        $rval .= "<span class='normal tsh-indent'><i>$subhead</i></span><br>\n";
+        $rval .= "<span class='normal tsh-indent'><em>$subhead</em></span><br>\n";
     }
-
     return $rval;
 }
 

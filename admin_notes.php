@@ -53,16 +53,15 @@ $notecount = tng_num_rows($notelinks);
         } ?>>
             <tbody id="notestblbody">
             <tr>
-                <td class="fieldnameback" width="50"><b><?php echo $admtext['text_sort']; ?></b></td>
-                <td class="fieldnameback" width="80"><b><?php echo $admtext['action']; ?></b></td>
-                <td class="fieldnameback" width="435"><b><?php echo $admtext['note']; ?></b></td>
+                <th class="fieldnameback" width="50"><?php echo $admtext['text_sort']; ?></th>
+                <th class="fieldnameback" width="80"><?php echo $admtext['action']; ?></th>
+                <th class="fieldnameback" width="435"><?php echo $admtext['note']; ?></th>
             </tr>
             </tbody>
         </table>
         <div id="notes">
             <?php
             if ($notelinks && $notecount) {
-
                 while ($note = tng_fetch_assoc($notelinks)) {
                     $citquery = "SELECT citationID FROM $citations_table WHERE gedcom = '$tree' AND ";
                     if ($note['noteID']) {
@@ -73,19 +72,20 @@ $notecount = tng_num_rows($notelinks);
                     $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
                     $citesicon = tng_num_rows($citresult) ? "admin-cite-on-icon" : "admin-cite-off-icon";
                     tng_free_result($citresult);
-
                     $note['note'] = cleanIt($note['note']);
                     $truncated = truncateIt($note['note'], 75);
                     $actionstr = $allow_edit ? "<a href='#' onclick=\"return editNote({$note['ID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>" : "";
                     $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteNote({$note['ID']},'$persfamID','$tree','$eventID');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "";
                     $actionstr .= "<a href='#' onclick=\"return showCitationsInside('N{$note['ID']}','{$note['noteID']}', '$persfamID');\" title=\"{$admtext['sources']}\" id=\"citesiconN{$note['ID']}\" class=\"smallicon $citesicon\"></a>";
-                    echo "<div class=\"sortrow\" id=\"notes_{$note['ID']}\">";
-                    echo "<table class='normal' cellpadding='3' cellspacing='1' border='0'>";
+                    echo "<div class='sortrow' id=\"notes_{$note['ID']}\">";
+                    echo "<table class='normal' cellpadding='3' cellspacing='1' border='0'>\n";
                     echo "<tr id=\"row_{$note['ID']}\">";
-                    echo "<td class='dragarea rounded-lg'><img src=\"img/admArrowUp.gif\" alt=\"\"><br><img src=\"img/admArrowDown.gif\" alt=\"\"></td>";
-                    echo "<td class='lightback' width=\"80\">$actionstr</td>";
-                    echo "<td class='lightback' width=\"435\">$truncated</td>";
-                    echo "</tr></table></div>\n";
+                    echo "<td class='dragarea rounded-lg'><img src='img/admArrowUp.gif' alt='' class='inline-block'><br><img src='img/admArrowDown.gif' alt='' class='inline-block'></td>";
+                    echo "<td class='lightback' width='80'>$actionstr</td>";
+                    echo "<td class='lightback' width='435'>$truncated</td>";
+                    echo "</tr>";
+                    echo "</table>\n";
+                    echo "</div>\n";
                 }
                 tng_free_result($notelinks);
             }

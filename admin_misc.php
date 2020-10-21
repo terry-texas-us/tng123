@@ -28,20 +28,20 @@ $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/misc_help.php');\
 $menu = doMenu($misctabs, "misc", $innermenu);
 echo displayHeadline($admtext['misc'], "img/misc_icon.gif", $menu, $message);
 ?>
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_whatsnewmsg.php"><?php echo $admtext['whatsnew']; ?></a></h3>
-            <span class="normal miscmenu"><?php echo $admtext['whatsnewblurb']; ?></span>
-            <hr>
-            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_mostwanted.php"><?php echo $admtext['mostwanted']; ?></a></h3>
-            <span class="normal miscmenu"><?php echo $admtext['mwblurb']; ?></span>
-            <hr>
-            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_data_validation.php"><?php echo $admtext['dataval']; ?></a></h3>
-            <span class="normal miscmenu"><?php echo $admtext['dvblurb']; ?></span>
-            <hr>
-        </td>
-    </tr>
-</table>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <h3 class="subhead"><a href="admin_whatsnewmsg.php"><img src="img/tng_expand.gif" class="inline-block"><?php echo $admtext['whatsnew']; ?></a></h3>
+                <p class="normal miscmenu"><?php echo $admtext['whatsnewblurb']; ?></p>
+                <hr>
+                <h3 class="subhead"><a href="admin_mostwanted.php"><img src="img/tng_expand.gif" class="inline-block"><?php echo $admtext['mostwanted']; ?></a></h3>
+                <p class="normal miscmenu"><?php echo $admtext['mwblurb']; ?></p>
+                <hr>
+                <h3 class="subhead"><a href="admin_data_validation.php"><img src="img/tng_expand.gif" class="inline-block"><?php echo $admtext['dataval']; ?></a></h3>
+                <p class="normal miscmenu"><?php echo $admtext['dvblurb']; ?></p>
+                <hr>
+            </td>
+        </tr>
+    </table>
     </div>
 <?php echo tng_adminfooter(); ?>

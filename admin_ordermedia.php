@@ -187,15 +187,14 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['text_sort'], "
                         $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
                         $truncated = substr($row['notes'], 0, 90);
                         $truncated = strlen($row['notes']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $row['notes'];
-                        echo "<div class=\"sortrow\" id=\"orderdivs_{$row['medialinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#md_{$row['medialinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['medialinkID']}').css('visibility','hidden');\">";
+                        echo "<div class='sortrow' id=\"orderdivs_{$row['medialinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#md_{$row['medialinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#md_{$row['medialinkID']}').css('visibility','hidden');\">";
                         echo "<table class='w-full' cellpadding='5' cellspacing='1'>\n";
                         echo "<tr>\n";
                         echo "<td class='dragarea rounded-lg normal'>";
-                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                         echo "</td>\n";
-
                         echo "<td class='lightback smaller' style=\"width:35px;text-align:center;\">";
-                        echo "<div style=\"padding-bottom:5px;\"><a href='#' onclick=\"return moveItemInList('{$row['medialinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src=\"img/admArrowUp.gif\" alt=\"\"><br>{$text['top']}</a></div>\n";
+                        echo "<div style=\"padding-bottom:5px;\"><a href='#' onclick=\"return moveItemInList('{$row['medialinkID']}',1);\" title=\"{$admtext['movetop']}\"><img src='img/admArrowUp.gif' alt='' class='inline-block'><br>{$text['top']}</a></div>\n";
                         echo "<input style=\"width:30px;\" class=\"movefields\" name=\"move{$row['medialinkID']}\" id=\"move{$row['medialinkID']}\" value=\"$count\" onkeypress=\"handleMediaEnter('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val(),event);\">\n";
                         echo "<a href='#' onclick=\"return moveItemInList('{$row['medialinkID']}',jQuery('#move{$row['medialinkID']}').val());\" title=\"{$admtext['movetop']}\">{$admtext['go']}</a>\n";
                         echo "</td>\n";

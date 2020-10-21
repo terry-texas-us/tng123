@@ -276,7 +276,7 @@ tng_adminheader($admtext['administration'], "");
                     <div class="tngmsgarea">
                         <?php if (!$tngconfig['hidetasks'] && $messages) { ?>
                             <a href="#" onclick="return toggleMsg('msgs','plus0');" class="togglehead no-underline">
-                                <img src="img/tng_expand.gif" title="toggle display" alt="toggle display" id="plus0" class="inline">
+                                <img src="img/tng_expand.gif" title="toggle display" alt="toggle display" id="plus0" class="inline-block">
                                 <strong class="adminsubhead text-base mb-1 ml-1"><?php echo $admtext['tasks']; ?></strong>
                             </a>
                             <?php if ($switcher) { ?>

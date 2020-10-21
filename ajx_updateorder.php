@@ -200,12 +200,12 @@ switch ($action) {
         $query = "UPDATE $people_table SET famc='$familyID' WHERE personID = \"$personID\" AND gedcom = '$tree' and famc = \"\"";
         $result = @tng_query($query);
 
-        $rval = "<div class=\"sortrow\" id=\"child_$personID\" style=\"width:500px;clear:both;\"";
+        $rval = "<div class='sortrow' id=\"child_$personID\" style=\"width:500px;clear:both;\"";
         $rval .= " onmouseover=\"jQuery('#unlinkc_$personID').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_$personID').css('visibility','hidden');\">\n";
         $rval .= "<table class='w-full' cellpadding='5' cellspacing='1'>\n";
         $rval .= "<tr>\n";
         $rval .= "<td class='dragarea rounded-lg normal'>";
-        $rval .= "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+        $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
         $rval .= "</td>\n";
         $rval .= "<td class='lightback normal childblock'>\n";
 

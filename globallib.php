@@ -229,7 +229,7 @@ function getGenderIcon($gender, $valign): string {
             $genderstr = "female";
         }
         if ($genderstr) {
-            $icon = "<img src=\"img/tng_$genderstr.gif\" width=\"11\" height=\"11\" alt=\"" . $text[$genderstr] . "\" style=\"vertical-align: " . $valign . "px;\">";
+            $icon = "<img src='img/tng_$genderstr.gif' alt='{$text[$genderstr]}' class='inline-block' style='vertical-align: {$valign}px;'>";
         }
     }
     return $icon;

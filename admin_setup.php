@@ -74,18 +74,18 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/set
                 <table>
                     <tr>
                         <td>
-                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_genconfig.php"><?php echo $admtext['configsettings']; ?></a></h3>
-                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_pedconfig.php"><?php echo $admtext['pedconfigsettings']; ?></a></h3>
+                            <h3 class="subhead"><a href="admin_genconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['configsettings']; ?></a></h3>
+                            <h3 class="subhead"><a href="admin_pedconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['pedconfigsettings']; ?></a></h3>
                         </td>
                         <td style="width:50px;">&nbsp;</td>
                         <td>
-                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_logconfig.php"><?php echo $admtext['logconfigsettings']; ?></a></h3>
-                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_importconfig.php"><?php echo $admtext['importconfigsettings']; ?></a></h3>
+                            <h3 class="subhead"><a href="admin_logconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['logconfigsettings']; ?></a></h3>
+                            <h3 class="subhead"><a href="admin_importconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['importconfigsettings']; ?></a></h3>
                         </td>
                         <td style="width:50px;">&nbsp;</td>
                         <td>
-                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_mapconfig.php"><?php echo $admtext['mapconfigsettings']; ?></a></h3>
-                            <h3 class="subhead"><img src="img/tng_expand.gif" width="15" height="15"> <a href="admin_templateconfig.php"><?php echo $admtext['templateconfigsettings']; ?></a></h3>
+                            <h3 class="subhead"><a href="admin_mapconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['mapconfigsettings']; ?></a></h3>
+                            <h3 class="subhead"><a href="admin_templateconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['templateconfigsettings']; ?></a></h3>
                         </td>
                     </tr>
                 </table>

@@ -304,14 +304,14 @@ include_once "eventlib.php";
                                     $child['allow_living'] = $crights['living'];
                                     $child['allow_private'] = $crights['private'];
                                     if ($child['firstname'] || $child['lastname']) {
-                                        echo "<div class=\"sortrow\" id=\"child_{$child['pID']}\" style=\"width:500px;clear:both\"";
+                                        echo "<div class='sortrow' id=\"child_{$child['pID']}\" style=\"width:500px;clear:both\"";
                                         if ($allow_delete) {
                                             echo " onmouseover=\"$('unlinkc_{$child['pID']}').style.visibility='visible';\" onmouseout=\"$('unlinkc_{$child['pID']}').style.visibility='hidden';\"";
                                         }
                                         echo ">\n";
                                         echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                                         echo "<td class='dragarea rounded-lg normal'>";
-                                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                                         echo "</td>\n";
                                         echo "<td class='lightback normal childblock'>\n";
                                         if ($allow_delete) {

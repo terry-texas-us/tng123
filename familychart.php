@@ -73,8 +73,6 @@ $vsep = $familychart['boxVsep'];
 $hpad = $familychart['chartHpad'];
 $vpad = $familychart['chartVpad'];
 $pheight = $boxheight + $vsep;
-$downarrow = "<img src='img/ArrowDown.gif' class='famdownarrow' alt=''>";
-$uparrow = "<img src='img/admArrowUp.gif' class='famuparrow' alt=''>";
 
 $famx = $hpad + floor(($boxwidth + $hsep) / 2); #position of parent boxes
 $famy = $vpad + $boxheight + $parentorder * $pheight + 2 * $familychart['halfgenheight'];
@@ -279,14 +277,21 @@ function setoutmainfamily($family, $colsep, $order, $patorder, $matorder, $left,
         }
     }
 }
-
+/**
+ * @param $person
+ * @param $left
+ * @param $top
+ * @param $class 'fambox' or 'mfambox'
+ * @param $type 'parent' or 'child'
+ * @param int $reverse
+ */
 function doBox($person, $left, $top, $class, $type, $reverse = 0) {
-    #class=fambox or mfambox, $type=parent or child
-    global $familychart, $text, $downarrow, $uparrow;
+    global $familychart, $text;
+    $downarrow = "<img src='img/ArrowDown.gif' alt='' class='famdownarrow inline-block'>";
+    $uparrow = "<img src='img/admArrowUp.gif' alt='' class='famuparrow inline-block'>";
     $name = $person['displayname'];
     $gender = getGenderIcon($person['sex'], 0);
     $rev = $reverse ? '&amp;rev=1' : '';
-
     if ($person['both']) {
         $birth = $person['birth'] ? $person['birth'] : ' ';
         $death = $person['death'] ? $person['death'] : ' ';
@@ -297,7 +302,7 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     } elseif ($familychart['livingsymbol'] && !$_SESSION['logged_in']) {
         $life = "<a href='login.php' title='{$text['fcmlogin']}'><img src='img/alive.png' height='15' width='15' title='{$text['living']}' alt=''></a>";
     }
-    $details = "<br><span class=\"smaller\">$gender $life</span>";
+    $details = "<br><span class='smaller'>$gender $life</span>";
     $andtree = '&amp;tree=' . $person['gedcom'];
     $thisPersonID = $person['personID'];
     $imagestr = "";
@@ -310,7 +315,6 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
             $famlink = " <a href='familychart.php?personID=$thisPersonID$andtree$rev' title='{$text['showfamily']}'>$downarrow</a>";
         } #but we want the child link to use the familyID
     }
-
     echo "\t<div class='$class' style='left:{$left}px;top:{$top}px;'>\n<table class='bare'><tbody><tr>";
     if ($familychart['inclphotos'] && $imagestr = getPhoto($person, $name, $familychart['boxheight'] - 4)) {
         echo "<td class='smallpic' style='padding-left:5px;'>$imagestr</td>";
@@ -318,9 +322,12 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     if (($imagestr && strlen($name) > $familychart['boxwidth'] / 4.5) || strlen($name) > $familychart['boxwidth'] / 3.2) {
         $name = "<small>$name</small>";
     }
-    $link = "<a href='getperson.php?personID=$thisPersonID$andtree' title='{$text['showperson']}'>$name</a>";
-    echo "<td>$link$details$famlink</td></tr></tbody></table>\n</div>\n";
-
+    echo "<td>\n";
+    echo "<a href='getperson.php?personID=$thisPersonID$andtree' title='{$text['showperson']}'>$name</a>\n";
+    echo "$details";
+    echo "$famlink";
+    echo "</td>";
+    echo "</tr></tbody></table>\n</div>\n";
     if ($others = $person['otherfamilies']) {
         echo "<div class='more' style='left:" . ($left - $familychart['chartHpad'] - $familychart['morew']) . "px; top:" .
             ($top + $familychart['boxheight'] - 15) . "px;'><img src='img/family_small_icon.gif' onclick='toggle(\"$thisPersonID\");' alt='{$text['otherfamilies']}' title='{$text['otherfamilies']}' >

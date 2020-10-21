@@ -445,17 +445,17 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
             <h3 class="subhead"><?php echo $text['otherevents']; ?></h3>
             <ul class="normal">
                 <li id="expand" class="othersearch">
-                    <a href="#" onclick="return toggleSection(1);" class="text-decoration-none">
-                        <img src="img/tng_expand.gif" alt="" width="15" height="15" class="exp-cont"><?php echo $text['clickdisplay']; ?>
+                    <a href="#" class="text-decoration-none" onclick="return toggleSection(1);">
+                        <img src="img/tng_expand.gif" alt="" class="exp-cont inline-block"><?php echo $text['clickdisplay']; ?>
                     </a>
                 </li>
                 <li id="contract" class="othersearch" style="display:none;">
-                    <a href="#" onclick="return toggleSection(0);" class="text-decoration-none">
-                        <img src="img/tng_collapse.gif" alt="" width="15" height="15" class="exp-cont"><?php echo $text['clickhide']; ?>
+                    <a href="#" class="text-decoration-none" onclick="return toggleSection(0);">
+                        <img src="img/tng_collapse.gif" alt="" class="exp-cont inline-block"><?php echo $text['clickhide']; ?>
                     </a>
                 </li>
             </ul>
-            <table id="otherevents" style="display:none;">
+            <table id="otherevents" style="display: none;">
                 <tr>
                     <td colspan="3">&nbsp;</td>
                 </tr>

@@ -66,7 +66,7 @@ function updateMostWanted(form) {
                     newcontent += '<table>\n';
                     newcontent += '<tr id="row_' + vars.ID + '">\n';
                     newcontent += '<td class="dragarea rounded-lg normal" style="width: 4em;">\n';
-                    newcontent += '<img src="img/admArrowUp.gif" alt=""><br>' + drag + '<br><img src="img/admArrowDown.gif" alt="">\n';
+                    newcontent += '<img src="img/admArrowUp.gif" alt="" class="inline-block">' + drag + '<img src="img/admArrowDown.gif" alt="" class="inline-block">\n';
                     newcontent += '</td>\n';
                     newcontent += '<td class="lightback" style="width:' + thumbwidth + 'px;">\n';
                     if (vars.thumbpath)

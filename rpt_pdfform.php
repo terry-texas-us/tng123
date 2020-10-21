@@ -225,7 +225,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         // options specific to certain report types
         <div class="pdfblock subhead">
             <a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle">
-                <img src="img/tng_expand.gif" width="15" height="15" id="dispicon"> <?php echo $text['dispopts']; ?>
+                <img src="img/tng_expand.gif" id="dispicon" class="inline-block"> <?php echo $text['dispopts']; ?>
             </a>
         </div>
         <div style="display:none;" id="dispopts">
@@ -261,9 +261,11 @@ header("Content-type:text/html; charset=" . $session_charset);
     <?php } ?>
 
     <!-- Font section -->
-    <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('font','fonticon','');" class="pdftoggle"><img
-                src="img/tng_expand.gif" width="15" height="15" id="fonticon"> <?php echo $text['fonts']; ?>
-        </a></div>
+    <div class="pdfblock subhead">
+        <a href="#" class="pdftoggle" onClick="return toggleSection('font','fonticon','');">
+            <img src="img/tng_expand.gif" id="fonticon" class="inline-block"> <?php echo $text['fonts']; ?>
+        </a>
+    </div>
     <div style="display:none;" id="font">
         <table cellpadding="3" class="normal">
             <tr>
@@ -332,8 +334,10 @@ header("Content-type:text/html; charset=" . $session_charset);
     </div>
 
     <!-- Page setup section -->
-    <div class="pdfblock subhead"><a href="#" onClick="return toggleSection('pgsetup','pgicon','');" class="pdftoggle"><img
-                src="img/tng_expand.gif" width="15" height="15" id="pgicon"> <?php echo $text['pgsetup']; ?></a>
+    <div class="pdfblock subhead">
+        <a href="#" class="pdftoggle" onClick="return toggleSection('pgsetup','pgicon','');">
+            <img src="img/tng_expand.gif" id="pgicon" class="inline-block"> <?php echo $text['pgsetup']; ?>
+        </a>
     </div>
     <div style="display:none;" id="pgsetup">
         <table cellpadding="3" class="normal">

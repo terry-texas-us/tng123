@@ -331,11 +331,11 @@ include_once "eventlib.php";
                     $query .= "FROM $people_table people, $families_table families ";
                     $query .= "WHERE people.personID = families.husband AND families.familyID = \"{$parent['familyID']}\" AND people.gedcom = '$tree' AND families.gedcom = '$tree'";
                     $gotfather = tng_query($query);
-                    echo "<div class=\"sortrow\" id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinkp_{$parent['familyID']}').style.display='';\" onmouseout=\"$('unlinkp_{$parent['familyID']}').style.display='none';\">\n";
+                    echo "<div class='sortrow' id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinkp_{$parent['familyID']}').style.display='';\" onmouseout=\"$('unlinkp_{$parent['familyID']}').style.display='none';\">\n";
                     echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($parentcount > 1) {
                         echo "<td class='dragarea rounded-lg normal'>";
-                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
@@ -505,11 +505,11 @@ include_once "eventlib.php";
                         }
                         $spouse = "husband";
                     }
-                    echo "<div class=\"sortrow\" id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinks_{$marriagerow['familyID']}').style.display='';\" onmouseout=\"$('unlinks_{$marriagerow['familyID']}').style.display='none';\">\n";
+                    echo "<div class='sortrow' id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"$('unlinks_{$marriagerow['familyID']}').style.display='';\" onmouseout=\"$('unlinks_{$marriagerow['familyID']}').style.display='none';\">\n";
                     echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($marrcount > 1) {
-                        echo "<td class=\"dragarea normal\">";
-                        echo "<img src=\"img/admArrowUp.gif\" alt=\"\"><br>" . $admtext['drag'] . "<br><img src=\"img/admArrowDown.gif\" alt=\"\">\n";
+                        echo "<td class='dragarea normal'>";
+                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
