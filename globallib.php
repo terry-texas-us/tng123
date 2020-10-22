@@ -1,14 +1,14 @@
 <?php
+
 @ini_set("session.bug_compat_warn", "0");
 @ini_set("allow_url_fopen", "0");
 $http = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off')) ? 'https' : 'http';
-
 @set_time_limit(0);
+require_once "core/html/buildSvgElement.php";
 //set binary to "binary" for more sensitive searches
 $binary = "";
 $notrunc = 0; //don't truncate if link doesn't go to showmedia
 $envelope = false;
-
 if (isset($offset) && $offset && !is_numeric($offset)) {
     die ("invalid offset");
 }
@@ -1184,7 +1184,10 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
  * @return string
  */
 function placeImage($place) {
-    return "<a href=\"placesearch.php?psearch=" . urlencode($place) . "\" class='pl'><img src='img/tng_search_small.gif' alt='' class='placeimg inline-block'></a>";
+    $output = "<a href='placesearch.php?psearch=" . urlencode($place) . "' class='pl'>";
+    $output .= buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+    $output .= "</a>";
+    return $output;
 }
 
 /**

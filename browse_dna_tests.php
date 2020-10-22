@@ -414,7 +414,9 @@ if ($test_type == "mtDNA") {
             tng_free_result($presult);
 
             if ($dnalinktext) {
-                $more = "<a href='#' onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\"><img src=\"img/ArrowDown.gif\" alt=\"{$text['more']}\"></a> ";
+                $more = "<a href='#' onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\">";
+                $more .= buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
+                $more .= "</a> ";
                 $morediv = "<div style='display: none;' id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>{$text['indlinked']}:</strong><br>$dnalinktext</div>";
             } else {
                 $more = $morediv = "";

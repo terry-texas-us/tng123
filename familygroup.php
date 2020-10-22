@@ -1,12 +1,11 @@
 <?php
+
 $textpart = "familygroup";
 include "tng_begin.php";
-
 include "personlib.php";
-
+$icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
 $placelinkbegin = $tngconfig['places1tree'] ? "<a href=\"placesearch.php?psearch=" : "<a href=\"placesearch.php?tree=$tree&amp;psearch=";
-$placelinkend = "\" title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>";
-
+$placelinkend = "\" title=\"{$text['findplaces']}\">$icon</a>";
 $firstsection = 0;
 $tableid = "";
 $cellnumber = 0;
@@ -24,7 +23,11 @@ $ldsOK = determineLDSRights();
 
 $totcols = $ldsOK ? 6 : 3;
 $factcols = $totcols - 1;
-
+/**
+ * @param $text
+ * @param $fact
+ * @return string
+ */
 function showFact($text, $fact) {
     global $factcols;
     $facttext = "<tr>\n";
@@ -34,7 +37,10 @@ function showFact($text, $fact) {
 
     return $facttext;
 }
-
+/**
+ * @param $event
+ * @return string
+ */
 function showDatePlace($event) {
     global $allow_lds_this, $cellnumber, $text, $tentative_edit, $tree, $familyID;
     global $placelinkbegin, $placelinkend;
@@ -56,9 +62,8 @@ function showDatePlace($event) {
             $pcitestr = $event['place'] ? "&nbsp; <span class='normal'>[$cite]</span>" : "";
         }
     }
-
     $dptext .= "<tr>\n";
-    $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
+    $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height='15' alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
     $dptext .= "<td class='fieldnameback align-top'$cellid><span class='fieldname'>" . $event['text'] . "&nbsp;$editicon</span></td>\n";
     $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td class='databack'";
@@ -76,7 +81,7 @@ function showDatePlace($event) {
             $event['type'] = $event['type2'];
             $event['ID'] = $event['ID2'];
         }
-        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height=\"15\" alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
+        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height='15' alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         $dptext .= "<td class='fieldnameback align-top'><span class='fieldname'>" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>{$event['ldsplace']}&nbsp;";
@@ -89,7 +94,13 @@ function showDatePlace($event) {
 
     return $dptext;
 }
-
+/**
+ * @param $ind
+ * @param $label
+ * @param $familyID
+ * @param $showmarriage
+ * @return string
+ */
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
     global $tree, $text, $children_table, $righttree;
     global $allow_lds_this, $allow_edit, $families_table, $people_table, $personID;

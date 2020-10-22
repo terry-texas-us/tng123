@@ -164,7 +164,6 @@ if (tng_num_rows($result)) {
         </thead>
 
         <?php
-        $chartlink = "<img src='img/chart.gif' alt='' class='inline-block'>";
         while ($row = tng_fetch_assoc($result)) {
             $rights = determineLivingPrivateRights($row);
             $row['allow_living'] = $rights['living'];
@@ -177,7 +176,8 @@ if (tng_num_rows($result)) {
                 if (!$tngconfig['places1tree']) {
                     $birthplacestr .= "tree={$row['gedcom']}&amp;";
                 }
-                $birthplacestr .= "psearch=" . urlencode($birthplace) . "\"><img src='img/tng_search_small.gif' alt='' class='inline-block'></a>";
+                $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                $birthplacestr .= "psearch=" . urlencode($birthplace) . "\">$icon</a>";
             }
             echo "<tr>\n";
             echo "<td class='databack'><a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
@@ -187,7 +187,9 @@ if (tng_num_rows($result)) {
                 echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
                 echo "</div>\n";
             }
-            echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
+            echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
+            echo "<img src='img/chart.gif' alt='' class='inline-block'>";
+            echo "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
             echo "<td class='databack text-nowrap'>$birthdate&nbsp;</td>";
             echo "<td class='databack'>&nbsp;$birthplacestr&nbsp;</td>";
             if ($numtrees > 1) {

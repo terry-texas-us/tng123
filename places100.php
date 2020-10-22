@@ -98,7 +98,6 @@ echo getFORM("places100", "get", "", "");
                         $num_in_col_ctr = 0;
                         while ($place = tng_fetch_assoc($result)) {
                             $place2 = urlencode($place['myplace']);
-
                             $query2 = "SELECT COUNT(place) AS placecount ";
                             $query2 .= "FROM $places_table ";
                             array_unshift($restrictions, "place = '" . addslashes($place['myplace']) . "'");
@@ -107,7 +106,8 @@ echo getFORM("places100", "get", "", "");
                             $countrow = tng_fetch_assoc($result2);
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
-                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr}psearch=$place2'><img src='img/tng_search_small.gif' alt='' class='inline-block'></a>" : "";
+                            $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr}psearch=$place2'>$icon</a>" : "";
                             if ($place['placecount'] > 1 || !$specificcount) {
                                 $name = "<a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\">{$place['myplace']}</a>";
                                 echo "$counter. $name ({$place['placecount']}) $searchlink<br>\n";

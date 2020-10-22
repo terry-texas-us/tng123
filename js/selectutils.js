@@ -88,7 +88,7 @@ function checkID(checkID, type, dest, treefield) {
 }
 
 function openChangeTree(entity, tree, id) {
-    tnglitbox = new LITBox('admin_changetreeform.php?entity=' + entity + '&oldtree=' + tree + '&entityID=' + id, {width: 420, height: 240});
+    tnglitbox = new LITBox('admin_changetreeform.php?entity=' + entity + '&oldtree=' + tree + '&entityID=' + id, {width: 480, height: 320});
     return false;
 }
 

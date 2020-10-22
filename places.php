@@ -95,7 +95,8 @@ if ($result) {
             $countrow = tng_fetch_assoc($result2);
             $specificcount = $countrow['placecount'];
             tng_free_result($result2);
-            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr}psearch=$place2'><img src='img/tng_search_small.gif' alt='' class='inline-block'></a>" : "";
+            $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr}psearch=$place2'>$icon</a>" : "";
             $name = $place['placecount'] > 1 || !$specificcount ? "<a href=\"places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2\">" . str_replace(["<", ">"], ["&lt;", "&gt;"], $place['myplace']) . "</a> ($tally_fmt)" : $place['myplace'];
             if (($count - 1) % $collen == 0) $col++;
             $chartstr = $col ? "" : "<td width='400'><div style='width: {$thiswidth}%;' class='bar rounded-r'><a href='places-oneletter.php?offset=$offset&amp;{$treestr}psearch=$place2' title=\"{$place['myplace']} ($tally_fmt)\"></a></div></td>";

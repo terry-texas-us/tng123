@@ -2,21 +2,18 @@
 include "begin.php";
 include "adminlib.php";
 require_once "./admin/trees.php";
-
 $textpart = "sources";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
+$iconChevronDown = buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree)) {
     $message = $admtext['norights'];
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
-
 initMediaTypes();
-
 $sourceID = ucfirst($sourceID);
 
 $treerow = getTree($trees_table, $tree);
@@ -109,7 +106,8 @@ echo "<a href='#' onclick=\"return showNotes('', '$sourceID');\" id='notesicon' 
                         <td><?php echo $admtext['tree']; ?>:</td>
                         <td>
                             <?php echo $treerow['treename']; ?>
-                            &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');"><img src="img/ArrowDown.gif" style="margin-left:-4px;margin-right:-2px;"><?php echo $admtext['edit']; ?>
+                            &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');">
+                                <?php echo "{$admtext['edit']}$iconChevronDown"; ?>
                             </a> )
                         </td>
                     </tr>

@@ -21,8 +21,7 @@ tng_free_result($treeresult);
 
 if (!$thumbmaxw) $thumbmaxw = 80;
 
-
-if ($offset) {
+if (!empty($offset)) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
 } else {
@@ -78,6 +77,7 @@ echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
 if ($map['key'] && $isConnected) {
+    if (!isset($flags['scripting'])) $flags['scripting'] = "";
     $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 tng_header($location, $flags);
@@ -390,17 +390,18 @@ if ($cemetery['place']) {
         $i = 1;
         while ($row = tng_fetch_assoc($result)) {
             $row['allow_living'] = 1;
-
             $rights = determineLivingPrivateRights($row);
             $row['allow_living'] = $rights['living'];
             $row['allow_private'] = $rights['private'];
-
             $name = getNameRev($row);
             $body .= "<tr>\n";
             $body .= "<td class='databack'>$i.</td>\n";
-            $body .= "<td class='databack'><a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
-            $placetxt = $row['burialplace'] . " <a href=\"placesearch.php?tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>";
-
+            $body .= "<td class='databack'>";
+            $body .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
+            $body .= "<img src='img/chart.gif' alt='' class='inline-block'>";
+            $body .= "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
+            $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+            $placetxt = $row['burialplace'] . " <a href=\"placesearch.php?tree=$tree&amp;psearch=" . urlencode($row['burialplace']) . "\" title=\"{$text['findplaces']}\">$icon</a>";
             $deathdate = $row['burialdate'] ? $row['burialdate'] : $row['deathdate'];
             if ($row['burialdate']) {
                 $abbrev = $text['burialabbr'];
@@ -408,7 +409,6 @@ if ($cemetery['place']) {
                 $abbrev = $text['deathabbr'];
             }
             $burialdate = $deathdate ? "$abbrev " . displayDate($deathdate) : "";
-
             $body .= "<td class='databack'>&nbsp;" . $burialdate . "</span></td>\n";
             $body .= "<td class='databack'><span class='normal'>$placetxt&nbsp;</span></td>";
             $body .= "<td class='databack'>{$row['personID']}</td>\n";

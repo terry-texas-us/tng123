@@ -137,7 +137,6 @@ echo $formstr;
                                 $place3 = addslashes($place['myplace']);
                                 $placetitle = $place['myplace'];
                             }
-
                             $query = "SELECT COUNT(place) AS placecount ";
                             $query .= "FROM $places_table ";
                             $query .= "WHERE place = '$place3'";
@@ -148,14 +147,14 @@ echo $formstr;
                             $countrow = tng_fetch_assoc($result2);
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
-                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>" : "";
+                            $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\">$icon</a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                                 $name = "<a href=\"$places_oneletter_url" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {
                                     $name .= "tree={$place['gedcom']}&amp;";
                                 }
                                 $name .= "psearch=$olplace\">";
-
                                 $name .= $place['myplace'];
                                 $name .= "</a>";
 

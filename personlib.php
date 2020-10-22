@@ -1,12 +1,14 @@
 <?php
+
+require_once "core/html/buildSvgElement.php";
 $nodate_all = "0000-00-00";
 $eventctr_all = 1;
 $num_collapsed = 0;
-
-function doStrong($string) {
-    return "<strong>$string</strong>";
-}
-
+/**
+ * @param $thisperson
+ * @param null $noicon
+ * @return string
+ */
 function getBirthInfo($thisperson, $noicon = null) {
     global $text, $tngconfig, $tree;
 
@@ -14,19 +16,17 @@ function getBirthInfo($thisperson, $noicon = null) {
     foreach ($varlist as $myindex) {
         if (!isset($thisperson[$myindex])) $thisperson[$myindex] = '';
     }
-
     $birthstring = "";
 
     if (!$noicon) {
-        $icon = "<img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'>";
+        $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
 
         $treestr = !empty($tngconfig['places1tree']) ? "" : "tree=$tree&amp;";
-
         $placelinkbegin = " <a href=\"placesearch.php?{$treestr}psearch=";
         $placelinkend = "\" title=\"{$text['findplaces']}\">$icon</a>";
     }
     if ($thisperson['birthdate'] || ($thisperson['birthplace'] && !$thisperson['altbirthdate'])) {
-        $birthstring .= ", &nbsp; " . doStrong($text['birthabbr']) . " ";
+        $birthstring .= ", <strong>{$text['birthabbr']}</strong> ";
         if ($thisperson['birthdate']) {
             $birthstring .= displayDate($thisperson['birthdate']);
         }
@@ -40,7 +40,7 @@ function getBirthInfo($thisperson, $noicon = null) {
         }
     } else {
         if ($thisperson['altbirthdate'] || $thisperson['altbirthplace']) {
-            $birthstring .= ", &nbsp; " . doStrong($text['chrabbr']) . " ";
+            $birthstring .= ", <strong>{$text['chrabbr']}</strong> ";
             if ($thisperson['altbirthdate']) {
                 $birthstring .= displayDate($thisperson['altbirthdate']);
             }
@@ -57,7 +57,7 @@ function getBirthInfo($thisperson, $noicon = null) {
     //the "noicon" flag is only set in the person preview screen. We don't want to see death info there (to keep it short)
     if (!$noicon) {
         if ($thisperson['deathdate'] || ($thisperson['deathplace'] && !$thisperson['burialdate'])) {
-            $birthstring .= ", &nbsp; " . doStrong($text['deathabbr']) . " ";
+            $birthstring .= ", &nbsp; <strong>{$text['deathabbr']}</strong> ";
             if ($thisperson['deathdate']) {
                 $birthstring .= displayDate($thisperson['deathdate']);
             }
@@ -69,7 +69,7 @@ function getBirthInfo($thisperson, $noicon = null) {
             }
         } else {
             if ($thisperson['burialdate'] || $thisperson['burialplace']) {
-                $birthstring .= ", &nbsp; " . doStrong($text['burialabbr']) . " ";
+                $birthstring .= ", <strong>{$text['burialabbr']}</strong> ";
                 if ($thisperson['burialdate']) {
                     $birthstring .= displayDate($thisperson['burialdate']);
                 }
@@ -84,7 +84,10 @@ function getBirthInfo($thisperson, $noicon = null) {
     }
     return $birthstring;
 }
-
+/**
+ * @param $persfamID
+ * @param int $shortcite
+ */
 function getCitations($persfamID, $shortcite = 1) {
     global $sources_table, $text, $tree, $citations_table, $citations, $citationsctr, $citedisplay;
 
@@ -188,7 +191,11 @@ function getCitations($persfamID, $shortcite = 1) {
     }
     tng_free_result($citresult);
 }
-
+/**
+ * @param $citekey
+ * @param int $withlink
+ * @return string
+ */
 function reorderCitation($citekey, $withlink = 1) {
     global $citedispctr, $citestring, $citations, $citedisplay;
 
@@ -225,7 +232,11 @@ function reorderCitation($citekey, $withlink = 1) {
     }
     return $newstring;
 }
-
+/**
+ * @param $persfamID
+ * @param $flag
+ * @return array
+ */
 function getNotes($persfamID, $flag) {
     global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text, $allow_private;
 
@@ -356,7 +367,11 @@ function getNotes($persfamID, $flag) {
 
     return $finalnotesarray;
 }
-
+/**
+ * @param $notearray
+ * @param $entity
+ * @return string
+ */
 function buildNotes($notearray, $entity) {
     $notes = "";
     $lasttitle = "---";
@@ -385,7 +400,12 @@ function buildNotes($notearray, $entity) {
 
     return insertLinks($notes);
 }
-
+/**
+ * @param $notearray
+ * @param $entity
+ * @param $eventlist
+ * @return string
+ */
 function buildGenNotes($notearray, $entity, $eventlist) {
     $notes = "";
     $lasttitle = "---";
@@ -423,7 +443,10 @@ function buildGenNotes($notearray, $entity, $eventlist) {
     }
     return insertLinks($notes);
 }
-
+/**
+ * @param $fact
+ * @return array
+ */
 function checkXnote($fact) {
     global $xnotes_table, $tree;
 
@@ -444,7 +467,11 @@ function checkXnote($fact) {
     }
     return $newfact;
 }
-
+/**
+ * @param $notes
+ * @param $needle
+ * @return mixed
+ */
 function strpos_array($notes, $needle) {
     while (($pos = strpos($haystack, $needle, $pos)) !== FALSE)
         $array[] = $pos++;
@@ -458,7 +485,10 @@ function resetEvents() {
     $nodate = "0000-00-00";
     $eventctr = 1;
 }
-
+/**
+ * @param $data
+ * @param $datetr
+ */
 function setEvent($data, $datetr) {
     global $eventctr, $events, $nodate, $map, $eventctr_all, $nodate_all, $tngconfig;
 
@@ -516,18 +546,19 @@ function setEvent($data, $datetr) {
         tng_free_result($custevents);
     }
 }
-
 define("UNKNOWN", $text['unknown']);
 define("FIND_PLACES", $text['findplaces']);
-
 $datewidth = $thumbmaxw + 20 > 104 ? $thumbmaxw + 20 : 104;
 $eventcounter = 0;
+/**
+ * @param $data
+ * @return string
+ */
 function showEvent($data) {
     global $notestogether, $text, $tree;
     global $tableid, $cellnumber, $tentative_edit;
     global $indnotes, $famnotes, $srcnotes, $reponotes, $indmedia, $fammedia, $srcmedia, $repomedia, $tngconfig;
     global $indalbums, $famalbums, $srcalbums, $repoalbums, $eventcounter, $num_collapsed;
-
     $myindexlist = ['type', 'event', 'entity', 'date', 'place', 'collapse', 'fact', 'xnote'];
     foreach ($myindexlist as $myindex) {
         if (!isset($data[$myindex])) $data[$myindex] = '';
@@ -671,7 +702,7 @@ function showEvent($data) {
     if ($output) {
         $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"img/tng_edit.gif\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         if (!empty($data['collapse']) && $rows > 1) {
-            $toggleicon = "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"t{$eventcounter}\" title=\"{$text['expand']}\">";
+            $toggleicon = "<img src='img/tng_sort_desc.gif' alt='' class='toggleicon inline-block' id=\"t{$eventcounter}\" title=\"{$text['expand']}\">";
             $num_collapsed++;
         } else {
             $toggleicon = "";
@@ -709,13 +740,16 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
         }
         if ($data['place']) {
             if ($cite) $cite = "&nbsp; [$cite]";
-
             if ($data['place'] == "NN") $data['place'] = UNKNOWN;
-
-            $output .= $data['place'];
-            if (!isset($data['np'])) {
+            if (isset($data['np'])) {
+                $output .= $data['place'];
+            } else {
                 $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
-                $output .= " <a href='placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'><img src='img/tng_search_small.gif' alt='" . FIND_PLACES . "' class='inline-block'></a>$cite\n";
+                $output .= " <a href='placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'>";
+                $output .= "<span class='mr-2'>{$data['place']}</span>";
+                $output .= buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                $output .= "</a>";
+                $output .= "$cite\n";
             }
             $cite = "";
         }
@@ -744,7 +778,11 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
             $output .= ">" . $data['place'];
             if (!isset($data['np'])) {
                 $treestr = !empty($places1Tree) ? "" : "&amp;tree=$tree";
-                $output .= " <a href=\"placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "\" title=\"" . FIND_PLACES . "\"><img src='img/tng_search_small.gif' alt=\"" . FIND_PLACES . "\" class='inline-block'></a>$cite&nbsp;</td>\n";
+                $output .= " <a href='placesearch.php?psearch=" . urlencode($data['place']) . $treestr . "' title='" . FIND_PLACES . "'>";
+                $output .= buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                $output .= "</a>";
+                $output .= "$cite&nbsp;";
+                $output .= "</td>\n";
             } else {
                 $output .= "</td>\n";
             }
@@ -753,11 +791,18 @@ function formatDateAndPlace(&$data, string &$cite, string $places1Tree, string $
     }
     return $output;
 }
-
+/**
+ * @param $breaksize
+ * @return string
+ */
 function showBreak($breaksize) {
     return "<tr><td colspan='3' class=\"$breaksize\">&nbsp;</td></tr>\n";
 }
-
+/**
+ * @param $entityID
+ * @param $type
+ * @param int $nomap
+ */
 function doCustomEvents($entityID, $type, $nomap = 0) {
     global $events_table, $eventtypes_table, $tree, $tngprint, $allow_lds;
 
@@ -786,7 +831,12 @@ function doCustomEvents($entityID, $type, $nomap = 0) {
     }
     tng_free_result($custevents);
 }
-
+/**
+ * @param $entity
+ * @param $medialist
+ * @param $albums
+ * @return string
+ */
 function doMediaSection($entity, $medialist, $albums) {
     global $mediatypes, $cellnumber, $tableid, $datewidth;
 
@@ -814,7 +864,11 @@ function doMediaSection($entity, $medialist, $albums) {
     }
     return $media;
 }
-
+/**
+ * @param $entity
+ * @param $linktype
+ * @return array
+ */
 function getLinkTypeMisc($entity, $linktype) {
     $misc = [];
     switch ($linktype) {
@@ -846,7 +900,11 @@ function getLinkTypeMisc($entity, $linktype) {
 
     return $misc;
 }
-
+/**
+ * @param $entity
+ * @param $linktype
+ * @return array
+ */
 function getAlbums($entity, $linktype) {
     global $tree, $album2entities_table, $albums_table, $albumlinks_table, $people_table, $families_table, $text, $livedefault;
 
@@ -924,7 +982,10 @@ function getAlbums($entity, $linktype) {
 
     return $albums;
 }
-
+/**
+ * @param $albums_array
+ * @return string
+ */
 function writeAlbums($albums_array) {
     global $tableid, $cellnumber, $text, $datewidth;
 
@@ -968,7 +1029,12 @@ function writeAlbums($albums_array) {
 
     return $albumtext;
 }
-
+/**
+ * @param $entity
+ * @param $linktype
+ * @param false $all
+ * @return array
+ */
 function getMedia($entity, $linktype, $all = false) {
     global $medialinks_table, $media_table, $tree, $text, $nonames;
     global $mediapath, $mediatypes_assoc, $tngconfig, $rootpath;
@@ -1055,7 +1121,12 @@ function getMedia($entity, $linktype, $all = false) {
 
     return $media;
 }
-
+/**
+ * @param $media_array
+ * @param $mediatypeID
+ * @param string $prefix
+ * @return string
+ */
 function writeMedia($media_array, $mediatypeID, $prefix = "") {
     global $tableid, $cellnumber, $text, $datewidth, $mediatypes_display, $mediatypes_like, $tngconfig, $num_collapsed;
 
@@ -1141,7 +1212,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
                 $titlemsg .= "><br><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; {$text['slidestart']}</a></div>\n";
             }
             $mediatext .= "<tr>\n";
-            $toggleicon = $hidemedia ? "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon\" id=\"m{$prefix}{$mediatypeID}\" title=\"{$text['expand']}\"/>" : "";
+            $toggleicon = $hidemedia ? "<img src='img/tng_sort_desc.gif' alt='' id=\"m{$prefix}{$mediatypeID}\" class='toggleicon inline-block' title=\"{$text['expand']}\"/>" : "";
             $mediatext .= "<td class=\"fieldnameback indleftcol align-top lm{$prefix}{$mediatypeID}\"$cellid";
             if ($thumbdivs) $rows++;
             if (!$hidemedia && $rows != 1) {
@@ -1169,7 +1240,11 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
 
     return $mediatext;
 }
-
+/**
+ * @param $albumID
+ * @param $albumname
+ * @return string
+ */
 function getAlbumPhoto($albumID, $albumname) {
     global $livedefault, $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
     global $mediatypes_assoc, $mediapath, $tree;
@@ -1253,7 +1328,10 @@ function getAlbumPhoto($albumID, $albumname) {
     }
     return $imgsrc;
 }
-
+/**
+ * @param $row
+ * @return array
+ */
 function getFact($row) {
     global $address_table, $text;
 
@@ -1311,7 +1389,10 @@ function getFact($row) {
     }
     return $fact;
 }
-
+/**
+ * @param $persfamID
+ * @return array
+ */
 function getStdExtras($persfamID) {
     global $tree, $events_table;
 
@@ -1323,7 +1404,10 @@ function getStdExtras($persfamID) {
     }
     return $stdex;
 }
-
+/**
+ * @param $assoc
+ * @return string
+ */
 function formatAssoc($assoc) {
     global $text, $tree, $people_table, $families_table;
 
@@ -1362,7 +1446,10 @@ function formatAssoc($assoc) {
 
     return $assocstr;
 }
-
+/**
+ * @param $section
+ * @return string
+ */
 function beginSection($section) {
     global $tableid, $cellnumber, $firstsection, $firstsectionsave, $tngconfig;
 
@@ -1381,7 +1468,10 @@ function beginSection($section) {
 
     return $sectext;
 }
-
+/**
+ * @param $section
+ * @return string
+ */
 function endSection($section) {
     return "</li> <!-- end $section -->\n";
 }

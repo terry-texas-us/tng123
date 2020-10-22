@@ -645,7 +645,8 @@ if (!$result) {
                                     } else {
                                         $data = nl2br($row[$thisfield]);
                                         if (strpos($thisfield, "place") && $data && !$csv) {
-                                            $data .= " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($data) . "\"><img src='img/tng_search_small.gif' alt='' class='inline-block'></a>";
+                                            $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                                            $data .= " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($data) . "\">$icon</a>";
                                         }
                                     }
                                 } else {

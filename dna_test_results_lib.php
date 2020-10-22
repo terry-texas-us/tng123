@@ -31,7 +31,7 @@ if (!$allow_private) $totnum_tests = ($num_tests - $num_private);
 if ($debug) echo "Number of total DNA Tests - $totnum_tests<br>";
 
 if ($totnum_tests) {
-    $toggleicon = "<img src=\"img/tng_sort_desc.gif\" class=\"toggleicon2\" style=\"cursor:pointer; float:right; padding-top:4px;\" title=\"{$text['expand']}\" alt=\"\" onclick=\"togglednaicon(); \">";
+    $toggleicon = "<img src='img/tng_sort_desc.gif' alt='' class='toggleicon2 inline-block cursor-pointer float-right pt-1' title=\"{$text['expand']}\" onclick=\"togglednaicon(); \">";
     $displaystyle = "display:none";
     $displayclass = "dnatest";
 

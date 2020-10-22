@@ -171,19 +171,17 @@ class modlister extends modparser
         // CONFIGURE COLUMN HEADER SORT ICONS
         $filesort = $namesort = '';
         if ($this->sortby == self::NAMECOL) {
-            $filesort = "<a href=\"admin_modhandler.php?sort=" . self::FILECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" height=\"8\" border='0' alt='' title=\"{$this->admtext['text_sort']}\"></a>";
-            $namesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" height=\"8\" border='0' alt=''>";
+            $filesort = "<a href=\"admin_modhandler.php?sort=" . self::FILECOL . "\">";
+            $filesort .= "<img src='img/tng_sort_asc.gif' alt='' class='inline-block' title=\"{$this->admtext['text_sort']}\" border='0'>";
+            $filesort .= "</a>";
+            $namesort = "<img src='img/tng_sort_desc.gif' alt='' border='0'>";
         } else {
-            $namesort = "<a href=\"admin_modhandler.php?sort=" . self::NAMECOL . "\"><img src=\"img/tng_sort_asc.gif\"
-            width=\"15\" height=\"8\" border='0' alt='' title=\"{$this->admtext['text_sort']}\"></a>";
-            $filesort = "<img src=\"img/tng_sort_desc.gif\"
-            width=\"15\" height=\"8\" border='0' alt=''>";
+            $namesort = "<a href=\"admin_modhandler.php?sort=" . self::NAMECOL . "\">";
+            $namesort .= "<img src='img/tng_sort_asc.gif' alt='' class='inline-block' title=\"{$this->admtext['text_sort']}\" border='0'>";
+            $namesort .= "</a>";
+            $filesort = "<img src='img/tng_sort_desc.gif' alt='' class='inline-block' border='0'>";
         }
-        /*******************************************************************
-         * SHOW MOD LIST HEADINGS
-         *******************************************************************/
+        // SHOW MOD LIST HEADINGS
         // uses bounding table to eliminate jumping during page load
         echo "<table id=\"mmgrid\" class=\"lightback $mmlistclass\">";
         echo "<tr class='databack'>";

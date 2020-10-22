@@ -50,7 +50,7 @@ if (file_exists($arrdnpath)) {
     $downarrow = @GetImageSize($arrdnpath);
     $pedigree['downarroww'] = $downarrow[0];
     $pedigree['downarrowh'] = $downarrow[1];
-    $pedigree['downarrow'] = "<img src=\"" . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">";
+    $pedigree['downarrow'] = "<img src='{$templatepath}img/ArrowDown.gif' width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt='' class='inline-block'>";
 } else {
     $pedigree['downarrow'] = "";
 }
@@ -704,7 +704,7 @@ echo "</form>\n";
     <p class="normal">
         (<?php echo $text['scrollnote'];
         if ($pedigree['usepopups_real']) {
-            echo ($pedigree['downarrow'] ? " <img src=\"" . $templatepath . "img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href='#'><b>V</b></a>") . $text['popupnote1'];
+            echo ($pedigree['downarrow'] ? " <img src='{$templatepath}img/ArrowDown.gif' width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt='' class='inline-block'>" : " <a href='#' class='font-semibold'>V</a>") . $text['popupnote1'];
         }
         ?>)
     </p>

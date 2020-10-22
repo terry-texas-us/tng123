@@ -346,7 +346,7 @@ function showBox($generation, $slot) {
     $cancelt = $pedigree['event'] == "over" ? " onmouseout=\"cancelTimer($slot)\"" : "";
     $boxes .= "<div class=\"downarrow\" id=\"downarrow$slot\" onmouse{$pedigree['event']}=\"setPopup($slot, $offsetV,$boxheighttouse)\"$cancelt style=\"width:{$pedigree['boxwidth']}" . "px; text-align:center; top:" . ($offsetV + $boxheighttouse + $pedigree['borderwidth'] + $pedigree['shadowoffset'] + 1) . "px;left:" . ($offsetH - 1) . "px;\">\n";
 
-    $boxes .= "<img src=\"{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\"  alt=\"\"></div>\n";
+    $boxes .= "<img src=\"{$templatepath}img/ArrowDown.gif\" alt='' class='inline-block' width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\"></div>\n";
 
     if ($pedigree['usepopups_real']) {
         //start the block
@@ -522,7 +522,7 @@ echo "</form>\n";
 if (!$tngprint) {
     echo "<span class='normal'>(" . $text['scrollnote'];
     if ($pedigree['usepopups_real']) {
-        echo ($pedigree['downarrow'] ? " <img src=\"{$templatepath}img/ArrowDown.gif\" width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt=\"\">" : " <a href='#'><span class='normal'><B>V</B></span></a>") . $text['popupnote1'];
+        echo ($pedigree['downarrow'] ? " <img src='{$templatepath}img/ArrowDown.gif' width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt='' class='inline-block'>" : " <a href='#'><span class='normal font-semibold'>V</span></a>") . $text['popupnote1'];
         if ($pedigree['popupchartlinks']) {
             echo "&nbsp;&nbsp;{$pedigree['chartlink']} &nbsp; " . $text['popupnote2'];
         }

@@ -13,17 +13,12 @@ $psearch = addslashes($psearch);
 $querystring = $psearchns;
 $cutoffstr = "personID = '$psearch'";
 $whatsnew = 0;
-
-if ($order) {
+if (!empty($order)) {
     $_SESSION['tng_psearch_order'] = $order;
 } else {
     $order = $_SESSION['tng_psearch_order'] ?? "name";
 }
-
-if ($order != "name" && $order != "nameup" && $order != "date" && $order != "dateup") {
-    $order = "";
-}
-
+if ($order != "name" && $order != "nameup" && $order != "date" && $order != "dateup") $order = "";
 $datesort = "dateup";
 $namesort = "name";
 $orderloc = strpos($_SERVER['QUERY_STRING'], "&amp;order=");
@@ -32,15 +27,15 @@ $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_S
 $numtrees = getTreesCount($trees_table);
 
 if ($order == "name") {
-    $namesort = "<a href=\"$placesearch_url$currargs&amp;order=nameup\" class='lightlink'>xxx <img src=\"img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $namesort = "<a href='$placesearch_url$currargs&amp;order=nameup' class='lightlink'>xxx <img src='img/tng_sort_desc.gif' alt='' class='inline-block'></a>";
 } else {
-    $namesort = "<a href=\"$placesearch_url$currargs&amp;order=name\" class='lightlink'>xxx <img src=\"img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $namesort = "<a href='$placesearch_url$currargs&amp;order=name' class='lightlink'>xxx <img src='img/tng_sort_asc.gif' alt='' class='inline-block'></a>";
 }
 
 if ($order == "date") {
-    $datesort = "<a href=\"$placesearch_url$currargs&amp;order=dateup\" class='lightlink'>yyy <img src=\"img/tng_sort_desc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $datesort = "<a href='$placesearch_url$currargs&amp;order=dateup' class='lightlink'>yyy <img src='img/tng_sort_desc.gif' alt='' class='inline-block'></a>";
 } else {
-    $datesort = "<a href=\"$placesearch_url$currargs&amp;order=date\" class='lightlink'>yyy <img src=\"img/tng_sort_asc.gif\" width=\"15\" height=\"8\" alt=\"\"></a>";
+    $datesort = "<a href='$placesearch_url$currargs&amp;order=date' class='lightlink'>yyy <img src='img/tng_sort_asc.gif' alt='' class='inline-block'></a>";
 }
 
 function processEvents($prefix, $stdevents, $displaymsgs) {
@@ -189,7 +184,6 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                 </tr>
                 <?php
                 $i = $offsetplus;
-                $chartlink = "<img src='img/chart.gif' alt='' class='inline-block'>";
                 while ($row = tng_fetch_assoc($result)) {
                     $rights = determineLivingPrivateRights($row);
                     $row['allow_living'] = $rights['living'];
@@ -208,7 +202,9 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\">{$row['p1lastname']} / {$row['p2lastname']}</a>";
                     } elseif ($prefix == "I") {
                         $name = getNameRev($row);
-                        echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
+                        echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
+                        echo "<img src='img/chart.gif' alt='' class='inline-block'>";
+                        echo "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
                     }
                     echo "&nbsp;</span></td>";
                     echo "<td class='databack'><span class='normal'>&nbsp;" . displayDate($dateval) . "</span></td>";
@@ -319,7 +315,6 @@ while ($prow = tng_fetch_assoc($presult)) {
             $codedplace = @htmlspecialchars(str_replace($banish, $banreplace, $psearchns), ENT_QUOTES, $session_charset);
             $codednotes = $prow['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $prow['notes']) : "";
             // add external link to Google Maps for Directions in the balloon
-            echo "<a href=\"{$http}://www.openstreetmap.org/#map=$zoom/$lat/$long\" target='_blank'><img src=\"img/Openstreetmap_logo_small.png\"> OpenStreetMap</a><br><br>"; // add external link to Google Maps for Directions in the balloon
             $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target='_blank'>{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
             if ($lat && $long) {
                 $uniqueplace = $psearch . $lat . $long;
@@ -421,7 +416,6 @@ if ($ldsOK) {
 $successcount += processEvents("F", $stdevents, $displaymsgs);
 
 if (!$successcount) echo "<p>{$text['noresults']}.</p>";
-
 
 tng_footer("");
 ?>

@@ -87,7 +87,7 @@ if (empty($tngconfig['hidedna'])) {
     $flags['scripting'] .= "<script language = 'javascript'>
 function togglednaicon() {
    if ($('.toggleicon2').attr('src').indexOf('desc') > 0) {
-      $('.toggleicon2').attr('src','img/tng_sort_asc.gif')
+      $('.toggleicon2').attr('src', 'img/tng_sort_asc.gif')
       $('.toggleicon2').attr('title', '{$text['collapse']}');
       $('.dnatest').show();
    }
@@ -99,7 +99,7 @@ function togglednaicon() {
 }
 
 function show_dnatest() {
-      $('.toggleicon2').attr('src','img/tng_sort_asc.gif')
+      $('.toggleicon2').attr('src', 'img/tng_sort_asc.gif')
       $('.toggleicon2').attr('title', '{$text['collapse']}');
       $('.dnatest').show();
 }
@@ -671,16 +671,15 @@ if ($map['key'] && $locations2map) {
             }
             $persontext .= "</td><td class='databack'><span class='smaller'><strong>$event</strong>";
             if ($description) $persontext .= " - $description";
-
             $persontext .= " - $dateforeventtable - $place</span></td>\n";
-            $persontext .= "<td class='databack' valign=\"middle\"><a href=\"googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"img/earth.gif\" alt=\"{$text['googleearthlink']}\" width=\"15\" height=\"15\"></a></td></tr>\n";
+            $persontext .= "<td class='databack' valign=\"middle\"><a href=\"googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"img/earth.gif\" alt=\"{$text['googleearthlink']}\" width='15' height='15'></a></td></tr>\n";
             if ($val['notes']) {
                 $locations2map[$key]['htmlcontent'] = str_replace("</div>", "<br><br>" . tng_real_escape_string($val['notes']) . "</div>", $locations2map[$key]['htmlcontent']);
             }
         }
     }
     $persontext .= "</table></div>\n<table>";
-    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width=\"15\" height=\"15\" align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
+    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width='15' height='15' align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
         $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class='fieldname'>{$text['gmaplegend']}</span></td>\n";

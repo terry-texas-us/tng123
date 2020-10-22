@@ -470,7 +470,6 @@ if ($tngneedresults) {
 
             <?php
             $i = $offsetplus;
-            $chartlink = "<img src='img/chart.gif' alt='' class='inline-block'>";
             $treestr = $tngconfig['places1tree'] ? "" : "tree=$tree&amp;";
             while ($row = tng_fetch_assoc($result)) {
                 echo "<tr>";
@@ -499,13 +498,14 @@ if ($tngneedresults) {
                         $hboth = $rights['both'];
                         $name = getNameRev($row);
                         $personIDstr = $row['hpersonID'];
-
                         if (!isMobile()) {
                             $namestr .= "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\">\n";
                             $namestr .= "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div>\n";
                             $namestr .= "</div>\n";
                         }
-                        $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
+                        $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
+                        $namestr .= "<img src='img/chart.gif' alt='' class='inline-block'>";
+                        $namestr .= "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                     }
 
                     //now dow wife
@@ -526,17 +526,16 @@ if ($tngneedresults) {
                         $wboth = $rights['both'];
                         $name = getNameRev($row);
                         if ($personIDstr) $personIDstr .= "<br>";
-
                         $personIDstr .= $row['wpersonID'];
-
                         if ($namestr) $namestr .= "<br>";
-
                         if (!isMobile()) {
                             $namestr .= "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\">\n";
                             $namestr .= "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div>\n";
                             $namestr .= "</div>\n";
                         }
-                        $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
+                        $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
+                        $namestr .= "<img src='img/chart.gif' alt='' class='inline-block'>";
+                        $namestr .= "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                     }
                     $rights['both'] = $hboth && $wboth && $famrights['both'];
                 } else {
@@ -545,18 +544,20 @@ if ($tngneedresults) {
                     $row['allow_private'] = $rights['private'];
                     $name = getNameRev($row);
                     $personIDstr = $row['personID'];
-
                     if (!isMobile()) {
                         $namestr .= "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}_$tngevent\">\n";
                         $namestr .= "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}_$tngevent\"></div>\n";
                         $namestr .= "</div>\n";
                     }
-                    $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$chartlink</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class=\"pers\" id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
+                    $namestr .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
+                    $namestr .= "<img src='img/chart.gif' alt='' class='inline-block'>";
+                    $namestr .= "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}:$tngevent\">$name</a>&nbsp;";
                 }
                 echo $namestr;
 
                 if ($rights['both']) {
-                    $placetxt = $row[$place] ? $row[$place] . " <a href=\"placesearch.php?{$treestr}psearch=" . urlencode($row[$place]) . "\" title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>" : truncateIt($row['info'], 75);
+                    $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                    $placetxt = $row[$place] ? $row[$place] . " <a href='placesearch.php?{$treestr}psearch=" . urlencode($row[$place]) . "' title=\"{$text['findplaces']}\">$icon</a>" : truncateIt($row['info'], 75);
                     $dateval = $row[$datefield];
                 } else {
                     $dateval = $placetxt = "";

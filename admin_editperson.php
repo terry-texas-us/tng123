@@ -10,20 +10,16 @@ require_once "./admin/notelinks.php";
 require_once "./admin/branches.php";
 require_once "./admin/trees.php";
 require_once "./public/people.php";
-
 $textpart = "people";
 include "$mylanguage/admintext.php";
-
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
 if (!isset($cw)) $cw = '';
 if (!isset($added)) $added = 0;
-
+$iconChevronDown = buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
 initMediaTypes();
-
 $row = fetchAndCleanPersonRow($personID, $people_table, $tree);
-
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
     $message = $admtext['norights'];
     header("Location: admin_login.php?message=" . urlencode($message));
@@ -411,7 +407,7 @@ if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
                                 <td class="spaceonleft">
                                     <?php echo $admtext['tree'] . ": " . $treerow['treename']; ?>
                                     <a href="#" onclick="return openChangeTree('person', '<?php echo $tree; ?>', '<?php echo $personID; ?>');">
-                                        (<img src="img/ArrowDown.gif" style="margin-left: -4px; margin-right: -2px;"><?php echo $admtext['edit']; ?>)
+                                        <?php echo "({$admtext['edit']}$iconChevronDown)"; ?>
                                     </a>
                                 </td>
                                 <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>

@@ -232,17 +232,17 @@ include_once "eventlib.php";
                                 if (!$assignedbranch) {
                                 $totbranches = tng_num_rows($branchresult) + 1;
                                 if ($totbranches < 2) $totbranches = 2;
-
                                 $selectnum = $totbranches < 8 ? $totbranches : 8;
                                 $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
                                 $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                 $select .= "	<option value=\"\"";
                                 if ($row['branch'] == "") $select .= " selected";
-
                                 $select .= ">{$admtext['nobranch']}</option>\n";
-
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                                echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
+                                echo $admtext['edit'];
+                                echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
+                                echo "</a> )</span><br>";
                                 ?>
                                 <div id="branchedit" class="lightback p-1" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);"
                                     onmouseout="closeBranchEdit('branch','branchedit','branchlist');">

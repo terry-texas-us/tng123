@@ -152,15 +152,13 @@ if ($nokids) {
     $nokidgroup = "";
     $nokidselect = "";
 }
-
 $idsort = "id";
 $birthsort = "birth";
 $deathsort = "death";
 $namesort = "nameup";
 $changesort = "change";
-$descicon = "<img src='img/tng_sort_desc.gif' class='sortimg' alt=''>";
-$ascicon = "<img src='img/tng_sort_asc.gif' class='sortimg' alt=''>";
-
+$descicon = "<img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'>";
+$ascicon = "<img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'>";
 if ($order == "id") {
     $orderstr = "personIDnum, lastname, lnprefix, firstname";
     $idsort = "<a href='admin_people.php?order=idup' class='lightlink'>{$admtext['id']} $descicon</a>";

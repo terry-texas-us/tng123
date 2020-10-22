@@ -150,15 +150,16 @@ header("Content-type:text/html; charset=" . $session_charset);
                     echo "<span id=\"branchlist2\"></span>";
                     if (!$assignedbranch) {
                     if ($numbranches > 8) $select = $admtext['scrollbranch'] . "<br>";
-
-                    $select .= "<select name=\"branch[]\" id=\"branch2\" multiple size=\"8\">\n";
+                    $select .= "<select name=\"branch[]\" id=\"branch2\" multiple size='8'>\n";
                     $select .= "	<option value=\"\"";
                     if ($row['branch'] == "") $select .= " selected";
-
                     $select .= ">{$admtext['nobranch']}</option>\n";
-
                     $select .= "$options</select>\n";
-                    echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\"><img src=\"img/ArrowDown.gif\" style=\"margin-left:-4px;margin-right:-2px;\">" . $admtext['edit'] . "</a> )</span><br>";
+                    echo " <span class='text-nowrap'>(";
+                    echo "<a href='#' onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\">";
+                    echo $admtext['edit'];
+                    echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
+                    echo "</a> )</span><br>";
                     ?>
                     <div id="branchedit2" class="lightback p-1" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('branch2','branchedit2','branchlist2');">
                         <?php

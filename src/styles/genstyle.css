@@ -1,10 +1,47 @@
+:root {
+    --bg-color-primary: #fff;
+    --color-primary: #000;
+    --bg-color-prev-caption: rgba(0, 0, 0, 0.35);
+    --bg-color-img-tag: rgba(0, 0, 0, 0.6);
+    --bg-color-bar: #008000;
+    --bg-color-marker-111: #05b8cc;
+    --bg-color-LB-over: #222;
+    --bg-color-secondary: #336;
+    --bg-color-link-hover: #336399;
+    --bg-color-compare: #414e68;
+    --bg-color-marker-12: #414e68;
+    --bg-color-marker-25: #41678a;
+    --bg-color-marker-37: #2e8899;
+    --bg-color-marker-67: #44a1b8;
+    --bg-color-to-top: #444;
+    --bg-color-dd: #666;
+    --bg-color-fast-mute: #69001a;
+    --bg-color-to-top-hover: #777;
+    --bg-color-mtitle: #999;
+    --bg-color-fam: #aac;
+
+    --bg-color-data-alt: #cacaf1;
+    --bg-color-input-active: #ccc;
+    --bg-color-input: #ddd;
+    --bg-color-data: #e0e0f7;
+    --bg-color-cc: #e4e4e4;
+    --bg-color-mode: #e6e6e6;
+    --bg-color-mini: #eee;
+    --bg-color-delx: #f00;
+    --bg-color-pop: #f9f9f9;
+    --bg-color-deviation: #ffacac;
+    --bg-color-prev-close: transparent;
+
+
+}
+
 p {
-  margin-top: 1em;
-  margin-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 p.footer {
-  margin: 0;
+    margin: 0;
 }
 
 img {

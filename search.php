@@ -102,7 +102,7 @@ if ($order == "birth") {
         $birthsort = $birthlabel;
     } else {
         $birthsort = "<a href='search.php?$currargs&amp;order=birthup' class='lightlink'>";
-        $birthsort .= "$birthlabel <img src='img/tng_sort_desc.gif' class='sortimg' alt=''>";
+        $birthsort .= "$birthlabel <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'>";
         $birthsort .= "</a>";
     }
 } else {
@@ -110,7 +110,7 @@ if ($order == "birth") {
         $birthsort = $birthlabel;
     } else {
         $birthsort = "<a href='search.php?$currargs&amp;order=birth' class='lightlink'>";
-        $birthsort .= "$birthlabel <img src='img/tng_sort_asc.gif' class='sortimg' alt=''>";
+        $birthsort .= "$birthlabel <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'>";
         $birthsort .= "</a>";
     }
     if ($order == "birthup") {
@@ -123,7 +123,7 @@ if ($order == "death") {
         $deathsort = $text['diedburied'];
     } else {
         $deathsort = "<a href='search.php?$currargs&amp;order=deathup' class='lightlink'>";
-        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_desc.gif' alt='' class='sortimg'>";
+        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'>";
         $deathsort .= "</a>";
     }
 } else {
@@ -131,7 +131,7 @@ if ($order == "death") {
         $deathsort = $text['diedburied'];
     } else {
         $deathsort = "<a href='search.php?$currargs&amp;order=death' class='lightlink'>";
-        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_asc.gif' alt='' class='sortimg'>";
+        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'>";
         $deathsort .= "</a>";
     }
     if ($order == "deathup") {
@@ -146,14 +146,14 @@ if ($order == "name") {
         $namesort = $nametitle;
     } else {
         $namesort = "<a href='search.php?$currargs&amp;order=nameup' class='lightlink'>";
-        $namesort .= "$nametitle <img src='img/tng_sort_desc.gif' class='sortimg' alt=''>";
+        $namesort .= "$nametitle <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'>";
         $namesort .= "</a>\n";
     }
 } else {
     if ($tngprint) {
         $namesort = $nametitle;
     } else {
-        $namesort = "<a href='search.php?$currargs&amp;order=name' class='lightlink'>$nametitle <img src='img/tng_sort_asc.gif' class='sortimg' alt=''></a>";
+        $namesort = "<a href='search.php?$currargs&amp;order=name' class='lightlink'>$nametitle <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'></a>";
     }
     if ($order == "nameup") {
         $orderstr = "p.lastname DESC, p.firstname DESC, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
@@ -507,7 +507,6 @@ echo $header;
     </thead>
 <?php
 $i = $offsetplus;
-$chartlink = "<img src='img/chart.gif' alt='' class='chartimg inline-block'>";
 while ($row = tng_fetch_assoc($result)) {
     $rights = determineLivingPrivateRights($row);
     $row['allow_living'] = $rights['living'];
@@ -553,9 +552,10 @@ while ($row = tng_fetch_assoc($result)) {
         echo "<div class='person-prev' id='prev{$row['gedcom']}_{$row['personID']}'></div>\n";
         echo "</div>\n";
     }
-    echo "<a href='pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}'>$chartlink</a> ";
+    echo "<a href='pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}'>";
+    echo "<img src='img/chart.gif' alt='' class='chartimg inline-block'>";
+    echo "</a> ";
     echo "<a href='getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}' class='pers' id='p{$row['personID']}_t{$row['gedcom']}'>$name</a>";
-
     echo "</td>";
     if (!isMobile()) {
         echo "<td class='databack'>{$row['personID']} </td>";

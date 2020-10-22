@@ -133,7 +133,8 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                             $countrow = tng_fetch_assoc($result2);
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
-                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\"><img src='img/tng_search_small.gif' alt=\"{$text['findplaces']}\" class='inline-block'></a>" : "";
+                            $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\">$icon</a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                                 $name = "<a href=\"places-oneletter.php?" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {
