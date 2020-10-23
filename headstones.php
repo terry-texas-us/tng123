@@ -1,34 +1,31 @@
 <?php
+
 $needMap = true;
 $textpart = "headstones";
 include "tng_begin.php";
-
 include "config/mapconfig.php";
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include "functions.php";
-
+require_once "admin/cemeteries.php";
 $flags['imgprev'] = true;
-
 if (!$thumbmaxw) $thumbmaxw = 80;
-
-
 $max_pages = 5;
+$cemnewoffset = 0;
+$cemoffsetplus = 0;
 if (!isset($max_cemeteries)) $max_cemeteries = 5;
-
-$city = preg_replace("/[<>{};!=]/", '', $city);
-$county = preg_replace("/[<>{};!=]/", '', $county);
-$state = preg_replace("/[<>{};!=]/", '', $state);
-$country = preg_replace("/[<>{};!=]/", '', $country);
-
+$city = isset($city) ? preg_replace("/[<>{};!=]/", '', $city) : "";
+$county = isset($county) ? preg_replace("/[<>{};!=]/", '', $county) : "";
+$state = isset($state) ? preg_replace("/[<>{};!=]/", '', $state) : "";
+$country = isset($country) ? preg_replace("/[<>{};!=]/", '', $country) : "";
 $city = addslashes($city);
 $county = addslashes($county);
 $state = addslashes($state);
 $country = addslashes($country);
-
+if (!isset($cemeteryID)) $cemeteryID = "";
 if ($cemeteryID) {
     $subquery = "WHERE cemeteryID = '$cemeteryID'";
 } else {
-    if ($cemoffset) {
+    if (!empty($cemoffset)) {
         $cemoffsetplus = $cemoffset + 1;
         $cemnewoffset = "$cemoffset, ";
     } else {
@@ -52,7 +49,7 @@ if ($cemeteryID) {
     }
     if ($subquery) $subquery = "WHERE " . $subquery;
 }
-
+$totrows = 0;
 if ($subquery) {
     $query = "SELECT * FROM $cemeteries_table ";
     $query .= "$subquery ";
@@ -63,7 +60,7 @@ if ($subquery) {
     $numrows = tng_num_rows($cemresult);
 
     if ($numrows == $max_cemeteries || $cemoffsetplus > 1) {
-        $query = "SELECT count(cemeteryID) AS ccount FROM $cemeteries_table $subquery";
+        $query = "SELECT COUNT(cemeteryID) AS ccount FROM $cemeteries_table $subquery";
         $result2 = tng_query($query);
         $row = tng_fetch_assoc($result2);
         tng_free_result($result2);
@@ -78,15 +75,15 @@ if (!$cemeteryID) {
     $toppagenav = get_browseitems_nav($totrows, "headstones.php?country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;tree=$tree&amp;cemoffset", $max_cemeteries, $max_pages);
     $tngpage = 1;
 }
-
-if (!$tngpage && !$cemeteryID && $cemresult && tng_num_rows($cemresult) == 1) {
+if (empty($tngpage) && !$cemeteryID && $cemresult && tng_num_rows($cemresult) == 1) {
     $cemetery = tng_fetch_assoc($cemresult);
     tng_free_result($cemresult);
     header("Location:showmap.php?cemeteryID={$cemetery['cemeteryID']}&tree=$tree");
     exit;
+} else {
+    $cemetery['cemeteryID'] = "";
 }
-
-if ($offset) {
+if (!empty($offset)) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
 } else {
@@ -129,13 +126,11 @@ echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
-    <h2 class="header">
-        <span class="headericon" id="headstones-hdr-icon"></span>&nbsp;<?php echo $text['cemeteriesheadstones'];
-        if ($location) {
-            echo " {$text['in']} $location";
-        } ?>
-    </h2>
-    <br class="clear-both">
+<br class="clear-both">
+<h2 class="header">
+    <span class="headericon" id="headstones-hdr-icon"></span><?php echo $text['cemeteriesheadstones'];
+    if ($location) echo " {$text['in']} $location"; ?>
+</h2><br>
 <?php
 $hiddenfields[] = ['name' => 'country', 'value' => $country];
 $hiddenfields[] = ['name' => 'state', 'value' => $state];
@@ -151,9 +146,10 @@ if ($tree) {
 $body = "";
 $cemcount = 0;
 $gotImageJpeg = function_exists('imageJpeg');
+
 while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     if ($cemcount) $body .= "<br>\n";
-    $body .= "<div class='titlebox rounded-lg'>\n";
+    $body .= "<div class='w-full mb-4 md:mx-auto md:max-w-3xl md:rounded-lg titlebox'>\n";
     $thiscem = $subquery ? $cemetery['cemeteryID'] : "";
     $query = "SELECT DISTINCT media.mediaID, description, notes, path, thumbpath, status, plot, showmap, usecollfolder, form, mediatypeID, abspath, newwindow, latitude, longitude ";
     $query .= "FROM $media_table media ";
@@ -164,11 +160,13 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     if (!$subquery) {
         $cemetery = [];
         $cemetery['cemname'] = $text['nocemetery'];
+        $cemetery['cemeteryID'] = "";
         $subquery = "done";
     }
-    $hsresult = tng_query($query);
-
-    $numrows = tng_num_rows($hsresult);
+    $result = tng_query($query);
+    $headstones = tng_fetch_all($result);
+    tng_free_result($result);
+    $numrows = count($headstones);
     if ($numrows == $maxsearchresults || $offsetplus > 1) {
         $query = "SELECT count(DISTINCT media.mediaID) AS hscount ";
         $query .= "FROM $media_table media ";
@@ -180,52 +178,33 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     } else {
         $totrows = $numrows;
     }
-
     $body .= "<div>";
     $body .= "<h3 class='subhead'>\n";
     if ($cemetery['cemname'] == $text['nocemetery']) {
         $location = $cemetery['cemname'];
     } else {
-        $location = "<a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">" . $cemetery['cemname'];
-        if ($cemetery['city']) {
-            if ($location) $location .= ", ";
-            $location .= $cemetery['city'];
-        }
-        if ($cemetery['county']) {
-            if ($location) $location .= ", ";
-            $location .= $cemetery['county'];
-        }
-        if ($cemetery['state']) {
-            if ($location) $location .= ", ";
-            $location .= $cemetery['state'];
-        }
-        if ($cemetery['country']) {
-            if ($location) $location .= ", ";
-            $location .= $cemetery['country'];
-        }
+        $location = "<a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">{$cemetery['cemname']}<br>";
+        $location .= cemeteryPlace($cemetery);
         $location .= "</a>";
     }
-
     if ($map['key']) {
-        $lat = $cemetery['latitude'];
-        $long = $cemetery['longitude'];
-        $zoom = $cemetery['zoom'] ? $cemetery['zoom'] : 10;
+        $lat = isset($cemetery['latitude']) ? $cemetery['latitude'] : "";
+        $long = isset($cemetery['longitude']) ? $cemetery['longitude'] : "";
+        $zoom = isset($cemetery['zoom']) ? $cemetery['zoom'] : 10;
         $pinplacelevel = $pinplacelevel2;
-
         if ($lat && $long) {
-            $cemeteryplace = "{$cemetery['city']}, {$cemetery['county']}, {$cemetery['state']}, {$cemetery['country']}";
+            $cemeteryplace = cemeteryPlace($cemetery);
             $localballooncemeteryname = @htmlspecialchars($cemetery['cemname'], ENT_QUOTES, $session_charset);
             $localballooncemeteryplace = @htmlspecialchars($cemeteryplace, ENT_QUOTES, $session_charset);
             $remoteballoontext = @htmlspecialchars(str_replace($banish, $banreplace, "{$cemetery['cemname']}, $cemeteryplace"), ENT_QUOTES, $session_charset);
             $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
-            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target='_blank'>{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
+            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
             $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "place" => $cemeteryplace, "htmlcontent" => "<div class=\"mapballoon normal\"><a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}\">$localballooncemeteryname</a><br>$localballooncemeteryplace$codednotes</div>"];
             $l2mCount++;
-            $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target='_blank'><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px;\" ></a>";
+            $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px;\" ></a>";
             $map['pins']++;
         }
     }
-
     $body .= $location;
     $body .= "</h3>";
     $pagenav = get_browseitems_nav($totrows, "headstones.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
@@ -248,16 +227,12 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $body .= "<th data-tablesaw-priority='6' class='fieldnameback fieldname'>&nbsp;{$text['status']}</th>";
     $body .= "<th data-tablesaw-priority='4' class='fieldnameback fieldname'>&nbsp;{$text['location']}</th>";
     $body .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
-
-    while ($hs = tng_fetch_assoc($hsresult)) {
+    foreach ($headstones as $hs) {
         $mediatypeID = $hs['mediatypeID'];
         $usefolder = $hs['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
-
         $status = $hs['status'];
         $hs['cemeteryID'] = $cemetery['cemeteryID'];
         if ($status && $text[$status]) $hs['status'] = $text[$status];
-
-
         $query = "SELECT medialinkID, medialinks.personID AS personID, people.personID AS personID2, familyID, people.living AS living, people.private AS private, people.branch AS branch, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, medialinks.gedcom AS gedcom, treename, sources.title, sources.sourceID, repositories.repoID,reponame, deathdate, burialdate, linktype ";
         $query .= "FROM ($medialinks_table medialinks, $trees_table trees) ";
         $query .= "LEFT JOIN $people_table people ON (medialinks.personID = people.personID AND medialinks.gedcom = people.gedcom) ";
@@ -266,16 +241,16 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $query .= "LEFT JOIN $repositories_table repositories ON (medialinks.personID = repositories.repoID AND medialinks.gedcom = repositories.gedcom) ";
         $query .= "WHERE mediaID = \"{$hs['mediaID']}\" AND medialinks.gedcom = trees.gedcom $wherestr2 ";
         $query .= "ORDER BY lastname, lnprefix, firstname, medialinks.personID";
-
         $presult = tng_query($query);
+        $prows = tng_fetch_all($presult);
+        tng_free_result($presult);
         $hslinktext = "";
-        while ($prow = tng_fetch_assoc($presult)) {
+        foreach ($prows as $prow) {
             $prights = determineLivingPrivateRights($prow);
             $prow['allow_living'] = $prights['living'];
             $prow['allow_private'] = $prights['private'];
-
             $hstext = "";
-            if ($prow['personID2'] != NULL) {
+            if ($prow['personID2'] != null) {
                 $hslinktext .= "<a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
                 $hslinktext .= getName($prow);
                 $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
@@ -299,8 +274,6 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
             }
             $hslinktext .= "</a>$hstext\n<br>\n";
         }
-        tng_free_result($presult);
-
         $description = $hs['description'];
         $notes = $hs['notes'];
 
@@ -311,19 +284,17 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         $href = getMediaHREF($hs, 3);
 
         if ($imgsrc) {
-            $body .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$hs['mediaID']}\" style='display: none;'></div></div>\n";
-            $body .= "<a href=\"$href\"";
+            $body .= "<div class='media-img'><div class='media-prev' id=\"prev{$hs['mediaID']}\" style='display: none;'></div></div>\n";
+            $body .= "<a href='$href'";
             if ($gotImageJpeg && isPhoto($hs) && checkMediaFileSize("$rootpath$usefolder/{$hs['path']}")) {
-                $body .= " class=\"media-preview\" id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
+                $body .= " class='media-preview' id=\"img-{$hs['mediaID']}-0-" . urlencode("$usefolder/{$hs['path']}") . "\"";
             }
             $body .= ">$imgsrc</a>\n";
         } else {
             $body .= "&nbsp;";
         }
-
         $body .= "</td>\n";
-
-        $body .= "<td class='databack'><span class='normal'><a href=\"$href\">{$hs['description']}</a><br>{$hs['notes']}&nbsp;</span></td>\n";
+        $body .= "<td class='databack'><span class='normal'><a href='$href'>{$hs['description']}</a><br>{$hs['notes']}&nbsp;</span></td>\n";
         $body .= "<td class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
         $body .= "<td class='databack'><span class='normal'>" . nl2br($hs['plot']);
         if ($hs['latitude'] || $hs['longitude']) {
@@ -338,22 +309,20 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $cemcount++;
     $body .= "</table>\n";
     if ($pagenav) $body .= "<br>$pagenav";
-
     $body .= "</div>\n<br>\n";
+
     if ($subquery == "done") break;
 }
-
 if ($map['key'] && $map['pins']) {
-    echo "<div id='map' class='rounded-lg cemmap'></div>\n";
+    echo "<div id='map' style=\"width: {$map['hstw']}; height: {$map['hsth']};\" class='w-full mb-4 md:mx-auto md:max-w-3xl md:rounded-lg cemmap'></div>\n";
 }
-
-if ($toppagenav) {
+if (!empty($toppagenav)) {
     echo "<p>$toppagenav</p>\n$body\n<p>$toppagenav</p>";
 } else {
     echo $body;
 }
 if ($cemresult) tng_free_result($cemresult);
 
-
 tng_footer($flags);
 ?>
+

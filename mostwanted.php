@@ -36,10 +36,10 @@ function showDivs($type) {
         $mediatext .= "<tr><td class='databack normal'>\n";
         $href = getMediaHREF($row, 0);
         if ($imgsrc) {
-            $mediatext .= "<div class=\"mwimage\">\n<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
-            $mediatext .= "<a href=\"$href\"";
+            $mediatext .= "<div class=\"mwimage\">\n<div class='media-img'><div class='media-prev' id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
+            $mediatext .= "<a href='$href'";
             if ($gotImageJpeg && isPhoto($row) && filesize("$rootpath$usefolder/" . $row['path']) < $maxmediafilesize) {
-                $mediatext .= " class=\"media-preview\" id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/{$row['path']}") . "\"";
+                $mediatext .= " class='media-preview' id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/{$row['path']}") . "\"";
             }
             $mediatext .= ">$imgsrc</a>\n";
             $mediatext .= "</div>\n";
@@ -64,7 +64,7 @@ function showDivs($type) {
         }
         if ($type == "photo" && $row['mediaID']) {
             $mediatext .= "<a href=\"suggest.php?page={$text['mostwanted']}:+{$row['mtitle']}\">" . $text['tellus'] . "</a>";
-            $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . $text['moreinfo'] . " <a href=\"$href\">{$row['mtitle']}</a> &nbsp;&nbsp;&nbsp;";
+            $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . $text['moreinfo'] . " <a href='$href'>{$row['mtitle']}</a> &nbsp;&nbsp;&nbsp;";
         }
         $mediatext .= "</div>\n";
         $mediatext .= "</td></tr>\n";

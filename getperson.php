@@ -650,7 +650,7 @@ if ($map['key'] && $locations2map) {
                     $markerIcon++;
                     $usedplaces[] = $place;
                     $savedplaces[] = ["place" => $place, "key" => $key];
-                    $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
+                    $locations2map[$key]['htmlcontent'] = "<div class='mapballoon normal' style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
                     $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
                     $thismarker = $markerIcon;
                 } else {

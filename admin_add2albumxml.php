@@ -66,7 +66,7 @@ if ($hsstat) {
     $wherestr .= $wherestr ? " AND status = \"$hsstat\"" : "status = \"$hsstat\"";
 }
 if ($cemeteryID) {
-    $wherestr .= $wherestr ? " AND cemeteryID = \"$cemeteryID\"" : "cemeteryID = \"$cemeteryID\"";
+    $wherestr .= $wherestr ? " AND cemeteryID = '$cemeteryID'" : "cemeteryID = '$cemeteryID'";
 }
 if ($wherestr) $wherestr = "WHERE $wherestr";
 

@@ -78,8 +78,8 @@ function getAlbumPhoto($albumID, $albumname) {
         }
         if (!$foundliving && !$foundprivate) {
             $size = @GetImageSize("$rootpath$tusefolder / $treestr{$trow['thumbpath']}");
-            $imgsrc = "<div class=\"media-img\">\n";
-            $imgsrc .= "<div class=\"media-prev\" id=\"prev$albumID\" style='display: none;'></div>\n";
+            $imgsrc = "<div class='media-img'>\n";
+            $imgsrc .= "<div class='media-prev' id=\"prev$albumID\" style='display: none;'></div>\n";
             $imgsrc .= "</div>\n";
             $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"{$text['albclicksee']}\"";
             if (function_exists('imageJpeg')) {

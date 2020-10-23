@@ -149,10 +149,10 @@ if (function_exists('imageJpeg') && $thumbcreate == "auto") {
         }
     }
 }
-
-$query = "UPDATE $media_table SET path=\"$path\",thumbpath=\"$thumbpath\",description=\"$description\",notes=\"$notes\",width=\"$width\",height=\"$height\",datetaken=\"$datetaken\",placetaken=\"$place\",owner=\"$owner\",changedate=\"$newdate\",changedby=\"$currentuser\",form=\"$form\",alwayson=\"$alwayson\",mediatypeID=\"$mediatypeID\",map=\"$imagemap\",abspath=\"$abspath\",gedcom = '$tree',status=\"$status\",cemeteryID=\"$cemeteryID\",plot=\"$plot\",showmap=\"$showmap\",linktocem=\"$linktocem\",latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\",bodytext=\"$bodytext\",usenl=\"$usenl\",newwindow=\"$newwindow\",usecollfolder=\"$usecollfolder\",mediakey=\"$mediakey\"  WHERE mediaID=\"$mediaID\"";
+$query = "UPDATE $media_table ";
+$query .= "SET path=\"$path\", thumbpath=\"$thumbpath\", description=\"$description\", notes=\"$notes\", width=\"$width\", height=\"$height\", datetaken=\"$datetaken\", placetaken=\"$place\", owner=\"$owner\", changedate=\"$newdate\", changedby=\"$currentuser\", form=\"$form\",alwayson=\"$alwayson\", mediatypeID=\"$mediatypeID\", map=\"$imagemap\", abspath=\"$abspath\", gedcom = '$tree', status=\"$status\", cemeteryID='$cemeteryID', plot=\"$plot\", showmap=\"$showmap\", linktocem=\"$linktocem\", latitude=\"$latitude\", longitude=\"$longitude\",zoom=\"$zoom\", bodytext=\"$bodytext\", usenl=\"$usenl\", newwindow=\"$newwindow\", usecollfolder=\"$usecollfolder\", mediakey=\"$mediakey\"  ";
+$query .= "WHERE mediaID=\"$mediaID\"";
 $result = tng_query($query);
-
 if ($mediatypeID != $mediatypeID_org) {
     $query = "SELECT personID, $medialinks_table.gedcom, eventID FROM ($medialinks_table, $media_table) WHERE $medialinks_table.mediaID = \"$mediaID\" AND $medialinks_table.mediaID = $media_table.mediaID";
     $result2 = tng_query($query);

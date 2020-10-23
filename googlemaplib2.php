@@ -29,7 +29,6 @@ $mcharsetstr = "&amp;oe=$session_charset";
     var startlong = '<?php echo $startlong; ?>';
     var startzoom = parseInt(<?php echo $startzoom; ?>);
     var foundzoom = parseInt(<?php echo $foundzoom; ?>);
-    //var placelevel = <?php echo $placelevel; ?>;
     var point = new google.maps.LatLng(startlat, startlong);
 
     var map = null;

@@ -1,10 +1,9 @@
 <?php
-//jmj map mod
+
 $locations2map = [];
 $l2mCount = 0;
 $map['pins'] = 0;
 if (!$map['displaytype']) $map['displaytype'] = "TERRAIN";
-
 
 // these two lines used to remove or replace characters that cause problems
 // with opening new Google maps
@@ -27,19 +26,13 @@ function tng_map_pins() {
         $pinplacelevel = $val['pinplacelevel'];
         if ($lat && $long) {
             if ($lat < $minLat) $minLat = $lat;
-
             if ($long < $minLong) $minLong = $long;
-
             if ($lat > $maxLat) $maxLat = $lat;
-
             if ($long > $maxLong) $maxLong = $long;
-
         }
     }
-
     $centLat = $minLat + (($maxLat - $minLat) / 2);
     $centLong = $minLong + ((abs($minLong) - abs($maxLong)) / 2);
-
     ?>
     <script>
         //<![CDATA[
@@ -120,7 +113,6 @@ function tng_map_pins() {
 
 function stri_replace($find, $replace, $string) {
     if (!is_array($find)) $find = [$find];
-
     if (!is_array($replace)) {
         if (!is_array($find)) {
             $replace = [$replace];

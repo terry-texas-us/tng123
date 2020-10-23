@@ -348,7 +348,7 @@ while ($row = tng_fetch_assoc($result)) {
     }
     $notes = nl2br(truncateIt(getXrefNotes($row['notes'], $row['gedcom']), $tngconfig['maxnoteprev']));
     if ($row['allow_living']) {
-        $description = $showPhotoInfo ? "<a href=\"$href\">{$row['description']}</a>" : $row['description'];
+        $description = $showPhotoInfo ? "<a href='$href'>{$row['description']}</a>" : $row['description'];
     } else {
         $nonamesloc = $row['private'] ? $tngconfig['nnpriv'] : $nonames;
         if ($nonamesloc) {
@@ -367,7 +367,7 @@ while ($row = tng_fetch_assoc($result)) {
     if ($tnggallery) {
         if ($imgsrc) {
             $mediatext .= "<div class='databack gallery text-center'>";
-            $mediatext .= $href ? "<a href=\"$href\">$imgsrc</a>\n" : "$imgsrc\n";
+            $mediatext .= $href ? "<a href='$href'>$imgsrc</a>\n" : "$imgsrc\n";
             $mediatext .= "</div>";
             $i++;
         }
@@ -381,10 +381,10 @@ while ($row = tng_fetch_assoc($result)) {
             $mediatext .= "</div>\n";
             $mediatext .= "</div>\n";
             if ($href && $row['allow_living']) {
-                $mediatext .= "<a href=\"$href\"";
+                $mediatext .= "<a href='$href'";
                 $treestr2 = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
                 if ($gotImageJpeg && isPhoto($row) && checkMediaFileSize("$rootpath$usefolder/$treestr2{$row['path']}")) {
-                    $mediatext .= " class=\"media-preview\" id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/$treestr2{$row['path']}") . "\"";
+                    $mediatext .= " class='media-preview' id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/$treestr2{$row['path']}") . "\"";
                 }
                 $mediatext .= ">$imgsrc</a>";
             } else {
@@ -400,11 +400,10 @@ while ($row = tng_fetch_assoc($result)) {
         $mediatext .= "$description<br>$notes&nbsp;</td>";
         if ($orgmediatypeID == "headstones") {
             if (!$row['cemname']) $row['cemname'] = $row['city'];
-
             $plotstr = $row['plot'] ? "<br>" . nl2br($row['plot']) : "";
-            $mediatext .= "<td class='databack' width=\"30%\"><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
+            $mediatext .= "<td class='databack' width='30%'><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
             $mediatext .= "<td class='databack text-nowrap'>{$row['status']}&nbsp;</td>";
-            $mediatext .= "<td class='databack' width=\"30%\">\n";
+            $mediatext .= "<td class='databack' width='30%'>\n";
         } else {
             $mediatext .= "<td class='databack' width=\"175\">\n";
         }

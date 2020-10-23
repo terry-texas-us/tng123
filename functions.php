@@ -201,7 +201,7 @@ function doMedia($mediatypeID) {
         $description = $wherestr && $row['altdescription'] ? $row['altdescription'] : $row['description'];
 
         if ($row['allow_living']) {
-            $description = $showPhotoInfo ? "<a href=\"$href\">$description</a>" : $description;
+            $description = $showPhotoInfo ? "<a href='$href'>$description</a>" : $description;
         } else {
             $nonamesloc = $row['private'] ? $tngconfig['nnpriv'] : $nonames;
             if ($nonamesloc) {
@@ -219,11 +219,11 @@ function doMedia($mediatypeID) {
         if ($imgsrc) {
             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
             $mediatext .= "<td class='databack center' style=\"width:$thumbmaxw" . "px\">";
-            $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
+            $mediatext .= "<div class='media-img'><div class='media-prev' id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
             if ($href && $row['allow_living']) {
-                $mediatext .= "<a href=\"$href\"";
+                $mediatext .= "<a href='$href'";
                 if ($gotImageJpeg && isPhoto($row) && checkMediaFileSize("$rootpath$usefolder/$treestr" . $row['path'])) {
-                    $mediatext .= " class=\"media-preview\" id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/$treestr{$row['path']}") . "\"";
+                    $mediatext .= " class='media-preview' id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/$treestr{$row['path']}") . "\"";
                 }
                 $mediatext .= ">$imgsrc</a>";
             } else {

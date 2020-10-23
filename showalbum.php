@@ -85,9 +85,9 @@ function getAlbumLinkText($albumID) {
 $albumlinktext = getAlbumLinkText($albumID);
 if ($albumlinktext) {
     $altext = $albumlinktext;
-    $albumlinktext = "<table cellpadding='4' cellspacing='1' border='0' class=\"whiteback w-full\">\n";
+    $albumlinktext = "<table cellpadding='4' cellspacing='1' border='0' class='w-full whiteback'>\n";
     $albumlinktext .= "<tr>\n";
-    $albumlinktext .= "<td class=\"fieldnameback fieldname align-top\" width=\"100\">{$text['indlinked']}</td>\n";
+    $albumlinktext .= "<td class='fieldnameback fieldname align-top' width=\"100\">{$text['indlinked']}</td>\n";
     $albumlinktext .= "<td class='databack' width=\"90%\">$altext</td>\n";
     $albumlinktext .= "</tr>\n";
     $albumlinktext .= "</table>\n<br>";
@@ -96,9 +96,9 @@ if (!$thumbmaxw) $thumbmaxw = 80;
 if ($tnggallery) {
     $maxsearchresults *= 2;
     $wherestr .= " AND thumbpath != \"\"";
-    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID\" class='snlink rounded'>&raquo; {$text['regphotos']}</a>&nbsp;";
+    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID\" class='rounded snlink'>&raquo; {$text['regphotos']}</a>&nbsp;";
 } else {
-    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID&amp;tnggallery=1\" class='snlink rounded'>&raquo; {$text['gallery']}</a>&nbsp;";
+    $gallerymsg = "<a href=\"showalbum.php?albumID=$albumID&amp;tnggallery=1\" class='rounded snlink'>&raquo; {$text['gallery']}</a>&nbsp;";
 }
 $_SESSION['tng_gallery'] = $tnggallery;
 $max_browsemedia_pages = 5;
@@ -178,11 +178,11 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'showalbu
 $toplinks = "<p class='normal'>";
 $toplinks .= $totrows ? "{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp;&nbsp; " : "";
 $toplinks .= $gallerymsg;
-$toplinks .= $allow_admin && $allow_edit ? "<a href=\"admin_editalbum.php?albumID=$albumID&amp;cw=1\" target='_blank' class='snlink rounded'>&raquo; {$text['editalbum']}</a> " : "";
+$toplinks .= $allow_admin && $allow_edit ? "<a href=\"admin_editalbum.php?albumID=$albumID&amp;cw=1\" target='_blank' class='rounded snlink'>&raquo; {$text['editalbum']}</a> " : "";
 $pagenav = get_browseitems_nav($totrows, "showalbum.php?albumID=$albumID&amp;tnggallery=$tnggallery&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 $preheader = $pagenav . "</p>\n";
 if ($tnggallery) {
-    $preheader .= "<div class='titlebox rounded-lg'>\n";
+    $preheader .= "<div class='rounded-lg titlebox'>\n";
     $firstrow = 1;
     $tablewidth = "";
     $header = "";
@@ -302,7 +302,7 @@ while ($row = tng_fetch_assoc($result)) {
     if ($href && !$firsthref) $firsthref = $href;
 
     if ($row['allow_living'] || !$nonamesloc) {
-        $description = $showAlbumInfo ? "<a href=\"$href\">{$row['description']}</a>" : $row['description'];
+        $description = $showAlbumInfo ? "<a href='$href'>{$row['description']}</a>" : $row['description'];
         $notes = nl2br(truncateIt(getXrefNotes($row['notes']), $tngconfig['maxnoteprev']));
         if (!$showAlbumInfo) $notes .= "<br>({$text['livingphoto']})";
 
@@ -318,21 +318,21 @@ while ($row = tng_fetch_assoc($result)) {
     }
     if ($tnggallery) {
         if ($imgsrc) {
-            $mediatext .= "<div class='databack gallery text-center'>";
-            $mediatext .= $href ? "<a href=\"$href\">$imgsrc</a>\n" : "$imgsrc\n";
+            $mediatext .= "<div class='text-center databack gallery'>";
+            $mediatext .= $href ? "<a href='$href'>$imgsrc</a>\n" : "$imgsrc\n";
             $mediatext .= "</div>";
             $i++;
         }
     } else {
         $mediatext .= "<tr><td class='databack'><span class='normal'>$i</span></td>";
         if ($imgsrc) {
-            $mediatext .= "<td class='databack text-center'>";
-            $mediatext .= "<div class=\"media-img\"><div class=\"media-prev\" id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
+            $mediatext .= "<td class='text-center databack'>";
+            $mediatext .= "<div class='media-img'><div class='media-prev' id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
             if ($href) {
-                $mediatext .= "<a href=\"$href\"";
+                $mediatext .= "<a href='$href'";
                 $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
                 if ($gotImageJpeg && isPhoto($row) && checkMediaFileSize("$rootpath$usefolder/$treestr{$row['path']}")) {
-                    $mediatext .= " class=\"media-preview\" id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/$treestr{$row['path']}") . "\"";
+                    $mediatext .= " class='media-preview' id=\"img-{$row['mediaID']}-0-" . urlencode("$usefolder/$treestr{$row['path']}") . "\"";
                 }
                 $mediatext .= ">$imgsrc</a>";
             } else {
@@ -342,7 +342,7 @@ while ($row = tng_fetch_assoc($result)) {
             $mediatext .= "<td class='databack'>";
             $thumbcount++;
         } else {
-            $mediatext .= "<td class='databack text-center'>&nbsp;</td>";
+            $mediatext .= "<td class='text-center databack'>&nbsp;</td>";
             $mediatext .= "<td class='databack'>";
         }
         $mediatext .= "<span class='normal'>$description<br>$notes&nbsp;</span></td>";
@@ -359,11 +359,11 @@ if ($tnggallery) {
 } else {
     if (!$thumbcount) {
         $header = str_replace("<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
-        $mediatext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
+        $mediatext = str_replace("<td class='text-center databack'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }
 if ($firsthref && !isMobile()) {
-    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref&amp;ss=1\" class='snlink rounded'>&raquo; {$text['slidestart']}</a>";
+    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref&amp;ss=1\" class='rounded snlink'>&raquo; {$text['slidestart']}</a>";
 }
 $toplinks .= "</p>";
 //print out the whole shootin' match right here, eh

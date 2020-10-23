@@ -56,26 +56,23 @@ if ($totnum_tests) {
     }
     $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
     $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
-
     $persontext .= "<tr>\n";
-    $persontext .= "<td class=\"fieldnameback fieldname align-top\" rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
+    $persontext .= "<td class='fieldnameback fieldname align-top' rowspan=\"$num_tests\">{$admtext['dna_tests']}$toggleicon</td>\n";
     $persontext .= "<td colspan='4' class='fieldnameback fieldname'><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";
     $persontext .= "<a href='#' title=\"{$text['dna_info_head']}\"><img src=\"img/info_2.png\" width=\"14\" height=\"14\" alt=\"\" onclick=\"tnglitbox = new LITBox('dna_info.php', {overlay:false, width:620, height:200}); return false\"/></a>";
     $persontext .= "</td>\n";
     $persontext .= "</tr>\n";
     $persontext .= "<tr id=\"dnatest\" class=\"$displayclass\" style=\"$displaystyle\">\n";
-    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['test_type']}</th>";
-    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['takenby']}</a></th>";
-    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['haplogroup']}&nbsp;</th>";
-    $persontext .= "<th class=\"fieldnameback fieldname align-top\">{$text['test_info']}</th></tr><tr class=\"$displayclass\" style=\"$displaystyle\">\n";
-
+    $persontext .= "<th class='fieldnameback fieldname align-top'>{$text['test_type']}</th>";
+    $persontext .= "<th class='fieldnameback fieldname align-top'>{$text['takenby']}</a></th>";
+    $persontext .= "<th class='fieldnameback fieldname align-top'>{$text['haplogroup']}&nbsp;</th>";
+    $persontext .= "<th class='fieldnameback fieldname align-top'>{$text['test_info']}</th></tr><tr class=\"$displayclass\" style=\"$displaystyle\">\n";
     //for each test, do a row
     $testnum = 0;
     while ($dna_test = tng_fetch_assoc($dna_results)) {
         if ($dna_test['private_test'] && ($allow_private) || (!$dna_test['private_test'])) {
             $dna_pers_result = getPersonSimple($dna_test['tgedcom'], $dna_test['tpersonID']);
             if ($dna_pers_result) $dprow = tng_fetch_assoc($dna_pers_result);
-
             $dna_righttree = checktree($dna_test['tgedcom']);
             $dna_rightbranch = $dna_righttree ? checkbranch($dprow['branch']) : false;
             $dprights = determineLivingPrivateRights($dprow, $dna_righttree, $dna_rightbranch);

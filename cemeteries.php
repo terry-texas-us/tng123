@@ -23,7 +23,6 @@ echo "<html lang='en'>\n";
 
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
-
 <script>
     const collapsemsg = "<?php echo $text['collapse']; ?>";
     const expandmsg = "<?php echo $text['expand']; ?>";
@@ -40,7 +39,6 @@ tng_header($text['cemeteriesheadstones'], $flags);
         }
         return false;
     }
-
     plus = new Image;
     plus.src = "img/tng_expand.gif";
     minus = new Image;
@@ -56,20 +54,17 @@ tng_header($text['cemeteriesheadstones'], $flags);
 <br class="clear-both">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'cemeteries', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
-
-define("DUMMYPLACE", "@@@@@@"); // sincerely hope there's not a place called this anywhere in the world
-define("NUMCOLS", 2);           //set as number of columns-1
+define("DUMMYPLACE", "@@@@@@");
+define("NUMCOLS", 2);
 define("DEFAULT_COLUMN_LENGTH", $numcems);
 $numrows = tng_num_rows($cemresult);
-
 $colsize = DEFAULT_COLUMN_LENGTH;
 $lastcountry = DUMMYPLACE;
 $divctr = $linectr = $colctr = $i = 0;
-echo "<div id=\"cemwrapper\">\n";
-echo "<p>&nbsp;&nbsp;<a href=\"browsemedia.php?mediatypeID=headstones\" class='snlink rounded'>&raquo; {$text['showallhsr']}</a></p>\n";
-echo "<div id=\"cemcontainer\">\n";
-echo "<div id=\"col$colctr\">\n";
-
+echo "<div id='cemwrapper'>\n";
+echo "<p>&nbsp;&nbsp;<a href='browsemedia.php?mediatypeID=headstones' class='snlink rounded'>&raquo; {$text['showallhsr']}</a></p>\n";
+echo "<div id='cemcontainer'>\n";
+echo "<div id='col$colctr'>\n";
 $cemetery = tng_fetch_assoc($cemresult);
 $orphan = false;
 $hiding = false;
@@ -81,11 +76,8 @@ while ($i < $numrows) {
                 $cityctr = 0;
                 while (($i < $numrows) && ($cemetery['county'] == $lastcounty) && ($cemetery['state'] == $laststate) && ($cemetery['country'] == $lastcountry)) { // display all cemeteries in the current county
                     if ($cemetery['city'] != $lastcity) {
-                        //end last city if $lastcity != dummy
                         if ($lastcity != DUMMYPLACE) echo "</div>\n";
 
-
-                        //start a new city
                         $lastcity = $cemetery['city'];
                         $divctr++;
                         if (!$hiding) $linectr++;
@@ -108,10 +100,8 @@ while ($i < $numrows) {
                     $i++;
                 }
                 if ($lastcity != DUMMYPLACE) echo "</div>\n";
-
-                echo "</div>\n";                    // displayed all cemeteries in the county
-
-            } else {                                // display the county
+                echo "</div>\n";
+            } else {
                 $divname = "county$divctr";
                 $divctr++;
                 $lastcounty = $cemetery['county'];
@@ -128,28 +118,27 @@ while ($i < $numrows) {
                     $hiding = false;
                 }
             }
-        } else {                                // display the State
-            if (($colctr < NUMCOLS) && ($linectr > $colsize) && !$orphan) {    // end of a column
+        } else {
+            if (($colctr < NUMCOLS) && ($linectr > $colsize) && !$orphan) {
                 $linectr = 0;
                 $colctr++;
                 echo "</div>\n<div id=\"col$colctr\">\n<em>{$cemetery['country']} {$text['cont']}</em>\n";
             }
             $orphan = false;
-
             $laststate = $cemetery['state'];
             $lastcounty = DUMMYPLACE;
             $hiding = false;
             $txt = $cemetery['state'] ? @htmlspecialchars($cemetery['state'], ENT_QUOTES, $session_charset) : $text['nostate'];
             if ($cemetery['state'] || !$tngconfig['cemblanks']) {
-                $linectr += 2;        //Add extra line to allow for the <br> at the end
+                $linectr += 2;
                 echo "<br><strong><a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;state=" . urlencode($cemetery['state']) . "&amp;tree=$tree\">$txt</a></strong><br>\n";
             } else {
                 $linectr++;
                 echo "<br>\n";
             }
         }
-    } else {                                    // display the Country
-        if (($colctr < NUMCOLS) && ($linectr > $colsize)) {    // end of a column
+    } else {
+        if (($colctr < NUMCOLS) && ($linectr > $colsize)) {
             $linectr = 0;
             $colctr++;
             echo "</div>\n<div id=\"col$colctr\">\n";
@@ -159,23 +148,19 @@ while ($i < $numrows) {
         $lastcounty = DUMMYPLACE;
         $hiding = false;
         if ($linectr) echo "<br>";
-
-        $linectr++;     //Add extra line to allow for the <br> at the end
+        $linectr++;
         $txt = $cemetery['country'] ? @htmlspecialchars($cemetery['country'], ENT_QUOTES, $session_charset) : $text['nocountry'];
         echo "<div class='databack cemcountry subhead rounded'><strong><a href=\"headstones.php?country=" . urlencode($cemetery['country']) . "&amp;tree=$tree\">$txt</a></strong></div>\n";
         $orphan = true;
     }
 }
 tng_free_result($cemresult);
-
 if ($numhs) {
-    echo "<br><div class='databack cemcountry subhead rounded'><strong><a href=\"headstones.php?tree=$tree\">{$text['nocemetery']}</a></strong></div>\n";
+    echo "<br><div class='databack cemcountry subhead rounded'><strong><a href='headstones.php?tree=$tree'>{$text['nocemetery']}</a></strong></div>\n";
 }
-
-echo "</div>\n";    //colx
-echo "</div>\n";    //container
 echo "</div>\n";
-echo "<br style=\"clear: both;\">";    //wrapper
-
+echo "</div>\n";
+echo "</div>\n";
+echo "<br class='clear-both'>";    //wrapper
 tng_footer("");
 ?>

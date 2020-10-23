@@ -193,7 +193,6 @@ if ($tree) {
 
     if ($querystring) $querystring .= " AND ";
 
-
     require_once "./admin/trees.php";
     $treerow = getTree($trees_table, $tree);
 
@@ -218,11 +217,7 @@ if ($tree) {
     }
 }
 
-$treequery = "SELECT count(gedcom) AS treecount FROM $trees_table";
-$treeresult = tng_query($treequery);
-$treerow = tng_fetch_assoc($treeresult);
-$numtrees = $treerow['treecount'];
-tng_free_result($treeresult);
+$numtrees = getTreesCount($trees_table);
 
 $gotInput = $mymarrplace || $mydivplace || $mymarryear || $mydivyear || $ecount;
 $more = getLivingPrivateRestrictions("f", false, $gotInput);

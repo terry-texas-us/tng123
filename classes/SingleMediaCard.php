@@ -96,7 +96,7 @@ class SingleMediaCard
             $description = $wherestr && $row['altdescription'] ? $row['altdescription'] : $row['description'];
 
             if ($row['allow_living']) {
-                $description = $showPhotoInfo ? "<a href=\"$href\">$description</a>" : $description;
+                $description = $showPhotoInfo ? "<a href='$href'>$description</a>" : $description;
             } else {
                 $nonamesloc = $row['private'] ? $tngconfig['nnpriv'] : $nonames;
                 if ($nonamesloc) {
@@ -114,7 +114,7 @@ class SingleMediaCard
             if ($imgsrc) {
                 $content .= "<div style=\"float:left;margin-right:10px;width:{$thumbmaxw}px;text-align:center;\">\n";
                 if ($href && $row['allow_living']) {
-                    $content .= "<a href=\"$href\">$imgsrc</a>\n";
+                    $content .= "<a href='$href'>$imgsrc</a>\n";
                 } else {
                     $content .= $imgsrc;
                 }

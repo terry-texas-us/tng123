@@ -1212,7 +1212,7 @@ function showLinks($linkList, $newtab = false, $class = null, $inner_html = null
         } else {
             $html = $title;
         }
-        $finishedList .= "><a href=\"$href\" title=\"$title\"$target>$html</a></li>\n";
+        $finishedList .= "><a href='$href' title=\"$title\"$target>$html</a></li>\n";
     }
     return $finishedList;
 }
@@ -1237,7 +1237,7 @@ function showMediaLinks($linkList) {
         $title = !empty($thumbrow['altdescription']) ? $thumbrow['altdescription'] : $thumbrow['description'];
         $imgsrc = "<img src=\"$thumb\" alt=\"$title\" title=\"$title\" class='thumb rounded'>";
         $href = getMediaHREF($thumbrow, 0);
-        $finishedmedList .= "<br><a href=\"$href\" title=\"$title\" target='_blank'>" . $imgsrc . "</a>&nbsp;<a href=\"$href\" title=\"$title\" target='_blank' style=\"vertical-align:top;\">$title</a><br>";
+        $finishedmedList .= "<br><a href='$href' title=\"$title\" target='_blank'>" . $imgsrc . "</a>&nbsp;<a href='$href' title=\"$title\" target='_blank' style=\"vertical-align:top;\">$title</a><br>";
     }
     return $finishedmedList;
 }

@@ -320,7 +320,7 @@ while ($prow = tng_fetch_assoc($presult)) {
                 $uniqueplace = $psearch . $lat . $long;
                 if ($map['showallpins'] || !in_array($uniqueplace, $usedplaces)) {
                     $usedplaces[] = $uniqueplace;
-                    $locations2map[$l2mCount] = ["pinplacelevel" => $pinplacelevel, "lat" => $lat, "long" => $long, "zoom" => $zoom, "htmlcontent" => "<div class=\"mapballoon normal\">$placeleveltext<br>$codedplace$codednotes</div>"];
+                    $locations2map[$l2mCount] = ["pinplacelevel" => $pinplacelevel, "lat" => $lat, "long" => $long, "zoom" => $zoom, "htmlcontent" => "<div class='mapballoon normal'>$placeleveltext<br>$codedplace$codednotes</div>"];
                     $l2mCount++;
                 }
             }

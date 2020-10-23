@@ -1081,15 +1081,14 @@ function getMedia($entity, $linktype, $all = false) {
                 if ($thismedia['imgsrc']) {
                     $imgsrc = $thismedia['imgsrc'];
                     $medialinkID = $medialink['medialinkID'];
-                    $thismedia['imgsrc'] = "<div class=\"media-img\">";
-                    $thismedia['imgsrc'] .= "<div class=\"media-prev\" id=\"prev{$medialink['mediaID']}";
+                    $thismedia['imgsrc'] = "<div class='media-img'>";
+                    $thismedia['imgsrc'] .= "<div class='media-prev' id=\"prev{$medialink['mediaID']}";
                     if ($linktype != "C") $thismedia['imgsrc'] .= "_$medialinkID";
-
                     $thismedia['imgsrc'] .= "\" style='display: none;'></div>";
                     $thismedia['imgsrc'] .= "</div>\n";
                     $thismedia['imgsrc'] .= "<a href=\"{$thismedia['href']}\"";
                     if ($gotImageJpeg && isPhoto($medialink) && checkMediaFileSize("$rootpath$usefolder/" . $medialink['path'])) {
-                        $thismedia['imgsrc'] .= " class=\"media-preview\" id=\"img-{$medialink['mediaID']}";
+                        $thismedia['imgsrc'] .= " class='media-preview' id=\"img-{$medialink['mediaID']}";
                         if ($linktype == "C") {
                             $thismedia['imgsrc'] .= "-0";
                         } else {
@@ -1316,12 +1315,12 @@ function getAlbumPhoto($albumID, $albumname) {
         }
         if (!$foundliving && !$foundprivate) {
             $size = @GetImageSize("$rootpath$tusefolder/{$trow['thumbpath']}");
-            $imgsrc = "<div class=\"media-img\">";
-            $imgsrc .= "<div class=\"media-prev\" id=\"prev{$trow['mediaID']}\" style='display: none;'></div>";
+            $imgsrc = "<div class='media-img'>";
+            $imgsrc .= "<div class='media-prev' id=\"prev{$trow['mediaID']}\" style='display: none;'></div>";
             $imgsrc .= "</div>\n";
             $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"{$text['albclicksee']}\"";
             if (function_exists('imageJpeg')) {
-                $imgsrc .= " class=\"media-preview\" id=\"img-{$trow['mediaID']}-0-" . urlencode("$tusefolder/{$trow['path']}") . "\"";
+                $imgsrc .= " class='media-preview' id=\"img-{$trow['mediaID']}-0-" . urlencode("$tusefolder/{$trow['path']}") . "\"";
             }
             $imgsrc .= "><img src=\"$tusefolder/" . str_replace("%2F", "/", rawurlencode($trow['thumbpath'])) . "\" class=\"thumb\" $size[3] alt=\"$albumname\"></a>";
         }

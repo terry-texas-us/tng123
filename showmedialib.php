@@ -1,4 +1,6 @@
 <?php
+
+require_once "admin/cemeteries.php";
 function display_size($file_size) {
     if ($file_size >= 1073741824) {
         $file_size = round($file_size / 1073741824 * 100) / 100 . "g";
@@ -96,9 +98,7 @@ function getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID,
             $wherestr .= " AND (media.description LIKE \"%$mediasearch%\" OR media.notes LIKE \"%$mediasearch%\" OR bodytext LIKE \"%$mediasearch%\")";
         }
         if ($tnggallery) $wherestr .= " AND thumbpath != \"\"";
-
-
-        $cemwhere = $cemeteryID ? " AND cemeteryID = \"$cemeteryID\"" : "";
+        $cemwhere = $cemeteryID ? " AND cemeteryID = '$cemeteryID'" : "";
 
         $query = "SELECT DISTINCT media.mediaID, path, map, description, notes, width, height, datetaken, placetaken, owner, alwayson, abspath, usecollfolder, status, plot, cemeteryID, showmap, bodytext, form, newwindow, usenl, latitude, longitude, mediatypeID, gedcom ";
         $query .= "FROM $media_table media ";
@@ -624,27 +624,7 @@ function doCemPlusMap($imgrow, $tree) {
     tng_free_result($cemresult);
 
     echo "<h3 class='subhead'>\n";
-    $location = $cemetery['cemname'];
-    if ($cemetery['city']) {
-        if ($location) $location .= ", ";
-
-        $location .= $cemetery['city'];
-    }
-    if ($cemetery['county']) {
-        if ($location) $location .= ", ";
-
-        $location .= $cemetery['county'];
-    }
-    if ($cemetery['state']) {
-        if ($location) $location .= ", ";
-
-        $location .= $cemetery['state'];
-    }
-    if ($cemetery['country']) {
-        if ($location) $location .= ", ";
-
-        $location .= $cemetery['country'];
-    }
+    $location = cemeteryLocation($cemetery);
     echo "<a href=\"showmap.php?cemeteryID={$imgrow['cemeteryID']}&amp;tree=$tree\">$location</a>";
     echo "</h3>\n";
     if ($cemetery['notes']) {
@@ -657,7 +637,6 @@ function doCemPlusMap($imgrow, $tree) {
             echo "<img src=\"$headstonepath/{$cemetery['maplink']}\" $mapsize[3] alt=\"{$cemetery['cemname']}\"><br><br>\n";
         }
     }
-
     $query = "SELECT mediaID, mediatypeID, path, thumbpath, description, notes, usecollfolder, abspath, newwindow, gedcom ";
     $query .= "FROM $media_table ";
     $query .= "WHERE cemeteryID = \"{$imgrow['cemeteryID']}\" AND linktocem = '1' ORDER BY mediatypeID, description";
@@ -689,10 +668,10 @@ function doCemPlusMap($imgrow, $tree) {
             echo "<tr>";
             echo "<td class='databack'><span class='normal'>$i</span></td>";
             echo "<td class='databack' width=\"$thumbmaxw\">";
-            echo $imgsrc ? "<a href=\"$href\"$targettext>$imgsrc</a>" : "&nbsp;";
+            echo $imgsrc ? "<a href='$href'$targettext>$imgsrc</a>" : "&nbsp;";
             echo "</td>\n";
             echo "<td class='databack'><span class='normal'>";
-            echo "<a href=\"$href\">$description</a><br>$notes&nbsp;</span></td></tr>\n";
+            echo "<a href='$href'>$description</a><br>$notes&nbsp;</span></td></tr>\n";
             $i++;
         }
         echo "</table>\n</div>\n";

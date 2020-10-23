@@ -39,16 +39,14 @@ $longitude = addslashes($longitude);
 $zoom = addslashes($zoom);
 $notes = addslashes($notes);
 $place = addslashes($place);
-
 $latitude = preg_replace("/,/", ".", $latitude);
 $longitude = preg_replace("/,/", ".", $longitude);
 if ($latitude && $longitude && !$zoom) $zoom = 13;
-
 if (!$zoom) $zoom = 0;
-
-$query = "UPDATE $cemeteries_table SET cemname=\"$cemname\",maplink=\"$maplink\",city=\"$city\",county=\"$county\",state=\"$state\",country=\"$country\",latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\",notes=\"$notes\",place=\"$place\" WHERE cemeteryID=\"$cemeteryID\"";
+$query = "UPDATE $cemeteries_table ";
+$query .= "SET cemname=\"$cemname\", maplink=\"$maplink\", city=\"$city\", county=\"$county\", state=\"$state\", country=\"$country\", latitude=\"$latitude\", longitude=\"$longitude\", zoom=\"$zoom\", notes=\"$notes\", place=\"$place\" ";
+$query .= "WHERE cemeteryID='$cemeteryID'";
 $result = tng_query($query);
-
 $tree = $assignedtree;
 if (!$tree) {
     $query = "SELECT gedcom FROM $trees_table LIMIT 2";
