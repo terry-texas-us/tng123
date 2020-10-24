@@ -37,7 +37,12 @@ if ($order == "date") {
 } else {
     $datesort = "<a href='$placesearch_url$currargs&amp;order=date' class='lightlink'>yyy <img src='img/tng_sort_asc.gif' alt='' class='inline-block'></a>";
 }
-
+/**
+ * @param $prefix
+ * @param $stdevents
+ * @param $displaymsgs
+ * @return int
+ */
 function processEvents($prefix, $stdevents, $displaymsgs) {
     global $eventtypes_table, $text, $tree, $people_table, $families_table, $trees_table, $offset, $page, $psearch, $maxsearchresults, $numtrees;
     global $psearchns, $urlstring, $events_table, $order, $namesort, $datesort;
@@ -259,6 +264,7 @@ echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 
 if ($map['key'] && $isConnected) {
+    if (!isset($flags['scripting'])) $flags['scripting'] = "";
     $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
 }
 
@@ -293,7 +299,7 @@ while ($prow = tng_fetch_assoc($presult)) {
     $foundtree = $prow['gedcom'];
     if ($prow['notes'] || $prow['latitude'] || $prow['longitude']) {
         if (($prow['latitude'] || $prow['longitude']) && $map['key'] && !$mapdrawn) {
-            echo "<br><div id=\"map\" style=\"width: {$map['hstw']}; height: {$map['hsth']}; margin-bottom:20px;\" class='rounded-lg'></div>\n";
+            echo "<br><div id='map' style=\"width: {$map['indw']}; height: {$map['indh']}; margin-bottom:20px;\" class='rounded-lg'></div>\n";
             $usedplaces = [];
             $mapdrawn = true;
         }
@@ -301,31 +307,28 @@ while ($prow = tng_fetch_assoc($presult)) {
             echo "<br><span><strong>{$text['tree']}:</strong> {$prow['treename']}</span><br>\n";
         }
         if ($prow['notes']) {
-            $notes = nl2br(truncateIt(getXrefNotes($prow['notes'], $prow['gedcom']), $tngconfig['maxnoteprev']));
+            $notes = nl2br(getXrefNotes($prow['notes'], $prow['gedcom']));
             echo "<span><strong>{$text['notes']}:</strong> $notes</span><br>";
         }
-
         if ($map['key']) {
             $lat = $prow['latitude'];
             $long = $prow['longitude'];
             $zoom = $prow['zoom'] ? $prow['zoom'] : 10;
             $placelevel = $prow['placelevel'] ? $prow['placelevel'] : "0";
             $pinplacelevel = ${"pinplacelevel" . $placelevel};
-            $placeleveltext = $placelevel != "0" ? $admtext['level' . $placelevel] . "&nbsp;:&nbsp;" : "";
+            $placeleveltext = $placelevel > 0 ? $admtext['level' . $placelevel] . "&nbsp;:&nbsp;" : "";
             $codedplace = @htmlspecialchars(str_replace($banish, $banreplace, $psearchns), ENT_QUOTES, $session_charset);
             $codednotes = $prow['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $prow['notes']) : "";
-            // add external link to Google Maps for Directions in the balloon
-            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target='_blank'>{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
+            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
             if ($lat && $long) {
                 $uniqueplace = $psearch . $lat . $long;
                 if ($map['showallpins'] || !in_array($uniqueplace, $usedplaces)) {
                     $usedplaces[] = $uniqueplace;
-                    $locations2map[$l2mCount] = ["pinplacelevel" => $pinplacelevel, "lat" => $lat, "long" => $long, "zoom" => $zoom, "htmlcontent" => "<div class='mapballoon normal'>$placeleveltext<br>$codedplace$codednotes</div>"];
+                    $locations2map[$l2mCount] = ["place" => $codedplace, "pinplacelevel" => $pinplacelevel, "lat" => $lat, "long" => $long, "zoom" => $zoom, "htmlcontent" => "<div class=\"mapballoon normal\">$placeleveltext<br>$codedplace$codednotes</div>"];
                     $l2mCount++;
                 }
             }
-
-            echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target='_blank'><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class='normal'><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
+            echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class=\"normal\"><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
             $map['pins']++;
         } elseif ($prow['latitude'] || $prow['longitude']) {
             echo "<span><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";

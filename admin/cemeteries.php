@@ -24,23 +24,18 @@ function fetchCemetery(string $cemeteries_table, $cemeteryId) {
  */
 function cemeteryLocation(?array $cemetery): string {
     if (empty($cemetery)) return "";
-    $location = $cemetery['cemname'];
-    $place = cemeteryPlace($cemetery);
-    if ($place) {
-        if ($location) $location .= ", ";
-        $location .= $place;
-    }
-    return $location;
+    return cemeteryPlace($cemetery, $cemetery['cemname']);
 }
 /**
  * Formats a cemetery location from optional juristiction parts.
  *
  * @param array|null $cemetery
- * @return string
+ * @param string $placeDetails optional detail text prepended to location
+ * @return string comma delimited cemetery location string
  */
-function cemeteryPlace(?array $cemetery): string {
+function cemeteryPlace(?array $cemetery, string $placeDetails = ""): string {
     if (empty($cemetery)) return "";
-    $place = "";
+    $place = $placeDetails;
     if ($cemetery['city']) {
         if ($place) $place .= ", ";
         $place .= $cemetery['city'];

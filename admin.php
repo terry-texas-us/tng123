@@ -25,8 +25,8 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     if (isMobile()) {
         $iconstr = $msgstr = "";
     } else {
-        $iconstr = "<img src='img/{$icon}_icon.gif' alt='{$label}' class='adminicon float-left rounded m-2 shadow'>\n";
-        $msgstr = "<div class='adminsubmsg text-xs'>$message</div>\n";
+        $iconstr = "<img src='img/{$icon}_icon.gif' alt='{$label}' class='float-left m-2 rounded shadow adminicon'>\n";
+        $msgstr = "<div class='text-xs adminsubmsg'>$message</div>\n";
     }
 
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";
@@ -34,7 +34,7 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
     if ($number) {
         $menu .= "<div class='float-right admintotal'><strong>" . number_format($number) . "</strong></div>\n";
     }
-    $menu .= "<div class='adminsubhead text-base mb-1'><strong>$label</strong></div>\n";
+    $menu .= "<div class='mb-1 text-base adminsubhead'><strong>$label</strong></div>\n";
     $menu .= $msgstr;
     $menu .= "<div style='clear:both;'></div>\n";
     $menu .= "</a>\n";
@@ -163,7 +163,7 @@ tng_adminheader($admtext['administration'], "");
 
 <?php echo tng_adminlayout(); ?>
 
-    <table class="mainbox m-auto w-full">
+    <table class="w-full m-auto mainbox">
         <?php
 
         $messages = "";
@@ -256,7 +256,7 @@ tng_adminheader($admtext['administration'], "");
             tng_free_result($result);
             if (count($languages) > 1) {
                 $switcher .= "<form action='admin_savelanguage.php' method='GET' target='_parent' name='language' style='display: inline-block;'>\n";
-                $switcher .= "<select name='newlanguage' class='text-black normal ml-4' onChange='document.language.submit();'>\n";
+                $switcher .= "<select name='newlanguage' class='ml-4 text-black normal' onChange='document.language.submit();'>\n";
                 foreach ($languages as $language) {
                     $switcher .= "<option value='{$language['languageID']}'";
                     if ($languages_path . $language['folder'] == $mylanguage)
@@ -275,9 +275,9 @@ tng_adminheader($admtext['administration'], "");
                 <td class="<?php echo $admincol; ?> align-top" colspan="2">
                     <div class="tngmsgarea">
                         <?php if (!$tngconfig['hidetasks'] && $messages) { ?>
-                            <a href="#" onclick="return toggleMsg('msgs','plus0');" class="togglehead no-underline">
+                            <a href="#" onclick="return toggleMsg('msgs','plus0');" class="no-underline togglehead">
                                 <img src="img/tng_expand.gif" title="toggle display" alt="toggle display" id="plus0" class="inline-block">
-                                <strong class="adminsubhead text-base mb-1 ml-1"><?php echo $admtext['tasks']; ?></strong>
+                                <strong class="mb-1 ml-1 text-base adminsubhead"><?php echo $admtext['tasks']; ?></strong>
                             </a>
                             <?php if ($switcher) { ?>
                                 <div class='float-right'><?php echo $switcher; ?></div>

@@ -91,7 +91,6 @@ if (!empty($offset)) {
     $newoffset = "";
     $page = 1;
 }
-
 $country = stripslashes($country);
 $state = stripslashes($state);
 $county = stripslashes($county);
@@ -217,12 +216,12 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
 
     if (isMobile()) {
         if ($tabletype == "toggle") $tabletype = "columntoggle";
-        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
+        $header = "<table class='w-full tablesaw whiteback normal' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
     } else {
         $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
     }
     $body .= $header;
-    $body .= "<thead><tr><th data-tablesaw-priority='persist' class='fieldnameback text-center fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
+    $body .= "<thead><tr><th data-tablesaw-priority='persist' class='text-center fieldnameback fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
     $body .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname'>&nbsp;{$text['description']}</th>";
     $body .= "<th data-tablesaw-priority='6' class='fieldnameback fieldname'>&nbsp;{$text['status']}</th>";
     $body .= "<th data-tablesaw-priority='4' class='fieldnameback fieldname'>&nbsp;{$text['location']}</th>";
@@ -276,8 +275,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         }
         $description = $hs['description'];
         $notes = $hs['notes'];
-
-        $body .= "<tr><td class='databack text-center' style=\"width:$thumbmaxw" . "px;\">";
+        $body .= "<tr><td class='text-center databack' style=\"width:$thumbmaxw" . "px;\">";
         $hs['mediatypeID'] = "headstones";
         $hs['allow_living'] = 1;
         $imgsrc = getSmallPhoto($hs);
