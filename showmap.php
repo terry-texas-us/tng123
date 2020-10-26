@@ -379,7 +379,7 @@ if ($cemetery['place']) {
     tng_free_result($result);
 }
 if ($map['key'] && ($cemcoords || $map['pins'])) {
-    echo "<div id='map' class='w-full mb-4 md:mx-auto md:max-w-3xl md:rounded-lg cemmap' style=\"width: {$map['hstw']}; height: {$map['hsth']};\"></div>\n";
+    echo "<div id='map' class='w-full mb-4 md:mx-auto md:max-w-3xl md:rounded-lg' style=\"width: {$map['hstw']}; height: {$map['hsth']};\"></div>\n";
     if ($cemcoords && empty($map['pins'])) {
         $locations2map[$l2mCount] = $cempin;
         $map['pins'] = 1;

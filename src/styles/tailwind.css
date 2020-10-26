@@ -1,0 +1,17 @@
+@tailwind base;
+
+@tailwind components;
+
+.btn-test {
+    @apply relative w-full px-2 py-1 text-sm text-gray-700 bg-white rounded shadow outline-none;
+}
+
+.btn-test:focus {
+    @apply outline-none shadow-outline
+}
+
+/*.btn-test::placeholder {*/
+/*    @apply  placeholder-gray-400*/
+/*}*/
+
+@tailwind utilities;

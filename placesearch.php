@@ -82,36 +82,32 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
         $newoffset = "";
         $page = 1;
     }
-
     $tngevents = $stdevents;
     $custevents = [];
     $query = "SELECT tag, eventtypeID, display FROM $eventtypes_table WHERE keep = '1' AND type = '$prefix' ORDER BY display";
     $result = tng_query($query);
-    while ($row = tng_fetch_assoc($result)) {
-        $eventtypeID = $row['eventtypeID'];
+    $eventTypes = tng_fetch_all($result);
+    tng_free_result($result);
+    foreach ($eventTypes as $eventType) {
+        $eventtypeID = $eventType['eventtypeID'];
         array_push($tngevents, $eventtypeID);
         array_push($custevents, $eventtypeID);
-        $displaymsgs[$eventtypeID] = getEventDisplay($row['display']);
+        $displaymsgs[$eventtypeID] = getEventDisplay($eventType['display']);
     }
-    tng_free_result($result);
-
     foreach ($tngevents as $tngevent) {
         $eventsjoin = false;
         $allwhere2 = "";
         $placetxt = $displaymsgs[$tngevent];
-
         if (in_array($tngevent, $custevents)) {
             $eventsjoin = true;
-            $allwhere2 .= " AND $alias.$idfield = events.persfamID AND $alias.gedcom = events.gedcom AND eventtypeID = \"$tngevent\" AND parenttag = \"\"";
+            $allwhere2 .= " AND $alias.$idfield = events.persfamID AND $alias.gedcom = events.gedcom AND eventtypeID = '$tngevent' AND parenttag = ''";
             $tngevent = "event";
         }
-
         $datefield = $tngevent . "date";
         $datefieldtr = $tngevent . "datetr";
         $place = $tngevent . "place";
         $allwhere2 .= " AND $place = '$psearch'";
-
-        if ($prefix == "F") {
+        if ($prefix === "F") {
             if ($order == "name") {
                 $orderstr = "p1lastname, p2lastname, $datefieldtr";
             } elseif ($order == "nameup") {
@@ -129,7 +125,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
             $query .= "WHERE $allwhere $allwhere2 ";
             $query .= "ORDER BY $orderstr ";
             $query .= "LIMIT $newoffset" . $maxsearchresults;
-        } elseif ($prefix == "I") {
+        } elseif ($prefix === "I") {
             if ($order == "name") {
                 $orderstr = "lastname, firstname, $datefieldtr";
             } elseif ($order == "nameup") {
@@ -149,9 +145,8 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
         $result = tng_query($query);
         $numrows = tng_num_rows($result);
 
-        //if results, do again w/o pagination to get total
         if ($numrows == $maxsearchresults || $offsetplus > 1) {
-            $query = "SELECT count($idfield) AS rcount ";
+            $query = "SELECT COUNT($idfield) AS rcount ";
             $query .= "FROM ($table $alias, $trees_table trees";
             $query .= $eventsjoin ? ", $events_table events) " : ") ";
             $query .= "WHERE $allwhere $allwhere2";
@@ -161,30 +156,26 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
         } else {
             $totrows = $numrows;
         }
-
         if ($numrows) {
             echo "<br>\n";
-            echo "<div class='titlebox rounded-lg'>\n";
+            echo "<div class='w-full mb-4 lg:mx-auto lg:max-w-5xl lg:rounded-lg titlebox'>\n";
             echo "<h3 class='subhead'>" . $placetxt . "</h3>\n";
             $numrowsplus = $numrows + $offset;
             $successcount++;
-
             echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
-
             $pagenav = get_browseitems_nav($totrows, "placesearch.php?$urlstring&amp;psearch=" . urlencode($psearchns) . "&amp;order=$order&amp;offset", $maxsearchresults, $max_browsesearch_pages);
             if ($pagenav) echo "<p>$pagenav</p>";
-
             $namestr = preg_replace("/xxx/", $text[$namefield], $namesort);
             $datestr = preg_replace("/yyy/", $placetxt, $datesort);
             ?>
-            <table class="whiteback w-full" cellpadding="3" cellspacing="1">
+            <table class="w-full whiteback" cellpadding="3" cellspacing="1">
                 <tr>
-                    <td class="fieldnameback"><span class="fieldname">&nbsp;</span></td>
-                    <td class="fieldnameback"><span class="fieldname text-nowrap">&nbsp;<b><?php echo $namestr; ?></b>&nbsp;</span></td>
-                    <td class="fieldnameback" colspan="2"><span class="fieldname">&nbsp;<b><?php echo $datestr; ?></b>&nbsp;</span></td>
-                    <td class="fieldnameback"><span class="fieldname text-nowrap">&nbsp;<b><?php echo $text[$idtext]; ?></b>&nbsp;</span></td>
+                    <th class="fieldnameback hidden md:table-cell"><span class="fieldname"></span></th>
+                    <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $namestr; ?></span></th>
+                    <th class="fieldnameback" colspan="2"><span class="fieldname"><?php echo $datestr; ?></span></th>
+                    <th class="fieldnameback hidden md:table-cell"><span class="fieldname text-nowrap"><?php echo $text[$idtext]; ?></span></th>
                     <?php if ($numtrees > 1) { ?>
-                        <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $text['tree']; ?></b>&nbsp;</span></td>
+                        <th class="fieldnameback"><span class="fieldname"><?php echo $text['tree']; ?></span></th>
                     <?php } ?>
                 </tr>
                 <?php
@@ -200,7 +191,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         $dateval = $placetxt = "";
                     }
                     echo "<tr>";
-                    echo "<td class='databack'><span class='normal'>$i</span></td>\n";
+                    echo "<td class='databack hidden md:table-cell'><span class='normal'>$i</span></td>\n";
                     $i++;
                     echo "<td class='databack'><span class='normal'>";
                     if ($prefix == "F") {
@@ -214,7 +205,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                     echo "&nbsp;</span></td>";
                     echo "<td class='databack'><span class='normal'>&nbsp;" . displayDate($dateval) . "</span></td>";
                     echo "<td class='databack'><span class='normal'>$placetxt&nbsp;</span></td>";
-                    echo "<td class='databack'><span class='normal'>{$row[$idfield]} </span></td>";
+                    echo "<td class='databack hidden md:table-cell'><span class='normal'>{$row[$idfield]} </span></td>";
                     if ($numtrees > 1) {
                         echo "<td class='databack'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
                     }
@@ -222,12 +213,9 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                 }
                 tng_free_result($result);
                 ?>
-
             </table>
-
             <?php
             if ($pagenav) echo "<p>$pagenav</p><br>";
-
             echo "</div>\n";
         }
     }
@@ -299,7 +287,7 @@ while ($prow = tng_fetch_assoc($presult)) {
     $foundtree = $prow['gedcom'];
     if ($prow['notes'] || $prow['latitude'] || $prow['longitude']) {
         if (($prow['latitude'] || $prow['longitude']) && $map['key'] && !$mapdrawn) {
-            echo "<br><div id='map' style=\"width: {$map['indw']}; height: {$map['indh']}; margin-bottom:20px;\" class='rounded-lg'></div>\n";
+            echo "<br><div id='map' class='w-full mb-4 lg:mx-auto lg:max-w-5xl lg:rounded-lg' style=\"width: {$map['indw']}; height: {$map['indh']}; margin-bottom:20px;\"></div>\n";
             $usedplaces = [];
             $mapdrawn = true;
         }
@@ -344,7 +332,7 @@ $placemedia = getMedia($psearch, "L");
 $placealbums = getAlbums($psearch, "L");
 $media = doMediaSection($psearch, $placemedia, $placealbums);
 if ($media) {
-    echo "<br>\n<div class='titlebox rounded-lg'>\n";
+    echo "<br>\n<div class='rounded-lg titlebox'>\n";
     echo "<h3 class='subhead'>{$text['media']}</h3>";
     echo "$media\n";
     echo "</div>\n";
@@ -384,9 +372,9 @@ while ($prow = tng_fetch_assoc($presult)) {
 }
 
 if ($cemdata) {
-    echo "<br>\n<div class='titlebox rounded-lg'>\n";
+    echo "<br>\n<div class='rounded-lg titlebox'>\n";
     echo "<h3 class='subhead'>{$text['cemeteries']}</h3>";
-    echo "<table class='whiteback w-full' cellpadding='3' cellspacing='1' border='0'>\n";
+    echo "<table class='w-full whiteback' cellpadding='3' cellspacing='1' border='0'>\n";
     echo "<tr>\n";
     echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;</span></td>\n";
     echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['name']}</b>&nbsp;</span></td>\n";

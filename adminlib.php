@@ -20,7 +20,7 @@ $isConnected = isConnected();
  */
 function tng_adminheader($title, $flags) {
     global $session_charset, $sitename, $templatenum, $text, $tngdomain, $tngconfig, $isConnected;
-
+    echo "<!-- begin tng_adminheader -->\n";
     header("Content-type:text/html;charset=" . $session_charset);
     echo "<!doctype html>\n";
     echo "<html lang='en'>\n";
@@ -43,18 +43,15 @@ function tng_adminheader($title, $flags) {
     echo "<script>\n";
     echo "function toggleAll(flag) {\n";
     echo "for (var i = 0; i < document.form2.elements.length; i++ ) {\n";
-    echo "if (document.form2.elements[i].type == 'checkbox') {\n";
-    echo "if (flag)\n";
-    echo "document.form2.elements[i].checked = true;\n";
-    echo "else\n";
-    echo "document.form2.elements[i].checked = false;\n";
+    echo "if (document.form2.elements[i].type === 'checkbox') {\n";
+    echo "document.form2.elements[i].checked = !!flag;\n";
     echo "}\n}\n}\n";
-    echo "var closeimg = 'img/tng_close.gif';\n";
-    echo "var loadingmsg = '{$text['loading']}';\n";
+    echo "const closeimg = 'img/tng_close.gif';\n";
+    echo "const loadingmsg = '{$text['loading']}';\n";
     echo "</script>\n";
     if ($isConnected) {
-        echo "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous' defer></script>\n";
-        echo "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous' defer></script>\n";
+        echo "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>\n";
+        echo "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous'></script>\n";
     } else {
         echo "<script>// <![CDATA[\nwindow.jQuery || document.write('<script src=\'js/jquery-3.3.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>\n";
         echo "<script>// <![CDATA[\nwindow.jQuery.ui || document.write('<script src=\'js/jquery-ui-1.12.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>\n";
@@ -65,6 +62,7 @@ function tng_adminheader($title, $flags) {
 
     echo "<script src='js/litbox.js'></script>\n";
     initMediaTypes();
+    echo "<!-- end tng_adminheader -->\n";
 }
 
 /**
@@ -73,16 +71,14 @@ function tng_adminheader($title, $flags) {
  */
 function tng_adminlayout($args = "") {
     global $tng_title, $tng_version, $tng_abbrev, $currentuser, $allow_admin, $admtext, $text, $maint, $homepage;
-
     $helplang = findhelp("index_help.php");
-
     if (isMobile()) $tng_title = $tng_abbrev;
-    $output = "<body class='adminbody m-0'$args>\n";
-    $output .= "<div class='topbanner fixed w-full m-0 leading-snug top-0 sideback whiteheader text-base'>\n";
-    if (!isMobile()) { // corner
-        $output .= "<div class='admincorner float-left'>\n";
+    $output = "<body class='m-0 adminbody'$args>\n";
+    $output .= "<div class='fixed top-0 w-full m-0 text-base leading-snug topbanner sideback whiteheader'>\n";
+    if (!isMobile()) {
+        $output .= "<div class='float-left admincorner'>\n";
         $output .= "<a href='http://lythgoes.net/genealogy/software.php' target='_blank'>";
-        $output .= "<img src='img/tnglogo.gif' alt='The Next Generation of Genealogy Sitebuilding' width='113' height='50' border='0'>";
+        $output .= "<img src='img/tnglogo.gif' alt='The Next Generation of Genealogy Sitebuilding' width='113' height='50'>";
         $output .= "</a>\n";
         $output .= "</div>\n";
     }
@@ -107,7 +103,6 @@ function tng_adminlayout($args = "") {
     $output .= "</div>\n";
     $output .= "</div>\n";
 
-    // left banner
     $output .= "<div>\n";
     $leftoffset = $mainoffset = "";
     if (!isMobile()) {
@@ -115,8 +110,8 @@ function tng_adminlayout($args = "") {
             $leftoffset = " style='left: -135px'";
             $mainoffset = "style='padding-left: 26px'";
         }
-        $output .= "<div id='leftmenu' class='leftmenu fixed h-full overflow-auto leading-tight sideback normal'$leftoffset>\n";
-        include("admin_leftmenu.php");
+        $output .= "<div id='leftmenu' class='fixed h-full overflow-auto leading-tight leftmenu sideback normal'$leftoffset>\n";
+        include "admin_leftmenu.php";
         $output .= "</div>\n";
     } else {
         $mainoffset = " style='padding-left: 0px;'";
@@ -258,19 +253,18 @@ function deleteNote($noteID, $flag) {
     $result = tng_query($query);
     $nrow = tng_fetch_assoc($result);
     tng_free_result($result);
-
-    $query = "SELECT count(ID) AS xcount FROM $notelinks_table WHERE xnoteID='{$nrow['xnoteID']}'";
+    $query = "SELECT COUNT(ID) AS xcount FROM $notelinks_table WHERE xnoteID='{$nrow['xnoteID']}'";
     $result = tng_query($query);
     $xrow = tng_fetch_assoc($result);
     tng_free_result($result);
 
     if ($xrow['xcount'] == 1) {
         $query = "DELETE FROM $xnotes_table WHERE ID='{$nrow['xnoteID']}'";
-        $result = tng_query($query);
+        tng_query($query);
     }
     if ($flag) {
         $query = "DELETE FROM $notelinks_table WHERE ID='$noteID'";
-        $result = tng_query($query);
+        tng_query($query);
     }
 }
 
@@ -285,7 +279,7 @@ function deleteNote($noteID, $flag) {
  */
 function displayToggle($id, $state, $target, $headline, $subhead, $append = "") {
     global $admtext;
-    $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='togglehead no-underline' style='color:#000;'>";
+    $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='no-underline togglehead' style='color:#000;'>";
     $rval .= "<img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' alt='{$admtext['toggle']}' id='$id' class='inline-block' title='{$admtext['toggle']}'>";
     $rval .= "<strong class='ml-1'>$headline</strong></a> $append</span><br>\n";
     if ($subhead) {
@@ -304,8 +298,8 @@ function displayToggle($id, $state, $target, $headline, $subhead, $append = "") 
  */
 function displayHeadline($headline, $icon, $menu, $message) {
     $rval = "<div class='lightback'>\n";
-    $rval .= "<div class='p-1'>\n";
-    $rval .= "<img src='$icon' width='40' height='40' align='left' title='$headline' alt='$headline' style='margin-right: 10px;'>";
+    $rval .= "<div class='flex items-center p-1'>\n";
+    $rval .= "<img src='$icon' alt='$headline' class='mr-3' title='$headline'>";
     $rval .= "<span class='plainheader'>$headline</span>\n";
     $rval .= "</div><br>\n";
     if ($message) {

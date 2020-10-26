@@ -232,7 +232,7 @@ class HeadElementPublic
         $script = "<script>\n";
         $script .= "var tnglitbox;\n";
         $script .= "var share = 0;\n";
-        $script .= "var closeimg = 'img/tng_close.gif';\n";
+        $script .= "const closeimg = 'img/tng_close.gif';\n";
         $script .= "const loadingmsg = '{$text['loading']}';\n";
         $script .= "const expand_msg = '{$text['expand']}';\n";
         $script .= "const collapse_msg = '{$text['collapse']}';\n";

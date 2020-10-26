@@ -123,23 +123,7 @@ echo "<p>{$admtext['matches']}: $numrows</p>";
 
                     while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {
                         $rowcount++;
-                        $location = $row['city'];
-                        if ($row['county']) {
-                            if ($location) $location .= ", ";
-
-                            $location .= $row['county'];
-                        }
-                        if ($row['state']) {
-                            if ($location) $location .= ", ";
-
-                            $location .= $row['state'];
-                        }
-                        if ($row['country']) {
-                            if ($location) $location .= ", ";
-
-                            $location .= $row['country'];
-                        }
-
+                        $location = cemeteryPlace($row);
                         $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
                         echo "<tr>\n";
                         echo "<td class='lightback'><span class='normal'>{$newactionstr}</span></td>\n";

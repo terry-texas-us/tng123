@@ -57,11 +57,11 @@ function cssTask() {
 
 function buildStyleTask() {
     return src([
-        'node_modules/tailwindcss/dist/base.css', 'node_modules/tailwindcss/dist/components.css', 'node_modules/tailwindcss/dist/utilities.css',
-        'src/styles/genstyle.css', 'src/styles/tngtabs2.css', 'src/styles/admin.css', 'src/styles/calendar.css', 'src/styles/cemeteries.css', 'src/styles/media.css', 'src/styles/verticalchart.css'])
+        // 'node_modules/tailwindcss/dist/base.css', 'node_modules/tailwindcss/dist/components.css', 'node_modules/tailwindcss/dist/utilities.css',
+        'src/styles/tailwind.css', 'src/styles/genstyle.css', 'src/styles/tngtabs2.css', 'src/styles/admin.css', 'src/styles/calendar.css', 'src/styles/cemeteries.css', 'src/styles/media.css', 'src/styles/verticalchart.css'])
         .pipe(sourcemaps.init())
         .pipe(concat('style.css'))
-        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(postcss([tailwindcss(), autoprefixer()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('./build/styles')
         );

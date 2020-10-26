@@ -312,7 +312,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     if ($subquery == "done") break;
 }
 if ($map['key'] && $map['pins']) {
-    echo "<div id='map' style=\"width: {$map['hstw']}; height: {$map['hsth']};\" class='w-full mb-4 md:mx-auto md:max-w-3xl md:rounded-lg cemmap'></div>\n";
+    echo "<div id='map' class='w-full mb-4 md:mx-auto md:max-w-3xl md:rounded-lg' style=\"width: {$map['hstw']}; height: {$map['hsth']};\"></div>\n";
 }
 if (!empty($toppagenav)) {
     echo "<p>$toppagenav</p>\n$body\n<p>$toppagenav</p>";

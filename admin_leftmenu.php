@@ -1,10 +1,10 @@
 <?php
 global $allow_edit, $allow_delete, $allow_add, $assignedtree, $assignedbranch, $allow_media_add, $allow_media_edit, $allow_media_delete;
 global $admtext;
-
+$output .= "<!-- begin admin_leftmenu -->\n";
 $output .= "<div id='adminslidebar' class='absolute cursor-pointer m-auto' onclick='toggleAdminMenu();'>\n";
 $arrow = isset($_SESSION['tng_menuhidden']) && $_SESSION['tng_menuhidden'] == "on" ? "ArrowRight.gif" : "ArrowLeft.gif";
-$output .= "<img src='img/{$arrow}' id='dirarrow' style='float: right; margin-top: 160px;'><br>\n";
+$output .= "<img src='img/{$arrow}' alt='' id='dirarrow' class='float-right mt-40'><br>\n";
 $output .= "</div>\n";
 
 if ($allow_edit || $allow_add || $allow_delete) {
@@ -47,4 +47,5 @@ if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
     $output .= "<a href='admin_utilities.php' class='lightlink2 leftlink'>{$admtext['backuprestore']}</a>\n";
     $output .= "<a href='admin_modhandler.php' class='lightlink2 leftlink'>{$admtext['modmgr']}</a>\n";
 }
-$output .= "<br>";
+$output .= "<br>\n";
+$output .= "<!-- end admin_leftmenu -->\n";

@@ -28,7 +28,6 @@ function adminMenuItem($destination, $label, $number, $message, $icon) {
         $iconstr = "<img src='img/{$icon}_icon.gif' alt='{$label}' class='float-left m-2 rounded shadow adminicon'>\n";
         $msgstr = "<div class='text-xs adminsubmsg'>$message</div>\n";
     }
-
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";
     $menu .= $iconstr;
     if ($number) {
@@ -59,7 +58,6 @@ function getTotal($table, $where = "") {
             } elseif ($where == 2)
                 $where = "gedcom = '$assignedtree'";
         }
-
         $query = "SELECT COUNT(*) AS num FROM $table";
         if ($where) $query .= " WHERE $where";
 
@@ -68,7 +66,6 @@ function getTotal($table, $where = "") {
         $total = $row['num'];
         tng_free_result($result);
     }
-
     return $total;
 }
 
@@ -121,7 +118,6 @@ if (!isMobile()) {
     $sourcesmsg = $peoplemsg = $familiesmsg = $treesmsg = $cemeteriesmsg = $timelinemsg = $placesmsg = $genmsg = $notesmsg = "";
     $admincol = "admincol-mobile";
 }
-
 tng_adminheader($admtext['administration'], "");
 ?>
     <script>
@@ -165,7 +161,6 @@ tng_adminheader($admtext['administration'], "");
 
     <table class="w-full m-auto mainbox">
         <?php
-
         $messages = "";
         if ($allow_edit || $allow_add || $allow_delete) {
             $total_users = getTotal($users_table);
@@ -217,13 +212,11 @@ tng_adminheader($admtext['administration'], "");
                 if ($backupmsg) {
                     $messages .= "<li><a href='admin_utilities.php'>{$admtext['task_backup']} ($backupmsg)</a></li>\n";
                 }
-
-                if (!$map['key'] || $map['key'] == "1") { // need map key
+                if (!$map['key'] || $map['key'] == "1") { // need google map api key
                     $messages .= "<li><a href='admin_mapconfig.php'>{$admtext['task_mapkey']}</a></li>\n";
                 }
             }
         }
-
         $switcher = "";
         if ($allow_admin) {
             $trees = explode(',', $_SESSION['availabletrees']);
@@ -267,7 +260,6 @@ tng_adminheader($admtext['administration'], "");
                 $switcher .= "</form>\n";
             }
         }
-
         if ($switcher || (!$tngconfig['hidetasks'] && $messages)) {
             $messages = "<ul>\n$messages</ul>\n";
             ?>
