@@ -82,7 +82,7 @@ $mediadescription = $info['mediadescription'];
 $page = $info['page'];
 $result = $info['result'];
 $imgrow = $info['imgrow'];
-if (isMobile() || ($imgrow['form'] && !in_array($imgrow['form'], $imagetypes))) {
+if ($imgrow['form'] && !in_array($imgrow['form'], $imagetypes)) {
     $tngconfig['ssdisabled'] = 1;
 }
 $numitems = tng_num_rows($result);

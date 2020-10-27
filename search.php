@@ -1,82 +1,64 @@
 <?php
+
 $textpart = "search";
 $order = "";
 include "tng_begin.php";
 global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
-
 include "searchlib.php";
-
 @set_time_limit(0);
 $maxsearchresults = !empty($nr) ? ($nr < 200 ? $nr : 200) : (!empty($_SESSION['tng_nr']) ? $_SESSION['tng_nr'] : $maxsearchresults);
 if (!isset($mybool) || ($mybool != "AND" && $mybool != "OR")) {
     $mybool = "AND";
 }
-
 $varlist = ['bpqualify', 'branch', 'brpqualify', 'bryqualify', 'byqualify', 'cpqualify', 'cyqualify', 'dpqualify', 'dyqualify', 'ecount', 'fnqualify', 'idqualify', 'lnqualify', 'myaltbirthplace', 'myaltbirthyear', 'mybirthplace', 'mybirthyear', 'myburialplace', 'myburialyear', 'mydeathplace', 'mydeathyear', 'myfirstname', 'mygender', 'mylastname', 'mynickname', 'mypersonid', 'myprefix', 'mysplname', 'mysuffix', 'mytitle', 'nnqualify', 'pfqualify', 'sfqualify', 'showdeath', 'showspouse', 'spqualify', 'tngprint', 'tqualify', 'urlstring'];
 foreach ($varlist as $var) {
     if (!isset(${$var}))
         ${$var} = "";
 }
-
 if (!isset($offset)) $offset = 0;
-
 $_SESSION['tng_search_tree'] = $tree;
 $_SESSION['tng_search_branch'] = $branch;
 $_SESSION['tng_search_lnqualify'] = $lnqualify;
 $mylastname = trim(stripslashes($mylastname));
 $_SESSION['tng_search_lastname'] = cleanIt($mylastname);
-
 $_SESSION['tng_search_fnqualify'] = $fnqualify;
 $myfirstname = trim(stripslashes($myfirstname));
 $_SESSION['tng_search_firstname'] = cleanIt($myfirstname);
-
 $_SESSION['tng_search_idqualify'] = $idqualify;
 $mypersonid = trim(stripslashes($mypersonid));
 $_SESSION['tng_search_personid'] = cleanIt($mypersonid);
-
 $_SESSION['tng_search_bpqualify'] = $bpqualify;
 $mybirthplace = trim(stripslashes($mybirthplace));
 $_SESSION['tng_search_birthplace'] = cleanIt($mybirthplace);
-
 $_SESSION['tng_search_byqualify'] = $byqualify;
 $mybirthyear = trim(stripslashes($mybirthyear));
 $_SESSION['tng_search_birthyear'] = cleanIt($mybirthyear);
-
 $_SESSION['tng_search_cpqualify'] = $cpqualify;
 $myaltbirthplace = trim(stripslashes($myaltbirthplace));
 $_SESSION['tng_search_altbirthplace'] = cleanIt($myaltbirthplace);
-
 $_SESSION['tng_search_cyqualify'] = $cyqualify;
 $myaltbirthyear = trim(stripslashes($myaltbirthyear));
 $_SESSION['tng_search_altbirthyear'] = cleanIt($myaltbirthyear);
-
 $_SESSION['tng_search_dpqualify'] = $dpqualify;
 $mydeathplace = trim(stripslashes($mydeathplace));
 $_SESSION['tng_search_deathplace'] = cleanIt($mydeathplace);
-
 $_SESSION['tng_search_dyqualify'] = $dyqualify;
 $mydeathyear = trim(stripslashes($mydeathyear));
 $_SESSION['tng_search_deathyear'] = cleanIt($mydeathyear);
-
 $_SESSION['tng_search_brpqualify'] = $brpqualify;
 $myburialplace = trim(stripslashes($myburialplace));
 $_SESSION['tng_search_burialplace'] = cleanIt($myburialplace);
-
 $_SESSION['tng_search_bryqualify'] = $bryqualify;
 $myburialyear = trim(stripslashes($myburialyear));
 $_SESSION['tng_search_burialyear'] = cleanIt($myburialyear);
-
 $_SESSION['tng_search_bool'] = $mybool;
 $_SESSION['tng_search_showdeath'] = $showdeath;
 $_SESSION['tng_search_gender'] = $mygender;
-
 $_SESSION['tng_search_showspouse'] = $showspouse;
 $mysplname = trim(stripslashes($mysplname));
 $_SESSION['tng_search_mysplname'] = cleanIt($mysplname);
-
 $_SESSION['tng_search_spqualify'] = $spqualify;
 $_SESSION['tng_nr'] = isset($nr) ? $nr : $maxsearchresults;
-
 if ($order) {
     $_SESSION['tng_search_order'] = $order;
 } else {
@@ -85,7 +67,6 @@ if ($order) {
         $order = "name";
     }
 }
-
 $_SERVER['QUERY_STRING'] = str_replace(['&amp;', '&'], ['&', '&amp;'], $_SERVER['QUERY_STRING']);
 $birthsort = "birth";
 $deathsort = "death";
@@ -95,7 +76,6 @@ $orderloc = strpos($_SERVER['QUERY_STRING'], "&amp;order=");
 $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_SERVER['QUERY_STRING'];
 $birthlabel = $tngconfig['hidechr'] ? $text['born'] : $text['bornchr'];
 $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
-
 if ($order == "birth") {
     $orderstr = "IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr), p.lastname, p.firstname";
     if ($tngprint) {
@@ -138,8 +118,7 @@ if ($order == "death") {
         $orderstr = "IF(p.deathdatetr, p.deathdatetr, p.burialdatetr) DESC, p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
     }
 }
-
-$nametitle = isMobile() ? $text['name'] : $text['lastfirst'];
+$nametitle = $text['lastfirst'];
 if ($order == "name") {
     $orderstr = "p.lastname, p.firstname, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
     if ($tngprint) {
@@ -159,7 +138,6 @@ if ($order == "name") {
         $orderstr = "p.lastname DESC, p.firstname DESC, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
     }
 }
-
 /**
  * @param $column
  * @param $colvar
@@ -170,24 +148,20 @@ if ($order == "name") {
  */
 function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $textstr) {
     global $allwhere, $lnprefixes, $criteria_limit, $criteria_count;
-
     if ($qualifier == "exists" || $qualifier == "dnexist") {
         $value = $usevalue = "";
     } else {
         $value = urldecode(trim($value));
         $usevalue = addslashes($value);
     }
-
     if ($column == "p.firstname") {
         $column = "TRIM(CONCAT_WS(' ', p.firstname, p.nickname))";
     }
-
     if ($column == "p.lastname" && $lnprefixes) {
         $column = "TRIM(CONCAT_WS(' ',p.lnprefix,p.lastname))";
     } elseif ($column == "spouse.lastname") {
         $column = "TRIM(CONCAT_WS(' ',spouse.lnprefix,spouse.lastname))";
     }
-
     $criteria_count++;
     if ($criteria_count >= $criteria_limit) {
         die("Error: Too many criteria chosen");
@@ -196,13 +170,10 @@ function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $texts
     $returnarray = buildColumn($qualifier, $column, $usevalue);
     $criteria .= $returnarray['criteria'];
     $qualifystr = $returnarray['qualifystr'];
-
     addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value);
 }
-
 $querystring = "";
 $allwhere = "";
-
 if ($mylastname || $lnqualify == "exists" || $lnqualify == "dnexist") {
     if ($mylastname == $text['nosurname']) {
         addtoQuery($text['lastname'], "mylastname", "lastname = ''", "lnqualify", $text['equals'], $text['equals'], $mylastname);
@@ -265,42 +236,28 @@ if ($myburialyear || $bryqualify == "exists" || $bryqualify == "dnexist") {
 }
 if ($mygender) {
     if ($mygender == "N") $mygender = "";
-
     buildCriteria("p.sex", "mygender", "gequalify", $gequalify, $mygender, $text['gender']);
 }
-
 $dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX"];
 $cejoin = doCustomEvents("I");
-
 if ($tree) {
     if ($urlstring) $urlstring .= "&amp;";
-
     $urlstring .= "tree=$tree";
-
     if ($querystring) $querystring .= " {$text['cap_and']} ";
-
-
     require_once "./admin/trees.php";
     $treerow = getTree($trees_table, $tree);
-
     $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
-
     if ($allwhere) $allwhere = "($allwhere) AND";
-
     $allwhere .= " p.gedcom='$tree'";
-
     if ($branch) {
         $urlstring .= "&amp;branch=$branch";
         $querystring .= " {$text['cap_and']} ";
-
         if ($branch != "-1") {
             $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = '$branch'";
             $branchresult = tng_query($query);
             $branchrow = tng_fetch_assoc($branchresult);
             tng_free_result($branchresult);
-
             $querystring .= $text['branch'] . " {$text['equals']} {$branchrow['description']}";
-
             $allwhere .= " AND p.branch like '%$branch%'";
         } else {
             $querystring .= $text['branch'] . " {$text['equals']} {$admtext['nobranch']}";
@@ -308,37 +265,29 @@ if ($tree) {
         }
     }
 }
-
 $treequery = "SELECT COUNT(gedcom) AS treecount FROM $trees_table";
 $treeresult = tng_query($treequery);
 $treerow = tng_fetch_assoc($treeresult);
 $numtrees = $treerow['treecount'];
 tng_free_result($treeresult);
-
 $branchquery = "SELECT COUNT(branch) AS branchcount FROM $branches_table";
 $branchresult = tng_query($branchquery);
 $branchrow = tng_fetch_assoc($branchresult);
 $numbranches = $branchrow['branchcount'];
 tng_free_result($branchresult);
-
 $gotInput = $mytitle || $myprefix || $mysuffix || $mynickname || $mybirthplace || $mydeathplace || $mybirthyear || $mydeathyear || $ecount;
 $more = getLivingPrivateRestrictions("p", $myfirstname, $gotInput);
-
 if ($more) {
     if ($allwhere) {
         $allwhere = $tree ? "$allwhere AND " : "($allwhere) AND ";
     }
     $allwhere .= $more;
 }
-
 if ($allwhere) {
     $allwhere = "WHERE " . $allwhere;
     $querystring = $text['text_for'] . " $querystring";
 }
-
 if ($orderstr) $orderstr = "ORDER BY $orderstr";
-
-
 $max_browsesearch_pages = 5;
 if ($offset) {
     $offsetplus = $offset + 1;
@@ -348,7 +297,6 @@ if ($offset) {
     $newoffset = "";
     $page = 1;
 }
-
 if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexist") {
     $gstring = $mygender == "F" ? "p.personID = wife AND spouse.personID = husband" : "p.personID = husband AND spouse.personID = wife";
     $query = "SELECT p.ID, spouse.personID AS spersonID, p.personID, p.lastname, p.lnprefix, p.firstname, p.nickname, p.living, p.private, p.branch, p.suffix, p.prefix, p.nameorder, p.title, p.birthplace, p.birthdate, p.deathplace, p.deathdate, p.altbirthdate, p.altbirthplace, p.burialdate, p.burialplace, p.gedcom, treename ";
@@ -358,7 +306,6 @@ if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexis
     $query .= "$orderstr ";
     $query .= "LIMIT $newoffset" . $maxsearchresults;
     $showspouse = "yess";
-
     $query2 = "SELECT COUNT(p.ID) AS pcount ";
     $query2 .= "FROM ($people_table p, $families_table families, $people_table spouse) ";
     $query2 .= "$cejoin ";
@@ -372,7 +319,6 @@ if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexis
         $families_join = "";
         $huswife = "";
     }
-
     $query = "SELECT p.ID, p.personID, lastname, lnprefix, firstname, p.living, p.private, p.branch, nickname, prefix, suffix, nameorder, title, birthplace, birthdate, birthdatetr, deathplace, deathdate, altbirthdate, altbirthdatetr, altbirthplace, burialdate, burialplace, p.gedcom, treename $huswife ";
     $query .= "FROM $people_table p ";
     $query .= "$families_join ";
@@ -381,7 +327,6 @@ if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexis
     $query .= "$allwhere ";
     $query .= "$orderstr ";
     $query .= "LIMIT $newoffset" . $maxsearchresults;
-
     $query2 = "SELECT COUNT(p.ID) AS pcount ";
     $query2 .= "FROM $people_table p ";
     $query2 .= "$families_join ";
@@ -390,7 +335,6 @@ if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexis
 }
 $result = tng_query($query);
 $numrows = tng_num_rows($result);
-
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
     $countrow = tng_fetch_assoc($result2);
@@ -399,7 +343,6 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 } else {
     $totrows = $numrows;
 }
-
 if (!$numrows) {
     $msg = $text['noresults'] . " $querystring. {$text['tryagain']}.";
     header("Location: searchform.php?msg=" . urlencode($msg));
@@ -410,39 +353,30 @@ if (!$numrows) {
     header("Location: getperson.php?personID=" . $row['personID'] . "&tree=" . $row['gedcom']);
     exit;
 }
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 tng_header($text['searchresults'], $flags);
 ?>
-<?php if (!isMobile()) { ?>
     <script src="js/search.js"></script>
     <script>
         // <![CDATA[
         const ajx_perspreview = 'ajx_perspreview.php';
         // ]]>
     </script>
-<?php } ?>
-
     <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
     <br style="clear: left;">
 <?php
 $logstring = "<a href=\"search.php?{$_SERVER['QUERY_STRING']}\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-
 $numrowsplus = $numrows + $offset;
-
 echo "<p class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} " . number_format($totrows) . " $querystring</p>";
-
 $pagenav = get_browseitems_nav($totrows, "search.php?$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
 $heatmap = !$cejoin && empty($mysplname) ? "<a href=\"heatmap.php?{$_SERVER['QUERY_STRING']}\" class='snlink rounded'>{$text['heatmap']}</a>" : "";
 if ($pagenav && !$cejoin && empty($mysplname)) {
     $heatmap = " | " . $heatmap;
 }
 echo "<p class='normal'>$pagenav$heatmap</p>";
-
 $header = $headerr = "";
 if ($enablemodeswitch) {
     $headerr = "data-tablesaw-mode-switch>\n";
@@ -454,35 +388,25 @@ if ($enableminimap) {
 } else {
     $headerr = $headerr;
 }
-if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-full' data-tablesaw-mode='columntoggle'" . $headerr;
-    } elseif ($tabletype == "stack") {
-        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-full' data-tablesaw-mode='stack'" . $headerr;
-    } elseif ($tabletype == "swipe") {
-        $header = "<table cellpadding='3' cellspacing='1' border='0' class='tablesaw whiteback normal w-full' data-tablesaw-mode='swipe'" . $headerr;
-    } else {
-        $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n";
-    }
-} else {
-    $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n" . $header;
-}
+$header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n" . $header;
 echo $header;
 ?>
     <thead>
     <tr>
         <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">#</span></th>
         <th data-tablesaw-priority="1" class="fieldnameback text-nowrap"><span class="fieldname"><?php echo $namesort; ?></span></th>
-        <?php if (!isMobile()) { ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
-            <?php if ($myprefix) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['prefix']; ?></th><?php } ?>
-            <?php if ($mysuffix) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['suffix']; ?></th><?php } ?>
-            <?php if ($mytitle) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['title']; ?></th><?php } ?>
-            <?php if ($mynickname) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['nickname']; ?></th><?php } ?>
+        <th data-tablesaw-priority="5" class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
+        <?php if ($myprefix) { ?>
+            <th class="fieldnameback fieldname"><?php echo $text['prefix']; ?></th>
+        <?php } ?>
+        <?php if ($mysuffix) { ?>
+            <th class="fieldnameback fieldname"><?php echo $text['suffix']; ?></th>
+        <?php } ?>
+        <?php if ($mytitle) { ?>
+            <th class="fieldnameback fieldname"><?php echo $text['title']; ?></th>
+        <?php } ?>
+        <?php if ($mynickname) { ?>
+            <th class="fieldnameback fieldname"><?php echo $text['nickname']; ?></th>
         <?php } ?>
         <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap"><?php echo $birthsort; ?></th>
         <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
@@ -492,9 +416,6 @@ echo $header;
         <?php } ?>
         <?php if ($showspouse) { ?>
             <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['spouse']; ?></th>
-        <?php } ?>
-        <?php if (isMobile()) { ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
         <?php } ?>
         <?php if ($numtrees > 1 || $numbranches) { ?>
             <th data-tablesaw-priority="6" class="fieldnameback fieldname text-nowrap">
@@ -547,19 +468,15 @@ while ($row = tng_fetch_assoc($result)) {
     echo "<td class='databack align-top'>$i</td>\n";
     $i++;
     echo "<td class='databack text-nowrap align-top'>\n";
-    if (!isMobile()) {
-        echo "<div class='person-img' id='mi{$row['gedcom']}_{$row['personID']}'>\n";
-        echo "<div class='person-prev' id='prev{$row['gedcom']}_{$row['personID']}'></div>\n";
-        echo "</div>\n";
-    }
+    echo "<div class='person-img' id='mi{$row['gedcom']}_{$row['personID']}'>\n";
+    echo "<div class='person-prev' id='prev{$row['gedcom']}_{$row['personID']}'></div>\n";
+    echo "</div>\n";
     echo "<a href='pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}'>";
     echo "<img src='img/chart.gif' alt='' class='chartimg inline-block'>";
     echo "</a> ";
     echo "<a href='getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}' class='pers' id='p{$row['personID']}_t{$row['gedcom']}'>$name</a>";
     echo "</td>";
-    if (!isMobile()) {
-        echo "<td class='databack'>{$row['personID']} </td>";
-    }
+    echo "<td class='databack'>{$row['personID']} </td>";
     if ($showspouse) {
         $spouse = "";
         if ($showspouse == "yess") {
@@ -572,7 +489,6 @@ while ($row = tng_fetch_assoc($result)) {
             $query .= "FROM $people_table ";
             $query .= "WHERE personID = '$spouseID' AND gedcom = '{$row['gedcom']}'";
             $spresult = tng_query($query);
-
             $sprow = tng_fetch_assoc($spresult);
             if ($sprow) {
                 $sprights = determineLivingPrivateRights($sprow);
@@ -586,12 +502,10 @@ while ($row = tng_fetch_assoc($result)) {
     } else {
         $spousestr = "";
     }
-    if (!isMobile()) {
-        if ($myprefix) echo "<td class='databack'>$prefix &nbsp;</td>";
-        if ($mysuffix) echo "<td class='databack'>$suffix &nbsp;</td>";
-        if ($mytitle) echo "<td class='databack'>$title &nbsp;</td>";
-        if ($mynickname) echo "<td class='databack'>$nickname &nbsp;</td>";
-    }
+    if ($myprefix) echo "<td class='databack'>$prefix &nbsp;</td>";
+    if ($mysuffix) echo "<td class='databack'>$suffix &nbsp;</td>";
+    if ($mytitle) echo "<td class='databack'>$title &nbsp;</td>";
+    if ($mynickname) echo "<td class='databack'>$nickname &nbsp;</td>";
     echo "<td class='databack'>&nbsp;$birthdate </td>";
     echo "<td class='databack'>$birthplace &nbsp;</td>";
     if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) {
@@ -599,10 +513,6 @@ while ($row = tng_fetch_assoc($result)) {
         echo "<td class='databack'>$deathplace &nbsp;</td>";
     }
     if ($showspouse) echo "<td class='databack'>$spousestr</td>";
-
-    if (isMobile()) {
-        echo "<td class='databack'>{$row['personID']} </td>";
-    }
     if ($numtrees > 1 || $numbranches) {
         echo "<td class='databack'><a href='showtree.php?tree={$row['gedcom']}'>{$row['treename']}</a>";
         if ($row['branch']) {
@@ -621,7 +531,6 @@ while ($row = tng_fetch_assoc($result)) {
                     tng_free_result($brresult);
                 }
                 if ($branchstr) $branchstr .= ", ";
-
                 if ($branchname) {
                     $branchstr .= $branchname;
                 } else {
@@ -635,9 +544,7 @@ while ($row = tng_fetch_assoc($result)) {
     echo "</tr>\n";
 }
 tng_free_result($result);
-
 echo "</table>\n";
-
 echo "<p>$pagenav$heatmap</p>\n<br>\n";
 tng_footer("");
 ?>

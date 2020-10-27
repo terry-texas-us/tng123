@@ -5,12 +5,6 @@ $flags['noicons'] = 0;
 tng_header($sitename ? "" : $text['mnuheader'], $flags);
 $dadlabel = getTemplateMessage('t19_dadside');
 $momlabel = getTemplateMessage('t19_momside');
-
-if (!isMobile()) {
-    ?>
-
-    <?php
-}
 ?>
 </div>
 <div class="topsection">

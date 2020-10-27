@@ -28,7 +28,7 @@ function reorderMedia($query, $plink, $mediatypeID) {
         $counter = 1;
         while ($medialinkrow = tng_fetch_assoc($result4)) {
             $query = "UPDATE $medialinks_table SET ordernum = \"$counter\" WHERE medialinkID = \"{$medialinkrow['medialinkID']}\"";
-            $result5 = tng_query($query);
+            tng_query($query);
             $counter++;
         }
         tng_free_result($result4);

@@ -43,7 +43,7 @@ if ($options['fix_header'] == YES) {
     </style>
     <?php
 }
-$min_width = isMobile() ? '0' : '640px';
+$min_width = '640px';
 echo "<style>body {margin: 0; overflow-y: scroll; min-width: $min_width;}</style>\n";
 
 echo "</head>\n";
@@ -60,8 +60,7 @@ if (!isset($message)) $message = "";
 
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 if (empty($admtext['modguidelines'])) $admtext['modguidelines'] = "Mod Guidelines";
-
-if ($options['fix_header'] == YES && !isMobile()) {
+if ($options['fix_header'] == YES) {
     $headclass = 'mmhead-fixed';
     $tableclass = 'm2table-fixed';
 } else {

@@ -199,9 +199,6 @@ class modbase
             } else {
                 $this->$key = $value;
             }
-            // if visitor is mobile don't use fixed headers
-            if ($this->sitever == 'mobile') $this->fix_header = 0;
-
         }
         $this->int_version = $this->version2integer($this->tng_version);
 

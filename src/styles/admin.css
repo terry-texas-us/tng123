@@ -41,17 +41,6 @@
   color: #ddd;
 }
 
-.admincol {
-  width: 50%;
-  min-width: 300px;
-  max-width: 500px;
-}
-
-.admincol-mobile {
-  width: 100%;
-  min-width: 354px;
-}
-
 a.admincell, div.tngmsgarea {
   color: #fff;
   padding: 8px;

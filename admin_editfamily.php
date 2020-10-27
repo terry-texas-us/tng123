@@ -476,19 +476,14 @@ echo displayHeadline($admtext['families'] . " &gt;&gt; " . $admtext['modifyfamil
                         <div id="childrenlist">
                             <?php
                             if ($children && $kidcount) {
-                                if (!isMobile()) {
-                                    $hidecode = "class=\"smaller hide-right\"";
-                                } else {
-                                    $hidecode = "class='smaller' style=\"float:right\"";
-                                }
+                                $hidecode = "class='smaller hide-right'";
                                 while ($child = tng_fetch_assoc($children)) {
                                     $crights = determineLivingPrivateRights($child);
                                     $child['allow_living'] = $crights['living'];
                                     $child['allow_private'] = $crights['private'];
-
                                     if ($child['firstname'] || $child['lastname']) {
                                         echo "<div class='sortrow' id=\"child_{$child['pID']}\" style=\"width:500px;clear:both\"";
-                                        if ($allow_delete && !isMobile()) {
+                                        if ($allow_delete) {
                                             echo " onmouseover=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','visible');\" onmouseout=\"jQuery('#unlinkc_{$child['pID']}').css('visibility','hidden');\"";
                                         }
                                         echo ">\n";

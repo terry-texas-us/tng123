@@ -5,12 +5,8 @@ $file = $break[count($break) - 1];
 $cachefile = substr_replace($file, "", -4);
 
 $newsitever = getSiteVersion();
-if (isMobile() || $newsitever != "standard") {
-    if (isMobile()) {
-        $cachefile = ($cachefile . '_cache_m.html');
-    } elseif (!isMobile() || $newsitever == "mobile") {
-        $cachefile = ($cachefile . '_cache_mdt.html');
-    }
+if ($newsitever != "standard") {
+    $cachefile = ($cachefile . '_cache_mdt.html');
 } else {
     $cachefile = ($cachefile . '_cache.html');
 }

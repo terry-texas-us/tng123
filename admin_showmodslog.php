@@ -43,7 +43,7 @@ if ($options['fix_header'] == YES) {
     <?php
 }
 
-$min_width = isMobile() ? '0' : '640px';
+$min_width = '640px';
 echo "<style>body {margin: 0; overflow-y: scroll; min-width: $min_width;}</style>";
 
 if ($options['compress_log'] == YES) {
@@ -94,8 +94,7 @@ $logheader = $admtext['recentactions'];
 $first_menu = TRUE;
 
 $clearmmlog = empty($_GET['clearmmlog']) ? false : true;
-
-if ($options['fix_header'] == YES && !isMobile()) {
+if ($options['fix_header'] == YES) {
     $headclass = 'mmhead-fixed';
     $ibarclass = 'ibar-fixed';
     $mmlogclass = 'mmlog-fixed';

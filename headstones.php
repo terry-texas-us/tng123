@@ -209,17 +209,10 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $pagenav = get_browseitems_nav($totrows, "headstones.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
     $body .= "<p>$pagenav</p>";
     $body .= "</div>\n";
-
     $header = "";
     $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
     $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-
-    if (isMobile()) {
-        if ($tabletype == "toggle") $tabletype = "columntoggle";
-        $header = "<table class='w-full tablesaw whiteback normal' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
-    } else {
-        $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
-    }
+    $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
     $body .= $header;
     $body .= "<thead><tr><th data-tablesaw-priority='persist' class='text-center fieldnameback fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
     $body .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname'>&nbsp;{$text['description']}</th>";

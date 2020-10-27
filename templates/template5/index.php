@@ -1,21 +1,14 @@
 <?php
 
 global $allow_admin;
-
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $tmp['t5_maintitle'], $flags);
 echo $headElement->getHtml();
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " mt-2'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " mt-2'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }

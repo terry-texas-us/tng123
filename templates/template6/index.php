@@ -3,39 +3,16 @@
 if (!isset($title) || !$title) {
     $title = getTemplateMessage('t6_maintitle');
 }
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
 echo $headElement->getHtml();
-
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
-
-if (isMobile()) {
-    ?>
-    <table class="page">
-    <tr class="row60">
-        <td colspan="4" class="headertitle">
-            <?php echo getTemplateMessage('t6_maintitle'); ?>
-        </td>
-    </tr>
-    <tr>
-        <td class="titlemid">
-            <img src="<?php echo $templatepath; ?><?php echo $tmp['t6_headimg']; ?>" width="559" height="60" alt="">
-        </td>
-    </tr>
-    <tr class="tablebkground">
-    <td colspan="4" class="padding" style="border-collapse:separate;">
-<?php } ?>
+?>
     <table class="w-full" cellspacing="0" cellpadding="5">
         <tr>
             <td class="section">

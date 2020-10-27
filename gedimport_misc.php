@@ -389,27 +389,25 @@ function deleteLinksOnMatch($entityID) {
     $result = @tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
         $query = "DELETE FROM $address_table WHERE addressID = \"{$row['addressID']}\"";
-        $result2 = @tng_query($query);
+        @tng_query($query);
     }
     tng_free_result($result);
-
     $query = "DELETE FROM $events_table WHERE gedcom = '$tree' AND persfamID = \"$entityID\"";
-    $result = @tng_query($query);
-
+    @tng_query($query);
     $query = "DELETE FROM $assoc_table WHERE personID = \"$entityID\" AND gedcom = '$tree'";
-    $result = @tng_query($query);
+    @tng_query($query);
 
     $query = "SELECT xnoteID FROM $notelinks_table WHERE persfamID = \"$entityID\" AND gedcom = '$tree'";
     $result = @tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
         $query = "DELETE FROM $xnotes_table WHERE ID = \"{$row['xnoteID']}\"";
-        $result2 = @tng_query($query);
+        @tng_query($query);
     }
     tng_free_result($result);
     $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$entityID\" AND gedcom = '$tree'";
-    $result = @tng_query($query);
+    @tng_query($query);
     $query = "DELETE FROM $citations_table WHERE persfamID = \"$entityID\" AND gedcom = '$tree'";
-    $result = @tng_query($query);
+    @tng_query($query);
 }
 
 function getPlaceRecord($place, $prevlevel) {
@@ -1302,7 +1300,7 @@ function getNoteRecord($noteID, $prevlevel) {
     if ($notectr) {
         if ($savestate['del'] == "match") {
             $query = "DELETE FROM $citations_table WHERE persfamID = '$noteID' and gedcom = '$tree'";
-            $result2 = @tng_query($query);
+            @tng_query($query);
         }
         processCitations($noteID, "", $notesource);
     }

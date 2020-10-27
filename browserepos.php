@@ -108,22 +108,10 @@ if ($pagenav || $reposearch) {
     echo doRepoSearch(1, $pagenav);
     echo "<br>\n";
 }
-
 $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-
-if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $header = "<table class='tablesaw whiteback normal w-full' data-tablesaw-mode='columntoggle'{$headerr}>\n";
-    } elseif ($tabletype == "stack") {
-        $header = "<table class='tablesaw whiteback normal w-full' data-tablesaw-mode='stack'{$headerr}>\n";
-    } elseif ($tabletype == "swipe") {
-        $header = "<table class='tablesaw whiteback normal w-full' data-tablesaw-mode='swipe'{$headerr}>\n";
-    }
-} else {
-    $header = "<table class='whiteback normal'>";
-}
+$header = "<table class='whiteback normal'>";
 echo $header;
 ?>
 <thead>

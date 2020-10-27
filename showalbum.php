@@ -355,14 +355,13 @@ while ($row = tng_fetch_assoc($result)) {
 tng_free_result($result);
 if ($tnggallery) {
     if (!$firstrow) $mediatext .= "</tr>\n";
-
 } else {
     if (!$thumbcount) {
         $header = str_replace("<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $header);
         $mediatext = str_replace("<td class='text-center databack'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }
-if ($firsthref && !isMobile()) {
+if ($firsthref) {
     $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref&amp;ss=1\" class='rounded snlink'>&raquo; {$text['slidestart']}</a>";
 }
 $toplinks .= "</p>";

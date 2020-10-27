@@ -26,18 +26,15 @@ tng_header($text['placelist'], $flags);
 if (!$tngconfig['places1tree']) {
     echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'places', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 }
-
 $linkstr = "";
 $linkstr2col1 = "";
 $linkstr2col2 = "";
 $linkstr3col1 = "";
 $linkstr3col2 = "";
-$collen = isMobile() ? 15 : 10;
-$cols = isMobile() ? 2 : 3;
-
+$collen = 10;
+$cols = 3;
 $offsetorg = $offset;
 $offset = $offset ? $offset + 1 : 1;
-
 $query = "SELECT UCASE(LEFT(TRIM(SUBSTRING_INDEX(place, ', ', -$offset)), 1)) AS firstchar, COUNT(UCASE(LEFT(TRIM(SUBSTRING_INDEX(place, ', ', -$offset)), 1))) AS placecount ";
 $query .= "FROM $places_table ";
 $query .= "WHERE TRIM(SUBSTRING_INDEX(place, ', ', -$offset)) != '' ";

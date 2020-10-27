@@ -12,7 +12,7 @@ function reorderMedia($query, $plink, $mediatypeID) {
         $counter = 1;
         while ($medialinkrow = tng_fetch_assoc($result4)) {
             $query = "UPDATE $medialinks_table SET ordernum = \"$counter\" WHERE medialinkID = \"{$medialinkrow['medialinkID']}\"";
-            $result5 = tng_query($query);
+            tng_query($query);
             $counter++;
         }
         tng_free_result($result4);
@@ -28,7 +28,7 @@ function resortMedia($mediaID) {
     if ($result2) {
         while ($plink = tng_fetch_assoc($result2)) {
             $query = "DELETE FROM $medialinks_table WHERE mediaID = \"{$plink['mediaID']}\"";
-            $result = tng_query($query);
+            tng_query($query);
 
             $query = "SELECT personID FROM $people_table WHERE personID = \"{$plink['personID']}\" AND gedcom = \"{$plink['gedcom']}\"";
             reorderMedia($query, $plink, $plink['mediatypeID']);

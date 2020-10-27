@@ -81,13 +81,7 @@ echo "<br>\n";
 $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-
-if (isMobile()) {
-    if ($tabletype == "toggle") $tabletype = "columntoggle";
-    $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
-} else {
-    $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
-}
+$header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
 echo $header;
 
 $albumtext = $header = "";

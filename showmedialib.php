@@ -426,7 +426,6 @@ function showMediaSource($imgrow, $ss = false) {
     global $text, $usefolder, $size, $imagetypes, $htmldocs, $tngconfig, $videotypes, $recordingtypes;
     global $description, $medialinkID, $albumlinkID, $mediatypes_like;
 
-    if (isMobile()) $ss = false;
     if ($imgrow['form']) {
         $imgrow['form'] = strtoupper($imgrow['form']);
     } else {
@@ -465,13 +464,8 @@ function showMediaSource($imgrow, $ss = false) {
                 $width = $size[0];
                 $height = $size[1];
                 if ($ss) {
-                    if (!isMobile()) {
-                        $maxw = 860;
-                        $maxh = 550;
-                    } else {
-                        $maxw = 600;
-                        $maxh = 400;
-                    }
+                    $maxw = 860;
+                    $maxh = 550;
                     $medialinkstr = $medialinkID ? "&medialinkID=$medialinkID" : "";
                     $albumlinkstr = $albumlinkID ? "&albumlinkID=$albumlinkID" : "";
                 }

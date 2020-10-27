@@ -204,8 +204,6 @@ if (!$pedigree['maxgen']) $pedigree['maxgen'] = 6;
 if ($generations > $pedigree['maxgen']) {
     $generations = intval($pedigree['maxgen']);
 } elseif (!$generations) {
-    if (isMobile()) $pedigree['initpedgens'] = 3;
-
     $generations = $pedigree['initpedgens'] >= 2 ? intval($pedigree['initpedgens']) : 2;
 } else {
     $generations = intval($generations);

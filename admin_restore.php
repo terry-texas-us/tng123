@@ -24,7 +24,7 @@ function restore($table) {
     }
     $lines = file($filename);
     $query = "DELETE FROM $table";
-    $result = tng_query($query);
+    tng_query($query);
 
     $fields = array_shift($lines);
     if (substr($fields, 0, 1) == '"') { // does this line hold the field list?

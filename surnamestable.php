@@ -23,11 +23,7 @@
             $topnum = tng_num_rows($result);
             if ($result) {
                 $counter = 1;
-                if (isMobile()) {
-                    $numcols = 2;
-                } elseif (!isset($numcols) || $numcols > 5) {
-                    $numcols = 5;
-                }
+                if (!isset($numcols) || $numcols > 5) $numcols = 5;
                 $num_in_col = ceil($topnum / $numcols);
 
                 $num_in_col_ctr = 0;

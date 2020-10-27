@@ -124,10 +124,10 @@ function doNotes($persfam1, $persfam2, $varname) {
 
     if ($ccombinenotes != "yes") {
         $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$persfam1\" AND gedcom = '$tree' $wherestr";
-        $noteresult = tng_query($query);
+        tng_query($query);
     }
     $query = "UPDATE $notelinks_table set persfamID = \"$persfam1\" WHERE persfamID = \"$persfam2\" AND gedcom = '$tree' $wherestr";
-    $noteresult = tng_query($query);
+    tng_query($query);
 }
 
 $s1row = $s2row = "";

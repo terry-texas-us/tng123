@@ -23,17 +23,14 @@ $linkstr2col1 = "";
 $linkstr2col2 = "";
 $linkstr3col1 = "";
 $linkstr3col2 = "";
-$collen = isMobile() ? 50 : 25;
-$cols = isMobile() ? 1 : 2;
+$collen = 25;
+$cols = 2;
 $grtotal = 50;
 define("PIE_TOTAL", 10);
 $nosurname = urlencode($text['nosurname']);
 $top30text = preg_replace("/xxx/", $grtotal, $text['top30']);
-
 $treestr = $orgtree ? "&amp;tree=$tree" : "";
-
 $livingPrivateRestrictions = getLivingPrivateRestrictions($people_table, false, false);
-
 $query = "SELECT UCASE(LEFT(lastname, 1)) AS firstchar, UCASE($binary left(lastname, 1)) AS binfirstchar, count(UCASE(LEFT(lastname, 1))) AS lncount ";
 $query .= "FROM $people_table ";
 if ($tree) $query .= "WHERE gedcom = '$tree' ";

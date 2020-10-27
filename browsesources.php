@@ -109,19 +109,7 @@ if ($pagenav || $sourcesearch) {
 $header = $headerr = "";
 $headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
 $headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-
-if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'" . $headerr;
-    } elseif ($tabletype == "stack") {
-        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'" . $headerr;
-    } elseif ($tabletype == "swipe") {
-        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'" . $headerr;
-    }
-} else {
-    $header = "<table cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n" . $header;
-}
-
+$header = "<table cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n" . $header;
 echo $header;
 ?>
     <thead>

@@ -12,17 +12,9 @@ if (!$personID && !isset($needperson)) {
 
 // how many generations to show?
 $generations = intval($generations);
-if (!$generations) {
-    if (!isMobile()) {
-        $generations = $fan_gen_default;
-    } else {
-        $generations = 3;
-    }
-}
+if (!$generations) $generations = $fan_gen_default;
 if ($generations > $fan_gen_max) $generations = $fan_gen_max;
-
 if ($generations < $fan_gen_min) $generations = $fan_gen_min;
-
 
 $result = getPersonFullPlusDates($tree, $personID);
 if (!tng_num_rows($result)) {

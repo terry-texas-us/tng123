@@ -2,27 +2,16 @@
 
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true, 'bodyclass' => "homebody"];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
-
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
-
-if (!isMobile()) {
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody'>\n";
-}
-
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody'>\n";
 $dadlabel = getTemplateMessage('t16_dadside');
 $momlabel = getTemplateMessage('t16_momside');
 $title = getTemplateMessage('t16_maintitle');
@@ -73,53 +62,51 @@ $search .= "</form>\n";
                     </div>
                 </div>
                 <div id="tbody">
-                    <?php if (!isMobile()) { ?>
-                        <div id="tsidebar">
-                            <div class="tsidesection">
-                                <?php echo $search; ?>
-                            </div>
-                            <div class="tsidesection">
-                                <h3><?php echo $text['featphoto']; ?></h3>
-                                <?php
-                                $rp_maxwidth = "100%";
-                                include "randomphoto.php";
-                                ?>
-                            </div>
-                            <div class="tsidesection">
-                                <h3><?php echo $admtext['menu']; ?></h3>
-                                <ul class="vmenu">
-                                    <li><a href="whatsnew.php"><?php echo $text['mnuwhatsnew']; ?></a></li>
-                                    <li><a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a></li>
-                                    <?php
-                                    foreach ($mediatypes as $mediatype) {
-                                        if (!$mediatype['disabled']) {
-                                            echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
-                                        }
-                                    }
-                                    ?>
-                                    <li><a href="browsealbums.php"><?php echo $text['albums']; ?></a></li>
-                                    <li><a href="browsemedia.php"><?php echo $text['allmedia']; ?></a></li>
-                                    <li><a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a></li>
-                                    <li><a href="places.php"><?php echo $text['places']; ?></a></li>
-                                    <li><a href="browsenotes.php"><?php echo $text['notes']; ?></a></li>
-                                    <li><a href="anniversaries.php"><?php echo $text['anniversaries']; ?></a></li>
-                                    <li><a href="calendar.php"><?php echo $text['calendar']; ?></a></li>
-                                    <li><a href="reports.php"><?php echo $text['reports']; ?></a></li>
-                                    <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
-                                    <li><a href="browserepos.php"><?php echo $text['repositories']; ?></a></li>
-                                    <?php if (!$tngconfig['hidedna']) { ?>
-                                        <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
-                                    <?php } ?>
-                                    <li><a href="statistics.php"><?php echo $text['mnustatistics']; ?></a></li>
-                                    <?php if ($allow_admin) { ?>
-                                        <li><a href="showlog.php"><?php echo $text['mnushowlog']; ?></a></li>
-                                        <li><a href="admin.php"><?php echo $text['mnuadmin']; ?></a></li>
-                                    <?php } ?>
-                                    <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>
-                                </ul>
-                            </div>
+                    <div id="tsidebar">
+                        <div class="tsidesection">
+                            <?php echo $search; ?>
                         </div>
-                    <?php } ?>
+                        <div class="tsidesection">
+                            <h3><?php echo $text['featphoto']; ?></h3>
+                            <?php
+                            $rp_maxwidth = "100%";
+                            include "randomphoto.php";
+                            ?>
+                        </div>
+                        <div class="tsidesection">
+                            <h3><?php echo $admtext['menu']; ?></h3>
+                            <ul class="vmenu">
+                                <li><a href="whatsnew.php"><?php echo $text['mnuwhatsnew']; ?></a></li>
+                                <li><a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a></li>
+                                <?php
+                                foreach ($mediatypes as $mediatype) {
+                                    if (!$mediatype['disabled']) {
+                                        echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
+                                    }
+                                }
+                                ?>
+                                <li><a href="browsealbums.php"><?php echo $text['albums']; ?></a></li>
+                                <li><a href="browsemedia.php"><?php echo $text['allmedia']; ?></a></li>
+                                <li><a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a></li>
+                                <li><a href="places.php"><?php echo $text['places']; ?></a></li>
+                                <li><a href="browsenotes.php"><?php echo $text['notes']; ?></a></li>
+                                <li><a href="anniversaries.php"><?php echo $text['anniversaries']; ?></a></li>
+                                <li><a href="calendar.php"><?php echo $text['calendar']; ?></a></li>
+                                <li><a href="reports.php"><?php echo $text['reports']; ?></a></li>
+                                <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
+                                <li><a href="browserepos.php"><?php echo $text['repositories']; ?></a></li>
+                                <?php if (!$tngconfig['hidedna']) { ?>
+                                    <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
+                                <?php } ?>
+                                <li><a href="statistics.php"><?php echo $text['mnustatistics']; ?></a></li>
+                                <?php if ($allow_admin) { ?>
+                                    <li><a href="showlog.php"><?php echo $text['mnushowlog']; ?></a></li>
+                                    <li><a href="admin.php"><?php echo $text['mnuadmin']; ?></a></li>
+                                <?php } ?>
+                                <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div id="thomebody">
                         <div class="tblock" id="big-block-1">
                             <h2><?php echo getTemplateMessage('t16_welcome'); ?></h2>
@@ -172,8 +159,6 @@ $search .= "</form>\n";
                                 <p class="contact">
                                     <img src="<?php echo $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?>
                                 </p>
-
-                                <?php if (isMobile()) echo $search; ?>
                             </div>
                             <div style="clear:both;"></div>
                         </div>

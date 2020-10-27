@@ -253,36 +253,30 @@ function doNotesCitations($persfam1, $persfam2, $varname) {
         tng_free_result($noteresult);
 
         $query = "DELETE FROM $notelinks_table WHERE persfamID = \"$persfam1\" AND gedcom = '$tree' $wherestr";
-        $noteresult = tng_query($query);
-
+        tng_query($query);
         $query = "DELETE FROM $citations_table WHERE persfamID = \"$persfam1\" AND gedcom = '$tree' $wherestr";
-        $citeresult = tng_query($query);
+        tng_query($query);
     }
     $query = "UPDATE $notelinks_table set persfamID = \"$persfam1\" WHERE persfamID = \"$persfam2\" AND gedcom = '$tree' $wherestr";
-    $noteresult = tng_query($query);
-
+    tng_query($query);
     $query = "UPDATE $citations_table set persfamID = \"$persfam1\" WHERE persfamID = \"$persfam2\" AND gedcom = '$tree' $wherestr";
-    $citeresult = tng_query($query);
+    tng_query($query);
 }
 
 function doAssociations($personID1, $personID2) {
     global $tree, $assoc_table;
-
     $query = "UPDATE $assoc_table set personID = \"$personID1\" WHERE personID = \"$personID2\" AND gedcom = '$tree'";
-    $assocresult = tng_query($query);
-
+    tng_query($query);
     $query = "UPDATE $assoc_table set passocID = \"$personID1\" WHERE passocID = \"$personID2\" AND gedcom = '$tree'";
-    $assocresult = tng_query($query);
+    tng_query($query);
 }
 
 function delAssociations($entity) {
     global $tree, $assoc_table;
-
     $query = "DELETE FROM $assoc_table WHERE personID = \"$entity\" AND gedcom = '$tree'";
-    $assocresult = tng_query($query);
-
+    tng_query($query);
     $query = "DELETE FROM $assoc_table WHERE passocID = \"{$entity}\" AND gedcom = '$tree'";
-    $assocresult = tng_query($query);
+    tng_query($query);
 }
 
 $p1row = $p2row = "";

@@ -35,11 +35,7 @@ function tng_adminheader($title, $flags) {
     echo "<link href='build/styles/style.css' rel='stylesheet'>\n";
     if (isset($flags['modmgr'])) echo "<link href='build/styles/modmanager.css' rel='stylesheet'>\n";
     if (is_numeric($templatenum)) echo "<link href='build/template{$templatenum}/styles/style.css' rel='stylesheet'>\n";
-    if (isMobile()) {
-        echo "<link href='build/styles/tngmobile.css' rel='stylesheet'>\n";
-    } else {
-        echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
-    }
+    echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     echo "<script>\n";
     echo "function toggleAll(flag) {\n";
     echo "for (var i = 0; i < document.form2.elements.length; i++ ) {\n";
@@ -70,18 +66,15 @@ function tng_adminheader($title, $flags) {
  * @return string
  */
 function tng_adminlayout($args = "") {
-    global $tng_title, $tng_version, $tng_abbrev, $currentuser, $allow_admin, $admtext, $text, $maint, $homepage;
+    global $tng_title, $tng_version, $currentuser, $allow_admin, $admtext, $text, $maint, $homepage;
     $helplang = findhelp("index_help.php");
-    if (isMobile()) $tng_title = $tng_abbrev;
     $output = "<body class='m-0 adminbody'$args>\n";
     $output .= "<div class='fixed top-0 w-full m-0 text-base leading-snug topbanner sideback whiteheader'>\n";
-    if (!isMobile()) {
-        $output .= "<div class='float-left admincorner'>\n";
-        $output .= "<a href='http://lythgoes.net/genealogy/software.php' target='_blank'>";
-        $output .= "<img src='img/tnglogo.gif' alt='The Next Generation of Genealogy Sitebuilding' width='113' height='50'>";
-        $output .= "</a>\n";
-        $output .= "</div>\n";
-    }
+    $output .= "<div class='float-left admincorner'>\n";
+    $output .= "<a href='http://lythgoes.net/genealogy/software.php' target='_blank'>";
+    $output .= "<img src='img/tnglogo.gif' alt='The Next Generation of Genealogy Sitebuilding' width='113' height='50'>";
+    $output .= "</a>\n";
+    $output .= "</div>\n";
     $output .= "<div class='pl-3 overflow-hidden'>\n";
     $output .= "<p class='my-1 text-nowrap'><strong>$tng_title, v.$tng_version</strong></p>\n";
     $output .= "<span class='whitetext normal text-nowrap'>\n";
@@ -90,34 +83,26 @@ function tng_adminlayout($args = "") {
     if ($allow_admin) {
         $output .= "&nbsp;|&nbsp; <a href='adminshowlog.php' class='lightlink' target='main'>{$admtext['showlog']}</a>\n";
     }
-    if (!isMobile()) {
-        $output .= "&nbsp;|&nbsp; <a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='lightlink'>{$admtext['getstart']}</a>\n";
-        if ($maint) {
-            $output .= "&nbsp;|&nbsp; <strong><span class='yellow'>{$text['mainton']}</span></strong>\n";
-        }
-        $output .= "&nbsp;|&nbsp; <a href='https://tng.lythgoes.net/wiki' class='lightlink' target='_blank'>TNG Wiki</a>\n";
-        $output .= "&nbsp;|&nbsp; <a href='https://tng.community' class='lightlink' target='_blank'>TNG Forum</a>\n";
+    $output .= "&nbsp;|&nbsp; <a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='lightlink'>{$admtext['getstart']}</a>\n";
+    if ($maint) {
+        $output .= "&nbsp;|&nbsp; <strong><span class='yellow'>{$text['mainton']}</span></strong>\n";
     }
+    $output .= "&nbsp;|&nbsp; <a href='https://tng.lythgoes.net/wiki' class='lightlink' target='_blank'>TNG Wiki</a>\n";
+    $output .= "&nbsp;|&nbsp; <a href='https://tng.community' class='lightlink' target='_blank'>TNG Forum</a>\n";
     $output .= "&nbsp;|&nbsp; <a href='logout.php?admin_login=1' class='lightlink' target='_parent'>{$admtext['logout']}&nbsp; (<strong>$currentuser</strong>)</a>\n";
     $output .= "</span>\n";
     $output .= "</div>\n";
     $output .= "</div>\n";
-
     $output .= "<div>\n";
     $leftoffset = $mainoffset = "";
-    if (!isMobile()) {
-        if (isset($_SESSION['tng_menuhidden']) && $_SESSION['tng_menuhidden'] == "on") {
-            $leftoffset = " style='left: -135px'";
-            $mainoffset = "style='padding-left: 26px'";
-        }
-        $output .= "<div id='leftmenu' class='fixed h-full overflow-auto leading-tight leftmenu sideback normal'$leftoffset>\n";
-        include "admin_leftmenu.php";
-        $output .= "</div>\n";
-    } else {
-        $mainoffset = " style='padding-left: 0px;'";
+    if (isset($_SESSION['tng_menuhidden']) && $_SESSION['tng_menuhidden'] == "on") {
+        $leftoffset = " style='left: -135px'";
+        $mainoffset = "style='padding-left: 26px'";
     }
+    $output .= "<div id='leftmenu' class='fixed h-full overflow-auto leading-tight leftmenu sideback normal'$leftoffset>\n";
+    include "admin_leftmenu.php";
+    $output .= "</div>\n";
     $output .= "<div id='maincontent' class='mainback'$mainoffset>\n";
-
     return $output;
 }
 
@@ -199,11 +184,7 @@ function doMenu($tabs, $currtab, $innermenu = 0) {
             }
         }
     }
-    if (isMobile()) {
-        $menu .= "<li>\n<a class='here'>\n<select id='tngtabselect' onchange='window.location.href=this.options[this.selectedIndex].value'>\n$choices</select>\n</a>\n</li>\n";
-    } else {
-        $menu .= $choices;
-    }
+    $menu .= $choices;
     $menu .= $newbrowser ? "</ul>\n" : "</div>\n";
     $menu .= "</div>\n";
     $menu .= "<div id='adm-innermenu' class='fieldnameback fieldname smaller'>\n";
@@ -399,7 +380,7 @@ function determineConflict($row, $table) {
 
     if (!$editconflict) {
         $query = "UPDATE $table SET edituser = '$currentuser', edittime = '$currenttime' WHERE ID = '{$row['ID']}'";
-        $eresult = tng_query($query);
+        tng_query($query);
     }
 
     return $editconflict;

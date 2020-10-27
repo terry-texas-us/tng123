@@ -91,19 +91,7 @@ $pagenav = get_browseitems_nav($totrows, "browsenotes.php?notesearch=$notesearch
 echo doNoteSearch(1, $pagenav);
 echo "<br>\n";
 
-if (isMobile()) {
-    if ($tabletype == "toggle") $tabletype = "columntoggle";
-
-    $tableStartTag = "<table class = 'tablesaw whiteback normal' data-tablesaw-mode = '$tabletype'";
-    if ($enableminimap) $tableStartTag .= " data-tablesaw-minimap";
-
-    if ($enablemodeswitch) {
-        $tableStartTag .= " data-tablesaw-mode-switch";
-    }
-    $tableStartTag .= ">";
-} else {
-    $tableStartTag = "<table class = 'whiteback normal'>";
-}
+$tableStartTag = "<table class = 'whiteback normal'>";
 echo $tableStartTag;
 ?>
     <thead>

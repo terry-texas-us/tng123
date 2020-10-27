@@ -285,16 +285,12 @@ echo "<html lang='en'>\n";
 
 tng_header($text['searchresults'], $flags);
 ?>
-<?php
-if (!isMobile()) {
-    ?>
     <script src="js/search.js"></script>
     <script>
         // <![CDATA[
         const ajx_fampreview = 'ajx_fampreview.php';
         // ]]>
     </script>
-<?php } ?>
 
     <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
     <br style="clear: left;">
@@ -322,18 +318,7 @@ if ($enableminimap) {
 } else {
     $headerr = $headerr;
 }
-
-if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'" . $headerr;
-    } elseif ($tabletype == "stack") {
-        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'" . $headerr;
-    } elseif ($tabletype == "swipe") {
-        $header = "<table class='tablesaw whiteback w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'" . $headerr;
-    }
-} else {
-    $header = "<table cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n" . $header;
-}
+$header = "<table cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n" . $header;
 echo $header;
 ?>
     <thead>
@@ -392,22 +377,16 @@ while ($row = tng_fetch_assoc($result)) {
     } else {
         $marrdate = $marrplace = $divdate = $divplace = $livingOK = "";
     }
-
     $fname = getNameRev($frow);
     $mname = getNameRev($mrow);
-
     $famidstr = "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
-
     echo "<tr>";
     echo "<td class='databack'>$i</td>\n";
     $i++;
-
     echo "<td class='databack'>$famidstr";
-    if (!isMobile()) {
-        echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
-        echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
-        echo "</div>\n";
-    }
+    echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
+    echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
+    echo "</div>\n";
     echo "&nbsp;</td>";
     echo "<td class='databack'>$fname&nbsp;</td>";
     echo "<td class='databack'>$mname&nbsp;</td>";

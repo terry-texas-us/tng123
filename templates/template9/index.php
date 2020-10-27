@@ -5,22 +5,14 @@ $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 
 $flags['style'] = "<style>\n";
 $flags['style'] .= "body {background-image: url('{$templatepath}img/Bottom_texture.jpg'); background-repeat: repeat; background-attachment: fixed; background-position: top left;}\n";
-if (!isMobile()) {
-    $flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$tmp['t9_headimg']}'); background-repeat: no-repeat; width: 432px; height: 150px;}\n";
-}
+$flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$tmp['t9_headimg']}'); background-repeat: no-repeat; width: 432px; height: 150px;}\n";
 $flags['style'] .= "</style>\n";
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }

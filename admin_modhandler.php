@@ -177,7 +177,7 @@ if ($options['fix_header'] == YES) {
     <?php
 }
 
-$min_width = isMobile() ? '0' : '640px';
+$min_width = '640px';
 echo "<style>body {margin: 0; overflow-y: scroll; min-width: $min_width;}</style>\n";
 
 echo "</head>\n";
@@ -192,8 +192,7 @@ $menu .= doMenu($modtabs, "modlist", $innermenu);
 $menu .= "</div>";
 
 echo displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
-
-$headclass = $options['fix_header'] == YES && !isMobile() ? 'mmhead-fixed' : 'mmhead-scroll';
+$headclass = $options['fix_header'] == YES ? 'mmhead-fixed' : 'mmhead-scroll';
 
 echo "<div class='mmcontainer whiteback'>";
 

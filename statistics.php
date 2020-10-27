@@ -26,14 +26,7 @@ tng_header($text['databasestatistics'], $flags);
         $header = "";
         $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
         $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-
-        if (isMobile()) {
-            if ($tabletype == "toggle") $tabletype = "columntoggle";
-
-            $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' style=\"maxwidth: 350px;\" data-tablesaw-mode=\"$tabletype\"{$headerr}>\n";
-        } else {
-            $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0' width='500'>";
-        }
+        $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0' width='500'>";
         echo $header;
         ?>
         <thead>
@@ -341,7 +334,7 @@ tng_header($text['databasestatistics'], $flags);
         echo "</table>\n";
 
         echo "<br><br>\n";
-        $width = !isMobile() ? "500px" : "100%";
+        $width = "500px";
         echo "<table style=\"width:$width;\" cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n";
         echo "<tr>";
         echo "<td class='fieldnameback fieldname align-top'><small>1</small></td>";

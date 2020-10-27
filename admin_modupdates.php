@@ -22,7 +22,7 @@ define("NO", 0);
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 
-$min_width = $sitever == 'mobile' ? '0' : '640px';
+$min_width = '640px';
 
 if ($options['fix_header'] == YES) {
     ?>
@@ -62,8 +62,7 @@ $menu .= "</div>";
 if (!isset($message)) $message = "";
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 $first_menu = TRUE;
-
-if ($options['fix_header'] == YES && !isMobile()) {
+if ($options['fix_header'] == YES) {
     $headclass = 'mmhead-fixed';
     $tableclass = 'm2table-fixed';
 } else {

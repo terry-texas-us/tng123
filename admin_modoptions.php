@@ -49,7 +49,7 @@ if (!isset($sub)) $sub = "tables";
 $flags['modmgr'] = true;
 tng_adminheader($admtext['modmgr'], $flags);
 
-$min_width = isMobile() ? '0' : '640px';
+$min_width = '640px';
 echo "<style>body {margin: 0; overflow-y: scroll; min-width: $min_width;}</style>";
 
 echo "</head>\n";
@@ -66,8 +66,7 @@ $menu .= "</div>";
 if (!isset($message)) $message = "";
 $headline = displayHeadline($admtext['modmgr'], "img/modmgr_icon.gif", $menu, $message);
 $first_menu = TRUE;
-
-if ($options['fix_header'] == YES && !isMobile()) {
+if ($options['fix_header'] == YES) {
     $headclass = 'mmhead-fixed';
     $tableclass = 'm2table-fixed';
 } else {

@@ -29,7 +29,7 @@ function reorderMedia($query, $plink) {
 
             while ($medialinkrow = tng_fetch_assoc($result4)) {
                 $query = "UPDATE $medialinks_table SET ordernum = \"$counter\" WHERE medialinkID = \"{$medialinkrow['medialinkID']}\"";
-                $result5 = tng_query($query);
+                tng_query($query);
                 $counter++;
             }
             tng_free_result($result4);
@@ -40,7 +40,7 @@ function reorderMedia($query, $plink) {
 
             while ($albumlinkrow = tng_fetch_assoc($result4)) {
                 $query = "UPDATE $album2entities_table SET ordernum = \"$counter\" WHERE alinkID = \"{$albumlinkrow['alinkID']}\"";
-                $result5 = tng_query($query);
+                tng_query($query);
                 $counter++;
             }
             tng_free_result($result4);
@@ -54,16 +54,14 @@ function setDefault($tree, $entity, $media, $album) {
 
     if ($album) {
         $query = "UPDATE $albumlinks_table SET defphoto = '' WHERE defphoto = '1' AND albumID = '$album'";
-        $result = @tng_query($query);
-
+        @tng_query($query);
         $query = "UPDATE $albumlinks_table SET defphoto = '1' WHERE albumID = '$album' AND mediaID = '$media'";
-        $result = @tng_query($query);
+        @tng_query($query);
     } else {
         $query = "UPDATE $medialinks_table SET defphoto = '' WHERE defphoto = '1' AND personID = '$entity' AND gedcom = '$tree'";
-        $result = @tng_query($query);
-
+        @tng_query($query);
         $query = "UPDATE $medialinks_table SET defphoto = '1' WHERE personID = '$entity' AND gedcom = '$tree' AND mediaID = '$media'";
-        $result = @tng_query($query);
+        @tng_query($query);
     }
 }
 

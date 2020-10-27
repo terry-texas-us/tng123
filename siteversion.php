@@ -18,7 +18,3 @@ function getSiteVersion($nomobile = false) {
 
     return $sitever;
 }
-
-function isMobile() {
-    return (stristr($_SERVER['HTTP_USER_AGENT'], "mobi"));
-}

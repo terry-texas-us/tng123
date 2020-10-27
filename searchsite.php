@@ -18,8 +18,7 @@ tng_header($text['searchnames'], $flags);
 if ($msg) {
     echo "<h3 id='errormsg' class='msgerror subhead'>" . stripslashes(strip_tags($msg)) . "</h3>";
 }
-
-$fieldclass = isMobile() ? "w-64" : "longfield";
+$fieldclass = "longfield";
 
 $onsubmit = "return searchGoogleWebSite('" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "')";
 echo getFORM("", "GET", "searchsite", "", $onsubmit);
@@ -29,11 +28,9 @@ echo getFORM("", "GET", "searchsite", "", $onsubmit);
             <label for="GoogleText" class="fieldnameback fieldname p-1"><?php echo $text['searchfor']; ?>:</label>
             <input id="GoogleText" class="<?php echo $fieldclass; ?>" name="s" type="search" placeholder="<?php echo $text['searchsite']; ?> ...">
         </div>
-
-        <?php if (!isMobile()) echo "<br><br>\n"; ?>
+        <br><br>
         <p style="max-width:400px;"><?php echo $text['searchnote']; ?></p>
     </div>
-
     <div class="searchsidebar">
         <p class="normal">
             <input type="submit" id="searchbtn" class="btn" value="<?php echo $text['search']; ?>">

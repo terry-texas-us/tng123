@@ -58,7 +58,6 @@ if ($currentuser) {
 }
 tng_free_result($result);
 ?>
-<?php if (!isMobile()) { ?>
     <script src="js/search.js"></script>
     <script>
         // <![CDATA[
@@ -66,30 +65,14 @@ tng_free_result($result);
         const ajx_fampreview = 'ajx_fampreview.php';
         // ]]>
     </script>
-<?php } ?>
     <h2 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo $text['whatsnew'] . " " . $pastxdays; ?></h2>
     <br>
 <?php
 $numtrees = 0;
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'whatsnew', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'lastimport' => true]);
-
-$nametitle = isMobile() ? $text['name'] : $text['lastfirst'];
-
-if (isMobile()) {
-    if ($tabletype == "toggle") $tabletype = "columntoggle";
-
-    $tableStartTag = "<table class = 'tablesaw whiteback normal' data-tablesaw-mode = '$tabletype'";
-    if ($enableminimap) $tableStartTag .= " data-tablesaw-minimap";
-
-    if ($enablemodeswitch) {
-        $tableStartTag .= " data-tablesaw-mode-switch";
-    }
-    $tableStartTag .= ">";
-} else {
-    $tableStartTag = "<table class = 'whiteback normal'>";
-}
+$nametitle = $text['lastfirst'];
+$tableStartTag = "<table class = 'whiteback normal'>";
 $header1 = $tableStartTag;
-
 $header1 .= "<thead>";
 $header1 .= "<tr>\n";
 $header1 .= "<th data-tablesaw-priority = 'persist' class = 'fieldnameback text-center thumbnails fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
@@ -182,11 +165,9 @@ if (tng_num_rows($result)) {
             echo "<tr>\n";
             echo "<td class='databack'><a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
             echo "<td class='databack'>\n";
-            if (!isMobile()) {
-                echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
-                echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
-                echo "</div>\n";
-            }
+            echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
+            echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
+            echo "</div>\n";
             echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
             echo "<img src='img/chart.gif' alt='' class='inline-block'>";
             echo "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
@@ -276,15 +257,12 @@ if (tng_num_rows($famresult)) {
             $row['allow_living'] = $rights['living'];
             $row['allow_private'] = $rights['private'];
             $wname = getName($row);
-
             echo "<tr>\n";
             echo "<td class='databack'>\n";
             echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']}</a>\n";
-            if (!isMobile()) {
-                echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
-                echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
-                echo "</div>\n";
-            }
+            echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
+            echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
+            echo "</div>\n";
             echo "</td>";
             echo "</span></td><td class='databack'><a href=\"getperson.php?personID={$row['husband']}&amp;tree={$row['gedcom']}\">{$row['husband']}</a></td>\n";
             echo "<td class='databack'><a href=\"getperson.php?personID={$row['husband']}&amp;tree={$row['gedcom']}\">$hname</a>&nbsp;</td>\n";

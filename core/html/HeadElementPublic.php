@@ -17,11 +17,10 @@ class HeadElementPublic
      * @param $flags 'nomobile'
      */
     function __construct(string $title, $flags) {
-        global $session_charset, $sitename, $tngconfig;
+        global $session_charset, $sitename;
         $title = @htmlspecialchars($title, ENT_QUOTES, $session_charset);
         $this->title = $title;
         $this->flags = $flags;
-
         $this->sitePrefix = $sitename ? @htmlspecialchars($title ? ": " . $sitename : $sitename, ENT_QUOTES, $session_charset) : "";
         $this->metas = $this->getMetaElements();
         $this->links = $this->getLinkElements();
@@ -29,13 +28,6 @@ class HeadElementPublic
         $this->styles = $this->getStyleElements();
 
         $this->icons = "";
-        if (isMobile()) {
-            if (!isset($flags['nomobile']) || !$flags['nomobile']) {
-                $this->icons = tng_mobileicons($title);
-                $this->icons .= "<div id='mcontent'>\n";
-            }
-            $this->addStyleElement("<style>\n{$tngconfig['mmenustyle']}</style>");
-        }
     }
 
     /**
@@ -98,8 +90,7 @@ class HeadElementPublic
      * @return array
      */
     public function getScriptElements(): array {
-        global $http, $isConnected, $responsivetables, $tngconfig, $tngprint;
-
+        global $http, $isConnected, $tngconfig, $tngprint;
         $scripts = [];
         if ($isConnected) {
             $scripts[] = "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
@@ -109,23 +100,16 @@ class HeadElementPublic
             $scripts[] = "<script>// <![CDATA[\nwindow.jQuery.ui || document.write('<script src=\'js/jquery-ui-1.12.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>";
         }
         $scripts[] = "<script src='js/net.js'></script>";
-
         if (isset($this->flags['scripting'])) {
             $scripts[] = $this->flags['scripting'];
         }
-        if (!empty($tngconfig['showshare']) && $isConnected && !isMobile()) {
+        if (!empty($tngconfig['showshare']) && $isConnected) {
             $w = $http == "https" ? "ws" : "w";
             $scripts[] = "<script src='{$http}://{$w}.sharethis.com/button/buttons.js'></script>";
             $scripts[] = "<script>stLight.options({publisher: 'be4e16ed-3cf4-460b-aaa4-6ac3d0e3004b', doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>";
         }
-        if ($tngconfig['menu'] < 2 && !$tngprint && !isMobile()) {
+        if ($tngconfig['menu'] < 2 && !$tngprint) {
             $scripts[] = "<script src='js/tngmenuhover2.js'></script>";
-        }
-        if (isMobile() && $responsivetables) {
-            $scripts[] = "<script src='js/tablesaw.js'></script>";
-            $scripts[] = "<!--[if lt IE 9]>";
-            $scripts[] = "<script src='js/respond.js'></script>";
-            $scripts[] = "<![endif]-->";
         }
         $scripts[] = self::getLitBoxScript($this->flags['error']);
 
@@ -150,23 +134,12 @@ class HeadElementPublic
      * @return array
      */
     public function getLinkElements(): array {
-        global $responsivetables, $templatenum, $tngconfig, $tngdomain, $tngprint;
+        global $templatenum, $tngconfig, $tngdomain, $tngprint;
         $links = [];
         $links[] = "<link href='build/styles/style.css' rel='stylesheet'>";
         if (is_numeric($templatenum)) $links[] = "<link href='build/template{$templatenum}/styles/style.css' rel='stylesheet'>";
-        if (isMobile()) {
-            if ($responsivetables) $links[] = "<link href='css/tablesaw.bare.css' rel='stylesheet'>";
-            $links[] = "<link href='build/styles/tngmobile.css' rel='stylesheet'>";
-            if (is_numeric($templatenum)) $links[] = "<link href='build/template{$templatenum}/styles/tngmobile.css' rel='stylesheet'>";
-        }
         if (isset($this->flags['link'])) $links[] = $this->flags['link'];
-        if (isMobile()) {
-            $links[] = "<link rel='apple-touch-icon-precomposed' sizes='144x144' href='$tngdomain/img/tng-apple-icon-144.png'>";
-            $links[] = "<link rel='apple-touch-icon-precomposed' sizes='114x114' href='$tngdomain/img/tng-apple-icon-114.png'>";
-            $links[] = "<link rel='apple-touch-icon-precomposed' sizes='72x72' href='$tngdomain/img/tng-apple-icon-72.png'>";
-            $links[] = "<link rel='apple-touch-icon-precomposed' href='$tngdomain/img/tng-apple-icon.png'>";
-            $links[] = "<link rel='shortcut icon' href='$tngdomain/img/tng-apple-icon.png'>";
-        } elseif ($tngconfig['favicon']) {
+        if ($tngconfig['favicon']) {
             $links[] = "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>";
         }
         $links[] = "<link rel='alternate' type='application/rss+xml' title='RSS' href='tngrss.php'>";
@@ -178,8 +151,7 @@ class HeadElementPublic
      * @return array
      */
     public function getMetaElements(): array {
-        global $custommeta, $fbOGimage, $pageURL, $site_desc, $sitename, $tngdomain;
-
+        global $fbOGimage, $pageURL, $site_desc, $sitename, $tngdomain;
         $metas[] = "<meta charset='utf-8'>";
         $metas[] = "<meta name='author' content='Darrin Lythgoe'>";
         $metas[] = "<meta name='Description' content='$this->title$this->sitePrefix'>";
@@ -188,10 +160,6 @@ class HeadElementPublic
         if (isset($this->flags['norobots'])) {
             $metas[] = $this->flags['norobots'];
         }
-        if (isMobile()) {
-            $metas[] = "<meta name='apple-mobile-web-app-capable' content='yes'>";
-        }
-
         if ($fbOGimage) { // Facebook Open Graph protocol
             $metas[] = "<meta property='og:title' content='$sitename'>";
             $metas[] = "<meta property='og:description' content='$this->title'>";

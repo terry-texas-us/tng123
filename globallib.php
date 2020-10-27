@@ -669,16 +669,9 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
  * @return string
  */
 function doMenuItem($index, $link, $image, $label, $page, $thispage): string {
-    if (isMobile()) {
-        $selected = $page == $thispage ? " selected" : "";
-        $item = "<option value=\"$link\"$selected>$label</option>\n";
-    } else {
-        $class = $page == $thispage ? " class=\"here\"" : "";
-        $imagetext = $image ? "<span class=\"tngsmallicon2\" id=\"{$image}-smicon\"></span>" : "";
-        $item = "<li><a id=\"a$index\" href=\"$link\"$class>$imagetext$label</a></li>\n";
-    }
-
-    return $item;
+    $class = $page == $thispage ? " class=\"here\"" : "";
+    $imagetext = $image ? "<span class=\"tngsmallicon2\" id=\"{$image}-smicon\"></span>" : "";
+    return "<li><a id=\"a$index\" href=\"$link\"$class>$imagetext$label</a></li>\n";
 }
 
 /**

@@ -76,18 +76,7 @@ echo "<div class='normal'>\n";
 $header = "";
 $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
 $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-
-if (isMobile()) {
-    if ($tabletype == "toggle") {
-        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='columntoggle'{$headerr}>\n";
-    } elseif ($tabletype == "stack") {
-        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='stack'{$headerr}>\n";
-    } elseif ($tabletype == "swipe") {
-        $header = "<table class='tablesaw whiteback normal w-full' cellpadding='3' cellspacing='1' border='0' data-tablesaw-mode='swipe'{$headerr}>\n";
-    }
-} else {
-    $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'></table>";
-}
+$header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'></table>";
 echo $header;
 ?>
 

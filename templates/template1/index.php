@@ -1,22 +1,14 @@
 <?php
 
 global $allow_admin;
-
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
 echo $headElement->getHtml();
-
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
@@ -29,7 +21,7 @@ $title = getTemplateMessage('t1_maintitle');
                 <td colspan="3">
                     <img id="mainphoto" class="border-0 float-left" src="<?php echo $templatepath; ?><?php echo $tmp['t1_mainimage']; ?>" alt="">
 
-                    <?php if ($tmp['t1_titlechoice'] == "text" || isMobile()) { ?>
+                    <?php if ($tmp['t1_titlechoice'] == "text") { ?>
                         <em class="maintitle"><?php echo $title; ?></em>
                     <?php } else { ?>
                         <img class="ml-2" src="<?php echo $templatepath; ?><?php echo $tmp['t1_titleimage']; ?>" alt="">

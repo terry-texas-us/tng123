@@ -7,25 +7,16 @@ if ($templateswitching && $templatenum) {
     include "templates/$templatepfx$templatenum/index.php";
     exit;
 }
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $flags = ['noicons' => true, 'noheader' => true];
 $headElement = new HeadElementPublic($text['mnuheader'], $flags);
-
 echo $headElement->getHtml();
-
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
-
 ?>
 
 <h1><?php echo $text['mnuheader']; ?></h1>

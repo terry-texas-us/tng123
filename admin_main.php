@@ -22,13 +22,8 @@ include "version.php";
  */
 function adminMenuItem($destination, $label, $number, $message, $icon) {
     $menu = "";
-    if (isMobile()) {
-        $iconstr = $msgstr = "";
-    } else {
-        $iconstr = "<img src=\"img/{$icon}_icon.gif\" alt='$label' class='adminicon float-left rounded m-2 shadow'>\n";
-        $msgstr = "<div class='adminsubmsg text-sm'>{$message}</div>\n";
-    }
-
+    $iconstr = "<img src=\"img/{$icon}_icon.gif\" alt='$label' class='adminicon float-left rounded m-2 shadow'>\n";
+    $msgstr = "<div class='adminsubmsg text-sm'>{$message}</div>\n";
     $menu .= "<a href='$destination' class='lightlink2 admincell fieldnameback'>\n";
     $menu .= $iconstr;
     if ($number) {
@@ -66,64 +61,56 @@ function getTotal($table, $where = "") {
         $query = "SELECT COUNT(*) AS num FROM $table";
 
         if ($where) $query .= " WHERE $where";
-
         $result = tng_query($query);
         $row = tng_fetch_assoc($result);
         $total = $row['num'];
         tng_free_result($result);
     }
-
     return $total;
 }
-
-if (!isMobile()) {
-    $genmsg = $mediamsg = "";
-    if ($allow_add) {
-        $genmsg .= $admtext['add'] . " | ";
-        $mediamsg = $genmsg;
-    } elseif ($allow_media_add) {
-        $mediamsg = $admtext['add'] . " | ";
-    }
-    $genmsg .= $admtext['find2'] . " | ";
-    $mediamsg .= $admtext['find2'] . " | ";
-    $notesmsg = $admtext['find2'] . " | ";
-    if ($allow_edit) {
-        $genmsg .= $admtext['edit'] . " | ";
-        $mediamsg .= $admtext['edit'] . " | ";
-        $notesmsg .= $admtext['edit'] . " | ";
-    } elseif ($allow_media_edit) {
-        $mediamsg .= $admtext['edit'] . " | ";
-    }
-    if ($allow_delete) {
-        $genmsg .= $admtext['text_delete'] . " | ";
-        $mediamsg .= $admtext['text_delete'] . " | ";
-        $notesmsg .= $admtext['text_delete'] . " | ";
-    } elseif ($allow_media_delete) {
-        $mediamsg .= $admtext['text_delete'] . " | ";
-    }
-    $sourcesmsg = $peoplemsg = $familiesmsg = $treesmsg = $cemeteriesmsg = $timelinemsg = $placesmsg = $genmsg;
-    $mediamsg .= $admtext['text_sort'];
-    if ($allow_edit) {
-        $peoplemsg .= $admtext['reviewsh'] . " | ";
-        $familiesmsg .= $admtext['reviewsh'] . " | ";
-    }
-    if ($allow_edit && $allow_delete) {
-        $peoplemsg .= $admtext['merge'] . " | ";
-        $placesmsg .= $admtext['merge'] . " | ";
-        $sourcesmsg .= $admtext['merge'] . " | ";
-    }
-    $treesmsg = substr($treesmsg, 0, -3);
-    $peoplemsg = substr($peoplemsg, 0, -3);
-    $familiesmsg = substr($familiesmsg, 0, -3);
-    $sourcesmsg = substr($sourcesmsg, 0, -3);
-    $cemeteriesmsg = substr($cemeteriesmsg, 0, -3);
-    $placesmsg = substr($placesmsg, 0, -3);
-    $timelinemsg = substr($timelinemsg, 0, -3);
-    $notesmsg = substr($notesmsg, 0, -3);
-} else {
-    $sourcesmsg = $peoplemsg = $familiesmsg = $treesmsg = $cemeteriesmsg = $timelinemsg = $placesmsg = $genmsg = $notesmsg = "";
+$genmsg = $mediamsg = "";
+if ($allow_add) {
+    $genmsg .= $admtext['add'] . " | ";
+    $mediamsg = $genmsg;
+} elseif ($allow_media_add) {
+    $mediamsg = $admtext['add'] . " | ";
 }
-
+$genmsg .= $admtext['find2'] . " | ";
+$mediamsg .= $admtext['find2'] . " | ";
+$notesmsg = $admtext['find2'] . " | ";
+if ($allow_edit) {
+    $genmsg .= $admtext['edit'] . " | ";
+    $mediamsg .= $admtext['edit'] . " | ";
+    $notesmsg .= $admtext['edit'] . " | ";
+} elseif ($allow_media_edit) {
+    $mediamsg .= $admtext['edit'] . " | ";
+}
+if ($allow_delete) {
+    $genmsg .= $admtext['text_delete'] . " | ";
+    $mediamsg .= $admtext['text_delete'] . " | ";
+    $notesmsg .= $admtext['text_delete'] . " | ";
+} elseif ($allow_media_delete) {
+    $mediamsg .= $admtext['text_delete'] . " | ";
+}
+$sourcesmsg = $peoplemsg = $familiesmsg = $treesmsg = $cemeteriesmsg = $timelinemsg = $placesmsg = $genmsg;
+$mediamsg .= $admtext['text_sort'];
+if ($allow_edit) {
+    $peoplemsg .= $admtext['reviewsh'] . " | ";
+    $familiesmsg .= $admtext['reviewsh'] . " | ";
+}
+if ($allow_edit && $allow_delete) {
+    $peoplemsg .= $admtext['merge'] . " | ";
+    $placesmsg .= $admtext['merge'] . " | ";
+    $sourcesmsg .= $admtext['merge'] . " | ";
+}
+$treesmsg = substr($treesmsg, 0, -3);
+$peoplemsg = substr($peoplemsg, 0, -3);
+$familiesmsg = substr($familiesmsg, 0, -3);
+$sourcesmsg = substr($sourcesmsg, 0, -3);
+$cemeteriesmsg = substr($cemeteriesmsg, 0, -3);
+$placesmsg = substr($placesmsg, 0, -3);
+$timelinemsg = substr($timelinemsg, 0, -3);
+$notesmsg = substr($notesmsg, 0, -3);
 tng_adminheader($admtext['administration'], "");
 ?>
 <script>
@@ -179,27 +166,19 @@ tng_adminheader($admtext['administration'], "");
             if (!$total_users) {
                 $messages .= "<li><a href='admin_newuser.php'>{$admtext['task_user']}</a></li>\n";
             }
-
-            //no tree?
             $total_trees = getTotal($trees_table);
             if (!$total_trees) {
                 $messages .= "<li><a href='admin_newtree.php'>{$admtext['task_tree']}</a></li>\n";
             }
-
-            //no people? import
             if (!$total_people) {
                 $messages .= "<li><a href='admin_dataimport.php'>{$admtext['importgedcom2']}</a> | <a href='admin_newperson.php'>{$admtext['task_people']}</a></li>\n";
             } elseif (!$total_families) {
                 $messages .= "<li><a href='admin_newfamily.php'>{$admtext['task_families']}</a></li>\n";
             }
-
-            //new users to review?
             $review_users = getTotal($users_table, "allow_living = '-1'");
             if ($review_users) {
                 $messages .= "<li><a href='admin_reviewusers.php'>{$admtext['task_revusers']} ($review_users)</a></li>\n";
             }
-
-            //people or families to review?
             $review_people = getTotal("$people_table, $temp_events_table", "$people_table.personID = $temp_events_table.personID AND $people_table.gedcom = $temp_events_table.gedcom AND (type = 'I' OR type = 'C')");
             if ($review_people) {
                 $messages .= "<li><a href='admin_findreview.php?type=I'>{$admtext['task_revind']} ($review_people)</a></li>\n";
@@ -208,13 +187,10 @@ tng_adminheader($admtext['administration'], "");
             if ($review_families) {
                 $messages .= "<li><a href='admin_findreview.php?type=F'>{$admtext['task_revfam']} ($review_families)</a></li>\n";
             }
-
-            //last backup more than x days ago?
             $backupmsg = "";
             $files = glob("$rootpath$backuppath/*.bak");
             $daysSince = $tngconfig['backupdays'];
             if (count($files)) {
-                //check dates
                 usort($files, function ($a, $b) {
                     if (filemtime($a) == filemtime($b)) {
                         return 0;
@@ -231,26 +207,22 @@ tng_adminheader($admtext['administration'], "");
                         $backupmsg = preg_replace("/xxx/", $daysSince, $admtext['lastbackup']);
                     }
                 }
-            } elseif ($total_people && $daysSince != "0") {
-                //no backup ever done
+            } elseif ($total_people && $daysSince != "0") { //no backup ever done
                 $backupmsg = $admtext['nobackups'];
             }
             if ($backupmsg) {
                 $messages .= "<li><a href='admin_utilities.php'>{$admtext['task_backup']} ($backupmsg)</a></li>\n";
             }
-
-            //need map key?
-            if (!$map['key'] || $map['key'] == "1") {
+            if (!$map['key'] || $map['key'] == "1") { // need google map api key
                 $messages .= "<li><a href='admin_mapconfig.php'>{$admtext['task_mapkey']}</a></li>\n";
             }
         }
     }
-
     if (!$tngconfig['hidetasks'] && $messages) {
         $messages = "<ul>\n$messages</ul>\n";
         ?>
         <tr>
-            <td class="admincol align-top" colspan="2">
+            <td class="align-top w-1/2 max-w-lg" colspan="2">
                 <div class="tngmsgarea">
                     <a href="#" onclick="return toggleMsg('msgs','plus0');" class="togglehead no-underline">
                         <img src="img/tng_expand.gif" title="toggle display" alt="toggle display" id="plus0" class="inline-block">
@@ -265,7 +237,7 @@ tng_adminheader($admtext['administration'], "");
         </tr>
     <?php } ?>
     <tr>
-        <td class="admincol align-top">
+        <td class="align-top w-1/2 max-w-lg">
             <?php
             if ($allow_edit || $allow_add || $allow_delete) {
                 echo adminMenuItem("admin_people.php", $admtext['people'], $total_people, $peoplemsg, "people");
@@ -288,12 +260,10 @@ tng_adminheader($admtext['administration'], "");
             if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
                 echo adminMenuItem("admin_misc.php", $admtext['misc'], "", $admtext['miscitems'], "misc");
             }
-            if (!isMobile()) {
             ?>
         </td>
-        <td class="admincol align-top">
+        <td class="align-top w-1/2 max-w-lg">
             <?php
-            }
             if ($allow_edit && $allow_add && $allow_delete && !$assignedbranch) {
                 echo adminMenuItem("admin_dataimport.php", $admtext['datamaint'], "", $admtext['importgedcom2'], "data");
             }
@@ -305,7 +275,6 @@ tng_adminheader($admtext['administration'], "");
                 if (!$assignedbranch) {
                     echo adminMenuItem("admin_branches.php", $admtext['branches'], getTotal($branches_table, 2), $treesmsg, "branches");
                 }
-
                 echo adminMenuItem("admin_eventtypes.php", $admtext['customeventtypes'], getTotal($eventtypes_table), $admtext['custeventitems'], "customeventtypes");
                 echo adminMenuItem("admin_reports.php", $admtext['reports'], getTotal($reports_table), $admtext['reportsitems'], "reports");
                 echo adminMenuItem("admin_dna_tests.php", $admtext['dna_tests'], getTotal($dna_tests_table), $admtext['dna_blurb'], "dna");
@@ -317,13 +286,4 @@ tng_adminheader($admtext['administration'], "");
         </td>
     </tr>
 </table>
-<?php
-$newsitever = getSiteVersion(true);
-if (isMobile()) {
-    echo "<p class='smaller'><a href=\"admin.php?sitever=$newsitever\" class='fieldnameback lightlink2' target='_top'>&nbsp;{$text['switchs']}&nbsp;</a></p>\n";
-} elseif ($sitever != $newsitever) {
-    echo "<p class='smaller'><a href=\"admin.php?sitever=mobile\" class='fieldnameback lightlink2' target='_top'>&nbsp;{$text['switchm']}&nbsp;</a></p>\n\n";
-}
-
-echo tng_adminfooter();
-?>
+<?php echo tng_adminfooter(); ?>

@@ -285,7 +285,7 @@ function getIndividualRecord($personID, $prevlevel) {
                         }
                         if (isset($info['SLGC']['SOUR'])) {
                             $query = "DELETE FROM $citations_table WHERE persfamID = \"$personID" . "::" . $info['SLGC']['FAMC'] . "\" AND gedcom = '$tree'";
-                            $result = @tng_query($query);
+                            @tng_query($query);
                             processCitations($personID . "::" . $famc, "SLGC", $info['SLGC']['SOUR']);
                         }
                     }
@@ -332,7 +332,7 @@ function getIndividualRecord($personID, $prevlevel) {
                         }
                         if (isset($info['SLGC']['SOUR'])) {
                             $query = "DELETE FROM $citations_table WHERE persfamID = \"$personID" . "::" . $info['SLGC']['FAMC'] . "\" AND gedcom = '$tree'";
-                            $result = @tng_query($query);
+                            @tng_query($query);
                             processCitations($personID . "::" . $info['SLGC']['FAMC'], "SLGC", $info['SLGC']['SOUR']);
                         }
                     }

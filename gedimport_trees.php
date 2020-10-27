@@ -23,9 +23,8 @@ function ClearData($tree) {
     }
 
     $query = "DELETE FROM $events_table WHERE gedcom = '$tree' AND persfamID != 'XXX'";
-    $result = tng_query($query);
-
+    tng_query($query);
     $query = "DELETE FROM $places_table WHERE gedcom = '$tree' AND (latitude is null OR latitude = '') AND (longitude is null OR longitude = '') AND (notes is null OR notes = '')";
-    $result = tng_query($query);
+    tng_query($query);
 }
 

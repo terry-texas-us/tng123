@@ -63,7 +63,7 @@ function clearBranch($table, $branch) {
     global $tree;
 
     $query = "UPDATE $table SET branch=\"\" WHERE gedcom = '$tree' AND branch = '$branch'";
-    $result = tng_query($query);
+    tng_query($query);
     $counter = tng_affected_rows();
 
     $query = "SELECT branch, ID FROM $table WHERE gedcom='$tree' AND branch LIKE \"%$branch%\"";
@@ -79,7 +79,7 @@ function clearBranch($table, $branch) {
             }
         }
         $query = "UPDATE $table SET branch=\"$newbranch\" WHERE ID=\"{$row['ID']}\"";
-        $result2 = tng_query($query);
+        tng_query($query);
         $counter++;
     }
     tng_free_result($result);
@@ -99,7 +99,7 @@ function deleteBranch($table, $branch) {
             if (in_array($branch, $branches)) {
                 deletePersonPlus($row['personID'], $tree, $row['sex']);
                 $query = "DELETE FROM $table WHERE ID=\"{$row['ID']}\"";
-                $result2 = tng_query($query);
+                tng_query($query);
                 $counter++;
             }
         }
@@ -112,10 +112,9 @@ function deleteBranch($table, $branch) {
             if (in_array($branch, $branches)) {
                 $familyID = $row['familyID'];
                 $query = "DELETE FROM $children_table WHERE ID='$familyID' AND gedcom = '$tree'";
-                $result2 = @tng_query($query);
-
+                @tng_query($query);
                 $query = "UPDATE $people_table SET famc=\"\" WHERE famc = '$familyID' AND gedcom = '$tree'";
-                $result2 = tng_query($query);
+                tng_query($query);
 
                 deleteEvents($familyID, $tree);
                 deleteCitations($familyID, $tree);
@@ -123,9 +122,8 @@ function deleteBranch($table, $branch) {
                 deleteBranchLinks($familyID, $tree);
                 deleteMediaLinks($familyID, $tree);
                 deleteAlbumLinks($familyID, $tree);
-
                 $query = "DELETE FROM $table WHERE ID=\"{$row['ID']}\"";
-                $result2 = tng_query($query);
+                tng_query($query);
                 $counter++;
             }
         }
@@ -145,9 +143,8 @@ function setPersonLabel($personID) {
             $result = @tng_query($query);
             $row = tng_fetch_assoc($result);
             tng_free_result($result);
-
             $query = "DELETE FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
-            $result = tng_query($query);
+            tng_query($query);
 
             //also delete children, events, medialinks, citations, notes, other family references
             deletePersonPlus($personID, $tree, $row['sex']);
@@ -186,7 +183,7 @@ function setPersonLabel($personID) {
 
             if ($overwrite || !$oldbranch) {
                 $query = "UPDATE $people_table SET branch = \"$newbranch\" WHERE personID = \"$personID\" AND gedcom = '$tree'";
-                $result = tng_query($query);
+                tng_query($query);
                 doICounter();
             }
             array_push($done, $personID);
@@ -200,15 +197,15 @@ function setPersonLabel($personID) {
 
         if ($branchaction == "clear" || $branchaction == "delete") {
             $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"$personID\" AND gedcom = '$tree' AND branch = '$branch'";
-            $result2 = tng_query($query);
+            tng_query($query);
         } else {
             if ($overwrite == 1 || !$branch) {
                 $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"$personID\" AND gedcom = '$tree'";
-                $result = tng_query($query);
+                tng_query($query);
             }
             if ($branch) {
                 $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES('$branch','$tree',\"$personID\")";
-                $result = tng_query($query);
+                tng_query($query);
             }
         }
     }
@@ -240,14 +237,13 @@ function setFamilyLabel($personID, $gender) {
             if ($branchaction == "delete") {
                 $familyID = $row['familyID'];
                 $query = "DELETE FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
-                $result2 = tng_query($query);
-
+                tng_query($query);
                 $query = "UPDATE $people_table SET famc=\"\" WHERE famc = '$familyID' AND gedcom = '$tree'";
-                $result2 = tng_query($query);
+                tng_query($query);
 
                 //also delete children, events, medialinks, citations, notes
                 $query = "DELETE FROM $children_table WHERE ID='$familyID' AND gedcom = '$tree'";
-                $result2 = @tng_query($query);
+                @tng_query($query);
 
                 deleteEvents($familyID, $tree);
                 deleteCitations($familyID, $tree);
@@ -278,7 +274,7 @@ function setFamilyLabel($personID, $gender) {
 
                 if ($overwrite || !$oldbranch) {
                     $query = "UPDATE $families_table SET branch = \"$newbranch\" WHERE familyID = \"{$row['familyID']}\" AND gedcom = '$tree'";
-                    $result2 = tng_query($query);
+                    tng_query($query);
 
                     doFCounter();
                 }
@@ -287,15 +283,15 @@ function setFamilyLabel($personID, $gender) {
 
             if ($branchaction == "clear" || $branchaction == "delete") {
                 $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"{$row['familyID']}\" AND gedcom = '$tree' AND branch = '$branch'";
-                $result2 = tng_query($query);
+                tng_query($query);
             } else {
                 if ($overwrite == 1 || !$branch) {
                     $query = "DELETE FROM $branchlinks_table WHERE persfamID = \"{$row['familyID']}\" AND gedcom = '$tree'";
-                    $result2 = tng_query($query);
+                    tng_query($query);
                 }
                 if ($branch) {
                     $query = "INSERT IGNORE INTO $branchlinks_table (branch,gedcom,persfamID) VALUES('$branch','$tree',\"{$row['familyID']}\")";
-                    $result2 = tng_query($query);
+                    tng_query($query);
                 }
             }
         }

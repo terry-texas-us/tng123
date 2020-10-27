@@ -11,22 +11,15 @@ preparebookmark($logstring);
 $flags['noicons'] = false; // generate the TNG menu bar
 $flags['noheader'] = false; // include the template Custom Header - normally topmenu.php
 $flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourpages'], $flags);
 echo $headElement->getHtml();
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
-
 ?>
 <h1>Feature 1 Story</h1>
 <p>

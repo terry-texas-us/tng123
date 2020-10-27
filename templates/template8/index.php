@@ -1,35 +1,17 @@
 <?php
 
 global $allow_admin;
-
 $flags['noicons'] = true;
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
 echo $headElement->getHtml();
-
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
-
-if (isMobile()) {
-    ?>
-    <div class="headerrow"
-        style="background-image: url(<?php echo $templatepath; ?><?php echo $tmp['t8_headimg']; ?>);background-position:right;">
-        <span class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle1'); ?></span><span
-            class="headertext text_tan"><?php echo getTemplateMessage('t8_headtitle2'); ?></span><span
-            class="headertext text_white"><?php echo getTemplateMessage('t8_headtitle3'); ?></span>
-    </div>
-    <br>
-<?php } ?>
+?>
     <table class="home_table">
         <tr>
             <td class="homenav_col">

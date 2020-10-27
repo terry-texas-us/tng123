@@ -622,7 +622,7 @@ class UploadHandler
                 adminwritelog("<a href=\"admin_editmedia.php?mediaID={$file->mediaID}\">{$this->options['added']}: {$file->mediaID}</a>");
 
                 $query = "UPDATE {$this->options['mediatypes_table']} SET disabled='0' where mediatypeID=\"{$this->options['mediatypeID']}\"";
-                $result = @tng_query($query);
+                @tng_query($query);
             } else {
                 $file->mediaID = "";
             }
@@ -835,12 +835,10 @@ class UploadHandler
         }
         $this->options['upload_dir'] .= $this->options['media_folder'] . "/";
         $this->options['upload_url'] .= $this->options['media_folder'] . "/";
-
         $query = "DELETE FROM {$this->options['media_table']} WHERE mediaID = \"$mediaID\"";
-        $result = @tng_query($query);
-
+        @tng_query($query);
         $query = "DELETE FROM {$this->options['medialinks_table']} WHERE mediaID = \"$mediaID\"";
-        $result = @tng_query($query);
+        @tng_query($query);
 
         $file_path = $this->get_upload_path($file_name);
         $success = is_file($file_path) && $file_name[0] !== '.' && unlink($file_path);

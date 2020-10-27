@@ -1,21 +1,14 @@
 <?php
 
 global $allow_admin;
-
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
-
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-
 $headElement = new HeadElementPublic($sitename ? "" : $text['ourpages'], $flags);
 echo $headElement->getHtml();
-if (isMobile()) {
-    mobileHeaderVariants($headElement, $flags);
-} else {
-    standardHeaderVariants($headElement, $flags);
-    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
-}
+standardHeaderVariants($headElement, $flags);
+echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
     echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
@@ -30,101 +23,92 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                 <td colspan="4" class="line"></td>
             </tr>
             <tr>
-                <?php if (!isMobile()) { ?>
-                    <td class="menuback">
-                        <a href="searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
-                        <form action="search.php" method="get">
-                            <table class="menuback">
-                                <tr>
-                                    <td>
-                                        <label class="fieldname"><?php echo $text['mnufirstname']; ?>:<br>
-                                            <input class="searchbox" name="myfirstname" type="search">
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="fieldname"><?php echo $text['mnulastname']; ?>: <br>
-                                            <input class="searchbox" name="mylastname" type="search">
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input name="mybool" type="hidden" value="AND">
-                                        <input name="search" type="submit" value="<?php echo $text['mnusearchfornames']; ?>">
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
+                <td class="menuback">
+                    <a href="searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
+                    <form action="search.php" method="get">
                         <table class="menuback">
                             <tr>
                                 <td>
-                                    <div class="fieldname">
-                                        <ul>
-                                            <li><a href="searchform.php" class="lightlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
-                                            <li><a href="surnames.php" class="lightlink"><?php echo $text['mnulastnames']; ?></a><br><br></li>
-                                        </ul>
-                                        <?php
-                                        if ($currentuser) {
-                                            echo "<p><span class='emphasisyellow'>{$text['welcome']}, $currentuserdesc.</span></p>\n";
-                                            echo "<ul>\n";
-                                            echo "<li><a href='logout.php' class='lightlink'>{$text['mnulogout']}</a></li>\n";
-                                        } else {
-                                            echo "<ul>\n";
-                                            echo "<li><a href='login.php' class='lightlink'>{$text['mnulogon']}</a></li>\n";
-                                        }
-                                        echo "<li><a href='whatsnew.php' class='lightlink'>{$text['mnuwhatsnew']}</a></li>\n";
-                                        echo "<li><a href='mostwanted.php' class='lightlink'>{$text['mostwanted']}</a></li>\n";
-
-                                        foreach ($mediatypes as $mediatype) {
-                                            if (!$mediatype['disabled']) {
-                                                echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}' class='lightlink'>{$mediatype['display']}</a></li>\n";
-                                            }
-                                        }
-
-                                        echo "<li><a href='browsealbums.php' class='lightlink'>{$text['albums']}</a></li>\n";
-                                        echo "<li><a href='browsemedia.php' class='lightlink'>{$text['allmedia']}</a></li>\n";
-                                        echo "<li><a href='cemeteries.php' class='lightlink'>{$text['mnucemeteries']}</a></li>\n";
-                                        echo "<li><a href='places.php' class='lightlink'>{$text['places']}</a></li>\n";
-                                        echo "<li><a href='browsenotes.php' class='lightlink'>{$text['notes']}</a></li>\n";
-                                        echo "<li><a href='anniversaries.php' class='lightlink'>{$text['anniversaries']}</a></li>\n";
-                                        echo "<li><a href='calendar.php' class='lightlink'>{$text['calendar']}</a></li>\n";
-                                        echo "<li><a href='reports.php' class='lightlink'>{$text['mnureports']}</a></li>\n";
-                                        echo "<li><a href='browsesources.php' class='lightlink'>{$text['mnusources']}</a></li>\n";
-                                        echo "<li><a href='browserepos.php' class='lightlink'>{$text['repositories']}</a></li>\n";
-                                        if (!$tngconfig['hidedna']) {
-                                            echo "<li><a href='browse_dna_tests.php' class='lightlink'>{$text['dna_tests']}</a></li>\n";
-                                        }
-                                        echo "<li><a href='statistics.php' class='lightlink'>{$text['mnustatistics']}</a></li>\n";
-                                        echo "<li><a href='changelanguage.php' class='lightlink'>{$text['mnulanguage']}</a></li>\n";
-                                        if ($allow_admin) {
-                                            echo "<li><a href='showlog.php' class='lightlink'>{$text['mnushowlog']}</a></li>\n";
-                                            echo "<li><a href='admin.php' class='lightlink'>{$text['mnuadmin']}</a></li>\n";
-                                        }
-                                        echo "<li><a href='bookmarks.php' class='lightlink'>{$text['bookmarks']}</a></li>\n";
-                                        echo "<li><a href='suggest.php?page=$title' class='lightlink'>{$text['contactus']}</a></li>\n";
-                                        if (!$currentuser && !$tngconfig['disallowreg']) {
-                                            echo "<li><a href='newacctform.php' class='lightlink'>{$text['mnuregister']}</a></li>\n";
-                                        }
-                                        echo "</ul><br>\n";
-                                        ?>
-                                    </div>
+                                    <label class="fieldname"><?php echo $text['mnufirstname']; ?>:<br>
+                                        <input class="searchbox" name="myfirstname" type="search">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="fieldname"><?php echo $text['mnulastname']; ?>: <br>
+                                        <input class="searchbox" name="mylastname" type="search">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="mybool" type="hidden" value="AND">
+                                    <input name="search" type="submit" value="<?php echo $text['mnusearchfornames']; ?>">
                                 </td>
                             </tr>
                         </table>
-                    </td>
-                <?php } ?>
+                    </form>
+                    <table class="menuback">
+                        <tr>
+                            <td>
+                                <div class="fieldname">
+                                    <ul>
+                                        <li><a href="searchform.php" class="lightlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
+                                        <li><a href="surnames.php" class="lightlink"><?php echo $text['mnulastnames']; ?></a><br><br></li>
+                                    </ul>
+                                    <?php
+                                    if ($currentuser) {
+                                        echo "<p><span class='emphasisyellow'>{$text['welcome']}, $currentuserdesc.</span></p>\n";
+                                        echo "<ul>\n";
+                                        echo "<li><a href='logout.php' class='lightlink'>{$text['mnulogout']}</a></li>\n";
+                                    } else {
+                                        echo "<ul>\n";
+                                        echo "<li><a href='login.php' class='lightlink'>{$text['mnulogon']}</a></li>\n";
+                                    }
+                                    echo "<li><a href='whatsnew.php' class='lightlink'>{$text['mnuwhatsnew']}</a></li>\n";
+                                    echo "<li><a href='mostwanted.php' class='lightlink'>{$text['mostwanted']}</a></li>\n";
+                                    foreach ($mediatypes as $mediatype) {
+                                        if (!$mediatype['disabled']) {
+                                            echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}' class='lightlink'>{$mediatype['display']}</a></li>\n";
+                                        }
+                                    }
+                                    echo "<li><a href='browsealbums.php' class='lightlink'>{$text['albums']}</a></li>\n";
+                                    echo "<li><a href='browsemedia.php' class='lightlink'>{$text['allmedia']}</a></li>\n";
+                                    echo "<li><a href='cemeteries.php' class='lightlink'>{$text['mnucemeteries']}</a></li>\n";
+                                    echo "<li><a href='places.php' class='lightlink'>{$text['places']}</a></li>\n";
+                                    echo "<li><a href='browsenotes.php' class='lightlink'>{$text['notes']}</a></li>\n";
+                                    echo "<li><a href='anniversaries.php' class='lightlink'>{$text['anniversaries']}</a></li>\n";
+                                    echo "<li><a href='calendar.php' class='lightlink'>{$text['calendar']}</a></li>\n";
+                                    echo "<li><a href='reports.php' class='lightlink'>{$text['mnureports']}</a></li>\n";
+                                    echo "<li><a href='browsesources.php' class='lightlink'>{$text['mnusources']}</a></li>\n";
+                                    echo "<li><a href='browserepos.php' class='lightlink'>{$text['repositories']}</a></li>\n";
+                                    if (!$tngconfig['hidedna']) {
+                                        echo "<li><a href='browse_dna_tests.php' class='lightlink'>{$text['dna_tests']}</a></li>\n";
+                                    }
+                                    echo "<li><a href='statistics.php' class='lightlink'>{$text['mnustatistics']}</a></li>\n";
+                                    echo "<li><a href='changelanguage.php' class='lightlink'>{$text['mnulanguage']}</a></li>\n";
+                                    if ($allow_admin) {
+                                        echo "<li><a href='showlog.php' class='lightlink'>{$text['mnushowlog']}</a></li>\n";
+                                        echo "<li><a href='admin.php' class='lightlink'>{$text['mnuadmin']}</a></li>\n";
+                                    }
+                                    echo "<li><a href='bookmarks.php' class='lightlink'>{$text['bookmarks']}</a></li>\n";
+                                    echo "<li><a href='suggest.php?page=$title' class='lightlink'>{$text['contactus']}</a></li>\n";
+                                    if (!$currentuser && !$tngconfig['disallowreg']) {
+                                        echo "<li><a href='newacctform.php' class='lightlink'>{$text['mnuregister']}</a></li>\n";
+                                    }
+                                    echo "</ul><br>\n";
+                                    ?>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
                 <td class="spacercol">&nbsp;&nbsp;&nbsp;</td>
                 <td class="content">
-                    <?php if (!isMobile()) { ?>
-                        <img src="<?php echo $templatepath; ?><?php echo $tmp['t4_headimg']; ?>" alt="" class="smallphoto">
-                        <?php
-                    }
-                    if ($tmp['t4_titlechoice'] == "text" || isMobile()) {
-                        ?>
+                    <img src="<?php echo $templatepath; ?><?php echo $tmp['t4_headimg']; ?>" alt="" class="smallphoto">
+                    <?php if ($tmp['t4_titlechoice'] == "text") { ?>
                         <div><br>
-
                             <span class="titletop"><?php echo $title1; ?></span><br>
                             <span class="titlebottom">&nbsp;<?php echo $title2; ?></span>
 
