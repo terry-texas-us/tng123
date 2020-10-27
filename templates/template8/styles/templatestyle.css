@@ -47,8 +47,7 @@ a.lightlink:active, a.lightlink:hover {
   color: #f2e6cc;
 }
 
-.fieldnameback,
-.tablesaw-cell-label {
+.fieldnameback {
     background-color: #504034;
     border-right-width: 1px;
     border-bottom-width: 1px;

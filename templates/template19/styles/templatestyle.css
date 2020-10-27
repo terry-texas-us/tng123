@@ -605,7 +605,7 @@ ul#tngnav {
     background-color: #f0f1fa !important;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .page, .tablesaw-cell-label {
+.bar, .fieldnameback, .LB_closeAjaxWindow, .page {
     background-color: #2a2d7a;
     font-weight: 400;
     color: #fff !important;

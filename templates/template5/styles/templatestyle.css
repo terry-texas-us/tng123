@@ -51,8 +51,8 @@ a.lightlink2:active, a.lightlink2:hover, a.lightlink:active, a.lightlink:hover {
   background-color: #4e7076;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .tablesaw-cell-label {
-  background-color: #68939b;
+.bar, .fieldnameback, .LB_closeAjaxWindow {
+    background-color: #68939b;
 }
 
 a.admincell:hover {

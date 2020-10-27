@@ -120,8 +120,8 @@ a.lightlink:active, a.lightlink:hover {
   background-color: #fc3;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .tablesaw-cell-label {
-  background-color: #b9b186;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback {
+    background-color: #b9b186;
 }
 
 a.admincell:hover, a.leftlink:hover {

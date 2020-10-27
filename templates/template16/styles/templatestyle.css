@@ -14,8 +14,8 @@
   color: #5e8db5;
 }
 
-.adminnav .snlinkact, .bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .snlinkact, .tablesaw-cell-label, a.snlink:hover {
-  background-color: #5e8db5;
+.adminnav .snlinkact, .bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .snlinkact, a.snlink:hover {
+    background-color: #5e8db5;
 }
 
 .databack, .LB_window, .snlink, div.innercontainer, ul.tngdd .langmenu, ul.tngdd .stubmenu {

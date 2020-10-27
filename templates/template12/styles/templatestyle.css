@@ -964,8 +964,7 @@ a:active, a:link {
   background-color: #504034;
 }
 
-.fieldnameback,
-.tablesaw-cell-label {
+.fieldnameback {
     background-color: #504034;
     border-right-width: 1px;
     border-bottom-width: 1px;

@@ -43,8 +43,8 @@ a.admincell:hover, a.leftlink:hover {
   background-color: #c66;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .tablesaw-cell-label {
-  background-color: #900;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback {
+    background-color: #900;
 }
 
 .sideback {

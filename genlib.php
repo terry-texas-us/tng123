@@ -41,44 +41,6 @@ if (!$tree && $defaulttree) {
     $tree = "";
 }
 
-
-/**
- * @param $headElement
- * @param array $flags 'bodyclass' 'noheader'
- */
-function mobileHeaderVariants($headElement, array $flags): void {
-    global $templatenum, $tmp, $tngprint;
-
-    $icons = $headElement->getIcons();
-
-    $class = !empty($flags['bodyclass']) ? $flags['bodyclass'] : "publicbody";
-    echo "<body class='{$class}'>\n";
-    echo "<div class='scroll-to-top'>\n";
-    echo "<a href='#'><img src='img/backtotop.png' alt=''></a>\n";
-    echo "</div>\n";
-
-    echo $icons;
-
-    if (!$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
-        $ttitle = "t{$templatenum}_maintitle";
-        if ($tmp[$ttitle]) {
-            $mtitle = str_replace(["<br>", "<br>"], " ", getTemplateMessage($ttitle));
-        } else {
-            $ttitle = "t{$templatenum}_headtitle";
-            $i = 1;
-            $mtitle = "";
-            while ($tmp[$ttitle . $i]) {
-                $mtitle .= getTemplateMessage($ttitle . $i) . " ";
-                $i++;
-            }
-        }
-        if ($mtitle) {
-            echo "<h3 class='mmaintitle'>" . $mtitle . "</h3>\n";
-            echo "<hr class='mtitlehr'/><br>\n";
-        }
-    }
-}
-
 /**
  * @param $headElement
  * @param array $flags 'noicons' 'noheader'
@@ -99,51 +61,6 @@ function standardHeaderVariants($headElement, array $flags): void {
         $icons = tng_icons(1, $title);
     }
     echo $icons;
-}
-
-/**
- * @param $headElement
- * @param array $flags 'nobody' 'bodyclass' 'noicons' 'noheader'
- * @param $maint
- */
-function preHeaderVariants($headElement, array $flags, $maint): void {
-    global $customheader, $templatenum, $templatepath, $tmp;
-    global $tngprint;
-
-    $title = $headElement->getTitle();
-    $icons = $headElement->getIcons();
-
-    if (!$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
-        include $templatepath . $customheader;
-    } elseif (!isset($flags['nobody']) || !$flags['nobody']) {
-        $class = !empty($flags['bodyclass']) ? $flags['bodyclass'] : "publicbody";
-        echo "<body class='{$class}'>\n";
-        echo "<div class='scroll-to-top'>\n";
-        echo "<a href='#'><img src='img/backtotop.png' alt=''></a>\n";
-        echo "</div>\n";
-    }
-    if ((!isset($flags['noicons']) || !$flags['noicons'])) {
-        $icons = tng_icons(1, $title);
-    }
-    echo $icons;
-    if (!$flags['noheader']) {
-        $ttitle = "t{$templatenum}_maintitle";
-        if ($tmp[$ttitle]) {
-            $mtitle = str_replace(["<br>", "<br>"], " ", getTemplateMessage($ttitle));
-        } else {
-            $ttitle = "t{$templatenum}_headtitle";
-            $i = 1;
-            $mtitle = "";
-            while ($tmp[$ttitle . $i]) {
-                $mtitle .= getTemplateMessage($ttitle . $i) . " ";
-                $i++;
-            }
-        }
-        if ($mtitle) {
-            echo "<h3 class='mmaintitle'>" . $mtitle . "</h3>\n";
-            echo "<hr class='mtitlehr'/><br>\n";
-        }
-    }
 }
 
 /**

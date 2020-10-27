@@ -212,8 +212,8 @@ a:active, a:link, div.icons a {
   color: #1d3e4e;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .page, .tablesaw-cell-label {
-  background-color: #31708e;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .page {
+    background-color: #31708e;
 }
 
 .databack {

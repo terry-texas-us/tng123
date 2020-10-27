@@ -405,10 +405,6 @@ if ($saveconfig) {
     fwrite($fp, "\$tngconfig['reposuffix'] = \"{$tngconfig['reposuffix']}\";\n");
     fwrite($fp, "\$tngconfig['noteprefix'] = \"{$tngconfig['noteprefix']}\";\n");
     fwrite($fp, "\$tngconfig['notesuffix'] = \"{$tngconfig['notesuffix']}\";\n");
-    fwrite($fp, "\$responsivetables = \"$responsivetables\";\n");
-    fwrite($fp, "\$tabletype = \"$tabletype\";\n");
-    fwrite($fp, "\$enablemodeswitch = \"$enablemodeswitch\";\n");
-    fwrite($fp, "\$enableminimap = \"$enableminimap\";\n");
     fwrite($fp, "\$tngconfig['hidetasks'] = \"{$tngconfig['hidetasks']}\";\n");
     fwrite($fp, "\$tngconfig['hidetotals'] = \"{$tngconfig['hidetotals']}\";\n");
     fwrite($fp, "\$tngconfig['backupdays'] = \"{$tngconfig['backupdays']}\";\n");

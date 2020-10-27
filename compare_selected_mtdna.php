@@ -73,34 +73,30 @@ preparebookmark($logstring);
 
 echo "<div class='normal'>\n";
 
-$header = "";
-$headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-$headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-$header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'></table>";
-echo $header;
 ?>
+<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'></table>
 
 <div class="overflowauto">
     <table class="whiteback normal w-full" cellpadding="0" cellspacing="1">
         <thead>
         <tr>
-            <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
+            <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
 
             <?php
             if ($allow_edit || $showtestnumbers) { ?>
-                <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
             <?php } ?>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="3" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr1_values']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr2_values']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr1_values']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr2_values']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
             <?php
             global $numtrees;
             if (!$assignedtree && ($numtrees > 1)) { ?>
-                <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
+                <th class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
         </tr>
         </thead>
 

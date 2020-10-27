@@ -50,8 +50,8 @@ a.admincell:hover, a.leftlink:hover {
   background-color: #46ab28;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .tablesaw-cell-label {
-  background-color: #39692a;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback {
+    background-color: #39692a;
 }
 
 .line {

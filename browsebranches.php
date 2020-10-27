@@ -81,29 +81,24 @@ $pagenav = get_browseitems_nav($totrows, "browsebranches.php?branchsearch=$branc
 if ($pagenav || $branchsearch) {
     echo doBranchSearch(1, $pagenav);
 }
-$header = "";
-$headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-$headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-$header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
-echo $header;
+echo "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
 ?>
     <thead>
     <tr>
-        <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
+        <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
+        <th class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['description']; ?>&nbsp;</th>
         <?php if ($numtrees > 1) { ?>
-            <th data-tablesaw-priority="2" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
+            <th class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['treename']; ?>&nbsp;</th>
         <?php } ?>
-        <th data-tablesaw-priority="3" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['startingind']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="4" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['individuals']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="5" class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['families']; ?>&nbsp;</th>
+        <th class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['startingind']; ?>&nbsp;</th>
+        <th class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['individuals']; ?>&nbsp;</th>
+        <th class="fieldnameback text-nowrap fieldname">&nbsp;<?php echo $text['families']; ?>&nbsp;</th>
     </tr>
     </thead>
 <?php
 $i = $offsetplus;
 $peoplewhere = getLivingPrivateRestrictions($people_table, false, false);
 if ($peoplewhere) $peoplewhere = "AND " . $peoplewhere;
-
 $familywhere = getLivingPrivateRestrictions($families_table, false, false);
 if ($familywhere) $familywhere = "AND " . $familywhere;
 

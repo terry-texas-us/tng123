@@ -436,8 +436,8 @@ fieldset {
     color: #663c36;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .page, .tablesaw-cell-label {
-  background-color: #063e53;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .page {
+    background-color: #063e53;
 }
 
 a.admincell:hover,

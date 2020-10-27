@@ -150,30 +150,20 @@ if ($tnggallery) {
 } else {
     $header = "<thead>\n";
     $header .= "<tr>\n";
-    $header .= "<th class='fieldnameback fieldname nbrcol' data-tablesaw-priority='persist'>#</th>\n";
-    $header .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname text-center' width=\"$thumbmaxw\">{$text['thumb']}</th>\n";
+    $header .= "<th class='fieldnameback fieldname nbrcol'>#</th>\n";
+    $header .= "<th class='fieldnameback fieldname text-center' width=\"$thumbmaxw\">{$text['thumb']}</th>\n";
     $width = $mediatypeID == "headstones" ? "50%" : "75%";
-    $header .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname'>{$text['description']}</th>\n";
+    $header .= "<th class='fieldnameback fieldname'>{$text['description']}</th>\n";
     if ($mediatypeID == "headstones") {
-        $header .= "<th data-tablesaw-priority='2' class='fieldnameback fieldname'>{$text['cemetery']}</th>\n";
-        $header .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>{$text['status']}</th>\n";
+        $header .= "<th class='fieldnameback fieldname'>{$text['cemetery']}</th>\n";
+        $header .= "<th class='fieldnameback fieldname'>{$text['status']}</th>\n";
     }
-    $header .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>{$text['indlinked']}</th>\n";
+    $header .= "<th class='fieldnameback fieldname'>{$text['indlinked']}</th>\n";
     $header .= "</tr>\n";
     $header .= "</thead>\n";
     $tablewidth = " style='width: 100%;'";
 }
-
-$headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-$headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-
-if ($tabletype) {
-    if ($tabletype == "toggle") $tabletype = "columntoggle";
-
-    $header = "<table class='tablesaw whiteback normal' cellpadding='3' cellspacing='1' border='0' $tablewidth data-tablesaw-mode=\"$tabletype\"{$headerr}>\n" . $header;
-} else {
-    $header = "<table %nameclass='whiteback no cellpadding='3' cellspacing='1' border='0'$tablewidth rmal'>\n" . $header;
-}
+$header = "<table %nameclass='whiteback no cellpadding='3' cellspacing='1' border='0'$tablewidth rmal'>\n" . $header;
 
 $i = $offsetplus;
 $maxplus = $maxsearchresults + 1;

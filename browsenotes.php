@@ -86,19 +86,17 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browseno
 if ($totrows) {
     echo "<p class='normal'>{$text['matches']} " . number_format($offsetplus) . " {$text['to']} " . number_format($numrowsplus) . " {$text['of']} " . number_format($totrows) . "</p>";
 }
-
 $pagenav = get_browseitems_nav($totrows, "browsenotes.php?notesearch=$notesearch&amp;offset", $maxsearchresults, $max_browsenote_pages);
 echo doNoteSearch(1, $pagenav);
 echo "<br>\n";
-
 $tableStartTag = "<table class = 'whiteback normal'>";
 echo $tableStartTag;
 ?>
     <thead>
     <tr>
-        <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">#</th>
-        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap fieldname"><?php echo $text['notes']; ?></th>
-        <th data-tablesaw-priority="2" class="fieldnameback fieldname"><?php echo $text['indlinked']; ?></th>
+        <th class="fieldnameback nbrcol fieldname">#</th>
+        <th class="fieldnameback text-nowrap fieldname"><?php echo $text['notes']; ?></th>
+        <th class="fieldnameback fieldname"><?php echo $text['indlinked']; ?></th>
     </tr>
     </thead>
 <?php

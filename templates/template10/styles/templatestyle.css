@@ -1401,8 +1401,8 @@ div.art-footer img {
   color: #073d3c;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .page, .tablesaw-cell-label {
-  background-color: #073d3c;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .page {
+    background-color: #073d3c;
 }
 
 a.admincell:hover, a.leftlink:hover {

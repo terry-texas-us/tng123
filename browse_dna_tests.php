@@ -226,17 +226,12 @@ $_SESSION["tsearch"] = $testsearch;
 if ($totrows) {
     echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
-
 $pagenav = get_browseitems_nav($totrows, "browse_dna_tests.php?testsearch=$testsearch&amp;offset", $maxsearchresults, $max_browse_test_pages);
 if ($pagenav || $testsearch) {
     echo doTestSearch(1, $pagenav);
     echo "<br>\n";
 }
-$header = "";
-$headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-$headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-$header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
-echo $header;
+echo "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
 ?>
 <script>
     function toggleAll(flag) {
@@ -270,22 +265,22 @@ if ($test_type == "mtDNA") {
     <?php } ?>
     <thead>
     <tr>
-        <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
+        <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
         <?php if ($test_type && $test_type != "X-DNA") { ?>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $admtext['select']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname">&nbsp;<?php echo $admtext['select']; ?>&nbsp;</th>
         <?php } ?>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_type']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_type']; ?>&nbsp;</th>
         <?php
         if ($allow_edit || $showtestnumbers) { ?>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
         <?php } ?>
-        <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
-        <th data-tablesaw-priority="1" class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
         <?php if ($numtrees > 1) { ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
+            <th class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
     </tr>
     </thead>
     <?php

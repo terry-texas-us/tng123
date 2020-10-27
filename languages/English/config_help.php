@@ -527,46 +527,6 @@ echo help_header("Help: General Settings");
             <td class="tngshadow">
 
                 <p style="float:right;"><a href="#top">Top</a></p>
-                <a id="mobile"><h4 class="subheadbold">Mobile</h4></a>
-
-                <p>The Mobile section allows you to control how TNG is displayed on smart phones and tablets.</p>
-
-                <h5>Enable Responsive Tables</h5>
-                <p>If this option is set to yes, the Tablesaw jQuery plugin that enables the Responsive Tables will be activated.<br>If set to no,
-                    then
-                    the Tablesaw jQuery plugin options will be bypassed.</p>
-
-                <h5>Responsive Table Type</h5>
-                <p>The Responsive Table Type can be set to
-                <ul>
-                    <li><strong>Toggle</strong>, which is the default, displays data columns based on the screen width and priority assigned. Rotating
-                        the
-                        smart phone or tablet screen from portrait to landscape orientation will display additional data columns.
-                    </li>
-
-                    <li><strong>Stack</strong>, which stacks the table headers to a two column layout with headers on the left when the viewport width
-                        is
-                        less than 40em (640px).
-                    </li>
-
-                    <li><strong>Swipe</strong>, which allows the user to use the swipe gesture (or use the left and right buttons) to navigate the
-                        columns.
-                    </li>
-                </ul>
-                <br>
-                <h5>Enable Responsive Tables Mode Switcher:</h5>
-                <p>The Mode Switcher option allows the user to switch between toggle, stack, or swipe table column displays.</p>
-
-                <h5>Enable Responsive Tables Mini Map</h5>
-                <p>Use data-tablesaw-minimap to add a series of small dots to show which columns are currently visible and which are hidden.
-                    Only available on swipe and toggle options. </p>
-
-            </td>
-        </tr>
-        <tr class="databack">
-            <td class="tngshadow">
-
-                <p style="float:right;"><a href="#top">Top</a></p>
                 <a id="pref"><h4 class="subheadbold">Prefixes and Suffixes</h4></a>
 
                 <p>These letters are combined with a number to form IDs for the people, families, sources, repositories and notes in your database.

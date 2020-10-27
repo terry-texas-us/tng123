@@ -209,16 +209,16 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $pagenav = get_browseitems_nav($totrows, "headstones.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
     $body .= "<p>$pagenav</p>";
     $body .= "</div>\n";
-    $header = "";
-    $headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-    $headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-    $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
-    $body .= $header;
-    $body .= "<thead><tr><th data-tablesaw-priority='persist' class='text-center fieldnameback fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
-    $body .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname'>&nbsp;{$text['description']}</th>";
-    $body .= "<th data-tablesaw-priority='6' class='fieldnameback fieldname'>&nbsp;{$text['status']}</th>";
-    $body .= "<th data-tablesaw-priority='4' class='fieldnameback fieldname'>&nbsp;{$text['location']}</th>";
-    $body .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>&nbsp;{$text['name']} ({$text['diedburied']})</th></tr></thead>";
+    $body .= "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n";
+    $body .= "<thead>\n";
+    $body .= "<tr>\n";
+    $body .= "<th class='text-center fieldnameback fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['description']}</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['status']}</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['location']}</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['name']} ({$text['diedburied']})</th>";
+    $body .= "</tr>\n";
+    $body .= "</thead>\n";
     foreach ($headstones as $hs) {
         $mediatypeID = $hs['mediatypeID'];
         $usefolder = $hs['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;

@@ -386,12 +386,12 @@ if ($tngneedresults) {
             ?>
             <thead>
             <tr>
-                <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
-                <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['lastfirst']; ?>&nbsp;</th>
-                <th data-tablesaw-priority="2" class="fieldnameback fieldname" colspan="2">&nbsp;<?php echo $datetxt; ?>&nbsp;</th>
-                <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['personid']; ?>&nbsp;</th>
+                <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
+                <th class="fieldnameback fieldname">&nbsp;<?php echo $text['lastfirst']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname" colspan="2">&nbsp;<?php echo $datetxt; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname">&nbsp;<?php echo $text['personid']; ?>&nbsp;</th>
                 <?php if ($numtrees > 1) { ?>
-                    <th data-tablesaw-priority="4" class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
+                    <th class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
                 <?php } ?>
             </tr>
             </thead>

@@ -77,24 +77,19 @@ if ($totrows) {
 $pagenav = get_browseitems_nav($totrows, "browsealbums.php?mediasearch=$mediasearch&amp;offset", $maxsearchresults, $max_browsemedia_pages);
 echo doMediaSearch(1, $pagenav);
 echo "<br>\n";
-
 $header = "";
-$headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-$headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
 $header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>";
 echo $header;
-
 $albumtext = $header = "";
 $header .= "<thead>\n";
 $header .= "<tr>\n";
-$header .= "<th data-tablesaw-priority='persist' class='fieldnameback fieldname nbrcol'>&nbsp;#&nbsp;</th>\n";
-$header .= "<th data-tablesaw-priority='1' class='fieldnameback fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
-$header .= "<th data-tablesaw-priority='2' class='fieldnameback fieldname'>&nbsp;{$text['description']}&nbsp;</th>\n";
-$header .= "<th data-tablesaw-priority='3' class='fieldnameback fieldname'>&nbsp;{$text['numitems']}&nbsp;</th>\n";
-$header .= "<th data-tablesaw-priority='4' class='fieldnameback fieldname'>&nbsp;{$text['indlinked']}&nbsp;</th>\n";
+$header .= "<th class='fieldnameback fieldname nbrcol'>&nbsp;#&nbsp;</th>\n";
+$header .= "<th class='fieldnameback fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
+$header .= "<th class='fieldnameback fieldname'>&nbsp;{$text['description']}&nbsp;</th>\n";
+$header .= "<th class='fieldnameback fieldname'>&nbsp;{$text['numitems']}&nbsp;</th>\n";
+$header .= "<th class='fieldnameback fieldname'>&nbsp;{$text['indlinked']}&nbsp;</th>\n";
 $header .= "</tr>\n";
 $header .= "</thead>\n";
-
 $i = $offsetplus;
 $maxplus = $maxsearchresults + 1;
 $thumbcount = 0;

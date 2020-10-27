@@ -47,8 +47,7 @@ a:visited {
   color: #8b8776;
 }
 
-.fieldnameback,
-.tablesaw-cell-label {
+.fieldnameback {
     border-right-width: 1px;
     border-bottom-width: 1px;
     border-right-style: solid;
@@ -71,8 +70,8 @@ a.lightlink:active, a.lightlink:hover {
   text-decoration: none;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback, .tablesaw-cell-label {
-  background-color: #660002;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .sideback {
+    background-color: #660002;
 }
 
 a.admincell:hover, a.leftlink:hover {

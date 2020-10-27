@@ -102,25 +102,20 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsere
 if ($totrows) {
     echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
 }
-
 $pagenav = get_browseitems_nav($totrows, "browserepos.php?reposearch=$reposearch&amp;offset", $maxsearchresults, $max_browserepo_pages);
 if ($pagenav || $reposearch) {
     echo doRepoSearch(1, $pagenav);
     echo "<br>\n";
 }
-$header = "";
-$headerr = $enableminimap ? " data-tablesaw-minimap" : "";
-$headerr .= $enablemodeswitch ? " data-tablesaw-mode-switch" : "";
-$header = "<table class='whiteback normal'>";
-echo $header;
+echo "<table class='whiteback normal'>";
 ?>
 <thead>
 <tr>
-    <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
-    <th data-tablesaw-priority="1" class="fieldnameback fieldname">&nbsp;<?php echo $text['repoid']; ?>&nbsp;</th>
-    <th data-tablesaw-priority="2" class="fieldnameback fieldname">&nbsp;<?php echo $text['name']; ?>&nbsp;</th>
+    <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
+    <th class="fieldnameback fieldname">&nbsp;<?php echo $text['repoid']; ?>&nbsp;</th>
+    <th class="fieldnameback fieldname">&nbsp;<?php echo $text['name']; ?>&nbsp;</th>
     <?php if ($numtrees > 1) { ?>
-        <th data-tablesaw-priority="3" class="fieldnameback">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
+        <th class="fieldnameback">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
 </tr>
 </thead>
 <?php

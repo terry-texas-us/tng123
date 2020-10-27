@@ -59,10 +59,10 @@ a:visited {
   color: #666;
 }
 
-.fieldnameback, .tablesaw-cell-label {
-  background-color: #336;
-  border-right: 1px solid #777;
-  border-bottom: 1px solid #777;
+.fieldnameback {
+    background-color: #336;
+    border-right: 1px solid #777;
+    border-bottom: 1px solid #777;
 }
 
 .databack {

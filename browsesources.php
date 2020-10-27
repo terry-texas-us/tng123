@@ -1,8 +1,6 @@
 <?php
 $textpart = "sources";
 include "tng_begin.php";
-global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
-
 include "functions.php";
 
 /**
@@ -105,30 +103,25 @@ if ($pagenav || $sourcesearch) {
 }
 ?>
     <br>
-<?php
-$header = $headerr = "";
-$headerr = $enablemodeswitch ? "data-tablesaw-mode-switch>\n" : ">\n" . $header;
-$headerr = $enableminimap ? " data-tablesaw-minimap " . $headerr : $headerr;
-$header = "<table cellpadding='3' cellspacing='1' border='0' class='whiteback'>\n" . $header;
-echo $header;
-?>
-    <thead>
-    <tr>
-        <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">&nbsp;# </span></th>
-        <th data-tablesaw-priority="3" class="fieldnameback text-nowrap"><span class="fieldname">&nbsp;<?php echo $text['sourceid']; ?>&nbsp;</span></th>
-        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap"><span class="fieldname">&nbsp;<?php echo $text['title'] . ", " . $text['author']; ?>&nbsp;</span></th>
-        <?php if ($numtrees > 1) { ?>
-            <th data-tablesaw-priority="3" class="fieldnameback"><span class="fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</span></th><?php } ?>
-    </tr>
-    </thead>
-<?php
-$i = $offsetplus;
-while ($row = tng_fetch_assoc($result)) {
-    $sourcetitle = $row['title'] ? $row['title'] : $row['shorttitle'];
-    echo "<tr>";
-    echo "<td class='databack'><span class='normal'>$i</span></td>\n";
-    echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
-    echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
+
+    <table cellpadding='3' cellspacing='1' border='0' class='whiteback'>
+        <thead>
+        <tr>
+            <th class="fieldnameback nbrcol"><span class="fieldname">&nbsp;# </span></th>
+            <th class="fieldnameback text-nowrap"><span class="fieldname">&nbsp;<?php echo $text['sourceid']; ?>&nbsp;</span></th>
+            <th class="fieldnameback text-nowrap"><span class="fieldname">&nbsp;<?php echo $text['title'] . ", " . $text['author']; ?>&nbsp;</span></th>
+            <?php if ($numtrees > 1) { ?>
+                <th class="fieldnameback"><span class="fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</span></th><?php } ?>
+        </tr>
+        </thead>
+        <?php
+        $i = $offsetplus;
+        while ($row = tng_fetch_assoc($result)) {
+            $sourcetitle = $row['title'] ? $row['title'] : $row['shorttitle'];
+            echo "<tr>";
+            echo "<td class='databack'><span class='normal'>$i</span></td>\n";
+            echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">{$row['sourceID']}</a>&nbsp;</span></td>";
+            echo "<td class='databack'><span class='normal'><a href=\"showsource.php?sourceID={$row['sourceID']}&amp;tree={$row['gedcom']}\">$sourcetitle</a><br>{$row['author']}&nbsp;</span></td>";
     if ($numtrees > 1) {
         echo "<td class='databack text-nowrap'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
     }

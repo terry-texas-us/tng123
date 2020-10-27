@@ -68,7 +68,8 @@ function tng_adminheader($title, $flags) {
 function tng_adminlayout($args = "") {
     global $tng_title, $tng_version, $currentuser, $allow_admin, $admtext, $text, $maint, $homepage;
     $helplang = findhelp("index_help.php");
-    $output = "<body class='m-0 adminbody'$args>\n";
+    $output = "<!-- begin tng_adminlayout - $args -->\n";
+    $output .= "<body class='m-0 adminbody'$args>\n";
     $output .= "<div class='fixed top-0 w-full m-0 text-base leading-snug topbanner sideback whiteheader'>\n";
     $output .= "<div class='float-left admincorner'>\n";
     $output .= "<a href='http://lythgoes.net/genealogy/software.php' target='_blank'>";
@@ -103,6 +104,7 @@ function tng_adminlayout($args = "") {
     include "admin_leftmenu.php";
     $output .= "</div>\n";
     $output .= "<div id='maincontent' class='mainback'$mainoffset>\n";
+    $output .= "<!-- end tng_adminlayout -->\n";
     return $output;
 }
 
@@ -110,12 +112,12 @@ function tng_adminlayout($args = "") {
  * @return string
  */
 function tng_adminfooter() {
-    $html = "</div>\n";
+    $html = "<!-- begin tng_adminfooter -->\n";
     $html .= "</div>\n";
-
+    $html .= "</div>\n";
     $html .= "</body>\n";
     $html .= "</html>\n";
-
+    $html .= "<!-- end tng_adminfooter -->\n";
     return $html;
 }
 

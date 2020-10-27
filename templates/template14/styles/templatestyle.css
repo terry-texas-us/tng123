@@ -410,8 +410,8 @@ a:active, a:link, div.icons a {
   color: #900;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .page, .tablesaw-cell-label {
-  background-color: #933;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .page {
+    background-color: #933;
 }
 
 a.admincell:hover, a.leftlink:hover {

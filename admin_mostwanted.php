@@ -21,9 +21,9 @@ function showDiv(string $type) {
         echo "</form>\n";
     }
     echo "<div id=\"order$type" . "divs\">\n";
-    echo "<table class='normal' id=\"order$type" . "tbl\">\n";
+    echo "<table class='normal w-full' id=\"order$type" . "tbl\">\n";
     echo "<tr>\n";
-    echo "<th class='fieldnameback' style=\"width: 4em;\"><span class='fieldname'>" . $admtext['text_sort'] . "</span></th>\n";
+    echo "<th class='fieldnameback w-12'><span class='fieldname'>" . $admtext['text_sort'] . "</span></th>\n";
     echo "<th class='fieldnameback' style=\"width: {$thumbmaxw}px;\"><span class='fieldname'>" . $admtext['thumb'] . "</span></th>\n";
     echo "<th class='fieldnameback'><span class='fieldname'>" . $admtext['description'] . "</span></th>\n";
     echo "</tr>\n";
@@ -42,9 +42,9 @@ function showDiv(string $type) {
         $truncated = substr($lrow['mwdesc'], 0, 90);
         $truncated = strlen($lrow['mwdesc']) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $lrow['mwdesc'];
         echo "<div class='sortrow' id=\"order{$lrow['mwtype']}" . "divs_{$lrow['mwID']}\" style=\"clear:both\" onmouseover=\"showEditDelete('{$lrow['mwID']}');\" onmouseout=\"hideEditDelete('{$lrow['mwID']}');\">";
-        echo "<table>\n";
+        echo "<table class='w-full'>\n";
         echo "<tr id=\"row_{$lrow['mwID']}\">\n";
-        echo "<td class='dragarea rounded-lg normal'>";
+        echo "<td class='dragarea rounded-lg normal w-16'>";
         echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
         echo "</td>\n";
         echo "<td class='lightback' style=\"width: {$thumbmaxw}px;\">";
@@ -104,9 +104,8 @@ tng_adminheader($admtext['mostwanted'], $flags);
         }
 
         table {
-            width: 100%;
             border-collapse: separate;
-            border-spacing: 2px;
+            /*border-spacing: 2px;*/
         }
 
         table th, table td {
@@ -134,7 +133,7 @@ tng_adminheader($admtext['mostwanted'], $flags);
     echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['mostwanted'], "img/misc_icon.gif", $menu, $message);
     ?>
 
-    <table class="lightback">
+    <table class="lightback w-full">
         <tr class="databack">
             <td class="tngshadow">
                 <?php

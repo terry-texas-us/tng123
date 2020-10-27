@@ -75,16 +75,15 @@ $tableStartTag = "<table class = 'whiteback normal'>";
 $header1 = $tableStartTag;
 $header1 .= "<thead>";
 $header1 .= "<tr>\n";
-$header1 .= "<th data-tablesaw-priority = 'persist' class = 'fieldnameback text-center thumbnails fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
-$header1 .= "<th data-tablesaw-priority = '1' class = 'fieldnameback fieldname'>&nbsp;{$text['description']}&nbsp;</th>\n";
-$hsheader = "<th data-tablesaw-priority = '2' class = 'fieldnameback fieldname'>&nbsp;{$text['cemetery']}&nbsp;</th>\n";
-$hsheader .= "<th data-tablesaw-priority = '3' class = 'fieldnameback fieldname'>&nbsp;{$text['status']}&nbsp;</th>\n";
-$header2 .= "<th data-tablesaw-priority = '5' class= 'fieldnameback fieldname'>&nbsp;{$text['indlinked']}&nbsp;</th>\n";
-$header2 .= "<th  data-tablesaw-priority = '5' class = 'fieldnameback fieldname' width = '130'>&nbsp;<b>{$text['lastmodified']}</b>&nbsp;</th>\n";
+$header1 .= "<th class = 'fieldnameback text-center thumbnails fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
+$header1 .= "<th class = 'fieldnameback fieldname'>&nbsp;{$text['description']}&nbsp;</th>\n";
+$hsheader = "<th class = 'fieldnameback fieldname'>&nbsp;{$text['cemetery']}&nbsp;</th>\n";
+$hsheader .= "<th class = 'fieldnameback fieldname'>&nbsp;{$text['status']}&nbsp;</th>\n";
+$header2 .= "<th class= 'fieldnameback fieldname'>&nbsp;{$text['indlinked']}&nbsp;</th>\n";
+$header2 .= "<th class = 'fieldnameback fieldname' width = '130'>&nbsp;<b>{$text['lastmodified']}</b>&nbsp;</th>\n";
 $header2 .= "</tr>\n";
 $header2 .= "</thead>\n";
 $footer = "</table>\n";
-
 if ($tree) {
     $wherestr = "($media_table.gedcom = '$tree' || $media_table.gedcom = \"\") AND ";
     $wherestr2 = " AND $medialinks_table.gedcom = '$tree'";
@@ -132,17 +131,17 @@ if (tng_num_rows($result)) {
         <?php echo $tableStartTag; ?>
         <thead>
         <tr>
-            <th data-tablesaw-priority="persist" class="fieldnameback idcol fieldname"><?php echo $text['id']; ?></th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname"><?php echo $nametitle; ?></th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?></th>
-            <th data-tablesaw-priority="3" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+            <th class="fieldnameback idcol fieldname"><?php echo $text['id']; ?></th>
+            <th class="fieldnameback fieldname"><?php echo $nametitle; ?></th>
+            <th class="fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?></th>
+            <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
             <?php if ($numtrees > 1) { ?>
-                <th data-tablesaw-priority="3" class="fieldnameback fieldname"><b><?php echo $text['tree']; ?><?php if ($numbranches) {
+                <th class="fieldnameback fieldname"><b><?php echo $text['tree']; ?><?php if ($numbranches) {
                             echo " | " . $text['branch'];
                         } ?></b>
                 </th>
             <?php } ?>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname" width="130"><?php echo $text['lastmodified']; ?></th>
+            <th class="fieldnameback fieldname" width="130"><?php echo $text['lastmodified']; ?></th>
         </tr>
         </thead>
 
@@ -214,19 +213,19 @@ if (tng_num_rows($famresult)) {
         <?php echo $tableStartTag; ?>
         <thead>
         <tr>
-            <th data-tablesaw-priority="persist" class="fieldnameback nbrcol fieldname"><?php echo $text['id']; ?></th>
-            <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['husbid']; ?></th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname"><?php echo $text['husbname']; ?></th>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname"><?php echo $text['wifeid']; ?></th>
-            <th data-tablesaw-priority="1" class="fieldnameback fieldname"><?php echo $text['wifename']; ?></th>
-            <th data-tablesaw-priority="2" class="fieldnameback fieldname"><?php echo $text['married']; ?></th>
+            <th class="fieldnameback nbrcol fieldname"><?php echo $text['id']; ?></th>
+            <th class="fieldnameback fieldname"><?php echo $text['husbid']; ?></th>
+            <th class="fieldnameback fieldname"><?php echo $text['husbname']; ?></th>
+            <th class="fieldnameback fieldname"><?php echo $text['wifeid']; ?></th>
+            <th class="fieldnameback fieldname"><?php echo $text['wifename']; ?></th>
+            <th class="fieldnameback fieldname"><?php echo $text['married']; ?></th>
             <?php if ($numtrees > 1) { ?>
-                <th data-tablesaw-priority="3" class="fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
+                <th class="fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
                         echo " | " . $text['branch'];
                     } ?>
                 </th>
             <?php } ?>
-            <th data-tablesaw-priority="6" class="fieldnameback fieldname" width="130">&nbsp;<?php echo $text['lastmodified']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname" width="130">&nbsp;<?php echo $text['lastmodified']; ?>&nbsp;</th>
         </tr>
         </thead>
 

@@ -36,8 +36,8 @@ a:visited {
   color: #366;
 }
 
-.fieldnameback, .LB_closeAjaxWindow, .sideback, .tablesaw-cell-label {
-  background-color: #009;
+.fieldnameback, .LB_closeAjaxWindow, .sideback {
+    background-color: #009;
 }
 
 .indexpage {

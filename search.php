@@ -3,7 +3,6 @@
 $textpart = "search";
 $order = "";
 include "tng_begin.php";
-global $responsivetables, $tabletype, $enablemodeswitch, $enableminimap;
 include "searchlib.php";
 @set_time_limit(0);
 $maxsearchresults = !empty($nr) ? ($nr < 200 ? $nr : 200) : (!empty($_SESSION['tng_nr']) ? $_SESSION['tng_nr'] : $maxsearchresults);
@@ -377,55 +376,43 @@ if ($pagenav && !$cejoin && empty($mysplname)) {
     $heatmap = " | " . $heatmap;
 }
 echo "<p class='normal'>$pagenav$heatmap</p>";
-$header = $headerr = "";
-if ($enablemodeswitch) {
-    $headerr = "data-tablesaw-mode-switch>\n";
-} else {
-    $headerr = ">\n" . $header;
-}
-if ($enableminimap) {
-    $headerr = " data-tablesaw-minimap " . $headerr;
-} else {
-    $headerr = $headerr;
-}
-$header = "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n" . $header;
-echo $header;
 ?>
-    <thead>
-    <tr>
-        <th data-tablesaw-priority="persist" class="fieldnameback nbrcol"><span class="fieldname">#</span></th>
-        <th data-tablesaw-priority="1" class="fieldnameback text-nowrap"><span class="fieldname"><?php echo $namesort; ?></span></th>
-        <th data-tablesaw-priority="5" class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
-        <?php if ($myprefix) { ?>
-            <th class="fieldnameback fieldname"><?php echo $text['prefix']; ?></th>
-        <?php } ?>
-        <?php if ($mysuffix) { ?>
-            <th class="fieldnameback fieldname"><?php echo $text['suffix']; ?></th>
-        <?php } ?>
-        <?php if ($mytitle) { ?>
-            <th class="fieldnameback fieldname"><?php echo $text['title']; ?></th>
-        <?php } ?>
-        <?php if ($mynickname) { ?>
-            <th class="fieldnameback fieldname"><?php echo $text['nickname']; ?></th>
-        <?php } ?>
-        <th data-tablesaw-priority="2" class="fieldnameback fieldname text-nowrap"><?php echo $birthsort; ?></th>
-        <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
-        <?php if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) { ?>
-            <th data-tablesaw-priority="6" class="fieldnameback fieldname text-nowrap"><?php echo $deathsort; ?></th>
-            <th data-tablesaw-priority="5" class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
-        <?php } ?>
-        <?php if ($showspouse) { ?>
-            <th data-tablesaw-priority="4" class="fieldnameback fieldname"><?php echo $text['spouse']; ?></th>
-        <?php } ?>
-        <?php if ($numtrees > 1 || $numbranches) { ?>
-            <th data-tablesaw-priority="6" class="fieldnameback fieldname text-nowrap">
-                <?php echo $text['tree']; ?><?php if ($numbranches) {
-                    echo " | " . $text['branch'];
-                } ?>
-            </th>
-        <?php } ?>
-    </tr>
-    </thead>
+    <table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>
+        <thead>
+        <tr>
+            <th class="fieldnameback nbrcol"><span class="fieldname">#</span></th>
+            <th class="fieldnameback text-nowrap"><span class="fieldname"><?php echo $namesort; ?></span></th>
+            <th class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
+            <?php if ($myprefix) { ?>
+                <th class="fieldnameback fieldname"><?php echo $text['prefix']; ?></th>
+            <?php } ?>
+            <?php if ($mysuffix) { ?>
+                <th class="fieldnameback fieldname"><?php echo $text['suffix']; ?></th>
+            <?php } ?>
+            <?php if ($mytitle) { ?>
+                <th class="fieldnameback fieldname"><?php echo $text['title']; ?></th>
+            <?php } ?>
+            <?php if ($mynickname) { ?>
+                <th class="fieldnameback fieldname"><?php echo $text['nickname']; ?></th>
+            <?php } ?>
+            <th class="fieldnameback fieldname text-nowrap"><?php echo $birthsort; ?></th>
+            <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+            <?php if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) { ?>
+                <th class="fieldnameback fieldname text-nowrap"><?php echo $deathsort; ?></th>
+                <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+            <?php } ?>
+            <?php if ($showspouse) { ?>
+                <th class="fieldnameback fieldname"><?php echo $text['spouse']; ?></th>
+            <?php } ?>
+            <?php if ($numtrees > 1 || $numbranches) { ?>
+                <th class="fieldnameback fieldname text-nowrap">
+                    <?php echo $text['tree']; ?><?php if ($numbranches) {
+                        echo " | " . $text['branch'];
+                    } ?>
+                </th>
+            <?php } ?>
+        </tr>
+        </thead>
 <?php
 $i = $offsetplus;
 while ($row = tng_fetch_assoc($result)) {

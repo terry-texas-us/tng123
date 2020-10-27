@@ -1383,8 +1383,8 @@ ul.art-vmenu a:hover .t {
   color: #5f5649;
 }
 
-.bar, .fieldnameback, .LB_closeAjaxWindow, .page, .tablesaw-cell-label, a.admincell:hover, a.leftlink:hover {
-  background-color: #ca521e;
+.bar, .fieldnameback, .LB_closeAjaxWindow, .page, a.admincell:hover, a.leftlink:hover {
+    background-color: #ca521e;
 }
 
 .admincell, .sideback {
