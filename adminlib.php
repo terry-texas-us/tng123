@@ -33,7 +33,6 @@ function tng_adminheader($title, $flags) {
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
     echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
     echo "<link href='build/styles/style.css' rel='stylesheet'>\n";
-    if (isset($flags['modmgr'])) echo "<link href='build/styles/modmanager.css' rel='stylesheet'>\n";
     if (is_numeric($templatenum)) echo "<link href='build/template{$templatenum}/styles/style.css' rel='stylesheet'>\n";
     echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     echo "<script>\n";

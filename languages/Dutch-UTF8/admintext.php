@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "geslaagde optimalisatie";
         $admtext['customheader'] = "Persoonlijke kopregels (Header)";
         $admtext['customfooter'] = "Persoonlijke voetregels (Footer)";
-        $admtext['custommeta'] = "Persoonlijke meta";
         $admtext['lineending'] = "Regel-einde";
         $admtext['backuppath'] = "Backupmap";
         $admtext['photopath'] = "Fotomap";

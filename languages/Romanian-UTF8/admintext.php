@@ -991,7 +991,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "optimizare cu succes";
         $admtext['customheader'] = "Titlu personalizat";
         $admtext['customfooter'] = "Subsol personalizat";
-        $admtext['custommeta'] = "Meta personalizat";
         $admtext['lineending'] = "Sfirsit linie";
         $admtext['backuppath'] = "Backup Folder";
         $admtext['photopath'] = "Photo Folder";

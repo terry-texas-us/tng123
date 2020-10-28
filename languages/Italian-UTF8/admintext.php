@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "Ottimizzato correttamente";
         $admtext['customheader'] = "Intestazione perso.";
         $admtext['customfooter'] = "Piede di pagina perso.";
-        $admtext['custommeta'] = "Meta perso.";
         $admtext['lineending'] = "Fine di linea";
         $admtext['backuppath'] = "Cartella salvaguardia";
         $admtext['photopath'] = "Cartella foto";

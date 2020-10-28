@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "Optimering gennemført";
         $admtext['customheader'] = "Tilpasset sidehoved";
         $admtext['customfooter'] = "Tilpasset sidefod";
-        $admtext['custommeta'] = "Tilpasset meta";
         $admtext['lineending'] = "Linjeafslutning";
         $admtext['backuppath'] = "Backup-mappe";
         $admtext['photopath'] = "Billedmappe";

@@ -135,7 +135,6 @@ fwrite($fp, "\$backuppath = \"$backuppath\";\n");
 fwrite($fp, "\$documentpath = \"$documentpath\";\n");
 fwrite($fp, "\$photopath = \"$photopath\";\n");
 fwrite($fp, "\$photosext = \"$photosext\";\n");
-fwrite($fp, "\$modspath = \"$modspath\";\n");
 fwrite($fp, "\$extspath = \"$extspath\";\n");
 fwrite($fp, "\$showextended = \"$showextended\";\n");
 fwrite($fp, "\$tngconfig['imgmaxh'] = \"$imgmaxh\";\n");

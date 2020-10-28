@@ -73,7 +73,6 @@ $backuppath = "backups";
 $documentpath = "documents";
 $photopath = "photos";
 $photosext = "jpg";
-$modspath = "mods";
 $extspath = "extensions";
 $showextended = "1";
 $tngconfig['imgmaxh'] = "";

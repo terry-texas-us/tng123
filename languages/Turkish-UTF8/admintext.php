@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "başarıyla optimize edildi";
         $admtext['customheader'] = "Özel Üstbilgi";
         $admtext['customfooter'] = "Özel Altbilgi";
-        $admtext['custommeta'] = "Özel Meta";
         $admtext['lineending'] = "Satır Sonu";
         $admtext['backuppath'] = "Yedekleme Klasörü";
         $admtext['photopath'] = "Fotoğraf Klasörü";

@@ -573,13 +573,6 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['modspath']; ?>:</td>
-                            <td>
-                                <input type="text" value="<?php echo $modspath; ?>" name="modspath" class="verylongfield">
-                                <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('mods',document.form1.modspath.value);">
-                                <span id="msg_mods"></span></td>
-                        </tr>
-                        <tr>
                             <td class="text-nowrap"><?php echo $admtext['extspath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $extspath; ?>" name="extspath" class="verylongfield">

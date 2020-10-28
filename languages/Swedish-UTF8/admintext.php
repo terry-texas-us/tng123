@@ -991,7 +991,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "framgångsrikt optimerad";
         $admtext['customheader'] = "Användardefinierat sidhuvud";
         $admtext['customfooter'] = "Användardefinierad sidfot";
-        $admtext['custommeta'] = "Användardefinierad meta";
         $admtext['lineending'] = "Radslut";
         $admtext['backuppath'] = "Mapp för säkerhetskopiering";
         $admtext['photopath'] = "Mapp för foton";

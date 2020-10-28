@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "fínstillt";
         $admtext['customheader'] = "Sérsniðinn síðuhaus";
         $admtext['customfooter'] = "Sérsniðinn síðufótur";
-        $admtext['custommeta'] = "Custom Meta";
         $admtext['lineending'] = "Línu endir";
         $admtext['backuppath'] = "Afrita mappa";
         $admtext['photopath'] = "Mynda mappa";

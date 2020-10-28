@@ -989,7 +989,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "βελτιστοποιήθηγκε επιτυχώς";
         $admtext['customheader'] = "Custom Header";
         $admtext['customfooter'] = "Custom Footer";
-        $admtext['custommeta'] = "Custom Meta";
         $admtext['lineending'] = "Line Ending";
         $admtext['backuppath'] = "Backup Φάκελος";
         $admtext['photopath'] = "Φάκελος Φωτογραφιών";

@@ -991,7 +991,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "susesvol geoptimiseerd";
         $admtext['customheader'] = "Doelgemaakte Kop";
         $admtext['customfooter'] = "Doelgemaate Voet";
-        $admtext['custommeta'] = "Doelgemaakte Meta";
         $admtext['lineending'] = "Lyn Einde";
         $admtext['backuppath'] = "Rugsteun Vouernaam";
         $admtext['photopath'] = "Foto Vouernaam";

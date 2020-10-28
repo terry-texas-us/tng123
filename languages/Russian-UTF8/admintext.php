@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "оптимизация произошла";
         $admtext['customheader'] = "Шапка (&#60;Header&#62;)";
         $admtext['customfooter'] = "Подвал (&#60;Footer&#62;)";
-        $admtext['custommeta'] = "Тег &#60;meta&#62;";
         $admtext['lineending'] = "Конец строки";
         $admtext['backuppath'] = "Папка для резервных копий";
         $admtext['photopath'] = "Папка для фото";

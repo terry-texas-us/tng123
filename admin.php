@@ -316,7 +316,6 @@ tng_adminheader($admtext['administration'], "");
                     echo adminMenuItem("admin_dna_tests.php", $admtext['dna_tests'], getTotal($dna_tests_table), $admtext['dna_blurb'], "dna");
                     echo adminMenuItem("admin_languages.php", $admtext['languages'], getTotal($languages_table), $treesmsg, "languages");
                     echo adminMenuItem("admin_utilities.php", $admtext['backuprestore'], "", $admtext['backupitems'], "backuprestore");
-                    echo adminMenuItem("admin_modhandler.php", $admtext['modmgr'], "", $admtext['mmgritems'], "modmgr");
                 }
                 ?>
             </td>

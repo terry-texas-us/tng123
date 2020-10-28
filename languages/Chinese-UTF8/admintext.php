@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "优化成功";
         $admtext['customheader'] = "自定义标题";
         $admtext['customfooter'] = "系定义页脚";
-        $admtext['custommeta'] = "自定义标识";
         $admtext['lineending'] = "行尾";
         $admtext['backuppath'] = "备份文件夹";
         $admtext['photopath'] = "照片文件夹";

@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "onnistuneesti optimoitu";
         $admtext['customheader'] = "Muokattu yläviite";
         $admtext['customfooter'] = "Muokattu alaviite";
-        $admtext['custommeta'] = "Muokattu metatieto";
         $admtext['lineending'] = "Rivinvaihto";
         $admtext['backuppath'] = "Varmistushakemisto";
         $admtext['photopath'] = "Kuvahakemisto";

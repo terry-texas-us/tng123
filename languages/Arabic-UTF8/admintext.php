@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "نجاح النمذجة";
         $admtext['customheader'] = "ترويسة خاص";
         $admtext['customfooter'] = "تذييلة خاص";
-        $admtext['custommeta'] = "ميتا خاص";
         $admtext['lineending'] = "نهاية سطر";
         $admtext['backuppath'] = "مجلد النسخ الاحتياطي";
         $admtext['photopath'] = "مجلد الصور";

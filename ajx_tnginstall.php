@@ -57,7 +57,7 @@ switch ($_POST['subroutine']) {
         $failed = "";
         $success = 0;
 
-        $files = ["adminlog.txt", "config/config.php", "config/mmconfig.php", "genlog.txt", "config/importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "whatsnew.txt"];
+        $files = ["adminlog.txt", "config/config.php", "genlog.txt", "config/importconfig.php", "config/logconfig.php", "config/mapconfig.php", "config/pedconfig.php", "whatsnew.txt"];
         foreach ($files as $file) {
             if (@chmod($file, 0666)) {
                 $success++;
@@ -66,9 +66,7 @@ switch ($_POST['subroutine']) {
             }
         }
         if ($failed) $failed .= " (666 / rw-rw-rw-)";
-
-
-        $folders = ["photos", "histories", "documents", "headstones", "media", "gendex", "backups", "gedcom", "mods", "extensions", "classes"];
+        $folders = ["photos", "histories", "documents", "headstones", "media", "gendex", "backups", "gedcom", "extensions", "classes"];
         $failed2 = "";
         foreach ($folders as $folder) {
             if (@chmod($folder, 0755)) {
@@ -354,7 +352,6 @@ if ($saveconfig) {
     fwrite($fp, "\$documentpath = \"$documentpath\";\n");
     fwrite($fp, "\$photopath = \"$photopath\";\n");
     fwrite($fp, "\$photosext = \"$photosext\";\n");
-    fwrite($fp, "\$modspath = \"$modspath\";\n");
     fwrite($fp, "\$extspath = \"$extspath\";\n");
     fwrite($fp, "\$showextended = \"$showextended\";\n");
     fwrite($fp, "\$thumbprefix = \"$thumbprefix\";\n");

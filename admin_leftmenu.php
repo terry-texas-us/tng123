@@ -45,7 +45,6 @@ if ($allow_edit && $allow_add && $allow_delete && !$assignedtree) {
     $output .= "<a href='admin_dna_tests.php' class='lightlink2 leftlink'>{$admtext['dna_tests']}</a>\n";
     $output .= "<a href='admin_languages.php' class='lightlink2 leftlink'>{$admtext['languages']}</a>\n";
     $output .= "<a href='admin_utilities.php' class='lightlink2 leftlink'>{$admtext['backuprestore']}</a>\n";
-    $output .= "<a href='admin_modhandler.php' class='lightlink2 leftlink'>{$admtext['modmgr']}</a>\n";
 }
 $output .= "<br>\n";
 $output .= "<!-- end admin_leftmenu -->\n";

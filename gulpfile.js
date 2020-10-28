@@ -94,15 +94,6 @@ function buildTngMobileStyleTask() {
         )
 }
 
-function buildModManagerStyleTask() {
-    return src('src/styles/modmanager.css')
-        .pipe(sourcemaps.init())
-        .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest('./build/styles')
-        )
-}
-
 function buildTngPrintStyleTask() {
     return src('src/styles/tngprint.css')
         .pipe(sourcemaps.init())
@@ -513,7 +504,7 @@ function cacheBustTask() {
 function watchTask() {
     watch(['src/styles/**/*.css', 'src/js/**/*.js'],
         series(
-            parallel(buildStyleTask, buildImgViewerStyleTask, buildModManagerStyleTask, buildTimelineStyleTask, buildTngMobileStyleTask, buildTngPrintStyleTask,
+            parallel(buildStyleTask, buildImgViewerStyleTask, buildTimelineStyleTask, buildTngMobileStyleTask, buildTngPrintStyleTask,
                 buildTemplate1StyleTask, buildTemplate2StyleTask, buildTemplate3StyleTask, buildTemplate4StyleTask, buildTemplate5StyleTask, buildTemplate6StyleTask, buildTemplate7StyleTask, buildTemplate8StyleTask, buildTemplate9StyleTask, buildTemplate10StyleTask,
                 buildTemplate11StyleTask, buildTemplate12StyleTask, buildTemplate13StyleTask, buildTemplate14StyleTask, buildTemplate15StyleTask, buildTemplate16StyleTask, buildTemplate17StyleTask, buildTemplate18StyleTask, buildTemplate19StyleTask, buildTemplate20StyleTask,
                 buildTemplate1MobileStyleTask, buildTemplate2MobileStyleTask, buildTemplate3MobileStyleTask, buildTemplate4MobileStyleTask, buildTemplate5MobileStyleTask, buildTemplate6MobileStyleTask, buildTemplate7MobileStyleTask, buildTemplate8MobileStyleTask, buildTemplate9MobileStyleTask, buildTemplate10MobileStyleTask,
@@ -532,7 +523,7 @@ exports.imagesTemplatesTask = imagesTemplatesTask;
 exports.buildStyleTask = buildStyleTask;
 exports.buildTemplate1StyleTask = buildTemplate1StyleTask;
 exports.default = series(
-    parallel(buildStyleTask, buildImgViewerStyleTask, buildModManagerStyleTask, buildTimelineStyleTask, buildTngMobileStyleTask, buildTngPrintStyleTask,
+    parallel(buildStyleTask, buildImgViewerStyleTask, buildTimelineStyleTask, buildTngMobileStyleTask, buildTngPrintStyleTask,
         buildTemplate1StyleTask, buildTemplate2StyleTask, buildTemplate3StyleTask, buildTemplate4StyleTask, buildTemplate5StyleTask, buildTemplate6StyleTask, buildTemplate7StyleTask, buildTemplate8StyleTask, buildTemplate9StyleTask, buildTemplate10StyleTask,
         buildTemplate11StyleTask, buildTemplate12StyleTask, buildTemplate13StyleTask, buildTemplate14StyleTask, buildTemplate15StyleTask, buildTemplate16StyleTask, buildTemplate17StyleTask, buildTemplate18StyleTask, buildTemplate19StyleTask, buildTemplate20StyleTask,
         buildTemplate1MobileStyleTask, buildTemplate2MobileStyleTask, buildTemplate3MobileStyleTask, buildTemplate4MobileStyleTask, buildTemplate5MobileStyleTask, buildTemplate6MobileStyleTask, buildTemplate7MobileStyleTask, buildTemplate8MobileStyleTask, buildTemplate9MobileStyleTask, buildTemplate10MobileStyleTask,

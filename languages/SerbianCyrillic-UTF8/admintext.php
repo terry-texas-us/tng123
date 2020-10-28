@@ -998,7 +998,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "успешно оптимизован";
         $admtext['customheader'] = "Прилагодљивo Заглавље";
         $admtext['customfooter'] = "Прилагодљиви Фоотер";
-        $admtext['custommeta'] = "Прилагодљиви Мета подаци";
         $admtext['lineending'] = "Линија Завршетка";
         $admtext['backuppath'] = "Фолдер Резевних Копија";
         $admtext['photopath'] = "Фолдер Фотографија";

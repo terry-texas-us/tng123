@@ -990,7 +990,6 @@ switch ($textpart) {
         $admtext['succoptimized'] = "úspěšně optimalizován";
         $admtext['customheader'] = "Volitelná hlavička";
         $admtext['customfooter'] = "Volitelné zápatí";
-        $admtext['custommeta'] = "Volitelné meta";
         $admtext['lineending'] = "Konec řádku";
         $admtext['backuppath'] = "Složka pro zálohování dat";
         $admtext['photopath'] = "Složka fotografií";
