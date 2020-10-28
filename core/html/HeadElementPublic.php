@@ -169,7 +169,6 @@ class HeadElementPublic
         if (isset($this->flags['autorefresh']) && $this->flags['autorefresh'] == 1) {
             $metas[] = "<meta http-equiv='refresh' content='30'>";
         }
-        // @include $custommeta; // todo include in dynamic method. static property needed
         return $metas;
     }
 

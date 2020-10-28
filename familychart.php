@@ -1,12 +1,9 @@
 <?php
 //Original code by Chris Moss
-
 include "famconfig.php";
 $textpart = 'pedigree';
 include "tng_begin.php";
-
 $reverse = $rev;
-
 if ($tngprint) {
     if ($familychart['boxwidth'] > 151) {
         $familychart['boxwidth'] = 151;
@@ -19,16 +16,11 @@ if ($tngprint) {
         $familychart['colsep'] = 200;
     }      #between family column centres
 }
-
 if (!($familyID || $personID)) die("no args\n");
-
-
 if (!($family = getfamily($tree, $familyID, $personID))) {
     $family = [];
 }
-
 doheader($tree, $family);
-
 $fatherID = $family['husband']['personID'];
 if ($fatherID && ($patfamilyID = $personID == $fatherID && $familyID ? $familyID :  #not first family if both set
         getresult(getChildFamily($tree, $fatherID, 'parentorder')))) {
@@ -43,7 +35,6 @@ if ($motherID && ($matfamilyID = $personID == $motherID && $familyID ? $familyID
     $temp = getChild($matfamily, $motherID);
     $family['wife']['otherfamilies'] = isset($temp['otherfamilies']) ? $temp['otherfamilies'] : "";
 }
-
 if ($personID && $familyID) {    #comment if directed to another family
     $temp = getChild($family, $personID);
     $name = $personID == $fatherID ? $family['husband']['displayname'] : ($personID == $motherID ? $family['wife']['displayname'] : $temp['displayname']);
@@ -51,7 +42,6 @@ if ($personID && $familyID) {    #comment if directed to another family
     $type = strtolower($frel ? $frel : ($mrel ? $mrel : 'birth'));
     echo $text['parentfamily'] . " " . ($name ? " {$text['of']} $name " : " {$text['shown']} ") . " {$text['isthe']} $admtext[$type] {$text['family']}.";
 }
-
 [$patorder, $patsize, $patgrand] = familyorder($patfamily, $fatherID);
 [$matorder, $matsize, $matgrand] = familyorder($matfamily, $motherID);
 $famsize = is_array($family['children']) ? count($family['children']) : 0;
@@ -61,10 +51,7 @@ if ($famsize + $parentorder + 1 > max($patsize, $matsize))  #minimize overall he
     $parentorder = max(0, max($patsize, $matsize) - $famsize - 1);
 }
 if (!$patgrand) $patorder = $parentorder;
-
 if (!$matgrand) $matorder = $parentorder;
-
-
 $colsep = $familychart['colsep'];
 $boxheight = $familychart['boxheight'];
 $boxwidth = $familychart['boxwidth'];
@@ -73,15 +60,12 @@ $vsep = $familychart['boxVsep'];
 $hpad = $familychart['chartHpad'];
 $vpad = $familychart['chartVpad'];
 $pheight = $boxheight + $vsep;
-
 $famx = $hpad + floor(($boxwidth + $hsep) / 2); #position of parent boxes
 $famy = $vpad + $boxheight + $parentorder * $pheight + 2 * $familychart['halfgenheight'];
 $chartheight = 2 * ($vpad + $boxheight + $familychart['halfgenheight']) - $vsep
     + $pheight * max($patsize, $matsize, $famsize + $parentorder);
 if ($chartheight < 300) $chartheight = 300;
-
-
-echo "<div align='left' id='outer' style='position:relative;padding-top:8px;width:100%;height:{$chartheight}px;'>\n";
+echo "<div align='left' id='outer' style='position: relative; padding-top: 8px; width: 100%; height: {$chartheight}px;'>\n";
 $famfx = $fammx = $hpad;
 if ($reverse) {
     $famfx += 2 * $colsep;
@@ -91,14 +75,17 @@ if ($reverse) {
 setoutparentfamily($patfamily, $fatherID, $famfx, $vpad, $boxwidth, $boxheight, $reverse ? 'M' : 'F');
 setoutparentfamily($matfamily, $motherID, $fammx, $vpad, $boxwidth, $boxheight, $reverse ? 'F' : 'M');
 setoutmainfamily($family, $colsep, $parentorder, $patorder, $matorder, $famx, $famy, $boxwidth, $boxheight, $reverse);
-
 echo "\n</div>\n";
-
 tng_footer($flags);
-
+/**
+ * @param $tree
+ * @param $familyID
+ * @param $personID
+ * @return array|string
+ */
 function getfamily($tree, $familyID, $personID) {
-# yields array(husband, wife, children)
-#  of  array(tree, familyID, husband, wife, personID, first, last, sex, birth, death, living, etc)
+    # yields array(husband, wife, children)
+    #  of  array(tree, familyID, husband, wife, personID, first, last, sex, birth, death, living, etc)
     global $families_table, $children_table, $people_table;
     if (!$familyID && $personID) {
         if ($familyID = getresult(tng_query("(SELECT familyID FROM $families_table WHERE husband='$personID' and gedcom='$tree' order by husborder limit 1) union (SELECT familyID FROM $families_table WHERE wife='$personID' and gedcom='$tree' order by wifeorder limit 1)"))) {
@@ -145,11 +132,14 @@ function getfamily($tree, $familyID, $personID) {
         return $res;
     }
 }
-
+/**
+ * @param $family
+ * @param $personID
+ * @return array|int[]
+ */
 function familyorder(&$family, $personID) {
     #return position of a person in a family and number of children
     if (!$family) return [0, 0, 0];
-
     if ($family['husband'] || $family['wife']) {
         $parents = 1;
     }
@@ -164,7 +154,11 @@ function familyorder(&$family, $personID) {
     }
     return [0, $count, $parents];
 }
-
+/**
+ * @param $result
+ * @param int $multiple
+ * @return array|mixed|string|null
+ */
 function getresult($result, $multiple = 0) {
     #mysql utility for single result, which can be a row
     if (!$result) {
@@ -174,17 +168,17 @@ function getresult($result, $multiple = 0) {
     $row = tng_fetch_array($result);
     tng_free_result($result);
     if ($multiple) return $row;
-
     return $row[0];
 }
-
-/*
-function doUpArrow($left,$top,$person) {
-	global $tree;
-	echo "<div style='position:absolute;left:" . ($left-7) . "px;top:" . ($top-14) . "px'><a href=\"familychart.php?personID={$person['personID']}&amp;tree=$tree\" style=\"padding:4px\"><img src=\"img/ArrowUp.gif\"></a></div>";
-}
-*/
-
+/**
+ * @param $family
+ * @param $childID
+ * @param $left
+ * @param $top
+ * @param $width
+ * @param $height
+ * @param $swap
+ */
 function setoutparentfamily($family, $childID, $left, $top, $width, $height, $swap) {
     #set parent family omitting the child who is the parent, which is done elsewhere
     global $familychart;
@@ -198,9 +192,7 @@ function setoutparentfamily($family, $childID, $left, $top, $width, $height, $sw
     $wife = $family['wife'];
     if ($husband && $wife) {
         doBox($husband, $left, $top, 'fambox', 'child');
-
         doBox($wife, $left + $width + $hsep, $top, 'fambox', 'child');
-
         echo "<div class='descender' style='left: {$xd}px;top: {$y}px;'>&nbsp;</div>\n";
         $both = 1;
     } elseif ($husband) {
@@ -233,7 +225,18 @@ function setoutparentfamily($family, $childID, $left, $top, $width, $height, $sw
         $top += $height + $vsep;
     }
 }
-
+/**
+ * @param $family
+ * @param $colsep
+ * @param $order
+ * @param $patorder
+ * @param $matorder
+ * @param $left
+ * @param $top
+ * @param $width
+ * @param $height
+ * @param $reverse
+ */
 function setoutmainfamily($family, $colsep, $order, $patorder, $matorder, $left, $top, $width, $height, $reverse) {
     #includes parents at appropriate positions for their families
     global $familychart;
@@ -337,7 +340,14 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
         echo "</div></div>\n";
     }
 }
-
+/**
+ * @param $side
+ * @param $x1
+ * @param $x2
+ * @param $x3
+ * @param $y1
+ * @param $y2
+ */
 function doConnector($side, $x1, $x2, $x3, $y1, $y2) {
     if ($y1 == $y2) {
         echo "<div class='across' style='left: {$x1}px;top:{$y1}px;'></div>\n";
@@ -347,11 +357,16 @@ function doConnector($side, $x1, $x2, $x3, $y1, $y2) {
         echo "<div class='joiner' style='left: {$x3}px;top:{$y1}px;'></div>\n";
     }
 }
-
+/**
+ * @param $person
+ * @param $spouse
+ * @param $left
+ * @param $top
+ * @param $reverse
+ */
 function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
     #insert html of a plus symbol with popups if other spouse(s)
     global $text, $families_table, $people_table, $tree;
-
     if ($otherfamilies = getfamilyID($person, 'other')) {
         echo "<div class='more' style='left:{$left}px;top:{$top}px;'>
 		<img src='img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}'>
@@ -377,25 +392,24 @@ function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
                 }
             }
             $spresult = tng_query($query);
-
             $spouserow = tng_fetch_assoc($spresult);
-
             $righttree = checktree($person['gedcom']);
             $rightbranch = $righttree ? checkbranch($person['branch']) : false;
-
             $spouserights = determineLivingPrivateRights($spouserow, $righttree);
             $spouserow['allow_living'] = $spouserights['living'];
             $spouserow['allow_private'] = $spouserights['private'];
-
             $spousename = getName($spouserow);
             tng_free_result($spresult);
-
             echo "<a href='familychart.php?familyID=$fam&amp;tree=$tree$rev'>{$text['familywith']} $spousename</a><br>\n";
         }
         echo "</div></div>\n";
     }
 }
-
+/**
+ * @param $person
+ * @param $type
+ * @return array|mixed|string|null
+ */
 function getfamilyID($person, $type) {
     #gets family for type=parent (first), child or 'other', which return array of possibles
     global $families_table, $children_table;
@@ -417,7 +431,12 @@ function getfamilyID($person, $type) {
         return $sp;
     }
 }
-
+/**
+ * @param $tree
+ * @param $personID
+ * @param $familyID
+ * @return array
+ */
 function getOtherFamilies($tree, $personID, $familyID) {
     #check to see if person has another (usually adopted) family, return ID and text
     global $text, $admtext;
@@ -431,35 +450,48 @@ function getOtherFamilies($tree, $personID, $familyID) {
     }
     return $res;
 }
-
+/**
+ * @param $family
+ * @param $personID
+ * @return mixed|string
+ */
 function getChild($family, $personID) {
     #extract named child array from family structure
     if (isset($family['children'])) {
         $kids = $family['children'];
         foreach ($kids as $kid)
             if ($kid['personID'] == $personID) return $kid;
-
     }
     return '';
 }
-
+/**
+ * @param $person
+ * @param $alt
+ * @param $height
+ * @return string
+ */
 function getPhoto($person, $alt, $height) {    #backwards compatibity version
     #returns link for default photo if visible
     $rights = getRights($person);
     return showSmallPhoto($person['personID'], $alt, $rights['both'], $height, false, $person['sex']);
 }
-
+/**
+ * @param $person
+ * @return bool[]
+ */
 function getRights($person) {
     #return array of rights
     $righttree = checktree($person['tree']);
     $rightbranch = $righttree ? checkbranch($person['branch']) : false;
     return determineLivingPrivateRights($person, $righttree, $rightbranch);
 }
-
+/**
+ * @param $tree
+ * @param $family
+ */
 function doheader($tree, $family) {
     #calls tng_Drawheading and tng_menu
     global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $allow_pdf, $nonames;
-
     $f = $family['husband'];
     $m = $family['wife'];
     $familyID = $f ? $f['familyID'] : ($m ? $m['familyID'] : $family['children'][0]['familyID']);
@@ -467,29 +499,22 @@ function doheader($tree, $family) {
     $righttree = checktree($tree);
     $rightbranch = $righttree ? checkbranch($family['branch']) : false;
     $rights = determineLivingPrivateRights($family, $righttree, $rightbranch);
-
     $treeResult = getTreeSimple($tree);      #patch to 2c
     $treerow = tng_fetch_assoc($treeResult);
     $disallowgedcreate = $treerow['disallowgedcreate'];
     $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
     tng_free_result($treeResult);
-
     $logname = $tngconfig['nnpriv'] && $family['private'] ? $admtext['text_private'] : ($nonames && $family['living'] ? $text['living'] : $familyname);
     writelog("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $logname ($familyID)</a>");
     preparebookmark("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $familyname ($familyID)</a>");
-
     echo "<!doctype html>\n";
     echo "<html lang='en'>\n";
-
     $flags['scripting'] = famStylesheet();
-
     tng_header($text['family'] . " " . $familyname . " ($familyID)", $flags);
     $photostr = showSmallPhoto($familyID, $familyname, $rights['both'], 0);
     $years = $family['marrdate'] && $rights['both'] ? $text['marrabbr'] . " " . displayDate($family['marrdate']) : "";
-
     echo tng_DrawHeading($photostr, "{$text['family']}: $familyname ($familyID)", $years);
     $innermenu = "<span class='lightlink3' id='tng_plink'>{$text['familychart']}&nbsp;</span>\n";
-
     $treeResult = getTreeSimple($tree);
     $treerow = tng_fetch_assoc($treeResult);
     $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
@@ -497,10 +522,11 @@ function doheader($tree, $family) {
         $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
         $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=fam&amp;familyID=$familyID&amp;tree=$tree', {width: 400, height: 480}); return false;\">PDF</a>\n";
     }
-
     echo tng_menu("F", "familychart", $familyID, $innermenu);
 }
-
+/**
+ * @return string
+ */
 function famStylesheet() {
     #css and javascript for this module
     global $familychart;
@@ -580,6 +606,7 @@ function famStylesheet() {
 	font-size: 10pt;
 }
 </style>
+
 <script>
 function toggle(elem) {
   if (document.getElementById(elem).style.display)

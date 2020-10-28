@@ -8,12 +8,6 @@ include $relpath . "begin.php";
 <head>
     <title>Aide : Administration</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <?php include $relpath . "adminmeta.php"; ?>
-    <style>
-        p {
-            margin-top: 0;
-        }
-    </style>
 </head>
 
 <body class="helpbody">

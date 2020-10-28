@@ -20,11 +20,6 @@ $momlabel = getTemplateMessage('t18_momside');
             margin: 0;
             background-color: #31708E;
         }
-
-        #mcontent {
-            padding-top: 0;
-        }
-
         #big-block-1 {
             background: url('<?php echo $templatepath; ?><?php echo $tmp['t18_mainimage']; ?>') no-repeat center 33%;
             background-size: 100% auto;

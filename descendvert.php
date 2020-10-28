@@ -640,7 +640,7 @@ $flags['scripting'] = "<style>
 	background-color: {$pedigree['bordercolor']};
 }
 </style>\n";
-$flags['scripting'] .= "<script type=\"text/javascript\">var tnglitbox;</script>\n";
+$flags['scripting'] .= "<script>var tnglitbox;</script>\n";
 tng_header($text['descendfor'] . " " . $row['name'], $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);

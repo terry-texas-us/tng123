@@ -151,13 +151,10 @@ echo help_header("Help: General Settings");
                 <p>If your site uses frames, use this field to indicate in which frame the TNG pages should display. If you are not using frames,
                     leave this as "_self".</p>
 
-                <h5>Custom Header / Footer / Meta</h5>
-                <p>File names for the page fragments to be used as your TNG page header, footer and HEAD section ("meta"). Files with the default
-                    names
-                    are supplied.
+                <h5>Topmenu / Footer</h5>
+                <p>File names for the page fragments to be used as your TNG page header and footer.
                     To use PHP coding in these files, they must have .php extensions. To make use of TNG's design templates, you must keep these the
-                    header and footer named
-                    topmenu.php and footer.php respectively.</p>
+                    header and footer named topmenu.php and footer.php respectively.</p>
 
                 <h5>Menu Location</h5>
                 <p>The TNG menu may be located on the top left of every page, just above the individual's name or other page heading, or on the top

@@ -11,25 +11,18 @@ STEP 2: Remove the following two lines. They are here to prevent the template fr
 
 echo "Please remove this line and the \"exit\" line that follows before deploying this file to the \"histories\" folder or your new \"extrapgs\" folder";
 exit;
-
 include("../tng_begin.php");
-
 $logstring = "<a href=\"histories/family1.php\">Your Family 1 Story</a>";
 writelog($logstring);
 preparebookmark($logstring);
-
-// The following $flags can be passed on the family story pages.  The $flags can either be true or false 
-
-$flags['noheader'] = false; // true to not include the template Custom Header, false to include the template Custom Header - normally topmenu.php
+// The following $flags can be passed on the family story pages.  The $flags can either be true or false
+$flags['noheader'] = false; // true to not include the template Custom Header, false to include the template topmenu.php
 $flags['nobody'] = true; // true to not generate the <body> tag if the tag is in the topmenu.php, false to generate the <body> tag
 $flags['noicons'] = false; // true to not generate the TNG menu bar, false to generates the TNG menu bar
 $flags['nologon'] = false; // true to bypass the checklogin and allow the page to be viewed by visitors even though your site requires Login, false to require login to view the page
-
 // for multi-language pages, you can use $text variables for your Feature Story Title
-
 tng_header("Your Family 1 Story Title", $flags);
-
-/*  For multi-language pages, you can cut everything that follows the ending php tag ?> through the starting php tag before the tng_footer( "" ) function call and paste it in a new file in your language folder, for example English-UTF8/family1.php and remove the comments on the next line. 
+/*  For multi-language pages, you can cut everything that follows the ending php tag ?> through the starting php tag before the tng_footer( "" ) function call and paste it in a new file in your language folder, for example English-UTF8/family1.php and remove the comments on the next line.
 
 	If you use a different file name, you need to also update the family1.php file name in the include accordingly
 */

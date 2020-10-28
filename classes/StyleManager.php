@@ -1,19 +1,30 @@
 <?php
 
+/**
+ * Class StyleManager
+ */
 class StyleManager
 {
     private array $ruleSets = [];
-
     public function __construct() {
     }
-
+    /**
+     * @param $selector
+     * @param $declaration
+     */
     public function addDeclaration($selector, $declaration) {
     }
-
+    /**
+     * @param $selector
+     * @param $declarationBlock
+     */
     public function addSelector($selector, $declarationBlock) {
         $this->ruleSets[$selector] = $declarationBlock;
     }
-
+    /**
+     * @param $selector
+     * @return array|mixed
+     */
     public function getSelector($selector) {
         if (array_key_exists($selector, $this->ruleSets)) {
             $declarationBlock = $this->ruleSets[$selector];
@@ -25,7 +36,9 @@ class StyleManager
         }
         return $declarationBlock;
     }
-
+    /**
+     * @return string
+     */
     public function getStyle() {
         $out = "<style>";
         foreach ($this->ruleSets as $selector => $declarationBlocks) {

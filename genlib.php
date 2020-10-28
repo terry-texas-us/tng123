@@ -46,16 +46,14 @@ if (!$tree && $defaulttree) {
  * @param array $flags 'noicons' 'noheader'
  */
 function standardHeaderVariants($headElement, array $flags): void {
-    global $customheader, $templatepath;
+    global $templatepath;
     global $tngprint;
-
     $title = $headElement->getTitle();
     $icons = $headElement->getIcons();
-
     if (!$tngprint && (!isset($flags['noheader']) || !$flags['noheader'])) {
-        echo "<!-- begin '{$templatepath}{$customheader}' content -->\n";
-        include $templatepath . $customheader;
-        echo "<!-- end '{$templatepath}{$customheader}' content -->\n";
+        echo "<!-- begin '{$templatepath}topmenu.php' content -->\n";
+        include "{$templatepath}topmenu.php";
+        echo "<!-- end '{$templatepath}topmenu.php' content -->\n";
     }
     if ((!isset($flags['noicons']) || !$flags['noicons'])) {
         $icons = tng_icons(1, $title);
@@ -83,15 +81,13 @@ function tng_header($title, $flags) {
  * @param bool[] $flags
  */
 function tng_footer($flags = ['basicfooter' => true]) {
-    global $customfooter, $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $tngconfig;
-
+    global $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $tngconfig;
     $needtherest = true;
     if ($tngprint) {
         $printfooter = $sitename;
         if ($dbowner) {
             if ($printfooter) $printfooter .= " - ";
-
-            if ($tngconfig['dataprotect'] && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === FALSE) {
+            if ($tngconfig['dataprotect'] && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === false) {
                 $data_protection_link = " | <a href='data_protection_policy.php' class='footer' title='{$text['dataprotect']}' target='_blank'>{$text['dataprotect']}</a>.\n";
             } else {
                 $data_protection_link = "";
@@ -104,9 +100,9 @@ function tng_footer($flags = ['basicfooter' => true]) {
             echo tng_basicfooter($flags);
             $needtherest = false;
         } else {
-            echo "<!-- begin '{$templatepath}{$customfooter}' content -->\n";
-            include $templatepath . $customfooter;
-            echo "<!-- end '{$templatepath}{$customfooter}' content -->\n";
+            echo "<!-- begin '{$templatepath}footer.php' content -->\n";
+            include "{$templatepath}footer.php";
+            echo "<!-- end '{$templatepath}footer.php' content -->\n";
         }
     }
     if ($needtherest) {

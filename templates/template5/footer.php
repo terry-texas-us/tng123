@@ -2,7 +2,7 @@
 
 </td>
 </tr>
-</table> <!-- [topmenu.php]-->
+</table>
 </td>
 </tr>
 <tr>
@@ -29,7 +29,7 @@
 <tr>
     <td class="tableheader"><img src="img/spacer.gif" width="25" height="25" alt=""></td>
 </tr>
-</table> <!-- .maintable [topmenu.php] -->
+</table>
 <br>
 <div class="footer small">
     <?php
@@ -38,4 +38,4 @@
     ?>
     <br><br>
 </div>
-</div> <!-- .center [topmenu.php] -->
+</div>

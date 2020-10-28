@@ -11,7 +11,7 @@ header("Content-type:text/html;charset=" . $session_charset);
 <html lang="en">
 
 <head>
-    <?php @include $custommeta;
+    <?php
     if ($session_charset) {
         echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=$session_charset\">\n";
     }

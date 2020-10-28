@@ -629,26 +629,8 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['customheader']; ?>:</td>
-                            <td>
-                                <input type="text" value="<?php echo $customheader; ?>" name="customheader" size="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['customfooter']; ?>:</td>
-                            <td>
-                                <input type="text" value="<?php echo $customfooter; ?>" name="customfooter" size="20">
-                            </td>
-                        </tr>
-                        <tr>
                             <td class='align-top'><?php echo $admtext['footermsg']; ?>:</td>
                             <td><textarea name="tng_footermsg" rows="2" cols="65"><?php echo $tngconfig['footermsg']; ?></textarea></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $admtext['custommeta']; ?>:</td>
-                            <td>
-                                <input type="text" value="<?php echo $custommeta; ?>" name="custommeta" size="20">
-                            </td>
                         </tr>
                         <tr>
                             <td><?php echo $admtext['iconloc']; ?>:</td>

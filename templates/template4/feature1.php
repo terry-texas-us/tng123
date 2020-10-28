@@ -1,15 +1,12 @@
 <?php
 include "tng_begin.php";
-
 initMediaTypes();
-
 $logstring = "<a href=\"histories/feature1.php\">Your Feature 1 Story</a>";
 writelog($logstring);
 preparebookmark($logstring);
-
 // for multi-language pages, you can use $text variables for your Feature Story Title
 $flags['noicons'] = false; // generate the TNG menu bar
-$flags['noheader'] = false; // include the template Custom Header - normally topmenu.php
+$flags['noheader'] = false; // include the template topmenu.php
 $flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";

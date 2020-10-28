@@ -21,11 +21,6 @@ $title = getTemplateMessage('t17_maintitle');
             margin: 0;
             background-color: #272727;
         }
-
-        #mcontent {
-            padding-top: 0;
-        }
-
         #big-block-1 {
             background: url('<?php echo $templatepath; ?><?php echo $tmp['t17_mainimage']; ?>') no-repeat center 45%;
             background-size: 100% auto;

@@ -14,7 +14,6 @@ function help_header($helptitle) {
     $header .= "<meta name='author' content='Darrin Lythgoe'>\n";
     $header .= "<link href='{$relpath}build/styles/style.css' rel='stylesheet'>\n";
     $header .= "<link href='{$relpath}{$templatepath}styles/style.css' rel='stylesheet'>\n";
-    $header .= file_get_contents($relpath . "adminmeta.php");
     $header .= "</head>";
     return $header;
 }

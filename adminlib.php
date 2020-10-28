@@ -20,44 +20,42 @@ $isConnected = isConnected();
  */
 function tng_adminheader($title, $flags) {
     global $session_charset, $sitename, $templatenum, $text, $tngdomain, $tngconfig, $isConnected;
-    echo "<!-- begin tng_adminheader -->\n";
+    $header = "<!-- begin tng_adminheader -->\n";
     header("Content-type:text/html;charset=" . $session_charset);
-    echo "<!doctype html>\n";
-    echo "<html lang='en'>\n";
-    echo "<head>\n";
-    echo "<meta charset='utf-8'>\n";
-    echo "<meta name='author' content='Darrin Lythgoe'>\n";
-    echo "<meta name='viewport' content='width=device-width, initial-scale=1'>\n";
-    echo "<meta name='robots' content='noindex, nofollow'>\n";
-    include "adminmeta.php";
+    $header .= "<!doctype html>\n";
+    $header .= "<html lang='en'>\n";
+    $header .= "<head>\n";
+    $header .= "<meta charset='utf-8'>\n";
+    $header .= "<meta name='author' content='Darrin Lythgoe'>\n";
+    $header .= "<meta name='viewport' content='width=device-width, initial-scale=1'>\n";
+    $header .= "<meta name='robots' content='noindex, nofollow'>\n";
     $usesitename = $sitename ? stripslashes($sitename) . ": " : "";
-    echo "<title>$usesitename" . "TNG Admin ($title)</title>\n";
-    echo "<link href='build/styles/style.css' rel='stylesheet'>\n";
-    if (is_numeric($templatenum)) echo "<link href='build/template{$templatenum}/styles/style.css' rel='stylesheet'>\n";
-    echo "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
-    echo "<script>\n";
-    echo "function toggleAll(flag) {\n";
-    echo "for (var i = 0; i < document.form2.elements.length; i++ ) {\n";
-    echo "if (document.form2.elements[i].type === 'checkbox') {\n";
-    echo "document.form2.elements[i].checked = !!flag;\n";
-    echo "}\n}\n}\n";
-    echo "const closeimg = 'img/tng_close.gif';\n";
-    echo "const loadingmsg = '{$text['loading']}';\n";
-    echo "</script>\n";
-    if ($isConnected) {
-        echo "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>\n";
-        echo "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous'></script>\n";
-    } else {
-        echo "<script>// <![CDATA[\nwindow.jQuery || document.write('<script src=\'js/jquery-3.3.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>\n";
-        echo "<script>// <![CDATA[\nwindow.jQuery.ui || document.write('<script src=\'js/jquery-ui-1.12.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>\n";
+    $header .= "<title>$usesitename" . "TNG Admin ($title)</title>\n";
+    $header .= "<link href='build/styles/style.css' rel='stylesheet'>\n";
+    if (is_numeric($templatenum)) $header .= "<link href='build/template{$templatenum}/styles/style.css' rel='stylesheet'>\n";
+    $header .= "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
+    $header .= "<script src='node_modules/jquery/dist/jquery.min.js'></script>\n";
+    $header .= "<script src='node_modules/jquery-ui-dist/jquery-ui.min.js'></script>\n";
+    $header .= "<script src='js/jquery.ui.touch-punch.min.js'></script>\n";
+    $header .= "<script src='js/net.js'></script>\n";
+    $header .= "<script src='js/admin.js'></script>\n";
+    $header .= "<script src='js/litbox.js'></script>\n";
+    $header .= "<style>#tngnav a, #tabs a {font-size: 11px;}</style>\n";
+    if (isset($flags['style'])) $header .= $flags['style'];
+    $header .= "<script>
+    function toggleAll(flag) {
+        for (let i = 0; i < document.form2.elements.length; i++ ) {
+            if (document.form2.elements[i].type === 'checkbox') {
+                document.form2.elements[i].checked = !!flag;
+            }
+        }
     }
-    echo "<script src='js/jquery.ui.touch-punch.min.js'></script>\n";
-    echo "<script src='js/net.js'></script>\n";
-    echo "<script src='js/admin.js'></script>\n";
-
-    echo "<script src='js/litbox.js'></script>\n";
+    const closeimg = 'img/tng_close.gif';
+    const loadingmsg = '{$text['loading']}';
+    </script>";
     initMediaTypes();
-    echo "<!-- end tng_adminheader -->\n";
+    $header .= "<!-- end tng_adminheader -->\n";
+    echo $header;
 }
 
 /**
