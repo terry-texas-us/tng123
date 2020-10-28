@@ -241,8 +241,3 @@ $text['chrabbr'] = "ged.";
 $text['deathabbr'] = "ovl.";  //from descend
 $text['burialabbr'] = "begr.";  //from descend
 $text['marrabbr'] = "getr.";
-
-// loading English or English-UTF8 is required to display custom text for mods that do not provide all translations
-$english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
-@include $rootpath . $endrootpath . "languages/$english/cust_text.php";
-@include "cust_text.php";

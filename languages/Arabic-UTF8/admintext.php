@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "استهلال";
         //changed in 8.0.0
         $admtext['showlog'] = "سجل مدير النظام";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "إضافة وحذف ملحقات البرنامج";
         //added in 9.0.0
         $admtext['oldimport'] = "الاستيراد بالصيغة القديمة (بدون شريط تقدم)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "إظهار كافة الأحداث والوسائط";
         $admtext['servertime'] = "توقيت الخادم هو";
         $admtext['sitetime'] = "وتوقيت الموقع هو";
-        $admtext['srexpl'] = "اختياري. استخدم مسار كامل مثل الذي يرد في مجلد الجذر، ثم انقل الملفات التالية إلى مسار الإعدادات <strong>فور</strong> حفظها مع جعلها قابلة للكتابة (صلاحيات 664): config.php, customconfig.php, impconfig.php, mapconfig.php, mmconfig.php, logconfig.php, mapconfig.php, pedconfig.php, templateconfig.php";
+        $admtext['srexpl'] = "اختياري. استخدم مسار كامل مثل الذي يرد في مجلد الجذر، ثم انقل الملفات التالية إلى مسار الإعدادات <strong>فور</strong> حفظها مع جعلها قابلة للكتابة (صلاحيات 664): config.php, customconfig.php, impconfig.php, mapconfig.php, logconfig.php, mapconfig.php, pedconfig.php, templateconfig.php";
         $admtext['mapstzm'] = "التكبير الابتدائي";
         $admtext['mapfoundzm'] = "تكبير الموقع";
         $admtext['rrnum'] = "رقم تقرير السجل";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "إرسال رسائل تأكيد";
         $admtext['fromadmin'] = "ارسل كافة الرسائل من العنوان أعلاه";
         $admtext['autotree'] = "إنشاء شجرة جديدة للمستخدم";
-        $admtext['modspath'] = "مجلد ملحقات النظام";
         $admtext['extspath'] = "مجلد اللواحق";
         $admtext['encrtype'] = "نوع التشفير";
         $admtext['none'] = "بدون تشفير";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "ولادة الأم";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "قائمة ملحقات النظام";
-        $admtext['removed'] = "تم الحذف";
-        $admtext['installed'] = "تم التثبيت";
-        $admtext['deleted'] = "تم الحذف";
-        $admtext['cantdel'] = "تعذر الحذف";
-        $admtext['cfgname'] = "اسم ملف التعيير";
-        $admtext['version'] = "الإصدار";
-        $admtext['nomods'] = "لا توجد ملفات تعريف ملحق (xxx) داخل مجلد الملحقات";
-        $admtext['location'] = "المكان";
-        $admtext['missing'] = "مفقود";
-        $admtext['badtarget'] = "خطأ في الهدف";
-        $admtext['cantwrite'] = "تعذرت الكتابة";
-        $admtext['notwrite'] = "غير قابل للكتابة، راجع الصلاحيات";
-        $admtext['checkwrite'] = "راجع الصلاحيات. لا بد من وجود صلاحيات الكتابة";
-        $admtext['toterrors'] = "إجمالي الأخطاء";
-        $admtext['missfile'] = "ملف مفقود";
-        $admtext['notunique'] = "غير فريد من نوعه";
-        $admtext['nodesc'] = "خطأ في تعريف المعامل. الوصف مفقود";
-        $admtext['defval'] = "القيمة الافتراضية";
-        $admtext['written'] = "تمت كتابة الملف";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "النسخة المحلية من xxx المطلوب تثبيته مفقود";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "مطلوب تحديثات على الملحق";
-        $admtext['cannotinstall'] = "تعذر تثبيت هذا الملحق";
-        $admtext['emptytarget'] = "الملف المستهدف فارغ";
-        $admtext['cantdelmissing'] = "تعذر الحذف. الملف مفقود";
-        //changed in 10.0.3
-        $admtext['editperf'] = "تم تغيير معاملات التعديل كما يلي:";
-        //added in 10.0.3
-        $admtext['options'] = "خيارات";
-        $admtext['viewlog'] = "شاهد السجل";
-        $admtext['target'] = "تغييرات";
-        $admtext['newfile'] = "يصنع";
-        $admtext['copiesfile'] = "ينسخ";
-        $admtext['copiesfile2'] = "ينسخ إلى";
-        $admtext['logoptions'] = "سجل نظام إدارة الملحقات";
-        $admtext['mmlogfilename'] = "اسم ملف السجل";
-        $admtext['sortlistby'] = "تصنيف القوائم بموجب";
-        $admtext['modname'] = "اسم المحق";
-        $admtext['bypassconfirm'] = "تخطى التأكيدات";
-        $admtext['modifyoptions'] = "تعديل خيارات برانامج إدارة الملاحق";
-        $admtext['ready'] = "مناسب للتثبيت";
-        $admtext['noselected'] = "لم تحدد أي ملفات!";
-        $admtext['choose'] = "اختر";
-        $admtext['showlogfile'] = "أظهر سجل عمليات برنامج إدارة الملاحق";
-        $admtext['recentactions'] = "أحدث إجراءات برنامج إدارة الملاحق";
-        $admtext['clearlog'] = "امسح السجل";
-        $admtext['confirmclearlog'] = "هل أنت متأكد أنك تريد مسح السجل؟";
-        $admtext['modsyntax'] = "صيغة الملحق";
-        $admtext['modguidelines'] = "معايير الملحق";
-        $admtext['filemod'] = "تم تحديث ملف xxx من قبل";
-        $admtext['potconf'] = "تضاربات محتملة";
-        $admtext['modifications'] = "تعديلات";
-        $admtext['othermmoptions'] = "أخرى";
-        $admtext['file'] = "ملف";
-        $admtext['tngmods'] = "ملاحق لبرنامج إدارة الأنساب ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "تم النسخ";
-        $admtext['emptyfile'] = "الملف فارغ";
-        $admtext['filescopied'] = "تم نسخ الملفات";
-        $admtext['notinst'] = "غير مثبت";
-        $admtext['install'] = "تثبيت";
-        $admtext['filedel'] = "تم حذف الملف";
-        $admtext['created'] = "تم الإنشاء";
-        $admtext['choosefilter'] = "اختر الفلتر ثم انقر على (اذهب) لأدوات التحكم المتاحة";
-        $admtext['mmmaxloglines'] = "الحد الأقصى من العمليات";
-        $admtext['statusfilter'] = "الوضع الراهن";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "إلغاء التثبيت";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "تنظيف";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "عدل الخيارات";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "مناسب للتثبيت";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "إصدار الملف/عدم تطابق الإصدار";
-        $admtext['bomfound'] = "تم حذف علامة ترتيب البايت (BOM)";
-        $admtext['cantinst'] = "تعذر التثبيت";
-        $admtext['cantproc'] = "تعذر حذف الملحق";
-        $admtext['cantupd'] = "تعذر تحديث المعامل";
-        $admtext['cleanupall'] = "تنظيف";
-        $admtext['copiesreq'] = "تحديد نسخ الملفات";
-        $admtext['delete'] = "حذف";
-        $admtext['deleteall'] = "حذف";
-        $admtext['errors'] = "أخطاء";
-        $admtext['excused'] = "ملفات معفية";
-        $admtext['filesinst'] = "ملفات مثبتة";
-        $admtext['filesrem'] = "ملفات حذفت";
-        $admtext['format'] = "خطأ في الصيغة";
-        $admtext['installall'] = "تثبيت";
-        $admtext['installing'] = "جاري التثبيت";
-        $admtext['line'] = "سطر";
-        $admtext['modified'] = "تم التعديل";
-        $admtext['modsinst'] = "تم تثبيت تعديلات النصوص";
-        $admtext['modrem'] = "تم إلغاء تثبيت الملحق";
-        $admtext['modsrem'] = "تمت إزالة تعديلات النصوص";
-        $admtext['modsreq'] = "تم تحديد تعديلات النصوص";
-        $admtext['newfilesreq'] = "تم تحديد الملفات الجديدة";
-        $admtext['nfcreated'] = "تم إنشاء ملف جديد";
-        $admtext['noact'] = "علامة العملية غير صالحة";
-        $admtext['nocfgfile'] = "لم يتم العثور على ملف الملاحق";
-        $admtext['nocomps'] = "مكونات مفقودة";
-        $admtext['noend'] = "%end:% العلامة مفقودة";
-        $admtext['nolocation'] = "علامة الموقع مفقودة";
-        $admtext['okay'] = "مقبول";
-        $admtext['opened'] = "تم الفتح";
-        $admtext['optional'] = "اختياري";
-        $admtext['partinst'] = "تم التثبيت الجزئي";
-        $admtext['removeall'] = "الغاء التثبيت";    // was Remove Selected mods
-        $admtext['removing'] = "جاري الغاء التثبيت";    // was Removing
-        $admtext['reqtag'] = "هنالك علامة إلزامية مفقودة";
-        $admtext['restparam'] = "جاري استرجاع المعامل المعياري";
-        $admtext['return'] = "العودة إلى برنامج إدارة الملحقات";
-        $admtext['tagnoterm'] = "tag not terminated";
-        $admtext['tagunk'] = "tag is unknown";
-        $admtext['tgtfile'] = "الملف المستهدف";
-        $admtext['updated'] = "تم التحديث";
-        $admtext['updparam'] = "جاري تحديث المعاملات";
-        $admtext['unxend'] = "نهاية فجائية للملف";
-        $admtext['warnings'] = "تحذيرات";
-        $admtext['allowdeletepartial'] = "السماح بحذف المحدد من الملاحق المثبتة جزئيا";
-        $admtext['allowdeleteinstalled'] = "السماح بحذف الملاحق الفردية المثبتة";
-        $admtext['showwarnings'] = "عرض تحذيرات الملاحق في الوضع الراهن";
-        $admtext['logfullpath'] = "سجل كامل المسار لعمليات الملفات";
-        $admtext['deleting'] = "جاري حذف ";
-        $admtext['wiki'] = "ويكي";
-        $admtext['aflist'] = "ملفات";
-        $admtext['hasoptions'] = "خيارات";
-        $admtext['restore'] = "اعادة القيم الافتراضية";
-        $admtext['stayon'] = "أقفل";
-        $admtext['accessible'] = "متاح";
-        $admtext['bypassed'] = "تم التجاوز";
-        $admtext['willbypass'] = "سيتم التجاهل";  // was "will bypass"
-        $admtext['cantdel'] = "تعذر الحذف";
-        $admtext['optmissing'] = "الملف مفقود (اختياري)";
-        $admtext['tgtmissing'] = "ملف الهدف مفقود";
-        $admtext['optlocked'] = "الملف مقفل (اختياري)";
-        $admtext['tgtlocked'] = "الملف مغلق";
-        $admtext['alreadyrem'] = "محذوف مسبقا";
-        $admtext['noaccess'] = "منع الوصول";
-        $admtext['badinstall'] = "تعذر التثبيت";
-        $admtext['removed'] = "تم الحذف";
-        $admtext['deleted'] = "تم الحذف";
-        $admtext['optsrcfilemissing'] = "المصدر الاختياري مفقود";
-        $admtext['srcfilemissing'] = "المصدر مفقود";
-        $admtext['optnocopy'] = "لم يتم نسخ الملف الاختياري";
-        $admtext['notcopied'] = "لم يتم النسخ";
-        $admtext['copied'] = "تم النسخ";
-        $admtext['notcreated'] = "تعذر إنشاء ملف جديد";
-        $admtext['optnotcreated'] = "تعذر إنشاء ملف اختياري جديد";
-        $admtext['nocreated'] = "لم يتم الإنشاء";
-        $admtext['fixedheader'] = "استخدام رؤوس ثابتة";
-        $admtext['cantremok'] = "تعذر الحذف، وهو اختياري، فتم التجاوز";
-        $admtext['nofolder'] = "المجلد المستهدف غير موجود";
-        $admtext['edparams'] = "تعديل المعاملات";
-        $admtext['compresslog'] = "طي عرض السجل";
-        $admtext['formodname'] = "لاسم الملحق ";
-        $admtext['nofolder'] = "المجلد المستهدف غير موجود";
-        $admtext['fileperms'] = "فضلا راجع صلاحيات الملف";
-        $admtext['noparam'] = "معامل مفقود";
-        $admtext['editing'] = "تعديل";
-        $admtext['redirect2log'] = "إعادة التوجيه إلى السجل لأجل";
-        $admtext['on_error'] = "الأخطاء فقط";
-        $admtext['on_all'] = "كافة العمليات";
-        $admtext['usestriping'] = "تفعيل الشرائط";
-        $admtext['stripeafter'] = "شرائط بعد عدد من الأسطر";
-        $admtext['adjusthdrs'] = "تعديل الهوامش العلوية الثابتة";
-        $admtext['displayoptions'] = "إعدادات العرض";
-        $admtext['no_frag'] = "غير مسموح بقصاصة النص البرمجي هنا";
-        //added in 12.0.0
-        $admtext['exists'] = "موجودا";
-        $admtext['newdirsreq'] = "تم تحديد مجلدات جديدة";
-        $admtext['cantrem'] = "تعذرت الإزالة";
-        $admtext['showanalyzer'] = "إظهار علامة تبويب المحلل";
-        $admtext['showdeveloper'] = "إظهار أدوات المطورين الأخرى";
-        $admtext['showupdates'] = "إظهار علامة التبويب للتحديثات المقترحة";
-        $admtext['analyzefiles'] = "تحليل ملفات TNG ";
-        $admtext['parsetable'] = "إظهار جدول التحليل النصي";
-        $admtext['recommendedfixes'] = "التحديثات المقترحة";
-        $admtext['selectmod'] = " اختر لملف معايرة الملحقات لترى جدول نتائج تحليل النص";
-        $admtext['parsertags'] = "مصفوفة تبويبات تحليل النصوص:";
-        $admtext['parsererror'] = "خطأ: ";
-        $admtext['filesel'] = "اختر الملف المعدل لتقوم بمعاية التعديلات";
-        $admtext['custtextfixes'] = " إرشادات الملحقات المحدثة توصي بأن يتم إدراج النصوص الخاصة قبل الملاحظات وفي بداية ملف cust_text.php حتى لا تؤثر الملحقات على التعديلات المطبقة على أدلة الاستخدام بعد سطر الملاحظة.";
-        $admtext['updcusttext'] = "تحديث ملفات cust_text.php  الخاصة";
-        $admtext['confirmupdcusttext'] = "هل أنت متأكد من تطبيق تحديثات ملفات cust_text.php ؟";
-        $admtext['compressnames'] = "ضغط أسماء الملحقات في قائمة الملحقات";
-        $admtext['verified'] = "تم التوثق";
-        $admtext['provisional'] = "(مؤقت) لا بد من توفره";
-        $admtext['backtoprevious'] = "العودة إلى الصفحة السابقة";
-        $admtext['reasontoupdate'] = " إذا لم تكن قد شغلت برنامج cust_text_update.php كجزء من عملية الترقية إلى الإصدار TNG v12، فعليك تحديث ملفات cust_text.php من أجل<ul><li> إضافة سطر جديد إلى الملفات و<ul><li> أيضا عليك تحديث السطر out-of-date في ملفات cust_text.php الحالي<ul><li> حيث أنها لا يتم استبدالها عند عملية التحديث لبرنامج TNG.";
-        $admtext['newanchor'] = " لا تنبغي ترجمة السطر المخصص للملاحظات الجديدة في ملفات اللغة حتى يتيسر استخدام تلك الملاحظات كمراجع آلية عند إدخال نصوص مخصصة قبل سطر الملحقات هذا من قبل مطوري الملحقات.";
-        $admtext['translateissue'] = " لو ترجمت سطر الملاحظات الجديدة، فسوف تفسل عملية إدراج الملحقات.";
-        $admtext['privatemod'] = "ملحق خاص";
-        $admtext['protected'] = " محمي - قم بإزالة المف يدويا";
-        $admtext['restored'] = "تمت الاستعادة";
-        $admtext['confdelmod'] = "هل أنت واثق أنك تريد حذف هذا الملحق من نظامك؟";
-        $admtext['allowdeletesupport'] = "السماح بإزالة مجلد المساندة عند حذف البرنامج الملحق";
-        $admtext['delrisk'] = " عند اختيارك لهذا الخيار، أنت تقبل بخطر احتمالية الحذف العفوي لمجلدات. نحن نعتقد أن هذه المخاطرة متدنية جدا.";
-        $admtext['delpartinfo'] = " لا ينبغي أن تجيب بنعم لهذا الخيار إلى إن كنت قد نسيت أن تحذف إصدارا سابقا من هذا البرنامج الإلحاقي قبل الإقدام على تنصيب الإصدار الجديد.";
-        $admtext['delinstinfo'] = " لا يتيغي أن تجيب بنعم على هذا الخيار إلا إذا كنت قد فرغت من تنصيب إصدارا جديدا لهذا البرنامج الملحق ثم استمر ظهور الإصدار السابق على أنه فعال.";
-        $admtext['updateopts'] = " ملف mmconfig.php بحاجة إلى تحديث! فضلا انقر على تبويبة الخيارات أعلاه ثم انقر على زر الحفظ.";
-        $admtext['confdelmod1'] = " هل أنت واثق من رغبتك بحذف هذا البرنامج الملحق من نظامك؟ لن تتمكن من التراجع عن هذه العملية لاحقا!";
-        $admtext['noeffect'] = "تحذير: هذا لا يغير أي شيء في برنامج TNG!";
-        $admtext['cfgnowrite'] = "Warning: Cfg file is write-protected. Parameters cannot be changed.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "هل أنت واثق أنك تريد حذف هذا الاختبار؟";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "إظهار";
 $admtext['lnfirst'] = "اسم العائلة أولا (مع الفواصل)";
 $admtext['savefirst'] = "حفظ التعديلات أولا؟";
 $admtext['misc'] = "منوعات";
-$admtext['modmgr'] = "إدارة ملحقات برنامج المواريث";
 $admtext['cannotopendir'] = "تعذر فتح المجلد";
 $admtext['reviewsh'] = "مراجعة"; //short version
 //moved here in 9.0.0

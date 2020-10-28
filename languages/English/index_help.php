@@ -11,7 +11,6 @@ echo help_header("Help: Administration");
             <p style="float:right; text-align:right;" class="smaller menu">
                 <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
-                <a href="modmanager_help.php" class="lightlink">&laquo; Help: Mod Manager</a> &nbsp;|&nbsp;
                 <a href="people_help.php" class="lightlink">Help: People &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Getting Started</small></h2>

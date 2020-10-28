@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "Begin weer";
         //changed in 8.0.0
         $admtext['showlog'] = "Logadministrasie";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "Konfigureer 3e-party produkte";
         //added in 9.0.0
         $admtext['oldimport'] = "Ou invoer styl (geen progresiewe stafie)";
         //changed in 11.0.0
@@ -1227,7 +1225,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Wys alle gebeurtenisse en media";
         $admtext['servertime'] = "Tyd by bediener is";
         $admtext['sitetime'] = "en tyd by webwerf is";
-        $admtext['srexpl'] = "Opsioneel. Gebruik 'n absolute padnaam, soos in die lokasie van Root, en verplaas die volgende lêers <strong>onmiddelik</strong> nadat die verandering bewaar is, en gee skryfregte (664-regte) aan die lêers: config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "Opsioneel. Gebruik 'n absolute padnaam, soos in die lokasie van Root, en verplaas die volgende lêers <strong>onmiddelik</strong> nadat die verandering bewaar is, en gee skryfregte (664-regte) aan die lêers: config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Begin vergroot";
         $admtext['mapfoundzm'] = "Lokasie vergroting";
         $admtext['rrnum'] = "Rekord Rapport Nommer";
@@ -1259,7 +1257,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Stuur bevestiging per e-pos";
         $admtext['fromadmin'] = "Stuur alle pos vanaf bostaande adres";
         $admtext['autotree'] = "Skep nuwe stamboom vir gebruiker";
-        $admtext['modspath'] = "Mods Vouer";
         $admtext['extspath'] = "Uitbreidings Vouer";
         $admtext['encrtype'] = "Tipe enkripsie";
         $admtext['none'] = "Geen enkripsie";
@@ -1689,212 +1686,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Mother's Birth";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "Mod Lys";
-        $admtext['removed'] = "verwyder";
-        $admtext['installed'] = "Geïnstalleer";
-        $admtext['deleted'] = "verwydered";
-        $admtext['cantdel'] = "onverwyderbaar";
-        $admtext['cfgname'] = "Naam van Konfig-lêer";
-        $admtext['version'] = "Weergawenommer";
-        $admtext['nomods'] = "Geen MOD definisielêers (xxx) in die MOD-vouer gevind nie";
-        $admtext['location'] = "Lokasie";
-        $admtext['missing'] = "Vermis";
-        $admtext['badtarget'] = "Doel is nie korrek nie";
-        $admtext['cantwrite'] = "Kan nie skryf na";
-        $admtext['notwrite'] = "geen skryfregte, kontroleer regte";
-        $admtext['checkwrite'] = "Kontroleer regte, skryfregte noodsaaklik.";
-        $admtext['toterrors'] = "Totale Foute";
-        $admtext['missfile'] = "Vermiste lêer";
-        $admtext['notunique'] = "nie uniek";
-        $admtext['nodesc'] = "Fout met parameterdefinisies, beskrywing ontbreek";
-        $admtext['defval'] = "Versuimwaarde";
-        $admtext['written'] = "Lêer is bewaar";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Lokale kopie van xxx vir installasie ontbreek";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Mod opgradeering word vereis";
-        $admtext['cannotinstall'] = "Mod kon nie geinstalleer word nie";
-        $admtext['emptytarget'] = "Doel leer is 'n lee leer.";
-        $admtext['cantdelmissing'] = "Cannot delete, file is missing";
-        //changed in 10.0.3
-        $admtext['editperf'] = "The Edit parameters were changed as follows:";
-        //added in 10.0.3
-        $admtext['options'] = "Options";
-        $admtext['viewlog'] = "View Log";
-        $admtext['target'] = "Changes";
-        $admtext['newfile'] = "Creates";
-        $admtext['copiesfile'] = "Copies";
-        $admtext['copiesfile2'] = "Copies to";
-        $admtext['logoptions'] = "Mod Manager Log";
-        $admtext['mmlogfilename'] = "Log File Name";
-        $admtext['sortlistby'] = "Sort Lists by";
-        $admtext['modname'] = "Mod Name";
-        $admtext['bypassconfirm'] = "Bypass the Confirmations";
-        $admtext['modifyoptions'] = "Modify Mod Manager Options";
-        $admtext['ready'] = "OK to Install";
-        $admtext['noselected'] = "You have not selected any files!";
-        $admtext['choose'] = "Select";
-        $admtext['showlogfile'] = "Show Mod Manager Action Log";
-        $admtext['recentactions'] = "Mod Manager Most Recent Actions";
-        $admtext['clearlog'] = "Clear Log";
-        $admtext['confirmclearlog'] = "Are you sure you want to clear the log?";
-        $admtext['modsyntax'] = "Mod Syntax";
-        $admtext['modguidelines'] = "Mod Standards";
-        $admtext['filemod'] = "File xxx is modified by";
-        $admtext['potconf'] = "Potential Conflicts";
-        $admtext['modifications'] = "modifications";
-        $admtext['othermmoptions'] = "Other";
-        $admtext['file'] = "File";
-        $admtext['tngmods'] = "Mods for TNG ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "gekopieer";
-        $admtext['emptyfile'] = "lêer is leeg";
-        $admtext['filescopied'] = "lêers gekopieer";
-        $admtext['notinst'] = "nie geïnstalleer nie";
-        $admtext['install'] = "installeer";
-        $admtext['filedel'] = "lêer verwyder";
-        $admtext['created'] = "geskep";
-        $admtext['choosefilter'] = "Kies die filteered en klik op Gaan vir die beskikbare kontroles";
-        $admtext['mmmaxloglines'] = "Grootste aantal transaksies";
-        $admtext['statusfilter'] = "Status";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Verwyder";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Opruim";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Wysig opsies";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "OK om te installeer";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "lêer weergawe/wanpasende weergawe";
-        $admtext['bomfound'] = "BOM verwyderd";
-        $admtext['cantinst'] = "kan nie installeer nie";
-        $admtext['cantproc'] = "mod onverwyderbaar";
-        $admtext['cantupd'] = "parameter onopdateerbaar";
-        $admtext['cleanupall'] = "Opruim";
-        $admtext['copiesreq'] = "gespesifiseerde lêer afskrifte";
-        $admtext['delete'] = "Verwyder";
-        $admtext['deleteall'] = "Verwyder";
-        $admtext['errors'] = "foute";
-        $admtext['excused'] = "verskooned lêers";
-        $admtext['filesinst'] = "geinstaleerede lêers";
-        $admtext['filesrem'] = "verwydered lêers";
-        $admtext['format'] = "foutiewe formaat";
-        $admtext['installall'] = "Instaleer";
-        $admtext['installing'] = "Installering";
-        $admtext['line'] = "Lyn";
-        $admtext['modified'] = "modifieseerd";
-        $admtext['modsinst'] = "veranderinge kode geïnstalleer";
-        $admtext['modrem'] = "mod verwyder";
-        $admtext['modsrem'] = "veranderinge kode verwyderd";
-        $admtext['modsreq'] = "veranderinge kode gespesifiseerde";
-        $admtext['newfilesreq'] = "nuwe lêers gespesifiseerd";
-        $admtext['nfcreated'] = "nuwe lêer geskep";
-        $admtext['noact'] = "aksie etiket is ongeldig";
-        $admtext['nocfgfile'] = "mod lêer nie gevind nie";
-        $admtext['nocomps'] = "elemente vermis";
-        $admtext['noend'] = "%end:% etiket ontbreek";
-        $admtext['nolocation'] = "plek etiket vermis";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "geopen";
-        $admtext['optional'] = "opsioneel";
-        $admtext['partinst'] = "gedeeltelik geïnstalleer";
-        $admtext['removeall'] = "Oninstaleer";    // was Remove Selected mods
-        $admtext['removing'] = "Oninstaleer";    // was Removing
-        $admtext['reqtag'] = "vereised etiket ontbreek";
-        $admtext['restparam'] = "herstel default parameter";
-        $admtext['return'] = "Terug na Mod Bestuurder";
-        $admtext['tagnoterm'] = "etiket nie beëindig nie";
-        $admtext['tagunk'] = "onbekende etiket";
-        $admtext['tgtfile'] = "teiken lêer";
-        $admtext['updated'] = "op gedateer";
-        $admtext['updparam'] = "Op gedateered parameter";
-        $admtext['unxend'] = "onverwagte eindeging van lêer";
-        $admtext['warnings'] = "Warskuwing";
-        $admtext['allowdeletepartial'] = "Laat toe om gedeeltelike geinstaleered Mods te verwyder";
-        $admtext['allowdeleteinstalled'] = "Laat toe om individueel geïnstalleer Mods te verwyder";
-        $admtext['showwarnings'] = "Wys Status van Mod Waarskuwings";
-        $admtext['logfullpath'] = "Wys volledige roete van lêer aksies";
-        $admtext['deleting'] = "Verwydering ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Lêers";
-        $admtext['hasoptions'] = "Opsies";
-        $admtext['restore'] = "Herstel van Default";
-        $admtext['stayon'] = "Sluit";
-        $admtext['accessible'] = "beskikbaar";
-        $admtext['bypassed'] = "omseil";
-        $admtext['willbypass'] = "ignoreer";  // was "will bypass"
-        $admtext['cantdel'] = "onverwyderbaar";
-        $admtext['optmissing'] = "lêer vermis (optioneel)";
-        $admtext['tgtmissing'] = "teiken lêer vermis";
-        $admtext['optlocked'] = "lêer gesluit (optioneel)";
-        $admtext['tgtlocked'] = "lêer gesluit";
-        $admtext['alreadyrem'] = "alreeds verwyder";
-        $admtext['noaccess'] = "geen toegang";
-        $admtext['badinstall'] = "instaleering gevaal";
-        $admtext['removed'] = "verwyder";
-        $admtext['deleted'] = "verwydered";
-        $admtext['optsrcfilemissing'] = "ontbreek opsionele bron";
-        $admtext['srcfilemissing'] = "bron vermis";
-        $admtext['optnocopy'] = "optionelel lêer nie gekopieer nie";
-        $admtext['notcopied'] = "nie gekopieer nie";
-        $admtext['copied'] = "gekopieer";
-        $admtext['notcreated'] = "'n nuwe lêer kan nie geskep word nie";
-        $admtext['optnotcreated'] = "opsionele nuwe lêer kan nie skep nie";
-        $admtext['nocreated'] = "nie skep nie";
-        $admtext['fixedheader'] = "Gebruik Vaste rubriek";
-        $admtext['cantremok'] = "kan nie verwyder, opsioneel, omseil word nie";
-        $admtext['nofolder'] = "gids teiken ontbrekende";
-        $admtext['edparams'] = "wys parameters";
-        $admtext['compresslog'] = "Log vertoon gevou";
-        $admtext['formodname'] = "vir mod naam ";
-        $admtext['nofolder'] = "gids teiken ontbrekende";
-        $admtext['fileperms'] = "Gaan asseblief die permissies na";
-        $admtext['noparam'] = "vermised parameter";
-        $admtext['editing'] = "redigering";
-        $admtext['redirect2log'] = "Log herverwys vir";
-        $admtext['on_error'] = "Slegs foute";
-        $admtext['on_all'] = "Alle Transaksies";
-        $admtext['usestriping'] = "gebruik strepe";
-        $admtext['stripeafter'] = "Strepe na nummer of rye";
-        $admtext['adjusthdrs'] = "Pas eers Vaste Rubriek";
-        $admtext['displayoptions'] = "Vertoon Display Instellings";
-        $admtext['no_frag'] = "fragmentering van kode nie hier toegelaat nie";
-        //added in 12.0.0
-        $admtext['exists'] = "Bestaan reeds";
-        $admtext['newdirsreq'] = "Nuwe files reeds gespesifiseer";
-        $admtext['cantrem'] = "Onverwyderbaar";
-        $admtext['showanalyzer'] = "Wys TNG file analiseering in gids";
-        $admtext['showdeveloper'] = "Wys ander ontwikkelaar hulpmiddels";
-        $admtext['showupdates'] = "Wys aanbevole opdateerings gids";
-        $admtext['analyzefiles'] = "Analiseer TNG file";
-        $admtext['parsetable'] = "Wys ontleder tabel";
-        $admtext['recommendedfixes'] = "Aanbevole opdateerings";
-        $admtext['selectmod'] = "Kies 'n mod config file om ontleders tabel resultate te bekyk";
-        $admtext['parsertags'] = "Omtleders tabel verskeidenheid:";
-        $admtext['parsererror'] = "Fout: ";
-        $admtext['filesel'] = "Kies TNG-file om te sien watter mods dit beïnvloed";
-        $admtext['custtextfixes'] = "Die opgedateerde Mod Riglyne beveel aan dat gepasmaakte teks voor die kommentaar in die begin van die cust_text.php file ingevoeg word sodat mods nie die veranderinge van gebruikershandleidings wat na die reaksie lyne aangebring is, beïnvloed nie.";
-        $admtext['updcusttext'] = "Op dateer cust_text.php files";
-        $admtext['confirmupdcusttext'] = "Seker jy wil die cust_text.php files opdateer?";
-        $admtext['compressnames'] = "Verwyder spasies van filenaam in Mod Lys";
-        $admtext['verified'] = "bevestig";
-        $admtext['provisional'] = "(Voorlopige) moet beskikbaar wees";
-        $admtext['backtoprevious'] = "Blaai terug";
-        $admtext['reasontoupdate'] = "As jy nie die cust_text_update.php geskrif uitgevoer het as deel van die TNG v12 opgradering nie, moet jy die cust_text.php file as volg opdateer, <ul><li> plaas 'n nuwe lyn by die file en as ook </li><li> om die bestaande ou line in die cust_text.php file te vervang </li></ul> wat nie vervang was tydens TNG opgradering nie.";
-        $admtext['newanchor'] = "Moenie die nuwe kommentaar lyn in die taal file vertaal nie, sodat dit as 'n anker kan gebruik word deur die mod ontwikkelaars.";
-        $admtext['translateissue'] = "Die installeering van hierdie mod sal misluk as die \"Comment\" lyn vertaal word.";
-        $admtext['privatemod'] = "Privaat Mod";
-        $admtext['protected'] = "beskermd - verwyder hierdie file per hand";
-        $admtext['restored'] = "hersteld";
-        $admtext['confdelmod'] = "Wees seker voor verwydering van Mod en verwante gids. Hierdie operasie nie ongedaan gemaak word nie!";
-        $admtext['allowdeletesupport'] = "Behou vewyderings ondersteuningsgids met verwydering van Mod";
-        $admtext['delrisk'] = "Gebruiker aanvaar alle risiko met die gebruik van opsie hoewel die risiko is minimal.";
-        $admtext['delpartinfo'] = "Gebruik slegs \"Yes\" opsie, as jy vergeet het om vorige weergawes van die mod te verwyder.";
-        $admtext['delinstinfo'] = "Gebruik slegs \"Yes\" opsie, as jy 'n nuwe weergawe van 'n mod geïnstalleer en die vorige weergawe is nog steeds geïnstalleer.";
-        $admtext['updateopts'] = "Opdateer mmconfig.php! Please click on the Options tab above and click on the Save button.";
-        $admtext['confdelmod1'] = "Bevestig die verwydering van hierdie Mod van jou systeem? Hierdie operasie kan nie gekoregeer word nie!";
-        $admtext['noeffect'] = "Waarskuwing: Moetnie verandering aan bring in TNG nie!";
-        $admtext['cfgnowrite'] = "Waarskuwing: Cfg-file is skryf beskerm. Parameters kan nie verander word nie.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "is jy seker jy will hierdie toets uitvee?";
@@ -2251,7 +2042,6 @@ $admtext['show'] = "Voorskou";
 $admtext['lnfirst'] = "Van as eerste (met komma's)";
 $admtext['savefirst'] = "Veranderinge eers bewaar?";
 $admtext['misc'] = "Ander";
-$admtext['modmgr'] = "Mod-beheer";
 $admtext['cannotopendir'] = "Kan vouer nie open nie";
 $admtext['reviewsh'] = "Hersien"; //short version
 //moved here in 9.0.0

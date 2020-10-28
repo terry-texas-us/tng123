@@ -12,7 +12,6 @@ echo help_header("Help: Utilities");
                 <a href="https://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="https://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
                 <a href="languages_help.php" class="lightlink">&laquo; Help: Languages</a> &nbsp;|&nbsp;
-                <a href="modmanager_help.php" class="lightlink">Help: Mod Manager &raquo;</a>
             </p>
             <h2 class="largeheader">Help: <small>Utilities</small></h2>
             <p class="smaller menu clear-both">

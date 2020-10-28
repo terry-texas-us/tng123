@@ -248,8 +248,3 @@ $text['findplaces'] = "Find all individuals with events at this location";
 $text['problem'] = "An error has occurred in the TNG software. What to do:<p>If you just installed an upgrade, you might have skipped part of the installation instructions. Go back to the upgrade readme page reread the instructions. Pay special attention to the database structure step.</p><p>If you just installed TNG for the first time, you might still need to create the database tables. Return to the readme.html page to find that step.</p><p>If you are the site owner, you may contact TNG support for further assistance with this problem. Please copy the query below and paste it into your message.</p>";
 //added in 13.0.0
 $admtext['nobranch'] = "No branch";
-
-// loading English or English-UTF8 is required to display custom text for mods that do not provide all translations
-//$english = $session_charset == "UTF-8" ? "English-UTF8" : "English";
-//@include $rootpath . $endrootpath . "languages/$english/cust_text.php";
-@include "cust_text.php";

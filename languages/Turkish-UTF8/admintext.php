@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "Devam et";
         //changed in 8.0.0
         $admtext['showlog'] = "Yönetici Günlüğü";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "TNG Modlarını Yükleme ve Kaldırma";
         //added in 9.0.0
         $admtext['oldimport'] = "Eski stil içe aktarma (ilerleme çubuğu yok)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Tüm etkinlikleri ve medyayı göster";
         $admtext['servertime'] = "Sunucu zamanı";
         $admtext['sitetime'] = "ve site zamanı";
-        $admtext['srexpl'] = "İsteğe bağlı. Kök Yolunda gördüğünüz gibi mutlak bir yol adı kullanın, ardından aşağıdaki dosyaları kaydettikten sonra <strong>hemen</strong> Yapılandırma Yoluna taşıyın ve bunları yazılabilir hale getirin (664 izin): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "İsteğe bağlı. Kök Yolunda gördüğünüz gibi mutlak bir yol adı kullanın, ardından aşağıdaki dosyaları kaydettikten sonra <strong>hemen</strong> Yapılandırma Yoluna taşıyın ve bunları yazılabilir hale getirin (664 izin): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Yakınlaştırma Başlatılıyor";
         $admtext['mapfoundzm'] = "Konum Yakınlaştırma";
         $admtext['rrnum'] = "Kayıt Rapor Numarası";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Bildirim e-postası gönder";
         $admtext['fromadmin'] = "Yukarıdaki tüm adreslerden gelen tüm postaları gönder";
         $admtext['autotree'] = "Kullanıcı için yeni soyağacı oluştur";
-        $admtext['modspath'] = "Değişiklikler Klasörü";
         $admtext['extspath'] = "Uzantılar Klasörü";
         $admtext['encrtype'] = "Şifreleme türü";
         $admtext['none'] = "Şifreleme yok";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Annenin Doğumu";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "Mod Listesi";
-        $admtext['removed'] = "kaldırıldı";
-        $admtext['installed'] = "Yüklendi";
-        $admtext['deleted'] = "silindi";
-        $admtext['cantdel'] = "silemiyorum";
-        $admtext['cfgname'] = "Yapılandırma Dosyası Adı";
-        $admtext['version'] = "Sürüm";
-        $admtext['nomods'] = "Mod klasöründe mod tanım dosyaları (xxx) bulunamadı";
-        $admtext['location'] = "Yer";
-        $admtext['missing'] = "eksik";
-        $admtext['badtarget'] = "Bozuk hedef";
-        $admtext['cantwrite'] = "Yazılamıyor";
-        $admtext['notwrite'] = "yazılabilir değil, izinleri kontrol et";
-        $admtext['checkwrite'] = "İzinleri kontrol edin, yazılabilir olmalıdır.";
-        $admtext['toterrors'] = "Toplam Hatalar";
-        $admtext['missfile'] = "Eksik dosya";
-        $admtext['notunique'] = "benzersiz değil";
-        $admtext['nodesc'] = "Parametre tanımı hatası, eksik açıklama";
-        $admtext['defval'] = "Varsayılan değer";
-        $admtext['written'] = "Dosya yazılı";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Kurulum için xxx yerel kopyası eksik";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Mod güncellemeleri gerekli";
-        $admtext['cannotinstall'] = "Bu mod yüklenemiyor";
-        $admtext['emptytarget'] = "Hedef dosya boş bir dosyadır.";
-        $admtext['cantdelmissing'] = "Silinemiyor, dosya eksik";
-        //changed in 10.0.3
-        $admtext['editperf'] = "Düzenleme parametreleri aşağıdaki gibi değiştirildi:";
-        //added in 10.0.3
-        $admtext['options'] = "Seçenekler";
-        $admtext['viewlog'] = "Günlüğü Görüntüle";
-        $admtext['target'] = "Değişiklikler";
-        $admtext['newfile'] = "Oluşturmak";
-        $admtext['copiesfile'] = "Kopyalamak";
-        $admtext['copiesfile2'] = "Kopyaları";
-        $admtext['logoptions'] = "Mod Yöneticisi Günlüğü";
-        $admtext['mmlogfilename'] = "Günlük Dosyası Adı";
-        $admtext['sortlistby'] = "Listeleri Sırala";
-        $admtext['modname'] = "Mod Adı";
-        $admtext['bypassconfirm'] = "Onayları Atla";
-        $admtext['modifyoptions'] = "Mod Yöneticisi Seçeneklerini Değiştir";
-        $admtext['ready'] = "Yüklemek için Tamam";
-        $admtext['noselected'] = "Hiçbir dosya seçmediniz!";
-        $admtext['choose'] = "Seç";
-        $admtext['showlogfile'] = "Mod Yöneticisi Eylem Günlüğünü Göster";
-        $admtext['recentactions'] = "Mod Yöneticisi En Son Eylemler";
-        $admtext['clearlog'] = "Günlüğü Temizle";
-        $admtext['confirmclearlog'] = "Günlüğü temizlemek istediğine emin misin?";
-        $admtext['modsyntax'] = "Mod Sözdizimi";
-        $admtext['modguidelines'] = "Mod Standartları";
-        $admtext['filemod'] = "Dosya xxx tarafından değiştirildi";
-        $admtext['potconf'] = "Potansiyel Çatışmalar";
-        $admtext['modifications'] = "değişiklikler";
-        $admtext['othermmoptions'] = "Diğer";
-        $admtext['file'] = "Dosya";
-        $admtext['tngmods'] = "TNG için modlar ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "kopyalanan";
-        $admtext['emptyfile'] = "dosya boş";
-        $admtext['filescopied'] = "dosyalar kopyalandı";
-        $admtext['notinst'] = "yüklü değil";
-        $admtext['install'] = "yükle";
-        $admtext['filedel'] = "Dosya silindi";
-        $admtext['created'] = "oluşturulan";
-        $admtext['choosefilter'] = "Filtreyi seçin ve kullanılabilir kontroller için Git'i tıklayın";
-        $admtext['mmmaxloglines'] = "Maksimum işlem sayısı";
-        $admtext['statusfilter'] = "Durum";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Kaldırmak";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Temizlemek";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Seçenekleri Düzenle";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "Yüklemek için Tamam";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "dosya sürümü/sürüm uyuşmazlığı";
-        $admtext['bomfound'] = "BOM kaldırıldı";
-        $admtext['cantinst'] = "yüklenemiyor";
-        $admtext['cantproc'] = "mod kaldırılamıyor";
-        $admtext['cantupd'] = "parametre güncellenemiyor";
-        $admtext['cleanupall'] = "Temizlemek";
-        $admtext['copiesreq'] = "belirtilen dosya kopyaları";
-        $admtext['delete'] = "Sil";
-        $admtext['deleteall'] = "Sil";
-        $admtext['errors'] = "hatalar";
-        $admtext['excused'] = "dosyalar muaf";
-        $admtext['filesinst'] = "dosyalar yüklendi";
-        $admtext['filesrem'] = "dosyalar kaldırıldı";
-        $admtext['format'] = "format hatası";
-        $admtext['installall'] = "Yükle";
-        $admtext['installing'] = "Yükleniyor";
-        $admtext['line'] = "Satır";
-        $admtext['modified'] = "değiştirildi";
-        $admtext['modsinst'] = "kod değişiklikleri yüklendi";
-        $admtext['modrem'] = "mod kaldırıldı";
-        $admtext['modsrem'] = "kod değişiklikleri kaldırıldı";
-        $admtext['modsreq'] = "kod değişiklikleri belirtildi";
-        $admtext['newfilesreq'] = "yeni dosyalar belirtildi";
-        $admtext['nfcreated'] = "yeni dosya oluşturuldu";
-        $admtext['noact'] = "eylem etiketi geçersiz";
-        $admtext['nocfgfile'] = "mod dosyası bulunamadı";
-        $admtext['nocomps'] = "eksik elemanlar";
-        $admtext['noend'] = "%son:% etiketi eksik";
-        $admtext['nolocation'] = "eksik konum etiketi";
-        $admtext['okay'] = "TAMAM";
-        $admtext['opened'] = "açıldı";
-        $admtext['optional'] = "isteğe bağlı";
-        $admtext['partinst'] = "kısmen kurulmuş";
-        $admtext['removeall'] = "Kaldır";    // was Remove Selected mods
-        $admtext['removing'] = "Kaldırılıyor";    // was Removing
-        $admtext['reqtag'] = "gerekli etiket eksik";
-        $admtext['restparam'] = "Varsayılan parametreyi geri yükleme";
-        $admtext['return'] = "Mod Yöneticisine Dön";
-        $admtext['tagnoterm'] = "etiket sonlandırılmadı";
-        $admtext['tagunk'] = "etiket bilinmiyor";
-        $admtext['tgtfile'] = "hedef dosya";
-        $admtext['updated'] = "güncellendi";
-        $admtext['updparam'] = "Parametre güncelleniyor";
-        $admtext['unxend'] = "beklenmeyen dosya sonu";
-        $admtext['warnings'] = "Uyarılar";
-        $admtext['allowdeletepartial'] = "Kısmen Yüklü Modlardan Seçilmiş Silme İşlemine İzin Ver";
-        $admtext['allowdeleteinstalled'] = "Tek tek Yüklenen Modların Silinmesine İzin Ver";
-        $admtext['showwarnings'] = "Mod Uyarıları Durumunda Göster";
-        $admtext['logfullpath'] = "Dosya eylemleri için tam yol günlüğü";
-        $admtext['deleting'] = "Siliniyor ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Dosyalar";
-        $admtext['hasoptions'] = "Seçenekler";
-        $admtext['restore'] = "Varsayılanı Geri Yükle";
-        $admtext['stayon'] = "Kilit";
-        $admtext['accessible'] = "ulaşılabilir";
-        $admtext['bypassed'] = "atlandı";
-        $admtext['willbypass'] = "göz ardı edecek";  // was "will bypass"
-        $admtext['cantdel'] = "silemiyorum";
-        $admtext['optmissing'] = "dosya eksik (isteğe bağlı)";
-        $admtext['tgtmissing'] = "hedef dosya eksik";
-        $admtext['optlocked'] = "dosya kilitli (isteğe bağlı)";
-        $admtext['tgtlocked'] = "dosya kilitli";
-        $admtext['alreadyrem'] = "zaten kaldırıldı";
-        $admtext['noaccess'] = "erişim yok";
-        $admtext['badinstall'] = "yüklenemedi";
-        $admtext['removed'] = "kaldırıldı";
-        $admtext['deleted'] = "silindi";
-        $admtext['optsrcfilemissing'] = "isteğe bağlı kaynak eksik";
-        $admtext['srcfilemissing'] = "kaynak eksik";
-        $admtext['optnocopy'] = "isteğe bağlı dosya kopyalanmadı";
-        $admtext['notcopied'] = "kopyalanmadı";
-        $admtext['copied'] = "kopyalandı";
-        $admtext['notcreated'] = "yeni dosya oluşturulamıyor";
-        $admtext['optnotcreated'] = "isteğe bağlı yeni dosya oluşturulamıyor";
-        $admtext['nocreated'] = "oluşturulmadı";
-        $admtext['fixedheader'] = "Sabit Başlıkları Kullan";
-        $admtext['cantremok'] = "kaldırılamıyor, isteğe bağlı, atlandı";
-        $admtext['nofolder'] = "hedef klasör eksik";
-        $admtext['edparams'] = "parametreleri düzenle";
-        $admtext['compresslog'] = "Günlük Görünümünü Daralt";
-        $admtext['formodname'] = "mod adı için ";
-        $admtext['nofolder'] = "hedef klasör eksik";
-        $admtext['fileperms'] = "Lütfen dosya izinlerini kontrol edin";
-        $admtext['noparam'] = "parametre eksik";
-        $admtext['editing'] = "düzenleniyor";
-        $admtext['redirect2log'] = "Giriş Yapmaya Yönlendir";
-        $admtext['on_error'] = "Sadece Hatalar";
-        $admtext['on_all'] = "Tüm İşlemler";
-        $admtext['usestriping'] = "Şeritler kullanın";
-        $admtext['stripeafter'] = "Satır sayısından sonra şerit";
-        $admtext['adjusthdrs'] = "Sabit Başlıkları Ayarla";
-        $admtext['displayoptions'] = "Görüntü Ayarları";
-        $admtext['no_frag'] = "kod parçasına burada izin verilmiyor";
-        //added in 12.0.0
-        $admtext['exists'] = "var";
-        $admtext['newdirsreq'] = "yeni klasörler belirtildi";
-        $admtext['cantrem'] = "kaldırılamıyor";
-        $admtext['showanalyzer'] = "TNG Dosyalarını Analiz Et sekmesini göster";
-        $admtext['showdeveloper'] = "Diğer Geliştirici araçlarını göster";
-        $admtext['showupdates'] = "Önerilen Güncellemeler sekmesini göster";
-        $admtext['analyzefiles'] = "TNG Dosyalarını Analiz Et";
-        $admtext['parsetable'] = "Ayrıştırma Tablosunu Görüntüle";
-        $admtext['recommendedfixes'] = "Önerilen Güncellemeler";
-        $admtext['selectmod'] = "Ayrıştırıcı tablo sonuçlarını görüntülemek için bir mod yapılandırma dosyası seçin";
-        $admtext['parsertags'] = "Ayrıştırıcı Etiketleri Dizisi:";
-        $admtext['parsererror'] = "Hata: ";
-        $admtext['filesel'] = "Hangi modların onu etkilediğini görmek için TNG dosyasını seçin.";
-        $admtext['custtextfixes'] = "Güncellenen Mod Kuralları, cust_text.php dosyasının başlangıcındaki yorumlardan önce özel metinlerin eklenmesini tavsiye eder, böylece modlar, yorum satırlarından sonra yapılan kullanıcı kılavuzu değişikliklerini etkilemez.";
-        $admtext['updcusttext'] = "Cust_text.php dosyalarını güncelle";
-        $admtext['confirmupdcusttext'] = "Cust_text.php dosyalarını güncellemek istediğinize emin misiniz?";
-        $admtext['compressnames'] = "Mod Listesindeki dosya adlarından boşlukları kaldırın";
-        $admtext['verified'] = "doğrulandı";
-        $admtext['provisional'] = "(geçici) mevcut olmalıdır";
-        $admtext['backtoprevious'] = "Önceki sayfaya dön";
-        $admtext['reasontoupdate'] = "Cust_text_update.php betiğini TNG v12 yükseltmesinin bir parçası olarak çalıştırmadıysanız, cust_text.php dosyalarınızı <ul><li>dosyalarına yeni bir satır eklemek için güncellemeniz gerekir ve </li><li>ayrıca TNG yükseltmeleri sırasında değiştirilmeyen mevcut cust_text.php dosyalarınızdaki</li></ul> güncel olmayan satırı güncelleyin.";
-        $admtext['newanchor'] = "Yeni yorum satırı, dil dosyalarında çevrilmemelidir, böylece mod geliştiricileri tarafından bu yeni yorum satırından önce özel metin eklemek için bir bağlantı olarak kullanılabilir.";
-        $admtext['translateissue'] = "Yeni yorum satırını çevirirseniz, mod yüklemeleri başarısız olur.";
-        $admtext['privatemod'] = "Özel Mod";
-        $admtext['protected'] = "korumalı-dosyayı el ile kaldır";
-        $admtext['restored'] = "onarıldı";
-        $admtext['confdelmod'] = "Bu mod ve ilişkili klasörü gerçekten sisteminizden silmek istiyor musunuz? Bu işlemi geri alamazsınız!";
-        $admtext['allowdeletesupport'] = "Mod silindiğinde destek klasörünü sil'e izin ver";
-        $admtext['delrisk'] = "Bu seçeneği seçerek, kullanıcı istenmeyen klasörlerin silinebileceği tüm riskleri kabul eder. Bu riskin çok küçük olduğuna inanıyoruz.";
-        $admtext['delpartinfo'] = "Yeni bir sürümü yüklemeden önce modun önceki sürümlerini kaldırmayı unuttuysanız, bu seçeneği yalnızca Evet olarak ayarlamanız gerekir.";
-        $admtext['delinstinfo'] = "Modun yeni bir sürümünü yüklediyseniz ve önceki sürüm hala yüklü gösteriyorsa, bu seçeneği yalnızca Evet olarak ayarlamanız gerekir.";
-        $admtext['updateopts'] = "Senin mmconfig.php dosyanızın güncellenmesi gerekiyor! Lütfen yukarıdaki Seçenekler sekmesine tıklayın ve Kaydet düğmesine tıklayın.";
-        $admtext['confdelmod1'] = "Bu modu gerçekten sisteminizden silmek istiyor musunuz? Bu işlemi geri alamazsınız!";
-        $admtext['noeffect'] = "Uyarı: TNG'de hiçbir şey değişmez!";
-        $admtext['cfgnowrite'] = "Uyarı: Cfg dosyası yazmaya karşı korumalıdır. Parametreler değiştirilemez.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Bu testi silmek istediğinize emin misiniz?";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "Göster";
 $admtext['lnfirst'] = "Önce soyadı (virgül ile)";
 $admtext['savefirst'] = "Önce değişiklikler kaydedilsin mi?";
 $admtext['misc'] = "Çeşitli";
-$admtext['modmgr'] = "Mod Yöneticisi";
 $admtext['cannotopendir'] = "Klasör açılamıyor";
 $admtext['reviewsh'] = "İncele"; //short version
 //moved here in 9.0.0

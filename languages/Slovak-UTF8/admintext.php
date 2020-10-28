@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "Pokračovať";
         //changed in 8.0.0
         $admtext['showlog'] = "Záznam prístupov";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "Inštalácia a odstránenie TNG módov (dopĺnkov tretích strán)";
         //added in 9.0.0
         $admtext['oldimport'] = "Starý štýl importu (bez zobrazenia priebehu)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Zobraziť všetky udalosti a médiá";
         $admtext['servertime'] = "Čas na serveri je";
         $admtext['sitetime'] = "a čas na webových stránkach je";
-        $admtext['srexpl'] = "Nepovinné. Použijte podobný názov absolútnej cesty, ako ju vidíte v koreňovom priečinku. Potom presuňte nasledujúce súbory do konfiguračného umiestnenia <strong>ihneď</strong> po uložení a urobte ich zapisovateľnými (povolenie 664): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "Nepovinné. Použijte podobný názov absolútnej cesty, ako ju vidíte v koreňovom priečinku. Potom presuňte nasledujúce súbory do konfiguračného umiestnenia <strong>ihneď</strong> po uložení a urobte ich zapisovateľnými (povolenie 664): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Východzie priblíženie";
         $admtext['mapfoundzm'] = "Priblíženie miesta";
         $admtext['rrnum'] = "Počet záznamov zostavy";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Posielať schvaľovací mail";
         $admtext['fromadmin'] = "Posielať všetky maily z vyššie uvedenej adresy";
         $admtext['autotree'] = "Vytvoriť nový strom pre používateľa";
-        $admtext['modspath'] = "Priečinok módov";
         $admtext['extspath'] = "Priečinok rozšírení";
         $admtext['encrtype'] = "Typ šifrovania";
         $admtext['none'] = "Bez šifrovania";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Narodenie matky";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "Zoznam módov";
-        $admtext['removed'] = "odstránené";
-        $admtext['installed'] = "Inštalované";
-        $admtext['deleted'] = "odstránené";
-        $admtext['cantdel'] = "nemožno odstrániť";
-        $admtext['cfgname'] = "Názov konfiguračného súboru";
-        $admtext['version'] = "Verzia";
-        $admtext['nomods'] = "V priečinku módov sa nenašli žiadne definičné súbory módu (xxx)";
-        $admtext['location'] = "Umiestnenie";
-        $admtext['missing'] = "chýba";
-        $admtext['badtarget'] = "Zlý cieľ";
-        $admtext['cantwrite'] = "Nemožno zapisovať do";
-        $admtext['notwrite'] = "nie je zapisovateľný, skontrolujte oprávnenie";
-        $admtext['checkwrite'] = "Skontrolujte oprávnenie, musí byť zapisovateľný.";
-        $admtext['toterrors'] = "Celkom chýb";
-        $admtext['missfile'] = "Chýba súbor";
-        $admtext['notunique'] = "nie je jedinečné";
-        $admtext['nodesc'] = "Chýba definícia parametra, chýba popis";
-        $admtext['defval'] = "Východzia hodnota";
-        $admtext['written'] = "Súbor bol prepísaný";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Pre inštaláciu chýba miestna kópia xxx";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Vyžaduje sa aktualizácia módu";
-        $admtext['cannotinstall'] = "Tento mód nemožno nainštalovať";
-        $admtext['emptytarget'] = "Cieľový súbor je prázdny súbor.";
-        $admtext['cantdelmissing'] = "Nemožno odstrániť, súbor sa nenašiel";
-        //changed in 10.0.3
-        $admtext['editperf'] = "Parametre boli zmenené takto:";
-        //added in 10.0.3
-        $admtext['options'] = "Možnosti";
-        $admtext['viewlog'] = "Zobraziť protokol";
-        $admtext['target'] = "Zmeny";
-        $admtext['newfile'] = "Nové";
-        $admtext['copiesfile'] = "Kópie";
-        $admtext['copiesfile2'] = "Kópie do";
-        $admtext['logoptions'] = "Protokol manažéra módov";
-        $admtext['mmlogfilename'] = "Názov protokolu";
-        $admtext['sortlistby'] = "Zoradiť zoznamy podľa";
-        $admtext['modname'] = "Názov módu";
-        $admtext['bypassconfirm'] = "Vynechať potvrdenie";
-        $admtext['modifyoptions'] = "Upraviť možnosti manažéra módov";
-        $admtext['ready'] = "Možno nainštalovať";
-        $admtext['noselected'] = "Nie sú vybrané žiadne súbory!";
-        $admtext['choose'] = "Vybrať";
-        $admtext['showlogfile'] = "Zobraziť protokol akcií manažéra módov";
-        $admtext['recentactions'] = "posledné akcie, ktoré vykonal manažér módov";
-        $admtext['clearlog'] = "Vymazať protokol";
-        $admtext['confirmclearlog'] = "Naozaj chcete vymazať protokol?";
-        $admtext['modsyntax'] = "Syntax módov";
-        $admtext['modguidelines'] = "Úvod k módom";
-        $admtext['filemod'] = "Súbor xxx je upravený módom";
-        $admtext['potconf'] = "Potenciálne konflikty";
-        $admtext['modifications'] = "úpravy";
-        $admtext['othermmoptions'] = "Iné";
-        $admtext['file'] = "Súbor";
-        $admtext['tngmods'] = "Módy pre TNG ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "skopírované";
-        $admtext['emptyfile'] = "súbor je prázdny";
-        $admtext['filescopied'] = "súbory skopírované";
-        $admtext['notinst'] = "nenainštalované";
-        $admtext['install'] = "Inštalovať";
-        $admtext['filedel'] = "Súbor odstránený";
-        $admtext['created'] = "vytvorené";
-        $admtext['choosefilter'] = "Vyberte filter a kliknutím na \"Vykonať\" zobrazíte dostupné ovládacie prvky";
-        $admtext['mmmaxloglines'] = "Maximálny počet transakcií";
-        $admtext['statusfilter'] = "Stav";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Odinštalovať";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Vyčistiť";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Upraviť možnosti";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "Možno nainštalovať";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "verzia súboru/chybná verzia";
-        $admtext['bomfound'] = "BOM odstránený";
-        $admtext['cantinst'] = "Nemožno nainštalovať";
-        $admtext['cantproc'] = "nemožno odstrániť mód";
-        $admtext['cantupd'] = "nemožno zmeniť parameter";
-        $admtext['cleanupall'] = "Vyčistiť";
-        $admtext['copiesreq'] = "kópie súborov špecifikované";
-        $admtext['delete'] = "Odstrániť";
-        $admtext['deleteall'] = "Odstrániť";
-        $admtext['errors'] = "chyby";
-        $admtext['excused'] = "súbory vyradené";
-        $admtext['filesinst'] = "súbory inštalované";
-        $admtext['filesrem'] = "súbory odstránené";
-        $admtext['format'] = "chyba formátu";
-        $admtext['installall'] = "Inštalovať";
-        $admtext['installing'] = "Inštalácia";
-        $admtext['line'] = "Riadok";
-        $admtext['modified'] = "upravené";
-        $admtext['modsinst'] = "úpravy kódu inštalované";
-        $admtext['modrem'] = "mód odinštalovaný";
-        $admtext['modsrem'] = "úpravy kódu odstránené";
-        $admtext['modsreq'] = "úpravy kódu špecifikované";
-        $admtext['newfilesreq'] = "nové súbory špecifikované";
-        $admtext['nfcreated'] = "nové súbory vytvorené";
-        $admtext['noact'] = "neplatná značka (tag) akcie";
-        $admtext['nocfgfile'] = "súbor módu nebol nájdený";
-        $admtext['nocomps'] = "chýbajúce prvky";
-        $admtext['noend'] = "%end:% chýbajúca značka (tag)";
-        $admtext['nolocation'] = "chýba značka (tag) umiestnenia";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "otvorený";
-        $admtext['optional'] = "voliteľný";
-        $admtext['partinst'] = "Čiastočne nainštalované";
-        $admtext['removeall'] = "Odinštalovať";    // was Remove Selected mods
-        $admtext['removing'] = "Odinštalovávanie";    // was Removing
-        $admtext['reqtag'] = "chýba požadovaná značka (tag)";
-        $admtext['restparam'] = "Obnova východzieho parametra";
-        $admtext['return'] = "Návrat do manažéra módov";
-        $admtext['tagnoterm'] = "značka (tag) nie je zakončená";
-        $admtext['tagunk'] = "značka (tag) je neznáma";
-        $admtext['tgtfile'] = "cieľový súbor";
-        $admtext['updated'] = "zmenené";
-        $admtext['updparam'] = "Zmena parametra";
-        $admtext['unxend'] = "neočakávaný koniec súboru";
-        $admtext['warnings'] = "Upozornenie";
-        $admtext['allowdeletepartial'] = "Povoliť Odstrániť vybrané z čiastočne nainštalovaných módov";
-        $admtext['allowdeleteinstalled'] = "Povoliť Odstrániť zo samostatne inštalovaných módov";
-        $admtext['showwarnings'] = "Zobraziť upozornenia módov v poli Stav";
-        $admtext['logfullpath'] = "Do protokolu zapísať celú cestu pre súborové akcie";
-        $admtext['deleting'] = "Odstraňovanie ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Súbory";
-        $admtext['hasoptions'] = "Možnosti";
-        $admtext['restore'] = "Obnoviť východzie";
-        $admtext['stayon'] = "Zamknúť";
-        $admtext['accessible'] = "prístupné";
-        $admtext['bypassed'] = "vynechané";
-        $admtext['willbypass'] = "bude ignorované";  // was "will bypass"
-        $admtext['cantdel'] = "nemožno odstrániť";
-        $admtext['optmissing'] = "chýbajúci súbor (voliteľný)";
-        $admtext['tgtmissing'] = "chýbajúci cieľový súbor";
-        $admtext['optlocked'] = "súbor zamknutý (voliteľný)";
-        $admtext['tgtlocked'] = "súbor zamknutý";
-        $admtext['alreadyrem'] = "už odstránený";
-        $admtext['noaccess'] = "nie je prístup";
-        $admtext['badinstall'] = "nepodarilo sa inštalovať";
-        $admtext['removed'] = "odstránené";
-        $admtext['deleted'] = "odstránené";
-        $admtext['optsrcfilemissing'] = "chýbajúci voliteľný zdroj";
-        $admtext['srcfilemissing'] = "chýbajúci zdroj";
-        $admtext['optnocopy'] = "voliteľný súbor nebol skopírovaný";
-        $admtext['notcopied'] = "neskopírované";
-        $admtext['copied'] = "skopírované";
-        $admtext['notcreated'] = "nemožno vytvoriť nový súbor";
-        $admtext['optnotcreated'] = "nemožno vytvoriť nový voliteľný súbor";
-        $admtext['nocreated'] = "nevytvorené";
-        $admtext['fixedheader'] = "Použiť pevnú hlavičku";
-        $admtext['cantremok'] = "nemožno odstrániť, obísť";
-        $admtext['nofolder'] = "chýbajúci cieľový priečinok";
-        $admtext['edparams'] = "upraviť parametre";
-        $admtext['compresslog'] = "Zbaliť zobrazenie protokolu";
-        $admtext['formodname'] = "pre názov módu ";
-        $admtext['nofolder'] = "chýbajúci cieľový priečinok";
-        $admtext['fileperms'] = "Skontrolujte, prosím, oprávnenie k súboru";
-        $admtext['noparam'] = "chýbajúci parameter";
-        $admtext['editing'] = "úprava";
-        $admtext['redirect2log'] = "Presmerovať na protokol";
-        $admtext['on_error'] = "Len chyby";
-        $admtext['on_all'] = "Všetky transakcie";
-        $admtext['usestriping'] = "Použiť pruhy";
-        $admtext['stripeafter'] = "Pruh po tomto počte riadkov";
-        $admtext['adjusthdrs'] = "Upraviť pevnú hlavičku";
-        $admtext['displayoptions'] = "Nastavenie zobrazenia";
-        $admtext['no_frag'] = "fragment kódu tu nie je povolený";
-        //added in 12.0.0
-        $admtext['exists'] = "existuje";
-        $admtext['newdirsreq'] = "nové priečinky sú špecifikované";
-        $admtext['cantrem'] = "nemožno presunúť";
-        $admtext['showanalyzer'] = "Zobraziť kartu Analyzátor";
-        $admtext['showdeveloper'] = "Zobraziť ďalšie vývojové nástroje";
-        $admtext['showupdates'] = "Zobraziť tabuľku odporúčaných aktualizácií";
-        $admtext['analyzefiles'] = "Analyzovať TNG súbory";
-        $admtext['parsetable'] = "Ukážka tabuľky analyzátora";
-        $admtext['recommendedfixes'] = "Odporúčané aktualizácie";
-        $admtext['selectmod'] = "Vyberte konfiguračný súbor módu na ukážku tabuľkových výsledkov analyzátora";
-        $admtext['parsertags'] = "Pole značiek analyzátora:";
-        $admtext['parsererror'] = "Chyba: ";
-        $admtext['filesel'] = "Vyberte upravený súbor na preskúmanie zmien";
-        $admtext['custtextfixes'] = "Aktualizované pokyny módu odporúčajú, aby používateľský text bol vsúvaný pred komentáre na začiatok súboru cust_text.php tak, aby módy nemali vplyv na ručné zmeny používateľa urobené za komentovanými riadkami.";
-        $admtext['updcusttext'] = "Aktualizovať súbory cust_text.php";
-        $admtext['confirmupdcusttext'] = "Naozaj chcete aktualizovať súbory cust_text.php?";
-        $admtext['compressnames'] = "Zhustiť názvy módov v zozname módov";
-        $admtext['verified'] = "Overené";
-        $admtext['provisional'] = "(dočasne) musí byť k dispozícii";
-        $admtext['backtoprevious'] = "Návrat k predchádzajúcej stránke";
-        $admtext['reasontoupdate'] = "Ak ste nespustili skript cust_text_update.php ako časť aktualizácie TNG v12, musíte zaktualizovať vaše súbory cust_text.php <ul><li>pridaním nového riadku do týchto súborov </li><li> a tiež zaktualizovaním neaktuálneho riadku vo vašich existujúcich súboroch cust_text.php,</li></ul> ktoré sa nenahradzujú počas aktualizácií TNG.";
-        $admtext['newanchor'] = "Nový komentovaný riadok by sa nemal prekladať v jazykových súboroch, pretože vývojári módu ho môžu použiť ako kotvu na vkladanie používateľského textu pred tento nový komentovaný riadok.";
-        $admtext['translateissue'] = "Ak preložite nový komentovaný riadok, inštalácie módu zlyhajú.";
-        $admtext['privatemod'] = "Neverejný mód";
-        $admtext['protected'] = "chránený-odstrániť súbor ručne";
-        $admtext['restored'] = "obnovené";
-        $admtext['confdelmod'] = "Naozaj chcete tento mód odstrániť z vášho systému?";
-        $admtext['allowdeletesupport'] = "Dovoliť vymazanie priečinka, ak je vymazaný mód";
-        $admtext['delrisk'] = "Výberom tejto voľby používateľ berie na seba riziko, že môžu byť vymazané aj priečinky, ktoré nechcel vymazať. Veríme, že toto riziko je veľmi malé.";
-        $admtext['delpartinfo'] = "Mali by ste nastaviť túto voľbu na Áno len vtedy, ak ste zabudli odinštalovať predchádzajúce verzie módu pred inštalovaním novej verzie.";
-        $admtext['delinstinfo'] = "Mali by ste nastaviť túto voľbu na Áno len vtedy, ak ste nainštalovali novú verziu módu a predchádzajúca verzia sa stále ukazuje ako nainštalovaná.";
-        $admtext['updateopts'] = "Váš súbor mmconfig.php potrebuje byť zaktualizovaný! Prosím, kliknite na vyššie uvedenú kartu Voľby a potom na tlačidlo Uložiť.";
-        $admtext['confdelmod1'] = "Naozaj chcete vymazať tento mód z vášho systému? Nemôžete vrátiť späť túto operáciu!";
-        $admtext['noeffect'] = "Upozornenie: Nič nemeňte v TNG!";
-        $admtext['cfgnowrite'] = "Upozornenie:  Súbor Cfg je chránený proti zápisu. Parametre nemožno zmeniť.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Naozaj chcete odstrániť tento test?";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "Ukážka";
 $admtext['lnfirst'] = "Najprv priezvisko (s čiarkami)";
 $admtext['savefirst'] = "Najprv uložiť zmeny?";
 $admtext['misc'] = "Rôzne";
-$admtext['modmgr'] = "Manažér módov";
 $admtext['cannotopendir'] = "Nedá sa otvoriť priečinok";
 $admtext['reviewsh'] = "Preskúmanie"; //short version
 //moved here in 9.0.0

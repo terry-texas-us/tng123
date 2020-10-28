@@ -12,7 +12,6 @@ echo help_header("Nápověda: Obslužné programy");
                 <a href="http://tng.community" target="_blank" class="lightlink">TNG Forum</a> &nbsp;|&nbsp;
                 <a href="http://tng.lythgoes.net/wiki" target="_blank" class="lightlink">TNG Wiki</a><br>
                 <a href="languages_help.php" class="lightlink">&laquo; Nápověda: Jazyky</a> &nbsp;|&nbsp;
-                <a href="modmanager_help.php" class="lightlink">Nápověda: Manažer módů &raquo;</a>
             </p>
             <h2 class="largeheader">Nápověda: <small>Obslužné programy</small></h2>
             <p class="smaller menu clear-both">

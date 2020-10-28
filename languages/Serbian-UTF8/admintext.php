@@ -698,9 +698,6 @@ switch ($textpart) {
         $admtext['resume'] = "kliknite ovde za nastavak";
         //changed in 8.0.0
         $admtext['showlog'] = "Admin Log fajl";
-        //added in 8.0.0
-
-        $admtext['mmgritems'] = "Instalacija i deinstalacija TNG modula (add-ons) trećih lica";
         //added in 9.0.0
         $admtext['oldimport'] = "Stari stil uvoza podataka (bez progres bara)";
         //changed in 11.0.0
@@ -1234,7 +1231,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Prikaži sve događaje i medije";
         $admtext['servertime'] = "Vreme na serveru je";
         $admtext['sitetime'] = "i vreme na sajtu je";
-        $admtext['srexpl'] = "Opciono. Koristite apsolutno ime putanje, kao ono što vidite na Root putanji, a zatim premestite sledeće fajlove na Config Putanji <strong>odmah</strong> nakon snimanja i učinite ih zapisivima (664 dozvole): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "Opciono. Koristite apsolutno ime putanje, kao ono što vidite na Root putanji, a zatim premestite sledeće fajlove na Config Putanji <strong>odmah</strong> nakon snimanja i učinite ih zapisivima (664 dozvole): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Startuj Uvećanje";
         $admtext['mapfoundzm'] = "Uvećaj Lokaciju na mapi";
         $admtext['rrnum'] = "Snimite broj izveštaja";
@@ -1266,7 +1263,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Pošalji potvrdu e-pošte";
         $admtext['fromadmin'] = "Pošaljite svu poštu sa gornje adrese";
         $admtext['autotree'] = "Kreirajte novo rodoslovno stablo za korisnika";
-        $admtext['modspath'] = "Folder Modova";
         $admtext['extspath'] = "Ekstenzija Foldera";
         $admtext['encrtype'] = "Tip Šifriranja";
         $admtext['none'] = "Bez Šifriranja";
@@ -1696,212 +1692,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Majčino Rođenje";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "Mod Lista";
-        $admtext['removed'] = "uklonjen";
-        $admtext['installed'] = "Instaliran";
-        $admtext['deleted'] = "izbrisan";
-        $admtext['cantdel'] = "ne može da se izbriše";
-        $admtext['cfgname'] = "Ime Konfiguracijski fajla";
-        $admtext['version'] = "Verzija";
-        $admtext['nomods'] = "U mod mapi nisu pronađeni fajlovi definicije moda (xxx)";
-        $admtext['location'] = "Lokacija";
-        $admtext['missing'] = "nedostaje";
-        $admtext['badtarget'] = "Loša meta";
-        $admtext['cantwrite'] = "Ne može se pisati na";
-        $admtext['notwrite'] = "nije moguće pisati, proverite dozvole";
-        $admtext['checkwrite'] = "Proveri dozvole, mora biti omogućeno pisanje.";
-        $admtext['toterrors'] = "Totalna Greška";
-        $admtext['missfile'] = "Nedostaje fajl";
-        $admtext['notunique'] = "nije jedinstven";
-        $admtext['nodesc'] = "Greška definisanja parametara, nedostaje opis";
-        $admtext['defval'] = "Podrazumevana vrednost";
-        $admtext['written'] = "Fajl je napisan";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Nedostaje lokalna kopija xxx za instalaciju";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Potrebna su ažuriranja Moda";
-        $admtext['cannotinstall'] = "Nije moguće instalirati ovaj Mod";
-        $admtext['emptytarget'] = "Ciljni fajl je prazni fajl.";
-        $admtext['cantdelmissing'] = "Nije moguće izbrisati datoteku";
-        //changed in 10.0.3
-        $admtext['editperf'] = "Parametri za uređivanje su promenjeni na sledeći način:";
-        //added in 10.0.3
-        $admtext['options'] = "Opcije";
-        $admtext['viewlog'] = "Pogledaj Log Dnevnik";
-        $admtext['target'] = "Promene";
-        $admtext['newfile'] = "Kreiranje";
-        $admtext['copiesfile'] = "Kopije";
-        $admtext['copiesfile2'] = "Kopije na";
-        $admtext['logoptions'] = "Mod Menađer Log";
-        $admtext['mmlogfilename'] = "Log Fajl Ime";
-        $admtext['sortlistby'] = "Sortiraj liste po";
-        $admtext['modname'] = "Mod Naziv";
-        $admtext['bypassconfirm'] = "Zaobići potvrde";
-        $admtext['modifyoptions'] = "Modifikovati Mod Menađer Opcije";
-        $admtext['ready'] = "OK za instalaciju";
-        $admtext['noselected'] = "Niste odabrali nijedan fajl!";
-        $admtext['choose'] = "Izaberite";
-        $admtext['showlogfile'] = "Prikažite Mod Log Akcioni Menađer";
-        $admtext['recentactions'] = "Mod Manager Najnovije Akcije";
-        $admtext['clearlog'] = "Obriši Log";
-        $admtext['confirmclearlog'] = "Jeste li sigurni da želite obrisati log?";
-        $admtext['modsyntax'] = "Mod Sintaksa";
-        $admtext['modguidelines'] = "Mod Standardi";
-        $admtext['filemod'] = "Fajl xxx je izmenjen";
-        $admtext['potconf'] = "Potencijalni Sukobi";
-        $admtext['modifications'] = "modifikacije";
-        $admtext['othermmoptions'] = "Drugo";
-        $admtext['file'] = "Fajl";
-        $admtext['tngmods'] = "Modovi za TNG ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "kopirano";
-        $admtext['emptyfile'] = "fajl je prazan";
-        $admtext['filescopied'] = "kopirani fajlovi";
-        $admtext['notinst'] = "nije instalirana";
-        $admtext['install'] = "instaliraj";
-        $admtext['filedel'] = "Fajl je izbrisan";
-        $admtext['created'] = "kreiran";
-        $admtext['choosefilter'] = "Izaberite filter i kliknite na Idi za dostupne kontrole";
-        $admtext['mmmaxloglines'] = "Maksimalan broj transakcija";
-        $admtext['statusfilter'] = "Status";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Deinstaliraj";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Pospremiti";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Uredi opcije";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "OK za instalaciju";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "verzije fajla/neusklađenost verzije";
-        $admtext['bomfound'] = "BOM uklonjen";
-        $admtext['cantinst'] = "ne može da se instalira";
-        $admtext['cantproc'] = "ne može se ukloniti mod";
-        $admtext['cantupd'] = "nije moguće ažurirati parametar";
-        $admtext['cleanupall'] = "Pospremiti";
-        $admtext['copiesreq'] = "navedene kopije fajlova";
-        $admtext['delete'] = "Obriši";
-        $admtext['deleteall'] = "Obriši sve";
-        $admtext['errors'] = "greške";
-        $admtext['excused'] = "opravdani fajlovi";
-        $admtext['filesinst'] = "instalirani fajlovi";
-        $admtext['filesrem'] = "fajlovi uklonjeni";
-        $admtext['format'] = "greška u formatu";
-        $admtext['installall'] = "Instaliraj";
-        $admtext['installing'] = "Instaliranje";
-        $admtext['line'] = "Linija";
-        $admtext['modified'] = "modifikovan";
-        $admtext['modsinst'] = "instalirane modifikacije koda";
-        $admtext['modrem'] = "mod deinstaliran";
-        $admtext['modsrem'] = "uklonjene izmene koda";
-        $admtext['modsreq'] = "specificirane izmene koda";
-        $admtext['newfilesreq'] = "navedene su novi fajlovi";
-        $admtext['nfcreated'] = "kreirana novi fajl";
-        $admtext['noact'] = "oznaka akcije je nevažeća";
-        $admtext['nocfgfile'] = "mod fajl nije pronađen";
-        $admtext['nocomps'] = "nedostaju elementi";
-        $admtext['noend'] = "%kraj:% nedostaje oznaka";
-        $admtext['nolocation'] = "nedostaje oznaka lokacije";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "otvoren";
-        $admtext['optional'] = "opciono";
-        $admtext['partinst'] = "delimično instaliran";
-        $admtext['removeall'] = "Deinstaliraj";    // was Remove Selected mods
-        $admtext['removing'] = "Deinstaliranje";    // was Removing
-        $admtext['reqtag'] = "nedostaje obavezna oznaka";
-        $admtext['restparam'] = "Vraćanje podrazumevanog parametra";
-        $admtext['return'] = "Povratak na Mod Manager";
-        $admtext['tagnoterm'] = "oznaka nije prekinuta";
-        $admtext['tagunk'] = "oznaka je nepoznata";
-        $admtext['tgtfile'] = "ciljni fajl";
-        $admtext['updated'] = "ažuriranje";
-        $admtext['updparam'] = "Ažuriranje parametra";
-        $admtext['unxend'] = "neočekivani kraj fajla";
-        $admtext['warnings'] = "Upozorenja";
-        $admtext['allowdeletepartial'] = "Dozvoli brisanje izabranih delimično instaliranih Modova";
-        $admtext['allowdeleteinstalled'] = "Dopusti brisanje pojedinačno instaliranih Modova";
-        $admtext['showwarnings'] = "Prikaži Mod upozorenja u statusu";
-        $admtext['logfullpath'] = "Prijavite punu putanju za radnje fajlove";
-        $admtext['deleting'] = "Brisanje ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Fajlovi";
-        $admtext['hasoptions'] = "Opcije";
-        $admtext['restore'] = "Povrati Uobičajeno";
-        $admtext['stayon'] = "Zaključati";
-        $admtext['accessible'] = "pristupačan";
-        $admtext['bypassed'] = "zaobiđen";
-        $admtext['willbypass'] = "će ignorisati";  // was "will bypass"
-        $admtext['cantdel'] = "ne može da se izbriše";
-        $admtext['optmissing'] = "nedostaje fajl (opciono)";
-        $admtext['tgtmissing'] = "nedostaje ciljni fajl";
-        $admtext['optlocked'] = "Fajl je zaključan (opciono)";
-        $admtext['tgtlocked'] = "Fajl je zaključan";
-        $admtext['alreadyrem'] = "već uklonjen";
-        $admtext['noaccess'] = "nema pristupa";
-        $admtext['badinstall'] = "nije uspelo da se instalira";
-        $admtext['removed'] = "uklonjen";
-        $admtext['deleted'] = "izbrisan";
-        $admtext['optsrcfilemissing'] = "nedostaje dodatni izvor";
-        $admtext['srcfilemissing'] = "nedostaje izvor";
-        $admtext['optnocopy'] = "opcionalni fajl nije kopiran";
-        $admtext['notcopied'] = "nije kopirano";
-        $admtext['copied'] = "kopirano";
-        $admtext['notcreated'] = "ne može da kreira novi fajl";
-        $admtext['optnotcreated'] = "ne može da kreira opcioni novi fajl";
-        $admtext['nocreated'] = "nije kreirano";
-        $admtext['fixedheader'] = "Koristite Fiksna Zaglavlja";
-        $admtext['cantremok'] = "ne može ukloniti, opcionalno, zaobići";
-        $admtext['nofolder'] = "folder cilja nedostaje";
-        $admtext['edparams'] = "uredi parametre";
-        $admtext['compresslog'] = "Skupi Log Prikaz";
-        $admtext['formodname'] = "za ime mod-a ";
-        $admtext['nofolder'] = "folder cilja nedostaje";
-        $admtext['fileperms'] = "Proverite dozvole za fajlove";
-        $admtext['noparam'] = "parametar nedostaje";
-        $admtext['editing'] = "uređivanje";
-        $admtext['redirect2log'] = "Redirekcija do Logova za";
-        $admtext['on_error'] = "Samo Greške";
-        $admtext['on_all'] = "Sve transakcije";
-        $admtext['usestriping'] = "Koristite Trake";
-        $admtext['stripeafter'] = "Traka nakon broja redova";
-        $admtext['adjusthdrs'] = "Prilagodite Fiksna Zaglavlja";
-        $admtext['displayoptions'] = "Podešavanja Ekrana";
-        $admtext['no_frag'] = "ovde nije dozvoljen fragment koda";
-        //added in 12.0.0
-        $admtext['exists'] = "postoji";
-        $admtext['newdirsreq'] = "navedeni su nove folderi";
-        $admtext['cantrem'] = "ne može da se ukloni";
-        $admtext['showanalyzer'] = "Prikaži karticu Analiziraj TNG Fajlove";
-        $admtext['showdeveloper'] = "Prikaži druge alatke za programere";
-        $admtext['showupdates'] = "Prikaži karticu Preporučena Ažuriranja";
-        $admtext['analyzefiles'] = "Analizirajte TNG fajlove";
-        $admtext['parsetable'] = "Pregled Parser Tabele";
-        $admtext['recommendedfixes'] = "Preporučena ažuriranja";
-        $admtext['selectmod'] = "Izaberite mod config fajl da biste videli rezultate tabele parser-a";
-        $admtext['parsertags'] = "Parser Tagova Reda:";
-        $admtext['parsererror'] = "Greška: ";
-        $admtext['filesel'] = "Izaberite fajl TNG da biste videli koji modovi utiču na nju";
-        $admtext['custtextfixes'] = "Ažurirane smjernice za modove preporučuju, da se prilagođeni tekst ubaci pre komentara na početku datoteke cust_text.php tako da modovi ne utiču na promene korisničkog priručnika koje su napravljene nakon linija komentara.";
-        $admtext['updcusttext'] = "Ažuriranje cust_text.php fajla";
-        $admtext['confirmupdcusttext'] = "Jeste li sigurni da želite ažurirati fajlove cust_text.php?";
-        $admtext['compressnames'] = "Uklonite razmake iz imena fajlova u Mod Listi";
-        $admtext['verified'] = "provereno";
-        $admtext['provisional'] = "(privremeno) moraju biti dostupni";
-        $admtext['backtoprevious'] = "Povratak na prethodnu stranicu";
-        $admtext['reasontoupdate'] = "Ako niste pokrenuli skriptu cust_text_update.php kao dio nadogradnje TNG v12, morate ažurirati datoteke cust_text.php na <ul><li>dodajte novu liniju u fajlu, i </li><li>takođe ažurirate postojeću liniju u postojećim cust_text.php fajlovima</li></ul> koje se ne menjaju tokom nadogradnje TNG-a.";
-        $admtext['newanchor'] = "Nova linija komentara ne bi trebalo da se prevodi u jezičke datoteke tako da se može koristiti kao sidro za umetanje prilagođenog teksta ispred ove nove linije komentara od strane mod programera.";
-        $admtext['translateissue'] = "Ako prevedete novu liniju komentara, instalirani mod neće uspeti.";
-        $admtext['privatemod'] = "Privatni Mod";
-        $admtext['protected'] = "zaštićen-ukloni fajl ručno";
-        $admtext['restored'] = "obnavljenje";
-        $admtext['confdelmod'] = "Da li zaista želite da izbrišete ovaj mod i pridruženi folder iz vašeg sistema? Ne možete poništiti ovu operaciju!";
-        $admtext['allowdeletesupport'] = "Dozvoli brisanje foldera za podršku kada je mod obrisan";
-        $admtext['delrisk'] = "Ako izaberete ovu opciju, korisnik prihvata sav rizik da se neželjeni folderi mogu izbrisati. Smatramo da je ovaj rizik veoma mali.";
-        $admtext['delpartinfo'] = "Ovu opciju postavite samo na Da, ako ste zaboravili da deinstalirate prethodne verzije moda pre instaliranja nove verzije.";
-        $admtext['delinstinfo'] = "Ovu opciju postavite samo na Da, ako ste instalirali novu verziju moda, a prethodna verzija još uvijek prikazuje instaliranu.";
-        $admtext['updateopts'] = "Vaš mmconfig.php treba da bude ažuriran! Kliknite na karticu Opcije iznad i kliknite na dugme Sačuvaj";
-        $admtext['confdelmod1'] = "Do you really want to delete this mod from your system? You can not undo this operation!";
-        $admtext['noeffect'] = "Upozorenje: Ne menja ništa u TNG-u!";
-        $admtext['cfgnowrite'] = "Upozorenje: Cfg fajl je zaštićen od pisanja. Parametri se ne mogu menjati.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Jeste li sigurni da želite izbrisati ovaj test?";
@@ -2258,7 +2048,6 @@ $admtext['show'] = "Pregled";
 $admtext['lnfirst'] = "Prezime prvo (sa zarezima)";
 $admtext['savefirst'] = "Prvo sačuvajte promene?";
 $admtext['misc'] = "Ostala podešavanja";
-$admtext['modmgr'] = "Upravljanje Modulima";
 $admtext['cannotopendir'] = "Nije moguće otvoriti folder";
 $admtext['reviewsh'] = "Pregled"; //short version
 //moved here in 9.0.0

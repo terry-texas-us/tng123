@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "Återuppta";
         //changed in 8.0.0
         $admtext['showlog'] = "Visa loggen";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "Konfigurera tredjepartstillägg";
         //added in 9.0.0
         $admtext['oldimport'] = "Äldre import (ingen förloppsindikator)";
         //changed in 11.0.0
@@ -1227,7 +1225,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Visa alla händelser och media";
         $admtext['servertime'] = "Server-tiden är";
         $admtext['sitetime'] = "och sajt-tiden är";
-        $admtext['srexpl'] = "Valfri. Ange en absolut sökväg, liknande den till Rot ovan. När du har sparat Konfig-roten, flytta <strong>genast</strong> följande filer till denna och gör dem skrivbara (664-rättighet): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "Valfri. Ange en absolut sökväg, liknande den till Rot ovan. När du har sparat Konfig-roten, flytta <strong>genast</strong> följande filer till denna och gör dem skrivbara (664-rättighet): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Startar Zoom";
         $admtext['mapfoundzm'] = "Plats Zoom";
         $admtext['rrnum'] = "Postens Rapportnummer";
@@ -1259,7 +1257,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Skicka bekräftelse-mail";
         $admtext['fromadmin'] = "Skicka alla mail från adressen ovan";
         $admtext['autotree'] = "Skapa nytt Träd för användare";
-        $admtext['modspath'] = "Sökväg till MOD";
         $admtext['extspath'] = "Sökväg till Tillägg";
         $admtext['encrtype'] = "Krypteringstyp";
         $admtext['none'] = "Ingen kryptering";
@@ -1689,212 +1686,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Mother's Birth";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "MOD-lista";
-        $admtext['removed'] = "har tagits bort";
-        $admtext['installed'] = "Installerad";
-        $admtext['deleted'] = "har raderats";
-        $admtext['cantdel'] = "kan inte radera";
-        $admtext['cfgname'] = "Konfigureringsfilens namn";
-        $admtext['version'] = "Version";
-        $admtext['nomods'] = "Inga MOD definitionsfiler (xxx) hittades i MOD-mappen";
-        $admtext['location'] = "Plats";
-        $admtext['missing'] = "Saknad";
-        $admtext['badtarget'] = "Felaktigt mål";
-        $admtext['cantwrite'] = "Kan inte skriva till";
-        $admtext['notwrite'] = "är inte skrivbar, kontrollera behörigheter";
-        $admtext['checkwrite'] = "Kontrollera behörigheter, måste vara skrivbar.";
-        $admtext['toterrors'] = "Totalt antal fel";
-        $admtext['missfile'] = "Saknad fil";
-        $admtext['notunique'] = "inte unik";
-        $admtext['nodesc'] = "Fel i parameterdefinitioner, beskrivning saknas";
-        $admtext['defval'] = "Standardvärde";
-        $admtext['written'] = "Fil skriven";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Lokal kopia av xxx för installation saknas";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Mod-uppdateringar krävs ";
-        $admtext['cannotinstall'] = "Kan inte installera denna Mod";
-        $admtext['emptytarget'] = "Målfilen är tom.";
-        $admtext['cantdelmissing'] = "Kan inte radera, filen saknas";
-        //changed in 10.0.3
-        $admtext['editperf'] = "The Edit parameters were changed as follows:";
-        //added in 10.0.3
-        $admtext['options'] = "Inställningar";
-        $admtext['viewlog'] = "Visa logg";
-        $admtext['target'] = "Ändrar";
-        $admtext['newfile'] = "Skapar";
-        $admtext['copiesfile'] = "Kopierar";
-        $admtext['copiesfile2'] = "Kopierar till";
-        $admtext['logoptions'] = "Logg för MOD-hanteraren";
-        $admtext['mmlogfilename'] = "Loggfilens namn";
-        $admtext['sortlistby'] = "Sortera fillista efter";
-        $admtext['modname'] = "MOD-namn";
-        $admtext['bypassconfirm'] = "Hoppa över bekräftelsemeddelanden";
-        $admtext['modifyoptions'] = "Modify Mod Manager Options";
-        $admtext['ready'] = "Klar att installera";
-        $admtext['noselected'] = "Du har inte valt några filer!";
-        $admtext['choose'] = "Välj";
-        $admtext['showlogfile'] = "Visa MOD-hanterarens åtgärdslogg";
-        $admtext['recentactions'] = "senaste åtgärder i MOD-hanteraren";
-        $admtext['clearlog'] = "Rensa logg";
-        $admtext['confirmclearlog'] = "Är det säkert att du vill tömma loggen?";
-        $admtext['modsyntax'] = "MOD-syntax";
-        $admtext['modguidelines'] = "Riktlinjer för MOD";
-        $admtext['filemod'] = "Fil xxx har ändrats av";
-        $admtext['potconf'] = "Möjliga konflikter";
-        $admtext['modifications'] = "förändringar";
-        $admtext['othermmoptions'] = "Övrigt";
-        $admtext['file'] = "Fil";
-        $admtext['tngmods'] = "MOD för TNG ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "kopierad";
-        $admtext['emptyfile'] = "tom fil";
-        $admtext['filescopied'] = "filer har kopierats";
-        $admtext['notinst'] = "ej installerad";
-        $admtext['install'] = "Installera";
-        $admtext['filedel'] = "Fil har raderats";
-        $admtext['created'] = "skapad";
-        $admtext['choosefilter'] = "Välj status och klicka på Kör för att filtrera";
-        $admtext['mmmaxloglines'] = "Max antal poster";
-        $admtext['statusfilter'] = "Status";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Avinstallera";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Städa upp";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Editeringsmöjligheter";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "OK att installera";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "Missmatchning av filversion";
-        $admtext['bomfound'] = "BOM har tagits bort";
-        $admtext['cantinst'] = "Kan ej installeras";
-        $admtext['cantproc'] = "Kan ej avinstalleras";
-        $admtext['cantupd'] = "kan inte uppdatera parametrar";
-        $admtext['cleanupall'] = "Städa upp";
-        $admtext['copiesreq'] = "kopiering av filer specificerade";
-        $admtext['delete'] = "Radera";
-        $admtext['deleteall'] = "Radera alla";
-        $admtext['errors'] = "fel";
-        $admtext['excused'] = "files excused";
-        $admtext['filesinst'] = "filer installerade";
-        $admtext['filesrem'] = "filer har tagits bort";
-        $admtext['format'] = "formatfel";
-        $admtext['installall'] = "Installera";
-        $admtext['installing'] = "Installerar";
-        $admtext['line'] = "Rad";
-        $admtext['modified'] = "ändrad";
-        $admtext['modsinst'] = "kodändring installerad";
-        $admtext['modrem'] = "MOD avinstallerad";
-        $admtext['modsrem'] = "kodändringar avinstallerade";
-        $admtext['modsreq'] = "kodförändringar specificerade";
-        $admtext['newfilesreq'] = "nya filer specificerade";
-        $admtext['nfcreated'] = "ny fil har skapats";
-        $admtext['noact'] = "ogiltigt händelsemärke";
-        $admtext['nocfgfile'] = "MOD-fil kan inte hittas";
-        $admtext['nocomps'] = "element saknas";
-        $admtext['noend'] = "%end:% märke saknas";
-        $admtext['nolocation'] = "platsmärke saknas";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "öppnad";
-        $admtext['optional'] = "valfri";
-        $admtext['partinst'] = "Delvis installerad";
-        $admtext['removeall'] = "Avinstallera";    // was Remove Selected mods
-        $admtext['removing'] = "Avinstallerar";    // was Removing
-        $admtext['reqtag'] = "obligatoriskt märke saknas";
-        $admtext['restparam'] = "Återställer standardparametrar";
-        $admtext['return'] = "Återvänd till MOD-hanteraren";
-        $admtext['tagnoterm'] = "märke ej avslutat";
-        $admtext['tagunk'] = "okänt märke";
-        $admtext['tgtfile'] = "målfil";
-        $admtext['updated'] = "uppdaterad";
-        $admtext['updparam'] = "Uppdaterar parametrar";
-        $admtext['unxend'] = "oväntat filslut";
-        $admtext['warnings'] = "Varningar";
-        $admtext['allowdeletepartial'] = "Tillåt radering av delvis installerade MODs";
-        $admtext['allowdeleteinstalled'] = "Tillåt radering av helt installerade MODs";
-        $admtext['showwarnings'] = "Visa MOD-varningar i status";
-        $admtext['logfullpath'] = "Logga full sökväg för filhändelser";
-        $admtext['deleting'] = "Raderar ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Filer";
-        $admtext['hasoptions'] = "Valmöjligheter";
-        $admtext['restore'] = "Återställ standardvärden";
-        $admtext['stayon'] = "Lås";
-        $admtext['accessible'] = "tillgänglig";
-        $admtext['bypassed'] = "överhoppad";
-        $admtext['willbypass'] = "kommer att ignoreras";  // was "will bypass"
-        $admtext['cantdel'] = "kan inte radera";
-        $admtext['optmissing'] = "fil saknas (valfri)";
-        $admtext['tgtmissing'] = "målfil saknas";
-        $admtext['optlocked'] = "fil låst (valfri)";
-        $admtext['tgtlocked'] = "fil låst";
-        $admtext['alreadyrem'] = "redan avinstallerad";
-        $admtext['noaccess'] = "ingen åtkomst";
-        $admtext['badinstall'] = "installation misslyckades";
-        $admtext['removed'] = "har tagits bort";
-        $admtext['deleted'] = "har raderats";
-        $admtext['optsrcfilemissing'] = "valfri källa saknas";
-        $admtext['srcfilemissing'] = "källa saknas";
-        $admtext['optnocopy'] = "valfri fil har ej kopierats";
-        $admtext['notcopied'] = "ej kopierad";
-        $admtext['copied'] = "kopierad";
-        $admtext['notcreated'] = "kan inte skapa ny fil";
-        $admtext['optnotcreated'] = "kan inte skapa (valfri) ny fil";
-        $admtext['nocreated'] = "inte skapad";
-        $admtext['fixedheader'] = "Använd fasta rubrikrader";
-        $admtext['cantremok'] = "ej avinstallerbar, valfri, överhoppad";
-        $admtext['nofolder'] = "målmapp saknas";
-        $admtext['edparams'] = "editera parametrar";
-        $admtext['compresslog'] = "Komprimerad loggvisning";
-        $admtext['formodname'] = "för MOD-namn ";
-        $admtext['nofolder'] = "målmapp saknas";
-        $admtext['fileperms'] = "Kontrollera filbehörigheter";
-        $admtext['noparam'] = "parameter saknas";
-        $admtext['editing'] = "editerar";
-        $admtext['redirect2log'] = "Gå automatiskt till loggen vid";
-        $admtext['on_error'] = "Enbart fel";
-        $admtext['on_all'] = "Alla poster";
-        $admtext['usestriping'] = "Visa randig lista";
-        $admtext['stripeafter'] = "Antal listrader per rand";
-        $admtext['adjusthdrs'] = "Justera fasta rubrikrader";
-        $admtext['displayoptions'] = "Inställningar för visning";
-        $admtext['no_frag'] = "kodfragment inte tillåtet här";
-        //added in 12.0.0
-        $admtext['exists'] = "existerar";
-        $admtext['newdirsreq'] = "nya mappar specificerade";
-        $admtext['cantrem'] = "kan inte ta bort";
-        $admtext['showanalyzer'] = "Visa fliken Analysera TNG-filer";
-        $admtext['showdeveloper'] = "Visa Andra Utvecklingsverktyg";
-        $admtext['showupdates'] = "Visa fliken Rekommenderade Uppdateringar";
-        $admtext['analyzefiles'] = "Analysera TNG-filer";
-        $admtext['parsetable'] = "Visa Parsningstabell";
-        $admtext['recommendedfixes'] = "Rekommenderade uppdateringar";
-        $admtext['selectmod'] = "Välj en Mod-konfigureringsfil för att visa parsningstabellens resultat";
-        $admtext['parsertags'] = "Parsningstaggar, matris:";
-        $admtext['parsererror'] = "Fel: ";
-        $admtext['filesel'] = "Välj TNG-fil för att se vilka Mod:ar som påverkar den";
-        $admtext['custtextfixes'] = "De uppdaterade Mod-riktlinjerna rekommenderar att egen text skrivs in före kommentarerna i början av filen cust_text.php så att Mod:ar inte påverkar ändringar i användarmanualen som görs efter kommentarraderna.";
-        $admtext['updcusttext'] = "Uppdatera cust_text.php-filer";
-        $admtext['confirmupdcusttext'] = "Är du säker på att du vill uppdatera cust_text.php-filerna?";
-        $admtext['compressnames'] = "Ta bort mellanslag från filnamn i Mod-listan";
-        $admtext['verified'] = "bekräftad";
-        $admtext['provisional'] = "(tillfällig) måste vara tillgänglig";
-        $admtext['backtoprevious'] = "Återgå till föregående sida";
-        $admtext['reasontoupdate'] = "Om du inte har kört cust_text_update.php script som en del av uppgraderingen av TNG v12, måste du uppdatera din cust_text.php files till att <ul><li>lägga till en ny rad till filerna och </li><li>också uppdatera raden out-of-date i dina nuvarande cust_text.php-filer</li></ul> vilka inte ersätts under TNG-uppgraderingen.";
-        $admtext['newanchor'] = "Den nya kommentarraden ska inte översättas i språkfilerna, utan ska kunna användas av Mod-utvecklare som ankare för att infoga egen text före denna nya kommentarrad.";
-        $admtext['translateissue'] = "Om du översätter den nya kommentarraden, kommer Mod-installationen att misslyckas.";
-        $admtext['privatemod'] = "Privat Mod";
-        $admtext['protected'] = "skyddade – ta bort filerna manuellt";
-        $admtext['restored'] = "återställd";
-        $admtext['confdelmod'] = "Vill du verkligen radera denna Mod och tillhörande mapp från systemet? Du kan inte ångra denna åtgärd!";
-        $admtext['allowdeletesupport'] = "Tillåt mappen Delete Support när Mod:en är raderad";
-        $admtext['delrisk'] = "Genom att välja detta alternativ, ansvarar användaren för att oönskade mappar kan raderas. Denna risk bedöms dock vara mycket liten.";
-        $admtext['delpartinfo'] = "Du bör välja alternativ Ja, endast om du glömt att avinstallera tidigare versioner av Mod:en innan du installerade en ny version.";
-        $admtext['delinstinfo'] = "Du bör välja alternativ Ja, endast om du installerat en ny version av Mod:en och den tidigare versionen fortfarande anges som installerad.";
-        $admtext['updateopts'] = "Filen mmconfig.php behöver uppdateras! Gå till fliken Alternativ ovan och klicka på Spara-knappen.";
-        $admtext['confdelmod1'] = "Vill du verkligen radera denna Mod från ditt system? Du kan inte ångra denna åtgärd!";
-        $admtext['noeffect'] = "Varning: Ändrar ingenting i TNG!";
-        $admtext['cfgnowrite'] = "Warning: Cfg file is write-protected. Parameters cannot be changed.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Är du säker på att du vill radera detta test?";
@@ -2251,7 +2042,6 @@ $admtext['show'] = "Förhandsgranska";
 $admtext['lnfirst'] = "Efternamn först (med kommatecken)";
 $admtext['savefirst'] = "spara ändringarna först?";
 $admtext['misc'] = "Diverse";
-$admtext['modmgr'] = "MOD-hanterare";
 $admtext['cannotopendir'] = "Kan inte öppna mappen";
 $admtext['reviewsh'] = "Granska"; //short version
 //moved here in 9.0.0

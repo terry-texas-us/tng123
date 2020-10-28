@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "Fortsæt";
         //changed in 8.0.0
         $admtext['showlog'] = "Admin-Log";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "Konfigurer 3.-parts tilføjelser";
         //added in 9.0.0
         $admtext['oldimport'] = "Gammeldags import (uden forløbsbjælke)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Vis alle begivenheder og billeder";
         $admtext['servertime'] = "Servertid er";
         $admtext['sitetime'] = "og hjemmesidetid er";
-        $admtext['srexpl'] = "Valgfri. Brug et absolut stinavn, som den du ser i rodstien, flyt derefter de følgende filer til Konfig. sti <strong>straks</strong> efter at have gemt og gør dem skrivbare (664 permissions): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "Valgfri. Brug et absolut stinavn, som den du ser i rodstien, flyt derefter de følgende filer til Konfig. sti <strong>straks</strong> efter at have gemt og gør dem skrivbare (664 permissions): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Start Zoom";
         $admtext['mapfoundzm'] = "Sted Zoom";
         $admtext['rrnum'] = "Post rapportnummer";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Send godkendelsesmail";
         $admtext['fromadmin'] = "Send alle emails fra ovenstående adresse";
         $admtext['autotree'] = "Opret nyt træ til bruger";
-        $admtext['modspath'] = "MODs sti";
         $admtext['extspath'] = "Udvidelsesmappe";
         $admtext['encrtype'] = "Krypteringstype";
         $admtext['none'] = "Ingen kryptering";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Mors fødsel";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "MOD Liste";
-        $admtext['removed'] = "fjernet";
-        $admtext['installed'] = "Installeret";
-        $admtext['deleted'] = "slettet";
-        $admtext['cantdel'] = "kan ikke slette";
-        $admtext['cfgname'] = "Konfigurationsfilens navn";
-        $admtext['version'] = "Version";
-        $admtext['nomods'] = "Ingen MOD definitionsfiler (xxx) fundet i MOD-mappen";
-        $admtext['location'] = "Sted";
-        $admtext['missing'] = "mangler";
-        $admtext['badtarget'] = "Forkert målfil";
-        $admtext['cantwrite'] = "Kan ikke skrive til";
-        $admtext['notwrite'] = "er ikke skrivbar, tjek rettigheder";
-        $admtext['checkwrite'] = "Tjek rettigheder, skal være skrivbar.";
-        $admtext['toterrors'] = "Totalt antal fejl";
-        $admtext['missfile'] = "Manglende fil";
-        $admtext['notunique'] = "ikke unikt";
-        $admtext['nodesc'] = "Parameterdefinitionsfejl, mangler beskrivelse";
-        $admtext['defval'] = "Standardværdi";
-        $admtext['written'] = "Fil er gemt";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Lokal kopi af xxx til installation mangler";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "MOD opdateringer er påkrævet";
-        $admtext['cannotinstall'] = "Kan ikke installere denne MOD";
-        $admtext['emptytarget'] = "Målet er en tom fil.";
-        $admtext['cantdelmissing'] = "Kan ikke slette, fil mangler";
-        //changed in 10.0.3
-        $admtext['editperf'] = "Redigeringsparametre blev ændret således:";
-        //added in 10.0.3
-        $admtext['options'] = "Indstillinger";
-        $admtext['viewlog'] = "Vis log";
-        $admtext['target'] = "Mål";
-        $admtext['newfile'] = "Opretter";
-        $admtext['copiesfile'] = "Kopierer";
-        $admtext['copiesfile2'] = "Kopierer til";
-        $admtext['logoptions'] = "Mod managers logindstillinger";
-        $admtext['mmlogfilename'] = "Logfilnavn";
-        $admtext['sortlistby'] = "Sortér listerne efter";
-        $admtext['modname'] = "Mod navn";
-        $admtext['bypassconfirm'] = "Udelad bekræftelserne";
-        $admtext['modifyoptions'] = "Redigér Mod Manager indstillinger";
-        $admtext['ready'] = "OK til at Installere";
-        $admtext['noselected'] = "Der er ikke valgt nogen filer!";
-        $admtext['choose'] = "Vælg";
-        $admtext['showlogfile'] = "Vis Mod Manager handlingslog";
-        $admtext['recentactions'] = "Mod Manager seneste handlinger";
-        $admtext['clearlog'] = "Slet loggen";
-        $admtext['confirmclearlog'] = "Skal loggen virkelig slettes?";
-        $admtext['modsyntax'] = "Mod syntaks";
-        $admtext['modguidelines'] = "Mod standarder";
-        $admtext['filemod'] = "Fil xxx modificeret af";
-        $admtext['potconf'] = "Mulige Konflikter";
-        $admtext['modifications'] = "modifikationer";
-        $admtext['othermmoptions'] = "Andre";
-        $admtext['file'] = "Fil";
-        $admtext['tngmods'] = "Mods for TNG ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "kopieret";
-        $admtext['emptyfile'] = "filen er tom";
-        $admtext['filescopied'] = "filerne kopieret";
-        $admtext['notinst'] = "ikke installeret";
-        $admtext['install'] = "Installer";
-        $admtext['filedel'] = "Fil slettet";
-        $admtext['created'] = "oprettet";
-        $admtext['choosefilter'] = "Vælg filteret og klik på Start for de tilgængelige kontroller";
-        $admtext['mmmaxloglines'] = "Maks. antal transaktioner";
-        $admtext['statusfilter'] = "Status";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Afinstaller";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Ryd Op";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Redigeringsindstillinger";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "OK til at installere";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "filversion / udgave mismatch";
-        $admtext['bomfound'] = "BOM fjernet";
-        $admtext['cantinst'] = "kan ikke installere";
-        $admtext['cantproc'] = "kan ikke fjerne MOD";
-        $admtext['cantupd'] = "kan ikke opdatere parameter";
-        $admtext['cleanupall'] = "Ryd op";
-        $admtext['copiesreq'] = "filkopier angivet";
-        $admtext['delete'] = "Slet";
-        $admtext['deleteall'] = "Slet";
-        $admtext['errors'] = "fejl";
-        $admtext['excused'] = "filer fritaget";
-        $admtext['filesinst'] = "filer installeret";
-        $admtext['filesrem'] = "filer fjernet";
-        $admtext['format'] = "formatfejl";
-        $admtext['installall'] = "Installér";
-        $admtext['installing'] = "Installerer";
-        $admtext['line'] = "Linje";
-        $admtext['modified'] = "ændret";
-        $admtext['modsinst'] = "kodeændringer installeret";
-        $admtext['modrem'] = "MOD fjernet";
-        $admtext['modsrem'] = "kodeændringer fjernet";
-        $admtext['modsreq'] = "kodeændringer angivet";
-        $admtext['newfilesreq'] = "nye filer angivet";
-        $admtext['nfcreated'] = "ny fil oprettet";
-        $admtext['noact'] = "handlingskode ugyldig";
-        $admtext['nocfgfile'] = "MOD fil ikke fundet";
-        $admtext['nocomps'] = "manglende elementer";
-        $admtext['noend'] = "%end:% kode mangler";
-        $admtext['nolocation'] = "manglende stedkode";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "åbnet";
-        $admtext['optional'] = "valgfri";
-        $admtext['partinst'] = "delvis installeret";
-        $admtext['removeall'] = "Fjern";    // was Remove Selected mods
-        $admtext['removing'] = "Afinstaller";    // was Removing
-        $admtext['reqtag'] = "nødvendig kode mangler";
-        $admtext['restparam'] = "Genopretter standardparameter";
-        $admtext['return'] = "Tilbage til MOD manager";
-        $admtext['tagnoterm'] = "kode ikke afsluttet";
-        $admtext['tagunk'] = "ukendt kode";
-        $admtext['tgtfile'] = "målfil";
-        $admtext['updated'] = "opdateret";
-        $admtext['updparam'] = "Opdaterer parameter";
-        $admtext['unxend'] = "Uventet afslutning på fil";
-        $admtext['warnings'] = "Advarsler";
-        $admtext['allowdeletepartial'] = "Tillad delvis sletning af markerede MODs";
-        $admtext['allowdeleteinstalled'] = "Tillad sletning af individuelt installerede MODs";
-        $admtext['showwarnings'] = "Vis MOD Advarsler i status";
-        $admtext['logfullpath'] = "Log fuld sti for filhandlinger";
-        $admtext['deleting'] = "Fjerner ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Filer";
-        $admtext['hasoptions'] = "Muligheder";
-        $admtext['restore'] = "Gendan standard";
-        $admtext['stayon'] = "Lås";
-        $admtext['accessible'] = "tilgængelig(e)";
-        $admtext['bypassed'] = "Udeladt";
-        $admtext['willbypass'] = "vil udelade";  // was "will bypass"
-        $admtext['cantdel'] = "kan ikke slette";
-        $admtext['optmissing'] = "fil mangler (valgfrit)";
-        $admtext['tgtmissing'] = "målfilen mangler";
-        $admtext['optlocked'] = "fil låst (valgfrit)";
-        $admtext['tgtlocked'] = "fil låst";
-        $admtext['alreadyrem'] = "allerede fjernet";
-        $admtext['noaccess'] = "ingen adgang";
-        $admtext['badinstall'] = "kunne ikke installeres";
-        $admtext['removed'] = "fjernet";
-        $admtext['deleted'] = "slettet";
-        $admtext['optsrcfilemissing'] = "valgfri kilde mangler";
-        $admtext['srcfilemissing'] = "kilde mangler";
-        $admtext['optnocopy'] = "valgfri fil ikke kopieret";
-        $admtext['notcopied'] = "ikke kopieret";
-        $admtext['copied'] = "kopieret";
-        $admtext['notcreated'] = "kan ikke oprette ny fil";
-        $admtext['optnotcreated'] = "kan ikke oprette valgfri ny fil";
-        $admtext['nocreated'] = "ikke oprettet";
-        $admtext['fixedheader'] = "Brug faste overskrifter";
-        $admtext['cantremok'] = "kan ikke fjernes, valgfri, udeladt";
-        $admtext['nofolder'] = "målmappen mangler";
-        $admtext['edparams'] = "redigér parametrene";
-        $admtext['compresslog'] = "Skjul logvisning";
-        $admtext['formodname'] = "for MOD navn ";
-        $admtext['nofolder'] = "målmappen mangler";
-        $admtext['fileperms'] = "Tjek filegenskaber";
-        $admtext['noparam'] = "parameter mangler";
-        $admtext['editing'] = "redigering";
-        $admtext['redirect2log'] = "Omdirigering til log For";
-        $admtext['on_error'] = "Kun fejl";
-        $admtext['on_all'] = "Alle handlinger";
-        $admtext['usestriping'] = "Brug striber";
-        $admtext['stripeafter'] = "Stribe efter antal rækker";
-        $admtext['adjusthdrs'] = "Tilpas faste overskrifter";
-        $admtext['displayoptions'] = "Visningsindstillinger";
-        $admtext['no_frag'] = "kodefragment ikke tilladt her";
-        //added in 12.0.0
-        $admtext['exists'] = "eksisterer";
-        $admtext['newdirsreq'] = "nye mapper specificeret";
-        $admtext['cantrem'] = "kan ikke fjerne";
-        $admtext['showanalyzer'] = "Vis fanen med Analysér TNG-filer";
-        $admtext['showdeveloper'] = "Vis Andre Udviklerværktøjer";
-        $admtext['showupdates'] = "Vis fanen med anbefalede opdateringer";
-        $admtext['analyzefiles'] = "Analysér TNG-filer";
-        $admtext['parsetable'] = "Se Parsertabel";
-        $admtext['recommendedfixes'] = "Anbefalede opdateringer";
-        $admtext['selectmod'] = "Vælg en MOD config-fil for at se resultaterne i parsertabellen";
-        $admtext['parsertags'] = "Parser Tags Array:";
-        $admtext['parsererror'] = "Fejl: ";
-        $admtext['filesel'] = "Vælg en TNG-fil for at se, hvilke MOD'er der påvirker den";
-        $admtext['custtextfixes'] = "Det anbefales i de opdaterede MOD retningslinjer, at brugerdefineret tekst indsættes før kommentarerne i begyndelsen af filen cust_text.php, således at MOD'er ikke påvirker ændringer af brugermanualen foretaget efter kommentarlinjerne.";
-        $admtext['updcusttext'] = "Opdatér cust_text.php filer";
-        $admtext['confirmupdcusttext'] = "Er det sikkert, at cust_text.php-filerne skal opdateres?";
-        $admtext['compressnames'] = "Fjern mellemrum fra filnavnene i MOD Listen";
-        $admtext['verified'] = "bekræftet";
-        $admtext['provisional'] = "(foreløbig) skal være tilgængelig";
-        $admtext['backtoprevious'] = "Tilbage til forrige side";
-        $admtext['reasontoupdate'] = "Hvis man ikke har kørt cust_text_update.php scriptet som en del af TNG v12 opgraderingen, så skal man opdatere cust_text.php filer til <ul> <li>tilføj en ny linje til filerne og </li><li>også opdatere out-of-date linjen i eksisterende cust_text.php filer,</li></ul> som ikke bliver udskiftes under TNG-opgraderinger.";
-        $admtext['newanchor'] = "Den nye kommentarlinje bør ikke oversættes i sprogfilerne, så den kan bruges som et anker for at indsætte brugerdefineret tekst før denne nye kommentarlinje af MOD-udviklerne.";
-        $admtext['translateissue'] = "Hvis man oversætter den nye kommentarlinje, vil MOD installationer mislykkes.";
-        $admtext['privatemod'] = "Privat MOD";
-        $admtext['protected'] = "beskyttet - fjern fil manuelt";
-        $admtext['restored'] = "genoprettet";
-        $admtext['confdelmod'] = "Er det sikkert, at denne MOD og tilhørende mappe skal slettes? Man kan ikke fortryde denne handling!";
-        $admtext['allowdeletesupport'] = "Tillad sletning af støttemappe, når MOD bliver slettet";
-        $admtext['delrisk'] = "Ved at vælge denne indstilling accepterer brugeren risikoen for, at utilsigtede mapper kunne blive slettet. Risikoen er meget lille.";
-        $admtext['delpartinfo'] = "Man bør kun sætte denne indstilling til Ja, hvis man glemte at afinstallere tidligere versioner af MOD'en, før man installerede en ny version.";
-        $admtext['delinstinfo'] = "Man bør kun sætte denne indstilling til Ja, hvis man installerede en ny version af MOD'en, og den tidligere version stadig står som installeret.";
-        $admtext['updateopts'] = "mmconfig.php skal opdateres! Klik på fanen Indstillinger ovenfor og klik på knappen Gem.";
-        $admtext['confdelmod1'] = "Er det sikkert, at denne MOD skal slettes? Man kan ikke fortryde denne handling!";
-        $admtext['noeffect'] = "Advarsel: Ændrer ikke noget i TNG!";
-        $admtext['cfgnowrite'] = "Advarsel: Cfg-fil er skrivebeskyttet. Parametre kan ikke ændres.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Er det sikkert, at denne DNA-test skal slettes?";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "Vis";
 $admtext['lnfirst'] = "Efternavn først (med komma)";
 $admtext['savefirst'] = "Gem ændringer først?";
 $admtext['misc'] = "Diverse";
-$admtext['modmgr'] = "MOD Administration";
 $admtext['cannotopendir'] = "Kan ikke åbne mappe";
 $admtext['reviewsh'] = "Gennemse"; //short version
 //moved here in 9.0.0

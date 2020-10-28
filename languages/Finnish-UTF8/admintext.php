@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "klikkaa jatkaaksesi";
         //changed in 8.0.0
         $admtext['showlog'] = "Muutosloki";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "Muokkaa kolmansien osapuolten sovelmia";
         //added in 9.0.0
         $admtext['oldimport'] = "Vanha tapa tuoda (ei edistymispalkkia)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Näytä kaikki tapahtumat ja mediatiedostot";
         $admtext['servertime'] = "Palvelimen aika on";
         $admtext['sitetime'] = "ja sivuston aika on";
-        $admtext['srexpl'] = "Valinnainen. Käytä absoluuttista polkunimeä, kuten näet Juuripolku -asetuksessa,siirrä sitten seuraavat tiedostot Asetus-polkuun heti tallennuksen jälkeen ja anna niille kirjoitusoikeus (664 oikeudet): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "Valinnainen. Käytä absoluuttista polkunimeä, kuten näet Juuripolku -asetuksessa,siirrä sitten seuraavat tiedostot Asetus-polkuun heti tallennuksen jälkeen ja anna niille kirjoitusoikeus (664 oikeudet): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Oletussuurennus";
         $admtext['mapfoundzm'] = "Sijainnin suurennos";
         $admtext['rrnum'] = "Raportin päivitys tietuemäärän jälkeen";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Lähetä hyväksymissähköposti";
         $admtext['fromadmin'] = "Lähetä kaikki sähköposti oheisella osoitteella";
         $admtext['autotree'] = "Luo uusi puu käyttäjälle";
-        $admtext['modspath'] = "Muunnosten sijainti";
         $admtext['extspath'] = "Laajennusten sijainti";
         $admtext['encrtype'] = "Salauksen tyyppi";
         $admtext['none'] = "Ei salausta";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Mother's Birth";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "Muunnosten lista";
-        $admtext['removed'] = "removed";
-        $admtext['installed'] = "Asennettu";
-        $admtext['deleted'] = "deleted";
-        $admtext['cantdel'] = "can't delete";
-        $admtext['cfgname'] = "Asetustiedoston nimi";
-        $admtext['version'] = "Versio";
-        $admtext['nomods'] = "Muunnosten asetustiedostoja (xxx) ei löytynyt muunnosten kansiosta";
-        $admtext['location'] = "Paikka";
-        $admtext['missing'] = "Puuttuu";
-        $admtext['badtarget'] = "Virheellinen kohde";
-        $admtext['cantwrite'] = "Tiedoston kirjoittaminen ei onnistu";
-        $admtext['notwrite'] = "ei ole kirjoitettavissa, tarkista oikeudet";
-        $admtext['checkwrite'] = "Tarkista oikeudet. Tulee olla kirjoitettavissa.";
-        $admtext['toterrors'] = "Virheitä yhteensä";
-        $admtext['missfile'] = "Puuttuva tiedosto";
-        $admtext['notunique'] = "ei yksilöllinen";
-        $admtext['nodesc'] = "Parametrien määritysvirhe. Puuttuva kuvaus";
-        $admtext['defval'] = "Oletusarvo";
-        $admtext['written'] = "Tiedosto kirjoitettu";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Paikallinen kopio xxxsta asennettavaksi puuttuu";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Laajennusten päivitykset vaaditaan";
-        $admtext['cannotinstall'] = "Unable to install this mod";
-        $admtext['emptytarget'] = "Target file is an empty file.";
-        $admtext['cantdelmissing'] = "Tiedosto puuttuu, ei voida poistaa";
-        //changed in 10.0.3
-        $admtext['editperf'] = "The Edit parameters were changed as follows:";
-        //added in 10.0.3
-        $admtext['options'] = "Options";
-        $admtext['viewlog'] = "View Log";
-        $admtext['target'] = "Changes";
-        $admtext['newfile'] = "Creates";
-        $admtext['copiesfile'] = "Copies";
-        $admtext['copiesfile2'] = "Copies to";
-        $admtext['logoptions'] = "Mod Manager Log";
-        $admtext['mmlogfilename'] = "Log File Name";
-        $admtext['sortlistby'] = "Sort Lists by";
-        $admtext['modname'] = "Mod Name";
-        $admtext['bypassconfirm'] = "Bypass the Confirmations";
-        $admtext['modifyoptions'] = "Modify Mod Manager Options";
-        $admtext['ready'] = "OK to Install";
-        $admtext['noselected'] = "You have not selected any files!";
-        $admtext['choose'] = "Select";
-        $admtext['showlogfile'] = "Show Mod Manager Action Log";
-        $admtext['recentactions'] = "Mod Manager Most Recent Actions";
-        $admtext['clearlog'] = "Clear Log";
-        $admtext['confirmclearlog'] = "Are you sure you want to clear the log?";
-        $admtext['modsyntax'] = "Mod Syntax";
-        $admtext['modguidelines'] = "Mod Standards";
-        $admtext['filemod'] = "File xxx is modified by";
-        $admtext['potconf'] = "Potential Conflicts";
-        $admtext['modifications'] = "modifications";
-        $admtext['othermmoptions'] = "Other";
-        $admtext['file'] = "File";
-        $admtext['tngmods'] = "Mods for TNG ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "copied";
-        $admtext['emptyfile'] = "file is empty";
-        $admtext['filescopied'] = "files copied";
-        $admtext['notinst'] = "not installed";
-        $admtext['install'] = "install";
-        $admtext['filedel'] = "File deleted";
-        $admtext['created'] = "created";
-        $admtext['choosefilter'] = "Choose the filter and click Go for the available controls";
-        $admtext['mmmaxloglines'] = "Max number of transactions";
-        $admtext['statusfilter'] = "Status";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Uninstall";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Clean Up";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Edit Options";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "OK to install";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "file version/version mismatch";
-        $admtext['bomfound'] = "BOM removed";
-        $admtext['cantinst'] = "cannot install";
-        $admtext['cantproc'] = "cannot remove mod";
-        $admtext['cantupd'] = "unable to update parameter";
-        $admtext['cleanupall'] = "Clean up";
-        $admtext['copiesreq'] = "file copies specified";
-        $admtext['delete'] = "Delete";
-        $admtext['deleteall'] = "Delete";
-        $admtext['errors'] = "errors";
-        $admtext['excused'] = "files excused";
-        $admtext['filesinst'] = "files installed";
-        $admtext['filesrem'] = "files removed";
-        $admtext['format'] = "format error";
-        $admtext['installall'] = "Install";
-        $admtext['installing'] = "Installing";
-        $admtext['line'] = "Line";
-        $admtext['modified'] = "modified";
-        $admtext['modsinst'] = "code modifications installed";
-        $admtext['modrem'] = "mod uninstalled";
-        $admtext['modsrem'] = "code modifications removed";
-        $admtext['modsreq'] = "code modifications specified";
-        $admtext['newfilesreq'] = "new files specified";
-        $admtext['nfcreated'] = "new file created";
-        $admtext['noact'] = "action tag invalid";
-        $admtext['nocfgfile'] = "mod file not found";
-        $admtext['nocomps'] = "missing elements";
-        $admtext['noend'] = "%end:% tag missing";
-        $admtext['nolocation'] = "missing location tag";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "opened";
-        $admtext['optional'] = "optional";
-        $admtext['partinst'] = "partially installed";
-        $admtext['removeall'] = "Uninstall";    // was Remove Selected mods
-        $admtext['removing'] = "Uninstalling";    // was Removing
-        $admtext['reqtag'] = "required tag missing";
-        $admtext['restparam'] = "Restoring default parameter";
-        $admtext['return'] = "Return to Mod Manager";
-        $admtext['tagnoterm'] = "tag not terminated";
-        $admtext['tagunk'] = "tag is unknown";
-        $admtext['tgtfile'] = "target file";
-        $admtext['updated'] = "updated";
-        $admtext['updparam'] = "Updating parameter";
-        $admtext['unxend'] = "unexpected end of file";
-        $admtext['warnings'] = "Warnings";
-        $admtext['allowdeletepartial'] = "Allow Delete Selected of Partially Installed Mods";
-        $admtext['allowdeleteinstalled'] = "Allow Delete of individually Installed Mods";
-        $admtext['showwarnings'] = "Show Mod Warnings in Status";
-        $admtext['logfullpath'] = "Log full path for file actions";
-        $admtext['deleting'] = "Deleting ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Files";
-        $admtext['hasoptions'] = "Options";
-        $admtext['restore'] = "Restore Default";
-        $admtext['stayon'] = "Lock";
-        $admtext['accessible'] = "accessible";
-        $admtext['bypassed'] = "bypassed";
-        $admtext['willbypass'] = "will ignore";  // was "will bypass"
-        $admtext['cantdel'] = "can't delete";
-        $admtext['optmissing'] = "file missing (optional)";
-        $admtext['tgtmissing'] = "target file missing";
-        $admtext['optlocked'] = "file locked (optional)";
-        $admtext['tgtlocked'] = "file locked";
-        $admtext['alreadyrem'] = "already removed";
-        $admtext['noaccess'] = "no access";
-        $admtext['badinstall'] = "failed to install";
-        $admtext['removed'] = "removed";
-        $admtext['deleted'] = "deleted";
-        $admtext['optsrcfilemissing'] = "optional source missing";
-        $admtext['srcfilemissing'] = "source missing";
-        $admtext['optnocopy'] = "optional file not copied";
-        $admtext['notcopied'] = "not copied";
-        $admtext['copied'] = "copied";
-        $admtext['notcreated'] = "can't create new file";
-        $admtext['optnotcreated'] = "can't create optional new file";
-        $admtext['nocreated'] = "not created";
-        $admtext['fixedheader'] = "Use Fixed Headers";
-        $admtext['cantremok'] = "can't remove, optional, bypassed";
-        $admtext['nofolder'] = "target folder missing";
-        $admtext['edparams'] = "edit parameters";
-        $admtext['compresslog'] = "Collapse Log Display";
-        $admtext['formodname'] = "for mod name ";
-        $admtext['nofolder'] = "target folder missing";
-        $admtext['fileperms'] = "Please check file permissions";
-        $admtext['noparam'] = "parameter missing";
-        $admtext['editing'] = "editing";
-        $admtext['redirect2log'] = "Redirect to Log For";
-        $admtext['on_error'] = "Errors Only";
-        $admtext['on_all'] = "All Transactions";
-        $admtext['usestriping'] = "Use stripes";
-        $admtext['stripeafter'] = "Stripe after number of rows";
-        $admtext['adjusthdrs'] = "Adjust Fixed Headers";
-        $admtext['displayoptions'] = "Display Settings";
-        $admtext['no_frag'] = "code fragment not allowed here";
-        //added in 12.0.0
-        $admtext['exists'] = "on";
-        $admtext['newdirsreq'] = "uusia kansioita määritelty";
-        $admtext['cantrem'] = "ei voi poistaa";
-        $admtext['showanalyzer'] = "Näytä analysoi TNG tiedostot välilehti";
-        $admtext['showdeveloper'] = "Näytä muut kehitystyökalut";
-        $admtext['showupdates'] = "Näytä suositellut päivitykset välilehti";
-        $admtext['analyzefiles'] = "Analysoi TNG tiedostot";
-        $admtext['parsetable'] = "Näytä jäsennin taulukko";
-        $admtext['recommendedfixes'] = "Suositellut päivitykset";
-        $admtext['selectmod'] = "Valitse laajennuksen asetustiedosto nähdäksesi jäsennin taulukon tulokset";
-        $admtext['parsertags'] = "Jäsennin tägien ryhmä:";
-        $admtext['parsererror'] = "Virhe: ";
-        $admtext['filesel'] = "Valitse TNG-tiedosto nähdäksesi mitkä laajennokset vaikuttavat siihen";
-        $admtext['custtextfixes'] = "Päivitetyt Laajennosten ohjeet suosittelevat poikkeustekstien sijoittamista ennen kommentteja cust_text.php tiedoston alkuun niin, että laajennokset eivät vaikuta käyttäjän tekemiin muutoksiin kommenttirivien jälkeen.";
-        $admtext['updcusttext'] = "Päivitä cust_text.php tiedostot";
-        $admtext['confirmupdcusttext'] = "Haluatko ladata cust_text.php tiedostot?";
-        $admtext['compressnames'] = "Poista välilyönnit tiedostonimistä Laajennosten listalla";
-        $admtext['verified'] = "todennettu";
-        $admtext['provisional'] = "(väliaikainen) tulee olla saatavilla";
-        $admtext['backtoprevious'] = "Palaa edelliselle sivulle";
-        $admtext['reasontoupdate'] = "Jos et ole suorittanut cust_text_update.php skriptiä osana TNG v12 päivitystä, sinun tulee päivittää cust_text.php tiedostot <ul><li>lisätäksesi uuden rivin tiedostoihin ja </li><li>myös päivittääksesi vanhentuneet rivit nykyisissä cust_text.php tiedostoissa</li></ul> jotka eivät ole korvattu TNG päivitysten aikana.";
-        $admtext['newanchor'] = "Uutta kommenttiriviä ei tulisi kääntää kieliteidostoissa, jotta sitä voidaan käyttää ankkuroimaan poikkeustekstien sijoittaminen laajennosten kehittäjien toimesta ennen kommenttiriviä.";
-        $admtext['translateissue'] = "Jos käännät uuden kommenttirivin, laajennosten asentaminen ei onnistu.";
-        $admtext['privatemod'] = "Yksityinen laajennos";
-        $admtext['protected'] = "suojattu-poista tiedosto käsin";
-        $admtext['restored'] = "palautettu";
-        $admtext['confdelmod'] = "Haluatko varmasti poistaa tämän laajennoksen ja siihen liitetyn hakemiston järjestelmästä? Et voi perua tätä toimenpidettä!";
-        $admtext['allowdeletesupport'] = "Salli tukitiedostojen hakemiston poistaminen kun laajennos poistetaan";
-        $admtext['delrisk'] = "Valitsemalla tämän vaihtoehdon, käyttäjät hyväksyy riskin, että myös hakemistoja, joita ei tarkoitettu poistettaviksi poistetaan. Uskomme tämän riskin olevan hyvin pieni.";
-        $admtext['delpartinfo'] = "Aseta tämä vaihtoehto Kyllä vain, jos unohdit poistaa edellisen version laajennoksesta ennen uuden version asennusta.";
-        $admtext['delinstinfo'] = "Aseta tämä vaihtoehto Kyllä vain, jos asensit uuden version laajennoksesta ja vanha versio näkyy edelleen asennettuna.";
-        $admtext['updateopts'] = "mmconfig.php pitää päivittää! Valaitse Asetukset välilehti yllä ja klikkaa Tallenna.";
-        $admtext['confdelmod1'] = "Haluatko oikeasti poistaa tämän laajennoksen järjestelmästä? Tätä toimintoa ei voi perua!";
-        $admtext['noeffect'] = "Varoitus: Ei muuta mitään TNG:ssä!";
-        $admtext['cfgnowrite'] = "Warning: Cfg file is write-protected. Parameters cannot be changed.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Haluatko varmasti poistaa tämän testin?";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "Esikatselu";
 $admtext['lnfirst'] = "Sukunimi ensin (pilkkujen kera)";
 $admtext['savefirst'] = "Tallenna ensin muutokset?";
 $admtext['misc'] = "Sekalainen";
-$admtext['modmgr'] = "Muunnosten hallinta";
 $admtext['cannotopendir'] = "Kansion avaus ei onnistu";
 $admtext['reviewsh'] = "Esikatsele"; //short version
 //moved here in 9.0.0

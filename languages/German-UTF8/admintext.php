@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "Fortsetzen";
         //changed in 8.0.0
         $admtext['showlog'] = "Protokoll der Änderungen";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "Fremd-Add-ons konfigurieren";
         //added in 9.0.0
         $admtext['oldimport'] = "Import im alten Stil (ohne Ladebalken)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Alle Ereignisse und Medien anzeigen";
         $admtext['servertime'] = "Server-Zeit ist";
         $admtext['sitetime'] = "und Website-Zeit ist";
-        $admtext['srexpl'] = "Optional. Verwenden Sie eine absolute Pfadangabe, wie im Root-Pfad ersichtlich. Verschieben Sie die folgenden Dateien <strong>sofort</strong> nach dem Speichern in das Konfigurations-Verzeichnis und machen Sie die Dateien beschreibbar (Berechtigung: 664): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php.";
+        $admtext['srexpl'] = "Optional. Verwenden Sie eine absolute Pfadangabe, wie im Root-Pfad ersichtlich. Verschieben Sie die folgenden Dateien <strong>sofort</strong> nach dem Speichern in das Konfigurations-Verzeichnis und machen Sie die Dateien beschreibbar (Berechtigung: 664): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php.";
         $admtext['mapstzm'] = "Start-Zoomwert";
         $admtext['mapfoundzm'] = "Orts-Zoom";
         $admtext['rrnum'] = "Berichtnummer speichern";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Bestätigungs-E-Mail senden";
         $admtext['fromadmin'] = "Alle E-Mails mit obiger Adresse versenden";
         $admtext['autotree'] = "Für diesen Benutzer neuen Stammbaum anlegen";
-        $admtext['modspath'] = "Pfad für Modifikationen";
         $admtext['extspath'] = "Pfad für Erweiterungen";
         $admtext['encrtype'] = "Verschlüsselungs-Typ";
         $admtext['none'] = "Keine Verschlüsselung";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Geburt der Mutter";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "Liste der Modifikationen";
-        $admtext['removed'] = "Entfernt";
-        $admtext['installed'] = "Installiert";
-        $admtext['deleted'] = "Gelöscht";
-        $admtext['cantdel'] = "Kann nicht gelöscht werden";
-        $admtext['cfgname'] = "Name der Konfigurationsdatei";
-        $admtext['version'] = "Version";
-        $admtext['nomods'] = "Im Modifikations-Verzeichnis wurden keine Definitionsdateien (xxx) gefunden";
-        $admtext['location'] = "Ort";
-        $admtext['missing'] = "Fehlt";
-        $admtext['badtarget'] = "Ziel ungültig";
-        $admtext['cantwrite'] = "Kann nicht schreiben auf";
-        $admtext['notwrite'] = "ist nicht schreibbar. Bitte Berechtigungen überprüfen.";
-        $admtext['checkwrite'] = "Bitte Berechtigungen überprüfen. Muss schreibbar sein.";
-        $admtext['toterrors'] = "Anzahl der Fehler";
-        $admtext['missfile'] = "Fehlende Datei";
-        $admtext['notunique'] = "nicht eindeutig";
-        $admtext['nodesc'] = "Parameter-Definitionsfehler, Beschreibung fehlt";
-        $admtext['defval'] = "Default-Wert";
-        $admtext['written'] = "Datei wurde geschrieben";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Lokale Kopie von xxx fehlt für Installation";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Modifikation-Aktualisierung erforderlich";
-        $admtext['cannotinstall'] = "Installierung der Modifikation nicht möglich";
-        $admtext['emptytarget'] = "Zieldatei ist eine leere Datei.";
-        $admtext['cantdelmissing'] = "Kann nicht gelöscht werden, Datei fehlt";
-        //changed in 10.0.3
-        $admtext['editperf'] = "Die Einstellungen wurden wie folgt geändert:";
-        //added in 10.0.3
-        $admtext['options'] = "Einstellungen";
-        $admtext['viewlog'] = "Protokoll anzeigen";
-        $admtext['target'] = "Zieldateien";
-        $admtext['newfile'] = "Neue Dateien";
-        $admtext['copiesfile'] = "Kopien";
-        $admtext['copiesfile2'] = "Kopien nach";
-        $admtext['logoptions'] = "Protokoll";
-        $admtext['mmlogfilename'] = "Name der Protokolldatei";
-        $admtext['sortlistby'] = "Liste sortieren nach";
-        $admtext['modname'] = "Modifikations-Name";
-        $admtext['bypassconfirm'] = "Bestätigungsseite überspringen";
-        $admtext['modifyoptions'] = "Änderung Mod Manager-Einstellungen";
-        $admtext['ready'] = "Bereit zur Installation";
-        $admtext['noselected'] = "Es wurde keine Datei ausgewählt!";
-        $admtext['choose'] = "Auswählen";
-        $admtext['showlogfile'] = "Anzeige Mod Manager-Protokoll";
-        $admtext['recentactions'] = "Zuletzt durchgeführte Aktionen";
-        $admtext['clearlog'] = "Protokollinhalt löschen";
-        $admtext['confirmclearlog'] = "Soll der Protokollinhalt wirklich gelöscht werden?";
-        $admtext['modsyntax'] = "Mod Syntax";
-        $admtext['modguidelines'] = "Mod Richtlinien";
-        $admtext['filemod'] = "Die Datei xxx wird verändert von";
-        $admtext['potconf'] = "Mögliche Konflikte";
-        $admtext['modifications'] = "Änderungen";
-        $admtext['othermmoptions'] = "Andere";
-        $admtext['file'] = "Datei";
-        $admtext['tngmods'] = "Mods für TNG";
-        //changed in TNG 10.1
-        $admtext['copied'] = "Kopiert";
-        $admtext['emptyfile'] = "Datei ist leer";
-        $admtext['filescopied'] = "Dateien kopiert";
-        $admtext['notinst'] = "Nicht installiert";
-        $admtext['install'] = "Installieren";
-        $admtext['filedel'] = "Datei gelöscht";
-        $admtext['created'] = "Erstellt";
-        $admtext['choosefilter'] = "Zur Anzeige der Bearbeitungsoptionen Status auswählen.";
-        $admtext['mmmaxloglines'] = "Max. angezeigte Aktionsanzahl";
-        $admtext['statusfilter'] = "Status";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Deinstallieren";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Bereinigen";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Einstellungen";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "Nicht installiert";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "Dateiversion nicht gleich";
-        $admtext['bomfound'] = "BOM entfernt";
-        $admtext['cantinst'] = "Nicht installierbar";
-        $admtext['cantproc'] = "Nicht entferntbar";
-        $admtext['cantupd'] = "Ändern der Parameter nicht möglich";
-        $admtext['cleanupall'] = "Auswahl bereinigen";
-        $admtext['copiesreq'] = "Dateikopien vorgesehen";
-        $admtext['delete'] = "Löschen";
-        $admtext['deleteall'] = "Auswahl löschen";
-        $admtext['errors'] = "Fehler";
-        $admtext['excused'] = "Dateien abgelehnt";
-        $admtext['filesinst'] = "Dateien installiert";
-        $admtext['filesrem'] = "Dateien entfernt";
-        $admtext['format'] = "Formatierungsfehler";
-        $admtext['installall'] = "Auswahl installieren";
-        $admtext['installing'] = "Installation";
-        $admtext['line'] = "Zeile";
-        $admtext['modified'] = "Modifiziert";
-        $admtext['modsinst'] = "Kodeanpassungen installiert";
-        $admtext['modrem'] = "Modifikation deinstalliert";
-        $admtext['modsrem'] = "Kodeanpassungen entfernt";
-        $admtext['modsreq'] = "Kodeanpassungen vorgesehen";
-        $admtext['newfilesreq'] = "Neue Dateien vorgesehen";
-        $admtext['nfcreated'] = "Neue Dateien erstellt";
-        $admtext['noact'] = "Tag ungültig";
-        $admtext['nocfgfile'] = "Moddatei nicht gefunden";
-        $admtext['nocomps'] = "Elemente fehlen";
-        $admtext['noend'] = "%end:% fehlt";
-        $admtext['nolocation'] = "%location:% fehlt";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "Geöffnet";
-        $admtext['optional'] = "Optional";
-        $admtext['partinst'] = "Teilweise installiert";
-        $admtext['removeall'] = "Auswahl deinstallieren";    // was Remove Selected mods
-        $admtext['removing'] = "Deinstallation";    // was Removing
-        $admtext['reqtag'] = "Benötigtes Schlüsselwort fehlt";
-        $admtext['restparam'] = "Auf Standard zurücksetzen";
-        $admtext['return'] = "Zurück zum Mod Manager";
-        $admtext['tagnoterm'] = "Tag nicht geschlossen";
-        $admtext['tagunk'] = "Tag unbekannt";
-        $admtext['tgtfile'] = "Zieldatei";
-        $admtext['updated'] = "Geändert";
-        $admtext['updparam'] = "Einstellungen ändern";
-        $admtext['unxend'] = "Unerwartetes Dateiende";
-        $admtext['warnings'] = "Warnungen";
-        $admtext['allowdeletepartial'] = "Löschen teilweise installierter Mods erlauben";
-        $admtext['allowdeleteinstalled'] = "Löschen installierter Mods erlauben";
-        $admtext['showwarnings'] = "Syntax-Warnungen unter Status anzeigen";
-        $admtext['logfullpath'] = "Kompletten Pfadbezeichnung protokollieren";
-        $admtext['deleting'] = "Löschen ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Dateien";
-        $admtext['hasoptions'] = "Einstellungen";
-        $admtext['restore'] = "Auf Standard zurücksetzen";
-        $admtext['stayon'] = "Statusauswahl beibehalten";
-        $admtext['accessible'] = "Zugänglich";
-        $admtext['bypassed'] = "Übersprungen";
-        $admtext['willbypass'] = "Wird übersprungen";  // was "will bypass"
-        $admtext['cantdel'] = "Kann nicht gelöscht werden";
-        $admtext['optmissing'] = "Datei fehlt (optional)";
-        $admtext['tgtmissing'] = "Zieldatei fehlt";
-        $admtext['optlocked'] = "Datei gesperrt (optional)";
-        $admtext['tgtlocked'] = "Datei gesperrt";
-        $admtext['alreadyrem'] = "Schon entfernt";
-        $admtext['noaccess'] = "Kein Zugriff";
-        $admtext['badinstall'] = "Installation fehlgeschlagen";
-        $admtext['removed'] = "Entfernt";
-        $admtext['deleted'] = "Gelöscht";
-        $admtext['optsrcfilemissing'] = "Optionale Ursprungsdatei fehlt";
-        $admtext['srcfilemissing'] = "Ursprungsdatei fehlt";
-        $admtext['optnocopy'] = "Optionale Datei nicht kopiert";
-        $admtext['notcopied'] = "Nicht kopiert";
-        $admtext['copied'] = "Kopiert";
-        $admtext['notcreated'] = "Konnte neue Datei nicht erstellen";
-        $admtext['optnotcreated'] = "Konnte optionale Datei nicht erstellen";
-        $admtext['nocreated'] = "Nicht erstellt";
-        $admtext['fixedheader'] = "Feststehenden Kopfbereich nutzen";
-        $admtext['cantremok'] = "Nicht deinstallierbar, optional, übersprungen";
-        $admtext['nofolder'] = "Zielordner fehlt";
-        $admtext['edparams'] = "Einstellungen ändern";
-        $admtext['compresslog'] = "Protokoll verkürzt anzeigen";
-        $admtext['formodname'] = "für Modifikationsname";
-        $admtext['nofolder'] = "Zielordner fehlt";
-        $admtext['fileperms'] = "Bitte Dateiberechtigungen prüfen";
-        $admtext['noparam'] = "Einstellung fehlt";
-        $admtext['editing'] = "Wird geändert";
-        $admtext['redirect2log'] = "Weiterleiten zum Protokoll";
-        $admtext['on_error'] = "Nur bei Fehlern";
-        $admtext['on_all'] = "Bei allen Aktionen";
-        $admtext['usestriping'] = "Abwechselnde Zeilenfarben nutzen";
-        $admtext['stripeafter'] = "Farbwechsel nach wievielen Zeilen";
-        $admtext['adjusthdrs'] = "Feststehenden Kopfbereich justieren";
-        $admtext['displayoptions'] = "Anzeige";
-        $admtext['no_frag'] = "Kodefragmente sind mit %replace:% nicht zulässig";
-        //added in 12.0.0
-        $admtext['exists'] = "vorhanden";
-        $admtext['newdirsreq'] = "neue Verzeichnisse festgelegt";
-        $admtext['cantrem'] = "entfernen nicht möglich";
-        $admtext['showanalyzer'] = "Tab 'TNG-Dateien analysieren' anzeigen";
-        $admtext['showdeveloper'] = "Andere Entwicklungstools anzeigen";
-        $admtext['showupdates'] = "Empfohlene Updates anzeigen";
-        $admtext['analyzefiles'] = "TNG-Dateien analysieren";
-        $admtext['parsetable'] = "Die Parser-Tabelle anzeigen";
-        $admtext['recommendedfixes'] = "Empfohlene Updates";
-        $admtext['selectmod'] = "Eine mod-config-Datei anzeigen, um die Ergebnisse der Parser-Tabelle zu sehen";
-        $admtext['parsertags'] = "Parser Tags Array:";
-        $admtext['parsererror'] = "Fehler: ";
-        $admtext['filesel'] = "Eine TNG-Datei auswählen, um zu sehen, welche Mods darauf zugreifen";
-        $admtext['custtextfixes'] = "Die Modifikations-Regeln empfehlen, dass Standardtext für Kommentare zu Beginn der Datei cust_text.php eingefügt wird, damit Modifikationen Änderungen nach den Kommentarzeilen nicht verändern.";
-        $admtext['updcusttext'] = "Die Dateien cust_text.php aktualisieren";
-        $admtext['confirmupdcusttext'] = "Sollen die Datei cust_text.php geändert werden?";
-        $admtext['compressnames'] = "Leerzeichen in Dateinamen in Mod List entfernen";
-        $admtext['verified'] = "bestätigt";
-        $admtext['provisional'] = "(provisional) muss verfügbar sein";
-        $admtext['backtoprevious'] = "Zurück zur vorigen Seite";
-        $admtext['reasontoupdate'] = "Wenn das Script cust_text_update.php beim Update auf TNG v12 nicht angewendet worden ist, müssen die Dateien cust_text.php aktualisiert werden, um <ul><li>eine neue Zeile hinzuzufügen und </li><li>um veraltete Einträge in den vorhandenen Dateien cust_text.php zu aktualisieren,</li></ul> die beim Update nicht ersetzt worden sind.";
-        $admtext['newanchor'] = "Die neue Kommentarzeile sollte in den Sprachdateien nicht übersetzt werden, damit sie als Anker benutzt werden kann, damit Entwickler von Modifikationen Standardtexte darüber einfügen können.";
-        $admtext['translateissue'] = "Wenn diese neue Kommentarzeile übersetzt wird, ist eine Installation von Modifikationen nicht möglich.";
-        $admtext['privatemod'] = "Private Modifikation";
-        $admtext['protected'] = "geschützt - Datei manuell entfernen";
-        $admtext['restored'] = "wiederhergestellt";
-        $admtext['confdelmod'] = "Soll wirklich diese Modifikation mit allen damit verbundenen Verzeichnissen gelöscht werden? Der Vorgang kann nicht rückgängig gemacht werden!";
-        $admtext['allowdeletesupport'] = "Zugehörige Verzeichnisse können gelöscht werden, wenn eine Modifkation gelöscht wird";
-        $admtext['delrisk'] = "Bei dieser Einstellung trägt der Nutzer das Risiko, dass unbeabsichtigt Verzeichnisse gelöscht werden könnten. Das Risiko dürfte sehr gering sein.";
-        $admtext['delpartinfo'] = "Hier sollte nur 'Ja' gewählt werden, wenn vergessen worden ist, ältere Versionen einer Modifikation zu löschen, bevor eine neue installiert worden ist.";
-        $admtext['delinstinfo'] = "Hier sollte nur 'Ja' gewählt werden, wenn eine neue Version einer Modifikation installiert worden ist und die frühere Version trotzdem noch angezeigt wird.";
-        $admtext['updateopts'] = "Die Datei mmconfig.php muss aktualisiert werden! Bitte oben auf den Tab 'Einstellungen' klicken und dann auf 'Speichern'.";
-        $admtext['confdelmod1'] = "Soll diese Modifikation wirklich gelöscht werden? Der Vorgang kann nicht rückgängig gemacht werden!";
-        $admtext['noeffect'] = "Achtung: Dies ändert nichts an TNG.";
-        $admtext['cfgnowrite'] = "Achtung: Die Cfg-Datei ist schreibgeschützt. Einstellungen können nicht gespeichert werden.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Wollen Sie den Test wirklich löschen?";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "Vorschau";
 $admtext['lnfirst'] = "Nachname zuerst (mit Kommata)";
 $admtext['savefirst'] = "Möchte Sie zuerst die Änderungen speichern?";
 $admtext['misc'] = "Verschiedenes";
-$admtext['modmgr'] = "Modifikations-Manager";
 $admtext['cannotopendir'] = "Verzeichnis kann nicht geöffnet werden";
 $admtext['reviewsh'] = "Prüfen"; //short version
 //moved here in 9.0.0

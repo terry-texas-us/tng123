@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "简历";
         //changed in 8.0.0
         $admtext['showlog'] = "管理日志";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "安装和删除TNG模块";
         //added in 9.0.0
         $admtext['oldimport'] = "旧样式导入 (没有进度栏)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "显示所有事件和媒体";
         $admtext['servertime'] = "服务器时间是";
         $admtext['sitetime'] = "和网站时间是";
-        $admtext['srexpl'] = "可选。使用绝对路径名，像你的根路径看，然后直接将以下文件移动到设置路径保存之后，让它们可写（ 664权限）：config.php，customconfig.php，importconfig.php，logconfig.php，mapconfig.php，mmconfig.php，pedconfig.php，templateconfig.php ";
+        $admtext['srexpl'] = "可选。使用绝对路径名，像你的根路径看，然后直接将以下文件移动到设置路径保存之后，让它们可写（ 664权限）：config.php，customconfig.php，importconfig.php，logconfig.php，mapconfig.php，pedconfig.php，templateconfig.php ";
         $admtext['mapstzm'] = "开始缩放 ";
         $admtext['mapfoundzm'] = "本地缩放";
         $admtext['rrnum'] = "记录报告编号";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "发送确认邮件";
         $admtext['fromadmin'] = "从上面的地址发送所有邮件";
         $admtext['autotree'] = "为用户创建新谱";
-        $admtext['modspath'] = "模块文件夹";
         $admtext['extspath'] = "扩展文件夹";
         $admtext['encrtype'] = "加密形式";
         $admtext['none'] = "无加密";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "母亲生日";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "模块列表";
-        $admtext['removed'] = "移除";
-        $admtext['installed'] = "已安装";
-        $admtext['deleted'] = "删除";
-        $admtext['cantdel'] = "无法删除";
-        $admtext['cfgname'] = "配置文件名";
-        $admtext['version'] = "版本";
-        $admtext['nomods'] = "在mod文件夹中找不到mod定义文件（xxx）";
-        $admtext['location'] = "位置";
-        $admtext['missing'] = "缺失";
-        $admtext['badtarget'] = "坏目标";
-        $admtext['cantwrite'] = "无法写入";
-        $admtext['notwrite'] = "不可写，检查权限";
-        $admtext['checkwrite'] = "检查权限，必须是可写的";
-        $admtext['toterrors'] = "所有错误";
-        $admtext['missfile'] = "缺少文件";
-        $admtext['notunique'] = "不是唯一";
-        $admtext['nodesc'] = "参数定义错误，缺少描述";
-        $admtext['defval'] = "默认值";
-        $admtext['written'] = "文件可写";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "安装xxx的本地文件丢失";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "需要模块更新";
-        $admtext['cannotinstall'] = "无法安装此mod";
-        $admtext['emptytarget'] = "目标文件是一个空文件";
-        $admtext['cantdelmissing'] = "无法删除，文件丢失";
-        //changed in 10.0.3
-        $admtext['editperf'] = "编辑参数更改如下：";
-        //added in 10.0.3
-        $admtext['options'] = "选项";
-        $admtext['viewlog'] = "查看日志";
-        $admtext['target'] = "更改";
-        $admtext['newfile'] = "创建";
-        $admtext['copiesfile'] = "复制";
-        $admtext['copiesfile2'] = "复制到";
-        $admtext['logoptions'] = "模块管理日志";
-        $admtext['mmlogfilename'] = "日志文件名";
-        $admtext['sortlistby'] = "排序列表";
-        $admtext['modname'] = "模块名字";
-        $admtext['bypassconfirm'] = "忽略确认";
-        $admtext['modifyoptions'] = "修改Mod管理选项";
-        $admtext['ready'] = "确认安装";
-        $admtext['noselected'] = "你还没有选择任何文件！";
-        $admtext['choose'] = "选择";
-        $admtext['showlogfile'] = "显示管理器操作日志";
-        $admtext['recentactions'] = "显示管理的最近操作";
-        $admtext['clearlog'] = "清理日志";
-        $admtext['confirmclearlog'] = "你确定要清除日志吗？";
-        $admtext['modsyntax'] = "模块语法";
-        $admtext['modguidelines'] = "模块规范";
-        $admtext['filemod'] = "文件xxx被修改";
-        $admtext['potconf'] = "可能冲突";
-        $admtext['modifications'] = "修改";
-        $admtext['othermmoptions'] = "其他";
-        $admtext['file'] = "文件";
-        $admtext['tngmods'] = "模块";
-        //changed in TNG 10.1
-        $admtext['copied'] = "已复制";
-        $admtext['emptyfile'] = "文件是空的";
-        $admtext['filescopied'] = "文件已复制";
-        $admtext['notinst'] = "未安装";
-        $admtext['install'] = "安装";
-        $admtext['filedel'] = "文件已删除";
-        $admtext['created'] = "创建";
-        $admtext['choosefilter'] = "选择过滤器，然后单击执行";
-        $admtext['mmmaxloglines'] = "最大处理数目";
-        $admtext['statusfilter'] = "状态";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "卸载";  //Uninstall";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "清理";  //Clean Up";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "编辑选项";  //Edit Options";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "确定安装";  //OK to install";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "文件版本/版本不匹配";
-        $admtext['bomfound'] = "已删除BOM ";
-        $admtext['cantinst'] = "无法安装";
-        $admtext['cantproc'] = "无法删除";
-        $admtext['cantupd'] = "无法发更新";
-        $admtext['cleanupall'] = "清理";
-        $admtext['copiesreq'] = "指定的文件副本";
-        $admtext['delete'] = "删除";
-        $admtext['deleteall'] = "删除";
-        $admtext['errors'] = "错误";
-        $admtext['excused'] = "文件被排除";
-        $admtext['filesinst'] = "已安装文件";
-        $admtext['filesrem'] = "文件已删除";
-        $admtext['format'] = "格式错误";
-        $admtext['installall'] = "安装";
-        $admtext['installing'] = "安装...";
-        $admtext['line'] = "轴";
-        $admtext['modified'] = "修改的";
-        $admtext['modsinst'] = "代码修改安装";
-        $admtext['modrem'] = "模块无法安装";
-        $admtext['modsrem'] = "代码修改被删除";
-        $admtext['modsreq'] = "代码修改指定";
-        $admtext['newfilesreq'] = "指定新文件";
-        $admtext['nfcreated'] = "新建文件";
-        $admtext['noact'] = "操作无效";
-        $admtext['nocfgfile'] = "模块文件缺失";
-        $admtext['nocomps'] = "确实元素";
-        $admtext['noend'] = "标签缺失";
-        $admtext['nolocation'] = "缺少定位标签";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "打开";
-        $admtext['optional'] = "可选";
-        $admtext['partinst'] = "部分安装";
-        $admtext['removeall'] = "卸载";  //Uninstall";    // was Remove Selected mods
-        $admtext['removing'] = "卸载...";  //.Uninstalling";    // was Removing
-        $admtext['reqtag'] = "需要缺失标签";
-        $admtext['restparam'] = "恢复默认参数";
-        $admtext['return'] = "返回模块管理";
-        $admtext['tagnoterm'] = "标签为终止";
-        $admtext['tagunk'] = "未知标签";
-        $admtext['tgtfile'] = "目标文件";
-        $admtext['updated'] = "更新";
-        $admtext['updparam'] = "更新参数...";
-        $admtext['unxend'] = "以外的文件结尾";
-        $admtext['warnings'] = "警告";
-        $admtext['allowdeletepartial'] = "允许删除所选的部分安装的模块";
-        $admtext['allowdeleteinstalled'] = "允许删除单独安装的模块";
-        $admtext['showwarnings'] = "显示模块状态警告";
-        $admtext['logfullpath'] = "记录文件动作的完整路径";
-        $admtext['deleting'] = "删除";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "文件";
-        $admtext['hasoptions'] = "选项";
-        $admtext['restore'] = "恢复默认值";
-        $admtext['stayon'] = "锁存";
-        $admtext['accessible'] = "可访问";
-        $admtext['bypassed'] = "忽略";
-        $admtext['willbypass'] = "将忽略";  //will ignore";  // was "will bypass"
-        $admtext['cantdel'] = "无法删除";
-        $admtext['optmissing'] = "文件丢失（可选）";
-        $admtext['tgtmissing'] = "目标文件丢失";
-        $admtext['optlocked'] = "文件锁存（可选）";
-        $admtext['tgtlocked'] = "文件锁定";
-        $admtext['alreadyrem'] = "已删除";
-        $admtext['noaccess'] = "无法访问";
-        $admtext['badinstall'] = "安装失败";
-        $admtext['removed'] = "移除";
-        $admtext['deleted'] = "删除";
-        $admtext['optsrcfilemissing'] = "可选资源缺失";
-        $admtext['srcfilemissing'] = "资源丢失";
-        $admtext['optnocopy'] = "可选文件不能拷贝";
-        $admtext['notcopied'] = "未复制";
-        $admtext['copied'] = "已复制";
-        $admtext['notcreated'] = "无法创建新文件";
-        $admtext['optnotcreated'] = "无法创建可选的新文件";
-        $admtext['nocreated'] = "未创建";
-        $admtext['fixedheader'] = "使用固定标题";
-        $admtext['cantremok'] = "无法删除，可选，忽略";
-        $admtext['nofolder'] = "目标文件夹丢失";
-        $admtext['edparams'] = "编辑参数";
-        $admtext['compresslog'] = "崩溃日志显示";
-        $admtext['formodname'] = "模式名字";
-        $admtext['nofolder'] = "目标文件夹丢失";
-        $admtext['fileperms'] = "请检查文件权限";
-        $admtext['noparam'] = "参数缺失";
-        $admtext['editing'] = "编辑...";
-        $admtext['redirect2log'] = "重定向到日志";
-        $admtext['on_error'] = "仅错误";
-        $admtext['on_all'] = "所有处理";
-        $admtext['usestriping'] = "使用条纹";
-        $admtext['stripeafter'] = "条纹的行数";
-        $admtext['adjusthdrs'] = "调整固定眉头";
-        $admtext['displayoptions'] = "显示设置";
-        $admtext['no_frag'] = "代码片段不允许在这里";
-        //added in 12.0.0
-        $admtext['exists'] = "存在";
-        $admtext['newdirsreq'] = "指定的新文件夹";
-        $admtext['cantrem'] = "不能删除";
-        $admtext['showanalyzer'] = "显示分析TNG的文件标签";
-        $admtext['showdeveloper'] = "显示其他工具";
-        $admtext['showupdates'] = "显示更新标签";
-        $admtext['analyzefiles'] = "分析文件";
-        $admtext['parsetable'] = "视图表";
-        $admtext['recommendedfixes'] = "建议更新";
-        $admtext['selectmod'] = "选择一个mod配置文件来查看解析器表结果";
-        $admtext['parsertags'] = "解析器标签组";
-        $admtext['parsererror'] = "错误";
-        $admtext['filesel'] = "选择TNG文件以查看哪些模块会影响它";
-        $admtext['custtextfixes'] = "更新的模式规则：自定义文本会在插入之前注释cust_text.php文件，以便模板不会影响用户手动更改。";
-        $admtext['updcusttext'] = "更新自定义文件";
-        $admtext['confirmupdcusttext'] = "确定要更新";
-        $admtext['compressnames'] = "在模式列表中删除空格";
-        $admtext['verified'] = "已证实";
-        $admtext['provisional'] = "（临时）必须可用";
-        $admtext['backtoprevious'] = "返回上一页";
-        $admtext['reasontoupdate'] = "如果你还没有运行cust_text_update.php脚本作为TNG v12升级的一部分，您需要将您的cust_text.php文件更新为<ul> <li>向该文件添加新行 文件和</li> <li>也会更新现有的过时cust_text.php文件</li> </ul>，这些文件在TNG期间不会被替换 升级";
-        $admtext['newanchor'] = "在语言文件中不应该翻译新的注释行，以便模板开发者自定义文本前可以用作插入的锚点";
-        $admtext['translateissue'] = "如果你翻译新的注释行，安装模板将失败";
-        $admtext['privatemod'] = "私人模板";
-        $admtext['protected'] = "保护--手动删除文件";
-        $admtext['restored'] = "恢复";
-        $admtext['confdelmod'] = "你真的想删除这个模板文件吗?此操作无法恢复";
-        $admtext['allowdeletesupport'] = "允许删除模板关联文件夹";
-        $admtext['delrisk'] = "通过选择此选项，用户接受所有风险可能会删除意外的文件夹。我们认为这个风险不大";
-        $admtext['delpartinfo'] = "如果你在安装新版本之前，忘记卸载旧版本，应该设置这个选项为Yes.";
-        $admtext['delinstinfo'] = "如果你安装了新版本和老版本依然显示安装，应该设置这个选项为Yes.";
-        $admtext['updateopts'] = "您的mmconfig.php需要更新！请点击上面的选项标签并点击保存按钮";
-        $admtext['confdelmod1'] = "你真的想删除这个模板吗？您无法撤消此操作";
-        $admtext['noeffect'] = "警告：不会改变任何TNG";
-        $admtext['cfgnowrite'] = "警告：Cfg文件被写保护 参数不能改变";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "你确定要删除这个测试吗？";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "显示";
 $admtext['lnfirst'] = "姓在前（用逗号）";
 $admtext['savefirst'] = "先保存更改";
 $admtext['misc'] = "其他";
-$admtext['modmgr'] = "模块管理";
 $admtext['cannotopendir'] = "不能打开文件夹";
 $admtext['reviewsh'] = "刷新"; //Review; //short version
 //moved here in 9.0.0

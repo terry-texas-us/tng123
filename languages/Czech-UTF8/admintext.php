@@ -690,8 +690,6 @@ switch ($textpart) {
         $admtext['resume'] = "Pokračovat";
         //changed in 8.0.0
         $admtext['showlog'] = "Záznam přístupů";
-        //added in 8.0.0
-        $admtext['mmgritems'] = "Instalace a odstranění TNG módů (doplňků třetích stran)";
         //added in 9.0.0
         $admtext['oldimport'] = "Starý styl importu (bez zobrazení průběhu)";
         //changed in 11.0.0
@@ -1226,7 +1224,7 @@ switch ($textpart) {
         $admtext['palldata'] = "Zobrazit všechny události a média";
         $admtext['servertime'] = "Čas na serveru je";
         $admtext['sitetime'] = "a čas na webových stránkách je";
-        $admtext['srexpl'] = "Nepovinné. Použijte absolutní název cesty podobně, jako jej vidíte v kořenové složce. Pak přesuňte následující soubory do konfiguračního umístění <strong>ihned</strong> po uložení a udělejte je zapisovatelné (povolení 664): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, mmconfig.php, pedconfig.php";
+        $admtext['srexpl'] = "Nepovinné. Použijte absolutní název cesty podobně, jako jej vidíte v kořenové složce. Pak přesuňte následující soubory do konfiguračního umístění <strong>ihned</strong> po uložení a udělejte je zapisovatelné (povolení 664): config.php, customconfig.php, importconfig.php, logconfig.php, mapconfig.php, pedconfig.php";
         $admtext['mapstzm'] = "Výchozí přiblížení";
         $admtext['mapfoundzm'] = "Přiblížení místa";
         $admtext['rrnum'] = "Počet záznamů reportu";
@@ -1258,7 +1256,6 @@ switch ($textpart) {
         $admtext['ackemail'] = "Posílat schvalovací mail";
         $admtext['fromadmin'] = "Posílat všechny maily z výše uvedené adresy";
         $admtext['autotree'] = "Vytvořit nový strom pro uživatele";
-        $admtext['modspath'] = "Složka módů";
         $admtext['extspath'] = "Složka rozšíření";
         $admtext['encrtype'] = "Typ šifrování";
         $admtext['none'] = "Bez šifrování";
@@ -1688,212 +1685,6 @@ switch ($textpart) {
         $admtext['motherbirth'] = "Narození matky";
         break;
 
-    case "mods":
-        $admtext['modlist'] = "Seznam módů";
-        $admtext['removed'] = "odstraněno";
-        $admtext['installed'] = "Instalováno";
-        $admtext['deleted'] = "vymazáno";
-        $admtext['cantdel'] = "nelze vymazat";
-        $admtext['cfgname'] = "Název konfiguračního souboru";
-        $admtext['version'] = "Verze";
-        $admtext['nomods'] = "Ve složce módů nebyly nalezeny žádné definiční soubory módu (xxx)";
-        $admtext['location'] = "Umístění";
-        $admtext['missing'] = "chybí";
-        $admtext['badtarget'] = "Špatný cíl";
-        $admtext['cantwrite'] = "Nelze zapisovat do";
-        $admtext['notwrite'] = "není zapisovatelný, zkontrolujte oprávnění";
-        $admtext['checkwrite'] = "Zkontrolujte oprávnění, musí být možnost zapisovat.";
-        $admtext['toterrors'] = "Celkem chyb";
-        $admtext['missfile'] = "Chybí soubor";
-        $admtext['notunique'] = "není jedinečné";
-        $admtext['nodesc'] = "Chyba definice parametru, chybí popis";
-        $admtext['defval'] = "Výchozí hodnota";
-        $admtext['written'] = "Soubor byl přepsán";
-        //changed in 9.0.0
-        $admtext['locmissing'] = "Pro instalaci chybí místní kopie xxx";
-        //added in 9.0.0
-        $admtext['needmodupdate'] = "Je vyžadována aktualizace módu";
-        $admtext['cannotinstall'] = "Tento mód nelze nainstalovat";
-        $admtext['emptytarget'] = "Cílový soubor je prázdný soubor.";
-        $admtext['cantdelmissing'] = "Nelze vymazat, soubor nebyl nalezen";
-        //changed in 10.0.3
-        $admtext['editperf'] = "Parametry byly změněny takto:";
-        //added in 10.0.3
-        $admtext['options'] = "Možnosti";
-        $admtext['viewlog'] = "Zobrazit protokol";
-        $admtext['target'] = "Změny";
-        $admtext['newfile'] = "Nové";
-        $admtext['copiesfile'] = "Kopie";
-        $admtext['copiesfile2'] = "Kopie do";
-        $admtext['logoptions'] = "Protokolu manažeru módů";
-        $admtext['mmlogfilename'] = "Název protokolu";
-        $admtext['sortlistby'] = "Řadit seznamy podle";
-        $admtext['modname'] = "Název módu";
-        $admtext['bypassconfirm'] = "Vynechat potvrzení";
-        $admtext['modifyoptions'] = "Upravit možnosti manažeru módů";
-        $admtext['ready'] = "Lze nainstalovat";
-        $admtext['noselected'] = "Nejsou vybrány žádné soubory!";
-        $admtext['choose'] = "Vybrat";
-        $admtext['showlogfile'] = "Zobrazit protokol akcí manažeru módů";
-        $admtext['recentactions'] = "poslední akce, které provedl manažer módů";
-        $admtext['clearlog'] = "Vymazat protokol";
-        $admtext['confirmclearlog'] = "Opravdu chcete vymazat protokol?";
-        $admtext['modsyntax'] = "Syntaxe módů";
-        $admtext['modguidelines'] = "Úvod k módům";
-        $admtext['filemod'] = "Soubor xxx je upraven módem";
-        $admtext['potconf'] = "Potenciální konflikty";
-        $admtext['modifications'] = "úpravy";
-        $admtext['othermmoptions'] = "Jiné";
-        $admtext['file'] = "Soubor";
-        $admtext['tngmods'] = "Módy pro TNG ";
-        //changed in TNG 10.1
-        $admtext['copied'] = "zkopírované";
-        $admtext['emptyfile'] = "soubor je prázdný";
-        $admtext['filescopied'] = "soubory zkopírované";
-        $admtext['notinst'] = "nenainstalováno";
-        $admtext['install'] = "Instalovat";
-        $admtext['filedel'] = "Soubor vymazán";
-        $admtext['created'] = "vytvořeno";
-        $admtext['choosefilter'] = "Vyberte filtr a kliknutím na Provést zobrazíte dostupné ovládací prvky";
-        $admtext['mmmaxloglines'] = "Maximální počet transakcí";
-        $admtext['statusfilter'] = "Stav";
-        //added in TNG 10.1
-        $admtext['uninstall'] = "Odinstalovat";    // was $admtext['remove'] = "Remove"
-        $admtext['cleanup'] = "Vyčistit";  // previously used as $admtext['clean']
-        $admtext['edopts'] = "Upravit možnosti";  // previously used as $admtext['edit'] without Option text
-        $admtext['ok2inst'] = "Lze nainstalovat";  // previously used $admtext['ready'] which is already translated
-        $admtext['badversion'] = "verze souboru/chybná verze";
-        $admtext['bomfound'] = "BOM odstraněn";
-        $admtext['cantinst'] = "Nelze nainstalovat";
-        $admtext['cantproc'] = "nelze odstranit mód";
-        $admtext['cantupd'] = "nelze změnit parametr";
-        $admtext['cleanupall'] = "Vyčistit";
-        $admtext['copiesreq'] = "kopie souborů specifikované";
-        $admtext['delete'] = "Vymazat";
-        $admtext['deleteall'] = "Vymazat";
-        $admtext['errors'] = "chyby";
-        $admtext['excused'] = "soubory vyřazené";
-        $admtext['filesinst'] = "soubory instalované";
-        $admtext['filesrem'] = "soubory odstraněné";
-        $admtext['format'] = "chyba formátu";
-        $admtext['installall'] = "Instalovat";
-        $admtext['installing'] = "Instalace";
-        $admtext['line'] = "Řádek";
-        $admtext['modified'] = "upravené";
-        $admtext['modsinst'] = "úpravy kódu instalované";
-        $admtext['modrem'] = "mód odinstalován";
-        $admtext['modsrem'] = "úpravy kódu odstraněné";
-        $admtext['modsreq'] = "úpravy kódu specifikované";
-        $admtext['newfilesreq'] = "nové soubory specifikované";
-        $admtext['nfcreated'] = "nové soubory vytvořené";
-        $admtext['noact'] = "neplatný tag akce";
-        $admtext['nocfgfile'] = "soubor módu nebyl nalezen";
-        $admtext['nocomps'] = "chybějící prvky";
-        $admtext['noend'] = "%end:% chybějící tag";
-        $admtext['nolocation'] = "chybějící tag location";
-        $admtext['okay'] = "OK";
-        $admtext['opened'] = "otevřen";
-        $admtext['optional'] = "volitelný";
-        $admtext['partinst'] = "Částečně nainstalováno";
-        $admtext['removeall'] = "Odinstalovat";    // was Remove Selected mods
-        $admtext['removing'] = "Odinstalace";    // was Removing
-        $admtext['reqtag'] = "chybí požadovaný tag";
-        $admtext['restparam'] = "Obnova výchozího parametru";
-        $admtext['return'] = "Návrat do manažeru módů";
-        $admtext['tagnoterm'] = "tag není zakončen";
-        $admtext['tagunk'] = "tag je neznámý";
-        $admtext['tgtfile'] = "cílový soubor";
-        $admtext['updated'] = "změněno";
-        $admtext['updparam'] = "Změna parametru";
-        $admtext['unxend'] = "neočekávaný konec souboru";
-        $admtext['warnings'] = "Upozornění";
-        $admtext['allowdeletepartial'] = "Povolit Vymazat vybrané pro částečně nainstalované módy";
-        $admtext['allowdeleteinstalled'] = "Povolit Vymazat pro samostatně nainstalované módy";
-        $admtext['showwarnings'] = "Zobrazit upozornění módu ve stavu";
-        $admtext['logfullpath'] = "Do protokolu zapsat celou cestu souborů";
-        $admtext['deleting'] = "Vymazání ";
-        $admtext['wiki'] = "Wiki";
-        $admtext['aflist'] = "Soubory";
-        $admtext['hasoptions'] = "Možnosti";
-        $admtext['restore'] = "Obnova výchozích";
-        $admtext['stayon'] = "Zamknout";
-        $admtext['accessible'] = "přístupný";
-        $admtext['bypassed'] = "vynecháno";
-        $admtext['willbypass'] = "bude ignorováno";  // was "will bypass"
-        $admtext['cantdel'] = "nelze vymazat";
-        $admtext['optmissing'] = "chybějící soubor (volitelný)";
-        $admtext['tgtmissing'] = "chybějící cílový soubor";
-        $admtext['optlocked'] = "soubor zamknut (volitelný)";
-        $admtext['tgtlocked'] = "soubor zamknut";
-        $admtext['alreadyrem'] = "již odstraněn";
-        $admtext['noaccess'] = "není přístup";
-        $admtext['badinstall'] = "nepodařilo se instalovat";
-        $admtext['removed'] = "odstraněno";
-        $admtext['deleted'] = "vymazáno";
-        $admtext['optsrcfilemissing'] = "chybějící volitelný zdroj";
-        $admtext['srcfilemissing'] = "chybějící zdroj";
-        $admtext['optnocopy'] = "volitelný soubor nebyl zkopírován";
-        $admtext['notcopied'] = "nezkopírováno";
-        $admtext['copied'] = "zkopírované";
-        $admtext['notcreated'] = "nelze vytvořit nový soubor";
-        $admtext['optnotcreated'] = "nelze vytvořit nový volitelný soubor";
-        $admtext['nocreated'] = "nevytvořeno";
-        $admtext['fixedheader'] = "Použít pevné záhlaví";
-        $admtext['cantremok'] = "nelze odstranit, obejít";
-        $admtext['nofolder'] = "chybějící cílová složka";
-        $admtext['edparams'] = "upravit parametry";
-        $admtext['compresslog'] = "Sbalit zobrazení protokolu";
-        $admtext['formodname'] = "pro název módu ";
-        $admtext['nofolder'] = "chybějící cílová složka";
-        $admtext['fileperms'] = "Zkontrolujte, prosím, oprávnění k souboru";
-        $admtext['noparam'] = "chybějící parametr";
-        $admtext['editing'] = "úprava";
-        $admtext['redirect2log'] = "Přesměrovat na protokol";
-        $admtext['on_error'] = "Pouze chyby";
-        $admtext['on_all'] = "Všechny transakce";
-        $admtext['usestriping'] = "Použít pruhy";
-        $admtext['stripeafter'] = "Pruh po tomto počtu řádků";
-        $admtext['adjusthdrs'] = "Upravit pevné záhlaví";
-        $admtext['displayoptions'] = "Nastavení zobrazení";
-        $admtext['no_frag'] = "fragment kódu zde není povolen";
-        //added in 12.0.0
-        $admtext['exists'] = "existuje";
-        $admtext['newdirsreq'] = "nové složky specifikovány";
-        $admtext['cantrem'] = "nelze odstranit";
-        $admtext['showanalyzer'] = "Zobrazit záložku Analýza souborů TNG";
-        $admtext['showdeveloper'] = "Zobrazit další nástroje pro vývojáře";
-        $admtext['showupdates'] = "Zobrazit záložku Doporučené aktualizace";
-        $admtext['analyzefiles'] = "Analýza souborů TNG";
-        $admtext['parsetable'] = "Tabulka parseru";
-        $admtext['recommendedfixes'] = "Doporučené aktualizace";
-        $admtext['selectmod'] = "Vyberte konfigurační soubor módu pro zobrazení parseru";
-        $admtext['parsertags'] = "Výsledky analýzy:";
-        $admtext['parsererror'] = "Chyba: ";
-        $admtext['filesel'] = "Vyberte soubor TNG a zjistěte, které mody jej ovlivňují";
-        $admtext['custtextfixes'] = "Aktualizovaný Průvodce pro tvorbu módů doporučuje vložit vlastní text před poznámky na začátek souboru cust_text.php tak, aby módy neměly vliv na uživatelské manuální změny provedené za řádky poznámek.";
-        $admtext['updcusttext'] = "Aktualizovat soubory cust_text.php";
-        $admtext['confirmupdcusttext'] = "Opravdu chcete aktualizovat soubory cust_text.php?";
-        $admtext['compressnames'] = "Odstranit mezery z názvů souborů v seznamu módů";
-        $admtext['verified'] = "ověřeno";
-        $admtext['provisional'] = "(prozatímní) musí být k dispozici";
-        $admtext['backtoprevious'] = "Návrat k předchozí stránce";
-        $admtext['reasontoupdate'] = "Pokud jste nespustili skript cust_text_update.php jako součást aktualizace TNG v12, je třeba aktualizovat vaše soubory cust_text.php a <ul> <li> přidat do souborů nový řádek a </li> <li> také aktualizovat zastaralý řádek ve stávajících souborech cust_text.php </li> </ul>, který nebyl během upgradu TNG nahrazen.";
-        $admtext['newanchor'] = "Nový řádek komentáře by neměl být v jazykových souborech přeložen, aby mohl být vývojáři módů použit jako kotva pro vložení vlastního textu před tento nový řádek komentáře.";
-        $admtext['translateissue'] = "Pokud přeložíte nový řádek komentáře, instalace modů se nezdaří.";
-        $admtext['privatemod'] = "Neveřejný mód";
-        $admtext['protected'] = "chráněno-odstraňte soubor ručně";
-        $admtext['restored'] = "obnoveno";
-        $admtext['confdelmod'] = "Opravdu chcete z vašeho systému smazat tento mod a přidruženou složku? Tuto operaci nelze vrátit zpět!";
-        $admtext['allowdeletesupport'] = "Povolit smazání podpůrné složky po vymazání modu";
-        $admtext['delrisk'] = "Výběrem této možnosti uživatel přijímá veškeré riziko, že mohly být odstraněny nezamýšlené složky. Věříme, že toto riziko je velmi malé.";
-        $admtext['delpartinfo'] = "Tuto možnost byste měli nastavit na hodnotu Ano pouze, pokud jste zapomněli odinstalovat předchozí verze módu před instalací nové verze.";
-        $admtext['delinstinfo'] = "Tuto možnost byste měli nastavit na hodnotu Ano pouze, pokud jste nainstalovali novou verzi modu a předchozí verze se stále zobrazuje jako nainstalovaná.";
-        $admtext['updateopts'] = "Váš mmconfig.php je třeba aktualizovat! Klikněte na záložku Možnosti výše a poté na tlačítko Uložit.";
-        $admtext['confdelmod1'] = "Opravdu chcete z vašeho systému smazat tento mod? Tuto operaci nelze vrátit zpět!";
-        $admtext['noeffect'] = "Varování: v TNG nic neměňte!";
-        $admtext['cfgnowrite'] = "Varování: Soubor Cfg je chráněný proti zápisu. Parametery nelze změnit.";
-        break;
-
     //added in 11.0.0
     case "dna":
         $admtext['confdeletedna'] = "Opravdu chcete vymazat tento test?";
@@ -2250,7 +2041,6 @@ $admtext['show'] = "Zobrazit";
 $admtext['lnfirst'] = "Nejprve příjmení (s čárkami)";
 $admtext['savefirst'] = "Nejprve uložit změny?";
 $admtext['misc'] = "Různé";
-$admtext['modmgr'] = "Manažer módů";
 $admtext['cannotopendir'] = "Nemohu otevřít složku";
 $admtext['reviewsh'] = "Přezkoumat"; //short version
 //moved here in 9.0.0
