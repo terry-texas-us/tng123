@@ -38,8 +38,6 @@ if (!empty($cemetery['maplink'])) {
 } else {
     $size = false;
 }
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 if ($map['key'] && $isConnected) {
     if (!isset($flags['scripting'])) $flags['scripting'] = "";
     $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";

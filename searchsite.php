@@ -7,9 +7,6 @@ if ($requirelogin && !$currentuser) {
     header("Location: searchform.php");
     exit;
 }
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['searchnames'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="searchsite-hdr-icon"></span><?php echo $text['searchsitemenu']; ?></h2>

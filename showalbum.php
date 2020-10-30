@@ -122,8 +122,6 @@ $albumname = $row['albumname'];
 $description = $row['description'];
 tng_free_result($result);
 if (!$noneliving && !$noneprivate) {
-    echo "<!doctype html>\n";
-    echo "<html lang='en'>\n";
     tng_header($text['albums'] . ": " . $albumname, $flags);
     echo tng_DrawHeading("", $text['albums'] . ": " . $albumname, $description);
     echo "<p>{$text['livingphoto']}</p>\n";
@@ -160,8 +158,6 @@ $numrowsplus = $numrows + $offset;
 $logstring = "<a href=\"showalbum.php?albumID=$albumID\">$albumname</a>";
 writelog($logstring);
 preparebookmark($logstring);
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 tng_header($text['albums'] . ": $albumname", $flags);
 $imgsrc = getAlbumPhoto($albumID, $albumname);
 if (!$imgsrc) {

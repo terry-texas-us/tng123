@@ -6,9 +6,6 @@ $logstring = "<a href='data_protection_policy.php'>" . xmlcharacters($text['data
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['dataprotect'], $flags);
 
 $langfolder = findlangfolder("data_protection_policy.php");

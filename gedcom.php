@@ -1095,9 +1095,6 @@ if ($maxgcgen > 0 || $type == "all") {
 
     echo "0 TRLR$lineending";
 } else {
-    echo "<!doctype html>\n";
-    echo "<html lang='en'>\n";
-
     tng_header("Error", "");
     echo "<h1>Error</h1>\n<p>maxgen = $maxgcgen. {$text['nomaxgen']}</p>\n";
     echo tng_menu("", "", "", 1);

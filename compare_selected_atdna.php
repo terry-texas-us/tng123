@@ -18,8 +18,6 @@ $test_group = isset($_SESSION["tgroup"]) ? $_SESSION["tgroup"] : "";
 $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $dnatree . "&amp;testsearch=" . $test_search . "&amp;test_type=" . $test_type . "&amp;test_group=" . $test_group;
 $headline = "{$text['dnatestscompare']}";
 $text['dnatestscompare_atdna'] .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . $text['allgroups'];
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 tng_header($text['dnatestscompare_atdna'], $flags);
 $comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
 $innermenu = "";

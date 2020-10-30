@@ -28,9 +28,6 @@ preparebookmark($logstring);
 //STEP 5: Remove the comments (leading slashes) on the next line if you *DON'T* want the TNG menu bar to show on your page.
 //$flags['noicons'] = true;
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($yourtitle, $flags);
 
 //STEP 6: Replace the text below with your own text (do not include the headline). 

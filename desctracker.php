@@ -292,9 +292,6 @@ if ($nextperson) {
     preparebookmark("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">{$text['descendfor']} $descname ($personID)</a>");
 }
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($descname, $flags);
 
 $photostr = showSmallPhoto($personID, $descname, $rights['both'], 0, false, $row['sex']);

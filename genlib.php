@@ -67,6 +67,8 @@ function standardHeaderVariants($headElement, array $flags): void {
  */
 function tng_header($title, $flags) {
     global $tngconfig, $text;
+    echo "<!doctype html>\n";
+    echo "<html lang='en'>\n";
     initMediaTypes();
     $headElement = new HeadElementPublic($title, $flags);
     echo $headElement->getHtml();

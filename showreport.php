@@ -500,9 +500,6 @@ if ($csv) {
     $truncname = str_replace(" ", "-", strtolower($rrow['reportname']));
     header("Content-Disposition: attachment; filename={$truncname}.csv\n\n");
 } else {
-    echo "<!doctype html>\n";
-    echo "<html lang='en'>\n";
-
     tng_header($rrow['reportname'], $flags);
     ?>
 

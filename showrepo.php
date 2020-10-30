@@ -35,9 +35,6 @@ $logstring = "<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\">" . $text['
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($reporow['reponame'], $flags);
 
 $repomedia = getMedia($reporow, "R");

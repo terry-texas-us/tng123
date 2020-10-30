@@ -42,9 +42,6 @@ if ($result) {
 
 $personID = preg_replace("/[^A-Za-z0-9_\-. ]/", '', $primaryID);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags['scripting'] = "<script src=\"js/selectutils.js\"></script>\n";
 
 tng_header($text['relcalc'], $flags);

@@ -8,11 +8,8 @@ $numrows = tng_num_rows($result);
 $logstring = "<a href=\"$reports_url\">" . xmlcharacters($text['reports']) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 tng_header($text['reports'], $flags);
 ?>
-
     <h2 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo $text['reports']; ?></h2>
     <br style="clear: left;">
 <?php

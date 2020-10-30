@@ -8,9 +8,6 @@ $logstring = "<a href=\"firstnames-all.php?tree=$tree\">{$text['firstnamelist']}
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header("{$text['firstnamelist']} - {$text['allfirstnames']}", $flags);
 ?>
     <a id="top"></a>

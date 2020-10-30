@@ -11,9 +11,6 @@ $logstring = "<a href=\"surnames-oneletter.php?firstchar=$firstchar&amp;tree=$tr
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['surnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $flags);
 ?>
     <h2 class="header"><span class="headericon"

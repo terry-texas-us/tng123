@@ -52,9 +52,6 @@ preparebookmark($logstring);
 
 $headtext = $srcrow['title'] ? $srcrow['title'] : $srcrow['shorttitle'];
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($headtext, $flags);
 
 $srcmedia = getMedia($srcrow, "S");

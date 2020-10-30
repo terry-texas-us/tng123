@@ -36,7 +36,7 @@ function tng_adminheader($title, $flags) {
     $header .= "<link rel='shortcut icon' href='$tngdomain/{$tngconfig['favicon']}'>\n";
     $header .= "<script src='node_modules/jquery/dist/jquery.min.js'></script>\n";
     $header .= "<script src='node_modules/jquery-ui-dist/jquery-ui.min.js'></script>\n";
-    $header .= "<script src='js/jquery.ui.touch-punch.min.js'></script>\n";
+    $header .= "<script src='node_modules/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js'></script>\n";
     $header .= "<script src='js/net.js'></script>\n";
     $header .= "<script src='js/admin.js'></script>\n";
     $header .= "<script src='js/litbox.js'></script>\n";

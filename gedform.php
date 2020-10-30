@@ -23,10 +23,6 @@ if (($disallowgedcreate && (!$allow_ged || !$rightbranch)) || !$personID) {
     header("location:$homepage");
     exit;
 }
-
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags['scripting'] = "<script>
 function validateForm() {
 	if( document.gedform.email.value == \"\" ) {

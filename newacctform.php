@@ -14,9 +14,6 @@ tng_free_result($userresult);
 
 $_SESSION['tng_email'] = generatePassword(1);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['regnewacct'], $flags);
 ?>
     <script>

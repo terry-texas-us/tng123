@@ -32,9 +32,6 @@ $logstring = "<a href=\"show_dna_test.php?testID=$testID\">$headline</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($headline, $flags);
 ?>
     <h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $headline; ?></h2>

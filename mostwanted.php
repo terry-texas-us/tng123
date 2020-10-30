@@ -77,9 +77,6 @@ function showDivs($type) {
     return $mediatext;
 }
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags = [];
 
 tng_header($text['mostwanted'], $flags);

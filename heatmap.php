@@ -212,12 +212,8 @@ $numrows = tng_num_rows($result);
 if ($map['key'] && $isConnected) {
     $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}&amp;libraries=visualization{$mapkeystr}\"></script>\n";
 }
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($headline, $flags);
 ?>
-
     <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $headline; ?></h2>
     <br style="clear: left;">
 <?php

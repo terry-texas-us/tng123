@@ -214,17 +214,15 @@ if ($order == "change") {
         $orderstr = "changedate DESC, lastname, lnprefix, firstname";
 }
 
-$query = "SET SQL_BIG_SELECTS=1";
-$result = tng_query($query);
-
-$query = "SELECT people.ID, people.personID{$idselect}, lastname, firstname, lnprefix, title, prefix, suffix, nameorder, birthdate, birthdatetr, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1),4,'0') AS birthyear, birthplace, altbirthdate, altbirthdatetr, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1),4,'0') AS altbirthyear, altbirthplace, deathdate, deathplace, burialdate, burialplace, people.living, people.private, people.branch, people.gedcom AS gedcom, treename, people.changedby, DATE_FORMAT(people.changedate,'%d %b %Y') AS changedatef $nokidselect ";
+tng_query("SET SQL_BIG_SELECTS=1");
+$query = "SELECT people.ID, people.personID{$idselect}, lastname, firstname, lnprefix, title, prefix, suffix, nameorder, birthdate, birthdatetr, LPAD(SUBSTRING_INDEX(birthdate, ' ', -1), 4, '0') AS birthyear, birthplace, altbirthdate, altbirthdatetr, LPAD(SUBSTRING_INDEX(altbirthdate, ' ', -1), 4, '0') AS altbirthyear, altbirthplace, deathdate, deathplace, burialdate, burialplace, people.living, people.private, people.branch, people.gedcom AS gedcom, treename, people.changedby, DATE_FORMAT(people.changedate, '%d %b %Y') AS changedatef $nokidselect ";
 $query .= "FROM ($people_table people, $trees_table trees) $nokidjoin $noparentjoin $nospousejoin ";
 $query .= "WHERE $allwhere $nokidgroup $nokidhaving ";
 $query .= "ORDER BY $orderstr ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
-
-$numrows = tng_num_rows($result);
+$people = tng_fetch_all($result);
+$numrows = count($people);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
     if ($nokids) {
         $query = "SELECT people.ID, people.personID, lastname, firstname, lnprefix $nokidselect ";
@@ -283,12 +281,10 @@ $menu = doMenu($peopletabs, "findperson", $innermenu);
 if (!isset($message)) $message = '';
 echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message);
 ?>
-
     <table class="lightback w-full" cellspacing="2" border="0">
         <tr class="databack">
             <td class="tngshadow">
                 <div class="normal">
-
                     <form action="admin_people.php" name="form1">
                         <table class="m-2">
                             <tr>
@@ -363,8 +359,7 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                                 $actionstr .= "<a href='#' onclick=\"return confirmDelete('zzz');\" title='{$admtext['text_delete']}' class='smallicon admin-delete-icon'></a>";
                             }
                             $actionstr .= "<a href='getperson.php?personID=xxx&amp;tree=yyy' target='_blank' title='{$admtext['test']}' class='smallicon admin-test-icon'></a>";
-
-                            while ($row = tng_fetch_assoc($result)) {
+                            foreach ($people as $row) {
                                 $rights = determineLivingPrivateRights($row);
                                 $row['allow_living'] = $rights['living'];
                                 $row['allow_private'] = $rights['private'];
@@ -425,7 +420,6 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                     }
                     else
                         echo "</table>\n" . $admtext['norecords'];
-                    tng_free_result($result);
                     ?>
                     </form>
 

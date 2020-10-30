@@ -42,9 +42,6 @@ tng_free_result($treeResult);
 writelog("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;generations=$gens&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $logname ($personID)") . "</a> $gens " . $gentext);
 preparebookmark("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;generations=$gens&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $gens " . $gentext);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 tng_header($text['pedigreefor'] . " " . $row['name'], $flags);

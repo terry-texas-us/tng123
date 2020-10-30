@@ -10,9 +10,6 @@ include "$mylanguage/text.php";
 
 $maintenance_mode = true;
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['sitemaint'], $flags);
 ?>
 

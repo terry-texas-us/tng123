@@ -1,6 +1,5 @@
 var selects = [];
 var selidx = 0;
-
 LITBox = function (url, options) {
     this.url = url;
     this.options = {
@@ -20,10 +19,8 @@ LITBox = function (url, options) {
     const winwidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     jQuery.extend(this.options, options || {});
     if (winwidth < this.options.width) this.options.width = winwidth - 35;
-
     this.setup();
 }
-
 LITBox.prototype = {
     setup: function () {
         var self = this;
@@ -80,7 +77,6 @@ LITBox.prototype = {
         this.d2.id = 'LB_window';
         this.d2.style.height = parseInt(this.options.height) + 'px';
         this.d2.style.zIndex = '101';
-
         this.d3 = document.createElement('div');
         this.d2.appendChild(this.d3);
         this.d3.className = 'LB_closeAjaxWindow';
@@ -96,7 +92,7 @@ LITBox.prototype = {
         this.close.d2 = this.d2;
         this.close.href = '#';
         this.close.onclick = this.remove;
-        this.close.innerHTML = '<img src="' + closeimg + '" border="0">';
+        this.close.innerHTML = '<img src="' + closeimg + '" alt="">';
         this.close.id = 'LB_close';
         this.close.onremove = this.options.onremove;
         this.d3text = document.createElement('div');
@@ -157,13 +153,11 @@ LITBox.prototype = {
             this.d2.style.top = parseInt(this.options.top) + 'px';
         }
         if (this.d) this.d.style.height = yScroll + "px";
-
     },
     remove: function () {
         if (this.temp) this.temp();
         var d2 = jQuery(this.d2);
         var onremove = this.onremove;
-
         d2.animate({opacity: 0}, 200, function () {
             d2.remove()
         });
@@ -174,18 +168,17 @@ LITBox.prototype = {
                 if (onremove) onremove();
             });
         }
-
         return false;
     },
     parseQuery: function (query) {
         var Params = new Object();
         if (!query) return Params; // return empty object
-        var Pairs = query.split(/[;&]/);
-        for (var i = 0; i < Pairs.length; i++) {
-            var KeyVal = Pairs[i].split('=');
+        const Pairs = query.split(/[;&]/);
+        for (let i = 0; i < Pairs.length; i++) {
+            const KeyVal = Pairs[i].split('=');
             if (!KeyVal || KeyVal.length != 2) continue;
-            var key = unescape(KeyVal[0]);
-            var val = unescape(KeyVal[1]);
+            const key = unescape(KeyVal[0]);
+            let val = unescape(KeyVal[1]);
             val = val.replace(/\+/g, ' ');
             Params[key] = val;
         }
@@ -255,6 +248,5 @@ function clearForm(form) {
 function openHelp(filename) {
     let newwindow = window.open(filename, 'newwindow', 'height=700, width=800, resizable=yes, scrollbars=yes');
     newwindow.focus();
-
     return false;
 }

@@ -21,12 +21,8 @@ if (isset($autorefresh)) {
 }
 $owner = $sitename ? $sitename : $dbowner;
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header("$loglines {$text['mostrecentactions']}", $flags);
 ?>
-
     <h2 class="header"><?php echo "$loglines {$text['mostrecentactions']}"; ?></h2>
     <br class="clear-both">
 <?php

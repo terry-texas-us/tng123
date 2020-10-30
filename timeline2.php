@@ -385,9 +385,6 @@ if ($pedigree['simile']) {
 }
 $flags['scripting'] .= "<link href='css/timeline.css' rel='stylesheet'>\n";
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['timeline'] . ": $namestr", $flags);
 
 $photostr = showSmallPhoto($primaryID, $namestr, $rights['both'], 0, false, $row['sex']);

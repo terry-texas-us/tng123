@@ -64,9 +64,6 @@ $logstring = "<a href=\"browsebranches.php?tree=$tree&amp;offset=$offset&amp;bra
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['branches'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="branches-hdr-icon"></span><?php echo $text['branches']; ?></h2>

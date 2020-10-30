@@ -7,8 +7,6 @@ $treestr = $tree ? " ({$text['tree']}: $tree)" : "";
 $logstring = "<a href=\"statistics.php?tree=$tree\">" . xmlcharacters($text['databasestatistics'] . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 tng_header($text['databasestatistics'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="stats-hdr-icon"></span><?php echo $text['databasestatistics']; ?></h2>

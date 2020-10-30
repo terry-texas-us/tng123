@@ -33,8 +33,6 @@ writelog($logstring);
 preparebookmark($logstring);
 //compute $allwhere from submitted criteria
 $ldsOK = determineLDSRights();
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 $flags['style'] = "<style>\n";
 $flags['style'] .= "table {width: 100%; border-collapse: separate; border-spacing: 1px;}\n";
 $flags['style'] .= "table th, table td {padding: 3px;}\n";

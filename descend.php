@@ -645,9 +645,6 @@ tng_free_result($treeResult);
 writelog("<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=$display\">" . xmlcharacters($text['descendfor'] . " $logname ($personID)") . "</a>");
 preparebookmark("<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=$display\">{$text['descendfor']} " . $row['name'] . " ($personID)</a>");
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags['style'] = "<style>\n";
 $flags['style'] .= ".desc {margin: 0 0 10px 0;}\n";
 $flags['style'] .= ".spouse {width: 100%;}\n";

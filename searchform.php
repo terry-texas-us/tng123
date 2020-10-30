@@ -46,9 +46,6 @@ $nr = isset($_SESSION['tng_nr']) ? $_SESSION['tng_nr'] : "";
 
 $dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX", "NPFX"];
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['searchnames'], $flags);
 ?>
     <script>

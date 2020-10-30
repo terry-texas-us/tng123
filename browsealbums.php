@@ -60,9 +60,6 @@ $logstring = "<a href=\"browsealbums.php?tree=$tree&amp;offset=$offset&amp;media
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['albums'], $flags);
 ?>
     <h2 class="header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h2>

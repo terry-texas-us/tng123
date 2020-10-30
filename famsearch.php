@@ -231,8 +231,6 @@ if (!$numrows) {
     header("Location: famsearchform.php?msg=" . urlencode($msg));
     exit;
 }
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 tng_header($text['searchresults'], $flags);
 ?>
     <script src="js/search.js"></script>

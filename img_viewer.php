@@ -42,9 +42,6 @@ include "showmedialib.php";
 $info = getMediaInfo($mediatypeID, $mediaID, $personID, $albumID, $albumlinkID, $cemeteryID, $eventID);
 $imgrow = $info['imgrow'];
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags['link'] = "<link href='build/styles/img_viewer.css' rel='stylesheet'>\n";
 $flags['scripting'] = "<script src='js/img_viewer.js'></script>\n";
 $flags['noheader'] = true;

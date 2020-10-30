@@ -20,8 +20,6 @@ function substr_unicode($str, $start, $len = null) {
         preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY), $start, $len));
 }
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
 $flags['scripting'] = "<script>\n";
 $flags['scripting'] .= "function redisplay(key) {window.location.href = jQuery('#' + key).attr('href');}\n";
 $flags['scripting'] .= "</script>\n";

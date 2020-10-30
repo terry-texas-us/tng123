@@ -131,9 +131,6 @@ if ($rights['both']) {
     if ($row['deathplace']) $headstr .= " " . $row['deathplace'];
 
 }
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($headstr, $flags);
 
 getCitations($personID);

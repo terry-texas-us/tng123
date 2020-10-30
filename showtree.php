@@ -25,9 +25,6 @@ tng_free_result($result);
 writelog("<a href=\"showtree.php?tree=$tree\">{$text['tree']}: {$row['treename']}</a>");
 preparebookmark("<a href=\"showtree.php?tree=$tree\">{$text['tree']}: {$row['treename']}</a>");
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['tree'] . ": " . $row['treename'], $flags);
 ?>
     <h2 class="header"><?php echo $text['tree'] . ": " . $row['treename']; ?></h2>

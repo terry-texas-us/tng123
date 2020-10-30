@@ -255,9 +255,6 @@ $gentext = xmlcharacters($text['generations']);
 writelog("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $logname ($personID)") . "</a> $generations " . $gentext);
 preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=textonly\">" . xmlcharacters($text['pedigreefor'] . " $pedname ($personID)") . "</a> $generations " . $gentext);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
 tng_header($text['pedigreefor'] . " $pedname", $flags);

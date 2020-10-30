@@ -42,9 +42,6 @@ tng_free_result($treeResult);
 writelog("<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\">{$text['fanchart']}: $logname ($personID)</a>");
 preparebookmark("<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\">{$text['fanchart']}: $namestr ($personID)</a>");
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header("{$text['fanchart']}: {$perName[0]}  Generations: {$generations}", $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);

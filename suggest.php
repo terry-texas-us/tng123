@@ -153,9 +153,6 @@ if ($enttype) {
     $headline = $text['suggestchange'] . ": $name";
     $comments = $text['comments'];
 
-    echo "<!doctype html>\n";
-    echo "<html lang='en'>\n";
-
     tng_header($headline, $flags);
 
     $photostr = showSmallPhoto($ID, $name, $row['allow_living'] && $row['allow_private'], 0, false, $row['sex']);
@@ -167,9 +164,6 @@ if ($enttype) {
 } else {
     $headline = $text['contactus'];
     $comments = $text['comments2'];
-
-    echo "<!doctype html>\n";
-    echo "<html lang='en'>\n";
 
     tng_header($headline, $flags);
     ?>

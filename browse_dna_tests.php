@@ -145,9 +145,6 @@ $logstring = "<a href=\"browse_dna_tests.php?tree=$tree&amp;offset=$offset&amp;t
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($admtext['dna_tests'], $flags);
 ?>
 

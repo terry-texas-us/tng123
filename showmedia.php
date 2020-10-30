@@ -161,9 +161,6 @@ $fixImagePath = str_replace(' ', '%20', $imgrow['path']);
 $fbOGimage = "<meta property=\"og:image\" content=\"" . $tngdomain . "/" . $imageFolder . "/" . $fixImagePath . "\">\n";
 $fbOGimage = "<meta property=\"og:image\" content=\"" . $tngdomain . "/" . $imageFolder . "/" . $fixImagePath . "\">\n";
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($mediatypeIDstr . ": " . $description, $flags);
 
 $imgviewer = $tngconfig['imgviewer'];

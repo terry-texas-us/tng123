@@ -18,9 +18,6 @@ $logstring = "<a href=\"cemeteries.php?tree=$tree\">{$text['cemeteriesheadstones
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['cemeteriesheadstones'], $flags);
 ?>
 <script>

@@ -15,9 +15,6 @@ $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $_SESSION["ttree"] . "&am
 $headline = "{$text['dnatestscompare']}";
 $text['dnatestscompare'] .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . $text['allgroups'];
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['dnatestscompare'], $flags);
 
 /**

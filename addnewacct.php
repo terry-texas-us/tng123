@@ -114,9 +114,6 @@ if ($username && $password && $realname && $email && $fingerprint == "realperson
     $success = 0;
 }
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['regnewacct'], $flags);
 
 echo "<h2 class='header'>{$text['regnewacct']}</h2>\n";

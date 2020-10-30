@@ -11,9 +11,6 @@ $logstring = "<a href=\"firstnames100.php?topnum=$topnum&amp;tree=$tree\">" . xm
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<!doctype html>\n";
-echo "<html lang='en'>\n";
-
 tng_header($text['firstnamelist'] . ": {$text['top30first']}", $flags);
 ?>
 

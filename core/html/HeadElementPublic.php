@@ -92,13 +92,9 @@ class HeadElementPublic
     public function getScriptElements(): array {
         global $http, $isConnected, $tngconfig, $tngprint;
         $scripts = [];
-        if ($isConnected) {
-            $scripts[] = "<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>";
-            $scripts[] = "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous'></script>";
-        } else {
-            $scripts[] = "<script>// <![CDATA[\nwindow.jQuery || document.write('<script src=\'js/jquery-3.3.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>";
-            $scripts[] = "<script>// <![CDATA[\nwindow.jQuery.ui || document.write('<script src=\'js/jquery-ui-1.12.1.min.js?v=910\'>\\x3C/script>')\n//]]></script>";
-        }
+        $scripts[] .= "<script src='node_modules/jquery/dist/jquery.min.js'></script>\n";
+        $scripts[] .= "<script src='node_modules/jquery-ui-dist/jquery-ui.min.js'></script>\n";
+        $scripts[] .= "<script src='node_modules/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js'></script>\n";
         $scripts[] = "<script src='js/net.js'></script>";
         if (isset($this->flags['scripting'])) {
             $scripts[] = $this->flags['scripting'];
