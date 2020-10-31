@@ -10,6 +10,7 @@ if (!$cemeteryID || !is_numeric($cemeteryID)) {
     exit;
 }
 include "functions.php";
+require_once "admin/pagination.php";
 require_once "admin/trees.php";
 require_once "admin/cemeteries.php";
 $flags['imgprev'] = true;

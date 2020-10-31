@@ -1,10 +1,11 @@
 <?php
+
 include "begin.php";
 include "config/mapconfig.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "findplace";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -269,9 +270,6 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_places.php?searchstring=" . stripslashes($searchstring) . "&amp;exactmatch=$exactmatch&amp;noocords=$nocoords&amp;temples=$temples&amp;noevents=$noevents&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -347,8 +345,10 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_places.php?searchstring=" . stripslashes($searchstring) . "&amp;exactmatch=$exactmatch&amp;noocords=$nocoords&amp;temples=$temples&amp;noevents=$noevents&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

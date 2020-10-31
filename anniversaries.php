@@ -3,6 +3,7 @@
 $textpart = "search";
 include "tng_begin.php";
 include "functions.php";
+require_once "admin/pagination.php";
 if (isset($tngyear)) {
     $tngyear = preg_replace("/[^0-9]/", "", $tngyear);
 }

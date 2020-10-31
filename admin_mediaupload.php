@@ -222,7 +222,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                     <input type="hidden" name="redirect" value="{$http}://blueimp.github.com/jQuery-File-Upload/">
                 </noscript>
                 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                <div class="row fileupload-buttonbar" style="float:left;">
+                <div class="float-left row fileupload-buttonbar">
                     <div class="span7">
                         <!-- The fileinput-button span is used to style the file input field as button -->
                         <span class="btn fileinput-button">
@@ -306,7 +306,7 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['upload'], "img
                                 <option value=""></option>
                             </select>
                         </td>
-                        <td class="normal align-top">&nbsp;</td>
+                        <td class="align-top normal">&nbsp;</td>
                     </tr>
                 </table>
 

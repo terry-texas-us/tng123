@@ -1,13 +1,13 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "sources";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-
 require_once "./core/html/addCriteria.php";
 
 if ($newsearch) {
@@ -161,9 +161,6 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_sources.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -227,8 +224,10 @@ echo displayHeadline($admtext['sources'], "img/sources_icon.gif", $menu, $messag
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_sources.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

@@ -388,13 +388,13 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                 <table class="normal">
                     <tr>
                         <td>
-                            <div style="float:left;"><?php echo $admtext['repoid']; ?> 1:
+                            <div class="float-left"><?php echo $admtext['repoid']; ?> 1:
                                 <input type="text" name="repoID1" id="repoID1" size="10" value="<?php echo $repoID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             </div>
                             <a href="#" onclick="return findItem('R','repoID1','reponame1',document.form1.tree.options[document.form1.tree.selectedIndex].value);" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                         <td width="80">&nbsp;</td>
                         <td>
-                            <div style="float:left;"><?php echo $admtext['repoid']; ?> 2:
+                            <div class="float-left"><?php echo $admtext['repoid']; ?> 2:
                                 <input type="text" name="repoID2" id="repoID2" size="10" value="<?php echo $repoID2; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             </div>
                             <a href="#" onclick="return findItem('R','repoID2','reponame2',document.form1.tree.options[document.form1.tree.selectedIndex].value);" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>

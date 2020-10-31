@@ -1,13 +1,12 @@
 <?php
+
 $textpart = "showphoto";
 include "tng_begin.php";
-
 include "functions.php";
 include "personlib.php";
-
+require_once "admin/pagination.php";
 function doMediaSearch($instance, $pagenav) {
     global $text, $mediasearch, $tree;
-
     $str = getFORM("browsealbums", "get", "MediaSearch$instance", "");
     $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\">\n";
     $str .= "<input type='hidden' name=\"tree\" value='$tree'>\n";

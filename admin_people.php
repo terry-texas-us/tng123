@@ -1,13 +1,13 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "people";
 include "$mylanguage/admintext.php";
-
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
-
 require_once "./core/html/addCriteria.php";
 
 $varlist = ['newsearch', 'searchstring', 'tree', 'living', 'private', 'exactmatch', 'nokids', 'noparents', 'nospouse'];
@@ -319,9 +319,6 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) $offsetplus = 0;
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    $pagenav = get_browseitems_nav($totrows, "admin_people.php?searchstring=$searchstring&amp;living=$living&amp;private=$private&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
                     ?>
                     <form action="admin_deleteselected.php" method="post" name="form2">
                         <?php if ($allow_delete) { ?>
@@ -415,8 +412,10 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                             ?>
                         </table>
                     <?php
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
+                    echo "<div class='w-full class=lg:flex my-6'>";
+                    echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                    echo getPaginationControlsHtml($totrows, "admin_people.php?searchstring=$searchstring&amp;living=$living&amp;private=$private&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 3);
+                    echo "</div>";
                     }
                     else
                         echo "</table>\n" . $admtext['norecords'];

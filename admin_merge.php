@@ -785,25 +785,25 @@ echo displayHeadline($admtext['people'] . " &gt;&gt; " . $admtext['merge'], "img
                     <table class="normal">
                         <tr>
                             <td>
-                                <div style="float:left;"><?php echo $admtext['personid']; ?> 1:
+                                <div class="float-left"><?php echo $admtext['personid']; ?> 1:
                                     <input type="text" name="personID1" id="personID1" size="10" value="<?php echo $personID1; ?>">
                                     &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                                 </div>
                                 <a href="#"
-                                   onclick="return findItem('I','personID1','name1',document.form1.tree.options[document.form1.tree.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
-                                   title="<?php echo $admtext['find']; ?>"
-                                   class="smallicon admin-find-icon"></a></td>
+                                    onclick="return findItem('I','personID1','name1',document.form1.tree.options[document.form1.tree.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
+                                    title="<?php echo $admtext['find']; ?>"
+                                    class="smallicon admin-find-icon"></a></td>
                             <td width="80">&nbsp;</td>
                             <td>
-                                <div style="float:left;"><?php echo $admtext['personid']; ?> 2:
+                                <div class="float-left"><?php echo $admtext['personid']; ?> 2:
                                     <input type="text" name="personID2" id="personID2" size="10" value="<?php echo $personID2; ?>"
-                                           onkeyup="processEnter();">
+                                        onkeyup="processEnter();">
                                     &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                                 </div>
                                 <a href="#"
-                                   onclick="return findItem('I','personID2','name2',document.form1.tree.options[document.form1.tree.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
-                                   title="<?php echo $admtext['find']; ?>"
-                                   class="smallicon admin-find-icon"></a></td>
+                                    onclick="return findItem('I','personID2','name2',document.form1.tree.options[document.form1.tree.selectedIndex].value,'<?php echo $assignedbranch; ?>');"
+                                    title="<?php echo $admtext['find']; ?>"
+                                    class="smallicon admin-find-icon"></a></td>
                         </tr>
                         <tr>
                             <td id="name1"><?php if (isset($p1row['reponame'])) {

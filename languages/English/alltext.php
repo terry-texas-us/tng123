@@ -38,13 +38,16 @@ $dates['TO'] = "to";
 $dates['Y'] = "Yes, date unknown";
 $dates['CAL'] = "Cal";
 $dates['EST'] = "Est";
-
 //global messages
 $text['cannotexecutequery'] = "Cannot execute query";
+$text['showing'] = "showing";
 $text['to'] = "to";
 $text['of'] = "of";
+$text['first'] = "first";
 $text['text_next'] = "Next";
 $text['text_prev'] = "Prev";
+$text['previous'] = "previous";
+$text['last'] = "last";
 $text['clickdisplay'] = "Click to display";
 $text['clickhide'] = "Click to hide";
 $text['forgot1'] = "<strong>Forgot your username or password?</strong><br>Enter your e-mail address below to have your username sent to you.";

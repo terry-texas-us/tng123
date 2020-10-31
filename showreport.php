@@ -1,16 +1,13 @@
 <?php
+
 $textpart = "reports";
 include "tng_begin.php";
-
 include "functions.php";
+require_once "admin/pagination.php";
 if (!isset($csv)) $csv = false;
-
 if (!is_numeric($reportID)) die ("Sorry!");
-
-
 function processfield($field) {
     global $need_families, $cejoins, $evfields, $people_table, $events_table, $familyfields_nonss;
-
     if (in_array($field, $familyfields_nonss)) {
         $newfield = "if(sex='M',families1." . $field . ",families2." . $field . ")";
         $need_families = 1;

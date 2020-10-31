@@ -4,6 +4,7 @@ $textpart = "showphoto";
 include "tng_begin.php";
 include "functions.php";
 require_once "albumlib.php";
+require_once "admin/pagination.php";
 $albumID = preg_replace("/[^0-9]/", '', $albumID);
 $flags['imgprev'] = true;
 $noneliving = $noneprivate = 1;

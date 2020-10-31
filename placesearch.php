@@ -6,6 +6,7 @@ include "tng_begin.php";
 require_once "./admin/trees.php";
 if (!$psearch) exit;
 include "personlib.php";
+require_once "admin/pagination.php";
 @set_time_limit(0);
 $psearch = preg_replace("/[<>{};!=]/", '', $psearch);
 $psearchns = $psearch;

@@ -1,13 +1,13 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "timeline";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-
 $tng_search_tlevents = $_SESSION['tng_search_tlevents'] = 1;
 if ($newsearch) {
     $exptime = 0;
@@ -84,9 +84,6 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) $offsetplus = 0;
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    $pagenav = get_browseitems_nav($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -131,8 +128,10 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_timelineevents.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo $admtext['norecords'];

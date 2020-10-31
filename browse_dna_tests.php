@@ -8,6 +8,7 @@ if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
 }
 include "functions.php";
 include "personlib.php";
+require_once "admin/pagination.php";
 
 $maxsearchresults = $maxdnasearchresults ? $maxdnasearchresults : $maxsearchresults;
 

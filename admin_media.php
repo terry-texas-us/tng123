@@ -1,15 +1,15 @@
 <?php
+
 include "begin.php";
 include "config/mapconfig.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "photos";
 include "$mylanguage/admintext.php";
-
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
 include_once "tngdblib.php";
-
 $maxnoteprev = 350;  //don't use the global value here because we always want to truncate
 
 if ($newsearch) {
@@ -331,9 +331,6 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_media.php?searchstring=$searchstring&amp;mediatypeID=$mediatypeID&amp;fileext=$fileext&amp;hsstat=$hsstat&amp;cemeteryID=$cemeteryID&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedmedia.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
@@ -520,18 +517,18 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 } else {
                                     $medialinktext .= "<li>{$prow['personID']}</li>";
                                 }
-
                             }
                             $medialinktext = $medialinktext ? "<ul>\n$medialinktext\n</ul>\n" : "&nbsp;";
                             echo "<td nowrap class='lightback normal'>$medialinktext</td>\n";
-
                             echo "</tr>\n";
                         }
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_media.php?searchstring=$searchstring&amp;mediatypeID=$mediatypeID&amp;fileext=$fileext&amp;hsstat=$hsstat&amp;cemeteryID=$cemeteryID&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

@@ -1,13 +1,12 @@
 <?php
+
 $textpart = "notes";
 include "tng_begin.php";
-
 include "functions.php";
+require_once "admin/pagination.php";
 require_once "./core/sql/extractWhereClause.php";
-
 function doNoteSearch($instance, $pagenav) {
     global $text, $notesearch, $tree;
-
     $str = "<div class='normal'>\n";
     $str .= getFORM("browsenotes", "get", "notesearch$instance", "");
     $str .= "<input type='text' name=\"notesearch\" value=\"$notesearch\"> <input type='submit' value=\"{$text['search']}\"> ";

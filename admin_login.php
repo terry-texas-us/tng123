@@ -88,10 +88,10 @@ if (!empty($reset)) $_COOKIE[$loggedin] = "";
 echo "</head>\n";
 echo tng_adminlayout();
 ?>
-<table class="w-75 m-auto" cellpadding="10" bgcolor="#fff">
+<table class="w-3/4 m-auto" cellpadding="10" bgcolor="#fff">
     <tr>
-        <td class="fieldnameback rounded-lg">
-            <span class="whiteheader mt-0 text-base" style="font-size: large; "><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></span>
+        <td class="rounded-lg fieldnameback">
+            <span class="mt-0 text-base whiteheader" style="font-size: large; "><?php echo $admtext['login'] . ": " . $admtext['administration']; ?></span>
         </td>
     </tr>
     <?php if (!empty($message)) { ?>
@@ -102,21 +102,21 @@ echo tng_adminlayout();
         </tr>
     <?php } ?>
     <tr>
-        <td class="databack tngshadow rounded-lg">
+        <td class="rounded-lg databack tngshadow">
             <div id="admlogintable" style="position:relative;">
-                <div class="altab" style="float:left;">
+                <div class="float-left altab">
                     <form action="processlogin.php" name="form1" method="post">
                         <table>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['username']; ?>:</span></td>
                                 <td>
-                                    <input type="text" class="loginfont w-auto" name="tngusername" size="20">
+                                    <input type="text" class="w-auto loginfont" name="tngusername" size="20">
                                 </td>
                             </tr>
                             <tr>
                                 <td><span class="normal"><?php echo $admtext['password']; ?>:</span></td>
                                 <td>
-                                    <input type="password" class="loginfont w-auto" name="tngpassword" size="20">
+                                    <input type="password" class="w-auto loginfont" name="tngpassword" size="20">
                                 </td>
                             </tr>
                             <tr>
@@ -135,12 +135,14 @@ echo tng_adminlayout();
                         <input type="hidden" name="continue" value="<?php echo $continue; ?>">
                     </form>
                 </div>
-                <div class="altab" style="float:left; width:50px;">&nbsp;&nbsp;&nbsp;</div>
-                <div class="altab">
-                    <form action="admin_login.php" name="form2" method="post">
-                        <table style="max-width:400px;">
-                            <tr>
-                                <td colspan="2"><span class="normal"><?php echo $text['forgot1']; ?></span></td>
+                <div class="float-left altab" width:50px;
+                ">&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="altab">
+                <form action="admin_login.php" name="form2" method="post">
+                    <table style="max-width:400px;">
+                        <tr>
+                            <td colspan="2"><span class="normal"><?php echo $text['forgot1']; ?></span></td>
                             </tr>
                             <tr>
                                 <td nowrap><span class="normal"><?php echo $admtext['email']; ?>:</span></td>

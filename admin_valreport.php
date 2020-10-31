@@ -1,13 +1,13 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "misc";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-
 $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef_birth', 'died_bef_birth', 'parents_younger', 'children_late', 'not_living', 'not_dead'];
 if (!$report || !in_array($report, $reports)) {
     header("Location: admin_data_validation.php");
@@ -208,11 +208,6 @@ if (!$numrowsplus) $offsetplus = 0;
     <tr class="databack">
         <td class="tngshadow normal">
             <h3 class="subhead"><?php echo $admtext[$report]; ?></h3>
-            <?php
-            echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            $pagenav = get_browseitems_nav($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 5);
-            echo "<span class='adminnav'>$pagenav</span></p>";
-            ?>
             <table cellpadding="5" cellspacing="1" class="normal">
                 <tr>
                     <?php
@@ -246,8 +241,10 @@ if (!$numrowsplus) $offsetplus = 0;
                         echo "</tr>\n";
                     }
                     echo "</table>\n";
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
+                    echo "<div class='w-full class=lg:flex my-6'>";
+                    echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                    echo getPaginationControlsHtml($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 3);
+                    echo "</div>";
                 } else {
                     echo "</table>\n" . $admtext['norecords'];
                 }

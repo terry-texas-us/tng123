@@ -3,6 +3,7 @@ $textpart = "showphoto";
 include "tng_begin.php";
 
 include "functions.php";
+require_once "admin/pagination.php";
 
 require_once "./core/sql/extractWhereClause.php";
 

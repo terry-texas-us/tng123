@@ -42,9 +42,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td>
                     <select name="searchtree" onchange="getNewMedia(document.find2,0)">
                         <?php
-                        if (!$assignedtree) {
-                            echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                        }
+                        if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
                         $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                         while ($treerow = tng_fetch_assoc($treeresult)) {
                             echo "	<option value=\"{$treerow['gedcom']}\"";

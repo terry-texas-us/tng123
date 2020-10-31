@@ -1,9 +1,10 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "review";
 include "$mylanguage/admintext.php";
-
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
@@ -183,9 +184,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             <td>
                                 <select name="tree">
                                     <?php
-                                    if (!$assignedtree) {
-                                        echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                                    }
+                                    if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "	<option value=\"{$treerow['gedcom']}\"";

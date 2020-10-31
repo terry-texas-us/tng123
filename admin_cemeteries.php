@@ -1,14 +1,14 @@
 <?php
+
 include "begin.php";
 include "config/mapconfig.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "cemeteries";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-
 require_once "admin/cemeteries.php";
 require_once "./core/html/addCriteria.php";
 
@@ -113,9 +113,6 @@ $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-curren
                         <?php
                         $numrowsplus = $numrows + $offset;
                         if (!$numrowsplus) $offsetplus = 0;
-                        echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                        $pagenav = get_browseitems_nav($totrows, "admin_cemeteries.php?q=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                        echo "<span class='adminnav'>$pagenav</span></p>\n";
                         ?>
                     </div>
                     <form action="admin_deleteselected.php" method="post" name="form2">
@@ -177,18 +174,20 @@ $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-curren
                                     $geo .= "{$admtext['zoom']}: " . $row['zoom'];
                                 }
                                     echo "$geo</td>\n";
-                            } else {
+                                } else {
                                     echo "<td class='lightback'>{$row['latitude']}</td>\n";
                                     echo "<td class='lightback'>{$row['longitude']}</td>\n";
                                 }
                                 echo "</tr>\n";
-                        }
-                        ?>
-                    </table>
-                <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>\n";
-                }
+                            }
+                            ?>
+                        </table>
+                    <?php
+                    echo "<div class='w-full class=lg:flex my-6'>";
+                    echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                    echo getPaginationControlsHtml($totrows, "admin_cemeteries.php?q=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 3);
+                    echo "</div>";
+                    }
                 else {
                     echo $admtext['norecords'];
                 }

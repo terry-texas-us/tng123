@@ -1,15 +1,15 @@
 <?php
+
 include "begin.php";
 include "config/mapconfig.php";
 include "adminlib.php";
 require_once "./core/sql/extractWhereClause.php";
+require_once "admin/pagination.php";
 $textpart = "notes";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-
 $orgtree = $tree;
 $exptime = 0;
 
@@ -40,7 +40,6 @@ if ($newsearch) {
         setcookie("tng_search_notes_post[offset]", $offset, $exptime);
     }
 }
-
 if ($offset) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
@@ -49,7 +48,6 @@ if ($offset) {
     $newoffset = "";
     $tngpage = 1;
 }
-
 $treequery = "SELECT gedcom, treename ";
 $treequery .= "FROM $trees_table ";
 if ($assignedtree) $treequery .= "WHERE gedcom = '$assignedtree' ";
@@ -83,32 +81,10 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 } else {
     $totrows = $numrows;
 }
-
 $helplang = findhelp("notes_help.php");
 
 tng_adminheader($admtext['notes'], $flags);
 ?>
-<script>
-    function validateForm() {
-        let rval = true;
-        if (document.form1.searchstring.value.length === 0) {
-            alert("<?php echo $admtext['entersearchvalue']; ?>");
-            rval = false;
-        }
-        return rval;
-    }
-
-    function confirmDelete(ID) {
-        if (confirm('<?php echo $admtext['confdeletenote']; ?>'))
-            deleteIt('note', ID);
-        return false;
-    }
-
-    function resetForm() {
-        document.form1.searchstring.value = '';
-        document.form1.tree.selectedIndex = 0;
-    }
-</script>
 
 <?php
 echo "</head>\n";
@@ -119,12 +95,10 @@ $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/notes2_help.php')
 $menu = doMenu($misctabs, "notes", $innermenu);
 echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
 ?>
-
 <table class="lightback">
     <tr class="databack">
         <td class="tngshadow">
             <div class="normal">
-
                 <form action="admin_notelist.php" name="form1" id="form1">
                     <table class="normal">
                         <tr>
@@ -132,17 +106,15 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                             <td>
                                 <select name="tree">
                                     <?php
-                                    if (!$assignedtree) {
-                                        echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                                    }
+                                    if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                                    while ($treerow = tng_fetch_assoc($treeresult)) {
+                                    $trees = tng_fetch_all($treeresult);
+                                    tng_free_result($treeresult);
+                                    foreach ($trees as $treerow) {
                                         echo "	<option value=\"{$treerow['gedcom']}\"";
                                         if ($treerow['gedcom'] == $tree) echo " selected";
-
                                         echo ">{$treerow['treename']}</option>\n";
                                     }
-                                    tng_free_result($treeresult);
                                     ?>
                                 </select>
                                 <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
@@ -154,7 +126,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td>
+                            <td colspan="2">
                                 <input type="checkbox" name="private" value="yes"<?php if ($private == "yes") {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['text_private']; ?></td>
@@ -166,9 +138,6 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_notelist.php?searchstring=$searchstring_noquotes&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -234,7 +203,6 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                         tng_free_result($result2);
                                     }
                                 }
-
                                 if (!$notelinktext) {
                                     $query = "SELECT * FROM $families_table WHERE familyID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
                                     $result2 = tng_query($query);
@@ -247,7 +215,6 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                         tng_free_result($result2);
                                     }
                                 }
-
                                 if (!$notelinktext) {
                                     $query = "SELECT * FROM $sources_table WHERE sourceID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
                                     $result2 = tng_query($query);
@@ -257,7 +224,6 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                         tng_free_result($result2);
                                     }
                                 }
-
                                 if (!$notelinktext) {
                                     $query = "SELECT * FROM $repositories_table WHERE repoID = \"{$nrow['personID']}\" AND gedcom = \"{$nrow['gedcom']}\"";
                                     $result2 = tng_query($query);
@@ -269,24 +235,27 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                                 }
                             }
                             tng_free_result($nresult);
-
                             if (($allow_edit && !$assignedtree) || !$row['secret']) {
                                 $notetext = cleanIt($row['note']);
                                 $notetext = truncateIt($notetext, 500);
                                 if (!$notetext) $notetext = "&nbsp;";
-
                             } else {
                                 $notetext = $admtext['text_private'];
                             }
                             echo "<td class='lightback'>$notetext</td>\n";
                             echo $treetext;
-                            echo "<td class='lightback' nowrap>\n<ul>\n$notelinktext\n</ul>\n</td></tr>\n";
+                            echo "<td class='lightback whitespace-no-wrap'>\n";
+                            echo "<ul>\n$notelinktext\n</ul>\n";
+                            echo "</td>\n";
+                            echo "</tr>\n";
                         }
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_notelist.php?searchstring=$searchstring_noquotes&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];
@@ -299,4 +268,25 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
         </td>
     </tr>
 </table>
+    <script>
+        function validateForm() {
+            let rval = true;
+            if (document.form1.searchstring.value.length === 0) {
+                alert("<?php echo $admtext['entersearchvalue']; ?>");
+                rval = false;
+            }
+            return rval;
+        }
+
+        function confirmDelete(ID) {
+            if (confirm('<?php echo $admtext['confdeletenote']; ?>'))
+                deleteIt('note', ID);
+            return false;
+        }
+
+        function resetForm() {
+            document.form1.searchstring.value = '';
+            document.form1.tree.selectedIndex = 0;
+        }
+    </script>
 <?php echo tng_adminfooter(); ?>

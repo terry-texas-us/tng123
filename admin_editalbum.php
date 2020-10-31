@@ -144,25 +144,27 @@ $menu = doMenu($albumtabs, "edit", $innermenu);
 echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum'], "img/albums_icon.gif", $menu, "");
 ?>
 
-<form action="admin_updatealbum.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-    <table class="lightback">
-        <tr class="databack">
-            <td class="tngshadow">
-                <div>
-                    <div id="thumbholder" style="float:left;<?php if (!$photo) {
-                        echo "display:none";
-                    } ?>"><?php echo $photo; ?></div>
-                    <span class="plainheader"><?php echo $row['albumname'] . ": </span><br>" . $row['description']; ?></div>
-                <?php
-                echo "<a href='#' onclick=\"return removeDefault();\" class='smaller' id=\"removedefault\"";
-                if (!$photo) echo " style=\"visibility:hidden\"";
+    <form action="admin_updatealbum.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+        <table class="lightback">
+            <tr class="databack">
+                <td class="tngshadow">
+                    <div>
+                        <div id="thumbholder" class="<?php if (!$photo) {
+                            echo "hidden ";
+                        } ?>float-left">
+                            <?php echo $photo; ?>
+                        </div>
+                        <span class="plainheader"><?php echo $row['albumname'] . ": </span><br>" . $row['description']; ?>
+                    </div>
+                    <?php
+                    echo "<a href='#' onclick=\"return removeDefault();\" class='smaller' id=\"removedefault\"";
+                    if (!$photo) echo " style=\"visibility:hidden\"";
+                    echo ">{$admtext['removedef']}</a>\n";
+                    ?>
+                </td>
+            </tr>
 
-                echo ">{$admtext['removedef']}</a>\n";
-                ?>
-            </td>
-        </tr>
-
-        <tr class="databack">
+            <tr class="databack">
             <td class="tngshadow">
                 <?php echo displayToggle("plus0", 0, "details", $admtext['existingalbuminfo'], $admtext['infosubt']); ?>
 
@@ -239,7 +241,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                             echo "<div class='sortrow' id=\"orderdivs_{$lrow['albumlinkID']}\" style=\"clear:both;position:relative;\" onmouseover=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','visible');\" onmouseout=\"jQuery('#del_{$lrow['albumlinkID']}').css('visibility','hidden');\">";
                             echo "<table class='w-full' cellpadding='5' cellspacing='1'>";
                             echo "<tr>\n";
-                            echo "<td class='dragarea rounded-lg normal'>";
+                            echo "<td class='rounded-lg dragarea normal'>";
                             echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                             echo "</td>\n";
                             echo "<td class='lightback smaller' style=\"width:35px;text-align:center;\">";
@@ -402,8 +404,7 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                 }
 
                                 include "eventmicro.php";
-
-                                echo "<tr id=\"alink_{$plink['alinkID']}\"><td class='lightback text-center'>\n";
+                                echo "<tr id=\"alink_{$plink['alinkID']}\"><td class='text-center lightback'>\n";
                                 if ($type != "place") {
                                     echo "<a href='#' title=\"{$admtext['edit']}\" onclick=\"return editMedia2EntityLink({$plink['alinkID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
                                 }

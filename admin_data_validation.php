@@ -55,9 +55,7 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
                             <td>
                                 <?php
                                 echo "<select id='treequeryselect' name='tree'>";
-                                if (!$assignedtree) {
-                                    echo "<option value=''>{$admtext['alltrees']}</option>\n";
-                                }
+                                if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
                                 // todo assigned tree is test and is empty here so likely do not need to pass
                                 echo $orderedTreesList->getSelectOptionsHtml($assignedtree);
                                 ?>

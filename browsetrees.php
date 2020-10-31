@@ -3,6 +3,12 @@
 $textpart = "trees";
 include "tng_begin.php";
 include "functions.php";
+require_once "admin/pagination.php";
+/**
+ * @param $instance
+ * @param $pagenav
+ * @return string
+ */
 function doTreeSearch($instance, $pagenav) {
     global $text, $treesearch;
     $str = "<span class='normal'>\n";

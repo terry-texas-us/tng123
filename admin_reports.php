@@ -1,9 +1,10 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "reports";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -132,9 +133,6 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_reports.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
 
                 <table class="normal">
@@ -163,7 +161,6 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                         $editlink = "admin_editreport.php?reportID={$row['reportID']}";
                         $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['reportID'] . "</a>" : $row['reportID'];
                         $name = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['reportname'] . "</a>" : $row['reportname'];
-
                         echo "<tr id=\"row_{$row['reportID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
                         echo "<td class='lightback'>&nbsp;{$row['ranking']}</td>\n";
                         echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
@@ -173,8 +170,10 @@ echo displayHeadline($admtext['reports'], "img/reports_icon.gif", $menu, $messag
                     ?>
                 </table>
             <?php
-            echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            echo "<span class='adminnav'>$pagenav</span></p>";
+            echo "<div class='w-full class=lg:flex my-6'>";
+            echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+            echo getPaginationControlsHtml($totrows, "admin_reports.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 3);
+            echo "</div>";
             }
             else {
                 echo $admtext['norecords'];

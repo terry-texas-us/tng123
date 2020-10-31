@@ -1,13 +1,13 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "users";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-
 if ($assignedtree) {
     $message = $admtext['norights'];
     header("Location: admin_login.php?message=" . urlencode($message));
@@ -129,9 +129,6 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_users.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -213,8 +210,10 @@ echo displayHeadline($admtext['users'], "img/users_icon.gif", $menu, $message);
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_users.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo $admtext['norecords'];

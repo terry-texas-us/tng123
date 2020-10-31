@@ -2,13 +2,12 @@
 
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "trees";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
-
 $tng_search_trees = $_SESSION['tng_search_trees'] = 1;
 if ($newsearch) {
     $exptime = 0;
@@ -71,7 +70,6 @@ $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/trees_help.php');
 $menu = doMenu($treetabs, "findtree", $innermenu);
 echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
 ?>
-
     <table class="lightback">
         <tr class="databack">
             <td class="tngshadow">
@@ -88,9 +86,6 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) $offsetplus = 0;
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    $pagenav = get_browseitems_nav($totrows, "admin_trees.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <table class="normal">
                     <tr>
@@ -103,7 +98,6 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                         <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['lastimport']; ?></th>
                         <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['importfilename']; ?></th>
                     </tr>
-
                     <?php
                     if ($numrows) {
                     $actionstr = "";
@@ -112,11 +106,10 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                     }
                     if ($allow_delete && !$assignedbranch) {
                         if (!$assignedtree) {
-                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                            $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"{$admtext['text_delete']}\" onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\"></a>";
                         }
                         $actionstr .= "<a href=\"admin_cleartree.php?tree=xxx\" onClick=\"return confirm('{$admtext['conftreeclear']}' );\" title=\"{$admtext['clear']}\" class=\"smallicon admin-clear-icon\"></a>";
                     }
-
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['gedcom'], $actionstr);
                         $editlink = "admin_edittree.php?tree={$row['gedcom']}";
@@ -142,15 +135,16 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                     tng_free_result($result);
                     ?>
                 </table>
-            <?php
-            echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            echo "<span class='adminnav'>$pagenav</span></p>";
-            }
+                <?php
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_notelist.php?searchstring=$searchstring_noquotes&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
+                }
             else {
                 echo $admtext['notrees'];
             }
             ?>
-
                 </div>
             </td>
         </tr>

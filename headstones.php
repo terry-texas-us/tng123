@@ -6,6 +6,7 @@ include "tng_begin.php";
 include "config/mapconfig.php";
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include "functions.php";
+require_once "admin/pagination.php";
 require_once "admin/cemeteries.php";
 $flags['imgprev'] = true;
 if (!$thumbmaxw) $thumbmaxw = 80;

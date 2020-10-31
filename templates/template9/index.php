@@ -14,7 +14,7 @@ echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='p-1 fieldnameback yellow'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $dadlabel = getTemplateMessage('t9_dadside');
 $momlabel = getTemplateMessage('t9_momside');
@@ -155,15 +155,12 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     <h2 class="art-postheader"><?php echo getTemplateMessage('t9_welcome'); ?></h2>
                                     <div class="cleared"></div>
                                     <div class="art-postcontent">
-
-                                        <img src="<?php echo $templatepath . $tmp['t9_mainimage']; ?>" alt="" style="float:left;"
-                                            class="temppreview">
+                                        <img src="<?php echo $templatepath . $tmp['t9_mainimage']; ?>" alt="" class="float-left temppreview">
                                         <?php
                                         if ($chooselang) {
                                             $query = "SELECT languageID, display, folder FROM $languages_table ORDER BY display";
                                             $result = tng_query($query);
                                             $numlangs = tng_num_rows($result);
-
                                             if ($numlangs > 1) {
                                                 echo getFORM("savelanguage2", "get", "tngmenu3", "");
                                                 echo "<select id='newlanguage3' name='newlanguage3' style='font-size: smaller;' onchange='document.tngmenu3.submit();'>";

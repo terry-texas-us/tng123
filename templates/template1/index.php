@@ -15,7 +15,7 @@ if ($tngconfig['maint']) {
 $title = getTemplateMessage('t1_maintitle');
 ?>
     <br>
-    <div class="m-auto w-75">
+    <div class="m-auto w-3/4">
         <table class="indexpage">
             <tr>
                 <td colspan="3">

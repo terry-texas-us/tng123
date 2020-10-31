@@ -1,9 +1,10 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "dna";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -123,9 +124,7 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                             <td>
                                 <select name="tree">
                                     <?php
-                                    if (!$assignedtree) {
-                                        echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                                    }
+                                    if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "	<option value=\"{$treerow['gedcom']}\"";
@@ -151,9 +150,6 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_dna_groups.php?offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselectedgroup.php" method="post" name="form2">
                     <p class="text-nowrap">
@@ -177,10 +173,10 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                            $actionstr .= "<a href=\"admin_edit_dna_group.php?dna_group=xxx&amp;tree=yyy&amp;test_type=zzz\" class='smallicon admin-edit-icon' title=\"{$admtext['edit']}\"></a>";
                         }
                         if (!$assignedtree) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                            $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"{$admtext['text_delete']}\" onClick=\"return confirmDelete('xxx','yyy');\"></a>";
                         }
 
                         while ($row = tng_fetch_assoc($result)) {
@@ -205,8 +201,10 @@ echo displayHeadline($admtext['dna_groups'], "img/dna_icon.gif", $menu, $message
                         ?>
                     </table>
                     <?php
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
+                    echo "<div class='w-full class=lg:flex my-6'>";
+                    echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                    echo getPaginationControlsHtml($totrows, "admin_dna_groups.php?offset", $maxsearchresults, 3);
+                    echo "</div>";
                     }
                     else {
                         echo $admtext['notrees'];

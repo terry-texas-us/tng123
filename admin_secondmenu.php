@@ -47,9 +47,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondary'
             <form action="admin_secondary.php" method="post" name="form1">
 	<span class="normal"><?php echo $admtext['tree']; ?>: <select name="tree">
 <?php
-if (!$assignedtree) {
-    echo "	<option value=\"--all--\">{$admtext['alltrees']}</option>\n";
-}
+if (!$assignedtree) echo "<option value='--all--'>{$admtext['alltrees']}</option>\n";
 while ($row = tng_fetch_assoc($result)) {
     echo "	<option value=\"{$row['gedcom']}\">{$row['treename']}</option>\n";
 }

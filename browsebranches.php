@@ -3,6 +3,7 @@
 $textpart = "trees";
 include "tng_begin.php";
 include "functions.php";
+require_once "admin/pagination.php";
 require_once "admin/trees.php";
 /**
  * @param $instance

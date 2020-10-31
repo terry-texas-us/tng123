@@ -4,6 +4,7 @@ $textpart = "search";
 $order = "";
 include "tng_begin.php";
 include "searchlib.php";
+require_once "admin/pagination.php";
 @set_time_limit(0);
 $maxsearchresults = $nr ? $nr : ($_SESSION['tng_nr'] ? $_SESSION['tng_nr'] : $maxsearchresults);
 $_SESSION['tng_search_ftree'] = $tree;

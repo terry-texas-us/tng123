@@ -480,15 +480,12 @@ echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['existingmediai
                 <div id="placeinfo"<?php if (!$placeopen) {
                     echo " style='display: none;'";
                 } ?>>
-                    <table class="topbuffer normal w-full">
+                    <table class="w-full topbuffer normal">
                         <tr>
                             <td width="150"><?php echo $admtext['placetaken']; ?>:</td>
                             <td>
-                                <input type="text" name="place" id="place" value="<?php echo $row['placetaken']; ?>" size="40" style="float:left;">
-                                <a href="#"
-                                   onclick="return openFindPlaceForm('place');"
-                                   title="<?php echo $admtext['find']; ?>"
-                                   class="smallicon admin-find-icon dn2px"></a>
+                                <input id="place" class="float-left" name="place" type="text" value="<?php echo $row['placetaken']; ?>" size="40">
+                                <a href="#" class="smallicon admin-find-icon dn2px" title="<?php echo $admtext['find']; ?>" onclick="return openFindPlaceForm('place');"></a>
                             </td>
                         </tr>
                         <?php if ($map['key']) { ?>

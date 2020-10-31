@@ -1,9 +1,10 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "branches";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -129,9 +130,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                             <td>
                                 <select name="tree">
                                     <?php
-                                    if (!$assignedtree) {
-                                        echo "	<option value=\"\">{$admtext['alltrees']}</option>\n";
-                                    }
+                                    if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
                                     $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
                                     while ($treerow = tng_fetch_assoc($treeresult)) {
                                         echo "	<option value=\"{$treerow['gedcom']}\"";
@@ -159,9 +158,6 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_branches.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
@@ -189,11 +185,11 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                            $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" class='smallicon admin-edit-icon' title=\"{$admtext['edit']}\"></a>";
                         }
                         if ($allow_delete) {
                             if (!$assignedtree) {
-                                $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx','yyy');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                                $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"{$admtext['text_delete']}\" onClick=\"return confirmDelete('xxx','yyy');\"></a>";
                             }
                         }
 
@@ -213,7 +209,6 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
 
                             $pcount = getBranchCount($row['gedcom'], $row['branch'], $people_table);
                             $fcount = getBranchCount($row['gedcom'], $row['branch'], $families_table);
-
                             echo "<td class='lightback'>{$row['personID']}&nbsp;</td>\n";
                             echo "<td class='lightback' style='text-align: right;'>$pcount&nbsp;</td>\n";
                             echo "<td class='lightback' style='text-align: right;'>$fcount&nbsp;</td>\n";
@@ -223,8 +218,10 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_branches.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo $admtext['notrees'];

@@ -10,7 +10,7 @@ echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " bodyindex'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='p-1 fieldnameback yellow'><strong>{$text['mainton']}</strong></span><br><br>\n";
 }
 $title = getTemplateMessage('t2_maintitle');
 ?>
@@ -31,18 +31,18 @@ $title = getTemplateMessage('t2_maintitle');
     </script>
 
     <div class="text-center">
-        <table class="indexpage p-0 rounded-lg">
+        <table class="p-0 rounded-lg indexpage">
             <tr>
                 <td class='align-top'>
-                    <div class="databack rounded-lg">
-                        <div style="float:left;display:inline;">
+                    <div class="rounded-lg databack">
+                        <div class="inline float-left">
                             <?php if ($tmp['t2_titlechoice'] == "text") { ?>
                                 <div id="titlecontainer">
                                     <em class="maintitle"><?php echo $title; ?></em>
                                 </div>
                             <?php } else { ?>
                                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443"
-                                    height="114" class="noimgborder rounded-lg">
+                                    height="114" class="rounded-lg noimgborder">
                                 <?php
                             }
                             $mainpara = getTemplateMessage('t2_mainpara');
@@ -208,7 +208,7 @@ $title = getTemplateMessage('t2_maintitle');
                             </form>
                         </div>
                         <div style="display:inline;">
-                            <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" id="mainphoto" class="noimgborder rounded-lg" style="max-height: 460px;" width="327"><br><br>
+                            <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_mainimage']; ?>" alt="" id="mainphoto" class="rounded-lg noimgborder" style="max-height: 460px;" width="327"><br><br>
                         </div>
                         <div style="clear:left;"></div>
                     </div>

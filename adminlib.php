@@ -74,20 +74,20 @@ function tng_adminlayout($args = "") {
     $output .= "</a>\n";
     $output .= "</div>\n";
     $output .= "<div class='pl-3 overflow-hidden'>\n";
-    $output .= "<p class='my-1 text-nowrap'><strong>$tng_title, v.$tng_version</strong></p>\n";
+    $output .= "<h1 class='my-1 text-nowrap'>$tng_title</h1>\n";
     $output .= "<span class='whitetext normal text-nowrap'>\n";
     $output .= "<a href='admin.php' class='lightlink'>{$admtext['adminhome']}</a>\n";
-    $output .= "&nbsp;|&nbsp; <a href='$homepage' class='lightlink'>{$admtext['publichome']}</a>\n";
-    if ($allow_admin) {
-        $output .= "&nbsp;|&nbsp; <a href='adminshowlog.php' class='lightlink' target='main'>{$admtext['showlog']}</a>\n";
-    }
-    $output .= "&nbsp;|&nbsp; <a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='lightlink'>{$admtext['getstart']}</a>\n";
+    $output .= "<a href='$homepage' class='lightlink'>{$admtext['publichome']}</a>\n";
+    //    if ($allow_admin) {
+    //        $output .= "&nbsp;|&nbsp; <a href='adminshowlog.php' class='lightlink' target='main'>{$admtext['showlog']}</a>\n";
+    //    }
+    //    $output .= "&nbsp;|&nbsp; <a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='lightlink'>{$admtext['getstart']}</a>\n";
     if ($maint) {
         $output .= "&nbsp;|&nbsp; <strong><span class='yellow'>{$text['mainton']}</span></strong>\n";
     }
-    $output .= "&nbsp;|&nbsp; <a href='https://tng.lythgoes.net/wiki' class='lightlink' target='_blank'>TNG Wiki</a>\n";
-    $output .= "&nbsp;|&nbsp; <a href='https://tng.community' class='lightlink' target='_blank'>TNG Forum</a>\n";
-    $output .= "&nbsp;|&nbsp; <a href='logout.php?admin_login=1' class='lightlink' target='_parent'>{$admtext['logout']}&nbsp; (<strong>$currentuser</strong>)</a>\n";
+    //    $output .= "&nbsp;|&nbsp; <a href='https://tng.lythgoes.net/wiki' class='lightlink' target='_blank'>TNG Wiki</a>\n";
+    //    $output .= "&nbsp;|&nbsp; <a href='https://tng.community' class='lightlink' target='_blank'>TNG Forum</a>\n";
+    $output .= "<a href='logout.php?admin_login=1' class='lightlink float-right' target='_parent'>{$admtext['logout']}&nbsp; (<strong>$currentuser</strong>)</a>\n";
     $output .= "</span>\n";
     $output .= "</div>\n";
     $output .= "</div>\n";
@@ -95,7 +95,7 @@ function tng_adminlayout($args = "") {
     $leftoffset = $mainoffset = "";
     if (isset($_SESSION['tng_menuhidden']) && $_SESSION['tng_menuhidden'] == "on") {
         $leftoffset = " style='left: -135px'";
-        $mainoffset = "style='padding-left: 26px'";
+        $mainoffset = " style='padding-left: 26px'";
     }
     $output .= "<div id='leftmenu' class='fixed h-full overflow-auto leading-tight leftmenu sideback normal'$leftoffset>\n";
     include "admin_leftmenu.php";
@@ -109,9 +109,19 @@ function tng_adminlayout($args = "") {
  * @return string
  */
 function tng_adminfooter() {
+    global $admtext, $allow_admin;
     $html = "<!-- begin tng_adminfooter -->\n";
     $html .= "</div>\n";
     $html .= "</div>\n";
+    $helplang = findhelp("index_help.php");
+    $html .= "<nav class='text-center lg:flex items-center justify-around flex-wrap p-6'>\n";
+    if ($allow_admin) {
+        $html .= "<a href='adminshowlog.php' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='main'>{$admtext['showlog']}</a>\n";
+    }
+    $html .= "<a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4'>{$admtext['getstart']}</a>\n";
+    $html .= "<a href='https://tng.lythgoes.net/wiki' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='_blank'>TNG Wiki</a>\n";
+    $html .= "<a href='https://tng.community' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='_blank'>TNG Forum</a>\n";
+    $html .= "</nav>\n";
     $html .= "</body>\n";
     $html .= "</html>\n";
     $html .= "<!-- end tng_adminfooter -->\n";
@@ -291,18 +301,6 @@ function displayHeadline($headline, $icon, $menu, $message) {
     $rval .= "</div>\n";
 
     return $rval;
-}
-
-/**
- * @param $start
- * @param $pagetotal
- * @param $grandtotal
- * @return string
- */
-function displayListLocation($start, $pagetotal, $grandtotal) {
-    global $admtext, $text;
-
-    return "<p class='m-2'>{$admtext['matches']}: " . number_format($start) . " {$text['to']} <span class='pagetotal'>" . number_format($pagetotal) . "</span> {$text['of']} <span class='restotal'>" . number_format($grandtotal) . "</span><br>";
 }
 
 /**

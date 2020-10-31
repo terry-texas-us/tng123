@@ -84,7 +84,7 @@ preparebookmark("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$t
 
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 if (empty($tngconfig['hidedna'])) {
-    $flags['scripting'] .= "<script language = 'javascript'>
+    $flags['scripting'] .= "<script>
 function togglednaicon() {
    if ($('.toggleicon2').attr('src').indexOf('desc') > 0) {
       $('.toggleicon2').attr('src', 'img/tng_sort_asc.gif')

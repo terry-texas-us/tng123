@@ -2,9 +2,9 @@
 
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "photos";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -106,11 +106,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_albums.php?searchstring=$searchstring&amp;exactmatch=$exactmatch&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
-
                 <table class="normal">
                     <tr>
                         <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
@@ -204,7 +200,6 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                             } else {
                                 $alinktext .= "<li>{$prow['personID']}</li>";
                             }
-
                         }
                         $alinktext = $alinktext ? "<ul>\n$alinktext\n</ul>\n" : "&nbsp;";
                         echo "<td class='lightback normal'>$alinktext</td>\n";
@@ -213,8 +208,10 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                     ?>
                 </table>
             <?php
-            echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-            echo "<span class='adminnav'>$pagenav</span></p>";
+            echo "<div class='w-full class=lg:flex my-6'>";
+            echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+            echo getPaginationControlsHtml($totrows, "admin_notelist.php?searchstring=$searchstring_noquotes&amp;offset", $maxsearchresults, 3);
+            echo "</div>";
             }
             else {
                 echo "</table>\n" . $admtext['norecords'];

@@ -1,9 +1,10 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "language";
 include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
@@ -87,9 +88,6 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) $offsetplus = 0;
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    $pagenav = get_browseitems_nav($totrows, "languages.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 5);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
 
                 <table class="normal">
@@ -121,8 +119,10 @@ echo displayHeadline($admtext['languages'], "img/languages_icon.gif", $menu, $me
                 </table>
                 <?php
                 if ($numrows) {
-                    echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                    echo "<span class='adminnav'>$pagenav</span></p>";
+                    echo "<div class='w-full class=lg:flex my-6'>";
+                    echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                    echo getPaginationControlsHtml($totrows, "languages.php?searchstring=$searchstring&amp;offset", $maxsearchresults, 3);
+                    echo "</div>";
                 } else {
                     echo $admtext['norecords'];
                 }

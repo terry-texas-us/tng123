@@ -1,11 +1,12 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
+require_once "admin/pagination.php";
 $textpart = "dna";
 include "personlib.php";
 include "tngdblib.php";
 include "$mylanguage/admintext.php";
-
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
@@ -226,9 +227,6 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                 <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                $pagenav = get_browseitems_nav($totrows, "admin_dna_tests.php?searchstring=$searchstring&amp;test_type=$test_type&amp;test_group=$test_group&amp;offset", $maxsearchresults, 5);
-                echo "<span class='adminnav'>$pagenav</span></p>";
                 ?>
                 <form action="admin_updateselecteddna.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
@@ -347,14 +345,15 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                             echo "<td class='lightback'>" . $privacy . "</td>\n";
                             echo "<td class='lightback'>" . $group . "</td>\n";
                             echo "<td class='lightback'>" . $row['gedcom'] . "</td>\n";
-
                             echo "</tr>\n";
                         }
                         ?>
                     </table>
                 <?php
-                echo displayListLocation($offsetplus, $numrowsplus, $totrows);
-                echo "<span class='adminnav'>$pagenav</span></p>";
+                echo "<div class='w-full class=lg:flex my-6'>";
+                echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getPaginationControlsHtml($totrows, "admin_dna_tests.php?searchstring=$searchstring&amp;test_type=$test_type&amp;test_group=$test_group&amp;offset", $maxsearchresults, 3);
+                echo "</div>";
                 }
                 else {
                     echo "</table>\n" . $admtext['norecords'];

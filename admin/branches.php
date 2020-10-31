@@ -18,7 +18,7 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
     $descriptions = [];
     $options = "";
     while ($branchrow = tng_fetch_assoc($branchresult)) {
-        $options .= "	<option value=\"{$branchrow['branch']}\"";
+        $options .= "<option value=\"{$branchrow['branch']}\"";
         if (in_array($branchrow['branch'], $branchlist)) {
             $options .= " selected";
             $descriptions[] = $branchrow['description'];
@@ -33,7 +33,7 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
         $selectnum = $totbranches < 8 ? $totbranches : 8;
         $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
         $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
-        $select .= "	<option value=''";
+        $select .= "<option value=''";
         if ($row == "") $select .= " selected";
         $select .= ">{$admtext['nobranch']}</option>\n";
         $select .= "$options</select>\n";

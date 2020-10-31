@@ -2,6 +2,7 @@
 $textpart = "sources";
 include "tng_begin.php";
 include "functions.php";
+require_once "admin/pagination.php";
 
 /**
  * @param $instance
