@@ -408,7 +408,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                             $mtypeID = $row['mediatypeID'];
                             $usefolder = $row['usecollfolder'] ? $mediatypes_assoc[$mtypeID] : $mediapath;
                             $newactionstr = preg_replace("/xxx/", $row['mediaID'], $actionstr);
-                            echo "<tr id=\"row_{$row['mediaID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['mediaID']}\"><td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) {
                                 echo "<td class='lightback text-center'><input type='checkbox' name=\"ph{$row['mediaID']}\" value='1'></td>";
                             }

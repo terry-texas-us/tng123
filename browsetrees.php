@@ -4,24 +4,7 @@ $textpart = "trees";
 include "tng_begin.php";
 include "functions.php";
 require_once "admin/pagination.php";
-/**
- * @param $instance
- * @param $pagenav
- * @return string
- */
-function doTreeSearch($instance, $pagenav) {
-    global $text, $treesearch;
-    $str = "<span class='normal'>\n";
-    $str .= getFORM("browsetrees", "GET", "TreeSearch$instance", "");
-    $str .= "<input type='text' name=\"treesearch\" value=\"$treesearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-    $str .= $pagenav;
-    if ($treesearch) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='browsetrees.php'>{$text['browsealltrees']}</a>";
-    }
-    $str .= "</form></span>\n";
-    return $str;
-}
-$max_browsetree_pages = 5;
+
 if ($offset) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
@@ -30,22 +13,18 @@ if ($offset) {
     $newoffset = "";
     $page = 1;
 }
-if ($treesearch) {
-    $wherestr = "WHERE treename LIKE \"%$treesearch%\" OR description LIKE \"%$treesearch%\"";
-} else {
-    $wherestr = "";
-}
-$query = "SELECT count(personID) AS pcount, trees.gedcom, treename, description ";
+$query = "SELECT COUNT(personID) AS pcount, trees.gedcom, treename, description ";
 $query .= "FROM $trees_table trees ";
 $query .= "LEFT JOIN $people_table people ON trees.gedcom = people.gedcom ";
-$query .= "$wherestr ";
+if ($treesearch) $query .= "WHERE treename LIKE '%$treesearch%' OR description LIKE '%$treesearch%'";
 $query .= "GROUP BY trees.gedcom ";
 $query .= "ORDER BY treename ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
+
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query = "SELECT count(gedcom) AS treecount FROM $trees_table";
+    $query = "SELECT COUNT(gedcom) AS treecount FROM $trees_table";
     $result2 = tng_query($query);
     $countrow = tng_fetch_assoc($result2);
     $totrows = $countrow['treecount'];
@@ -54,39 +33,41 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 }
 $numrowsplus = $numrows + $offset;
 tng_header($text['trees'], $flags);
-if ($totrows > 1) {
-    ?>
-    <link href="css/c3.css" rel="stylesheet">
-    <script src="js/d3.min.js"></script>
-    <script src="js/c3.min.js"></script>
-<?php } ?>
-
-<h2 class="header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h2>
-<br style="clear: left;">
-
-<?php
-if ($totrows) {
-    echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
-}
-$pagenav = get_browseitems_nav($totrows, "browsetrees.php?treesearch=$treesearch&amp;offset", $maxsearchresults, $max_browsetree_pages);
-if ($pagenav || $treesearch) echo doTreeSearch(1, $pagenav);
 ?>
-<div style="display:inline-block; margin-right:50px;">
-    <table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>
+<h2 class="mb-4 header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h2>
+
+<div class='mb-4 normal'>
+    <form name="treesearch1" action="browsetrees.php" method="get">
+        <label for="treesearch" hidden><?php echo $text['search']; ?></label>
+        <input id="treesearch" class="p-1 ml-1" name="treesearch" type="search" value="<?php echo $treesearch; ?>">
+        <input class="p-1 px-2" type="submit" value="<?php echo $text['search']; ?>">
+        <input name='tree' type='hidden' value="<?php echo $tree; ?>">
+    </form>
+</div>
+
+<div class='w-full class=lg:flex my-6'>
+    <?php
+    echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+    echo getPaginationControlsHtml($totrows, "browsesources.php?sourcesearch=$sourcesearch&amp;offset", $maxsearchresults, 3);
+    ?>
+</div>
+
+<div class="inline-block mr-12">
+    <table class='whiteback normal'>
         <thead>
         <tr>
-            <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
-            <th class="fieldnameback text-nowrap fieldname"><?php echo $text['treename']; ?></th>
-            <th class="fieldnameback text-nowrap fieldname"><?php echo $text['description']; ?></th>
-            <th class="fieldnameback text-nowrap fieldname"><?php echo $text['individuals']; ?></th>
-            <th class="fieldnameback text-nowrap fieldname"><?php echo $text['families']; ?></th>
-            <th class="fieldnameback text-nowrap fieldname"><?php echo $text['sources']; ?></th>
+            <th class="p-2 fieldnameback nbrcol fieldname">#</th>
+            <th class="p-2 fieldnameback fieldname"><?php echo $text['treename']; ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo $text['description']; ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo $text['individuals']; ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo $text['families']; ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo $text['sources']; ?></th>
             <?php
             $trees = explode(',', $_SESSION['availabletrees']);
             $numtrees = count($trees);
             if ($numtrees > 1) {
                 ?>
-                <th class="fieldnameback text-nowrap fieldname">&nbsp;</th>
+                <th class="p-2 fieldnameback fieldname">&nbsp;</th>
             <?php } ?>
         </tr>
         </thead>
@@ -103,14 +84,15 @@ if ($pagenav || $treesearch) echo doTreeSearch(1, $pagenav);
             $srcresult = tng_query($query);
             $srcrow = tng_fetch_assoc($srcresult);
             tng_free_result($srcresult);
-            echo "<tr><td class='databack'>$i</td>\n";
-            echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
-            echo "<td class='databack'>{$row['description']}&nbsp;</td>";
-            echo "<td class='databack' align=\"right\"><a href=\"search.php?tree={$row['gedcom']}\">" . number_format($row['pcount']) . "</a>&nbsp;</td>";
-            echo "<td class='databack' align=\"right\"><a href=\"famsearch.php?tree={$row['gedcom']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
-            echo "<td class='databack' align=\"right\"><a href=\"browsesources.php?tree={$row['gedcom']}\">" . number_format($srcrow['scount']) . "</a>&nbsp;</td>";
+            echo "<tr>\n";
+            echo "<td class='p-2 databack'>$i</td>\n";
+            echo "<td class='p-2 databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+            echo "<td class='p-2 databack'>{$row['description']}&nbsp;</td>";
+            echo "<td class='p-2 text-right databack'><a href=\"search.php?tree={$row['gedcom']}\">" . number_format($row['pcount']) . "</a>&nbsp;</td>";
+            echo "<td class='p-2 text-right databack'><a href=\"famsearch.php?tree={$row['gedcom']}\">" . number_format($famrow['fcount']) . "</a>&nbsp;</td>";
+            echo "<td class='p-2 text-right databack'><a href=\"browsesources.php?tree={$row['gedcom']}\">" . number_format($srcrow['scount']) . "</a>&nbsp;</td>";
             if ($numtrees > 1) {
-                echo "<td class='databack' align=\"right\">";
+                echo "<td class='text-right p-2databack'>";
                 if ($row['gedcom'] == $assignedtree) {
                     echo $admtext['active'];
                 } elseif (in_array($row['gedcom'], $trees)) {
@@ -124,16 +106,17 @@ if ($pagenav || $treesearch) echo doTreeSearch(1, $pagenav);
         tng_free_result($result);
         echo "</table>";
         ?>
-        <br><br>
 </div>
-<?php
-if ($totrows > 1) {
-    ?>
+<?php if ($totrows > 1) { ?>
+    <link href="css/c3.css" rel="stylesheet">
+    <script src="js/d3.min.js"></script>
+    <script src="js/c3.min.js"></script>
+
     <div id="charts" style="display:inline-block; width:400px; vertical-align:top;text-align:center;">
         <div id="trees_chart"></div>
     </div>
     <script>
-        var trees_chart = c3.generate({
+        let trees_chart = c3.generate({
             bindto: '#trees_chart',
             data: {
                 columns: [
@@ -163,9 +146,7 @@ if ($totrows > 1) {
             }
         });
     </script>
-<?php } ?>
-
-<br>
-<?php
+    <?php
+}
 tng_footer("");
 ?>

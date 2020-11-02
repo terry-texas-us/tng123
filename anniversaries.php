@@ -4,6 +4,7 @@ $textpart = "search";
 include "tng_begin.php";
 include "functions.php";
 require_once "admin/pagination.php";
+
 if (isset($tngyear)) {
     $tngyear = preg_replace("/[^0-9]/", "", $tngyear);
 }
@@ -34,10 +35,7 @@ writelog($logstring);
 preparebookmark($logstring);
 //compute $allwhere from submitted criteria
 $ldsOK = determineLDSRights();
-$flags['style'] = "<style>\n";
-$flags['style'] .= "table {width: 100%; border-collapse: separate; border-spacing: 1px;}\n";
-$flags['style'] .= "table th, table td {padding: 3px;}\n";
-$flags['style'] .= "</style>\n";
+
 tng_header($text['anniversaries'], $flags);
 ?>
     <script src="js/search.js"></script>
@@ -49,7 +47,7 @@ tng_header($text['anniversaries'], $flags);
     <script>
         // <![CDATA[
         function resetForm() {
-            var myform = document.form1;
+            let myform = document.form1;
             myform.tngevent.selectedIndex = 0;
             myform.tngdaymonth.value = "";
             myform.tngmonth.selectedIndex = 0;
@@ -68,8 +66,7 @@ tng_header($text['anniversaries'], $flags);
 
         //]]>
     </script>
-    <h2 class="header"><span class="headericon" id="dates-hdr-icon"></span><?php echo $text['anniversaries']; ?></h2>
-    <br style="clear: left;">
+    <h2 class="mb-4 header"><span class="headericon" id="dates-hdr-icon"></span><?php echo $text['anniversaries']; ?></h2>
 <?php
 $js = "\" onsubmit=\"return validateForm(this);";
 echo getFORM("anniversaries2", "get", "form1", "form1$js");
@@ -79,63 +76,63 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
     <div class="annfield normal">
         <label for="tngevent"><?php echo $text['event']; ?>:</label>
         <br>
-        <select name="tngevent" id="tngevent" style="max-width: 335px;">
+        <select id="tngevent" class="p-2" name="tngevent" style="max-width: 335px;">
             <?php
-            echo "<option value=\"\">&nbsp;</option>\n";
-            echo "<option value=\"birth\"";
+            echo "<option value=''>&nbsp;</option>\n";
+            echo "<option value='birth'";
             if ($tngevent == "birth") echo " selected";
             echo ">{$text['born']}</option>\n";
-            echo "<option value=\"altbirth\"";
+            echo "<option value='altbirth'";
             if ($tngevent == "altbirth") echo " selected";
             echo ">{$text['christened']}</option>\n";
-            echo "<option value=\"death\"";
+            echo "<option value='death'";
             if ($tngevent == "death") echo " selected";
             echo ">{$text['died']}</option>\n";
-            echo "<option value=\"burial\"";
+            echo "<option value='burial'";
             if ($tngevent == "burial") echo " selected";
             echo ">{$text['buried']}</option>\n";
-            echo "<option value=\"marr\"";
+            echo "<option value='marr'";
             if ($tngevent == "marr") echo " selected";
             echo ">{$text['married']}</option>\n";
-            echo "<option value=\"div\"";
+            echo "<option value='div'";
             if ($tngevent == "div") echo " selected";
             echo ">{$text['divorced']}</option>\n";
             if ($ldsOK) {
-                echo "<option value=\"bapt\"";
+                echo "<option value='bapt'";
                 if ($tngevent == "bapt") echo " selected";
                 echo ">{$text['baptizedlds']}</option>\n";
-                echo "<option value=\"conf\"";
+                echo "<option value='conf'";
                 if ($tngevent == "conf") echo " selected";
                 echo ">{$text['conflds']}</option>\n";
-                echo "<option value=\"init\"";
+                echo "<option value='init'";
                 if ($tngevent == "init") echo " selected";
                 echo ">{$text['initlds']}</option>\n";
-                echo "<option value=\"endl\"";
+                echo "<option value='endl'";
                 if ($tngevent == "endl") echo " selected";
                 echo ">{$text['endowedlds']}</option>\n";
-                echo "<option value=\"seal\"";
+                echo "<option value='seal'";
                 if ($tngevent == "seal") echo " selected";
                 echo ">{$text['sealedslds']}</option>\n";
             }
             //loop through custom event types where keep=1, not a standard event
             $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep = '1' AND type = 'I' ORDER BY display";
             $result = tng_query($query);
-            $dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NAME", "NICK", "TITL", "NSFX", "DIV", "MARR"];
-            while ($row = tng_fetch_assoc($result)) {
-                if (!in_array($row['tag'], $dontdo)) {
+            $eventTypes = tng_fetch_all($result);
+            tng_free_result($result);
+            foreach ($eventTypes as $row) {
+                if (!in_array($row['tag'], ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NAME", "NICK", "TITL", "NSFX", "DIV", "MARR"])) {
                     echo "<option value=\"{$row['eventtypeID']}\"";
                     if ($tngevent == $row['eventtypeID']) echo " selected";
                     echo ">" . getEventDisplay($row['display']) . "</option>\n";
                 }
             }
-            tng_free_result($result);
             ?>
         </select>
     </div>
     <div class="annfield normal">
         <label for="tngdaymonth"><?php echo $text['day']; ?>:</label>
         <br>
-        <select name="tngdaymonth" id="tngdaymonth">
+        <select class="p-2" name="tngdaymonth" id="tngdaymonth">
             <option value="">&nbsp;</option>
             <?php
             for ($i = 1; $i <= 31; $i++) {
@@ -150,7 +147,7 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
     <div class="annfield normal">
         <label for="tngmonth" class="annlabel"><?php echo $text['month']; ?>:</label>
         <br>
-        <select name="tngmonth" id="tngmonth">
+        <select class="p-2" name="tngmonth" id="tngmonth">
             <option value="">&nbsp;</option>
             <option value="1"<?php if ($tngmonth == 1) {
                 echo " selected";
@@ -193,22 +190,20 @@ echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1'])
     <div class="annfield normal">
         <label for="tngyear"><?php echo $text['year']; ?>:</label>
         <br>
-        <input type="text" name="tngyear" id="tngyear" size="6" maxlength="4" value="<?php echo $tngyear; ?>">
+        <input id="tngyear" class="p-2" name="tngyear" type="text" value="<?php echo $tngyear; ?>" size="6" maxlength="4">
     </div>
     <div class="annfield normal">
         <label for="tngkeywords"><?php echo $text['keyword']; ?>:</label>
         <br>
-        <input type="text" name="tngkeywords" id="tngkeywords" size="20" value="<?php echo stripslashes($tngkeywordsclean); ?>">
+        <input id="tngkeywords" class="p-2" name="tngkeywords" type="text" value="<?php echo stripslashes($tngkeywordsclean); ?>" size="20">
     </div>
     <div class="annfield normal">
         <br>
         <input type="hidden" name="tngneedresults" value="1">
-        <input type="submit" value="<?php echo $text['search']; ?>">
-        <input type="button" value="<?php echo $text['tng_reset']; ?>" onclick="resetForm();">
-        |
-        <input type="button" value="<?php echo $text['calendar']; ?>" onclick="window.location.href='<?php echo "calendar.php?m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
+        <input class="p-2" type="submit" value="<?php echo $text['search']; ?>">
+        <input class="p-2" type="button" value="<?php echo $text['tng_reset']; ?>" onclick="resetForm();">
+        <input class="p-2" type="button" value="<?php echo $text['calendar']; ?>" onclick="window.location.href='<?php echo "calendar.php?m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
     </div>
-
     </form>
     <br class="clear-both">
     <br>
@@ -226,13 +221,13 @@ if ($tngneedresults) {
         }
         $query = "SELECT tag, eventtypeID FROM $eventtypes_table WHERE keep = '1' AND type = 'I' ORDER BY display";
         $result = tng_query($query);
-        $dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NAME", "NICK", "TITL", "NSFX", "DIV", "MARR"];
-        while ($row = tng_fetch_assoc($result)) {
-            if (!in_array($row['tag'], $dontdo)) {
+        $eventTypes = tng_fetch_all($result);
+        tng_free_result($result);
+        foreach ($eventTypes as $row) {
+            if (!in_array($row['tag'], ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NAME", "NICK", "TITL", "NSFX", "DIV", "MARR"])) {
                 array_push($tngevents, $row['eventtypeID']);
             }
         }
-        tng_free_result($result);
     }
     foreach ($tngevents as $tngevent) {
         $allwhere = "";
@@ -373,24 +368,25 @@ if ($tngneedresults) {
             $totrows = $numrows;
         }
         if ($numrows) {
-            echo "<div class='titlebox rounded-lg'>\n";
+            echo "<div class='rounded-lg titlebox'>\n";
             echo "<h3 class='subhead'>$datetxt</h3>";
             $numrowsplus = $numrows + $offset;
             $successcount++;
-            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
-            $pagenav = get_browseitems_nav($totrows, "anniversaries2.php?$urlstring&amp;tngevent=$tngsaveevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=1&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-            if ($pagenav) echo "<p>$pagenav</p>";
+            echo "<div class='w-full class=lg:flex my-6'>";
+            echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+            echo getPaginationControlsHtml($totrows, "anniversaries2.php?$urlstring&amp;tngevent=$tngsaveevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=1&amp;offset", $maxsearchresults, 3);
+            echo "</div>";
             $tableStartTag = "<table class='whiteback normal'>";
             echo $tableStartTag;
             ?>
             <thead>
             <tr>
-                <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
-                <th class="fieldnameback fieldname">&nbsp;<?php echo $text['lastfirst']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname" colspan="2">&nbsp;<?php echo $datetxt; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname">&nbsp;<?php echo $text['personid']; ?>&nbsp;</th>
+                <th class="hidden p-2 sm:table-cell fieldnameback nbrcol fieldname">#</th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['lastfirst']; ?></th>
+                <th class="p-2 fieldnameback fieldname" colspan="2"><?php echo $datetxt; ?></th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['personid']; ?></th>
                 <?php if ($numtrees > 1) { ?>
-                    <th class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th>
+                    <th class="p-2 fieldnameback fieldname"><?php echo $text['tree']; ?></th>
                 <?php } ?>
             </tr>
             </thead>
@@ -400,9 +396,9 @@ if ($tngneedresults) {
             $treestr = $tngconfig['places1tree'] ? "" : "tree=$tree&amp;";
             while ($row = tng_fetch_assoc($result)) {
                 echo "<tr>";
-                echo "<td class='databack'>$i</td>\n";
+                echo "<td class='hidden p-2 sm:table-cell databack'>$i</td>\n";
                 $i++;
-                echo "<td class='databack'>\n";
+                echo "<td class='p-2 databack'>\n";
                 $personIDstr = $namestr = $hboth = $wboth = "";
                 if ($needfamilies) {
                     //do husband
@@ -481,11 +477,11 @@ if ($tngneedresults) {
                     $dateval = $placetxt = "";
                 }
                 echo "</td>\n";
-                echo "<td class='databack'>&nbsp;" . displayDate($dateval) . "</td>";
-                echo "<td class='databack'>$placetxt&nbsp;</td>";
-                echo "<td class='databack'>$personIDstr </td>";
+                echo "<td class='p-2 databack'>" . displayDate($dateval) . "</td>";
+                echo "<td class='p-2 databack'>$placetxt</td>";
+                echo "<td class='p-2 databack'>$personIDstr </td>";
                 if ($numtrees > 1) {
-                    echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class='p-2 databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a></td>";
                 }
                 echo "</tr>\n";
             }

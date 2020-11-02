@@ -114,22 +114,20 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                         $newactionstr = preg_replace("/xxx/", $row['gedcom'], $actionstr);
                         $editlink = "admin_edittree.php?tree={$row['gedcom']}";
                         $gedcom = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['gedcom'] . "</a>" : $row['gedcom'];
-
                         $query = "SELECT count(personID) AS pcount FROM $people_table WHERE gedcom = \"{$row['gedcom']}\"";
                         $result2 = tng_query($query);
                         $prow = tng_fetch_assoc($result2);
                         $pcount = number_format($prow['pcount']);
                         tng_free_result($result2);
-
                         echo "<tr id=\"row_{$row['gedcom']}\">";
-                        echo "<td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
-                        echo "<td class='lightback text-nowrap'>&nbsp;$gedcom&nbsp;</td>\n";
-                        echo "<td class='lightback'>&nbsp;{$row['treename']}&nbsp;</td>\n";
-                        echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";
-                        echo "<td class='lightback text-nowrap' align=\"right\">&nbsp;$pcount&nbsp;</td>\n";
-                        echo "<td class='lightback text-nowrap'>&nbsp;{$row['owner']}&nbsp;</td>\n";
-                        echo "<td class='lightback text-nowrap'>&nbsp;{$row['lastimportdate']}&nbsp;</td>\n";
-                        echo "<td class='lightback text-nowrap'>&nbsp;{$row['importfilename']}&nbsp;</td>\n";
+                        echo "<td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
+                        echo "<td class='lightback text-nowrap'>$gedcom</td>\n";
+                        echo "<td class='lightback'>{$row['treename']}</td>\n";
+                        echo "<td class='lightback'>{$row['description']}</td>\n";
+                        echo "<td class='lightback text-nowrap text-right'>$pcount</td>\n";
+                        echo "<td class='lightback text-nowrap'>{$row['owner']}</td>\n";
+                        echo "<td class='lightback text-nowrap'>{$row['lastimportdate']}</td>\n";
+                        echo "<td class='lightback text-nowrap'>{$row['importfilename']}</td>\n";
                         echo "</tr>\n";
                     }
                     tng_free_result($result);

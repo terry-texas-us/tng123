@@ -271,7 +271,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['testID'], $actionstr);
                             echo "<tr id=\"row_{$row['testID']}\">\n";
-                            echo "<td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
                             if ($allow_edit || $allow_delete) {
                                 echo "<td class='lightback text-center'><input type='checkbox' name=\"dna{$row['testID']}\" value='1'></td>";
                             }

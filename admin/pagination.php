@@ -7,7 +7,7 @@
  * @param $pagenavpages
  * @return string
  */
-function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages) {
+function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages = 5) {
     global $tngpage, $totalpages, $text, $orgtree, $test_type, $test_group;
     $first = ucfirst($text['first']);
     $previous = ucfirst($text['previous']);
@@ -48,10 +48,9 @@ function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages) {
             }
         }
     }
-    $html = "<div class='mt-4 text-center lg:text-right lg:w-3/5 adminnav lg:inline-block'>\n";
+    $html = "<div class='mt-4 mx-1 lg:text-right adminnav lg:inline-block'>\n";
     $html .= "<div class='normal'>\n";
     $html .= "$firstlink $prevlink $pagenav $nextlink $lastlink";
-    //    if ($firstlink || $lastlink) $html .= getToPageHtml($address, $perpage);
     $html .= "</div>\n";
     $html .= "</div>\n";
     return $html;
@@ -65,7 +64,7 @@ function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages) {
 function getPaginationLocationHtml($start, $pagetotal, $grandtotal) {
     global $text;
     $showing = ucfirst($text['showing']);
-    $html = "<div class='text-center lg:inline lg:w-2/5'>\n";
+    $html = "<div class='mx-4 inline'>\n";
     $html .= "$showing " . number_format($start) . " {$text['to']} <span class='pagetotal'>" . number_format($pagetotal) . "</span> {$text['of']} <span class='restotal'>" . number_format($grandtotal) . "</span>";
     $html .= "</div>\n";
     return $html;
@@ -77,9 +76,10 @@ function getPaginationLocationHtml($start, $pagetotal, $grandtotal) {
  */
 function getToPageHtml($address, $perpage) {
     global $text, $orgtree;
-    $html = " <div class='inline rounded snlink'>";
-    $html .= "<input type='text' class='w-16 text-sm border-none tngpage minifield' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(), '$address', '$orgtree', $perpage);}\"> ";
-    $html .= "<input type='button' value=\"{$text['go']}\" class='minibutton' onclick=\"goToPage(this, '$address', '$orgtree', $perpage);\">";
+    $html = " <div class='rounded mx-4 inline'>";
+    $html .= "<span class='pr-2'>" . ucfirst(_todo_("go to page")) . "</span>";
+    $html .= "<input type='text' class='w-20 px-3 border-none tngpage' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this, event)) {goToPage($(this).next(), '$address', '$orgtree', $perpage);}\"> ";
+    $html .= "<input type='button' value=\"{$text['go']}\" class='px-3 bg-transparent border-none hover:bg-gray-500' onclick=\"goToPage(this, '$address', '$orgtree', $perpage);\">";
     $html .= "</div>";
     return $html;
 }

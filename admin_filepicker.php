@@ -152,7 +152,7 @@ function frmFiles() {
                 if ($nImageNr >= $lStartRec && $nImageShowed < $pagetotal) {
 
                     echo "<tr id=\"row_$nImageNr\">\n";
-                    echo "<td align=\"left\" class='lightback'><div class=\"action-btns\">\n";
+                    echo "<td align=\"left\" class='lightback'><div class='action-btns'>\n";
                     echo "<a href=\"javascript:ReturnFile('$img$subdir" . addslashes($file) . "')\" title=\"{$admtext['select']}\" class='smallicon admin-edit-icon'></a>";
                     if ($allow_delete) {
                         echo "<a href='#' onclick=\"return deleteIt('file','$nImageNr','$tngpath/$subdir" . addslashes($file) . "');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";

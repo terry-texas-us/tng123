@@ -90,27 +90,27 @@ echo displayHeadline($admtext['trees'] . " &gt;&gt; " . $admtext['modifytree'], 
                                     echo "<tr>";
                                     echo "<td>{$admtext['people']}: </td>";
                                     echo "<td>&nbsp;</td>";
-                                    echo "<td align=\"right\">$pcount</td>";
+                                    echo "<td class='text-right'>$pcount</td>";
                                     echo "</tr>\n";
                                     echo "<tr>";
                                     echo "<td>{$admtext['families']}: </td>";
                                     echo "<td>&nbsp;</td>";
-                                    echo "<td align=\"right\">$fcount</td>";
+                                    echo "<td class='text-right'>$fcount</td>";
                                     echo "</tr>\n";
                                     echo "<tr>";
                                     echo "<td>{$admtext['sources']}: </td>";
                                     echo "<td>&nbsp;</td>";
-                                    echo "<td align=\"right\">$scount</td>";
+                                    echo "<td class='text-right'>$scount</td>";
                                     echo "</tr>\n";
                                     echo "<tr>";
                                     echo "<td>{$admtext['repositories']}: </td>";
                                     echo "<td>&nbsp;</td>";
-                                    echo "<td align=\"right\">$rcount</td>";
+                                    echo "<td class='text-right'>$rcount</td>";
                                     echo "</tr>\n";
                                     echo "<tr>";
                                     echo "<td>{$admtext['notes']}: </td>";
                                     echo "<td>&nbsp;</td>";
-                                    echo "<td align=\"right\">$ncount</td>";
+                                    echo "<td class='text-right'>$ncount</td>";
                                     echo "</tr>\n";
                                     ?>
                                 </table>

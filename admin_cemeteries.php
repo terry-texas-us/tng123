@@ -151,7 +151,7 @@ $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-curren
                             foreach ($cemeteries as $row) {
                                 $location = cemeteryPlace($row);
                                 $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
-                                echo "<tr id=\"row_{$row['cemeteryID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
+                                echo "<tr id=\"row_{$row['cemeteryID']}\"><td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
                                 if ($allow_delete) {
                                     echo "<td class='text-center lightback'><input type='checkbox' name=\"del{$row['cemeteryID']}\" value='1'></td>";
                                 }

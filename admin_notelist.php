@@ -254,6 +254,7 @@ echo displayHeadline($admtext['notes'], "img/misc_icon.gif", $menu, $message);
                 <?php
                 echo "<div class='w-full class=lg:flex my-6'>";
                 echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+                echo getToPageHtml("admin_notelist.php?searchstring=$searchstring_noquotes&amp;offset", 3);
                 echo getPaginationControlsHtml($totrows, "admin_notelist.php?searchstring=$searchstring_noquotes&amp;offset", $maxsearchresults, 3);
                 echo "</div>";
                 }

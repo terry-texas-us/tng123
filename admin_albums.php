@@ -131,7 +131,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         $newactionstr = preg_replace("/xxx/", $row['albumID'], $actionstr);
                         echo "<tr id=\"row_{$row['albumID']}\">\n";
                         echo "<td class='lightback'>\n";
-                        echo "<div class=\"action-btns\">$newactionstr</div>\n";
+                        echo "<div class='action-btns'>$newactionstr</div>\n";
                         echo "</td>\n";
                         echo "<td class='lightback normal' style=\"width:" . ($thumbmaxw + 6) . "px;text-align:center;vertical-align:top\">";
 

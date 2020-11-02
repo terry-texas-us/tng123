@@ -321,7 +321,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                                 $newactionstr = preg_replace("/yyy/", $row['gedcom'], $newactionstr);
                             }
                             $newactionstr = preg_replace("/zzz/", urlencode($row['place']), $newactionstr);
-                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class=\"action-btns\">$newactionstr</div></td>\n";
+                            echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
                             if ($allow_delete) {
                                 echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['ID']}\" value='1'></td>";
                             }

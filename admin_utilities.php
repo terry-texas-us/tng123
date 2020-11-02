@@ -39,7 +39,7 @@ function doRow($table_name, $display_name) {
     global $admtext, $rootpath, $backuppath, $fileflag;
 
     echo "<tr>\n";
-    echo "<td class='lightback'><div class=\"action-btns\"><a href='#' onclick=\"return startOptimize('$table_name');\" title=\"{$admtext['optimize']}\" class=\"smallicon admin-opt-icon\"></a>";
+    echo "<td class='lightback'><div class='action-btns'><a href='#' onclick=\"return startOptimize('$table_name');\" title=\"{$admtext['optimize']}\" class=\"smallicon admin-opt-icon\"></a>";
     echo "<a href='#' onclick=\"return startBackup('$table_name');\" title=\"{$admtext['backup']}\" class=\"smallicon admin-save-icon\"></a>";
     $fileflag = $table_name && file_exists("$rootpath$backuppath/$table_name.bak");
     echo "<a href='#' id=\"rst_$table_name\" onclick=\"if( confirm('{$admtext['surerestore']}') ) {startRestore('$table_name') ;} return false;\" title=\"{$admtext['restore']}\" class=\"smallicon admin-rest-icon\"";
