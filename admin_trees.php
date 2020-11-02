@@ -86,27 +86,27 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) $offsetplus = 0;
-                ?>
-                <table class="normal">
-                    <tr>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['action']; ?></th>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['id']; ?></th>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['treename']; ?></th>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['description']; ?></th>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['people']; ?></th>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['owner']; ?></th>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['lastimport']; ?></th>
-                        <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['importfilename']; ?></th>
-                    </tr>
-                    <?php
-                    if ($numrows) {
-                    $actionstr = "";
-                    if ($allow_edit && !$assignedbranch) {
-                        $actionstr .= "<a href=\"admin_edittree.php?tree=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
-                    }
-                    if ($allow_delete && !$assignedbranch) {
-                        if (!$assignedtree) {
-                            $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"{$admtext['text_delete']}\" onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\"></a>";
+                    ?>
+                    <table class="normal">
+                        <tr>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['action']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['id']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['treename']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['description']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['people']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['owner']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['lastimport']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['importfilename']; ?></th>
+                        </tr>
+                        <?php
+                        if ($numrows) {
+                        $actionstr = "";
+                        if ($allow_edit && !$assignedbranch) {
+                            $actionstr .= "<a href=\"admin_edittree.php?tree=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                        }
+                        if ($allow_delete && !$assignedbranch) {
+                            if (!$assignedtree) {
+                                $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"{$admtext['text_delete']}\" onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\"></a>";
                         }
                         $actionstr .= "<a href=\"admin_cleartree.php?tree=xxx\" onClick=\"return confirm('{$admtext['conftreeclear']}' );\" title=\"{$admtext['clear']}\" class=\"smallicon admin-clear-icon\"></a>";
                     }
@@ -114,6 +114,7 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                         $newactionstr = preg_replace("/xxx/", $row['gedcom'], $actionstr);
                         $editlink = "admin_edittree.php?tree={$row['gedcom']}";
                         $gedcom = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['gedcom'] . "</a>" : $row['gedcom'];
+
                         $query = "SELECT count(personID) AS pcount FROM $people_table WHERE gedcom = \"{$row['gedcom']}\"";
                         $result2 = tng_query($query);
                         $prow = tng_fetch_assoc($result2);
@@ -121,13 +122,13 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                         tng_free_result($result2);
                         echo "<tr id=\"row_{$row['gedcom']}\">";
                         echo "<td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
-                        echo "<td class='lightback text-nowrap'>$gedcom</td>\n";
+                        echo "<td class='lightback whitespace-no-wrap'>$gedcom</td>\n";
                         echo "<td class='lightback'>{$row['treename']}</td>\n";
                         echo "<td class='lightback'>{$row['description']}</td>\n";
-                        echo "<td class='lightback text-nowrap text-right'>$pcount</td>\n";
-                        echo "<td class='lightback text-nowrap'>{$row['owner']}</td>\n";
-                        echo "<td class='lightback text-nowrap'>{$row['lastimportdate']}</td>\n";
-                        echo "<td class='lightback text-nowrap'>{$row['importfilename']}</td>\n";
+                        echo "<td class='lightback whitespace-no-wrap text-right'>$pcount</td>\n";
+                        echo "<td class='lightback whitespace-no-wrap'>{$row['owner']}</td>\n";
+                        echo "<td class='lightback whitespace-no-wrap'>{$row['lastimportdate']}</td>\n";
+                        echo "<td class='lightback whitespace-no-wrap'>{$row['importfilename']}</td>\n";
                         echo "</tr>\n";
                     }
                     tng_free_result($result);

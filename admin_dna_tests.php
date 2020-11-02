@@ -230,7 +230,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                 ?>
                 <form action="admin_updateselecteddna.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
-                        <p class="text-nowrap">
+                        <p class="whitespace-no-wrap">
                             <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
                             <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
                             <?php if ($allow_delete) { ?>

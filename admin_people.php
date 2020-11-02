@@ -338,12 +338,12 @@ echo displayHeadline($admtext['people'], "img/people_icon.gif", $menu, $message)
                                 <th class="fieldnameback"><span class="fieldname"><?php echo $idsort; ?></span></th>
                                 <th class="fieldnameback"><span class="fieldname"><?php echo $namesort; ?></span></th>
                                 <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['thumb']; ?></span></th>
-                                <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $birthsort; ?></span></th>
-                                <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $deathsort; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname whitespace-no-wrap"><?php echo $birthsort; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname whitespace-no-wrap"><?php echo $deathsort; ?></span></th>
                                 <?php if ($numtrees > 1) { ?>
                                     <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['tree']; ?></span></th>
                                 <?php } ?>
-                                <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $changesort; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname whitespace-no-wrap"><?php echo $changesort; ?></span></th>
                             </tr>
 
                             <?php

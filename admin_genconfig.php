@@ -512,13 +512,13 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['rootpath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['rootpath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $rootpath; ?>" name="newrootpath" class="verylongfield">
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['photopath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['photopath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $photopath; ?>" name="photopath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onclick="makeFolder('photos',document.form1.photopath.value);">
@@ -526,7 +526,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['documentpath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['documentpath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $documentpath; ?>" name="documentpath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('documents',document.form1.documentpath.value);">
@@ -534,7 +534,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     id="msg_documents"></span></td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['historypath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['historypath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $historypath; ?>" name="historypath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('histories',document.form1.historypath.value);">
@@ -542,7 +542,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     id="msg_histories"></span></td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['headstonepath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['headstonepath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $headstonepath; ?>" name="headstonepath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('headstones',document.form1.headstonepath.value);">
@@ -550,14 +550,14 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                                     id="msg_headstones"></span></td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['mediapath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['mediapath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $mediapath; ?>" name="mediapath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('media',document.form1.mediapath.value);">
                                 <span id="msg_media"></span></td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['gendex']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['gendex']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $gendexfile; ?>" name="gendexfile" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('gendex',document.form1.gendexfile.value);">
@@ -565,7 +565,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['backuppath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['backuppath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $backuppath; ?>" name="backuppath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('backups',document.form1.backuppath.value);">
@@ -573,7 +573,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-nowrap"><?php echo $admtext['extspath']; ?>:</td>
+                            <td class="whitespace-no-wrap"><?php echo $admtext['extspath']; ?>:</td>
                             <td>
                                 <input type="text" value="<?php echo $extspath; ?>" name="extspath" class="verylongfield">
                                 <input type="button" value="<?php echo $admtext['makefolder']; ?>" onClick="makeFolder('exts',document.form1.extspath.value);">

@@ -85,7 +85,7 @@ tng_header($text['repositories'], $flags);
             echo "<td class='p-2 databack'><span class='normal'><a href=\"showrepo.php?repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['repoID']}</a>&nbsp;</span></td>";
             echo "<td class='p-2 databack'><span class='normal'><a href=\"showrepo.php?repoID={$row['repoID']}&amp;tree={$row['gedcom']}\">{$row['reponame']}</a>&nbsp;</span></td>";
             if ($numtrees > 1) {
-                echo "<td class='p-2 databack text-nowrap'><span class='normal'>{$row['treename']}&nbsp;</span></td>";
+                echo "<td class='p-2 databack whitespace-no-wrap'><span class='normal'>{$row['treename']}&nbsp;</span></td>";
             }
             echo "</tr>\n";
             $i++;

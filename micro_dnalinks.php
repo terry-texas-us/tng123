@@ -44,7 +44,7 @@ if ($result2) {
                 <input type="button" value="<?php echo $admtext['add']; ?>" onclick="return addDnaLink(findform);"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
             </td>
             <td><a href="#" onclick="return findItem('I','newlink',null,findform.tree1.options[findform.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>','m_<?php echo $mediaID; ?>');" title="<?php echo $admtext['find']; ?>"
-                   class="smallicon admin-find-icon"></a></td>
+                    class="smallicon admin-find-icon"></a></td>
         </tr>
     </table>
     <div id="alink_error" style="display:none;" class="normal red"></div>
@@ -53,9 +53,9 @@ if ($result2) {
     <table cellpadding="3" cellspacing="1" id="linktable" class="normal">
         <tbody>
         <tr>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<strong><?php echo $admtext['action']; ?></strong>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<strong><?php echo $admtext['name'] . " (" . $admtext['id'] . ")"; ?></strong>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<strong><?php echo $admtext['tree']; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<strong><?php echo $admtext['action']; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<strong><?php echo $admtext['name'] . " (" . $admtext['id'] . ")"; ?></strong>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<strong><?php echo $admtext['tree']; ?></strong>&nbsp;</td>
         </tr>
         <?php echo $linkrows; ?>
         </tbody>

@@ -13,7 +13,7 @@ $formstr = getFORM("processlogin", "post", "form1", "", "");
 echo $formstr;
 ?>
 <div class="normal">
-    <div class="text-nowrap" id="loginblock">
+    <div class="whitespace-no-wrap" id="loginblock">
         <div class="loginprompt"><?php echo $text['username']; ?>:</div>
         <input type="text" name="tngusername" class="loginfont <?php echo $loginfieldclass; ?>" id="tngusername">
         <br>

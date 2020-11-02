@@ -390,7 +390,7 @@ while ($row = tng_fetch_assoc($result)) {
             if (!$row['cemname']) $row['cemname'] = $row['city'];
             $plotstr = $row['plot'] ? "<br>" . nl2br($row['plot']) : "";
             $mediatext .= "<td class='databack' width='30%'><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>$plotstr&nbsp;</td>";
-            $mediatext .= "<td class='databack text-nowrap'>{$row['status']}&nbsp;</td>";
+            $mediatext .= "<td class='databack whitespace-no-wrap'>{$row['status']}&nbsp;</td>";
             $mediatext .= "<td class='databack' width='30%'>\n";
         } else {
             $mediatext .= "<td class='databack' width=\"175\">\n";

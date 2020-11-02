@@ -256,19 +256,19 @@ echo "<p class='normal'>$pagenav</p>";
         <thead>
         <tr>
             <th class="fieldnameback nbrcol"><span class="fieldname"># </span></th>
-            <th class="fieldnameback fieldname text-nowrap"><?php echo $text['familyid']; ?></th>
-            <th class="fieldnameback fieldname text-nowrap"><?php echo $fnamesort; ?></th>
-            <th class="fieldnameback fieldname text-nowrap"><?php echo $mnamesort; ?></th>
-            <th class="fieldnameback fieldname text-nowrap"><?php echo $marrsort; ?></th>
+            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $text['familyid']; ?></th>
+            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $fnamesort; ?></th>
+            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $mnamesort; ?></th>
+            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $marrsort; ?></th>
             <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
             <?php if ($mydivplace || $mydivyear) { ?>
-                <th class="fieldnameback fieldname text-nowrap"><?php echo $divsort; ?></th>
+                <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $divsort; ?></th>
                 <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
                 <?php
             }
             if ($numtrees > 1) {
                 ?>
-                <th class="fieldnameback fieldname text-nowrap"><?php echo $text['tree']; ?></th>
+                <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $text['tree']; ?></th>
             <?php } ?>
         </tr>
         </thead>

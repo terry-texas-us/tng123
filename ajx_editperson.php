@@ -201,7 +201,7 @@ include_once "eventlib.php";
 
                     <table class="normal topbuffer">
                         <tr>
-                            <td class="text-nowrap">
+                            <td class="whitespace-no-wrap">
                                 <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
                                     echo " checked";
                                 } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
@@ -239,7 +239,7 @@ include_once "eventlib.php";
                                 if ($row['branch'] == "") $select .= " selected";
                                 $select .= ">{$admtext['nobranch']}</option>\n";
                                 $select .= "$options</select>\n";
-                                echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
+                                echo " &nbsp;<span class='whitespace-no-wrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
                                 echo $admtext['edit'];
                                 echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
                                 echo "</a> )</span><br>";
@@ -442,7 +442,7 @@ include_once "eventlib.php";
         echo "<td colspan='2'>&nbsp;</td>";
         echo "</tr>\n";
         echo "<tr>\n";
-        echo "<td class='align-top text-nowrap' style='width:110px;'>" . $admtext['SLGC'] . ":</td>\n";
+        echo "<td class='align-top whitespace-no-wrap' style='width:110px;'>" . $admtext['SLGC'] . ":</td>\n";
         echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength='50' class='w-32'></td>\n";
         echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class='longfield'></td>\n";
         echo "<td>\n";

@@ -66,7 +66,7 @@ function showAction($entityID, $num = null) {
     return $lines;
 }
 
-$selectline = $mediaID || $albumID ? "<td class='fieldnameback fieldname text-nowrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n" : "";
+$selectline = $mediaID || $albumID ? "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n" : "";
 
 switch ($type) {
     case "I":
@@ -113,18 +113,16 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['personid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['name'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['birthdate'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['deathdate'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['personid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['name'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['birthdate'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['deathdate'] . "</th>\n";
             $lines .= "</tr>\n";
-
             while ($row = tng_fetch_assoc($result)) {
                 $birthdate = $deathdate = "";
                 $rights = determineLivingPrivateRights($row);
                 $row['allow_living'] = $rights['living'];
                 $row['allow_private'] = $rights['private'];
-
                 if ($rights['both']) {
                     if ($row['birthdate']) {
                         $birthdate = "{$admtext['birthabbr']} " . displayDate($row['birthdate']);
@@ -208,11 +206,10 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['familyid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['husbname'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['wifename'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['familyid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['husbname'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['wifename'] . "</th>\n";
             $lines .= "</tr>\n";
-
             while ($row = tng_fetch_assoc($result)) {
                 $thishusb = $thiswife = "";
                 if ($row['hpersonID']) {
@@ -265,14 +262,12 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname text-nowrap' style=\"width:100px;\">" . $admtext['sourceid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['title'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . $admtext['sourceid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['title'] . "</th>\n";
             $lines .= "</tr>\n";
-
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['sourceID']}\">\n";
                 if ($mediaquery) $lines .= showAction($row['sourceID']);
-
                 $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
                 $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['sourceID']}');\" id=\"item_{$row['sourceID']}\">" . truncateIt($title, 100) . "</a></td>\n";
@@ -294,18 +289,16 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname text-nowrap' style=\"width:100px;\">" . $admtext['id'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['sourceid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['title'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['page'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['personid'] . "/" . $admtext['familyid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname text-nowrap'>" . $admtext['event'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . $admtext['id'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['sourceid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['title'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['page'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['personid'] . "/" . $admtext['familyid'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['event'] . "</th>\n";
             $lines .= "</tr>\n";
-
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['citationID']}\">\n";
                 if ($mediaquery) $lines .= showAction($row['citationID']);
-
                 $lines .= "<td class='lightback'>" . $row['citationID'] . "</td>\n";
                 $title = $row['title'] ? $row['title'] : $row['shorttitle'];
                 $lines .= "<td class='lightback'>" . $row['sourceID'] . "</td>\n";
@@ -324,14 +317,12 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<td class='fieldnameback fieldname text-nowrap' style=\"width:100px;\">" . $admtext['repoid'] . "</td>\n";
-            $lines .= "<td class='fieldnameback fieldname text-nowrap'>" . $admtext['title'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . $admtext['repoid'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['title'] . "</td>\n";
             $lines .= "</tr>\n";
-
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['repoID']}\">\n";
                 if ($mediaquery) $lines .= showAction($row['repoID']);
-
                 $lines .= "<td class='lightback'>" . $row['repoID'] . "</td>\n";
                 $lines .= "<td class='lightback'><a href='#' onclick=\"return retItem('{$row['repoID']}');\" id=\"item_{$row['repoID']}\">" . truncateIt($row['reponame'], 75) . "</a></td>\n";
                 $lines .= "</tr>\n";
@@ -350,7 +341,7 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<td class='fieldnameback fieldname text-nowrap'>" . $admtext['place'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['place'] . "</td>\n";
             $lines .= "</tr>\n";
 
             $num = 1;

@@ -286,7 +286,6 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                         }
                                         if ($cemrow['country']) {
                                             if ($location) $location .= ", ";
-
                                             $location .= $cemrow['country'];
                                         }
                                         $actionstr = $allow_delete ? "<a href='#' onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";
@@ -294,8 +293,8 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                             $actionstr .= "<a href='#' onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width='15' height='15' class=\"oldicon\"></a>";
                                         }
                                         echo "<tr id=\"row_{$cemrow['cemeteryID']}\">";
-                                        echo "<td class='text-nowrap'>$actionstr</td>";
-                                        echo "<td class='text-nowrap'>$location</td>";
+                                        echo "<td class='whitespace-no-wrap'>$actionstr</td>";
+                                        echo "<td class='whitespace-no-wrap'>$location</td>";
                                         echo "</tr>\n";
                                     }
                                     ?>

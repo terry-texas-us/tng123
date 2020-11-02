@@ -167,14 +167,14 @@ if (tng_num_rows($result)) {
             echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
             echo "<img src='img/chart.gif' alt='' class='inline-block'>";
             echo "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
-            echo "<td class='databack text-nowrap'>$birthdate&nbsp;</td>";
+            echo "<td class='databack whitespace-no-wrap'>$birthdate&nbsp;</td>";
             echo "<td class='databack'>&nbsp;$birthplacestr&nbsp;</td>";
             if ($numtrees > 1) {
                 echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
             }
             $changedby = $row['changedby'];
             $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class='databack text-nowrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
+            echo "<td class='databack whitespace-no-wrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
             echo "</tr>\n";
         }
         tng_free_result($result);
@@ -281,7 +281,7 @@ if (tng_num_rows($famresult)) {
             }
             $changedby = $row['changedby'];
             $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class='databack text-nowrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
+            echo "<td class='databack whitespace-no-wrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
         }
         tng_free_result($famresult);
         echo "</table>\n";

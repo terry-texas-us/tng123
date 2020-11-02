@@ -81,15 +81,15 @@ echo "<div class='normal'>\n";
 
             <?php
             if ($allow_edit || $showtestnumbers) { ?>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
             <?php } ?>
-            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr1_values']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['hvr2_values']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['hvr1_values']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['hvr2_values']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
             <?php
             global $numtrees;
             if (!$assignedtree && ($numtrees > 1)) { ?>
@@ -164,13 +164,10 @@ echo "<div class='normal'>\n";
                 echo "<td class=\"$databack\">&nbsp;$mtdna_haplogroup</td>";
                 $seq = $row['ref_seq'];
                 if ($seq == "rcrs") $seq = "rCRS";
-
                 if ($seq == "rsrs") $seq = "RSRS";
-
                 echo "<td class=\"$databack\">&nbsp;$seq</td>";
-                echo "<td class='$databack  text-nowrap'>&nbsp;{$row['hvr1_results']}</td>";
-                echo "<td class='$databack  text-nowrap'>&nbsp;{$row['hvr2_results']}</td>";
-
+                echo "<td class='$databack  whitespace-no-wrap'>&nbsp;{$row['hvr1_results']}</td>";
+                echo "<td class='$databack  whitespace-no-wrap'>&nbsp;{$row['hvr2_results']}</td>";
                 $mrcanc_namestr = "";
                 $anc_namestr = "";
                 if ($row['MRC_ancestorID']) {
@@ -209,7 +206,7 @@ echo "<div class='normal'>\n";
                 $group = $row['dna_group_desc'] ? $row['dna_group_desc'] : $text['none'];
                 echo "<td class=\"$databack\">$group</td>";
                 if (!$assignedtree && ($numtrees > 1)) {
-                    echo "<td class='$databack text-nowrap'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                    echo "<td class='$databack whitespace-no-wrap'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                 }
                 echo "</tr>\n";
                 $i++;

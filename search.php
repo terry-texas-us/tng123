@@ -82,7 +82,7 @@ if ($order == "birth") {
         $birthsort = $birthlabel;
     } else {
         $birthsort = "<a href='search.php?$currargs&amp;order=birthup' class='lightlink'>";
-        $birthsort .= "$birthlabel <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'>";
+        $birthsort .= "$birthlabel <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'>";
         $birthsort .= "</a>";
     }
 } else {
@@ -90,7 +90,7 @@ if ($order == "birth") {
         $birthsort = $birthlabel;
     } else {
         $birthsort = "<a href='search.php?$currargs&amp;order=birth' class='lightlink'>";
-        $birthsort .= "$birthlabel <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'>";
+        $birthsort .= "$birthlabel <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'>";
         $birthsort .= "</a>";
     }
     if ($order == "birthup") {
@@ -103,7 +103,7 @@ if ($order == "death") {
         $deathsort = $text['diedburied'];
     } else {
         $deathsort = "<a href='search.php?$currargs&amp;order=deathup' class='lightlink'>";
-        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'>";
+        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'>";
         $deathsort .= "</a>";
     }
 } else {
@@ -111,7 +111,7 @@ if ($order == "death") {
         $deathsort = $text['diedburied'];
     } else {
         $deathsort = "<a href='search.php?$currargs&amp;order=death' class='lightlink'>";
-        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'>";
+        $deathsort .= "{$text['diedburied']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'>";
         $deathsort .= "</a>";
     }
     if ($order == "deathup") {
@@ -125,14 +125,14 @@ if ($order == "name") {
         $namesort = $nametitle;
     } else {
         $namesort = "<a href='search.php?$currargs&amp;order=nameup' class='lightlink'>";
-        $namesort .= "$nametitle <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'>";
+        $namesort .= "$nametitle <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'>";
         $namesort .= "</a>\n";
     }
 } else {
     if ($tngprint) {
         $namesort = $nametitle;
     } else {
-        $namesort = "<a href='search.php?$currargs&amp;order=name' class='lightlink'>$nametitle <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'></a>";
+        $namesort = "<a href='search.php?$currargs&amp;order=name' class='lightlink'>$nametitle <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     }
     if ($order == "nameup") {
         $orderstr = "p.lastname DESC, p.firstname DESC, IF(p.birthdatetr, p.birthdatetr, p.altbirthdatetr)";
@@ -147,7 +147,7 @@ if ($order == "name") {
  * @param $textstr
  */
 function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $textstr) {
-    global $allwhere, $lnprefixes, $criteria_limit, $criteria_count;
+    global $lnprefixes, $criteria_limit, $criteria_count;
     if ($qualifier == "exists" || $qualifier == "dnexist") {
         $value = $usevalue = "";
     } else {
@@ -334,7 +334,9 @@ if (($mysplname && $mygender) || $spqualify == "exists" || $spqualify == "dnexis
     $query2 .= "$allwhere";
 }
 $result = tng_query($query);
-$numrows = tng_num_rows($result);
+$people = tng_fetch_all($result);
+tng_free_result($result);
+$numrows = count($people);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
     $countrow = tng_fetch_assoc($result2);
@@ -348,8 +350,7 @@ if (!$numrows) {
     header("Location: searchform.php?msg=" . urlencode($msg));
     exit;
 } elseif ($numrows == 1 && !$offset) {
-    $row = tng_fetch_assoc($result);
-    tng_free_result($result);
+    $row = $people[0];
     header("Location: getperson.php?personID=" . $row['personID'] . "&tree=" . $row['gedcom']);
     exit;
 }
@@ -368,43 +369,37 @@ $logstring = "<a href=\"search.php?{$_SERVER['QUERY_STRING']}\">" . xmlcharacter
 writelog($logstring);
 preparebookmark($logstring);
 $numrowsplus = $numrows + $offset;
-echo "<p class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} " . number_format($totrows) . " $querystring</p>";
-$pagenav = get_browseitems_nav($totrows, "search.php?$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-$heatmap = !$cejoin && empty($mysplname) ? "<a href=\"heatmap.php?{$_SERVER['QUERY_STRING']}\" class='snlink rounded'>{$text['heatmap']}</a>" : "";
-if ($pagenav && !$cejoin && empty($mysplname)) {
-    $heatmap = " | " . $heatmap;
-}
-echo "<p class='normal'>$pagenav$heatmap</p>";
+$heatmap = !$cejoin && empty($mysplname) ? "<a href=\"heatmap.php?{$_SERVER['QUERY_STRING']}\" class='rounded snlink'>{$text['heatmap']}</a>" : "";
+echo "<p class='normal'>$heatmap</p>";
 ?>
-    <table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>
+    <table class='whiteback normal'>
         <thead>
         <tr>
-            <th class="fieldnameback nbrcol"><span class="fieldname">#</span></th>
-            <th class="fieldnameback text-nowrap"><span class="fieldname"><?php echo $namesort; ?></span></th>
-            <th class="fieldnameback fieldname text-nowrap"><?php echo $text['personid']; ?></th>
+            <th class="hidden p-2 sm:table-cell fieldnameback nbrcol"><span class="fieldname">#</span></th>
+            <th class="p-2 whitespace-no-wrap fieldnameback"><span class="fieldname"><?php echo $namesort; ?></span></th>
+            <th class="hidden p-2 whitespace-no-wrap fieldnameback md:table-cell fieldname"><?php echo $text['personid']; ?></th>
             <?php if ($myprefix) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['prefix']; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo $text['prefix']; ?></th>
             <?php } ?>
             <?php if ($mysuffix) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['suffix']; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo $text['suffix']; ?></th>
             <?php } ?>
             <?php if ($mytitle) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['title']; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo $text['title']; ?></th>
             <?php } ?>
             <?php if ($mynickname) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['nickname']; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo $text['nickname']; ?></th>
             <?php } ?>
-            <th class="fieldnameback fieldname text-nowrap"><?php echo $birthsort; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo $birthsort; ?></th>
             <?php if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) { ?>
-                <th class="fieldnameback fieldname text-nowrap"><?php echo $deathsort; ?></th>
-                <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+                <th class="p-2 fieldnameback fieldname whitespace-no-wrap"><?php echo $deathsort; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo $text['location']; ?></th>
             <?php } ?>
             <?php if ($showspouse) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['spouse']; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo $text['spouse']; ?></th>
             <?php } ?>
             <?php if ($numtrees > 1 || $numbranches) { ?>
-                <th class="fieldnameback fieldname text-nowrap">
+                <th class="p-2 fieldnameback fieldname whitespace-no-wrap">
                     <?php echo $text['tree']; ?><?php if ($numbranches) {
                         echo " | " . $text['branch'];
                     } ?>
@@ -414,7 +409,7 @@ echo "<p class='normal'>$pagenav$heatmap</p>";
         </thead>
 <?php
 $i = $offsetplus;
-while ($row = tng_fetch_assoc($result)) {
+foreach ($people as $row) {
     $rights = determineLivingPrivateRights($row);
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
@@ -451,18 +446,18 @@ while ($row = tng_fetch_assoc($result)) {
     if ($row['nickname'] && ($row['allow_living'] || !$nonames) && ($row['allow_private'] || !$tngconfig['nnpriv'])) {
         $name .= " \"{$row['nickname']}\"";
     }
-    echo "<td class='databack align-top'>$i</td>\n";
+    echo "<td class='hidden p-2 align-top sm:table-cell databack'>$i</td>\n";
     $i++;
-    echo "<td class='databack text-nowrap align-top'>\n";
+    echo "<td class='p-2 align-top databack whitespace-no-wrap'>\n";
     echo "<div class='person-img' id='mi{$row['gedcom']}_{$row['personID']}'>\n";
     echo "<div class='person-prev' id='prev{$row['gedcom']}_{$row['personID']}'></div>\n";
     echo "</div>\n";
     echo "<a href='pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}'>";
-    echo "<img src='img/chart.gif' alt='' class='chartimg inline-block'>";
+    echo "<img src='img/chart.gif' alt='' class='inline-block chartimg'>";
     echo "</a> ";
     echo "<a href='getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}' class='pers' id='p{$row['personID']}_t{$row['gedcom']}'>$name</a>";
     echo "</td>";
-    echo "<td class='databack'>{$row['personID']} </td>";
+    echo "<td class='hidden p-2 md:table-cell databack'>{$row['personID']} </td>";
     if ($showspouse) {
         $spouse = "";
         if ($showspouse == "yess") {
@@ -488,19 +483,18 @@ while ($row = tng_fetch_assoc($result)) {
     } else {
         $spousestr = "";
     }
-    if ($myprefix) echo "<td class='databack'>$prefix &nbsp;</td>";
-    if ($mysuffix) echo "<td class='databack'>$suffix &nbsp;</td>";
-    if ($mytitle) echo "<td class='databack'>$title &nbsp;</td>";
-    if ($mynickname) echo "<td class='databack'>$nickname &nbsp;</td>";
-    echo "<td class='databack'>&nbsp;$birthdate </td>";
-    echo "<td class='databack'>$birthplace &nbsp;</td>";
+    if ($myprefix) echo "<td class='p-2 databack'>$prefix &nbsp;</td>";
+    if ($mysuffix) echo "<td class='p-2 databack'>$suffix &nbsp;</td>";
+    if ($mytitle) echo "<td class='p-2 databack'>$title &nbsp;</td>";
+    if ($mynickname) echo "<td class='p-2 databack'>$nickname &nbsp;</td>";
+    echo "<td class='p-2 databack'>$birthdate<br>$birthplace</td>";
     if ($mydeathyear || $mydeathplace || $myburialyear || $myburialplace || $showdeath) {
-        echo "<td class='databack'>$deathdate &nbsp;</td>";
-        echo "<td class='databack'>$deathplace &nbsp;</td>";
+        echo "<td class='p-2 databack'>$deathdate &nbsp;</td>";
+        echo "<td class='p-2 databack'>$deathplace &nbsp;</td>";
     }
-    if ($showspouse) echo "<td class='databack'>$spousestr</td>";
+    if ($showspouse) echo "<td class='p-2 databack'>$spousestr</td>";
     if ($numtrees > 1 || $numbranches) {
-        echo "<td class='databack'><a href='showtree.php?tree={$row['gedcom']}'>{$row['treename']}</a>";
+        echo "<td class='p-2 databack'><a href='showtree.php?tree={$row['gedcom']}'>{$row['treename']}</a>";
         if ($row['branch']) {
             $branches = explode(",", $row['branch']);
             echo "<br>";
@@ -529,8 +523,10 @@ while ($row = tng_fetch_assoc($result)) {
     }
     echo "</tr>\n";
 }
-tng_free_result($result);
 echo "</table>\n";
-echo "<p>$pagenav$heatmap</p>\n<br>\n";
+echo "<div class='w-full class=lg:flex my-6'>";
+echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+echo getPaginationControlsHtml($totrows, "search.php?$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults);
+echo "</div>";
 tng_footer("");
 ?>

@@ -133,16 +133,14 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
         <thead>
         <tr>
             <?php if ($allow_edit || $showtestnumbers) { ?>
-                <th class="fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
             <?php } ?>
-            <th class="fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th class="fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
-            <th class="fieldnameback text-center text-nowrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
             <?php
-
             $resultsarr = [];
             $i = $ii = $iii = '0';
-
             foreach (array_keys($_POST) as $key) {
                 if (substr($key, 0, 3) == "dna") {
                     $testID = substr($key, 3);
@@ -228,7 +226,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
         <?php
         echo "<tr>";
         $col_span = ($allow_edit || $showtestnumbers) ? 4 : 3;
-        echo "<td colspan=$col_span class='align-top text-center text-nowrap' style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
+        echo "<td colspan=$col_span class='align-top text-center whitespace-no-wrap' style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
 
 
         $i = 0;
@@ -245,7 +243,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 $col_span = 5;
                 $i = $i + 3;
             }
-            echo "<td colspan=$col_span class='text-center text-nowrap' style=\"$modestyle\">$modestr</td>";
+            echo "<td colspan=$col_span class='text-center whitespace-no-wrap' style=\"$modestyle\">$modestr</td>";
             $i++;
         }
         echo "</tr>\n";
@@ -282,9 +280,9 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 tng_free_result($dna_pers_result);
                 echo "<tr>\n";
                 if ($allow_edit || $showtestnumbers) {
-                    echo "<td class='databack text-nowrap'>&nbsp;{$row['test_number']}&nbsp;</td>";
+                    echo "<td class='databack whitespace-no-wrap'>&nbsp;{$row['test_number']}&nbsp;</td>";
                 }
-                echo "<td class='databack text-nowrap'>&nbsp;$dna_namestr&nbsp;</td>";
+                echo "<td class='databack whitespace-no-wrap'>&nbsp;$dna_namestr&nbsp;</td>";
                 $anc_namestr = "";
                 if ($row['MD_ancestorID']) {
                     $dna_anc_result = getPersonSimple($row['gedcom'], $row['MD_ancestorID']);
@@ -299,16 +297,16 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
 
                     tng_free_result($dna_anc_result);
                 }
-                echo "<td class='databack text-nowrap'>&nbsp;$anc_namestr</td>";
+                echo "<td class='databack whitespace-no-wrap'>&nbsp;$anc_namestr</td>";
                 if ($row['haplogroup']) {
                     if (($row['test_type'] == "Y-DNA" && $row['confirmed']) || $row['test_type'] == "mtDNA") {
                         $row['haplogroup'] = "<span class='confirmed_haplogroup'>" . $row['haplogroup'] . "</span>";
                     } else {
                         $row['haplogroup'] = "<span class='predicted_haplogroup'>" . $row['haplogroup'] . "</span>";
                     }
-                    echo "<td class='databack text-nowrap'>&nbsp;{$row['haplogroup']}</td>";
+                    echo "<td class='databack whitespace-no-wrap'>&nbsp;{$row['haplogroup']}</td>";
                 } else {
-                    echo "<td class='databack text-nowrap'>&nbsp;{$row['haplogroup']}</td>";
+                    echo "<td class='databack whitespace-no-wrap'>&nbsp;{$row['haplogroup']}</td>";
                 }
                 $resultscsv = str_replace('-', ',', $row['y_results']);
                 $yresultsarr = explode(',', $resultscsv);
@@ -369,7 +367,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     } else {
                         $displaystr = ($yresultsarr[$j] != $mode[$j]) ? "<span class=\"deviationback\">{$yresultsarr[$j]}</span>" : "<span class=\"blackchars\">{$yresultsarr[$j]}</span>";
                     }
-                    echo "<td class='databack text-center text-nowrap' colspan=$col_span>$displaystr</td>";
+                    echo "<td class='databack text-center whitespace-no-wrap' colspan=$col_span>$displaystr</td>";
                     $j++;
                 }
                 echo "</tr>\n";

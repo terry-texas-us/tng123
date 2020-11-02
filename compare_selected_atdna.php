@@ -85,22 +85,22 @@ echo "<div class='normal'>\n";
 
                 <?php
                 if ($allow_edit || $showtestnumbers) { ?>
-                    <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                    <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
                 <?php } ?>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['vendor']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['chromosome']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['segment_start']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['segment_end']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['centiMorgans']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['snps']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['y_haplogroup']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['mt_haplogroup']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['suggested_relationship']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['actual_relationship']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['mrca']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $admtext['related_side']; ?>&nbsp;</th>
-                <th class="fieldnameback fieldname text-nowrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['vendor']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['chromosome']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['segment_start']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['segment_end']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['centiMorgans']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['snps']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['y_haplogroup']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['mt_haplogroup']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['suggested_relationship']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['actual_relationship']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['mrca']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['related_side']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
                 <?php
                 global $numtrees;
                 if (!$assignedtree && ($numtrees > 1)) { ?>
@@ -223,7 +223,7 @@ echo "<div class='normal'>\n";
                     echo "<td class=\"$databack\">$group</td>";
                     global $numtrees;
                     if (!$assignedtree && ($numtrees > 1)) {
-                        echo "<td class='$databack text-nowrap'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                        echo "<td class='$databack whitespace-no-wrap'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
                     }
                     echo "</tr>\n";
                     $i++;

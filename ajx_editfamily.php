@@ -185,7 +185,7 @@ include_once "eventlib.php";
 
                         <table class="normal topbuffer">
                             <tr>
-                                <td class="text-nowrap">
+                                <td class="whitespace-no-wrap">
                                     <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
                                         echo " checked";
                                     } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
@@ -223,7 +223,7 @@ include_once "eventlib.php";
                                     if ($row['branch'] == "") $select .= " selected";
                                     $select .= ">{$admtext['nobranch']}</option>\n";
                                     $select .= "$options</select>\n";
-                                    echo " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
+                                    echo " &nbsp;<span class='whitespace-no-wrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
                                     echo $admtext['edit'];
                                     echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
                                     echo "</a> )</span><br>";

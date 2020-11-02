@@ -196,7 +196,7 @@ echo displayHeadline($admtext['repositories'], "img/repos_icon.gif", $menu, $mes
                             echo "<td class='lightback'>&nbsp;$id&nbsp;</td>\n";
                             echo "<td class='lightback'>&nbsp;{$row['reponame']}&nbsp;</td>\n";
                             if ($numtrees > 1) {
-                                echo "<td class='lightback text-nowrap'>&nbsp;{$row['treename']}&nbsp;</td>\n";
+                                echo "<td class='lightback whitespace-no-wrap'>&nbsp;{$row['treename']}&nbsp;</td>\n";
                             }
                             echo "</tr>\n";
                         }

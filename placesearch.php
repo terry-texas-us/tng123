@@ -71,10 +71,8 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
     $more = getLivingPrivateRestrictions($alias, false, false);
     if ($more) {
         if ($allwhere) $allwhere .= " AND ";
-
         $allwhere .= $more;
     }
-    $max_browsesearch_pages = 5;
     if ($offset) {
         $offsetplus = $offset + 1;
         $newoffset = "$offset, ";
@@ -160,23 +158,20 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
         if ($numrows) {
             echo "<br>\n";
             echo "<div class='w-full mb-4 lg:mx-auto lg:max-w-5xl lg:rounded-lg titlebox'>\n";
-            echo "<h3 class='subhead'>" . $placetxt . "</h3>\n";
+            echo "<h3 class='subhead mb-4'>" . $placetxt . "</h3>\n";
             $numrowsplus = $numrows + $offset;
             $successcount++;
-            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</p>";
-            $pagenav = get_browseitems_nav($totrows, "placesearch.php?$urlstring&amp;psearch=" . urlencode($psearchns) . "&amp;order=$order&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-            if ($pagenav) echo "<p>$pagenav</p>";
             $namestr = preg_replace("/xxx/", $text[$namefield], $namesort);
             $datestr = preg_replace("/yyy/", $placetxt, $datesort);
             ?>
-            <table class="w-full whiteback" cellpadding="3" cellspacing="1">
+            <table class="w-full whiteback">
                 <tr>
-                    <th class="fieldnameback hidden md:table-cell"><span class="fieldname"></span></th>
-                    <th class="fieldnameback"><span class="fieldname text-nowrap"><?php echo $namestr; ?></span></th>
-                    <th class="fieldnameback" colspan="2"><span class="fieldname"><?php echo $datestr; ?></span></th>
-                    <th class="fieldnameback hidden md:table-cell"><span class="fieldname text-nowrap"><?php echo $text[$idtext]; ?></span></th>
+                    <th class="hidden p-2 fieldnameback md:table-cell"><span class="fieldname"></span></th>
+                    <th class="p-2 fieldnameback"><span class="fieldname whitespace-no-wrap"><?php echo $namestr; ?></span></th>
+                    <th class="p-2 fieldnameback" colspan="2"><span class="fieldname"><?php echo $datestr; ?></span></th>
+                    <th class="hidden p-2 fieldnameback md:table-cell"><span class="fieldname whitespace-no-wrap"><?php echo $text[$idtext]; ?></span></th>
                     <?php if ($numtrees > 1) { ?>
-                        <th class="fieldnameback"><span class="fieldname"><?php echo $text['tree']; ?></span></th>
+                        <th class="p-2 fieldnameback"><span class="fieldname"><?php echo $text['tree']; ?></span></th>
                     <?php } ?>
                 </tr>
                 <?php
@@ -192,9 +187,9 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         $dateval = $placetxt = "";
                     }
                     echo "<tr>";
-                    echo "<td class='databack hidden md:table-cell'><span class='normal'>$i</span></td>\n";
+                    echo "<td class='hidden p-2 databack md:table-cell'><span class='normal'>$i</span></td>\n";
                     $i++;
-                    echo "<td class='databack'><span class='normal'>";
+                    echo "<td class='p-2 databack'><span class='normal'>";
                     if ($prefix == "F") {
                         echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\">{$row['p1lastname']} / {$row['p2lastname']}</a>";
                     } elseif ($prefix == "I") {
@@ -203,12 +198,12 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                         echo "<img src='img/chart.gif' alt='' class='inline-block'>";
                         echo "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
                     }
-                    echo "&nbsp;</span></td>";
-                    echo "<td class='databack'><span class='normal'>&nbsp;" . displayDate($dateval) . "</span></td>";
-                    echo "<td class='databack'><span class='normal'>$placetxt&nbsp;</span></td>";
-                    echo "<td class='databack hidden md:table-cell'><span class='normal'>{$row[$idfield]} </span></td>";
+                    echo "</span></td>";
+                    echo "<td class='p-2 databack'><span class='normal'>" . displayDate($dateval) . "</span></td>";
+                    echo "<td class='p-2 databack'><span class='normal'>$placetxt</span></td>";
+                    echo "<td class='hidden p-2 databack md:table-cell'><span class='normal'>{$row[$idfield]} </span></td>";
                     if ($numtrees > 1) {
-                        echo "<td class='databack'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</span></td>";
+                        echo "<td class='p-2 databack'><span class='normal'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a></span></td>";
                     }
                     echo "</tr>\n";
                 }
@@ -216,7 +211,10 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                 ?>
             </table>
             <?php
-            if ($pagenav) echo "<p>$pagenav</p><br>";
+            echo "<div class='w-full class=lg:flex my-6'>";
+            echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+            echo getPaginationControlsHtml($totrows, "placesearch.php?$urlstring&amp;psearch=" . urlencode($psearchns) . "&amp;order=$order&amp;offset", $maxsearchresults);
+            echo "</div>";
             echo "</div>\n";
         }
     }
@@ -338,9 +336,10 @@ if ($media) {
 
 $pquery = "SELECT cemname, city, county, state, country, cemeteryID FROM $cemeteries_table WHERE place = '$psearch'";
 $presult = tng_query($pquery) or die ($text['cannotexecutequery'] . ": $pquery");
+$cemeteries = tng_fetch_all($presult);
 $cemdata = "";
 $i = 1;
-while ($prow = tng_fetch_assoc($presult)) {
+foreach ($cemeteries as $prow) {
     $country = stripslashes($prow['country']);
     $state = stripslashes($prow['state']);
     $county = stripslashes($prow['county']);
@@ -362,9 +361,9 @@ while ($prow = tng_fetch_assoc($presult)) {
         $location = $country;
     }
     $cemdata .= "<tr>\n";
-    $cemdata .= "<td class='databack'>$i.</td>\n";
-    $cemdata .= "<td class='databack'><a href=\"showmap.php?cemeteryID={$prow['cemeteryID']}\">{$prow['cemname']}</a></td>\n";
-    $cemdata .= "<td class='databack'>$location</td>\n";
+    $cemdata .= "<td class='p-2 databack'>$i.</td>\n";
+    $cemdata .= "<td class='p-2 databack'><a href=\"showmap.php?cemeteryID={$prow['cemeteryID']}\">{$prow['cemname']}</a></td>\n";
+    $cemdata .= "<td class='p-2 databack'>$location</td>\n";
     $cemdata .= "</tr>\n";
     $i++;
 }
@@ -372,11 +371,11 @@ while ($prow = tng_fetch_assoc($presult)) {
 if ($cemdata) {
     echo "<br>\n<div class='rounded-lg titlebox'>\n";
     echo "<h3 class='subhead'>{$text['cemeteries']}</h3>";
-    echo "<table class='w-full whiteback' cellpadding='3' cellspacing='1' border='0'>\n";
+    echo "<table class='w-full whiteback'>\n";
     echo "<tr>\n";
-    echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;</span></td>\n";
-    echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['name']}</b>&nbsp;</span></td>\n";
-    echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['location']}</b>&nbsp;</span></td>\n";
+    echo "<td class='p-2 fieldnameback'><span class='fieldname'></span></td>\n";
+    echo "<td class='p-2 fieldnameback'><span class='fieldname font-semibold'>{$text['name']}</span></td>\n";
+    echo "<td class='p-2 fieldnameback'><span class='fieldname font-semibold'>{$text['location']}</span></td>\n";
     echo "</tr>\n";
     echo "$cemdata</table>\n";
     echo "</div>\n";

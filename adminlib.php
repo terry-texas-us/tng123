@@ -74,8 +74,8 @@ function tng_adminlayout($args = "") {
     $output .= "</a>\n";
     $output .= "</div>\n";
     $output .= "<div class='pl-3 overflow-hidden'>\n";
-    $output .= "<h1 class='my-1 text-nowrap'>$tng_title</h1>\n";
-    $output .= "<span class='whitetext normal text-nowrap'>\n";
+    $output .= "<h1 class='my-1 whitespace-no-wrap'>$tng_title</h1>\n";
+    $output .= "<span class='whitetext normal whitespace-no-wrap'>\n";
     $output .= "<a href='admin.php' class='lightlink'>{$admtext['adminhome']}</a>\n";
     $output .= "<a href='$homepage' class='lightlink'>{$admtext['publichome']}</a>\n";
     //    if ($allow_admin) {

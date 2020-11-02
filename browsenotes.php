@@ -61,7 +61,7 @@ tng_header($text['notes'], $flags);
         <thead>
         <tr>
             <th class="hidden p-2 sm:table-cell fieldnameback nbrcol fieldname">#</th>
-            <th class="p-2 fieldnameback text-nowrap fieldname"><?php echo $text['notes']; ?></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo $text['notes']; ?></th>
             <th class="p-2 fieldnameback fieldname"><?php echo $text['indlinked']; ?></th>
         </tr>
         </thead>

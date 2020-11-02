@@ -329,8 +329,8 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                                 &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             </td>
                             <td><a href="#"
-                                   onclick="return findItem(findform.linktype1.options[findform.linktype1.selectedIndex].value,'newlink1',null,findform.tree1.options[findform.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>','a_<?php echo $albumID; ?>');"
-                                   title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
+                                    onclick="return findItem(findform.linktype1.options[findform.linktype1.selectedIndex].value,'newlink1',null,findform.tree1.options[findform.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>','a_<?php echo $albumID; ?>');"
+                                    title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                         </tr>
                     </table>
                     <div id="alink_error" style="display:none;" class="normal red"></div>
@@ -339,18 +339,18 @@ echo displayHeadline($admtext['albums'] . " &gt;&gt; " . $admtext['modifyalbum']
                     <table class="normal">
                         <tbody id="linktable">
                         <tr>
-                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['action']; ?></th>
-                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['linktype']; ?></th>
-                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['name'] . ", " . $admtext['id']; ?></th>
-                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['tree']; ?></th>
-                            <th class="fieldnameback fieldname text-nowrap"><?php echo $admtext['event']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['action']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['linktype']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['name'] . ", " . $admtext['id']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['tree']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['event']; ?></th>
                         </tr>
                         <?php
                         $oldlinks = 0;
                         if ($result3) {
                             while ($plink = tng_fetch_assoc($result3)) {
                                 $oldlinks++;
-                                if ($plink['personID'] != NULL) {
+                                if ($plink['personID'] != null) {
                                     $type = $admtext['person'];
                                     $id = " (" . $plink['personID'] . ")";
                                     $rights = determineLivingPrivateRights($plink);

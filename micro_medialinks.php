@@ -137,8 +137,8 @@ if ($result2) {
                 <input type="button" value="<?php echo $admtext['add']; ?>" onclick="return addMedia2EntityLink(findform);"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
             </td>
             <td><a href="#"
-                   onclick="return findItem(findform.linktype1.options[findform.linktype1.selectedIndex].value,'newlink',null,findform.tree1.options[findform.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>','m_<?php echo $mediaID; ?>');"
-                   title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
+                    onclick="return findItem(findform.linktype1.options[findform.linktype1.selectedIndex].value,'newlink',null,findform.tree1.options[findform.tree1.selectedIndex].value,'<?php echo $assignedbranch; ?>','m_<?php echo $mediaID; ?>');"
+                    title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
         </tr>
     </table>
     <div id="alink_error" style="display:none;" class="normal red"></div>
@@ -147,14 +147,14 @@ if ($result2) {
     <table cellpadding="3" cellspacing="1" id="linktable" class="normal">
         <tbody>
         <tr>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['linktype']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['name'] . ", " . $admtext['id']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['event']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['alttd']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['defphoto']; ?></b>&nbsp;</td>
-            <td class="fieldnameback fieldname text-nowrap">&nbsp;<b><?php echo $admtext['show']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['action']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['linktype']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['name'] . ", " . $admtext['id']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['tree']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['event']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['alttd']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['defphoto']; ?></b>&nbsp;</td>
+            <td class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<b><?php echo $admtext['show']; ?></b>&nbsp;</td>
         </tr>
         <?php echo $linkrows; ?>
         </tbody>

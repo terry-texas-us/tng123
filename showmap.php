@@ -4,7 +4,6 @@ $textpart = "headstones";
 $needMap = true;
 include "tng_begin.php";
 include "config/mapconfig.php";
-
 if (!$cemeteryID || !is_numeric($cemeteryID)) {
     header("Location: thispagedoesnotexist.html");
     exit;
@@ -77,6 +76,7 @@ if ($cemeteryID) {
             $localballooncemeteryname = @htmlspecialchars($cemetery['cemname'], ENT_QUOTES, $session_charset);
             $localballooncemeteryplace = @htmlspecialchars($cemeteryplace, ENT_QUOTES, $session_charset);
             $remoteballoontext = @htmlspecialchars(str_replace($banish, $banreplace, "{$cemetery['cemname']}, $cemeteryplace"), ENT_QUOTES, $session_charset);
+            $remoteballoontext = rawurlencode($remoteballoontext);
             $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
             $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
             $cempin = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "htmlcontent" => "<div class=\"mapballoon normal\">$localballooncemeteryname<br>$localballooncemeteryplace$codednotes</div>"];
@@ -104,11 +104,11 @@ if (!empty($headstones)) {
     $i = 1;
     $body .= "<div class='w-full md:mx-auto md:max-w-3xl md:rounded-lg titlebox'>\n";
     $body .= "<h3 class='subhead'>{$text['cemphotos']}</h3>\n";
-    $body .= "<table cellpadding='3' cellspacing='1' border='0' class='w-full whiteback'>\n";
+    $body .= "<table class='w-full whiteback'>\n";
     $body .= "<tr>";
-    $body .= "<th class='w-4 fieldnameback hidden md:table-cell'></th>\n";
-    $body .= "<th class='fieldnameback fieldname' width='$thumbmaxw'>{$text['thumb']}</th>\n";
-    $body .= "<th class='fieldnameback fieldname'>{$text['description']}</th>\n";
+    $body .= "<th class='p-2 hidden w-4 fieldnameback md:table-cell'></th>\n";
+    $body .= "<th class='p-2 fieldnameback fieldname' style='width: {$thumbmaxw}px;'>{$text['thumb']}</th>\n";
+    $body .= "<th class='p-2 fieldnameback fieldname'>{$text['description']}</th>\n";
     $body .= "</tr>\n";
     foreach ($headstones as $hs) {
         $mediatypeID = $hs['mediatypeID'];
@@ -119,8 +119,8 @@ if (!empty($headstones)) {
         $imgsrc = getSmallPhoto($hs);
         $href = getMediaHREF($hs, 3);
         $body .= "<tr>";
-        $body .= "<td class='databack hidden md:table-cell'><span class='normal'>$i</span></td>";
-        $body .= "<td class='databack' width=\"$thumbmaxw\">";
+        $body .= "<td class='p-2 hidden databack md:table-cell'><span class='normal'>$i</span></td>";
+        $body .= "<td class='p-2 databack' style='width: {$thumbmaxw}px;'>";
         if ($imgsrc) {
             $body .= "<div class='media-img'><div class='media-prev' id=\"prev{$hs['mediaID']}\" style='display: none;'></div></div>\n";
             $body .= "<a href='$href'";
@@ -132,7 +132,7 @@ if (!empty($headstones)) {
             $body .= "&nbsp;";
         }
         $body .= "</td>\n";
-        $body .= "<td class='databack'><span class='normal'>";
+        $body .= "<td class='p-2 databack'><span class='normal'>";
         $body .= "<a href='$href'>$description</a><br>$notes&nbsp;</span></td>";
         $body .= "</tr>\n";
         $i++;
@@ -166,15 +166,13 @@ if ($numrows) {
     } else {
         $totrows = $numrows;
     }
-    $pagenav = get_browseitems_nav($totrows, "showmap.php?cemeteryID=$cemeteryID&amp;tree=$tree&amp;offset", $maxsearchresults, 5);
-    if ($pagenav) $body .= "<p>$pagenav</p>";
-    $body .= "<table cellpadding='3' cellspacing='1' border='0' class='w-full whiteback'>\n";
+    $body .= "<table class='w-full whiteback'>\n";
     $body .= "<thead><tr>\n";
-    $body .= "<th class='fieldnameback'><span class='fieldname'>&nbsp;{$text['thumb']}</span></th>";
-    $body .= "<th class='fieldnameback'><span class='fieldname'>&nbsp;{$text['description']}</span></th>";
-    $body .= "<th class='fieldnameback'><span class='fieldname'>&nbsp;{$text['status']}</span></th>";
-    $body .= "<th class='fieldnameback'><span class='fieldname'>&nbsp;{$text['location']}</span></th>";
-    $body .= "<th class='fieldnameback'><span class='fieldname'>&nbsp;{$text['name']} ({$text['diedburied']})</span></th>";
+    $body .= "<th class='p-2 fieldnameback'><span class='fieldname'>&nbsp;{$text['thumb']}</span></th>";
+    $body .= "<th class='p-2 fieldnameback'><span class='fieldname'>&nbsp;{$text['description']}</span></th>";
+    $body .= "<th class='p-2 fieldnameback'><span class='fieldname'>&nbsp;{$text['status']}</span></th>";
+    $body .= "<th class='p-2 fieldnameback'><span class='fieldname'>&nbsp;{$text['location']}</span></th>";
+    $body .= "<th class='p-2 fieldnameback'><span class='fieldname'>&nbsp;{$text['name']} ({$text['diedburied']})</span></th>";
     $body .= "</tr></thead>\n";
     while ($hs = tng_fetch_assoc($hsresult)) {
         $mediatypeID = $hs['mediatypeID'];
@@ -235,7 +233,7 @@ if ($numrows) {
         tng_free_result($presult);
         $description = $hs['description'];
         $notes = nl2br($hs['notes']);
-        $body .= "<tr><td class='text-center databack' style=\"width:$thumbmaxw" . "px;\">";
+        $body .= "<tr><td class='p-2 text-center databack' style=\"width:$thumbmaxw" . "px;\">";
         $hs['allow_living'] = $noneliving;
         $hs['allow_private'] = $noneprivate;
         $imgsrc = getSmallPhoto($hs);
@@ -251,9 +249,9 @@ if ($numrows) {
             $body .= "&nbsp;";
         }
         $body .= "</td>\n";
-        $body .= "<td class='databack'><span class='normal'><a href='$href'>{$hs['description']}</a><br>$notes&nbsp;</span></td>\n";
-        $body .= "<td class='databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
-        $body .= "<td class='databack'><span class='normal'>" . nl2br($hs['plot']);
+        $body .= "<td class='p-2 databack'><span class='normal'><a href='$href'>{$hs['description']}</a><br>$notes&nbsp;</span></td>\n";
+        $body .= "<td class='p-2 databack'><span class='normal'>{$hs['status']}&nbsp;</span></td>\n";
+        $body .= "<td class='p-2 databack'><span class='normal'>" . nl2br($hs['plot']);
         if ($hs['latitude'] || $hs['longitude']) {
             $pin_num = $map['pins'] + 1;
             $coords = "$pin_num. {$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
@@ -289,11 +287,11 @@ if ($numrows) {
             $index_all++;
         }
         $body .= "&nbsp;</span></td>\n";
-        $body .= "<td class='databack'><span class='normal'>$hslinktext&nbsp;</span></td>\n";
+        $body .= "<td class='p-2 databack'><span class='normal'>$hslinktext&nbsp;</span></td>\n";
         $body .= "</tr>\n";
     }
     $body .= "</table>\n";
-    if ($pagenav) $body .= "<p>$pagenav</p>";
+    $body .= getPaginationControlsHtml($totrows, "showmap.php?cemeteryID=$cemeteryID&amp;tree=$tree&amp;offset", $maxsearchresults);
     $body .= "</div>\n";
 }
 tng_free_result($hsresult);
@@ -304,15 +302,15 @@ if ($cemetery['place']) {
     if (tng_num_rows($result)) {
         $body .= "<br><div class='rounded-lg titlebox'>\n";
         $body .= "<h3 class='subhead'>{$text['allburials']}</h3>\n";
-        $body .= "<table class='w-full whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n";
+        $body .= "<table class='w-full whiteback normal'>\n";
         $body .= "<thead>\n";
         $body .= "<tr>\n";
-        $body .= "<th class='fieldnameback nbrcol'><span class='fieldname'>&nbsp;#&nbsp;</span></th>\n";
-        $body .= "<th class='fieldnameback'><span class='fieldname text-nowrap'>&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
-        $body .= "<th colspan='2' class='fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
-        $body .= "<th class='fieldnameback'><span class='fieldname text-nowrap'>&nbsp;{$text['personid']}&nbsp;</span></th>\n";
+        $body .= "<th class='p-2 fieldnameback nbrcol'><span class='fieldname'>&nbsp;#&nbsp;</span></th>\n";
+        $body .= "<th class='p-2 fieldnameback'><span class='whitespace-no-wrap fieldname'>&nbsp;{$text['lastfirst']}&nbsp;</span></th>\n";
+        $body .= "<th colspan='2' class='p-2 fieldnameback'><span class='fieldname'>&nbsp;<b>{$text['buried']}</b>&nbsp;</span></th>\n";
+        $body .= "<th class='p-2 fieldnameback'><span class='whitespace-no-wrap fieldname'>&nbsp;{$text['personid']}&nbsp;</span></th>\n";
         if ($numtrees > 1) {
-            $body .= "<th class='fieldnameback'><span class='fieldname'>&nbsp;{$text['tree']}&nbsp;</span></th>\n";
+            $body .= "<th class='p-2 fieldnameback'><span class='fieldname'>&nbsp;{$text['tree']}&nbsp;</span></th>\n";
         }
         $body .= "</tr>\n";
         $body .= "</thead>\n";
@@ -324,8 +322,8 @@ if ($cemetery['place']) {
             $row['allow_private'] = $rights['private'];
             $name = getNameRev($row);
             $body .= "<tr>\n";
-            $body .= "<td class='databack'>$i.</td>\n";
-            $body .= "<td class='databack'>";
+            $body .= "<td class='p-2 databack'>$i.</td>\n";
+            $body .= "<td class='p-2 databack'>";
             $body .= "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
             $body .= "<img src='img/chart.gif' alt='' class='inline-block'>";
             $body .= "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>&nbsp;</td>\n";
@@ -338,11 +336,11 @@ if ($cemetery['place']) {
                 $abbrev = $text['deathabbr'];
             }
             $burialdate = $deathdate ? "$abbrev " . displayDate($deathdate) : "";
-            $body .= "<td class='databack'>&nbsp;" . $burialdate . "</span></td>\n";
-            $body .= "<td class='databack'><span class='normal'>$placetxt&nbsp;</span></td>";
-            $body .= "<td class='databack'>{$row['personID']}</td>\n";
+            $body .= "<td class='p-2 databack'>&nbsp;" . $burialdate . "</span></td>\n";
+            $body .= "<td class='p-2 databack'><span class='normal'>$placetxt&nbsp;</span></td>";
+            $body .= "<td class='p-2 databack'>{$row['personID']}</td>\n";
             if ($numtrees > 1) {
-                $body .= "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>\n";
+                $body .= "<td class='p-2 databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>\n";
             }
             $i++;
         }

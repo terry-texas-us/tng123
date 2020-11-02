@@ -168,7 +168,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                         </p>
                     <?php } ?>
                     <table class="normal">
-                        <tr class="fieldnameback fieldname text-nowrap">
+                        <tr class="fieldnameback fieldname whitespace-no-wrap">
                             <th><?php echo $admtext['action']; ?></th>
                             <?php if ($allow_delete) { ?>
                                 <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>

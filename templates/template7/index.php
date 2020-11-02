@@ -42,8 +42,8 @@ if ($tngconfig['maint']) {
             <tr class="strip">
                 <td class="fieldnameback">
                     <span class="fieldname">
-                        <label class="text-nowrap"><?php echo $text['mnufirstname']; ?>: <input type="search" name="myfirstname"></label>
-                        <label class="text-nowrap pl-2"><?php echo $text['mnulastname']; ?>: <input type="search" name="mylastname"></label>
+                        <label class="whitespace-no-wrap"><?php echo $text['mnufirstname']; ?>: <input type="search" name="myfirstname"></label>
+                        <label class="whitespace-no-wrap pl-2"><?php echo $text['mnulastname']; ?>: <input type="search" name="mylastname"></label>
                         <input type="hidden" name="mybool" value="AND"><input type="hidden" name="offset" value="0">
                         <span class="px-2"><input type="submit" name="search" value="<?php echo $text['mnusearch']; ?>"></span>
                     </span>

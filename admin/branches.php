@@ -37,7 +37,7 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
         if ($row == "") $select .= " selected";
         $select .= ">{$admtext['nobranch']}</option>\n";
         $select .= "$options</select>\n";
-        $html .= " &nbsp;<span class='text-nowrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
+        $html .= " &nbsp;<span class='whitespace-no-wrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
         $html .= $admtext['edit'];
         $html .= buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
         $html .= "</a> )</span><br>";
