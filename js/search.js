@@ -1,4 +1,4 @@
-var searchtimer;
+let searchtimer;
 jQuery(document).ready(function () {
     jQuery('a.pers').each(function (index, item) {
         let matches = /p(\w*)_t([\w-]*):*(\w*)/.exec(item.id);
@@ -42,7 +42,7 @@ function showPersonPreview(personID, tree, event) {
 
         const params = {personID: personID, tree: tree};
         jQuery.ajax({
-            url: ajx_perspreview,
+            url: 'ajx_perspreview.php',
             data: params,
             dataType: 'html',
             success: function (req) {
@@ -67,10 +67,10 @@ function showFamilyPreview(familyID, tree) {
     let $familySelection = jQuery('#prev' + entitystr);
     $familySelection.css('visibility', 'visible');
     if (!$familySelection.html()) {
-        $familySelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + 'img/spinner.gif" style="border:0;"> ' + loadingmsg + '</div>');
+        $familySelection.html('<div id="ld' + entitystr + '" class="person-inner"><img src="' + 'img/spinner.gif" alt=""> ' + loadingmsg + '</div>');
         const params = {familyID: familyID, tree: tree};
         jQuery.ajax({
-            url: ajx_fampreview,
+            url: 'ajx_fampreview.php',
             data: params,
             dataType: 'html',
             success: function (req) {

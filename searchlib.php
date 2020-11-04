@@ -1,7 +1,12 @@
 <?php
 $criteria_limit = 8;
 $criteria_count = 0;
-
+/**
+ * @param $qualifier
+ * @param $column
+ * @param $usevalue
+ * @return mixed
+ */
 function buildColumn($qualifier, $column, $usevalue) {
     global $text;
 
@@ -58,6 +63,15 @@ function buildColumn($qualifier, $column, $usevalue) {
     return $returnarray;
 }
 
+/**
+ * @param $column
+ * @param $colvar
+ * @param $qualifyvar
+ * @param $altcolumn
+ * @param $qualifier
+ * @param $value
+ * @param $textstr
+ */
 function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier, $value, $textstr) {
     global $text, $criteria_limit, $criteria_count;
 
@@ -126,6 +140,15 @@ function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier
     addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value);
 }
 
+/**
+ * @param $textstr
+ * @param $colvar
+ * @param $criteria
+ * @param $qualifyvar
+ * @param $qualifier
+ * @param $qualifystr
+ * @param $value
+ */
 function addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value) {
     global $allwhere, $mybool, $querystring, $urlstring, $mybooltext, $text;
 
@@ -162,12 +185,18 @@ function addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qual
     }
 }
 
+/**
+ * @param $type
+ * @return string
+ */
 function doCustomEvents($type) {
     global $dontdo, $cejoin, $eventtypes_table, $events_table, $text, $allwhere, $mybool;
 
     $cejoin = "";
-    $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep='1' AND type=\"$type\" ORDER BY display";
+    $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep='1' AND type='$type' ORDER BY display";
     $result = tng_query($query);
+    $eventTypes = tng_fetch_all($result);
+    tng_free_result($result);
     $needce = 0;
     $ecount = 0;
     if ($type == "F") {
@@ -178,7 +207,7 @@ function doCustomEvents($type) {
         $treefield = "p.gedcom";
     }
 
-    while ($row = tng_fetch_assoc($result)) {
+    foreach ($eventTypes as $row) {
         if (!in_array($row['tag'], $dontdo)) {
             $needecount = 1;
             $display = getEventDisplay($row['display']);
@@ -243,6 +272,5 @@ function doCustomEvents($type) {
             }
         }
     }
-    tng_free_result($result);
     return $cejoin;
 }

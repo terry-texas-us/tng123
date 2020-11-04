@@ -1,36 +1,41 @@
 <?php
+
 include "begin.php";
 include "genlib.php";
 $textpart = "familygroup";
 include "getlang.php";
 include "$mylanguage/text.php";
-
 include "checklogin.php";
 include "personlib.php";
-
 $firstsection = 0;
 $tableid = "";
 $cellnumber = 0;
-
 $totcols = 3;
 $factcols = $totcols - 1;
 
+/**
+ * @param $text
+ * @param $fact
+ * @return string
+ */
 function showFact($text, $fact) {
     global $factcols;
-
     $facttext = "";
     if ($fact) {
         $facttext .= "<tr>\n";
-        $facttext .= "<td class='fieldnameback align-top whitespace-no-wrap'><span class='fieldname'>&nbsp;" . $text . "&nbsp;</span></td>\n";
-        $facttext .= "<td colspan=\"$factcols\" class='databack'><span class='normal'>$fact&nbsp;</span></td>\n";
+        $facttext .= "<td class='p-2 whitespace-no-wrap align-top fieldnameback'><span class='fieldname'>" . $text . "</span></td>\n";
+        $facttext .= "<td colspan='$factcols' class='p-2 databack'><span class='normal'>$fact</span></td>\n";
         $facttext .= "</tr>\n";
     }
     return $facttext;
 }
 
+/**
+ * @param $event
+ * @return string
+ */
 function showDatePlace($event) {
     global $cellnumber;
-
     $dptext = "";
     if ($event['date'] || $event['place']) {
         if (!$cellnumber) {
@@ -40,23 +45,28 @@ function showDatePlace($event) {
             $cellid = "";
         }
         $dptext .= "<tr>\n";
-        $dptext .= "<td class='fieldnameback align-top whitespace-no-wrap' $cellid><span class='fieldname'>&nbsp;" . $event['text'] . "&nbsp;</span></td>\n";
-        $dptext .= "<td class='databack whitespace-no-wrap'><span class='normal'>" . displayDate($event['date']) . "&nbsp;</span></td>\n";
-        $dptext .= "<td class='databack' width=\"80%\"><span class='normal'>{$event['place']}&nbsp;</span></td>\n";
+        $dptext .= "<td class='p-1 whitespace-no-wrap align-top fieldnameback' $cellid><span class='fieldname'>" . $event['text'] . "</span></td>\n";
+        $dptext .= "<td class='p-1 whitespace-no-wrap databack'><span class='normal'>" . displayDate($event['date']) . "</span></td>\n";
+        $dptext .= "<td class='w-4/5 p-1 databack'><span class='normal'>{$event['place']}</span></td>\n";
         $dptext .= "</tr>\n";
     }
     return $dptext;
 }
 
+/**
+ * @param $ind
+ * @param $label
+ * @param $familyID
+ * @param $showmarriage
+ * @return string
+ */
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
     global $tree, $text, $totcols;
     global $personID, $families_table, $people_table, $righttree;
-
     $indtext = "";
     $rights = determineLivingPrivateRights($ind, $righttree);
     $ind['allow_living'] = $rights['living'];
     $ind['allow_private'] = $rights['private'];
-
     $haskids = $ind['haskids'] ? "X" : "&nbsp;";
     $restriction = $familyID ? "AND familyID != '$familyID'" : "";
     if ($ind['sex'] == "M") {
@@ -70,28 +80,23 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
     $namestr = getName($ind);
     $personID = $ind['personID'];
-
     //adjust for same-sex relationships
     if ($ind['sex'] == "M" && $label == $text['wife']) {
         $label = $text['husband'];
     } elseif ($ind['sex'] == "F" && $label == $text['husband']) {
         $label = $text['wife'];
     }
-
     //show photo & name
     $indtext .= "<tr>\n";
     $indtext .= "<td colspan='$totcols'>";
     $indtext .= "<span class='normal'>$label | $sex</span><br>";
     $indtext .= "<h3 class='subhead'>";
     if ($ind['haskids']) $indtext .= "> ";
-
     $indtext .= "$namestr";
     $indtext .= "</h3>\n";
     $indtext .= "</td>\n";
     $indtext .= "</tr>\n";
-
     $event = [];
-
     $event['text'] = $text['born'];
     $event['event'] = "BIRT";
     $event['type'] = "I";
@@ -101,7 +106,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $event['place'] = $ind['birthplace'];
     }
     $indtext .= showDatePlace($event);
-
     $event = [];
     $event['event'] = "CHR";
     $event['type'] = "I";
@@ -114,7 +118,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $event['text'] = $text['christened'];
         $indtext .= showDatePlace($event);
     }
-
     $event = [];
     $event['text'] = $text['died'];
     $event['event'] = "DEAT";
@@ -125,7 +128,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $event['place'] = $ind['deathplace'];
     }
     $indtext .= showDatePlace($event);
-
     $event = [];
     $event['text'] = $text['buried'];
     $event['event'] = "BURI";
@@ -136,7 +138,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $event['place'] = $ind['burialplace'];
     }
     $indtext .= showDatePlace($event);
-
     //show marriage & sealing if $showmarriage
     if ($familyID) {
         if ($showmarriage) {
@@ -147,7 +148,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
             $fam['allow_living'] = $frights['living'];
             $fam['allow_private'] = $frights['private'];
             tng_free_result($result);
-
             $event = [];
             $eventd = [];
             $event['text'] = $text['married'];
@@ -171,7 +171,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     } else {
         $spousetext = $text['spouse'];
     }
-
     //show other spouses
     $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, families.living AS fliving, families.private AS fprivate, families.branch AS branch, families.gedcom, people.living AS living, people.private AS private, marrdate, marrplace ";
     $query .= "FROM $families_table families ";
@@ -180,7 +179,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $query .= "WHERE husband = \"{$ind['personID']}\" AND people.gedcom = '$tree' $restriction ";
         $query .= "ORDER BY husborder";
     } else {
-        if ($ind['sex'] = "F") {
+        if ($ind['sex'] == "F") {
             $query .= "LEFT JOIN $people_table people ON families.husband = people.personID AND families.gedcom = people.gedcom ";
             $query .= "WHERE wife = \"{$ind['personID']}\" AND people.gedcom = '$tree' $restriction ";
             $query .= "ORDER BY wifeorder";
@@ -190,7 +189,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         }
     }
     $spresult = tng_query($query);
-
     while ($fam = tng_fetch_assoc($spresult)) {
         $frights = determineLivingPrivateRights($fam, $righttree);
         $fam['allow_living'] = $frights['living'];
@@ -199,7 +197,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $spouselink = $spousename ? "$spousename | " : "";
         $spouselink .= $fam['familyID'];
         $indtext .= showFact($spousetext, $spouselink);
-
         $event = [];
         $event['text'] = $text['married'];
         $event['event'] = "MARR";
@@ -216,7 +213,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         }
         $indtext .= showDatePlace($event);
     }
-
     //show parents (for hus&wif)
     if ($familyID) {
         $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch, people.gedcom ";
@@ -231,7 +227,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         tng_free_result($presult);
         $fatherlink = $fathername ? "$fathername | " . $parent['familyID'] : "";
         $indtext .= showFact($text['father'], $fatherlink);
-
         $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch, people.gedcom ";
         $query .= "FROM $families_table families, $people_table people ";
         $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = '$tree' AND people.personID = families.wife AND people.gedcom = '$tree'";
@@ -245,7 +240,6 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $motherlink = $mothername ? "$mothername | " . $parent['familyID'] : "";
         $indtext .= showFact($text['mother'], $motherlink);
     }
-
     return $indtext;
 }
 
@@ -260,31 +254,22 @@ if (!tng_num_rows($result)) {
 } else {
     tng_free_result($result);
 }
-
 header("Content-type:text/html; charset=" . $session_charset);
-
 initMediaTypes();
-
 $righttree = checktree($tree);
-
 $frights = determineLivingPrivateRights($famrow, $righttree);
 $famrow['allow_living'] = $frights['living'];
 $famrow['allow_private'] = $frights['private'];
 $famname = getFamilyName($famrow);
-$namestr = $text['family'] . ": " . $famname;
-
-$years = $famrow['marrdate'] && $frights['both'] ? $text['marrabbr'] . " " . displayDate($famrow['marrdate']) : "";
-
+$namestr = $text['family'] . ": <small>$famname</small>";
+//$years = $famrow['marrdate'] && $frights['both'] ? $text['marrabbr'] . " " . displayDate($famrow['marrdate']) : "";
 $photostr = showSmallPhoto($familyID, $famname, $famrow['allow_living'], 0);
 echo tng_DrawHeading($photostr, $namestr, $years);
-
 $famtext = "";
 $personID = $famrow['husband'] ? $famrow['husband'] : $famrow['wife'];
-
 $famtext .= "<ul class='nopad'>\n";
 $famtext .= beginSection("info");
-$famtext .= "<table class= 'w-full' border='0' cellspacing='1' cellpadding='4'>\n";
-
+$famtext .= "<table class= 'w-full'>\n";
 //get husband & spouses
 if ($famrow['husband']) {
     $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['husband']}\" AND gedcom = '$tree'";
@@ -294,7 +279,6 @@ if ($famrow['husband']) {
     $famtext .= displayIndividual($husbrow, $label, $familyID, 1);
     tng_free_result($result);
 }
-
 //get wife & spouses
 if ($famrow['wife']) {
     $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['wife']}\" AND gedcom = '$tree'";
@@ -304,26 +288,24 @@ if ($famrow['wife']) {
     $famtext .= displayIndividual($wiferow, $label, $familyID, 0);
     tng_free_result($result);
 }
-
-//for each child
-$query = "SELECT $people_table.personID AS personID, branch, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, famc, sex, birthdate, birthplace, altbirthdate, altbirthplace, haskids, deathdate, deathplace, burialdate, burialplace FROM $people_table, $children_table WHERE $people_table.personID = $children_table.personID AND $children_table.familyID = \"{$famrow['familyID']}\" AND $people_table.gedcom = '$tree' AND $children_table.gedcom = '$tree' ORDER BY ordernum";
-$children = tng_query($query);
-
-if ($children && tng_num_rows($children)) {
-    //put a break here, title "Children"
-    $famtext .= showBreak('smallbreak');
+// Children
+$query = "SELECT people.personID AS personID, branch, firstname, lnprefix, lastname, prefix, suffix, nameorder, living, private, famc, sex, birthdate, birthplace, altbirthdate, altbirthplace, haskids, deathdate, deathplace, burialdate, burialplace ";
+$query .= "FROM $people_table people, $children_table children ";
+$query .= "WHERE people.personID = children.personID AND children.familyID = \"{$famrow['familyID']}\" AND people.gedcom = '$tree' AND children.gedcom = '$tree' ";
+$query .= "ORDER BY ordernum";
+$result = tng_query($query);
+if ($result && tng_num_rows($result)) {
+    $children = tng_fetch_all($result);
+    tng_free_result($result);
+    $famtext .= "<tr><td colspan='3' class='smallbreak'>&nbsp;</td></tr>\n";
 
     $childcount = 0;
-    while ($childrow = tng_fetch_assoc($children)) {
+    foreach ($children as $child) {
         $childcount++;
-        $famtext .= displayIndividual($childrow, "{$text['child']} $childcount", "", 1);
+        $famtext .= displayIndividual($child, "{$text['child']} $childcount", "", 1);
     }
 }
-tng_free_result($children);
-
 $famtext .= "</table>\n";
 $famtext .= endSection("info");
-
 $famtext .= "</ul>\n";
-
 echo $famtext;

@@ -216,21 +216,17 @@ function getSmallPhoto($medialink) {
  */
 function tng_DrawHeading($photostr, $namestr, $years) {
     global $tngconfig;
+
     if ($photostr) {
-        $outputstr = "<div style=\"float: left; padding-right: 5px;\">$photostr</div>\n";
-        $outputstr .= "<h1 class=\"header fn\" id=\"nameheader\">$namestr</h1>\n";
+        $outputstr = "<div class='float-left pr-1'>$photostr</div>\n";
+        $outputstr .= "<h1 class='header fn' id='nameheader'>$namestr</h1>\n";
         $outputstr .= "<span class='normal'>$years</span>\n";
     } else {
-        $outputstr = "<h1 class=\"header fn\" id=\"nameheader\">$namestr</h1>\n";
-        if ($years) {
-            $outputstr .= "<span class='normal'>$years</span><br>\n";
-        }
+        $outputstr = "<h1 class='header fn' id='nameheader'>$namestr</h1>\n";
+        if ($years) $outputstr .= "<span class='normal'>$years</span><br>\n";
     }
-    $outputstr .= "<br style=\"clear: both;\"><br>\n";
-    if (empty($tngconfig['webmatches'])) {
-        echo "<div id=\"mhmatches\"></div>\n";
-    }
-
+    $outputstr .= "<br class='clear-both'>\n";
+    if (empty($tngconfig['webmatches'])) echo "<div id='mhmatches'></div>\n";
     return $outputstr;
 }
 
@@ -758,7 +754,7 @@ function tng_icons($instance, $title = "") {
         }
 
         if ($outermenu) {
-            $fullmenu .= "<div class='menucontainer'>\n";
+            $fullmenu .= "<div class='print:hidden menucontainer'>\n";
             $fullmenu .= "<div class='innercontainer'>\n";
 
             $fullmenu .= $outermenu;

@@ -5,6 +5,8 @@ $order = "";
 include "tng_begin.php";
 include "searchlib.php";
 require_once "admin/pagination.php";
+require_once "admin/trees.php";
+
 @set_time_limit(0);
 $maxsearchresults = $nr ? $nr : ($_SESSION['tng_nr'] ? $_SESSION['tng_nr'] : $maxsearchresults);
 $_SESSION['tng_search_ftree'] = $tree;
@@ -55,40 +57,48 @@ $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_S
 $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
 if ($order == "marr") {
     $orderstr = "marrdatetr, marrplace, father.lastname, father.firstname";
-    $marrsort = "<a href='search.php?$currargs&order=marrup' class='lightlink'>{$text['married']} <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'></a>";
+    $marrsort = "<a href='famsearch.php?$currargs&order=marrup' class='lightlink'>{$text['married']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $marrsort = "<a href='search.php?$currargs&order=marr' class='lightlink'>{$text['married']} <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'></a>";
+    $marrsort = "<a href='famsearch.php?$currargs&order=marr' class='lightlink'>{$text['married']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "marrup") {
         $orderstr = "marrdatetr DESC, marrplace DESC, father.lastname, father.firstname";
     }
 }
 if ($order == "div") {
     $orderstr = "divdatetr, divplace, father.lastname, father.firstname, marrdatetr";
-    $divsort = "<a href='search.php?$currargs&order=divup' class='lightlink'>{$text['divorced']} <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'></a>";
+    $divsort = "<a href='famsearch.php?$currargs&order=divup' class='lightlink'>{$text['divorced']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $divsort = "<a href='search.php?$currargs&order=div' class='lightlink'>{$text['divorced']} <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'></a>";
+    $divsort = "<a href='famsearch.php?$currargs&order=div' class='lightlink'>{$text['divorced']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "divup") {
         $orderstr = "divdatetr DESC, divplace DESC, father.lastname, father.firstname, marrdatetr";
     }
 }
 if ($order == "fname") {
     $orderstr = "father.lastname, father.firstname, marrdatetr";
-    $fnamesort = "<a href='search.php?$currargs&order=fnameup' class='lightlink'>{$text['fathername']} <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'></a>";
+    $fnamesort = "<a href='famsearch.php?$currargs&order=fnameup' class='lightlink'>{$text['fathername']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $fnamesort = "<a href='search.php?$currargs&order=fname' class='lightlink'>{$text['fathername']} <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'></a>";
+    $fnamesort = "<a href='famsearch.php?$currargs&order=fname' class='lightlink'>{$text['fathername']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "fnameup") {
         $orderstr = "father.lastname DESC, father.firstname DESC, marrdatetr";
     }
 }
 if ($order == "mname") {
     $orderstr = "mother.lastname, mother.firstname, marrdatetr";
-    $mnamesort = "<a href='search.php?$currargs&order=mnameup' class='lightlink'>{$text['mothername']} <img src='img/tng_sort_desc.gif' alt='' class='sortimg inline-block'></a>";
+    $mnamesort = "<a href='famsearch.php?$currargs&order=mnameup' class='lightlink'>{$text['mothername']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $mnamesort = "<a href='search.php?$currargs&order=mname' class='lightlink'>{$text['mothername']} <img src='img/tng_sort_asc.gif' alt='' class='sortimg inline-block'></a>";
+    $mnamesort = "<a href='famsearch.php?$currargs&order=mname' class='lightlink'>{$text['mothername']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "mnameup") {
         $orderstr = "mother.lastname DESC, mother.firstname DESC, marrdatetr";
     }
 }
+/**
+ * @param $column
+ * @param $colvar
+ * @param $qualifyvar
+ * @param $qualifier
+ * @param $value
+ * @param $textstr
+ */
 function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $textstr) {
     global $lnprefixes, $criteria_limit, $criteria_count;
     if ($qualifier == "exists" || $qualifier == "dnexist") {
@@ -98,14 +108,12 @@ function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $texts
         $usevalue = addslashes($value);
     }
     if ($column == "father.lastname" && $lnprefixes) {
-        $column = "TRIM(CONCAT_WS(' ',father.lnprefix,father.lastname))";
+        $column = "TRIM(CONCAT_WS(' ', father.lnprefix, father.lastname))";
     } elseif ($column == "mother.lastname") {
-        $column = "TRIM(CONCAT_WS(' ',mother.lnprefix,mother.lastname))";
+        $column = "TRIM(CONCAT_WS(' ', mother.lnprefix, mother.lastname))";
     }
     $criteria_count++;
-    if ($criteria_count >= $criteria_limit) {
-        die("sorry");
-    }
+    if ($criteria_count >= $criteria_limit) die("sorry");
     $criteria = "";
     $returnarray = buildColumn($qualifier, $column, $usevalue);
     $criteria .= $returnarray['criteria'];
@@ -162,7 +170,6 @@ if ($tree) {
     if ($urlstring) $urlstring .= "&amp;";
     $urlstring .= "tree=$tree";
     if ($querystring) $querystring .= " AND ";
-    require_once "./admin/trees.php";
     $treerow = getTree($trees_table, $tree);
     $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
     if ($allwhere) $allwhere = "($allwhere) AND";
@@ -218,7 +225,9 @@ $query2 .= "LEFT JOIN $people_table AS father ON f.gedcom=father.gedcom AND husb
 $query2 .= "LEFT JOIN $people_table AS mother ON f.gedcom=mother.gedcom AND wife = mother.personID ";
 $query2 .= "$allwhere (f.gedcom = trees.gedcom)";
 $result = tng_query($query);
-$numrows = tng_num_rows($result);
+$families = tng_fetch_all($result);
+tng_free_result($result);
+$numrows = count($families);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
     $countrow = tng_fetch_assoc($result2);
@@ -233,48 +242,32 @@ if (!$numrows) {
     exit;
 }
 tng_header($text['searchresults'], $flags);
-?>
-    <script src="js/search.js"></script>
-    <script>
-        // <![CDATA[
-        const ajx_fampreview = 'ajx_fampreview.php';
-        // ]]>
-    </script>
-
-    <h2 class="header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
-    <br style="clear: left;">
-<?php
 $logstring = "<a href=\"famsearch.php?{$_SERVER['QUERY_STRING']}\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 $numrowsplus = $numrows + $offset;
-echo "<p class='normal'>" . $text['matches'] . " $offsetplus " . $text['to'] . " $numrowsplus " . $text['of'] . " " . number_format($totrows) . " $querystring</p>";
-$pagenav = get_browseitems_nav($totrows, "famsearch.php?" . "$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults, $max_browsesearch_pages);
-echo "<p class='normal'>$pagenav</p>";
 ?>
-    <table cellpadding='3' cellspacing='1' border='0' class='whiteback'>
+    <h2 class="mb-4 header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?><br><small class='ml-4'><?php echo $querystring; ?></small></h2>
+    <table class='w-11/12 mx-auto whiteback'>
         <thead>
         <tr>
-            <th class="fieldnameback nbrcol"><span class="fieldname"># </span></th>
-            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $text['familyid']; ?></th>
-            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $fnamesort; ?></th>
-            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $mnamesort; ?></th>
-            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $marrsort; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
+            <th class="p-2 fieldnameback nbrcol"><span class="fieldname"># </span></th>
+            <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['family']; ?></th>
+            <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $fnamesort; ?></th>
+            <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $mnamesort; ?></th>
+            <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $marrsort; ?></th>
             <?php if ($mydivplace || $mydivyear) { ?>
-                <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $divsort; ?></th>
-                <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
-                <?php
-            }
-            if ($numtrees > 1) {
-                ?>
-                <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $text['tree']; ?></th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $divsort; ?></th>
+            <?php } ?>
+            <?php if ($numtrees > 1) { ?>
+                <th class="hidden p-2 whitespace-no-wrap lg:table-cell fieldnameback fieldname"><?php echo $text['tree']; ?></th>
             <?php } ?>
         </tr>
         </thead>
         <?php
         $i = $offsetplus;
-        while ($row = tng_fetch_assoc($result)) {
+        $peopleIcon = buildSvgElement("img/people.svg", ["class" => "w-4 h-4 fill-current inline-block"]);
+        foreach ($families as $row) {
             //assemble frow and mrow, override family living flag if allow_living for either of these is no
             $frow = [
                 "firstname" => $row['ffirstname'],
@@ -309,33 +302,31 @@ echo "<p class='normal'>$pagenav</p>";
             }
             $fname = getNameRev($frow);
             $mname = getNameRev($mrow);
-            $famidstr = "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']} </a>";
             echo "<tr>";
-            echo "<td class='databack'>$i</td>\n";
+            echo "<td class='p-2 align-top databack'>$i</td>\n";
             $i++;
-            echo "<td class='databack'>$famidstr";
+            echo "<td class='p-2 align-top text-center databack'>";
+            echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class='fam' id=\"f{$row['familyID']}_t{$row['gedcom']}\">$peopleIcon</a>";
             echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
             echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
             echo "</div>\n";
-            echo "&nbsp;</td>";
-            echo "<td class='databack'>$fname&nbsp;</td>";
-            echo "<td class='databack'>$mname&nbsp;</td>";
-            echo "<td class='databack'>$marrdate&nbsp;</td>";
-            echo "<td class='databack'>$marrplace&nbsp;</td>";
-            if ($mydivyear || $mydivplace) {
-                echo "<td class='databack'>$divdate </td>";
-                echo "<td class='databack'>$divplace&nbsp;</td>";
-            }
+            echo "</td>";
+            echo "<td class='p-2 align-top databack'>$fname</td>";
+            echo "<td class='p-2 align-top databack'>$mname</td>";
+            echo "<td class='p-2 databack'>$marrdate<br>$marrplace</td>";
+            if ($mydivyear || $mydivplace) echo "<td class='p-2 databack'>$divdate <br>$divplace</td>";
             if ($numtrees > 1) {
-                echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
+                echo "<td class='hidden p-2 align-top lg:table-cell databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a></td>";
             }
             echo "</tr>\n";
         }
-        tng_free_result($result);
         ?>
     </table>
-
-<?php
-echo "<p>$pagenav</p><br>";
-tng_footer("");
-?>
+    <div class='w-full class=lg:flex my-6'>
+        <?php
+        echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
+        echo getPaginationControlsHtml($totrows, "famsearch.php?" . "$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults);
+        ?>
+    </div>
+    <script src="js/search.js"></script>
+<?php tng_footer(""); ?>

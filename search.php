@@ -356,12 +356,6 @@ if (!$numrows) {
 }
 tng_header($text['searchresults'], $flags);
 ?>
-    <script src="js/search.js"></script>
-    <script>
-        // <![CDATA[
-        const ajx_perspreview = 'ajx_perspreview.php';
-        // ]]>
-    </script>
     <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchresults']; ?></h2>
     <br style="clear: left;">
 <?php
@@ -528,5 +522,6 @@ echo "<div class='w-full class=lg:flex my-6'>";
 echo getPaginationLocationHtml($offsetplus, $numrowsplus, $totrows);
 echo getPaginationControlsHtml($totrows, "search.php?$urlstring&amp;mybool=$mybool&amp;nr=$maxsearchresults&amp;showspouse=$showspouse&amp;showdeath=$showdeath&amp;offset", $maxsearchresults);
 echo "</div>";
-tng_footer("");
 ?>
+    <script src="js/search.js"></script>
+<?php tng_footer(""); ?>

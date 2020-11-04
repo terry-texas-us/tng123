@@ -79,6 +79,7 @@ $admtext['level5'] = "State/Province";
 $admtext['level6'] = "Country";
 $admtext['level0'] = "Not Set";
 
+$text['person'] = "person";
 $text['male'] = "Male";
 $text['female'] = "Female";
 $text['closewindow'] = "Close Window";

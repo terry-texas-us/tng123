@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * @param $result
+ * @param $offset
+ * @param $itemname
+ * @return int|mixed|string
+ */
 function get_item_id($result, $offset, $itemname) {
     if (!tng_data_seek($result, $offset)) return (0);
 
@@ -7,19 +14,11 @@ function get_item_id($result, $offset, $itemname) {
     return $row[$itemname];
 }
 
-function get_item_id_pair($result, $offset, $itemname, $needamp) {
-    $item = get_item_id($result, $offset, $itemname);
-    if ($item) {
-        $str = $itemname . "=" . $item;
-        if ($needamp) $str = "&amp;" . $str;
-
-    } else {
-        $str = "";
-    }
-
-    return $str;
-}
-
+/**
+ * @param $result
+ * @param $mediaID
+ * @return array
+ */
 function get_media_offsets($result, $mediaID) {
     tng_data_seek($result, 0);
     $found = 0;
@@ -37,6 +36,17 @@ function get_media_offsets($result, $mediaID) {
     return [$i, $prev, $next, $nexttolast];
 }
 
+/**
+ * @param $result
+ * @param $address
+ * @param $page
+ * @param $jumpfunc
+ * @param $title
+ * @param $label
+ * @param $allstr
+ * @param $showlinks
+ * @return string
+ */
 function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $allstr, $showlinks) {
     global $cemeteryID;
 
@@ -52,14 +62,18 @@ function get_media_link($result, $address, $page, $jumpfunc, $title, $label, $al
         $href .= $allstr . "&amp;tngpage=$page";
         if (substr($href, 0, 5) == "&amp;") $href = substr($href, 5);
 
-        $link = " <a href=\"$address$href\" class='snlink rounded' title=\"$title\">$label</a> ";
+        $link = " <a href=\"$address$href\" class='rounded snlink' title=\"$title\">$label</a> ";
     } else {
-        $link = " <a href='#' class='snlink rounded' onclick=\"return $jumpfunc('$mediaID','$medialinkID','$albumlinkID')\" title=\"$title\">$label</a> ";
+        $link = " <a href='#' class='rounded snlink' onclick=\"return $jumpfunc('$mediaID','$medialinkID','$albumlinkID')\" title=\"$title\">$label</a> ";
     }
 
     return $link;
 }
 
+/**
+ * @param $mediatypeID
+ * @return string
+ */
 function doMedia($mediatypeID) {
     global $media_table, $medialinks_table, $change_limit, $cutoffstr, $wherestr, $text, $admtext, $families_table, $sources_table, $repositories_table, $citations_table, $nonames;
     global $people_table, $trees_table, $currentuser, $userlist;
@@ -87,7 +101,7 @@ function doMedia($mediatypeID) {
     }
     $query .= " WHERE $cutoffstr $wherestr mediatypeID = \"$mediatypeID\" ";
     $query .= "ORDER BY ";
-    if (strpos($_SERVER['SCRIPT_NAME'], "placesearch") !== FALSE) {
+    if (strpos($_SERVER['SCRIPT_NAME'], "placesearch") !== false) {
         $query .= "ordernum";
     } else {
         $query .= "changedate DESC, description";
@@ -95,7 +109,8 @@ function doMedia($mediatypeID) {
     $query .= " LIMIT $change_limit";
     $mediaresult = tng_query($query);
     $titlemsg = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
-    $mediaheader = "<div class='titlebox rounded-lg'><h3 class='subhead'>$titlemsg</h3>\n" . $header;
+    $mediaheader = "<div class='titlebox md:mx-4 md:rounded-lg'>";
+    $mediaheader .= "<h3 class='subhead'>$titlemsg</h3>\n" . $header;
 
     $mediatext = "";
     $thumbcount = 0;
@@ -218,7 +233,7 @@ function doMedia($mediatypeID) {
         $imgsrc = getSmallPhoto($row);
         if ($imgsrc) {
             $treestr = $tngconfig['mediatrees'] && $row['gedcom'] ? $row['gedcom'] . "/" : "";
-            $mediatext .= "<td class='databack center' style=\"width:$thumbmaxw" . "px\">";
+            $mediatext .= "<td class='p-2 databack center' style=\"width:$thumbmaxw" . "px\">";
             $mediatext .= "<div class='media-img'><div class='media-prev' id=\"prev{$row['mediaID']}\" style='display: none;'></div></div>\n";
             if ($href && $row['allow_living']) {
                 $mediatext .= "<a href='$href'";
@@ -230,39 +245,39 @@ function doMedia($mediatypeID) {
                 $mediatext .= $imgsrc;
             }
             $mediatext .= "</td>";
-            $mediatext .= "<td class='databack'>";
+            $mediatext .= "<td class='p-2 databack'>";
             $thumbcount++;
         } else {
-            $mediatext .= "<td class='databack text-center'>&nbsp;</td>";
-            $mediatext .= "<td class='databack'>";
+            $mediatext .= "<td class='p-2 text-center databack'></td>";
+            $mediatext .= "<td class='p-2 databack'>";
         }
 
-        $mediatext .= "$description<br>$notes&nbsp;</td>";
+        $mediatext .= "$description<br>$notes</td>";
         if ($mediatypeID == "headstones") {
             if (!$row['cemname']) $row['cemname'] = $row['city'];
 
-            $mediatext .= "<td class='databack'><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
+            $mediatext .= "<td class='p-2 databack'><a href=\"showmap.php?cemeteryID={$row['cemeteryID']}\">{$row['cemname']}</a>";
             if ($row['plot']) $mediatext .= "<br>";
 
-            $mediatext .= nl2br($row['plot']) . "&nbsp;</td>";
-            $mediatext .= "<td class='databack'>{$row['status']}&nbsp;</td>";
-            $mediatext .= "<td class='databack'>\n";
+            $mediatext .= nl2br($row['plot']) . "</td>";
+            $mediatext .= "<td class='p-2 databack'>{$row['status']}</td>";
+            $mediatext .= "<td class='p-2 databack'>\n";
         } else {
-            $mediatext .= "<td class='databack' width=\"175\">\n";
+            $mediatext .= "<td class='p-2 databack' width=\"175\">\n";
         }
         $mediatext .= $medialinktext;
-        $mediatext .= "&nbsp;</td>\n";
+        $mediatext .= "</td>\n";
         if ($whatsnew) {
             $changedby = $row['changedby'];
             $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            $mediatext .= "<td class='databack'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>";
+            $mediatext .= "<td class='hidden p-2 md:table-cell databack'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>";
             $mediatext .= "</tr>\n";
         }
         //ereg if no thumbs
     }
     if (!$thumbcount) {
-        $mediaheader = str_replace("<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>", "", $mediaheader);
-        $mediatext = str_replace("<td class='databack text-center'>&nbsp;</td><td class='databack'>", "<td class='databack'>", $mediatext);
+        $mediaheader = str_replace("<td class='p-2 fieldnameback'><span class='fieldname'><strong>{$text['thumb']}</strong></span></td>", "", $mediaheader);
+        $mediatext = str_replace("<td class='p-2 text-center databack'></td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
     tng_free_result($mediaresult);
     return $mediatext ? $mediaheader . $mediatext . $footer . "</div>\n<br>\n" : "";

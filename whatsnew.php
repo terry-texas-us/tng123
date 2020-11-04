@@ -27,11 +27,6 @@ $logstring = "<a href='whatsnew.php'>" . xmlcharacters($text['whatsnew'] . $past
 writelog($logstring);
 preparebookmark($logstring);
 
-$flags['style'] = "<style>\n";
-$flags['style'] .= "table {width: 100%; border-collapse: separate; border-spacing: 1px;}\n";
-$flags['style'] .= "table th, table td {padding: 3px;}\n";
-$flags['style'] .= "</style>\n";
-
 tng_header($text['whatsnew'] . " " . $pastxdays, $flags);
 
 //get all users, username + description
@@ -42,42 +37,35 @@ tng_header($text['whatsnew'] . " " . $pastxdays, $flags);
 
 $query = "SELECT username, description FROM $users_table WHERE allow_living != '-1' AND (allow_edit = '1' OR allow_add = '1')";
 $result = tng_query($query);
+$users = tng_fetch_all($result);
+tng_free_result($result);
 $userlist = [];
-if (tng_num_rows($result) == 1) $currentuser = "";
+if (count($users) == 1) $currentuser = "";
 
 if ($currentuser) {
-    while ($row = tng_fetch_assoc($result)) {
+    foreach ($users as $row) {
         if ($row['description']) {
             $key = $row['username'];
             $userlist[$key] = $row['description'];
         }
     }
 }
-tng_free_result($result);
 ?>
-    <script src="js/search.js"></script>
-    <script>
-        // <![CDATA[
-        const ajx_perspreview = 'ajx_perspreview.php';
-        const ajx_fampreview = 'ajx_fampreview.php';
-        // ]]>
-    </script>
     <h2 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo $text['whatsnew'] . " " . $pastxdays; ?></h2>
     <br>
 <?php
 $numtrees = 0;
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'whatsnew', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'lastimport' => true]);
 $nametitle = $text['lastfirst'];
-$tableStartTag = "<table class = 'whiteback normal'>";
-$header1 = $tableStartTag;
+$header1 = "<table class = 'w-11/12 mx-auto whiteback normal'>";
 $header1 .= "<thead>";
 $header1 .= "<tr>\n";
-$header1 .= "<th class = 'fieldnameback text-center thumbnails fieldname'>&nbsp;{$text['thumb']}&nbsp;</th>\n";
-$header1 .= "<th class = 'fieldnameback fieldname'>&nbsp;{$text['description']}&nbsp;</th>\n";
-$hsheader = "<th class = 'fieldnameback fieldname'>&nbsp;{$text['cemetery']}&nbsp;</th>\n";
-$hsheader .= "<th class = 'fieldnameback fieldname'>&nbsp;{$text['status']}&nbsp;</th>\n";
-$header2 .= "<th class= 'fieldnameback fieldname'>&nbsp;{$text['indlinked']}&nbsp;</th>\n";
-$header2 .= "<th class = 'fieldnameback fieldname' width = '130'>&nbsp;<b>{$text['lastmodified']}</b>&nbsp;</th>\n";
+$header1 .= "<th class = 'p-2 text-center fieldnameback thumbnails fieldname'>{$text['thumb']}</th>\n";
+$header1 .= "<th class = 'p-2 fieldnameback fieldname'>{$text['description']}</th>\n";
+$hsheader = "<th class = 'p-2 fieldnameback fieldname'>{$text['cemetery']}</th>\n";
+$hsheader .= "<th class = 'p-2 fieldnameback fieldname'>{$text['status']}</th>\n";
+$header2 .= "<th class= 'p-2 fieldnameback fieldname'>{$text['indlinked']}</th>\n";
+$header2 .= "<th class = 'hidden p-2 md:w-32 md:table-cell fieldnameback fieldname'>{$text['lastmodified']}</th>\n";
 $header2 .= "</tr>\n";
 $header2 .= "</thead>\n";
 $footer = "</table>\n";
@@ -96,7 +84,6 @@ if (file_exists($file)) {
     $contents = file($file);
     foreach ($contents as $line) {
         if (trim($line)) echo "<p>$line</p>";
-
     }
 }
 
@@ -121,65 +108,64 @@ if ($livingPrivateRestrictions) {
 $query .= "ORDER BY changedate DESC, lastname, firstname, birthyear, altbirthyear ";
 $query .= "LIMIT $change_limit";
 $result = tng_query($query);
-if (tng_num_rows($result)) {
+$people = tng_fetch_all($result);
+tng_free_result($result);
+if (count($people)) {
     ?>
-    <div class="titlebox rounded-lg">
-        <h3 class="subhead"><?php echo $text['individuals']; ?></h3>
-        <?php echo $tableStartTag; ?>
-        <thead>
-        <tr>
-            <th class="fieldnameback idcol fieldname"><?php echo $text['id']; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $nametitle; ?></th>
-            <th class="fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['location']; ?></th>
-            <?php if ($numtrees > 1) { ?>
-                <th class="fieldnameback fieldname"><b><?php echo $text['tree']; ?><?php if ($numbranches) {
+    <div class="md:mx-4 md:rounded-lg titlebox">
+        <h3 class="subhead"><?php echo $text['people']; ?></h3>
+        <table class='w-11/12 mx-auto whiteback normal'>
+            <thead>
+            <tr>
+                <th class="p-2 fieldnameback idcol fieldname"><?php echo ucfirst($text['person']); ?></th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $nametitle; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?></th>
+                <?php if ($numtrees > 1) { ?>
+                    <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
                             echo " | " . $text['branch'];
-                        } ?></b>
-                </th>
-            <?php } ?>
-            <th class="fieldnameback fieldname" width="130"><?php echo $text['lastmodified']; ?></th>
-        </tr>
-        </thead>
-
-        <?php
-        while ($row = tng_fetch_assoc($result)) {
-            $rights = determineLivingPrivateRights($row);
-            $row['allow_living'] = $rights['living'];
-            $row['allow_private'] = $rights['private'];
-            $namestr = getNameRev($row);
-            $birthplacestr = "";
-            [$birthdate, $birthplace] = getBirthInformation($rights['both'], $row);
-            if ($birthplace) {
-                $birthplacestr = $birthplace . " <a href=\"placesearch.php?";
-                if (!$tngconfig['places1tree']) {
-                    $birthplacestr .= "tree={$row['gedcom']}&amp;";
+                        } ?></th>
+                <?php } ?>
+                <th class="hidden p-2 lg:table-cell fieldnameback fieldname"><?php echo $text['lastmodified']; ?></th>
+            </tr>
+            </thead>
+            <?php
+            $personIcon = buildSvgElement("img/person.svg", ["class" => "mx-1 w-4 h-4 fill-current inline-block"]);
+            $diagram2RightIcon = buildSvgElement("img/diagram-2-right.svg", ["class" => "mx-1 w-4 h-4 fill-current inline-block"]);
+            foreach ($people as $row) {
+                $rights = determineLivingPrivateRights($row);
+                $row['allow_living'] = $rights['living'];
+                $row['allow_private'] = $rights['private'];
+                $namestr = getNameRev($row);
+                $birthplacestr = "";
+                [$birthdate, $birthplace] = getBirthInformation($rights['both'], $row);
+                if ($birthplace) {
+                    $birthplacestr = $birthplace . " <a href=\"placesearch.php?";
+                    if (!$tngconfig['places1tree']) {
+                        $birthplacestr .= "tree={$row['gedcom']}&amp;";
+                    }
+                    $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
+                    $birthplacestr .= "psearch=" . urlencode($birthplace) . "\">$icon</a>";
                 }
-                $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
-                $birthplacestr .= "psearch=" . urlencode($birthplace) . "\">$icon</a>";
+                echo "<tr>\n";
+                echo "<td class='p-2 text-center databack'>";
+                echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$diagram2RightIcon</a>";
+                echo "<a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}\">$personIcon</a>";
+                echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
+                echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
+                echo "</div>\n";
+                echo "</td>\n";
+                echo "<td class='p-2 databack'>$namestr</td>\n";
+                echo "<td class='p-2 databack'>$birthdate<br>$birthplacestr</td>";
+                if ($numtrees > 1) {
+                    echo "<td class='p-2 databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a></td>";
+                }
+                $changedby = $row['changedby'];
+                $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
+                echo "<td class='hidden p-2 whitespace-no-wrap lg:table-cell databack'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
+                echo "</tr>\n";
             }
-            echo "<tr>\n";
-            echo "<td class='databack'><a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">{$row['personID']}</a></td>\n";
-            echo "<td class='databack'>\n";
-            echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['personID']}\">\n";
-            echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['personID']}\"></div>\n";
-            echo "</div>\n";
-            echo "<a href=\"pedigree.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">";
-            echo "<img src='img/chart.gif' alt='' class='inline-block'>";
-            echo "</a> <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\" class='pers' id=\"p{$row['personID']}_t{$row['gedcom']}\">$namestr</a>&nbsp;</td>\n";
-            echo "<td class='databack whitespace-no-wrap'>$birthdate&nbsp;</td>";
-            echo "<td class='databack'>&nbsp;$birthplacestr&nbsp;</td>";
-            if ($numtrees > 1) {
-                echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
-            }
-            $changedby = $row['changedby'];
-            $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class='databack whitespace-no-wrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td>\n";
-            echo "</tr>\n";
-        }
-        tng_free_result($result);
-        echo "</table>\n";
-        ?>
+            ?>
+        </table>
     </div>
     <br>
     <?php
@@ -202,93 +188,89 @@ if ($livingPrivateRestrictions) {
 }
 $query .= "ORDER BY families.changedate DESC, hlastname, wlastname ";
 $query .= "LIMIT $change_limit";
-$famresult = tng_query($query);
-if (tng_num_rows($famresult)) {
+$result = tng_query($query);
+$families = tng_fetch_all($result);
+tng_free_result($result);
+if (count($families)) {
     ?>
-    <div class="titlebox rounded-lg">
+    <div class="md:mx-4 md:rounded-lg titlebox">
         <h3 class="subhead"><?php echo $text['families']; ?></h3>
-        <?php echo $tableStartTag; ?>
-        <thead>
-        <tr>
-            <th class="fieldnameback nbrcol fieldname"><?php echo $text['id']; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['husbid']; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['husbname']; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['wifeid']; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['wifename']; ?></th>
-            <th class="fieldnameback fieldname"><?php echo $text['married']; ?></th>
-            <?php if ($numtrees > 1) { ?>
-                <th class="fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
-                        echo " | " . $text['branch'];
-                    } ?>
-                </th>
-            <?php } ?>
-            <th class="fieldnameback fieldname" width="130">&nbsp;<?php echo $text['lastmodified']; ?>&nbsp;</th>
-        </tr>
-        </thead>
+        <table class='w-11/12 mx-auto rounded-lg whiteback normal'>
+            <thead>
+            <tr>
+                <th class="p-2 fieldnameback nbrcol fieldname"><?php echo $text['family']; ?></th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['husbname']; ?></th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['wifename']; ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo $text['married']; ?></th>
+                <?php if ($numtrees > 1) { ?>
+                    <th class="p-2 fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
+                            echo " | " . $text['branch'];
+                        } ?>
+                    </th>
+                <?php } ?>
+                <th class="hidden p-2 md:w-32 md:table-cell fieldnameback fieldname"><?php echo $text['lastmodified']; ?></th>
+            </tr>
+            </thead>
 
-        <?php
-        while ($row = tng_fetch_assoc($famresult)) {
-            $row['living'] = $row['hliving'];
-            $row['private'] = $row['hprivate'];
-            $row['firstname'] = $row['hfirstname'];
-            $row['lnprefix'] = $row['hlnprefix'];
-            $row['lastname'] = $row['hlastname'];
-            $row['prefix'] = $row['hprefix'];
-            $row['suffix'] = $row['hsuffix'];
-            $row['nameorder'] = $row['hnameorder'];
-            $rights = determineLivingPrivateRights($row);
-            $row['allow_living'] = $rights['living'];
-            $row['allow_private'] = $rights['private'];
-            $hname = getName($row);
-
-            $row['living'] = $row['wliving'];
-            $row['private'] = $row['wprivate'];
-            $row['firstname'] = $row['wfirstname'];
-            $row['lnprefix'] = $row['wlnprefix'];
-            $row['lastname'] = $row['wlastname'];
-            $row['prefix'] = $row['wprefix'];
-            $row['suffix'] = $row['wsuffix'];
-            $row['nameorder'] = $row['wnameorder'];
-            $rights = determineLivingPrivateRights($row);
-            $row['allow_living'] = $rights['living'];
-            $row['allow_private'] = $rights['private'];
-            $wname = getName($row);
-            echo "<tr>\n";
-            echo "<td class='databack'>\n";
-            echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class=\"fam\" id=\"f{$row['familyID']}_t{$row['gedcom']}\">{$row['familyID']}</a>\n";
-            echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
-            echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
-            echo "</div>\n";
-            echo "</td>";
-            echo "</span></td><td class='databack'><a href=\"getperson.php?personID={$row['husband']}&amp;tree={$row['gedcom']}\">{$row['husband']}</a></td>\n";
-            echo "<td class='databack'><a href=\"getperson.php?personID={$row['husband']}&amp;tree={$row['gedcom']}\">$hname</a>&nbsp;</td>\n";
-            echo "<td class='databack'><a href=\"getperson.php?personID={$row['wife']}&amp;tree={$row['gedcom']}\">{$row['wife']}</a>&nbsp;</td>\n";
-            echo "<td class='databack'><a href=\"getperson.php?personID={$row['wife']}&amp;tree={$row['gedcom']}\">$wname</a>&nbsp;</td>\n";
-            echo "<td class='databack'>";
-            if ($rights['both']) {
-                $row['branch'] = $row['fbranch'];
-                $row['living'] = $row['fliving'];
-                $row['private'] = $row['fprivate'];
+            <?php
+            $peopleIcon = buildSvgElement("img/people.svg", ["class" => "w-4 h-4 fill-current inline-block"]);
+            foreach ($families as $row) {
+                $row['living'] = $row['hliving'];
+                $row['private'] = $row['hprivate'];
+                $row['firstname'] = $row['hfirstname'];
+                $row['lnprefix'] = $row['hlnprefix'];
+                $row['lastname'] = $row['hlastname'];
+                $row['prefix'] = $row['hprefix'];
+                $row['suffix'] = $row['hsuffix'];
+                $row['nameorder'] = $row['hnameorder'];
                 $rights = determineLivingPrivateRights($row);
                 $row['allow_living'] = $rights['living'];
                 $row['allow_private'] = $rights['private'];
-                if ($rights['both']) echo displayDate($row['marrdate']);
+                $hname = getName($row);
 
+                $row['living'] = $row['wliving'];
+                $row['private'] = $row['wprivate'];
+                $row['firstname'] = $row['wfirstname'];
+                $row['lnprefix'] = $row['wlnprefix'];
+                $row['lastname'] = $row['wlastname'];
+                $row['prefix'] = $row['wprefix'];
+                $row['suffix'] = $row['wsuffix'];
+                $row['nameorder'] = $row['wnameorder'];
+                $rights = determineLivingPrivateRights($row);
+                $row['allow_living'] = $rights['living'];
+                $row['allow_private'] = $rights['private'];
+                $wname = getName($row);
+                echo "<tr>\n";
+                echo "<td class='p-2 text-center databack'>\n";
+                echo "<a href=\"familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}\" class='fam' id=\"f{$row['familyID']}_t{$row['gedcom']}\">$peopleIcon</a>\n";
+                echo "<div class='person-img' id=\"mi{$row['gedcom']}_{$row['familyID']}\">\n";
+                echo "<div class='person-prev' id=\"prev{$row['gedcom']}_{$row['familyID']}\"></div>\n";
+                echo "</div>\n";
+                echo "</td>";
+                echo "<td class='p-2 databack'><a href=\"getperson.php?personID={$row['husband']}&amp;tree={$row['gedcom']}\">$hname</a></td>\n";
+                echo "<td class='p-2 databack'><a href=\"getperson.php?personID={$row['wife']}&amp;tree={$row['gedcom']}\">$wname</a></td>\n";
+                echo "<td class='p-2 databack'>";
+                if ($rights['both']) {
+                    $row['branch'] = $row['fbranch'];
+                    $row['living'] = $row['fliving'];
+                    $row['private'] = $row['fprivate'];
+                    $rights = determineLivingPrivateRights($row);
+                    $row['allow_living'] = $rights['living'];
+                    $row['allow_private'] = $rights['private'];
+                    if ($rights['both']) echo displayDate($row['marrdate']);
+                }
+                echo "</td>\n";
+                if ($numtrees > 1) {
+                    echo "<td class='p-2 databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a></td>";
+                }
+                $changedby = $row['changedby'];
+                $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
+                echo "<td class='hidden p-2 whitespace-no-wrap md:table-cell databack'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
             }
-            echo "&nbsp;</td>\n";
-            if ($numtrees > 1) {
-                echo "<td class='databack'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";
-            }
-            $changedby = $row['changedby'];
-            $changedbydesc = isset($userlist[$changedby]) ? $userlist[$changedby] : $changedby;
-            echo "<td class='databack whitespace-no-wrap'>" . displayDate($row['changedatef']) . ($currentuser ? " ({$changedbydesc})" : "") . "</td></tr>\n";
-        }
-        tng_free_result($famresult);
-        echo "</table>\n";
-        ?>
+            ?>
+        </table>
     </div>
     <br><br>
-    <?php
-}
-tng_footer($flags);
-?>
+<?php } ?>
+    <script src="js/search.js"></script>
+<?php tng_footer($flags); ?>

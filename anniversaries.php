@@ -39,11 +39,6 @@ tng_header($text['anniversaries'], $flags);
     <script src="js/search.js"></script>
     <script>
         // <![CDATA[
-        const ajx_perspreview = 'ajx_perspreview.php';
-        //]]>
-    </script>
-    <script>
-        // <![CDATA[
         function resetForm() {
             let myform = document.form1;
             myform.tngevent.selectedIndex = 0;
