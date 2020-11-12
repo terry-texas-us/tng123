@@ -624,7 +624,7 @@ function showEvent($data) {
 
                 if ($cite) $cite = "&nbsp; [$cite]";
 
-                $output .= "<td class='databack' colspan='2'>" . nl2br(insertLinks($data['fact'][$i])) . "$cite&nbsp;</td></tr>\n";
+                $output .= "<td class='p-1 databack' colspan='2'>" . nl2br(insertLinks($data['fact'][$i])) . "$cite&nbsp;</td></tr>\n";
                 $cite = "";
             }
         } else {
@@ -645,7 +645,7 @@ function showEvent($data) {
             }
             if ($cite) $cite = "&nbsp; [$cite]";
 
-            $output .= "<td class='databack' colspan='2'>" . nl2br(insertLinks($data['fact'])) . "$cite&nbsp;</td></tr>\n";
+            $output .= "<td class='p-1 databack' colspan='2'>" . nl2br(insertLinks($data['fact'])) . "$cite&nbsp;</td></tr>\n";
             $cite = "";
         }
     }
@@ -654,7 +654,7 @@ function showEvent($data) {
             $rows++;
             if ($output) $output .= "<tr class=\"t{$eventcounter}\"$toggle>\n";
 
-            $output .= "<td class='databack' colspan='2'>$notes</td>\n";
+            $output .= "<td class='p-1 databack' colspan='2'>$notes</td>\n";
             $output .= "</tr>\n";
         }
     }
@@ -680,20 +680,20 @@ function showEvent($data) {
                     $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle>\n";
                 }
                 if ($item['imgsrc']) {
-                    $mediaoutput .= "<td class='databack text-center'>{$item['imgsrc']}</td>\n";
+                    $mediaoutput .= "<td class='p-1 databack text-center'>{$item['imgsrc']}</td>\n";
                     $thumbcount++;
                 } else {
-                    $mediaoutput .= "<td class='databack'>&nbsp;</td>";
+                    $mediaoutput .= "<td class='p-1 databack'>&nbsp;</td>";
                 }
-                $mediaoutput .= "<td class='databack'>{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
+                $mediaoutput .= "<td class='p-1 databack'>{$item['name']}<br>" . nl2br($item['description']) . "</td>\n";
                 $mediaoutput .= "</tr>\n";
             }
         }
         if (!$thumbcount) {
-            $mediaoutput = str_replace("<td class='databack'>&nbsp;</td><td class='databack'>", "<td class='databack' colspan='2'>", $mediaoutput);
+            $mediaoutput = str_replace("<td class='p-1 databack'>&nbsp;</td><td class='p-1 databack'>", "<td class='p-1 databack' colspan='2'>", $mediaoutput);
         }
         if ($thumbdivs) {
-            $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle><td class='databack' colspan='2'>$thumbdivs</td></tr>\n";
+            $mediaoutput .= "<tr class=\"t{$eventcounter}\"$toggle><td class='p-1 databack' colspan='2'>$thumbdivs</td></tr>\n";
             $rows++;
         }
         $output .= $mediaoutput;
@@ -709,7 +709,7 @@ function showEvent($data) {
         }
         $class = $cellid ? " indleftcol" : "";
         $rowspan = $rows > 1 && !$data['collapse'] ? " rowspan=\"$rows\"" : "";
-        $preoutput = "<tr>\n<td class=\"fieldnameback align-top$class lt{$eventcounter}\" $rowspan$cellid>$toggleicon<span class='fieldname'>{$data['text']}$editicon</span></td>\n";
+        $preoutput = "<tr>\n<td class=\"p-1 fieldnameback align-top$class lt{$eventcounter}\" $rowspan$cellid>$toggleicon<span class='fieldname'>{$data['text']}$editicon</span></td>\n";
         $final = $preoutput . $output;
     } else {
         $final = "";

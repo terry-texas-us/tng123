@@ -30,7 +30,7 @@ $persontext = "";
 $persontext .= "<ul class='nopad'>\n";
 
 $persontext .= beginSection("info");
-$persontext .= "<table class='w-full' border='0' cellspacing='1' cellpadding='4'>\n";
+$persontext .= "<table class='w-full'>\n";
 resetEvents();
 if ($rights['both']) {
     if ($row['nickname']) {

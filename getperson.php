@@ -163,7 +163,7 @@ if (!empty($tng_extras)) {
 }
 
 $persontext .= beginSection("info");
-$persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
+$persontext .= "<table class='w-11/12 mx-auto whiteback tfixed'>\n";
 $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
 resetEvents();
 if ($rights['both']) {

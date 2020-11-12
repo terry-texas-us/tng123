@@ -24,7 +24,6 @@ include "tabledefs.php";
 
 if (!$badtables) adminwritelog($admtext['createtables']);
 
-
 tng_adminheader($admtext['tablecreation'], $flags);
 
 echo "</head>\n";
@@ -37,20 +36,20 @@ $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/setup_help.php#ta
 $menu = doMenu($setuptabs, "tablecreation", $innermenu);
 echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['tablecreation'], "img/setup_icon.gif", $menu, $message);
 ?>
-
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow"><span class="normal"><p>
-<?php
-if ($badtables) {
-    echo "Tables not created: $badtables";
-} else {
-    echo $admtext['tablesuccess'];
-}
-?>
-</p>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow"><span class="normal">
+            <p>
+            <?php
+            if ($badtables) {
+                echo "Tables not created: $badtables";
+            } else {
+                echo $admtext['tablesuccess'];
+            }
+            ?>
+            </p>
 			<p><a href="admin_setup.php"><?php echo $admtext['backtosetup']; ?></a>.</p></span>
-        </td>
-    </tr>
-</table>
+            </td>
+        </tr>
+    </table>
 <?php echo tng_adminfooter(); ?>

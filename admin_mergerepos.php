@@ -365,19 +365,21 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     <tr>
                         <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
                         <td>
-                            <select name="tree">
-                                <?php
-                                $trees = "";
-                                while ($treerow = tng_fetch_assoc($treeresult)) {
-                                    $trees .= "			<option value='{$treerow['gedcom']}'";
-                                    if ($treerow['gedcom'] == $tree) $trees .= " selected";
+                            <label>
+                                <select name="tree">
+                                    <?php
+                                    $trees = "";
+                                    while ($treerow = tng_fetch_assoc($treeresult)) {
+                                        $trees .= "			<option value='{$treerow['gedcom']}'";
+                                        if ($treerow['gedcom'] == $tree) $trees .= " selected";
 
-                                    $trees .= ">{$treerow['treename']}</option>\n";
-                                }
-                                echo $trees;
-                                $mergeclass = $repoID1 && $repoID2 ? "class='btn'" : "class='disabled' disabled";
-                                ?>
-                            </select>
+                                        $trees .= ">{$treerow['treename']}</option>\n";
+                                    }
+                                    echo $trees;
+                                    $mergeclass = $repoID1 && $repoID2 ? "class='btn'" : "class='disabled' disabled";
+                                    ?>
+                                </select>
+                            </label>
                         </td>
                     </tr>
                     <tr>
@@ -389,12 +391,14 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     <tr>
                         <td>
                             <div class="float-left"><?php echo $admtext['repoid']; ?> 1:
+                                <label for="repoID1"></label>
                                 <input type="text" name="repoID1" id="repoID1" size="10" value="<?php echo $repoID1; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             </div>
                             <a href="#" onclick="return findItem('R','repoID1','reponame1',document.form1.tree.options[document.form1.tree.selectedIndex].value);" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
                         <td width="80">&nbsp;</td>
                         <td>
                             <div class="float-left"><?php echo $admtext['repoid']; ?> 2:
+                                <label for="repoID2"></label>
                                 <input type="text" name="repoID2" id="repoID2" size="10" value="<?php echo $repoID2; ?>"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
                             </div>
                             <a href="#" onclick="return findItem('R','repoID2','reponame2',document.form1.tree.options[document.form1.tree.selectedIndex].value);" title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
@@ -417,12 +421,16 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['merge']
                     <tr>
                         <td>
 				<span class="normal">
-				<input type="checkbox" name="ccombinenotes" value="yes"<?php if ($ccombinenotes == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['combinenotesonly']; ?><br>
-				<input type="checkbox" name="ccombineextras" value="yes"<?php if ($ccombineextras == "yes") {
-                    echo " checked";
-                } ?>> <?php echo $admtext['combineextras']; ?>
+				<label>
+<input type="checkbox" name="ccombinenotes" value="yes"<?php if ($ccombinenotes == "yes") {
+    echo " checked";
+} ?>>
+</label> <?php echo $admtext['combinenotesonly']; ?><br>
+				<label>
+<input type="checkbox" name="ccombineextras" value="yes"<?php if ($ccombineextras == "yes") {
+    echo " checked";
+} ?>>
+</label> <?php echo $admtext['combineextras']; ?>
 				</span>
                         </td>
                     </tr>
