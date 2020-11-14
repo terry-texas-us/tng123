@@ -84,32 +84,6 @@ preparebookmark("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$t
 
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 if (empty($tngconfig['hidedna'])) {
-    $flags['scripting'] .= "<script>
-function togglednaicon() {
-   if ($('.toggleicon2').attr('src').indexOf('desc') > 0) {
-      $('.toggleicon2').attr('src', 'img/tng_sort_asc.gif')
-      $('.toggleicon2').attr('title', '{$text['collapse']}');
-      $('.dnatest').show();
-   }
-   else {
-      $('.toggleicon2').attr('src','img/tng_sort_desc.gif')
-      $('.toggleicon2').attr('title', '{$text['expand']}');
-      $('.dnatest').hide();
-   }
-}
-
-function show_dnatest() {
-      $('.toggleicon2').attr('src', 'img/tng_sort_asc.gif')
-      $('.toggleicon2').attr('title', '{$text['collapse']}');
-      $('.dnatest').show();
-}
-
-function hide_dnatest() {
-      $('.toggleicon2').attr('src','img/tng_sort_desc.gif')
-      $('.toggleicon2').attr('title', '{$text['expand']}');
-      $('.dnatest').hide();
-}
-</script>";
     $showdnatest = "show_dnatest(); ";
     $hidednatest = "hide_dnatest(); ";
 } else {
@@ -647,7 +621,7 @@ if ($map['key'] && $locations2map) {
                     $markerIcon++;
                     $usedplaces[] = $place;
                     $savedplaces[] = ["place" => $place, "key" => $key];
-                    $locations2map[$key]['htmlcontent'] = "<div class='mapballoon normal' style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
+                    $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
                     $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
                     $thismarker = $markerIcon;
                 } else {
@@ -787,10 +761,14 @@ if ($allowpdf) {
 $rightbranch = $org_rightbranch;
 echo tng_menu("I", "person", $personID, $innermenu);
 ?>
+    <script>
+        const collapse = "<?php echo $text['collapse']; ?>";
+        const expand = "<?php echo $text['expand']; ?>";
+    </script>
     <script src="js/getperson.js"></script>
     <script>
         function infoToggle(part) {
-            if (part == "all") {
+            if (part === "all") {
                 jQuery('#info').show();
                 <?php
                 if (!empty($media)) {
