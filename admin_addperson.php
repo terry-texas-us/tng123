@@ -14,7 +14,7 @@ include "deletelib.php";
 
 $tree = $tree1;
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -68,9 +68,9 @@ $result = tng_query($query);
 
 if ($result && tng_num_rows($result)) {
     if ($newperson == "ajax") {
-        echo "error:{$admtext['person']} $personID {$admtext['idexists']}";
+        echo "error:" . _('Person') . " $personID " . _('could not be added because this ID already exists.') . "";
     } else {
-        $message = "{$admtext['person']} $personID {$admtext['idexists']}";
+        $message = "" . _('Person') . " $personID " . _('could not be added because this ID already exists.') . "";
         header("Location: admin_people.php?message=" . urlencode($message));
     }
     exit;
@@ -160,7 +160,7 @@ foreach ($branchlist as $b) {
     tng_execute($query, $params);
 }
 
-adminwritelog("<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\">{$admtext['addnewperson']}: $tree/$personID</a>");
+adminwritelog("<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\">" . _('Add New Person') . ": $tree/$personID</a>");
 
 if ($type == "child") {
     if ($familyID) {
@@ -192,10 +192,10 @@ if ($type == "child") {
     }
 
     if ($row['birthdate']) {
-        $birthdate = $admtext['birthabbr'] . " " . $row['birthdate'];
+        $birthdate = _('b.') . " " . $row['birthdate'];
     } else {
         if ($row['altbirthdate']) {
-            $birthdate = $admtext['chrabbr'] . " " . $row['altbirthdate'];
+            $birthdate = _('c.') . " " . $row['altbirthdate'];
         } else {
             $birthdate = "";
         }
@@ -205,10 +205,10 @@ if ($type == "child") {
     $rval .= "<table class='w-full' cellpadding='5' cellspacing='1'>\n";
     $rval .= "<tr>\n";
     $rval .= "<td class='dragarea rounded-lg normal'>";
-    $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
+    $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
     $rval .= "</td>\n";
     $rval .= "<td class='lightback normal childblock'>\n";
-    $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
+    $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">" . _('Remove') . "</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">" . _('Delete') . "</a></div>";
     $personlink = getName($row);
     if ($newperson != "ajax") {
         $personlink = "<a href='#' onclick=\"EditChild('$personID');\">$personlink</a>";

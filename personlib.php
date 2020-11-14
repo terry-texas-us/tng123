@@ -23,10 +23,10 @@ function getBirthInfo($thisperson, $noicon = null) {
 
         $treestr = !empty($tngconfig['places1tree']) ? "" : "tree=$tree&amp;";
         $placelinkbegin = " <a href=\"placesearch.php?{$treestr}psearch=";
-        $placelinkend = "\" title=\"{$text['findplaces']}\">$icon</a>";
+        $placelinkend = "\" title=\"" . _('Find all individuals with events at this location') . "\">$icon</a>";
     }
     if ($thisperson['birthdate'] || ($thisperson['birthplace'] && !$thisperson['altbirthdate'])) {
-        $birthstring .= ", <strong>{$text['birthabbr']}</strong> ";
+        $birthstring .= ", <strong>" . _('b.') . "</strong> ";
         if ($thisperson['birthdate']) {
             $birthstring .= displayDate($thisperson['birthdate']);
         }
@@ -40,7 +40,7 @@ function getBirthInfo($thisperson, $noicon = null) {
         }
     } else {
         if ($thisperson['altbirthdate'] || $thisperson['altbirthplace']) {
-            $birthstring .= ", <strong>{$text['chrabbr']}</strong> ";
+            $birthstring .= ", <strong>" . _('c.') . "</strong> ";
             if ($thisperson['altbirthdate']) {
                 $birthstring .= displayDate($thisperson['altbirthdate']);
             }
@@ -57,7 +57,7 @@ function getBirthInfo($thisperson, $noicon = null) {
     //the "noicon" flag is only set in the person preview screen. We don't want to see death info there (to keep it short)
     if (!$noicon) {
         if ($thisperson['deathdate'] || ($thisperson['deathplace'] && !$thisperson['burialdate'])) {
-            $birthstring .= ", &nbsp; <strong>{$text['deathabbr']}</strong> ";
+            $birthstring .= ", &nbsp; <strong>" . _('d.') . "</strong> ";
             if ($thisperson['deathdate']) {
                 $birthstring .= displayDate($thisperson['deathdate']);
             }
@@ -69,7 +69,7 @@ function getBirthInfo($thisperson, $noicon = null) {
             }
         } else {
             if ($thisperson['burialdate'] || $thisperson['burialplace']) {
-                $birthstring .= ", <strong>{$text['burialabbr']}</strong> ";
+                $birthstring .= ", <strong>" . _('bur.') . "</strong> ";
                 if ($thisperson['burialdate']) {
                     $birthstring .= displayDate($thisperson['burialdate']);
                 }
@@ -97,7 +97,7 @@ function getCitations($persfamID, $shortcite = 1) {
     $citquery .= "LEFT JOIN $sources_table sources ON citations.sourceID = sources.sourceID AND sources.gedcom = citations.gedcom ";
     $citquery .= "WHERE persfamID = '$persfamID' AND citations.gedcom = '$tree' ";
     $citquery .= "ORDER BY ordernum, citationID";
-    $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
+    $citresult = tng_query($citquery) or die (_('Cannot execute query') . ": $citquery");
 
     while ($citrow = tng_fetch_assoc($citresult)) {
         $source = $citrow['sourceID'] ? "[<a href=\"showsource.php?sourceID={$citrow['sourceID']}&amp;tree=$tree\">{$citrow['sourceID']}</a>] " : "";
@@ -162,7 +162,7 @@ function getCitations($persfamID, $shortcite = 1) {
         if ($citrow['quay'] != "") {
             if ($newstring) $newstring .= " ";
 
-            $newstring .= "({$text['reliability']}: {$citrow['quay']})";
+            $newstring .= "(" . _('Reliability') . ": {$citrow['quay']})";
         }
         if ($citrow['citedate']) {
             if ($newstring) $newstring .= ", ";
@@ -247,13 +247,13 @@ function getNotes($persfamID, $flag) {
     $finalnotesarray = [];
 
     if ($flag == "I") {
-        $precusttitles = ["BIRT" => $text['born'], "CHR" => $text['christened'], "NAME" => $text['name'], "TITL" => $text['title'], "NPFX" => $text['prefix'], "NSFX" => $text['suffix'], "NICK" => $text['nickname'], "BAPL" => $text['baptizedlds'], "CONL" => $text['conflds'], "INIT" => $text['initlds'], "ENDL" => $text['endowedlds']];
-        $postcusttitles = ["DEAT" => $text['died'], "BURI" => $text['buried'], "SLGC" => $text['sealedplds']];
+        $precusttitles = ["BIRT" => _('Born'), "CHR" => _('Christened'), "NAME" => _('Name'), "TITL" => _('Title'), "NPFX" => _('Prefix'), "NSFX" => _('Suffix'), "NICK" => _('Nickname'), "BAPL" => _('Baptized (LDS)'), "CONL" => _('Confirmed (LDS)'), "INIT" => _('Initiatory (LDS)'), "ENDL" => _('Endowed (LDS)')];
+        $postcusttitles = ["DEAT" => _('Died'), "BURI" => _('Buried'), "SLGC" => _('Sealed to Parents (LDS)')];
     } elseif ($flag == "F") {
-        $precusttitles = ["MARR" => $text['married'], "SLGS" => $text['sealedslds'], "DIV" => $text['divorced']];
+        $precusttitles = ["MARR" => _('Married'), "SLGS" => _('Sealed to Spouse (LDS)'), "DIV" => _('Divorced')];
         $postcusttitles = [];
     } else {
-        $precusttitles = ["ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']];
+        $precusttitles = ["ABBR" => _('Short Title'), "CALN" => _('Call Number'), "AUTH" => _('Author'), "PUBL" => _('Publisher'), "TITL" => _('Title')];
         $postcusttitles = [];
     }
 
@@ -546,8 +546,9 @@ function setEvent($data, $datetr) {
         tng_free_result($custevents);
     }
 }
-define("UNKNOWN", $text['unknown']);
-define("FIND_PLACES", $text['findplaces']);
+
+define("UNKNOWN", _('Unknown'));
+define("FIND_PLACES", _('Find all individuals with events at this location'));
 $datewidth = $thumbmaxw + 20 > 104 ? $thumbmaxw + 20 : 104;
 $eventcounter = 0;
 /**
@@ -609,8 +610,7 @@ function showEvent($data) {
         $output .= formatDateAndPlace($data, $cite, $tngconfig['places1tree'], $tree);
         $output .= "</tr>\n";
     } elseif ($data['fact'] == "" && $cite) {
-
-        $data['fact'] = $text['yesabbr'];
+        $data['fact'] = _('Y');
 
         $rows++;
     }
@@ -700,9 +700,9 @@ function showEvent($data) {
     }
 
     if ($output) {
-        $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"img/tng_edit.gif\" alt=\"{$text['editevent']}\" title=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}', {width:500, height:500});\" class=\"fakelink\">" : "";
+        $editicon = $tentative_edit && $data['event'] && $data['event'] != "NAME" ? "<img src=\"img/tng_edit.gif\" alt=\"" . _('Suggest a change for this event') . "\" title=\"" . _('Suggest a change for this event') . "\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$data['entity']}&amp;type={$data['type']}&amp;event={$data['event']}&amp;title={$data['text']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         if (!empty($data['collapse']) && $rows > 1) {
-            $toggleicon = "<img src='img/tng_sort_desc.gif' alt='' class='toggleicon inline-block' id=\"t{$eventcounter}\" title=\"{$text['expand']}\">";
+            $toggleicon = "<img src='img/tng_sort_desc.gif' alt='' class='toggleicon inline-block' id=\"t{$eventcounter}\" title=\"" . _('Expand') . "\">";
             $num_collapsed++;
         } else {
             $toggleicon = "";
@@ -971,8 +971,8 @@ function getAlbums($entity, $linktype) {
             $thisalbum['description'] = $albumlink['description'];
         } else {
             $thisalbum['imgsrc'] = "";
-            $thisalbum['name'] = $text['living'];
-            $thisalbum['description'] = "({$text['livingphoto']})";
+            $thisalbum['name'] = _('Living');
+            $thisalbum['description'] = "(" . _('At least one living or private individual is linked to this item - Details withheld.') . ")";
         }
 
         if (!isset($albums[$eventID])) $albums[$eventID] = [];
@@ -1018,7 +1018,7 @@ function writeAlbums($albums_array) {
                 $albumcount++;
             }
             $albumtext .= "<tr>\n";
-            $albumtext .= "<td class='fieldnameback indleftcol align-top'$cellid rowspan=\"$totalalbums\"><span class='fieldname'>{$text['albums']}</span></td>\n";
+            $albumtext .= "<td class='fieldnameback indleftcol align-top'$cellid rowspan=\"$totalalbums\"><span class='fieldname'>" . _('Albums') . "</span></td>\n";
 
             if (!$thumbcount) {
                 $albumrows = str_replace("/<td class='databack' style=\"width:$datewidth" . "px;\">&nbsp;<\/td><td class='databack'>/", "<td class='databack' colspan='2'>", $albumrows);
@@ -1066,13 +1066,13 @@ function getMedia($entity, $linktype, $all = false) {
         $thismedia['imgsrc'] = getSmallPhoto($medialink);
         $thismedia['thumbexists'] = $medialink['allow_living'] && $medialink['thumbpath'] && file_exists("$rootpath$usefolder/" . $medialink['thumbpath']);
         if (!$medialink['allow_living'] && ($nonames || $tngconfig['nnpriv'])) {
-            $thismedia['name'] = $text['livingphoto'];
+            $thismedia['name'] = _('At least one living or private individual is linked to this item - Details withheld.');
             $thismedia['description'] = "";
         } else {
             $thismedia['name'] = $medialink['altdescription'] ? $medialink['altdescription'] : $medialink['description'];
             $thismedia['description'] = truncateIt(getXrefNotes(($medialink['altnotes'] ? $medialink['altnotes'] : $medialink['notes']), $tree), (!empty($tngconfig['maxnoteprev']) ? $tngconfig['maxnoteprev'] : 0));
             if (!$medialink['allow_living']) {
-                $thismedia['description'] .= " ({$text['livingphoto']})";
+                $thismedia['description'] .= " (" . _('At least one living or private individual is linked to this item - Details withheld.') . ")";
             } else {
                 $thismedia['href'] = getMediaHREF($medialink, $mlflag);
                 if ($thismedia['name']) {
@@ -1103,7 +1103,7 @@ function getMedia($entity, $linktype, $all = false) {
                 if ($thismedia['description']) {
                     $thismedia['description'] .= "<br>";
                 }
-                $thismedia['description'] .= "<strong>" . $text['plot'] . ": </strong>" . $medialink['plot'];
+                $thismedia['description'] .= "<strong>" . _('Plot') . ": </strong>" . $medialink['plot'];
             }
         }
         if (!$all && $medialink['eventID'] && ($linktype == "L" || ($entity['allow_living'] && $entity['allow_private']))) {
@@ -1206,10 +1206,10 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
             if (empty($tngconfig['ssdisabled']) && $mediacount >= 3 && $slidelink) {
                 $titlemsg .= "<div id=\"ssm{$prefix}{$mediatypeID}\"";
                 if ($hidemedia) $titlemsg .= " style='display: none;'";
-                $titlemsg .= "><br><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; {$text['slidestart']}</a></div>\n";
+                $titlemsg .= "><br><a href=\"$slidelink&amp;ss=1\" class=\"smaller lightlink\">&raquo; " . _('Slide Show') . "</a></div>\n";
             }
             $mediatext .= "<tr>\n";
-            $toggleicon = $hidemedia ? "<img src='img/tng_sort_desc.gif' alt='' id=\"m{$prefix}{$mediatypeID}\" class='toggleicon inline-block' title=\"{$text['expand']}\"/>" : "";
+            $toggleicon = $hidemedia ? "<img src='img/tng_sort_desc.gif' alt='' id=\"m{$prefix}{$mediatypeID}\" class='toggleicon inline-block' title=\"" . _('Expand') . "\"/>" : "";
             $mediatext .= "<td class=\"fieldnameback indleftcol align-top lm{$prefix}{$mediatypeID}\"$cellid";
             if ($thumbdivs) $rows++;
             if (!$hidemedia && $rows != 1) {
@@ -1249,7 +1249,7 @@ function getAlbumPhoto($albumID, $albumname) {
     $query2 = "SELECT path, thumbpath, usecollfolder, mediatypeID, albumlinks.mediaID AS mediaID, alwayson ";
     $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
     $query2 .= "WHERE albumID = '$albumID' AND media.mediaID = albumlinks.mediaID AND defphoto = '1'";
-    $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
+    $result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
     $trow = tng_fetch_assoc($result2);
     $mediaID = $trow['mediaID'];
     $tmediatypeID = $trow['mediatypeID'];
@@ -1316,7 +1316,7 @@ function getAlbumPhoto($albumID, $albumname) {
             $imgsrc = "<div class='media-img'>";
             $imgsrc .= "<div class='media-prev' id=\"prev{$trow['mediaID']}\" style='display: none;'></div>";
             $imgsrc .= "</div>\n";
-            $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"{$text['albclicksee']}\"";
+            $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"" . _('Click to see all the items in this album') . "\"";
             if (function_exists('imageJpeg')) {
                 $imgsrc .= " class='media-preview' id=\"img-{$trow['mediaID']}-0-" . urlencode("$tusefolder/{$trow['path']}") . "\"";
             }
@@ -1334,16 +1334,16 @@ function getFact($row) {
 
     $fact = [];
     $i = 0;
-    if ($row['age']) $fact[$i++] = $text['age'] . ": " . $row['age'];
+    if ($row['age']) $fact[$i++] = _('Age') . ": " . $row['age'];
 
     if ($row['agency']) {
-        $fact[$i++] = $text['agency'] . ": " . $row['agency'];
+        $fact[$i++] = _('Agency') . ": " . $row['agency'];
     }
     if ($row['cause']) {
-        $fact[$i++] = $text['cause'] . ": " . $row['cause'];
+        $fact[$i++] = _('Cause') . ": " . $row['cause'];
     }
     if ($row['addressID']) {
-        $fact[$i] = !empty($row['isrepo']) ? "" : $text['address'] . ":";
+        $fact[$i] = !empty($row['isrepo']) ? "" : _('Address') . ":";
         $query = "SELECT address1, address2, city, state, zip, country, www, email, phone FROM $address_table WHERE addressID = \"{$row['addressID']}\"";
         $addrresults = tng_query($query);
         $addr = tng_fetch_assoc($addrresults);
@@ -1437,9 +1437,9 @@ function formatAssoc($assoc) {
 
         if (!$assocstr) $assocstr = $assoc['passocID'];
 
-        $assocstr = "<a href=\"familygroup.php?familyID={$assoc['passocID']}&amp;tree=$tree\">" . $text['family'] . ": $assocstr</a>";
+        $assocstr = "<a href=\"familygroup.php?familyID={$assoc['passocID']}&amp;tree=$tree\">" . _('Family') . ": $assocstr</a>";
     }
-    $assocstr .= $assoc['relationship'] ? " ({$text['relationship2']}: {$assoc['relationship']})" : "";
+    $assocstr .= $assoc['relationship'] ? " (" . _('Relationship') . ": {$assoc['relationship']})" : "";
 
     return $assocstr;
 }

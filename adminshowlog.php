@@ -16,26 +16,26 @@ if ($adminmaxloglines) {
     $loglines = "";
 }
 
-tng_adminheader($admtext['adminlogfile'], "");
+tng_adminheader(_('Admin Log File'), "");
 
 echo "</head>\n";
 echo tng_adminlayout();
 ?>
     <div class="lightback">
         <div style="padding:10px;" class="databack normal">
-            <p class="plainheader"><?php echo "$loglines " . $admtext['mostrecentactions']; ?></p>
+            <p class="plainheader"><?php echo "$loglines " . _('Most Recent Actions'); ?></p>
             <table class="normal">
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $admtext['mostrecentactions']; ?></td>
+                    <td class="fieldnameback fieldname"><?php echo _('Most Recent Actions'); ?></td>
                 </tr>
                 <?php
                 $lines = file($adminlogfile);
 
-            foreach ($lines as $line) {
-                echo "<tr><td class='lightback'>$line</td></tr>\n";
-            }
-            ?>
-        </table>
+                foreach ($lines as $line) {
+                    echo "<tr><td class='lightback'>$line</td></tr>\n";
+                }
+                ?>
+            </table>
         </div>
     </div>
 

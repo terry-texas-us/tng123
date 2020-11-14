@@ -16,7 +16,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 <div class="databack" id="slideshell">
 
     <div id="slideshow">
-        <div id="loadingdiv" class="rounded-lg" style="display:none;"><?php echo $text['loading']; ?></div>
+        <div id="loadingdiv" class="rounded-lg" style="display:none;"><?php echo _('Loading...'); ?></div>
         <div id="div1" class="slide">
             <?php
             initMediaTypes();
@@ -27,7 +27,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 showMediaSource($imgrow, true);
             } else {
                 ?>
-                <div style="width:400px; height:300px; border:1px solid #000;"><?php echo $text['living']; ?></div>
+                <div style="width:400px; height:300px; border:1px solid #000;"><?php echo _('Living'); ?></div>
             <?php } ?>
         </div>
         <div id="div0" class="slide" style="display:none;"></div>

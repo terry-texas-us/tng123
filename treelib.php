@@ -40,7 +40,7 @@ if ($tree) {
     $result = tng_query($query);
     while ($row = tng_fetch_assoc($result)) {
         $delquery = "DELETE FROM $albumlinks_table WHERE mediaID=\"{$row['mediaID']}\"";
-        $delresult = tng_query($delquery) or die ($admtext['cannotexecutequery'] . ": $delquery");
+        $delresult = tng_query($delquery) or die (_('Cannot execute query') . ": $delquery");
     }
     tng_free_result($result);
 

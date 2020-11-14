@@ -60,11 +60,11 @@ $nonamesloc = $livinginfo['private'] ? $tngconfig['nnpriv'] : $nonames;
 if ($noneliving || !$nonamesloc || $imgrow['alwayson']) {
     $description = $mediadescription;
     $notes = nl2br(xmlcharacters(getXrefNotes($medianotes, $tree)));
-    $notes .= $info['gotmap'] ? "<p>" . $text['mediamaptext'] . "</p>" : "";
+    $notes .= $info['gotmap'] ? "<p>" . _('<strong>Note:</strong> Move your mouse pointer over the image to show names. Click to see a page for each name.') . "</p>" : "";
 } else {
-    $description = $notes = $text['living'];
+    $description = $notes = _('Living');
 }
-$logdesc = $nonamesloc && !$noneliving && !$imgrow['alwayson'] ? ($livinginfo['private'] ? $admtext['text_private'] : $text['living']) : $description;
+$logdesc = $nonamesloc && !$noneliving && !$imgrow['alwayson'] ? ($livinginfo['private'] ? _('Private') : _('Living')) : $description;
 
 $usefolder = $imgrow['usecollfolder'] ? $mediatypes_assoc[$mediatypeID] : $mediapath;
 $size = @GetImageSize("$rootpath$usefolder/" . $imgrow['path'], $info);

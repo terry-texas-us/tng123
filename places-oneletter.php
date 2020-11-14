@@ -14,10 +14,10 @@ if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
     $treestr3 = "tree=$tree&";
-    $logstring = "<a href=\"places-oneletter.php?firstchar=$firstchar&amp;psearch=$psearch&amp;tree=$tree$offsetstr$stretchstr\">{$text['placelist']}: $decodedfirstchar ({$text['tree']}: $tree)</a>";
+    $logstring = "<a href=\"places-oneletter.php?firstchar=$firstchar&amp;psearch=$psearch&amp;tree=$tree$offsetstr$stretchstr\">" . _('Place List') . ": $decodedfirstchar (" . _('Tree') . ": $tree)</a>";
 } else {
     $treestr = $treestr2 = $treestr3 = "";
-    $logstring = "<a href=\"places-oneletter.php?firstchar=$firstchar&amp;psearch=$psearch$offsetstr$stretchstr\">{$text['placelist']}: $decodedfirstchar</a>";
+    $logstring = "<a href=\"places-oneletter.php?firstchar=$firstchar&amp;psearch=$psearch$offsetstr$stretchstr\">" . _('Place List') . ": $decodedfirstchar</a>";
 }
 
 $offsetorg = $offset;
@@ -63,11 +63,11 @@ if (tng_num_rows($result) == 1) {
 writelog($logstring);
 preparebookmark($logstring);
 
-$displaychar = $decodedfirstchar ? $decodedfirstchar : $text['all'];
+$displaychar = $decodedfirstchar ? $decodedfirstchar : _('All');
 
-tng_header($text['placelist'] . ": $displaychar", $flags);
+tng_header(_('Place List') . ": $displaychar", $flags);
 ?>
-<h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": $displaychar"; ?></h2>
+<h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo _('Place List') . ": $displaychar"; ?></h2>
 <br class="clearleft">
 <?php
 
@@ -83,14 +83,14 @@ echo $formstr;
 ?>
 <div class="titlebox rounded-lg">
     <?php
-    echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
+    echo "" . _('Show all places containing') . ": <input type='text' name=\"psearch\">\n";
     if ($tree && !$tngconfig['places1tree']) {
         echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
     }
     echo "<input type='hidden' name=\"stretch\" value='1'>\n";
-    echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";
+    echo "<input type='submit' name=\"pgo\" value=\"" . _('Go') . "\">\n";
     ?>
-    <br><br><?php echo "<a href=\"places.php?{$treestr2}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"places-all.php?{$treestr2}\">{$text['showallplaces']}</a>"; ?>
+    <br><br><?php echo "<a href=\"places.php?{$treestr2}\">" . _('Main places page') . "</a> &nbsp;|&nbsp; <a href=\"places-all.php?{$treestr2}\">" . _('Show all largest localities') . "</a>"; ?>
 </div>
 </form>
 
@@ -99,11 +99,12 @@ echo $formstr;
     <div>
         <h3 class="subhead">
             <?php
-            echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']}";
-            if (isset($_GET['offset'])) echo " ({$text['numoccurrences']}):";
+            echo "" . _('Place List') . ": $decodedfirstchar, " . _('sorted alphabetically') . "";
+            if (isset($_GET['offset'])) echo " (" . _('number of total localities in parentheses') . "):";
             ?>
         </h3>
-        <p class="smaller"><?php echo $text['showmatchingplaces']; ?> <a href="<?php echo "heatmap.php?" . $treestr . $heatargs; ?>" class="snlink rounded"><?php echo $text['heatmap']; ?></a></p>
+        <p class="smaller"><?php echo _('Click on a place to show smaller localities. Click on the search icon to show matching individuals.'); ?> <a href="<?php echo "heatmap.php?" . $treestr . $heatargs; ?>"
+                class="snlink rounded"><?php echo _('Heat Map'); ?></a></p>
     </div>
     <table class="sntable">
         <tr>
@@ -145,7 +146,7 @@ echo $formstr;
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
                             $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
-                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\">$icon</a>" : "";
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"" . _('Find all individuals with events at this location') . "\">$icon</a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                                 $name = "<a href=\"$places_oneletter_url" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {

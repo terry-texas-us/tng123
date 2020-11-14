@@ -35,18 +35,18 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 }
 $numrowsplus = $numrows + $offset;
 $numtrees = getTreesCount($trees_table);
-$logstring = "<a href=\"browsebranches.php?tree=$tree&amp;offset=$offset&amp;branchsearch=$branchsearch\">" . xmlcharacters($text['branches']) . "</a>";
+$logstring = "<a href=\"browsebranches.php?tree=$tree&amp;offset=$offset&amp;branchsearch=$branchsearch\">" . xmlcharacters(_('Branches')) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-tng_header($text['branches'], $flags);
+tng_header(_('Branches'), $flags);
 ?>
-    <h2 class="mb-4 header"><span class="headericon" id="branches-hdr-icon"></span><?php echo $text['branches']; ?></h2>
+    <h2 class="mb-4 header"><span class="headericon" id="branches-hdr-icon"></span><?php echo _('Branches'); ?></h2>
 <?php echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsebranches', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']); ?>
     <div class='mb-4 normal'>
         <form name="branchsearch1" action="browsebranches.php" method="get">
-            <label for="branchsearch" hidden><?php echo $text['search']; ?></label>
+            <label for="branchsearch" hidden><?php echo _('Search'); ?></label>
             <input id="branchsearch" class="p-1 ml-1" name="branchsearch" type="search" value="<?php echo $branchsearch; ?>">
-            <input class="p-1 px-2" type="submit" value="<?php echo $text['search']; ?>">
+            <input class="p-1 px-2" type="submit" value="<?php echo _('Search'); ?>">
             <input name='tree' type='hidden' value="<?php echo $tree; ?>">
         </form>
     </div>
@@ -54,13 +54,13 @@ tng_header($text['branches'], $flags);
         <thead>
         <tr>
             <th class="hidden p-2 sm:table-cell fieldnameback nbrcol fieldname">#</th>
-            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo $text['description']; ?></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo _('Description'); ?></th>
             <?php if ($numtrees > 1) { ?>
-                <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo $text['treename']; ?></th>
+                <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo _('Tree Name'); ?></th>
             <?php } ?>
-            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo $text['startingind']; ?></th>
-            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo $text['individuals']; ?></th>
-            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo $text['families']; ?></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo _('Starting Individual'); ?></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo _('individuals'); ?></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo _('Families'); ?></th>
         </tr>
         </thead>
         <?php

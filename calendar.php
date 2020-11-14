@@ -11,7 +11,7 @@
 
 $textpart = "search";
 include "tng_begin.php";
-$logstring = "<a href=\"calendar.php?living=$living&amp;hide=$hide&amp;tree=$tree&amp;m=$m&amp;year=$year\">" . xmlcharacters($text['calendar']) . "</a>";
+$logstring = "<a href=\"calendar.php?living=$living&amp;hide=$hide&amp;tree=$tree&amp;m=$m&amp;year=$year\">" . xmlcharacters(_('Calendar')) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 $ucharset = strtoupper($session_charset);
@@ -23,10 +23,10 @@ function substr_unicode($str, $start, $len = null) {
 $flags['scripting'] = "<script>\n";
 $flags['scripting'] .= "function redisplay(key) {window.location.href = jQuery('#' + key).attr('href');}\n";
 $flags['scripting'] .= "</script>\n";
-tng_header($text['calendar'], $flags);
+tng_header(_('Calendar'), $flags);
 ?>
 
-    <h2 class="header"><span class="headericon" id="calendar-hdr-icon"></span><?php echo $text['calendar']; ?></h2>
+    <h2 class="header"><span class="headericon" id="calendar-hdr-icon"></span><?php echo _('Calendar'); ?></h2>
     <br style="clear: left;">
 
 <?php
@@ -45,7 +45,7 @@ $dateString = "$thisYear-$thisMonth-01 00:00:00";
 $time = strtotime($dateString);
 $startDay = date('w', $time);
 $daysInMonth = date('t', $time);
-$daysOfWeek = [$text['sunday'], $text['monday'], $text['tuesday'], $text['wednesday'], $text['thursday'], $text['friday'], $text['saturday']];
+$daysOfWeek = [_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')];
 $thisMonthName = $dates[strtoupper(date('F', $time))];
 $nextMonth = date('n', strtotime($dateString . " +1 month"));
 $nextMonthYear = $nextMonth == 1 ? $thisYear + 1 : $thisYear;
@@ -309,15 +309,15 @@ if ($allow_living) {
     <div style="text-align: right;">
         <div style="float: left;">
             <?php
-            echo "<a href=\"anniversaries.php?tngmonth=$m&amp;tngneedresults=1\"><strong>&gt;&gt; {$text['anniversaries']}</strong></a>";
+            echo "<a href=\"anniversaries.php?tngmonth=$m&amp;tngneedresults=1\"><strong>&gt;&gt; " . _('Dates and Anniversaries') . "</strong></a>";
             ?>
         </div>
         <?php
-        echo "<strong>{$text['filter']}:</strong>&nbsp; ";
+        echo "<strong>" . _('Filter') . ":</strong>&nbsp; ";
         $args = "&amp;hide=" . implode(',', $hideEvents) . "&amp;tree=$thisTree&amp;m=$thisMonth&amp;year=$thisYear";
-        echo $showLiving == 2 ? "<strong>{$text['all']}</strong> &nbsp;|&nbsp; " : "<a href=\"?living=2{$args}\">{$text['all']}</a> &nbsp;|&nbsp; ";
-        echo $showLiving == 1 ? "<strong>{$text['living']}</strong> &nbsp;|&nbsp; " : "<a href=\"?living=1{$args}\">{$text['living']}</a> &nbsp;|&nbsp; ";
-        echo !$showLiving ? "<strong>{$text['notliving']}</strong>" : "<a href=\"?living=0{$args}\">{$text['notliving']}</a>";
+        echo $showLiving == 2 ? "<strong>" . _('All') . "</strong> &nbsp;|&nbsp; " : "<a href=\"?living=2{$args}\">" . _('All') . "</a> &nbsp;|&nbsp; ";
+        echo $showLiving == 1 ? "<strong>" . _('Living') . "</strong> &nbsp;|&nbsp; " : "<a href=\"?living=1{$args}\">" . _('Living') . "</a> &nbsp;|&nbsp; ";
+        echo !$showLiving ? "<strong>" . _('Not Living') . "</strong>" : "<a href=\"?living=0{$args}\">" . _('Not Living') . "</a>";
         ?>
     </div>
 <?php } ?>
@@ -350,7 +350,7 @@ if ($allow_living) {
                             foreach (array_keys($events[$thisDate][$event]) as $ged) {
                                 foreach (array_keys($events[$thisDate][$event][$ged]) as $id) {
                                     if ($j >= $truncateDateAfter) {
-                                        echo "<a href=\"anniversaries.php?tngdaymonth=$thisDay&amp;tngmonth=$thisMonth&amp;tngneedresults=1\" class=\"calMore\">" . $text['more'] . "...</a>\n";
+                                        echo "<a href=\"anniversaries.php?tngdaymonth=$thisDay&amp;tngmonth=$thisMonth&amp;tngneedresults=1\" class=\"calMore\">" . _('More') . "...</a>\n";
                                         $j++;
                                         continue 3;
                                     }
@@ -364,14 +364,13 @@ if ($allow_living) {
                 }
                 echo "</div>\n</td>\n";
                 if (($dayInWeek % 7) == 0) echo "</tr><tr>\n";
-
             }
             if (($dayInWeek % 7) != 0) echo "</tr><tr>\n";
 
             ?>
 
             <td colspan="7">
-                <div class="calKey"><?php echo $text['nodayevents'] ?></div>
+                <div class="calKey"><?php echo _('Events for this month that are not associated with a specific day:') ?></div>
 
                 <?php
                 $thisDate = "$thisMonth-00";
@@ -384,7 +383,7 @@ if ($allow_living) {
                         }
                     }
                 } else {
-                    echo $text['none'];
+                    echo _('No encryption');
                 }
                 ?>
 

@@ -58,17 +58,17 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("trees_help.php");
 
-tng_adminheader($admtext['trees'], $flags);
+tng_adminheader(_('Trees'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
 $allow_add_tree = $assignedtree ? 0 : $allow_add;
-$treetabs[0] = [1, "admin_trees.php", $admtext['search'], "findtree"];
-$treetabs[1] = [$allow_add_tree, "admin_newtree.php", $admtext['addnew'], "addtree"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/trees_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$treetabs[0] = [1, "admin_trees.php", _('Search'), "findtree"];
+$treetabs[1] = [$allow_add_tree, "admin_newtree.php", _('Add New'), "addtree"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/trees_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($treetabs, "findtree", $innermenu);
-echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
+echo displayHeadline(_('Trees'), "img/trees_icon.gif", $menu, $message);
 ?>
     <table class="lightback">
         <tr class="databack">
@@ -76,12 +76,12 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                 <div class="normal">
 
                     <form action="admin_trees.php" name="form1">
-                        <?php echo $admtext['searchfor']; ?>:
+                        <?php echo _('Search for'); ?>:
                         <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                         <input type="hidden" name="findtree" value="1">
                         <input type="hidden" name="newsearch" value="1">
-                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="align-top">
+                        <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                        <input type="submit" name="submit" value="<?php echo _('Reset'); ?>" onClick="document.form1.searchstring.value='';" class="align-top">
                     </form>
                     <?php
                     $numrowsplus = $numrows + $offset;
@@ -89,31 +89,31 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                     ?>
                     <table class="normal">
                         <tr>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['action']; ?></th>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['id']; ?></th>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['treename']; ?></th>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['description']; ?></th>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['people']; ?></th>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['owner']; ?></th>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['lastimport']; ?></th>
-                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo $admtext['importfilename']; ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('Action'); ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('ID'); ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('Tree Name'); ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('Description'); ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('People'); ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('Owner'); ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('Show last import'); ?></th>
+                            <th class="fieldnameback fieldname whitespace-no-wrap"><?php echo _('Import File Name'); ?></th>
                         </tr>
                         <?php
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit && !$assignedbranch) {
-                            $actionstr .= "<a href=\"admin_edittree.php?tree=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                            $actionstr .= "<a href=\"admin_edittree.php?tree=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete && !$assignedbranch) {
                             if (!$assignedtree) {
-                                $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"{$admtext['text_delete']}\" onClick=\"if(confirm('{$admtext['conftreedelete']}' )){deleteIt('tree','xxx');} return false;\"></a>";
+                                $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"" . _('Delete') . "\" onClick=\"if(confirm('" . _('Are you sure you want to delete this tree and all associated items?') . "' )){deleteIt('tree','xxx');} return false;\"></a>";
                         }
-                        $actionstr .= "<a href=\"admin_cleartree.php?tree=xxx\" onClick=\"return confirm('{$admtext['conftreeclear']}' );\" title=\"{$admtext['clear']}\" class=\"smallicon admin-clear-icon\"></a>";
+                            $actionstr .= "<a href=\"admin_cleartree.php?tree=xxx\" onClick=\"return confirm('" . _('Are you sure you want to clear all data from this tree?') . "' );\" title=\"" . _('Clear') . "\" class=\"smallicon admin-clear-icon\"></a>";
                     }
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['gedcom'], $actionstr);
                         $editlink = "admin_edittree.php?tree={$row['gedcom']}";
-                        $gedcom = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['gedcom'] . "</a>" : $row['gedcom'];
+                        $gedcom = $allow_edit ? "<a href=\"$editlink\" title=\"" . _('Edit') . "\">" . $row['gedcom'] . "</a>" : $row['gedcom'];
 
                         $query = "SELECT count(personID) AS pcount FROM $people_table WHERE gedcom = \"{$row['gedcom']}\"";
                         $result2 = tng_query($query);
@@ -141,7 +141,7 @@ echo displayHeadline($admtext['trees'], "img/trees_icon.gif", $menu, $message);
                 echo "</div>";
                 }
             else {
-                echo $admtext['notrees'];
+                echo _('No tree records exist');
             }
             ?>
                 </div>

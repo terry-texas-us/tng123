@@ -6,7 +6,7 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     exit;
 }
 
@@ -76,7 +76,7 @@ if ($dupIDs) {
     }
 }
 
-adminwritelog($admtext['addnewevent'] . ": $eventtypeID/$tree/$persfamID");
+adminwritelog(_('Add New Event') . ": $eventtypeID/$tree/$persfamID");
 
 $query = "SELECT display FROM $eventtypes_table WHERE eventtypeID = '$eventtypeID'";
 $result = tng_query($query);

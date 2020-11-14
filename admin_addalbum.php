@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_media_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -18,5 +18,5 @@ $query = "INSERT INTO $albums_table (albumname,description,keywords,active,alway
 $params = [&$template, &$albumname, &$description, &$keywords, &$active, &$alwayson];
 tng_execute($query, $params);
 $albumID = tng_insert_id();
-adminwritelog($admtext['addnewalbum'] . ": $albumname");
+adminwritelog(_('Add New Album') . ": $albumname");
 header("Location: admin_editalbum.php?albumID=$albumID&added=1");

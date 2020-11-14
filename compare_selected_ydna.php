@@ -17,10 +17,10 @@ $test_type = isset($_SESSION["ttype"]) ? $_SESSION["ttype"] : "";
 $test_group = isset($_SESSION["tgroup"]) ? $_SESSION["tgroup"] : "";
 $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $dnatree . "&amp;testsearch=" . $test_search . "&amp;test_type=" . $test_type . "&amp;test_group=" . $test_group;
 
-$headline = "{$text['dnatestscompare']}";
-$text['dnatestscompare'] .= $test_group ? ": " . $test_group : ": " . $text['allgroups'];
+$headline = "" . _('Compare Y-DNA Tests') . "";
+_('Compare Y-DNA Tests') .= $test_group ? ": " . $test_group : ": " . _('All Groups');
 
-tng_header($text['dnatestscompare'], $flags);
+tng_header(_('Compare Y-DNA Tests'), $flags);
 
 /**
  * This file is part of the array_column library
@@ -121,14 +121,14 @@ if (!function_exists('array_column')) {
     }
 }
 
-$comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
-$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target='_blank' class='lightlink'>{$text['help']}</a>";
+$comptabs[0] = [1, $browse_dna_tests_url, _('DNA Tests'), "dnatests"];
+$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target='_blank' class='lightlink'>" . _('Help for this area') . "</a>";
 // Y-DNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class='lightlink'>{$admtext['ydna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class='lightlink'>" . _('Y-DNA Tests') . "</a>";
 // mtDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class='lightlink'>{$admtext['mtdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class='lightlink'>" . _('mtDNA (Mitochondrial) Tests') . "</a>";
 // atDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class='lightlink'>{$admtext['atdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class='lightlink'>" . _('atDNA (autosomal) Tests') . "</a>";
 $menu = doMenu($comptabs, "", $innermenu);
 
 // moved here so that we can control whether to show the markers 68-111 heading
@@ -169,7 +169,7 @@ foreach ($resultsarr as $subKey => $subArray) {
 $columnCount = max(array_map('count', $modesarr));
 
 ?>
-<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare']; ?></h2>
+<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo _('Compare Y-DNA Tests'); ?></h2>
 <br style="clear: left;">
 <?php
 echo $menu;
@@ -193,29 +193,29 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
             ?>
             <?php
             if ($allow_edit || $showtestnumbers) { ?>
-                <th colspan="4" class="fieldnameback fieldname text-center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
+                <th colspan="4" class="fieldnameback fieldname text-center">&nbsp;<?php echo _('DNA Test'); ?>&nbsp;</th>
                 <?php
             } else { ?>
-                <th colspan="3" class="fieldnameback fieldname text-center">&nbsp;<?php echo $text['dna_test']; ?>&nbsp;</th>
+                <th colspan="3" class="fieldnameback fieldname text-center">&nbsp;<?php echo _('DNA Test'); ?>&nbsp;</th>
             <?php } ?>
             // TODO the following for lines are likely mangled. Test if dna ever entered.
-            <th class="text-center whitespace-no-wrap" colspan="11" style="<?php echo $style12 ?>"> {$text['12markers']} "</th>
-            <th class="text-center whitespace-no-wrap" colspan="9" style="<?php echo $style25 ?>"> {$text['25markers']} "</th>
-            <th class="text-center whitespace-no-wrap" colspan="10" style="<?php echo $style37 ?>"> {$text['37markers']} "</th>
+            <th class="text-center whitespace-no-wrap" colspan="11" style="<?php echo $style12 ?>"> " . _('Markers 1-12') . " "</th>
+            <th class="text-center whitespace-no-wrap" colspan="9" style="<?php echo $style25 ?>"> " . _('Markers 13-25') . " "</th>
+            <th class="text-center whitespace-no-wrap" colspan="10" style="<?php echo $style37 ?>"> " . _('Markers 26-37') . " "</th>
             <?php if ($columnCount > '37') { ?>
-                <th class="text-center whitespace-no-wrap" colspan="28" style="<?php echo $style67 ?>"> {$text['67markers']} "</th>
+                <th class="text-center whitespace-no-wrap" colspan="28" style="<?php echo $style67 ?>"> " . _('Markers 38-67') . " "</th>
             <?php } ?>
             <?php if ($columnCount > '67') { ?>
-                <th class="text-center whitespace-no-wrap" colspan="44" style="<?php echo $style111 ?>">{$text['111markers']} "</th>
+                <th class="text-center whitespace-no-wrap" colspan="44" style="<?php echo $style111 ?>">" . _('Markers 68-111') . " "</th>
             <?php } ?>
         </tr>
         <tr>
             <?php if ($allow_edit || $showtestnumbers) { ?>
-                <th class=" fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th class=" fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Test Number/Name'); ?>&nbsp;</th>
             <?php } ?>
-            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
-            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Taken by'); ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Most distant ancestor'); ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Haplogroup'); ?>&nbsp;</th>
             <?php
             /* moved up so that we can control whether to show Markers m68-111 heading
 
@@ -286,7 +286,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 $col_span = 1;
 
                 if (in_array($dysv[$j], $fastmut)) {
-                    $title = $text['fastmutating'];
+                    $title = _('Fast&nbsp;Mutating');
                     $class = "fakelink";
                     $style = "background-color:$bgfastmut; color:$txtfastmut;";
                 }
@@ -303,7 +303,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
         <?php
         echo "<tr>";
         $col_span = ($allow_edit || $showtestnumbers) ? 4 : 3;
-        echo "<td colspan=$col_span class='align-top text-center whitespace-no-wrap' style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
+        echo "<td colspan=$col_span class='align-top text-center whitespace-no-wrap' style=\"$modestyle\"><strong>" . _('Mode Values') . "&nbsp;>></strong>&nbsp;</td>";
 
         // the following builds the mode values row in the table
         $i = 0;
@@ -332,7 +332,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 $person_name = $row['person_name'];
                 $dna_namestr = getName($dprow);
                 if ($row['private_dna'] && $allow_edit) {
-                    $privacy = "&nbsp;(" . $admtext['text_private'] . ")";
+                    $privacy = "&nbsp;(" . _('Private') . ")";
                 } else {
                     $privacy = "";
                 }
@@ -342,7 +342,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     $dna_namestr = $person_name . $privacy;
                 }
                 if ($row['private_dna'] && !$allow_edit) {
-                    $dna_namestr = " - " . $admtext['text_private'];
+                    $dna_namestr = " - " . _('Private');
                 }
                 tng_free_result($dna_pers_result);
                 echo "<tr>\n";
@@ -373,9 +373,9 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 echo "<td class='$databack whitespace-no-wrap'>&nbsp;$anc_namestr</td>";
                 if ($row['ydna_haplogroup']) {
                     if ($row['ydna_confirmed']) {
-                        $haplogroup = "<span class='confirmed_haplogroup'>" . $row['ydna_haplogroup'] . " - " . $text['confirmed'] . "</span>";
+                        $haplogroup = "<span class='confirmed_haplogroup'>" . $row['ydna_haplogroup'] . " - " . _('Confirmed') . "</span>";
                     } else {
-                        $haplogroup = "<span class='predicted_haplogroup'>" . $row['ydna_haplogroup'] . " - " . $text['predicted'] . "</span>";
+                        $haplogroup = "<span class='predicted_haplogroup'>" . $row['ydna_haplogroup'] . " - " . _('Predicted') . "</span>";
                     }
                 }
                 echo "<td class='$databack whitespace-no-wrap'>&nbsp;$haplogroup</td>";

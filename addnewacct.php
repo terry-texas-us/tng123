@@ -114,15 +114,15 @@ if ($username && $password && $realname && $email && $fingerprint == "realperson
     $success = 0;
 }
 
-tng_header($text['regnewacct'], $flags);
+tng_header(_('Register for New User Account'), $flags);
 
-echo "<h2 class='header'>{$text['regnewacct']}</h2>\n";
+echo "<h2 class='header'>" . _('Register for New User Account') . "</h2>\n";
 echo "<span class='normal'>\n";
 if ($success > 0) {
-    echo "<p>{$text['success']}</p>";
+    echo "<p>" . _('Success') . "</p>";
     if ($emailaddr) {
         $emailtouse = $tngconfig['fromadmin'] == 1 ? $emailaddr : $email;
-        $message = "{$deftext['name']}: $realname\n{$deftext['username']}: $username\n\n{$deftext['emailmsg']} $moreinfo\n\n{$text['administration']}: $tngdomain/admin.php";
+        $message = "{$deftext['name']}: $realname\n{$deftext['username']}: $username\n\n{$deftext['emailmsg']} $moreinfo\n\n" . _('Administration') . ": $tngdomain/admin.php";
         $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
         tng_sendmail($owner, $emailtouse, $dbowner, $emailaddr, $deftext['emailsubject'], $message, $emailaddr, $email);
 
@@ -130,23 +130,23 @@ if ($success > 0) {
         if ($tngconfig['autoapp']) {
             // send email to user saying they're ready to go
             // include password if that feature not turned off
-            $welcome = $admtext['hello'] . " $realname,\r\n\r\n{$admtext['activated']}";
+            $welcome = _('Hello') . " $realname,\r\n\r\n" . _('Your genealogy user account has been activated.') . "";
             if (!$tngconfig['omitpwd']) {
-                $welcome .= "{$text['password']}: $org_password\r\n";
+                $welcome .= "" . _('Password') . ": $org_password\r\n";
             }
             $welcome .= "\r\n$dbowner\r\n$tngdomain";
-            $subject = $admtext['subjectline'];
+            $subject = _('Your genealogy user account has been activated.');
         } elseif ($tngconfig['ackemail']) {
             // send email to user saying that we're working on it
-            $welcome = $admtext['hello'] . " $realname,\r\n\r\n{$text['ackmessage']}\r\n$dbowner\r\n$tngdomain";
-            $subject = $text['acksubject'];
+            $welcome = _('Hello') . " $realname,\r\n\r\n" . _('Your request for a user account has been received. Your account will be inactive until it has been reviewed by the site administrator. You will be notified by email when your login is ready for use.') . "\r\n$dbowner\r\n$tngdomain";
+            $subject = _('Thank you for registering');
         }
         if ($welcome) {
             tng_sendmail($owner, $emailaddr, $realname, $email, $subject, $welcome, $emailaddr, $emailaddr);
         }
     }
 } else {
-    echo "<p>{$text['failure']}</p>";
+    echo "<p>{_('We\'re sorry, but the username you entered is already in use. Please use the Back button on your browser to return to the previous page and select a different username.')}</p>";
 }
 echo "</span>";
 

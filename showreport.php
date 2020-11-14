@@ -133,8 +133,8 @@ if ($rrow['sqlselect']) {
     $evfields['pl'] = "eventplace";
     $evfields['fa'] = "info";
 
-    $subtypes['dt'] = $text['date'];
-    $subtypes['pl'] = $text['place'];
+    $subtypes['dt'] = _('Date');
+    $subtypes['pl'] = _('Place');
     $subtypes['fa'] = "";
 
     $displaytext = "";
@@ -485,9 +485,9 @@ if ($rrow['sqlselect']) {
 $limitstr = $csv ? "" : " LIMIT $newoffset" . $maxsearchresults;
 $result = @tng_query($query . $limitstr);
 
-$treelogstr = $tree ? " ({$text['tree']}: $tree)" : "";
+$treelogstr = $tree ? " (" . _('Tree') . ": $tree)" : "";
 if ($rrow['active'] && !$csv) {
-    $logstring = "<a href=\"showreport.php?reportID=$reportID&amp;tree=$tree\">" . xmlcharacters($text['report'] . ": {$rrow['reportname']}$treelogstr") . "</a>";
+    $logstring = "<a href=\"showreport.php?reportID=$reportID&amp;tree=$tree\">" . xmlcharacters(_('Report') . ": {$rrow['reportname']}$treelogstr") . "</a>";
     writelog($logstring);
     preparebookmark($logstring);
 }
@@ -500,9 +500,9 @@ if ($csv) {
     tng_header($rrow['reportname'], $flags);
     ?>
 
-    <h2 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo "{$text['report']}: {$rrow['reportname']}"; ?></h2>
+    <h2 class="header"><span class="headericon" id="reports-hdr-icon"></span><?php echo "" . _('Report') . ": {$rrow['reportname']}"; ?></h2>
     <p>
-        <span class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $text['description'] . ": " . nl2br($rrow['reportdesc']); ?></span>
+        <span class="normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo _('Description') . ": " . nl2br($rrow['reportdesc']); ?></span>
     </p>
     <br style="clear: left;">
 
@@ -520,9 +520,9 @@ if ($csv) {
 if (!$result) {
     ?>
 
-    <p class="normal"><?php echo "<b>{$text['error']}:</b> {$text['reportsyntax']} (ID: {$rrow['reportID']}) {$text['wasincorrect']} "; ?>
+    <p class="normal"><?php echo "<b>" . _('Error') . ":</b> " . _('The syntax of the query run with this report') . " (ID: {$rrow['reportID']}) " . _('was incorrect, and as a result the report could not be run. Please contact the system administrator at') . " "; ?>
         <?php echo "<a href=\"mailto:$emailaddr\">$emailaddr</a>"; ?>.</p>
-    <p><?php echo $text['query'] . ": $query <br>{$text['errormessage']}:"; ?>
+    <p><?php echo _('Query') . ": $query <br>" . _('Error Message') . ":"; ?>
         <?php echo tng_error(); ?></p>
 
     <?php
@@ -552,7 +552,7 @@ if (!$result) {
 
         $numrowsplus = $numrows + $offset;
         if ($totrows) {
-            echo "<p>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows &nbsp; <a href=\"showreport.php?reportID=$reportID&csv=1&tree=$tree\" target='_blank' class='snlink rounded'>&raquo; {$text['csv']}</a></p>";
+            echo "<p>" . _('Matches') . " $offsetplus " . _('to') . " $numrowsplus " . _('of') . " $totrows &nbsp; <a href=\"showreport.php?reportID=$reportID&csv=1&tree=$tree\" target='_blank' class='snlink rounded'>&raquo; " . _('Comma-delimited CSV file') . "</a></p>";
         }
 
         $pagenav = get_browseitems_nav($totrows, "showreport.php?reportID=$reportID$testurl&amp;offset", $maxsearchresults, $max_browsesearch_pages);

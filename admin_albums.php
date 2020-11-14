@@ -67,65 +67,65 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("albums_help.php");
 
-tng_adminheader($admtext['albums'], $flags);
+tng_adminheader(_('Albums'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$albumtabs[0] = [1, "admin_albums.php", $admtext['search'], "findalbum"];
-$albumtabs[1] = [$allow_media_add, "admin_newalbum.php", $admtext['addnew'], "addalbum"];
-$albumtabs[2] = [$allow_media_edit, "admin_orderalbumform.php", $admtext['text_sort'], "sortalbums"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/albums_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$albumtabs[0] = [1, "admin_albums.php", _('Search'), "findalbum"];
+$albumtabs[1] = [$allow_media_add, "admin_newalbum.php", _('Add New'), "addalbum"];
+$albumtabs[2] = [$allow_media_edit, "admin_orderalbumform.php", _('Sort'), "sortalbums"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/albums_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($albumtabs, "findalbum", $innermenu);
-echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message);
+echo displayHeadline(_('Albums'), "img/albums_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
 
-                <form action="admin_albums.php" name="form1" id="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
-                            <td>
-                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
-                            </td>
-                            <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="align-top">
-                            </td>
-                        </tr>
-                    </table>
+                    <form action="admin_albums.php" name="form1" id="form1">
+                        <table>
+                            <tr>
+                                <td><span class="normal"><?php echo _('Search for'); ?>: </span></td>
+                                <td>
+                                    <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                                    <input type="submit" name="submit" value="<?php echo _('Reset'); ?>" onClick="document.form1.searchstring.value='';" class="align-top">
+                                </td>
+                            </tr>
+                        </table>
 
-                    <input type="hidden" name="findalbum" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                </form>
+                        <input type="hidden" name="findalbum" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                    </form>
 
-                <?php
-                $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) $offsetplus = 0;
-                ?>
-                <table class="normal">
-                    <tr>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['thumb']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['albumname'] . ", " . $admtext['description']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['albmedia']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['active']; ?>?</th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['linkedto']; ?></th>
-                    </tr>
                     <?php
-                    if ($numrows) {
-                    $actionstr = "";
-                    if ($allow_media_edit) {
-                        $actionstr .= "<a href=\"admin_editalbum.php?albumID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
-                    }
-                    if ($allow_media_delete) {
-                        $actionstr .= "<a href='#' onclick=\"if(confirm('{$admtext['confdeletealbum']}' )){deleteIt('album',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
-                    }
-                    $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
+                    $numrowsplus = $numrows + $offset;
+                    if (!$numrowsplus) $offsetplus = 0;
+                    ?>
+                    <table class="normal">
+                        <tr>
+                            <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Thumb'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Album Name') . ", " . _('Description'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Album Media'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Active'); ?>?</th>
+                            <th class="fieldnameback fieldname"><?php echo _('Linked to'); ?></th>
+                        </tr>
+                        <?php
+                        if ($numrows) {
+                        $actionstr = "";
+                        if ($allow_media_edit) {
+                            $actionstr .= "<a href=\"admin_editalbum.php?albumID=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
+                        }
+                        if ($allow_media_delete) {
+                            $actionstr .= "<a href='#' onclick=\"if(confirm('" . _('Are you sure you want to delete this album?') . "' )){deleteIt('album',xxx);} return false;\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
+                        }
+                        $actionstr .= "<a href=\"showalbum.php?albumID=xxx\" target='_blank' title=\"" . _('Test') . "\" class='smallicon admin-test-icon'></a>";
 
                     while ($row = tng_fetch_assoc($result)) {
                         $newactionstr = preg_replace("/xxx/", $row['albumID'], $actionstr);
@@ -138,7 +138,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         $query2 = "SELECT thumbpath, usecollfolder, mediatypeID ";
                         $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
                         $query2 .= "WHERE albumID = \"{$row['albumID']}\" AND media.mediaID = albumlinks.mediaID AND defphoto='1'";
-                        $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
+                        $result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
                         $trow = tng_fetch_assoc($result2);
                         $tmediatypeID = $trow['mediatypeID'];
                         $tusefolder = $trow['usecollfolder'] ? $mediatypes_assoc[$tmediatypeID] : $mediapath;
@@ -162,11 +162,11 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                         tng_free_result($cresult);
 
                         $editlink = "admin_editalbum.php?albumID={$row['albumID']}";
-                        $albumname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['albumname'] . "</a>" : "<u>" . $row['albumname'] . "</u>";
+                        $albumname = $allow_edit ? "<a href=\"$editlink\" title=\"" . _('Edit') . "\">" . $row['albumname'] . "</a>" : "<u>" . $row['albumname'] . "</u>";
 
                         echo "<td class='lightback normal'>$albumname<br>" . strip_tags($row['description']) . "</td>\n";
                         echo "<td class='lightback normal text-center'>$acount</td>\n";
-                        $active = $row['active'] ? $admtext['yes'] : $admtext['no'];
+                        $active = $row['active'] ? _('Yes') : _('No');
                         echo "<td class='lightback normal text-center'>$active</td>\n";
 
                         $query = "SELECT people.personID AS personID2, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.entityID AS personID, sources.title, sources.sourceID, repositories.repoID, reponame ";
@@ -190,13 +190,13 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
                             if ($prow['personID2'] != NULL) {
                                 $alinktext .= "<li>" . getName($prow) . " ({$prow['personID2']})</li>\n";
                             } elseif ($prow['sourceID'] != NULL) {
-                                $sourcetext = $prow['title'] ? "{$admtext['source']}: {$prow['title']}" : "{$admtext['source']}: {$prow['sourceID']}";
+                                $sourcetext = $prow['title'] ? "" . _('Source') . ": {$prow['title']}" : "" . _('Source') . ": {$prow['sourceID']}";
                                 $alinktext .= "<li>$sourcetext ({$prow['sourceID']})</li>\n";
                             } elseif ($prow['repoID'] != NULL) {
-                                $repotext = $prow['reponame'] ? "{$admtext['repository']}: {$prow['reponame']}" : "{$admtext['repository']}: {$prow['repoID']}";
+                                $repotext = $prow['reponame'] ? "" . _('Repository') . ": {$prow['reponame']}" : "" . _('Repository') . ": {$prow['repoID']}";
                                 $alinktext .= "<li>$repotext ({$prow['repoID']})</li>\n";
                             } elseif ($prow['familyID'] != NULL) {
-                                $alinktext .= "<li>{$admtext['family']}: " . getFamilyName($prow) . "</li>\n";
+                                $alinktext .= "<li>" . _('Family') . ": " . getFamilyName($prow) . "</li>\n";
                             } else {
                                 $alinktext .= "<li>{$prow['personID']}</li>";
                             }
@@ -214,7 +214,7 @@ echo displayHeadline($admtext['albums'], "img/albums_icon.gif", $menu, $message)
             echo "</div>";
             }
             else {
-                echo "</table>\n" . $admtext['norecords'];
+                echo "</table>\n" . _('No records exist.');
             }
             tng_free_result($result);
             ?>

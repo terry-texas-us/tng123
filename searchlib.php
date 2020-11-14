@@ -14,23 +14,23 @@ function buildColumn($qualifier, $column, $usevalue) {
     switch ($qualifier) {
         case "equals":
             $criteria .= "$column = \"$usevalue\"";
-            $qualifystr = $text['equals'];
+            $qualifystr = _('equals');
             break;
         case "startswith":
             $criteria .= "$column LIKE \"$usevalue%\"";
-            $qualifystr = $text['startswith'];
+            $qualifystr = _('starts with');
             break;
         case "endswith":
             $criteria .= "$column LIKE \"%$usevalue\"";
-            $qualifystr = $text['endswith'];
+            $qualifystr = _('ends with');
             break;
         case "exists":
             $criteria .= "$column != \"\"";
-            $qualifystr = $text['exists'];
+            $qualifystr = _('exists');
             break;
         case "dnexist":
             $criteria .= "$column = \"\"";
-            $qualifystr = $text['dnexist'];
+            $qualifystr = _('does not exist');
             break;
         case "soundexof":
             if (count(explode(" ", $usevalue)) > 1) {
@@ -38,7 +38,7 @@ function buildColumn($qualifier, $column, $usevalue) {
             } else {
                 $criteria .= "(SOUNDEX(SUBSTRING_INDEX($column, ' ', 1)) = SOUNDEX(\"$usevalue\") OR SOUNDEX(SUBSTRING_INDEX(TRIM($column), ' ', -1)) = SOUNDEX(\"$usevalue\"))";
             }
-            $qualifystr = $text['soundexof'];
+            $qualifystr = _('soundex of');
             break;
         case "metaphoneof":
             $metaphoneprefix = substr($column, 0, 1);
@@ -50,11 +50,11 @@ function buildColumn($qualifier, $column, $usevalue) {
                 $mcolumn = "metaphone";
             }
             $criteria .= "{$mcolumn} = \"" . metaphone($usevalue) . "\"";
-            $qualifystr = $text['metaphoneof'];
+            $qualifystr = _('metaphone of');
             break;
         default:
             $criteria .= "$column LIKE \"%$usevalue%\"";
-            $qualifystr = $text['contains'];
+            $qualifystr = _('contains');
             break;
     }
     $returnarray['criteria'] = $criteria;
@@ -93,48 +93,48 @@ function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier
     switch ($qualifier) {
         case "pm2":
             $criteria = "($yearstr1 < $numvalue + 2 AND $yearstr2 > $numvalue - 2)";
-            $qualifystr = $text['plusminus2'];
+            $qualifystr = _('+/- 2 years from');
             break;
         case "pm5":
             $criteria = "($yearstr1 < $numvalue + 5 AND $yearstr2 > $numvalue - 5)";
-            $qualifystr = $text['plusminus5'];
+            $qualifystr = _('+/- 5 years from');
             break;
         case "pm10":
             $criteria = "($yearstr1 < $numvalue + 10 AND $yearstr2 > $numvalue - 10)";
-            $qualifystr = $text['plusminus10'];
+            $qualifystr = _('+/- 10 years from');
             break;
         case "lt":
             $criteria = "($yearstr1 != \"\" AND $yearstr1 < \"$numvalue\")";
-            $qualifystr = $text['lessthan'];
+            $qualifystr = _('less than');
             break;
         case "gt":
             $criteria = "$yearstr1 > \"$numvalue\"";
-            $qualifystr = $text['greaterthan'];
+            $qualifystr = _('greater than');
             break;
         case "lte":
             $criteria = "($yearstr1 != \"\" AND $yearstr1 <= \"$numvalue\")";
-            $qualifystr = $text['lessthanequal'];
+            $qualifystr = _('less than or equal to');
             break;
         case "gte":
             $criteria = "$yearstr1 >= \"$numvalue\"";
-            $qualifystr = $text['greaterthanequal'];
+            $qualifystr = _('greater than or equal to');
             break;
         case "exists":
             $criteria = "YEAR($column) != \"\"";
             if ($altcolumn) {
                 $criteria = "($criteria OR YEAR($altcolumn) != \"\")";
             }
-            $qualifystr = $text['exists'];
+            $qualifystr = _('exists');
             break;
         case "dnexist":
             $criteria = "YEAR($column) = \"\"";
             if ($altcolumn) $criteria .= " AND YEAR($altcolumn) = \"\"";
-            
-            $qualifystr = $text['dnexist'];
+
+            $qualifystr = _('does not exist');
             break;
         default:
             $criteria = "$yearstr1 = '$value'";
-            $qualifystr = $text['equalto'];
+            $qualifystr = _('equal to');
             break;
     }
     addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value);
@@ -158,21 +158,20 @@ function addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qual
 
     if ($querystring) $querystring .= " $mybooltext ";
 
-
-    if ($textstr == $text['gender']) {
+    if ($textstr == _('Gender')) {
         switch ($value) {
             case "M":
-                $value = $text['male'];
+                $value = _('Male');
                 break;
             case "F":
-                $value = $text['female'];
+                $value = _('Female');
                 break;
             case "U":
-                $value = $text['unknown'];
+                $value = _('Unknown');
                 break;
             case "":
             case "N":
-                $value = $text['none'];
+                $value = _('No encryption');
                 break;
         }
     }
@@ -224,7 +223,7 @@ function doCustomEvents($type) {
                     $ecount++;
                 }
                 $tablepfx = "e$ecount.";
-                buildCriteria($tablepfx . "info", $cefstr, $cfqstr, $cfq, $cef, "$display ({$text['fact']})");
+                buildCriteria($tablepfx . "info", $cefstr, $cfqstr, $cfq, $cef, "$display (" . _('Fact') . ")");
                 $needce = 1;
             }
 
@@ -240,7 +239,7 @@ function doCustomEvents($type) {
                     $ecount++;
                 }
                 $tablepfx = "e$ecount.";
-                buildCriteria($tablepfx . "eventplace", $cepstr, $cpqstr, $cpq, $cep, "$display ({$text['place']})");
+                buildCriteria($tablepfx . "eventplace", $cepstr, $cpqstr, $cpq, $cep, "$display (" . _('Place') . ")");
                 $needce = 1;
             }
 
@@ -256,7 +255,7 @@ function doCustomEvents($type) {
                     $ecount++;
                 }
                 $tablepfx = "e$ecount.";
-                buildYearCriteria($tablepfx . "eventdatetr", $ceystr, $cyqstr, "", $cyq, $cey, "$display ({$text['year']})");
+                buildYearCriteria($tablepfx . "eventdatetr", $ceystr, $cyqstr, "", $cyq, $cey, "$display (" . _('Year') . ")");
                 $needce = 1;
             }
             if ($needce) {

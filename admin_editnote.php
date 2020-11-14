@@ -21,15 +21,15 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 <form action="" name="form3" onSubmit="return updateNote(this);">
     <div style="float:right;text-align:center;">
-        <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
-        <p><a href="#" onclick="gotoSection('editnote','notelist');"><?php echo $text['cancel']; ?></a></p>
+        <input type="submit" name="submit" class="btn" value="<?php echo _('Save'); ?>">
+        <p><a href="#" onclick="gotoSection('editnote','notelist');"><?php echo _('Cancel'); ?></a></p>
     </div>
-    <h3 class="subhead"><?php echo $admtext['modifynote']; ?> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></h3>
+    <h3 class="subhead"><?php echo _('Modify Note'); ?> |
+        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo _('Help for this area'); ?></a></h3>
 
     <table cellpadding="2" class="normal">
         <tr>
-            <td class='align-top'><?php echo $admtext['note']; ?>:</td>
+            <td class='align-top'><?php echo _('Note'); ?>:</td>
             <td><textarea cols="60" rows="25" name="note"><?php echo $row['note']; ?></textarea></td>
         </tr>
         <tr>
@@ -39,7 +39,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 echo "<input type='checkbox' name=\"private\" value='1'";
                 if ($row['secret']) echo " checked";
 
-                echo "> " . $admtext['text_private'];
+                echo "> " . _('Private');
                 ?>
             </td>
         </tr>

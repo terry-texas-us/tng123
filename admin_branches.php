@@ -9,7 +9,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if ($assignedbranch) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -97,99 +97,99 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("branches_help.php");
 
-tng_adminheader($admtext['branches'], $flags);
+tng_adminheader(_('Branches'), $flags);
 ?>
-<script>
-    function confirmDelete(ID, tree) {
-        if (confirm('<?php echo $admtext['confbranchdelete']; ?>'))
-            deleteIt('branch', ID, tree);
-        return false;
-    }
-</script>
+    <script>
+        function confirmDelete(ID, tree) {
+            if (confirm('<?php echo _('Are you sure you want to delete this branch?'); ?>'))
+                deleteIt('branch', ID, tree);
+            return false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
 echo tng_adminlayout();
 
-$branchtabs['0'] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
-$branchtabs['1'] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$branchtabs['0'] = [1, "admin_branches.php", _('Search'), "findbranch"];
+$branchtabs['1'] = [$allow_add, "admin_newbranch.php", _('Add New'), "addbranch"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($branchtabs, "findbranch", $innermenu);
-echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $message);
+echo displayHeadline(_('Branches'), "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
 
-                <form action="admin_branches.php" name="form1" id="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
-                            <td>
-                                <select name="tree">
-                                    <?php
-                                    if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
-                                    $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                                    while ($treerow = tng_fetch_assoc($treeresult)) {
-                                        echo "	<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) echo " selected";
+                    <form action="admin_branches.php" name="form1" id="form1">
+                        <table>
+                            <tr>
+                                <td><span class="normal"><?php echo _('Search for'); ?>: </span></td>
+                                <td>
+                                    <select name="tree">
+                                        <?php
+                                        if (!$assignedtree) echo "<option value=''>" . _('All Trees') . "</option>\n";
+                                        $treeresult = tng_query($treequery) or die (_('Cannot execute query') . ": $treequery");
+                                        while ($treerow = tng_fetch_assoc($treeresult)) {
+                                            echo "	<option value=\"{$treerow['gedcom']}\"";
+                                            if ($treerow['gedcom'] == $tree) echo " selected";
 
-                                        echo ">{$treerow['treename']}</option>\n";
-                                    }
-                                    tng_free_result($treeresult);
-                                    ?>
-                                </select>
-                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
-                            </td>
-                            <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0;"
-                                    class="align-top">
-                            </td>
-                        </tr>
-                    </table>
+                                            echo ">{$treerow['treename']}</option>\n";
+                                        }
+                                        tng_free_result($treeresult);
+                                        ?>
+                                    </select>
+                                    <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                                    <input type="submit" name="submit" value="<?php echo _('Reset'); ?>" onClick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0;"
+                                        class="align-top">
+                                </td>
+                            </tr>
+                        </table>
 
-                    <input type="hidden" name="findbranch" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                </form>
+                        <input type="hidden" name="findbranch" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                    </form>
 
-                <?php
+                    <?php
                 $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
                 ?>
-                <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php if ($allow_delete) { ?>
-                        <p>
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                            <input type="submit" name="xbranchaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
-                        </p>
-                    <?php } ?>
-                    <table class="normal">
-                        <tr class="fieldnameback fieldname whitespace-no-wrap">
-                            <th><?php echo $admtext['action']; ?></th>
-                            <?php if ($allow_delete) { ?>
-                                <th><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
-                            <?php } ?>
-                            <th><?php echo $admtext['id']; ?></th>
-                            <th><?php echo $admtext['description']; ?></th>
-                            <th><?php echo $admtext['tree']; ?></th>
-                            <th><?php echo $text['startingind']; ?></th>
-                            <th><?php echo $admtext['people']; ?></th>
-                            <th><?php echo $admtext['families']; ?></th>
-                        </tr>
+                    <form action="admin_deleteselected.php" method="post" name="form2">
+                        <?php if ($allow_delete) { ?>
+                            <p>
+                                <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                                <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">
+                                <input type="submit" name="xbranchaction" value="<?php echo _('Delete Selected'); ?>" onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">
+                            </p>
+                        <?php } ?>
+                        <table class="normal">
+                            <tr class="fieldnameback fieldname whitespace-no-wrap">
+                                <th><?php echo _('Action'); ?></th>
+                                <?php if ($allow_delete) { ?>
+                                    <th><span class="fieldname"><?php echo _('Select'); ?></span></th>
+                                <?php } ?>
+                                <th><?php echo _('ID'); ?></th>
+                                <th><?php echo _('Description'); ?></th>
+                                <th><?php echo _('Tree'); ?></th>
+                                <th><?php echo _('Starting Individual'); ?></th>
+                                <th><?php echo _('People'); ?></th>
+                                <th><?php echo _('Families'); ?></th>
+                            </tr>
 
-                        <?php
-                        if ($numrows) {
-                        $actionstr = "";
-                        if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" class='smallicon admin-edit-icon' title=\"{$admtext['edit']}\"></a>";
-                        }
-                        if ($allow_delete) {
-                            if (!$assignedtree) {
-                                $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"{$admtext['text_delete']}\" onClick=\"return confirmDelete('xxx','yyy');\"></a>";
+                            <?php
+                            if ($numrows) {
+                            $actionstr = "";
+                            if ($allow_edit) {
+                                $actionstr .= "<a href=\"admin_editbranch.php?branch=xxx&amp;tree=yyy\" class='smallicon admin-edit-icon' title=\"" . _('Edit') . "\"></a>";
+                            }
+                            if ($allow_delete) {
+                                if (!$assignedtree) {
+                                    $actionstr .= "<a href='#' class='smallicon admin-delete-icon' title=\"" . _('Delete') . "\" onClick=\"return confirmDelete('xxx','yyy');\"></a>";
                             }
                         }
 
@@ -201,7 +201,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                                 echo "<td class='lightback text-center'><input type='checkbox' name=\"del{$row['branch']}&{$row['gedcom']}\" value='1'></td>";
                             }
                             $editlink = "admin_editbranch.php?branch={$row['branch']}&tree={$row['gedcom']}";
-                            $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['branch'] . "</a>" : $row['branch'];
+                            $id = $allow_edit ? "<a href=\"$editlink\" title=\"" . _('Edit') . "\">" . $row['branch'] . "</a>" : $row['branch'];
 
                             echo "<td class='lightback' nowrap>&nbsp;$id&nbsp;</td>\n";
                             echo "<td class='lightback'>&nbsp;{$row['description']}</td>\n";
@@ -224,7 +224,7 @@ echo displayHeadline($admtext['branches'], "img/branches_icon.gif", $menu, $mess
                 echo "</div>";
                 }
                 else {
-                    echo $admtext['notrees'];
+                    echo _('No tree records exist');
                 }
                 ?>
 

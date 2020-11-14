@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit || !$allow_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -17,7 +17,7 @@ require "adminlog.php";
 $count = 0;
 
 $xdnaaction = stripslashes($xdnaaction);
-if ($xdnaaction == $admtext['deleteselected']) {
+if ($xdnaaction == _('Delete Selected')) {
     $query = "DELETE FROM $dna_tests_table WHERE 1=0";
 
     foreach (array_keys($_POST) as $key) {
@@ -27,7 +27,7 @@ if ($xdnaaction == $admtext['deleteselected']) {
             $query .= " OR testID=\"$testID\"";
 
             $aquery = "DELETE FROM $dna_links_table WHERE testID=\"$testID\"";
-            $aresult = tng_query($aquery) or die ($admtext['cannotexecutequery'] . ": $aquery");
+            $aresult = tng_query($aquery) or die (_('Cannot execute query') . ": $aquery");
 
         }
     }
@@ -35,11 +35,11 @@ if ($xdnaaction == $admtext['deleteselected']) {
     $result = tng_query($query);
 }
 
-adminwritelog($admtext['modifydna'] . ": " . $admtext['all']);
+adminwritelog(_('Edit Existing DNA Test') . ": " . _('All'));
 
 if ($count) {
-    $message = $admtext['changestoalldna'] . " {$admtext['succsaved']}.";
+    $message = _('Changes to all tests') . " " . _('were successfully saved') . ".";
 } else {
-    $message = $admtext['nochanges'];
+    $message = _('No changes were made.');
 }
 header("Location: admin_dna_tests.php?message=" . urlencode($message));

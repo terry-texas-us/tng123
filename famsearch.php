@@ -54,39 +54,39 @@ $fnamesort = "fnameup";
 $mnamesort = "mnameup";
 $orderloc = strpos($_SERVER['QUERY_STRING'], "&order=");
 $currargs = $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_SERVER['QUERY_STRING'];
-$mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
+$mybooltext = $mybool == "AND" ? _('AND') : _('OR');
 if ($order == "marr") {
     $orderstr = "marrdatetr, marrplace, father.lastname, father.firstname";
-    $marrsort = "<a href='famsearch.php?$currargs&order=marrup' class='lightlink'>{$text['married']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
+    $marrsort = "<a href='famsearch.php?$currargs&order=marrup' class='lightlink'>" . _('Married') . " <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $marrsort = "<a href='famsearch.php?$currargs&order=marr' class='lightlink'>{$text['married']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
+    $marrsort = "<a href='famsearch.php?$currargs&order=marr' class='lightlink'>" . _('Married') . " <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "marrup") {
         $orderstr = "marrdatetr DESC, marrplace DESC, father.lastname, father.firstname";
     }
 }
 if ($order == "div") {
     $orderstr = "divdatetr, divplace, father.lastname, father.firstname, marrdatetr";
-    $divsort = "<a href='famsearch.php?$currargs&order=divup' class='lightlink'>{$text['divorced']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
+    $divsort = "<a href='famsearch.php?$currargs&order=divup' class='lightlink'>" . _('Divorced') . " <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $divsort = "<a href='famsearch.php?$currargs&order=div' class='lightlink'>{$text['divorced']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
+    $divsort = "<a href='famsearch.php?$currargs&order=div' class='lightlink'>" . _('Divorced') . " <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "divup") {
         $orderstr = "divdatetr DESC, divplace DESC, father.lastname, father.firstname, marrdatetr";
     }
 }
 if ($order == "fname") {
     $orderstr = "father.lastname, father.firstname, marrdatetr";
-    $fnamesort = "<a href='famsearch.php?$currargs&order=fnameup' class='lightlink'>{$text['fathername']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
+    $fnamesort = "<a href='famsearch.php?$currargs&order=fnameup' class='lightlink'>{_('Father\'s Name')} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $fnamesort = "<a href='famsearch.php?$currargs&order=fname' class='lightlink'>{$text['fathername']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
+    $fnamesort = "<a href='famsearch.php?$currargs&order=fname' class='lightlink'>{_('Father\'s Name')} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "fnameup") {
         $orderstr = "father.lastname DESC, father.firstname DESC, marrdatetr";
     }
 }
 if ($order == "mname") {
     $orderstr = "mother.lastname, mother.firstname, marrdatetr";
-    $mnamesort = "<a href='famsearch.php?$currargs&order=mnameup' class='lightlink'>{$text['mothername']} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
+    $mnamesort = "<a href='famsearch.php?$currargs&order=mnameup' class='lightlink'>{_('Mother\'s Name')} <img src='img/tng_sort_desc.gif' alt='' class='inline-block sortimg'></a>";
 } else {
-    $mnamesort = "<a href='famsearch.php?$currargs&order=mname' class='lightlink'>{$text['mothername']} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
+    $mnamesort = "<a href='famsearch.php?$currargs&order=mname' class='lightlink'>{_('Mother\'s Name')} <img src='img/tng_sort_asc.gif' alt='' class='inline-block sortimg'></a>";
     if ($order == "mnameup") {
         $orderstr = "mother.lastname DESC, mother.firstname DESC, marrdatetr";
     }
@@ -123,46 +123,46 @@ function buildCriteria($column, $colvar, $qualifyvar, $qualifier, $value, $texts
 $querystring = "";
 $allwhere = "";
 if ($myflastname || $flnqualify == "exists" || $flnqualify == "dnexist") {
-    if ($myflastname == $text['nosurname']) {
-        addtoQuery("lastname", "myflastname", "father.lastname = \"\"", "flnqualify", $text['equals'], $text['equals'], $myflastname);
+    if ($myflastname == _('[no surname]')) {
+        addtoQuery("lastname", "myflastname", "father.lastname = \"\"", "flnqualify", _('equals'), _('equals'), $myflastname);
     } else {
-        buildCriteria("father.lastname", "myflastname", "flnqualify", $flnqualify, $myflastname, $text['lastname']);
+        buildCriteria("father.lastname", "myflastname", "flnqualify", $flnqualify, $myflastname, _('Last Name'));
     }
 }
 if ($myffirstname || $ffnqualify == "exists" || $ffnqualify == "dnexist") {
-    buildCriteria("father.firstname", "myffirstname", "ffnqualify", $ffnqualify, $myffirstname, $text['firstname']);
+    buildCriteria("father.firstname", "myffirstname", "ffnqualify", $ffnqualify, $myffirstname, _('First Name'));
 }
 if ($mymlastname || $mlnqualify == "exists" || $mlnqualify == "dnexist") {
-    if ($mymlastname == $text['nosurname']) {
-        addtoQuery("lastname", "mymlastname", "mother.lastname = \"\"", "mlnqualify", $text['equals'], $text['equals'], $mymlastname);
+    if ($mymlastname == _('[no surname]')) {
+        addtoQuery("lastname", "mymlastname", "mother.lastname = \"\"", "mlnqualify", _('equals'), _('equals'), $mymlastname);
     } else {
-        buildCriteria("mother.lastname", "mymlastname", "mlnqualify", $mlnqualify, $mymlastname, $text['lastname']);
+        buildCriteria("mother.lastname", "mymlastname", "mlnqualify", $mlnqualify, $mymlastname, _('Last Name'));
     }
 }
 if ($mymfirstname || $mfnqualify == "exists" || $mfnqualify == "dnexist") {
-    buildCriteria("mother.firstname", "mymfirstname", "mfnqualify", $mfnqualify, $mymfirstname, $text['firstname']);
+    buildCriteria("mother.firstname", "mymfirstname", "mfnqualify", $mfnqualify, $mymfirstname, _('First Name'));
 }
 if ($myfamilyid) {
     $myfamilyid = strtoupper($myfamilyid);
     if ($fidqualify == "equals" && is_numeric($myfamilyid)) {
         $myfamilyid = $familyprefix . $myfamilyid . $familysuffix;
     }
-    buildCriteria("familyID", "myfamilyid", "fidqualify", $fidqualify, $myfamilyid, $text['familyid']);
+    buildCriteria("familyID", "myfamilyid", "fidqualify", $fidqualify, $myfamilyid, _('Family ID'));
 }
 if ($mymarrplace || $mpqualify == "exists" || $mpqualify == "dnexist") {
-    buildCriteria("marrplace", "mymarrplace", "mpqualify", $mpqualify, $mymarrplace, $text['marrplace']);
+    buildCriteria("marrplace", "mymarrplace", "mpqualify", $mpqualify, $mymarrplace, _('Marriage Place'));
 }
 if ($mymarryear || $myqualify == "exists" || $myqualify == "dnexist") {
-    buildYearCriteria("marrdatetr", "mymarryear", "myqualify", "", $myqualify, $mymarryear, $text['marrdatetr']);
+    buildYearCriteria("marrdatetr", "mymarryear", "myqualify", "", $myqualify, $mymarryear, _('Marriage Year'));
 }
 if ($mydivplace || $dvpqualify == "exists" || $dvpqualify == "dnexist") {
-    buildCriteria("divplace", "mydivplace", "dvpqualify", $dvpqualify, $mydivplace, $text['divplace']);
+    buildCriteria("divplace", "mydivplace", "dvpqualify", $dvpqualify, $mydivplace, _('Divorce Place'));
 }
 if ($mydivyear || $dvyqualify == "exists" || $dvyqualify == "dnexist") {
-    buildYearCriteria("divdatetr", "mydivyear", "dvyqualify", "", $dvyqualify, $mydivyear, $text['divdatetr']);
+    buildYearCriteria("divdatetr", "mydivyear", "dvyqualify", "", $dvyqualify, $mydivyear, _('Divorce Date (True)'));
 }
 if ($mymarrtype || $mtqualify == "exists" || $mtqualify == "dnexist") {
-    buildCriteria("marrtype", "mymarrtype", "mtqualify", $mtqualify, $mymarrtype, $text['marrtype']);
+    buildCriteria("marrtype", "mymarrtype", "mtqualify", $mtqualify, $mymarrtype, _('Marriage Type'));
 }
 $dontdo = ["MARR", "DIV"];
 $cejoin = doCustomEvents("F");
@@ -171,17 +171,17 @@ if ($tree) {
     $urlstring .= "tree=$tree";
     if ($querystring) $querystring .= " AND ";
     $treerow = getTree($trees_table, $tree);
-    $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
+    $querystring .= _('Tree') . " " . _('equals') . " {$treerow['treename']}";
     if ($allwhere) $allwhere = "($allwhere) AND";
     $allwhere .= " f.gedcom = '$tree'";
     if ($branch) {
         $urlstring .= "&amp;branch=$branch";
-        $querystring .= " {$text['cap_and']} ";
+        $querystring .= " " . _('AND') . " ";
         $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = '$branch'";
         $branchresult = tng_query($query);
         $branchrow = tng_fetch_assoc($branchresult);
         tng_free_result($branchresult);
-        $querystring .= $text['branch'] . " {$text['equals']} {$branchrow['description']}";
+        $querystring .= _('Branch') . " " . _('equals') . " {$branchrow['description']}";
         $allwhere .= " AND f.branch like \"%$branch%\"";
     }
 }
@@ -196,7 +196,7 @@ if ($more) {
 }
 if ($allwhere) {
     $allwhere = "WHERE " . $allwhere . " AND ";
-    $querystring = "{$text['text_for']} $querystring";
+    $querystring = "" . _('for') . " $querystring";
 } else {
     $allwhere = "WHERE ";
 }
@@ -229,7 +229,7 @@ $families = tng_fetch_all($result);
 tng_free_result($result);
 $numrows = count($families);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
+    $result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
     $countrow = tng_fetch_assoc($result2);
     $totrows = $countrow['fcount'];
     tng_free_result($result2);
@@ -237,22 +237,22 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 if (!$numrows) {
-    $msg = $text['noresults'] . " $querystring. " . $text['tryagain'] . ".";
+    $msg = _('No results found. Please try again.') . " $querystring. " . _('Please try again') . ".";
     header("Location: famsearchform.php?msg=" . urlencode($msg));
     exit;
 }
-tng_header($text['searchresults'], $flags);
-$logstring = "<a href=\"famsearch.php?{$_SERVER['QUERY_STRING']}\">" . xmlcharacters($text['searchresults'] . " $querystring") . "</a>";
+tng_header(_('Search Results'), $flags);
+$logstring = "<a href=\"famsearch.php?{$_SERVER['QUERY_STRING']}\">" . xmlcharacters(_('Search Results') . " $querystring") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 $numrowsplus = $numrows + $offset;
 ?>
-    <h2 class="mb-4 header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo $text['searchresults']; ?><br><small class='ml-4'><?php echo $querystring; ?></small></h2>
+    <h2 class="mb-4 header"><span class="headericon" id="fsearch-hdr-icon"></span><?php echo _('Search Results'); ?><br><small class='ml-4'><?php echo $querystring; ?></small></h2>
     <table class='w-11/12 mx-auto whiteback'>
         <thead>
         <tr>
             <th class="p-2 fieldnameback nbrcol"><span class="fieldname"># </span></th>
-            <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['family']; ?></th>
+            <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo _('Family'); ?></th>
             <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $fnamesort; ?></th>
             <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $mnamesort; ?></th>
             <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $marrsort; ?></th>
@@ -260,7 +260,7 @@ $numrowsplus = $numrows + $offset;
                 <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $divsort; ?></th>
             <?php } ?>
             <?php if ($numtrees > 1) { ?>
-                <th class="hidden p-2 whitespace-no-wrap lg:table-cell fieldnameback fieldname"><?php echo $text['tree']; ?></th>
+                <th class="hidden p-2 whitespace-no-wrap lg:table-cell fieldnameback fieldname"><?php echo _('Tree'); ?></th>
             <?php } ?>
         </tr>
         </thead>

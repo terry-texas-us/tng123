@@ -10,7 +10,7 @@ if ($link) {
     include "version.php";
 
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -30,7 +30,7 @@ while ($row = tng_fetch_assoc($result)) {
 tng_free_result($result);
 
 $treequery = "SELECT gedcom, treename FROM $trees_table ORDER BY treename";
-$treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+$treeresult = tng_query($treequery) or die (_('Cannot execute query') . ": $treequery");
 $treenum = 0;
 while ($treerow = tng_fetch_assoc($treeresult)) {
     $treenum++;
@@ -41,7 +41,7 @@ tng_free_result($treeresult);
 
 $helplang = findhelp("templateconfig_help.php");
 
-tng_adminheader($admtext['modifytemplatesettings'], $flags);
+tng_adminheader(_('Modify Template Configuration Settings'), $flags);
 ?>
     <script src="js/mediautils.js"></script>
     <script src="js/selectutils.js"></script>
@@ -78,7 +78,7 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
         }
 
         function showUploadBox(key, folder) {
-            jQuery('#div_' + key).html("<input type=\"file\" name=\"upload_" + key + "\" onchange=\"populateFileName(this,jQuery('#form_" + key + "'));\"> <?php echo $admtext['text_or']; ?> <input type='button' value=\"<?php echo $admtext['select']; ?>\" name=\"photoselect_" + key + "\" onclick=\"javascript:FilePicker('form_" + key + "','" + folder + "');\" >");
+            jQuery('#div_' + key).html("<input type=\"file\" name=\"upload_" + key + "\" onchange=\"populateFileName(this,jQuery('#form_" + key + "'));\"> <?php echo _('OR'); ?> <input type='button' value=\"<?php echo _('Select'); ?>\" name=\"photoselect_" + key + "\" onclick=\"javascript:FilePicker('form_" + key + "','" + folder + "');\" >");
             jQuery('#div_' + key).toggle();
             return false;
         }
@@ -122,45 +122,45 @@ tng_adminheader($admtext['modifytemplatesettings'], $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
-$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
-$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
-$setuptabs[3] = [1, "#", $admtext['templateconfigsettings'], "template"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/templateconfig_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$setuptabs[0] = [1, "admin_setup.php", _('Configuration'), "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", _('Diagnostics'), "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", _('Table Creation'), "tablecreation"];
+$setuptabs[3] = [1, "#", _('Template Settings'), "template"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/templateconfig_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($setuptabs, "template", $innermenu);
-echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['templateconfigsettings'], "img/setup_icon.gif", $menu, "");
+echo displayHeadline(_('Setup') . " &gt;&gt; " . _('Configuration') . " &gt;&gt; " . _('Template Settings'), "img/setup_icon.gif", $menu, "");
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form name="formtop1">
-                <label for="form_templateswitching"><?php echo $admtext['templateswitching']; ?>:</label>
-                <select name="form_templateswitching" id="form_templateswitching">
-                    <option value="0"<?php if (!$templateswitching) {
-                        echo " selected";
-                    } ?>><?php echo $admtext['no']; ?></option>
-                    <option value="1"<?php if ($templateswitching) {
-                        echo " selected";
-                    } ?>><?php echo $admtext['yes']; ?></option>
-                </select>
-            </form>
-        </td>
-    </tr>
-    <tr class="databack">
-        <td class="tngshadow">
-            <form name="formtop2">
-                <label for="form_templatenum"><b><?php echo $admtext['template']; ?>:</b></label>
-                <?php
-                chdir($rootpath . $endrootpath . TEMPLATES_PATH);
-                $totaltemplates = 0;
-                $sections = [];
-                $entries = [];
-                $folders = [];
-                if ($handle = @opendir('.')) {
-                    while ($filename = readdir($handle)) {
-                        if (is_dir($filename) && $filename != "." && $filename != "..") {
-                            $i = substr($filename, 0, 8) == "template" && is_numeric(substr($filename, 8)) ? substr($filename, 8) : $filename;
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <form name="formtop1">
+                    <label for="form_templateswitching"><?php echo _('Enable Template Selection'); ?>:</label>
+                    <select name="form_templateswitching" id="form_templateswitching">
+                        <option value="0"<?php if (!$templateswitching) {
+                            echo " selected";
+                        } ?>><?php echo _('No'); ?></option>
+                        <option value="1"<?php if ($templateswitching) {
+                            echo " selected";
+                        } ?>><?php echo _('Yes'); ?></option>
+                    </select>
+                </form>
+            </td>
+        </tr>
+        <tr class="databack">
+            <td class="tngshadow">
+                <form name="formtop2">
+                    <label for="form_templatenum"><b><?php echo _('Template'); ?>:</b></label>
+                    <?php
+                    chdir($rootpath . $endrootpath . TEMPLATES_PATH);
+                    $totaltemplates = 0;
+                    $sections = [];
+                    $entries = [];
+                    $folders = [];
+                    if ($handle = @opendir('.')) {
+                        while ($filename = readdir($handle)) {
+                            if (is_dir($filename) && $filename != "." && $filename != "..") {
+                                $i = substr($filename, 0, 8) == "template" && is_numeric(substr($filename, 8)) ? substr($filename, 8) : $filename;
                             $totaltemplates++;
                             $sections['t' . $i] = "";
                             $entries[] = $i;
@@ -179,22 +179,22 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         echo "<option value=\"$entry\"";
                         if ($templatenum == $entry) echo " selected";
 
-                        $tprefix = is_numeric($entry) ? $admtext['template'] . " " : "";
+                        $tprefix = is_numeric($entry) ? _('Template') . " " : "";
                         echo ">$tprefix$entry</option>\n";
                     }
                     ?>
                 </select>
-                <button id="previewbtn"><span class="prevmsg"><?php echo $admtext['showprev']; ?></span><span class="prevmsg" style="display:none;"><?php echo $admtext['hideprev']; ?></span></button>
-            </form>
+                    <button id="previewbtn"><span class="prevmsg"><?php echo _('Show Previews'); ?></span><span class="prevmsg" style="display:none;"><?php echo _('Hide Previews'); ?></span></button>
+                </form>
 
-            <div style="display:none;" id="previewscroll" class="scroller">
-                <br>
-                <div style="position:absolute;">
-                    <?php
-                    foreach ($entries as $i) {
-                        $newtemplatepfx = is_numeric($i) ? "template" : "";
-                        echo "<div class='prevdiv' id=\"prev$i\"><span class='prevnum'>$i:</span>";
-                        if (file_exists("{$rootpath}{$endrootpath}templates/$newtemplatepfx$i/img/preview1sm.jpg")) {
+                <div style="display:none;" id="previewscroll" class="scroller">
+                    <br>
+                    <div style="position:absolute;">
+                        <?php
+                        foreach ($entries as $i) {
+                            $newtemplatepfx = is_numeric($i) ? "template" : "";
+                            echo "<div class='prevdiv' id=\"prev$i\"><span class='prevnum'>$i:</span>";
+                            if (file_exists("{$rootpath}{$endrootpath}templates/$newtemplatepfx$i/img/preview1sm.jpg")) {
                             echo "<img src=\"templates/$newtemplatepfx$i/img/preview1sm.jpg\" class='temppreview mx-2' alt=''>";
                         }
                         if (file_exists("{$rootpath}{$endrootpath}templates/$newtemplatepfx$i/img/preview2sm.jpg")) {
@@ -255,15 +255,15 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     $sections[$n] .= "<input type='radio' name=\"form_$key\" id=\"form_{$key}_image\" value=\"image\"";
                     if ($value == "image") $sections[$n] .= " checked";
 
-                    $sections[$n] .= "> <label for=\"form_{$key}_image\">{$admtext['ttitleimage']}</label> &nbsp;";
+                    $sections[$n] .= "> <label for=\"form_{$key}_image\">" . _('Image') . "</label> &nbsp;";
                     $sections[$n] .= "<input type='radio' name=\"form_$key\" id=\"form_{$key}_text\" value=\"text\"";
                     if ($value == "text") $sections[$n] .= " checked";
 
-                    $sections[$n] .= "> <label for=\"form_{$key}_text\">{$admtext['ttitletext']}</label> &nbsp;";
+                    $sections[$n] .= "> <label for=\"form_{$key}_text\">" . _('Text') . "</label> &nbsp;";
                 } else {
                     $sections[$n] .= "<input type='text' class='longfield' name=\"form_$key\" id=\"form_$key\" value='$value'>\n";
                     if (strpos($key, "img") !== false || strpos($key, "image") !== false || strpos($key, "thumb") !== false || strpos($key, "photol") !== false || strpos($key, "photor") !== false) {
-                        $sections[$n] .= " <input type='button' onclick=\"if(jQuery('#form_$key').val()) return preview('templates/{$folders[$n]}/' + jQuery('#form_$key').val());\" value=\"{$admtext['preview']}\"> <input type='button' onclick=\"return showUploadBox('$key','{$folders[$n]}');\" value=\"{$admtext['change']}\" >\n";
+                        $sections[$n] .= " <input type='button' onclick=\"if(jQuery('#form_$key').val()) return preview('templates/{$folders[$n]}/' + jQuery('#form_$key').val());\" value=\"" . _('Preview') . "\"> <input type='button' onclick=\"return showUploadBox('$key','{$folders[$n]}');\" value=\"" . _('Change') . "\" >\n";
                         $size = @GetImageSize($rootpath . "templates/{$folders[$n]}/$value");
                         if ($size) {
                             $imagesize1 = $size[0];
@@ -273,15 +273,15 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         $sections[$n] .= "<div id=\"div_$key\" style='display: none;'></div>";
                     } elseif (substr($label, -6) == "person") {
                         $treefield = str_replace("person", "tree", $key);
-                        $sections[$n] .= "<a href='#' onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"{$admtext['find']}\">\n";
-                        $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" class='align-middle' width='20' height='20' style='margin-left:2px; margin-bottom:4px;'>\n";
+                        $sections[$n] .= "<a href='#' onclick=\"return findItem('I','form_{$key}','',$('#form_{$treefield}').val(),'');\" title=\"" . _('Find...') . "\">\n";
+                        $sections[$n] .= "<img src=\"img/tng_find.gif\" title=\"" . _('Find...') . "\" alt=\"" . _('Find...') . "\" class='align-middle' width='20' height='20' style='margin-left:2px; margin-bottom:4px;'>\n";
                         $sections[$n] .= "</a>\n";
                     }
                 }
                 if ($languageList && !isset($parts[2]) && in_array($label, $needtrans)) {
                     if ($type == "textarea") $sections[$n] .= "<br>";
 
-                    $sections[$n] .= "{$admtext['createcopy']}: \n<select id=\"lang_$key\">\n$languageList\n</select> <input type='button' value=\"{$admtext['go']}\" onclick=\"return insertLangRow('$key','$type');\" >\n";
+                    $sections[$n] .= "" . _('Create copy in') . ": \n<select id=\"lang_$key\">\n$languageList\n</select> <input type='button' value=\"" . _('Go') . "\" onclick=\"return insertLangRow('$key','$type');\" >\n";
                 }
                 $sections[$n] .= "</td>\n</tr>\n";
             }
@@ -301,12 +301,12 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         $imagetext .= "<img src=\"templates/$newtemplatepfx$i/img/preview2.jpg\" id='preview2' class='temppreview mx-2' alt=''>\n";
                     }
                     if ($imagetext) echo "$imagetext<br>";
-                    echo "<p><input type='submit' name='submittop' accesskey='s' value=\"{$admtext['save']}\"></p>\n";
-                    echo "<p><strong>{$admtext['folder']}: templates/" . $folders['t' . $i] . "</strong></p>";
+                    echo "<p><input type='submit' name='submittop' accesskey='s' value=\"" . _('Save') . "\"></p>\n";
+                    echo "<p><strong>" . _('Folder') . ": templates/" . $folders['t' . $i] . "</strong></p>";
                     echo "<table class='tstable normal'>\n";
                     echo "$section";
                     echo "</table>\n";
-                    echo "<br><input type='submit' name='submit' accesskey='s' class='btn' value=\"{$admtext['save']}\">\n";
+                    echo "<br><input type='submit' name='submit' accesskey='s' class='btn' value=\"" . _('Save') . "\">\n";
                     echo "<input type='hidden' name='form_templateswitching' value=''>\n";
                     echo "<input type='hidden' name='form_templatenum' value=''>\n";
                     echo "</form>\n";

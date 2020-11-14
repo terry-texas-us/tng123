@@ -35,9 +35,9 @@ $row['allow_private'] = $rights['private'];
 
 $namestr = getName($row);
 
-$logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
+$logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $namestr);
 
-writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
+writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">" . _('Individual info for') . " $logname ($personID)</a>");
 
 $events = [];
 echo api_person($row, $fullevents);

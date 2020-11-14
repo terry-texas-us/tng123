@@ -32,15 +32,15 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 $numrowsplus = $numrows + $offset;
-tng_header($text['trees'], $flags);
+tng_header(_('Trees'), $flags);
 ?>
-<h2 class="mb-4 header"><span class="headericon" id="trees-hdr-icon"></span><?php echo $text['trees']; ?></h2>
+<h2 class="mb-4 header"><span class="headericon" id="trees-hdr-icon"></span><?php echo _('Trees'); ?></h2>
 
 <div class='mb-4 normal'>
     <form name="treesearch1" action="browsetrees.php" method="get">
-        <label for="treesearch" hidden><?php echo $text['search']; ?></label>
+        <label for="treesearch" hidden><?php echo _('Search'); ?></label>
         <input id="treesearch" class="p-1 ml-1" name="treesearch" type="search" value="<?php echo $treesearch; ?>">
-        <input class="p-1 px-2" type="submit" value="<?php echo $text['search']; ?>">
+        <input class="p-1 px-2" type="submit" value="<?php echo _('Search'); ?>">
         <input name='tree' type='hidden' value="<?php echo $tree; ?>">
     </form>
 </div>
@@ -57,11 +57,11 @@ tng_header($text['trees'], $flags);
         <thead>
         <tr>
             <th class="p-2 fieldnameback nbrcol fieldname">#</th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['treename']; ?></th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['description']; ?></th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['individuals']; ?></th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['families']; ?></th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['sources']; ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('Tree Name'); ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('Description'); ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('individuals'); ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('Families'); ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('Sources'); ?></th>
             <?php
             $trees = explode(',', $_SESSION['availabletrees']);
             $numtrees = count($trees);
@@ -94,9 +94,9 @@ tng_header($text['trees'], $flags);
             if ($numtrees > 1) {
                 echo "<td class='text-right p-2databack'>";
                 if ($row['gedcom'] == $assignedtree) {
-                    echo $admtext['active'];
+                    echo _('Active');
                 } elseif (in_array($row['gedcom'], $trees)) {
-                    echo "<a href=\"switchtree.php?newtree={$row['gedcom']}&ret={$homepage}\">{$text['switch']}</a>";
+                    echo "<a href=\"switchtree.php?newtree={$row['gedcom']}&ret={$homepage}\">" . _('Switch') . "</a>";
                 }
                 echo "</td>";
             }

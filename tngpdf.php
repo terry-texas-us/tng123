@@ -348,7 +348,7 @@ $origlMargin = $this->lMargin;
             $h2 = $this->FontSize;
 
             //build up our footer text
-            $txt = "{$text['maintby']} $dbowner";
+            $txt = "" . _('Maintained by') . " $dbowner";
             if ($sitename != '') $txt = "$sitename - $txt";
 
 
@@ -360,7 +360,7 @@ $origlMargin = $this->lMargin;
             $this->SetY((-1 * $footerConfig['bMargin']) - $h1);
             $this->Cell(0, $h1, $tngdomain, 0, 0, 'L');
             if ($footerConfig['printWordPage'] == true) {
-                $pagetext = $text['page'] . ' ';
+                $pagetext = _('Page') . ' ';
             }
             $pagetext .= $this->page;
             $this->Cell(0, $h1, $pagetext, 0, 0, 'R');

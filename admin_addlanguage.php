@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedtree || !$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -20,7 +20,7 @@ $params = [&$template, &$display, &$folder, &$langcharset, &$langnorels];
 tng_execute($query, $params);
 $languageID = tng_insert_id();
 
-adminwritelog("<a href=\"admin_editlanguage.php?languageID=$languageID\">{$admtext['addnewlanguage']}: $display/$folder</a>");
+adminwritelog("<a href=\"admin_editlanguage.php?languageID=$languageID\">" . _('Add New Language') . ": $display/$folder</a>");
 
-$message = $admtext['language'] . " $display {$admtext['succadded']}.";
+$message = _('Language') . " $display " . _('was successfully added') . ".";
 header("Location: admin_languages.php?message=" . urlencode($message));

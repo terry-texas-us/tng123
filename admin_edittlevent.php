@@ -17,49 +17,49 @@ $row['evdetail'] = preg_replace("/\"/", "&#34;", $row['evdetail']);
 
 $helplang = findhelp("tlevents_help.php");
 
-tng_adminheader($admtext['modifytlevent'], $flags);
+tng_adminheader(_('Edit Existing Timeline Event'), $flags);
 ?>
-<script>
-    function validateForm() {
-        let rval = true;
-        if (document.form1.evyear.value.length == 0) {
-            alert("<?php echo $admtext['enterevyear']; ?>");
-            rval = false;
-        } else if (document.form1.evdetail.value.length == 0) {
-            alert("<?php echo $admtext['enterevdetail']; ?>");
-            rval = false;
-        } else if (document.form1.endyear.value.length == 0 && (document.form1.endmonth.selectedIndex > 0 || document.form1.endday.selectedIndex > 0)) {
-            alert("If you enter a day or month for the ending date, you must also enter an ending year.");
-            rval = false;
-        } else if ((document.form1.evday.selectedIndex > 0 && document.form1.evmonth.selectedIndex <= 0) || (document.form1.endday.selectedIndex > 0 && document.form1.endmonth.selectedIndex <= 0)) {
-            alert("If you select a day, you must also select a month.");
-            rval = false;
-        } else if (document.form1.endyear.value && parseInt(document.form1.endyear.value) < parseInt(document.form1.evyear.value)) {
-            alert("Ending year is less than beginning year.");
-            rval = false;
+    <script>
+        function validateForm() {
+            let rval = true;
+            if (document.form1.evyear.value.length == 0) {
+                alert("<?php echo _('Please enter the event year.'); ?>");
+                rval = false;
+            } else if (document.form1.evdetail.value.length == 0) {
+                alert("<?php echo _('Please enter the event detail.'); ?>");
+                rval = false;
+            } else if (document.form1.endyear.value.length == 0 && (document.form1.endmonth.selectedIndex > 0 || document.form1.endday.selectedIndex > 0)) {
+                alert("If you enter a day or month for the ending date, you must also enter an ending year.");
+                rval = false;
+            } else if ((document.form1.evday.selectedIndex > 0 && document.form1.evmonth.selectedIndex <= 0) || (document.form1.endday.selectedIndex > 0 && document.form1.endmonth.selectedIndex <= 0)) {
+                alert("If you select a day, you must also select a month.");
+                rval = false;
+            } else if (document.form1.endyear.value && parseInt(document.form1.endyear.value) < parseInt(document.form1.evyear.value)) {
+                alert("Ending year is less than beginning year.");
+                rval = false;
+            }
+            return rval;
         }
-        return rval;
-    }
-</script>
+    </script>
 
 <?php
 echo "</head>\n";
 echo tng_adminlayout();
 
-$timelinetabs[0] = [1, "admin_timelineevents.php", $admtext['search'], "findtlevent"];
-$timelinetabs[1] = [$allow_add, "admin_newtlevent.php", $admtext['addnew'], "addtlevent"];
-$timelinetabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/tlevents_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+$timelinetabs[0] = [1, "admin_timelineevents.php", _('Search'), "findtlevent"];
+$timelinetabs[1] = [$allow_add, "admin_newtlevent.php", _('Add New'), "addtlevent"];
+$timelinetabs[2] = [$allow_edit, "#", _('Edit'), "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/tlevents_help.php#add');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($timelinetabs, "edit", $innermenu);
-echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['modifytlevent'], "img/tlevents_icon.gif", $menu, "");
+echo displayHeadline(_('Timeline Events') . " &gt;&gt; " . _('Edit Existing Timeline Event'), "img/tlevents_icon.gif", $menu, "");
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updatetlevent.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-                <table class="normal">
-                    <?php
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <form action="admin_updatetlevent.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+                    <table class="normal">
+                        <?php
                     function doEventRow($label, $row, $dayname, $monthname, $yearname, $help) {
                         global $dates;
                         ?>
@@ -81,40 +81,40 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['modifytleve
                                     <option value=""></option>
                                     <option value="1"<?php if ($row[$monthname] == 1) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['JAN']; ?></option>
+                                    } ?>><?php echo _('Jan'); ?></option>
                                     <option value="2"<?php if ($row[$monthname] == 2) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['FEB']; ?></option>
+                                    } ?>><?php echo _('Feb'); ?></option>
                                     <option value="3"<?php if ($row[$monthname] == 3) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['MAR']; ?></option>
+                                    } ?>><?php echo _('Mar'); ?></option>
                                     <option value="4"<?php if ($row[$monthname] == 4) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['APR']; ?></option>
+                                    } ?>><?php echo _('Apr'); ?></option>
                                     <option value="5"<?php if ($row[$monthname] == 5) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['MAY']; ?></option>
+                                    } ?>><?php echo _('May'); ?></option>
                                     <option value="6"<?php if ($row[$monthname] == 6) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['JUN']; ?></option>
+                                    } ?>><?php echo _('Jun'); ?></option>
                                     <option value="7"<?php if ($row[$monthname] == 7) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['JUL']; ?></option>
+                                    } ?>><?php echo _('Jul'); ?></option>
                                     <option value="8"<?php if ($row[$monthname] == 8) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['AUG']; ?></option>
+                                    } ?>><?php echo _('Aug'); ?></option>
                                     <option value="9"<?php if ($row[$monthname] == 9) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['SEP']; ?></option>
+                                    } ?>><?php echo _('Sep'); ?></option>
                                     <option value="10"<?php if ($row[$monthname] == 10) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['OCT']; ?></option>
+                                    } ?>><?php echo _('Oct'); ?></option>
                                     <option value="11"<?php if ($row[$monthname] == 11) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['NOV']; ?></option>
+                                    } ?>><?php echo _('Nov'); ?></option>
                                     <option value="12"<?php if ($row[$monthname] == 12) {
                                         echo " selected";
-                                    } ?>><?php echo $dates['DEC']; ?></option>
+                                    } ?>><?php echo _('Dec'); ?></option>
                                 </select>
                                 <input type="text" name="<?php echo $yearname; ?>" size="4" value="<?php echo $row[$yearname]; ?>">
                                 <span class="normal"><?php echo $help; ?></span>
@@ -123,39 +123,39 @@ echo displayHeadline($admtext['tlevents'] . " &gt;&gt; " . $admtext['modifytleve
                         <?php
                     }
 
-                    doEventRow($admtext['startdt'], $row, "evday", "evmonth", "evyear", $admtext['yrreq']);
-                    doEventRow($admtext['enddt'], $row, "endday", "endmonth", "endyear", "");
-                    ?>
-                    <tr>
-                        <td><?php echo $admtext['evtitle']; ?>:</td>
-                        <td>
-                            <input type="text" name="evtitle" width="100" value="<?php echo $row['evtitle']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class='align-top'><span class="normal"><?php echo $admtext['evdetail']; ?>:</span></td>
-                        <td colspan="2"><textarea cols="80" rows="8" name="evdetail"><?php echo $row['evdetail']; ?></textarea></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
+                        doEventRow(_('Start Date'), $row, "evday", "evmonth", "evyear", _('(only year is required)'));
+                        doEventRow(_('End Date'), $row, "endday", "endmonth", "endyear", "");
+                        ?>
+                        <tr>
+                            <td><?php echo _('Event title'); ?>:</td>
+                            <td>
+                                <input type="text" name="evtitle" width="100" value="<?php echo $row['evtitle']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='align-top'><span class="normal"><?php echo _('Event detail'); ?>:</span></td>
+                            <td colspan="2"><textarea cols="80" rows="8" name="evdetail"><?php echo $row['evdetail']; ?></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
 		<span class="normal">
 <?php
-echo $admtext['onsave'] . ":<br>";
-echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
+echo _('On save') . ":<br>";
+echo "<input type='radio' name='newscreen' value='return'> " . _('Return to this page') . "<br>\n";
 if ($tng_search_tlevents) {
-    echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
+    echo "<input type='radio' name='newscreen' value=\"none\" checked> " . _('Return to menu') . "\n";
 }
 ?>
 		</span>
-                        </td>
-                    </tr>
-                </table>
-                <br>&nbsp;
-                <input type="hidden" name="tleventID" value="<?php echo $tleventID; ?>">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-            </form>
-        </td>
-    </tr>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>&nbsp;
+                    <input type="hidden" name="tleventID" value="<?php echo $tleventID; ?>">
+                    <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo _('Save'); ?>">
+                </form>
+            </td>
+        </tr>
 
-</table>
+    </table>
 <?php echo tng_adminfooter(); ?>

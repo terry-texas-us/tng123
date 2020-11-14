@@ -20,7 +20,7 @@ tng_free_result($result);
 $row['firstname'] = preg_replace("/\"/", "&#34;", $row['firstname']);
 
 if (!$allow_media_edit && !$allow_media_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: ajx_login.php?message=" . urlencode($message));
     exit;
 }
@@ -46,7 +46,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 <table class="w-full" cellpadding="10" cellspacing="0">
     <tr class="databack">
         <td>
-            <h3 class="subhead"><?php echo $admtext['medialinks']; ?></h3>
+            <h3 class="subhead"><?php echo _('Media Links'); ?></h3>
             <form action="" name="form1" id="form1">
                 <?php include "micro_medialinks.php"; ?>
             </form>

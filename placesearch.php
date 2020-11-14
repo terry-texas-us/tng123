@@ -171,7 +171,7 @@ function processEvents($prefix, $stdevents, $displaymsgs) {
                     <th class="p-2 fieldnameback" colspan="2"><span class="fieldname"><?php echo $datestr; ?></span></th>
                     <th class="hidden p-2 fieldnameback md:table-cell"><span class="fieldname whitespace-no-wrap"><?php echo $text[$idtext]; ?></span></th>
                     <?php if ($numtrees > 1) { ?>
-                        <th class="p-2 fieldnameback"><span class="fieldname"><?php echo $text['tree']; ?></span></th>
+                        <th class="p-2 fieldnameback"><span class="fieldname"><?php echo _('Tree'); ?></span></th>
                     <?php } ?>
                 </tr>
                 <?php
@@ -237,19 +237,19 @@ if ($tree && !$tngconfig['places1tree']) {
 }
 
 if (!$tngconfig['places1tree']) {
-    $querystring .= " {$text['and']} tree {$text['equals']} {$treerow['treename']} ";
+    $querystring .= " " . _('and ') . " tree " . _('equals') . " {$treerow['treename']} ";
     $treename = ", treename";
 } else {
     $treename = "";
 }
 
-$logstring = "<a href=\"placesearch.php?psearch=$psearchns$logurlstring\">{$text['searchresults']} $querystring</a>";
+$logstring = "<a href=\"placesearch.php?psearch=$psearchns$logurlstring\">" . _('Search Results') . " $querystring</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
 if ($map['key'] && $isConnected) {
     if (!isset($flags['scripting'])) $flags['scripting'] = "";
-    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language=" . _('&amp;hl=en') . "$mapkeystr\"></script>\n";
 }
 
 tng_header($psearchns, $flags);
@@ -270,7 +270,7 @@ $pquery .= "WHERE place = '$psearch'";
 if ($tree && !$tngconfig['places1tree']) {
     $pquery .= " AND places.gedcom = '$tree' ";
 }
-$presult = tng_query($pquery) or die ($text['cannotexecutequery'] . ": $pquery");
+$presult = tng_query($pquery) or die (_('Cannot execute query') . ": $pquery");
 
 $rightbranch = 1;
 $innermenu = "&nbsp;\n";
@@ -288,11 +288,11 @@ while ($prow = tng_fetch_assoc($presult)) {
             $mapdrawn = true;
         }
         if (!$tngconfig['places1tree'] && $numtrees > 1) {
-            echo "<br><span><strong>{$text['tree']}:</strong> {$prow['treename']}</span><br>\n";
+            echo "<br><span><strong>" . _('Tree') . ":</strong> {$prow['treename']}</span><br>\n";
         }
         if ($prow['notes']) {
             $notes = nl2br(getXrefNotes($prow['notes'], $prow['gedcom']));
-            echo "<span><strong>{$text['notes']}:</strong> $notes</span><br>";
+            echo "<span><strong>" . _('Notes') . ":</strong> $notes</span><br>";
         }
         if ($map['key']) {
             $lat = $prow['latitude'];
@@ -302,8 +302,8 @@ while ($prow = tng_fetch_assoc($presult)) {
             $pinplacelevel = ${"pinplacelevel" . $placelevel};
             $placeleveltext = $placelevel > 0 ? $admtext['level' . $placelevel] . "&nbsp;:&nbsp;" : "";
             $codedplace = @htmlspecialchars(str_replace($banish, $banreplace, $psearchns), ENT_QUOTES, $session_charset);
-            $codednotes = $prow['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $prow['notes']) : "";
-            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $codedplace";
+            $codednotes = $prow['notes'] ? "<br><br>" . tng_real_escape_string(_('Notes') . ": " . $prow['notes']) : "";
+            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q" . _('&amp;hl=en') . "$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">" . _('Click to get directions') . "</a>" . _(' to ') . " $codedplace";
             if ($lat && $long) {
                 $uniqueplace = $psearch . $lat . $long;
                 if ($map['showallpins'] || !in_array($uniqueplace, $usedplaces)) {
@@ -312,10 +312,10 @@ while ($prow = tng_fetch_assoc($presult)) {
                     $l2mCount++;
                 }
             }
-            echo "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class=\"normal\"><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
+            echo "<a href=\"{$http}://maps.google.com/maps?f=q" . _('&amp;hl=en') . "$mcharsetstr&amp;daddr=$lat,$long($codedplace)&amp;z=12&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$l2mCount\" alt=\"\"></a><strong>$placeleveltext</strong><span class=\"normal\"><strong>" . _('Latitude') . ":</strong> {$prow['latitude']}, <strong>" . _('Longitude') . ":</strong> {$prow['longitude']}</span><br><br>";
             $map['pins']++;
         } elseif ($prow['latitude'] || $prow['longitude']) {
-            echo "<span><strong>{$text['latitude']}:</strong> {$prow['latitude']}, <strong>{$text['longitude']}:</strong> {$prow['longitude']}</span><br><br>";
+            echo "<span><strong>" . _('Latitude') . ":</strong> {$prow['latitude']}, <strong>" . _('Longitude') . ":</strong> {$prow['longitude']}</span><br><br>";
         }
     }
 }
@@ -329,13 +329,13 @@ $placealbums = getAlbums($psearch, "L");
 $media = doMediaSection($psearch, $placemedia, $placealbums);
 if ($media) {
     echo "<br>\n<div class='rounded-lg titlebox'>\n";
-    echo "<h3 class='subhead'>{$text['media']}</h3>";
+    echo "<h3 class='subhead'>" . _('Media') . "</h3>";
     echo "$media\n";
     echo "</div>\n";
 }
 
 $pquery = "SELECT cemname, city, county, state, country, cemeteryID FROM $cemeteries_table WHERE place = '$psearch'";
-$presult = tng_query($pquery) or die ($text['cannotexecutequery'] . ": $pquery");
+$presult = tng_query($pquery) or die (_('Cannot execute query') . ": $pquery");
 $cemeteries = tng_fetch_all($presult);
 $cemdata = "";
 $i = 1;
@@ -370,12 +370,12 @@ foreach ($cemeteries as $prow) {
 
 if ($cemdata) {
     echo "<br>\n<div class='rounded-lg titlebox'>\n";
-    echo "<h3 class='subhead'>{$text['cemeteries']}</h3>";
+    echo "<h3 class='subhead'>" . _('Cemeteries') . "</h3>";
     echo "<table class='w-full whiteback'>\n";
     echo "<tr>\n";
     echo "<td class='p-2 fieldnameback'><span class='fieldname'></span></td>\n";
-    echo "<td class='p-2 fieldnameback'><span class='fieldname font-semibold'>{$text['name']}</span></td>\n";
-    echo "<td class='p-2 fieldnameback'><span class='fieldname font-semibold'>{$text['location']}</span></td>\n";
+    echo "<td class='p-2 fieldnameback'><span class='fieldname font-semibold'>" . _('Name') . "</span></td>\n";
+    echo "<td class='p-2 fieldnameback'><span class='fieldname font-semibold'>" . _('Location') . "</span></td>\n";
     echo "</tr>\n";
     echo "$cemdata</table>\n";
     echo "</div>\n";
@@ -385,25 +385,25 @@ $successcount = 0;
 
 //then loop over events like anniversaries
 $stdevents = ["birth", "altbirth", "death", "burial"];
-$displaymsgs = ["birth" => $text['birth'], "altbirth" => $text['christened'], "death" => $text['died'], "burial" => $text['buried']];
+$displaymsgs = ["birth" => _('Birth'), "altbirth" => _('Christened'), "death" => _('Died'), "burial" => _('Buried')];
 if ($ldsOK) {
     array_push($stdevents, "endl", "init", "conf", "bapt");
-    $displaymsgs['endl'] = $text['endowedlds'];
-    $displaymsgs['init'] = $text['initlds'];
-    $displaymsgs['conf'] = $text['conflds'];
-    $displaymsgs['bapt'] = $text['baptizedlds'];
+    $displaymsgs['endl'] = _('Endowed (LDS)');
+    $displaymsgs['init'] = _('Initiatory (LDS)');
+    $displaymsgs['conf'] = _('Confirmed (LDS)');
+    $displaymsgs['bapt'] = _('Baptized (LDS)');
 }
 $successcount += processEvents("I", $stdevents, $displaymsgs);
 
 $stdevents = ["marr", "div"];
-$displaymsgs = ["marr" => $text['married'], "div" => $text['divorced']];
+$displaymsgs = ["marr" => _('Married'), "div" => _('Divorced')];
 if ($ldsOK) {
     array_push($stdevents, "seal");
-    $displaymsgs['seal'] = $text['sealedslds'];
+    $displaymsgs['seal'] = _('Sealed to Spouse (LDS)');
 }
 $successcount += processEvents("F", $stdevents, $displaymsgs);
 
-if (!$successcount) echo "<p>{$text['noresults']}.</p>";
+if (!$successcount) echo "<p>" . _('No results found. Please try again.') . ".</p>";
 
 tng_footer("");
 ?>

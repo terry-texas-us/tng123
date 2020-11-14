@@ -9,16 +9,16 @@ if ($link) {
     $admin_login = 1;
     include "checklogin.php";
     if ($assignedtree) {
-        echo $admtext['norights'];
+        echo _('You are not authorized to view this page. If you have a username and password, please login below.');
         exit;
     }
 }
 
 if (@mkdir($folder, 0777)) {
-    echo $admtext['success'];
+    echo _('Success');
 } elseif (file_exists($folder)) {
-    echo $admtext['fexists'];
+    echo _('Failed. Folder already exists.');
 } else {
-    echo $admtext['fmanual'];
+    echo _('Failed. Please create using an FTP program or online file manager.');
 }
 

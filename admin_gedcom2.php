@@ -25,7 +25,7 @@ if (!$allow_ged && $assignedtree) {
     tng_free_result($result);
 
     if ($disallowgedcreate) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -39,8 +39,7 @@ $placelist = [];
 $branchmedia = [];
 if (empty($exportmedia)) $exportmedia = 0;
 
-
-tng_adminheader($admtext['gedexport'], $flags);
+tng_adminheader(_('GEDCOM Export'), $flags);
 
 if (empty($tree)) $tree = "";
 
@@ -72,13 +71,13 @@ echo "</head>\n";
 echo tng_adminlayout();
 
 $helplang = findhelp("data_help.php");
-$datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
-$datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
-$datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php#export');\" class='lightlink'>{$admtext['help']}</a>";
+$datatabs[0] = [1, "admin_dataimport.php", _('Import'), "import"];
+$datatabs[1] = [1, "admin_export.php", _('Export'), "export"];
+$datatabs[2] = [1, "admin_secondmenu.php", _('Secondary Processes'), "second"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php#export');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($datatabs, "export", $innermenu);
 if (!isset($message)) $message = "";
-echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'], "img/data_icon.gif", $menu, $message);
+echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('GEDCOM Export'), "img/data_icon.gif", $menu, $message);
 ?>
 
 <div class="lightback pad2">
@@ -90,7 +89,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
 
             $citations = [];
             $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' ORDER BY eventID";
-            $citresult = tng_query($citquery) or die ($admtext['cannotexecutequery'] . ": $citquery");
+            $citresult = tng_query($citquery) or die (_('Cannot execute query') . ": $citquery");
 
             while ($cite = tng_fetch_assoc($citresult)) {
                 $eventID = $cite['eventID'] ? $cite['eventID'] : "NAME";
@@ -327,7 +326,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if ($savestate['ncount'] % 10 == 0) {
                 if ($saveimport) {
                     $query = "UPDATE $saveimport_table SET ncount=\"{$savestate['ncount']}\" WHERE gedcom = '$tree'";
-                    $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                    $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
                 }
                 echo "<strong>N{$savestate['ncount']}</strong> ";
             }
@@ -398,7 +397,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if ($saveimport) {
                 $savestate['offset'] = ftell($fp);
                 $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"{$xnotetxt['noteID']}\" WHERE gedcom = '$tree'";
-                $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
             }
 
             return $xnotestr;
@@ -510,7 +509,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                                     if ($saveimport) {
                                         $savestate['offset'] = ftell($fp);
                                         $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"{$media['mediaID']}\", scount=\"{$savestate['mcount']}\" WHERE gedcom = '$tree'";
-                                        $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                                        $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
                                     }
                                     echo "<strong>M{$savestate['mcount']}</strong> ";
                                 }
@@ -751,7 +750,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 } elseif ($nonamesloc == 2) {
                     $info .= "1 NAME " . initials($ind['firstname']) . " /" . trim($ind['lnprefix'] . " " . $ind['lastname']) . "/$lineending";
                 } else {
-                    $info .= "1 NAME {$text['living']} //$lineending";
+                    $info .= "1 NAME " . _('Living') . " //$lineending";
                 }
 
                 if ($rights['both']) {
@@ -1085,7 +1084,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 if (count($newsources)) {
                     foreach ($newsources as $nextsource) {
                         $srcquery = "SELECT * FROM $sources_table WHERE sourceID = \"$nextsource\" AND gedcom = '$tree'";
-                        $srcresult = tng_query($srcquery) or die ($text['cannotexecutequery'] . ": $query");
+                        $srcresult = tng_query($srcquery) or die (_('Cannot execute query') . ": $query");
                         if ($srcresult) {
                             $source = tng_fetch_assoc($srcresult);
                             if (trim($source['repoID'])) {
@@ -1107,7 +1106,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 }
 
                 $srcquery = "SELECT *, $numstr AS num FROM $sources_table WHERE gedcom = '$tree' {$savestate['wherestr']} ORDER BY num";
-                $srcresult = tng_query($srcquery) or die ($admtext['cannotexecutequery'] . ": $query");
+                $srcresult = tng_query($srcquery) or die (_('Cannot execute query') . ": $query");
                 while ($source = tng_fetch_assoc($srcresult)) {
                     $sourcestr .= writeSource($source);
                 }
@@ -1172,7 +1171,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if ($saveimport) {
                 $savestate['offset'] = ftell($fp);
                 $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"{$source['sourceID']}\", scount=\"{$savestate['scount']}\" WHERE gedcom = '$tree'";
-                $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
             }
             if ($savestate['scount'] % 10 == 0) {
                 echo "<strong>S{$savestate['scount']}</strong> ";
@@ -1191,7 +1190,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 if (count($newrepos)) {
                     foreach ($newrepos as $nextrepo) {
                         $repoquery = "SELECT * FROM $repositories_table WHERE repoID = \"$nextrepo\" AND gedcom = '$tree'";
-                        $reporesult = tng_query($repoquery) or die ($text['cannotexecutequery'] . ": $query");
+                        $reporesult = tng_query($repoquery) or die (_('Cannot execute query') . ": $query");
                         if ($reporesult) {
                             $repo = tng_fetch_assoc($reporesult);
                             $repostr .= writeRepository($repo);
@@ -1210,7 +1209,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 }
 
                 $repoquery = "SELECT *, $numstr AS num FROM $repositories_table WHERE gedcom = '$tree' {$savestate['wherestr']} ORDER BY num";
-                $reporesult = tng_query($repoquery) or die ($admtext['cannotexecutequery'] . ": $query");
+                $reporesult = tng_query($repoquery) or die (_('Cannot execute query') . ": $query");
 
                 while ($repo = tng_fetch_assoc($reporesult)) {
                     $repostr .= writeRepository($repo);
@@ -1254,7 +1253,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             if ($saveimport) {
                 $savestate['offset'] = ftell($fp);
                 $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"{$repo['repoID']}\", rcount=\"{$savestate['rcount']}\" WHERE gedcom = '$tree'";
-                $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
             }
             if ($savestate['rcount'] % 10 == 0) {
                 echo "<strong>R{$savestate['rcount']}</strong> ";
@@ -1288,7 +1287,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     $query = "SELECT place, notes, latitude, longitude, placelevel, zoom ";
                     $query .= "FROM {$places_table} ";
                     $query .= "WHERE place = \"" . addslashes($place) . "\" {$treestr}";
-                    $result = @tng_query($query) or die($admtext['cannotexecutequery'] . ": $query");
+                    $result = @tng_query($query) or die(_('Cannot execute query') . ": $query");
                     $row = tng_fetch_assoc($result);
                     if ($row['latitude'] || $row['longitude'] || $row['notes']) {
                         $places[] = $row;
@@ -1297,7 +1296,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 }
             } else {
                 $query = "SELECT place, notes, latitude, longitude, placelevel, zoom FROM $places_table WHERE (latitude != \"\" OR longitude != \"\" OR notes != \"\") $treestr";
-                $result = @tng_query($query) or die($admtext['cannotexecutequery'] . ": $query");
+                $result = @tng_query($query) or die(_('Cannot execute query') . ": $query");
                 while ($row = tng_fetch_assoc($result)) {
                     $places[] = $row;
                 }
@@ -1306,7 +1305,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 $query = "SELECT $medialinks_table.personID AS place, $places_table.notes AS notes, latitude, longitude
 	        FROM ($places_table, $medialinks_table)
 	        WHERE linktype = \"L\" $treestr AND $places_table.place = $medialinks_table.personID $jtreestr";
-                $result = @tng_query($query) or die($admtext['cannotexecutequery'] . ": $query");
+                $result = @tng_query($query) or die(_('Cannot execute query') . ": $query");
                 while ($row = tng_fetch_assoc($result)) {
                     if (!in_array($place, $places)) {
                         $places[] = $row;
@@ -1340,7 +1339,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     if ($saveimport) {
                         $savestate['offset'] = ftell($fp);
                         $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"" . addslashes($place['place']) . "\", pcount=\"{$savestate['pcount']}\" WHERE gedcom = '$tree'";
-                        $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                        $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
                     }
                     echo "<strong>P{$savestate['pcount']}</strong> ";
                 }
@@ -1357,10 +1356,10 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         }
 
         ?>
-        <p class="normal"><strong><?php echo $admtext['exporting']; ?></strong></p>
+        <p class="normal"><strong><?php echo _('Exporting GEDCOM...'); ?></strong></p>
         <?php
         if ($saveimport) {
-            echo "<p>{$admtext['ifexportfails']} <a href=\"admin_gedcom2.php?tree=$tree&amp;resume=1\">{$admtext['clickresume']}</a>.</p>$lineending";
+            echo "<p>" . _('If the export fails to run to completion,') . " <a href=\"admin_gedcom2.php?tree=$tree&amp;resume=1\">" . _('click here to resume') . "</a>.</p>$lineending";
         }
 
         @set_time_limit(0);
@@ -1374,7 +1373,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
         if ($saveimport) {
             if ($resume) {
                 $checksql = "SELECT filename, offset, lasttype, lastid, icount, fcount, scount, ncount, rcount, mcount, pcount, media FROM $saveimport_table WHERE gedcom = '$tree'";
-                $result = @tng_query($checksql) or die ($admtext['cannotexecutequery'] . ": $checksql");
+                $result = @tng_query($checksql) or die (_('Cannot execute query') . ": $checksql");
                 $found = tng_num_rows($result);
                 if ($found) {
                     $row = tng_fetch_assoc($result);
@@ -1432,7 +1431,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 $result = tng_query($query);
 
                 $sql = "INSERT INTO $saveimport_table (filename, offset, gedcom, media)  VALUES(\"$filename\", 0, '$tree', \"$exportmedia\")";
-                $result = @tng_query($sql) or die ($admtext['cannotexecutequery'] . ": $sql");
+                $result = @tng_query($sql) or die (_('Cannot execute query') . ": $sql");
             }
         }
         if ($found) {
@@ -1452,7 +1451,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             $savestate['pcount'] = 0;
             $savestate['media'] = $exportmedia;
         }
-        if (!$fp) die ($admtext['cannotopen'] . " " . $filename);
+        if (!$fp) die (_('Cannot open file') . " " . $filename);
 
         flock($fp, LOCK_EX);
 
@@ -1519,7 +1518,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             if ($saveimport) {
                                 $savestate['offset'] = ftell($fp);
                                 $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"{$ind['personID']}\", icount=\"{$savestate['icount']}\" WHERE gedcom = '$tree'";
-                                $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                                $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
                             }
                         }
                     }
@@ -1556,7 +1555,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                             if ($saveimport) {
                                 $savestate['offset'] = ftell($fp);
                                 $query = "UPDATE $saveimport_table SET offset={$savestate['offset']}, lasttype={$savestate['lasttype']}, lastid=\"{$fam['familyID']}\", fcount=\"{$savestate['fcount']}\" WHERE gedcom = '$tree'";
-                                $saveresult = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                                $saveresult = @tng_query($query) or die (_('Cannot execute query') . ": $query");
                             }
                         }
                     }
@@ -1601,18 +1600,18 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
 
         if ($saveimport) {
             $sql = "DELETE FROM $saveimport_table WHERE gedcom = '$tree'";
-            $result = @tng_query($sql) or die ($admtext['cannotexecutequery'] . ": $query");
+            $result = @tng_query($sql) or die (_('Cannot execute query') . ": $query");
         }
         ?>
 
         <p class="normal">
             <?php
-            adminwritelog($admtext['export'] . ": $tree");
-            echo "{$admtext['finishedexporting']} <br>{$savestate['icount']} {$admtext['people']}, {$savestate['fcount']} {$admtext['families']}, {$savestate['scount']} {$admtext['sources']}, {$savestate['rcount']} {$admtext['repositories']}, {$savestate['ncount']} {$admtext['notes']}, {$savestate['mcount']} {$admtext['media']}, {$savestate['pcount']} {$admtext['places']}";
+            adminwritelog(_('Export') . ": $tree");
+            echo "" . _('Finished Exporting GEDCOM') . " <br>{$savestate['icount']} " . _('People') . ", {$savestate['fcount']} " . _('Families') . ", {$savestate['scount']} " . _('Sources') . ", {$savestate['rcount']} " . _('Repositories') . ", {$savestate['ncount']} " . _('Notes') . ", {$savestate['mcount']} " . _('Media') . ", {$savestate['pcount']} " . _('Places') . "";
             ?>
         </p>
 
-        <p class="normal"><a href="<?php echo "$gedpath/$tree" . ".ged" ?>" download><?php echo $admtext['downloadged']; ?></a></p>
+        <p class="normal"><a href="<?php echo "$gedpath/$tree" . ".ged" ?>" download><?php echo _('Download GEDCOM'); ?></a></p>
 
     </div>
 </div>

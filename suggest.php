@@ -9,31 +9,31 @@ $_SESSION['tng_yourname'] = generatePassword(1);
 $flags['scripting'] = "<script>
 function validateForm() {
 	if( document.suggest." . $_SESSION['tng_yourname'] . ".value == \"\" ) {
-		alert(\"{$text['entername']}\");
+		alert(\"" . _('Please enter your name') . "\");
 		return false;
 	}
 	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,6})$/;
 	var address = document.suggest." . $_SESSION['tng_email'] . ".value;
 	if(address.length == 0 || reg.test(address) == false){
-		alert(\"{$text['enteremail']}\");
+		alert(\"" . _('Please enter a valid e-mail address.') . "\");
 		return false;
 	}
 	else if( document.suggest.em2.value.length == 0 ) {
-		alert(\"{$text['enteremail2']}\");
+		alert(\"" . _('Please enter your email address again.') . "\");
 		return false;
 	}
 	else if( document.suggest.{$_SESSION['tng_email']}.value != document.suggest.em2.value ) {
-		alert(\"{$text['emailsmatch']}\");
+		alert(\"" . _('Your emails do not match. Please enter the same email address in each field.') . "\");
 		return false;
 	}
 	else if( document.suggest." . $_SESSION['tng_comments'] . ".value == \"\" ) {
-		alert(\"{$text['entercomments']}\");
+		alert(\"" . _('Please enter your comments') . "\");
 		return false;
 	}";
 if ($tngconfig['askconsent']) {
     $flags['scripting'] .= "
 	else if( !document.suggest.tng_user_consent.checked ) {
-		alert(\"{$text['consentreq']}\");
+		alert(\"" . _('Please give your consent for this site to store personal information.') . "\");
 		return false;
 	}";
 }
@@ -106,9 +106,9 @@ if ($enttype == "I") {
     }
 
     $plus = $hname && $wname ? " + " : "";
-    $name = $text['family'] . ": $hname$plus$wname ($ID)";
+    $name = _('Family') . ": $hname$plus$wname ($ID)";
 
-    $years = $years = $row['marrdate'] && $row['allow_living'] && $row['allow_private'] ? $text['marrabbr'] . " " . displayDate($row['marrdate']) : "";
+    $years = $years = $row['marrdate'] && $row['allow_living'] && $row['allow_private'] ? _('m.') . " " . displayDate($row['marrdate']) : "";
 } elseif ($enttype == "S") {
     $typestr = "source";
     $query = "SELECT title FROM $sources_table WHERE sourceID = '$ID' AND gedcom = '$tree'";
@@ -128,7 +128,7 @@ if ($enttype == "I") {
     $row['allow_private'] = $rights['private'];
     tng_free_result($sresult);
 
-    $name = $text['source'] . ": {$row['title']} ($ID)";
+    $name = _('Source') . ": {$row['title']} ($ID)";
     $years = "";
 } elseif ($enttype == "R") {
     $typestr = "repo";
@@ -140,7 +140,7 @@ if ($enttype == "I") {
     $row['living'] = 0;
     $row['allow_living'] = $row['allow_private'] = 1;
 
-    $name = $text['repository'] . ": {$row['reponame']} ($ID)";
+    $name = _('Repository') . ": {$row['reponame']} ($ID)";
 } elseif ($enttype == "L") {
     $typestr = "place";
     $row['living'] = 0;
@@ -150,8 +150,8 @@ if ($enttype == "I") {
     $typestr = "";
 }
 if ($enttype) {
-    $headline = $text['suggestchange'] . ": $name";
-    $comments = $text['comments'];
+    $headline = _('Suggest a change') . ": $name";
+    $comments = _('Description of<br>proposed changes');
 
     tng_header($headline, $flags);
 
@@ -160,17 +160,17 @@ if ($enttype) {
 
     $innermenu = "&nbsp; \n";
     echo tng_menu($enttype, "suggest", $ID, $innermenu);
-    $buttontext = $text['submitsugg'];
+    $buttontext = _('Submit Suggestion');
 } else {
-    $headline = $text['contactus'];
-    $comments = $text['comments2'];
+    $headline = _('Contact Us');
+    $comments = _('Comments');
 
     tng_header($headline, $flags);
     ?>
     <h2 class="header"><span class="headericon" id="contact-hdr-icon"></span><?php echo $headline; ?></h2>
     <br style="clear: left;">
     <?php
-    $buttontext = $text['sendmsg'];
+    $buttontext = _('Send Message');
 }
 
 if ($message) {
@@ -194,26 +194,26 @@ echo $formstr;
 <?php } ?>
     <table cellspacing="1" cellpadding="4" class="whiteback normal">
         <tr>
-            <td class="fieldnameback" width="20%"><span class="fieldname"><?php echo $text['yourname']; ?>:&nbsp; </span></td>
+            <td class="fieldnameback" width="20%"><span class="fieldname"><?php echo _('Your Name'); ?>:&nbsp; </span></td>
             <td class="databack" width="80%">
                 <input type="text" name="<?php echo $_SESSION['tng_yourname']; ?>" class="longfield">
             </td>
         </tr>
         <tr>
-            <td class="fieldnameback"><span class="fieldname"><?php echo $text['email']; ?>:&nbsp; </span></td>
+            <td class="fieldnameback"><span class="fieldname"><?php echo _('E-mail'); ?>:&nbsp; </span></td>
             <td class="databack">
                 <input type="text" name="<?php echo $_SESSION['tng_email']; ?>" class="longfield" value="<?php echo $preemail; ?>">
             </td>
         </tr>
         <tr>
-            <td class="fieldnameback"><span class="fieldname"><?php echo $text['emailagain']; ?>:&nbsp; </span></td>
+            <td class="fieldnameback"><span class="fieldname"><?php echo _('Email again'); ?>:&nbsp; </span></td>
             <td class="databack">
                 <input type="text" name="em2" class="longfield" value="<?php echo $preemail; ?>">
             </td>
         </tr>
         <?php if ($page) { ?>
             <tr>
-                <td class="fieldnameback"><span class="fieldname"><?php echo $text['subject']; ?>:&nbsp; </span></td>
+                <td class="fieldnameback"><span class="fieldname"><?php echo _('E-mail Subject'); ?>:&nbsp; </span></td>
                 <td class="databack"><?php echo stripslashes($page); ?></td>
             </tr>
         <?php } ?>
@@ -234,10 +234,10 @@ if ($tngconfig['askconsent']) {
     <br>
     <input type="checkbox" name="tng_user_consent" value="1">
     <?php
-    echo $text['consent'];
+    echo _('I give my consent for this site to store the personal information collected here. I understand that I may ask the site owner to remove this information at any time.');
 }
 if ($tngconfig['dataprotect']) {
-    echo "<br><a href='data_protection_policy.php' target='_blank'>{$text['dataprotect']}</a>\n";
+    echo "<br><a href='data_protection_policy.php' target='_blank'>" . _('Data Protection Policy') . "</a>\n";
 }
 ?>
     <br><br>

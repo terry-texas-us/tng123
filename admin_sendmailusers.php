@@ -10,7 +10,7 @@ require "adminlog.php";
 include "tngmaillib.php";
 
 if ($assignedtree) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -21,11 +21,11 @@ if ($gedcom) {
 }
 
 $recipientquery = "SELECT realname, email FROM $users_table WHERE allow_living != '-1' AND email != \"\" AND (no_email is NULL or no_email != '1') $wherestr";
-$result = tng_query($recipientquery) or die ($admtext['cannotexecutequery'] . ": $recipientquery");
+$result = tng_query($recipientquery) or die (_('Cannot execute query') . ": $recipientquery");
 $numrows = tng_num_rows($result);
 
 if (!$numrows) {
-    $message = $admtext['nousers'];
+    $message = _('No user records exist');
     header("Location: admin_users.php?message=" . urlencode($message));
 } else {
     $subject = stripslashes($subject);
@@ -37,8 +37,8 @@ if (!$numrows) {
         tng_sendmail($owner, $emailaddr, $row['realname'], $recipient, $subject, $body, $emailaddr, $emailaddr);
     }
 
-    adminwritelog($admtext['sentmailmessage']);
-    $message = $admtext['succmail'] . ".";
+    adminwritelog(_('Sent E-mail Message'));
+    $message = _('Your e-mail message has been sent.') . ".";
 }
 
 tng_free_result($result);

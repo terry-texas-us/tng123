@@ -25,20 +25,20 @@ function getBranchesSelectionHtml(string $branches_table, string $tree, ?array $
         }
         $options .= ">{$branchrow['description']}</option>\n";
     }
-    $desclist = count($descriptions) ? implode(', ', $descriptions) : $admtext['nobranch'];
+    $desclist = count($descriptions) ? implode(', ', $descriptions) : _('No Branch');
     $html = "<span id=\"branchlist\">$desclist</span>";
     if (!$assignedbranch) {
         $totbranches = tng_num_rows($branchresult) + 1;
         if ($totbranches < 2) $totbranches = 2;
         $selectnum = $totbranches < 8 ? $totbranches : 8;
-        $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
+        $select = $totbranches >= 8 ? _('(Scroll to see all choices)') . "<br>" : "";
         $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
         $select .= "<option value=''";
         if ($row == "") $select .= " selected";
-        $select .= ">{$admtext['nobranch']}</option>\n";
+        $select .= ">" . _('No Branch') . "</option>\n";
         $select .= "$options</select>\n";
         $html .= " &nbsp;<span class='whitespace-no-wrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
-        $html .= $admtext['edit'];
+        $html .= _('Edit');
         $html .= buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
         $html .= "</a> )</span><br>";
         $html .= "<div id='branchedit' class='lightback p-1' style='position: absolute; display: none;' onmouseover=\"clearTimeout(branchtimer);\" onmouseout=\"closeBranchEdit('branch','branchedit','branchlist');\">";

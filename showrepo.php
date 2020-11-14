@@ -31,7 +31,7 @@ $reporow['allow_living'] = 1;
 
 $reponotes = getNotes($repoID, "R");
 
-$logstring = "<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\">" . $text['repository'] . " {$reporow['reponame']} ($repoID)</a>";
+$logstring = "<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\">" . _('Repository') . " {$reporow['reponame']} ($repoID)</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -48,12 +48,12 @@ $repotext .= beginSection("info");
 $repotext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
 $repotext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($reporow['reponame']) {
-    $repotext .= showEvent(["text" => $text['name'], "fact" => $reporow['reponame']]);
+    $repotext .= showEvent(["text" => _('Name'), "fact" => $reporow['reponame']]);
 }
 if ($reporow['addressID']) {
     $reporow['isrepo'] = true;
     $extras = getFact($reporow);
-    $repotext .= showEvent(["text" => $text['address'], "fact" => $extras]);
+    $repotext .= showEvent(["text" => _('Address'), "fact" => $extras]);
 }
 
 //do custom events
@@ -64,9 +64,9 @@ ksort($events);
 foreach ($events as $event)
     $repotext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-    $repotext .= showEvent(["text" => $text['repoid'], "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>", "np" => 1]);
+    $repotext .= showEvent(["text" => _('Repository ID'), "date" => $repoID, "place" => "<a href=\"admin_editrepo.php?repoID=$repoID&amp;tree=$tree&amp;cw=1\" target='_blank'>" . _('Edit') . "</a>", "np" => 1]);
 } else {
-    $repotext .= showEvent(["text" => $text['repoid'], "date" => $repoID]);
+    $repotext .= showEvent(["text" => _('Repository ID'), "date" => $repoID]);
 }
 
 if ($soffset) {
@@ -88,12 +88,12 @@ while ($srow = tng_fetch_assoc($sresult)) {
     $repolinktext .= "<a href=\"showsource.php?sourceID={$srow['sourceID']}&amp;tree=$tree\">$title</a>";
 }
 if ($numrows >= $maxsearchresults) {
-    $repolinktext .= "\n[<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">{$text['moresrc']}</a>]";
+    $repolinktext .= "\n[<a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree&amp;foffset=$foffset&amp;soffset=" . ($newsoffset + $maxsearchresults) . "\">" . _('More sources') . "</a>]";
 }
 tng_free_result($sresult);
 
 if ($repolinktext) {
-    $repotext .= showEvent(["text" => $text['indlinked'], "fact" => $repolinktext]);
+    $repotext .= showEvent(["text" => _('Linked to'), "fact" => $repolinktext]);
 }
 
 $repotext .= "</table>\n";
@@ -113,7 +113,7 @@ if ($notes) {
     $repotext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
     $repotext .= "<col class=\"labelcol\"/><col/>\n";
     $repotext .= "<tr>\n";
-    $repotext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>&nbsp;{$text['notes']}&nbsp;</span></td>\n";
+    $repotext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>&nbsp;" . _('Notes') . "&nbsp;</span></td>\n";
     $repotext .= "<td class='databack'>$notes</td>\n";
     $repotext .= "</tr>\n";
     $repotext .= "</table>\n";
@@ -130,16 +130,16 @@ if ($media || $notes) {
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['repoinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">" . _('Repository Information') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if ($media) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">" . _('Media') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">" . _('Notes') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">" . _('All') . "</a>\n";
 } else {
-    $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['repoinfo']}</span>\n";
+    $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">" . _('Repository Information') . "</span>\n";
 }
 
 $rightbranch = 1;

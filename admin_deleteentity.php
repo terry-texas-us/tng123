@@ -8,7 +8,7 @@ $admin_login = 1;
 include "checklogin.php";
 
 if (!$allow_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -28,7 +28,7 @@ if ($entity == "state") {
 }
 $result = tng_query($query);
 
-adminwritelog($admtext['deleted'] . ": $entity: $original_name");
+adminwritelog(_('Deleted') . ": $entity: $original_name");
 echo "1";
 
  

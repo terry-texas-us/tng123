@@ -18,9 +18,9 @@ tng_free_result($result);
 $query = "DELETE FROM $temp_events_table WHERE tempID=\"$tempID\"";
 $result = tng_query($query);
 
-adminwritelog($admtext['deleted'] . ": {$admtext['tentdata']} $tempID");
+adminwritelog(_('Deleted') . ": " . _('Temporary event record for ') . " $tempID");
 
-$message = $admtext['tentdata'] . " $tempID {$admtext['succdeleted']}.";
+$message = _('Temporary event record for ') . " $tempID " . _('was successfully deleted') . ".";
 
 header("Location: admin_findreview.php?type={$row['type']}&message=" . urlencode($message) . "&time=" . microtime());
 

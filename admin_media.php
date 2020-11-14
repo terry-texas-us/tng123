@@ -130,7 +130,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("media_help.php");
 
-tng_adminheader($admtext['media'], $flags);
+tng_adminheader(_('Media'), $flags);
 
 $standardtypes = [];
 foreach ($mediatypes as $mediatype) {
@@ -143,11 +143,11 @@ $sttypestr = implode(",", $standardtypes);
 <script src="js/mediautils.js"></script>
 <script>
     var tnglitbox;
-    const entercollid = "<?php echo $admtext['entercollid']; ?>";
-    const entercolldisplay = "<?php echo $admtext['entercolldisplay']; ?>";
-    const entercollipath = "<?php echo $admtext['entercollpath']; ?>";
-    const entercollicon = "<?php echo $admtext['entercollicon']; ?>";
-    const confmtdelete = "<?php echo $admtext['confmtdelete']; ?>";
+    const entercollid = "<?php echo _('Please enter a collection ID.'); ?>";
+    const entercolldisplay = "<?php echo _('Please enter a collection display name.'); ?>";
+    const entercollipath = "<?php echo _('Please enter a collection folder name.'); ?>";
+    const entercollicon = "<?php echo _('Please enter a collection icon file name.'); ?>";
+    const confmtdelete = "<?php echo _('Are you sure you want to delete this media type?'); ?>";
     var stmediatypes = new Array(<?php echo $sttypestr; ?>);
     var manage = 1;
     var allow_media_edit = <?php echo($allow_media_edit ? "1" : "0"); ?>;
@@ -188,13 +188,13 @@ $sttypestr = implode(",", $standardtypes);
     }
 
     function confirmDelete(mediaID) {
-        if (confirm('<?php echo $admtext['confdeletemedia']; ?>')) {
+        if (confirm('<?php echo _('Are you sure you want to delete this media?'); ?>')) {
             <?php if ($tngconfig['mediadel'] == 2) { ?>
-                if (confirm('<?php echo $admtext['confdelmediafile']; ?>')) {
-                    deleteIt('media', mediaID, '', 1);
-                } else {
-                    deleteIt('media', mediaID, '', 0);
-                }
+            if (confirm('<?php echo _('Do you want to delete the physical file as well?'); ?>')) {
+                deleteIt('media', mediaID, '', 1);
+            } else {
+                deleteIt('media', mediaID, '', 0);
+            }
             <?php } else { ?>
             deleteIt('media', mediaID);
             <?php } ?>
@@ -207,15 +207,15 @@ $sttypestr = implode(",", $standardtypes);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
-$mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
-$mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
-$mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
-$mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
-$mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$mediatabs[0] = [1, "admin_media.php", _('Search'), "findmedia"];
+$mediatabs[1] = [$allow_media_add, "admin_newmedia.php", _('Add New'), "addmedia"];
+$mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", _('Sort'), "sortmedia"];
+$mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", _('Thumbnails'), "thumbs"];
+$mediatabs[4] = [$allow_media_add && !$assignedtree, "admin_photoimport.php", _('Import'), "import"];
+$mediatabs[5] = [$allow_media_add, "admin_mediaupload.php", _('Upload'), "upload"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($mediatabs, "findmedia", $innermenu);
-echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
+echo displayHeadline(_('Media'), "img/photos_icon.gif", $menu, $message);
 ?>
 
 <table class="lightback">
@@ -226,7 +226,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                 <form action="admin_media.php" name="form1" id="form1">
                     <table class="normal">
                         <tr>
-                            <td><?php echo $admtext['searchfor']; ?>:</td>
+                            <td><?php echo _('Search for'); ?>:</td>
                             <td>
                                 <?php
                                 $newwherestr = $wherestr;
@@ -235,26 +235,26 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 $wherestr = $newwherestr;
                                 ?>
                                 <input class="longfield" name="searchstring" type="search" value="<?php echo $originalstring; ?>">
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="align-top">
+                                <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                                <input type="submit" name="submit" value="<?php echo _('Reset'); ?>" onClick="resetForm();" class="align-top">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['fileext']; ?>:</td>
+                            <td><?php echo _('File ext.'); ?>:</td>
                             <td>
                                 <input type="text" name="fileext" value="<?php echo $fileext; ?>" size="3">
                                 &nbsp;&nbsp;<input type="checkbox" name="unlinked" value="1"<?php if ($unlinked) {
                                     echo " checked";
-                                } ?> > <?php echo $admtext['unlinked']; ?>
+                                } ?> > <?php echo _('Unlinked only'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['mediatype']; ?>:</td>
+                            <td><?php echo _('Collection'); ?>:</td>
                             <td>
                                 <select name="mediatypeID" onchange="toggleHeadstoneCriteria(this.options[this.selectedIndex].value)">
 
                                     <?php
-                                    echo "<option value=\"\">{$admtext['all']}</option>\n";
+                                    echo "<option value=\"\">" . _('All') . "</option>\n";
                                     foreach ($mediatypes as $mediatype) {
                                         $msgID = $mediatype['ID'];
                                         echo "	<option value=\"$msgID\"";
@@ -265,17 +265,17 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     ?>
                                 </select>
                                 <?php if (!$assignedtree && $allow_add && $allow_edit && $allow_delete) { ?>
-                                    <input type="button" name="addnewmediatype" value="<?php echo $admtext['addnewcoll']; ?>" class="align-top"
+                                    <input type="button" name="addnewmediatype" value="<?php echo _('Add Collection'); ?>" class="align-top"
                                         onclick="tnglitbox = new LITBox('admin_newcollection.php?field=mediatypeID', {width:600, height:340});">
-                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo $admtext['edit']; ?>" style="vertical-align:top;display:none;"
+                                    <input type="button" name="editmediatype" id="editmediatype" value="<?php echo _('Edit'); ?>" style="vertical-align:top;display:none;"
                                         onclick="editMediatype(document.form1.mediatypeID);">
-                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo $admtext['text_delete']; ?>" style="vertical-align:top;display:none;"
+                                    <input type="button" name="delmediatype" id="delmediatype" value="<?php echo _('Delete'); ?>" style="vertical-align:top;display:none;"
                                         onclick="confirmDeleteMediatype(document.form1.mediatypeID);">
                                 <?php } ?>
                             </td>
                         </tr>
                         <tr id="hsstatrow">
-                            <td><?php echo $admtext['status']; ?>:</td>
+                            <td><?php echo _('Status'); ?>:</td>
                             <td>
                                 <select name="hsstat">
                                     <option value="all"<?php if ($hsstat == "all") {
@@ -284,27 +284,27 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                     </option>
                                     <option value=""<?php if (!$hsstat) {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['nostatus']; ?></option>
+                                    } ?>><?php echo _('No status'); ?></option>
                                     <option value="notyetlocated"<?php if ($hsstat == "notyetlocated") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['notyetlocated']; ?></option>
+                                    } ?>><?php echo _('Not yet located'); ?></option>
                                     <option value="located"<?php if ($hsstat == "located") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['located']; ?></option>
+                                    } ?>><?php echo _('Located'); ?></option>
                                     <option value="unmarked"<?php if ($hsstat == "unmarked") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['unmarked']; ?></option>
+                                    } ?>><?php echo _('Unmarked'); ?></option>
                                     <option value="missing"<?php if ($hsstat == "missing") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['missing']; ?></option>
+                                    } ?>><?php echo _('Missing'); ?></option>
                                     <option value="cremated"<?php if ($hsstat == "cremated") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['cremated']; ?></option>
+                                    } ?>><?php echo _('Cremated'); ?></option>
                                 </select>
                             </td>
                         </tr>
                         <tr id="cemrow">
-                            <td><?php echo $admtext['cemetery']; ?>:</td>
+                            <td><?php echo _('Cemetery'); ?>:</td>
                             <td>
                                 <select name="cemeteryID">
                                     <option selected></option>
@@ -335,16 +335,16 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                 <form action="admin_updateselectedmedia.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
                         <p class="whitespace-no-wrap">
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
+                            <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                            <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
                             <?php if ($allow_media_delete) { ?>
-                                <input type="submit" name="xphaction" value="<?php echo $admtext['deleteselected']; ?>"
-                                       onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">&nbsp;&nbsp;
+                                <input type="submit" name="xphaction" value="<?php echo _('Delete Selected'); ?>"
+                                    onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">&nbsp;&nbsp;
                                 <?php
                             }
                             if ($allow_media_edit) {
                             ?>
-                            <input type="submit" name="xphaction" value="<?php echo $admtext['convto']; ?>">
+                            <input type="submit" name="xphaction" value="<?php echo _('Convert Selected to'); ?>">
                             <select name="newmediatype" class="align-top">
                                 <?php
                                 foreach ($mediatypes as $mediatype) {
@@ -356,10 +356,10 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 echo "</select>&nbsp;&nbsp;\n";
 
                                 $albumquery = "SELECT albumID, albumname FROM $albums_table ORDER BY albumname";
-                                $albumresult = tng_query($albumquery) or die ($admtext['cannotexecutequery'] . ": $albumquery");
+                                $albumresult = tng_query($albumquery) or die (_('Cannot execute query') . ": $albumquery");
                                 $numalbums = tng_num_rows($albumresult);
                                 if ($numalbums) {
-                                    echo "<input type='submit' name=\"xphaction\" value=\"{$admtext['addtoalbum']}\">\n";
+                                    echo "<input type='submit' name=\"xphaction\" value=\"" . _('Add to Album') . "\">\n";
                                     echo "<select name=\"albumID\" style=\"vertical-align:top;\">\n";
                                     while ($albumrow = tng_fetch_assoc($albumresult)) {
                                         echo "	<option value=\"{$albumrow['albumID']}\"";
@@ -377,32 +377,32 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
 
                     <table class="normal">
                         <tr>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
                             <?php if ($allow_edit || $allow_media_edit || $allow_delete || $allow_media_delete) { ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Select'); ?></th>
                             <?php } ?>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['thumb']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo "{$admtext['title']}, {$admtext['description']}"; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Thumb'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo "" . _('Title') . ", " . _('Description') . ""; ?></th>
                             <?php if ($map['key']) { ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['googleplace']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Geocode Location'); ?></th>
                                 <?php
                             }
                             if (!$mediatypeID) {
                                 ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['mediatype']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Collection'); ?></th>
                             <?php } ?>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['linkedto']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Linked to'); ?></th>
                         </tr>
                         <?php
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_media_edit) {
-                            $actionstr .= "<a href=\"admin_editmedia.php?mediaID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                            $actionstr .= "<a href=\"admin_editmedia.php?mediaID=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_media_delete) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                         }
-                        $actionstr .= "<a href=\"showmedia.php?mediaID=xxx\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
+                        $actionstr .= "<a href=\"showmedia.php?mediaID=xxx\" target='_blank' title=\"" . _('Test') . "\" class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $mtypeID = $row['mediatypeID'];
@@ -435,17 +435,17 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 echo "<td nowrap class='lightback'><span class='normal'>";
                                 $geo = "";
                                 if ($row['latitude']) {
-                                    $geo .= $admtext['latitude'] . ": " . number_format($row['latitude'], 3);
+                                    $geo .= _('Latitude') . ": " . number_format($row['latitude'], 3);
                                 }
                                 if ($row['longitude']) {
                                     if ($geo) $geo .= "<br>";
 
-                                    $geo .= $admtext['longitude'] . ": " . number_format($row['longitude'], 3);
+                                    $geo .= _('Longitude') . ": " . number_format($row['longitude'], 3);
                                 }
                                 if ($row['zoom']) {
                                     if ($geo) $geo .= "<br>";
 
-                                    $geo .= $admtext['zoom'] . ": " . $row['zoom'];
+                                    $geo .= _('Zoom') . ": " . $row['zoom'];
                                 }
                                 echo "$geo&nbsp;</span></td>\n";
                             }
@@ -473,13 +473,13 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                 if ($prow['personID2'] != NULL) {
                                     $medialinktext .= "<li>" . getName($prow) . " ({$prow['personID2']})</li>\n";
                                 } elseif ($prow['sourceID'] != NULL) {
-                                    $sourcetext = $prow['title'] ? "{$admtext['source']}: {$prow['title']}" : "{$admtext['source']}: {$prow['sourceID']}";
+                                    $sourcetext = $prow['title'] ? "" . _('Source') . ": {$prow['title']}" : "" . _('Source') . ": {$prow['sourceID']}";
                                     $medialinktext .= "<li>$sourcetext ({$prow['sourceID']})</li>\n";
                                 } elseif ($prow['repoID'] != NULL) {
-                                    $repotext = $prow['reponame'] ? "{$admtext['repository']}: {$prow['reponame']}" : "{$admtext['repository']}: {$prow['repoID']}";
+                                    $repotext = $prow['reponame'] ? "" . _('Repository') . ": {$prow['reponame']}" : "" . _('Repository') . ": {$prow['repoID']}";
                                     $medialinktext .= "<li>$repotext ({$prow['repoID']})</li>\n";
                                 } elseif ($prow['familyID'] != NULL) {
-                                    $medialinktext .= "<li>{$admtext['family']}: " . getFamilyName($prow) . "</li>\n";
+                                    $medialinktext .= "<li>" . _('Family') . ": " . getFamilyName($prow) . "</li>\n";
                                 } elseif (!$prow['linktype'] || $prow['linktype'] == "C") {
                                     $query = "SELECT persfamID, sourceID, gedcom FROM $citations_table WHERE citationID = \"{$prow['personID']}\"";
                                     $cresult = tng_query($query);
@@ -488,7 +488,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                         if ($crow) {
                                             $persfamID = $crow['persfamID'];
                                             if (!in_array($persfamID, $citelinks)) {
-                                                $medialinktext .= "<li>{$admtext['citation']}: ";
+                                                $medialinktext .= "<li>" . _('Citation') . ": ";
                                                 $citelinks[] = $persfamID;
                                                 if (substr($persfamID, 0, 1) == $tngconfig['personprefix'] || substr($persfamID, -1) == $tngconfig['personsuffix']) {
                                                     $presult2 = getPersonSimple($crow['gedcom'], $persfamID);
@@ -505,7 +505,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                                                     if ($presult2) {
                                                         $famrow = tng_fetch_assoc($presult2);
                                                         $familyname = getFamilyName($famrow);
-                                                        $medialinktext .= "{$text['family']}: $familyname ($persfamID)";
+                                                        $medialinktext .= "" . _('Family') . ": $familyname ($persfamID)";
                                                         tng_free_result($presult2);
                                                     }
                                                 }
@@ -531,7 +531,7 @@ echo displayHeadline($admtext['media'], "img/photos_icon.gif", $menu, $message);
                 echo "</div>";
                 }
                 else {
-                    echo "</table>\n" . $admtext['norecords'];
+                    echo "</table>\n" . _('No records exist.');
                 }
                 tng_free_result($result);
                 ?>

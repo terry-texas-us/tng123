@@ -58,12 +58,12 @@ function getSpouseParents($personID, $sex) {
     global $tree, $righttree, $text, $admtext;
 
     if ($sex == "M") {
-        $childtext = tng_strtolower($text['sonof']);
+        $childtext = tng_strtolower(_('son of'));
     } else {
         if ($sex == "F") {
-            $childtext = tng_strtolower($text['daughterof']);
+            $childtext = tng_strtolower(_('daughter of'));
         } else {
-            $childtext = tng_strtolower($text['childof']);
+            $childtext = tng_strtolower(_('child of'));
         }
     }
 
@@ -82,11 +82,11 @@ function getSpouseParents($personID, $sex) {
                     $fathrow['allow_living'] = $frights['living'];
                     $fathrow['allow_private'] = $frights['private'];
                     $fathname = getName($fathrow);
-                    if ($fathrow['name'] == $text['living']) {
-                        $fathrow['firstname'] = $text['living'];
+                    if ($fathrow['name'] == _('Living')) {
+                        $fathrow['firstname'] = _('Living');
                     }
-                    if ($fathrow['name'] == $admtext['text_private']) {
-                        $fathrow['firstname'] = $admtext['text_private'];
+                    if ($fathrow['name'] == _('Private')) {
+                        $fathrow['firstname'] = _('Private');
                     }
                     $parentstr .= "<a href='#' onclick=\"if(jQuery('#p{$fathrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$fathrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$fathrow['personID']}&amp;tree=$tree';} return false;\">$fathname</a>";
                 }
@@ -102,13 +102,13 @@ function getSpouseParents($personID, $sex) {
                     $mothrow['allow_living'] = $mrights['living'];
                     $mothrow['allow_private'] = $mrights['private'];
                     $mothname = getName($mothrow);
-                    if ($mothrow['name'] == $text['living']) {
-                        $mothrow['firstname'] = $text['living'];
+                    if ($mothrow['name'] == _('Living')) {
+                        $mothrow['firstname'] = _('Living');
                     }
-                    if ($mothrow['name'] == $admtext['text_private']) {
-                        $mothrow['firstname'] = $admtext['text_private'];
+                    if ($mothrow['name'] == _('Private')) {
+                        $mothrow['firstname'] = _('Private');
                     }
-                    if ($parentstr) $parentstr .= " {$text['text_and']} ";
+                    if ($parentstr) $parentstr .= " " . _('AND') . " ";
 
                     $parentstr .= "<a href='#' onclick=\"if(jQuery('#p{$mothrow['personID']}').length) {jQuery('html, body').animate({scrollTop: jQuery('#p{$mothrow['personID']}').offset().top-10},'slow');}else{window.location.href='getperson.php?personID={$mothrow['personID']}&amp;tree=$tree';} return false;\">$mothname</a>";
                 }
@@ -134,19 +134,19 @@ function getVitalDates($row, $needparents = null) {
 
     if ($row['allow_living'] && $row['allow_private']) {
         if ($row['birthdate'] || $row['birthplace']) {
-            $bornmsg = ($row['sex'] == "F") ? $text['wasborn_female'] : $text['wasborn_male'];
+            $bornmsg = ($row['sex'] == "F") ? _('was born') : _('was born');
             $vitalinfo .= " " . $bornmsg . printDate($row['birthdate'], $row['birthdatetr']);
             if ($row['birthplace']) {
-                $vitalinfo .= " " . trim($text['inplace']) . " " . $row['birthplace'];
+                $vitalinfo .= " " . trim(_(' in ')) . " " . $row['birthplace'];
             }
         }
         if ($row['altbirthdate'] || $row['altbirthplace']) {
             if ($vitalinfo) $vitalinfo .= ";";
 
-            $christenedmsg = ($row['sex'] == "F") ? $text['waschristened_female'] : $text['waschristened_male'];
+            $christenedmsg = ($row['sex'] == "F") ? _('was christened') : _('was christened');
             $vitalinfo .= " " . $christenedmsg . printDate($row['altbirthdate'], $row['altbirthdatetr']);
             if ($row['altbirthplace']) {
-                $vitalinfo .= " " . trim($text['inplace']) . " " . $row['altbirthplace'];
+                $vitalinfo .= " " . trim(_(' in ')) . " " . $row['altbirthplace'];
             }
         }
         if ($needparents) {
@@ -158,21 +158,21 @@ function getVitalDates($row, $needparents = null) {
         if ($row['deathdate'] || $row['deathplace']) {
             if ($vitalinfo) $vitalinfo .= ";";
 
-            $diedmsg = ($row['sex'] == "F") ? $text['died_female'] : $text['died_male'];
+            $diedmsg = ($row['sex'] == "F") ? _('died') : _('died');
             if ($row['deathdate'] == "Y") {
-                $vitalinfo .= " " . $text['and'] . $diedmsg;
+                $vitalinfo .= " " . _('and ') . $diedmsg;
             } else {
                 $vitalinfo .= " " . $diedmsg . printDate($row['deathdate'], $row['deathdatetr']);
             }
             if ($row['deathplace']) {
-                $vitalinfo .= $text['inplace'] . $row['deathplace'];
+                $vitalinfo .= _(' in ') . $row['deathplace'];
             }
         }
         if ($row['burialdate'] || $row['burialplace']) {
             if ($vitalinfo) $vitalinfo .= ";";
 
-            $buriedmsg = ($row['sex'] == "F") ? $text['wasburied_female'] : $text['wasburied_male'];
-            $crematedmsg = ($row['sex'] == "F") ? $text['wascremated_female'] : $text['wascremated_male'];
+            $buriedmsg = ($row['sex'] == "F") ? _('was buried') : _('was buried');
+            $crematedmsg = ($row['sex'] == "F") ? _('was cremated') : _('was cremated');
             $burialmsg = $row['burialtype'] ? $crematedmsg : $buriedmsg;
             if (substr($row['burialdatetr'], 0, 10) == "0000-00-00")  // no date
             {
@@ -181,7 +181,7 @@ function getVitalDates($row, $needparents = null) {
                 $vitalinfo .= " " . $buriedmsg . printDate($row['burialdate'], $row['burialdatetr']);
             }
             if ($row['burialplace']) {
-                $vitalinfo .= $text['inplace'] . $row['burialplace'];
+                $vitalinfo .= _(' in ') . $row['burialplace'];
             }
         }
     }
@@ -201,21 +201,21 @@ function getSpouseDates($row, $personsex) {
             if ($row['marrtype']) $spouseinfo .= " ({$row['marrtype']})";
 
             if (($row['marrdate'] || $row['marrtype']) && $row['marrplace']) {
-                $spouseinfo .= $text['inplace'];
+                $spouseinfo .= _(' in ');
             }
             $spouseinfo .= $row['marrplace'];
         }
         if ($row['divdate'] || $row['divplace']) {
-            $divorcemsg = ($personsex == "F") ? $text['wasdivorced_female'] : $text['wasdivorced_male'];
+            $divorcemsg = ($personsex == "F") ? _('was divorced') : _('was divorced');
             if ($row['divdate']) {
                 if ($row['divdate'] == "Y") {
-                    $spouseinfo .= ", " . $text['and'] . $divorcemsg;
+                    $spouseinfo .= ", " . _('and ') . $divorcemsg;
                 } else {
-                    $spouseinfo .= ", " . $text['and'] . $divorcemsg . "  " . printDate($row['divdate'], $row['divdatetr']);
+                    $spouseinfo .= ", " . _('and ') . $divorcemsg . "  " . printDate($row['divdate'], $row['divdatetr']);
                 }
             }
             if ($row['divplace']) {
-                $spouseinfo .= "  " . $text['inplace'] . $row['divplace'];
+                $spouseinfo .= "  " . _(' in ') . $row['divplace'];
             }
         }
     }
@@ -266,7 +266,7 @@ function getOtherEvents($row) {
         tng_free_result($custevents);
     }
     if ($otherEvents) {
-        $otherEvents = "<p>{$text['otherevents']}:\n<ul class=\"regevents\">$otherEvents</ul></p>\n";
+        $otherEvents = "<p>" . _('Other Events') . ":\n<ul class=\"regevents\">$otherEvents</ul></p>\n";
     }
     return $otherEvents;
 }
@@ -281,13 +281,13 @@ function getRegNotes($persfamID, $flag) {
     $finalnotesarray = [];
 
     if ($flag == "I") {
-        $precusttitles = ["BIRT" => $text['birth'], "CHR" => $text['christened'], "NAME" => $text['name'], "TITL" => $text['title'], "NSFX" => $text['suffix'], "NICK" => $text['nickname'], "BAPL" => $text['baptizedlds'], "CONL" => $text['conflds'], "INIT" => $text['initlds'], "ENDL" => $text['endowedlds']];
-        $postcusttitles = ["DEAT" => $text['died'], "BURI" => $text['buried'], "SLGC" => $text['sealedplds']];
+        $precusttitles = ["BIRT" => _('Birth'), "CHR" => _('Christened'), "NAME" => _('Name'), "TITL" => _('Title'), "NSFX" => _('Suffix'), "NICK" => _('Nickname'), "BAPL" => _('Baptized (LDS)'), "CONL" => _('Confirmed (LDS)'), "INIT" => _('Initiatory (LDS)'), "ENDL" => _('Endowed (LDS)')];
+        $postcusttitles = ["DEAT" => _('Died'), "BURI" => _('Buried'), "SLGC" => _('Sealed to Parents (LDS)')];
     } elseif ($flag == "F") {
-        $precusttitles = ["MARR" => $text['married'], "SLGS" => $text['sealedslds'], "DIV" => $text['divorced']];
+        $precusttitles = ["MARR" => _('Married'), "SLGS" => _('Sealed to Spouse (LDS)'), "DIV" => _('Divorced')];
         $postcusttitles = [];
     } else {
-        $precusttitles = ["ABBR" => $text['shorttitle'], "CALN" => $text['callnum'], "AUTH" => $text['author'], "PUBL" => $text['publisher'], "TITL" => $text['title']];
+        $precusttitles = ["ABBR" => _('Short Title'), "CALN" => _('Call Number'), "AUTH" => _('Author'), "PUBL" => _('Publisher'), "TITL" => _('Title')];
         $postcusttitles = [];
     }
 

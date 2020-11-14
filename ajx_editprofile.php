@@ -31,42 +31,42 @@ $allow_user_change = true;
 <div class="databack ajaxwindow" id="editprof">
     <form action="ajx_updateuser.php" method="post" name="editprofile"
         onsubmit='if(!this.username.value.length) {
-            alert("<?php echo htmlentities($text['enterusername'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Please enter a username.'), ENT_QUOTES); ?>");
             this.username.focus();
             return false;
             }
             else if(!this.password.value.length) {
-            alert("<?php echo htmlentities($text['enterpassword'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Please enter a password.'), ENT_QUOTES); ?>");
             this.password.focus();
             return false;
             }
             else if(!this.password2.value.length) {
-            alert("<?php echo htmlentities($text['enterpassword2'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Please enter your password again.'), ENT_QUOTES); ?>");
             this.password2.focus();
             return false;
             }
             else if(this.password.value !== this.password2.value) {
-            alert("<?php echo htmlentities($text['pwdsmatch'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Your passwords do not match. Please enter the same password in each field.'), ENT_QUOTES); ?>");
             this.password.focus();
             return false;
             }
             else if(!this.realname.value.length) {
-            alert("<?php echo htmlentities($text['enterrealname'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Please enter your real name.'), ENT_QUOTES); ?>");
             this.realname.focus();
             return false;
             }
             else if(!this.email.value.length || !checkEmail(this.email.value)) {
-            alert("<?php echo htmlentities($text['enteremail'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Please enter a valid e-mail address.'), ENT_QUOTES); ?>");
             this.email.focus();
             return false;
             }
             else if(this.em2.value.length === 0) {
-            alert("<?php echo htmlentities($text['enteremail2'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Please enter your email address again.'), ENT_QUOTES); ?>");
             this.em2.focus();
             return false;
             }
             else if(this.email.value !== this.em2.value) {
-            alert("<?php echo htmlentities($text['emailsmatch'], ENT_QUOTES); ?>");
+            alert("<?php echo htmlentities(_('Your emails do not match. Please enter the same email address in each field.'), ENT_QUOTES); ?>");
             this.em2.focus();
             return false;
             }
@@ -77,10 +77,10 @@ $allow_user_change = true;
         <table class="normal" cellspacing="0" cellpadding="2">
             <tr class="databack">
                 <td>
-                    <h3 class="subhead"><?php echo $text['editprofile']; ?></h3>
+                    <h3 class="subhead"><?php echo _('Edit Profile'); ?></h3>
                     <table class="normal" cellpadding="3" cellspacing="0">
                         <tr>
-                            <td><?php echo $text['username'];
+                            <td><?php echo _('Username');
                                 if ($allow_user_change) {
                                     echo "*";
                                 } ?>:
@@ -96,79 +96,79 @@ $allow_user_change = true;
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['password']; ?>*:</td>
+                            <td><?php echo _('Password'); ?>*:</td>
                             <td>
                                 <input type="password" name="password" size="20" maxlength="100" value="<?php echo $row['password']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['pwdagain']; ?>*:</td>
+                            <td><?php echo _('Password again'); ?>*:</td>
                             <td>
                                 <input type="password" name="password2" size="20" maxlength="100" value="<?php echo $row['password']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['realname']; ?>*:</td>
+                            <td><?php echo _('Real Name'); ?>*:</td>
                             <td>
                                 <input type="text" name="realname" size="50" maxlength="50" value="<?php echo $row['realname']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['phone']; ?>:</td>
+                            <td><?php echo _('Phone'); ?>:</td>
                             <td>
                                 <input type="text" name="phone" size="30" maxlength="30" value="<?php echo $row['phone']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['email']; ?>*:</td>
+                            <td><?php echo _('E-mail'); ?>*:</td>
                             <td>
                                 <input type="text" name="email" size="50" maxlength="100" value="<?php echo $row['email']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['emailagain']; ?>*:</td>
+                            <td><?php echo _('Email again'); ?>*:</td>
                             <td>
                                 <input type="text" name="em2" size="50" maxlength="100" value="<?php echo $row['email']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['website']; ?>:</td>
+                            <td><?php echo _('Web Site'); ?>:</td>
                             <td>
                                 <input type="text" name="website" size="50" maxlength="128" value="<?php echo $row['website']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['address']; ?>:</td>
+                            <td><?php echo _('Address'); ?>:</td>
                             <td>
                                 <input type="text" name="address" size="50" maxlength="100" value="<?php echo $row['address']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['city']; ?>:</td>
+                            <td><?php echo _('City'); ?>:</td>
                             <td>
                                 <input type="text" name="city" size="50" maxlength="64" value="<?php echo $row['city']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['state']; ?>:</td>
+                            <td><?php echo _('state'); ?>:</td>
                             <td>
                                 <input type="text" name="state" size="50" maxlength="64" value="<?php echo $row['state']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['zip']; ?>:</td>
+                            <td><?php echo _('Zip/Postal Code'); ?>:</td>
                             <td>
                                 <input type="text" name="zip" size="20" maxlength="10" value="<?php echo $row['zip']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $text['country']; ?>:</td>
+                            <td><?php echo _('country'); ?>:</td>
                             <td>
                                 <input type="text" name="country" size="50" maxlength="64" value="<?php echo $row['country']; ?>">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['preflang']; ?>:</td>
+                            <td><?php echo _('Preferred language'); ?>:</td>
                             <td>
                                 <select name="preflang">
                                     <option value=""></option>
@@ -189,11 +189,11 @@ $allow_user_change = true;
                         </tr>
                     </table>
                     <br>
-                    <p>*<?php echo $text['required']; ?></p>
+                    <p>*<?php echo _('required'); ?></p>
                     <input type="hidden" name="orguser" value="<?php echo $row['username']; ?>">
                     <input type="hidden" name="orgpwd" value="<?php echo $row['password']; ?>">
                     <input type="hidden" name="ajax" value="1">
-                    <input type="submit" name="saveprofile" class="btn" id="saveprofile" value="<?php echo $text['savechanges']; ?>">
+                    <input type="submit" name="saveprofile" class="btn" id="saveprofile" value="<?php echo _('Save Changes'); ?>">
                 </td>
             </tr>
         </table>

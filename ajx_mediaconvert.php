@@ -66,7 +66,7 @@ foreach ($mediatypes_assoc as $type => $path) {
     }
 }
 
-$logmsg = preg_replace("/xxx/", $count, $admtext['mediaexpl']);
+$logmsg = preg_replace("/xxx/", $count, _('xxx media files moved'));
 
 adminwritelog($logmsg);
 echo $logmsg;

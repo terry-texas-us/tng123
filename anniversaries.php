@@ -28,13 +28,13 @@ if ($tree && $tree != '-x--all--x-') {
 } else {
     $righttree = -1;
 }
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"anniversaries.php?tngevent=$tngevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=$tngneedresults&amp;offset=$offset&amp;tree=$tree&amp;tngpage=$tngpage\">" . xmlcharacters($text['anniversaries'] . " $treestr") . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href=\"anniversaries.php?tngevent=$tngevent&amp;tngdaymonth=$tngdaymonth&amp;tngmonth=$tngmonth&amp;tngyear=$tngyear&amp;tngkeywords=$tngkeywords&amp;tngneedresults=$tngneedresults&amp;offset=$offset&amp;tree=$tree&amp;tngpage=$tngpage\">" . xmlcharacters(_('Dates and Anniversaries') . " $treestr") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 //compute $allwhere from submitted criteria
 $ldsOK = determineLDSRights();
-tng_header($text['anniversaries'], $flags);
+tng_header(_('Dates and Anniversaries'), $flags);
 ?>
     <script src="js/search.js"></script>
     <script>
@@ -51,7 +51,7 @@ tng_header($text['anniversaries'], $flags);
         function validateForm(form) {
             let rval = true;
             if (form.tngdaymonth.selectedIndex === 0 && form.tngmonth.selectedIndex === 0 && form.tngyear.value.length === 0 && form.tngkeywords.value.length === 0) {
-                alert("<?php echo $text['enterdate']; ?>");
+                alert("<?php echo _('Please enter or select at least one of the following: Day, Month, Year, Keyword'); ?>");
                 rval = false;
             }
             return rval;
@@ -59,50 +59,50 @@ tng_header($text['anniversaries'], $flags);
 
         //]]>
     </script>
-    <h2 class="mb-4 header"><span class="headericon" id="dates-hdr-icon"></span><?php echo $text['anniversaries']; ?></h2>
+    <h2 class="mb-4 header"><span class="headericon" id="dates-hdr-icon"></span><?php echo _('Dates and Anniversaries'); ?></h2>
     <form action="anniversaries2.php" method="get" name="form1" id="form1" onsubmit="return validateForm(this);">
         <?php echo treeDropdown(['startform' => false, 'endform' => false, 'name' => 'form1']); ?>
-        <p class="normal"><?php echo $text['explain']; ?></p>
+        <p class="normal"><?php echo _('Enter date components to see matching events. Leave a field blank to see matches for all.'); ?></p>
         <div class="annfield normal">
-            <label for="tngevent"><?php echo $text['event']; ?>:</label>
+            <label for="tngevent"><?php echo _('Event(s)'); ?>:</label>
             <br>
             <select id="tngevent" class="p-2" name="tngevent" style="max-width: 335px;">
                 <?php
                 echo "<option value=''>&nbsp;</option>\n";
                 echo "<option value='birth'";
                 if ($tngevent == "birth") echo " selected";
-                echo ">{$text['born']}</option>\n";
+                echo ">" . _('Born') . "</option>\n";
                 echo "<option value='altbirth'";
                 if ($tngevent == "altbirth") echo " selected";
-                echo ">{$text['christened']}</option>\n";
+                echo ">" . _('Christened') . "</option>\n";
                 echo "<option value='death'";
                 if ($tngevent == "death") echo " selected";
-                echo ">{$text['died']}</option>\n";
+                echo ">" . _('Died') . "</option>\n";
                 echo "<option value='burial'";
                 if ($tngevent == "burial") echo " selected";
-                echo ">{$text['buried']}</option>\n";
+                echo ">" . _('Buried') . "</option>\n";
                 echo "<option value='marr'";
                 if ($tngevent == "marr") echo " selected";
-                echo ">{$text['married']}</option>\n";
+                echo ">" . _('Married') . "</option>\n";
                 echo "<option value='div'";
                 if ($tngevent == "div") echo " selected";
-                echo ">{$text['divorced']}</option>\n";
+                echo ">" . _('Divorced') . "</option>\n";
                 if ($ldsOK) {
                     echo "<option value='bapt'";
                     if ($tngevent == "bapt") echo " selected";
-                    echo ">{$text['baptizedlds']}</option>\n";
+                    echo ">" . _('Baptized (LDS)') . "</option>\n";
                     echo "<option value='conf'";
                     if ($tngevent == "conf") echo " selected";
-                    echo ">{$text['conflds']}</option>\n";
+                    echo ">" . _('Confirmed (LDS)') . "</option>\n";
                     echo "<option value='init'";
                     if ($tngevent == "init") echo " selected";
-                    echo ">{$text['initlds']}</option>\n";
+                    echo ">" . _('Initiatory (LDS)') . "</option>\n";
                     echo "<option value='endl'";
                     if ($tngevent == "endl") echo " selected";
-                    echo ">{$text['endowedlds']}</option>\n";
+                    echo ">" . _('Endowed (LDS)') . "</option>\n";
                     echo "<option value='seal'";
                     if ($tngevent == "seal") echo " selected";
-                    echo ">{$text['sealedslds']}</option>\n";
+                    echo ">" . _('Sealed to Spouse (LDS)') . "</option>\n";
                 }
                 //loop through custom event types where keep=1, not a standard event
                 $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep = '1' AND type = 'I' ORDER BY display";
@@ -120,7 +120,7 @@ tng_header($text['anniversaries'], $flags);
             </select>
         </div>
         <div class="annfield normal">
-            <label for="tngdaymonth"><?php echo $text['day']; ?>:</label>
+            <label for="tngdaymonth"><?php echo _('Day'); ?>:</label>
             <br>
             <select class="p-2" name="tngdaymonth" id="tngdaymonth">
                 <option value="">&nbsp;</option>
@@ -135,64 +135,64 @@ tng_header($text['anniversaries'], $flags);
             </select>
         </div>
         <div class="annfield normal">
-            <label for="tngmonth" class="annlabel"><?php echo $text['month']; ?>:</label>
+            <label for="tngmonth" class="annlabel"><?php echo _('Month'); ?>:</label>
             <br>
             <select class="p-2" name="tngmonth" id="tngmonth">
                 <option value="">&nbsp;</option>
                 <option value="1"<?php if ($tngmonth == 1) {
                     echo " selected";
-                } ?>><?php echo $dates['JANUARY']; ?></option>
+                } ?>><?php echo _('January'); ?></option>
                 <option value="2"<?php if ($tngmonth == 2) {
                     echo " selected";
-                } ?>><?php echo $dates['FEBRUARY']; ?></option>
+                } ?>><?php echo _('February'); ?></option>
                 <option value="3"<?php if ($tngmonth == 3) {
                     echo " selected";
-                } ?>><?php echo $dates['MARCH']; ?></option>
+                } ?>><?php echo _('March'); ?></option>
                 <option value="4"<?php if ($tngmonth == 4) {
                     echo " selected";
-                } ?>><?php echo $dates['APRIL']; ?></option>
+                } ?>><?php echo _('April'); ?></option>
                 <option value="5"<?php if ($tngmonth == 5) {
                     echo " selected";
-                } ?>><?php echo $dates['MAY']; ?></option>
+                } ?>><?php echo _('May'); ?></option>
                 <option value="6"<?php if ($tngmonth == 6) {
                     echo " selected";
-                } ?>><?php echo $dates['JUNE']; ?></option>
+                } ?>><?php echo _('June'); ?></option>
                 <option value="7"<?php if ($tngmonth == 7) {
                     echo " selected";
-                } ?>><?php echo $dates['JULY']; ?></option>
+                } ?>><?php echo _('July'); ?></option>
                 <option value="8"<?php if ($tngmonth == 8) {
                     echo " selected";
-                } ?>><?php echo $dates['AUGUST']; ?></option>
+                } ?>><?php echo _('August'); ?></option>
                 <option value="9"<?php if ($tngmonth == 9) {
                     echo " selected";
-                } ?>><?php echo $dates['SEPTEMBER']; ?></option>
+                } ?>><?php echo _('September'); ?></option>
                 <option value="10"<?php if ($tngmonth == 10) {
                     echo " selected";
-                } ?>><?php echo $dates['OCTOBER']; ?></option>
+                } ?>><?php echo _('October'); ?></option>
                 <option value="11"<?php if ($tngmonth == 11) {
                     echo " selected";
-                } ?>><?php echo $dates['NOVEMBER']; ?></option>
+                } ?>><?php echo _('November'); ?></option>
                 <option value="12"<?php if ($tngmonth == 12) {
                     echo " selected";
-                } ?>><?php echo $dates['DECEMBER']; ?></option>
+                } ?>><?php echo _('December'); ?></option>
             </select>
         </div>
         <div class="annfield normal">
-            <label for="tngyear"><?php echo $text['year']; ?>:</label>
+            <label for="tngyear"><?php echo _('Year'); ?>:</label>
             <br>
             <input id="tngyear" class="p-2" name="tngyear" type="text" value="<?php echo $tngyear; ?>" size="6" maxlength="4">
         </div>
         <div class="annfield normal">
-            <label for="tngkeywords"><?php echo $text['keyword']; ?>:</label>
+            <label for="tngkeywords"><?php echo _('Keyword (ie, \"Abt\")'); ?>:</label>
             <br>
             <input id="tngkeywords" class="p-2" name="tngkeywords" type="text" value="<?php echo stripslashes($tngkeywordsclean); ?>" size="20">
         </div>
         <div class="annfield normal">
             <br>
             <input type="hidden" name="tngneedresults" value="1">
-            <input class="p-2" type="submit" value="<?php echo $text['search']; ?>">
-            <input class="p-2" type="button" value="<?php echo $text['tng_reset']; ?>" onclick="resetForm();">
-            <input class="p-2" type="button" value="<?php echo $text['calendar']; ?>" onclick="window.location.href='<?php echo "calendar.php?m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
+            <input class="p-2" type="submit" value="<?php echo _('Search'); ?>">
+            <input class="p-2" type="button" value="<?php echo _('Reset'); ?>" onclick="resetForm();">
+            <input class="p-2" type="button" value="<?php echo _('Calendar'); ?>" onclick="window.location.href='<?php echo "calendar.php?m=$tngmonth&amp;year=$tngyear&amp;tree=$tree"; ?>';">
         </div>
     </form>
     <br class="clear-both">
@@ -227,40 +227,40 @@ if ($tngneedresults) {
         $tngsaveevent = $tngevent;
         switch ($tngevent) {
             case "birth":
-                $datetxt = $text['born'];
+                $datetxt = _('Born');
                 break;
             case "altbirth":
-                $datetxt = $text['christened'];
+                $datetxt = _('Christened');
                 break;
             case "death":
-                $datetxt = $text['died'];
+                $datetxt = _('Died');
                 break;
             case "burial":
-                $datetxt = $text['buried'];
+                $datetxt = _('Buried');
                 break;
             case "marr":
-                $datetxt = $text['married'];
+                $datetxt = _('Married');
                 $needfamilies = 1;
                 break;
             case "div":
-                $datetxt = $text['divorced'];
+                $datetxt = _('Divorced');
                 $needfamilies = 1;
                 break;
             case "seal":
-                $datetxt = $text['sealedslds'];
+                $datetxt = _('Sealed to Spouse (LDS)');
                 $needfamilies = 1;
                 break;
             case "endl":
-                $datetxt = $text['endowedlds'];
+                $datetxt = _('Endowed (LDS)');
                 break;
             case "bapt":
-                $datetxt = $text['baptizedlds'];
+                $datetxt = _('Baptized (LDS)');
                 break;
             case "conf":
-                $datetxt = $text['conflds'];
+                $datetxt = _('Confirmed (LDS)');
                 break;
             case "init":
-                $datetxt = $text['initlds'];
+                $datetxt = _('Initiatory (LDS)');
                 break;
             default:
                 //look up display
@@ -373,11 +373,11 @@ if ($tngneedresults) {
                 <thead>
                 <tr>
                     <th class="hidden p-2 sm:table-cell fieldnameback nbrcol fieldname">#</th>
-                    <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['lastfirst']; ?></th>
+                    <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo _('Last Name, First Name'); ?></th>
                     <th class="p-2 fieldnameback fieldname"><?php echo $datetxt; ?></th>
-                    <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['personid']; ?></th>
+                    <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo _('Person ID'); ?></th>
                     <?php if ($numtrees > 1) { ?>
-                        <th class="p-2 fieldnameback fieldname"><?php echo $text['tree']; ?></th>
+                        <th class="p-2 fieldnameback fieldname"><?php echo _('Tree'); ?></th>
                     <?php } ?>
                 </tr>
                 </thead>
@@ -461,7 +461,7 @@ if ($tngneedresults) {
                     echo $namestr;
                     if ($rights['both']) {
                         $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
-                        $placetxt = $row[$place] ? $row[$place] . " <a href='placesearch.php?{$treestr}psearch=" . urlencode($row[$place]) . "' title=\"{$text['findplaces']}\">$icon</a>" : truncateIt($row['info'], 75);
+                        $placetxt = $row[$place] ? $row[$place] . " <a href='placesearch.php?{$treestr}psearch=" . urlencode($row[$place]) . "' title=\"" . _('Find all individuals with events at this location') . "\">$icon</a>" : truncateIt($row['info'], 75);
                         $dateval = $row[$datefield];
                     } else {
                         $dateval = $placetxt = "";
@@ -484,7 +484,7 @@ if ($tngneedresults) {
             echo "</div><br>\n";
         }
     }
-    if (!$successcount) echo "<p>{$text['noresults']}.</p>";
+    if (!$successcount) echo "<p>" . _('No results found. Please try again.') . ".</p>";
 } //end of $tng_needresults
 tng_footer("");
 ?>

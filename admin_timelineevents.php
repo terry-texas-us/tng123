@@ -57,16 +57,16 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("tlevents_help.php");
 
-tng_adminheader($admtext['tlevents'], $flags);
+tng_adminheader(_('Timeline Events'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$timelinetabs[0] = [1, "admin_timelineevents.php", $admtext['search'], "findtimeline"];
-$timelinetabs[1] = [$allow_add, "admin_newtlevent.php", $admtext['addnew'], "addtlevent"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/tlevents_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$timelinetabs[0] = [1, "admin_timelineevents.php", _('Search'), "findtimeline"];
+$timelinetabs[1] = [$allow_add, "admin_newtlevent.php", _('Add New'), "addtlevent"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/tlevents_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($timelinetabs, "findtimeline", $innermenu);
-echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $message);
+echo displayHeadline(_('Timeline Events'), "img/tlevents_icon.gif", $menu, $message);
 ?>
 
     <table class="lightback">
@@ -74,45 +74,45 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
             <td class="tngshadow">
                 <div class="normal">
                     <form action="admin_timelineevents.php" name="form1">
-                        <?php echo $admtext['searchfor']; ?>:
+                        <?php echo _('Search for'); ?>:
                         <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
                         <input type="hidden" name="findtlevent" value="1">
                         <input type="hidden" name="newsearch" value="1">
-                        <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                        <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="document.form1.searchstring.value='';" class="align-top">
+                        <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                        <input type="submit" name="submit" value="<?php echo _('Reset'); ?>" onClick="document.form1.searchstring.value='';" class="align-top">
                     </form>
                     <?php
                     $numrowsplus = $numrows + $offset;
                     if (!$numrowsplus) $offsetplus = 0;
-                ?>
-                <form action="admin_deleteselected.php" method="post" name="form2">
-                    <?php if ($allow_delete) { ?>
-                        <p>
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                            <input type="submit" name="xtimeaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
-                        </p>
-                    <?php } ?>
-                    <table class="normal">
-                        <tr>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
-                            <?php if ($allow_delete) { ?>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
-                            <?php } ?>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['evyear']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['enddt']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['evtitle']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['evdetail']; ?></th>
-                        </tr>
-                        <?php
-                        if ($numrows) {
-                        $actionstr = "";
-                        if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_edittlevent.php?tleventID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
-                        }
-                        if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"if(confirm('{$admtext['confdeletetlevent']}' )){deleteIt('tlevent',xxx);} return false;\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
-                        }
+                    ?>
+                    <form action="admin_deleteselected.php" method="post" name="form2">
+                        <?php if ($allow_delete) { ?>
+                            <p>
+                                <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                                <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">
+                                <input type="submit" name="xtimeaction" value="<?php echo _('Delete Selected'); ?>" onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">
+                            </p>
+                        <?php } ?>
+                        <table class="normal">
+                            <tr>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('Action'); ?></span></th>
+                                <?php if ($allow_delete) { ?>
+                                    <th class="fieldnameback"><span class="fieldname"><?php echo _('Select'); ?></span></th>
+                                <?php } ?>
+                                <th class="fieldnameback fieldname"><?php echo _('Event year'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('End Date'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Event title'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Event detail'); ?></th>
+                            </tr>
+                            <?php
+                            if ($numrows) {
+                            $actionstr = "";
+                            if ($allow_edit) {
+                                $actionstr .= "<a href=\"admin_edittlevent.php?tleventID=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
+                            }
+                            if ($allow_delete) {
+                                $actionstr .= "<a href='#' onClick=\"if(confirm('" . _('Are you sure you want to delete this timeline event?') . "' )){deleteIt('tlevent',xxx);} return false;\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
+                            }
 
                         while ($rowcount < $numrows && $row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['tleventID'], $actionstr);
@@ -134,7 +134,7 @@ echo displayHeadline($admtext['tlevents'], "img/tlevents_icon.gif", $menu, $mess
                 echo "</div>";
                 }
                 else {
-                    echo $admtext['norecords'];
+                    echo _('No records exist.');
                 }
                 tng_free_result($result);
                 ?>

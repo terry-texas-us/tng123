@@ -10,11 +10,11 @@ $divctr = 1;
 if ($pedigree['stdesc']) {
     $display = "none";
     $excolimg = "tng_plus";
-    $imgtitle = $text['expand'];
+    $imgtitle = _('Expand');
 } else {
     $display = "block";
     $excolimg = "tng_minus";
-    $imgtitle = $text['collapse'];
+    $imgtitle = _('Collapse');
 }
 
 function getIndividual($key, $sex, $level, $trail, $dab) {
@@ -86,7 +86,7 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
                     $vitalinfo = getVitalDates($crow);
                     $newdab = $dab . "." . $childcounter;
                     $rval .= str_repeat("  ", ($level - 1) * 8);
-                    $rval .= "<li>$level<span class='px-3'><a href=\"getperson.php?personID={$crow['personID']}&amp;tree=$tree\">$cname</a><sup>[$newdab]</sup><a href=\"desctracker.php?trail=$newtrail&amp;tree=$tree\" title=\"{$text['graphdesc']}\"><img src='img/dchart.gif' class='inline' width='10' height='9' alt=\"{$text['graphdesc']}\"></a></span>$vitalinfo\n";
+                    $rval .= "<li>$level<span class='px-3'><a href=\"getperson.php?personID={$crow['personID']}&amp;tree=$tree\">$cname</a><sup>[$newdab]</sup><a href=\"desctracker.php?trail=$newtrail&amp;tree=$tree\" title=\"" . _('Descendancy chart to this point') . "\"><img src='img/dchart.gif' class='inline' width='10' height='9' alt=\"" . _('Descendancy chart to this point') . "\"></a></span>$vitalinfo\n";
                     if ($level < $generations) {
                         $ind = getIndividual($crow['personID'], $crow['sex'], $level + 1, $newtrail, $newdab);
                         if ($ind) {
@@ -105,7 +105,7 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
                         }
                         if ($nxtkids) {
                             //chart continues
-                            $rval .= "[<a href=\"descendtext.php?personID={$crow['personID']}&amp;tree=$tree\" title=\"{$text['popupnote3']}\"> =&gt;</a>]";
+                            $rval .= "[<a href=\"descendtext.php?personID={$crow['personID']}&amp;tree=$tree\" title=\"" . _('New chart') . "\"> =&gt;</a>]";
                         }
                     }
                     $rval .= str_repeat("  ", ($level - 1) * 8) . "</li>\n";
@@ -131,19 +131,19 @@ function getVitalDates($row) {
 
     if ($row['allow_living'] && $row['allow_private']) {
         if ($row['birthdate']) {
-            $vitalinfo = $text['birthabbr'] . " " . displayDate($row['birthdate']) . " ";
+            $vitalinfo = _('b.') . " " . displayDate($row['birthdate']) . " ";
         } else {
             if ($row['altbirthdate']) {
-                $vitalinfo = $text['chrabbr'] . " " . displayDate($row['altbirthdate']) . " ";
+                $vitalinfo = _('c.') . " " . displayDate($row['altbirthdate']) . " ";
             } else {
                 $vitalinfo .= " ";
             }
         }
         if ($row['deathdate']) {
-            $vitalinfo .= $text['deathabbr'] . " " . displayDate($row['deathdate']);
+            $vitalinfo .= _('d.') . " " . displayDate($row['deathdate']);
         } else {
             if ($row['burialdate']) {
-                $vitalinfo .= $text['burialabbr'] . " " . displayDate($row['burialdate']);
+                $vitalinfo .= _('bur.') . " " . displayDate($row['burialdate']);
             } else {
                 $vitalinfo .= " ";
             }
@@ -164,7 +164,7 @@ if ($result) {
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
     $namestr = getName($row);
-    $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
+    $logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $namestr);
 }
 
 $treeResult = getTreeSimple($tree);
@@ -173,19 +173,18 @@ $disallowgedcreate = $treerow['disallowgedcreate'];
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
-writelog("<a href=\"descendtext.php?personID=$personID&amp;tree=$tree\">{$text['descendfor']} $logname ($personID)</a>");
-preparebookmark("<a href=\"descendtext.php?personID=$personID&amp;tree=$tree\">{$text['descendfor']} $namestr ($personID)</a>");
+writelog("<a href=\"descendtext.php?personID=$personID&amp;tree=$tree\">" . _('Descendancy for') . " $logname ($personID)</a>");
+preparebookmark("<a href=\"descendtext.php?personID=$personID&amp;tree=$tree\">" . _('Descendancy for') . " $namestr ($personID)</a>");
 
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
-tng_header($text['descendfor'] . " $namestr", $flags);
+tng_header(_('Descendancy for') . " $namestr", $flags);
 ?>
     <script>
-        var collapsemsg = "<?php echo $text['collapse']; ?>";
-        var expandmsg = "<?php echo $text['expand']; ?>";
+        var collapsemsg = "<?php echo _('Collapse'); ?>";
+        var expandmsg = "<?php echo _('Expand'); ?>";
 
         function toggleDescSection(key) {
-
             var section = jQuery('#' + key);
             if (section.css('display') == 'none') {
                 section.show();
@@ -240,7 +239,7 @@ if (!$generations) {
     }
 }
 
-$innermenu = $text['generations'] . ": &nbsp;";
+$innermenu = _('Generations') . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='descendtext.php?personID=$personID&amp;tree=$tree&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= "<option value=\"$i\"";
@@ -249,10 +248,10 @@ for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class='lightlink'>{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class='lightlink'>{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"register.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>{$text['regformat']}</a>\n";
+$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class='lightlink'>" . _('Standard') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class='lightlink'>" . _('Compact') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">" . _('Text Only') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"register.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>" . _('Register Format') . "</a>\n";
 if ($generations <= 12 && $allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=desc&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
@@ -263,11 +262,11 @@ echo "</form>\n";
 ?>
     <div class="normal">
         <p>
-            (<?php echo "<img src='img/dchart.gif' class='inline-block' width='10' height='9' alt=''> = {$text['graphdesc']}, <img src='img/tng_plus.gif' class='inline-block' width='9' height='9' alt=''> = {$text['expand']}, <img src='img/tng_minus.gif' class='inline-block' width='9' height='9' alt=''> = {$text['collapse']}"; ?>
+            (<?php echo "<img src='img/dchart.gif' class='inline-block' width='10' height='9' alt=''> = " . _('Descendancy chart to this point') . ", <img src='img/tng_plus.gif' class='inline-block' width='9' height='9' alt=''> = " . _('Expand') . ", <img src='img/tng_minus.gif' class='inline-block' width='9' height='9' alt=''> = " . _('Collapse') . ""; ?>
             )
         </p>
         <p>
-            <a href="#" onclick="return toggleAll('');"><?php echo $text['expandall']; ?></a> | <a href="#" onclick="return toggleAll('none');"><?php echo $text['collapseall']; ?></a>
+            <a href="#" onclick="return toggleAll('');"><?php echo _('Expand all'); ?></a> | <a href="#" onclick="return toggleAll('none');"><?php echo _('Collapse all'); ?></a>
         </p>
         <div id="descendantchart" class="text-left">
             <?php

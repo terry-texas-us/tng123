@@ -16,7 +16,7 @@ if (!$allow_ged && $assignedtree) {
     tng_free_result($result);
 
     if ($disallowgedcreate) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -37,7 +37,7 @@ $branchresult = tng_query($query);
 
 $helplang = findhelp("data_help.php");
 
-tng_adminheader($admtext['gedexport'], $flags);
+tng_adminheader(_('GEDCOM Export'), $flags);
 ?>
 <script>
     <?php
@@ -56,12 +56,12 @@ tng_adminheader($admtext['gedexport'], $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
-$datatabs[1] = [$allow_ged, "admin_export.php", $admtext['export'], "export"];
-$datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php#export');\" class='lightlink'>{$admtext['help']}</a>";
+$datatabs[0] = [1, "admin_dataimport.php", _('Import'), "import"];
+$datatabs[1] = [$allow_ged, "admin_export.php", _('Export'), "export"];
+$datatabs[2] = [1, "admin_secondmenu.php", _('Secondary Processes'), "second"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php#export');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($datatabs, "export", $innermenu);
-echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'], "img/data_icon.gif", $menu, $message);
+echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('GEDCOM Export'), "img/data_icon.gif", $menu, $message);
 ?>
 
 <table class="lightback normal w-full" cellpadding="10" cellspacing="2">
@@ -70,11 +70,11 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
             <form action="admin_gedcom2.php" method="post" name="form1">
                 <table class="normal">
                     <tr>
-                        <td><?php echo $admtext['tree']; ?>:</td>
+                        <td><?php echo _('Tree'); ?>:</td>
                         <td>
                             <select name="tree" id="treeselect" onchange="swapBranches(document.form1);">
                                 <?php
-                                $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                                $treeresult = tng_query($treequery) or die (_('Cannot execute query') . ": $treequery");
                                 $firsttree = "";
                                 while ($treerow = tng_fetch_assoc($treeresult)) {
                                     if (!$firsttree) $firsttree = $treerow['gedcom'];
@@ -90,14 +90,14 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['branch']; ?>:</td>
+                        <td><?php echo _('Branch'); ?>:</td>
                         <td>
                             <?php
                             $query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"$firsttree\" ORDER BY description";
                             $branchresult = tng_query($query);
 
                             echo "<select name='branch' id='branch' size=\"$selectnum\">\n";
-                            echo "	<option value=\"\">{$admtext['allbranches']}</option>\n";
+                            echo "	<option value=\"\">" . _('All Branches') . "</option>\n";
                             while ($branch = tng_fetch_assoc($branchresult)) {
                                 echo "	<option value=\"{$branch['branch']}\"";
                                 if ($row['branch'] == $branch['branch']) {
@@ -114,22 +114,22 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                 <br>
 
                 <input type="checkbox" name="exliving" id="exliving" value="1">
-                <label for="exliving"><?php echo $admtext['exliving']; ?></label> &nbsp;&nbsp;
+                <label for="exliving"><?php echo _('Exclude living'); ?></label> &nbsp;&nbsp;
                 <input type="checkbox" name="exprivate" id="exprivate" value="1">
-                <label for="exprivate"><?php echo $admtext['exprivate']; ?></label>
+                <label for="exprivate"><?php echo _('Exclude private'); ?></label>
                 <br><br>
 
                 <input type="checkbox" name="exportmedia" id="exportmedia" value="1" onClick="toggleStuff();">
-                <label for="exportmedia"><?php echo $admtext['exportmedia']; ?></label>
+                <label for="exportmedia"><?php echo _('Export media links'); ?></label>
 
                 <br>
 
                 <div style="display:none;" id="exprows">
                     <table class="normal" cellspacing="10">
                         <tr>
-                            <td><?php echo $admtext['select']; ?></td>
-                            <td><?php echo $admtext['mediatypes']; ?></td>
-                            <td><?php echo $admtext['exppaths']; ?>:</td>
+                            <td><?php echo _('Select'); ?></td>
+                            <td><?php echo _('Media Types'); ?></td>
+                            <td><?php echo _('Local path'); ?>:</td>
                         </tr>
                         <?php
                         foreach ($mediatypes as $mediatype) {
@@ -165,7 +165,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedexport'
                     </table>
                 </div>
                 <br>
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['export']; ?>">
+                <input type="submit" name="submit" class="btn" value="<?php echo _('Export'); ?>">
             </form>
         </td>
     </tr>

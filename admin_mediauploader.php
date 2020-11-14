@@ -19,7 +19,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_media_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -886,6 +886,6 @@ $options = [
     'mediatypeID' => $mediatypeID,
     'media_folder' => $mediafolder,
     'subfolder' => $folder,
-    'added' => $admtext['addnewmedia']
+    'added' => _('Add New Media')
 ];
 $upload_handler = new UploadHandler($options);

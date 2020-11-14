@@ -2,7 +2,7 @@
 echo "var branchids = new Array();\n";
 echo "branchids['none'] = new Array(\"\");\n";
 echo "var branchnames = new Array();\n";
-echo "branchnames['none'] = new Array(\"{$admtext['allbranches']}\");\n";
+echo "branchnames['none'] = new Array(\"" . _('All Branches') . "\");\n";
 $swapbranches = "swapBranches(document.form1);\n";
 $dispid = "";
 $dispname = "";
@@ -12,7 +12,7 @@ $treeresult = tng_query($query);
 while ($treerow = tng_fetch_assoc($treeresult)) {
     $nexttree = addslashes($treerow['gedcom']);
     $dispid .= "branchids['$nexttree'] = new Array(\"\"";
-    $dispname .= "branchnames['$nexttree'] = new Array(\"{$admtext['allbranches']}\"";
+    $dispname .= "branchnames['$nexttree'] = new Array(\"" . _('All Branches') . "\"";
 
     $query = "SELECT branch, gedcom, description FROM $branches_table WHERE gedcom = \"$nexttree\" ORDER BY description";
     $branchresult = tng_query($query);

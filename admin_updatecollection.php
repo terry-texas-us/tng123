@@ -22,7 +22,7 @@ $query = "UPDATE $mediatypes_table SET display=\"$display\", path=\"$path\", lik
 $result = @tng_query($query);
 
 if (tng_affected_rows()) {
-    adminwritelog($admtext['editcoll'] . ": $display_org");
+    adminwritelog(_('Edit Collection') . ": $display_org");
     echo "1";
 } else {
     echo "0";

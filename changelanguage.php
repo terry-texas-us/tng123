@@ -10,10 +10,10 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 
-tng_header($text['changelanguage'], $flags);
+tng_header(_('Change Language'), $flags);
 ?>
 
-<h2 class="header"><?php echo $text['changelanguage']; ?></h2>
+<h2 class="header"><?php echo _('Change Language'); ?></h2>
 <br class="clear-both">
 
 <?php
@@ -32,12 +32,12 @@ if ($numrows) {
         ?>
     </select>
     <br><br>
-    <input type="submit" class="btn" value="<?php echo $text['savechanges']; ?>">
+    <input type="submit" class="btn" value="<?php echo _('Save Changes'); ?>">
     <br><br>
     </form>
     <?php
 } else {
-    echo $text['language'] . ": $mylanguage\n";
+    echo _('Language') . ": $mylanguage\n";
 }
 tng_footer("");
 ?>

@@ -9,7 +9,7 @@ include "checklogin.php";
 require "adminlog.php";
 include "tngmaillib.php";
 if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -93,10 +93,10 @@ if (!$duplicate) {
         }
         tng_sendmail($owner, $emailaddr, $realname, $email, $deftext['subjectline'], stripslashes($welcome), $emailaddr, $emailaddr);
     }
-    adminwritelog("<a href=\"admin_edituser.php?userID=$userID\">{$admtext['modifyuser']}: $userID</a>");
-    $message = $admtext['changestouser'] . " $userID {$admtext['succsaved']}.";
+    adminwritelog("<a href=\"admin_edituser.php?userID=$userID\">" . _('Edit Existing User') . ": $userID</a>");
+    $message = _('Changes to user') . " $userID " . _('were successfully saved') . ".";
 } else {
-    $message = $admtext['duplicate'];
+    $message = _('Changes were not saved. Another record with the same key already exists.');
 }
 if ($newuser) {
     if ($tngconfig['autotree'] && !$tngconfig['autoapp']) {

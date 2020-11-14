@@ -66,7 +66,7 @@ if ($assignedtree) {
 $orgtree = $tree;
 
 $uquery = "SELECT COUNT(userID) AS ucount FROM $users_table WHERE allow_living = '-1'";
-$uresult = tng_query($uquery) or die ($admtext['cannotexecutequery'] . ": $uquery");
+$uresult = tng_query($uquery) or die (_('Cannot execute query') . ": $uquery");
 $urow = tng_fetch_assoc($uresult);
 $numusers = $urow['ucount'];
 tng_free_result($uresult);
@@ -142,115 +142,115 @@ $helplang = findhelp("families_help.php");
 
 $revstar = checkReview("F");
 
-tng_adminheader($admtext['families'], $flags);
+tng_adminheader(_('Families'), $flags);
 ?>
-<script>
-    function confirmDelete(ID) {
-        if (confirm('<?php echo $admtext['confdeletefam']; ?>'))
-            deleteIt('family', ID, '<?php echo $tree; ?>');
-        return false;
-    }
-</script>
+    <script>
+        function confirmDelete(ID) {
+            if (confirm('<?php echo _('Are you sure you want to delete this family?'); ?>'))
+                deleteIt('family', ID, '<?php echo $tree; ?>');
+            return false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
 echo tng_adminlayout();
 
-$familytabs[0] = [1, "admin_families.php", $admtext['search'], "findfamily"];
-$familytabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
-$familytabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'] . $revstar, "review"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/families_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$familytabs[0] = [1, "admin_families.php", _('Search'), "findfamily"];
+$familytabs[1] = [$allow_add, "admin_newfamily.php", _('Add New'), "addfamily"];
+$familytabs[2] = [$allow_edit, "admin_findreview.php?type=F", _('Review') . $revstar, "review"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/families_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($familytabs, "findfamily", $innermenu);
-echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $message);
+echo displayHeadline(_('Families'), "img/families_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
 
-                <form action="admin_families.php" name="form1" id="form1">
-                    <table class="normal">
-                        <tr>
-                            <td><?php echo $admtext['searchfor']; ?>:</td>
-                            <td>
-                                <?php include "treequery.php"; ?>
-                                <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
-                            </td>
-                            <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                    onClick="document.form1.searchstring.value=''; document.form1.spousename.selectedIndex=0; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false; document.form1.living.checked=false;"
-                                    class="align-top">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="2">
-                                <select name="spousename">
-                                    <option value="husband"<?php if ($spousename == "husband") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['husbname']; ?></option>
-                                    <option value="wife"<?php if ($spousename == "wife") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['wifename']; ?></option>
-                                    <option value="none"<?php if ($spousename == "none") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['noname']; ?></option>
-                                </select>
-                                <input type="checkbox" name="living" value="yes"<?php if ($living == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['livingonly']; ?>
-                                <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['exactmatch']; ?>
-                            </td>
-                        </tr>
-                    </table>
+                    <form action="admin_families.php" name="form1" id="form1">
+                        <table class="normal">
+                            <tr>
+                                <td><?php echo _('Search for'); ?>:</td>
+                                <td>
+                                    <?php include "treequery.php"; ?>
+                                    <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring_noquotes; ?>">
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                                    <input type="submit" name="submit" value="<?php echo _('Reset'); ?>"
+                                        onClick="document.form1.searchstring.value=''; document.form1.spousename.selectedIndex=0; document.form1.tree.selectedIndex=0; document.form1.exactmatch.checked=false; document.form1.living.checked=false;"
+                                        class="align-top">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td colspan="2">
+                                    <select name="spousename">
+                                        <option value="husband"<?php if ($spousename == "husband") {
+                                            echo " selected";
+                                        } ?>><?php echo _('Father\'s Name'); ?></option>
+                                        <option value="wife"<?php if ($spousename == "wife") {
+                                            echo " selected";
+                                        } ?>><?php echo _('Mother\'s Name'); ?></option>
+                                        <option value="none"<?php if ($spousename == "none") {
+                                            echo " selected";
+                                        } ?>><?php echo _('No Name'); ?></option>
+                                    </select>
+                                    <input type="checkbox" name="living" value="yes"<?php if ($living == "yes") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('Living only'); ?>
+                                    <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('Exact match only'); ?>
+                                </td>
+                            </tr>
+                        </table>
 
-                    <input type="hidden" name="findfamily" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                </form>
-                <?php
-                $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) $offsetplus = 0;
+                        <input type="hidden" name="findfamily" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                    </form>
+                    <?php
+                    $numrowsplus = $numrows + $offset;
+                    if (!$numrowsplus) $offsetplus = 0;
                 ?>
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
                         <p>
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                            <input type="submit" name="xfamaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                            <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                            <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">
+                            <input type="submit" name="xfamaction" value="<?php echo _('Delete Selected'); ?>" onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">
                         </p>
                     <?php } ?>
 
                     <table class="normal">
                         <tr>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo _('Action'); ?></span></th>
                             <?php if ($allow_delete) { ?>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['select']; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('Select'); ?></span></th>
                             <?php } ?>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['id']; ?></span></th>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['husbid']; ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo _('ID'); ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo _('Father ID'); ?></span></th>
                             <?php
                             if ($spousename == "husband") {
-                                echo "<th class='fieldnameback'><span class='fieldname'>{$admtext['husbname']}</span></th>\n";
+                                echo "<th class='fieldnameback'><span class='fieldname'>{_('Father\'s Name')}</span></th>\n";
                             }
                             ?>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['wifeid']; ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo _('Mother ID'); ?></span></th>
                             <?php
                             if ($spousename == "wife") {
-                                echo "<th class='fieldnameback'><span class='fieldname'>{$admtext['wifename']}</span></th>\n";
+                                echo "<th class='fieldnameback'><span class='fieldname'>{_('Mother\'s Name')}</span></th>\n";
                             }
                             ?>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['marrdate']; ?></span></th>
+                            <th class="fieldnameback"><span class="fieldname"><?php echo _('Marr Date'); ?></span></th>
                             <?php if ($numtrees > 1) { ?>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['tree']; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('Tree'); ?></span></th>
                                 <?php
                             }
                             if ($numusers > 1) {
                                 ?>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['lastmodified']; ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('Last Modified Date'); ?></span></th>
                             <?php } ?>
                         </tr>
 
@@ -258,12 +258,12 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editfamily.php?familyID=xxx&amp;tree=yyy\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                            $actionstr .= "<a href=\"admin_editfamily.php?familyID=xxx&amp;tree=yyy\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('zzz');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('zzz');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                         }
-                        $actionstr .= "<a href=\"familygroup.php?familyID=xxx&amp;tree=yyy\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
+                        $actionstr .= "<a href=\"familygroup.php?familyID=xxx&amp;tree=yyy\" target='_blank' title=\"" . _('Test') . "\" class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['familyID'], $actionstr);
@@ -274,7 +274,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                             $row['allow_private'] = $rights['private'];
 
                             $editlink = "admin_editfamily.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}";
-                            $id = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['familyID'] . "</a>" : $row['familyID'];
+                            $id = $allow_edit ? "<a href=\"$editlink\" title=\"" . _('Edit') . "\">" . $row['familyID'] . "</a>" : $row['familyID'];
 
                             echo "<tr id=\"row_{$row['ID']}\"><td class='lightback'><div class='action-btns'>$newactionstr</div></td>\n";
                             if ($allow_delete) {
@@ -307,7 +307,7 @@ echo displayHeadline($admtext['families'], "img/families_icon.gif", $menu, $mess
                 echo "</div>";
                 }
                 else {
-                    echo "</table>\n" . $admtext['norecords'];
+                    echo "</table>\n" . _('No records exist.');
                 }
                 tng_free_result($result);
                 ?>

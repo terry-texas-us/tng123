@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_media_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -21,8 +21,8 @@ $query = "DELETE FROM $albumlinks_table WHERE albumID=\"$albumID\"";
 $result = tng_query($query);
 
 // TODO text ['album'] was not defined in any language. Manually added here.
-adminwritelog($admtext['deleted'] . ": " . _todo_('Album') . " $albumID");
-$message = _todo_('Album') . " $albumID {$admtext['succdeleted']}.";
+adminwritelog(_('Deleted') . ": " . _todo_('Album') . " $albumID");
+$message = _todo_('Album') . " $albumID " . _('was successfully deleted') . ".";
 
 header("Location: admin_albums.php?message=" . urlencode($message));
 

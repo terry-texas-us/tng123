@@ -113,21 +113,21 @@ if ($location && $country) {
     $location = $country;
 }
 
-$titlestr = $text['cemeteriesheadstones'];
-if ($location) $titlestr .= " {$text['in']} $location";
+$titlestr = _('Cemeteries and Headstones');
+if ($location) $titlestr .= " " . _('in') . " $location";
 
 $logstring = "<a href=\"headstones.php?country=$country&amp;state=$state&amp;county=$county&amp;city=$city&amp;cemeteryID=$cemeteryID&amp;tree=$tree\">$titlestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
 if ($map['key'] && $isConnected) {
-    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language=" . _('&amp;hl=en') . "$mapkeystr\"></script>\n";
 }
-tng_header($text['cemeteriesheadstones'], $flags);
+tng_header(_('Cemeteries and Headstones'), $flags);
 ?>
 <br class="clear-both">
 <h2 class="header">
-    <span class="headericon" id="headstones-hdr-icon"></span><?php echo $text['cemeteriesheadstones'];
-    if ($location) echo " {$text['in']} $location"; ?>
+    <span class="headericon" id="headstones-hdr-icon"></span><?php echo _('Cemeteries and Headstones');
+    if ($location) echo " " . _('in') . " $location"; ?>
 </h2><br>
 <?php
 $hiddenfields[] = ['name' => 'country', 'value' => $country];
@@ -157,7 +157,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $query .= "LIMIT $newoffset" . $maxsearchresults;
     if (!$subquery) {
         $cemetery = [];
-        $cemetery['cemname'] = $text['nocemetery'];
+        $cemetery['cemname'] = _('No Cemetery');
         $cemetery['cemeteryID'] = "";
         $subquery = "done";
     }
@@ -178,7 +178,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     }
     $body .= "<div>";
     $body .= "<h3 class='subhead'>\n";
-    if ($cemetery['cemname'] == $text['nocemetery']) {
+    if ($cemetery['cemname'] == _('No Cemetery')) {
         $location = $cemetery['cemname'];
     } else {
         $location = "<a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}&amp;tree=$tree\">{$cemetery['cemname']}<br>";
@@ -195,11 +195,11 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
             $localballooncemeteryname = @htmlspecialchars($cemetery['cemname'], ENT_QUOTES, $session_charset);
             $localballooncemeteryplace = @htmlspecialchars($cemeteryplace, ENT_QUOTES, $session_charset);
             $remoteballoontext = @htmlspecialchars(str_replace($banish, $banreplace, "{$cemetery['cemname']}, $cemeteryplace"), ENT_QUOTES, $session_charset);
-            $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string($text['notes'] . ": " . $cemetery['notes']) : "";
-            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $localballooncemeteryname";
+            $codednotes = $cemetery['notes'] ? "<br><br>" . tng_real_escape_string(_('Notes') . ": " . $cemetery['notes']) : "";
+            $codednotes .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q" . _('&amp;hl=en') . "$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)\" target=\"_blank\">" . _('Click to get directions') . "</a>" . _(' to ') . " $localballooncemeteryname";
             $locations2map[$l2mCount] = ["zoom" => $zoom, "lat" => $lat, "long" => $long, "pinplacelevel" => $pinplacelevel, "place" => $cemeteryplace, "htmlcontent" => "<div class=\"mapballoon normal\"><a href=\"showmap.php?cemeteryID={$cemetery['cemeteryID']}\">$localballooncemeteryname</a><br>$localballooncemeteryplace$codednotes</div>"];
             $l2mCount++;
-            $body .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px;\" ></a>";
+            $body .= "<a href=\"{$http}://maps.google.com/maps?f=q" . _('&amp;hl=en') . "$mcharsetstr&amp;daddr=$lat,$long($remoteballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\"><img src=\"google_marker.php?image=$pinplacelevel2.png&amp;text=$l2mCount\" alt=\"\" align=\"left\" style=\"padding-right:5px;\" ></a>";
             $map['pins']++;
         }
     }
@@ -211,11 +211,11 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
     $body .= "<table class='whiteback normal' cellpadding='3' cellspacing='1' border='0'>\n";
     $body .= "<thead>\n";
     $body .= "<tr>\n";
-    $body .= "<th class='text-center fieldnameback fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;{$text['thumb']}</th>";
-    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['description']}</th>";
-    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['status']}</th>";
-    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['location']}</th>";
-    $body .= "<th class='fieldnameback fieldname'>&nbsp;{$text['name']} ({$text['diedburied']})</th>";
+    $body .= "<th class='text-center fieldnameback fieldname' style=\"width:{$thumbmaxw}px;\">&nbsp;" . _('Thumb') . "</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;" . _('Description') . "</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;" . _('Status') . "</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;" . _('Location') . "</th>";
+    $body .= "<th class='fieldnameback fieldname'>&nbsp;" . _('Name') . " (" . _('Died/Buried') . ")</th>";
     $body .= "</tr>\n";
     $body .= "</thead>\n";
     foreach ($headstones as $hs) {
@@ -246,18 +246,18 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
                 $hslinktext .= getName($prow);
                 $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
                 if ($prow['deathdate']) {
-                    $abbrev = $text['deathabbr'];
+                    $abbrev = _('d.');
                 } elseif ($prow['burialdate']) {
-                    $abbrev = $text['burialabbr'];
+                    $abbrev = _('bur.');
                 }
                 $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
             } elseif ($prow['familyID'] != NULL) {
-                $hslinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}<br>}\">{$text['family']}: " . getFamilyName($prow);
+                $hslinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}<br>}\">" . _('Family') . ": " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
-                $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
+                $sourcetext = $prow['title'] ? "" . _('Source') . ": {$prow['title']}" : "" . _('Source') . ": {$prow['sourceID']}";
                 $hslinktext .= "<a href=\"showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
             } elseif ($prow['repoID'] != NULL) {
-                $repotext = $prow['reponame'] ? "{$text['repository']}: {$prow['reponame']}" : "{$text['repository']}: {$prow['repoID']}";
+                $repotext = $prow['reponame'] ? "" . _('Repository') . ": {$prow['reponame']}" : "" . _('Repository') . ": {$prow['repoID']}";
                 $hslinktext .= "<a href=\"showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
             } else {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
@@ -290,7 +290,7 @@ while (!$subquery || $cemetery = tng_fetch_assoc($cemresult)) {
         if ($hs['latitude'] || $hs['longitude']) {
             if ($hs['plot']) $body .= "<br>";
 
-            $body .= "{$text['latitude']}: {$hs['latitude']}, {$text['longitude']}: {$hs['longitude']}";
+            $body .= "" . _('Latitude') . ": {$hs['latitude']}, " . _('Longitude') . ": {$hs['longitude']}";
         }
         $body .= "&nbsp;</span></td>\n";
         $body .= "<td class='databack'><span class='normal'>$hslinktext&nbsp;</span></td>\n";

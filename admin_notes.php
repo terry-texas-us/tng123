@@ -20,7 +20,7 @@ if ($eventtype['display']) {
 } elseif ($eventID) {
     $eventtypedesc = $admtext[$eventID];
 } else {
-    $eventtypedesc = $admtext['general'];
+    $eventtypedesc = _('General');
 }
 tng_free_result($eventtypes);
 
@@ -40,22 +40,22 @@ $notecount = tng_num_rows($notelinks);
     echo " style='display: none;'";
 } ?>>
     <form name="form1">
-        <h3 class="subhead"><?php echo "{$admtext['notes']}: $eventtypedesc"; ?> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></h3>
+        <h3 class="subhead"><?php echo "" . _('Notes') . ": $eventtypedesc"; ?> |
+            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo _('Help for this area'); ?></a></h3>
         <p>
             <?php if ($allow_add) { ?>
-                <input type="button" value="  <?php echo $admtext['addnew']; ?>  " onclick="document.form2.reset();gotoSection('notelist','addnote');">&nbsp;
+                <input type="button" value="  <?php echo _('Add New'); ?>  " onclick="document.form2.reset();gotoSection('notelist','addnote');">&nbsp;
             <?php } ?>
-            <input type="button" value="  <?php echo $admtext['finish']; ?>  " onclick="tnglitbox.remove();">
+            <input type="button" value="  <?php echo _('Finish'); ?>  " onclick="tnglitbox.remove();">
         </p>
         <table id="notestbl" class="fieldname normal" cellpadding="3" cellspacing="1" border="0"<?php if (!$notecount) {
             echo " style='display: none;'";
         } ?>>
             <tbody id="notestblbody">
             <tr>
-                <th class="fieldnameback" width="50"><?php echo $admtext['text_sort']; ?></th>
-                <th class="fieldnameback" width="80"><?php echo $admtext['action']; ?></th>
-                <th class="fieldnameback" width="435"><?php echo $admtext['note']; ?></th>
+                <th class="fieldnameback" width="50"><?php echo _('Sort'); ?></th>
+                <th class="fieldnameback" width="80"><?php echo _('Action'); ?></th>
+                <th class="fieldnameback" width="435"><?php echo _('Note'); ?></th>
             </tr>
             </tbody>
         </table>
@@ -69,14 +69,14 @@ $notecount = tng_num_rows($notelinks);
                     } else {
                         $citquery .= "persfamID = '$persfamID' AND eventID = \"N{$note['ID']}\"";
                     }
-                    $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
+                    $citresult = tng_query($citquery) or die (_('Cannot execute query') . ": $citquery");
                     $citesicon = tng_num_rows($citresult) ? "admin-cite-on-icon" : "admin-cite-off-icon";
                     tng_free_result($citresult);
                     $note['note'] = cleanIt($note['note']);
                     $truncated = truncateIt($note['note'], 75);
-                    $actionstr = $allow_edit ? "<a href='#' onclick=\"return editNote({$note['ID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>" : "";
-                    $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteNote({$note['ID']},'$persfamID','$tree','$eventID');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "";
-                    $actionstr .= "<a href='#' onclick=\"return showCitationsInside('N{$note['ID']}','{$note['noteID']}', '$persfamID');\" title=\"{$admtext['sources']}\" id=\"citesiconN{$note['ID']}\" class=\"smallicon $citesicon\"></a>";
+                    $actionstr = $allow_edit ? "<a href='#' onclick=\"return editNote({$note['ID']});\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>" : "";
+                    $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteNote({$note['ID']},'$persfamID','$tree','$eventID');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>" : "";
+                    $actionstr .= "<a href='#' onclick=\"return showCitationsInside('N{$note['ID']}','{$note['noteID']}', '$persfamID');\" title=\"" . _('Sources') . "\" id=\"citesiconN{$note['ID']}\" class=\"smallicon $citesicon\"></a>";
                     echo "<div class='sortrow' id=\"notes_{$note['ID']}\">";
                     echo "<table class='normal' cellpadding='3' cellspacing='1' border='0'>\n";
                     echo "<tr id=\"row_{$note['ID']}\">";
@@ -99,21 +99,21 @@ $notecount = tng_num_rows($notelinks);
 } ?> id="addnote">
     <form action="" name="form2" onSubmit="return addNote(this);">
         <div style="float:right;text-align:center;">
-            <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
-            <p><a href="#" onclick="gotoSection('addnote','notelist');"><?php echo $text['cancel']; ?></a></p>
+            <input type="submit" name="submit" class="btn" value="<?php echo _('Save'); ?>">
+            <p><a href="#" onclick="gotoSection('addnote','notelist');"><?php echo _('Cancel'); ?></a></p>
         </div>
-        <h3 class="subhead"><?php echo $admtext['addnewnote']; ?> |
-            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo $admtext['help']; ?></a></h3>
+        <h3 class="subhead"><?php echo _('Add New Note'); ?> |
+            <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/notes_help.php');"><?php echo _('Help for this area'); ?></a></h3>
 
         <table cellpadding="2" class="normal">
             <tr>
-                <td class='align-top'><?php echo $admtext['note']; ?>:</td>
+                <td class='align-top'><?php echo _('Note'); ?>:</td>
                 <td><textarea cols="60" rows="25" name="note"></textarea></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?></td>
+                    <input type="checkbox" name="private" value="1"> <?php echo _('Private'); ?></td>
             </tr>
         </table>
         <br>

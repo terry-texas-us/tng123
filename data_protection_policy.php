@@ -2,11 +2,11 @@
 $nologin = 1;
 include "tng_begin.php";
 
-$logstring = "<a href='data_protection_policy.php'>" . xmlcharacters($text['dataprotect']) . "</a>";
+$logstring = "<a href='data_protection_policy.php'>" . xmlcharacters(_('Data Protection Policy')) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($text['dataprotect'], $flags);
+tng_header(_('Data Protection Policy'), $flags);
 
 $langfolder = findlangfolder("data_protection_policy.php");
 

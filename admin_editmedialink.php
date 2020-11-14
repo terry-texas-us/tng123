@@ -34,7 +34,7 @@ function doEvent($eventID, $displayval, $info) {
     return "<option value=\"$eventID\"" . ($eventID == $meventID ? " selected" : "") . ">$displayval" . ($info ? ": $info" : "") . "</option>\n";
 }
 
-$options = "<option value=\"\">{$text['none']}</option>";
+$options = "<option value=\"\">" . _('No encryption') . "</option>";
 if ($row['linktype'] == "I") {
     //standard people events
     $list = ["NAME", "BIRT", "CHR", "DEAT", "BURI"];
@@ -85,7 +85,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     <form action="" method="post" name="editlinkform" id="editlinkform" onsubmit="return updateMedia2EntityLink(this);">
         <table cellpadding="2" class="normal">
             <tr>
-                <td class='align-top'><?php echo $admtext['event']; ?>:</td>
+                <td class='align-top'><?php echo _('Event(s)'); ?>:</td>
                 <td>
                     <select name="eventID" id="eventID">
                         <?php echo $options; ?>
@@ -94,11 +94,11 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <?php if ($type != "album") { ?>
                 <tr>
-                    <td class='align-top'><?php echo $admtext['alttitle']; ?>:</td>
+                    <td class='align-top'><?php echo _('Alternate Title'); ?>:</td>
                     <td><textarea name="altdescription" rows="3" cols="40"><?php echo $row['altdescription']; ?></textarea></td>
                 </tr>
                 <tr>
-                    <td class='align-top'><?php echo $admtext['altdesc']; ?>:</td>
+                    <td class='align-top'><?php echo _('Alternate Description'); ?>:</td>
                     <td><textarea name="altnotes" rows="4" cols="40"><?php echo $row['altnotes']; ?></textarea></td>
                 </tr>
                 <tr>
@@ -106,11 +106,11 @@ header("Content-type:text/html; charset=" . $session_charset);
                         <?php if ($row['linktype'] != "C") { ?>
                             <input type="checkbox" name="defphoto" value="1"<?php if ($row['defphoto']) {
                                 echo " checked";
-                            } ?>> <?php echo $admtext['makedefault']; ?>*
+                            } ?>> <?php echo _('Make Default'); ?>*
                         <?php } ?>
                         <input type="checkbox" name="show" value="1"<?php if (!$row['dontshow']) {
                             echo " checked";
-                        } ?>> <?php echo $admtext['show']; ?>
+                        } ?>> <?php echo _('Show'); ?>
                     </td>
                 </tr>
             <?php } ?>
@@ -122,10 +122,10 @@ header("Content-type:text/html; charset=" . $session_charset);
         <?php } ?>
         <input type="hidden" name="linkID" value="<?php echo $linkID; ?>">
         <input type="hidden" name="type" value="<?php echo $type; ?>">
-        <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">
-        <input type="button" name="cancel" value="<?php echo $text['cancel']; ?>" onclick="tnglitbox.remove();">
+        <input type="submit" name="submit" value="<?php echo _('Save'); ?>">
+        <input type="button" name="cancel" value="<?php echo _('Cancel'); ?>" onclick="tnglitbox.remove();">
         <p class="normal">
-            <?php if ($type != "album") echo "*{$admtext['defphotonote']}\n"; ?>
+            <?php if ($type != "album") echo "*" . _('Use the thumbnail to identify this person, family or source on pedigree and other charts, including family group sheets.') . "\n"; ?>
         </p>
     </form>
 </div>

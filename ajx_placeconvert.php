@@ -51,7 +51,7 @@ if ($action == "convert") {
         }
         tng_free_result($result);
 
-        $logmsg = $admtext['treesgone'];
+        $logmsg = _('Tree assignments removed from all place records');
     }
 }
 

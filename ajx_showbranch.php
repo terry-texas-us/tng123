@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -16,7 +16,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div style="margin:10px;">
-    <h3 class="subhead"><?php echo $admtext['showpeople']; ?></h3>
+    <h3 class="subhead"><?php echo _('Show people with this tree/branch'); ?></h3>
     <?php
     $query = "SELECT personID, firstname, lastname, lnprefix, prefix, suffix, branch, gedcom, nameorder, living, private ";
     $query .= "FROM $people_table ";
@@ -54,9 +54,9 @@ header("Content-type:text/html; charset=" . $session_charset);
     tng_free_result($brresult);
 
     if (!$names) {
-        echo "<p>{$admtext['norecords']}</p>";
+        echo "<p>" . _('No records exist.') . "</p>";
     } else {
-        echo "<p class='normal'>{$admtext['existlabels']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</p>\n";
+        echo "<p class='normal'>" . _('Existing labels') . ": $counter " . _('People') . ", $fcounter " . _('Families') . ".</p>\n";
         echo $names;
     }
     ?>

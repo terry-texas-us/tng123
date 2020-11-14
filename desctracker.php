@@ -280,7 +280,7 @@ if ($nextperson) {
         $row['allow_private'] = $rights['private'];
 
         $descname = getName($row);
-        $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $descname);
+        $logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $descname);
     }
 
     $treeResult = getTreeSimple($tree);
@@ -288,8 +288,8 @@ if ($nextperson) {
     $disallowgedcreate = $treerow['disallowgedcreate'];
     tng_free_result($treeResult);
 
-    writelog("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">{$text['descendfor']} $logname ($personID)</a>");
-    preparebookmark("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">{$text['descendfor']} $descname ($personID)</a>");
+    writelog("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">" . _('Descendancy for') . " $logname ($personID)</a>");
+    preparebookmark("<a href=\"desctracker.php?trail=$trail&amp;tree=$tree\">" . _('Descendancy for') . " $descname ($personID)</a>");
 }
 
 tng_header($descname, $flags);
@@ -312,10 +312,10 @@ if (!$generations) {
     }
 }
 
-$innermenu = "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class='lightlink'>{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class='lightlink'>{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"register.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>{$text['regformat']}</a>\n";
+$innermenu = "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class='lightlink'>" . _('Standard') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descend.php?personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class='lightlink'>" . _('Compact') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"descendtext.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class=\"lightlink3\">" . _('Text Only') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"register.php?personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>" . _('Register Format') . "</a>\n";
 
 echo getFORM("descend", "GET", "form1", "form1");
 echo tng_menu("I", "descend", $personID, $innermenu);

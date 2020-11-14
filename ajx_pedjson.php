@@ -71,11 +71,11 @@ function xmlPerson($currperson, $backperson, $generation) {
         if ($row['altbirthdate'] && !$row['birthdate']) {
             $bd = $row['altbirthdate'];
             $bp = trim($row['altbirthplace']);
-            $birthabbr = $text['capaltbirthabbr'];
+            $birthabbr = _('A');
         } elseif ($dataflag) {
             $bd = $row['birthdate'];
             $bp = trim($row['birthplace']);
-            $birthabbr = $text['capbirthabbr'];
+            $birthabbr = _('B');
         } else {
             $bd = $bp = $birthabbr = "";
         }
@@ -84,11 +84,11 @@ function xmlPerson($currperson, $backperson, $generation) {
         if ($row['burialdate'] && !$row['deathdate']) {
             $dd = $row['burialdate'];
             $dp = trim($row['burialplace']);
-            $deathabbr = $text['capburialabbr'];
+            $deathabbr = _('B');
         } elseif ($dataflag) {
             $dd = $row['deathdate'];
             $dp = trim($row['deathplace']);
-            $deathabbr = $text['capdeathabbr'];
+            $deathabbr = _('D');
         } else {
             $dd = $dp = $deathabbr = "";
         }
@@ -244,7 +244,7 @@ function getFamily($famrow) {
         $marrdate = displayDate($famrow['marrdate']);
         $marrplace = trim($famrow['marrplace']);
         if ($famrow['marrdate'] || $famrow['marrplace']) {
-            $marrabbr = $text['capmarrabbr'];
+            $marrabbr = _('M');
         } else {
             $marrabbr = "";
         }

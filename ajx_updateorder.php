@@ -7,7 +7,7 @@ $admin_login = 1;
 include "checklogin.php";
 
 if (!$allow_media_edit && !$allow_media_add && !$allow_media_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -203,13 +203,13 @@ switch ($action) {
         $rval .= "<table class='w-full' cellpadding='5' cellspacing='1'>\n";
         $rval .= "<tr>\n";
         $rval .= "<td class='dragarea rounded-lg normal'>";
-        $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
+        $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
         $rval .= "</td>\n";
         $rval .= "<td class='lightback normal childblock'>\n";
 
-        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['remove']}</a>";
+        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">" . _('Remove') . "</a>";
         if ($allow_delete) {
-            $rval .= " &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a>";
+            $rval .= " &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">" . _('Delete') . "</a>";
         }
         $rval .= "</div>";
         $display = str_replace("|", "</a>", $display);
@@ -345,7 +345,7 @@ switch ($action) {
     case "add":
         //add photo to album at end
         $query2 = "SELECT max(ordernum) AS maxordernum FROM $albumlinks_table WHERE albumID = \"$album\" GROUP BY albumID";
-        $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
+        $result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
         $row2 = tng_fetch_assoc($result2);
         $count = $row2['maxordernum'] + 1;
         tng_free_result($result2);

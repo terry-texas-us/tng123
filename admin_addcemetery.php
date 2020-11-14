@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -22,7 +22,7 @@ if ($newfile && $newfile != "none") {
     if (@move_uploaded_file($newfile, $newpath)) {
         @chmod($newpath, 0644);
     } else {
-        $message = $admtext['mapnotcopied'] . " $newpath {$admtext['improperpermissions']}.";
+        $message = _('The map image file could not be copied to') . " $newpath " . _('because the folder does not exist (check the Root Path) or does not have proper permissions (try chmod(777)).') . ".";
         header("Location: admin_cemeteries.php?message=" . urlencode($message));
         exit;
     }
@@ -75,7 +75,7 @@ if ($place) {
     tng_free_result($result);
 }
 
-adminwritelog("<a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID\">{$admtext['addnewcemetery']}: $cemeteryID - $cemname</a>");
+adminwritelog("<a href=\"admin_editcemetery.php?cemeteryID=$cemeteryID\">" . _('Add New Cemetery') . ": $cemeteryID - $cemname</a>");
 
-$message = $admtext['cemetery'] . " $cemeteryID {$admtext['succadded']}.";
+$message = _('Cemetery') . " $cemeteryID " . _('was successfully added') . ".";
 header("Location: admin_cemeteries.php?message=" . urlencode($message));

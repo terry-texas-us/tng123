@@ -13,7 +13,7 @@ function getAlbumPhoto($albumID, $albumname) {
     $query2 = "SELECT gedcom, path, thumbpath, usecollfolder, mediatypeID, albumlinks.mediaID AS mediaID, alwayson, media.gedcom ";
     $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";
     $query2 .= "WHERE albumID = '$albumID' AND media.mediaID = albumlinks.mediaID AND defphoto='1'";
-    $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
+    $result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
     $trow = tng_fetch_assoc($result2);
     $mediaID = $trow['mediaID'];
     $tmediatypeID = $trow['mediatypeID'];
@@ -81,7 +81,7 @@ function getAlbumPhoto($albumID, $albumname) {
             $imgsrc = "<div class='media-img'>\n";
             $imgsrc .= "<div class='media-prev' id=\"prev$albumID\" style='display: none;'></div>\n";
             $imgsrc .= "</div>\n";
-            $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"{$text['albclicksee']}\"";
+            $imgsrc .= "<a href=\"showalbum.php?albumID=$albumID\" title=\"" . _('Click to see all the items in this album') . "\"";
             if (function_exists('imageJpeg')) {
                 $imgsrc .= " onmouseover=\"showPreview('{$trow['mediaID']}','','" . urlencode("$tusefolder/$treestr{$trow['path']}") . "','');\" onmouseout=\"closePreview('$albumID','','$sitever');\" onclick=\"closePreview('$albumID','');\"";
             }

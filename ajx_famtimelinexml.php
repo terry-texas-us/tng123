@@ -56,7 +56,7 @@ foreach ($timeline as $timeentry) {
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
     $name = xmlcharacters(getName($row));
-    echo "<event start=\"" . $beg_date_gmt . "\" end=\"" . $end_date_gmt . "\" title=\"$name ($beg_year - $end_year)\">{$text['birthabbr']} " . displayDate($row['birthdate']) . " - {$text['deathabbr']} " . displayDate($row['deathdate']) . "</event>\n";
+    echo "<event start=\"" . $beg_date_gmt . "\" end=\"" . $end_date_gmt . "\" title=\"$name ($beg_year - $end_year)\">" . _('b.') . " " . displayDate($row['birthdate']) . " - " . _('d.') . " " . displayDate($row['deathdate']) . "</event>\n";
 
     if ($output['timeperson'] == $primary) {
         if ($row['birthdatetr'] != "0000-00-00") {
@@ -66,7 +66,7 @@ foreach ($timeline as $timeentry) {
             if ($row['birthplace']) {
                 $evdateinfo .= ", " . $row['birthplace'];
             }
-            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"{$text['born']} ($name)\">$evdateinfo</event>\n";
+            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"" . _('Born') . " ($name)\">$evdateinfo</event>\n";
         }
         if ($row['altbirthdatetr'] != "0000-00-00") {
             $evdate = getTimelineDate($row['altbirthdatetr']);
@@ -75,7 +75,7 @@ foreach ($timeline as $timeentry) {
             if ($row['altbirthplace']) {
                 $evdateinfo .= ", " . $row['altbirthplace'];
             }
-            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"{$text['christened']} ($name)\">$evdateinfo</event>\n";
+            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"" . _('Christened') . " ($name)\">$evdateinfo</event>\n";
         }
         if ($row['deathdatetr'] != "0000-00-00") {
             $evdate = getTimelineDate($row['deathdatetr']);
@@ -84,7 +84,7 @@ foreach ($timeline as $timeentry) {
             if ($row['deathplace']) {
                 $evdateinfo .= ", " . $row['deathplace'];
             }
-            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"{$text['died']} ($name)\">$evdateinfo</event>\n";
+            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"" . _('Died') . " ($name)\">$evdateinfo</event>\n";
         }
         if ($row['burialdatetr'] != "0000-00-00") {
             $evdate = getTimelineDate($row['burialdatetr']);
@@ -93,7 +93,7 @@ foreach ($timeline as $timeentry) {
             if ($row['burialplace']) {
                 $evdateinfo .= ", " . $row['burialplace'];
             }
-            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"{$text['buried']} ($name)\">$evdateinfo</event>\n";
+            echo "<event start=\"" . $evdate_gmt . "\" end=\"" . $evdate_gmt . "\" icon=\"img/green-circle.png\" title=\"" . _('Buried') . " ($name)\">$evdateinfo</event>\n";
         }
     }
     tng_free_result($result);
@@ -190,7 +190,7 @@ foreach ($timeline as $timeentry) {
                     $beg_date_gmt = $beg_date['date_gmt'];
                     $displayDate = displayDate($marriagerow['marrdate']);
 
-                    echo "<event start=\"" . $beg_date_gmt . "\" end=\"" . $beg_date_gmt . "\" title=\"" . xmlcharacters("{$text['married']} $spousename") . "\">" . xmlcharacters("$displayDate, {$marriagerow['marrplace']}") . "</event>\n";
+                    echo "<event start=\"" . $beg_date_gmt . "\" end=\"" . $beg_date_gmt . "\" title=\"" . xmlcharacters("" . _('Married') . " $spousename") . "\">" . xmlcharacters("$displayDate, {$marriagerow['marrplace']}") . "</event>\n";
                 }
             }
             //get all children (link to people) born to this marriage
@@ -201,11 +201,11 @@ foreach ($timeline as $timeentry) {
                 if ($child['birthdate']) {
                     $date = $child['birthdatetr'];
                     $displayDate = displayDate($child['birthdate']);
-                    $abbr = $text['birthabbr'];
+                    $abbr = _('b.');
                 } elseif ($child['altbirthdate']) {
                     $date = $child['altbirthdatetr'];
                     $displayDate = displayDate($child['altbirthdate']);
-                    $abbr = $text['chrabbr'];
+                    $abbr = _('c.');
                 }
                 if ($date && substr($date, 0, 4) != "0000") {
                     $crights = determineLivingPrivateRights($child, $righttree);
@@ -218,7 +218,7 @@ foreach ($timeline as $timeentry) {
                         $beg_date = getTimelineDate($date);
                         $beg_year = $beg_date['year'];
                         $beg_date_gmt = $beg_date['date_gmt'];
-                        echo "<event start=\"" . $beg_date_gmt . "\" end=\"" . $beg_date_gmt . "\" title=\"" . xmlcharacters($text['child'] . ": " . $childname) . "\">" . xmlcharacters("$abbr $displayDate") . "</event>\n";
+                        echo "<event start=\"" . $beg_date_gmt . "\" end=\"" . $beg_date_gmt . "\" title=\"" . xmlcharacters(_('Child') . ": " . $childname) . "\">" . xmlcharacters("$abbr $displayDate") . "</event>\n";
                     }
                 }
             }

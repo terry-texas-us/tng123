@@ -35,9 +35,9 @@ $row['allow_living'] = $rights['living'];
 $row['allow_private'] = $rights['private'];
 
 $famname = getFamilyName($famrow);
-$namestr = $text['family'] . ": " . $famname;
+$namestr = _('Family') . ": " . $famname;
 
-$logstring = "<a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\">{$text['familygroupfor']} $famname</a>";
+$logstring = "<a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\">" . _('Family Group Sheet for') . " $famname</a>";
 writelog($logstring);
 
 $family = "\"id\":\"{$famrow['familyID']}\",\"tree\":\"{$famrow['gedcom']}\"";

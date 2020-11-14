@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -28,13 +28,13 @@ $personID = $row['personID'];
 $familyID = $row['familyID'];
 $eventID = $row['eventID'];
 
-$persfamID = $personID ? $admtext['person'] . " " . $personID : $admtext['family'] . " " . $familyID;
+$persfamID = $personID ? _('Person') . " " . $personID : _('Family') . " " . $familyID;
 
 $changedate = date("Y-m-d H:i:s", time() + (3600 * $time_offset));
 $eventdatetr = convertDate($eventdate);
 //don't forget to save date
 
-if ($choice == $admtext['savedel']) {
+if ($choice == _('Save and Delete')) {
     if (is_numeric($eventID)) {
         $query = "UPDATE $events_table SET eventdate=\"$eventdate\", eventdatetr=\"$eventdatetr\", eventplace=\"$eventplace\", info=\"$info\" WHERE eventID = '$eventID'";
         $result = tng_query($query);
@@ -141,17 +141,16 @@ if ($choice == $admtext['savedel']) {
     if ($eventplace) {
         $placetree = $tngconfig['places1tree'] ? "" : $tree;
         $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom) VALUES (\"$placetree\",\"$eventplace\",'0','0')";
-        $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+        $result = @tng_query($query) or die (_('Cannot execute query') . ": $query");
     }
 
-    $succmsg = $admtext['tentadd'];
+    $succmsg = _('was made permanent');
 }
-if ($choice != $admtext['postpone']) {
+if ($choice != _('Postpone')) {
     $query = "DELETE FROM $temp_events_table WHERE tempID=\"$tempID\"";
     $result = tng_query($query);
 
-    if ($choice == $admtext['igndel']) $succmsg = $admtext['tentdel'];
-
+    if ($choice == _('Ignore and Delete')) $succmsg = _('was deleted');
 } else {
     $succmsg = "";
     $message = "";
@@ -159,11 +158,11 @@ if ($choice != $admtext['postpone']) {
 
 if ($succmsg) {
     if ($row['type'] == "F") {
-        adminwritelog("<a href=\"admin_editfamily.php?familyID=$family&tree=$tree\">$choice ({$admtext['family']}): $tree/{$row['familyID']}</a>");
+        adminwritelog("<a href=\"admin_editfamily.php?familyID=$family&tree=$tree\">$choice (" . _('Family') . "): $tree/{$row['familyID']}</a>");
     } else {
-        adminwritelog("<a href=\"admin_editperson.php?personID=$personID&tree=$tree\">$choice ({$admtext['person']}): $tree/{$row['personID']}</a>");
+        adminwritelog("<a href=\"admin_editperson.php?personID=$personID&tree=$tree\">$choice (" . _('Person') . "): $tree/{$row['personID']}</a>");
     }
-    $message = $admtext['tentdata'] . " $persfamID $succmsg.";
+    $message = _('Temporary event record for ') . " $persfamID $succmsg.";
 }
 
 header("Location: admin_findreview.php?type=$type&message=" . urlencode($message));

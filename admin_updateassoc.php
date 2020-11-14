@@ -11,7 +11,7 @@ include "checklogin.php";
 require "datelib.php";
 
 if (!$allow_edit) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -30,7 +30,7 @@ $query .= "SET passocID=\"{$passocID}\", relationship=\"{$relationship}\", relty
 $query .= "WHERE assocID=\"{$assocID}\"";
 $result = tng_query($query);
 
-adminwritelog($admtext['modifyassoc'] . ": $assocID/$tree/$personID::$passocID ($relationship)");
+adminwritelog(_('Edit Existing Association') . ": $assocID/$tree/$personID::$passocID ($relationship)");
 
 $name = getPersonOrFamilyAssociatedName($reltype, $passocID, $tree);
 $namestr = cleanIt($name . ": " . $orgrelationship);

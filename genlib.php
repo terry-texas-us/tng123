@@ -75,7 +75,7 @@ function tng_header($title, $flags) {
     standardHeaderVariants($headElement, $flags);
     //    echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
     if ($tngconfig['maint']) {
-        echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+        echo "<span class='fieldnameback yellow p-1'><strong>" . _('Maintenance Mode is ON') . "</strong></span><br><br>\n";
     }
 }
 
@@ -90,11 +90,11 @@ function tng_footer($flags = ['basicfooter' => true]) {
         if ($dbowner) {
             if ($printfooter) $printfooter .= " - ";
             if ($tngconfig['dataprotect'] && strpos($_SERVER['REQUEST_URI'], "/data_protection_policy.php") === false) {
-                $data_protection_link = " | <a href='data_protection_policy.php' class='footer' title='{$text['dataprotect']}' target='_blank'>{$text['dataprotect']}</a>.\n";
+                $data_protection_link = " | <a href='data_protection_policy.php' class='footer' title='" . _('Data Protection Policy') . "' target='_blank'>" . _('Data Protection Policy') . "</a>.\n";
             } else {
                 $data_protection_link = "";
             }
-            $printfooter .= $text['maintby'] . " <a href='suggest.php' class='footer' title='{$text['contactus']}'>$dbowner</a>.{$data_protection_link}";
+            $printfooter .= _('Maintained by') . " <a href='suggest.php' class='footer' title='" . _('Contact Us') . "'>$dbowner</a>.{$data_protection_link}";
         }
         echo "<p class='smaller'>" . $printfooter . "<br>\n$tngdomain</p>";
     } else {
@@ -244,9 +244,9 @@ function getSurnameOnly($row) {
         if ($tngconfig['ucsurnames']) $namestr = tng_strtoupper($namestr);
 
     } elseif ($row['private']) {
-        $namestr = $admtext['text_private'];
+        $namestr = _('Private');
     } else {
-        $namestr = $text['living'];
+        $namestr = _('Living');
     }
 
     return $namestr;
@@ -265,9 +265,9 @@ function getFirstNameOnly($row) {
     } elseif ($nonames == 2) {
         $namestr = initials($row['firstname']);
     } elseif ($row['private']) {
-        $namestr = $admtext['text_private'];
+        $namestr = _('Private');
     } else {
-        $namestr = $text['living'];
+        $namestr = _('Living');
     }
 
     return $namestr;
@@ -290,43 +290,43 @@ function tng_menu($enttype, $currpage, $entityID, $innermenu) {
         $menu .= $newbrowser ? "<ul id='tngnav'>\n" : "<div id='tabs'>\n";
         $choices = "";
         if ($enttype == "I") {
-            $choices .= doMenuItem($nexttab++, "getperson.php?personID=$entityID&amp;tree=$tree", "ind", $text['indinfo'], $currpage, "person");
-            $choices .= doMenuItem($nexttab++, "familychart.php?personID=$entityID&amp;tree=$tree", "fam", $text['family'], $currpage, "familychart");
-            $choices .= doMenuItem($nexttab++, "pedigree.php?personID=$entityID&amp;tree=$tree", "ped", $text['ancestors'], $currpage, "pedigree");
-            $choices .= doMenuItem($nexttab++, "descend.php?personID=$entityID&amp;tree=$tree", "desc", $text['descendants'], $currpage, "descend");
-            $choices .= doMenuItem($nexttab++, "relateform.php?primaryID=$entityID&amp;tree=$tree", "rel", $text['relationship'], $currpage, "relate");
-            $choices .= doMenuItem($nexttab++, "timeline.php?primaryID=$entityID&amp;tree=$tree", "time", $text['timeline'], $currpage, "timeline");
+            $choices .= doMenuItem($nexttab++, "getperson.php?personID=$entityID&amp;tree=$tree", "ind", _('Individual'), $currpage, "person");
+            $choices .= doMenuItem($nexttab++, "familychart.php?personID=$entityID&amp;tree=$tree", "fam", _('Family'), $currpage, "familychart");
+            $choices .= doMenuItem($nexttab++, "pedigree.php?personID=$entityID&amp;tree=$tree", "ped", _('Ancestors'), $currpage, "pedigree");
+            $choices .= doMenuItem($nexttab++, "descend.php?personID=$entityID&amp;tree=$tree", "desc", _('Descendants'), $currpage, "descend");
+            $choices .= doMenuItem($nexttab++, "relateform.php?primaryID=$entityID&amp;tree=$tree", "rel", _('Relationship'), $currpage, "relate");
+            $choices .= doMenuItem($nexttab++, "timeline.php?primaryID=$entityID&amp;tree=$tree", "time", _('Timeline'), $currpage, "timeline");
             if (!$disallowgedcreate || ($allow_ged && $rightbranch)) {
-                $choices .= doMenuItem($nexttab++, "gedform.php?personID=$entityID&amp;tree=$tree", "ged", $text['extractgedcom'], $currpage, "gedcom");
+                $choices .= doMenuItem($nexttab++, "gedform.php?personID=$entityID&amp;tree=$tree", "ged", _('GEDCOM'), $currpage, "gedcom");
             }
             $editstr = "admin_editperson.php?person";
         } elseif ($enttype == "F") {
-            $choices .= doMenuItem($nexttab++, "familychart.php?familyID=$entityID&amp;tree=$tree", "fam", $text['familychart'], $currpage, "familychart");
-            $choices .= doMenuItem($nexttab++, "familygroup.php?familyID=$entityID&amp;tree=$tree", "rel", $text['groupsheet'], $currpage, "family");
+            $choices .= doMenuItem($nexttab++, "familychart.php?familyID=$entityID&amp;tree=$tree", "fam", _('Family Chart'), $currpage, "familychart");
+            $choices .= doMenuItem($nexttab++, "familygroup.php?familyID=$entityID&amp;tree=$tree", "rel", _('Group Sheet'), $currpage, "family");
             $editstr = "admin_editfamily.php?family";
         } elseif ($enttype == "S") {
-            $choices .= doMenuItem($nexttab++, "showsource.php?sourceID=$entityID&amp;tree=$tree", "ged", $text['source'], $currpage, "source");
+            $choices .= doMenuItem($nexttab++, "showsource.php?sourceID=$entityID&amp;tree=$tree", "ged", _('Source'), $currpage, "source");
             $editstr = "admin_editsource.php?source";
         } elseif ($enttype == "R") {
-            $choices .= doMenuItem($nexttab++, "showrepo.php?repoID=$entityID&amp;tree=$tree", "ged", $text['repository'], $currpage, "repo");
+            $choices .= doMenuItem($nexttab++, "showrepo.php?repoID=$entityID&amp;tree=$tree", "ged", _('Repository'), $currpage, "repo");
             $editstr = "admin_editrepo.php?repo";
         } elseif ($enttype == "D") {
             if (!$_SESSION["ttree"]) $_SESSION["ttree"] = "-x--all--x-";
 
             $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $_SESSION["ttree"] . "&amp;test_type=" . $_SESSION["ttype"] . "&amp;test_group=" . $_SESSION["tgroup"] . "&amp;testsearch=" . $_SESSION["tsearch"];
-            $choices .= doMenuItem($nexttab++, "$browse_dna_tests_url", "ged", $text['all_dna_tests'], $currpage, "alldna");
-            $choices .= doMenuItem($nexttab++, "show_dna_test.php?testID=$entityID", "ged", $text['dna_test'], $currpage, "dna");
+            $choices .= doMenuItem($nexttab++, "$browse_dna_tests_url", "ged", _('All DNA tests'), $currpage, "alldna");
+            $choices .= doMenuItem($nexttab++, "show_dna_test.php?testID=$entityID", "ged", _('DNA Test'), $currpage, "dna");
             $editstr = "admin_edit_dna_test.php?test";
         } elseif ($enttype == "L") {
             $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree=$tree";
-            $choices .= doMenuItem($nexttab++, "placesearch.php?psearch=$entityID$treestr", "place", $text['place'], $currpage, "place");
+            $choices .= doMenuItem($nexttab++, "placesearch.php?psearch=$entityID$treestr", "place", _('Place'), $currpage, "place");
             $editstr = "admin_editplace.php?";
             $entityID = urlencode($entityID);
         }
         if ($allow_edit && $rightbranch) {
-            $choices .= doMenuItem($nexttab, "$editstr" . "ID=$entityID&amp;tree=$tree&amp;cw=1\" target=\"_blank", "sugg", $text['edit'], $currpage, "");
+            $choices .= doMenuItem($nexttab, "$editstr" . "ID=$entityID&amp;tree=$tree&amp;cw=1\" target=\"_blank", "sugg", _('Edit'), $currpage, "");
         } elseif ($emailaddr) {
-            $choices .= doMenuItem($nexttab, "suggest.php?enttype=$enttype&amp;ID=$entityID&amp;tree=$tree", "sugg", $text['suggest'], $currpage, "suggest");
+            $choices .= doMenuItem($nexttab, "suggest.php?enttype=$enttype&amp;ID=$entityID&amp;tree=$tree", "sugg", _('Suggest'), $currpage, "suggest");
         }
         $menu .= $choices;
         $menu .= $newbrowser ? "</ul>\n" : "</div>\n";
@@ -366,11 +366,11 @@ function tng_getLeftIcons() {
 
     $left_icons = "";
     if (empty($tngconfig['showhome'])) {
-        $left_icons .= tng_smallIcon(['url' => $homepage, 'label' => $text['homepage'], 'id' => "home"]);
+        $left_icons .= tng_smallIcon(['url' => $homepage, 'label' => _('Home Page'), 'id' => "home"]);
         $tngconfig['menucount']++;
     }
     if (empty($tngconfig['showsearch'])) {
-        $params = ['url' => "searchform.php", 'label' => $text['search'], 'id' => "search"];
+        $params = ['url' => "searchform.php", 'label' => _('Search'), 'id' => "search"];
         if (empty($tngconfig['searchchoice'])) {
             $params['onclick'] = "return openSearch();";
         }
@@ -380,7 +380,7 @@ function tng_getLeftIcons() {
     $profilelink = $userparen = "";
     if ($currentuser) {
         if ($allow_profile) {
-            $label = "({$text['editprofile']}: $currentuser)";
+            $label = "(" . _('Edit Profile') . ": $currentuser)";
             $profilelink = tng_smallIcon(['label' => $label, 'class' => "tngsmallicon3", 'id' => "profile",
                 'onclick' => "tnglitbox = new LITBox('ajx_editprofile.php?p=" . urlencode("") . "', {width: 580, height: 750}); return false"]);
             $tngconfig['menucount']++;
@@ -390,9 +390,9 @@ function tng_getLeftIcons() {
     }
     if (empty($tngconfig['showlogin'])) {
         if ($currentuser) {
-            $left_icons .= tng_smallIcon(['url' => "logout.php?session=" . session_name(), 'label' => $text['logout'] . $userparen, 'id' => "log"]);
+            $left_icons .= tng_smallIcon(['url' => "logout.php?session=" . session_name(), 'label' => _('Logout') . $userparen, 'id' => "log"]);
         } else {
-            $left_icons .= tng_smallIcon(['label' => $text['login'], 'id' => "log", 'onclick' => "return openLogin('ajx_login.php?p=" . urlencode("") . "');"]);
+            $left_icons .= tng_smallIcon(['label' => _('Login'), 'id' => "log", 'onclick' => "return openLogin('ajx_login.php?p=" . urlencode("") . "');"]);
         }
         $tngconfig['menucount']++;
     }
@@ -409,7 +409,7 @@ function tng_getRightIcons(): string {
 
     $right_icons = "";
     if (!empty($tngconfig['showshare']) && $isConnected) {
-        $right_icons .= tng_smallIcon(['label' => $text['share'], 'id' => "share", 'onclick' => "jQuery('#shareicons').toggle(200); if(!share) { jQuery('#share-smicon').html('{$text['hide']}'); share=1;} else { jQuery('#share-smicon').html('{$text['share']}'); share=0; }; return false;"]);
+        $right_icons .= tng_smallIcon(['label' => _('Share'), 'id' => "share", 'onclick' => "jQuery('#shareicons').toggle(200); if(!share) { jQuery('#share-smicon').html('" . _('Hide') . "'); share=1;} else { jQuery('#share-smicon').html('" . _('Share') . "'); share=0; }; return false;"]);
     }
     if (empty($tngconfig['showprint'])) {
         $print_url = getScriptName();
@@ -418,11 +418,11 @@ function tng_getRightIcons(): string {
         } else {
             $print_url .= "?tngprint=1";
         }
-        $right_icons .= tng_smallIcon(['label' => $text['tngprint'], 'id' => "print", 'rel' => "nofollow", 'onclick' => "newwindow=window.open('$print_url','tngprint','width=850,height=600,status=no,resizable=yes,scrollbars=yes'); newwindow.focus(); return false;"]);
+        $right_icons .= tng_smallIcon(['label' => _('Print'), 'id' => "print", 'rel' => "nofollow", 'onclick' => "newwindow=window.open('$print_url','tngprint','width=850,height=600,status=no,resizable=yes,scrollbars=yes'); newwindow.focus(); return false;"]);
     }
 
     if (empty($tngconfig['showbmarks']) && $gotlastpage) {
-        $right_icons .= tng_smallIcon(['label' => $text['bookmark'], 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('ajx_addbookmark.php?p=" . urlencode("") . "', {width:350, height:120}); return false;"]);
+        $right_icons .= tng_smallIcon(['label' => _('Bookmark'), 'id' => "bmk", 'onclick' => "tnglitbox = new LITBox('ajx_addbookmark.php?p=" . urlencode("") . "', {width:350, height:120}); return false;"]);
         $tngconfig['menucount']++;
     }
 
@@ -623,7 +623,7 @@ function tng_mobileicons($title) {
     $finditems = tng_getFindMenu();
     if ($tngconfig['menucount']) {
         $menuitems .= "<ul id='mfindmenu' class='mright'>\n" . $finditems . "</ul>\n";
-        $menuicons .= "<a href='' class='mmenu' id='mmenu-find' title=\"{$text['find_menu']}\" onclick=\"return toggleMobileMenu('find');\"></a>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-find' title=\"" . _('Find') . "\" onclick=\"return toggleMobileMenu('find');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("find", $tngconfig['menucount']);
     }
 
@@ -631,7 +631,7 @@ function tng_mobileicons($title) {
     $mediaitems = tng_getMediaMenu();
     if ($tngconfig['menucount']) {
         $menuitems .= "<ul id='mmediamenu' class='mright'>\n" . $mediaitems . "</ul>\n";
-        $menuicons .= "<a href='' class='mmenu' id='mmenu-media' title=\"{$text['media']}\" onclick=\"return toggleMobileMenu('media');\"></a>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-media' title=\"" . _('Media') . "\" onclick=\"return toggleMobileMenu('media');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("media", $tngconfig['menucount']);
     }
 
@@ -639,7 +639,7 @@ function tng_mobileicons($title) {
     $infoitems = tng_getInfoMenu($title);
     if ($tngconfig['menucount']) {
         $menuitems .= "<ul id='minfomenu' class='mright'>\n" . $infoitems . "</ul>\n";
-        $menuicons .= "<a href='' class='mmenu' id='mmenu-info' title=\"{$text['info']}\" onclick=\"return toggleMobileMenu('info');\"></a>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-info' title=\"" . _('Info') . "\" onclick=\"return toggleMobileMenu('info');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("info", $tngconfig['menucount']);
     }
     $tngconfig['menucount'] = 0;
@@ -654,7 +654,7 @@ function tng_mobileicons($title) {
     $tngconfig['menucount'] = 0;
     $menuitems .= tng_getLangMenu($title);
     if ($tngconfig['menucount']) {
-        $menuicons .= "<a href='' class='mmenu' id='mmenu-lang' title=\"{$text['language']}\" onclick=\"return toggleMobileMenu('lang');\"></a>\n";
+        $menuicons .= "<a href='' class='mmenu' id='mmenu-lang' title=\"" . _('Language') . "\" onclick=\"return toggleMobileMenu('lang');\"></a>\n";
         $tngconfig['mmenustyle'] .= get_menustyle("lang", $tngconfig['menucount']);
     }
     $menuicons .= "</div>\n";
@@ -674,7 +674,7 @@ function tng_icons($instance, $title = "") {
     $fullmenu = "";
     if ($tngprint) {
         $fullmenu .= "<div style='float: right;'>";
-        $fullmenu .= "<b><a id='printlink' style='text-decoration: underline;' href=\"javascript: {document.getElementById('printlink').style.visibility='hidden'; window.print();}\">&gt; {$text['tngprint']} &lt;</a></b>";
+        $fullmenu .= "<b><a id='printlink' style='text-decoration: underline;' href=\"javascript: {document.getElementById('printlink').style.visibility='hidden'; window.print();}\">&gt; " . _('Print') . " &lt;</a></b>";
         $fullmenu .= "</div>\n";
     } else {
         if ($tngconfig['menu'] == 1) {
@@ -694,19 +694,19 @@ function tng_icons($instance, $title = "") {
 
         $menu = "";
         if ($tngconfig['menu'] < 2) {
-            $menu .= "<li><a href='#' class='menulink'>{$text['find_menu']}</a>\n";
+            $menu .= "<li><a href='#' class='menulink'>" . _('Find') . "</a>\n";
             $menu .= "<ul>\n";
             $menu .= tng_getFindMenu();
             $menu .= "</ul>\n";
             $menu .= "</li>\n";
 
-            $menu .= "<li><a href='#' class='menulink'>{$text['media']}</a>\n";
+            $menu .= "<li><a href='#' class='menulink'>" . _('Media') . "</a>\n";
             $menu .= "<ul>\n";
             $menu .= tng_getMediaMenu();
             $menu .= "</ul>\n";
             $menu .= "</li>\n";
 
-            $menu .= "<li><a href='#' class='menulink'>{$text['info']}</a>\n";
+            $menu .= "<li><a href='#' class='menulink'>" . _('Info') . "</a>\n";
             $last = !$langmenu && !isset($custommenu) ? " class='last'" : "";
             $menu .= "<ul{$last}>\n";
             $menu .= tng_getInfoMenu($title);
@@ -765,16 +765,16 @@ function tng_icons($instance, $title = "") {
             if (empty($tngconfig['searchchoice']) && empty($tngconfig['showsearch'])) {
                 $fullmenu .= '<div id="searchdrop" class="slidedown rounded-lg" style="display:none;">';
                 $fullmenu .= "<a href='#' class='float-right' onclick=\"jQuery('#searchdrop').slideUp(200); return false;\"><img src='img/tng_close.gif' alt=''></a>";
-                $fullmenu .= "<h3 class='subhead'>{$text['search']} | <a href='searchform.php'>{$text['mnuadvancedsearch']}</a> | <a href='famsearchform.php'>{$text['searchfams']}</a> | <a href='searchsite.php'>{$text['searchsitemenu']}</a></h3>";
+                $fullmenu .= "<h3 class='subhead'>" . _('Search') . " | <a href='searchform.php'>" . _('Advanced Search') . "</a> | <a href='famsearchform.php'>" . _('Search Families') . "</a> | <a href='searchsite.php'>" . _('Search Site') . "</a></h3>";
                 $fullmenu .= getFORM("search", "get", "", "") . "\n";
-                $fullmenu .= "<label for='searchfirst' class='mr-2'>{$text['firstname']}:</label>";
+                $fullmenu .= "<label for='searchfirst' class='mr-2'>" . _('First Name') . ":</label>";
                 $fullmenu .= "<input type='text' name='myfirstname' id='searchfirst'>\n";
-                $fullmenu .= "<label for='searchlast' class='mr-2'>{$text['lastname']}:</label>";
+                $fullmenu .= "<label for='searchlast' class='mr-2'>" . _('Last Name') . ":</label>";
                 $fullmenu .= "<input type='text' name='mylastname' id='searchlast'>\n";
-                $fullmenu .= "<label for='searchid' class='mr-2'>{$text['id']}:</label>";
+                $fullmenu .= "<label for='searchid' class='mr-2'>" . _('ID') . ":</label>";
                 $fullmenu .= "<input type='text' class='w-24' name='mypersonid' id='searchid'>\n";
                 $fullmenu .= "<input type='hidden' name='idqualify' value='equals'>\n";
-                $fullmenu .= "<input type='submit' value='{$text['search']}'></form></div>";
+                $fullmenu .= "<input type='submit' value='" . _('Search') . "'></form></div>";
             }
         }
 
@@ -859,7 +859,7 @@ function treeDropdown($forminfo) {
             if ($forminfo['startform']) {
                 $ret .= getFORM($forminfo['action'], $forminfo['method'], $forminfo['name'], $forminfo['id']);
             }
-            $ret .= "<span class='normal'>{$text['tree']}: </span>";
+            $ret .= "<span class='normal'>" . _('Tree') . ": </span>";
             $ret .= treeSelect($treeresult, $forminfo['name']);
             $ret .= "&nbsp; <img src=\"img/spinner.gif\" style='display: none;' id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
             if (isset($forminfo['hidden']) && is_array($forminfo['hidden'])) {
@@ -891,7 +891,7 @@ function treeDropdown($forminfo) {
                     $importtime += ($time_offset * 3600);
                 }
                 $importdate = strtoupper(substr(PHP_OS, 0, 3)) == 'WIN' ? strftime("%#d %b %Y %H:%M:%S", $importtime) : strftime("%e %b %Y %H:%M:%S", $importtime);
-                echo "<p class='normal'>{$text['lastimportdate']}: " . displayDate($importdate) . "</p>";
+                echo "<p class='normal'>" . _('Date of Last GEDCOM Import') . ": " . displayDate($importdate) . "</p>";
             }
         }
         tng_free_result($treeresult);
@@ -918,7 +918,7 @@ function treeSelect($treeresult, $formname = null, $onchange = null) {
     $ret .= "<option value=\"-x--all--x-\" ";
     if (!$tree) $ret .= "selected";
 
-    $ret .= ">{$text['alltrees']}</option>\n";
+    $ret .= ">" . _('All Trees') . "</option>\n";
 
     while ($row = tng_fetch_assoc($treeresult)) {
         $ret .= "<option value=\"{$row['gedcom']}\"";

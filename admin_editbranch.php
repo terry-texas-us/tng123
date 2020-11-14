@@ -10,7 +10,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -25,16 +25,15 @@ $treerow = getTree($trees_table, $tree);
 
 $helplang = findhelp("branches_help.php");
 
-tng_adminheader($admtext['modifytree'], $flags);
+tng_adminheader(_('Edit Existing Tree'), $flags);
 ?>
 <script src="js/selectutils.js"></script>
 <script>
     function validateForm() {
         let rval = true;
         var form = document.form1;
-
         if (form1.description.value.length == 0) {
-            alert("<?php echo $admtext['entertreedesc']; ?>");
+            alert("<?php echo _('Please enter a branch description.'); ?>");
             rval = false;
         }
         return rval;
@@ -45,11 +44,10 @@ tng_adminheader($admtext['modifytree'], $flags);
     function startLabels(form) {
         //pass the form fields as args
         var form = document.form1;
-
         if (form.personID.value.length == 0) {
-            alert("<?php echo $admtext['enterstartingind']; ?>");
+            alert("<?php echo _('Please enter a starting individual ID.'); ?>");
         } else if (isNaN(form.agens.value) || isNaN(form.dgens.value)) {
-            alert("<?php echo $admtext['gensnumeric']; ?>");
+            alert("<?php echo _('Values for Ancestors and Descendants must be numeric.'); ?>");
         } else {
             var args = "&personID=" + form.personID.value + "&agens=" + form.agens.value + "&dagens=" + form.dagens.value + "&dgens=" + form.dgens.value + "&dospouses=" + form.dospouses.value;
             tnglitbox = new LITBox('ajx_branchmenu.php?branch=<?php echo $branch; ?>&tree=<?php echo $tree; ?>' + args, {
@@ -99,14 +97,14 @@ tng_adminheader($admtext['modifytree'], $flags);
 
     function toggleClear(option) {
         jQuery('#allpart').fadeIn(300);
-        jQuery('#labelsub').val(option ? '<?php echo $admtext['text_delete']; ?>' : '<?php echo $admtext['clearlabels']; ?>');
+        jQuery('#labelsub').val(option ? '<?php echo _('Delete'); ?>' : '<?php echo _('Clear labels'); ?>');
         jQuery('#overwrite1').fadeOut(300);
     }
 
     function toggleAdd() {
         jQuery('#allpart').fadeOut(300);
         document.form2.set[1].checked = true;
-        jQuery('#labelsub').val('<?php echo $admtext['addlabels']; ?>');
+        jQuery('#labelsub').val('<?php echo _('Add labels'); ?>');
         jQuery('#overwrite1').fadeIn(300);
     }
 </script>
@@ -115,12 +113,12 @@ tng_adminheader($admtext['modifytree'], $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$branchtabs[0] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
-$branchtabs[1] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
-$branchtabs[2] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+$branchtabs[0] = [1, "admin_branches.php", _('Search'), "findbranch"];
+$branchtabs[1] = [$allow_add, "admin_newbranch.php", _('Add New'), "addbranch"];
+$branchtabs[2] = [$allow_edit, "#", _('Edit'), "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php#add');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($branchtabs, "edit", $innermenu);
-echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranch'], "img/branches_icon.gif", $menu, $message);
+echo displayHeadline(_('Branches') . " &gt;&gt; " . _('Edit Existing Branch'), "img/branches_icon.gif", $menu, $message);
 ?>
 
 <table class="lightback">
@@ -129,15 +127,15 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
             <form action="admin_updatebranch.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
                 <table class="normal">
                     <tr>
-                        <td class='align-top'><?php echo $admtext['tree']; ?>:</td>
+                        <td class='align-top'><?php echo _('Tree'); ?>:</td>
                         <td><?php echo $treerow['treename']; ?></td>
                     </tr>
                     <tr>
-                        <td class='align-top'><?php echo $admtext['branchid']; ?>:</td>
+                        <td class='align-top'><?php echo _('Branch ID'); ?>:</td>
                         <td><?php echo $branch; ?></td>
                     </tr>
                     <tr>
-                        <td class='align-top'><?php echo $admtext['description']; ?>:</td>
+                        <td class='align-top'><?php echo _('Description'); ?>:</td>
                         <td>
                             <input type="text" name="description" size="60" value="<?php echo $row['description']; ?>">
                         </td>
@@ -145,38 +143,38 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
 
                     <tr>
                         <td colspan="2">
-                            <div id="startind1"><br><strong><?php echo $text['startingind']; ?>:</strong></div>
+                            <div id="startind1"><br><strong><?php echo _('Starting Individual'); ?>:</strong></div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div id="startind2">&nbsp;&nbsp;<?php echo $admtext['personid']; ?>:</div>
+                            <div id="startind2">&nbsp;&nbsp;<?php echo _('Person ID'); ?>:</div>
                         </td>
                         <td>
                             <table id="startind3" class="normal">
                                 <tr>
                                     <td>
-                                        <input type="text" name="personID" id="personID" value="<?php echo $row['personID']; ?>" size="10"> &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
+                                        <input type="text" name="personID" id="personID" value="<?php echo $row['personID']; ?>" size="10"> &nbsp;<?php echo _('OR'); ?>&nbsp;
                                     </td>
-                                    <td><a href="#" onclick="return findItem('I','personID','','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo $admtext['find']; ?>"
-                                           class="smallicon admin-find-icon"></a></td>
+                                    <td><a href="#" onclick="return findItem('I','personID','','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');" title="<?php echo _('Find...'); ?>"
+                                            class="smallicon admin-find-icon"></a></td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <div id="numgens1"><br><strong><?php echo $admtext['numgenerations']; ?>:</strong></div>
+                            <div id="numgens1"><br><strong><?php echo _('Number of Generations'); ?>:</strong></div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div id="numgens2">&nbsp;&nbsp;<?php echo $admtext['ancestors']; ?>:</div>
+                            <div id="numgens2">&nbsp;&nbsp;<?php echo _('Ancestors'); ?>:</div>
                         </td>
                         <td>
                             <div id="numgens3">
                                 <input type="text" name="agens" size="3" maxlength="3" value="<?php echo $row['agens'] ? $row['agens'] : 0; ?>">
-                                &nbsp;&nbsp; <?php echo $admtext['descofanc']; ?>:
+                                &nbsp;&nbsp; <?php echo _('Descendant generations from each ancestor'); ?>:
                                 <select name="dagens" id="dagens">
                                     <?php
                                     $dagens = $row['dagens'] != "" ? $row['dagens'] : 1;
@@ -193,14 +191,14 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
                     </tr>
                     <tr>
                         <td>
-                            <div id="numgens4">&nbsp;&nbsp;<?php echo $admtext['descendants']; ?>:</div>
+                            <div id="numgens4">&nbsp;&nbsp;<?php echo _('Descendants'); ?>:</div>
                         </td>
                         <td>
                             <div id="numgens5">
                                 <input type="text" name="dgens" size="3" maxlength="3" value="<?php echo $row['dgens'] ? $row['dgens'] : 0; ?>"> &nbsp;&nbsp;
                                 <input type="checkbox" name="dospouses" id="dospouses"<?php if ($row['inclspouses']) {
                                     echo " checked";
-                                } ?> value="1"> <?php echo $admtext['inclspouses']; ?>
+                                } ?> value="1"> <?php echo _('Include spouses for all descendants'); ?>
                             </div>
                         </td>
                     </tr>
@@ -209,10 +207,10 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['modifybranc
 	<br></span>
                 <input type="hidden" name="tree" value="<?php echo $tree; ?>">
                 <input type="hidden" name="branch" value="<?php echo $branch; ?>">
-                <input type="submit" name="submit" class="btn" value="<?php echo $admtext['save']; ?>">
-                <input type="submit" name="submitx" accesskey="s" class="btn" value="<?php echo $admtext['saveexit']; ?>">
-                <input type="button" class="btn" value="<?php echo $admtext['addlabels']; ?>" onclick="return startLabels(document.forms.form1);">
-                <input type="button" class="btn" value="<?php echo $admtext['showpeople']; ?>" onclick="return showBranchPeople();">
+                <input type="submit" name="submit" class="btn" value="<?php echo _('Save'); ?>">
+                <input type="submit" name="submitx" accesskey="s" class="btn" value="<?php echo _('Save and Exit'); ?>">
+                <input type="button" class="btn" value="<?php echo _('Add labels'); ?>" onclick="return startLabels(document.forms.form1);">
+                <input type="button" class="btn" value="<?php echo _('Show people with this tree/branch'); ?>" onclick="return showBranchPeople();">
             </form>
         </td>
     </tr>

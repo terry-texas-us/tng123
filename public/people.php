@@ -85,11 +85,11 @@ function getBirthInformation(bool $both, array $person): array {
 
     if ($both) {
         if ($person['birthdate'] || $person['birthplace']) {
-            $birthdate = $admtext['birthabbr'] . " " . displayDate($person['birthdate']);
+            $birthdate = _('b.') . " " . displayDate($person['birthdate']);
             $birthplace = $person['birthplace'];
         } else {
             if ($person['altbirthdate'] || $person['altbirthplace']) {
-                $birthdate = $admtext['chrabbr'] . " " . displayDate($person['altbirthdate']);
+                $birthdate = _('c.') . " " . displayDate($person['altbirthdate']);
                 $birthplace = $person['altbirthplace'];
             } else {
                 $birthdate = "";
@@ -110,12 +110,12 @@ function getBirthText(?array $person): string {
 
     global $admtext;
     if ($person['birthdate']) {
-        $birthstring = $admtext['birthabbr'] . " " . displayDate($person['birthdate']);
+        $birthstring = _('b.') . " " . displayDate($person['birthdate']);
     } else {
         if ($person['altbirthdate']) {
-            $birthstring = $admtext['chrabbr'] . " " . displayDate($person['altbirthdate']);
+            $birthstring = _('c.') . " " . displayDate($person['altbirthdate']);
         } else {
-            $birthstring = $admtext['nobirthinfo'];
+            $birthstring = _('No birth info');
         }
     }
     return $birthstring;
@@ -129,10 +129,10 @@ function getDeathText(?array $person): string {
     global $admtext;
 
     if ($person['deathdate']) {
-        $deathstring = $admtext['deathabbr'] . " " . displayDate($person['deathdate']);
+        $deathstring = _('d.') . " " . displayDate($person['deathdate']);
     } else {
         if ($person['burialdate']) {
-            $deathstring = $admtext['burialabbr'] . " " . displayDate($person['burialdate']);
+            $deathstring = _('bur.') . " " . displayDate($person['burialdate']);
         } else {
             $deathstring = "";
         }
@@ -160,7 +160,7 @@ function getVitalInformation(?array $person, bool $tree): array {
             $birthinfo = " ($birthstring$deathstring)";
         }
     } else {
-        $birthinfo = ($person['private'] ? $admtext['text_private'] : $admtext['living']) . " - " . $person['personID'];
+        $birthinfo = ($person['private'] ? _('Private') : _('Living')) . " - " . $person['personID'];
     }
     return [$person, $birthinfo];
 }

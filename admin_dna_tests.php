@@ -14,7 +14,7 @@ function get_test_groups($test_type, $test_group) {
     global $admtext, $dna_groups_table;
     $wherestr2 = $test_type ? " AND test_type = \"$test_type\"" : "";
     $groupquery = "SELECT description, test_type, gedcom FROM $dna_groups_table WHERE description IS NOT NULL $wherestr2 ORDER BY description";
-    $groupsel = "	<option value=\"\">{$admtext['allgroups']}</option>\n";
+    $groupsel = "	<option value=\"\">" . _('All Groups') . "</option>\n";
     $groupresult = tng_query($groupquery);
     while ($grouprow = tng_fetch_assoc($groupresult)) {
         $groupsel .= "	<option value=\"{$grouprow['description']}\"";
@@ -116,7 +116,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("dna_help.php");
 
-tng_adminheader($admtext['dna_tests'], $flags);
+tng_adminheader(_('DNA Tests'), $flags);
 ?>
 <script>
     var tnglitbox;
@@ -131,7 +131,7 @@ tng_adminheader($admtext['dna_tests'], $flags);
     }
 
     function confirmDelete(testID) {
-        if (confirm('<?php echo $admtext["confdeletedna"]; ?>')) {
+        if (confirm('<?php echo _("Are you sure you want to delete this test?"); ?>')) {
             deleteIt('dna', testID);
         }
         return false;
@@ -142,20 +142,20 @@ tng_adminheader($admtext['dna_tests'], $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$dnatabs[0] = [1, "admin_dna_tests.php", $admtext['search'], "findtest"];
-$dnatabs[1] = [$allow_add, "admin_new_dna_test.php", $admtext['addnew'], "addtest"];
-$dnatabs[2] = [$allow_add, "admin_dna_groups.php", $admtext['dna_groups'], "dnagroups"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/dna_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$dnatabs[0] = [1, "admin_dna_tests.php", _('Search'), "findtest"];
+$dnatabs[1] = [$allow_add, "admin_new_dna_test.php", _('Add New'), "addtest"];
+$dnatabs[2] = [$allow_add, "admin_dna_groups.php", _('DNA Groups'), "dnagroups"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/dna_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($dnatabs, "findtest", $innermenu);
-echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message);
+echo displayHeadline(_('DNA Tests'), "img/dna_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
 
-                <form action="admin_dna_tests.php" name="form1" id="form1">
+                    <form action="admin_dna_tests.php" name="form1" id="form1">
                     <table class="normal">
                         <tr>
                             <td>
@@ -166,13 +166,13 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                 $treeresult = tng_query($query);
                                 $numtrees = tng_num_rows($treeresult);
                                 if ($numtrees > 1) {
-                                    echo $admtext['tree'] . ": ";
+                                    echo _('Tree') . ": ";
                                     $ret = "";
                                     $ret .= "<select name='tree' id='tree' onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
                                     $ret .= "<option value=\"\" ";
                                     if (!$tree) $ret .= "selected";
 
-                                    $ret .= ">{$admtext['alltrees']}</option>\n";
+                                    $ret .= ">" . _('All Trees') . "</option>\n";
 
                                     while ($row2 = tng_fetch_assoc($treeresult)) {
                                         $ret .= "<option value=\"{$row2['gedcom']}\"";
@@ -186,87 +186,87 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                     $ret .= "&nbsp; <img src=\"img/spinner.gif\" style='display: none;' id=\"treespinner\" alt=\"\" class=\"spinner\">\n";
                                     echo $ret;
                                 }
-                                echo $admtext['test_type'] . ": ";
+                                echo _('Test Type') . ": ";
                                 $wherestr = $newwherestr;
                                 ?>
                                 <select name="test_type" id="test_type"
-                                        onchange="jQuery('#treespinner2').show();document.form1.test_group.selectedIndex = 0;document.form1.submit();">
-                                    <option value=""><?php echo $admtext['alltypes']; ?></option>
+                                    onchange="jQuery('#treespinner2').show();document.form1.test_group.selectedIndex = 0;document.form1.submit();">
+                                    <option value=""><?php echo _('All Types'); ?></option>
                                     <option value="atDNA"<?php if ($test_type == "atDNA") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['atdna_test']; ?></option>
+                                    } ?>><?php echo _('atDNA (autosomal) Tests'); ?></option>
                                     <option value="Y-DNA"<?php if ($test_type == "Y-DNA") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['ydna_test']; ?></option>
+                                    } ?>><?php echo _('Y-DNA Tests'); ?></option>
                                     <option value="mtDNA"<?php if ($test_type == "mtDNA") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['mtdna_test']; ?></option>
+                                    } ?>><?php echo _('mtDNA (Mitochondrial) Tests'); ?></option>
                                     <option value="X-DNA"<?php if ($test_type == "X-DNA") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['xdna_test']; ?></option>
+                                    } ?>><?php echo _('X-DNA'); ?></option>
                                 </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;
-                                <?php echo $text['testgroup']; ?>:
+                                <?php echo _('Test Group'); ?>:
                                 <select name="test_group" id="test_group" onchange="jQuery('#treespinner3').show();document.form1.submit();">
                                     <?php echo get_test_groups($test_type, $test_group); ?>
                                 </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner3" alt="" class="spinner">
                             </td>
                         </tr>
                         <tr>
-                            <td><br><?php echo $admtext['searchfor']; ?>:
+                            <td><br><?php echo _('Search for'); ?>:
                                 <input name="searchstring" type="search" value="<?php echo $originalstring; ?>">&nbsp;
-                                <input type="submit" name="submit2" value="<?php echo $admtext['search']; ?>" class="align-top">&nbsp;&nbsp;
-                                <input type="submit" name="reset" value="<?php echo $admtext['reset']; ?>" class="align-top"
+                                <input type="submit" name="submit2" value="<?php echo _('Search'); ?>" class="align-top">&nbsp;&nbsp;
+                                <input type="submit" name="reset" value="<?php echo _('Reset'); ?>" class="align-top"
                                     onclick="document.form1.searchstring.value=''; document.form1.tree.selectedIndex=0; document.form1.test_type.selectedIndex = 0; document.form1.test_group.selectedIndex = 0;">
                             </td>
                         </tr>
                     </table>
 
-                    <input type="hidden" name="findtest" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                </form>
-                <?php
-                $numrowsplus = $numrows + $offset;
+                        <input type="hidden" name="findtest" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                    </form>
+                    <?php
+                    $numrowsplus = $numrows + $offset;
                 if (!$numrowsplus) $offsetplus = 0;
                 ?>
                 <form action="admin_updateselecteddna.php" method="post" name="form2">
                     <?php if ($allow_media_delete || $allow_media_edit) { ?>
                         <p class="whitespace-no-wrap">
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
+                            <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                            <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
                             <?php if ($allow_delete) { ?>
-                                <input type="submit" name="xdnaaction" value="<?php echo $admtext['deleteselected']; ?>"
-                                       onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">&nbsp;&nbsp;
+                                <input type="submit" name="xdnaaction" value="<?php echo _('Delete Selected'); ?>"
+                                    onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">&nbsp;&nbsp;
                             <?php } ?>
                         </p>
                     <?php } ?>
 
                     <table class="normal">
                         <tr>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
                             <?php if ($allow_edit || $allow_delete) { ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Select'); ?></th>
                             <?php } ?>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['test_type']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $text['test_number']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['match_date']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['name']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['mda']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['mrca']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['keeptest']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['keepname']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $text['testgroup']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['tree']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Test Type'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Test Number/Name'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Match Date'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Name'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Most distant ancestor'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('MRC Ancestor'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Test Privacy'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Name Privacy'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Test Group'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Tree'); ?></th>
                         </tr>
                         <?php
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_edit_dna_test.php?testID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                            $actionstr .= "<a href=\"admin_edit_dna_test.php?testID=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                            $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                         }
-                        $actionstr .= "<a href=\"show_dna_test.php?testID=xxx\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
+                        $actionstr .= "<a href=\"show_dna_test.php?testID=xxx\" target='_blank' title=\"" . _('Test') . "\" class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['testID'], $actionstr);
@@ -290,7 +290,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                             if ($dbname) {
                                 echo "<td class='lightback'>" . $dbname . "</td>\n";
                             } else {
-                                echo "<td class='lightback'>" . $row['person_name'] . "<br>&nbsp;" . $admtext['person_name'] . "</td>\n";
+                                echo "<td class='lightback'>" . $row['person_name'] . "<br>&nbsp;" . _('Person not in database') . "</td>\n";
                             }
 
                             $mdanc_namestr = "";
@@ -327,18 +327,18 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                                         $ancrow['allow_living'] = $ancrow['allow_private'] = 1;
 
                                         $famname = getFamilyName($ancrow);
-                                        $fammarried = "<br>&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $ancrow['marrdate'];
+                                        $fammarried = "<br>&nbsp;&nbsp;<strong>" . _('m.') . "</strong>&nbsp;" . $ancrow['marrdate'];
                                         $mrcanc_namestr = $famname . $fammarried;
                                     }
                                 }
                             }
-                            $privtest = $row['private_test'] ? $admtext['text_private'] : "&nbsp;";
-                            $privacy = $row['private_dna'] ? $admtext['text_private'] : $admtext['configsettings'];
+                            $privtest = $row['private_test'] ? _('Private') : "&nbsp;";
+                            $privacy = $row['private_dna'] ? _('Private') : _('General Settings');
                             $query = "SELECT description FROM $dna_groups_table WHERE dna_group=\"{$row['dna_group']}\"";
                             $descresult = tng_query($query);
                             $descrow = tng_fetch_assoc($descresult);
                             tng_free_result($descresult);
-                            $group = $row['dna_group'] ? $descrow['description'] : $text['none'];
+                            $group = $row['dna_group'] ? $descrow['description'] : _('No encryption');
                             echo "<td class='lightback'>" . $mdanc_namestr . "</td>\n";
                             echo "<td class='lightback'>" . $mrcanc_namestr . "</td>\n";
                             echo "<td class='lightback'>" . $privtest . "</td>\n";
@@ -356,7 +356,7 @@ echo displayHeadline($admtext['dna_tests'], "img/dna_icon.gif", $menu, $message)
                 echo "</div>";
                 }
                 else {
-                    echo "</table>\n" . $admtext['norecords'];
+                    echo "</table>\n" . _('No records exist.');
                 }
                 tng_free_result($result);
                 ?>

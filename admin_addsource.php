@@ -10,7 +10,7 @@ $error_pfx = $ajax ? "error:" : "";
 
 $tree = $tree1;
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     if ($ajax) {
         echo $error_pfx . $message;
     } else {
@@ -42,9 +42,9 @@ $query = "INSERT INTO $sources_table (sourceID,shorttitle,title,author,callnum,p
 $params = [&$template, &$sourceID, &$shorttitle, &$title, &$author, &$callnum, &$publisher, &$repoID, &$actualtext, &$newdate, &$tree1, &$currentuser];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
-    adminwritelog("<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree\">{$admtext['addnewsource']}: $tree/$sourceID</a>");
+    adminwritelog("<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree\">" . _('Add New Source') . ": $tree/$sourceID</a>");
 } else {
-    die ($error_pfx . $admtext['cannotexecutequery'] . ": $query");
+    die ($error_pfx . _('Cannot execute query') . ": $query");
 }
 if (isset($ajax)) {
     echo $sourceID;

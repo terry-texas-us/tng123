@@ -12,7 +12,7 @@ require "adminlog.php";
 require "deletelib.php";
 
 if ($assignedbranch) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -380,13 +380,13 @@ function doDescendants($personID, $gender, $gen, $maxgen) {
 }
 
 if ($branchaction == "clear") {
-    $branchtitle = $admtext['clearingbranch'];
+    $branchtitle = _('Clearing Branch Labels');
     $overwrite = 1;
 } elseif ($branchaction == "delete") {
     $branchtitle = "DELETING BRANCH";
     $overwrite = 0;
 } else {
-    $branchtitle = $admtext['addingbranch'];
+    $branchtitle = _('Adding Branch Labels');
     $branchclause = $overwrite ? "" : " AND branch = \"\"";
 }
 header("Content-type:text/html; charset=" . $session_charset);
@@ -419,8 +419,8 @@ if ($set == "all") {
     if ($dgens > 0) doDescendants($personID, $gender, 1, $dgens);
 
 }
-echo "<p class='normal'>{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</p>\n";
+echo "<p class='normal'>" . _('Total Affected') . ": $counter " . _('People') . ", $fcounter " . _('Families') . ".</p>\n";
 echo "<p class='normal'>$names</p>\n";
 echo "<p class='normal'>$famnames</p>\n";
 
-adminwritelog($admtext['labelbranches'] . ": $tree/$branch ($branchaction/$set)");
+adminwritelog(_('Label Branches') . ": $tree/$branch ($branchaction/$set)");

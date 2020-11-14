@@ -9,7 +9,7 @@ include "$mylanguage/admintext.php";
 include "checklogin.php";
 
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: login.php?message=" . urlencode($message));
     exit;
 }
@@ -35,20 +35,20 @@ include_once "eventlib.php";
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
-                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
+                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo _('Save'); ?>">
                 </div>
-                <h3 class="subhead togglehead no-underline"><?php echo $admtext['addnewperson']; ?></h3>
+                <h3 class="subhead togglehead no-underline"><?php echo _('Add New Person'); ?></h3>
 
                 <table class="normal">
                     <tr>
-                        <td class="align-top" colspan="2"><span class="normal"><strong><?php echo $admtext['prefixpersonid']; ?></strong></span></td>
+                        <td class="align-top" colspan="2"><span class="normal"><strong><?php echo _('Please prefix Person ID with \"I\" for \"Individual\"'); ?></strong></span></td>
                     </tr>
                     <tr>
-                        <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
+                        <td><span class="normal"><?php echo _('Person ID'); ?>:</span></td>
                         <td>
                             <input type="text" name="personID" id="personID" size="10" onBlur="this.value=this.value.toUpperCase()">
-                            <input type="button" value="<?php echo $admtext['generate']; ?>" onClick="generateIDajax('person','personID');">
-                            <input type="button" value="<?php echo $admtext['check']; ?>" onClick="checkIDajax(document.persform1.personID.value,'person','pcheckmsg');">
+                            <input type="button" value="<?php echo _('Generate'); ?>" onClick="generateIDajax('person','personID');">
+                            <input type="button" value="<?php echo _('Check'); ?>" onClick="checkIDajax(document.persform1.personID.value,'person','pcheckmsg');">
                             <span id="pcheckmsg" class="normal"></span>
                         </td>
                     </tr>
@@ -57,14 +57,14 @@ include_once "eventlib.php";
         </tr>
         <tr class="databack">
             <td class="tngbotshadow">
-                <?php echo displayToggle("plus0", 1, "names", $admtext['name'], ""); ?>
+                <?php echo displayToggle("plus0", 1, "names", _('Name'), ""); ?>
 
                 <div id="names">
                     <table class="normal topmarginsmall">
                         <tr>
-                            <td><?php echo $admtext['firstgivennames']; ?></td>
-                            <?php if ($lnprefixes) echo "<td>{$admtext['lnprefix']}</td>\n"; ?>
-                            <td><?php echo $admtext['lastsurname']; ?></td>
+                            <td><?php echo _('First/Given Name(s)'); ?></td>
+                            <?php if ($lnprefixes) echo "<td>" . _('Surname Prefix') . "</td>\n"; ?>
+                            <td><?php echo _('Last/Surname'); ?></td>
                         </tr>
                         <tr>
                             <td>
@@ -82,23 +82,23 @@ include_once "eventlib.php";
                     </table>
                     <table class="normal topmarginsmall">
                         <tr>
-                            <td><?php echo $admtext['sex']; ?></td>
-                            <td><?php echo $admtext['nickname']; ?></td>
-                            <td><?php echo $admtext['title']; ?></td>
-                            <td><?php echo $admtext['prefix']; ?></td>
-                            <td><?php echo $admtext['suffix']; ?></td>
-                            <td><?php echo $admtext['nameorder']; ?></td>
+                            <td><?php echo _('Gender'); ?></td>
+                            <td><?php echo _('Nickname'); ?></td>
+                            <td><?php echo _('Title'); ?></td>
+                            <td><?php echo _('Prefix'); ?></td>
+                            <td><?php echo _('Suffix'); ?></td>
+                            <td><?php echo _('Name Order'); ?></td>
                         </tr>
                         <tr>
                             <td>
                                 <select name="sex">
-                                    <option value="U"><?php echo $admtext['unknown']; ?></option>
+                                    <option value="U"><?php echo _('Unknown'); ?></option>
                                     <option value="M"<?php if ($gender == "M") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['male']; ?></option>
+                                    } ?>><?php echo _('Male'); ?></option>
                                     <option value="F"<?php if ($gender == "F") {
                                         echo " selected";
-                                    } ?>><?php echo $admtext['female']; ?></option>
+                                    } ?>><?php echo _('Female'); ?></option>
                                 </select>
                             </td>
                             <td>
@@ -115,10 +115,10 @@ include_once "eventlib.php";
                             </td>
                             <td>
                                 <select name="pnameorder">
-                                    <option value="0"><?php echo $admtext['default']; ?></option>
-                                    <option value="1"><?php echo $admtext['western']; ?></option>
-                                    <option value="2"><?php echo $admtext['oriental']; ?></option>
-                                    <option value="3"><?php echo $admtext['lnfirst']; ?></option>
+                                    <option value="0"><?php echo _('Default'); ?></option>
+                                    <option value="1"><?php echo _('First name first'); ?></option>
+                                    <option value="2"><?php echo _('Surname first (without commas)'); ?></option>
+                                    <option value="3"><?php echo _('Surname first (with commas)'); ?></option>
                                 </select>
                             </td>
                         </tr>
@@ -127,11 +127,11 @@ include_once "eventlib.php";
                     <table class="normal topbuffer">
                         <tr>
                             <td class="whitespace-no-wrap">
-                                <input type="checkbox" name="living" value="1" checked="checked"> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
-                                <input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?>
+                                <input type="checkbox" name="living" value="1" checked="checked"> <?php echo _('Living'); ?>&nbsp;&nbsp;
+                                <input type="checkbox" name="private" value="1"> <?php echo _('Private'); ?>
                             </td>
-                            <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
-                            <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?></td>
+                            <td class="spaceonleft"><?php echo _('Tree') . ": " . $treerow['treename']; ?></td>
+                            <td class="spaceonleft"><?php echo _('Branch') . ": "; ?></td>
                             <td style="height:2em;">
                                 <?php
                                 $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
@@ -146,15 +146,15 @@ include_once "eventlib.php";
                                 }
                                 echo "<span id=\"pbranchlist\"></span>";
                                 if (!$assignedbranch) {
-                                if ($numbranches > 8) $select = "{$admtext['scrollbranch']}<br>";
+                                if ($numbranches > 8) $select = "" . _('(Scroll to see all choices)') . "<br>";
                                 $select .= "<select name=\"branch[]\" id=\"pbranch\" multiple size='8'>\n";
                                 $select .= "	<option value=\"\"";
                                 if ($row['branch'] == "") $select .= " selected";
-                                $select .= ">{$admtext['nobranch']}</option>\n";
+                                $select .= ">" . _('No Branch') . "</option>\n";
                                 $select .= "$options</select>\n";
                                 echo " &nbsp;<span class='whitespace-no-wrap'>(<a href='#' onclick=\"showBranchEdit('pbranchedit'); quitBranchEdit('pbranchedit'); return false;\">";
                                 echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
-                                echo $admtext['edit'];
+                                echo _('Edit');
                                 echo "</a> )</span><br>";
                                 ?>
                                 <div id="pbranchedit" class="lightback p-1" style="position:absolute;display:none;" onmouseover="clearTimeout(branchtimer);" onmouseout="closeBranchEdit('pbranch','pbranchedit','pbranchlist');">
@@ -174,15 +174,15 @@ include_once "eventlib.php";
         </tr>
         <tr class="databack">
             <td>
-                <?php echo displayToggle("plus1", 1, "events", $admtext['events'], ""); ?>
+                <?php echo displayToggle("plus1", 1, "events", _('Events'), ""); ?>
 
                 <div id="events">
-                    <p class="smallest topmarginsmall"><?php echo $admtext['datenote']; ?></p>
+                    <p class="smallest topmarginsmall"><?php echo _('<strong>Note:</strong> When entering dates, please use the standard genealogical format DD MMM YYYY. For example, 10 Apr 2004.'); ?></p>
                     <table class="normal">
                         <tr>
                             <td>&nbsp;</td>
-                            <td><?php echo $admtext['date']; ?></td>
-                            <td><?php echo $admtext['place']; ?></td>
+                            <td><?php echo _('Date'); ?></td>
+                            <td><?php echo _('Place'); ?></td>
                             <td colspan="4">&nbsp;</td>
                         </tr>
                         <?php

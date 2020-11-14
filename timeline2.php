@@ -14,18 +14,18 @@ if (!is_array($timeline)) {
 }
 
 $tlmonths[0] = "";
-$tlmonths[1] = $dates['JAN'];
-$tlmonths[2] = $dates['FEB'];
-$tlmonths[3] = $dates['MAR'];
-$tlmonths[4] = $dates['APR'];
-$tlmonths[5] = $dates['MAY'];
-$tlmonths[6] = $dates['JUN'];
-$tlmonths[7] = $dates['JUL'];
-$tlmonths[8] = $dates['AUG'];
-$tlmonths[9] = $dates['SEP'];
-$tlmonths[10] = $dates['OCT'];
-$tlmonths[11] = $dates['NOV'];
-$tlmonths[12] = $dates['DEC'];
+$tlmonths[1] = _('Jan');
+$tlmonths[2] = _('Feb');
+$tlmonths[3] = _('Mar');
+$tlmonths[4] = _('Apr');
+$tlmonths[5] = _('May');
+$tlmonths[6] = _('Jun');
+$tlmonths[7] = _('Jul');
+$tlmonths[8] = _('Aug');
+$tlmonths[9] = _('Sep');
+$tlmonths[10] = _('Oct');
+$tlmonths[11] = _('Nov');
+$tlmonths[12] = _('Dec');
 
 $minwidth = 100;
 $maxwidth = 1600;
@@ -55,7 +55,7 @@ if ($result) {
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
     $namestr = getName($row);
-    $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
+    $logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $namestr);
     tng_free_result($result);
 }
 
@@ -80,11 +80,11 @@ function getEvents($person) {
     if ($person['birthdate']) {
         $index = $person['birthdatetr'];
         $events[$index]['date'] = displayDate($person['birthdate']);
-        $events[$index]['text'] = $text['born'] . ":";
+        $events[$index]['text'] = _('Born') . ":";
     } elseif ($person['altbirthdate']) {
         $index = $person['altbirthdatetr'];
         $events[$index]['date'] = displayDate($person['altbirthdate']);
-        $events[$index]['text'] = $text['christened'] . ":";
+        $events[$index]['text'] = _('Christened') . ":";
     }
     $events[$index]['year'] = $person['birth'];
     $events[$index]['left'] = $leftoffset;
@@ -148,7 +148,7 @@ function getEvents($person) {
             $index = str_replace("/", "-", $marriagerow['marrdatetr']);
             if ($index != "0000-00-00") {
                 $events[$index]['date'] = displayDate($marriagerow['marrdate']);
-                $events[$index]['text'] = $text['married'] . " $spouselink:";
+                $events[$index]['text'] = _('Married') . " $spouselink:";
                 $events[$index]['year'] = $marriagerow['marryear'];
                 $marriagerow['marryear'] = strtok($marriagerow['marryear'], '/');
                 $events[$index]['left'] = intval($ratio * ($marriagerow['marryear'] - $person['birth'])) + $leftoffset;
@@ -175,11 +175,11 @@ function getEvents($person) {
                 if ($child['birthdate']) {
                     $index = str_replace("/", "-", $child['birthdatetr']) . sprintf("%2d", $child['ordernum']);
                     $events[$index]['date'] = displayDate($child['birthdate']);
-                    $events[$index]['text'] = $text['child'] . " $childlink " . $text['birthabbr'];
+                    $events[$index]['text'] = _('Child') . " $childlink " . _('b.');
                 } elseif ($child['altbirthdate']) {
                     $index = str_replace("/", "-", $child['altbirthdatetr']) . sprintf("%2d", $child['ordernum']);
                     $events[$index]['date'] = displayDate($child['altbirthdate']);
-                    $events[$index]['text'] = $text['child'] . " $childlink " . $text['chrabbr'];
+                    $events[$index]['text'] = _('Child') . " $childlink " . _('c.');
                 } else {
                     $index = "";
                 }
@@ -202,11 +202,11 @@ function getEvents($person) {
         if ($person['deathdate']) {
             $index = str_replace("/", "-", $person['deathdatetr']);
             $events[$index]['date'] = displayDate($person['deathdate']);
-            $events[$index]['text'] = $text['died'] . ":";
+            $events[$index]['text'] = _('Died') . ":";
         } elseif ($person['burialdate']) {
             $index = $person['burialdatetr'];
             $events[$index]['date'] = displayDate($person['burialdate']);
-            $events[$index]['text'] = $text['buried'] . ":";
+            $events[$index]['text'] = _('Buried') . ":";
         } else {
             $index = "";
         }
@@ -230,8 +230,8 @@ function getEvents($person) {
     return $eventstr;
 }
 
-writelog("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($logname)</a>");
-preparebookmark("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">{$text['timeline']} ($namestr)</a>");
+writelog("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">" . _('Timeline') . " ($logname)</a>");
+preparebookmark("<a href=\"timeline.php?primaryID=$primaryID&amp;tree=$tree\">" . _('Timeline') . " ($namestr)</a>");
 
 $keeparray = [];
 $earliest = intval(date('Y'));
@@ -300,7 +300,7 @@ $tlquery = "SELECT evday, evmonth, evyear, evtitle, evdetail, endday, endmonth, 
 	WHERE (evyear * 1 <= $latest * 1 AND endyear * 1 >= $earliest * 1) OR (endyear = \"\" AND (evyear BETWEEN \"$earliest\" AND \"$latest\"))
 	ORDER BY evyear * 1, evmonth, evday";
 
-$tlresult = tng_query($tlquery) or die ($text['cannotexecutequery'] . ": $tlquery");
+$tlresult = tng_query($tlquery) or die (_('Cannot execute query') . ": $tlquery");
 $tlevents = [];
 $tlevents2 = [];
 while ($tlrow = tng_fetch_assoc($tlresult)) {
@@ -385,20 +385,20 @@ if ($pedigree['simile']) {
 }
 $flags['scripting'] .= "<link href='css/timeline.css' rel='stylesheet'>\n";
 
-tng_header($text['timeline'] . ": $namestr", $flags);
+tng_header(_('Timeline') . ": $namestr", $flags);
 
 $photostr = showSmallPhoto($primaryID, $namestr, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $namestr, getYears($row));
 
 echo getFORM("timeline", "post", "form1", "form1");
 
-$innermenu = $text['chartwidth'] . ": &nbsp;";
+$innermenu = _('Chart width') . ": &nbsp;";
 $innermenu .= "<input type='text' name='newwidth' class='verysmall' value='$chartwidth' maxlength='4' size='4'> &nbsp;&nbsp; ";
-$innermenu .= "<a href='#' class='lightlink' onclick=\"document.form1.submit();\">{$text['refresh']}</a>\n";
+$innermenu .= "<a href='#' class='lightlink' onclick=\"document.form1.submit();\">" . _('Refresh') . "</a>\n";
 
 echo tng_menu("I", "timeline", $primaryID, $innermenu);
 
-echo "<h3 class='subhead'>{$text['timeline']}</h3>\n";
+echo "<h3 class='subhead'>" . _('Timeline') . "</h3>\n";
 
 if ($pedigree['simile']) {
     echo "<div id=\"tngtimeline\" style=\"height: {$pedigree['tcheight']}px;\"></div>\n";
@@ -459,7 +459,7 @@ $enddiv = "</div>";
 
 echo "<span class='normal'><br><br>\n";
 if (count($timeline) > 1) {
-    echo $text['text_delete'];
+    echo _('Delete');
 } else {
     echo "&nbsp;";
 }
@@ -502,9 +502,9 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
 ?>
 
     <br><br>
-    <input type="button" name="lines" class="btn" value="<?php echo $text['togglelines']; ?>" onclick="toggleLines();">
-    <input type="button" name="addmore" class="btn" value="<?php echo $text['timelineinstr']; ?>" onclick="toggleAddMore();">
-    <input type="submit" class="btn" value="<?php echo $text['refresh']; ?>">
+    <input type="button" name="lines" class="btn" value="<?php echo _('Toggle Lines'); ?>" onclick="toggleLines();">
+    <input type="button" name="addmore" class="btn" value="<?php echo _('Add People'); ?>" onclick="toggleAddMore();">
+    <input type="submit" class="btn" value="<?php echo _('Refresh'); ?>">
     <div id="addmorediv" style="display:none;">
         <?php
         echo "<span class='normal'><br><br>";
@@ -513,7 +513,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
         $numrows = tng_num_rows($treeresult);
         $newtime = time();
         for ($x = 2; $x < 6; $x++) {
-            echo $text['addperson'] . ": ";
+            echo _('Add Person') . ": ";
             if ($numrows > 1) {
                 echo "<select name=\"nexttree$x\">\n";
                 while ($treerow = tng_fetch_assoc($treeresult)) {
@@ -528,7 +528,7 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
                 echo "<input type='hidden' name=\"nexttree$x\" value='$tree'>";
                 $treestr = "'" . $tree . "'";
             }
-            echo "<input type='text' name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type='button' name=\"find$x\" id=\"find$x\" value=\"{$text['find']}\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";
+            echo "<input type='text' name=\"nextpersonID$x\" id=\"nextpersonID$x\" size=\"10\">  <input type='button' name=\"find$x\" id=\"find$x\" value=\"" . _('Find...') . "\" onclick=\"findItem('I','nextpersonID$x',null,$treestr);\"><br>\n";
             if ($x < 5) $treeresult = tng_query($query);
 
         }
@@ -547,8 +547,8 @@ echo "<table width=\"" . ($chartwidth + $lineoffset + 20) . "\" style=\"height:$
     <table class="whiteback w-full" cellpadding="3" cellspacing="1">
         <tr>
             <td class="fieldnameback" width="20">&nbsp;</td>
-            <td class="fieldnameback" width="50"><span class="fieldname"><strong>&nbsp;<?php echo $text['date']; ?></strong></span></td>
-            <td class="fieldnameback"><span class="fieldname"><strong>&nbsp;<?php echo $text['event']; ?></strong></span></td>
+            <td class="fieldnameback" width="50"><span class="fieldname"><strong>&nbsp;<?php echo _('Date'); ?></strong></span></td>
+            <td class="fieldnameback"><span class="fieldname"><strong>&nbsp;<?php echo _('Event(s)'); ?></strong></span></td>
         </tr>
         <?php
         $counter = 0;

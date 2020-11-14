@@ -8,18 +8,18 @@ $topnum = preg_replace("/[^0-9]/", '', $topnum);
 if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
-    $logstring = "<a href=\"places100.php?topnum=$topnum&amp;tree=$tree\">" . xmlcharacters($text['placelist'] . ": {$text['top']} $topnum ({$text['tree']}: $tree)") . "</a>";
+    $logstring = "<a href=\"places100.php?topnum=$topnum&amp;tree=$tree\">" . xmlcharacters(_('Place List') . ": " . _('Top') . " $topnum (" . _('Tree') . ": $tree)") . "</a>";
 } else {
     $treestr = $treestr2 = "";
-    $logstring = "<a href=\"places100.php?topnum=$topnum\">" . xmlcharacters($text['placelist'] . ": {$text['top']} $topnum") . "</a>";
+    $logstring = "<a href=\"places100.php?topnum=$topnum\">" . xmlcharacters(_('Place List') . ": " . _('Top') . " $topnum") . "</a>";
 }
 
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($text['placelist'] . ": {$text['top']} $topnum", $flags);
+tng_header(_('Place List') . ": " . _('Top') . " $topnum", $flags);
 ?>
-    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": {$text['top']} $topnum"; ?></h2>
+    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo _('Place List') . ": " . _('Top') . " $topnum"; ?></h2>
     <br class="clearleft">
 <?php
 if ($tree && !$tngconfig['places1tree']) {
@@ -29,9 +29,9 @@ if ($tree && !$tngconfig['places1tree']) {
 echo getFORM("places100", "get", "", "");
 ?>
     <div class="titlebox rounded-lg">
-        <?php echo $text['showtop']; ?>&nbsp;
-        <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="4" maxlength="4"> <?php echo $text['byoccurrence']; ?>&nbsp;
-        <input type="submit" value="<?php echo $text['go']; ?>">
+        <?php echo _('Show top'); ?>&nbsp;
+        <input type="text" name="topnum" value="<?php echo $topnum; ?>" size="4" maxlength="4"> <?php echo _('ordered by occurrence'); ?>&nbsp;
+        <input type="submit" value="<?php echo _('Go'); ?>">
     </div>
 <?php echo "</form>\n"; ?>
     <br>
@@ -39,24 +39,24 @@ echo getFORM("places100", "get", "", "");
 <?php echo getFORM("places-oneletter", "get", "", ""); ?>
     <div class="titlebox rounded-lg">
         <?php
-        echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
+        echo "" . _('Show all places containing') . ": <input type='text' name=\"psearch\">\n";
         if ($tree && !$tngconfig['places1tree']) {
             echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
         }
         echo "<input type='hidden' name=\"stretch\" value='1'>\n";
-        echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";
+        echo "<input type='submit' name=\"pgo\" value=\"" . _('Go') . "\">\n";
         if (!$decodedfirstchar) {
-            $decodedfirstchar = $text['top'] . " $topnum";
+            $decodedfirstchar = _('Top') . " $topnum";
         }
         ?>
-        <br><br><?php echo "<a href=\"places.php?{$treestr}\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"places-all.php?{$treestr2}\">{$text['showallplaces']}</a>"; ?>
+        <br><br><?php echo "<a href=\"places.php?{$treestr}\">" . _('Main places page') . "</a> &nbsp;|&nbsp; <a href=\"places-all.php?{$treestr2}\">" . _('Show all largest localities') . "</a>"; ?>
     </div>
 <?php echo "</form>\n"; ?>
     <br>
     <div class="titlebox rounded-lg">
         <div>
-            <h3 class="subhead"><?php echo "{$text['placelist']}: $decodedfirstchar, {$text['sortedalpha']} ({$text['numoccurrences']}):"; ?></h3>
-            <p class="smaller"><?php echo $text['showmatchingplaces']; ?></p>
+            <h3 class="subhead"><?php echo "" . _('Place List') . ": $decodedfirstchar, " . _('sorted alphabetically') . " (" . _('number of total localities in parentheses') . "):"; ?></h3>
+            <p class="smaller"><?php echo _('Click on a place to show smaller localities. Click on the search icon to show matching individuals.'); ?></p>
         </div>
         <table class="sntable">
             <tr>

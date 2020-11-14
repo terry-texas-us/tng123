@@ -93,7 +93,7 @@ $mcharsetstr = "&amp;oe=$session_charset";
             return true;
     }
 
-    const notfound = "<?php echo $admtext['notfound'] ?>";
+    const notfound = "<?php echo _(' not found. Try another search. Check the Map Search Help for possible reasons the search failed, or try your search using the Full Google Map Search link') ?>";
 
     function getNewZoomLevel() {
         jQuery('#zoombox').val(map.getZoom());

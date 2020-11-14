@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_media_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -37,7 +37,7 @@ if ($newfile && $newfile != "none") {
         @chmod($newpath, 0644);
     } else {
         //improper permissions or folder doesn't exist (root path may be wrong)
-        $message = $admtext['notcopied'] . " $newpath {$admtext['improperpermissions']}.";
+        $message = _('The file could not be copied to') . " $newpath " . _('because the folder does not exist (check the Root Path) or does not have proper permissions (try chmod(777)).') . ".";
         header("Location: admin_media.php?message=" . urlencode($message));
         exit;
     }
@@ -58,7 +58,7 @@ if (function_exists('imageJpeg') && $thumbcreate == "auto") {
         @chmod($newthumbpath, 0644);
     } else {
         //could not create thumbnail (size or type problem) or permissions (root path may be wrong)
-        $message = $admtext['thumbnailnotcopied'] . " $newthumbpath {$admtext['improper2']}.";
+        $message = _('The thumbnail file could not be copied to') . " $newthumbpath " . _('because the original file is too large or is not a valid image, or because the folder does not exist (check the Root Path) or does not have proper permissions (try chmod(777)).') . ".";
         header("Location: admin_media.php?message=" . urlencode($message));
         exit;
     }
@@ -68,7 +68,7 @@ if (function_exists('imageJpeg') && $thumbcreate == "auto") {
             @chmod($newthumbpath, 0644);
         } else {
             //improper permissions or folder doesn't exist (root path may be wrong)
-            $message = $admtext['thumbnailnotcopied'] . " $newthumbpath {$admtext['improperpermissions']}.";
+            $message = _('The thumbnail file could not be copied to') . " $newthumbpath " . _('because the folder does not exist (check the Root Path) or does not have proper permissions (try chmod(777)).') . ".";
             header("Location: admin_media.php?message=" . urlencode($message));
             exit;
         }
@@ -124,10 +124,10 @@ if ($affected_rows == 1) {
     $query = "UPDATE $mediatypes_table SET disabled='0' where mediatypeID=\"$mediatypeID\"";
     $result = @tng_query($query);
 
-    adminwritelog("<a href=\"admin_editmedia.php?mediaID=$mediaID\">{$admtext['addnewmedia']}: $mediaID</a>");
+    adminwritelog("<a href=\"admin_editmedia.php?mediaID=$mediaID\">" . _('Add New Media') . ": $mediaID</a>");
 
     header("Location: admin_editmedia.php?mediaID=$mediaID&newmedia=1&added=1");
 } else {
-    $message = $admtext['photonotadded'] . ".";
+    $message = _('The item could not be added, most likely because another media record already exists for the collection and physical file specified.') . ".";
     header("Location: admin_media.php?message=" . urlencode($message));
 }

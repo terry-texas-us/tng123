@@ -24,7 +24,7 @@ $righttree = checktree($tree);
 //look up person or family
 if ($row['type'] == "I" || $row['type'] == "C") {
     $tng_search_preview = $_SESSION['tng_search_preview'];
-    $reviewmsg = $admtext['reviewpeople'];
+    $reviewmsg = _('Accept or decline tentative changes to individuals');
 
     $query = "SELECT firstname, lastname, lnprefix, nameorder, prefix, suffix, gedcom, branch FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);
@@ -38,8 +38,8 @@ if ($row['type'] == "I" || $row['type'] == "C") {
     $prow['allow_private'] = $rights['private'];
 
     $name = getName($prow);
-    $teststr = "  | <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target='_blank'>{$admtext['test']}</a>";
-    $editstr = "  | <a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\" target='_blank'>{$admtext['edit']}</a>";
+    $teststr = "  | <a href=\"getperson.php?personID=$personID&amp;tree=$tree\" target='_blank'>" . _('Test') . "</a>";
+    $editstr = "  | <a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\" target='_blank'>" . _('Edit') . "</a>";
 } elseif ($row['type'] == "F") {
     $query = "SELECT husband, wife FROM $families_table WHERE familyID = '$familyID' AND gedcom = '$tree'";
     $result = tng_query($query);
@@ -73,12 +73,12 @@ if ($row['type'] == "I" || $row['type'] == "C") {
     $name = "$hname$plus$wname";
 
     $checkbranch = 1;
-    $teststr = "  | <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target='_blank'>{$admtext['test']}</a>";
-    $editstr = "  | <a href=\"admin_editfamily.php?familyID=$familyID&amp;tree=$tree\" target='_blank'>{$admtext['edit']}</a>";
+    $teststr = "  | <a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\" target='_blank'>" . _('Test') . "</a>";
+    $editstr = "  | <a href=\"admin_editfamily.php?familyID=$familyID&amp;tree=$tree\" target='_blank'>" . _('Edit') . "</a>";
 }
 
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree) || !$rightbranch) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -216,14 +216,14 @@ $gotnotes = $note['notecount'] ? "*" : "";
 tng_free_result($notelinks);
 
 $citequery = "SELECT count(citationID) AS citecount FROM $citations_table WHERE persfamID='$persfamID' AND gedcom ='$tree' AND eventID = \"$eventID\"";
-$citeresult = tng_query($citequery) or die ($admtext['cannotexecutequery'] . ": $citequery");
+$citeresult = tng_query($citequery) or die (_('Cannot execute query') . ": $citequery");
 $cite = tng_fetch_assoc($citeresult);
 $gotcites = $cite['citecount'] ? "*" : "";
 tng_free_result($citeresult);
 
 $helplang = findhelp("people_help.php");
 
-tng_adminheader($admtext['review'], $flags);
+tng_adminheader(_('Review'), $flags);
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
@@ -237,21 +237,21 @@ echo tng_adminlayout();
 
 if ($row['type'] == "I") {
     $icon = "img/people_icon.gif";
-    $hmsg = $admtext['people'];
-    $peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
-    $peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
-    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'], "review"];
-    $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
+    $hmsg = _('People');
+    $peopletabs[0] = [1, "admin_people.php", _('Search'), "findperson"];
+    $peopletabs[1] = [$allow_add, "admin_newperson.php", _('Add New'), "addperson"];
+    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", _('Review'), "review"];
+    $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", _('Merge'), "merge"];
 } else {
     $icon = "img/families_icon.gif";
-    $hmsg = $admtext['families'];
-    $peopletabs[0] = [1, "admin_families.php", $admtext['search'], "findperson"];
-    $peopletabs[1] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
-    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review"];
+    $hmsg = _('Families');
+    $peopletabs[0] = [1, "admin_families.php", _('Search'), "findperson"];
+    $peopletabs[1] = [$allow_add, "admin_newfamily.php", _('Add New'), "addfamily"];
+    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=F", _('Review'), "review"];
 }
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#review');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#review');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($peopletabs, "review", $innermenu);
-echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $message);
+echo displayHeadline("$hmsg &gt;&gt; " . _('Review') . "", $icon, $menu, $message);
 ?>
 
 <table class="lightback">
@@ -263,14 +263,14 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                 <form action="admin_savereview.php" method="post" name="form1">
                     <table class="normal">
                         <tr>
-                            <td class='align-top'><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo _('Tree'); ?>:</span></td>
                             <td><span class="normal"><?php echo $treerow['treename']; ?></span></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class='align-top'><h3 class="subhead"><?php echo $admtext['event']; ?>:</h3></td>
+                            <td class='align-top'><h3 class="subhead"><?php echo _('Event(s)'); ?>:</h3></td>
                             <td><h3 class="subhead"><?php echo $displayval; ?></h3></td>
                         </tr>
                         <tr>
@@ -278,36 +278,36 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                         </tr>
                         <?php
                         if ($datefield) {
-// TODO span tags out of order datefield and placefield
+                            // TODO span tags out of order datefield and placefield
                             echo "<tr>";
-                            echo "<td>{$admtext['eventdate']}: </span></td>";
+                            echo "<td>" . _('Event Date') . ": </span></td>";
                             echo "<td class='align-top'><span class='normal'>{$evrow[$datefield]}</td>";
                             echo "</tr>\n";
                             echo "<tr>";
-                            echo "<td><strong>{$admtext['suggested']}:</strong></td>";
+                            echo "<td><strong>" . _('Suggested') . ":</strong></td>";
                             echo "<td colspan='2'><input type='text' name=\"newdate\" value=\"{$row['eventdate']}\" onblur=\"checkDate(this);\"></td>";
                             echo "</tr>\n";
                         }
                         if ($placefield) {
                             $row['eventplace'] = preg_replace("/\"/", "&#34;", $row['eventplace']);
                             echo "<tr>";
-                            echo "<td>{$admtext['eventplace']}:</td>";
+                            echo "<td>" . _('Event Place') . ":</td>";
                             echo "<td class='align-top'><span class='normal'>{$evrow[$placefield]}</td>";
                             echo "</tr>\n";
                             echo "<tr>";
-                            echo "<td><strong>{$admtext['suggested']}:</strong></td>";
+                            echo "<td><strong>" . _('Suggested') . ":</strong></td>";
                             echo "<td class='align-top'><input type='text' name=\"newplace\" class=\"verylongfield\" id=\"newplace\" size=\"40\" value=\"{$row['eventplace']}\"></td>";
-                            echo "<td><a href='#' onclick=\"return openFindPlaceForm('newplace');\" title=\"{$admtext['find']}\" class=\"smallicon admin-find-icon\"></a></td>";
+                            echo "<td><a href='#' onclick=\"return openFindPlaceForm('newplace');\" title=\"" . _('Find...') . "\" class=\"smallicon admin-find-icon\"></a></td>";
                             echo "</tr>\n";
                         }
                         if ($factfield) {
                             $row['info'] = preg_replace("/\"/", "&#34;", $row['info']);
                             echo "<tr>";
-                            echo "<td class='align-top'>{$admtext['detail']}:</td>";
+                            echo "<td class='align-top'>" . _('Detail') . ":</td>";
                             echo "<td class='align-top'>{$row[$factfield]}</td>";
                             echo "</tr>\n";
                             echo "<tr>";
-                            echo "<td class='align-top'><strong>{$admtext['suggested']}:</strong></td>";
+                            echo "<td class='align-top'><strong>" . _('Suggested') . ":</strong></td>";
                             echo "<td class='align-top' colspan='2'><textarea cols=\"60\" rows='4' name=\"newinfo\">{$row['info']}</textarea></td>";
                             echo "</tr>\n";
                         }
@@ -332,14 +332,14 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class='align-top'><?php echo $admtext['usernotes']; ?>:</td>
+                            <td class='align-top'><?php echo _('Notes regarding<br>suggested change<br>(will not be saved)'); ?>:</td>
                             <td class='align-top'><textarea cols="60" rows="4" name="usernote"><?php echo $row['note']; ?></textarea></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class='align-top'><?php echo $admtext['postdate']; ?>:</td>
+                            <td class='align-top'><?php echo _('Posted on'); ?>:</td>
                             <td><?php echo "{$row['postdate']} ({$row['user']})"; ?></td>
                         </tr>
                     </table>
@@ -347,10 +347,10 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                     <input type="hidden" name="tempID" value="<?php echo $tempID; ?>">
                     <input type="hidden" name="type" value="<?php echo $row['type']; ?>">
                     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-                    <input type="hidden" name="choice" value="<?php echo $admtext['savedel']; ?>">
-                    <input type="submit" class="btn" value="<?php echo $admtext['savedel']; ?>">
-                    <input type="submit" class="btn" value="<?php echo $admtext['postpone']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['postpone']; ?>';">
-                    <input type="submit" class="btn" value="<?php echo $admtext['igndel']; ?>" onClick="document.form1.choice.value='<?php echo $admtext['igndel']; ?>';">
+                    <input type="hidden" name="choice" value="<?php echo _('Save and Delete'); ?>">
+                    <input type="submit" class="btn" value="<?php echo _('Save and Delete'); ?>">
+                    <input type="submit" class="btn" value="<?php echo _('Postpone'); ?>" onClick="document.form1.choice.value='<?php echo _('Postpone'); ?>';">
+                    <input type="submit" class="btn" value="<?php echo _('Ignore and Delete'); ?>" onClick="document.form1.choice.value='<?php echo _('Ignore and Delete'); ?>';">
                     <br>
                 </form>
             </div>

@@ -31,15 +31,15 @@ $citefontsub = 4;  // number of font pts to take off for superscript
 $ldsOK = determineLDSRights(true);
 
 // compute the label width based on the longest string that will be displayed
-$labelwidth = getMaxStringWidth([$text['name'], $text['born'], $text['christened'], $text['died'], $text['buried'], $text['cremated'], $text['spouse'], $text['married']], $rptFont, "B", $lblFontSize, ':');
+$labelwidth = getMaxStringWidth([_('Name'), _('Born'), _('Christened'), _('Died'), _('Buried'), _('Cremated'), _('Spouse'), _('Married')], $rptFont, "B", $lblFontSize, ':');
 if ($ldsOK) {
-    $labelwidth = getMaxStringWidth([$text['baptizedlds'], $text['endowedlds'], $text['sealedslds']], $rptFont, "B", $lblFontSize, ':', $labelwidth);
+    $labelwidth = getMaxStringWidth([_('Baptized (LDS)'), _('Endowed (LDS)'), _('Sealed to Spouse (LDS)')], $rptFont, "B", $lblFontSize, ':', $labelwidth);
 }
 $labelwidth += 0.1;
 
 // create Header
 if ($blankform == 1) {
-    $title = $text['indreport'];
+    $title = _('Individual Report');
 } else {
     $result = getPersonData($tree, $personID);
     if ($result) {
@@ -53,7 +53,7 @@ if ($blankform == 1) {
         $namestr = getName($row);
     }
 
-    $title = $text['indreportfor'] . " $namestr ($personID)";
+    $title = _('Individual Report for') . " $namestr ($personID)";
 }
 
 $pdf->SetTitle($title);
@@ -95,21 +95,20 @@ $citestring = [];
 
 // create a blank form if that's what they asked for
 if ($blankform == 1) {
-
-    nameLine($text['name'], '', $text['gender'], '');
-    doubleLine($text['born'], '', $text['place'], '');
+    nameLine(_('Name'), '', _('Gender'), '');
+    doubleLine(_('Born'), '', _('Place'), '');
     if (!$tngconfig['hidechr']) {
-        doubleLine($text['christened'], '', $text['place'], '');
+        doubleLine(_('Christened'), '', _('Place'), '');
     }
-    doubleLine($text['died'], '', $text['place'], '');
-    doubleLine($text['buried'], '', $text['place'], '');
+    doubleLine(_('Died'), '', _('Place'), '');
+    doubleLine(_('Buried'), '', _('Place'), '');
     if ($ldsOK) {
-        doubleLine($text['baptizedlds'], '', $text['place'], '');
-        doubleLine($text['endowedlds'], '', $text['place'], '');
+        doubleLine(_('Baptized (LDS)'), '', _('Place'), '');
+        doubleLine(_('Endowed (LDS)'), '', _('Place'), '');
     }
-    singleLine($text['spouse'], '', "B");
-    doubleLine($text['married'], '', $text['place'], '');
-    if ($ldsOK) doubleLine($text['sealedslds'], '', $text['place'], '');
+    singleLine(_('Spouse'), '', "B");
+    doubleLine(_('Married'), '', _('Place'), '');
+    if ($ldsOK) doubleLine(_('Sealed to Spouse (LDS)'), '', _('Place'), '');
 
     childLine(1, '');
     childLine(2, '');
@@ -118,7 +117,7 @@ if ($blankform == 1) {
     childLine(5, '');
     $pdf->SetFont($rptFont, "B", $lblFontSize);
     pageBox();
-    titleLine($text['general']);
+    titleLine(_('General'));
 } // create a filled in form
 else {
     if ($citesources && $rights['both']) getCitations($personID, 0);
@@ -130,30 +129,29 @@ else {
 
     $gender = strtoupper($row['sex']);
     if ($gender == "M") {
-        $gender = $text['male'];
+        $gender = _('Male');
     } else {
         if ($gender == "F") {
-            $gender = $text['female'];
+            $gender = _('Female');
         } else {
             if ($gender == "U") {
-                $gender = $text['unknown'];
+                $gender = _('Unknown');
             } else {
                 $gender = $row['sex'];
             }
         }
     }
-    nameLine($text['name'], $namestr, $text['gender'], $gender, $cite);
-    if ($row['nickname']) singleLine($text['nickname'], $row['nickname']);
-
+    nameLine(_('Name'), $namestr, _('Gender'), $gender, $cite);
+    if ($row['nickname']) singleLine(_('Nickname'), $row['nickname']);
 
     // birth
     if ($rights['both']) {
         $cite = reorderCitation($personID . "_BIRT", 0);
-        doubleLine($text['born'], displayDate($row['birthdate']), $text['place'], $row['birthplace'], $cite);
+        doubleLine(_('Born'), displayDate($row['birthdate']), _('Place'), $row['birthplace'], $cite);
 
         if (!$tngconfig['hidechr']) {
             $cite = reorderCitation($personID . "_CHR", 0);
-            doubleLine($text['christened'], displayDate($row['altbirthdate']), $text['place'], $row['altbirthplace'], $cite);
+            doubleLine(_('Christened'), displayDate($row['altbirthdate']), _('Place'), $row['altbirthplace'], $cite);
         }
 
         $custevents = getPersonEventData($tree, $personID);
@@ -170,13 +168,13 @@ else {
             $done = false;
             if ($custevent['eventdate'] || $custevent['eventplace']) {
                 $cite = reorderCitation($personID . "_" . $custevent['eventID'], 0);
-                doubleLine($displayval, displayDate($custevent['eventdate']), $text['place'], $custevent['eventplace'], $cite);
+                doubleLine($displayval, displayDate($custevent['eventdate']), _('Place'), $custevent['eventplace'], $cite);
                 $done = true;
             }
             if ($custevent['info']) {
                 if ($done) {
                     $cite = reorderCitation($personID . "_" . $custevent['eventID'], 0);
-                    $displayval = $text['cont'];
+                    $displayval = _('(cont.)');
                 } else {
                     $cite = "";
                 }
@@ -186,33 +184,33 @@ else {
         tng_free_result($custevents);
 
         $cite = reorderCitation($personID . "_DEAT", 0);
-        doubleLine($text['died'], displayDate($row['deathdate']), $text['place'], $row['deathplace'], $cite);
+        doubleLine(_('Died'), displayDate($row['deathdate']), _('Place'), $row['deathplace'], $cite);
 
         $cite = reorderCitation($personID . "_BURI", 0);
-        $burialmsg = $row['burialtype'] ? $text['cremated'] : $text['buried'];
-        doubleLine($burialmsg, displayDate($row['burialdate']), $text['place'], $row['burialplace'], $cite);
+        $burialmsg = $row['burialtype'] ? _('Cremated') : _('Buried');
+        doubleLine($burialmsg, displayDate($row['burialdate']), _('Place'), $row['burialplace'], $cite);
     } else {
-        doubleLine($text['born'], '', $text['place'], '');
+        doubleLine(_('Born'), '', _('Place'), '');
         if (!$tngconfig['hidechr']) {
-            doubleLine($text['christened'], '', $text['place'], '');
+            doubleLine(_('Christened'), '', _('Place'), '');
         }
-        doubleLine($text['died'], '', $text['place'], '');
-        doubleLine($text['buried'], '', $text['place'], '');
+        doubleLine(_('Died'), '', _('Place'), '');
+        doubleLine(_('Buried'), '', _('Place'), '');
     }
 
     if ($rights['lds']) {
         if ($rights['both']) {
             $cite = reorderCitation($personID . "_BAPL", 0);
-            doubleLine($text['baptizedlds'], displayDate($row['baptdate']), $text['place'], $row['baptplace'], $cite);
+            doubleLine(_('Baptized (LDS)'), displayDate($row['baptdate']), _('Place'), $row['baptplace'], $cite);
             $cite = reorderCitation($personID . "_CONF", 0);
-            doubleLine($text['conflds'], displayDate($row['confdate']), $text['place'], $row['confplace'], $cite);
+            doubleLine(_('Confirmed (LDS)'), displayDate($row['confdate']), _('Place'), $row['confplace'], $cite);
             $cite = reorderCitation($personID . "_INIT", 0);
-            doubleLine($text['initlds'], displayDate($row['initdate']), $text['place'], $row['initplace'], $cite);
+            doubleLine(_('Initiatory (LDS)'), displayDate($row['initdate']), _('Place'), $row['initplace'], $cite);
             $cite = reorderCitation($personID . "_ENDL", 0);
-            doubleLine($text['endowedlds'], displayDate($row['endldate']), $text['place'], $row['endlplace'], $cite);
+            doubleLine(_('Endowed (LDS)'), displayDate($row['endldate']), _('Place'), $row['endlplace'], $cite);
         } else {
-            doubleLine($text['baptizedlds'], '', $text['place'], '');
-            doubleLine($text['endowedlds'], '', $text['place'], '');
+            doubleLine(_('Baptized (LDS)'), '', _('Place'), '');
+            doubleLine(_('Endowed (LDS)'), '', _('Place'), '');
         }
     }
 
@@ -246,9 +244,9 @@ else {
                 $cite2 = reorderCitation($fathrow['personID'] . "_NAME", 0);
                 if ($cite2) $cite .= $cite ? ", $cite2" : $cite2;
 
-                singleLine($text['father'], "$fathname $fathtext", '', $cite);
+                singleLine(_('Father'), "$fathname $fathtext", '', $cite);
             } else {
-                singleLine($text['father'], '');
+                singleLine(_('Father'), '');
             }
 
             $gotmother = getParentSimplePlusDates($tree, $parent['familyID'], "wife");
@@ -270,23 +268,23 @@ else {
                 $cite2 = reorderCitation($mothrow['personID'] . "_NAME", 0);
                 if ($cite2) $cite .= $cite ? ", $cite2" : $cite2;
 
-                singleLine($text['mother'], "$mothname $mothtext", '', $cite);
+                singleLine(_('Mother'), "$mothname $mothtext", '', $cite);
             } else {
-                singleLine($text['mother'], '');
+                singleLine(_('Mother'), '');
             }
 
             if ($rights['lds']) {
                 if ($rights['both']) {
-                    doubleLine($text['sealedplds'], displayDate($parent['sealdate']), $text['place'], $row['sealplace']);
+                    doubleLine(_('Sealed to Parents (LDS)'), displayDate($parent['sealdate']), _('Place'), $row['sealplace']);
                 } else {
-                    doubleLine($text['sealedplds'], '', $text['place'], '');
+                    doubleLine(_('Sealed to Parents (LDS)'), '', _('Place'), '');
                 }
             }
         }
     } // print two empty fields
     else {
-        singleLine($text['father'], '');
-        singleLine($text['mother'], '');
+        singleLine(_('Father'), '');
+        singleLine(_('Mother'), '');
     }
 
     if ($row['sex'] == 'M') {
@@ -339,20 +337,20 @@ else {
             $cite2 = reorderCitation($marriagerow[$spouse] . "_NAME", 0);
             if ($cite2) $cite .= $cite ? ", $cite2" : $cite2;
 
-            singleLine($text['spouse'], "$namestr $spousetext", '', $cite);
+            singleLine(_('Spouse'), "$namestr $spousetext", '', $cite);
         }
         if ($mrights['both']) {
             $cite = reorderCitation($marriagerow['familyID'] . "_MARR", 0);
-            doubleLine($text['married'], displayDate($marriagerow['marrdate']), $text['place'], $marriagerow['marrplace'], $cite);
+            doubleLine(_('Married'), displayDate($marriagerow['marrdate']), _('Place'), $marriagerow['marrplace'], $cite);
         } else {
-            doubleLine($text['married'], '', $text['place'], '');
+            doubleLine(_('Married'), '', _('Place'), '');
         }
         if ($mrights['lds']) {
             if ($mrights['both']) {
                 $cite = reorderCitation($marriagerow['familyID'] . "_SLGS", 0);
-                doubleLine($text['sealedslds'], displayDate($marriagerow['sealdate']), $text['place'], $marriagerow['sealplace'], $cite);
+                doubleLine(_('Sealed to Spouse (LDS)'), displayDate($marriagerow['sealdate']), _('Place'), $marriagerow['sealplace'], $cite);
             } else {
-                doubleLine($text['sealedslds'], '', $text['place'], '');
+                doubleLine(_('Sealed to Spouse (LDS)'), '', _('Place'), '');
             }
         }
 
@@ -379,8 +377,8 @@ else {
     // notes and such
     // draw the box to contain the notes
     pageBox();
-    titleLine($text['general']);
-    $titleConfig['header'] = $text['general'] . ' ' . $text['cont'];
+    titleLine(_('General'));
+    $titleConfig['header'] = _('General') . ' ' . _('(cont.)');
     $titleConfig['headerFont'] = $rptFont;
     $titleConfig['headerFontSize'] = $lblFontSize;
     $titleConfig['outline'] = true;
@@ -413,12 +411,12 @@ else {
 
     // create the citations page
     if ($citesources && $citestring) {
-        $titleConfig['header'] = $text['sources'];
+        $titleConfig['header'] = _('Sources');
         $titleConfig['headerFont'] = $rptFont;
         $titleConfig['headerFontSize'] = $lblFontSize;
         $titleConfig['outline'] = true;
         $pdf->AddPage();
-        $titleConfig['header'] = $text['sources'] . ' ' . $text['cont'];
+        $titleConfig['header'] = _('Sources') . ' ' . _('(cont.)');
 
         // reduce the font
         $pdf->SetFont($rptFont, '', $rptFontSize - 2);
@@ -450,7 +448,7 @@ function childLine($childnum, $data, $cite = '') {
     $pdf->Cell($labelwidth, $lineheight, "$childnum", 1, 0, 'R');
     if ($childnum == 1) {
         $pdf->SetX($lftmrg);
-        $pdf->Cell($labelwidth, $lineheight, $text['children'] . ":", 0, 0, 'L');
+        $pdf->Cell($labelwidth, $lineheight, _('Children') . ":", 0, 0, 'L');
     }
     $pdf->SetFont($rptFont, '', $rptFontSize);
     $pdf->Cell($paperdim['w'] - $pdf->GetX() - $rtmrg, $lineheight, $data, 1, 0, 'L');

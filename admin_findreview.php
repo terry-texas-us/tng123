@@ -109,7 +109,7 @@ $result = tng_query($query);
 
 $numrows = tng_num_rows($result);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $result2 = tng_query($totquery) or die ($admtext['cannotexecutequery'] . ": $totquery");
+    $result2 = tng_query($totquery) or die (_('Cannot execute query') . ": $totquery");
     $row = tng_fetch_assoc($result2);
     $totrows = $row['tcount'];
     tng_free_result($result2);
@@ -117,15 +117,15 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 
-tng_adminheader($admtext['review'], $flags);
+tng_adminheader(_('Review'), $flags);
 ?>
-<script>
-    function confirmDelete(ID) {
-        if (confirm('<?php echo $admtext['confdeleteevent']; ?>'))
-            deleteIt('tevent', ID);
-        return false;
-    }
-</script>
+    <script>
+        function confirmDelete(ID) {
+            if (confirm('<?php echo _('Are you sure you want to delete this event?'); ?>'))
+                deleteIt('tevent', ID);
+            return false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
@@ -133,107 +133,107 @@ echo tng_adminlayout();
 
 if ($type == "I") {
     $icon = "img/people_icon.gif";
-    $hmsg = $admtext['people'];
-    $peopletabs[0] = [1, "admin_people.php", $admtext['search'], "findperson"];
-    $peopletabs[1] = [$allow_add, "admin_newperson.php", $admtext['addnew'], "addperson"];
-    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", $admtext['review'], "review"];
-    $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", $admtext['merge'], "merge"];
+    $hmsg = _('People');
+    $peopletabs[0] = [1, "admin_people.php", _('Search'), "findperson"];
+    $peopletabs[1] = [$allow_add, "admin_newperson.php", _('Add New'), "addperson"];
+    $peopletabs[2] = [$allow_edit, "admin_findreview.php?type=I", _('Review'), "review"];
+    $peopletabs[3] = [$allow_edit && $allow_delete, "admin_merge.php", _('Merge'), "merge"];
 } else {
     $icon = "img/families_icon.gif";
-    $hmsg = $admtext['families'];
-    $peopletabs['0'] = [1, "admin_families.php", $admtext['search'], "findperson"];
-    $peopletabs['1'] = [$allow_add, "admin_newfamily.php", $admtext['addnew'], "addfamily"];
-    $peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=F", $admtext['review'], "review"];
+    $hmsg = _('Families');
+    $peopletabs['0'] = [1, "admin_families.php", _('Search'), "findperson"];
+    $peopletabs['1'] = [$allow_add, "admin_newfamily.php", _('Add New'), "addfamily"];
+    $peopletabs['2'] = [$allow_edit, "admin_findreview.php?type=F", _('Review'), "review"];
 }
 
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#review');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/people_help.php#review');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($peopletabs, "review", $innermenu);
-echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $message);
+echo displayHeadline("$hmsg &gt;&gt; " . _('Review') . "", $icon, $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <h3 class="subhead"><?php echo $admtext['selectevaction']; ?></h3>
-            <div class="normal">
-                <form action="admin_findreview.php" name="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['user']; ?>:</span></td>
-                            <td>
-                                <select name="reviewuser">
-                                    <?php
-                                    echo "	<option value=\"\">{$admtext['allusers']}</option>\n";
-                                    $query = "SELECT username, description FROM $users_table ORDER BY description";
-                                    $userresult = tng_query($query);
-                                    while ($userrow = tng_fetch_assoc($userresult)) {
-                                        echo "	<option value=\"{$userrow['username']}\"";
-                                        if ($userrow['username'] == $reviewuser) {
-                                            echo " selected";
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <h3 class="subhead"><?php echo _('Select Event and Action'); ?></h3>
+                <div class="normal">
+                    <form action="admin_findreview.php" name="form1">
+                        <table>
+                            <tr>
+                                <td><span class="normal"><?php echo _('User'); ?>:</span></td>
+                                <td>
+                                    <select name="reviewuser">
+                                        <?php
+                                        echo "	<option value=\"\">" . _('All Users') . "</option>\n";
+                                        $query = "SELECT username, description FROM $users_table ORDER BY description";
+                                        $userresult = tng_query($query);
+                                        while ($userrow = tng_fetch_assoc($userresult)) {
+                                            echo "	<option value=\"{$userrow['username']}\"";
+                                            if ($userrow['username'] == $reviewuser) {
+                                                echo " selected";
+                                            }
+                                            echo ">{$userrow['description']}</option>\n";
                                         }
-                                        echo ">{$userrow['description']}</option>\n";
-                                    }
-                                    tng_free_result($userresult);
-                                    ?>
-                                </select>
-                            </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['tree']; ?>: </span></td>
-                            <td>
-                                <select name="tree">
-                                    <?php
-                                    if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
-                                    $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
-                                    while ($treerow = tng_fetch_assoc($treeresult)) {
-                                        echo "	<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) echo " selected";
+                                        tng_free_result($userresult);
+                                        ?>
+                                    </select>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><span class="normal"><?php echo _('Tree'); ?>: </span></td>
+                                <td>
+                                    <select name="tree">
+                                        <?php
+                                        if (!$assignedtree) echo "<option value=''>" . _('All Trees') . "</option>\n";
+                                        $treeresult = tng_query($treequery) or die (_('Cannot execute query') . ": $treequery");
+                                        while ($treerow = tng_fetch_assoc($treeresult)) {
+                                            echo "	<option value=\"{$treerow['gedcom']}\"";
+                                            if ($treerow['gedcom'] == $tree) echo " selected";
 
-                                        echo ">{$treerow['treename']}</option>\n";
-                                    }
-                                    tng_free_result($treeresult);
-                                    ?>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
-                                    onClick="document.form1.reviewuser.value=''; document.form1.tree.selectedIndex=0; document.form1.living.checked=false; document.form1.exactmatch.checked=false;"
-                                    class="align-top">
-                            </td>
-                        </tr>
-                    </table>
-                    <input type="hidden" name="type" value="<?php echo $type; ?>">
-                    <input type="hidden" name="newsearch" value="1">
-                </form>
-                <br>
-
-                <?php
-                $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) $offsetplus = 0;
-                echo "<p>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
-                $pagenav = get_browseitems_nav($totrows, "admin_findreview.php?type=$type&amp;reviewuser=$reviewuser&amp;offset", $maxsearchresults, 5);
-                echo " &nbsp; $pagenav</p>";
-                ?>
-                <table class="normal">
-                    <tr>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['id']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['name']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['event']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['postdate']; ?></th>
-                        <th class="fieldnameback fieldname"><?php echo $admtext['tree']; ?></th>
-                    </tr>
+                                            echo ">{$treerow['treename']}</option>\n";
+                                        }
+                                        tng_free_result($treeresult);
+                                        ?>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                                    <input type="submit" name="submit" value="<?php echo _('Reset'); ?>"
+                                        onClick="document.form1.reviewuser.value=''; document.form1.tree.selectedIndex=0; document.form1.living.checked=false; document.form1.exactmatch.checked=false;"
+                                        class="align-top">
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="type" value="<?php echo $type; ?>">
+                        <input type="hidden" name="newsearch" value="1">
+                    </form>
+                    <br>
 
                     <?php
-                    $actionstr = "<a href=\"admin_review.php?tempID=xxx\" title=\"{$admtext['review']}\" class='smallicon admin-edit-icon'></a>";
-                    if ($allow_delete) {
-                        $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
-                    }
+                    $numrowsplus = $numrows + $offset;
+                    if (!$numrowsplus) $offsetplus = 0;
+                    echo "<p>" . _('Matches') . ": $offsetplus " . _('to') . " $numrowsplus " . _('of') . " $totrows";
+                    $pagenav = get_browseitems_nav($totrows, "admin_findreview.php?type=$type&amp;reviewuser=$reviewuser&amp;offset", $maxsearchresults, 5);
+                    echo " &nbsp; $pagenav</p>";
+                    ?>
+                    <table class="normal">
+                        <tr>
+                            <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('ID'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Name'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Event(s)'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Posted on'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Tree'); ?></th>
+                        </tr>
 
-                    while ($row = tng_fetch_assoc($result)) {
-                        if (is_numeric($row['eventID'])) {
+                        <?php
+                        $actionstr = "<a href=\"admin_review.php?tempID=xxx\" title=\"" . _('Review') . "\" class='smallicon admin-edit-icon'></a>";
+                        if ($allow_delete) {
+                            $actionstr .= "<a href='#' onclick=\"return confirmDelete('xxx');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
+                        }
+
+                        while ($row = tng_fetch_assoc($result)) {
+                            if (is_numeric($row['eventID'])) {
                             $query = "SELECT display, eventtypes.eventtypeID AS eventtypeID, tag ";
                             $query .= "FROM $eventtypes_table eventtypes, $events_table events ";
                             $query .= "WHERE eventID = {$row['eventID']} AND eventtypes.eventtypeID = events.eventtypeID";
@@ -296,7 +296,7 @@ echo displayHeadline("$hmsg &gt;&gt; {$admtext['review']}", $icon, $menu, $messa
                     ?>
                 </table>
                 <?php
-                echo "<p>{$admtext['matches']}: $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows";
+                echo "<p>" . _('Matches') . ": $offsetplus " . _('to') . " $numrowsplus " . _('of') . " $totrows";
                 echo " &nbsp; $pagenav</p>";
                 ?>
             </div>

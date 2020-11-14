@@ -10,7 +10,7 @@ if ($link) {
     include "checklogin.php";
     include "version.php";
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -18,7 +18,7 @@ if ($link) {
 
 $helplang = findhelp("mapconfig_help.php");
 
-tng_adminheader($admtext['modifymapsettings'], $flags);
+tng_adminheader(_('Modify Map Configuration Settings'), $flags);
 ?>
 <script>
     function validateWidth(width) {
@@ -51,13 +51,13 @@ tng_adminheader($admtext['modifymapsettings'], $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
-$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
-$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
-$setuptabs[3] = [1, "#", $admtext['mapconfigsettings'], "map"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/mapconfig_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$setuptabs[0] = [1, "admin_setup.php", _('Configuration'), "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", _('Diagnostics'), "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", _('Table Creation'), "tablecreation"];
+$setuptabs[3] = [1, "#", _('Map Settings'), "map"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/mapconfig_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($setuptabs, "map", $innermenu);
-echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'] . " &gt;&gt; " . $admtext['mapconfigsettings'], "img/setup_icon.gif", $menu, "");
+echo displayHeadline(_('Setup') . " &gt;&gt; " . _('Configuration') . " &gt;&gt; " . _('Map Settings'), "img/setup_icon.gif", $menu, "");
 ?>
 
 <table class="normal lightback w-full" cellpadding="10" cellspacing="2">
@@ -66,44 +66,44 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
             <form action="admin_updatemapconfig.php" method="post" name="form1">
                 <table class="normal">
                     <tr>
-                        <td><?php echo $admtext['mapkey']; ?>:</td>
+                        <td><?php echo _('Map Key'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['key']; ?>" name="mapkey" size="80">
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['maptype']; ?>:</td>
+                        <td><?php echo _('Map Type'); ?>:</td>
                         <td>
                             <select name="maptype">
                                 <option value="TERRAIN"<?php if ($map['displaytype'] == "TERRAIN") {
                                     echo " selected";
-                                } ?>><?php echo $admtext['mapterrain']; ?></option>
+                                } ?>><?php echo _('Terrain'); ?></option>
                                 <option value="ROADMAP"<?php if ($map['displaytype'] == "ROADMAP") {
                                     echo " selected";
-                                } ?>><?php echo $admtext['maproadmap']; ?></option>
+                                } ?>><?php echo _('Road Map'); ?></option>
                                 <option value="HYBRID"<?php if ($map['displaytype'] == "HYBRID") {
                                     echo " selected";
-                                } ?>><?php echo $admtext['maphybrid']; ?></option>
+                                } ?>><?php echo _('Hybrid'); ?></option>
                                 <option value="SATELLITE"<?php if ($map['displaytype'] == "SATELLITE") {
                                     echo " selected";
-                                } ?>><?php echo $admtext['mapsatellite']; ?></option>
+                                } ?>><?php echo _('Satellite'); ?></option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapstlat']; ?>:</td>
+                        <td><?php echo _('Starting Latitude'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['stlat']; ?>" name="mapstlat" onblur="this.value = validateLatLong(this.value)">
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapstlong']; ?>:</td>
+                        <td><?php echo _('Starting Longitude'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['stlong']; ?>" name="mapstlong" onblur="this.value = validateLatLong(this.value)">
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapstzm']; ?>:</td>
+                        <td><?php echo _('Starting Zoom'); ?>:</td>
                         <td>
                             <select name="mapstzoom">
                                 <?php
@@ -118,7 +118,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapfoundzm']; ?>:</td>
+                        <td><?php echo _('Location Zoom'); ?>:</td>
                         <td>
                             <select name="mapfoundzoom">
                                 <?php
@@ -134,75 +134,75 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                     </tr>
 
                     <tr>
-                        <td class="align-top" colspan="2"><br><?php echo $admtext['mapdimsind']; ?>:</td>
+                        <td class="align-top" colspan="2"><br><?php echo _('Dimensions, Individual Page'); ?>:</td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapwidth']; ?>:</td>
+                        <td><?php echo _('Width (% or px)'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['indw']; ?>" name="mapindw" onblur="this.value = validateWidth(this.value)">
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapheight']; ?>:</td>
+                        <td><?php echo _('Height (px)'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['indh']; ?>" name="mapindh" onblur="this.value = validateHeight(this.value)">
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="align-top" colspan="2"><br><?php echo $admtext['mapdimshst']; ?>:</td>
+                        <td class="align-top" colspan="2"><br><?php echo _('Dimensions, Headstones Pages'); ?>:</td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapwidth']; ?>:</td>
+                        <td><?php echo _('Width (% or px)'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['hstw']; ?>" name="maphstw" onblur="this.value = validateWidth(this.value)">
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapheight']; ?>:</td>
+                        <td><?php echo _('Height (px)'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['hsth']; ?>" name="maphsth" onblur="this.value = validateHeight(this.value)">
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="align-top" colspan="2"><br><?php echo $admtext['mapdimsadm']; ?>:</td>
+                        <td class="align-top" colspan="2"><br><?php echo _('Dimensions, Admin Pages'); ?>:</td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapwidth']; ?>:</td>
+                        <td><?php echo _('Width (% or px)'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['admw']; ?>" name="mapadmw" onblur="this.value = validateWidth(this.value)">
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['mapheight']; ?>:</td>
+                        <td><?php echo _('Height (px)'); ?>:</td>
                         <td>
                             <input type="text" value="<?php echo $map['admh']; ?>" name="mapadmh" onblur="this.value = validateHeight(this.value)">
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['startoff']; ?>:</td>
+                        <td><?php echo _('Hide Admin Maps to Start'); ?>:</td>
                         <td>
                             <select name="startoff">
                                 <option value="1"<?php if ($map['startoff']) {
                                     echo " selected";
-                                } ?>><?php echo $admtext['yes']; ?></option>
+                                } ?>><?php echo _('Yes'); ?></option>
                                 <option value="0"<?php if (!$map['startoff']) {
                                     echo " selected";
-                                } ?>><?php echo $admtext['no']; ?></option>
+                                } ?>><?php echo _('No'); ?></option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['pstartoff']; ?>:</td>
+                        <td><?php echo _('Hide Public Maps to Start'); ?>:</td>
                         <td>
                             <select name="pstartoff">
                                 <option value="1"<?php if ($map['pstartoff']) {
                                     echo " selected";
-                                } ?>><?php echo $admtext['yes']; ?></option>
+                                } ?>><?php echo _('Yes'); ?></option>
                                 <option value="0"<?php if (!$map['pstartoff']) {
                                     echo " selected";
-                                } ?>><?php echo $admtext['no']; ?></option>
+                                } ?>><?php echo _('No'); ?></option>
                             </select>
                         </td>
                     </tr>
@@ -211,15 +211,15 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                         <td class="align-top" colspan="2"><br></td>
                     </tr>
                     <tr>
-                        <td><?php echo $admtext['conslpins']; ?>:</td>
+                        <td><?php echo _('Consolidate Duplicate Pins'); ?>:</td>
                         <td>
                             <select name="showallpins">
                                 <option value="0"<?php if (!$map['showallpins']) {
                                     echo " selected";
-                                } ?>><?php echo $admtext['yes']; ?></option>
+                                } ?>><?php echo _('Yes'); ?></option>
                                 <option value="1"<?php if ($map['showallpins']) {
                                     echo " selected";
-                                } ?>><?php echo $admtext['no']; ?></option>
+                                } ?>><?php echo _('No'); ?></option>
                             </select>
                         </td>
                     </tr>
@@ -232,7 +232,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['configuration'
                 <input type="hidden" name="pinplacelevel4" value="<?php echo $pinplacelevel4; ?>">
                 <input type="hidden" name="pinplacelevel5" value="<?php echo $pinplacelevel5; ?>">
                 <input type="hidden" name="pinplacelevel6" value="<?php echo $pinplacelevel6; ?>">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
+                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo _('Save'); ?>">
             </form>
         </td>
     </tr>

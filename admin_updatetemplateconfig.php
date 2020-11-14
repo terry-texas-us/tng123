@@ -15,7 +15,7 @@ if ($link) {
     include "version.php";
 
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -82,6 +82,6 @@ foreach ($_POST as $newkey => $newvalue) {
     }
 }
 
-adminwritelog($admtext['modifytemplatesettings'] . " - {$admtext['template']} " . $form_templatenum . " - {$admtext['templateswitching']} = " . $form_templateswitching);
+adminwritelog(_('Modify Template Configuration Settings') . " - " . _('Template') . " " . $form_templatenum . " - " . _('Enable Template Selection') . " = " . $form_templateswitching);
 
 header("Location: admin_setup.php");

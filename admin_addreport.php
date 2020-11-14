@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedtree || !$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -20,7 +20,7 @@ $params = [&$template, &$reportname, &$reportdesc, &$ranking, &$active, &$displa
 tng_execute($query, $params);
 $reportID = tng_insert_id();
 
-adminwritelog("<a href=\"admin_editreport.php?reportID=$reportID\">{$admtext['addnewreport']}: $reportID/$reportname</a>");
+adminwritelog("<a href=\"admin_editreport.php?reportID=$reportID\">" . _('Add New Report') . ": $reportID/$reportname</a>");
 
-$message = $admtext['report'] . " $reportID {$admtext['succadded']}.";
+$message = _('Report') . " $reportID " . _('was successfully added') . ".";
 header("Location: admin_reports.php?message=" . urlencode($message));

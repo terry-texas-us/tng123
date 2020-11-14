@@ -23,7 +23,7 @@ if (!in_array($mediatypeID, $mediatypes_like['photos']) && !in_array($mediatypeI
 if ($orgmediatypeID) {
     $titlestr = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
 } else {
-    $titlestr = $text['allmedia'];
+    $titlestr = _('All Media');
 }
 
 if ($mediasearch) {
@@ -38,9 +38,9 @@ if ($mediasearch) {
 if ($tnggallery) {
     $tnggallery = 1;
     $maxsearchresults *= 2;
-    $gallerymsg = "<a href=\"browsemedia.php?tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink rounded'>&raquo; {$text['regphotos']}</a>";
+    $gallerymsg = "<a href=\"browsemedia.php?tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink rounded'>&raquo; " . _('Descriptive View') . "</a>";
 } else {
-    $gallerymsg = "<a href=\"browsemedia.php?tnggallery=1&amp;tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink rounded'>&raquo; {$text['gallery']}</a>";
+    $gallerymsg = "<a href=\"browsemedia.php?tnggallery=1&amp;tree=$tree&amp;mediatypeID=$orgmediatypeID&amp;mediasearch=$mediasearch\" class='snlink rounded'>&raquo; " . _('Thumbnails Only') . "</a>";
 }
 
 $_SESSION['tng_gallery'] = $tnggallery;
@@ -50,7 +50,7 @@ function doMediaSearch($instance, $pagenav) {
     global $text, $mediasearch, $orgmediatypeID, $tree, $tnggallery;
 
     $str = getFORM("browsemedia", "get", "MediaSearch$instance", "");
-    $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\"> <input type='submit' value=\"{$text['search']}\"> <input type='button' value=\"{$text['tng_reset']}\" onclick=\"window.location.href='browsemedia.php?mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\"> <input type='submit' value=\"" . _('Search') . "\"> <input type='button' value=\"" . _('Reset') . "\" onclick=\"window.location.href='browsemedia.php?mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";
     $str .= "<input type='hidden' name=\"mediatypeID\" value=\"$orgmediatypeID\">\n";
     $str .= $pagenav;
     $str .= "<input type='hidden' name=\"tree\" value='$tree'>\n";
@@ -105,7 +105,7 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $numrowsplus = $numrows + $offset;
 
-$treestr = $tree ? " " . $text['tree'] . ": $tree" : "";
+$treestr = $tree ? " " . _('Tree') . ": $tree" : "";
 $treestr = trim("$mediasearch $treestr");
 $treestr = $treestr ? " ($treestr)" : "";
 $logstring = "<a href=\"browsemedia.php?tree=$tree&amp;offset=$offset&amp;mediasearch=$mediasearch&amp;mediatypeID=$mediatypeID\">$titlestr$treestr</a>";
@@ -132,7 +132,7 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browseme
 
 $toplinks = "<p class='normal'>";
 if ($totrows) {
-    $toplinks .= $text['matches'] . " " . number_format($offsetplus) . " {$text['to']} " . number_format($numrowsplus) . " {$text['of']} " . number_format($totrows) . " &nbsp;&nbsp;&nbsp; ";
+    $toplinks .= _('Matches') . " " . number_format($offsetplus) . " " . _('to') . " " . number_format($numrowsplus) . " " . _('of') . " " . number_format($totrows) . " &nbsp;&nbsp;&nbsp; ";
 }
 $toplinks .= "$gallerymsg";
 
@@ -149,14 +149,14 @@ if ($tnggallery) {
     $header = "<thead>\n";
     $header .= "<tr>\n";
     $header .= "<th class='fieldnameback fieldname nbrcol'>#</th>\n";
-    $header .= "<th class='fieldnameback fieldname text-center' width=\"$thumbmaxw\">{$text['thumb']}</th>\n";
+    $header .= "<th class='fieldnameback fieldname text-center' width=\"$thumbmaxw\">" . _('Thumb') . "</th>\n";
     $width = $mediatypeID == "headstones" ? "50%" : "75%";
-    $header .= "<th class='fieldnameback fieldname'>{$text['description']}</th>\n";
+    $header .= "<th class='fieldnameback fieldname'>" . _('Description') . "</th>\n";
     if ($mediatypeID == "headstones") {
-        $header .= "<th class='fieldnameback fieldname'>{$text['cemetery']}</th>\n";
-        $header .= "<th class='fieldnameback fieldname'>{$text['status']}</th>\n";
+        $header .= "<th class='fieldnameback fieldname'>" . _('Cemetery') . "</th>\n";
+        $header .= "<th class='fieldnameback fieldname'>" . _('Status') . "</th>\n";
     }
-    $header .= "<th class='fieldnameback fieldname'>{$text['indlinked']}</th>\n";
+    $header .= "<th class='fieldnameback fieldname'>" . _('Linked to') . "</th>\n";
     $header .= "</tr>\n";
     $header .= "</thead>\n";
     $tablewidth = " style='width: 100%;'";
@@ -245,20 +245,20 @@ while ($row = tng_fetch_assoc($result)) {
                 if ($orgmediatypeID == "headstones") {
                     $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
                     if ($prow['deathdate']) {
-                        $abbrev = $text['deathabbr'];
+                        $abbrev = _('d.');
                     } elseif ($prow['burialdate']) {
-                        $abbrev = $text['burialabbr'];
+                        $abbrev = _('bur.');
                     }
                     $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
                 }
             } elseif ($prow['sourceID'] != NULL) {
-                $sourcetext = $prow['title'] ? $text['source'] . ": " . $prow['title'] : $text['source'] . ": " . $prow['sourceID'];
+                $sourcetext = $prow['title'] ? _('Source') . ": " . $prow['title'] : _('Source') . ": " . $prow['sourceID'];
                 $medialinktext .= "<li><a href=\"showsource.php?sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext\n";
             } elseif ($prow['repoID'] != NULL) {
-                $repotext = $prow['reponame'] ? $text['repository'] . ": " . $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
+                $repotext = $prow['reponame'] ? _('Repository') . ": " . $prow['reponame'] : _('Repository') . ": " . $prow['repoID'];
                 $medialinktext .= "<li><a href=\"showrepo.php?repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext";
             } elseif ($prow['familyID'] != NULL) {
-                $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
+                $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">" . _('Family') . ": " . getFamilyName($prow);
             } elseif (!$prow['linktype'] || $prow['linktype'] == "C") {
                 $query = "SELECT persfamID, sourceID, gedcom FROM $citations_table WHERE citationID = \"{$prow['personID']}\"";
                 $cresult = tng_query($query);
@@ -284,7 +284,7 @@ while ($row = tng_fetch_assoc($result)) {
                                 if ($presult2) {
                                     $famrow = tng_fetch_assoc($presult2);
                                     $familyname = getFamilyName($famrow);
-                                    $medialinktext .= "<li><a href=\"familygroup.php?familyID=$persfamID&amp;tree={$crow['gedcom']}\">{$text['family']}: $familyname</a>";
+                                    $medialinktext .= "<li><a href=\"familygroup.php?familyID=$persfamID&amp;tree={$crow['gedcom']}\">" . _('Family') . ": $familyname</a>";
                                     tng_free_result($presult2);
                                 }
                             }
@@ -322,7 +322,7 @@ while ($row = tng_fetch_assoc($result)) {
     $uselink = getMediaHREF($row, 0);
 
     if ($numrows == $maxplus) {
-        $medialinktext .= "\n['<a href=\"showmedia.php?mediaID={$row['mediaID']}&amp;ioffset=$maxsearchresults\">{$text['morelinks']}</a>']";
+        $medialinktext .= "\n['<a href=\"showmedia.php?mediaID={$row['mediaID']}&amp;ioffset=$maxsearchresults\">" . _('More Links') . "</a>']";
     }
 
     $imgsrc = getSmallPhoto($row);
@@ -340,16 +340,16 @@ while ($row = tng_fetch_assoc($result)) {
     } else {
         $nonamesloc = $row['private'] ? $tngconfig['nnpriv'] : $nonames;
         if ($nonamesloc) {
-            $description = $text['livingphoto'];
+            $description = _('At least one living or private individual is linked to this item - Details withheld.');
             $notes = "";
         } else {
             $description = $row['description'];
-            $notes = $notes ? $notes . "<br>({$text['livingphoto']})" : "({$text['livingphoto']})";
+            $notes = $notes ? $notes . "<br>(" . _('At least one living or private individual is linked to this item - Details withheld.') . ")" : "(" . _('At least one living or private individual is linked to this item - Details withheld.') . ")";
         }
     }
 
     if ($row['status'] && ($orgmediatypeID != "headstones")) {
-        $notes = $text['status'] . ": " . $row['status'] . "; " . $notes;
+        $notes = _('Status') . ": " . $row['status'] . "; " . $notes;
     }
 
     if ($tnggallery) {
@@ -403,14 +403,14 @@ while ($row = tng_fetch_assoc($result)) {
 tng_free_result($result);
 if (!$tnggallery) {
     if (!$thumbcount) {
-        $header = str_replace("<td class='fieldnameback fieldname'><strong>{$text['thumb']}</strong></td>", "", $header); // todo multiple tag search string has been mangled
+        $header = str_replace("<td class='fieldnameback fieldname'><strong>" . _('Thumb') . "</strong></td>", "", $header); // todo multiple tag search string has been mangled
         $mediatext = str_replace("<td class='databack text-center'></td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
 }
 
 if (!$tngconfig['ssdisabled'] && $firsthref && $totrows > 1) {
     $ss = strpos($firsthref, "?") ? "&amp;ss=1" : "?ss=1";
-    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref$ss\" class='snlink rounded'>&raquo; {$text['slidestart']}</a>";
+    $toplinks .= " &nbsp;&nbsp; <a href=\"$firsthref$ss\" class='snlink rounded'>&raquo; " . _('Slide Show') . "</a>";
 }
 $toplinks .= "</p>";
 //print out the whole shootin' match right here, eh

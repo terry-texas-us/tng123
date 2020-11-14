@@ -30,19 +30,19 @@ if ($type == "person") {
     }
 }
 
-$result = tng_query($query) or die ("{$admtext['cannotexecutequery']}: $query");
+$result = tng_query($query) or die ("" . _('Cannot execute query') . ": $query");
 $prefixlen = strlen($prefix);
 $suffixlen = strlen($suffix) * -1;
 
 header("Content-type:text/html; charset=" . $session_charset);
 if ($result && tng_num_rows($result)) {
-    echo "<span class=\"msgerror\">ID $checkID {$admtext['idinuse']}</span>";
+    echo "<span class=\"msgerror\">ID $checkID " . _('is in use. Please choose a different ID') . "</span>";
 } else {
     if (($prefix && (substr($checkID, 0, $prefixlen) != $prefix || !is_numeric(substr($checkID, $prefixlen)))) ||
         ($suffix && (substr($checkID, $suffixlen) != $suffix || !is_numeric(substr($checkID, 0, $suffixlen))))) {
-        echo "<span class=\"msgerror\">$checkID {$admtext['idnotvalid']} $prefix</span>";
+        echo "<span class=\"msgerror\">$checkID " . _('is not a valid ID. A valid ID is a numeric string prefixed with') . " $prefix</span>";
     } else {
-        echo "<span class=\"msgapproved\">ID $checkID {$admtext['idok']}</span>";
+        echo "<span class=\"msgapproved\">ID $checkID " . _('is OK to use') . "</span>";
     }
 }
 tng_free_result($result);

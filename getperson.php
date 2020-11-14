@@ -58,7 +58,7 @@ $disallowgedcreate = $treerow['disallowgedcreate'];
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
-$logname = !empty($tngconfig['nnpriv']) && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
+$logname = !empty($tngconfig['nnpriv']) && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $namestr);
 $treestr = "<a href=\"showtree.php?tree=$tree\">{$treerow['treename']}</a>";
 if ($row['branch']) {
     //explode on commas
@@ -75,12 +75,11 @@ if ($row['branch']) {
         tng_free_result($brresult);
     }
     if ($branchstr) $treestr = $treestr . " | $branchstr";
-
 }
 tng_free_result($result);
 
-writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $logname ($personID)</a>");
-preparebookmark("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">{$text['indinfofor']} $namestr ($personID)</a>");
+writelog("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">" . _('Individual info for') . " $logname ($personID)</a>");
+preparebookmark("<a href=\"getperson.php?personID=$personID&amp;tree=$tree\">" . _('Individual info for') . " $namestr ($personID)</a>");
 
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 if (empty($tngconfig['hidedna'])) {
@@ -90,17 +89,17 @@ if (empty($tngconfig['hidedna'])) {
     $showdnatest = $hidednatest = "";
 }
 if ($map['key'] && $isConnected) {
-    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language=" . _('&amp;hl=en') . "$mapkeystr\"></script>\n";
 }
 $headstr = $namestr;
 if ($rights['both']) {
     if ($row['birthdate']) {
-        $headstr .= " {$text['birthabbr']} " . displayDate($row['birthdate']);
+        $headstr .= " " . _('b.') . " " . displayDate($row['birthdate']);
     }
     if ($row['birthplace']) $headstr .= " " . $row['birthplace'];
 
     if ($row['deathdate']) {
-        $headstr .= " {$text['deathabbr']} " . displayDate($row['deathdate']);
+        $headstr .= " " . _('d.') . " " . displayDate($row['deathdate']);
     }
     if ($row['deathplace']) $headstr .= " " . $row['deathplace'];
 
@@ -141,55 +140,55 @@ $persontext .= "<table class='w-11/12 mx-auto whiteback tfixed'>\n";
 $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col />\n";
 resetEvents();
 if ($rights['both']) {
-    $persontext .= showEvent(["text" => $text['name'], "fact" => getName($row, true), "event" => "NAME", "entity" => $personID, "type" => "I"]);
+    $persontext .= showEvent(["text" => _('Name'), "fact" => getName($row, true), "event" => "NAME", "entity" => $personID, "type" => "I"]);
     if ($row['title']) {
-        $persontext .= showEvent(["text" => $text['title'], "fact" => $row['title'], "event" => "TITL", "entity" => $personID, "type" => "I"]);
+        $persontext .= showEvent(["text" => _('Title'), "fact" => $row['title'], "event" => "TITL", "entity" => $personID, "type" => "I"]);
     }
     if ($row['prefix']) {
-        $persontext .= showEvent(["text" => $text['prefix'], "fact" => $row['prefix'], "event" => "NPFX", "entity" => $personID, "type" => "I"]);
+        $persontext .= showEvent(["text" => _('Prefix'), "fact" => $row['prefix'], "event" => "NPFX", "entity" => $personID, "type" => "I"]);
     }
     if ($row['suffix']) {
-        $persontext .= showEvent(["text" => $text['suffix'], "fact" => $row['suffix'], "event" => "NSFX", "entity" => $personID, "type" => "I"]);
+        $persontext .= showEvent(["text" => _('Suffix'), "fact" => $row['suffix'], "event" => "NSFX", "entity" => $personID, "type" => "I"]);
     }
     if ($row['nickname']) {
-        $persontext .= showEvent(["text" => $text['nickname'], "fact" => $row['nickname'], "event" => "NICK", "entity" => $personID, "type" => "I"]);
+        $persontext .= showEvent(["text" => _('Nickname'), "fact" => $row['nickname'], "event" => "NICK", "entity" => $personID, "type" => "I"]);
     }
     if ($row['private'] && $allow_edit && $allow_add && $allow_delete && !$assignedtree) {
-        $persontext .= showEvent(["text" => $admtext['text_private'], "fact" => $admtext['yes']]);
+        $persontext .= showEvent(["text" => _('Private'), "fact" => _('Yes')]);
     }
-    setEvent(["text" => $text['born'], "fact" => $stdex['BIRT'], "date" => $row['birthdate'], "place" => $row['birthplace'], "event" => "BIRT", "entity" => $personID, "type" => "I"], $row['birthdatetr']);
-    setEvent(["text" => $text['christened'], "fact" => $stdex['CHR'], "date" => $row['altbirthdate'], "place" => $row['altbirthplace'], "event" => "CHR", "entity" => $personID, "type" => "I"], $row['altbirthdatetr']);
+    setEvent(["text" => _('Born'), "fact" => $stdex['BIRT'], "date" => $row['birthdate'], "place" => $row['birthplace'], "event" => "BIRT", "entity" => $personID, "type" => "I"], $row['birthdatetr']);
+    setEvent(["text" => _('Christened'), "fact" => $stdex['CHR'], "date" => $row['altbirthdate'], "place" => $row['altbirthplace'], "event" => "CHR", "entity" => $personID, "type" => "I"], $row['altbirthdatetr']);
 }
 if ($row['sex'] == "M") {
-    $sex = $text['male'];
+    $sex = _('Male');
     $spouse = "wife";
     $self = "husband";
     $spouseorder = "husborder";
 } else {
     if ($row['sex'] == "F") {
-        $sex = $text['female'];
+        $sex = _('Female');
         $spouse = "husband";
         $self = "wife";
         $spouseorder = "wifeorder";
     } else {
-        $sex = $text['unknown'];
+        $sex = _('Unknown');
         $spouseorder = "";
     }
 }
-setEvent(["text" => $text['gender'], "fact" => $sex], $nodate);
+setEvent(["text" => _('Gender'), "fact" => $sex], $nodate);
 
 if ($rights['both']) {
     if ($rights['lds']) {
-        setEvent(["text" => $text['baptizedlds'], "fact" => $stdex['BAPL'], "date" => $row['baptdate'], "place" => $row['baptplace'], "event" => "BAPL", "entity" => $personID, "type" => "I"], $row['baptdatetr']);
-        setEvent(["text" => $text['conflds'], "fact" => $stdex['CONL'], "date" => $row['confdate'], "place" => $row['confplace'], "event" => "CONL", "entity" => $personID, "type" => "I"], $row['confdatetr']);
-        setEvent(["text" => $text['initlds'], "fact" => $stdex['INIT'], "date" => $row['initdate'], "place" => $row['initplace'], "event" => "INIT", "entity" => $personID, "type" => "I"], $row['initdatetr']);
-        setEvent(["text" => $text['endowedlds'], "fact" => $stdex['ENDL'], "date" => $row['endldate'], "place" => $row['endlplace'], "event" => "ENDL", "entity" => $personID, "type" => "I"], $row['endldatetr']);
+        setEvent(["text" => _('Baptized (LDS)'), "fact" => $stdex['BAPL'], "date" => $row['baptdate'], "place" => $row['baptplace'], "event" => "BAPL", "entity" => $personID, "type" => "I"], $row['baptdatetr']);
+        setEvent(["text" => _('Confirmed (LDS)'), "fact" => $stdex['CONL'], "date" => $row['confdate'], "place" => $row['confplace'], "event" => "CONL", "entity" => $personID, "type" => "I"], $row['confdatetr']);
+        setEvent(["text" => _('Initiatory (LDS)'), "fact" => $stdex['INIT'], "date" => $row['initdate'], "place" => $row['initplace'], "event" => "INIT", "entity" => $personID, "type" => "I"], $row['initdatetr']);
+        setEvent(["text" => _('Endowed (LDS)'), "fact" => $stdex['ENDL'], "date" => $row['endldate'], "place" => $row['endlplace'], "event" => "ENDL", "entity" => $personID, "type" => "I"], $row['endldatetr']);
     }
 
     doCustomEvents($personID, "I");
 
-    setEvent(["text" => $text['died'], "fact" => $stdex['DEAT'], "date" => $row['deathdate'], "place" => $row['deathplace'], "event" => "DEAT", "entity" => $personID, "type" => "I"], $row['deathdatetr']);
-    $burialmsg = $row['burialtype'] ? $text['cremated'] : $text['buried'];
+    setEvent(["text" => _('Died'), "fact" => $stdex['DEAT'], "date" => $row['deathdate'], "place" => $row['deathplace'], "event" => "DEAT", "entity" => $personID, "type" => "I"], $row['deathdatetr']);
+    $burialmsg = $row['burialtype'] ? _('Cremated') : _('Buried');
     setEvent(["text" => $burialmsg, "fact" => $stdex['BURI'], "date" => $row['burialdate'], "place" => $row['burialplace'], "event" => "BURI", "entity" => $personID, "type" => "I"], $row['burialdatetr']);
 }
 
@@ -200,7 +199,7 @@ foreach ($events as $event)
 if ($rights['both']) {
     $assocresult = getAssociations($tree, $personID);
     while ($assoc = tng_fetch_assoc($assocresult)) {
-        $persontext .= showEvent(["text" => $text['association'], "fact" => formatAssoc($assoc)]);
+        $persontext .= showEvent(["text" => _('Association'), "fact" => formatAssoc($assoc)]);
     }
     tng_free_result($assocresult);
 }
@@ -210,27 +209,27 @@ if ($notestogether == 1) {
     if ($rights['both']) {
         $notes = buildGenNotes($indnotes, $personID, "--x-general-x--");
     } elseif ($row['living']) {
-        $notes = $text['livingnote'];
+        $notes = _('At least one living or private individual is linked to this note - Details withheld.');
     }
 
     if ($notes) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class='fieldnameback align-top' id=\"notes1\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='fieldnameback align-top' id=\"notes1\"><span class='fieldname'>" . _('Notes') . "&nbsp;</span></td>\n";
         $persontext .= "<td class='databack' colspan='2'><div class='notearea'>$notes</div></td>\n";
         $persontext .= "</tr>\n";
         $notes = ""; //wipe it out so we don't get a link at the top
     }
 }
 
-$persontext .= showEvent(["text" => $text['personid'], "date" => $personID, "place" => $treestr, "np" => 1]);
+$persontext .= showEvent(["text" => _('Person ID'), "date" => $personID, "place" => $treestr, "np" => 1]);
 if ($row['changedate'] || ($allow_edit && $rightbranch)) {
     $row['changedate'] = displayDate($row['changedate'], false);
     if ($allow_edit && $rightbranch) {
         if ($row['changedate']) $row['changedate'] .= " | ";
 
-        $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+        $row['changedate'] .= "<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree&amp;cw=1\" target=\"_blank\">" . _('Edit') . "</a>";
     }
-    $persontext .= showEvent(["text" => $text['lastmodified'], "fact" => $row['changedate']]);
+    $persontext .= showEvent(["text" => _('Last Modified Date'), "fact" => $row['changedate']]);
 }
 
 $persontext .= "</table>\n";
@@ -269,16 +268,16 @@ if ($parents && tng_num_rows($parents)) {
                 $fatherlink .= $birthinfo;
                 if ($fatherlink) {
                     $age = age($fathrow);
-                    if ($age) $fatherlink .= " &nbsp;({$text['age']} $age)";
+                    if ($age) $fatherlink .= " &nbsp;(" . _('Age') . " $age)";
 
                 }
             }
-            $label = $fathrow['sex'] == "F" ? $text['mother'] : $text['father'];
+            $label = $fathrow['sex'] == "F" ? _('Mother') : _('Father');
             $persontext .= showEvent(["text" => $label, "fact" => $fatherlink]);
             if ($rights['both'] && $parent['frel']) {
                 $rel = $parent['frel'];
                 $relstr = $admtext[$rel] ? $admtext[$rel] : $rel;
-                $persontext .= showEvent(["text" => $text['relationship2'], "fact" => $relstr]);
+                $persontext .= showEvent(["text" => _('Relationship'), "fact" => $relstr]);
             }
             tng_free_result($gotfather);
         }
@@ -301,22 +300,22 @@ if ($parents && tng_num_rows($parents)) {
                 $motherlink .= $birthinfo;
                 if ($motherlink) {
                     $age = age($mothrow);
-                    if ($age) $motherlink .= " &nbsp;({$text['age']} $age)";
+                    if ($age) $motherlink .= " &nbsp;(" . _('Age') . " $age)";
 
                 }
             }
-            $label = $mothrow['sex'] == "M" ? $text['father'] : $text['mother'];
+            $label = $mothrow['sex'] == "M" ? _('Father') : _('Mother');
             $persontext .= showEvent(["text" => $label, "fact" => $motherlink]);
             if ($rights['both'] && $parent['mrel']) {
                 $rel = $parent['mrel'];
                 $relstr = $admtext[$rel] ? $admtext[$rel] : $rel;
-                $persontext .= showEvent(["text" => $text['relationship2'], "fact" => $relstr]);
+                $persontext .= showEvent(["text" => _('Relationship'), "fact" => $relstr]);
             }
             tng_free_result($gotmother);
         }
 
         if ($rights['both'] && $rights['lds'] && (empty($tngconfig['pardata']) || $tngconfig['pardata'] < 2)) {
-            setEvent(["text" => $text['sealedplds'], "date" => $parent['sealdate'], "place" => $parent['sealplace'], "event" => "SLGC", "entity" => "$personID::{$parent['familyID']}", "type" => "C", "nomap" => 1], $parent['sealdatetr']);
+            setEvent(["text" => _('Sealed to Parents (LDS)'), "date" => $parent['sealdate'], "place" => $parent['sealplace'], "event" => "SLGC", "entity" => "$personID::{$parent['familyID']}", "type" => "C", "nomap" => 1], $parent['sealdatetr']);
         }
 
         $gotparents = getFamilyData($tree, $parent['familyID']);
@@ -339,12 +338,12 @@ if ($parents && tng_num_rows($parents)) {
                     if (!empty($parent['marrtype'])) {
                         if (!is_array($stdexf['MARR'])) $stdexf['MARR'] = [];
 
-                        array_unshift($stdexf['MARR'], $text['type'] . ": " . $parent['marrtype']);
+                        array_unshift($stdexf['MARR'], _('Type') . ": " . $parent['marrtype']);
                     }
                 }
 
-                setEvent(["text" => $text['married'], "fact" => $stdexf['MARR'], "date" => $parentrow['marrdate'], "place" => $parentrow['marrplace'], "event" => "MARR", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1], $parentrow['marrdatetr']);
-                setEvent(["text" => $text['divorced'], "fact" => $stdexf['DIV'], "date" => $parentrow['divdate'], "place" => $parentrow['divplace'], "event" => "DIV", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1], $parentrow['divdatetr']);
+                setEvent(["text" => _('Married'), "fact" => $stdexf['MARR'], "date" => $parentrow['marrdate'], "place" => $parentrow['marrplace'], "event" => "MARR", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1], $parentrow['marrdatetr']);
+                setEvent(["text" => _('Divorced'), "fact" => $stdexf['DIV'], "date" => $parentrow['divdate'], "place" => $parentrow['divplace'], "event" => "DIV", "entity" => $parentrow['familyID'], "type" => "F", "nomap" => 1], $parentrow['divdatetr']);
 
                 if (empty($tngconfig['pardata'])) {
                     doCustomEvents($parent['familyID'], "F", 1);
@@ -358,7 +357,7 @@ if ($parents && tng_num_rows($parents)) {
 
                 $assocresult = getAssociations($tree, $parent['familyID']);
                 while ($assoc = tng_fetch_assoc($assocresult)) {
-                    $persontext .= showEvent(["text" => $text['association'], "fact" => formatAssoc($assoc)]);
+                    $persontext .= showEvent(["text" => _('Association'), "fact" => formatAssoc($assoc)]);
                 }
                 tng_free_result($assocresult);
 
@@ -372,7 +371,7 @@ if ($parents && tng_num_rows($parents)) {
 
                     if ($famnotes2) {
                         $persontext .= "<tr>\n";
-                        $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+                        $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>" . _('Notes') . "&nbsp;</span></td>\n";
                         $persontext .= "<td class='databack' colspan='2'><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
                         $persontext .= "</tr>\n";
                     }
@@ -386,7 +385,7 @@ if ($parents && tng_num_rows($parents)) {
             }
         }
 
-        $persontext .= showEvent(["text" => $text['familyid'], "date" => $parent['familyID'], "place" => "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='familychart.php?familyID={$parent['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1]);
+        $persontext .= showEvent(["text" => _('Family ID'), "date" => $parent['familyID'], "place" => "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">" . _('Group Sheet') . "</a>&nbsp; | &nbsp;<a href='familychart.php?familyID={$parent['familyID']}&amp;tree=$tree'>" . _('Family Chart') . "</a>", "np" => 1]);
         $persontext .= "</table>\n";
         $persontext .= "<br>\n";
     }
@@ -413,7 +412,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     if ($marriagerow['marrtype']) {
         if (!is_array($stdexf['MARR'])) $stdexf['MARR'] = [];
 
-        array_unshift($stdexf['MARR'], $text['type'] . ": " . $marriagerow['marrtype']);
+        array_unshift($stdexf['MARR'], _('Type') . ": " . $marriagerow['marrtype']);
     }
 
     $spouse = $marriagerow['husband'] == $personID ? 'wife' : 'husband';
@@ -434,7 +433,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             $spouselink .= $birthinfo;
             if ($spouselink) {
                 $age = age($spouserow);
-                if ($age) $spouselink .= " &nbsp;({$text['age']} $age)";
+                if ($age) $spouselink .= " &nbsp;(" . _('Age') . " $age)";
 
             }
         }
@@ -445,9 +444,9 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     }
     $marrstr = $marrtot > 1 ? " $marrcount" : "";
     if ($srights['both']) {
-        $persontext .= showEvent(["text" => "{$text['family']}$marrstr", "fact" => $spouselink, "entity" => $marriagerow['familyID'], "type" => "F"]);
+        $persontext .= showEvent(["text" => "" . _('Family') . "$marrstr", "fact" => $spouselink, "entity" => $marriagerow['familyID'], "type" => "F"]);
     } else {
-        $persontext .= showEvent(["text" => "{$text['family']}$marrstr", "fact" => $spouselink]);
+        $persontext .= showEvent(["text" => "" . _('Family') . "$marrstr", "fact" => $spouselink]);
     }
 
     $rightfbranch = checkbranch($marriagerow['branch']) ? 1 : 0;
@@ -459,11 +458,11 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
     if ($marrights['both'] && $srights['both']) {
         resetEvents();
 
-        setEvent(["text" => $text['married'], "fact" => $stdexf['MARR'], "date" => $marriagerow['marrdate'], "place" => $marriagerow['marrplace'], "event" => "MARR", "entity" => $marriagerow['familyID'], "type" => "F"], $marriagerow['marrdatetr']);
-        setEvent(["text" => $text['divorced'], "fact" => $stdexf['DIV'], "date" => $marriagerow['divdate'], "place" => $marriagerow['divplace'], "event" => "DIV", "entity" => $marriagerow['familyID'], "type" => "F"], $marriagerow['divdatetr']);
+        setEvent(["text" => _('Married'), "fact" => $stdexf['MARR'], "date" => $marriagerow['marrdate'], "place" => $marriagerow['marrplace'], "event" => "MARR", "entity" => $marriagerow['familyID'], "type" => "F"], $marriagerow['marrdatetr']);
+        setEvent(["text" => _('Divorced'), "fact" => $stdexf['DIV'], "date" => $marriagerow['divdate'], "place" => $marriagerow['divplace'], "event" => "DIV", "entity" => $marriagerow['familyID'], "type" => "F"], $marriagerow['divdatetr']);
 
         if ($marrights['lds']) {
-            setEvent(["text" => $text['sealedslds'], "fact" => $stdexf['SLGS'], "date" => $marriagerow['sealdate'], "place" => $marriagerow['sealplace'], "event" => "SLGS", "entity" => $marriagerow['familyID'], "type" => "F"], $marriagerow['sealdatetr']);
+            setEvent(["text" => _('Sealed to Spouse (LDS)'), "fact" => $stdexf['SLGS'], "date" => $marriagerow['sealdate'], "place" => $marriagerow['sealplace'], "event" => "SLGS", "entity" => $marriagerow['familyID'], "type" => "F"], $marriagerow['sealdatetr']);
         }
 
         doCustomEvents($marriagerow['familyID'], "F");
@@ -473,7 +472,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
         $assocresult = getAssociations($tree, $marriagerow['familyID']);
         while ($assoc = tng_fetch_assoc($assocresult)) {
-            $persontext .= showEvent(["text" => $text['association'], "fact" => formatAssoc($assoc)]);
+            $persontext .= showEvent(["text" => _('Association'), "fact" => formatAssoc($assoc)]);
         }
         tng_free_result($assocresult);
 
@@ -486,7 +485,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
         if ($famnotes2) {
             $persontext .= "<tr>\n";
-            $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+            $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>" . _('Notes') . "&nbsp;</span></td>\n";
             $persontext .= "<td class='databack' colspan='2'><span class='normal'><div class=\"notearea\">$famnotes2</div></span></td>\n";
             $persontext .= "</tr>\n";
         }
@@ -498,7 +497,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
 
     if ($children && tng_num_rows($children)) {
         $persontext .= "<tr>\n";
-        $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>{$text['children']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='fieldnameback align-top'><span class='fieldname'>" . _('Children') . "&nbsp;</span></td>\n";
         $persontext .= "<td class='databack' colspan='2'>\n";
 
         $kidcount = 1;
@@ -506,7 +505,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
         while ($child = tng_fetch_assoc($children)) {
             $childID = $child['personID'];
             $child['gedcom'] = $tree;
-            $ifkids = $child['haskids'] ? "<a href=\"descend.php?personID=$childID&amp;tree=$tree\" title='{$text['descendants']}' class='text-decoration-none'><strong>+</strong></a>" : "&nbsp;";
+            $ifkids = $child['haskids'] ? "<a href=\"descend.php?personID=$childID&amp;tree=$tree\" title='" . _('Descendants') . "' class='text-decoration-none'><strong>+</strong></a>" : "&nbsp;";
             $birthinfo = getBirthInfo($child);
             $crights = determineLivingPrivateRights($child, $righttree);
             $child['allow_living'] = $crights['living'];
@@ -519,7 +518,7 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
                 if ($crights['both']) {
                     $persontext .= $birthinfo;
                     $age = age($child);
-                    if ($age) $persontext .= " &nbsp;({$text['age']} $age)";
+                    if ($age) $persontext .= " &nbsp;(" . _('Age') . " $age)";
 
 
                     $frel = strtolower($child['frel']);
@@ -558,11 +557,11 @@ while ($marriagerow = tng_fetch_assoc($marriages)) {
             if ($marriagerow['changedate']) {
                 $marriagerow['changedate'] .= " | ";
             }
-            $marriagerow['changedate'] .= "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">{$text['edit']}</a>";
+            $marriagerow['changedate'] .= "<a href=\"admin_editfamily.php?familyID={$marriagerow['familyID']}&amp;tree=$tree&amp;cw=1\" target=\"_blank\">" . _('Edit') . "</a>";
         }
-        $persontext .= showEvent(["text" => $text['lastmodified'], "fact" => $marriagerow['changedate']]);
+        $persontext .= showEvent(["text" => _('Last Modified Date'), "fact" => $marriagerow['changedate']]);
     }
-    $persontext .= showEvent(["text" => $text['familyid'], "date" => $marriagerow['familyID'], "place" => "<a href=\"familygroup.php?familyID={$marriagerow['familyID']}&amp;tree=$tree\">{$text['groupsheet']}</a>&nbsp; | &nbsp;<a href='familychart.php?familyID={$marriagerow['familyID']}&amp;tree=$tree'>{$text['familychart']}</a>", "np" => 1]);
+    $persontext .= showEvent(["text" => _('Family ID'), "date" => $marriagerow['familyID'], "place" => "<a href=\"familygroup.php?familyID={$marriagerow['familyID']}&amp;tree=$tree\">" . _('Group Sheet') . "</a>&nbsp; | &nbsp;<a href='familychart.php?familyID={$marriagerow['familyID']}&amp;tree=$tree'>" . _('Family Chart') . "</a>", "np" => 1]);
     $persontext .= "</table>\n";
     $persontext .= "<br>\n";
 }
@@ -574,11 +573,11 @@ if ($map['key'] && $locations2map) {
     $persontext .= beginSection("eventmap");
     $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
     $persontext .= "<col class=\"labelcol\"/><col class=\"mapcol\"/><col />\n";
-    $persontext .= "<tr class='align-top'><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class='fieldname'>{$text['gmapevent']}</span></td>\n";
+    $persontext .= "<tr class='align-top'><td class=\"fieldnameback indleftcol\" id=\"eventmap1\"><span class='fieldname'>" . _('Event Map') . "</span></td>\n";
     $persontext .= "<td class='databack'>\n";
     $persontext .= "<div id='map' class='rounded-lg' style=\"width: {$map['indw']}; height: {$map['indh']};\">";
     if ($map['pstartoff']) {
-        $persontext .= "<a href='#' onclick=\"ShowTheMap(); return false;\"><div class=\"loadmap\">{$text['loadmap']}<br><img src=\"img/loadmap.gif\" width=\"150\" height=\"150\" ></div></a>";
+        $persontext .= "<a href='#' onclick=\"ShowTheMap(); return false;\"><div class=\"loadmap\">" . _('Load the map') . "<br><img src=\"img/loadmap.gif\" width=\"150\" height=\"150\" ></div></a>";
     }
     $persontext .= "</div>\n";
     $persontext .= "</td>\n";
@@ -622,7 +621,7 @@ if ($map['key'] && $locations2map) {
                     $usedplaces[] = $place;
                     $savedplaces[] = ["place" => $place, "key" => $key];
                     $locations2map[$key]['htmlcontent'] = "<div class=\"mapballoon normal\" style=\"margin-top:10px;\"><strong>{$val['fixedplace']}</strong><br><br>" . addslashes($event) . ": $dateforlocalballoon";
-                    $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">{$text['getdirections']}</a>{$text['directionsto']} $directionplace</div>";
+                    $locations2map[$key]['htmlcontent'] .= "<br><br><a href=\"{$http}://maps.google.com/maps?f=q" . _('&amp;hl=en') . "&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target=\"_blank\">" . _('Click to get directions') . "</a>" . _(' to ') . " $directionplace</div>";
                     $thismarker = $markerIcon;
                 } else {
                     $total = count($usedplaces);
@@ -635,7 +634,7 @@ if ($map['key'] && $locations2map) {
                         }
                     }
                 }
-                $persontext .= "<a href=\"{$http}://maps.google.com/maps?f=q{$text['glang']}&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target= \"_blank\"><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$thismarker\" alt=\"{$text['googlemaplink']}\" width= \"20\" height=\"34\"></a>";
+                $persontext .= "<a href=\"{$http}://maps.google.com/maps?f=q" . _('&amp;hl=en') . "&amp;daddr=$lat,$long($directionballoontext)&amp;z=$zoom&amp;om=1&amp;iwloc=addr\" target= \"_blank\"><img src=\"google_marker.php?image=$pinplacelevel.png&amp;text=$thismarker\" alt=\"" . _('Link to Google Maps') . "\" width= \"20\" height=\"34\"></a>";
                 $map['pins']++;
             } else {
                 $persontext .= "&nbsp;";
@@ -643,20 +642,20 @@ if ($map['key'] && $locations2map) {
             $persontext .= "</td><td class='databack'><span class='smaller'><strong>$event</strong>";
             if ($description) $persontext .= " - $description";
             $persontext .= " - $dateforeventtable - $place</span></td>\n";
-            $persontext .= "<td class='databack' valign=\"middle\"><a href=\"googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"{$text['kmlfile']}\"><img src=\"img/earth.gif\" alt=\"{$text['googleearthlink']}\" width='15' height='15'></a></td></tr>\n";
+            $persontext .= "<td class='databack' valign=\"middle\"><a href=\"googleearthbylatlong.php?m=world&amp;n=$directionplace&amp;lon=$long&amp;lat=$lat&amp;z=$zoom\" title=\"" . _('Download a .kml file to show this location in Google Earth') . "\"><img src=\"img/earth.gif\" alt=\"" . _('Link to Google Earth') . "\" width='15' height='15'></a></td></tr>\n";
             if ($val['notes']) {
                 $locations2map[$key]['htmlcontent'] = str_replace("</div>", "<br><br>" . tng_real_escape_string($val['notes']) . "</div>", $locations2map[$key]['htmlcontent']);
             }
         }
     }
     $persontext .= "</table></div>\n<table>";
-    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width='15' height='15' align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"{$text['download']}\">{$text['googleearthlink']}</a>&nbsp;</span></td></tr></table>\n";
+    $persontext .= "<tr><td><span class=\"smaller\"><img src=\"img/earth.gif\" alt=\"\" width='15' height='15' align=\"left\">&nbsp;= <a href=\"http://earth.google.com/download-earth.html\" target=\"_blank\" title=\"" . _('Click to download') . "\">" . _('Link to Google Earth') . "</a>&nbsp;</span></td></tr></table>\n";
     $persontext .= "</td>\n</tr>\n";
     if ($nonzeroplaces) {
-        $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class='fieldname'>{$text['gmaplegend']}</span></td>\n";
+        $persontext .= "<tr class='align-top'><td class='fieldnameback'><span class='fieldname'>" . _('Pin Legend') . "</span></td>\n";
         $persontext .= "<td colspan='2' class='databack'><span class='smaller'>";
         for ($i = 1; $i < 7; $i++) {
-            $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt='' height='17' width='10' class='align-middle'>&nbsp;: " . $admtext["level$i"] . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
+            $persontext .= "<img src=\"img/" . ${"pinplacelevel" . $i} . ".png\" alt='' height='17' width='10' class='align-middle'>&nbsp;: " . _("Not Set") . " &nbsp;&nbsp;&nbsp;&nbsp;\n";
         }
         $persontext .= "<img src=\"img/$pinplacelevel0.png\" alt='' height='17' width='10' class='align-top'>&nbsp;: {$admtext['level0']}</span></td>\n";
         $persontext .= "</tr>\n";
@@ -679,7 +678,7 @@ if ($notestogether != 1) {
     if ($rights['both']) {
         $notes = $notestogether ? buildGenNotes($indnotes, $personID, "--x-general-x--") : buildNotes($indnotes, $personID);
     } else {
-        $notes = $text['livingnote'];
+        $notes = _('At least one living or private individual is linked to this note - Details withheld.');
     }
 
     if ($notes) {
@@ -687,7 +686,7 @@ if ($notestogether != 1) {
         $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
         $persontext .= "<col class=\"labelcol\"/><col />\n";
         $persontext .= "<tr>\n";
-        $persontext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+        $persontext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>" . _('Notes') . "&nbsp;</span></td>\n";
         $persontext .= "<td class='databack'>$notes</td>\n";
         $persontext .= "</tr>\n";
         $persontext .= "</table>\n";
@@ -701,7 +700,7 @@ if ($citedispctr) {
     $persontext .= "<table cellspacing='1' cellpadding='4' class='whiteback tfixed'>\n";
     $persontext .= "<col class=\"labelcol\"/><col />\n";
     $persontext .= "<tr>\n";
-    $persontext .= "<td class='fieldnameback indleftcol align-top' id=\"citations1\"><a name=\"sources\"><span class='fieldname'>{$text['sources']}&nbsp;</span></a></td>\n";
+    $persontext .= "<td class='fieldnameback indleftcol align-top' id=\"citations1\"><a name=\"sources\"><span class='fieldname'>" . _('Sources') . "&nbsp;</span></a></td>\n";
     $persontext .= "<td class='databack'>";
     if (!empty($tngconfig['scrollcite'])) {
         $persontext .= "<div class=\"notearea\">";
@@ -735,23 +734,23 @@ if (!empty($media) || $notes || $citedispctr || $map['key']) {
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href='#' onclick=\"{$showdnatest}return toggleCollapsed(0)\" class='lightlink'>{$text['expandall']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"{$hidednatest}return toggleCollapsed(1)\" class='lightlink'>{$text['collapseall']}</a> &nbsp;</div>" : "";
-    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['persinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu = $num_collapsed ? "<div style=\"float:right;\"><a href='#' onclick=\"{$showdnatest}return toggleCollapsed(0)\" class='lightlink'>" . _('Expand all') . "</a> &nbsp; | &nbsp; <a href='#' onclick=\"{$hidednatest}return toggleCollapsed(1)\" class='lightlink'>" . _('Collapse all') . "</a> &nbsp;</div>" : "";
+    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">" . _('Personal information only') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if (!empty($media)) {
-        $innermenu .= "<a href='#' class=\"$tng_mlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class=\"$tng_mlink\" onclick=\"return infoToggle('media');\" id=\"tng_mlink\">" . _('Media') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">" . _('Notes') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($citedispctr) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('citations');\" id=\"tng_clink\">{$text['sources']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('citations');\" id=\"tng_clink\">" . _('Sources') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($map['key'] && $locations2map) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('eventmap');\" id=\"tng_glink\">{$text['gmapevent']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('eventmap');\" id=\"tng_glink\">" . _('Event Map') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">" . _('All') . "</a>\n";
 } else {
-    $innermenu = "<span class=\"lightlink3\" id=\"tng_plink\">{$text['persinfo']}</span>\n";
+    $innermenu = "<span class=\"lightlink3\" id=\"tng_plink\">" . _('Personal information only') . "</span>\n";
 }
 if ($allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
@@ -762,8 +761,8 @@ $rightbranch = $org_rightbranch;
 echo tng_menu("I", "person", $personID, $innermenu);
 ?>
     <script>
-        const collapse = "<?php echo $text['collapse']; ?>";
-        const expand = "<?php echo $text['expand']; ?>";
+        const collapse = "<?php echo _('Collapse'); ?>";
+        const expand = "<?php echo _('Expand'); ?>";
     </script>
     <script src="js/getperson.js"></script>
     <script>

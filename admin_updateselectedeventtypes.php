@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedtree || !$allow_edit || !$allow_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -15,19 +15,19 @@ if ($assignedtree || !$allow_edit || !$allow_delete) {
 require "adminlog.php";
 
 $query = "";
-if ($cetaction == $admtext['ignoreselected']) {
+if ($cetaction == _('Ignore Selected')) {
     $query = "UPDATE $eventtypes_table SET keep='0' WHERE 1=0";
 } else {
-    if ($cetaction == $admtext['acceptselected']) {
+    if ($cetaction == _('Accept Selected')) {
         $query = "UPDATE $eventtypes_table SET keep='1' WHERE 1=0";
     } else {
-        if ($cetaction == $admtext['collapseselected']) {
+        if ($cetaction == _('Collapse Selected')) {
             $query = "UPDATE $eventtypes_table SET collapse='1' WHERE 1=0";
         } else {
-            if ($cetaction == $admtext['expselected']) {
+            if ($cetaction == _('Expand Selected')) {
                 $query = "UPDATE $eventtypes_table SET collapse='0' WHERE 1=0";
             } else {
-                if ($cetaction == $admtext['deleteselected']) {
+                if ($cetaction == _('Delete Selected')) {
                     $query = "DELETE FROM $eventtypes_table WHERE 1=0";
                 }
             }
@@ -44,8 +44,8 @@ if ($query) {
     $result = tng_query($query);
 }
 
-adminwritelog($admtext['modifyeventtype'] . ": " . $admtext['all']);
+adminwritelog(_('Edit Existing Event Type') . ": " . _('All'));
 
-$message = $admtext['changestoallevtypes'] . " {$admtext['succsaved']}.";
+$message = _('Changes to all event types') . " " . _('were successfully saved') . ".";
 header("Location: admin_eventtypes.php?message=" . urlencode($message));
 

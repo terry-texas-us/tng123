@@ -27,10 +27,10 @@
                 $num_in_col = ceil($topnum / $numcols);
 
                 $num_in_col_ctr = 0;
-                $nosurname = urlencode($text['nosurname']);
+                $nosurname = urlencode(_('[no surname]'));
                 while ($surname = tng_fetch_assoc($result)) {
                     $surname2 = urlencode($surname['lastname']);
-                    $name = $surname['lastname'] ? "<a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$text['nosurname']}</a>";
+                    $name = $surname['lastname'] ? "<a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">" . _('[no surname]') . "</a>";
                     echo "$counter. $name ({$surname['lncount']})<br>\n";
                     $counter++;
                     $num_in_col_ctr++;

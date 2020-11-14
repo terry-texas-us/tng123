@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_media_edit) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -20,7 +20,7 @@ $query = "UPDATE $albums_table SET albumname=\"$albumname\",description=\"$descr
 $result = tng_query($query);
 //cycle through all ph fields
 //delete if requested
-adminwritelog($admtext['modifyalbum'] . ": $albumID");
+adminwritelog(_('Edit Existing Album') . ": $albumID");
 if ($newscreen == "return") {
     header("Location: admin_editalbum.php?albumID=$albumID");
 } else {
@@ -37,7 +37,7 @@ if ($newscreen == "return") {
         </html>
         <?php
     } else {
-        $message = $admtext['changestoalbum'] . " $albumID {$admtext['succsaved']}.";
+        $message = _('Changes to album') . " $albumID " . _('were successfully saved') . ".";
         header("Location: admin_albums.php?message=" . urlencode($message));
     }
 }

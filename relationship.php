@@ -66,31 +66,31 @@ class Relationship
         $g2 = $gender2;
 
         if ($this->spouses) {
-            $relmsg = "$namestr {$text['text_and']} $namestr2 {$text['spouses']}";
+            $relmsg = "$namestr " . _('AND') . " $namestr2 " . _('Spouses / Partners') . "";
         } else {
             if ($this->split || $this->multparents) {  //(tree is split at the top)
                 //cousins or siblings or aunt/uncle
 
                 if ($this->downcount == 1 && $this->upcount == 1) {
-                    $msgarray = $this->half ? [$text['halfbrother'], $text['halfsister'], $text['halfsibling']] : [$text['brother'], $text['sister'], $text['sibling']];
+                    $msgarray = $this->half ? [_('the half brother of'), _('the half sister of'), _('the half sibling of')] : [_('the brother of'), _('the sister of'), _('the sibling of')];
                     $relmsg = $this->getRelMsg($this->spouseflag, $name1, $g1, $name2, $g2, $msgarray);
                 } elseif (!$this->downcount) {
                     if ($this->upcount == 1) {
                         if ($g1 == "M") {
-                            $reldesc = $text['stepson'];
+                            $reldesc = _('the stepson of');
                         } elseif ($g1 == "F") {
-                            $reldesc = $text['stepdau'];
+                            $reldesc = _('the stepdaughter of');
                         } else {
-                            $reldesc = $text['stepchild'];
+                            $reldesc = _('the stepchild of');
                         }
                     } elseif ($this->upcount > 1) {
                         $greats = $this->upcount - 2;
                         if ($g1 == "M") {
-                            $reldesc = $greats ? $text['gstepgson'] : $text['stepgson'];
+                            $reldesc = $greats ? _('the xxx great step-grandson of') : _('the xxx step-grandson of');
                         } elseif ($g1 == "F") {
-                            $reldesc = $greats ? $text['gstepgdau'] : $text['stepgdau'];
+                            $reldesc = $greats ? _('the xxx great step-granddaughter of') : _('the xxx step-granddaughter of');
                         } else {
-                            $reldesc = $greats ? $text['gstepgchild'] : $text['stepgchild'];
+                            $reldesc = $greats ? _('the xxx great step-grandchild of') : _('the xxx step-grandchild of');
                         }
 
                         $greatmsg = $greats > 1 ? "$greats x" : "";
@@ -98,16 +98,16 @@ class Relationship
                     } else {
                         $reldesc = "[undetermined relationship]"; //shouldn't ever get here.
                     }
-                    $relmsg = "$name1 {$text['is']} $reldesc $name2";
+                    $relmsg = "$name1 " . _('is') . " $reldesc $name2";
                 } elseif ($this->upcount == 1) {
                     $greats = $this->downcount - 2;
-                    $relarray = $greats ? [$text['guncle'], $text['gaunt'], $text['guncleaunt']] : [$text['uncle'], $text['aunt'], $text['uncleaunt']];
+                    $relarray = $greats ? [_('the xxx great uncle of'), _('the xxx great aunt of'), _('the xxx great uncle/aunt of')] : [_('the xxx uncle of'), _('the xxx aunt of'), _('the xxx uncle/aunt of')];
                     $greatmsg = $greats > 1 ? "$greats x" : "";
                     $relmsg = $this->getRelMsg($this->spouseflag, $name1, $g1, $name2, $g2, $relarray);
                     $relmsg = preg_replace("/xxx/", $greatmsg, $relmsg);
                 } elseif ($this->downcount == 1) {
                     $greats = $this->upcount - 2;
-                    $relarray = $greats ? [$text['gnephew'], $text['gniece'], $text['gnephnc']] : [$text['nephew'], $text['niece'], $text['nephnc']];
+                    $relarray = $greats ? [_('the xxx great nephew of'), _('the xxx great niece of'), _('the xxx great nephew/niece of')] : [_('the xxx nephew of'), _('the xxx niece of'), _('the xxx nephew/niece of')];
                     $greatmsg = $greats > 1 ? "$greats x" : "";
                     $relmsg = $this->getRelMsg($this->spouseflag, $name1, $g1, $name2, $g2, $relarray);
                     $relmsg = preg_replace("/xxx/", $greatmsg, $relmsg);
@@ -116,14 +116,14 @@ class Relationship
                     $cousins = $this->downcount <= $this->upcount ? $this->downcount - 1 : $this->upcount - 1;
                     //get sex of person1 to determine male cousin or female cousin (for languages with gender)
                     $cousinmsg = $cousins > 1 ? "$cousins x" : "";
-                    $msgarray = $this->half ? [$text['mhalfcousin'], $text['fhalfcousin'], $text['halfcousin']] : [$text['mcousin'], $text['fcousin'], $text['cousin']];
+                    $msgarray = $this->half ? [_('the xxx half cousin yyy of'), _('the xxx half cousin yyy of'), _('the xxx half cousin yyy of')] : [_('the xxx cousin yyy of'), _('the xxx cousin yyy of'), _('the xxx cousin yyy of')];
                     $relmsg = $this->getRelMsg($this->spouseflag, $name1, $g1, $name2, $g2, $msgarray);
                     $relmsg = preg_replace("/xxx/", $cousinmsg, $relmsg);
                     $removed = abs($this->downcount - $this->upcount);
                     if ($removed > 1) {
-                        $remmsg = " $removed " . $text['removed'];
+                        $remmsg = " $removed " . _('times removed');
                     } elseif ($removed == 1) {
-                        $remmsg = " " . $text['oneremoved'];
+                        $remmsg = " " . _('once removed');
                     } else {
                         $remmsg = "";
                     }
@@ -136,35 +136,35 @@ class Relationship
                     //son/daughter (get sex of person ?)
                     $thisgender = $g1;
                     if ($this->spouseflag) {
-                        $reldesc = $g1 == "M" ? $text['fil'] : ($g1 == "F" ? $text['mil'] : $text['fmil']);
+                        $reldesc = $g1 == "M" ? _('the father-in-law of') : ($g1 == "F" ? _('the mother-in-law of') : _('the father- or mother-in-law of'));
                     } else {
                         if ($this->downcount == 2) {
                             if ($thisgender == "M") {
-                                $reldesc = $text['fathof'];
+                                $reldesc = _('the father of');
                             } elseif ($thisgender == "F") {
-                                $reldesc = $text['mothof'];
+                                $reldesc = _('the mother of');
                             } else {
-                                $reldesc = $text['parof'];
+                                $reldesc = _('the parent of');
                             }
                         } else {
                             if ($thisgender == "M") {
-                                $reldesc = $text['son'];
+                                $reldesc = _('the son of');
                             } elseif ($thisgender == "F") {
-                                $reldesc = $text['daughter'];
+                                $reldesc = _('the daughter of');
                             } else {
-                                $reldesc = $text['child'];
+                                $reldesc = _('Child');
                             }
                         }
                     }
-                    $relmsg = "$name1 {$text['is']} $reldesc $name2";
+                    $relmsg = "$name1 " . _('is') . " $reldesc $name2";
                 } else {
                     //great grandson/great granddaughter
                     if ($this->downcount) {
                         $greats = $this->downcount - 3;
-                        $relarray = $greats ? [$text['ggfath'], $text['ggmoth'], $text['ggpar']] : [$text['gfath'], $text['gmoth'], $text['gpar']];
+                        $relarray = $greats ? [_('the xxx great grandfather of'), _('the xxx great grandmother of'), _('the xxx great grandparent of')] : [_('the xxx grandfather of'), _('the xxx grandmother of'), _('the xxx grandparent of')];
                     } else {
                         $greats = $this->upcount - 2;
-                        $relarray = $greats ? [$text['ggson'], $text['ggdau'], $text['ggsondau']] : [$text['gson'], $text['gdau'], $text['gsondau']];
+                        $relarray = $greats ? [_('the xxx great grandson of'), _('the xxx great granddaughter of'), _('the xxx great grandchild of')] : [_('the xxx grandson of'), _('the xxx granddaughter of'), _('the xxx grandchild of')];
                     }
                     $greatmsg = $greats > 1 ? "$greats x" : "";
                     $relmsg = $this->getRelMsg($this->spouseflag, $name1, $g1, $name2, $g2, $relarray);
@@ -179,9 +179,9 @@ class Relationship
         global $text;
 
         if ($spouseflag == 1) {
-            $spousemsg = $gender2 == "M" ? $text['rwife'] : ($gender2 == "F" ? $text['rhusband'] : $text['rspouse']);
+            $spousemsg = $gender2 == "M" ? _('the wife of ') : ($gender2 == "F" ? _('the husband of ') : _('the spouse of '));
         } elseif ($spouseflag == 2) { //same sex relationship
-            $spousemsg = $gender2 == "M" ? $text['rhusband'] : ($gender2 == "F" ? $text['rwife'] : $text['rspouse']);
+            $spousemsg = $gender2 == "M" ? _('the husband of ') : ($gender2 == "F" ? _('the wife of ') : _('the spouse of '));
         }
         if ($gender1 == "M") {
             $reldesc = $messages['0'];
@@ -190,7 +190,7 @@ class Relationship
         } else {
             $reldesc = $messages['2'];
         }
-        return "$namestr {$text['is']} $reldesc $spousemsg $namestr2";
+        return "$namestr " . _('is') . " $reldesc $spousemsg $namestr2";
     }
 
     public function switchGender($gender) {
@@ -240,7 +240,7 @@ if (tng_num_rows($result)) {
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
     $namestr = getName($row);
-    $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
+    $logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $namestr);
     $gender1 = $row['sex'];
 
     $treeResult = getTreeSimple($tree);
@@ -259,15 +259,15 @@ if (tng_num_rows($result2)) {
     $row2['allow_living'] = $rights2['living'];
     $row2['allow_private'] = $rights2['private'];
     $namestr2 = getName($row2);
-    $logname2 = $tngconfig['nnpriv'] && $row2['private'] ? $admtext['text_private'] : ($nonames && $row2['living'] ? $text['living'] : $namestr2);
+    $logname2 = $tngconfig['nnpriv'] && $row2['private'] ? _('Private') : ($nonames && $row2['living'] ? _('Living') : $namestr2);
     $gender2 = $row2['sex'];
 } else {
     $error = $secondpersonID;
 }
 tng_free_result($result2);
 
-writelog("<a href=\"relationship.php?altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">{$text['relcalc']}: $logname ($primarypersonID) =&gt;$logname2 ($secondpersonID)</a>");
-preparebookmark("<a href=\"relationship.php?altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">{$text['relcalc']}: $namestr ($primarypersonID) =&gt;$namestr2 ($secondpersonID)</a>");
+writelog("<a href=\"relationship.php?altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">" . _('Relationship Calculator') . ": $logname ($primarypersonID) =&gt;$logname2 ($secondpersonID)</a>");
+preparebookmark("<a href=\"relationship.php?altprimarypersonID=$primarypersonID&amp;tree=$tree&amp;secondpersonID=$secondpersonID\">" . _('Relationship Calculator') . ": $namestr ($primarypersonID) =&gt;$namestr2 ($secondpersonID)</a>");
 
 $pedigree['url'] = "pedigree.php?";
 $pedigree['cellpad'] = 5;
@@ -276,7 +276,7 @@ if ($pedigree['inclphotos'] && (trim($photopath) == "" || trim($photosext) == ""
     $pedigree['inclphotos'] = false;
 }
 if (file_exists("img/chart.gif")) {
-    $pedigree['chartlink'] = "<img src='img/chart.gif' alt='' title=\"{$text['popupnote2']}\" class='inline-block'>";
+    $pedigree['chartlink'] = "<img src='img/chart.gif' alt='' title=\"" . _('New pedigree') . "\" class='inline-block'>";
 } else {
     $pedigree['chartlink'] = "<span class='normal font-semibold'>P</span>";
 }
@@ -375,7 +375,7 @@ function drawBox($drawpersonID, $spouseflag, $topflag) {
         if ($row['famc'] && $pedigree['popupchartlinks']) {
             $iconactions = " onmouseover=\"if($('#ic$slot')) $('#ic$slot').show();\" onmouseout=\"if($('#ic$slot')) $('#ic$slot').hide();\"";
             $iconlinks = "<div class=\"floverlr\" id=\"ic$slot\" style=\"left:" . ($pedigree['puboxwidth'] - 35) . "px;top:" . ($pedigree['puboxheight'] - 15) . "px;display:none;\">";
-            $iconlinks .= "<a href=\"{$pedigree['url']}personID=$drawpersonID&amp;tree=$tree&amp;display=standard&amp;generations=" . $pedigree['initpedgens'] . "\" title=\"{$text['popupnote2']}\">{$pedigree['chartlink']}</a>\n";
+            $iconlinks .= "<a href=\"{$pedigree['url']}personID=$drawpersonID&amp;tree=$tree&amp;display=standard&amp;generations=" . $pedigree['initpedgens'] . "\" title=\"" . _('New pedigree') . "\">{$pedigree['chartlink']}</a>\n";
             $iconlinks .= "</div>\n";
             $slot++;
         } else {
@@ -753,12 +753,12 @@ function swapPeople() {
 
 $personID = $primarypersonID;
 
-tng_header($text['relcalc'], $flags);
+tng_header(_('Relationship Calculator'), $flags);
 
 $photostr = showSmallPhoto($primarypersonID, $namestr, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $namestr, getYears($row));
 
-$innermenu = $text['rels'] . ": &nbsp;";
+$innermenu = _('Relationships') . ": &nbsp;";
 $innermenu .= "<select name=\"maxrels\" class=\"verysmall\">\n";
 for ($i = 1; $i <= $pedigree['maxrels']; $i++) {
     $innermenu .= "<option value=\"$i\"";
@@ -768,19 +768,19 @@ for ($i = 1; $i <= $pedigree['maxrels']; $i++) {
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 
-$innermenu .= $text['dospouses2'] . ": &nbsp;";
+$innermenu .= _('Show Spouses') . ": &nbsp;";
 $innermenu .= "<select name=\"disallowspouses\" class=\"verysmall\">\n";
 $innermenu .= "<option value='0'";
 if (!$disallowspouses) $innermenu .= " selected";
 
-$innermenu .= ">{$admtext['yes']}</option>\n";
+$innermenu .= ">" . _('Yes') . "</option>\n";
 $innermenu .= "<option value='1'";
 if ($disallowspouses) $innermenu .= " selected";
 
-$innermenu .= ">{$admtext['no']}</option>\n";
+$innermenu .= ">" . _('No') . "</option>\n";
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
 
-$innermenu .= $text['generations'] . ": &nbsp;";
+$innermenu .= _('Generations') . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\">\n";
 for ($i = 1; $i <= $pedigree['maxupgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
@@ -789,8 +789,8 @@ for ($i = 1; $i <= $pedigree['maxupgen']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href='#' class='lightlink' onclick=\"document.form1.submit();\">{$text['refresh']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"relateform.php?primaryID=$primarypersonID&amp;tree=$tree\" class='lightlink'>{$text['findanother']}</a>\n";
+$innermenu .= "<a href='#' class='lightlink' onclick=\"document.form1.submit();\">" . _('Refresh') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"relateform.php?primaryID=$primarypersonID&amp;tree=$tree\" class='lightlink'>" . _('Find another relationship') . "</a>\n";
 
 echo getFORM("relationship2", "get", "form1", "form1");
 echo tng_menu("I", "relate", $primarypersonID, $innermenu);
@@ -799,13 +799,13 @@ echo "<input type='hidden' name=\"savedpersonID\" value=\"$secondpersonID\">\n";
 echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
 echo "</form>\n";
 ?>
-    <div id="searching"><img src="img/spinner.gif" alt=""> <?php echo $text['searching']; ?></div>
-    <h3 class="subhead"><?php echo $text['relateto'] . " $namestr2"; ?></h3>
+    <div id="searching"><img src="img/spinner.gif" alt=""> <?php echo _('Searching'); ?></div>
+    <h3 class="subhead"><?php echo _('Relationship to') . " $namestr2"; ?></h3>
 <?php
 if ($error) {
-    echo "<p>$error {$text['notvalid']}</p>\n";
+    echo "<p>$error " . _('is not a valid Person ID number or does not exist in this database. Please try again.') . "</p>\n";
 } elseif ($primarypersonID == $secondpersonID) {
-    echo "<p>{$text['sameperson']}</p>\n";
+    echo "<p>" . _('The two individuals are the same person.') . "</p>\n";
 } else {
     $gens = new Relationship();
 
@@ -842,7 +842,7 @@ if ($error) {
     }
 
     if (!$totalRelationships) {
-        $newstr = preg_replace("/xxx/", $generations, $text['notrelated']);
+        $newstr = preg_replace("/xxx/", $generations, _('The two individuals are not related within xxx generations.'));
         echo "<p>$newstr</p>\n";
     }
 }

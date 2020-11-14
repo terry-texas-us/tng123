@@ -8,7 +8,7 @@ $admin_login = 1;
 include "checklogin.php";
 $tree = $tree1;
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -37,6 +37,6 @@ $query = "INSERT INTO $repositories_table (repoID,reponame,addressID,changedate,
 $params = [&$template, &$repoID, &$reponame, &$addressID, &$newdate, &$tree1, &$currentuser];
 tng_execute($query, $params);
 
-adminwritelog("<a href=\"admin_editrepo.php?repoID=$repoID&tree=$tree\">{$admtext['addnewrepo']}: $tree/$repoID</a>");
+adminwritelog("<a href=\"admin_editrepo.php?repoID=$repoID&tree=$tree\">" . _('Add New Repository') . ": $tree/$repoID</a>");
 
 header("Location: admin_editrepo.php?repoID=$repoID&tree=$tree&added=1");

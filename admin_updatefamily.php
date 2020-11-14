@@ -17,7 +17,7 @@ $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -45,7 +45,7 @@ if (!$editconflict) {
     $husband = ucfirst(trim($husband));
     if ($husband) {
         $spquery = "SELECT living FROM $people_table WHERE personID = \"$husband\" AND gedcom = '$tree'";
-        $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
+        $spouselive = tng_query($spquery) or die (_('Cannot execute query') . ": $spquery");
         $spouserow = tng_fetch_assoc($spouselive);
         $husbliving = $spouserow['living'];
     } else {
@@ -54,7 +54,7 @@ if (!$editconflict) {
     $wife = ucfirst(trim($wife));
     if ($wife) {
         $spquery = "SELECT living FROM $people_table WHERE personID = \"$wife\" AND gedcom = '$tree'";
-        $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
+        $spouselive = tng_query($spquery) or die (_('Cannot execute query') . ": $spquery");
         $spouserow = tng_fetch_assoc($spouselive);
         $wifeliving = $spouserow['living'];
     } else {
@@ -102,7 +102,7 @@ if (!$editconflict) {
     $placetree = $tngconfig['places1tree'] ? "" : $tree;
     foreach ($places as $place) {
         $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore) VALUES (\"$placetree\",\"$place\",'0','0','0')";
-        $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+        $result = @tng_query($query) or die (_('Cannot execute query') . ": $query");
         if ($tngconfig['autogeo'] && tng_affected_rows()) {
             $ID = tng_insert_id();
             $message = geocode($place, 0, $ID);
@@ -112,9 +112,9 @@ if (!$editconflict) {
     $query = "UPDATE $families_table SET husband=\"$husband\",wife=\"$wife\",living=\"$familyliving\",private=\"$private\",marrdate=\"$marrdate\",marrdatetr=\"$marrdatetr\",marrplace=\"$marrplace\",marrtype=\"$marrtype\",divdate=\"$divdate\",divdatetr=\"$divdatetr\",divplace=\"$divplace\",sealdate=\"$sealdate\",sealdatetr=\"$sealdatetr\",sealplace=\"$sealplace\",changedate=\"$newdate\",branch=\"$allbranches\",changedby=\"$currentuser\",edituser=\"\",edittime='0' WHERE familyID='$familyID' AND gedcom = '$tree'";
     $result = tng_query($query);
 
-    adminwritelog("<a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree&cw=$cw\">{$admtext['modifyfamily']}: $tree/$familyID</a>");
+    adminwritelog("<a href=\"admin_editfamily.php?familyID=$familyID&tree=$tree&cw=$cw\">" . _('Edit Existing Family') . ": $tree/$familyID</a>");
 } else {
-    $message = $admtext['notsaved'];
+    $message = _('Changes were not saved. Another user has locked the record.');
 }
 
 if ($media == "1") {
@@ -137,7 +137,7 @@ if ($media == "1") {
     } elseif ($newfamily == "ajax") {
         echo 1;
     } else {
-        $message = $admtext['changestofamily'] . " $familyID {$admtext['succsaved']}.";
+        $message = _('Changes to family') . " $familyID " . _('were successfully saved') . ".";
         header("Location: admin_families.php?message=" . urlencode($message));
     }
 }

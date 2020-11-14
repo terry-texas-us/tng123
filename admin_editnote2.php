@@ -15,7 +15,7 @@ $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
 if (!$allow_edit || ($assignedtree && $assignedtree != $row['gedcom'])) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -25,13 +25,13 @@ $row['note'] = preg_replace("/\"/", "&#34;", $row['note']);
 
 $helplang = findhelp("misc_help.php");
 
-tng_adminheader($admtext['modifynote'], $flags);
+tng_adminheader(_('Modify Note'), $flags);
 ?>
 <script>
     function validateForm(form) {
         let rval = true;
         if (form.note.value.length == 0) {
-            alert("<?php echo $admtext['enternote']; ?>");
+            alert("<?php echo _('Please enter the note text.'); ?>");
             rval = false;
         }
         return rval;
@@ -42,11 +42,11 @@ tng_adminheader($admtext['modifynote'], $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$misctabs[0] = [1, "admin_notelist.php", $admtext['notes'], "notes"];
-$misctabs[1] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/notes2_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
+$misctabs[0] = [1, "admin_notelist.php", _('Notes'), "notes"];
+$misctabs[1] = [$allow_edit, "#", _('Edit'), "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/notes2_help.php#add');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($misctabs, "edit", $innermenu);
-echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $message);
+echo displayHeadline(_('Modify Note'), "img/misc_icon.gif", $menu, $message);
 ?>
 
 <table class="lightback">
@@ -55,7 +55,7 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
             <form action="admin_updatenote2.php" name="form2" method="post" onSubmit="return validateForm(this);">
                 <table cellpadding="2" class="normal">
                     <tr>
-                        <td class='align-top'><?php echo $admtext['note']; ?>:</td>
+                        <td class='align-top'><?php echo _('Note'); ?>:</td>
                         <td><textarea cols="80" rows="30" name="note"><?php echo $row['note']; ?></textarea></td>
                     </tr>
                     <tr>
@@ -65,7 +65,7 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
                             echo "<input type='checkbox' name=\"private\" value='1'";
                             if ($row['secret']) echo " checked";
 
-                            echo "> " . $admtext['text_private'];
+                            echo "> " . _('Private');
                             ?>
                         </td>
                     </tr>
@@ -74,8 +74,8 @@ echo displayHeadline($admtext['modifynote'], "img/misc_icon.gif", $menu, $messag
                 <input type="hidden" name="ID" value="<?php echo $row['nID']; ?>">
                 <input type="hidden" name="xID" value="<?php echo $ID; ?>">
                 <input type="hidden" name="gedcom" value="<?php echo $row['gedcom']; ?>">
-                <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">
-                <input type="button" name="cancel" value="<?php echo $text['cancel']; ?>"
+                <input type="submit" name="submit" value="<?php echo _('Save'); ?>">
+                <input type="button" name="cancel" value="<?php echo _('Cancel'); ?>"
                     onClick="window.location.href='admin_notelist.php';">
             </form>
         </td>

@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -28,8 +28,8 @@ $params = [&$template, &$evday, &$evmonth, &$evyear, &$endday, &$endmonth, &$end
 tng_execute($query, $params);
 $tleventID = tng_insert_id();
 
-adminwritelog($admtext['addnewtlevent'] . ": $tleventID - $evdetail");
+adminwritelog(_('Add New Event') . ": $tleventID - $evdetail");
 
 // TODO text ['tlevent'] was not defined in any language. Manually added here.
-$message = _todo_('Timeline Event') . " $tleventID {$admtext['succadded']}.";
+$message = _todo_('Timeline Event') . " $tleventID " . _('was successfully added') . ".";
 header("Location: admin_timelineevents.php?message=" . urlencode($message));

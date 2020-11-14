@@ -34,5 +34,5 @@ if ($noneliving || $imgrow['alwayson']) {
     showMediaSource($imgrow, true);
 } else {
     ?>
-    <div class="livingbox rounded-lg"><?php echo $text['living']; ?></div>
+    <div class="livingbox rounded-lg"><?php echo _('Living'); ?></div>
 <?php } ?>

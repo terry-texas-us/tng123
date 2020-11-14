@@ -7,7 +7,7 @@ function ClearData($tree) {
 
     $query = "SELECT COUNT(*) AS trees FROM $trees_table";
     if (!($result = tng_query($query))) {
-        die ($admtext['cannotexecutequery'] . ": $query");
+        die (_('Cannot execute query') . ": $query");
     }
 
     $row = tng_fetch_assoc($result);
@@ -18,7 +18,7 @@ function ClearData($tree) {
         $query .= (($tree_cnt >= 2) ? " WHERE gedcom = '$tree'" : "");
 
         if (!($result = tng_query($query))) {
-            die ($admtext['cannotexecutequery'] . ": $query");
+            die (_('Cannot execute query') . ": $query");
         }
     }
 

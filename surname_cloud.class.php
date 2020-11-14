@@ -50,7 +50,7 @@ class surname_cloud
         $query .= "$wherestr ";
         $query .= "GROUP BY surname ";
         $query .= "ORDER by lastname";
-        $result = tng_query($query) or die ("{$text['cannotexecutequery']}: $query");
+        $result = tng_query($query) or die ("" . _('Cannot execute query') . ": $query");
         if (!$result) return "";
         // Fetch all surnames into an array
         $surnames = [];
@@ -129,7 +129,7 @@ class surname_cloud
         foreach ($surnames as $name) {
             if ($name['selected'] == 1) {
                 $surname2 = $name['surname'];
-                $name['count'] = $name['count'] . ' ' . $text['individuals'];
+                $name['count'] = $name['count'] . ' ' . _('individuals');
                 $output .= "<span class='surnames-cloud size" . $name['class'] . "'>";
                 $output .= "<a class='surnames-cloud size" . $name['class'] . "' ";
                 $output .= "href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treeBranchUrlString\" title=\"{$name['count']}\">";

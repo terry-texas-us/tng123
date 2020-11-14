@@ -25,7 +25,7 @@ if (!in_array($collid, $stdcolls)) {
     $affected_rows = tng_execute($query, $params);
 
     if ($affected_rows > 0) {
-        adminwritelog($admtext['addnewcoll'] . ": $display_org");
+        adminwritelog(_('Add Collection') . ": $display_org");
         $newcollid = $collid;
     }
 }

@@ -158,7 +158,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-    <h4 class="subhead"><?php echo $text['pdfgen']; ?></h4>
+    <h4 class="subhead"><?php echo _('PDF Generator'); ?></h4>
     <br>
     <h5 class="subhead"><span class="normal" style="padding-bottom:3px;"><?php echo $text[$titleidx]; ?></span><br><?php echo $titletext; ?></h5>
     <?php
@@ -177,7 +177,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         <table id="genselect" cellpadding="0" class="normal">
             <tr>
                 <td>
-                    <span class="normal"><?php echo $text['generations']; ?>:</span>
+                    <span class="normal"><?php echo _('Generations'); ?>:</span>
                 </td>
                 <td>
                     <?php doGenOptions($generations, $genmin, $genmax); ?>
@@ -186,7 +186,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             <?php if ($pdftype == "ped" || $pdftype == "desc") { ?>
                 <tr>
                     <td class="ws">
-                        <span class="normal"><?php echo $text['startnum']; ?>:</span>
+                        <span class="normal"><?php echo _('First Number'); ?>:</span>
                     </td>
                     <td>
                         <input type="text" name="startnum" value="1" size="4">
@@ -202,7 +202,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     if ($allow_blank) {
         ?>
         <div class="pdfblock normal">
-            <input type="checkbox" id="blankform" name="blankform" value="1"> <?php echo $text['blank']; ?></div>
+            <input type="checkbox" id="blankform" name="blankform" value="1"> <?php echo _('Blank Chart'); ?></div>
         <?php
     }
 
@@ -210,7 +210,7 @@ header("Content-type:text/html; charset=" . $session_charset);
     if ($allow_cite) {
         ?>
         <div class="pdfblock normal">
-            <input type="checkbox" id="citesources" name="citesources" value="1" checked="1"> <?php echo $text['inclsrcs']; ?></div>
+            <input type="checkbox" id="citesources" name="citesources" value="1" checked="1"> <?php echo _('Include Sources'); ?></div>
         <?php
     }
     if ($pdftype == "fam") {
@@ -225,33 +225,33 @@ header("Content-type:text/html; charset=" . $session_charset);
         // options specific to certain report types
         <div class="pdfblock subhead">
             <a href="#" onClick="return toggleSection('dispopts','dispicon','');" class="pdftoggle">
-                <img src="img/tng_expand.gif" id="dispicon" class="inline-block"> <?php echo $text['dispopts']; ?>
+                <img src="img/tng_expand.gif" id="dispicon" class="inline-block"> <?php echo _('Display Options'); ?>
             </a>
         </div>
         <div style="display:none;" id="dispopts">
             <table id="display" cellpadding="3" class="normal">
                 <tr>
                     <td>
-                        <span class="normal"><?php echo $text['datesloc']; ?>:&nbsp;</span>
+                        <span class="normal"><?php echo _('Dates and Locations'); ?>:&nbsp;</span>
                     </td>
                     <td>
                         <select name="getPlace">
-                            <option value="1" selected><?php echo $text['borchr']; ?></option>
-                            <option value="2"><?php echo $text['nobd']; ?></option>
-                            <option value="3"><?php echo $text['bcdb']; ?></option>
+                            <option value="1" selected><?php echo _('Birth/Alt - Death/Burial'); ?></option>
+                            <option value="2"><?php echo _('No Birth or Death Dates'); ?></option>
+                            <option value="3"><?php echo _('All Birth/Alt/Death/Burial data'); ?></option>
                         </select>
                     </td>
                 </tr>
                 <td>
-                    <span class="normal"><?php echo $text['numsys']; ?>:&nbsp;</span>
+                    <span class="normal"><?php echo _('Numbering System'); ?>:&nbsp;</span>
                 </td>
                 <td>
                     <select name="numbering">
-                        <option value="0"><?php echo $text['none']; ?></option>
-                        <option value="1" selected><?php echo $text['gennums']; ?></option>
-                        <option value="2"><?php echo $text['henrynums']; ?></option>
-                        <option value="3"><?php echo $text['abovnums']; ?></option>
-                        <option value="4"><?php echo $text['devnums']; ?></option>
+                        <option value="0"><?php echo _('No encryption'); ?></option>
+                        <option value="1" selected><?php echo _('Generation Numbers'); ?></option>
+                        <option value="2"><?php echo _('Henry Numbers'); ?></option>
+                        <option value="3"><?php echo _('d\'Aboville Numbers'); ?></option>
+                        <option value="4"><?php echo _('de Villiers Numbers'); ?></option>
                     </select>
                 </td>
                 <tr>
@@ -263,13 +263,13 @@ header("Content-type:text/html; charset=" . $session_charset);
     <!-- Font section -->
     <div class="pdfblock subhead">
         <a href="#" class="pdftoggle" onClick="return toggleSection('font','fonticon','');">
-            <img src="img/tng_expand.gif" id="fonticon" class="inline-block"> <?php echo $text['fonts']; ?>
+            <img src="img/tng_expand.gif" id="fonticon" class="inline-block"> <?php echo _('Fonts'); ?>
         </a>
     </div>
     <div style="display:none;" id="font">
         <table cellpadding="3" class="normal">
             <tr>
-                <td><?php echo $text['family']; ?></td>
+                <td><?php echo _('Family'); ?></td>
                 <td>
                     <?php doFontOptions('rptFont'); ?>
                 </td>
@@ -280,7 +280,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 ?>
                 <tr>
                     <td>
-                        <span class="normal"><?php echo $text['header']; ?>:&nbsp;</span>
+                        <span class="normal"><?php echo _('Header'); ?>:&nbsp;</span>
                     </td>
                     <td>
                         <?php doFontSizeOptions('hdrFontSize', $hdrFontSizes, $hdrFontDefault); ?>
@@ -294,7 +294,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 ?>
                 <tr>
                     <td>
-                        <span class="normal"><?php echo $text['labels']; ?>:&nbsp;</span>
+                        <span class="normal"><?php echo _('Labels'); ?>:&nbsp;</span>
                     </td>
                     <td>
                         <?php doFontSizeOptions('lblFontSize', $lblFontSizes, $lblFontDefault); ?>
@@ -308,7 +308,7 @@ header("Content-type:text/html; charset=" . $session_charset);
                 ?>
                 <tr>
                     <td>
-                        <span class="normal"><?php echo $text['data']; ?>:&nbsp;</span>
+                        <span class="normal"><?php echo _('Data'); ?>:&nbsp;</span>
                     </td>
                     <td>
                         <?php doFontSizeOptions('rptFontSize', $rptFontSizes, $rptFontDefault); ?>
@@ -336,14 +336,14 @@ header("Content-type:text/html; charset=" . $session_charset);
     <!-- Page setup section -->
     <div class="pdfblock subhead">
         <a href="#" class="pdftoggle" onClick="return toggleSection('pgsetup','pgicon','');">
-            <img src="img/tng_expand.gif" id="pgicon" class="inline-block"> <?php echo $text['pgsetup']; ?>
+            <img src="img/tng_expand.gif" id="pgicon" class="inline-block"> <?php echo _('Page Setup'); ?>
         </a>
     </div>
     <div style="display:none;" id="pgsetup">
         <table cellpadding="3" class="normal">
             <tr>
                 <td>
-                    <span class="normal"><?php echo $text['pgsize']; ?>:&nbsp;</span>
+                    <span class="normal"><?php echo _('Page Size'); ?>:&nbsp;</span>
                 </td>
                 <td>
                     <select name="pagesize">
@@ -361,27 +361,27 @@ header("Content-type:text/html; charset=" . $session_charset);
                         </option>
                         <option value="letter"<?php if (!$pagesize || $pagesize == "letter") {
                             echo "selected";
-                        } ?>><?php echo $text['letter']; ?></option>
+                        } ?>><?php echo _('Letter'); ?></option>
                         <option value="legal<?php if ($pagesize == "legal") {
                             echo "selected";
-                        } ?>"><?php echo $text['legal']; ?></option>
+                        } ?>"><?php echo _('Legal'); ?></option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <span class="normal"><?php echo $text['orient']; ?>:&nbsp;</span>
+                    <span class="normal"><?php echo _('Orientation'); ?>:&nbsp;</span>
                 </td>
                 <td>
                     <select name="orient">
-                        <option value=p selected><?php echo $text['portrait']; ?></option>
-                        <option value=l><?php echo $text['landscape']; ?></option>
+                        <option value=p selected><?php echo _('Portrait'); ?></option>
+                        <option value=l><?php echo _('Landscape'); ?></option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <span class="normal"><?php echo $text['tmargin']; ?>:&nbsp;</span>
+                    <span class="normal"><?php echo _('Top Margin'); ?>:&nbsp;</span>
                 </td>
                 <td>
                     <input type="text" value="0.5" name="topmrg" size="5">
@@ -389,7 +389,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td>
-                    <span class="normal"><?php echo $text['bmargin']; ?>:&nbsp;</span>
+                    <span class="normal"><?php echo _('Bottom Margin'); ?>:&nbsp;</span>
                 </td>
                 <td>
                     <input type="text" value="0.5" name="botmrg" size="5">
@@ -397,7 +397,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td>
-                    <span class="normal"><?php echo $text['lmargin']; ?>:&nbsp;</span>
+                    <span class="normal"><?php echo _('Left Margin'); ?>:&nbsp;</span>
                 </td>
                 <td>
                     <input type="text" value="0.5" name="lftmrg" size="5">
@@ -405,7 +405,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
             <tr>
                 <td>
-                    <span class="normal"><?php echo $text['rmargin']; ?>:&nbsp;</span>
+                    <span class="normal"><?php echo _('Right Margin'); ?>:&nbsp;</span>
                 </td>
                 <td>
                     <input type="text" value="0.5" name="rtmrg" size="5">
@@ -414,7 +414,7 @@ header("Content-type:text/html; charset=" . $session_charset);
         </table>
     </div>
     <br>
-    <input type="submit" onclick="this.form.target='_blank'" class="btn" value="<?php echo $text['createch']; ?>">
+    <input type="submit" onclick="this.form.target='_blank'" class="btn" value="<?php echo _('Create Chart'); ?>">
 
     </form>
 

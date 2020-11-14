@@ -216,7 +216,7 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
     if ($showlinks) {
         if ($allow_admin && $allow_media_edit) {
-            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target='_blank' class='snlink rounded'>&raquo; {$text['editmedia']}</a> &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"admin_editmedia.php?mediaID=$mediaID&amp;cw=1\" target='_blank' class='snlink rounded'>&raquo; " . _('Edit Media') . "</a> &nbsp;&nbsp;&nbsp;";
         }
 
         if ($albumlinkID) {
@@ -224,17 +224,17 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
             $pagenav .= "<a href=\"showalbum.php?albumID=$albumID&amp;offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink rounded'>&raquo; $albumname</a>  &nbsp;&nbsp;&nbsp;";
         } elseif (!$personID) {
             $offset = floor($page / $maxsearchresults) * $maxsearchresults;
-            $pagenav .= "<a href=\"browsemedia.php?" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink rounded'>&raquo; {$text['showall']}</a>  &nbsp;&nbsp;&nbsp;";
+            $pagenav .= "<a href=\"browsemedia.php?" . $showall . "offset=$offset&amp;tngpage=$pagenum&amp;tnggallery=$tnggallery\" class='snlink rounded'>&raquo; " . _('Show All') . "</a>  &nbsp;&nbsp;&nbsp;";
         } else {
             if ($linktype == "F") {
-                $pagenav .= "<a href=\"familygroup.php?familyID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; {$text['groupsheet']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"familygroup.php?familyID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; " . _('Group Sheet') . "</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "S") {
-                $pagenav .= "<a href=\"showsource.php?sourceID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; {$text['source']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showsource.php?sourceID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; " . _('Source') . "</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "R") {
-                $pagenav .= "<a href=\"showrepo.php?repoID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; {$text['repository']}</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"showrepo.php?repoID=$personID&amp;tree=$tree\" class='snlink rounded'>&raquo; " . _('Repository') . "</a>  &nbsp;&nbsp;&nbsp;";
             } elseif ($linktype == "L") {
                 $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree=$tree";
-                $pagenav .= "<a href=\"placesearch.php?psearch=$personID$treestr\" class='snlink rounded'>&raquo; {$text['place']}: $personID</a>  &nbsp;&nbsp;&nbsp;";
+                $pagenav .= "<a href=\"placesearch.php?psearch=$personID$treestr\" class='snlink rounded'>&raquo; " . _('Place') . ": $personID</a>  &nbsp;&nbsp;&nbsp;";
             }
         }
     }
@@ -251,21 +251,21 @@ function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlin
 
         if ($page > 1) {
             $prevpage = $page - 1;
-            $prevlink = get_media_link($result, "showmedia.php?", $prevpage, "jump", $text['text_prev'], "&laquo;" . $text['text_prev'], $allstr, $showlinks);
+            $prevlink = get_media_link($result, "showmedia.php?", $prevpage, "jump", _('Prev'), "&laquo;" . _('Prev'), $allstr, $showlinks);
         }
         if ($page < $totalpages) {
             $nextpage = $page + 1;
-            $nextlink = get_media_link($result, "showmedia.php?", $nextpage, "jumpnext", $text['text_next'], $text['text_next'] . "&raquo;", $allstr, $showlinks);
+            $nextlink = get_media_link($result, "showmedia.php?", $nextpage, "jumpnext", _('Next'), _('Next') . "&raquo;", $allstr, $showlinks);
         }
         $curpage = 0;
         $numlinks = "";
         while ($curpage++ < $totalpages) {
             if (($curpage <= $page - $max_showmedia_pages || $curpage >= $page + $max_showmedia_pages) && $max_showmedia_pages != 0) {
                 if ($curpage == 1) {
-                    $firstlink = get_media_link($result, "showmedia.php?", $curpage, "jump", $text['firstpage'], "&laquo;1", $allstr, $showlinks) . "...";
+                    $firstlink = get_media_link($result, "showmedia.php?", $curpage, "jump", _('First Page'), "&laquo;1", $allstr, $showlinks) . "...";
                 }
                 if ($curpage == $totalpages) {
-                    $lastlink = "..." . get_media_link($result, "showmedia.php?", $curpage, "jump", $text['lastpage'], "$totalpages&raquo;", $allstr, $showlinks);
+                    $lastlink = "..." . get_media_link($result, "showmedia.php?", $curpage, "jump", _('Last Page'), "$totalpages&raquo;", $allstr, $showlinks);
                 }
             } else {
                 if ($curpage == $page) {
@@ -349,14 +349,14 @@ function getMediaLinkText($mediaID, $ioffset) {
             $medialinktext .= "<a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
             $medialinktext .= getName($prow) . "</a>";
         } elseif ($prow['sourceID'] != NULL) {
-            $sourcetext = $prow['title'] ? $prow['title'] : $text['source'] . ": " . $prow['sourceID'];
+            $sourcetext = $prow['title'] ? $prow['title'] : _('Source') . ": " . $prow['sourceID'];
             $medialinktext .= "<a href=\"showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">" . $sourcetext . "</a>";
         } elseif ($prow['repoID'] != NULL) {
-            $repotext = $prow['reponame'] ? $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
+            $repotext = $prow['reponame'] ? $prow['reponame'] : _('Repository') . ": " . $prow['repoID'];
             $medialinktext .= "<a href=\"showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">" . $repotext . "</a>";
         } elseif ($prow['familyID'] != NULL) {
             $familyname = trim($prow['hlnprefix'] . " " . $prow['hlastname']) . "/" . trim($prow['wlnprefix'] . " " . $prow['wlastname']) . " ({$prow['familyID']})";
-            $medialinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: $familyname</a>";
+            $medialinktext .= "<a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">" . _('Family') . ": $familyname</a>";
         } elseif (!$prow['linktype'] || $prow['linktype'] == "C") {
             $query = "SELECT persfamID, sourceID, gedcom FROM $citations_table WHERE citationID = \"{$prow['personID']}\"";
             $cresult = tng_query($query);
@@ -384,7 +384,7 @@ function getMediaLinkText($mediaID, $ioffset) {
                             if ($presult2) {
                                 $famrow = tng_fetch_assoc($presult);
                                 $familyname = getFamilyName($famrow);
-                                $medialinktext .= "<a href=\"familygroup.php?familyID=$persfamID&amp;tree={$crow['gedcom']}\">{$text['family']}: $familyname</a>";
+                                $medialinktext .= "<a href=\"familygroup.php?familyID=$persfamID&amp;tree={$crow['gedcom']}\">" . _('Family') . ": $familyname</a>";
                                 $need_semicolon = true;
                                 tng_free_result($presult2);
                             }
@@ -404,7 +404,7 @@ function getMediaLinkText($mediaID, $ioffset) {
             $eresult = tng_query($query);
             $erow = tng_fetch_assoc($eresult);
             if ($prow['eventID'] == "BURI" && $prow['burialtype'] == "1") {
-                $event = $text["cremated"];
+                $event = _("Cremated");
             } else {
                 $event = $erow['display'] && is_numeric($prow['eventID']) ? getEventDisplay($erow['display']) : ($admtext[$prow['eventID']] ? $admtext[$prow['eventID']] : $prow['eventID']);
             }
@@ -416,7 +416,7 @@ function getMediaLinkText($mediaID, $ioffset) {
     }
     tng_free_result($presult);
     if ($numrows > $maxsearchresults) {
-        $medialinktext .= "\n['<a href=\"showmedia.php?mediaID=$mediaID&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['morelinks']}</a>']";
+        $medialinktext .= "\n['<a href=\"showmedia.php?mediaID=$mediaID&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">" . _('More Links') . "</a>']";
     }
 
     return $medialinktext;
@@ -451,9 +451,9 @@ function showMediaSource($imgrow, $ss = false) {
     if ($imgrow['path']) {
         if ($imgrow['abspath']) {
             if ($imgrow['newwindow']) {
-                echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
+                echo "<form><input type='button' value=\"" . _('View this item') . "...\" onClick=\"window.open('$mediasrc');\"></form>\n";
             } else {
-                echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
+                echo "<form><input type='button' value=\"" . _('View this item') . "...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
             }
         } else {
             if (!$imgrow['form']) {
@@ -500,13 +500,13 @@ function showMediaSource($imgrow, $ss = false) {
                 }
                 if ($ss) {  //slideshow
                     $img = "<img src=\"$mediasrc\" $mapstr alt=\"$description\">";
-                    echo "<div id=\"slidearea\"><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}$medialinkstr$albumlinkstr\" border='0' title=\"{$text['moreinfo']}\">$img</a></div>\n";
+                    echo "<div id=\"slidearea\"><a href=\"showmedia.php?mediaID={$imgrow['mediaID']}$medialinkstr$albumlinkstr\" border='0' title=\"" . _('More Information') . "\">$img</a></div>\n";
                 } else {
                     $imgviewer = $tngconfig['imgviewer'];
                     if (!$imgviewer || in_array($imgrow['mediatypeID'], $mediatypes_like[$imgviewer])) {
                         $maxvh = $tngconfig['imgvheight'];
                         $calcHeight = $maxvh ? ($height > $maxvh ? $maxvh : $height) : 1;
-                        echo "<div id='loadingdiv2' class='rounded-lg' style='position:static;'>{$text['loading']}</div>";
+                        echo "<div id='loadingdiv2' class='rounded-lg' style='position:static;'>" . _('Loading...') . "</div>";
                         echo "<iframe name='iframe1' id='iframe1' src=\"img_viewer.php?mediaID={$imgrow['mediaID']}&amp;medialinkID={$imgrow['medialinkID']}\" width='100%' height='1' onload=\"calcHeight($calcHeight)\" frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>";
                     } else {
                         echo "<div class='titlebox rounded-lg text-center' id='imgdiv'><img src='$mediasrc' id='theimage' $mapstr alt='$description'></div>\n";
@@ -543,9 +543,9 @@ function showMediaSource($imgrow, $ss = false) {
                 }
             } else {
                 if ($imgrow['newwindow']) {
-                    echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.open('$mediasrc');\"></form>\n";
+                    echo "<form><input type='button' value=\"" . _('View this item') . "...\" onClick=\"window.open('$mediasrc');\"></form>\n";
                 } else {
-                    echo "<form><input type='button' value=\"{$text['viewitem']}...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
+                    echo "<form><input type='button' value=\"" . _('View this item') . "...\" onClick=\"window.location.href='$mediasrc';\"></form>\n";
                 }
             }
         }
@@ -571,38 +571,38 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
     $tabletext .= "<table class='whiteback w-full' border='0' cellspacing='1' cellpadding='4'>\n";
 
     if ($imgrow['owner']) {
-        $tabletext .= tableRow($text['photoowner'], $imgrow['owner']);
+        $tabletext .= tableRow(_('Owner/Source'), $imgrow['owner']);
     }
     if ($imgrow['datetaken']) {
-        $tabletext .= tableRow($text['date'], displayDate($imgrow['datetaken']));
+        $tabletext .= tableRow(_('Date'), displayDate($imgrow['datetaken']));
     }
     if ($imgrow['placetaken']) {
-        $tabletext .= tableRow($text['place'], $imgrow['placetaken']);
+        $tabletext .= tableRow(_('Place'), $imgrow['placetaken']);
     }
     if ($imgrow['latitude']) {
-        $tabletext .= tableRow($text['latitude'], $imgrow['latitude']);
+        $tabletext .= tableRow(_('Latitude'), $imgrow['latitude']);
     }
     if ($imgrow['longitude']) {
-        $tabletext .= tableRow($text['longitude'], $imgrow['longitude']);
+        $tabletext .= tableRow(_('Longitude'), $imgrow['longitude']);
     }
 
     if ($showextended) {
         if ($filename) {
-            $tabletext .= tableRow($text['filename'], $filename);
+            $tabletext .= tableRow(_('File Name'), $filename);
             $filesize = $imgrow['path'] && file_exists("$rootpath$usefolder/" . $imgrow['path']) ? display_size(filesize("$rootpath$usefolder/" . $imgrow['path'])) : "";
-            $tabletext .= tableRow($text['filesize'], $filesize);
+            $tabletext .= tableRow(_('File Size'), $filesize);
         }
         if (in_array($imgrow['form'], $imagetypes)) {
-            $tabletext .= tableRow($text['photosize'], "$size[0] x $size[1]");
+            $tabletext .= tableRow(_('Dimensions'), "$size[0] x $size[1]");
         }
         $tabletext .= output_iptc_data($info);
     }
 
     if ($medialinktext) {
-        $tabletext .= tableRow($text['indlinked'], $medialinktext);
+        $tabletext .= tableRow(_('Linked to'), $medialinktext);
     }
     if ($albumlinktext) {
-        $tabletext .= tableRow($text['albums'], $albumlinktext);
+        $tabletext .= tableRow(_('Albums'), $albumlinktext);
     }
     $tabletext .= "</table>\n";
 
@@ -622,7 +622,7 @@ function doCemPlusMap($imgrow, $tree) {
     echo "<a href=\"showmap.php?cemeteryID={$imgrow['cemeteryID']}&amp;tree=$tree\">$location</a>";
     echo "</h3>\n";
     if ($cemetery['notes']) {
-        echo "<p><strong>{$text['notes']}:</strong> " . nl2br($cemetery['notes']) . "</p>";
+        echo "<p><strong>" . _('Notes') . ":</strong> " . nl2br($cemetery['notes']) . "</p>";
     }
 
     if ($imgrow['showmap']) {
@@ -638,11 +638,11 @@ function doCemPlusMap($imgrow, $tree) {
     if (tng_num_rows($hsresult)) {
         $i = 1;
         echo "<div class='titlebox rounded-lg'>\n";
-        echo "<h3 class='subhead'>{$text['cemphotos']}</h3>";
+        echo "<h3 class='subhead'>" . _('Cemetery Photos') . "</h3>";
         echo "<table class='whiteback w-full' cellpadding='3' cellspacing='1' border='0'>\n";
         echo "<tr><td class='fieldnameback' width=\"10\">&nbsp;</td>\n";
-        echo "<td class='fieldnameback' width=\"$thumbmaxw\"><span class='fieldname'>&nbsp;<strong>{$text['thumb']}</strong>&nbsp;</span></td>\n";
-        echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>{$text['description']}</strong>&nbsp;</span></td></tr>\n";
+        echo "<td class='fieldnameback' width=\"$thumbmaxw\"><span class='fieldname'>&nbsp;<strong>" . _('Thumb') . "</strong>&nbsp;</span></td>\n";
+        echo "<td class='fieldnameback'><span class='fieldname'>&nbsp;<strong>" . _('Description') . "</strong>&nbsp;</span></td></tr>\n";
 
         while ($hs = tng_fetch_assoc($hsresult)) {
             $description = $hs['description'];

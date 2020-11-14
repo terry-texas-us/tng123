@@ -32,9 +32,9 @@ function writelog($string) {
 
     $remhost = $charset == "UTF-8" ? utf8_encode($remhost) : utf8_decode($remhost);
 
-    $string .= " {$text['accessedby']} $remhost";
+    $string .= " " . _('accessed by') . " $remhost";
     if ($currentuser) {
-        $string .= " ({$text['user']}: $currentuserdesc)";
+        $string .= " (" . _('User') . ": $currentuserdesc)";
     }
 
     $fp = fopen($logfile, "r+");

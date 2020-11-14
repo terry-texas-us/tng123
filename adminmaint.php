@@ -9,7 +9,7 @@ $maintenance_mode = true;
 include "checklogin.php";
 include "version.php";
 
-tng_adminheader($admtext['maintmode'], '');
+tng_adminheader(_('Maintenance Mode'), '');
 
 echo "</head>\n";
 echo tng_adminlayout();
@@ -17,9 +17,9 @@ echo tng_adminlayout();
 
 <div class="lightback">
     <div style="padding:10px;" class="databack normal">
-        <p class="plainheader"><?php echo $admtext['maintmode']; ?></p>
+        <p class="plainheader"><?php echo _('Maintenance Mode'); ?></p>
 
-        <p class="normal"><?php echo $admtext['maintexp']; ?>
+        <p class="normal"><?php echo _('All database access is temporarily unavailable for site maintenance. Please try again later. If regular functions do not resume within a few hours of first seeing this message, please contact the site administrator.'); ?>
         </p><br><br>
     </div>
 </div>

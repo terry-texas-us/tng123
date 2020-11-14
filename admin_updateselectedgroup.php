@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit || !$allow_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -17,7 +17,7 @@ require "adminlog.php";
 $count = 0;
 
 $xdnaaction = stripslashes($xdnagroupaction);
-if ($xdnagroupaction == $admtext['deleteselected']) {
+if ($xdnagroupaction == _('Delete Selected')) {
     $query = "DELETE FROM $dna_groups_table WHERE 1=0";
 
     foreach (array_keys($_POST) as $key) {
@@ -37,11 +37,11 @@ if ($xdnagroupaction == $admtext['deleteselected']) {
     $result = tng_query($query);
 }
 
-adminwritelog($admtext['modifydna'] . ": " . $admtext['all']);
+adminwritelog(_('Edit Existing DNA Test') . ": " . _('All'));
 
 if ($count) {
-    $message = $admtext['changestoalldna'] . " {$admtext['succsaved']}.";
+    $message = _('Changes to all tests') . " " . _('were successfully saved') . ".";
 } else {
-    $message = $admtext['nochanges'];
+    $message = _('No changes were made.');
 }
 header("Location: admin_dna_groups.php?message=" . urlencode($message));

@@ -24,10 +24,10 @@ function getBirth($row) {
 
     $birthdate = "";
     if ($row['birthdate']) {
-        $birthdate = "{$admtext['birthabbr']} " . displayDate($row['birthdate']);
+        $birthdate = "" . _('b.') . " " . displayDate($row['birthdate']);
     } else {
         if ($row['altbirthdate']) {
-            $birthdate = "{$admtext['chrabbr']} " . displayDate($row['altbirthdate']);
+            $birthdate = "" . _('c.') . " " . displayDate($row['altbirthdate']);
         }
     }
     if ($birthdate) $birthdate = " ($birthdate)";
@@ -38,7 +38,7 @@ function getBirth($row) {
 $row = fetchAndCleanFamilyRow($familyID, $families_table, $tree);
 
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: ajx_login.php?message=" . urlencode($message));
     exit;
 }
@@ -80,7 +80,7 @@ include_once "eventlib.php";
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
-                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
+                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo _('Save'); ?>">
                 </div>
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
@@ -94,20 +94,20 @@ include_once "eventlib.php";
                             <div class="topbuffer bottombuffer smallest">
                                 <?php
                                 if ($editconflict) {
-                                    echo "<br><p>{$admtext['editconflict']}</p>";
+                                    echo "<br><p>" . _('Another user is already editing this record. Please try again later.') . "</p>";
                                 } else {
                                     $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
                                     $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
                                     $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
-                                    echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-                                    echo "<a href='#' onclick=\"return showNotes('', '$familyID');\" class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
-                                    echo "<a href='#' onclick=\"return showCitations('', '$familyID');\" class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
-                                    echo "<a href='#' onclick=\"return showAssociations('$familyID','F');\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
+                                    echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">" . _('Save') . "</a>\n";
+                                    echo "<a href='#' onclick=\"return showNotes('', '$familyID');\" class=\"smallicon si-plus $notesicon\">" . _('Notes') . "</a>\n";
+                                    echo "<a href='#' onclick=\"return showCitations('', '$familyID');\" class=\"smallicon si-plus $citesicon\">" . _('Sources') . "</a>\n";
+                                    echo "<a href='#' onclick=\"return showAssociations('$familyID','F');\" class=\"smallicon si-plus $associcon\">" . _('Associations') . "</a>\n";
                                 }
                                 ?>
                                 <br class="clear-both">
                             </div>
-                            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
+                            <span class="smallest"><?php echo _('Last Modified Date') . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
                     </tr>
                 </table>
@@ -116,7 +116,7 @@ include_once "eventlib.php";
         <?php if (!$editconflict) { ?>
             <tr class="databack">
                 <td class="tngbotshadow">
-                    <?php echo displayToggle("plus0", 1, "spouses", $admtext['spouses'], ""); ?>
+                    <?php echo displayToggle("plus0", 1, "spouses", _('Spouses / Partners'), ""); ?>
 
                     <div id="spouses">
                         <table class="normal topmarginsmall">
@@ -133,20 +133,20 @@ include_once "eventlib.php";
                                 $spouserow['allow_private'] = $hrights['private'];
                                 $husbstr = getName($spouserow) . getBirth($spouserow) . " - " . $row['husband'];
                             }
-                            if (!isset($husbstr)) $husbstr = $admtext['clickfind'];
+                            if (!isset($husbstr)) $husbstr = _('Click Find or Create =>');
                             ?>
                             <tr>
-                                <td><span class="normal"><?php echo $admtext['husband']; ?>:</span></td>
+                                <td><span class="normal"><?php echo _('Father'); ?>:</span></td>
                                 <td>
                                     <input type="text" readonly="readonly" name="husbnameplusid" id="husbnameplusid" size="40" value="<?php echo "$husbstr"; ?>">
                                     <input type="hidden" name="husband"
-                                           id="husband"
-                                           value="<?php echo $row['husband']; ?>">
-                                    <input type="button" value="<?php echo $admtext['find']; ?>"
-                                           onclick="return findItem('I','husband','husbnameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
-                                    <input type="button" value="<?php echo $admtext['addnew']; ?>" onclick="return newPerson('M','spouse');">
-                                    <input type="button" value="  <?php echo $admtext['edit']; ?>  " onclick="editPerson(document.famform1.husband.value,0,'M');">
-                                    <input type="button" value="<?php echo $admtext['remove']; ?>" onclick="removeSpouse(document.famform1.husband,document.famform1.husbnameplusid);">
+                                        id="husband"
+                                        value="<?php echo $row['husband']; ?>">
+                                    <input type="button" value="<?php echo _('Find...'); ?>"
+                                        onclick="return findItem('I','husband','husbnameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
+                                    <input type="button" value="<?php echo _('Add New'); ?>" onclick="return newPerson('M','spouse');">
+                                    <input type="button" value="  <?php echo _('Edit'); ?>  " onclick="editPerson(document.famform1.husband.value,0,'M');">
+                                    <input type="button" value="<?php echo _('Remove'); ?>" onclick="removeSpouse(document.famform1.husband,document.famform1.husbnameplusid);">
                                 </td>
                             </tr>
                             <?php
@@ -164,21 +164,21 @@ include_once "eventlib.php";
                                 $spouserow['allow_private'] = $wrights['private'];
                                 $wifestr = getName($spouserow) . getBirth($spouserow) . " - " . $row['wife'];
                             }
-                            if (!isset($wifestr)) $wifestr = $admtext['clickfind'];
+                            if (!isset($wifestr)) $wifestr = _('Click Find or Create =>');
                             ?>
                             <tr>
-                                <td><span class="normal"><?php echo $admtext['wife']; ?>:</span></td>
+                                <td><span class="normal"><?php echo _('Mother'); ?>:</span></td>
                                 <td>
                                     <input type="text" readonly readonly="readonly" name="wifenameplusid" id="wifenameplusid" size="40" value="<?php echo "$wifestr"; ?>">
                                     <input type="hidden"
-                                           name="wife"
-                                           id="wife"
-                                           value="<?php echo $row['wife']; ?>">
-                                    <input type="button" value="<?php echo $admtext['find']; ?>"
-                                           onclick="return findItem('I','wife','wifenameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
-                                    <input type="button" value="<?php echo $admtext['create']; ?>" onclick="return newPerson('F','spouse');">
-                                    <input type="button" value="  <?php echo $admtext['edit']; ?>  " onclick="editPerson(document.famform1.wife.value,0,'F');">
-                                    <input type="button" value="<?php echo $admtext['remove']; ?>" onclick="removeSpouse(document.famform1.wife,document.famform1.wifenameplusid);">
+                                        name="wife"
+                                        id="wife"
+                                        value="<?php echo $row['wife']; ?>">
+                                    <input type="button" value="<?php echo _('Find...'); ?>"
+                                        onclick="return findItem('I','wife','wifenameplusid','<?php echo $tree; ?>','<?php echo $assignedbranch; ?>');">
+                                    <input type="button" value="<?php echo _('Create...'); ?>" onclick="return newPerson('F','spouse');">
+                                    <input type="button" value="  <?php echo _('Edit'); ?>  " onclick="editPerson(document.famform1.wife.value,0,'F');">
+                                    <input type="button" value="<?php echo _('Remove'); ?>" onclick="removeSpouse(document.famform1.wife,document.famform1.wifenameplusid);">
                                 </td>
                             </tr>
                         </table>
@@ -188,13 +188,13 @@ include_once "eventlib.php";
                                 <td class="whitespace-no-wrap">
                                     <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
                                         echo " checked";
-                                    } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
+                                    } ?>> <?php echo _('Living'); ?>&nbsp;&nbsp;
                                     <input type="checkbox" name="private" value="1"<?php if ($row['private']) {
                                         echo " checked=\"$checked\"";
-                                    } ?>> <?php echo $admtext['text_private']; ?>
+                                    } ?>> <?php echo _('Private'); ?>
                                 </td>
-                                <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
-                                <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
+                                <td class="spaceonleft"><?php echo _('Tree') . ": " . $treerow['treename']; ?></td>
+                                <td class="spaceonleft"><?php echo _('Branch') . ": "; ?>
 
                                     <?php
                                     $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
@@ -211,20 +211,20 @@ include_once "eventlib.php";
                                         }
                                         $options .= ">{$branchrow['description']}</option>\n";
                                     }
-                                    $desclist = count($descriptions) ? implode(', ', $descriptions) : $admtext['nobranch'];
+                                    $desclist = count($descriptions) ? implode(', ', $descriptions) : _('No Branch');
                                     echo "<span id=\"branchlist\">$desclist</span>";
                                     if (!$assignedbranch) {
                                     $totbranches = tng_num_rows($branchresult) + 1;
                                     if ($totbranches < 2) $totbranches = 2;
                                     $selectnum = $totbranches < 8 ? $totbranches : 8;
-                                    $select = $totbranches >= 8 ? "{$admtext['scrollbranch']}<br>" : "";
+                                    $select = $totbranches >= 8 ? "" . _('(Scroll to see all choices)') . "<br>" : "";
                                     $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                     $select .= "	<option value=\"\"";
                                     if ($row['branch'] == "") $select .= " selected";
-                                    $select .= ">{$admtext['nobranch']}</option>\n";
+                                    $select .= ">" . _('No Branch') . "</option>\n";
                                     $select .= "$options</select>\n";
                                     echo " &nbsp;<span class='whitespace-no-wrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
-                                    echo $admtext['edit'];
+                                    echo _('Edit');
                                     echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
                                     echo "</a> )</span><br>";
                                     ?>
@@ -247,20 +247,20 @@ include_once "eventlib.php";
             </tr>
             <tr class="databack">
                 <td class="tngbotshadow">
-                    <?php echo displayToggle("plus1", 1, "events", $admtext['events'], ""); ?>
+                    <?php echo displayToggle("plus1", 1, "events", _('Events'), ""); ?>
 
                     <div id="events">
-                        <p class="smallest topmarginsmall"><?php echo $admtext['datenote']; ?></p>
+                        <p class="smallest topmarginsmall"><?php echo _('<strong>Note:</strong> When entering dates, please use the standard genealogical format DD MMM YYYY. For example, 10 Apr 2004.'); ?></p>
                         <table class="normal" cellpadding="1" cellspacing="2">
                             <tr>
                                 <td>&nbsp;</td>
-                                <td><?php echo $admtext['date']; ?></td>
-                                <td><?php echo $admtext['place']; ?></td>
+                                <td><?php echo _('Date'); ?></td>
+                                <td><?php echo _('Place'); ?></td>
                                 <td colspan="4">&nbsp;</td>
                             </tr>
                             <?php echo showEventRow('marrdate', 'marrplace', 'MARR', $familyID); ?>
                             <tr>
-                                <td><?php echo $admtext['marriagetype']; ?>:</td>
+                                <td><?php echo _('Marriage Type'); ?>:</td>
                                 <td colspan="6">
                                     <input type="text" value="<?php echo $row['marrtype']; ?>" name="marrtype" style="width:494px;" maxlength="50">
                                 </td>
@@ -275,7 +275,7 @@ include_once "eventlib.php";
                                 <td colspan="2">
                                     <br/>
                                     <p class="subhead font-medium">
-                                        <?php echo "{$admtext['otherevents']}: <input type='button' value=\" {$admtext['addnew']} \" onclick=\"newEvent('F', '$familyID', '$tree');\">\n"; ?>
+                                        <?php echo "" . _('Other Events') . ": <input type='button' value=\" " . _('Add New') . " \" onclick=\"newEvent('F', '$familyID', '$tree');\">\n"; ?>
                                     </p>
                                 </td>
                             </tr>
@@ -286,13 +286,13 @@ include_once "eventlib.php";
             </tr>
             <tr class="databack">
                 <td class="tngbotshadow">
-                    <?php echo displayToggle("plus2", 1, "children", $admtext['children'] . " (<span id=\"childcount\">$kidcount</span>)", ""); ?>
+                    <?php echo displayToggle("plus2", 1, "children", _('Children') . " (<span id=\"childcount\">$kidcount</span>)", ""); ?>
 
                     <div id="children" style="padding-top:10px;">
                         <table id="ordertbl" width="500px" cellpadding="3" cellspacing="1">
                             <tr>
-                                <th class="fieldnameback" style="width:55px;"><span class="fieldname"><?php echo $admtext['text_sort']; ?></span></th>
-                                <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['child']; ?></span></th>
+                                <th class="fieldnameback" style="width:55px;"><span class="fieldname"><?php echo _('Sort'); ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('Child'); ?></span></th>
                             </tr>
                         </table>
                         <div id="childrenlist">
@@ -310,11 +310,11 @@ include_once "eventlib.php";
                                         echo ">\n";
                                         echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                                         echo "<td class='dragarea rounded-lg normal'>";
-                                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
+                                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                                         echo "</td>\n";
                                         echo "<td class='lightback normal childblock'>\n";
                                         if ($allow_delete) {
-                                            echo "<div id=\"unlinkc_{$child['pID']}\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">{$admtext['remove']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">{$admtext['text_delete']}</a></div>";
+                                            echo "<div id=\"unlinkc_{$child['pID']}\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_unlink');\">" . _('Remove') . "</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('{$child['pID']}','child_delete');\">" . _('Delete') . "</a></div>";
                                         }
                                         if ($crights['both']) {
                                             $birthstring = getBirthText($child);
@@ -322,7 +322,7 @@ include_once "eventlib.php";
                                             echo getName($child);
                                             echo " - {$child['pID']}<br>$birthstring";
                                         } else {
-                                            echo $admtext['living'] . " - " . $child['pID'];
+                                            echo _('Living') . " - " . $child['pID'];
                                         }
                                         echo "</div>\n</td>\n</tr>\n</table>\n</div>\n";
                                     }
@@ -333,10 +333,10 @@ include_once "eventlib.php";
                         </div>
 
                         <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-                        <p class="normal"><?php echo $admtext['newchildren']; ?>:
-                            <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return findItem('I','children',null,'<?php echo $tree; ?>');">
-                            <input type="button" value="<?php echo $admtext['create']; ?>"
-                                   onclick="return newPerson('','child',document.famform1.husband.value,'<?php echo "$familyID"; ?>','<?php echo $assignedbranch; ?>');">
+                        <p class="normal"><?php echo _('New Children'); ?>:
+                            <input type="button" value="<?php echo _('Find...'); ?>" onclick="return findItem('I','children',null,'<?php echo $tree; ?>');">
+                            <input type="button" value="<?php echo _('Create...'); ?>"
+                                onclick="return newPerson('','child',document.famform1.husband.value,'<?php echo "$familyID"; ?>','<?php echo $assignedbranch; ?>');">
                             <input type="hidden" name="familyID" value="<?php echo "$familyID"; ?>">
                             <input type="hidden" name="lastperson" value="<?php echo "$lastperson"; ?>">
                             <input type="hidden" name="newfamily" value="ajax">

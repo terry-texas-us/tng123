@@ -11,7 +11,7 @@ include "checklogin.php";
 include "version.php";
 
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -31,36 +31,36 @@ $brresult = tng_query($query);
 
 $helplang = findhelp("branches_help.php");
 
-tng_adminheader($admtext['labelbranches'], $flags);
+tng_adminheader(_('Label Branches'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$branchtabs[0] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
-$branchtabs[1] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
-$branchtabs[2] = [$allow_edit, "#", $admtext['labelbranches'], "label"];
-$innermenu = "<a href=\"javascript:newwindow=window.open('../$helplang/branches_help.php#labelbranch');\" class='lightlink'>{$admtext['help']}</a>";
+$branchtabs[0] = [1, "admin_branches.php", _('Search'), "findbranch"];
+$branchtabs[1] = [$allow_add, "admin_newbranch.php", _('Add New'), "addbranch"];
+$branchtabs[2] = [$allow_edit, "#", _('Label Branches'), "label"];
+$innermenu = "<a href=\"javascript:newwindow=window.open('../$helplang/branches_help.php#labelbranch');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($branchtabs, "label", $innermenu);
-echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);
+echo displayHeadline(_('Branches') . " &gt;&gt; " . _('Label Branches'), "img/branches_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <table cellpadding="1">
-                <tr>
-                    <td><span class="normal"><strong><?php echo $admtext['tree']; ?>:</strong></span></td>
-                    <td><span class="normal"><?php echo $row['treename']; ?></span></td>
-                </tr>
-                <tr>
-                    <td><span class="normal"><strong><?php echo $admtext['branch']; ?>:</strong></span></td>
-                    <td><span class="normal"><?php echo $brow['description']; ?></span></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <table cellpadding="1">
+                    <tr>
+                        <td><span class="normal"><strong><?php echo _('Tree'); ?>:</strong></span></td>
+                        <td><span class="normal"><?php echo $row['treename']; ?></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="normal"><strong><?php echo _('Branch'); ?>:</strong></span></td>
+                        <td><span class="normal"><?php echo $brow['description']; ?></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
 			<span class="normal"><br>
 <?php
-echo "<p class='adminnav'><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class='snlink rounded'>{$admtext['labelbranches']}</a></p>\n";
+echo "<p class='adminnav'><a href=\"admin_branchmenu.php?tree=$tree&amp;branch=$branch\" class='snlink rounded'>" . _('Label Branches') . "</a></p>\n";
 while ($row = tng_fetch_assoc($brresult)) {
     $rights = determineLivingPrivateRights($row, true, true);
     $row['allow_living'] = $rights['living'];

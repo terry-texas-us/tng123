@@ -10,14 +10,14 @@ if ($link) {
     include "version.php";
 
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
 }
 require "adminlog.php";
 $fp = @fopen("config/pedconfig.php", "w", 1);
-if (!$fp) die ($admtext['cannotopen'] . " pedconfig.php");
+if (!$fp) die (_('Cannot open file') . " pedconfig.php");
 
 if (!$vwidth) $vwidth = 100;
 if (!$vheight) $vheight = 42;
@@ -89,6 +89,6 @@ fwrite($fp, "?>\n");
 flock($fp, LOCK_UN);
 fclose($fp);
 
-adminwritelog($admtext['modifypedsettings']);
+adminwritelog(_('Modify Pedigree Configuration Settings'));
 
 header("Location: admin_setup.php");

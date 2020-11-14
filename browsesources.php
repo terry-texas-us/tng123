@@ -53,20 +53,20 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 $numrowsplus = $numrows + $offset;
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href='browsesources.php?tree=$tree&amp;offset=$offset&amp;sourcesearch=$sourcesearch'>" . xmlcharacters($text['sources'] . $treestr) . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href='browsesources.php?tree=$tree&amp;offset=$offset&amp;sourcesearch=$sourcesearch'>" . xmlcharacters(_('Sources') . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-tng_header($text['sources'], $flags);
+tng_header(_('Sources'), $flags);
 ?>
-    <h2 class="mb-4 header"><span class="headericon" id="sources-hdr-icon"></span><?php echo $text['sources']; ?></h2>
+    <h2 class="mb-4 header"><span class="headericon" id="sources-hdr-icon"></span><?php echo _('Sources'); ?></h2>
 
 <?php echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsesources', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']); ?>
     <div class='mb-4 normal'>
         <form name="sourcesearch1" action="browsesources.php" method="get">
-            <label for="sourcesearch" hidden><?php echo $text['search']; ?></label>
+            <label for="sourcesearch" hidden><?php echo _('Search'); ?></label>
             <input id="sourcesearch" class="p-1 ml-1" name="sourcesearch" type="search" value="<?php echo $sourcesearch; ?>">
-            <input class="p-1 px-2" type="submit" value="<?php echo $text['search']; ?>">
+            <input class="p-1 px-2" type="submit" value="<?php echo _('Search'); ?>">
             <input name='tree' type='hidden' value="<?php echo $tree; ?>">
         </form>
     </div>
@@ -74,10 +74,10 @@ tng_header($text['sources'], $flags);
         <thead>
         <tr>
             <th class="hidden p-2 sm:table-cell fieldnameback nbrcol"><span class="fieldname">#</span></th>
-            <th class="p-2 fieldnameback whitespace-no-wrap"><span class="fieldname"><?php echo $text['sourceid']; ?></span></th>
-            <th class="p-2 fieldnameback whitespace-no-wrap"><span class="fieldname"><?php echo $text['title'] . ", " . $text['author']; ?></span></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap"><span class="fieldname"><?php echo _('Source ID'); ?></span></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap"><span class="fieldname"><?php echo _('Title') . ", " . _('Author'); ?></span></th>
             <?php if ($numtrees > 1) { ?>
-                <th class="p-2 fieldnameback"><span class="fieldname"><?php echo $text['tree']; ?></span></th>
+                <th class="p-2 fieldnameback"><span class="fieldname"><?php echo _('Tree'); ?></span></th>
             <?php } ?>
         </tr>
         </thead>

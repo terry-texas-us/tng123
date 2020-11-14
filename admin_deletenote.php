@@ -20,7 +20,7 @@ $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
-adminwritelog($admtext['deleted'] . ": {$admtext['note']} $noteID");
+adminwritelog(_('Deleted') . ": " . _('Note') . " $noteID");
 
 echo $row['ncount'];
 

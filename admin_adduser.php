@@ -10,7 +10,7 @@ require "adminlog.php";
 include "tngmaillib.php";
 
 if ($assignedtree || !$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -78,22 +78,22 @@ if (!$duplicate) {
     if ($notify && $email) {
         $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
 
-        tng_sendmail($owner, $emailaddr, $realname, $email, $admtext['activated'], $welcome, $emailaddr, $emailaddr);
+        tng_sendmail($owner, $emailaddr, $realname, $email, _('Your genealogy user account has been activated.'), $welcome, $emailaddr, $emailaddr);
     }
 
     if (tng_affected_rows()) {
         $userID = tng_insert_id();
-        adminwritelog("<a href=\"admin_edituser.php?userID=$userID\">{$admtext['addnewuser']}: $username</a>");
-        $message = $admtext['user'] . " $username {$admtext['succadded']}.";
+        adminwritelog("<a href=\"admin_edituser.php?userID=$userID\">" . _('Add New User') . ": $username</a>");
+        $message = _('User') . " $username " . _('was successfully added') . ".";
         if ($currentuser == "Administrator-No-Users-Yet") {
             $_SESSION['currentuser'] = $username;
             $_SESSION['currentuserdesc'] = $description;
         }
     } else {
-        $message = $admtext['userfailed'] . ".";
+        $message = _('ERROR: Your user could not be created because another user with the same username already exists.') . ".";
     }
 } else {
-    $message = $admtext['duplicate'];
+    $message = _('Changes were not saved. Another record with the same key already exists.');
 }
 
 header("Location: admin_users.php?message=" . urlencode($message));

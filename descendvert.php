@@ -47,7 +47,7 @@ else {
 $arrrtpath = $rootpath . $endrootpath . "img/ArrowDownYellow.gif";
 if (file_exists($arrrtpath)) {
     $offpageimg = @GetImageSize($arrrtpath);
-    $pedigree['offpagelink'] = "<img border='0' src=\"" . "img/ArrowDownYellow.gif\" $offpageimg[3] alt=\"{$text['popupnote3']}\" />";
+    $pedigree['offpagelink'] = "<img border='0' src=\"" . "img/ArrowDownYellow.gif\" $offpageimg[3] alt=\"" . _('New chart') . "\" />";
     $pedigree['offpageimgw'] = $offpageimg[0];
     $pedigree['offpageimgh'] = $offpageimg[1];
 } else
@@ -58,7 +58,7 @@ if (file_exists($arrltpath)) {
     $uparrowimg = @GetImageSize($arrltpath);
     $pedigree['uparrowimgw'] = $uparrowimg[0];
     $pedigree['uparrowimgh'] = $uparrowimg[1];
-    $pedigree['uparrowlink'] = "<img border='0' src=\"" . "img/ArrowUpYellow.gif\" $uparrowimg[3] align=\"left\" title=\"{$text['popupnote3']}\" alt=\"{$text['popupnote3']}\" style=\"margin-right:5px\"/>";
+    $pedigree['uparrowlink'] = "<img border='0' src=\"" . "img/ArrowUpYellow.gif\" $uparrowimg[3] align=\"left\" title=\"" . _('New chart') . "\" alt=\"" . _('New chart') . "\" style=\"margin-right:5px\"/>";
     $pedigree['leftindent'] += $pedigree['uparrowimgw'] + $pedigree['shadowoffset'] + 6;
 } else {
     $pedigree['uparrowlink'] = "<b>&lt;</b>";
@@ -154,7 +154,7 @@ function getParents($personID) {
 
 function getNewChart($personID) {
     global $tree, $generations, $text, $descendvert_url, $kidsflag;
-    return $kidsflag ? "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"{$text['popupnote3']}\" border='0'/></a>" : "";
+    return $kidsflag ? "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"" . _('New chart') . "\" border='0'/></a>" : "";
 }
 
 function doBox($level, $person, $spouseflag, $kidsflag) {
@@ -193,7 +193,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             $boxstr .= "<div id=\"popuptop\" class=\"popup\" style=\"position:absolute; visibility:hidden; background-color:{$pedigree['popupcolor']}; left:" . ($left + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2)) . "px; top:$adjtop" . "px;z-index:10\" onmouseover=\"cancelTimer('top')\" onmouseout=\"setTimer('top')\">\n";
             $boxstr .= "<div>\n<div class='tngshadow popvdescinner'>\n<div class='pboxpopupdiv rounded-lg'>\n";
             $boxstr .= "<table><tr><td><table border='0' cellspacing='0' cellpadding='1'>\n";
-            $boxstr .= "<tr><td class=\"normal pboxpopup\"><b>{$text['parents']}</b></td></tr>\n$parentinfo\n</table></td></tr></table>\n</div>\n</div>\n</div>\n</div>\n";
+            $boxstr .= "<tr><td class=\"normal pboxpopup\"><b>" . _('Parents') . "</b></td></tr>\n$parentinfo\n</table></td></tr></table>\n</div>\n</div>\n</div>\n</div>\n";
         }
     }
 
@@ -201,7 +201,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
         $mouseover .= "if(jQuery('#ic$slot').length) jQuery('#ic$slot').show();";
         $mouseout .= "if(jQuery('#ic$slot').length) jQuery('#ic$slot').hide();";
         $iconlinks = "<div class=\"floverlr\" id=\"ic$slot\" style=\"top:" . ($pedigree['puboxwidth'] - 20) . "px;left:" . ($pedigree['puboxheight'] - 15) . "px;display:none;background-color:$bgcolor\">";
-        $iconlinks .= "<a href=\"{$pedigree['url']}personID={$person['personID']}&amp;tree=$tree&amp;display=standard&amp;generations=" . $pedigree['initpedgens'] . "\" title=\"{$text['popupnote2']}\">{$pedigree['chartlink']}</a>\n";
+        $iconlinks .= "<a href=\"{$pedigree['url']}personID={$person['personID']}&amp;tree=$tree&amp;display=standard&amp;generations=" . $pedigree['initpedgens'] . "\" title=\"" . _('New pedigree') . "\">{$pedigree['chartlink']}</a>\n";
         $iconlinks .= "</div>\n";
         $slot++;
     } else
@@ -248,7 +248,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
 
         $boxstr .= "<span style=\"font-size:{$pedigree['boxnamesize']}" . "pt;\">{$pedigree['spacer']}<a href=\"$getperson_url" . "personID={$person['personID']}&amp;tree=$tree" . "\">{$person['name']}</a>{$extra}</span>$boxarrow</div></div>\n";
     } else
-        $boxstr .= "<span style=\"font-size:{$pedigree['boxnamesize']}" . "pt;\">{$text['unknownlit']}</span></div></div>\n";
+        $boxstr .= "<span style=\"font-size:{$pedigree['boxnamesize']}" . "pt;\">" . _('Unknown') . "</span></div></div>\n";
 
     $boxstr .= $hiddenbox;
 
@@ -263,7 +263,7 @@ function doBox($level, $person, $spouseflag, $kidsflag) {
             } else {
                 $boxstr .= "<div style=\"position: absolute; left:" . ($left + $pedigree['borderwidth'] + intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2) + 1) . "px;top:" . ($top + $pedigree['boxwidth'] + $pedigree['borderwidth'] + $pedigree['shadowoffset'] + 3) . "px;z-index:5\">\n";
                 //$nextperson = $person['personID'] ? $person['personID'] : $spouseflag;
-                $boxstr .= "<a href=\"$descendvert_url" . "personID=$spouseflag&amp;tree=$tree&amp;generations=$generations\" title=\"{$text['popupnote3']}\">{$pedigree['offpagelink']}</a></div>\n";
+                $boxstr .= "<a href=\"$descendvert_url" . "personID=$spouseflag&amp;tree=$tree&amp;generations=$generations\" title=\"" . _('New chart') . "\">{$pedigree['offpagelink']}</a></div>\n";
             }
         }
     }
@@ -394,7 +394,7 @@ function doIndividual($person, $level) {
             $top = $leftmarker[$level];
             $left = $pedigree['leftindent'] + ($pedigree['boxwidth'] + $pedigree['boxHsep'] + $spouseoffset) * ($level - 1);
             $chart .= "<div style=\"position: absolute; top:" . ($top - $pedigree['boxHsep'] - $pedigree['borderwidth'] - intval(($pedigree['boxheight'] - $pedigree['offpageimgh']) / 2) - 1) . "px;left:" . ($left + $pedigree['boxwidth'] + $pedigree['borderwidth'] + $pedigree['shadowoffset'] + 3) . "px;z-index:5\">\n";
-            $chart .= "<a href=\"$descendvert_url" . "personID=$person&amp;tree=$tree&amp;generations=$generations\" title=\"{$text['popupnote3']}\">{$pedigree['offpagelink']}</a></div>\n";
+            $chart .= "<a href=\"$descendvert_url" . "personID=$person&amp;tree=$tree&amp;generations=$generations\" title=\"" . _('New chart') . "\">{$pedigree['offpagelink']}</a></div>\n";
         }
 
         if ($famrow[$spouse] || $marrtot > 1) {
@@ -537,11 +537,11 @@ function getVitalDates($row) {
         if ($row['altbirthdate'] && !$row['birthdate']) {
             $bd = $row['altbirthdate'];
             $bp = $row['altbirthplace'];
-            $birthabbr = $text['capaltbirthabbr'] . ":";
+            $birthabbr = _('A') . ":";
         } elseif ($dataflag) {
             $bd = $row['birthdate'];
             $bp = $row['birthplace'];
-            $birthabbr = $text['capbirthabbr'] . ":";
+            $birthabbr = _('B') . ":";
         } else {
             $bd = "";
             $bp = "";
@@ -552,11 +552,11 @@ function getVitalDates($row) {
         if ($row['burialdate'] && !$row['deathdate']) {
             $dd = $row['burialdate'];
             $dp = $row['burialplace'];
-            $deathabbr = $text['capburialabbr'] . ":";
+            $deathabbr = _('B') . ":";
         } elseif ($dataflag) {
             $dd = $row['deathdate'];
             $dp = $row['deathplace'];
-            $deathabbr = $text['capdeathabbr'] . ":";
+            $deathabbr = _('D') . ":";
         } else {
             $dd = "";
             $dp = "";
@@ -565,7 +565,7 @@ function getVitalDates($row) {
     } else {
         $bd = $bp = $birthabbr = $dd = $dp = $deathabbr = $md = $mp = $marrabbr = "";
     }
-    $marrabbr = $text['capmarrabbr'] . ":";
+    $marrabbr = _('M') . ":";
     if ($bd) {
         $vitalinfo .= "<tr>\n<td class=\"pboxpopup normal align-top\" align=\"right\">$birthabbr</td>\n";
         $vitalinfo .= "<td class=\"pboxpopup normal align-top\">" . displayDate($bd) . "</td></tr>\n";
@@ -610,7 +610,7 @@ if ($result) {
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
     $row['name'] = getName($row);
-    $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $row['name']);
+    $logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $row['name']);
 }
 
 $treeResult = getTreeSimple($tree);
@@ -619,8 +619,8 @@ $disallowgedcreate = $treerow['disallowgedcreate'];
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
-writelog("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">" . xmlcharacters($text['descendfor'] . " $logname ($personID)") . "</a>");
-preparebookmark("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">{$text['descendfor']} " . $row['name'] . " ($personID)</a>");
+writelog("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">" . xmlcharacters(_('Descendancy for') . " $logname ($personID)") . "</a>");
+preparebookmark("<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree\">" . _('Descendancy for') . " " . $row['name'] . " ($personID)</a>");
 
 $flags['scripting'] = "<style>
 .desc {
@@ -641,7 +641,7 @@ $flags['scripting'] = "<style>
 }
 </style>\n";
 $flags['scripting'] .= "<script>var tnglitbox;</script>\n";
-tng_header($text['descendfor'] . " " . $row['name'], $flags);
+tng_header(_('Descendancy for') . " " . $row['name'], $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $row['name'], getYears($row));
@@ -659,7 +659,7 @@ else
 for ($i = 0; $i < $generations + 1; $i++)
     setLeftMarker($i, 0, "initializing");
 
-$innermenu = $text['generations'] . ": &nbsp;";
+$innermenu = _('Generations') . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= "<option value=\"$i\"";
@@ -667,11 +667,11 @@ for ($i = 1; $i <= $pedigree['maxdesc']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class='lightlink'>{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class='lightlink'>{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;&amp;generations=$generations\" class=\"lightlink$slinkstyle\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$descendtext_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"$register_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>{$text['regformat']}</a>\n";
+$innermenu .= "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=standard&amp;generations=$generations\" class='lightlink'>" . _('Standard') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"$descend_url" . "personID=$personID&amp;tree=$tree&amp;display=compact&amp;generations=$generations\" class='lightlink'>" . _('Compact') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;&amp;generations=$generations\" class=\"lightlink$slinkstyle\">" . _('Vertical') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"$descendtext_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>" . _('Text Only') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"$register_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\" class='lightlink'>" . _('Register Format') . "</a>\n";
 if ($generations <= 12 && $allowpdf)
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' onclick=\"tnglitbox = new LITBox('$pdfform_url" . "pdftype=desc&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations',{width:350,height:350});return false;\">PDF</a>\n";
 
@@ -680,9 +680,9 @@ echo tng_menu("I", "descend", $personID, $innermenu);
 echo "</form>\n";
 ?>
     <p class="normal">
-        <?php echo $text['scrollnote'];
+        <?php echo _('Notes: You may have to scroll down or right to see chart.');
         if (!empty($pedigree['usepopups_real'])) {
-            echo ($pedigree['rightarrow'] ? " <img src=\"" . $templatepath . "img/arrowright2.gif\" width=\"{$pedigree['rightarroww']}\" height=\"{$pedigree['rightarrowh']}\" alt=\"\" />" : " <a href='#'><b>V</b></a>") . $text['popupnote1'];
+            echo ($pedigree['rightarrow'] ? " <img src=\"" . $templatepath . "img/arrowright2.gif\" width=\"{$pedigree['rightarroww']}\" height=\"{$pedigree['rightarrowh']}\" alt=\"\" />" : " <a href='#'><b>V</b></a>") . _('Additional information');
         }
         ?>
     </p>

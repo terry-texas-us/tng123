@@ -130,20 +130,20 @@ $nonamesloc = $livinginfo['private'] ? $tngconfig['nnpriv'] : $nonames;
 if ($noneliving || !$nonamesloc || $imgrow['alwayson']) {
     $description = preg_replace("/\"/", "&#34;", $mediadescription);
     $notes = nl2br(getXrefNotes($medianotes, $tree));
-    $mapnote = $info['gotmap'] ? "<p>" . $text['mediamaptext'] . "</p>\n" : "";
+    $mapnote = $info['gotmap'] ? "<p>" . _('<strong>Note:</strong> Move your mouse pointer over the image to show names. Click to see a page for each name.') . "</p>\n" : "";
 } else {
-    $description = $notes = ($livinginfo['private'] ? $admtext['text_private'] : $text['living']);
+    $description = $notes = ($livinginfo['private'] ? _('Private') : _('Living'));
     $mapnote = "";
 }
-$logdesc = $nonamesloc && !$noneliving && !$imgrow['alwayson'] ? ($livinginfo['private'] ? $admtext['text_private'] : $text['living']) : $description;
+$logdesc = $nonamesloc && !$noneliving && !$imgrow['alwayson'] ? ($livinginfo['private'] ? _('Private') : _('Living')) : $description;
 $mediatypeIDstr = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
 
 if (!$personID) {
     writelog("<a href=\"showmedia.php?mediaID=$mediaID&amp;tnggallery=$tnggallery\">$mediatypeIDstr: $logdesc ($mediaID)</a>");
     preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;tnggallery=$tnggallery\">$mediatypeIDstr: $description ($mediaID)</a>");
 } elseif ($albumlinkID) {
-    writelog("<a href=\"showmedia.php?mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">{$text['albums']}: $logdesc ($mediaID)</a>");
-    preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">{$text['albums']}: $description ($mediaID)</a>");
+    writelog("<a href=\"showmedia.php?mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">" . _('Albums') . ": $logdesc ($mediaID)</a>");
+    preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;albumlinkID=$albumlinkID&amp;tnggallery=$tnggallery\">" . _('Albums') . ": $description ($mediaID)</a>");
 } else {
     writelog("<a href=\"showmedia.php?mediaID=$mediaID&amp;medialinkID=$medialinkID\">$mediatypeIDstr: $logdesc ($mediaID)</a>");
     preparebookmark("<a href=\"showmedia.php?mediaID=$mediaID&amp;medialinkID=$medialinkID\">$mediatypeIDstr: $description ($mediaID)</a>");
@@ -173,7 +173,7 @@ $size = @GetImageSize("$rootpath$usefolder/" . $imgrow['path'], $info);
 $adjheight = $size['1'] - 1;
 
 if (!$tngconfig['ssdisabled'] && !$tngprint && $numitems > 1) {
-    $sscontrols = " &nbsp;&nbsp;&nbsp; <a href='#' onclick=\"return start();\" class='snlink rounded'>&raquo; {$text['slidestart']}</a>\n";
+    $sscontrols = " &nbsp;&nbsp;&nbsp; <a href='#' onclick=\"return start();\" class='snlink rounded'>&raquo; " . _('Slide Show') . "</a>\n";
 } else {
     $sscontrols = "";
 }
@@ -184,8 +184,8 @@ if ($personID) {
         $years = getYears($row);
         $type = "person";
     } elseif ($linktype == "F") {
-        $namestr = $text['family'] . ": " . getFamilyName($row);
-        $years = $row['marrdate'] && $row['allow_living'] && $row['allow_private'] ? $text['marrabbr'] . " " . displayDate($row['marrdate']) : "";
+        $namestr = _('Family') . ": " . getFamilyName($row);
+        $years = $row['marrdate'] && $row['allow_living'] && $row['allow_private'] ? _('m.') . " " . displayDate($row['marrdate']) : "";
         $type = "family";
     } elseif ($linktype == "S") {
         $namestr = $row['title'];
@@ -268,12 +268,12 @@ if ($noneliving || $imgrow['alwayson']) {
             if ($status && $text[$status]) {
                 $imgrow['status'] = $text[$status];
             }
-            echo "<b>{$text['status']}:</b> {$imgrow['status']}";
+            echo "<b>" . _('Status') . ":</b> {$imgrow['status']}";
         }
         if ($imgrow['plot']) {
             if ($imgrow['status']) echo "<br>";
 
-            echo "<b>{$text['plot']}:</b> " . nl2br($imgrow['plot']);
+            echo "<b>" . _('Plot') . ":</b> " . nl2br($imgrow['plot']);
         }
         echo "</p>";
     } elseif (!$tngconfig['imgviewer'] || in_array($mediatypeID, $mediatypes_like[$tngconfig['imgviewer']])) {
@@ -297,7 +297,7 @@ if ($noneliving || $imgrow['alwayson']) {
 } else {
     ?>
     <div style="border: 1px solid #000; padding: 5px; width:<?php echo $size['0']; ?>px; height:<?php echo $adjheight; ?>px;">
-        <strong><span class="normal"><?php echo $livinginfo['private'] ? $admtext['text_private'] : $text['living']; ?></span></strong>
+        <strong><span class="normal"><?php echo $livinginfo['private'] ? _('Private') : _('Living'); ?></span></strong>
     </div>
     <?php
 }
@@ -305,12 +305,12 @@ if (!$tngprint && !$tngconfig['ssdisabled']) {
     ?>
     </div>
     <?php
-    $flags['more'] = "<script>\n//<![CDATA[\nvar timeoutID;\nvar myslides;\nvar resumemsg='&gt; {$text['slideresume']}';\n";
-    $flags['more'] .= "var slidestopmsg = '&gt; {$text['slidestop']}';\n";
-    $flags['more'] .= "var startmsg='&gt; {$text['slidestart']}';\n";
-    $flags['more'] .= "var plussecsmsg = \"{$text['plussecs']}\";\n";
-    $flags['more'] .= "var minussecsmsg = \"{$text['minussecs']}\";\n";
-    $flags['more'] .= "var slidesecsmsg = \"{$text['slidesecs']}\";\n";
+    $flags['more'] = "<script>\n//<![CDATA[\nvar timeoutID;\nvar myslides;\nvar resumemsg='&gt; " . _('Resume Slide Show') . "';\n";
+    $flags['more'] .= "var slidestopmsg = '&gt; " . _('Pause Slide Show') . "';\n";
+    $flags['more'] .= "var startmsg='&gt; " . _('Slide Show') . "';\n";
+    $flags['more'] .= "var plussecsmsg = \"" . _('plus 0.5 seconds') . "\";\n";
+    $flags['more'] .= "var minussecsmsg = \"" . _('minus 0.5 seconds') . "\";\n";
+    $flags['more'] .= "var slidesecsmsg = \"" . _('Seconds for each slide:') . "\";\n";
 
     if ($ss) $flags['more'] .= "jQuery(document).ready(start);\n";
 

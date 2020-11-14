@@ -130,9 +130,9 @@ function getNameUniversal($row, $order, $hcard = null) {
         $firstname = $hcard ? "<span class=\"given-name\">" . $row['firstname'] . "</span>" : $row['firstname'];
         $namestr = constructName($firstname, $lastname, $title, $suffix, $order);
     } elseif ($row['living'] && !$row['allow_living'] && $nonames == 1) {
-        $namestr = $text['living'];
+        $namestr = _('Living');
     } elseif ($row['private'] && !$row['allow_private'] && $tngconfig['nnpriv'] == 1) {
-        $namestr = $admtext['text_private'];
+        $namestr = _('Private');
     } else {  //initials
         $firstname = $hcard ? "<span class=\"given-name\">" . initials($row['firstname']) . "</span>" : initials($row['firstname']);
         $namestr = constructName($firstname, $lastname, $title, $suffix, $order);
@@ -153,7 +153,7 @@ function getFamilyName($row): string {
     $righttree = checktree($row['gedcom']);
 
     $hquery = "SELECT firstname, lnprefix, lastname, title, prefix, suffix, living, private, branch, nameorder, gedcom FROM $people_table WHERE personID = \"{$row['husband']}\" AND gedcom = \"{$row['gedcom']}\"";
-    $hresult = tng_query($hquery) or die ($text['cannotexecutequery'] . ": $hquery");
+    $hresult = tng_query($hquery) or die (_('Cannot execute query') . ": $hquery");
     $hrow = tng_fetch_assoc($hresult);
 
     $hrights = determineLivingPrivateRights($hrow, $righttree);
@@ -164,7 +164,7 @@ function getFamilyName($row): string {
     tng_free_result($hresult);
 
     $wquery = "SELECT firstname, lnprefix, lastname, title, prefix, suffix, living, private, branch, nameorder, gedcom FROM $people_table WHERE personID = \"{$row['wife']}\" AND gedcom = \"{$row['gedcom']}\"";
-    $wresult = tng_query($wquery) or die ($text['cannotexecutequery'] . ": $wquery");
+    $wresult = tng_query($wquery) or die (_('Cannot execute query') . ": $wquery");
     $wrow = tng_fetch_assoc($wresult);
 
     $wrights = determineLivingPrivateRights($wrow, $righttree);
@@ -619,12 +619,12 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     if ($tngpage > 1) {
         $prevpage = $tngpage - 1;
         $navoffset = (($prevpage * $perpage) - $perpage);
-        $prevlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$prevpage\" class='snlink rounded' title=\"{$text['text_prev']}\">&laquo;{$text['text_prev']}</a> ";
+        $prevlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$prevpage\" class='snlink rounded' title=\"" . _('Prev') . "\">&laquo;" . _('Prev') . "</a> ";
     }
     if ($tngpage < $totalpages) {
         $nextpage = $tngpage + 1;
         $navoffset = (($nextpage * $perpage) - $perpage);
-        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class='snlink rounded' title=\"{$text['text_next']}\">{$text['text_next']}&raquo;</a>";
+        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class='snlink rounded' title=\"" . _('Next') . "\">" . _('Next') . "&raquo;</a>";
     }
     $curpage = 0;
     $pagenav = $firstlink = $lastlink = '';
@@ -633,10 +633,10 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
         $navoffset = (($curpage - 1) * $perpage);
         if (($curpage <= $tngpage - $pagenavpages || $curpage >= $tngpage + $pagenavpages) && $pagenavpages) {
             if ($curpage == 1) {
-                $firstlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink rounded' title=\"{$text['firstpage']}\">&laquo;1</a> ... ";
+                $firstlink = " <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink rounded' title=\"" . _('First Page') . "\">&laquo;1</a> ... ";
             }
             if ($curpage == $totalpages) {
-                $lastlink = "... <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink rounded' title=\"{$text['lastpage']}\">$totalpages&raquo;</a>";
+                $lastlink = "... <a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$curpage\" class='snlink rounded' title=\"" . _('Last Page') . "\">$totalpages&raquo;</a>";
             }
         } else {
             if ($curpage == $tngpage) {
@@ -648,8 +648,8 @@ function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
     }
     if ($firstlink || $lastlink) {
         $gotolink = " <span class='snlink rounded'>";
-        $gotolink .= "<input type='text' class='tngpage minifield text-sm w-16 border-none' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> ";
-        $gotolink .= "<input type='button' value=\"{$text['go']}\" class='minibutton' onclick=\"goToPage(this,'$address','$orgtree',$perpage);\">";
+        $gotolink .= "<input type='text' class='tngpage minifield text-sm w-16 border-none' placeholder=\"" . _('Page') . " #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {goToPage($(this).next(),'$address','$orgtree',$perpage);}\"> ";
+        $gotolink .= "<input type='button' value=\"" . _('Go') . "\" class='minibutton' onclick=\"goToPage(this,'$address','$orgtree',$perpage);\">";
         $gotolink .= "</span>";
     } else {
         $gotolink = "";
@@ -689,7 +689,7 @@ function displayDate($date): string {
             if (isset($dates[$datepartu])) {
                 $datepart = $dates[$datepartu];
             } elseif ($datepartu == "AND") {
-                $datepart = $dates['TEXT_AND'];
+                $datepart = _('and');
             } elseif ($datepartu == "@#DJULIAN@") {
                 $datepart = "[J]";
             }
@@ -723,27 +723,27 @@ function printDate($date, $datetr) {
                     switch ($datepartu) {
                         case "ABT.":
                         case "ABT":
-                            $datepart = tng_strtolower($dates['ABOUT']);
+                        $datepart = tng_strtolower(_('About'));
                             break;
                         case "AFT.":
                         case "AFT":
-                            $datepart = tng_strtolower($dates['AFTER']);
+                        $datepart = tng_strtolower(_('After'));
                             break;
                         case "BEF.":
                         case "BEF":
-                            $datepart = tng_strtolower($dates['BEFORE']);
+                        $datepart = tng_strtolower(_('Before'));
                             break;
                         case "BET.":
                         case "BET":
-                            $datepart = tng_strtolower($dates['BETWEEN']);
+                        $datepart = tng_strtolower(_('Between'));
                             break;
                         case "CAL.":
                         case "CAL":
-                            $datepart = tng_strtolower($dates['CAL']);
+                        $datepart = tng_strtolower(_('Cal'));
                             break;
                         case "EST.":
                         case "EST":
-                            $datepart = tng_strtolower($dates['EST']);
+                        $datepart = tng_strtolower(_('Est'));
                             break;
                         default:
                             $datepart = tng_strtolower($datepart);
@@ -751,7 +751,7 @@ function printDate($date, $datetr) {
                     }
                 }
             } elseif ($datepartu == "AND") {
-                $datepart = $dates['TEXT_AND'];
+                $datepart = _('and');
             } elseif ($datepartu == "@#DJULIAN@") {
                 $datepart = "[J]";
             }
@@ -759,9 +759,9 @@ function printDate($date, $datetr) {
         $newdate .= $newdate ? (" " . $datepart) : $datepart;
     }
     if ($prefix == 0 && substr_count($newdate, " ") == 2) {
-        $newdate = " " . trim($text['onthisdate']) . " " . $newdate;
+        $newdate = " " . trim(_(' on ')) . " " . $newdate;
     } elseif ($prefix == 0) {
-        $newdate = " " . trim($text['inthisyear']) . " " . $newdate;
+        $newdate = " " . trim(_(' in ')) . " " . $newdate;
     } elseif ($newdate != "") {
         $newdate = " " . $newdate;
     }
@@ -833,7 +833,7 @@ function getDatePrefix($datestr): string {
     if ($datestr) {
         $orgstr = $datestr;
         $datestr = strtoupper($datestr);
-        $prefixes = [$dates['BEF'], $dates['AFT'], $dates['ABT'], $dates['CAL'], $dates['EST']];
+        $prefixes = [_('Bef'), _('Aft'), _('Abt'), _('Cal'), _('Est')];
         foreach ($prefixes as $str) {
             if (strpos($datestr, strtoupper($str)) === 0) {
                 $prefix = $str . " ";
@@ -853,7 +853,7 @@ function getDisplayYear($datestr, $trueyear) {
     global $dates;
 
     if ($datestr == "Y") {
-        $display = $dates['Y'];
+        $display = _('Yes, date unknown');
     } else {
         $newstr = displayDate($datestr);  //translated
         $prefix = getDatePrefix($newstr);  //first part of translated string
@@ -1082,7 +1082,7 @@ function age($row) {
 
     if ($age <> "") {
         global $text;
-        $age .= " {$text['years']}";
+        $age .= " " . _('years') . "";
     }
 
     return $age;
@@ -1142,7 +1142,7 @@ function showSmallPhoto($persfamID, $alttext, $rights, $height, $type = false, $
             tng_free_result($result2);
             if ($numphotos) {
                 //if photos exist, show box with link to sort page where they can pick a default
-                $photo = "<a href=\"admin_ordermedia.php?newlink1=$persfamID&tree1=$tree&mediatypeID=photos&linktype1=$type\" class='smaller' style=\"display:block; padding:8px; border:1px solid #000; margin-right:6px; text-align:center;\">{$admtext['choosedef']}</a>";
+                $photo = "<a href=\"admin_ordermedia.php?newlink1=$persfamID&tree1=$tree&mediatypeID=photos&linktype1=$type\" class='smaller' style=\"display:block; padding:8px; border:1px solid #000; margin-right:6px; text-align:center;\">" . _('Choose<br>default<br>photo') . "</a>";
             }
         } elseif ($gender && !empty($tngconfig['usedefthumbs'])) {
             if ($gender == "M") {

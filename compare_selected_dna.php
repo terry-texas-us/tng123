@@ -12,10 +12,10 @@ if (!$_SESSION["ttree"]) $_SESSION["ttree"] = "-x--all--x-";
 
 $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $_SESSION["ttree"] . "&amp;testsearch=" . $_SESSION["tsearch"] . "&amp;test_type=" . $_SESSION["ttype"] . "&amp;test_group=" . $_SESSION["tgroup"];
 
-$headline = "{$text['dnatestscompare']}";
-$text['dnatestscompare'] .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . $text['allgroups'];
+$headline = "" . _('Compare Y-DNA Tests') . "";
+_('Compare Y-DNA Tests') .= $_SESSION["tgroup"] ? ": " . $_SESSION["tgroup"] : ": " . _('All Groups');
 
-tng_header($text['dnatestscompare'], $flags);
+tng_header(_('Compare Y-DNA Tests'), $flags);
 
 /**
  * This file is part of the array_column library
@@ -116,10 +116,10 @@ if (!function_exists('array_column')) {
     }
 }
 
-$comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
+$comptabs[0] = [1, $browse_dna_tests_url, _('DNA Tests'), "dnatests"];
 $innermenu = "";
 $menu = doMenu($comptabs, "", $innermenu);
-echo displayHeadline($text['dnatestscompare'], "img//dna_icon.gif", $menu, $message);
+echo displayHeadline(_('Compare Y-DNA Tests'), "img//dna_icon.gif", $menu, $message);
 $dysv = ["DYS_393", "DYS_390", "DYS_19", "DYS_391", "DYS_385", "DYS_426", "DYS_388", "DYS_439", "DYS_389I", "DYS_392", "DYS_389II", "DYS_458", "DYS_459", "DYS_455", "DYS_454", "DYS_447", "DYS_437", "DYS_448", "DYS_449", "DYS_464", "DYS_460", "Y_GATA_H4", "YCAI", "YCAII", "DYS_456", "DYS_607", "DYS_576", "DYS_570", "CDY", "DYS_442", "DYS_438", "DYS_531", "DYS_578", "DYS_395S1", "DYS_590", "DYS_537", "DYS_641", "DYS_472", "DYS_406S1", "DYS_511", "DYS_425", "DYS_413", "DYS_557", "DYS_594", "DYS_436", "DYS_490", "DYS_534", "DYS_450", "DYS_444", "DYS_481", "DYS_520", "DYS_446", "DYS_617", "DYS_568", "DYS_487", "DYS_572", "DYS_640", "DYS_492", "DYS_565", "DYS_710", "DYS_485", "DYS_632", "DYS_495", "DYS_540", "DYS_714", "DYS_716", "DYS_717", "DYS_505", "DYS_556", "DYS_549", "DYS_589", "DYS_522", "DYS_494", "DYS_533", "DYS_636", "DYS_575", "DYS_638", "DYS_462", "DYS_452", "DYS_445", "Y_GATA_A10", "DYS_463", "DYS_441", "Y_GGAAT_1B07", "DYS_525", "DYS_712", "DYS_593", "DYS_650", "DYS_532", "DYS_715", "DYS_504", "DYS_513", "DYS_561", "DYS_552", "DYS_726", "DYS_635", "DYS_587", "DYS_643", "DYS_497", "DYS_510", "DYS_434", "DYS_461", "DYS_435"];
 
 $fastmut = ["DYS_385", "DYS_439", "DYS_458", "DYS_449", "DYS_464", "DYS_456", "DYS_576", "DYS_570", "CDY"];
@@ -133,11 +133,11 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
         <thead>
         <tr>
             <?php if ($allow_edit || $showtestnumbers) { ?>
-                <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Test Number/Name'); ?>&nbsp;</th>
             <?php } ?>
-            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
-            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Taken by'); ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Most distant ancestor'); ?>&nbsp;</th>
+            <th class="fieldnameback text-center whitespace-no-wrap" style="<?php echo $mainstyle; ?>">&nbsp;<?php echo _('Haplogroup'); ?>&nbsp;</th>
             <?php
             $resultsarr = [];
             $i = $ii = $iii = '0';
@@ -211,7 +211,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     $jj++;
                 }
                 if (in_array($dysv[$j], $fastmut)) {
-                    $title = $text['fastmutating'];
+                    $title = _('Fast&nbsp;Mutating');
                     $class = "fakelink";
                     $style = "background-color:$bgfastmut; color:$txtfastmut;";
                 }
@@ -226,7 +226,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
         <?php
         echo "<tr>";
         $col_span = ($allow_edit || $showtestnumbers) ? 4 : 3;
-        echo "<td colspan=$col_span class='align-top text-center whitespace-no-wrap' style=\"$modestyle\"><strong>{$text['mode_values']}&nbsp;>></strong>&nbsp;</td>";
+        echo "<td colspan=$col_span class='align-top text-center whitespace-no-wrap' style=\"$modestyle\"><strong>" . _('Mode Values') . "&nbsp;>></strong>&nbsp;</td>";
 
 
         $i = 0;
@@ -265,7 +265,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                 $person_name = $row['person_name'];
                 $dna_namestr = getName($dprow);
                 if ($row['private_dna'] && $allow_edit) {
-                    $privacy = "&nbsp;(" . $admtext['text_private'] . ")";
+                    $privacy = "&nbsp;(" . _('Private') . ")";
                 } else {
                     $privacy = "";
                 }
@@ -275,7 +275,7 @@ $modestyle = "background-color:$bgmode; color:$txtmode;";
                     $dna_namestr = $person_name . $privacy;
                 }
                 if ($row['private_dna'] && !$allow_edit) {
-                    $dna_namestr = " - " . $admtext['text_private'];
+                    $dna_namestr = " - " . _('Private');
                 }
                 tng_free_result($dna_pers_result);
                 echo "<tr>\n";

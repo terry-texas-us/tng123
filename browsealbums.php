@@ -35,21 +35,21 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 $numrowsplus = $numrows + $offset;
-$treestr = $tree ? " {$text['tree']}: $tree" : "";
+$treestr = $tree ? " " . _('Tree') . ": $tree" : "";
 $treestr = trim("$mediasearch $treestr");
 $treestr = $treestr ? " ($treestr)" : "";
-$logstring = "<a href=\"browsealbums.php?tree=$tree&amp;offset=$offset&amp;mediasearch=$mediasearch\">{$text['allalbums']}$treestr</a>";
+$logstring = "<a href=\"browsealbums.php?tree=$tree&amp;offset=$offset&amp;mediasearch=$mediasearch\">" . _('All Albums') . "$treestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
-tng_header($text['albums'], $flags);
+tng_header(_('Albums'), $flags);
 ?>
-    <h2 class="mb-4 header"><span class="headericon" id="albums-hdr-icon"></span><?php echo $text['albums']; ?></h2>
+    <h2 class="mb-4 header"><span class="headericon" id="albums-hdr-icon"></span><?php echo _('Albums'); ?></h2>
 <?php echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsealbums', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']); ?>
     <div class='mb-4 normal'>
         <form name="mediasearch1" action="browsealbums.php" method="get">
-            <label for="mediasearch" hidden><?php echo $text['search']; ?></label>
+            <label for="mediasearch" hidden><?php echo _('Search'); ?></label>
             <input id="mediasearch" class="p-1 ml-1" name="mediasearch" type="search" value="<?php echo $mediasearch; ?>">
-            <input class="p-1 px-2" type="submit" value="<?php echo $text['search']; ?>">
+            <input class="p-1 px-2" type="submit" value="<?php echo _('Search'); ?>">
             <input name='tree' type='hidden' value="<?php echo $tree; ?>">
         </form>
     </div>
@@ -57,10 +57,10 @@ tng_header($text['albums'], $flags);
         <thead>
         <tr>
             <th class='p-2 fieldnameback fieldname nbrcol'>#</th>
-            <th class='p-2 fieldnameback fieldname'><?php echo $text['thumb']; ?></th>
-            <th class='p-2 fieldnameback fieldname'><?php echo $text['description']; ?></th>
-            <th class='p-2 fieldnameback fieldname'><?php echo $text['numitems']; ?></th>
-            <th class='p-2 fieldnameback fieldname'><?php echo $text['indlinked']; ?></th>
+            <th class='p-2 fieldnameback fieldname'><?php echo _('Thumb'); ?></th>
+            <th class='p-2 fieldnameback fieldname'><?php echo _('Description'); ?></th>
+            <th class='p-2 fieldnameback fieldname'><?php echo _('# Items'); ?></th>
+            <th class='p-2 fieldnameback fieldname'><?php echo _('Linked to'); ?></th>
         </tr>
         </thead>
         <?php
@@ -76,7 +76,7 @@ tng_header($text['albums'], $flags);
             } else {
                 $query2 = "SELECT count($albumlinks_table.albumlinkID) AS acount FROM $albumlinks_table WHERE albumID = '{$row['albumID']}'";
             }
-            $result2 = tng_query($query2) or die ($text['cannotexecutequery'] . ": $query2");
+            $result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
             $arow = tng_fetch_assoc($result2);
             tng_free_result($result2);
             $query = "SELECT album2entities.entityID AS personID, people.personID AS personID2, people.living AS living, people.private AS private, people.branch AS branch, families.branch AS fbranch, families.living AS fliving, families.private AS fprivate, familyID, husband, wife, people.lastname AS lastname, people.lnprefix AS lnprefix, people.firstname AS firstname, people.prefix AS prefix, people.suffix AS suffix, nameorder, album2entities.gedcom, sources.title, sources.sourceID, repositories.repoID, reponame, deathdate, burialdate, linktype ";
@@ -131,13 +131,13 @@ tng_header($text['albums'], $flags);
                     $medialinktext .= "<li><a href=\"getperson.php?personID={$prow['personID2']}&amp;tree={$prow['gedcom']}\">";
                     $medialinktext .= getName($prow) . "</a></li>\n";
                 } elseif ($prow['sourceID'] != null) {
-                    $sourcetext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
+                    $sourcetext = $prow['title'] ? "" . _('Source') . ": {$prow['title']}" : "" . _('Source') . ": {$prow['sourceID']}";
                     $medialinktext .= "<li><a href=\"showsource.php?sourceID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$sourcetext</a></li>\n";
                 } elseif ($prow['repoID'] != null) {
-                    $repotext = $prow['reponame'] ? "{$text['repository']}: {$prow['reponame']}" : "{$text['repository']}: {$prow['repoID']}";
+                    $repotext = $prow['reponame'] ? "" . _('Repository') . ": {$prow['reponame']}" : "" . _('Repository') . ": {$prow['repoID']}";
                     $medialinktext .= "<li><a href=\"showrepo.php?repoID={$prow['personID']}&amp;tree={$prow['gedcom']}\">$repotext</a></li>\n";
                 } elseif ($prow['familyID'] != null) {
-                    $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow) . "</a></li>\n";
+                    $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['personID']}&amp;tree={$prow['gedcom']}\">" . _('Family') . ": " . getFamilyName($prow) . "</a></li>\n";
                 } else {
                     $treestr = $tngconfig['places1tree'] ? "" : "&amp;tree={$prow['gedcom']}";
                     $encodedPlace = urlencode($prow['personID']);
@@ -153,12 +153,12 @@ tng_header($text['albums'], $flags);
                 $alblink = "<a href=\"showalbum.php?albumID={$row['albumID']}\">{$row['albumname']}</a>";
             } else {
                 $imgsrc = "";
-                $alblink = $text['living'];
+                $alblink = _('Living');
                 $nonamesloc = $foundprivate ? $tngconfig['nnpriv'] : $nonames;
                 if ($nonamesloc) {
-                    $description = $text['livingphoto'];
+                    $description = _('At least one living or private individual is linked to this item - Details withheld.');
                 } else {
-                    $description .= "({$text['livingphoto']})";
+                    $description .= "(" . _('At least one living or private individual is linked to this item - Details withheld.') . ")";
                 }
             }
             $albumtext .= "<tr>\n";

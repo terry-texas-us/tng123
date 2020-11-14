@@ -8,7 +8,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_edit || $assignedtree) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -17,23 +17,23 @@ if (!$allow_edit || $assignedtree) {
 
 $helplang = findhelp("backuprestore_help.php");
 
-tng_adminheader($admtext['backuprestore'], $flags);
+tng_adminheader(_('Utilities'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$utiltabs[0] = [1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables"];
-$utiltabs[1] = [1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure"];
-$utiltabs[2] = [1, "admin_renumbermenu.php", $admtext['renumber'], "renumber"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$utiltabs[0] = [1, "admin_utilities.php?sub=tables", _('Tables'), "tables"];
+$utiltabs[1] = [1, "admin_utilities.php?sub=structure", _('Table structure'), "structure"];
+$utiltabs[2] = [1, "admin_renumbermenu.php", _('Resequence IDs'), "renumber"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($utiltabs, "renumber", $innermenu);
-$headline = $admtext['backuprestore'] . " &gt;&gt; " . $admtext['renumber'];
+$headline = _('Utilities') . " &gt;&gt; " . _('Resequence IDs');
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 <div class="lightback pad2">
     <div class="databack normal p-1">
 
-        <h3 class="subhead"><?php echo $admtext['renumber']; ?></h3>
+        <h3 class="subhead"><?php echo _('Resequence IDs'); ?></h3>
 
         <?php
         $nextnum = isset($start) ? $start : 1;
@@ -219,7 +219,7 @@ echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
         }
         tng_free_result($result);
 
-        echo "<p class='normal'>{$admtext['finreseq']}: $count {$admtext['recsreseq']}</p>\n";
+        echo "<p class='normal'>" . _('Finished resequencing') . ": $count " . _('records resequenced') . "</p>\n";
         echo "</div></div>\n";
         echo tng_adminfooter();
         ?>

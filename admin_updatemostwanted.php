@@ -27,7 +27,7 @@ if ($ID) {
 } else {
     //get new ordernum
     $query2 = "SELECT max(ordernum) AS maxordernum FROM $mostwanted_table WHERE mwtype = \"$mwtype\"";
-    $result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
+    $result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
     $row2 = tng_fetch_assoc($result2);
     $ordernum = $row2['maxordernum'] + 1;
     tng_free_result($result2);
@@ -55,7 +55,7 @@ if ($mediaID && $mediaID != $orgmediaID) {
     tng_free_result($result);
 }
 
-adminwritelog($admtext['mostwanted'] . " : $title");
+adminwritelog(_('Most Wanted') . " : $title");
 
 $truncated = preg_replace("/\r/", "", $truncated);
 $truncated = preg_replace("/\n/", "", $truncated);

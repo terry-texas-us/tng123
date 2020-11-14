@@ -64,7 +64,7 @@ $personcount = count($infoDescend);
 $paperdim = $pdf->GetPageSize();
 
 // set the document title
-$title = $text['descendfor'] . ' ' . $infoDescend[0]['name'];
+$title = _('Descendancy for') . ' ' . $infoDescend[0]['name'];
 $pdf->SetTitle($title);
 $titleConfig = ['title' => $title,
     'image' => $blankform ? "" : getPdfSmallPhoto($personID, $rights['living'] && $rights['private'], $row['sex']),
@@ -196,7 +196,7 @@ if ($sex == 'M') {
                     $infoDescend[$j]['name'] = $spousename;
                 }
             } else {
-                $infoDescend[$j]['name'] = $text['unknown'];
+                $infoDescend[$j]['name'] = _('Unknown');
             }
             $infoDescend[$j]['gen'] = $level - 1;
             if ($numbering == 0) {
@@ -296,7 +296,7 @@ if ($sex == 'M') {
         }
     } // if there is no spouse listed, it's unknown
     else {
-        $infoDescend[$j]['name'] = $text['unknown'];
+        $infoDescend[$j]['name'] = _('Unknown');
     }
     tng_free_result($result);
 }
@@ -307,24 +307,24 @@ function getVitalDates($row) {
     $vitalinfo = "";
     if ($row['allow_living'] && $row['allow_private']) {
         if ($row['birthdate']) {
-            $vitalinfo .= $text['birthabbr'] . ' ' . displayDate($row['birthdate']) . ', ';
+            $vitalinfo .= _('b.') . ' ' . displayDate($row['birthdate']) . ', ';
             if ($row['birthplace']) $vitalinfo .= $row['birthplace'] . ', ';
 
         }
         if ((!$row['birthdate'] || $getPlace == 3) && $row['altbirthdate']) {
-            $vitalinfo .= $text['chrabbr'] . ' ' . displayDate($row['altbirthdate']) . ', ';
+            $vitalinfo .= _('c.') . ' ' . displayDate($row['altbirthdate']) . ', ';
             if ($row['altbirthplace']) {
                 $vitalinfo .= $row['altbirthplace'] . ', ';
             }
         }
 
         if ($row['deathdate']) {
-            $vitalinfo .= $text['deathabbr'] . ' ' . displayDate($row['deathdate']) . ', ';
+            $vitalinfo .= _('d.') . ' ' . displayDate($row['deathdate']) . ', ';
             if ($row['deathplace']) $vitalinfo .= $row['deathplace'] . ', ';
 
         }
         if ((!$row['deathdate'] || $getPlace == 3) && $row['burialdate']) {
-            $vitalinfo .= $text['burialabbr'] . ' ' . displayDate($row['burialdate']) . ', ';
+            $vitalinfo .= _('bur.') . ' ' . displayDate($row['burialdate']) . ', ';
             if ($row['burialplace']) $vitalinfo .= $row['burialplace'];
 
         }

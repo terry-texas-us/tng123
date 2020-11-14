@@ -18,16 +18,16 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-    <h3 class="subhead"><?php echo $admtext['addmedia']; ?></h3>
+    <h3 class="subhead"><?php echo _('Add Media'); ?></h3>
     <form name="find2" onsubmit="getNewMwMedia(this,1); return false;">
         <table class="normal">
             <tr>
-                <td><?php echo $admtext['searchfor']; ?>:</td>
+                <td><?php echo _('Search for'); ?>:</td>
                 <td>
                     <input id="searchstring" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                 </td>
                 <td>
-                    <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
+                    <input type="submit" name="searchbutton" value="<?php echo _('Search'); ?>" class="align-top">
                     <span id="spinner1" style="display:none;"><img src="img/spinner.gif"></span>
                 </td>
             </tr>

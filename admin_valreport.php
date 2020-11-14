@@ -23,15 +23,15 @@ tng_adminheader(_todo_('Validation'), $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$misctabs[0] = [1, "admin_misc.php", $admtext['menu'], "misc"];
-$misctabs[1] = [1, "admin_whatsnewmsg.php", $admtext['whatsnew'], "whatsnew"];
-$misctabs[2] = [1, "admin_mostwanted.php", $admtext['mostwanted'], "mostwanted"];
-$misctabs[3] = [1, "admin_data_validation.php", $admtext['dataval'], "validation"];
-$misctabs[4] = [1, "admin_valreport.php?report=$report&amp;tree=$tree", $admtext['report'], "report"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
+$misctabs[0] = [1, "admin_misc.php", _('Menu'), "misc"];
+$misctabs[1] = [1, "admin_whatsnewmsg.php", _('What\'s New'), "whatsnew"];
+$misctabs[2] = [1, "admin_mostwanted.php", _('Most Wanted'), "mostwanted"];
+$misctabs[3] = [1, "admin_data_validation.php", _('Data Validation'), "validation"];
+$misctabs[4] = [1, "admin_valreport.php?report=$report&amp;tree=$tree", _('Report'), "report"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/mostwanted_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"mostwanted.php\" target='_blank' class='lightlink'>" . _('Test') . "</a>";
 $menu = doMenu($misctabs, "report", $innermenu);
-echo displayHeadline($admtext['misc'] . " &gt;&gt; " . $admtext['dataval'] . " &gt;&gt; " . $admtext[$report], "img/misc_icon.gif", $menu, $message);
+echo displayHeadline(_('Miscellaneous') . " &gt;&gt; " . _('Data Validation') . " &gt;&gt; " . $admtext[$report], "img/misc_icon.gif", $menu, $message);
 
 $query = "";
 $nameFields = "$people_table.personID, $people_table.lastname, $people_table.firstname, $people_table.lnprefix, $people_table.prefix, $people_table.suffix, $people_table.nameorder, $people_table.living, $people_table.private, $people_table.branch, $people_table.gedcom";
@@ -246,7 +246,7 @@ if (!$numrowsplus) $offsetplus = 0;
                     echo getPaginationControlsHtml($totrows, "admin_valreport.php?report=$report&amp;offset", $maxsearchresults, 3);
                     echo "</div>";
                 } else {
-                    echo "</table>\n" . $admtext['norecords'];
+                    echo "</table>\n" . _('No records exist.');
                 }
                 tng_free_result($result);
                 ?>

@@ -24,7 +24,7 @@ $query = "DELETE FROM $events_table WHERE eventID = '$eventID'";
 $result = tng_query($query);
 
 $query = "DELETE FROM $citations_table WHERE eventID = '$eventID'";
-$result = tng_query($query) or die ($admtext['cannotexecutequery'] . "]: $query");
+$result = tng_query($query) or die (_('Cannot execute query') . "]: $query");
 
 $query = "SELECT xnoteID FROM $notelinks_table WHERE eventID = '$eventID'";
 $result = tng_query($query);
@@ -45,6 +45,6 @@ if ($row['xcount'] == 1) {
 $query = "DELETE FROM $notelinks_table WHERE eventID = '$eventID'";
 $result = tng_query($query);
 
-adminwritelog("{$admtext['deleted']}: {$admtext['event']} $eventID");
+adminwritelog("" . _('Deleted') . ": " . _('Event(s)') . " $eventID");
 echo 1;
 

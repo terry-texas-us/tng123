@@ -14,7 +14,7 @@ echo "<data>\n";
 
 $wherestr = $pedigree['tcevents'] ? "WHERE (evyear BETWEEN \"$earliest\" AND \"$latest\") OR (endyear BETWEEN \"$earliest\" AND \"$latest\")" : "";
 $tlquery = "SELECT evday, evmonth, evyear, evtitle, evdetail, endday, endmonth, endyear FROM $tlevents_table $wherestr ORDER BY evyear, evmonth, evday";
-$tlresult = tng_query($tlquery) or die ($text['cannotexecutequery'] . ": $tlquery");
+$tlresult = tng_query($tlquery) or die (_('Cannot execute query') . ": $tlquery");
 $tlevents = [];
 $tlevents2 = [];
 while ($tlrow = tng_fetch_assoc($tlresult)) {

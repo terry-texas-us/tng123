@@ -1,8 +1,8 @@
 <script>
     window.CookieHinweis_options = {
-        message: '<?php echo $text['cookieuse']; ?><br>',
-        agree: '<?php echo $text['understand']; ?>',
-        learnMore: '&bull; <?php echo $text['viewpolicy']; ?>',
+        message: '<?php echo _('Note: This site uses cookies.'); ?><br>',
+        agree: '<?php echo _('I understand'); ?>',
+        learnMore: '&bull; <?php echo _('View policy'); ?>',
         link: 'data_protection_policy.php',
         theme: 'hell-unten-rechts'  //other options: dark-top, dark-bottom
     };

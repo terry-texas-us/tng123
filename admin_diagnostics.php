@@ -21,25 +21,25 @@ $red = "<img src='img/tng_close.gif'>";
 $orange = "<img src='img/orange.gif'>";
 $green = "<img src='img/tng_check.gif'>";
 
-tng_adminheader($admtext['diagnostics'], $flags);
+tng_adminheader(_('Diagnostics'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
-$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
-$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
-$innermenu = "<a href='#' class='lightlink'>{$admtext['help']} onclick='return openHelp(\"$helplang/setup_help.php#diagnostics\");'</a>";
+$setuptabs[0] = [1, "admin_setup.php", _('Configuration'), "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", _('Diagnostics'), "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", _('Table Creation'), "tablecreation"];
+$innermenu = "<a href='#' class='lightlink'>" . _('Help for this area') . " onclick='return openHelp(\"$helplang/setup_help.php#diagnostics\");'</a>";
 $menu = doMenu($setuptabs, "diagnostics", $innermenu);
-echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'], "img/setup_icon.gif", $menu, "");
+echo displayHeadline(_('Setup') . " &gt;&gt; " . _('Diagnostics'), "img/setup_icon.gif", $menu, "");
 ?>
 
     <table class="lightback normal w-full" cellpadding="10" cellspacing="2">
         <tr>
-            <td class="tngshadow databack" colspan="2"><em><?php echo $admtext['sysinfo']; ?></em></td>
+            <td class="tngshadow databack" colspan="2"><em><?php echo _('Information about your web site environment.'); ?></em></td>
         </tr>
         <tr>
-            <td class="tngshadow databack"><?php echo $admtext['phpver']; ?>:<br><em><?php echo $admtext['phpreq']; ?></em></td>
+            <td class="tngshadow databack"><?php echo _('PHP version'); ?>:<br><em><?php echo _('(TNG requires 5.6 or higher.)'); ?></em></td>
             <td class="tngshadow databack">
                 <?php
                 $phpver = floatval(phpversion());
@@ -51,51 +51,51 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
                 echo 'PHP ' . phpversion();
                 ?>
                 <br>
-                <a href="admin_phpinfo.php"><?php echo $admtext['phpinf']; ?></a>
+                <a href="admin_phpinfo.php"><?php echo _('PHP Info Screen'); ?></a>
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack"><?php echo $admtext['gdlib']; ?>:<br><em><?php echo $admtext['gdreq']; ?></em></td>
+            <td class="tngshadow databack"><?php echo _('GD graphics library'); ?>:<br><em><?php echo _('(Required for TNG\'s thumbnail creation tools.)'); ?></em></td>
             <td class="tngshadow databack">
                 <?php
                 if (extension_loaded('gd')) {
                     if (ImageTypes() & IMG_GIF) {
-                        echo "<p>$green&nbsp;" . $admtext['available'] . "</p>";
+                        echo "<p>$green&nbsp;" . _('Available') . "</p>";
                     } else {
-                        echo "<p>$orange&nbsp;" . $admtext['availnogif'] . "</p>";
+                        echo "<p>$orange&nbsp;" . _('Available, but does not support .gif images') . "</p>";
                     }
                 } else {
-                    echo "<p>$red&nbsp;" . $admtext['notinst'] . "</p>";
+                    echo "<p>$red&nbsp;" . _('Not installed') . "</p>";
                 }
                 ?>
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack"><?php echo $admtext['safemode']; ?>:</td>
+            <td class="tngshadow databack"><?php echo _('Safe Mode'); ?>:</td>
             <td class="tngshadow databack">
                 <?php
                 if (!$safe_mode) {
-                    echo "<p>$green&nbsp;" . $admtext['off'] . "</p>";
+                    echo "<p>$green&nbsp;" . _('Off') . "</p>";
                 } else {
-                    echo "<p>$orange&nbsp;" . $admtext['on'] . "</p>";
+                    echo "<p>$orange&nbsp;" . _('On') . "</p>";
                 }
                 ?>
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack"><?php echo $admtext['fileuploads']; ?>:<br><em><?php echo $admtext['fureq']; ?></em></td>
+            <td class="tngshadow databack"><?php echo _('File Uploads'); ?>:<br><em><?php echo _('(Required for web-based GEDCOM upload, image upload and other form functionality.)'); ?></em></td>
             <td class="tngshadow databack">
                 <?php
                 if ($file_uploads) {
-                    echo "<p>$green&nbsp;" . $admtext['perm'] . "</p>";
+                    echo "<p>$green&nbsp;" . _('Permitted') . "</p>";
                 } else {
-                    echo "<p>$red&nbsp;" . $admtext['notperm'] . "</p>";
+                    echo "<p>$red&nbsp;" . _('Not permitted, use FTP instead') . "</p>";
                 }
                 ?>
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack"><?php echo $admtext['sqlver']; ?>:<br><em><?php echo $admtext['sqlreq']; ?></em></td>
+            <td class="tngshadow databack"><?php echo _('MySQL version'); ?>:<br><em><?php echo _('(TNG requires 5.5 or higher.)'); ?></em></td>
             <td class="tngshadow databack">
                 <?php
                 $client_info = tng_get_client_info();
@@ -109,7 +109,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
                         echo "<p>$red&nbsp;";
                     }
                 }
-                echo 'MySQL ' . tng_get_client_info() . " " . $admtext['client'] . "</p>";
+                echo 'MySQL ' . tng_get_client_info() . " " . _('(client)') . "</p>";
                 $dbsi = floatval(preg_replace("/[^-0-9\.]/", "", tng_get_server_info()));
                 if ($dbsi >= 5.5) {
                     echo "<p>$green&nbsp;";
@@ -120,12 +120,12 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
                         echo "<p>$red&nbsp;";
                     }
                 }
-                echo 'MySQL ' . tng_get_server_info() . " " . $admtext['server'] . "</p>";
+                echo 'MySQL ' . tng_get_server_info() . " " . _('(server)') . "</p>";
                 ?>
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack"><?php echo $admtext['wsrvr']; ?>:</td>
+            <td class="tngshadow databack"><?php echo _('Webserver'); ?>:</td>
             <td class="tngshadow databack">
                 <?php
                 echo "<p>$green&nbsp;";
@@ -134,7 +134,7 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
             </td>
         </tr>
         <tr>
-            <td class="tngshadow databack"><?php echo $admtext['fperms']; ?>:<br><em><?php echo $admtext['fpreq']; ?></em></td>
+            <td class="tngshadow databack"><?php echo _('File/Folder Permissions'); ?>:<br><em><?php echo _('(TNG requires some files and folders to have special access rights.)'); ?></em></td>
             <td class="tngshadow databack">
                 <?php
                 $myuserid = getmyuid();
@@ -167,71 +167,71 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
                 $ftext = '';
                 // check files
                 if (!(fileReadWrite($myuserid, $mygroupid, 'config/config.php'))) {
-                    $text = "<p>$red&nbsp;{$admtext['rofile']} config.php</p>";
+                    $text = "<p>$red&nbsp;" . _('File is read-only:') . " config.php</p>";
                 }
                 $uselog = $logname;
                 if (!(fileReadWrite($myuserid, $mygroupid, $uselog))) {
-                    $ftext = "<p>$red&nbsp;{$admtext['rofile']} {$admtext['publog']} ($logname)</p>";
+                    $ftext = "<p>$red&nbsp;" . _('File is read-only:') . " " . _('Public log') . " ($logname)</p>";
                 }
                 if (!(fileReadWrite($myuserid, $mygroupid, $adminlogfile))) {
-                    $ftext .= "<p>$red&nbsp;{$admtext['rofile']} {$admtext['admlog']} ($adminlogfile)</p>";
+                    $ftext .= "<p>$red&nbsp;" . _('File is read-only:') . " " . _('Admin log') . " ($adminlogfile)</p>";
                 }
                 if (!(fileReadWrite($myuserid, $mygroupid, 'config/importconfig.php'))) {
-                    $ftext .= "<p>$red&nbsp;{$admtext['rofile']} importconfig.php</p>";
+                    $ftext .= "<p>$red&nbsp;" . _('File is read-only:') . " importconfig.php</p>";
                 }
                 if (!(fileReadWrite($myuserid, $mygroupid, 'config/logconfig.php'))) {
-                    $ftext .= "<p>$red&nbsp;{$admtext['rofile']} logconfig.php</p>";
+                    $ftext .= "<p>$red&nbsp;" . _('File is read-only:') . " logconfig.php</p>";
                 }
                 if (!(fileReadWrite($myuserid, $mygroupid, 'config/pedconfig.php'))) {
-                    $ftext .= "<p>$red&nbsp;{$admtext['rofile']} pedconfig.php</p>";
+                    $ftext .= "<p>$red&nbsp;" . _('File is read-only:') . " pedconfig.php</p>";
                 }
                 if (!(fileReadWrite($myuserid, $mygroupid, 'config/mapconfig.php'))) {
-                    $ftext .= "<p>$red&nbsp;{$admtext['rofile']} mapconfig.php</p>";
+                    $ftext .= "<p>$red&nbsp;" . _('File is read-only:') . " mapconfig.php</p>";
                 }
 
                 // check folders
                 if (!(dirExists($photopath))) {
-                    $ftext .= "<p>$red&nbsp;{$admtext['folderdne']} $photopath</p>";
+                    $ftext .= "<p>$red&nbsp;" . _('Folder does not exist:') . " $photopath</p>";
                 } else {
                     if (!(dirReadWrite($myuserid, $mygroupid, $photopath))) {
-                        $ftext .= "<p>$orange&nbsp;{$admtext['rofolder']} $photopath ($rootpath$photopath)</p>";
+                        $ftext .= "<p>$orange&nbsp;" . _('Folder is read-only:') . " $photopath ($rootpath$photopath)</p>";
                     }
                 }
                 if (!(dirExists($headstonepath))) {
-                    $ftext .= "<p>$red&nbsp;{$admtext['folderdne']} $headstonepath</p>";
+                    $ftext .= "<p>$red&nbsp;" . _('Folder does not exist:') . " $headstonepath</p>";
                 } else {
                     if (!(dirReadWrite($myuserid, $mygroupid, $headstonepath))) {
-                        $ftext .= "<p>$orange&nbsp;{$admtext['rofolder']} $headstonepath ($rootpath$headstonepath)</p>";
+                        $ftext .= "<p>$orange&nbsp;" . _('Folder is read-only:') . " $headstonepath ($rootpath$headstonepath)</p>";
                     }
                 }
                 if (!(dirExists($historypath))) {
-                    $ftext .= "<p>$orange&nbsp;{$admtext['folderdne']} $historypath ($rootpath$historypath)</p>";
+                    $ftext .= "<p>$orange&nbsp;" . _('Folder does not exist:') . " $historypath ($rootpath$historypath)</p>";
                 } else {
                     if (!(dirReadWrite($myuserid, $mygroupid, $historypath))) {
-                        $ftext .= "<p>$orange&nbsp;{$admtext['rofolder']} $historypath ($rootpath$historypath)</p>";
+                        $ftext .= "<p>$orange&nbsp;" . _('Folder is read-only:') . " $historypath ($rootpath$historypath)</p>";
                     }
                 }
                 if (!(dirExists($backuppath))) {
-                    $ftext .= "<p>$orange&nbsp;{$admtext['folderdne']} $backuppath ($rootpath$backuppath)</p>";
+                    $ftext .= "<p>$orange&nbsp;" . _('Folder does not exist:') . " $backuppath ($rootpath$backuppath)</p>";
                 } else {
                     if (!(dirReadWrite($myuserid, $mygroupid, $backuppath))) {
-                        $ftext .= "<p>$orange&nbsp;{$admtext['rofolder']} $backuppath ($rootpath$backuppath)</p>";
+                        $ftext .= "<p>$orange&nbsp;" . _('Folder is read-only:') . " $backuppath ($rootpath$backuppath)</p>";
                     }
                 }
                 if (!(dirExists($gedpath))) {
-                    $ftext .= "<p>$orange&nbsp;{$admtext['folderdne']} $gedpath ($rootpath$gedpath)</p>";
+                    $ftext .= "<p>$orange&nbsp;" . _('Folder does not exist:') . " $gedpath ($rootpath$gedpath)</p>";
                 } else {
                     if (!(dirReadWrite($myuserid, $mygroupid, $gedpath))) {
-                        $ftext .= "<p>$orange&nbsp;{$admtext['rofolder']} $gedpath ($rootpath$gedpath)</p>";
+                        $ftext .= "<p>$orange&nbsp;" . _('Folder is read-only:') . " $gedpath ($rootpath$gedpath)</p>";
                     }
                 }
                 if ($ftext == '') {
-                    $ftext = "<p>$green&nbsp;" . $admtext['keyrw'] . "</p>";
+                    $ftext = "<p>$green&nbsp;" . _('Key folders are all read/write') . "</p>";
                 }
                 echo $ftext;
 
                 if ($text == '') {
-                    echo "<p>$green&nbsp;" . $admtext['cfgrw'] . "</p>";
+                    echo "<p>$green&nbsp;" . _('Configuration files are all read/write') . "</p>";
                 }
                 echo $text;
                 ?>
@@ -239,10 +239,10 @@ echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext['diagnostics'],
         </tr>
         <tr>
             <td colspan="2" class="tngshadow databack">
-                <p><img src="img/tng_check.gif"> = <?php echo $admtext['acceptable']; ?></p>
-                <p><img src="img/orange.gif"> = <?php echo $admtext['restricted']; ?></p>
-                <p><img src="img/tng_close.gif"> = <?php echo $admtext['needchngs']; ?></p>
-                <p><?php echo "{$admtext['yourbrowser']} {$_SERVER['HTTP_USER_AGENT']}"; ?></p>
+                <p><img src="img/tng_check.gif"> = <?php echo _('Acceptable.'); ?></p>
+                <p><img src="img/orange.gif"> = <?php echo _('Some functionality may be restricted. You may encounter errors during installation or while running TNG.'); ?></p>
+                <p><img src="img/tng_close.gif"> = <?php echo _('TNG may not run without changes to your PHP or server configuration.'); ?></p>
+                <p><?php echo "" . _('Your browser:') . " {$_SERVER['HTTP_USER_AGENT']}"; ?></p>
             </td>
         </tr>
     </table>

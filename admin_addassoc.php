@@ -11,7 +11,7 @@ include "checklogin.php";
 require "adminlog.php";
 
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     exit;
 }
 
@@ -30,7 +30,7 @@ if ($revassoc) {
     tng_execute($query, $params);
 }
 
-adminwritelog($admtext['addnewassoc'] . ": $assocID/$tree/$personID::$passocID ($relationship)");
+adminwritelog(_('Add New Association') . ": $assocID/$tree/$personID::$passocID ($relationship)");
 
 //get name
 

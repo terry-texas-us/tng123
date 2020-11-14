@@ -6,18 +6,18 @@ if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
     $treestr3 = "tree=$tree&";
-    $logstring = "<a href=\"places-all.php?$treestr2\">{$text['allplaces']} ({$text['tree']}: $tree)</a>";
+    $logstring = "<a href=\"places-all.php?$treestr2\">" . _('All Largest Localities') . " (" . _('Tree') . ": $tree)</a>";
 } else {
     $treestr = $treestr2 = $treestr3 = "";
-    $logstring = "<a href='places-all.php'>{$text['allplaces']}</a>";
+    $logstring = "<a href='places-all.php'>" . _('All Largest Localities') . "</a>";
 }
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($text['placelist'] . ": " . $text['allplaces'], $flags);
+tng_header(_('Place List') . ": " . _('All Largest Localities'), $flags);
 ?>
     <a id="top"></a>
-    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist'] . ": " . $text['allplaces']; ?></h2>
+    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo _('Place List') . ": " . _('All Largest Localities'); ?></h2>
     <br class="clearleft">
 <?php
 if (!$tngconfig['places1tree']) {
@@ -52,7 +52,7 @@ if ($result) {
 ?>
 
     <div class="titlebox rounded-lg normal">
-        <h3 class="subhead"><?php echo $text['placesstarting']; ?></h3>
+        <h3 class="subhead"><?php echo _('Show largest localities starting with'); ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
 
         <?php
@@ -60,20 +60,20 @@ if ($result) {
         echo $formstr;
         ?>
         <?php
-        echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
+        echo "" . _('Show all places containing') . ": <input type='text' name=\"psearch\">\n";
         if ($tree && !$tngconfig['places1tree']) {
             echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
         }
         echo "<input type='hidden' name=\"stretch\" value='1'>\n";
-        echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";
+        echo "<input type='submit' name=\"pgo\" value=\"" . _('Go') . "\">\n";
         ?>
         </form>
 
-        <br><?php echo "<a href=\"places.php?$treestr2\">{$text['mainplacepage']}</a> &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\">{$text['heatmap']}</a>"; ?>
+        <br><?php echo "<a href=\"places.php?$treestr2\">" . _('Main places page') . "</a> &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\">" . _('Heat Map') . "</a>"; ?>
     </div>
     <br>
 
-    <p class="smaller"><?php echo $text['showmatchingplaces']; ?></p>
+    <p class="smaller"><?php echo _('Click on a place to show smaller localities. Click on the search icon to show matching individuals.'); ?></p>
 <?php
 for ($scount = 1; $scount < $initialchar; $scount++) {
     ?>
@@ -131,7 +131,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                             $specificcount = $countrow['placecount'];
                             tng_free_result($result2);
                             $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
-                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"{$text['findplaces']}\">$icon</a>" : "";
+                            $searchlink = $specificcount ? " <a href='placesearch.php?{$treestr3}psearch=$place2' title=\"" . _('Find all individuals with events at this location') . "\">$icon</a>" : "";
                             if ($place['placecount'] > 1 || ($place['myplace'] != $place['wholeplace'] && !$commaOnEnd)) {
                                 $name = "<a href=\"places-oneletter.php?" . $poffset;
                                 if ($tree && !$tngconfig['places1tree']) {
@@ -159,7 +159,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
         </table>
         </div>
 
-        <br><p class="normal"><a href="#top"><?php echo $text['backtotop']; ?></a></p><br>
+        <br><p class="normal"><a href="#top"><?php echo _('Back to top'); ?></a></p><br>
         <?php
     }
 }

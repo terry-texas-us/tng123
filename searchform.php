@@ -46,7 +46,7 @@ $nr = isset($_SESSION['tng_nr']) ? $_SESSION['tng_nr'] : "";
 
 $dontdo = ["ADDR", "BIRT", "CHR", "DEAT", "BURI", "NICK", "TITL", "NSFX", "NPFX"];
 
-tng_header($text['searchnames'], $flags);
+tng_header(_('Search People'), $flags);
 ?>
     <script>
         //<![CDATA[
@@ -121,17 +121,14 @@ tng_header($text['searchnames'], $flags);
             let thisform = document.search;
             let thisfield;
             let found = 0;
-
             if (thisform.mysplname.value !== "" && (thisform.mygender.selectedIndex < 1 || thisform.mygender.selectedIndex > 2)) {
-                alert("<?php echo $text['spousemore']; ?>");
+                alert("<?php echo _('If you enter a value for Spouse\'s Last Name, you must select a Gender.'); ?>");
                 return false;
             }
-
             if (thisform.mysplname.value !== "" && thisform.mybool.selectedIndex > 0) {
-                alert("<?php echo $text['joinor']; ?>");
+                alert("<?php echo _('The \'Join with OR\' option cannot be used with Spouse\'s Last Name'); ?>");
                 return false;
             }
-
             URL = "mybool=" + thisform.mybool[thisform.mybool.selectedIndex].value;
             URL = URL + "&nr=" + thisform.nr[thisform.nr.selectedIndex].value;
             <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && ($numtrees > 1 || $numbranches)) { ?>
@@ -198,7 +195,7 @@ tng_header($text['searchnames'], $flags);
         //]]>
     </script>
 
-    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo $text['searchnames']; ?></h2>
+    <h2 class="header"><span class="headericon" id="search-hdr-icon"></span><?php echo _('Search People'); ?></h2>
     <br class="clear-both">
 <?php
 if (!empty($msg)) {
@@ -212,24 +209,24 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
             <table cellspacing="1" cellpadding="4" class="normal">
                 <?php if ((!$requirelogin || !$treerestrict || !$assignedtree) && ($numtrees > 1 || $numbranches)) { ?>
                     <tr>
-                        <td class="fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
-                                echo " | " . $text['branch'];
+                        <td class="fieldnameback fieldname"><?php echo _('Tree'); ?><?php if ($numbranches) {
+                                echo " | " . _('Branch');
                             } ?>:
                         </td>
                         <td class="databack">
                             <?php echo treeSelect($result, null, $branchchange); ?>
                             <select name="branch" id="branch">
-                                <option value=""><?php echo $admtext['allbranches']; ?></option>
+                                <option value=""><?php echo _('All Branches'); ?></option>
                             </select>
                         </td>
                     </tr>
                 <?php } ?>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['firstname']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('First Name'); ?>:</td>
                     <td class="databack">
                         <select name="fnqualify" class="mediumfield">
                             <?php
-                            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"]];
+                            $item_array = [[_('contains'), "contains"], [_('equals'), "equals"], [_('starts with'), "startswith"], [_('ends with'), "endswith"], [_('exists'), "exists"], [_('does not exist'), "dnexist"], [_('soundex of'), "soundexof"]];
                             foreach ($item_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($fnqualify == $item[1]) echo " selected";
@@ -241,11 +238,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['lastname']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Last Name'); ?>:</td>
                     <td class="databack">
                         <select name="lnqualify" class="mediumfield">
                             <?php
-                            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
+                            $item_array = [[_('contains'), "contains"], [_('equals'), "equals"], [_('starts with'), "startswith"], [_('ends with'), "endswith"], [_('exists'), "exists"], [_('does not exist'), "dnexist"], [_('soundex of'), "soundexof"], [_('metaphone of'), "metaphoneof"]];
                             foreach ($item_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($lnqualify == $item[1]) echo " selected";
@@ -257,11 +254,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['personid']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Person ID'); ?>:</td>
                     <td class="databack">
                         <select name="idqualify" class="mediumfield">
                             <?php
-                            $item_array = [[$text['equals'], "equals"], [$text['contains'], "contains"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"]];
+                            $item_array = [[_('equals'), "equals"], [_('contains'), "contains"], [_('starts with'), "startswith"], [_('ends with'), "endswith"]];
                             foreach ($item_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($idqualify == $item[1]) echo " selected";
@@ -273,17 +270,17 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['gender']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Gender'); ?>:</td>
                     <td class="databack">
                         <select name="gequalify" class="mediumfield">
-                            <option value="equals"><?php echo $text['equals']; ?></option>
+                            <option value="equals"><?php echo _('equals'); ?></option>
                         </select>
                         <select name="mygender">
                             <option value="">&nbsp;</option>
-                            <option value="M"<?php if ($mygender == "M") echo " selected"; ?>><?php echo $text['male']; ?></option>
-                            <option value="F"<?php if ($mygender == "F") echo " selected"; ?>><?php echo $text['female']; ?></option>
-                            <option value="U"<?php if ($mygender == "U") echo " selected"; ?>><?php echo $text['unknown']; ?></option>
-                            <option value="N"<?php if ($mygender == "N") echo " selected"; ?>><?php echo $text['none']; ?></option>
+                            <option value="M"<?php if ($mygender == "M") echo " selected"; ?>><?php echo _('Male'); ?></option>
+                            <option value="F"<?php if ($mygender == "F") echo " selected"; ?>><?php echo _('Female'); ?></option>
+                            <option value="U"<?php if ($mygender == "U") echo " selected"; ?>><?php echo _('Unknown'); ?></option>
+                            <option value="N"<?php if ($mygender == "N") echo " selected"; ?>><?php echo _('No encryption'); ?></option>
                         </select>
                     </td>
                 </tr>
@@ -291,11 +288,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['birthplace']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Birth Place'); ?>:</td>
                     <td class="databack">
                         <select name="bpqualify" class="mediumfield">
                             <?php
-                            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+                            $item_array = [[_('contains'), "contains"], [_('equals'), "equals"], [_('starts with'), "startswith"], [_('ends with'), "endswith"], [_('exists'), "exists"], [_('does not exist'), "dnexist"]];
                             foreach ($item_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($bpqualify == $item[1]) echo " selected";
@@ -307,11 +304,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['birthdatetr']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Birth Date (True)'); ?>:</td>
                     <td class="databack">
                         <select name="byqualify" class="mediumfield">
                             <?php
-                            $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+                            $item2_array = [[_('equals'), ""], [_('+/- 2 years from'), "pm2"], [_('+/- 5 years from'), "pm5"], [_('+/- 10 years from'), "pm10"], [_('less than'), "lt"], [_('greater than'), "gt"], [_('less than or equal to'), "lte"], [_('greater than or equal to'), "gte"], [_('exists'), "exists"], [_('does not exist'), "dnexist"]];
                             foreach ($item2_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($byqualify == $item[1]) echo " selected";
@@ -323,7 +320,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr<?php if ($tngconfig['hidechr']) echo " style='display: none;'"; ?>>
-                    <td class="fieldnameback fieldname"><?php echo $text['altbirthplace']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Christening Place'); ?>:</td>
                     <td class="databack">
                         <select name="cpqualify" class="mediumfield">
                             <?php
@@ -338,11 +335,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr<?php if ($tngconfig['hidechr']) echo " style='display: none;'"; ?>>
-                    <td class="fieldnameback fieldname"><?php echo $text['altbirthdatetr']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Christening Year'); ?>:</td>
                     <td class="databack">
                         <select name="cyqualify" class="mediumfield">
                             <?php
-                            $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+                            $item2_array = [[_('equals'), ""], [_('+/- 2 years from'), "pm2"], [_('+/- 5 years from'), "pm5"], [_('+/- 10 years from'), "pm10"], [_('less than'), "lt"], [_('greater than'), "gt"], [_('less than or equal to'), "lte"], [_('greater than or equal to'), "gte"], [_('exists'), "exists"], [_('does not exist'), "dnexist"]];
                             foreach ($item2_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($cyqualify == $item[1]) echo " selected";
@@ -354,7 +351,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['deathplace']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Death Place'); ?>:</td>
                     <td class="databack">
                         <select name="dpqualify" class="mediumfield">
                             <?php
@@ -369,11 +366,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['deathdatetr']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Death Date (True)'); ?>:</td>
                     <td class="databack">
                         <select name="dyqualify" class="mediumfield">
                             <?php
-                            $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+                            $item2_array = [[_('equals'), ""], [_('+/- 2 years from'), "pm2"], [_('+/- 5 years from'), "pm5"], [_('+/- 10 years from'), "pm10"], [_('less than'), "lt"], [_('greater than'), "gt"], [_('less than or equal to'), "lte"], [_('greater than or equal to'), "gte"], [_('exists'), "exists"], [_('does not exist'), "dnexist"]];
                             foreach ($item2_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($dyqualify == $item[1]) echo " selected";
@@ -385,7 +382,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['burialplace']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Burial Place'); ?>:</td>
                     <td class="databack">
                         <select name="brpqualify" class="mediumfield">
                             <?php
@@ -400,11 +397,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['burialdatetr']; ?>:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Burial Date (True)'); ?>:</td>
                     <td class="databack">
                         <select name="bryqualify" class="mediumfield">
                             <?php
-                            $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+                            $item2_array = [[_('equals'), ""], [_('+/- 2 years from'), "pm2"], [_('+/- 5 years from'), "pm5"], [_('+/- 10 years from'), "pm10"], [_('less than'), "lt"], [_('greater than'), "gt"], [_('less than or equal to'), "lte"], [_('greater than or equal to'), "gte"], [_('exists'), "exists"], [_('does not exist'), "dnexist"]];
                             foreach ($item2_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($bryqualify == $item[1]) echo " selected";
@@ -419,11 +416,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="fieldnameback fieldname"><?php echo $text['spousesurname']; ?>*:</td>
+                    <td class="fieldnameback fieldname"><?php echo _('Spouse\'s Last Name'); ?>*:</td>
                     <td class="databack">
                         <select name="spqualify" class="mediumfield">
                             <?php
-                            $item_array = [[$text['contains'], "contains"], [$text['equals'], "equals"], [$text['startswith'], "startswith"], [$text['endswith'], "endswith"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"], [$text['soundexof'], "soundexof"], [$text['metaphoneof'], "metaphoneof"]];
+                            $item_array = [[_('contains'), "contains"], [_('equals'), "equals"], [_('starts with'), "startswith"], [_('ends with'), "endswith"], [_('exists'), "exists"], [_('does not exist'), "dnexist"], [_('soundex of'), "soundexof"], [_('metaphone of'), "metaphoneof"]];
                             foreach ($item_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($spqualify == $item[1]) echo " selected";
@@ -435,20 +432,20 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
             </table>
-            <p class="smaller"><em>*<?php echo $text['spousemore']; ?></em></p>
+            <p class="smaller"><em>*<?php echo _('If you enter a value for Spouse\'s Last Name, you must select a Gender.'); ?></em></p>
             <input type="hidden" name="offset" value="0">
 
             <hr>
-            <h3 class="subhead"><?php echo $text['otherevents']; ?></h3>
+            <h3 class="subhead"><?php echo _('Other Events'); ?></h3>
             <ul class="normal">
                 <li id="expand" class="othersearch">
                     <a href="#" class="text-decoration-none" onclick="return toggleSection(1);">
-                        <img src="img/tng_expand.gif" alt="" class="exp-cont inline-block"><?php echo $text['clickdisplay']; ?>
+                        <img src="img/tng_expand.gif" alt="" class="exp-cont inline-block"><?php echo _('Click to display'); ?>
                     </a>
                 </li>
                 <li id="contract" class="othersearch" style="display:none;">
                     <a href="#" class="text-decoration-none" onclick="return toggleSection(0);">
-                        <img src="img/tng_collapse.gif" alt="" class="exp-cont inline-block"><?php echo $text['clickhide']; ?>
+                        <img src="img/tng_collapse.gif" alt="" class="exp-cont inline-block"><?php echo _('Click to hide'); ?>
                     </a>
                 </li>
             </ul>
@@ -457,7 +454,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     <td colspan="3">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td><span class="normal"><?php echo $text['nickname']; ?>:</span></td>
+                    <td><span class="normal"><?php echo _('Nickname'); ?>:</span></td>
                     <td>
                         <select name="nnqualify" class="mediumfield">
                             <?php
@@ -474,7 +471,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="normal"><?php echo $text['title']; ?>:</span></td>
+                    <td><span class="normal"><?php echo _('Title'); ?>:</span></td>
                     <td>
                         <select name="tqualify" class="mediumfield">
                             <?php
@@ -491,7 +488,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="normal"><?php echo $text['prefix']; ?>:</span></td>
+                    <td><span class="normal"><?php echo _('Prefix'); ?>:</span></td>
                     <td>
                         <select name="pfqualify" class="mediumfield">
                             <?php
@@ -508,7 +505,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="normal"><?php echo $text['suffix']; ?>:</span></td>
+                    <td><span class="normal"><?php echo _('Suffix'); ?>:</span></td>
                     <td>
                         <select name="sfqualify" class="mediumfield">
                             <?php
@@ -545,7 +542,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     echo "<tr><td colspan='3'><span class='normal'>{$row['displaymsg']}</span></td></tr>\n";
 
                     echo "<tr>\n";
-                    echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['fact']}:</span></td>\n";
+                    echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;" . _('Fact') . ":</span></td>\n";
                     echo "<td>\n";
                     echo "<select name=\"cfq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
                     foreach ($item_array as $item) {
@@ -558,7 +555,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     echo "</tr>\n";
 
                     echo "<tr>\n";
-                    echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['place']}:</span></td>\n";
+                    echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;" . _('Place') . ":</span></td>\n";
                     echo "<td>\n";
                     echo "<select name=\"cpq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
                     foreach ($item_array as $item) {
@@ -571,11 +568,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     echo "</tr>\n";
 
                     echo "<tr>\n";
-                    echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;{$text['year']}:</span></td>\n";
+                    echo "<td><span class='normal'>&nbsp;&nbsp;&nbsp;" . _('Year') . ":</span></td>\n";
                     echo "<td>\n";
                     echo "<select name=\"cyq{$row['eventtypeID']}\" class=\"mediumfield\">\n";
 
-                    $item2_array = [[$text['equals'], ""], [$text['plusminus2'], "pm2"], [$text['plusminus5'], "pm5"], [$text['plusminus10'], "pm10"], [$text['lessthan'], "lt"], [$text['greaterthan'], "gt"], [$text['lessthanequal'], "lte"], [$text['greaterthanequal'], "gte"], [$text['exists'], "exists"], [$text['dnexist'], "dnexist"]];
+                    $item2_array = [[_('equals'), ""], [_('+/- 2 years from'), "pm2"], [_('+/- 5 years from'), "pm5"], [_('+/- 10 years from'), "pm10"], [_('less than'), "lt"], [_('greater than'), "gt"], [_('less than or equal to'), "lte"], [_('greater than or equal to'), "gte"], [_('exists'), "exists"], [_('does not exist'), "dnexist"]];
                     foreach ($item2_array as $item) {
                         echo "<option value=\"$item[1]\"";
                         echo ">$item[0]</option>\n";
@@ -589,8 +586,8 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                 ?>
                 <tr>
                     <td colspan="3"><br>
-                        <input type="button" value="<?php echo $text['search']; ?>" onclick="$('searchbtn').className='fieldnamebacksave'; return makeURL();">
-                        <input type="button" value="<?php echo $text['resetall']; ?>" onclick="resetValues();">
+                        <input type="button" value="<?php echo _('Search'); ?>" onclick="$('searchbtn').className='fieldnamebacksave'; return makeURL();">
+                        <input type="button" value="<?php echo _('Reset All Values'); ?>" onclick="resetValues();">
                     </td>
                 </tr>
             </table>
@@ -600,11 +597,11 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
         <div class="searchsidebar">
             <table>
                 <tr>
-                    <td><span class="normal"><?php echo $text['joinwith']; ?>:</span></td>
+                    <td><span class="normal"><?php echo _('Join with'); ?>:</span></td>
                     <td>
                         <select name="mybool">
                             <?php
-                            $item3_array = [[$text['cap_and'], "AND"], [$text['cap_or'], "OR"]];
+                            $item3_array = [[_('AND'), "AND"], [_('OR'), "OR"]];
                             foreach ($item3_array as $item) {
                                 echo "<option value=\"$item[1]\"";
                                 if ($mybool == $item[1]) echo " selected";
@@ -616,7 +613,7 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                     <td></td>
                 </tr>
                 <tr>
-                    <td><span class="normal"><?php echo $text['numresults']; ?>:</span></td>
+                    <td><span class="normal"><?php echo _('Results per page'); ?>:</span></td>
                     <td>
                         <select name="nr">
                             <?php
@@ -633,16 +630,16 @@ $branchchange = "var tree=getTree(this); if( !tree ) tree = 'none'; swapBranches
                 </tr>
             </table>
             <p class="normal">
-                <input type="checkbox" name="showdeath" value="yes"<?php if ($showdeath == "yes") echo " checked"; ?> > <?php echo $text['showdeath']; ?><br>
-                <input type="checkbox" name="showspouse" value="yes"<?php if ($showspouse == "yes") echo " checked"; ?> > <?php echo $text['showspouse']; ?><br>
+                <input type="checkbox" name="showdeath" value="yes"<?php if ($showdeath == "yes") echo " checked"; ?> > <?php echo _('Show death/burial information'); ?><br>
+                <input type="checkbox" name="showspouse" value="yes"<?php if ($showspouse == "yes") echo " checked"; ?> > <?php echo _('Show spouse (will show duplicates if individual has more than one spouse)'); ?><br>
                 <br>
-                <input type="submit" id="searchbtn" class="btn" value="<?php echo $text['search']; ?>">
-                <input type="button" id="resetbtn" class="btn" value="<?php echo $text['tng_reset']; ?>" onclick="resetValues();">
+                <input type="submit" id="searchbtn" class="btn" value="<?php echo _('Search'); ?>">
+                <input type="button" id="resetbtn" class="btn" value="<?php echo _('Reset'); ?>" onclick="resetValues();">
             </p>
             <br><br>
             <p>
-                <a href="famsearchform.php" class="snlink rounded">&raquo; <?php echo $text['searchfams']; ?></a>
-                <a href="searchsite.php" class="snlink rounded">&raquo; <?php echo $text['searchsitemenu']; ?></a>
+                <a href="famsearchform.php" class="snlink rounded">&raquo; <?php echo _('Search Families'); ?></a>
+                <a href="searchsite.php" class="snlink rounded">&raquo; <?php echo _('Search Site'); ?></a>
             </p>
         </div>
 

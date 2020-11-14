@@ -21,7 +21,7 @@ function getNewID($type, $table) {
             $query = "SELECT MAX(0+SUBSTRING_INDEX($type" . "ID,'$suffix',1)) AS newID FROM $table WHERE gedcom = '$tree'";
         }
 
-        $result = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+        $result = tng_query($query) or die (_('Cannot execute query') . ": $query");
         $maxrow = tng_fetch_array($result);
         tng_free_result($result);
 

@@ -27,7 +27,7 @@ $params = [&$template, &$persfamID, &$tree, &$xnoteID, &$eventID, &$private];
 tng_execute($query, $params);
 $ID = tng_insert_id();
 
-adminwritelog($admtext['addnewnote'] . ": $tree/$persfamID/$xnoteID/$eventID");
+adminwritelog(_('Add New Note') . ": $tree/$persfamID/$xnoteID/$eventID");
 
 $orgnote = cleanIt($orgnote);
 $truncated = truncateIt($orgnote, 75);

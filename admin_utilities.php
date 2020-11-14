@@ -9,7 +9,7 @@ include "checklogin.php";
 include "version.php";
 
 if ($assignedtree) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -39,10 +39,10 @@ function doRow($table_name, $display_name) {
     global $admtext, $rootpath, $backuppath, $fileflag;
 
     echo "<tr>\n";
-    echo "<td class='lightback'><div class='action-btns'><a href='#' onclick=\"return startOptimize('$table_name');\" title=\"{$admtext['optimize']}\" class=\"smallicon admin-opt-icon\"></a>";
-    echo "<a href='#' onclick=\"return startBackup('$table_name');\" title=\"{$admtext['backup']}\" class=\"smallicon admin-save-icon\"></a>";
+    echo "<td class='lightback'><div class='action-btns'><a href='#' onclick=\"return startOptimize('$table_name');\" title=\"" . _('Optimize') . "\" class=\"smallicon admin-opt-icon\"></a>";
+    echo "<a href='#' onclick=\"return startBackup('$table_name');\" title=\"" . _('Back up') . "\" class=\"smallicon admin-save-icon\"></a>";
     $fileflag = $table_name && file_exists("$rootpath$backuppath/$table_name.bak");
-    echo "<a href='#' id=\"rst_$table_name\" onclick=\"if( confirm('{$admtext['surerestore']}') ) {startRestore('$table_name') ;} return false;\" title=\"{$admtext['restore']}\" class=\"smallicon admin-rest-icon\"";
+    echo "<a href='#' id=\"rst_$table_name\" onclick=\"if( confirm('" . _('Are you sure you want to restore the selected tables?') . "') ) {startRestore('$table_name') ;} return false;\" title=\"" . _('Restore') . "\" class=\"smallicon admin-rest-icon\"";
     if (!$fileflag) echo " style=\"visibility:hidden\"";
 
     echo "></a>";
@@ -60,7 +60,7 @@ $helplang = findhelp("backuprestore_help.php");
 if (empty($sub)) $sub = "tables";
 
 if (!isset($message)) $message = "";
-tng_adminheader($admtext['backuprestore'], $flags);
+tng_adminheader(_('Utilities'), $flags);
 ?>
 <script>
     function toggleAll(flag) {
@@ -95,13 +95,13 @@ tng_adminheader($admtext['backuprestore'], $flags);
                     form.submit();
                     break;
                 case "restoreall":
-                    if (confirm('<?php echo $admtext['surerestore']; ?>')) {
+                    if (confirm('<?php echo _('Are you sure you want to restore the selected tables?'); ?>')) {
                         form.action = 'admin_restore.php';
                         form.submit();
                     }
                     break;
                 case "delete":
-                    if (confirm('<?php echo $admtext['suredelbk']; ?>')) {
+                    if (confirm('<?php echo _('Are you sure you want to delete the selected backups?'); ?>')) {
                         form.table.value = 'del';
                         form.action = 'admin_backup.php?table=del';
                         form.submit();
@@ -109,7 +109,7 @@ tng_adminheader($admtext['backuprestore'], $flags);
                     break;
             }
         } else {
-            alert('<?php echo $admtext['seltable']; ?>');
+            alert('<?php echo _('Please select at least one table.'); ?>');
             sel.selectedIndex = 0;
         }
         return false;
@@ -181,114 +181,116 @@ tng_adminheader($admtext['backuprestore'], $flags);
 echo "</head>\n";
 echo tng_adminlayout();
 
-$utiltabs['0'] = [1, "admin_utilities.php?sub=tables", $admtext['tables'], "tables"];
-$utiltabs['1'] = [1, "admin_utilities.php?sub=structure", $admtext['tablestruct'], "structure"];
-$utiltabs['2'] = [1, "admin_renumbermenu.php", $admtext['renumber'], "renumber"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$utiltabs['0'] = [1, "admin_utilities.php?sub=tables", _('Tables'), "tables"];
+$utiltabs['1'] = [1, "admin_utilities.php?sub=structure", _('Table structure'), "structure"];
+$utiltabs['2'] = [1, "admin_renumbermenu.php", _('Resequence IDs'), "renumber"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/backuprestore_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($utiltabs, $sub, $innermenu);
-$headline = $sub == "tables" ? $admtext['backuprestore'] . " &gt;&gt; " . $admtext['backuprestoretables'] : $admtext['backuprestore'] . " &gt;&gt; " . $admtext['backupstruct'];
+$headline = $sub == "tables" ? _('Utilities') . " &gt;&gt; " . _('Back up, Restore &amp; Optimize Table Data') : _('Utilities') . " &gt;&gt; " . _('Back up Table Structure');
 echo displayHeadline($headline, "img/backuprestore_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <?php if ($sub == "tables") { ?>
-                <p class="normal"><em><?php echo $admtext['brinstructions']; ?></em></p>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <?php if ($sub == "tables") { ?>
+                    <p class="normal">
+                        <em><?php echo _('To back up, restore or optimize a table, click on the appropriate action icon for that table, or select multiple tables and apply that action to all selected by choosing the corresponding action at the top of the screen.'); ?></em>
+                    </p>
 
-                <h3 class="subhead"><?php echo $admtext['backuprestoretables']; ?></h3>
-                <p class="normal"><?php echo $admtext['backupnote']; ?></p>
-                <div class="normal">
-                    <form action="" name="form1" id="form1" onsubmit="return startUtility(document.form1.withsel);">
-                        <p>
-                            <input type="hidden" name="table" value="all">
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onclick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onclick="toggleAll(0);">&nbsp;&nbsp;
-                            <?php echo $admtext['wsel']; ?>
-                            <select name="withsel">
-                                <option value=""></option>
-                                <option value="backupall"><?php echo $admtext['backup']; ?></option>
-                                <option value="optimizeall"><?php echo $admtext['optimize']; ?></option>
-                                <option value="restoreall"><?php echo $admtext['restore']; ?></option>
-                                <option value="delete"><?php echo $admtext['text_delete']; ?></option>
-                            </select>
-                            <input type="submit" name="go" value="<?php echo $admtext['go']; ?>">
-                        </p>
+                    <h3 class="subhead"><?php echo _('Back up, Restore &amp; Optimize Table Data'); ?></h3>
+                    <p class="normal"><?php echo _('NOTE: If your database is very large, you might want to use an independent tool (like mysqldumper or phpMyAdmin) to back up and restore your tables. At least one of these should be available from your site control panel.'); ?></p>
+                    <div class="normal">
+                        <form action="" name="form1" id="form1" onsubmit="return startUtility(document.form1.withsel);">
+                            <p>
+                                <input type="hidden" name="table" value="all">
+                                <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onclick="toggleAll(1);">
+                                <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onclick="toggleAll(0);">&nbsp;&nbsp;
+                                <?php echo _('With selected:'); ?>
+                                <select name="withsel">
+                                    <option value=""></option>
+                                    <option value="backupall"><?php echo _('Back up'); ?></option>
+                                    <option value="optimizeall"><?php echo _('Optimize'); ?></option>
+                                    <option value="restoreall"><?php echo _('Restore'); ?></option>
+                                    <option value="delete"><?php echo _('Delete'); ?></option>
+                                </select>
+                                <input type="submit" name="go" value="<?php echo _('Go'); ?>">
+                            </p>
 
+                            <table class="normal">
+                                <tr>
+                                    <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('Select'); ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('Table'); ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('last backup more than xxx days ago'); ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('File Size'); ?></th>
+                                    <th class="fieldnameback fieldname" style="width:200px;"><?php echo _('Message'); ?></th>
+                                </tr>
+                                <?php
+                                doRow($address_table, _('Addresses'));
+                                doRow($albums_table, _('Albums'));
+                                doRow($album2entities_table, _('Album Links'));
+                                doRow($albumlinks_table, _('Album Media'));
+                                doRow($assoc_table, _('Associations'));
+                                doRow($branches_table, _('Branches'));
+                                doRow($branchlinks_table, _('Branch Links'));
+                                doRow($cemeteries_table, _('Cemeteries'));
+                                doRow($children_table, _('Children'));
+                                doRow($countries_table, _('Countries'));
+                                doRow($dna_groups_table, _('DNA Groups'));
+                                doRow($dna_links_table, _('DNA Links'));
+                                doRow($dna_tests_table, _('DNA Tests'));
+                                doRow($events_table, _('Events'));
+                                doRow($eventtypes_table, _('Event Types'));
+                                doRow($families_table, _('Families'));
+                                doRow($languages_table, _('Languages'));
+                                doRow($media_table, _('Media Table'));
+                                doRow($medialinks_table, _('Media Links'));
+                                doRow($mediatypes_table, _('Media Types'));
+                                doRow($mostwanted_table, _('Most Wanted'));
+                                doRow($notelinks_table, _('Note Links'));
+                                doRow($xnotes_table, _('Notes'));
+                                doRow($people_table, _('People'));
+                                doRow($places_table, _('Places'));
+                                doRow($reports_table, _('Reports'));
+                                doRow($sources_table, _('Sources'));
+                                doRow($repositories_table, _('Repositories'));
+                                doRow($citations_table, _('Citations'));
+                                doRow($states_table, _('States'));
+                                doRow($temp_events_table, _('Temp Events'));
+                                doRow($templates_table, _('Template Settings'));
+                                doRow($tlevents_table, _('Timeline Events'));
+                                doRow($trees_table, _('Trees'));
+                                doRow($users_table, _('Users'));
+                                ?>
+                            </table>
+                        </form>
+
+                    </div>
+                <?php } elseif ($sub == "structure") { ?>
+                    <p class="normal"><em><?php echo _('To back up or restore the table structure, click on the appropriate action icon below. WARNING: Restoring the table structure will delete all existing data!'); ?></em></p>
+
+                    <h3 class="subhead"><?php echo _('Back up Table Structure'); ?></h3>
+                    <div class="normal">
                         <table class="normal">
                             <tr>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['table']; ?></th>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['lastbackup']; ?></th>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['backupfilesize']; ?></th>
-                                <th class="fieldnameback fieldname" style="width:200px;"><?php echo $admtext['msg']; ?></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('Action'); ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('last backup more than xxx days ago'); ?></span></th>
+                                <th class="fieldnameback"><span class="fieldname"><?php echo _('File Size'); ?></span></th>
                             </tr>
-                            <?php
-                            doRow($address_table, $admtext['addresstable']);
-                            doRow($albums_table, $admtext['albums']);
-                            doRow($album2entities_table, $admtext['album2entitiestable']);
-                            doRow($albumlinks_table, $admtext['albumlinkstable']);
-                            doRow($assoc_table, $admtext['associations']);
-                            doRow($branches_table, $admtext['branches']);
-                            doRow($branchlinks_table, $admtext['brlinkstable']);
-                            doRow($cemeteries_table, $admtext['cemeteries']);
-                            doRow($children_table, $admtext['children']);
-                            doRow($countries_table, $admtext['countriestable']);
-                            doRow($dna_groups_table, $admtext['dna_groups']);
-                            doRow($dna_links_table, $admtext['dna_links']);
-                            doRow($dna_tests_table, $admtext['dna_tests']);
-                            doRow($events_table, $admtext['events']);
-                            doRow($eventtypes_table, $admtext['eventtypes']);
-                            doRow($families_table, $admtext['families']);
-                            doRow($languages_table, $admtext['languages']);
-                            doRow($media_table, $admtext['mediatable']);
-                            doRow($medialinks_table, $admtext['medialinkstable']);
-                            doRow($mediatypes_table, $admtext['mediatypes']);
-                            doRow($mostwanted_table, $admtext['mostwanted']);
-                            doRow($notelinks_table, $admtext['notelinkstable']);
-                            doRow($xnotes_table, $admtext['notes']);
-                            doRow($people_table, $admtext['people']);
-                            doRow($places_table, $admtext['places']);
-                            doRow($reports_table, $admtext['reports']);
-                            doRow($sources_table, $admtext['sources']);
-                            doRow($repositories_table, $admtext['repositories']);
-                            doRow($citations_table, $admtext['citations']);
-                            doRow($states_table, $admtext['statestable']);
-                            doRow($temp_events_table, $admtext['temptable']);
-                            doRow($templates_table, $admtext['templatestable']);
-                            doRow($tlevents_table, $admtext['tleventstable']);
-                            doRow($trees_table, $admtext['trees']);
-                            doRow($users_table, $admtext['users']);
-                            ?>
-                        </table>
-                    </form>
-
-                </div>
-            <?php } elseif ($sub == "structure") { ?>
-                <p class="normal"><em><?php echo $admtext['brinstructions2']; ?></em></p>
-
-                <h3 class="subhead"><?php echo $admtext['backupstruct']; ?></h3>
-                <div class="normal">
-                    <table class="normal">
-                        <tr>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['action']; ?></span></th>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['lastbackup']; ?></span></th>
-                            <th class="fieldnameback"><span class="fieldname"><?php echo $admtext['backupfilesize']; ?></span></th>
-                        </tr>
-                        <tr>
-                            <td class="lightback">
-                                <div class="action-btns2"><a href="admin_backup.php?table=struct" title="<?php echo $admtext['backup']; ?>" class="smallicon admin-save-icon"></a>
-                                    <?php
-                                    if (file_exists("$rootpath$backuppath/tng_tablestructure.bak")) {
-                                        $fileflag = 1;
-                                        ?>
-                                        <a href="admin_restore.php?table=struct" onClick="return confirm('<?php echo $admtext['surerestorets']; ?>');" title="<?php echo $admtext['restore']; ?>"
-                                           class="smallicon admin-rest-icon"></a>
+                            <tr>
+                                <td class="lightback">
+                                    <div class="action-btns2"><a href="admin_backup.php?table=struct" title="<?php echo _('Back up'); ?>" class="smallicon admin-save-icon"></a>
                                         <?php
-                                    } else {
-                                        $fileflag = 0;
-                                    }
+                                        if (file_exists("$rootpath$backuppath/tng_tablestructure.bak")) {
+                                            $fileflag = 1;
+                                            ?>
+                                            <a href="admin_restore.php?table=struct" onClick="return confirm('<?php echo _('Are you sure you want to restore the table structure? All existing data will be lost!'); ?>');" title="<?php echo _('Restore'); ?>"
+                                                class="smallicon admin-rest-icon"></a>
+                                            <?php
+                                        } else {
+                                            $fileflag = 0;
+                                        }
                                     ?>
                                 </div>
                             </td>

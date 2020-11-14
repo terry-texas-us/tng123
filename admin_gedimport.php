@@ -17,7 +17,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_add || !$allow_edit || $assignedbranch) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -111,18 +111,18 @@ function getAlbumLinksToSave() {
     return $albumlinks;
 }
 
-tng_adminheader($admtext['datamaint'], $flags);
+tng_adminheader(_('Import/Export'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
 if (!empty($old)) {
-    $datatabs['0'] = [1, "admin_dataimport.php", $admtext['import'], "import"];
-    $datatabs['1'] = [$allow_export, "admin_export.php", $admtext['export'], "export"];
-    $datatabs['2'] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+    $datatabs['0'] = [1, "admin_dataimport.php", _('Import'), "import"];
+    $datatabs['1'] = [$allow_export, "admin_export.php", _('Export'), "export"];
+    $datatabs['2'] = [1, "admin_secondmenu.php", _('Secondary Processes'), "second"];
+    $innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
     $menu = doMenu($datatabs, "import", $innermenu);
-    echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, $message);
+    echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('GEDCOM Import'), "img/data_icon.gif", $menu, $message);
 
     echo "<div class='lightback' style=\"padding:2px;\">\n";
     echo "<div class='databack normal' style=\"padding:5px;\">\n";
@@ -173,18 +173,18 @@ if (isset($remotefile) && $remotefile && $remotefile != "none") {
         $fp = @fopen($gedfilename, "r");
 
         if ($fp === false) {
-            $openmsg = $admtext['cannotopen'] . " $basefilename. " . $admtext['umps'];
+            $openmsg = _('Cannot open file') . " $basefilename. " . _('Your GEDCOM file may be larger than the maximum size allowed by your PHP installation. You can ask your provider to increase the \'upload_max_filesize\' value, or you can copy your file to the \'gedcom\' folder on your site and import it from there instead.');
         } else {
             $fstat = fstat($fp);
-            $openmsg = $admtext['importinggedcom'];
+            $openmsg = _('Importing GEDCOM...<br>(this may take several minutes)');
             $savestate['filename'] = $gedfilename;
             $clearedtogo = "true";
             if (!empty($old)) {
-                echo "<strong>$remotefile {$admtext['opened']}</strong><br>\n";
+                echo "<strong>$remotefile " . _('opened...') . "</strong><br>\n";
             }
         }
     } else {
-        $openmsg = $admtext['cannotupload'] . " " . $_FILES['remotefile']['name'] . ". " . $admtext['invfperms'];
+        $openmsg = _('Could not upload file:') . " " . $_FILES['remotefile']['name'] . ". " . _('Your \'gedcom\' folder may have inadequate permissions (try 755 or 777).');
     }
 } elseif (isset($database) && $database) {
     $gedfilename = $gedpath == "admin" || $gedpath == "" ? $database : "$rootpath$gedpath/$database";
@@ -194,25 +194,25 @@ if (isset($remotefile) && $remotefile && $remotefile != "none") {
 
     $fp = @fopen($gedfilename, "r");
     if ($fp === false) {
-        $openmsg = $admtext['cannotopen'] . " $database";
+        $openmsg = _('Cannot open file') . " $database";
     } else {
         $fstat = fstat($fp);
-        $openmsg = $admtext['importinggedcom'];
+        $openmsg = _('Importing GEDCOM...<br>(this may take several minutes)');
         $savestate['filename'] = $gedfilename;
         $clearedtogo = "true";
         if (!empty($old)) {
-            echo "<strong>$database {$admtext['opened']}</strong><br>\n";
+            echo "<strong>$database " . _('opened...') . "</strong><br>\n";
         }
     }
 } elseif (!empty($resuming) && !$resuming) {
-    $openmsg = $admtext['cannotopen'] . ". " . $admtext['umps'];
+    $openmsg = _('Cannot open file') . ". " . _('Your GEDCOM file may be larger than the maximum size allowed by your PHP installation. You can ask your provider to increase the \'upload_max_filesize\' value, or you can copy your file to the \'gedcom\' folder on your site and import it from there instead.');
 }
 
 $allcount = 0;
 if ($savestate['filename']) {
     $tree = $tree1; //selected
     $query = "UPDATE $trees_table SET lastimportdate=\"$today\", importfilename=\"$savegedfilename\" WHERE gedcom = '$tree'";
-    $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+    $result = @tng_query($query) or die (_('Cannot execute query') . ": $query");
 
     if ($del == "append") {
         //calculate offsets
@@ -264,11 +264,11 @@ if ($savestate['filename']) {
 
         $sql = "INSERT INTO $saveimport_table (filename, icount, ioffset, fcount, foffset, scount, soffset, mcount, pcount, ncount, noffset, roffset, offset, delvar, ucaselast, norecalc, neweronly, allevents, media, gedcom, branch)  
 			VALUES(\"{$savestate['filename']}\", 0, \"{$savestate['ioffset']}\", 0, \"{$savestate['foffset']}\", 0, \"{$savestate['soffset']}\", 0, 0, 0, \"{$savestate['noffset']}\", \"{$savestate['roffset']}\", 0, \"$del\", {$savestate['ucaselast']}, {$savestate['norecalc']}, {$savestate['neweronly']}, {$savestate['allevents']}, $mll, '$tree', \"{$savestate['branch']}\")";
-        $result = @tng_query($sql) or die ($admtext['cannotexecutequery'] . ": $sql");
+        $result = @tng_query($sql) or die (_('Cannot execute query') . ": $sql");
     }
 } elseif ($saveimport && !$openmsg) {
     $checksql = "SELECT filename, icount, ioffset, fcount, foffset, scount, soffset, mcount, pcount, ncount, noffset, roffset, offset, ucaselast, norecalc, neweronly, allevents, media, branch, delvar FROM $saveimport_table WHERE gedcom = '$tree'";
-    $result = @tng_query($checksql) or die ($admtext['cannotexecutequery'] . ": $checksql");
+    $result = @tng_query($checksql) or die (_('Cannot execute query') . ": $checksql");
     $found = tng_num_rows($result);
     if ($found) {
         $row = tng_fetch_assoc($result);
@@ -301,7 +301,7 @@ if ($savestate['filename']) {
         if ($fp !== false) {
             $fstat = fstat($fp);
             fseek($fp, $savestate['offset']);
-            $openmsg = $admtext['importinggedcom'];
+            $openmsg = _('Importing GEDCOM...<br>(this may take several minutes)');
             $clearedtogo = "true";
 
             if (!empty($del) && $del != "no") {
@@ -312,19 +312,19 @@ if ($savestate['filename']) {
                 $num_albumlinks = count($albumlinks);
             }
         } else {
-            $openmsg = $admtext['cannotopen'] . " " . $savestate['filename'] . " " . $admtext['toresume'];
+            $openmsg = _('Cannot open file') . " " . $savestate['filename'] . " " . _('to resume import');
         }
     } else {
-        $openmsg = $admtext['notresumed'] . " " . $admtext['maybedone'];
+        $openmsg = _('Import could not be resumed.') . " " . _('It may have already finished.');
     }
 } elseif (!$openmsg) {
-    $openmsg = $admtext['notresumed'] . " " . $admtext['turnonsis'];
+    $openmsg = _('Import could not be resumed.') . " " . _('Make sure \'Save Import State\' is turned on in the Import Settings.');
 }
 
 if (!empty($old)) {
     echo "<p class='normal'>$openmsg</p>\n";
     if ($clearedtogo == "true" && $saveimport && (!$remotefile || $remotefile == "none")) {
-        echo "<p class='normal'>{$admtext['ifimportfails']} <a href=\"admin_gedimport.php?tree=$tree&amp;old=1\">{$admtext['clickresume']}</a>.</p>\n";
+        echo "<p class='normal'>" . _('If the import fails to run to completion,') . " <a href=\"admin_gedimport.php?tree=$tree&amp;old=1\">" . _('click here to resume') . "</a>.</p>\n";
     }
 } else {
     ?>
@@ -358,25 +358,23 @@ if (!empty($old)) {
 
                 var nc = jQuery(idivs[ilen]).find('#nc');
                 if (nc.length) ncount.innerHTML = nc.html();
-
                 var mc = jQuery(idivs[ilen]).find('#mc');
                 if (mc.length) mcount.innerHTML = mc.html();
-
                 var pc = jQuery(idivs[ilen]).find('#pc');
                 if (pc.length) pcount.innerHTML = pc.html();
             }
             if (!parent.done)
                 timeoutID = setTimeout(updateCount, <?php echo $readmsecs; ?>);
             else if (!parent.suspended) {
-                msgdiv.innerHTML = "<?php echo $admtext['finishedimporting']; ?>" + ' &nbsp;<img src="img/tng_check.gif">';
+                msgdiv.innerHTML = "<?php echo _('Finished Importing GEDCOM'); ?>" + ' &nbsp;<img src="img/tng_check.gif">';
                 showCloseMenu();
             }
         }
 
         function showCloseMenu() {
-            var closemsg = '<a href="#" onclick="tnglitbox.remove();return false;"><img src="img/tng_close.gif" align="left" style="margin-right:5px">' + "<?php echo $text['closewindow']; ?>" + '</a>';
+            var closemsg = '<a href="#" onclick="tnglitbox.remove();return false;"><img src="img/tng_close.gif" align="left" style="margin-right:5px">' + "<?php echo _('Close this window'); ?>" + '</a>';
             if (parent.started)
-                parent.document.getElementById('implinks').innerHTML = '<span id="toremove"><a href="#" onclick="return removeFile(\'<?php echo $gedfilename; ?>\');">' + "<?php echo $admtext['removeged']; ?>" + '</a></span><p>' + closemsg + ' | <a href="admin_secondmenu.php">' + "<?php echo $admtext['moreoptions']; ?>" + '</a></p>';
+                parent.document.getElementById('implinks').innerHTML = '<span id="toremove"><a href="#" onclick="return removeFile(\'<?php echo $gedfilename; ?>\');">' + "<?php echo _('Delete GEDCOM file (optional)'); ?>" + '</a></span><p>' + closemsg + ' | <a href="admin_secondmenu.php">' + "<?php echo _('More Options'); ?>" + '</a></p>';
             else
                 parent.document.getElementById('implinks').innerHTML = '<p>' + closemsg + '</p>';
         }
@@ -482,11 +480,11 @@ if ($fp !== false) {
     }
     @fclose($fp);
 
-    $treemsg = $tree ? ", " . $admtext['tree'] . ": $tree/" : "";
-    adminwritelog("{$admtext['gedimport']}: " . basename($admtext['filename']) . ":{$savestate['filename']}$treemsg; {$savestate['icount']} {$admtext['people']}, {$savestate['fcount']} {$admtext['families']}, {$savestate['scount']} {$admtext['sources']}, {$savestate['ncount']} {$admtext['notes']}, {$savestate['mcount']} {$admtext['media']}, {$savestate['pcount']} {$admtext['places']}");
+    $treemsg = $tree ? ", " . _('Tree') . ": $tree/" : "";
+    adminwritelog("" . _('GEDCOM Import') . ": " . basename(_('File Name')) . ":{$savestate['filename']}$treemsg; {$savestate['icount']} " . _('People') . ", {$savestate['fcount']} " . _('Families') . ", {$savestate['scount']} " . _('Sources') . ", {$savestate['ncount']} " . _('Notes') . ", {$savestate['mcount']} " . _('Media') . ", {$savestate['pcount']} " . _('Places') . "");
 
     if (!empty($old)) {
-        echo "<p>{$admtext['finishedimporting']}<br>" . number_format($savestate['icount']) . " {$admtext['people']} &nbsp; " . number_format($savestate['fcount']) . " {$admtext['families']} &nbsp; " . number_format($savestate['scount']) . " {$admtext['sources']} &nbsp; " . number_format($savestate['ncount']) . " {$admtext['notes']} &nbsp; " . number_format($savestate['mcount']) . " {$admtext['media']} &nbsp; " . number_format($savestate['pcount']) . " {$admtext['places']}</p>";
+        echo "<p>" . _('Finished Importing GEDCOM') . "<br>" . number_format($savestate['icount']) . " " . _('People') . " &nbsp; " . number_format($savestate['fcount']) . " " . _('Families') . " &nbsp; " . number_format($savestate['scount']) . " " . _('Sources') . " &nbsp; " . number_format($savestate['ncount']) . " " . _('Notes') . " &nbsp; " . number_format($savestate['mcount']) . " " . _('Media') . " &nbsp; " . number_format($savestate['pcount']) . " " . _('Places') . "</p>";
     } else {
         echo "<div class='impc'>\n";
         echo "<span id='pr'>500</span><span id='ic'>" . $savestate['icount'] . "</span><span id='fc'>" . $savestate['fcount'] . "</span><span id='sc'>" . $savestate['scount'] . "</span><span id='nc'>" . $savestate['ncount'] . "</span><span id='mc'>" . $savestate['mcount'] . "</span><span id='pc'>" . $savestate['pcount'] . "</span>\n";
@@ -499,8 +497,8 @@ if ($fp !== false) {
     }
 }
 if (!empty($old)) {
-    echo "<p><a href=\"admin_secondary.php?secaction={$admtext['tracklines']}&tree=$tree\">{$admtext['tracklines']}</a></p>";
-    echo "<p><a href=\"admin_dataimport.php\">{$admtext['backtodataimport']}</a></p>\n";
+    echo "<p><a href=\"admin_secondary.php?secaction=" . _('Track Lines') . "&tree=$tree\">" . _('Track Lines') . "</a></p>";
+    echo "<p><a href=\"admin_dataimport.php\">" . _('Back to Data Import') . "</a></p>\n";
     echo "</div></div>\n";
 }
 ?>

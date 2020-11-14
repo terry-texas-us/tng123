@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -30,10 +30,10 @@ if ($entity == "state") {
 $params = [&$template, &$newname];
 $affected_rows = tng_execute_noerror($query, $params);
 
-adminwritelog($admtext['enternew'] . " $entity: $original_name");
+adminwritelog(_('Enter new') . " $entity: $original_name");
 
 if ($affected_rows == 1) {
-    echo "$original_name " . $admtext['added'];
+    echo "$original_name " . _('Added');
 } else {
-    echo "$original_name " . $admtext['alreadyexists'];
+    echo "$original_name " . _('already exists');
 }

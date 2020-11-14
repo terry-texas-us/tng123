@@ -19,18 +19,18 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="finddiv">
-    <h3 class="subhead"><?php echo $admtext['addmedia']; ?></h3>
+    <h3 class="subhead"><?php echo _('Add Media'); ?></h3>
     <form name="find2" onsubmit="getNewMedia(this,1); return false;">
         <table>
             <tr>
-                <td><span class="normal"><?php echo $admtext['mediatype']; ?>: </span></td>
-                <td><span class="normal"><?php echo $admtext['tree']; ?>: </span></td>
-                <td colspan="2"><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
+                <td><span class="normal"><?php echo _('Collection'); ?>: </span></td>
+                <td><span class="normal"><?php echo _('Tree'); ?>: </span></td>
+                <td colspan="2"><span class="normal"><?php echo _('Search for'); ?>: </span></td>
             </tr>
             <tr>
                 <td>
                     <select name="mediatypeID" onChange="toggleHeadstoneCriteria(document.find2,this.options[this.selectedIndex].value); getNewMedia(document.find2,0);">
-                        <option value=""><?php echo $admtext['all']; ?></option>
+                        <option value=""><?php echo _('All'); ?></option>
                         <?php
                         foreach ($mediatypes as $mediatype) {
                             $msgID = $mediatype['ID'];
@@ -42,8 +42,8 @@ header("Content-type:text/html; charset=" . $session_charset);
                 <td>
                     <select name="searchtree" onchange="getNewMedia(document.find2,0)">
                         <?php
-                        if (!$assignedtree) echo "<option value=''>{$admtext['alltrees']}</option>\n";
-                        $treeresult = tng_query($treequery) or die ($admtext['cannotexecutequery'] . ": $treequery");
+                        if (!$assignedtree) echo "<option value=''>" . _('All Trees') . "</option>\n";
+                        $treeresult = tng_query($treequery) or die (_('Cannot execute query') . ": $treequery");
                         while ($treerow = tng_fetch_assoc($treeresult)) {
                             echo "	<option value=\"{$treerow['gedcom']}\"";
                             if ($treerow['gedcom'] == $tree) echo " selected";
@@ -58,25 +58,25 @@ header("Content-type:text/html; charset=" . $session_charset);
                     <input id="searchstring" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                 </td>
                 <td>
-                    <input type="submit" name="searchbutton" value="<?php echo $admtext['search']; ?>" class="align-top">
+                    <input type="submit" name="searchbutton" value="<?php echo _('Search'); ?>" class="align-top">
                     <span id="spinner1" style="display:none;"><img src="img/spinner.gif"></span>
                 </td>
             </tr>
         </table>
         <table>
             <tr id="hsstatrow" style="display:none;">
-                <td><span class="normal"><?php echo $admtext['status']; ?>: </span></td>
-                <td><span class="normal"><?php echo $admtext['cemetery']; ?>: </span></td>
+                <td><span class="normal"><?php echo _('Status'); ?>: </span></td>
+                <td><span class="normal"><?php echo _('Cemetery'); ?>: </span></td>
             </tr>
             <tr id="cemrow" style="display:none;">
                 <td>
                     <select name="hsstat" onchange="getNewMedia(document.find2,0)">
                         <option value="">&nbsp;</option>
-                        <option value="<?php echo $admtext['notyetlocated']; ?>"><?php echo $admtext['notyetlocated']; ?></option>
-                        <option value="<?php echo $admtext['located']; ?>"><?php echo $admtext['located']; ?></option>
-                        <option value="<?php echo $admtext['unmarked']; ?>"><?php echo $admtext['unmarked']; ?></option>
-                        <option value="<?php echo $admtext['missing']; ?>"><?php echo $admtext['missing']; ?></option>
-                        <option value="<?php echo $admtext['cremated']; ?>"><?php echo $admtext['cremated']; ?></option>
+                        <option value="<?php echo _('Not yet located'); ?>"><?php echo _('Not yet located'); ?></option>
+                        <option value="<?php echo _('Located'); ?>"><?php echo _('Located'); ?></option>
+                        <option value="<?php echo _('Unmarked'); ?>"><?php echo _('Unmarked'); ?></option>
+                        <option value="<?php echo _('Missing'); ?>"><?php echo _('Missing'); ?></option>
+                        <option value="<?php echo _('Cremated'); ?>"><?php echo _('Cremated'); ?></option>
                     </select>
                 </td>
                 <td>

@@ -5,7 +5,7 @@ include "tng_begin.php";
 
 include "functions.php";
 
-$logstring = "<a href='mostwanted.php'>" . xmlcharacters($text['mostwanted']) . "</a>";
+$logstring = "<a href='mostwanted.php'>" . xmlcharacters(_('Most Wanted')) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -50,21 +50,21 @@ function showDivs($type) {
         $mediatext .= "<div class=\"mwperson\">\n";
         if ($type == "person") {
             if ($row['personID']) {
-                $mediatext .= "<a href=\"suggest.php?enttype=I&amp;ID={$row['personID']}&amp;tree={$row['gedcom']}\">" . $text['tellus'] . "</a>";
+                $mediatext .= "<a href=\"suggest.php?enttype=I&amp;ID={$row['personID']}&amp;tree={$row['gedcom']}\">" . _('Tell us what you know') . "</a>";
 
                 $rights = determineLivingPrivateRights($row);
                 $row['allow_living'] = $rights['living'];
                 $row['allow_private'] = $rights['private'];
 
                 $name = getName($row);
-                $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . $text['moreinfo'] . " <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
+                $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . _('More Information') . " <a href=\"getperson.php?personID={$row['personID']}&amp;tree={$row['gedcom']}\">$name</a>";
             } else {
-                $mediatext .= "<a href=\"suggest.php?page={$text['mostwanted']}:+{$row['mwtitle']}\">" . $text['tellus'] . "</a>";
+                $mediatext .= "<a href=\"suggest.php?page=" . _('Most Wanted') . ":+{$row['mwtitle']}\">" . _('Tell us what you know') . "</a>";
             }
         }
         if ($type == "photo" && $row['mediaID']) {
-            $mediatext .= "<a href=\"suggest.php?page={$text['mostwanted']}:+{$row['mtitle']}\">" . $text['tellus'] . "</a>";
-            $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . $text['moreinfo'] . " <a href='$href'>{$row['mtitle']}</a> &nbsp;&nbsp;&nbsp;";
+            $mediatext .= "<a href=\"suggest.php?page=" . _('Most Wanted') . ":+{$row['mtitle']}\">" . _('Tell us what you know') . "</a>";
+            $mediatext .= " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; " . _('More Information') . " <a href='$href'>{$row['mtitle']}</a> &nbsp;&nbsp;&nbsp;";
         }
         $mediatext .= "</div>\n";
         $mediatext .= "</td></tr>\n";
@@ -79,22 +79,22 @@ function showDivs($type) {
 
 $flags = [];
 
-tng_header($text['mostwanted'], $flags);
+tng_header(_('Most Wanted'), $flags);
 
 $flags['imgprev'] = true;
 ?>
-    <h2 class="header"><span class="headericon" id="mw-hdr-icon"></span><?php echo $text['mostwanted']; ?></h2>
+    <h2 class="header"><span class="headericon" id="mw-hdr-icon"></span><?php echo _('Most Wanted'); ?></h2>
     <br style="clear: left;">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'mostwanted', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 echo "<div class=\"titlebox rounded-lg mwblock\">\n";
-echo "<h3 class='subhead'>" . $text['mysperson'] . "</h3>\n";
+echo "<h3 class='subhead'>" . _('Elusive People') . "</h3>\n";
 echo showDivs("person");
 echo "</div>\n";
 
 echo "<br>\n";
 echo "<div class=\"titlebox rounded-lg mwblock\">\n";
-echo "<h3 class='subhead'>" . $text['mysphoto'] . "</h3>\n";
+echo "<h3 class='subhead'>" . _('Mystery Photos') . "</h3>\n";
 echo showDivs("photo");
 echo "</div>\n";
 

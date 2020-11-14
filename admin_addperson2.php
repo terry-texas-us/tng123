@@ -67,7 +67,7 @@ deleteEvents($personID, $tree);
 deleteNoteLinks($personID, $tree);
 
 if ($result && tng_num_rows($result)) {
-    echo "{\"error\":\"{$admtext['person']} $personID {$admtext['idexists']}\"}";
+    echo "{\"error\":\"" . _('Person') . " $personID " . _('could not be added because this ID already exists.') . "\"}";
 } else {
     $places = [];
     if (trim($birthplace) && !in_array($birthplace, $places)) {
@@ -176,10 +176,10 @@ if ($result && tng_num_rows($result)) {
         }
 
         if ($row['birthdate']) {
-            $birthdate = $admtext['birthabbr'] . " " . $row['birthdate'];
+            $birthdate = _('b.') . " " . $row['birthdate'];
         } else {
             if ($row['altbirthdate']) {
-                $birthdate = $admtext['chrabbr'] . " " . $row['altbirthdate'];
+                $birthdate = _('c.') . " " . $row['altbirthdate'];
             } else {
                 $birthdate = "";
             }
@@ -189,11 +189,11 @@ if ($result && tng_num_rows($result)) {
         $rval .= "<table class='w-full' cellpadding='5' cellspacing='1'>";
         $rval .= "<tr>\n";
         $rval .= "<td class='dragarea rounded-lg normal'>";
-        $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
+        $rval .= "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
         $rval .= "</td>\n";
         $rval .= "<td class='lightback normal childblock'>\n";
         $name = getName($row);
-        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">{$admtext['unlink']}</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">{$admtext['text_delete']}</a></div>";
+        $rval .= "<div id=\"unlinkc_$personID\" class=\"smaller hide-right\"><a href='#' onclick=\"return unlinkChild('$personID','child_unlink');\">" . _('Unlink') . "</a> &nbsp; | &nbsp; <a href='#' onclick=\"return unlinkChild('$personID','child_delete');\">" . _('Delete') . "</a></div>";
         $rval .= "<a href='#' onclick=\"EditChild('$personID');\">" . $name . "</a> - $personID<br>$birthdate</div>\n</td>\n</tr>\n</table>\n</div>\n";
         echo $rval;
     } elseif ($type == "spouse") {
@@ -201,7 +201,7 @@ if ($result && tng_num_rows($result)) {
         $name = preg_replace("/\"/", "\\\"", $name);
         echo "{\"id\":\"{$row['personID']}\",\"name\":\"$name\"}";
     }
-    adminwritelog("<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\">{$admtext['addnewperson']}: $tree/$personID</a>");
+    adminwritelog("<a href=\"admin_editperson.php?personID=$personID&amp;tree=$tree\">" . _('Add New Person') . ": $tree/$personID</a>");
     if ($needped) {
         header("Location: pedigree.php?personID=$personID&tree=$tree");
     }

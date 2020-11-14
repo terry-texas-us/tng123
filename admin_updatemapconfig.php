@@ -15,7 +15,7 @@ if ($link) {
     include "version.php";
 
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -24,7 +24,7 @@ if ($link) {
 require "adminlog.php";
 
 $fp = @fopen("config/mapconfig.php", "w", 1);
-if (!$fp) die ($admtext['cannotopen'] . " mapconfig.php");
+if (!$fp) die (_('Cannot open file') . " mapconfig.php");
 
 
 flock($fp, LOCK_EX);
@@ -56,7 +56,7 @@ fwrite($fp, "\$pinplacelevel6 = \"$pinplacelevel6\";\n");
 flock($fp, LOCK_UN);
 fclose($fp);
 
-adminwritelog($admtext['modifymapsettings']);
+adminwritelog(_('Modify Map Configuration Settings'));
 
 header("Location: admin_setup.php");
 

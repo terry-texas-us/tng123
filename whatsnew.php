@@ -14,7 +14,7 @@ $flags['imgprev'] = true;
 
 if (!$change_cutoff) $change_cutoff = 0;
 
-$pastxdays = $change_cutoff ? " " . preg_replace("/xx/", $change_cutoff, $text['pastxdays']) : "";
+$pastxdays = $change_cutoff ? " " . preg_replace("/xx/", $change_cutoff, _('(past xx days)')) : "";
 $whatsnew = 1;
 
 $branchquery = "SELECT count(branch) AS branchcount FROM $branches_table";
@@ -23,11 +23,11 @@ $branchrow = tng_fetch_assoc($branchresult);
 $numbranches = $branchrow['branchcount'];
 tng_free_result($branchresult);
 
-$logstring = "<a href='whatsnew.php'>" . xmlcharacters($text['whatsnew'] . $pastxdays) . "</a>";
+$logstring = "<a href='whatsnew.php'>" . xmlcharacters(_('What\'s New') . $pastxdays) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($text['whatsnew'] . " " . $pastxdays, $flags);
+tng_header(_('What\'s New') . " " . $pastxdays, $flags);
 
 //get all users, username + description
 //put in assoc table
@@ -51,21 +51,21 @@ if ($currentuser) {
     }
 }
 ?>
-    <h2 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo $text['whatsnew'] . " " . $pastxdays; ?></h2>
+    <h2 class="header"><span class="headericon" id="whatsnew-hdr-icon"></span><?php echo _('What\'s New') . " " . $pastxdays; ?></h2>
     <br>
 <?php
 $numtrees = 0;
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'whatsnew', 'method' => 'get', 'name' => 'form1', 'id' => 'form1', 'lastimport' => true]);
-$nametitle = $text['lastfirst'];
+$nametitle = _('Last Name, First Name');
 $header1 = "<table class = 'w-11/12 mx-auto whiteback normal'>";
 $header1 .= "<thead>";
 $header1 .= "<tr>\n";
-$header1 .= "<th class = 'p-2 text-center fieldnameback thumbnails fieldname'>{$text['thumb']}</th>\n";
-$header1 .= "<th class = 'p-2 fieldnameback fieldname'>{$text['description']}</th>\n";
-$hsheader = "<th class = 'p-2 fieldnameback fieldname'>{$text['cemetery']}</th>\n";
-$hsheader .= "<th class = 'p-2 fieldnameback fieldname'>{$text['status']}</th>\n";
-$header2 .= "<th class= 'p-2 fieldnameback fieldname'>{$text['indlinked']}</th>\n";
-$header2 .= "<th class = 'hidden p-2 md:w-32 md:table-cell fieldnameback fieldname'>{$text['lastmodified']}</th>\n";
+$header1 .= "<th class = 'p-2 text-center fieldnameback thumbnails fieldname'>" . _('Thumb') . "</th>\n";
+$header1 .= "<th class = 'p-2 fieldnameback fieldname'>" . _('Description') . "</th>\n";
+$hsheader = "<th class = 'p-2 fieldnameback fieldname'>" . _('Cemetery') . "</th>\n";
+$hsheader .= "<th class = 'p-2 fieldnameback fieldname'>" . _('Status') . "</th>\n";
+$header2 .= "<th class= 'p-2 fieldnameback fieldname'>" . _('Linked to') . "</th>\n";
+$header2 .= "<th class = 'hidden p-2 md:w-32 md:table-cell fieldnameback fieldname'>" . _('Last Modified Date') . "</th>\n";
 $header2 .= "</tr>\n";
 $header2 .= "</thead>\n";
 $footer = "</table>\n";
@@ -113,19 +113,19 @@ tng_free_result($result);
 if (count($people)) {
     ?>
     <div class="md:mx-4 md:rounded-lg titlebox">
-        <h3 class="subhead"><?php echo $text['people']; ?></h3>
+        <h3 class="subhead"><?php echo _('People'); ?></h3>
         <table class='w-11/12 mx-auto whiteback normal'>
             <thead>
             <tr>
-                <th class="p-2 fieldnameback idcol fieldname"><?php echo ucfirst($text['person']); ?></th>
+                <th class="p-2 fieldnameback idcol fieldname"><?php echo ucfirst(_('Person')); ?></th>
                 <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $nametitle; ?></th>
-                <th class="p-2 fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? $text['born'] : $text['bornchr']); ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo($tngconfig['hidechr'] ? _('Born') : _('Born/Christened')); ?></th>
                 <?php if ($numtrees > 1) { ?>
-                    <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
-                            echo " | " . $text['branch'];
+                    <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo _('Tree'); ?><?php if ($numbranches) {
+                            echo " | " . _('Branch');
                         } ?></th>
                 <?php } ?>
-                <th class="hidden p-2 lg:table-cell fieldnameback fieldname"><?php echo $text['lastmodified']; ?></th>
+                <th class="hidden p-2 lg:table-cell fieldnameback fieldname"><?php echo _('Last Modified Date'); ?></th>
             </tr>
             </thead>
             <?php
@@ -194,21 +194,21 @@ tng_free_result($result);
 if (count($families)) {
     ?>
     <div class="md:mx-4 md:rounded-lg titlebox">
-        <h3 class="subhead"><?php echo $text['families']; ?></h3>
+        <h3 class="subhead"><?php echo _('Families'); ?></h3>
         <table class='w-11/12 mx-auto rounded-lg whiteback normal'>
             <thead>
             <tr>
-                <th class="p-2 fieldnameback nbrcol fieldname"><?php echo $text['family']; ?></th>
-                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['husbname']; ?></th>
-                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo $text['wifename']; ?></th>
-                <th class="p-2 fieldnameback fieldname"><?php echo $text['married']; ?></th>
+                <th class="p-2 fieldnameback nbrcol fieldname"><?php echo _('Family'); ?></th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo _('Father\'s Name'); ?></th>
+                <th class="p-2 whitespace-no-wrap fieldnameback fieldname"><?php echo _('Mother\'s Name'); ?></th>
+                <th class="p-2 fieldnameback fieldname"><?php echo _('Married'); ?></th>
                 <?php if ($numtrees > 1) { ?>
-                    <th class="p-2 fieldnameback fieldname"><?php echo $text['tree']; ?><?php if ($numbranches) {
-                            echo " | " . $text['branch'];
+                    <th class="p-2 fieldnameback fieldname"><?php echo _('Tree'); ?><?php if ($numbranches) {
+                            echo " | " . _('Branch');
                         } ?>
                     </th>
                 <?php } ?>
-                <th class="hidden p-2 md:w-32 md:table-cell fieldnameback fieldname"><?php echo $text['lastmodified']; ?></th>
+                <th class="hidden p-2 md:w-32 md:table-cell fieldnameback fieldname"><?php echo _('Last Modified Date'); ?></th>
             </tr>
             </thead>
 

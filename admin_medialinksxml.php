@@ -12,7 +12,7 @@ if ($albumID) {
 } else {
     $query2 = "SELECT personID AS entityID, gedcom FROM $medialinks_table WHERE gedcom = '$tree' AND mediaID = \"$mediaID\" AND linktype = \"$linktype\"";
 }
-$result2 = tng_query($query2) or die ($admtext['cannotexecutequery'] . ": $query2");
+$result2 = tng_query($query2) or die (_('Cannot execute query') . ": $query2");
 $alreadygot = [];
 while ($row2 = tng_fetch_assoc($result2))
     $alreadygot[] = $row2['entityID'];
@@ -28,14 +28,14 @@ function showAction($entityID, $num = null) {
         $gotit = in_array($entityID, $alreadygot);
         if ($gotit) $lines .= "display:none";
 
-        $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . urlencode($entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
+        $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . urlencode($entityID) . "', '$num');\">" . _('Add') . "</a></div>";
         $lines .= "<div id=\"linked_$id\" style=\"text-align:center;width:50px;";
         if (!$gotit) $lines .= "display:none";
 
         $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
-        $lines .= "\"><a href='#' onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
+        $lines .= "\"><a href='#' onclick=\"selectEntity(document.find.newlink1, '$id');\">" . _('Select') . "</a>";
     }
     $lines .= "</div>";
     $lines .= "</td>";
@@ -46,11 +46,11 @@ function showAction($entityID, $num = null) {
 function doPeople($firstname, $lastname) {
     global $tree, $assignedbranch, $lnprefixes, $maxsearchresults, $admtext, $people_table;
     $lines = "<tr>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['personid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['name'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['birthdate'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['deathdate'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . _('Select') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Person ID') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Name') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Birth Date') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Death Date') . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
     $allwhere = "gedcom = '$tree'";
     if ($assignedbranch) {
@@ -75,23 +75,23 @@ function doPeople($firstname, $lastname) {
 
     while ($row = tng_fetch_assoc($result)) {
         if ($row['birthdate']) {
-            $birthdate = $admtext['birthabbr'] . " " . $row['birthdate'];
+            $birthdate = _('b.') . " " . $row['birthdate'];
         } elseif ($row['altbirthdate']) {
-            $birthdate = $admtext['chrabbr'] . " " . $row['altbirthdate'];
+            $birthdate = _('c.') . " " . $row['altbirthdate'];
         } else {
             $birthdate = "";
         }
 
         if ($row['deathdate']) {
-            $deathdate = $admtext['deathabbr'] . " " . $row['deathdate'];
+            $deathdate = _('d.') . " " . $row['deathdate'];
         } elseif ($row['burialdate']) {
-            $deathdate = $admtext['burialabbr'] . " " . $row['burial'];
+            $deathdate = _('bur.') . " " . $row['burial'];
         } else {
             $deathdate = "";
         }
 
         if (!$birthdate && $deathdate) {
-            $birthdate = $admtext['nobirthinfo'];
+            $birthdate = _('No birth info');
         }
         $row['allow_living'] = 1;
         $name = getName($row);
@@ -110,10 +110,10 @@ function doPeople($firstname, $lastname) {
 function doFamilies($husbname, $wifename) {
     global $tree, $assignedbranch, $maxsearchresults, $admtext, $families_table, $people_table;
     $lines = "<tr>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['familyid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['husbname'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['wifename'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . _('Select') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Family ID') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Father\'s Name') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Mother\'s Name') . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
     $allwhere = "families.gedcom = '$tree'";
     $joinon = "";
@@ -185,9 +185,9 @@ function doFamilies($husbname, $wifename) {
 function doSources($title) {
     global $tree, $sources_table, $maxsearchresults, $admtext;
     $lines = "<tr>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['sourceid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . _('Select') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Source ID') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Title') . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
     $query = "SELECT sourceID, title FROM $sources_table WHERE gedcom = '$tree' AND title LIKE \"%$title%\" ORDER BY title LIMIT $maxsearchresults";
     $result = tng_query($query);
@@ -205,9 +205,9 @@ function doSources($title) {
 function doRepos($title) {
     global $tree, $repositories_table, $maxsearchresults, $admtext;
     $lines = "<tr>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['repoid'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['title'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . _('Select') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Repository ID') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Title') . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
     $query = "SELECT repoID, reponame FROM $repositories_table WHERE gedcom = '$tree' AND reponame LIKE \"%$title%\" ORDER BY reponame LIMIT $maxsearchresults";
     $result = tng_query($query);
@@ -225,8 +225,8 @@ function doRepos($title) {
 function doPlaces($place) {
     global $tree, $maxsearchresults, $admtext, $places_table;
     $lines = "<tr>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n";
-    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . $admtext['place'] . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . _('Select') . "</b>&nbsp;</td>\n";
+    $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>&nbsp;<b>" . _('Place') . "</b>&nbsp;</td>\n";
     $lines .= "</tr>\n";
     $allwhere = "gedcom = '$tree'";
     if ($place) $allwhere .= " AND place LIKE \"%$place%\"";

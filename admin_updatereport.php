@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -40,10 +40,10 @@ if ($savecopy) {
     $result = tng_query($query);
 }
 
-adminwritelog("<a href=\"admin_editreport.php?reportID=$reportID\">{$admtext['modifyreport']}: $reportID</a>");
+adminwritelog("<a href=\"admin_editreport.php?reportID=$reportID\">" . _('Edit Existing Report') . ": $reportID</a>");
 
 if ($submitx) {
-    $message = $admtext['changestoreport'] . " $reportID {$admtext['succsaved']}.";
+    $message = _('Changes to report') . " $reportID " . _('were successfully saved') . ".";
     header("Location: admin_reports.php?message=" . urlencode($message));
 } else {
     header("Location: admin_editreport.php?reportID=$reportID");

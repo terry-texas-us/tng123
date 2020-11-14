@@ -43,14 +43,14 @@ function geocode($address, $multiples, $id) {
                     $lng = $xml->result->geometry->location->lng;
 
                     $query = "UPDATE $places_table SET latitude = \"$lat\", longitude = \"$lng\", zoom = \"$foundzoom\" WHERE ID = \"$id\"";
-                    $result2 = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query " . tng_error());
+                    $result2 = tng_query($query) or die (_('Cannot execute query') . ": $query " . tng_error());
 
-                    $message = "$lat, $lng  &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>{$admtext['edit']}</a>";
+                    $message = "$lat, $lng  &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>" . _('Edit') . "</a>";
                 } else {
                     $query = "UPDATE $places_table SET geoignore = '1' WHERE ID = \"$id\"";
-                    $result2 = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query " . tng_error());
+                    $result2 = tng_query($query) or die (_('Cannot execute query') . ": $query " . tng_error());
 
-                    $message = "<strong>{$admtext['toomany']}</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>{$admtext['edit']}</a>";
+                    $message = "<strong>" . _('Ignored (too many results)') . "</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>" . _('Edit') . "</a>";
                 }
                 if ($delay) $delay -= 20000;
 
@@ -63,10 +63,10 @@ function geocode($address, $multiples, $id) {
                     $geocode_pending = false;
                     if ($status != "OVER_QUERY_LIMIT") {
                         $query = "UPDATE $places_table SET geoignore = '1' WHERE ID = \"$id\"";
-                        $result2 = tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query" . tng_error());
+                        $result2 = tng_query($query) or die (_('Cannot execute query') . ": $query" . tng_error());
                     }
 
-                    $message = "<strong>{$admtext['nogeocode']} ($status)</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>{$admtext['edit']}</a>";
+                    $message = "<strong>" . _('Could not be geocoded') . " ($status)</strong> &mdash; <a href=\"admin_editplace.php?ID=$id&amp;cw=1\" target='_blank'>" . _('Edit') . "</a>";
                 }
             }
             if ($delay) usleep($delay);

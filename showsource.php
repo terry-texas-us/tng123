@@ -46,7 +46,7 @@ tng_free_result($sresult);
 $srcnotes = getNotes($sourceID, "S");
 getCitations($sourceID);
 
-$logstring = "<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\">" . xmlcharacters($text['source'] . " {$srcrow['title']} ($sourceID)") . "</a>";
+$logstring = "<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree\">" . xmlcharacters(_('Source') . " {$srcrow['title']} ($sourceID)") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -65,25 +65,25 @@ $sourcetext .= beginSection("info");
 $sourcetext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
 $sourcetext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($srcrow['title']) {
-    $sourcetext .= showEvent(["text" => $text['title'], "fact" => $srcrow['title']]);
+    $sourcetext .= showEvent(["text" => _('Title'), "fact" => $srcrow['title']]);
 }
 if ($srcrow['shorttitle']) {
-    $sourcetext .= showEvent(["text" => $text['shorttitle'], "fact" => $srcrow['shorttitle']]);
+    $sourcetext .= showEvent(["text" => _('Short Title'), "fact" => $srcrow['shorttitle']]);
 }
 if ($srcrow['author']) {
-    $sourcetext .= showEvent(["text" => $text['author'], "fact" => $srcrow['author']]);
+    $sourcetext .= showEvent(["text" => _('Author'), "fact" => $srcrow['author']]);
 }
 if ($srcrow['publisher']) {
-    $sourcetext .= showEvent(["text" => $text['publisher'], "fact" => $srcrow['publisher']]);
+    $sourcetext .= showEvent(["text" => _('Publisher'), "fact" => $srcrow['publisher']]);
 }
 if ($srcrow['callnum']) {
-    $sourcetext .= showEvent(["text" => $text['callnum'], "fact" => $srcrow['callnum']]);
+    $sourcetext .= showEvent(["text" => _('Call Number'), "fact" => $srcrow['callnum']]);
 }
 if ($srcrow['reponame']) {
-    $sourcetext .= showEvent(["text" => $text['repository'], "fact" => "<a href=\"showrepo.php?repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"]);
+    $sourcetext .= showEvent(["text" => _('Repository'), "fact" => "<a href=\"showrepo.php?repoID={$srcrow['repoID']}&amp;tree=$tree\">{$srcrow['reponame']}</a>"]);
 }
 if ($srcrow['other']) {
-    $sourcetext .= showEvent(["text" => $text['other'], "fact" => $srcrow['other']]);
+    $sourcetext .= showEvent(["text" => _('Other Information'), "fact" => $srcrow['other']]);
 }
 
 //do custom events
@@ -94,9 +94,9 @@ ksort($events);
 foreach ($events as $event)
     $sourcetext .= showEvent($event);
 if ($allow_admin && $allow_edit) {
-    $sourcetext .= showEvent(["text" => $text['sourceid'], "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>", "np" => 1]);
+    $sourcetext .= showEvent(["text" => _('Source ID'), "date" => $sourceID, "place" => "<a href=\"admin_editsource.php?sourceID=$sourceID&amp;tree=$tree&amp;cw=1\" target='_blank'>" . _('Edit') . "</a>", "np" => 1]);
 } else {
-    $sourcetext .= showEvent(["text" => $text['sourceid'], "date" => $sourceID]);
+    $sourcetext .= showEvent(["text" => _('Source ID'), "date" => $sourceID]);
 }
 
 if ($ioffset) {
@@ -139,13 +139,13 @@ while ($srow = tng_fetch_assoc($sresult)) {
 
 if ($srcrow['actualtext']) {
     if ((!$noneliving && !$srcrow['allow_living']) || (!$noneprivate && !$srcrow['allow_private'])) {
-        $srcrow['actualtext'] = $text['livingphoto'];
+        $srcrow['actualtext'] = _('At least one living or private individual is linked to this item - Details withheld.');
     }
-    $sourcetext .= showEvent(["text" => $text['text'], "fact" => $srcrow['actualtext']]);
+    $sourcetext .= showEvent(["text" => _('Text'), "fact" => $srcrow['actualtext']]);
 }
 
 if ($numrows > $maxsearchresults) {
-    $sourcelinktext .= "\n[<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree&amp;foffset=$foffset&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">{$text['moreind']}</a>]";
+    $sourcelinktext .= "\n[<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree&amp;foffset=$foffset&amp;ioffset=" . ($newioffset + $maxsearchresults) . "\">" . _('More individuals') . "</a>]";
 }
 tng_free_result($sresult);
 
@@ -165,16 +165,15 @@ while ($srow = tng_fetch_assoc($sresult)) {
 
     if (!$srow['allow_private']) $noneprivate = 0;
 
-
-    $sourcelinktext .= "<a href=\"familygroup.php?familyID={$srow['familyID']}&amp;tree={$srow['gedcom']}\">{$text['family']}: " . getFamilyName($srow) . "</a>";
+    $sourcelinktext .= "<a href=\"familygroup.php?familyID={$srow['familyID']}&amp;tree={$srow['gedcom']}\">" . _('Family') . ": " . getFamilyName($srow) . "</a>";
 }
 if ($numrows >= $maxsearchresults) {
-    $sourcelinktext .= "\n[<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree&amp;ioffset=$ioffset&amp;foffset=" . ($newfoffset + $maxsearchresults) . "\">{$text['morefam']}</a>]";
+    $sourcelinktext .= "\n[<a href=\"showsource.php?sourceID=$sourceID&amp;tree=$tree&amp;ioffset=$ioffset&amp;foffset=" . ($newfoffset + $maxsearchresults) . "\">" . _('More families') . "</a>]";
 }
 tng_free_result($sresult);
 
 if ($sourcelinktext) {
-    $sourcetext .= showEvent(["text" => $text['indlinked'], "fact" => $sourcelinktext]);
+    $sourcetext .= showEvent(["text" => _('Linked to'), "fact" => $sourcelinktext]);
 }
 
 $sourcetext .= "</table>\n";
@@ -194,7 +193,7 @@ if ($notes) {
     $sourcetext .= "<table class='whiteback tfixed' cellspacing='1'  cellpadding='4'>\n";
     $sourcetext .= "<col class=\"labelcol\"/><col/>\n";
     $sourcetext .= "<tr>\n";
-    $sourcetext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>&nbsp;{$text['notes']}&nbsp;</span></td>\n";
+    $sourcetext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>&nbsp;" . _('Notes') . "&nbsp;</span></td>\n";
     $sourcetext .= "<td class='databack'>$notes</td>\n";
     $sourcetext .= "</tr>\n";
     $sourcetext .= "</table>\n";
@@ -211,16 +210,16 @@ if ($notes || $media) {
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['srcinfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu .= "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">" . _('Source Information') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if ($media) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">" . _('Media') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">" . _('Notes') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">" . _('All') . "</a>\n";
 } else {
-    $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">{$text['srcinfo']}</span>\n";
+    $innermenu .= "<span class=\"lightlink3\" id=\"tng_plink\">" . _('Source Information') . "</span>\n";
 }
 
 echo tng_menu("S", "source", $sourceID, $innermenu);

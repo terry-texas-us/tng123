@@ -14,7 +14,7 @@ $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 if (!$allow_add || !$allow_edit || $assignedbranch) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -26,17 +26,17 @@ $today = date("Y-m-d H:i:s");
 global $prefix;
 $helplang = findhelp("data_help.php");
 
-tng_adminheader($admtext['datamaint'], $flags);
+tng_adminheader(_('Import/Export'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
-$datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
-$datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$datatabs[0] = [1, "admin_dataimport.php", _('Import'), "import"];
+$datatabs[1] = [1, "admin_export.php", _('Export'), "export"];
+$datatabs[2] = [1, "admin_secondmenu.php", _('Secondary Processes'), "second"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/data_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($datatabs, "import", $innermenu);
-echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'], "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
+echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('GEDCOM Import'), "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
 <div class="lightback pad2">
     <div class="databack normal p-1">
@@ -49,25 +49,25 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         @set_time_limit(0);
         if ($remotefile && $remotefile != "none") {
             $fp = @fopen($remotefile, "r");
-            if ($fp === false) die ($admtext['cannotopen'] . " $remotefile");
+            if ($fp === false) die (_('Cannot open file') . " $remotefile");
 
-            echo "$remotefile {$admtext['opened']}<br>\n";
+            echo "$remotefile " . _('opened...') . "<br>\n";
             $savestate['filename'] = $remotefile;
         } else {
             if ($database) {
                 $localfile = $gedpath == "admin" || $gedpath == "" ? $database : "$rootpath$gedpath/$database";
                 $fp = @fopen($localfile, "r");
                 if (!$fp) {
-                    die ($admtext['cannotopen'] . " r=$rootpath, g=$gedpath, l=$localfile");
+                    die (_('Cannot open file') . " r=$rootpath, g=$gedpath, l=$localfile");
                 }
-                echo "$database {$admtext['opened']}<br>\n";
+                echo "$database " . _('opened...') . "<br>\n";
                 $savestate['filename'] = $localfile;
             }
         }
         if ($savestate['filename']) $tree = $tree1; //selected
 
         ?>
-        <p class="normal"><strong><?php echo $admtext['importinggedcom']; ?></strong></p>
+        <p class="normal"><strong><?php echo _('Importing GEDCOM...<br>(this may take several minutes)'); ?></strong></p>
         <?php
         //get custom event types
         $query = "SELECT eventtypeID, tag, description, keep, type, display FROM $eventtypes_table";
@@ -163,7 +163,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
                                 $display = isset($admtext[$tag]) ? $admtext[$tag] : $tag;
                             }
                             $query = "INSERT IGNORE INTO $eventtypes_table (tag, description, display, keep, type)  VALUES(\"$tag\", \"$type\", \"$display\", '0', \"$prefix\")";
-                            $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+                            $result = @tng_query($query) or die (_('Cannot execute query') . ": $query");
 
                             $eventctr++;
                             echo "<strong>$eventctr</strong> ";
@@ -205,11 +205,11 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['gedimport'
         <span class="normal">
 <br><br>
 <?php
-adminwritelog($admtext['datamaint'] . ": $eventctr " . $admtext['eventtypes']);
-echo $admtext['finishedimporting'] . "<br>$eventctr " . $admtext['eventtypes'];
+adminwritelog(_('Import/Export') . ": $eventctr " . _('Event Types'));
+echo _('Finished Importing GEDCOM') . "<br>$eventctr " . _('Event Types');
 ?>
 <br>
 </span>
-        <?php echo "<p><a href=\"admin_dataimport.php\">{$admtext['backtodataimport']}</a></p>"; ?>
+        <?php echo "<p><a href=\"admin_dataimport.php\">" . _('Back to Data Import') . "</a></p>"; ?>
 
         <?php echo tng_adminfooter(); ?>

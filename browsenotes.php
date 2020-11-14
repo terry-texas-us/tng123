@@ -41,19 +41,19 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 $numrowsplus = $numrows + $offset;
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"browsenotes.php?tree=$tree&amp;offset=$offset&amp;notesearch=" . htmlentities(stripslashes($notesearch), ENT_QUOTES) . "\">" . xmlcharacters($text['notes'] . $treestr) . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href=\"browsenotes.php?tree=$tree&amp;offset=$offset&amp;notesearch=" . htmlentities(stripslashes($notesearch), ENT_QUOTES) . "\">" . xmlcharacters(_('Notes') . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-tng_header($text['notes'], $flags);
+tng_header(_('Notes'), $flags);
 ?>
-    <h2 class="mb-4 header"><span class="headericon" id="notes-hdr-icon"></span><?php echo $text['notes']; ?></h2>
+    <h2 class="mb-4 header"><span class="headericon" id="notes-hdr-icon"></span><?php echo _('Notes'); ?></h2>
 <?php echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browsenotes', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']); ?>
     <div class='mb-4 normal'>
         <form name="notesearch1" action="browsenotes.php" method="get">
-            <label for="notesearch" hidden><?php echo $text['search']; ?></label>
+            <label for="notesearch" hidden><?php echo _('Search'); ?></label>
             <input id="notesearch" class="p-1 ml-1" name="notesearch" type="search" value="<?php echo $notesearch; ?>">
-            <input class="p-1 px-2" type="submit" value="<?php echo $text['search']; ?>">
+            <input class="p-1 px-2" type="submit" value="<?php echo _('Search'); ?>">
             <input name='tree' type='hidden' value="<?php echo $tree; ?>">
         </form>
     </div>
@@ -61,8 +61,8 @@ tng_header($text['notes'], $flags);
         <thead>
         <tr>
             <th class="hidden p-2 sm:table-cell fieldnameback nbrcol fieldname">#</th>
-            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo $text['notes']; ?></th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['indlinked']; ?></th>
+            <th class="p-2 fieldnameback whitespace-no-wrap fieldname"><?php echo _('Notes'); ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('Linked to'); ?></th>
         </tr>
         </thead>
         <tbody>
@@ -110,7 +110,7 @@ tng_header($text['notes'], $flags);
                     $row2['allow_private'] = $nrights['private'];
                     if (!$row2['allow_private']) $noneprivate = 0;
                     if (!$row2['allow_living']) $noneliving = 0;
-                    $notelinktext .= "<a href=\"familygroup.php?familyID={$row2['familyID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['family']} {$row2['familyID']}</a>\n<br>\n";
+                    $notelinktext .= "<a href=\"familygroup.php?familyID={$row2['familyID']}&tree={$row2['gedcom']}\" target='_blank'>" . _('Family') . " {$row2['familyID']}</a>\n<br>\n";
                     tng_free_result($result2);
                 }
             }
@@ -119,7 +119,7 @@ tng_header($text['notes'], $flags);
                 $result2 = tng_query($query);
                 if (tng_num_rows($result2) == 1) {
                     $row2 = tng_fetch_assoc($result2);
-                    $notelinktext .= "<a href=\"showsource.php?sourceID={$row2['sourceID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['source']} $sourcetext ({$row2['sourceID']})</a>\n<br>\n";
+                    $notelinktext .= "<a href=\"showsource.php?sourceID={$row2['sourceID']}&tree={$row2['gedcom']}\" target='_blank'>" . _('Source') . " $sourcetext ({$row2['sourceID']})</a>\n<br>\n";
                     tng_free_result($result2);
                 }
             }
@@ -128,7 +128,7 @@ tng_header($text['notes'], $flags);
                 $result2 = tng_query($query);
                 if (tng_num_rows($result2) == 1) {
                     $row2 = tng_fetch_assoc($result2);
-                    $notelinktext .= "<a href=\"showrepo.php?repoID={$row2['repoID']}&tree={$row2['gedcom']}\" target='_blank'>{$text['repository']} $sourcetext ({$row2['repoID']})</a>\n<br>\n";
+                    $notelinktext .= "<a href=\"showrepo.php?repoID={$row2['repoID']}&tree={$row2['gedcom']}\" target='_blank'>" . _('Repository') . " $sourcetext ({$row2['repoID']})</a>\n<br>\n";
                     tng_free_result($result2);
                 }
             }
@@ -138,7 +138,7 @@ tng_header($text['notes'], $flags);
             if ($noneliving && $noneprivate) {
                 echo nl2br($nrow['note']);
             } else {
-                echo $text['livingnote'];
+                echo _('At least one living or private individual is linked to this note - Details withheld.');
             }
             echo "</td>\n";
             echo "<td class='p-2 databack' style='width: 175px;'>$notelinktext</td>\n";

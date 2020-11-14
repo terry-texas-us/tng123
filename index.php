@@ -10,72 +10,72 @@ if ($templateswitching && $templatenum) {
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
 $flags = ['noicons' => true, 'noheader' => true];
-$headElement = new HeadElementPublic($text['mnuheader'], $flags);
+$headElement = new HeadElementPublic(_('Home Page'), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _('Maintenance Mode is ON') . "</strong></span><br><br>\n";
 }
 ?>
 
-<h1><?php echo $text['mnuheader']; ?></h1>
+<h1><?php echo _('Home Page'); ?></h1>
 
 <?php
 if ($currentuser) {
-    echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
+    echo "<p><strong>" . _('Welcome headline') . ", $currentuserdesc.</strong></p>\n";
 }
 ?>
-<h2><?php echo $text['mnusearchfornames']; ?></h2>
+<h2><?php echo _('Search'); ?></h2>
 
 <form name="searchform" action="search.php" method="get">
-    <label for="myfirstname"><?php echo $text['firstname']; ?></label>
+    <label for="myfirstname"><?php echo _('First Name'); ?></label>
     <input id="myfirstname" name="myfirstname" type="search">
-    <label for="mylastname"><?php echo $text['lastname']; ?></label>
+    <label for="mylastname"><?php echo _('Last Name'); ?></label>
     <input id="mylastname" name="mylastname" type="search">
     <input name="mybool" type="hidden" value="AND">
     <input name="offset" type="hidden" value="0">
-    <input name="search" type="submit" value="<?php echo $text['search']; ?>">
+    <input name="search" type="submit" value="<?php echo _('Search'); ?>">
 </form>
 <hr>
-<h2><?php echo $text['mnufeatures']; ?></h2>
+<h2><?php echo _('Other Features'); ?></h2>
 
 <ul>
     <?php
     if ($currentuser) { // this means you're logged in
-        echo "<li><a href='logout.php'>{$text['mnulogout']}</a></li>\n";
+        echo "<li><a href='logout.php'>" . _('Log Out') . "</a></li>\n";
     } else {
-        echo "<li><a href='login.php'>{$text['mnulogon']}</a></li>\n";
+        echo "<li><a href='login.php'>" . _('Log In') . "</a></li>\n";
     }
-    echo "<li><a href='newacctform.php'>{$text['mnuregister']}</a></li>\n";
-    echo "<li><a href='searchform.php'>{$text['mnuadvancedsearch']}</a></li>\n";
-    echo "<li><a href='surnames.php'>{$text['mnulastnames']}</a></li>\n";
-    echo "<li><a href='bookmarks.php'>{$text['bookmarks']}</a></li>\n";
-    echo "<li><a href='statistics.php'>{$text['mnustatistics']}</a></li>\n";
-    echo "<li><a href='browsemedia.php?mediatypeID=photos'>{$text['mnuphotos']}</a></li>\n";
-    echo "<li><a href='browsemedia.php?mediatypeID=histories'>{$text['mnuhistories']}</a></li>\n";
-    echo "<li><a href='browsemedia.php?mediatypeID=documents'>{$text['documents']}</a></li>\n";
-    echo "<li><a href='browsemedia.php?mediatypeID=videos'>{$text['videos']}</a></li>\n";
-    echo "<li><a href='browsemedia.php?mediatypeID=recordings'>{$text['recordings']}</a></li>\n";
-    echo "<li><a href='browsealbums.php'>{$text['albums']}</a></li>\n";
-    echo "<li><a href='browsemedia.php'>{$text['allmedia']}</a></li>\n";
-    echo "<li><a href='cemeteries.php'>{$text['mnucemeteries']}</a></li>\n";
-    echo "<li><a href='browsemedia.php?mediatypeID=headstones'>{$text['mnutombstones']}</a></li>\n";
-    echo "<li><a href='places.php'>{$text['places']}</a></li>\n";
-    echo "<li><a href='browsenotes.php'>{$text['notes']}</a></li>\n";
-    echo "<li><a href='anniversaries.php'>{$text['anniversaries']}</a></li>\n";
-    echo "<li><a href='reports.php'>{$text['mnureports']}</a></li>\n";
-    echo "<li><a href='browsesources.php'>{$text['mnusources']}</a></li>\n";
-    echo "<li><a href='browserepos.php'>{$text['repositories']}</a></li>\n";
-    echo "<li><a href='whatsnew.php'>{$text['mnuwhatsnew']}</a></li>\n";
-    echo "<li><a href='mostwanted.php'>{$text['mostwanted']}</a></li>\n";
-    echo "<li><a href='changelanguage.php'>{$text['mnulanguage']}</a></li>\n";
+    echo "<li><a href='newacctform.php'>" . _('Register for a User Account') . "</a></li>\n";
+    echo "<li><a href='searchform.php'>" . _('Advanced Search') . "</a></li>\n";
+    echo "<li><a href='surnames.php'>" . _('Surnames') . "</a></li>\n";
+    echo "<li><a href='bookmarks.php'>" . _('Bookmarks') . "</a></li>\n";
+    echo "<li><a href='statistics.php'>" . _('Statistics') . "</a></li>\n";
+    echo "<li><a href='browsemedia.php?mediatypeID=photos'>" . _('Photos') . "</a></li>\n";
+    echo "<li><a href='browsemedia.php?mediatypeID=histories'>" . _('Histories') . "</a></li>\n";
+    echo "<li><a href='browsemedia.php?mediatypeID=documents'>" . _('Documents') . "</a></li>\n";
+    echo "<li><a href='browsemedia.php?mediatypeID=videos'>" . _('Videos') . "</a></li>\n";
+    echo "<li><a href='browsemedia.php?mediatypeID=recordings'>" . _('Recordings') . "</a></li>\n";
+    echo "<li><a href='browsealbums.php'>" . _('Albums') . "</a></li>\n";
+    echo "<li><a href='browsemedia.php'>" . _('All Media') . "</a></li>\n";
+    echo "<li><a href='cemeteries.php'>" . _('Cemeteries') . "</a></li>\n";
+    echo "<li><a href='browsemedia.php?mediatypeID=headstones'>" . _('Headstones') . "</a></li>\n";
+    echo "<li><a href='places.php'>" . _('Places') . "</a></li>\n";
+    echo "<li><a href='browsenotes.php'>" . _('Notes') . "</a></li>\n";
+    echo "<li><a href='anniversaries.php'>" . _('Dates and Anniversaries') . "</a></li>\n";
+    echo "<li><a href='reports.php'>" . _('Reports') . "</a></li>\n";
+    echo "<li><a href='browsesources.php'>" . _('Sources') . "</a></li>\n";
+    echo "<li><a href='browserepos.php'>" . _('Repositories') . "</a></li>\n";
+    echo "<li><a href='whatsnew.php'>{_('What\'s New')}</a></li>\n";
+    echo "<li><a href='mostwanted.php'>" . _('Most Wanted') . "</a></li>\n";
+    echo "<li><a href='changelanguage.php'>" . _('Change Language') . "</a></li>\n";
 
     if ($allow_admin) {
-        echo "<li><a href='showlog.php'>{$text['mnushowlog']}</a></li>\n";
-        echo "<li><a href='admin.php'>{$text['mnuadmin']}</a></li>\n";
+        echo "<li><a href='showlog.php'>" . _('Access Log') . "</a></li>\n";
+        echo "<li><a href='admin.php'>" . _('Administration') . "</a></li>\n";
     }
-    echo "<li><a href='suggest.php'>{$text['contactus']}</a></li>\n";
+    echo "<li><a href='suggest.php'>" . _('Contact Us') . "</a></li>\n";
     ?>
 </ul>
 

@@ -41,13 +41,13 @@ if ($email) {
 
             if ($success) {
                 $sendmail = 1;
-                $content = $text['newpass'] . ": $newpassword";
-                $message = $text['pwdsent'];
+                $content = _('Your new temporary password') . ": $newpassword";
+                $message = _('Your new temporary password has been sent to your e-mail address.');
             } else {
-                $message = $text['loginnotsent3'];
+                $message = _('The e-mail address and username you provided do not match any user account currently on record. No information has been sent.');
             }
         } else {
-            $message = $text['loginnotsent'];
+            $message = _('Login information not sent');
         }
     } else {
         $div = "usnmsg";
@@ -58,10 +58,10 @@ if ($email) {
 
         if ($row['username']) {
             $sendmail = 1;
-            $content = $text['logininfo'] . ":\n\n{$text['username']}: {$row['username']}";
-            $message = $text['usersent'];
+            $content = _('Your login information') . ":\n\n" . _('Username') . ": {$row['username']}";
+            $message = _('Your username has been sent to your e-mail address.');
         } else {
-            $message = $text['loginnotsent2'];
+            $message = _('The e-mail address you provided does not match any user account currently on record. No information has been sent.');
         }
     }
 
@@ -69,7 +69,7 @@ if ($email) {
         $mailmessage = $content;
         $owner = preg_replace("/,/", "", ($sitename ? $sitename : ($dbowner ? $dbowner : "TNG")));
 
-        tng_sendmail($owner, $emailaddr, $row['realname'], $email, $text['logininfo'], $mailmessage, $emailaddr, $emailaddr);
+        tng_sendmail($owner, $emailaddr, $row['realname'], $email, _('Your login information'), $mailmessage, $emailaddr, $emailaddr);
     }
 }
 header("Content-type:text/html; charset=" . $session_charset);

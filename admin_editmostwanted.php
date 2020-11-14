@@ -28,29 +28,29 @@ if ($ID) {
 $helplang = findhelp("mostwanted_help.php");
 if ($row['mwtype']) $mwtype = $row['mwtype'];
 
-$typemsg = $mwtype == "person" ? $admtext['mysperson'] : $admtext['mysphoto'];
+$typemsg = $mwtype == "person" ? _('Elusive People') : _('Mystery Photos');
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="more">
-    <h3 class="subhead"><?php echo $admtext['mostwanted'] . ": " . $typemsg; ?> |
-        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/mostwanted_help.php');"><?php echo $admtext['help']; ?></a>
+    <h3 class="subhead"><?php echo _('Most Wanted') . ": " . $typemsg; ?> |
+        <a href="#" onclick="return openHelp('<?php echo $helplang; ?>/mostwanted_help.php');"><?php echo _('Help for this area'); ?></a>
     </h3>
     <form action="" name="editmostwanted" onsubmit="return updateMostWanted(this);">
         <table class="normal">
             <tr>
-                <td><?php echo $admtext['title']; ?>:</td>
+                <td><?php echo _('Title'); ?>:</td>
                 <td>
                     <input class="w-full" name="title" type="text" value="<?php echo $row['title']; ?>" size="60" maxlength="128">
                 </td>
             </tr>
             <tr>
-                <td><?php echo $admtext['description']; ?>:</td>
+                <td><?php echo _('Description'); ?>:</td>
                 <td><textarea class="w-full" name="description" rows="4" cols="60"><?php echo $row['description']; ?></textarea></td>
             </tr>
             <tr>
-                <td><?php echo $admtext['tree']; ?>:</td>
+                <td><?php echo _('Tree'); ?>:</td>
                 <td>
                     <select name="mwtree" onchange="tree=this.options[this.selectedIndex].value">
                         <?php
@@ -79,21 +79,21 @@ header("Content-type:text/html; charset=" . $session_charset);
                 </td>
             </tr>
             <tr>
-                <td><?php echo $admtext['person']; ?>:</td>
+                <td><?php echo _('Person'); ?>:</td>
                 <td>
                     <div style="float: left;">
-                        <input id="personID" name="personID" type="text" value="<?php echo $row['personID']; ?>" placeholder="<?php echo $admtext['enterpersonid']; ?>">
-                        <span style="padding: 0.5em;"><?php echo $admtext['text_or']; ?></span>
-                        <a href="#" class="smallicon admin-find-icon" title="<?php echo $admtext['find']; ?>" style="float: right;"
-                           onclick="return findItem('I', 'personID', '', document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value, '<?php echo $assignedbranch; ?>');"></a>
+                        <input id="personID" name="personID" type="text" value="<?php echo $row['personID']; ?>" placeholder="<?php echo _('Please enter a Person ID'); ?>">
+                        <span style="padding: 0.5em;"><?php echo _('OR'); ?></span>
+                        <a href="#" class="smallicon admin-find-icon" title="<?php echo _('Find...'); ?>" style="float: right;"
+                            onclick="return findItem('I', 'personID', '', document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value, '<?php echo $assignedbranch; ?>');"></a>
                     </div>
 
                 </td>
             </tr>
         </table>
         <br>
-        <input type="button" value="<?php echo $admtext['selphoto']; ?>"
-               onclick="return openMostWantedMediaFind(document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value);">
+        <input type="button" value="<?php echo _('Select Photo'); ?>"
+            onclick="return openMostWantedMediaFind(document.editmostwanted.mwtree.options[document.editmostwanted.mwtree.selectedIndex].value);">
         <div id="mwphoto">
             <table style="padding-top:6px;">
                 <tr>
@@ -131,6 +131,6 @@ header("Content-type:text/html; charset=" . $session_charset);
         <input type="hidden" name="mediaID" id="mediaID" value="<?php echo $row['mediaID']; ?>">
         <input type="hidden" name="orgmediaID" id="orgmediaID" value="<?php echo $row['mediaID']; ?>">
         <input type="hidden" name="mwtype" id="mwtype" value="<?php echo $mwtype; ?>">
-        <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>">
+        <input type="submit" name="submit" value="<?php echo _('Save'); ?>">
     </form>
 </div>

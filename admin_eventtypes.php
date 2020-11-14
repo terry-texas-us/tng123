@@ -89,25 +89,25 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 }
 $helplang = findhelp("eventtypes_help.php");
 
-tng_adminheader($admtext['eventtypes'], $flags);
+tng_adminheader(_('Event Types'), $flags);
 ?>
-<script>
-    function confirmDelete(ID) {
-        if (confirm('<?php echo $admtext['confdeleteevtype']; ?>'))
-            deleteIt('eventtype', ID);
-        return false;
-    }
-</script>
+    <script>
+        function confirmDelete(ID) {
+            if (confirm('<?php echo _('Are you sure you want to delete this event type?'); ?>'))
+                deleteIt('eventtype', ID);
+            return false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
 echo tng_adminlayout();
 
-$evtabs['0'] = [1, "admin_eventtypes.php", $admtext['search'], "findevent"];
-$evtabs['1'] = [$allow_add, "admin_neweventtype.php", $admtext['addnew'], "addevent"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/eventtypes_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$evtabs['0'] = [1, "admin_eventtypes.php", _('Search'), "findevent"];
+$evtabs['1'] = [$allow_add, "admin_neweventtype.php", _('Add New'), "addevent"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/eventtypes_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($evtabs, "findevent", $innermenu);
-echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gif", $menu, $message);
+echo displayHeadline(_('Custom Event Types'), "img/customeventtypes_icon.gif", $menu, $message);
 ?>
     <table class="lightback">
         <tr class="databack">
@@ -116,122 +116,122 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                     <form action="admin_eventtypes.php" name="form1">
                         <table class="normal">
                             <tr>
-                                <td><?php echo $admtext['searchfor']; ?>:</td>
+                                <td><?php echo _('Search for'); ?>:</td>
                                 <td>
                                     <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                                 </td>
                                 <td>
-                                    <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                                    <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>"
+                                    <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                                    <input type="submit" name="submit" value="<?php echo _('Reset'); ?>"
                                         onClick="document.form1.searchstring.value=''; document.form1.etype.selectedIndex=0; document.form1.onimport['2'].checked=true;" class="align-top">
                                 </td>
                             </tr>
                             <tr>
-                                <td><?php echo $admtext['assocwith']; ?>:</td>
+                                <td><?php echo _('Associated with'); ?>:</td>
                                 <td>
                                     <select name="etype">
-                                        <option value=""><?php echo $admtext['all']; ?></option>
+                                        <option value=""><?php echo _('All'); ?></option>
                                         <option value="I"<?php if ($etype == "I") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['individual']; ?></option>
-                                    <option value="F"<?php if ($etype == "F") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['family']; ?></option>
-                                    <option value="S"<?php if ($etype == "S") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['source']; ?></option>
-                                    <option value="R"<?php if ($etype == "R") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['repository']; ?></option>
-                                </select> &nbsp;
-                                <?php echo $admtext['sortby']; ?>:
-                                <select name="stype">
-                                    <option value="T"<?php if (!$stype || $stype == "T") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['tag']; ?></option>
-                                    <option value="E"<?php if ($stype == "E") {
-                                        echo " selected";
-                                    } ?>><?php echo $admtext['events']; ?></option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="radio" name="onimport" value="1"<?php if ($onimport) {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['accept']; ?>
-                                <input type="radio" name="onimport" value="0"<?php if ($onimport === "0") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['ignore']; ?>
-                                <input type="radio" name="onimport" value=""<?php if ($onimport === NULL || $onimport === "") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['all']; ?>
-                            </td>
-                        </tr>
-                    </table>
+                                            echo " selected";
+                                        } ?>><?php echo _('Individual'); ?></option>
+                                        <option value="F"<?php if ($etype == "F") {
+                                            echo " selected";
+                                        } ?>><?php echo _('Family'); ?></option>
+                                        <option value="S"<?php if ($etype == "S") {
+                                            echo " selected";
+                                        } ?>><?php echo _('Source'); ?></option>
+                                        <option value="R"<?php if ($etype == "R") {
+                                            echo " selected";
+                                        } ?>><?php echo _('Repository'); ?></option>
+                                    </select> &nbsp;
+                                    <?php echo _('Sort by'); ?>:
+                                    <select name="stype">
+                                        <option value="T"<?php if (!$stype || $stype == "T") {
+                                            echo " selected";
+                                        } ?>><?php echo _('Tag'); ?></option>
+                                        <option value="E"<?php if ($stype == "E") {
+                                            echo " selected";
+                                        } ?>><?php echo _('Events'); ?></option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="radio" name="onimport" value="1"<?php if ($onimport) {
+                                        echo " checked";
+                                    } ?>> <?php echo _('Accept'); ?>
+                                    <input type="radio" name="onimport" value="0"<?php if ($onimport === "0") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('Ignore'); ?>
+                                    <input type="radio" name="onimport" value=""<?php if ($onimport === null || $onimport === "") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('All'); ?>
+                                </td>
+                            </tr>
+                        </table>
 
-                    <input type="hidden" name="findeventtype" value="1">
-                    <input type="hidden" name="newsearch" value="1">
-                </form>
-                <?php
-                $numrowsplus = $numrows + $offset;
-                if (!$numrowsplus) $offsetplus = 0;
-                ?>
-                <form action="admin_updateselectedeventtypes.php" method="post" name="form2">
-                    <p>
-                        <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                        <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
-                        <?php if ($allow_delete) { ?>
-                            <input type="submit" name="cetaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                        <input type="hidden" name="findeventtype" value="1">
+                        <input type="hidden" name="newsearch" value="1">
+                    </form>
+                    <?php
+                    $numrowsplus = $numrows + $offset;
+                    if (!$numrowsplus) $offsetplus = 0;
+                    ?>
+                    <form action="admin_updateselectedeventtypes.php" method="post" name="form2">
+                        <p>
+                            <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                            <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
+                            <?php if ($allow_delete) { ?>
+                                <input type="submit" name="cetaction" value="<?php echo _('Delete Selected'); ?>" onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">
+                                <?php
+                            }
+                            if ($allow_edit) {
+                            ?>
+                            <input type="submit" name="cetaction" value="<?php echo _('Accept Selected'); ?>">
+                            <input type="submit" name="cetaction" value="<?php echo _('Ignore Selected'); ?>">
+                            <input type="submit" name="cetaction" value="<?php echo _('Collapse Selected'); ?>">
+                            <input type="submit" name="cetaction" value="<?php echo _('Expand Selected'); ?>">
+                        </p>
+                        <?php } ?>
+
+                        <table class="normal">
+                            <tr>
+                                <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
+                                <?php if ($allow_delete || $allow_edit) { ?>
+                                    <th class="fieldnameback fieldname"><?php echo _('Select'); ?></th>
+                                <?php } ?>
+                                <th class="fieldnameback fieldname"><?php echo _('Tag'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Type/Description'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Display'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Order #'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Ind/Fam'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('On Import'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Collapse'); ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Events'); ?></th>
+                            </tr>
+
                             <?php
-                        }
-                        if ($allow_edit) {
-                        ?>
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['acceptselected']; ?>">
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['ignoreselected']; ?>">
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['collapseselected']; ?>">
-                        <input type="submit" name="cetaction" value="<?php echo $admtext['expselected']; ?>">
-                    </p>
-                    <?php } ?>
-
-                    <table class="normal">
-                        <tr>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
-                            <?php if ($allow_delete || $allow_edit) { ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
-                            <?php } ?>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['tag']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['typedescription']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['display']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['orderpound']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['indfam']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['onimport']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['collapse']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['events']; ?></th>
-                        </tr>
-
-                        <?php
-                        if ($numrows) {
-                        $actionstr = "";
-                        if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editeventtype.php?eventtypeID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
-                        }
-                        if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                            if ($numrows) {
+                            $actionstr = "";
+                            if ($allow_edit) {
+                                $actionstr .= "<a href=\"admin_editeventtype.php?eventtypeID=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
+                            }
+                            if ($allow_delete) {
+                                $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                         }
                         while ($row = tng_fetch_assoc($result)) {
-                            $keep = $row['keep'] ? $admtext['accept'] : $admtext['ignore'];
-                            $collapse = $row['collapse'] ? $admtext['yes'] : $admtext['no'];
+                            $keep = $row['keep'] ? _('Accept') : _('Ignore');
+                            $collapse = $row['collapse'] ? _('Yes') : _('No');
                             switch ($row['type']) {
                                 case "I":
-                                    $type = $admtext['individual'];
+                                    $type = _('Individual');
                                     break;
                                 case "F":
-                                    $type = $admtext['family'];
+                                    $type = _('Family');
                                     break;
                                 case "S":
-                                    $type = $admtext['source'];
+                                    $type = _('Source');
                                     break;
                                 case "R":
-                                    $type = $admtext['repository'];
+                                    $type = _('Repository');
                                     break;
                             }
                             $displayval = getEventDisplay($row['display']);
@@ -260,7 +260,7 @@ echo displayHeadline($admtext['customeventtypes'], "img/customeventtypes_icon.gi
                 echo "</div>";
                 }
                 else {
-                    echo "</table>\n" . $admtext['norecords'];
+                    echo "</table>\n" . _('No records exist.');
                 }
                 tng_free_result($result);
                 ?>

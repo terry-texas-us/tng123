@@ -16,7 +16,7 @@ function get_test_groups($test_type, $test_group) {
     global $text, $dna_groups_table;
     $wherestr2 = $test_type ? " AND test_type = \"$test_type\"" : "";
     $groupquery = "SELECT description, test_type, gedcom FROM $dna_groups_table WHERE description IS NOT NULL $wherestr2 ORDER BY description";
-    $groupsel = "	<option value=\"\">{$text['allgroups']}</option>\n";
+    $groupsel = "	<option value=\"\">" . _('All Groups') . "</option>\n";
     $groupresult = tng_query($groupquery);
     while ($grouprow = tng_fetch_assoc($groupresult)) {
         $groupsel .= "	<option value=\"{$grouprow['description']}\"";
@@ -34,10 +34,10 @@ function doTestSearch($instance, $pagenav) {
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browse_dna_tests", "get", "TestSearch$instance", "");
-    $str .= "<input type='text' name=\"testsearch\" value=\"$testsearch\"> <input type='submit' value=\"{$text['search']}\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    $str .= "<input type='text' name=\"testsearch\" value=\"$testsearch\"> <input type='submit' value=\"" . _('Search') . "\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     $str .= $pagenav;
     if ($testsearch) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"browse_dna_tests.php\">{$text['browsealltests']}</a>";
+        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"browse_dna_tests.php\">" . _('Browse All Tests') . "</a>";
     }
     $str .= "<input type='hidden' name=\"tree\" value='$tree'>\n";
     $str .= "</form></span>\n";
@@ -82,19 +82,19 @@ if (!$allow_private) {
     $wherestr .= "";
 }
 
-$test_hdr = $admtext['dna_tests'];
+$test_hdr = _('DNA Tests');
 
 if (!isset($test_type)) $test_type = '';
 if ($test_type) {
     switch ($test_type) {
         case "Y-DNA":
-            $test_hdr = $text['ydna_test'];
+            $test_hdr = _('Y-DNA Tests');
             break;
         case "mtDNA":
-            $test_hdr = $text['mtdna_test'];
+            $test_hdr = _('mtDNA (Mitochondrial) Tests');
             break;
         case "atDNA":
-            $test_hdr = $text['atdna_test'];
+            $test_hdr = _('atDNA (autosomal) Tests');
             break;
     }
     if ($wherestr) {
@@ -105,7 +105,7 @@ if ($test_type) {
 }
 if (!isset($test_group)) $test_group = '';
 if ($test_group) {
-    $admtext['dna_tests'] .= ": " . $test_group;
+    _('DNA Tests') .= ": " . $test_group;
     if ($wherestr) {
         $wherestr .= " AND $dna_tests_table.dna_group_desc = \"$test_group\"";
     } else {
@@ -141,12 +141,12 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 if (!isset($offset)) $offset = 0;
 $numrowsplus = $numrows + $offset;
 
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"browse_dna_tests.php?tree=$tree&amp;offset=$offset&amp;testsearch=$testsearch\">" . xmlcharacters($admtext['dna_tests'] . $treestr) . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href=\"browse_dna_tests.php?tree=$tree&amp;offset=$offset&amp;testsearch=$testsearch\">" . xmlcharacters(_('DNA Tests') . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($admtext['dna_tests'], $flags);
+tng_header(_('DNA Tests'), $flags);
 ?>
 
 <h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $test_hdr; ?></h2>
@@ -165,12 +165,12 @@ tng_header($admtext['dna_tests'], $flags);
                     $numtrees = tng_num_rows($treeresult);
                     if ($numtrees > 1) {
                         $ret = "";
-                        $ret .= "<span class='normal'>{$text['tree']}: </span>";
+                        $ret .= "<span class='normal'>" . _('Tree') . ": </span>";
                         $ret .= "<select name=\"tree\" id=\"treeselect\" onchange=\"jQuery('#treespinner').show();document.form1.submit();\">\n";
                         $ret .= "<option value=\"-x--all--x-\" ";
                         if (!$tree) $ret .= "selected";
 
-                        $ret .= ">{$text['alltrees']}</option>\n";
+                        $ret .= ">" . _('All Trees') . "</option>\n";
 
                         while ($row = tng_fetch_assoc($treeresult)) {
                             $ret .= "<option value=\"{$row['gedcom']}\"";
@@ -187,29 +187,29 @@ tng_header($admtext['dna_tests'], $flags);
                 ?>
             </td>
             <td>
-                <?php echo $text['test_type']; ?>:
+                <?php echo _('Test Type'); ?>:
                 <select name="test_type" id="test_type" onchange="jQuery('#treespinner2').show();document.form1.test_group.selectedIndex = 0;document.form1.submit();">
-                    <option value=""><?php echo $text['alltypes']; ?></option>
+                    <option value=""><?php echo _('All Types'); ?></option>
                     <option value="atDNA"<?php if ($test_type == "atDNA") {
                         echo " selected";
-                    } ?>><?php echo $admtext['atdna_test']; ?></option>
+                    } ?>><?php echo _('atDNA (autosomal) Tests'); ?></option>
                     <option value="Y-DNA"<?php if ($test_type == "Y-DNA") {
                         echo " selected";
-                    } ?>><?php echo $admtext['ydna_test']; ?></option>
+                    } ?>><?php echo _('Y-DNA Tests'); ?></option>
                     <option value="mtDNA"<?php if ($test_type == "mtDNA") {
                         echo " selected";
-                    } ?>><?php echo $admtext['mtdna_test']; ?></option>
+                    } ?>><?php echo _('mtDNA (Mitochondrial) Tests'); ?></option>
                     <option value="X-DNA"<?php if ($test_type == "X-DNA") {
                         echo " selected";
-                    } ?>><?php echo $admtext['xdna_test']; ?></option>
+                    } ?>><?php echo _('X-DNA'); ?></option>
                 </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner2" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
             </td>
             <td>
-                <?php echo $text['testgroup']; ?>:
+                <?php echo _('Test Group'); ?>:
                 <select name="test_group" id="test_group" onchange="jQuery('#treespinner3').show();document.form1.submit();">
                     <?php echo get_test_groups($test_type, $test_group); ?>
                 </select>&nbsp;<img src="img/spinner.gif" style="display:none;" id="treespinner3" alt="" class="spinner">&nbsp;&nbsp;&nbsp;
-                <input type="submit" name="reset" value="<?php echo $text['tng_reset']; ?>" onclick="document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
+                <input type="submit" name="reset" value="<?php echo _('Reset'); ?>" onclick="document.form1.test_type.selectedIndex = 0;document.form1.test_group.selectedIndex = 0;">
                 <br>
             </td>
         </tr>
@@ -222,7 +222,7 @@ $_SESSION["tgroup"] = $test_group;
 $_SESSION["tsearch"] = $testsearch;
 
 if ($totrows) {
-    echo "<p><span class='normal'>{$text['matches']} $offsetplus {$text['to']} $numrowsplus {$text['of']} $totrows</span></p>";
+    echo "<p><span class='normal'>" . _('Matches') . " $offsetplus " . _('to') . " $numrowsplus " . _('of') . " $totrows</span></p>";
 }
 $pagenav = get_browseitems_nav($totrows, "browse_dna_tests.php?testsearch=$testsearch&amp;offset", $maxsearchresults, $max_browse_test_pages);
 if ($pagenav || $testsearch) {
@@ -256,29 +256,29 @@ if ($test_type == "mtDNA") {
 ?>
 <form action="<?php echo $compare_url; ?>" method="post" name="form2">
     <p class="whitespace-no-wrap">
-        <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-        <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
-        <input type="submit" name="cdnaaction" value="<?php echo $text['compareselected']; ?>">&nbsp;&nbsp;
+        <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+        <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">&nbsp;&nbsp;
+        <input type="submit" name="cdnaaction" value="<?php echo _('Compare Selected'); ?>">&nbsp;&nbsp;
     </p>
     <?php } ?>
     <thead>
     <tr>
         <th class="fieldnameback nbrcol fieldname">&nbsp;#&nbsp;</th>
         <?php if ($test_type && $test_type != "X-DNA") { ?>
-            <th class="fieldnameback fieldname">&nbsp;<?php echo $admtext['select']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname">&nbsp;<?php echo _('Select'); ?>&nbsp;</th>
         <?php } ?>
-        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['test_type']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Test Type'); ?>&nbsp;</th>
         <?php
         if ($allow_edit || $showtestnumbers) { ?>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Test Number/Name'); ?>&nbsp;</th>
         <?php } ?>
-        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['haplogroup']; ?>&nbsp;</th>
-        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['mda']; ?>&nbsp;</th>
-        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
-        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Haplogroup'); ?>&nbsp;</th>
+        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Taken by'); ?>&nbsp;</th>
+        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Most distant ancestor'); ?>&nbsp;</th>
+        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('MRC Ancestor'); ?>&nbsp;</th>
+        <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Test Group'); ?>&nbsp;</th>
         <?php if ($numtrees > 1) { ?>
-            <th class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
+            <th class="fieldnameback fieldname">&nbsp;<?php echo _('Tree'); ?>&nbsp;</th><?php } ?>
     </tr>
     </thead>
     <?php
@@ -289,7 +289,7 @@ if ($test_type == "mtDNA") {
             $descresult = tng_query($query);
             $descrow = tng_fetch_assoc($descresult);
             tng_free_result($descresult);
-            $group = $row['dna_group'] ? $descrow['description'] : $text['none'];
+            $group = $row['dna_group'] ? $descrow['description'] : _('No encryption');
 
             echo "<tr><td class='databack'>$i</td>\n";
             if ($test_type && $test_type != "X-DNA") {
@@ -299,7 +299,7 @@ if ($test_type == "mtDNA") {
             echo "<td class='databack'><a href=\"show_dna_test.php?group=$group&amp;testID={$row['testID']}&amp;tree={$row['gedcom']}\">{$row['test_type']}$dash{$row['markers']}</a>&nbsp;</td>";
             if ($allow_edit || $showtestnumbers) {
                 if ($row['private_test']) {
-                    $privtest = "<br>&nbsp;(" . $admtext['text_private'] . ")";
+                    $privtest = "<br>&nbsp;(" . _('Private') . ")";
                 } else {
                     $privtest = "";
                 }
@@ -341,7 +341,7 @@ if ($test_type == "mtDNA") {
             $person_name = $row['person_name'];
             $dna_namestr = getName($dprow);
             if ($row['private_dna'] && $allow_edit) {
-                $privacy = "&nbsp;(" . $admtext['text_private'] . ")";
+                $privacy = "&nbsp;(" . _('Private') . ")";
             } else {
                 $privacy = "";
             }
@@ -353,7 +353,7 @@ if ($test_type == "mtDNA") {
                 $dna_namestr = $person_name . $privacy;
             }
             if ($row['private_dna'] && !$allow_edit) {
-                $dna_namestr = $admtext['text_private'];
+                $dna_namestr = _('Private');
             }
             tng_free_result($dna_pers_result);
 
@@ -379,9 +379,9 @@ if ($test_type == "mtDNA") {
                     $rights = determineLivingPrivateRights($prow, $righttree, $rightbranch);
                     $name = "$counter. ";
                     if (!$rights['living']) {
-                        $name .= $text['living'];
+                        $name .= _('Living');
                     } elseif (!$rights['private']) {
-                        $name .= $admtext['text_private'];
+                        $name .= _('Private');
                     } else {
                         $prow['allow_living'] = $rights['living'];
                         $prow['allow_private'] = $rights['private'];
@@ -395,10 +395,10 @@ if ($test_type == "mtDNA") {
             tng_free_result($presult);
 
             if ($dnalinktext) {
-                $more = "<a href='#' onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"{$text['moreind']}\">";
+                $more = "<a href='#' onclick=\"\$('#more_{$row['testID']}').slideToggle();return false;\" title=\"" . _('More individuals') . "\">";
                 $more .= buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
                 $more .= "</a> ";
-                $morediv = "<div style='display: none;' id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>{$text['indlinked']}:</strong><br>$dnalinktext</div>";
+                $morediv = "<div style='display: none;' id=\"more_{$row['testID']}\"><hr class=\"mtitlehr\"><strong>" . _('Linked to') . ":</strong><br>$dnalinktext</div>";
             } else {
                 $more = $morediv = "";
             }
@@ -447,7 +447,7 @@ if ($test_type == "mtDNA") {
                         $famrow['allow_private'] = $rights['private'];
 
                         $famname = getFamilyName($famrow);
-                        $fammarried = "<br>&nbsp;&nbsp;<strong>{$text['marrabbr']}</strong>&nbsp;" . $famrow['marrdate'];
+                        $fammarried = "<br>&nbsp;&nbsp;<strong>" . _('m.') . "</strong>&nbsp;" . $famrow['marrdate'];
                         $mrcanc_namestr = "<a href=\"familygroup.php?familyID={$row['MRC_ancestorID']}&tree={$row['gedcom']}\">$famname</a>" . $fammarried;
                     }
                 }

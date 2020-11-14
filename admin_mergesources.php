@@ -12,7 +12,7 @@ require "adminlog.php";
 require_once "./public/events.php";
 
 if (!$allow_edit || !$allow_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -147,8 +147,8 @@ if (!$mergeaction) {
     $cshorttitle = "yes";
     $clongtitle = "yes";
 }
-if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']) {
-    if ($mergeaction == $admtext['nextmatch']) {
+if ($mergeaction == _('Next Match') || $mergeaction == _('Next Duplicate')) {
+    if ($mergeaction == _('Next Match')) {
         $wherestr2 = $sourceID2 ? " AND sourceID > \"$sourceID2\"" : "";
         $wherestr2 .= $sourceID1 ? " AND sourceID > \"$sourceID1\"" : "";
 
@@ -210,11 +210,11 @@ if ($mergeaction == $admtext['nextmatch'] || $mergeaction == $admtext['nextdup']
         $sourceID2 = $s2row['sourceID'];
         tng_free_result($result2);
     } else {
-        $mergeaction = $admtext['comprefresh'];
+        $mergeaction = _('Compare/Refresh');
         $sourceID2 = "";
     }
 }
-if ($mergeaction == $admtext['merge']) {
+if ($mergeaction == _('Merge')) {
     $updatestr = "";
 
     foreach ($_POST as $key => $value) {
@@ -300,190 +300,186 @@ if ($mergeaction == $admtext['merge']) {
     }
     $sourceID2 = "";
     $s2row = "";
-    adminwritelog($admtext['merge'] . ": $tree/$sourceID2 => $sourceID1");
+    adminwritelog(_('Merge') . ": $tree/$sourceID2 => $sourceID1");
 }
 
 $helplang = findhelp("sources_help.php");
 
-tng_adminheader($admtext['merge'], $flags);
+tng_adminheader(_('Merge'), $flags);
 ?>
-<script src="js/selectutils.js"></script>
-<script>
-    var tnglitbox;
+    <script src="js/selectutils.js"></script>
+    <script>
+        var tnglitbox;
 
-    function validateForm() {
-        let rval = true;
+        function validateForm() {
+            let rval = true;
+            if (document.form1.sourceID1.value == '' || document.form1.sourceID2.value == '' || document.form1.sourceID1.value == document.form1.sourceID2.value)
+                rval = false;
+            else
+                rval = confirm('<?php echo _('Are you sure you want to merge these two sources?'); ?>');
+            return rval;
+        }
 
-        if (document.form1.sourceID1.value == '' || document.form1.sourceID2.value == '' || document.form1.sourceID1.value == document.form1.sourceID2.value)
-            rval = false;
-        else
-            rval = confirm('<?php echo $admtext['confirmmergesources']; ?>');
-
-        return rval;
-    }
-
-    function switchsources() {
-        var formname = document.form1;
-
-        if (formname.sourceID1.value && formname.sourceID2.value) {
-            var temp = formname.sourceID1.value;
+        function switchsources() {
+            var formname = document.form1;
+            if (formname.sourceID1.value && formname.sourceID2.value) {
+                var temp = formname.sourceID1.value;
 
             formname.sourceID1.value = formname.sourceID2.value;
             formname.sourceID2.value = temp;
 
             return true;
-        } else
-            return false;
-
-    }
-</script>
+            } else
+                return false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
 echo tng_adminlayout();
 
-$sourcetabs[0] = [1, "admin_sources.php", $admtext['search'], "findsource"];
-$sourcetabs[1] = [$allow_add, "admin_newsource.php", $admtext['addnew'], "addsource"];
-$sourcetabs[3] = [$allow_edit && $allow_delete, "admin_mergesources.php", $admtext['merge'], "merge"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/sources_help.php#merge');\" class='lightlink'>{$admtext['help']}</a>";
+$sourcetabs[0] = [1, "admin_sources.php", _('Search'), "findsource"];
+$sourcetabs[1] = [$allow_add, "admin_newsource.php", _('Add New'), "addsource"];
+$sourcetabs[3] = [$allow_edit && $allow_delete, "admin_mergesources.php", _('Merge'), "merge"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/sources_help.php#merge');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($sourcetabs, "merge", $innermenu);
-echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "img/sources_icon.gif", $menu, $message);
+echo displayHeadline(_('Sources') . " &gt;&gt; " . _('Merge'), "img/sources_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal"><em><?php echo $admtext['choosemergesources']; ?></em><br><br>
-                <form action="admin_mergesources.php" method="post" name="form1" id="form1">
-                    <table>
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['tree']; ?>:</span></td>
-                            <td>
-                                <select name="tree">
-                                    <?php
-                                    $trees = "";
-                                    while ($treerow = tng_fetch_assoc($treeresult)) {
-                                        $trees .= "			<option value=\"{$treerow['gedcom']}\"";
-                                        if ($treerow['gedcom'] == $tree) $trees .= " selected";
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal"><em><?php echo _('Choose sources to merge or find potential matches'); ?></em><br><br>
+                    <form action="admin_mergesources.php" method="post" name="form1" id="form1">
+                        <table>
+                            <tr>
+                                <td><span class="normal"><?php echo _('Tree'); ?>:</span></td>
+                                <td>
+                                    <select name="tree">
+                                        <?php
+                                        $trees = "";
+                                        while ($treerow = tng_fetch_assoc($treeresult)) {
+                                            $trees .= "			<option value=\"{$treerow['gedcom']}\"";
+                                            if ($treerow['gedcom'] == $tree) $trees .= " selected";
 
-                                        $trees .= ">{$treerow['treename']}</option>\n";
-                                    }
+                                            $trees .= ">{$treerow['treename']}</option>\n";
+                                        }
                                     echo $trees;
                                     $mergeclass = $sourceID1 && $sourceID2 ? "class=\"btn\"" : "class=\"disabled\" disabled";
                                     ?>
                                 </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table class="normal">
-                        <tr>
-                            <td>
-                                <div class="float-left"><?php echo $admtext['sourceid']; ?> 1:
-                                    <input type="text" name="sourceID1" id="sourceID1" size="10" value="<?php echo $sourceID1; ?>">
-                                    &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                                </div>
-                                <a href="#" onclick="return findItem('S','sourceID1','sourceTitle1',document.form1.tree.options[document.form1.tree.selectedIndex].value);"
-                                    title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                            <td width="80">&nbsp;</td>
-                            <td>
-                                <div class="float-left"><?php echo $admtext['sourceid']; ?> 2:
-                                    <input type="text" name="sourceID2" id="sourceID2" size="10" value="<?php echo $sourceID2; ?>">
-                                    &nbsp;<?php echo $admtext['text_or']; ?>&nbsp;
-                                </div>
-                                <a href="#" onclick="return findItem('S','sourceID2','sourceTitle2',document.form1.tree.options[document.form1.tree.selectedIndex].value);"
-                                    title="<?php echo $admtext['find']; ?>" class="smallicon admin-find-icon"></a></td>
-                        </tr>
-                        <tr>
-                            <td id="sourceTitle1"><?php if (isset($s1row['title'])) {
-                                    echo truncateIt($s1row['title'], 100);
-                                } ?></td>
-                            <td width="80"></td>
-                            <td id="sourceTitle2"><?php if (isset($s2row['title'])) {
-                                    echo truncateIt($s2row['title'], 100);
-                                } ?></td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table>
-                        <tr>
-                            <td colspan="5"><span class="normal"><strong><?php echo $admtext['matchthese']; ?></strong></span></td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td colspan="3"><span class="normal"><strong><?php echo $admtext['otheroptions']; ?></strong></span></td>
-                        </tr>
-                        <tr>
-                            <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table class="normal">
+                            <tr>
+                                <td>
+                                    <div class="float-left"><?php echo _('Source ID'); ?> 1:
+                                        <input type="text" name="sourceID1" id="sourceID1" size="10" value="<?php echo $sourceID1; ?>">
+                                        &nbsp;<?php echo _('OR'); ?>&nbsp;
+                                    </div>
+                                    <a href="#" onclick="return findItem('S','sourceID1','sourceTitle1',document.form1.tree.options[document.form1.tree.selectedIndex].value);"
+                                        title="<?php echo _('Find...'); ?>" class="smallicon admin-find-icon"></a></td>
+                                <td width="80">&nbsp;</td>
+                                <td>
+                                    <div class="float-left"><?php echo _('Source ID'); ?> 2:
+                                        <input type="text" name="sourceID2" id="sourceID2" size="10" value="<?php echo $sourceID2; ?>">
+                                        &nbsp;<?php echo _('OR'); ?>&nbsp;
+                                    </div>
+                                    <a href="#" onclick="return findItem('S','sourceID2','sourceTitle2',document.form1.tree.options[document.form1.tree.selectedIndex].value);"
+                                        title="<?php echo _('Find...'); ?>" class="smallicon admin-find-icon"></a></td>
+                            </tr>
+                            <tr>
+                                <td id="sourceTitle1"><?php if (isset($s1row['title'])) {
+                                        echo truncateIt($s1row['title'], 100);
+                                    } ?></td>
+                                <td width="80"></td>
+                                <td id="sourceTitle2"><?php if (isset($s2row['title'])) {
+                                        echo truncateIt($s2row['title'], 100);
+                                    } ?></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table>
+                            <tr>
+                                <td colspan="5"><span class="normal"><strong><?php echo _('Match the following fields:'); ?></strong></span></td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td colspan="3"><span class="normal"><strong><?php echo _('Other Options:'); ?></strong></span></td>
+                            </tr>
+                            <tr>
+                                <td>
 				<span class="normal">
 				<input type="checkbox" name="cshorttitle" value="yes"<?php if ($cshorttitle) {
                     echo " checked";
-                } ?>> <?php echo $admtext['shorttitle']; ?><br>
+                } ?>> <?php echo _('Short Title'); ?><br>
 				<input type="checkbox" name="clongtitle" value="yes"<?php if ($clongtitle) {
                     echo " checked";
-                } ?>> <?php echo $admtext['title']; ?>
+                } ?>> <?php echo _('Title'); ?>
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>
 				<span class="normal">
 				<input type="checkbox" name="cauthor" value="yes"<?php if ($cauthor == "yes") {
                     echo " checked";
-                } ?>> <?php echo $admtext['author']; ?><br>
+                } ?>> <?php echo _('Author'); ?><br>
 				<input type="checkbox" name="cpublisher" value="yes"<?php if ($cpublisher == "yes") {
                     echo " checked";
-                } ?>> <?php echo $admtext['publisher']; ?>
+                } ?>> <?php echo _('Publisher'); ?>
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>
 				<span class="normal">
 				<input type="checkbox" name="crepoID" value="yes"<?php if ($crepoID == "yes") {
                     echo " checked";
-                } ?>> <?php echo $admtext['repository']; ?><br>
+                } ?>> <?php echo _('Repository'); ?><br>
 				<input type="checkbox" name="cactualtext" value="yes"<?php if ($cactualtext == "yes") {
                     echo " checked";
-                } ?>> <?php echo $admtext['actualtext']; ?>
+                } ?>> <?php echo _('Actual Text'); ?>
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td>
 				<span class="normal">
 				<input type="checkbox" name="ccombinenotes" value="yes"<?php if ($ccombinenotes == "yes") {
                     echo " checked";
-                } ?>> <?php echo $admtext['combinenotesonly']; ?><br>
+                } ?>> <?php echo _('Combine notes'); ?><br>
 				<input type="checkbox" name="ccombineextras" value="yes"<?php if ($ccombineextras == "yes") {
                     echo " checked";
-                } ?>> <?php echo $admtext['combineextras']; ?>
+                } ?>> <?php echo _('Combine media'); ?>
 				</span>
-                            </td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td class='align-top'>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td class='align-top'>
 				<span class="normal">
 				<input type="checkbox" name="cignoreblanks" value="yes"<?php if ($cignoreblanks == "yes") {
                     echo " checked";
-                } ?>> <?php echo $admtext['ignoreblanks']; ?><br>
+                } ?>> <?php echo _('Ignore Blanks'); ?><br>
 				</span>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
-                    <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
-                    <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction">
-                    <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction"
-                           onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchsources();">
-                    <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
-                    <br><br>
-                    <table class="normal">
-                        <?php
-                        if (is_array($s1row)) {
-                            $eventlist = [];
-                            echo "<tr>\n";
-                            echo "<td colspan='3'><strong class='subhead'>{$admtext['source']} 1 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
-                            if (is_array($s2row)) {
-                                echo "<td colspan='3'><strong class='subhead'>{$admtext['source']} 2 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">{$admtext['edit']}</a></strong></td>\n";
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <input type="submit" class="btn" value="<?php echo _('Next Match'); ?>" name="mergeaction">
+                        <input type="submit" class="btn" value="<?php echo _('Next Duplicate'); ?>" name="mergeaction">
+                        <input type="submit" class="btn" value="<?php echo _('Compare/Refresh'); ?>" name="mergeaction">
+                        <input type="submit" class="btn" value="<?php echo _('Switch'); ?>" name="mergeaction"
+                            onClick="document.form1.mergeaction.value='<?php echo _('Compare/Refresh'); ?>'; return switchsources();">
+                        <input type="submit" <?php echo $mergeclass; ?> value="<?php echo _('Merge'); ?>" name="mergeaction" onClick="return validateForm();">
+                        <br><br>
+                        <table class="normal">
+                            <?php
+                            if (is_array($s1row)) {
+                                $eventlist = [];
+                                echo "<tr>\n";
+                                echo "<td colspan='3'><strong class='subhead'>" . _('Source') . " 1 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s1row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">" . _('Edit') . "</a></strong></td>\n";
+                                if (is_array($s2row)) {
+                                    echo "<td colspan='3'><strong class='subhead'>" . _('Source') . " 2 | <a href=\"\" onclick=\"window.open('admin_editsource.php?sourceID={$s2row['sourceID']}&amp;tree=$tree&amp;cw=1'); return false;\">" . _('Edit') . "</a></strong></td>\n";
 
                                 $query = "SELECT display, eventdate, eventplace, info, events.eventtypeID AS eventtypeID, events.eventID AS eventID ";
                                 $query .= "FROM $events_table events, $eventtypes_table eventtypes ";
@@ -543,18 +539,18 @@ echo displayHeadline($admtext['sources'] . " &gt;&gt; " . $admtext['merge'], "im
                             }
 
                         } else {
-                            echo "<tr><td><span class='normal'{$admtext['nomatches']}</span></td></tr>";
+                                echo "<tr><td><span class='normal'" . _('No Matches') . "</span></td></tr>";
                         }
                         ?>
                     </table>
                     <?php if ($sourceID1 || $sourceID2) { ?>
                         <br>
-                        <input type="submit" class="btn" value="<?php echo $admtext['nextmatch']; ?>" name="mergeaction">
-                        <input type="submit" class="btn" value="<?php echo $admtext['nextdup']; ?>" name="mergeaction">
-                        <input type="submit" class="btn" value="<?php echo $admtext['comprefresh']; ?>" name="mergeaction">
-                        <input type="submit" class="btn" value="<?php echo $admtext['mswitch']; ?>" name="mergeaction"
-                            onClick="document.form1.mergeaction.value='<?php echo $admtext['comprefresh']; ?>'; return switchsources();">
-                        <input type="submit" <?php echo $mergeclass; ?> value="<?php echo $admtext['merge']; ?>" name="mergeaction" onClick="return validateForm();">
+                        <input type="submit" class="btn" value="<?php echo _('Next Match'); ?>" name="mergeaction">
+                        <input type="submit" class="btn" value="<?php echo _('Next Duplicate'); ?>" name="mergeaction">
+                        <input type="submit" class="btn" value="<?php echo _('Compare/Refresh'); ?>" name="mergeaction">
+                        <input type="submit" class="btn" value="<?php echo _('Switch'); ?>" name="mergeaction"
+                            onClick="document.form1.mergeaction.value='<?php echo _('Compare/Refresh'); ?>'; return switchsources();">
+                        <input type="submit" <?php echo $mergeclass; ?> value="<?php echo _('Merge'); ?>" name="mergeaction" onClick="return validateForm();">
                     <?php } ?>
                 </form>
             </div>

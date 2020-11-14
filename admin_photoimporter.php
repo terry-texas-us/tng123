@@ -10,7 +10,7 @@ include "version.php";
 require "adminlog.php";
 
 if (!$allow_media_add || $assignedtree) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -64,7 +64,7 @@ function importFrom($tngpath, $orgpath, $needsubdirs) {
 }
 
 $helplang = findhelp("data_help.php");
-adminwritelog($admtext['media'] . " &gt;&gt; " . $admtext['import'] . " ($mediatypeID): $tree");
+adminwritelog(_('Media') . " &gt;&gt; " . _('Import') . " ($mediatypeID): $tree");
 
 tng_adminheader(_todo_('Photo Import'), $flags);
 
@@ -73,23 +73,23 @@ $tngpath = $mediatypes_assoc[$mediatypeID];
 echo "</head>\n";
 echo tng_adminlayout();
 
-$mediatabs[0] = [1, "admin_media.php", $admtext['search'], "findmedia"];
-$mediatabs[1] = [$allow_media_add, "admin_newmedia.php", $admtext['addnew'], "addmedia"];
-$mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", $admtext['text_sort'], "sortmedia"];
-$mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", $admtext['thumbnails'], "thumbs"];
-$mediatabs[4] = [!$assignedtree, "admin_photoimport.php", $admtext['import'], "import"];
-$mediatabs[5] = [!$assignedtree, "admin_mediaupload.php", $admtext['upload'], "upload"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$mediatabs[0] = [1, "admin_media.php", _('Search'), "findmedia"];
+$mediatabs[1] = [$allow_media_add, "admin_newmedia.php", _('Add New'), "addmedia"];
+$mediatabs[2] = [$allow_media_edit, "admin_ordermediaform.php", _('Sort'), "sortmedia"];
+$mediatabs[3] = [$allow_media_edit && !$assignedtree, "admin_thumbnails.php", _('Thumbnails'), "thumbs"];
+$mediatabs[4] = [!$assignedtree, "admin_photoimport.php", _('Import'), "import"];
+$mediatabs[5] = [!$assignedtree, "admin_mediaupload.php", _('Upload'), "upload"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/media_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($mediatabs, "import", $innermenu);
-echo displayHeadline($admtext['media'] . " &gt;&gt; " . $admtext['import'], "img/photos_icon.gif", $menu, $message);
+echo displayHeadline(_('Media') . " &gt;&gt; " . _('Import'), "img/photos_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow normal">
-            <?php
-            $subdirs = importFrom($tngpath, '', 1);
-            foreach ($subdirs as $subdir) {
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow normal">
+                <?php
+                $subdirs = importFrom($tngpath, '', 1);
+                foreach ($subdirs as $subdir) {
                 chdir("$rootpath$tngpath/$subdir");
                 importFrom($tngpath, $subdir, 0);
             }

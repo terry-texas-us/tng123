@@ -5,19 +5,19 @@ include "tng_begin.php";
 if ($tree && !$tngconfig['places1tree']) {
     $treestr = "tree=$tree&amp;";
     $treestr2 = "tree=$tree";
-    $logstring = "<a href=\"places.php?offset=$offset&amp;$treestr2\">{$text['placelist']} ({$text['tree']}: $tree)</a>";
+    $logstring = "<a href=\"places.php?offset=$offset&amp;$treestr2\">" . _('Place List') . " (" . _('Tree') . ": $tree)</a>";
 } else {
     $treestr = $treestr2 = "";
-    $logstring = "<a href='places.php'>{$text['placelist']}</a>";
+    $logstring = "<a href='places.php'>" . _('Place List') . "</a>";
 }
-$text['top30places'] = preg_replace("/xxx/", "30", $text['top30places']);
+_('Top xxx largest localities') = preg_replace("/xxx/", "30", _('Top xxx largest localities'));
 
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($text['placelist'], $flags);
+tng_header(_('Place List'), $flags);
 ?>
-    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo $text['placelist']; ?></h2>
+    <h2 class="header"><span class="headericon" id="places-hdr-icon"></span><?php echo _('Place List'); ?></h2>
     <br class="clearleft">
 <?php
 if (!$tngconfig['places1tree']) {
@@ -49,7 +49,7 @@ if ($result) {
 
         if ($place['firstchar'] != "") {
             $urlfirstchar = urlencode($place['firstchar']);
-            $countstr = $text['placesstarting'] . ": " . $place['firstchar'] . " (" . number_format($place['placecount']) . " " . $text['totalnames'] . ")";
+            $countstr = _('Show largest localities starting with') . ": " . $place['firstchar'] . " (" . number_format($place['placecount']) . " " . _('total individuals') . ")";
             $linkstr .= "<a href=\"places-oneletter.php?firstchar=$urlfirstchar&amp;{$treestr}offset=$offsetorg&amp;psearch=$psearch\" class='snlink rounded' title=\"$countstr\">{$place['firstchar']}</a> ";
         }
         $initialchar++;
@@ -106,7 +106,7 @@ if ($result) {
 }
 ?>
     <div class="titlebox rounded-lg normal">
-        <h3 class="subhead"><?php echo $text['placesstarting']; ?></h3>
+        <h3 class="subhead"><?php echo _('Show largest localities starting with'); ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
 
         <?php
@@ -114,23 +114,23 @@ if ($result) {
         echo $formstr;
         ?>
         <?php
-        echo "{$text['placescont']}: <input type='text' name=\"psearch\">\n";
+        echo "" . _('Show all places containing') . ": <input type='text' name=\"psearch\">\n";
         if ($tree && !$tngconfig['places1tree']) {
             echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
         }
         echo "<input type='hidden' name=\"stretch\" value='1'>\n";
-        echo "<input type='submit' name=\"pgo\" value=\"{$text['go']}\">\n";
+        echo "<input type='submit' name=\"pgo\" value=\"" . _('Go') . "\">\n";
         ?>
         </form>
 
-        <br><?php echo "<a href=\"places-all.php?$treestr2\">{$text['showallplaces']}</a> ({$text['sortedalpha']}) &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\" class='snlink rounded'>{$text['heatmap']}</a>"; ?>
+        <br><?php echo "<a href=\"places-all.php?$treestr2\">" . _('Show all largest localities') . "</a> (" . _('sorted alphabetically') . ") &nbsp;|&nbsp; <a href=\"heatmap.php?$treestr2\" class='snlink rounded'>" . _('Heat Map') . "</a>"; ?>
     </div>
     <br>
     <div class="titlebox rounded-lg">
         <table class="table-top30">
             <tr>
                 <td colspan="5">
-                    <h3 class="subhead"><?php echo "{$text['top30places']} ({$text['totalplaces']}):"; ?></h3>
+                    <h3 class="subhead"><?php echo "" . _('Top xxx largest localities') . " (" . _('total places') . "):"; ?></h3>
                 </td>
             </tr>
             <tr>
@@ -151,12 +151,12 @@ if ($result) {
                     <?php
                     $formstr = getFORM("places100", "get", "", "");
                     echo $formstr;
-                    echo $text['showtop'];
-                    echo " <input type='text' name=\"topnum\" value=\"100\" size='4' maxlength='4'> {$text['byoccurrence']}\n";
+                    echo _('Show top');
+                    echo " <input type='text' name=\"topnum\" value=\"100\" size='4' maxlength='4'> " . _('ordered by occurrence') . "\n";
                     if ($tree && !$tngconfig['places1tree']) {
                         echo "<input type='hidden' name=\"tree\" value='$tree'>\n";
                     }
-                    echo "<input type='submit' value=\"{$text['go']}\"></form>\n";
+                    echo "<input type='submit' value=\"" . _('Go') . "\"></form>\n";
                     ?>
                 </td>
             </tr>

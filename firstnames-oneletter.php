@@ -1,4 +1,5 @@
 <?php
+
 $textpart = "surnames";
 @set_time_limit(0);
 include "tng_begin.php";
@@ -6,16 +7,16 @@ include "tng_begin.php";
 $firstchar = mb_substr($firstchar, 0, 1, $charset);
 $decodedfirstchar = stripslashes(urldecode($firstchar));
 
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"firstnames-oneletter.php?firstchar=$firstchar&amp;tree=$tree\">" . xmlcharacters($text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar$treestr") . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href=\"firstnames-oneletter.php?firstchar=$firstchar&amp;tree=$tree\">" . xmlcharacters(_('First Name List') . ": " . _('Begins with') . " $decodedfirstchar$treestr") . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar", $flags);
+tng_header(_('First Name List') . ": " . _('Begins with') . " $decodedfirstchar", $flags);
 ?>
 
     <h2 class="header">
-        <span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['firstnamelist'] . ": {$text['beginswith']} $decodedfirstchar"; ?>
+        <span class="headericon" id="surnames-hdr-icon"></span><?php echo _('First Name List') . ": " . _('Begins with') . " $decodedfirstchar"; ?>
     </h2>
     <br class="clearleft">
 <?php
@@ -25,8 +26,8 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
 
     <div class="titlebox rounded-lg">
         <div>
-            <h3 class="subhead"><?php echo "{$text['allfirstbegwith']} $decodedfirstchar, {$text['sortedalpha']} ({$text['totalnames']}):"; ?></h3>
-            <p class="smaller"><?php echo $text['showmatchingfirstnames'] . "&nbsp;&nbsp;&nbsp;<a href=\"firstnames.php?tree=$tree\">{$text['mainfirstnamepage']}</a> &nbsp;|&nbsp; <a href=\"firstnames-all.php?tree=$tree\">{$text['showallfirstnames']}</a>"; ?></p>
+            <h3 class="subhead"><?php echo "" . _('All first names beginning with') . " $decodedfirstchar, " . _('sorted alphabetically') . " (" . _('total individuals') . "):"; ?></h3>
+            <p class="smaller"><?php echo _('Click on a first name to show matching records.') . "&nbsp;&nbsp;&nbsp;<a href=\"firstnames.php?tree=$tree\">" . _('Main first name page') . "</a> &nbsp;|&nbsp; <a href=\"firstnames-all.php?tree=$tree\">" . _('Show all first names') . "</a>"; ?></p>
         </div>
         <table class="sntable">
             <tr>
@@ -55,7 +56,7 @@ echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'firstnam
                         $num_in_col_ctr = 0;
                         while ($firstname = tng_fetch_assoc($result)) {
                             $firstname2 = urlencode($firstname['firstname']);
-                            $name = $firstname['firstname'] ? "<a href=\"search.php?myfirstname=$firstname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : $text['nofirstname'];
+                            $name = $firstname['firstname'] ? "<a href=\"search.php?myfirstname=$firstname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$firstname['lowername']}</a>" : _('[no first name]');
                             echo "$snnum. $name ({$firstname['lncount']})<br>\n";
                             $snnum++;
                             $num_in_col_ctr++;

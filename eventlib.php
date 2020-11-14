@@ -37,15 +37,15 @@ function showCustEvents($id) {
         }
         $truncated = substr($info, 0, 90);
         $info = strlen($info) > 90 ? substr($truncated, 0, strrpos($truncated, ' ')) . '&hellip;' : $info;
-        $actionstr = $allow_edit ? "<a href='#' onclick=\"return editEvent({$event['eventID']});\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>" : "";
-        $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteEvent('{$event['eventID']}');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";
+        $actionstr = $allow_edit ? "<a href='#' onclick=\"return editEvent({$event['eventID']});\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>" : "";
+        $actionstr .= $allow_delete ? "<a href='#' onclick=\"return deleteEvent('{$event['eventID']}');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";
         if (isset($gotnotes)) {
             $notesicon = !empty($gotnotes[$event['eventID']]) ? "admin-note-on-icon" : "admin-note-off-icon";
-            $actionstr .= "<a href='#' onclick=\"return showNotes('{$event['eventID']}','$id');\" title=\"{$admtext['notes']}\" id=\"notesicon{$event['eventID']}\" class='smallicon $notesicon'></a>";
+            $actionstr .= "<a href='#' onclick=\"return showNotes('{$event['eventID']}','$id');\" title=\"" . _('Notes') . "\" id=\"notesicon{$event['eventID']}\" class='smallicon $notesicon'></a>";
         }
         if (isset($gotcites)) {
             $citesicon = !empty($gotcites[$event['eventID']]) ? "admin-cite-on-icon" : "admin-cite-off-icon";
-            $actionstr .= "<a href='#' onclick=\"return showCitations('{$event['eventID']}','$id');\" title=\"{$admtext['sources']}\" id=\"citesicon{$event['eventID']}\" class='smallicon $citesicon'></a>";
+            $actionstr .= "<a href='#' onclick=\"return showCitations('{$event['eventID']}','$id');\" title=\"" . _('Sources') . "\" id=\"citesicon{$event['eventID']}\" class='smallicon $citesicon'></a>";
         }
         if ($event['eventdate'] || $event['eventplace']) {
             echo "<tr class=\"row_{$event['eventID']} align-top\" id=\"row_{$event['eventID']}_top\">\n";

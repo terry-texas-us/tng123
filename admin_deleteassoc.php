@@ -16,6 +16,6 @@ $result = tng_query($query);
 $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
-adminwritelog("{$admtext['deleted']}: {$admtext['association']} $assocID");
+adminwritelog("" . _('Deleted') . ": " . _('Association') . " $assocID");
 
 echo $row['acount'];

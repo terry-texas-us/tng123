@@ -22,7 +22,7 @@ if ($xID) {
 if (!$private) $private = "0";
 $query = "UPDATE $notelinks_table SET secret=\"$private\" WHERE ID='$ID'";
 $result = tng_query($query);
-adminwritelog($admtext['modifynote'] . ": $tree/$persfamID/$ID/$eventID");
+adminwritelog(_('Modify Note') . ": $tree/$persfamID/$ID/$eventID");
 $orgnote = cleanIt($orgnote);
 $truncated = truncateIt(stripslashes($orgnote), 75);
 header("Content-type:text/html; charset=" . $session_charset);

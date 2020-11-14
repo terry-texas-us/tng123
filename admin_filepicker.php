@@ -71,7 +71,7 @@ function frmFiles() {
     ?>
 
     <div class="databack ajaxwindow" id="filepicker">
-    <h3 class="subhead"><?php echo $admtext['selectfile']; ?></h3>
+    <h3 class="subhead"><?php echo _('Select File'); ?></h3>
 
     <?php
     $nCurrentPage = $page ? $page : 0;
@@ -81,18 +81,18 @@ function frmFiles() {
     $lStartRec = $nCurrentPage * $pagetotal;
     frmFilesHdFt($columns, $nCurrentPage, $nPages);
     ?>
-    <span class="normal">&nbsp;<?php echo "<b>{$admtext['folder']}:</b> $tngpath/" . stripslashes($subdir); ?></span><br>
+    <span class="normal">&nbsp;<?php echo "<b>" . _('Folder') . ":</b> $tngpath/" . stripslashes($subdir); ?></span><br>
     <table class="normal">
     <tr class="fieldnameback">
-        <td align="left" width="60"><span class="fieldname"><b><?php echo $admtext['action']; ?></b></span></td>
+        <td align="left" width="60"><span class="fieldname"><b><?php echo _('Action'); ?></b></span></td>
         <td nowrap><span
-                class="fieldname"><b><?php echo "<a href='#' onclick=\"return " . mfpGetUrl(0, 'name') . "\" class='lightlink'>{$admtext['filename']} <img src=\"img/tng_sort_{$namedir}.gif\" width='15' height='8' alt=\"\"></a>"; ?></b></span>
+                class="fieldname"><b><?php echo "<a href='#' onclick=\"return " . mfpGetUrl(0, 'name') . "\" class='lightlink'>" . _('File Name') . " <img src=\"img/tng_sort_{$namedir}.gif\" width='15' height='8' alt=\"\"></a>"; ?></b></span>
         </td>
         <td align="center"><span
-                class="fieldname"><b><?php echo "<a href='#' onclick=\"return " . mfpGetUrl(0, 'date') . "\" class='lightlink'>{$admtext['date']} <img src=\"img/tng_sort_{$datedir}.gif\" width='15' height='8' alt=\"\"></a>"; ?></b></span>
+                class="fieldname"><b><?php echo "<a href='#' onclick=\"return " . mfpGetUrl(0, 'date') . "\" class='lightlink'>" . _('Date') . " <img src=\"img/tng_sort_{$datedir}.gif\" width='15' height='8' alt=\"\"></a>"; ?></b></span>
         </td>
-        <td align="center"><span class="fieldname"><b><?php echo $admtext['size']; ?></b></span></td>
-        <td align="center"><span class="fieldname"><b><?php echo $admtext['dimensions']; ?></b></span></td>
+        <td align="center"><span class="fieldname"><b><?php echo _('Size'); ?></b></span></td>
+        <td align="center"><span class="fieldname"><b><?php echo _('Dimensions'); ?></b></span></td>
     </tr>
     <?php
     $nImageNr = 0;
@@ -153,11 +153,11 @@ function frmFiles() {
 
                     echo "<tr id=\"row_$nImageNr\">\n";
                     echo "<td align=\"left\" class='lightback'><div class='action-btns'>\n";
-                    echo "<a href=\"javascript:ReturnFile('$img$subdir" . addslashes($file) . "')\" title=\"{$admtext['select']}\" class='smallicon admin-edit-icon'></a>";
+                    echo "<a href=\"javascript:ReturnFile('$img$subdir" . addslashes($file) . "')\" title=\"" . _('Select') . "\" class='smallicon admin-edit-icon'></a>";
                     if ($allow_delete) {
-                        echo "<a href='#' onclick=\"return deleteIt('file','$nImageNr','$tngpath/$subdir" . addslashes($file) . "');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                        echo "<a href='#' onclick=\"return deleteIt('file','$nImageNr','$tngpath/$subdir" . addslashes($file) . "');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                     }
-                    echo "<a href=\"javascript:ShowFile('$tngpath/$subdir" . addslashes($file) . "')\" title=\"{$admtext['preview']}\" class='smallicon admin-test-icon'></a>\n";
+                    echo "<a href=\"javascript:ShowFile('$tngpath/$subdir" . addslashes($file) . "')\" title=\"" . _('Preview') . "\" class='smallicon admin-test-icon'></a>\n";
                     ?>
                     </div>
                     </td>
@@ -195,21 +195,20 @@ function frmFiles() {
                             array_pop($dirbreakdown);
                             $newsubdir = implode('/', $dirbreakdown) . '/';
                             if ($newsubdir == '/') $newsubdir = '';
-
                         }
                         ?>
                         <tr>
                             <td align="left" valign="middle" class="lightback">
                                 <?php
                                 if ($folders) {
-                                    echo "<a href=\"javascript:ReturnFile('$img$subdir" . addslashes($file) . "')\" title=\"{$admtext['select']}\">{$admtext['select']}</a> | ";
+                                    echo "<a href=\"javascript:ReturnFile('$img$subdir" . addslashes($file) . "')\" title=\"" . _('Select') . "\">" . _('Select') . "</a> | ";
                                 }
                                 ?>
                                 <span class="normal"><a href="#"
-                                                        onclick="return moreFilepicker({subdir: '<?php echo addslashes($newsubdir); ?>',path: '<?php echo $path; ?>',folders: '<?php echo $folders; ?>',order: '<?php echo $order; ?>'});"><?php echo $admtext['open']; ?></a></span>
+                                        onclick="return moreFilepicker({subdir: '<?php echo addslashes($newsubdir); ?>',path: '<?php echo $path; ?>',folders: '<?php echo $folders; ?>',order: '<?php echo $order; ?>'});"><?php echo _('Open'); ?></a></span>
                             </td>
                             <td class="lightback">
-                                <span class="normal"><?php echo "<b>{$admtext['folder']}:</b> $filename"; ?></span>
+                                <span class="normal"><?php echo "<b>" . _('Folder') . ":</b> $filename"; ?></span>
                             </td>
                             <td class="lightback text-center"><?php echo date($datefmt, filemtime($file)); ?>&nbsp;</td>
                             <td class="lightback align-middle text-center">&nbsp;</td>
@@ -274,7 +273,7 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
         $nCPage = $nCurrentPage + 1; //current page display
 
         if ($nCurrentPage != 0) {
-            mfpLink($nCurrentPage - 1, $text['text_prev']);
+            mfpLink($nCurrentPage - 1, _('Prev'));
         }
         mfpLink(0, 1, $nCurrentPage == 0);
 
@@ -293,14 +292,14 @@ function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
 
         mfpLink($nPages - 1, $nPages, $nCurrentPage == $nPages - 1);
         if ($nCurrentPage + 1 != $nPages) {
-            mfpLink($nCurrentPage + 1, $text['text_next']);
+            mfpLink($nCurrentPage + 1, _('Next'));
         }
 
         if ($firstNear > 1 || $lastNear < $nPages - 2) {
             $nextPageStr = "jQuery('#gotopage').prev('.tngpage').val()-1";
             echo "<span class='snlink rounded'>\n";
-            echo "<input type='text' class='tngpage minifield text-sm w-16 border-none' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {" . mfpGetUrl($nextPageStr) . "}\"> ";
-            echo "<input type='button' id='gotopage' value=\"{$text['go']}\" class='minibutton' onclick=\"" . mfpGetUrl($nextPageStr) . "\">\n";
+            echo "<input type='text' class='tngpage minifield text-sm w-16 border-none' placeholder=\"" . _('Page') . " #\" name='tngpage' onkeyup=\"if(pageEnter(this,event)) {" . mfpGetUrl($nextPageStr) . "}\"> ";
+            echo "<input type='button' id='gotopage' value=\"" . _('Go') . "\" class='minibutton' onclick=\"" . mfpGetUrl($nextPageStr) . "\">\n";
             echo "</span>";
         }
         echo "</div>\n";

@@ -49,20 +49,20 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
     $totrows = $numrows;
 }
 $numrowsplus = $numrows + $offset;
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href='browserepos.php?tree=$tree&amp;offset=$offset&amp;reposearch=$reposearch'>" . xmlcharacters($text['repositories'] . $treestr) . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href='browserepos.php?tree=$tree&amp;offset=$offset&amp;reposearch=$reposearch'>" . xmlcharacters(_('Repositories') . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-tng_header($text['repositories'], $flags);
+tng_header(_('Repositories'), $flags);
 ?>
-<h2 class="mb-4 header"><span class="headericon" id="repos-hdr-icon"></span><?php echo $text['repositories']; ?></h2>
+<h2 class="mb-4 header"><span class="headericon" id="repos-hdr-icon"></span><?php echo _('Repositories'); ?></h2>
 <div class='normal'>
     <?php echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'browserepos', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']); ?>
     <div class='mb-4 normal'>
         <form name="reposearch1" action="browserepos.php" method="get">
-            <label for="reposearch"><?php echo $text['search']; ?></label>
+            <label for="reposearch"><?php echo _('Search'); ?></label>
             <input id="reposearch" class="p-1 ml-1" name="reposearch" type="search" value="<?php echo $reposearch; ?>">
-            <input class="p-1 px-2" type="submit" value="<?php echo $text['search']; ?>">
+            <input class="p-1 px-2" type="submit" value="<?php echo _('Search'); ?>">
             <input name='tree' type='hidden' value="<?php echo $tree; ?>">
         </form>
     </div>
@@ -70,10 +70,10 @@ tng_header($text['repositories'], $flags);
         <thead>
         <tr>
             <th class="hidden p-2 sm:display-cell fieldnameback nbrcol fieldname">#</th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['repoid']; ?></th>
-            <th class="p-2 fieldnameback fieldname"><?php echo $text['name']; ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('Repository ID'); ?></th>
+            <th class="p-2 fieldnameback fieldname"><?php echo _('Name'); ?></th>
             <?php if ($numtrees > 1) { ?>
-                <th class="p-2 fieldnameback"><?php echo $text['tree']; ?></th><?php } ?>
+                <th class="p-2 fieldnameback"><?php echo _('Tree'); ?></th><?php } ?>
         </tr>
         </thead>
         <tbody>

@@ -14,36 +14,36 @@ require "adminlog.php";
 
 $helplang = findhelp("second_help.php");
 
-tng_adminheader($admtext['secondarymaint'], $flags);
+tng_adminheader(_('Secondary Processes'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$datatabs[0] = [1, "admin_dataimport.php", $admtext['import'], "import"];
-$datatabs[1] = [1, "admin_export.php", $admtext['export'], "export"];
-$datatabs[2] = [1, "admin_secondmenu.php", $admtext['secondarymaint'], "second"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/second_help.php');\" class='lightlink'>{$admtext['help']}</a>";
+$datatabs[0] = [1, "admin_dataimport.php", _('Import'), "import"];
+$datatabs[1] = [1, "admin_export.php", _('Export'), "export"];
+$datatabs[2] = [1, "admin_secondmenu.php", _('Secondary Processes'), "second"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/second_help.php');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($datatabs, "second", $innermenu);
-echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarymaint'] . " &gt;&gt; " . $secaction, "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
+echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('Secondary Processes') . " &gt;&gt; " . $secaction, "img/data_icon.gif", $menu, (isset($message) ? $message : ""));
 ?>
     <div class="lightback pad2">
         <div class="databack normal p-1">
 
             <?php
-        @set_time_limit(0);
-        $wherestr = "";
-        if ($secaction == $admtext['sortchildren']) {
-            echo "<p>" . $admtext['sortingchildren'] . "</p>";
-            echo $admtext['families'] . ":<br>\n";
-            $fcount = 0;
-            if ($tree != "--all--") {
-                $wherestr = "WHERE $families_table.gedcom = '$tree'";
-                $wherestr2 = "AND $children_table.gedcom = '$tree'";
-            }
-            $query = "SELECT familyID, gedcom FROM $families_table $wherestr";
-            $result = tng_query($query);
-            while ($family = tng_fetch_assoc($result)) {
-                $query = "SELECT $children_table.ID AS ID, IF(birthdatetr !='0000-00-00',birthdatetr,altbirthdatetr) AS birth FROM $children_table, $people_table 
+            @set_time_limit(0);
+            $wherestr = "";
+            if ($secaction == _('Sort Children')) {
+                echo "<p>" . _('Sorting Children') . "</p>";
+                echo _('Families') . ":<br>\n";
+                $fcount = 0;
+                if ($tree != "--all--") {
+                    $wherestr = "WHERE $families_table.gedcom = '$tree'";
+                    $wherestr2 = "AND $children_table.gedcom = '$tree'";
+                }
+                $query = "SELECT familyID, gedcom FROM $families_table $wherestr";
+                $result = tng_query($query);
+                while ($family = tng_fetch_assoc($result)) {
+                    $query = "SELECT $children_table.ID AS ID, IF(birthdatetr !='0000-00-00',birthdatetr,altbirthdatetr) AS birth FROM $children_table, $people_table 
 			WHERE $children_table.familyID = \"{$family['familyID']}\" AND $people_table.personID = $children_table.personID AND $people_table.gedcom = $children_table.gedcom $wherestr2
 			ORDER BY birth, ordernum";
                 $fresult = tng_query($query);
@@ -53,28 +53,27 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                     $query = "UPDATE $children_table SET ordernum=\"$order\" WHERE ID=\"{$child['ID']}\"";
                     $cresult = tng_query($query);
                 }
-                $fcount++;
-                if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
+                    $fcount++;
+                    if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
 
-                tng_free_result($fresult);
-            }
-            tng_free_result($result);
-// TODO text ['finishedsort'] was not defined in any language. Manually added here.
-            echo "<br><br>" . _todo_('finished sort') . "<br>";
-        } elseif ($secaction == $admtext['sortspouses']) {
-
-            echo "<p>" . $admtext['sortingspouses'] . "</p>";
-            echo $admtext['people'] . ":<br>\n";
-            $fcount = 0;
-            if ($tree != "--all--") {
-                $wherestr = " AND $families_table.gedcom = '$tree'";
-            }
-            //first do husbands
-            $query = "SELECT personID, families.gedcom AS gedcom ";
-            $query .= "FROM $families_table families, $people_table people ";
-            $query .= "WHERE people.personID = families.husband AND people.gedcom = families.gedcom $wherestr";
-            $result = tng_query($query);
-            while ($husband = tng_fetch_assoc($result)) {
+                    tng_free_result($fresult);
+                }
+                tng_free_result($result);
+                // TODO text ['finishedsort'] was not defined in any language. Manually added here.
+                echo "<br><br>" . _todo_('finished sort') . "<br>";
+            } elseif ($secaction == _('Sort Spouses')) {
+                echo "<p>" . _('Sorting Spouses') . "</p>";
+                echo _('People') . ":<br>\n";
+                $fcount = 0;
+                if ($tree != "--all--") {
+                    $wherestr = " AND $families_table.gedcom = '$tree'";
+                }
+                //first do husbands
+                $query = "SELECT personID, families.gedcom AS gedcom ";
+                $query .= "FROM $families_table families, $people_table people ";
+                $query .= "WHERE people.personID = families.husband AND people.gedcom = families.gedcom $wherestr";
+                $result = tng_query($query);
+                while ($husband = tng_fetch_assoc($result)) {
                 $query = "SELECT ID FROM $families_table 
 			WHERE husband = \"{$husband['personID']}\" AND gedcom = \"{$husband['gedcom']}\"
 			ORDER BY marrdatetr, husborder";
@@ -113,26 +112,26 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
 
                 tng_free_result($fresult);
             }
-            tng_free_result($result);
-// TODO text ['finishedsort'] was not defined in any language. Manually added here.
-            echo "<br><br>" . _todo_('finished sort') . "<br>";
-        } elseif ($secaction == $admtext['creategendex']) {
-            //create gendex file
-            function getVitals($person) {
-                if ($person['birthdate']) {
-                    $info = $person['birthdate'] . "|" . $person['birthplace'] . "|";
-                } else {
-                    $info = $person['altbirthdate'] . "|" . $person['altbirthplace'] . "|";
-                }
-                if ($person['deathdate']) {
-                    $info .= $person['deathdate'] . "|" . $person['deathplace'] . "|";
-                } else {
+                tng_free_result($result);
+                // TODO text ['finishedsort'] was not defined in any language. Manually added here.
+                echo "<br><br>" . _todo_('finished sort') . "<br>";
+            } elseif ($secaction == _('Create GENDEX')) {
+                //create gendex file
+                function getVitals($person) {
+                    if ($person['birthdate']) {
+                        $info = $person['birthdate'] . "|" . $person['birthplace'] . "|";
+                    } else {
+                        $info = $person['altbirthdate'] . "|" . $person['altbirthplace'] . "|";
+                    }
+                    if ($person['deathdate']) {
+                        $info .= $person['deathdate'] . "|" . $person['deathplace'] . "|";
+                    } else {
                     $info .= $person['burialdate'] . "|" . $person['burialplace'] . "|";
                 }
                 return $info;
             }
 
-            echo "<p>" . $admtext['creatinggendex'] . "</p>";
+                echo "<p>" . _('Creating GENDEX file...') . "</p>";
             if ($tree == "--all--") {
                 $gendexout = "$rootpath$gendexfile/gendex.txt";
                 $gendexURL = "$tngdomain/$gendexfile/gendex.txt";
@@ -147,7 +146,7 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
             if ($result) {
                 //open file (overwrite any contents)
                 $fp2 = @fopen($gendexout, "w");
-                if (!$fp2) die ($admtext['cannotopen'] . " $gendexout");
+                if (!$fp2) die (_('Cannot open file') . " $gendexout");
 
 
                 flock($fp2, LOCK_EX);
@@ -168,37 +167,36 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
 
                         $tcount++;
                         if ($tcount % 100 == 0) echo "<strong>$tcount</strong> ";
-
                     }
                 }
                 flock($fp2, LOCK_UN);
                 fclose($fp2);
             }
-            tng_free_result($result);
-            ?>
-            <br><br>
-            <?php
-            echo "<p class='normal'>" . $admtext['finishedgendex'] . "<br>\n";
-            echo $admtext['filename'] . ": $gendexURL</p>\n";
-            ?>
-            <p class="normal"><?php echo $admtext['postgdx']; ?>:<br>
-                &raquo; <a href="http://www.gendexnetwork.org" target="_blank">GenDexNetwork</a><br>
-                &raquo; <a href="http://www.familytreeseeker.com" target="_blank">FamilyTreeSeeker.com</a>
-            </p>
-            <?php
-        } elseif ($secaction == $admtext['tracklines']) {
-            echo "<p class='normal'>" . $admtext['trackinglines'] . "</p>";
-            echo $admtext['families'] . ":<br>\n";
+                tng_free_result($result);
+                ?>
+                <br><br>
+                <?php
+                echo "<p class='normal'>" . _('Finished with GENDEX file creation.') . "<br>\n";
+                echo _('File Name') . ": $gendexURL</p>\n";
+                ?>
+                <p class="normal"><?php echo _('Where to post your GENDEX file'); ?>:<br>
+                    &raquo; <a href="http://www.gendexnetwork.org" target="_blank">GenDexNetwork</a><br>
+                    &raquo; <a href="http://www.familytreeseeker.com" target="_blank">FamilyTreeSeeker.com</a>
+                </p>
+                <?php
+            } elseif ($secaction == _('Track Lines')) {
+                echo "<p class='normal'>" . _('Tracking Lines of Descent...') . "</p>";
+                echo _('Families') . ":<br>\n";
 
-            $query = "UPDATE $children_table SET haskids = 0";
-            if ($tree != "--all--") $query .= " WHERE gedcom = '$tree'";
+                $query = "UPDATE $children_table SET haskids = 0";
+                if ($tree != "--all--") $query .= " WHERE gedcom = '$tree'";
 
-            $result2 = tng_query($query);
+                $result2 = tng_query($query);
 
-            $fcount = 0;
-            if ($tree != "--all--") {
-                $wherestr = "AND $families_table.gedcom = '$tree'";
-            }
+                $fcount = 0;
+                if ($tree != "--all--") {
+                    $wherestr = "AND $families_table.gedcom = '$tree'";
+                }
             $query = "SELECT distinct ($families_table.familyID), husband, wife, $families_table.gedcom AS gedcom FROM ($children_table, $families_table) WHERE $families_table.familyID = $children_table.familyID AND $families_table.gedcom = $children_table.gedcom $wherestr";
             $result = tng_query($query);
             while ($family = tng_fetch_assoc($result)) {
@@ -212,21 +210,20 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                 }
                 $fcount++;
                 if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
-
             }
-            tng_free_result($result);
-            echo "<br><br>{$admtext['finishedtracking']}<br>";
-        } elseif ($secaction == $admtext['relabelbranches']) {
-            $fcount = 0;
-            echo "<p>" . $admtext['relabeling'] . "</p>";
-            if ($tree != "--all--") $wherestr = "WHERE gedcom = '$tree'";
+                tng_free_result($result);
+                echo "<br><br>" . _('Finished tracking lines of descent.') . "<br>";
+            } elseif ($secaction == _('Relabel Branches')) {
+                $fcount = 0;
+                echo "<p>" . _('Relabeling Branches') . "</p>";
+                if ($tree != "--all--") $wherestr = "WHERE gedcom = '$tree'";
 
-            $query = "SELECT branch, persfamID, gedcom FROM $branchlinks_table $wherestr";
-            $result = tng_query($query);
-            while ($branch = tng_fetch_assoc($result)) {
-                $success = 0;
-                if (substr($branch['persfamID'], 0, 1) != "F") {
-                    $query = "SELECT branch FROM $people_table WHERE personID = \"{$branch['persfamID']}\" AND gedcom = \"{$branch['gedcom']}\"";
+                $query = "SELECT branch, persfamID, gedcom FROM $branchlinks_table $wherestr";
+                $result = tng_query($query);
+                while ($branch = tng_fetch_assoc($result)) {
+                    $success = 0;
+                    if (substr($branch['persfamID'], 0, 1) != "F") {
+                        $query = "SELECT branch FROM $people_table WHERE personID = \"{$branch['persfamID']}\" AND gedcom = \"{$branch['gedcom']}\"";
                     $result2 = tng_query($query);
                     if (tng_num_rows($result2)) {
                         $row = tng_fetch_assoc($result2);
@@ -267,49 +264,47 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                     }
                     tng_free_result($result2);
                 }
-                if ($success) {
-                    $fcount++;
-                    if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
-
+                    if ($success) {
+                        $fcount++;
+                        if ($fcount % 100 == 0) echo "<strong>$fcount</strong> ";
+                    }
                 }
-            }
-            tng_free_result($result);
-        } elseif ($secaction == $admtext['evalmedia']) {
-            echo "<p>" . $admtext['evaluating'] . "...</p>";
-            //loop through each media type
-            $query = "SELECT * FROM $mediatypes_table ORDER BY ordernum, display";
-            $result = @tng_query($query);
+                tng_free_result($result);
+            } elseif ($secaction == _('Trim Media Menus')) {
+                echo "<p>" . _('Counting media') . "...</p>";
+                //loop through each media type
+                $query = "SELECT * FROM $mediatypes_table ORDER BY ordernum, display";
+                $result = @tng_query($query);
 
-            while ($row = tng_fetch_assoc($result)) {
-                $query2 = "SELECT count(*) AS counter FROM $media_table WHERE mediatypeID = \"{$row['mediatypeID']}\"";
-                $result2 = @tng_query($query2);
-                $row2 = tng_fetch_assoc($result2);
-                $display = $row['display'] ? $row['display'] : $admtext[$row['mediatypeID']];
-                echo "$display: " . number_format($row2['counter']);
+                while ($row = tng_fetch_assoc($result)) {
+                    $query2 = "SELECT count(*) AS counter FROM $media_table WHERE mediatypeID = \"{$row['mediatypeID']}\"";
+                    $result2 = @tng_query($query2);
+                    $row2 = tng_fetch_assoc($result2);
+                    $display = $row['display'] ? $row['display'] : $admtext[$row['mediatypeID']];
+                    echo "$display: " . number_format($row2['counter']);
                 if (!$row2['counter']) {
-                    echo " ... " . $admtext['disabled'];
+                    echo " ... " . _('Disabled');
                     $disabled = 1;
                 } else {
                     $disabled = 0;
                 }
-                $query3 = "UPDATE $mediatypes_table SET disabled=\"$disabled\" where mediatypeID=\"{$row['mediatypeID']}\"";
-                $result3 = @tng_query($query3);
-                echo "<br>\n";
-                tng_free_result($result2);
-            }
-            tng_free_result($result);
-            echo "<br><br>{$admtext['finished']}<br>";
-        } elseif ($secaction == $admtext['refreshliving']) {
-            $changedToLiving = $changedToDeceased = $counted = 0;
+                    $query3 = "UPDATE $mediatypes_table SET disabled=\"$disabled\" where mediatypeID=\"{$row['mediatypeID']}\"";
+                    $result3 = @tng_query($query3);
+                    echo "<br>\n";
+                    tng_free_result($result2);
+                }
+                tng_free_result($result);
+                echo "<br><br>" . _('Finished') . "<br>";
+            } elseif ($secaction == _('Refresh Living')) {
+                $changedToLiving = $changedToDeceased = $counted = 0;
 
-            if ($tree != "--all--") $wherestr = "WHERE gedcom = '$tree'";
+                if ($tree != "--all--") $wherestr = "WHERE gedcom = '$tree'";
 
-
-            $query = "SELECT ID, birthdate, birthdatetr, altbirthdatetr, deathdate, deathplace, deathdatetr, burialdate, burialplace, burialdatetr, living, personID, gedcom FROM $people_table $wherestr";
-            $result = tng_query($query);
-            while ($row = tng_fetch_assoc($result)) {
-                $birth = $row['birthdatetr'] != "0000-00-00" ? $row['birthdatetr'] : $row['altbirthdatetr'];
-                $death = $row['deathdatetr'] != "0000-00-00" ? $row['deathdatetr'] : $row['burialdatetr'];
+                $query = "SELECT ID, birthdate, birthdatetr, altbirthdatetr, deathdate, deathplace, deathdatetr, burialdate, burialplace, burialdatetr, living, personID, gedcom FROM $people_table $wherestr";
+                $result = tng_query($query);
+                while ($row = tng_fetch_assoc($result)) {
+                    $birth = $row['birthdatetr'] != "0000-00-00" ? $row['birthdatetr'] : $row['altbirthdatetr'];
+                    $death = $row['deathdatetr'] != "0000-00-00" ? $row['deathdatetr'] : $row['burialdatetr'];
 
                 $living = -1;
                 $counted++;
@@ -369,22 +364,20 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
                         echo "-<a href=\"admin_editperson.php?personID={$row['personID']}&tree={$row['gedcom']}\">{$row['personID']}</a> ";
                     }
                 }
-                if ($counted % 100 == 0) echo "I$counted ";
+                    if ($counted % 100 == 0) echo "I$counted ";
+                }
+                tng_free_result($result);
+                echo "<br><br>" . _('Finished') . "<br>$changedToDeceased " . _('changed to deceased') . ", $changedToLiving " . _('changed to living') . ".";
+            } elseif ($secaction == _('Make Private')) {
+                if ($tngimpcfg['maxprivyrs']) {
+                    $peopleMadePrivate = $familiesMadePrivate = $counted = 0;
 
-            }
-            tng_free_result($result);
-            echo "<br><br>{$admtext['finished']}<br>$changedToDeceased {$admtext['chtodeceased']}, $changedToLiving {$admtext['chtoliving']}.";
-        } elseif ($secaction == $admtext['makeprivate']) {
-            if ($tngimpcfg['maxprivyrs']) {
-                $peopleMadePrivate = $familiesMadePrivate = $counted = 0;
+                    if ($tree != "--all--") $wherestr = "AND gedcom = '$tree'";
 
-                if ($tree != "--all--") $wherestr = "AND gedcom = '$tree'";
+                    $query = "SELECT ID, personID, gedcom, deathdatetr, burialdatetr, private FROM $people_table WHERE private != '1' AND living != '1' $wherestr";
+                    $result = tng_query($query);
 
-
-                $query = "SELECT ID, personID, gedcom, deathdatetr, burialdatetr, private FROM $people_table WHERE private != '1' AND living != '1' $wherestr";
-                $result = tng_query($query);
-
-                $today = date('Y');
+                    $today = date('Y');
 
                 while ($row = tng_fetch_assoc($result)) {
                     $death = $row['deathdatetr'] != "0000-00-00" ? $row['deathdatetr'] : $row['burialdatetr'];
@@ -405,19 +398,19 @@ echo displayHeadline($admtext['datamaint'] . " &gt;&gt; " . $admtext['secondarym
 
                 }
                 tng_free_result($result);
+                }
+
+                if (!$peopleMadePrivate) $peopleMadePrivate = "0";
+
+                echo "<br><br>" . _('Finished') . "<br>$peopleMadePrivate " . _('changed to private') . ".";
             }
 
-            if (!$peopleMadePrivate) $peopleMadePrivate = "0";
+            adminwritelog(_('Secondary Processes') . ": $secaction");
+            ?>
 
-            echo "<br><br>{$admtext['finished']}<br>$peopleMadePrivate {$admtext['chtoprivate']}.";
-        }
+            <p class="normal">&raquo; <a href="admin_secondmenu.php"><?php echo _('Back to Secondary Processes'); ?></a></p>
 
-        adminwritelog($admtext['secondary'] . ": $secaction");
-        ?>
-
-        <p class="normal">&raquo; <a href="admin_secondmenu.php"><?php echo $admtext['backtosecondary']; ?></a></p>
-
+        </div>
     </div>
-</div>
 
 <?php echo tng_adminfooter(); ?>

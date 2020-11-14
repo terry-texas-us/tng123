@@ -40,7 +40,7 @@ if ($personID && $familyID) {    #comment if directed to another family
     $name = $personID == $fatherID ? $family['husband']['displayname'] : ($personID == $motherID ? $family['wife']['displayname'] : $temp['displayname']);
     [$frel, $mrel] = getResult(tng_query("select frel,mrel from $children_table where personID='$personID' and familyID='$familyID' and gedcom='$tree'"), 1);
     $type = strtolower($frel ? $frel : ($mrel ? $mrel : 'birth'));
-    echo $text['parentfamily'] . " " . ($name ? " {$text['of']} $name " : " {$text['shown']} ") . " {$text['isthe']} $admtext[$type] {$text['family']}.";
+    echo _('The parent family ') . " " . ($name ? " " . _('of') . " $name " : " " . _('shown') . " ") . " " . _('is the') . " $admtext[$type] " . _('Family') . ".";
 }
 [$patorder, $patsize, $patgrand] = familyorder($patfamily, $fatherID);
 [$matorder, $matsize, $matgrand] = familyorder($matfamily, $motherID);
@@ -300,10 +300,10 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
         $death = $person['death'] ? $person['death'] : ' ';
         $life = $birth == ' ' && $death == ' ' ? ' ' : "($birth-$death)";
         if ($person['living'] && $familychart['livingsymbol'] && $familychart['livingalways']) {
-            $life .= "<img src='img/alive.png' height='15' width='15' title='{$text['living']}' alt=''>";
+            $life .= "<img src='img/alive.png' height='15' width='15' title='" . _('Living') . "' alt=''>";
         }
     } elseif ($familychart['livingsymbol'] && !$_SESSION['logged_in']) {
-        $life = "<a href='login.php' title='{$text['fcmlogin']}'><img src='img/alive.png' height='15' width='15' title='{$text['living']}' alt=''></a>";
+        $life = "<a href='login.php' title='" . _('Please log in to see details') . "'><img src='img/alive.png' height='15' width='15' title='" . _('Living') . "' alt=''></a>";
     }
     $details = "<br><span class='smaller'>$gender $life</span>";
     $andtree = '&amp;tree=' . $person['gedcom'];
@@ -312,10 +312,10 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
     $famlink = "";
     if ($familyID = getfamilyID($person, $type)) {
         if ($type == 'child') {
-            $famlink = " <a href='familychart.php?familyID=$familyID$andtree' title='{$text['showparentfamily']}'>$uparrow</a>\n";
+            $famlink = " <a href='familychart.php?familyID=$familyID$andtree' title='" . _('show parent family') . "'>$uparrow</a>\n";
         } #in general link through the person
         else {
-            $famlink = " <a href='familychart.php?personID=$thisPersonID$andtree$rev' title='{$text['showfamily']}'>$downarrow</a>";
+            $famlink = " <a href='familychart.php?personID=$thisPersonID$andtree$rev' title='" . _('Show family') . "'>$downarrow</a>";
         } #but we want the child link to use the familyID
     }
     echo "\t<div class='$class' style='left:{$left}px;top:{$top}px;'>\n<table class='bare'><tbody><tr>";
@@ -326,14 +326,14 @@ function doBox($person, $left, $top, $class, $type, $reverse = 0) {
         $name = "<small>$name</small>";
     }
     echo "<td>\n";
-    echo "<a href='getperson.php?personID=$thisPersonID$andtree' title='{$text['showperson']}'>$name</a>\n";
+    echo "<a href='getperson.php?personID=$thisPersonID$andtree' title='" . _('show person') . "'>$name</a>\n";
     echo "$details";
     echo "$famlink";
     echo "</td>";
     echo "</tr></tbody></table>\n</div>\n";
     if ($others = $person['otherfamilies']) {
         echo "<div class='more' style='left:" . ($left - $familychart['chartHpad'] - $familychart['morew']) . "px; top:" .
-            ($top + $familychart['boxheight'] - 15) . "px;'><img src='img/family_small_icon.gif' onclick='toggle(\"$thisPersonID\");' alt='{$text['otherfamilies']}' title='{$text['otherfamilies']}' >
+            ($top + $familychart['boxheight'] - 15) . "px;'><img src='img/family_small_icon.gif' onclick='toggle(\"$thisPersonID\");' alt='" . _('Other families') . "' title='" . _('Other families') . "' >
 		<div id='$thisPersonID' class='rounded-lg popup hiddenbox'>\n";
         while ($other = array_shift($others))
             echo "\t<a href='familychart.php?familyID={$other['familyID']}&amp;personID=$thisPersonID$andtree'>{$other['text']}</a><br>\n";
@@ -369,7 +369,7 @@ function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
     global $text, $families_table, $people_table, $tree;
     if ($otherfamilies = getfamilyID($person, 'other')) {
         echo "<div class='more' style='left:{$left}px;top:{$top}px;'>
-		<img src='img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='{$text['otherspouses']}'>
+		<img src='img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='" . _('other spouses') . "'>
 		<div id='$spouse' class='rounded-lg popup rounded-lg hiddenbox'>";
         $tree = $person['gedcom'];
         $rev = $reverse ? '&amp;rev=1' : '';
@@ -400,7 +400,7 @@ function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
             $spouserow['allow_private'] = $spouserights['private'];
             $spousename = getName($spouserow);
             tng_free_result($spresult);
-            echo "<a href='familychart.php?familyID=$fam&amp;tree=$tree$rev'>{$text['familywith']} $spousename</a><br>\n";
+            echo "<a href='familychart.php?familyID=$fam&amp;tree=$tree$rev'>" . _('Family with') . " $spousename</a><br>\n";
         }
         echo "</div></div>\n";
     }
@@ -445,7 +445,7 @@ function getOtherFamilies($tree, $personID, $familyID) {
     while ($row = tng_fetch_assoc($result)) {
         if (($f = $row['familyID']) != $familyID) {
             $type = strtolower($row['frel'] ? $row['frel'] : ($row['mrel'] ? $row['mrel'] : 'birth'));
-            array_push($res, ['familyID' => $f, 'type' => $type, 'text' => "{$text['showfamily']} - $admtext[$type]"]); #language independent
+            array_push($res, ['familyID' => $f, 'type' => $type, 'text' => "" . _('Show family') . " - $admtext[$type]"]); #language independent
         }
     }
     return $res;
@@ -504,15 +504,15 @@ function doheader($tree, $family) {
     $disallowgedcreate = $treerow['disallowgedcreate'];
     $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
     tng_free_result($treeResult);
-    $logname = $tngconfig['nnpriv'] && $family['private'] ? $admtext['text_private'] : ($nonames && $family['living'] ? $text['living'] : $familyname);
-    writelog("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $logname ($familyID)</a>");
-    preparebookmark("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>{$text['familychart']}: $familyname ($familyID)</a>");
+    $logname = $tngconfig['nnpriv'] && $family['private'] ? _('Private') : ($nonames && $family['living'] ? _('Living') : $familyname);
+    writelog("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>" . _('Family Chart') . ": $logname ($familyID)</a>");
+    preparebookmark("<a href='familychart.php?familyID=$familyID&amp;tree=$tree'>" . _('Family Chart') . ": $familyname ($familyID)</a>");
     $flags['scripting'] = famStylesheet();
-    tng_header($text['family'] . " " . $familyname . " ($familyID)", $flags);
+    tng_header(_('Family') . " " . $familyname . " ($familyID)", $flags);
     $photostr = showSmallPhoto($familyID, $familyname, $rights['both'], 0);
-    $years = $family['marrdate'] && $rights['both'] ? $text['marrabbr'] . " " . displayDate($family['marrdate']) : "";
-    echo tng_DrawHeading($photostr, "{$text['family']}: $familyname ($familyID)", $years);
-    $innermenu = "<span class='lightlink3' id='tng_plink'>{$text['familychart']}&nbsp;</span>\n";
+    $years = $family['marrdate'] && $rights['both'] ? _('m.') . " " . displayDate($family['marrdate']) : "";
+    echo tng_DrawHeading($photostr, "" . _('Family') . ": $familyname ($familyID)", $years);
+    $innermenu = "<span class='lightlink3' id='tng_plink'>" . _('Family Chart') . "&nbsp;</span>\n";
     $treeResult = getTreeSimple($tree);
     $treerow = tng_fetch_assoc($treeResult);
     $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);

@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit && !$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -22,7 +22,7 @@ $result = tng_query($query);
 $query = "UPDATE $dna_tests_table SET dna_group_desc = \"$description\"  WHERE dna_group=\"$dna_group\"";
 $result = tng_query($query);
 
-adminwritelog("<a href=\"admin_edit_dna_group.php?dna_group=$dna_group&tree=$tree&test_type=$test_type\">{$admtext['modifydnagroup']}: $dna_group</a>");
+adminwritelog("<a href=\"admin_edit_dna_group.php?dna_group=$dna_group&tree=$tree&test_type=$test_type\">" . _('Edit Existing DNA Group') . ": $dna_group</a>");
 
 if ($newtest == "return") {
     header("Location: admin_edit_dna_group.php?testID=$testID&cw=$cw");
@@ -40,7 +40,7 @@ if ($newtest == "return") {
         </html>
         <?php
     } else {
-        $message = $admtext['changestogroup'] . " $dna_group {$admtext['succsaved']}.";
+        $message = _('Changes to DNA Group') . " $dna_group " . _('were successfully saved') . ".";
         header("Location: admin_dna_groups.php?message=" . urlencode($message));
     }
 }

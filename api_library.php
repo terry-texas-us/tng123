@@ -42,7 +42,7 @@ function api_person($row, $fullevents = false) {
         $suffix = $row['suffix'];
         $nickname = $row['nickname'];
     } else {
-        $firstname = $text['living'];
+        $firstname = _('Living');
         $lnprefix = $lastname = $title = $prefix = $suffix = $nickname = "";
     }
     $person .= "\"firstname\":\"$firstname\",\"lnprefix\":\"$lnprefix\",\"lastname\":\"$lastname\",";

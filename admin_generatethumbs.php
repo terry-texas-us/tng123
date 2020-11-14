@@ -11,7 +11,7 @@ include "checklogin.php";
 require "adminlog.php";
 
 if (!$allow_media_add) {
-    echo $admtext['norights'];
+    echo _('You are not authorized to view this page. If you have a username and password, please login below.');
     exit;
 }
 
@@ -76,7 +76,7 @@ while ($row = tng_fetch_assoc($result)) {
                 if (ceil(filesize($path) / 1000) > $maxsizeallowed) {
                     $needsupdate = 0;
                     $conflicts++;
-                    $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . $admtext['thumbsize'] . "<br>\n";  //file is too big
+                    $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . _('(original is too large)') . "<br>\n";  //file is too big
                 } else {
                     if (function_exists('imageJpeg') && image_createThumb($path, $newthumbpath, $thumbmaxw, $thumbmaxh, $thumbquality)) {
                         if (strtoupper($destInfo['extension']) == "GIF") {
@@ -88,13 +88,13 @@ while ($row = tng_fetch_assoc($result)) {
                     } else {
                         $needsupdate = 0;
                         $conflicts++;
-                        $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $newthumbpath . " " . $admtext['thumbinv'] . "<br>\n";  //thumb couldn't be created
+                        $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $newthumbpath . " " . _('(invalid image or inadequate permissions)') . "<br>\n";  //thumb couldn't be created
                     }
                 }
             } else {
                 $needsupdate = 0;
                 $conflicts++;
-                $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . $admtext['thumblost'] . "<br>\n";  //original doesn't exist
+                $conflictstr .= $conflicts . ". \"" . truncateIt($row['description'], 30) . "\" | " . $row['path'] . " " . _('(original not found)') . "<br>\n";  //original doesn't exist
             }
         }
     }
@@ -107,9 +107,9 @@ while ($row = tng_fetch_assoc($result)) {
 }
 tng_free_result($result);
 
-adminwritelog("{$admtext['genthumbs']}: {$admtext['thumbsgenerated']}: $count; {$admtext['recsupdated']}: $updated; {$admtext['thumbconflicts']}: $conflicts");
+adminwritelog("" . _('Generate Thumbnails') . ": " . _('Thumbnails generated') . ": $count; " . _('Records updated') . ": $updated; " . _('Thumbnails not generated due to path, permissions, size or file name problems') . ": $conflicts");
 
-echo "<p><strong>{$admtext['thumbsgenerated']}:</strong> $count<br><strong>{$admtext['recsupdated']}:</strong> $updated</p>";
+echo "<p><strong>" . _('Thumbnails generated') . ":</strong> $count<br><strong>" . _('Records updated') . ":</strong> $updated</p>";
 if ($conflicts) {
-    echo "<p><strong>" . $admtext['thumbconflicts'] . ":</strong> $conflicts</p><p style=\"line-height:1.5;\">$conflictstr</p>";
+    echo "<p><strong>" . _('Thumbnails not generated due to path, permissions, size or file name problems') . ":</strong> $conflicts</p><p style=\"line-height:1.5;\">$conflictstr</p>";
 }

@@ -9,9 +9,9 @@
  */
 function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages = 5) {
     global $tngpage, $totalpages, $text, $orgtree, $test_type, $test_group;
-    $first = ucfirst($text['first']);
-    $previous = ucfirst($text['previous']);
-    $last = ucfirst($text['last']);
+    $first = ucfirst(_('first'));
+    $previous = ucfirst(_('previous'));
+    $last = ucfirst(_('last'));
     if (!$tngpage) $tngpage = 1;
     if (!$perpage) $perpage = 50;
     if ($total <= $perpage) return "";
@@ -27,7 +27,7 @@ function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages = 5
     if ($tngpage < $totalpages) {
         $nextpage = $tngpage + 1;
         $navoffset = (($nextpage * $perpage) - $perpage);
-        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class='px-3 py-2 rounded hover:bg-gray-500' title=\"{$text['text_next']}\">{$text['text_next']}</a>\n";
+        $nextlink = "<a href=\"$address=$navoffset&amp;tree=$orgtree&amp;test_type=$test_type&amp;test_group=$test_group&amp;tngpage=$nextpage\" class='px-3 py-2 rounded hover:bg-gray-500' title=\"" . _('Next') . "\">" . _('Next') . "</a>\n";
     }
     $curpage = 0;
     $pagenav = $firstlink = $lastlink = '';
@@ -63,9 +63,9 @@ function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages = 5
  */
 function getPaginationLocationHtml($start, $pagetotal, $grandtotal) {
     global $text;
-    $showing = ucfirst($text['showing']);
+    $showing = ucfirst(_('showing'));
     $html = "<div class='mx-4 inline'>\n";
-    $html .= "$showing " . number_format($start) . " {$text['to']} <span class='pagetotal'>" . number_format($pagetotal) . "</span> {$text['of']} <span class='restotal'>" . number_format($grandtotal) . "</span>";
+    $html .= "$showing " . number_format($start) . " " . _('to') . " <span class='pagetotal'>" . number_format($pagetotal) . "</span> " . _('of') . " <span class='restotal'>" . number_format($grandtotal) . "</span>";
     $html .= "</div>\n";
     return $html;
 }
@@ -78,8 +78,8 @@ function getToPageHtml($address, $perpage) {
     global $text, $orgtree;
     $html = " <div class='rounded mx-4 inline'>";
     $html .= "<span class='pr-2'>" . ucfirst(_todo_("go to page")) . "</span>";
-    $html .= "<input type='text' class='w-20 px-3 border-none tngpage' placeholder=\"{$text['page']} #\" name='tngpage' onkeyup=\"if(pageEnter(this, event)) {goToPage($(this).next(), '$address', '$orgtree', $perpage);}\"> ";
-    $html .= "<input type='button' value=\"{$text['go']}\" class='px-3 bg-transparent border-none hover:bg-gray-500' onclick=\"goToPage(this, '$address', '$orgtree', $perpage);\">";
+    $html .= "<input type='text' class='w-20 px-3 border-none tngpage' placeholder=\"" . _('Page') . " #\" name='tngpage' onkeyup=\"if(pageEnter(this, event)) {goToPage($(this).next(), '$address', '$orgtree', $perpage);}\"> ";
+    $html .= "<input type='button' value=\"" . _('Go') . "\" class='px-3 bg-transparent border-none hover:bg-gray-500' onclick=\"goToPage(this, '$address', '$orgtree', $perpage);\">";
     $html .= "</div>";
     return $html;
 }

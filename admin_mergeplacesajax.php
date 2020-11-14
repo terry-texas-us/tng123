@@ -116,11 +116,11 @@ if ($addtoquery) {
     $dquery .= $addtoquery;
     if (!$tngconfig['places1tree']) $dquery .= ")";
 
-    $result = tng_query($dquery) or die ($admtext['cannotexecutequery'] . ": $dquery");
+    $result = tng_query($dquery) or die (_('Cannot execute query') . ": $dquery");
 
-    adminwritelog($admtext['mergeplaces'] . ": $newplace");
+    adminwritelog(_('Merge Places') . ": $newplace");
 
-    $message = $admtext['pmsucc'] . ": $newplace.";
+    $message = _('Place merge successful') . ": $newplace.";
 }
 header("Content-Type: application/json; charset=" . $session_charset);
 echo "{\"latitude\":\"$keeplat\", \"longitude\":\"$keeplong\"}";

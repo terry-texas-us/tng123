@@ -3,13 +3,13 @@
 // copyright July 2003. Used by permission.
 $textpart = "stats";
 include "tng_begin.php";
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"statistics.php?tree=$tree\">" . xmlcharacters($text['databasestatistics'] . $treestr) . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href=\"statistics.php?tree=$tree\">" . xmlcharacters(_('Statistics') . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
-tng_header($text['databasestatistics'], $flags);
+tng_header(_('Statistics'), $flags);
 ?>
-    <h2 class="header"><span class="headericon" id="stats-hdr-icon"></span><?php echo $text['databasestatistics']; ?></h2>
+    <h2 class="header"><span class="headericon" id="stats-hdr-icon"></span><?php echo _('Statistics'); ?></h2>
     <br style="clear: left;">
     <link href="css/c3.css" rel="stylesheet">
     <script src="js/d3.min.js"></script>
@@ -21,8 +21,8 @@ tng_header($text['databasestatistics'], $flags);
         <table class='container max-w-lg lg:mx-4 whiteback normal'>
             <thead>
             <tr>
-                <th class="fieldnameback fieldname"><?php echo $text['description']; ?></th>
-                <th class="w-1/3 text-right fieldnameback fieldname"><?php echo $text['quantity']; ?></th>
+                <th class="fieldnameback fieldname"><?php echo _('Description'); ?></th>
+                <th class="w-1/3 text-right fieldnameback fieldname"><?php echo _('Quantity'); ?></th>
             </tr>
             </thead>
             <?php
@@ -159,31 +159,31 @@ tng_header($text['databasestatistics'], $flags);
             $fmt_numdeceased = number_format($numdeceased);
             ?>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totindividuals']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Individuals'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo $totalpeople; ?></span></td>
             </tr>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totmales']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Males'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo "$fmt_males ($percentmales%)"; ?></span></td>
             </tr>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totfemales']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Females'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo "$fmt_females ($percentfemales%)"; ?></span></td>
             </tr>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totunknown']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Unknown Gender'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo "$fmt_unknownsex ($percentunknownsex%)"; ?></span></td>
             </tr>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totliving']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Living'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo $numliving; ?></span></td>
             </tr>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totfamilies']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Families'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo $totalfamilies; ?></span></td>
             </tr>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totuniquesn']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Unique Surnames'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo $uniquesurnames; ?></span></td>
             </tr>
             <?php
@@ -194,7 +194,7 @@ tng_header($text['databasestatistics'], $flags);
                 $titlestr = $text[$mediatypeID] ? $text[$mediatypeID] : $mediatypes_display[$mediatypeID];
                 ?>
                 <tr>
-                    <td class='databack'><span class='normal'><?php echo "{$text['total']} $titlestr"; ?></span></td>
+                    <td class='databack'><span class='normal'><?php echo "" . _('Total') . " $titlestr"; ?></span></td>
                     <td class='text-right databack'><span class='normal'><?php echo number_format($totalmedia[$mediatypeID]); ?></span></td>
                 </tr>
                 <?php
@@ -208,15 +208,15 @@ tng_header($text['databasestatistics'], $flags);
             }
             ?>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['totsources']; ?></span></td>
+                <td class='databack'><span class='normal'><?php echo _('Total Sources'); ?></span></td>
                 <td class='text-right databack'><span class='normal'><?php echo $totalsources; ?></span></td>
             </tr>
             <tr>
-                <td class='databack normal'><?php echo $text['avglifespan']; ?><sup>1</sup></td>
-                <td class='text-right databack'><span class='normal'><?php echo "$avgyears {$text['years']}, $avgdays {$text['days']}"; ?></span></td>
+                <td class='databack normal'><?php echo _('Average Lifespan'); ?><sup>1</sup></td>
+                <td class='text-right databack'><span class='normal'><?php echo "$avgyears " . _('years') . ", $avgdays " . _('days') . ""; ?></span></td>
             </tr>
             <tr>
-                <td class='databack'><span class='normal'><?php echo $text['earliestbirth']; ?>
+                <td class='databack'><span class='normal'><?php echo _('Earliest Birth'); ?>
                         <?php
                         if ($firstallowed) {
                             echo " (<a href=\"getperson.php?personID=$firstbirthpersonid&amp;tree=$firstbirthgedcom\">$firstbirthfirstname $firstbirthlnprefix $firstbirthlastname</a>)";
@@ -227,7 +227,7 @@ tng_header($text['databasestatistics'], $flags);
             </tr>
             <?php if ($tngconfig['lastimport'] && $treerow['treename'] && $lastimportdate) { ?>
                 <tr>
-                    <td class='databack'><span class='normal'><?php echo $text['lastimportdate']; ?></span></td>
+                    <td class='databack'><span class='normal'><?php echo _('Date of Last GEDCOM Import'); ?></span></td>
                     <?php
                     $importtime = strtotime($lastimportdate);
                     if (substr($lastimport, 11, 8) != "00:00:00") {
@@ -243,8 +243,8 @@ tng_header($text['databasestatistics'], $flags);
         <table class='container max-w-lg md:mx-4 whiteback normal'>
             <thead>
             <tr>
-                <th class="fieldnameback fieldname"><?php echo $text['longestlived']; ?><sup>1</sup></th>
-                <th class="w-1/3 text-right fieldnameback fieldname"><?php echo $text['age']; ?></th>
+                <th class="fieldnameback fieldname"><?php echo _('Longest Lived'); ?><sup>1</sup></th>
+                <th class="w-1/3 text-right fieldnameback fieldname"><?php echo _('Age'); ?></th>
             </tr>
             </thead>
             <?php
@@ -283,9 +283,9 @@ tng_header($text['databasestatistics'], $flags);
                         <span class='normal'>
                             <?php
                             if ($yearsold) {
-                                echo number_format($yearsold) . " " . $text['years'];
+                                echo number_format($yearsold) . " " . _('years');
                             }
-                            if ($daysold) echo " $daysold " . $text['days'];
+                            if ($daysold) echo " $daysold " . _('days');
                             ?>
                         </span>
                     </td>
@@ -297,7 +297,7 @@ tng_header($text['databasestatistics'], $flags);
         <table class='container max-w-lg md:mx-4 whiteback'>
             <tr>
                 <td class='align-top fieldnameback fieldname'><small>1</small></td>
-                <td class='databack normal'><?php echo $text['agedisclaimer']; ?></td>
+                <td class='databack normal'><?php echo _('Age-related calculations are based on individuals with recorded birth <em>and</em> death dates.  Due to the existence of incomplete date fields(e.g., a death date listed only as \"1945\" or \"BEF 1860\"), these calculations cannot be 100% accurate.'); ?></td>
             </tr>
         </table>
         <?php
@@ -305,7 +305,7 @@ tng_header($text['databasestatistics'], $flags);
         if ($tree && !$treerow['secret']) {
             ?>
             <br>
-            <span class='normal'><a href='showtree.php?tree=$tree'><?php echo $text['treedetail']; ?></a></span>
+            <span class='normal'><a href='showtree.php?tree=$tree'><?php echo _('More information on this tree'); ?></a></span>
             <br>
         <?php } ?>
         <br>
@@ -326,9 +326,9 @@ tng_header($text['databasestatistics'], $flags);
                 ],
                 type: 'pie',
                 names: {
-                    data1: "<?php echo $text['totmales'] . " ($fmt_males)"; ?>",
-                    data2: "<?php echo $text['totfemales'] . " ($fmt_females)"; ?>",
-                    data3: "<?php echo $text['totunknown'] . " ($fmt_unknownsex)"; ?>"
+                    data1: "<?php echo _('Total Males') . " ($fmt_males)"; ?>",
+                    data2: "<?php echo _('Total Females') . " ($fmt_females)"; ?>",
+                    data3: "<?php echo _('Total Unknown Gender') . " ($fmt_unknownsex)"; ?>"
                 },
                 colors: {
                     data1: '#0af',
@@ -346,8 +346,8 @@ tng_header($text['databasestatistics'], $flags);
                 ],
                 type: 'pie',
                 names: {
-                    data1: "<?php echo $text['totliving'] . " ($numliving)"; ?>",
-                    data2: "<?php echo $text['totdeceased'] . " ($fmt_numdeceased)"; ?>"
+                    data1: "<?php echo _('Total Living') . " ($numliving)"; ?>",
+                    data2: "<?php echo _('Total Deceased') . " ($fmt_numdeceased)"; ?>"
                 },
                 colors: {
                     data1: '#900',

@@ -57,7 +57,7 @@ if ($tngconfig['revmail']) {
 
         $persfamID = $familyID;
         $plus = $hname && $wname ? " + " : "";
-        $namestr = $text['family'] . ": $hname$plus$wname ($familyID)";
+        $namestr = _('Family') . ": $hname$plus$wname ($familyID)";
     }
     $query = "SELECT treename, email, owner FROM $trees_table WHERE gedcom='$tree'";
     $treeresult = tng_query($query);
@@ -66,8 +66,8 @@ if ($tngconfig['revmail']) {
     $owner = $treerow['owner'] ? $treerow['owner'] : ($sitename ? $sitename : $dbowner);
     tng_free_result($treeresult);
 
-    $message = "{$text['reviewmsg']}\n\n$namestr\n{$text['user']}: $currentuser\n\n{$text['administration']}: $tngdomain/admin.php";
-    tng_sendmail("TNG", $emailaddr, $owner, $sendemail, $text['revsubject'], $message, $emailaddr, $emailaddr);
+    $message = "" . _('You have a suggested change that needs your review. This submission concerns:') . "\n\n$namestr\n" . _('User') . ": $currentuser\n\n" . _('Administration') . ": $tngdomain/admin.php";
+    tng_sendmail("TNG", $emailaddr, $owner, $sendemail, _('Suggested change needs your review'), $message, $emailaddr, $emailaddr);
 }
 echo 1;
 

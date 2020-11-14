@@ -9,7 +9,7 @@ include "checklogin.php";
 include "version.php";
 $iconChevronDown = buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -38,37 +38,37 @@ while ($note = tng_fetch_assoc($notelinks)) {
 
 $helplang = findhelp("repositories_help.php");
 
-tng_adminheader($admtext['modifyrepo'], $flags);
+tng_adminheader(_('Edit Existing Repository'), $flags);
 $photo = showSmallPhoto($repoID, $row['reponame'], 1, 0, "R");
 include_once "eventlib.php";
 include_once "eventlib_js.php";
 ?>
-<script>
-    var persfamID = "<?php echo $repoID; ?>";
-    var allow_cites = false;
-    var allow_notes = true;
-</script>
+    <script>
+        var persfamID = "<?php echo $repoID; ?>";
+        var allow_cites = false;
+        var allow_notes = true;
+    </script>
 
 <?php
 echo "</head>\n";
 echo tng_adminlayout();
 
-$repotabs[0] = [1, "admin_repositories.php", $admtext['search'], "findrepo"];
-$repotabs[1] = [$allow_add, "admin_newrepo.php", $admtext['addnew'], "addrepo"];
-$repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", $admtext['merge'], "merge"];
-$repotabs[3] = [$allow_edit, "admin_editrepo.php?repoID=$repoID&tree=$tree", $admtext['edit'], "edit"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/repositories_help.php#repoedit');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
+$repotabs[0] = [1, "admin_repositories.php", _('Search'), "findrepo"];
+$repotabs[1] = [$allow_add, "admin_newrepo.php", _('Add New'), "addrepo"];
+$repotabs[2] = [$allow_edit && $allow_delete, "admin_mergerepos.php", _('Merge'), "merge"];
+$repotabs[3] = [$allow_edit, "admin_editrepo.php?repoID=$repoID&tree=$tree", _('Edit'), "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/repositories_help.php#repoedit');\" class='lightlink'>" . _('Help for this area') . "</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"showrepo.php?repoID=$repoID&amp;tree=$tree\" target='_blank' class='lightlink'>" . _('Test') . "</a>";
 if ($allow_add && (!$assignedtree || $assignedtree == $tree)) {
-    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$repoID&amp;tree=$tree&amp;linktype=R\" class='lightlink'>{$admtext['addmedia']}</a>";
+    $innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID=$repoID&amp;tree=$tree&amp;linktype=R\" class='lightlink'>" . _('Add Media') . "</a>";
 }
 $menu = doMenu($repotabs, "edit", $innermenu);
-echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyrepo'], "img/repos_icon.gif", $menu, $message);
+echo displayHeadline(_('Repositories') . " &gt;&gt; " . _('Edit Existing Repository'), "img/repos_icon.gif", $menu, $message);
 ?>
 
-<form action="admin_updaterepo.php" method="post" name="form1">
-    <table class="lightback">
-        <tr class="databack">
+    <form action="admin_updaterepo.php" method="post" name="form1">
+        <table class="lightback">
+            <tr class="databack">
             <td class="tngshadow">
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
@@ -83,124 +83,124 @@ echo displayHeadline($admtext['repositories'] . " &gt;&gt; " . $admtext['modifyr
                             <div class="topbuffer bottombuffer smallest">
                                 <?php
                                 $notesicon = "img/" . ($gotnotes['general'] ? "tng_anote_on.gif" : "tng_anote.gif");
-                                echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-                                echo "<a href='#' onclick=\"return showNotes('', '$repoID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
+                                echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">" . _('Save') . "</a>\n";
+                                echo "<a href='#' onclick=\"return showNotes('', '$repoID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">" . _('Notes') . "</a>\n";
                                 ?>
                                 <br class="clear-both">
                             </div>
-                            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
+                            <span class="smallest"><?php echo _('Last Modified Date') . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
                     </tr>
                 </table>
             </td>
-        </tr>
-        <tr class="databack">
-            <td class="tngshadow">
-                <table class="normal">
-                    <tr>
-                        <td><?php echo $admtext['tree']; ?>:</td>
-                        <td>
-                            <?php echo $treerow['treename']; ?>
-                            &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');">
-                                <?php echo "{$admtext['edit']}$iconChevronDown"; ?>
-                            </a>)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['name']; ?>:</td>
-                        <td>
-                            <input type="text" name="reponame" size="40" value="<?php echo $row['reponame']; ?>">
-                            (<?php echo $admtext['required']; ?>)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['address1']; ?>:</td>
-                        <td>
-                            <input type="text" name="address1" size="50" value="<?php echo $row['address1']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['address2']; ?>:</td>
-                        <td>
-                            <input type="text" name="address2" size="50" value="<?php echo $row['address2']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['city']; ?>:</td>
-                        <td>
-                            <input type="text" name="city" size="50" value="<?php echo $row['city']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['stateprov']; ?>:</td>
-                        <td>
-                            <input type="text" name="state" size="50" value="<?php echo $row['state']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['zip']; ?>:</td>
-                        <td>
-                            <input type="text" name="zip" size="20" value="<?php echo $row['zip']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['countryaddr']; ?>:</td>
-                        <td>
-                            <input type="text" name="country" size="50" value="<?php echo $row['country']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['phone']; ?>:</td>
-                        <td>
-                            <input type="text" name="phone" size="30" value="<?php echo $row['phone']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['email']; ?>:</td>
-                        <td>
-                            <input type="text" name="email" size="50" value="<?php echo $row['email']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['website']; ?>:</td>
-                        <td>
-                            <input type="text" name="www" size="50" value="<?php echo $row['www']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <br/>
-                            <p class="subhead font-medium">
-                                <?php echo "{$admtext['otherevents']}: <input type='button' value=\" {$admtext['addnew']} \" onclick=\"newEvent('R', '$repoID', '$tree');\">\n"; ?>
-                            </p>
-                        </td>
-                    </tr>
-                    <?php showCustEvents($repoID); ?>
-                </table>
-            </td>
-        </tr>
-        <tr class="databack">
-            <td class="tngshadow">
-                <p class="normal">
-                    <?php
-                    echo $admtext['onsave'] . ":<br>";
-                    echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
-                    if ($cw) {
-                        echo "<input type='radio' name='newscreen' value=\"close\" checked> {$text['closewindow']}\n";
-                    } else {
-                        echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
-                    }
-                    ?>
-                </p>
-                <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-                <input type="hidden" name="addressID" value="<?php echo $row['addressID']; ?>">
-                <input type="hidden" name="repoID" value="<?php echo "$repoID"; ?>">
-                <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
-                <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo $admtext['save']; ?>">
-            </td>
-        </tr>
+            </tr>
+            <tr class="databack">
+                <td class="tngshadow">
+                    <table class="normal">
+                        <tr>
+                            <td><?php echo _('Tree'); ?>:</td>
+                            <td>
+                                <?php echo $treerow['treename']; ?>
+                                &nbsp;(<a href="#" onclick="return openChangeTree('source','<?php echo $tree; ?>','<?php echo $sourceID; ?>');">
+                                    <?php echo "" . _('Edit') . "$iconChevronDown"; ?>
+                                </a>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Name'); ?>:</td>
+                            <td>
+                                <input type="text" name="reponame" size="40" value="<?php echo $row['reponame']; ?>">
+                                (<?php echo _('required'); ?>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Address 1'); ?>:</td>
+                            <td>
+                                <input type="text" name="address1" size="50" value="<?php echo $row['address1']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Address 2'); ?>:</td>
+                            <td>
+                                <input type="text" name="address2" size="50" value="<?php echo $row['address2']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('City'); ?>:</td>
+                            <td>
+                                <input type="text" name="city" size="50" value="<?php echo $row['city']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('State/Province'); ?>:</td>
+                            <td>
+                                <input type="text" name="state" size="50" value="<?php echo $row['state']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Zip/Postal Code'); ?>:</td>
+                            <td>
+                                <input type="text" name="zip" size="20" value="<?php echo $row['zip']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Country'); ?>:</td>
+                            <td>
+                                <input type="text" name="country" size="50" value="<?php echo $row['country']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Phone'); ?>:</td>
+                            <td>
+                                <input type="text" name="phone" size="30" value="<?php echo $row['phone']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('E-mail'); ?>:</td>
+                            <td>
+                                <input type="text" name="email" size="50" value="<?php echo $row['email']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Web Site'); ?>:</td>
+                            <td>
+                                <input type="text" name="www" size="50" value="<?php echo $row['www']; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <br/>
+                                <p class="subhead font-medium">
+                                    <?php echo "" . _('Other Events') . ": <input type='button' value=\" " . _('Add New') . " \" onclick=\"newEvent('R', '$repoID', '$tree');\">\n"; ?>
+                                </p>
+                            </td>
+                        </tr>
+                        <?php showCustEvents($repoID); ?>
+                    </table>
+                </td>
+            </tr>
+            <tr class="databack">
+                <td class="tngshadow">
+                    <p class="normal">
+                        <?php
+                        echo _('On save') . ":<br>";
+                        echo "<input type='radio' name='newscreen' value='return'> " . _('Return to this page') . "<br>\n";
+                        if ($cw) {
+                            echo "<input type='radio' name='newscreen' value=\"close\" checked> " . _('Close this window') . "\n";
+                        } else {
+                            echo "<input type='radio' name='newscreen' value=\"none\" checked> " . _('Return to menu') . "\n";
+                        }
+                        ?>
+                    </p>
+                    <input type="hidden" name="tree" value="<?php echo $tree; ?>">
+                    <input type="hidden" name="addressID" value="<?php echo $row['addressID']; ?>">
+                    <input type="hidden" name="repoID" value="<?php echo "$repoID"; ?>">
+                    <input type="hidden" value="<?php echo "$cw"; ?>" name="cw">
+                    <input type="submit" name="submit2" class="btn" accesskey="s" value="<?php echo _('Save'); ?>">
+                </td>
+            </tr>
 
-    </table>
-</form>
+        </table>
+    </form>
 
 <?php echo tng_adminfooter(); ?>

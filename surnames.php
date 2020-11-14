@@ -1,17 +1,18 @@
 <?php
+
 $textpart = "surnames";
 include "tng_begin.php";
 require_once "./core/html/getFormStartTag.php";
 require_once "./core/sql/extractWhereClause.php";
 
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href='surnames.php?tree=$tree'>" . xmlcharacters($text['surnamelist'] . $treestr) . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href='surnames.php?tree=$tree'>" . xmlcharacters(_('Surname List') . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header($text['surnamelist'], $flags);
+tng_header(_('Surname List'), $flags);
 ?>
-    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist']; ?></h2>
+    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo _('Surname List'); ?></h2>
     <br class="clearleft">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
@@ -24,8 +25,8 @@ $collen = 25;
 $cols = 2;
 $grtotal = 50;
 define("PIE_TOTAL", 10);
-$nosurname = urlencode($text['nosurname']);
-$top30text = preg_replace("/xxx/", $grtotal, $text['top30']);
+$nosurname = urlencode(_('[no surname]'));
+$top30text = preg_replace("/xxx/", $grtotal, _('Top xxx surnames'));
 $treestr = $orgtree ? "&amp;tree=$tree" : "";
 $livingPrivateRestrictions = getLivingPrivateRestrictions($people_table, false, false);
 $query = "SELECT UCASE(LEFT(lastname, 1)) AS firstchar, UCASE($binary left(lastname, 1)) AS binfirstchar, count(UCASE(LEFT(lastname, 1))) AS lncount ";
@@ -51,10 +52,10 @@ if ($result) {
         }
         $firstchar = strtoupper($firstchar);
         if ($firstchar == "") {
-            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink rounded'>" . $text['nosurname'] . "</a> ";
+            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink rounded'>" . _('[no surname]') . "</a> ";
         } else {
             $urlfirstchar = $firstchar;
-            $countstr = $text['surnamesstarting'] . ": " . $firstchar . " (" . number_format($surname['lncount']) . " " . $text['totalnames'] . ")";
+            $countstr = _('Show surnames starting with') . ": " . $firstchar . " (" . number_format($surname['lncount']) . " " . _('total individuals') . ")";
             $linkstr .= "<a href=\"surnames-oneletter.php?firstchar=$urlfirstchar$treestr\" class='snlink rounded' title=\"$countstr\">{$firstchar}</a>";
         }
         $initialchar++;
@@ -110,9 +111,9 @@ if ($result) {
 }
 ?>
     <div class="titlebox rounded-lg normal">
-        <h3 class="subhead"><?php echo $text['surnamesstarting']; ?></h3>
+        <h3 class="subhead"><?php echo _('Show surnames starting with'); ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
-        <br><?php echo "<a href=\"surnames-all.php?tree=$tree\">{$text['showallsurnames']}</a> ({$text['sortedalpha']})"; ?>
+        <br><?php echo "<a href=\"surnames-all.php?tree=$tree\">" . _('Show all surnames') . "</a> (" . _('sorted alphabetically') . ")"; ?>
     </div>
     <br>
     <div class="titlebox rounded-lg">
@@ -120,7 +121,7 @@ if ($result) {
             <table class="table-top30">
                 <tr>
                     <td colspan="5">
-                        <h3 class="subhead"><?php echo "{$top30text} ({$text['totalnames']}):"; ?></h3>
+                        <h3 class="subhead"><?php echo "{$top30text} (" . _('total individuals') . "):"; ?></h3>
                     </td>
                 </tr>
                 <tr>
@@ -139,15 +140,15 @@ if ($result) {
                 <tr>
                     <td colspan="5">
                         <?php
-                        $top20text = preg_replace("/xxx/", PIE_TOTAL, $text['top30']);
-                        $justtop = preg_replace("/xxx/", PIE_TOTAL, $text['justtop']);
+                        $top20text = preg_replace("/xxx/", PIE_TOTAL, _('Top xxx surnames'));
+                        $justtop = preg_replace("/xxx/", PIE_TOTAL, _('Just the top xxx'));
                         echo getFormStartTag("surnames100", "get");
-                        echo "<span>{$text['showtop']}</span>";
+                        echo "<span>" . _('Show top') . "</span>";
                         ?>
                         <input type="text" name="topnum" value="100" size="5" maxlength="5">
-                        <span> <?php echo $text['byoccurrence']; ?></span>
+                        <span> <?php echo _('ordered by occurrence'); ?></span>
                         <input type="hidden" name="tree" value="<?php echo $tree; ?>">
-                        <input type="submit" value="<?php echo $text['go']; ?>">
+                        <input type="submit" value="<?php echo _('Go'); ?>">
                         <?php echo "</form>\n"; ?>
                     </td>
                 </tr>
@@ -155,7 +156,7 @@ if ($result) {
             <br><br>
         </div>
         <div id="charts" style="display:inline-block; width:400px; vertical-align:top;text-align:center;">
-            <h3 class="subhead"><?php echo "{$top20text}<br>{$text['amongall']}"; ?></h3>
+            <h3 class="subhead"><?php echo "{$top20text}<br>" . _('(among all names)') . ""; ?></h3>
             <div id="whole_chart"></div>
             <br><br>
             <h3 class="subhead"><?php echo $justtop; ?></h3>
@@ -199,7 +200,7 @@ if ($result) {
                         echo "data{$counter}: \"{$names[$i]} ({$cfmt})\", ";
                     }
                     $counter += 1;
-                    echo "data{$counter}: \"{$text['allothers']} (" . number_format($remaining) . ")\"";
+                    echo "data{$counter}: \"" . _('All others') . " (" . number_format($remaining) . ")\"";
                     ?>
                 },
                 colors: {

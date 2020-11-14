@@ -21,7 +21,7 @@ if ($link) {
     include "version.php";
 
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -42,7 +42,7 @@ $doctype = addslashes($doctype);
 require "adminlog.php";
 
 $fp = @fopen("config/config.php", "w", 1);
-if (!$fp) die ($admtext['cannotopen'] . " config.php");
+if (!$fp) die (_('Cannot open file') . " config.php");
 
 
 flock($fp, LOCK_EX);
@@ -272,7 +272,7 @@ fwrite($fp, "@include \"config/customconfig.php\";\n");
 flock($fp, LOCK_UN);
 fclose($fp);
 
-adminwritelog($admtext['modifysettings']);
+adminwritelog(_('Modify Configuration Settings'));
 
 $oldsubroot = $newsubroot != $subroot ? "?sr=$subroot" : "";
 header("Location: admin_setup.php$oldsubroot");

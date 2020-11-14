@@ -15,7 +15,7 @@ if ($link) {
     include "version.php";
 
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -24,7 +24,7 @@ if ($link) {
 require "adminlog.php";
 
 $fp = @fopen("config/logconfig.php", "w", 1);
-if (!$fp) die ($admtext['cannotopen'] . " logconfig.php");
+if (!$fp) die (_('Cannot open file') . " logconfig.php");
 
 
 flock($fp, LOCK_EX);
@@ -45,16 +45,16 @@ flock($fp, LOCK_UN);
 fclose($fp);
 
 $fp = fopen($rootpath . $logname, "c");
-if (!$fp) die ("{$admtext['cannotopen']} $logname");
+if (!$fp) die ("" . _('Cannot open file') . " $logname");
 
 fclose($fp);
 
 $fp = fopen($rootpath . $adminlogfile, "c");
-if (!$fp) die ("{$admtext['cannotopen']} $adminlogfile");
+if (!$fp) die ("" . _('Cannot open file') . " $adminlogfile");
 
 fclose($fp);
 
-adminwritelog($admtext['modifylogsettings']);
+adminwritelog(_('Modify Log Configuration Settings'));
 
 header("Location: admin_setup.php");
 

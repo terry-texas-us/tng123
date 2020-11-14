@@ -47,20 +47,20 @@ if (!isset($mybool)) $mybool = "AND";
 
 if (!empty($psearch)) {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE '%$psearch%' AND latitude != '' AND longitude != ''";
-    $querystring = $text['text_for'] . " " . $text['place'] . " " . $text['contains'] . " " . $psearch;
+    $querystring = _('for') . " " . _('Place') . " " . _('contains') . " " . $psearch;
     if ($tree && !$tngconfig['places1tree']) {
         $query .= " AND gedcom = '$tree'";
-        $querystring .= " {$text['cap_and']} " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
+        $querystring .= " " . _('AND') . " " . _('Tree') . " " . _('equals') . " {$treerow['treename']}";
     }
-    $headline = $text['placelist'] . " | " . $text['heatmap'] . " | " . $psearch;
+    $headline = _('Place List') . " | " . _('Heat Map') . " | " . $psearch;
 } elseif (!empty($firstchar)) {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE place LIKE \"$firstchar%\" AND latitude != \"\" AND longitude != \"\"";
-    $querystring = $text['text_for'] . " " . $text['place'] . " " . $text['startswith'] . " " . $firstchar;
+    $querystring = _('for') . " " . _('Place') . " " . _('starts with') . " " . $firstchar;
     if ($tree && !$tngconfig['places1tree']) {
         $query .= " AND gedcom = '$tree'";
-        $querystring .= " {$text['cap_and']} " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
+        $querystring .= " " . _('AND') . " " . _('Tree') . " " . _('equals') . " {$treerow['treename']}";
     }
-    $headline = $text['placelist'] . " | " . $text['heatmap'];
+    $headline = _('Place List') . " | " . _('Heat Map');
 } elseif (!empty($mylastname) || !empty($myfirstname) || !empty($mypersonid) || !empty($mybirthplace) || !empty($mybirthyear) || !empty($myaltbirthplace) || !empty($mydeathplace) || !empty($mydeathyear) || !empty($myburialplace) || !empty($myburialyear) || !empty($mygender) || !empty($branch)) {
     $mylastname = !empty($mylastname) ? trim(stripslashes($mylastname)) : "";
     $myfirstname = !empty($myfirstname) ? trim(stripslashes($myfirstname)) : "";
@@ -76,88 +76,88 @@ if (!empty($psearch)) {
 
     $_SERVER['QUERY_STRING'] = str_replace(['&amp;', '&'], ['&', '&amp;'], $_SERVER['QUERY_STRING']);
     $currargs = isset($orderloc) && $orderloc > 0 ? substr($_SERVER['QUERY_STRING'], 0, $orderloc) : $_SERVER['QUERY_STRING'];
-    $mybooltext = $mybool == "AND" ? $text['cap_and'] : $text['cap_or'];
+    $mybooltext = $mybool == "AND" ? _('AND') : _('OR');
 
     $querystring = "";
     $allwhere = "";
 
     if (!empty($mylastname) || (isset($lnqualify) && ($lnqualify == "exists" || $lnqualify == "dnexist"))) {
-        if ($mylastname == $text['nosurname']) {
-            addtoQuery($text['lastname'], "mylastname", "lastname = \"\"", "lnqualify", $text['equals'], $text['equals'], $mylastname);
+        if ($mylastname == _('[no surname]')) {
+            addtoQuery(_('Last Name'), "mylastname", "lastname = \"\"", "lnqualify", _('equals'), _('equals'), $mylastname);
         } else {
-            buildCriteria("p.lastname", "mylastname", "lnqualify", $lnqualify, $mylastname, $text['lastname']);
+            buildCriteria("p.lastname", "mylastname", "lnqualify", $lnqualify, $mylastname, _('Last Name'));
         }
     }
     if (!empty($myfirstname) || (isset($fnqualify) && ($fnqualify == "exists" || $fnqualify == "dnexist"))) {
-        buildCriteria("p.firstname", "myfirstname", "fnqualify", $fnqualify, $myfirstname, $text['firstname']);
+        buildCriteria("p.firstname", "myfirstname", "fnqualify", $fnqualify, $myfirstname, _('First Name'));
     }
     if ($mypersonid) {
         $mypersonid = strtoupper($mypersonid);
         if ($idqualify == "equals" && is_numeric($mypersonid)) $mypersonid = $tngconfig['personprefix'] . $mypersonid . $tngconfig['personsuffix'];
-        buildCriteria("p.personID", "mypersonid", "idqualify", $idqualify, $mypersonid, $text['personid']);
+        buildCriteria("p.personID", "mypersonid", "idqualify", $idqualify, $mypersonid, _('Person ID'));
     }
     if (!empty($mytitle) || (isset($tqualify) && ($tqualify == "exists" || $tqualify == "dnexist"))) {
-        buildCriteria("p.title", "mytitle", "tqualify", $tqualify, $mytitle, $text['title']);
+        buildCriteria("p.title", "mytitle", "tqualify", $tqualify, $mytitle, _('Title'));
     }
     if (!empty($myprefix) || (isset($pfqualify) && ($pfqualify == "exists" || $pfqualify == "dnexist"))) {
-        buildCriteria("p.prefix", "myprefix", "pfqualify", $pfqualify, $myprefix, $text['prefix']);
+        buildCriteria("p.prefix", "myprefix", "pfqualify", $pfqualify, $myprefix, _('Prefix'));
     }
     if (!empty($mysuffix) || (isset($sfqualify) && ($sfqualify == "exists" || $sfqualify == "dnexist"))) {
-        buildCriteria("p.suffix", "mysuffix", "sfqualify", $sfqualify, $mysuffix, $text['suffix']);
+        buildCriteria("p.suffix", "mysuffix", "sfqualify", $sfqualify, $mysuffix, _('Suffix'));
     }
     if (!empty($mynickname) || (isset($nnqualify) && ($nnqualify == "exists" || $nnqualify == "dnexist"))) {
-        buildCriteria("p.nickname", "mynickname", "nnqualify", $nnqualify, $mynickname, $text['nickname']);
+        buildCriteria("p.nickname", "mynickname", "nnqualify", $nnqualify, $mynickname, _('Nickname'));
     }
     if (!empty($mybirthplace) || (isset($bpqualify) && ($bpqualify == "exists" || $bpqualify == "dnexist"))) {
-        buildCriteria("p.birthplace", "mybirthplace", "bpqualify", $bpqualify, $mybirthplace, $text['birthplace']);
+        buildCriteria("p.birthplace", "mybirthplace", "bpqualify", $bpqualify, $mybirthplace, _('Birth Place'));
     }
     if (!empty($mybirthyear) || (isset($byqualify) && ($byqualify == "exists" || $byqualify == "dnexist"))) {
-        buildYearCriteria("p.birthdatetr", "mybirthyear", "byqualify", "p.altbirthdatetr", $byqualify, $mybirthyear, $text['birthdatetr']);
+        buildYearCriteria("p.birthdatetr", "mybirthyear", "byqualify", "p.altbirthdatetr", $byqualify, $mybirthyear, _('Birth Date (True)'));
     }
     if (!empty($myaltbirthplace) || (isset($cpqualify) && ($cpqualify == "exists" || $cpqualify == "dnexist"))) {
-        buildCriteria("p.altbirthplace", "myaltbirthplace", "cpqualify", $cpqualify, $myaltbirthplace, $text['altbirthplace']);
+        buildCriteria("p.altbirthplace", "myaltbirthplace", "cpqualify", $cpqualify, $myaltbirthplace, _('Christening Place'));
     }
     if (!empty($myaltbirthyear) || (isset($cyqualify) && ($cyqualify == "exists" || $cyqualify == "dnexist"))) {
-        buildYearCriteria("p.altbirthdatetr", "myaltbirthyear", "cyqualify", "", $cyqualify, $myaltbirthyear, $text['altbirthdatetr']);
+        buildYearCriteria("p.altbirthdatetr", "myaltbirthyear", "cyqualify", "", $cyqualify, $myaltbirthyear, _('Christening Year'));
     }
     if (!empty($mydeathplace) || (isset($dpqualify) && ($dpqualify == "exists" || $dpqualify == "dnexist"))) {
-        buildCriteria("p.deathplace", "mydeathplace", "dpqualify", $dpqualify, $mydeathplace, $text['deathplace']);
+        buildCriteria("p.deathplace", "mydeathplace", "dpqualify", $dpqualify, $mydeathplace, _('Death Place'));
     }
     if (!empty($mydeathyear) || (isset($dyqualify) && ($dyqualify == "exists" || $dyqualify == "dnexist"))) {
-        buildYearCriteria("p.deathdatetr", "mydeathyear", "dyqualify", "p.burialdatetr", $dyqualify, $mydeathyear, $text['deathdatetr']);
+        buildYearCriteria("p.deathdatetr", "mydeathyear", "dyqualify", "p.burialdatetr", $dyqualify, $mydeathyear, _('Death Date (True)'));
     }
     if (!empty($myburialplace) || (isset($brpqualify) && ($brpqualify == "exists" || $brpqualify == "dnexist"))) {
-        buildCriteria("p.burialplace", "myburialplace", "brpqualify", $brpqualify, $myburialplace, $text['burialplace']);
+        buildCriteria("p.burialplace", "myburialplace", "brpqualify", $brpqualify, $myburialplace, _('Burial Place'));
     }
     if (!empty($myburialyear) || (isset($bryqualify) && ($bryqualify == "exists" || $bryqualify == "dnexist"))) {
-        buildYearCriteria("p.burialdatetr", "myburialyear", "bryqualify", "", $bryqualify, $myburialyear, $text['burialdatetr']);
+        buildYearCriteria("p.burialdatetr", "myburialyear", "bryqualify", "", $bryqualify, $myburialyear, _('Burial Date (True)'));
     }
     if (!empty($mygender)) {
         if ($mygender == "N") $mygender = "";
-        buildCriteria("p.sex", "mygender", "gequalify", $gequalify, $mygender, $text['gender']);
+        buildCriteria("p.sex", "mygender", "gequalify", $gequalify, $mygender, _('Gender'));
     }
 
     if ($tree) {
         if ($urlstring) $urlstring .= "&amp;";
         $urlstring .= "tree=$tree";
 
-        if ($querystring) $querystring .= " {$text['cap_and']} ";
+        if ($querystring) $querystring .= " " . _('AND') . " ";
 
-        $querystring .= $text['tree'] . " {$text['equals']} {$treerow['treename']}";
+        $querystring .= _('Tree') . " " . _('equals') . " {$treerow['treename']}";
 
         if ($allwhere) $allwhere = "($allwhere) AND";
         $allwhere .= " p.gedcom = '$tree'";
 
         if ($branch) {
             $urlstring .= "&amp;branch=$branch";
-            $querystring .= " {$text['cap_and']} ";
+            $querystring .= " " . _('AND') . " ";
 
             $query = "SELECT description FROM $branches_table WHERE gedcom = '$tree' AND branch = '$branch'";
             $branchresult = tng_query($query);
             $branchrow = tng_fetch_assoc($branchresult);
             tng_free_result($branchresult);
 
-            $querystring .= $text['branch'] . " {$text['equals']} {$branchrow['description']}";
+            $querystring .= _('Branch') . " " . _('equals') . " {$branchrow['description']}";
 
             $allwhere .= " AND p.branch like \"%$branch%\"";
         }
@@ -176,7 +176,7 @@ if (!empty($psearch)) {
 
     if ($allwhere) {
         $allwhere = " WHERE " . $allwhere . " AND latitude != \"\" AND longitude != \"\"";
-        $querystring = $text['text_for'] . " $querystring";
+        $querystring = _('for') . " $querystring";
     } else {
         $allwhere = " WHERE latitude != \"\" AND longitude != \"\"";
     }
@@ -190,14 +190,14 @@ if (!empty($psearch)) {
 
     $query = $query . $on1 . $allwhere . " UNION " . $query . $on2 . $allwhere;
     if ($markermap) $query .= " ORDER BY lastname, firstname";
-    $headline = $text['searchresults'] . " | " . $text['heatmap'];
+    $headline = _('Search Results') . " | " . _('Heat Map');
 } else {
     $query = "SELECT place, latitude, longitude, notes FROM $places_table WHERE latitude != \"\" AND longitude != \"\"";
     if ($tree && !$tngconfig['places1tree']) {
         $query .= " AND gedcom = '$tree'";
-        $querystring = $text['text_for'] . " " . $text['tree'] . " {$text['equals']} {$treerow['treename']}";
+        $querystring = _('for') . " " . _('Tree') . " " . _('equals') . " {$treerow['treename']}";
     }
-    $headline = $text['placelist'] . " | " . $text['heatmap'];
+    $headline = _('Place List') . " | " . _('Heat Map');
     $querystr = "";
 }
 
@@ -210,7 +210,7 @@ $numrows = tng_num_rows($result);
 //we'll then construct a large JS object to feed into the code below
 
 if ($map['key'] && $isConnected) {
-    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}&amp;libraries=visualization{$mapkeystr}\"></script>\n";
+    $flags['scripting'] .= "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language=" . _('&amp;hl=en') . "&amp;libraries=visualization{$mapkeystr}\"></script>\n";
 }
 tng_header($headline, $flags);
 ?>
@@ -221,7 +221,7 @@ $logstring = "<a href=\"" . $_SERVER['REQUEST_URI'] . "\">" . xmlcharacters($hea
 writelog($logstring);
 preparebookmark($logstring);
 
-echo "<p class='normal'>{$text['places']} $querystring (" . number_format($numrows) . ")</p>";
+echo "<p class='normal'>" . _('Places') . " $querystring (" . number_format($numrows) . ")</p>";
 
 $uniquePlaces = [];
 while ($row = tng_fetch_assoc($result)) {
@@ -245,7 +245,7 @@ while ($row = tng_fetch_assoc($result)) {
         $person->name = "<a href=\"getperson.php?personID={$row['personID']}&tree={$row['gedcom']}\">" . getName($row) . "</a>";
         if ($rights['both']) {
             $person->birthplace = $row['birthp'];
-            $person->birthdate = $row['birthdate'] ? $text['birthabbr'] . " " . displayDate($row['birthdate']) : $text['chrabbr'] . " " . displayDate($row['altbirthdate']);
+            $person->birthdate = $row['birthdate'] ? _('b.') . " " . displayDate($row['birthdate']) : _('c.') . " " . displayDate($row['altbirthdate']);
         }
         $uniquePlaces[$key]->people[] = $person;
     }
@@ -452,8 +452,8 @@ if ($markermap) {
 <?php if ($markermap) { ?>
     <br>
     <div id="inline-actions">
-        <input id="refresh" type="button" value="<?php echo $text['refreshmap']; ?>" class="item">
-        <a href="#" id="clear"><?php echo $text['remnums']; ?></a>
+        <input id="refresh" type="button" value="<?php echo _('Refresh Map'); ?>" class="item">
+        <a href="#" id="clear"><?php echo _('Clear Numbers and Pins'); ?></a>
     </div>
 <?php } ?>
 

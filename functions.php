@@ -172,19 +172,19 @@ function doMedia($mediatypeID) {
                 if ($mediatypeID == "headstones") {
                     $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
                     if ($prow['deathdate']) {
-                        $abbrev = $text['deathabbr'];
+                        $abbrev = _('d.');
                     } elseif ($prow['burialdate']) {
-                        $abbrev = $text['burialabbr'];
+                        $abbrev = _('bur.');
                     }
                     $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
                 }
             } elseif ($prow['familyID'] != NULL) {
-                $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">{$text['family']}: " . getFamilyName($prow);
+                $medialinktext .= "<li><a href=\"familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}\">" . _('Family') . ": " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
-                $sourcetext = $prow['title'] ? $text['source'] . ": " . $prow['title'] : $text['source'] . ": " . $prow['sourceID'];
+                $sourcetext = $prow['title'] ? _('Source') . ": " . $prow['title'] : _('Source') . ": " . $prow['sourceID'];
                 $medialinktext .= "<li><a href=\"showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}\">$sourcetext";
             } elseif ($prow['repoID'] != NULL) {
-                $repotext = $prow['reponame'] ? $text['repository'] . ": " . $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
+                $repotext = $prow['reponame'] ? _('Repository') . ": " . $prow['reponame'] : _('Repository') . ": " . $prow['repoID'];
                 $medialinktext .= "<li><a href=\"showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}\">$repotext";
             } else {
                 $medialinktext .= "<li><a href=\"placesearch.php?psearch=" . urlencode($prow['personID']);
@@ -220,10 +220,10 @@ function doMedia($mediatypeID) {
         } else {
             $nonamesloc = $row['private'] ? $tngconfig['nnpriv'] : $nonames;
             if ($nonamesloc) {
-                $description = $text['livingphoto'];
+                $description = _('At least one living or private individual is linked to this item - Details withheld.');
                 $notes = "";
             } else {
-                $notes = $notes ? $notes . "<br>({$text['livingphoto']})" : "({$text['livingphoto']})";
+                $notes = $notes ? $notes . "<br>(" . _('At least one living or private individual is linked to this item - Details withheld.') . ")" : "(" . _('At least one living or private individual is linked to this item - Details withheld.') . ")";
             }
             $href = "";
         }
@@ -276,7 +276,7 @@ function doMedia($mediatypeID) {
         //ereg if no thumbs
     }
     if (!$thumbcount) {
-        $mediaheader = str_replace("<td class='p-2 fieldnameback'><span class='fieldname'><strong>{$text['thumb']}</strong></span></td>", "", $mediaheader);
+        $mediaheader = str_replace("<td class='p-2 fieldnameback'><span class='fieldname'><strong>" . _('Thumb') . "</strong></span></td>", "", $mediaheader);
         $mediatext = str_replace("<td class='p-2 text-center databack'></td><td class='databack'>", "<td class='databack'>", $mediatext);
     }
     tng_free_result($mediaresult);

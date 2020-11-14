@@ -177,92 +177,92 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 
 $helplang = findhelp("places_help.php");
 
-tng_adminheader($admtext['places'], $flags);
+tng_adminheader(_('Places'), $flags);
 ?>
-<script>
-    function validateForm() {
-        let rval = true;
-        if (document.form1.searchstring.value.length == 0) {
-            alert("<?php echo $admtext['entersearchvalue']; ?>");
-            rval = false;
+    <script>
+        function validateForm() {
+            let rval = true;
+            if (document.form1.searchstring.value.length == 0) {
+                alert("<?php echo _('Please enter a search value.'); ?>");
+                rval = false;
+            }
+            return rval;
         }
-        return rval;
-    }
 
-    function confirmDelete(ID) {
-        if (confirm('<?php echo $admtext['confdeleteplace']; ?>'))
-            deleteIt('place', ID);
-        return false;
-    }
+        function confirmDelete(ID) {
+            if (confirm('<?php echo _('Are you sure you want to delete this place?'); ?>'))
+                deleteIt('place', ID);
+            return false;
+        }
 
-    function resetForm() {
-        document.form1.searchstring.value = '';
-        if (document.form1.tree)
-            document.form1.tree.selectedIndex = 0;
-        document.form1.exactmatch.checked = false;
-        document.form1.nocoords.checked = false;
-        document.form1.noevents.checked = false;
-        document.form1.nolevel.checked = false;
-        document.form1.temples.checked = false;
-    }
-</script>
+        function resetForm() {
+            document.form1.searchstring.value = '';
+            if (document.form1.tree)
+                document.form1.tree.selectedIndex = 0;
+            document.form1.exactmatch.checked = false;
+            document.form1.nocoords.checked = false;
+            document.form1.noevents.checked = false;
+            document.form1.nolevel.checked = false;
+            document.form1.temples.checked = false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
 echo tng_adminlayout();
 
-$placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
-$placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
-$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php?place=$searchstring&amp;place2=$place2", $admtext['merge'], "merge"];
-$placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$placetabs[0] = [1, "admin_places.php", _('Search'), "findplace"];
+$placetabs[1] = [$allow_add, "admin_newplace.php", _('Add New'), "addplace"];
+$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php?place=$searchstring&amp;place2=$place2", _('Merge'), "merge"];
+$placetabs[3] = [$allow_edit, "admin_geocodeform.php", _('Geocode'), "geo"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($placetabs, "findplace", $innermenu);
-echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message);
+echo displayHeadline(_('Places'), "img/places_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <div class="normal">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <div class="normal">
 
-                <form action="admin_places.php" name="form1" id="form1">
-                    <table class="normal">
-                        <tr>
-                            <td><span class="normal"><?php echo $admtext['searchfor']; ?>: </span></td>
-                            <td>
-                                <?php if (!$tngconfig['places1tree']) include "treequery.php"; ?>
-                                <input class="verylongfield" name="searchstring" type="search" value="<?php echo stripslashes($searchstring_noquotes); ?>">
-                            </td>
-                            <td>
-                                <input type="submit" name="submit" value="<?php echo $admtext['search']; ?>" class="align-top">
-                                <input type="submit" name="submit" value="<?php echo $admtext['reset']; ?>" onClick="resetForm();" class="align-top">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="2">
-                                <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['exactmatch']; ?>&nbsp;&nbsp;
-                                <input type="checkbox" name="nocoords" value="yes"<?php if ($nocoords == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['nocoords']; ?>&nbsp;&nbsp;
-                                <input type="checkbox" name="noevents" value="yes"<?php if ($noevents == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['noevents']; ?>&nbsp;&nbsp;<br>
-                                <input type="checkbox" name="nolevel" value="yes"<?php if ($nolevel == "yes") {
-                                    echo " checked";
-                                } ?>> <?php echo $admtext['nolevel']; ?>&nbsp;&nbsp;
-                                <?php
-                                if (determineLDSRights()) {
-                                    echo "<input type='checkbox' name=\"temples\" value=\"yes\"";
-                                    if ($temples == "yes") echo " checked";
-                                    echo "> " . $admtext['findtemples'];
-                                }
-                                ?>
-                            </td>
-                        </tr>
-                    </table>
+                    <form action="admin_places.php" name="form1" id="form1">
+                        <table class="normal">
+                            <tr>
+                                <td><span class="normal"><?php echo _('Search for'); ?>: </span></td>
+                                <td>
+                                    <?php if (!$tngconfig['places1tree']) include "treequery.php"; ?>
+                                    <input class="verylongfield" name="searchstring" type="search" value="<?php echo stripslashes($searchstring_noquotes); ?>">
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
+                                    <input type="submit" name="submit" value="<?php echo _('Reset'); ?>" onClick="resetForm();" class="align-top">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td colspan="2">
+                                    <input type="checkbox" name="exactmatch" value="yes"<?php if ($exactmatch == "yes") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('Exact match only'); ?>&nbsp;&nbsp;
+                                    <input type="checkbox" name="nocoords" value="yes"<?php if ($nocoords == "yes") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('Missing latitude or longitude'); ?>&nbsp;&nbsp;
+                                    <input type="checkbox" name="noevents" value="yes"<?php if ($noevents == "yes") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('No associated events'); ?>&nbsp;&nbsp;<br>
+                                    <input type="checkbox" name="nolevel" value="yes"<?php if ($nolevel == "yes") {
+                                        echo " checked";
+                                    } ?>> <?php echo _('Place level not set'); ?>&nbsp;&nbsp;
+                                    <?php
+                                    if (determineLDSRights()) {
+                                        echo "<input type='checkbox' name=\"temples\" value=\"yes\"";
+                                        if ($temples == "yes") echo " checked";
+                                        echo "> " . _('Find only LDS temple codes');
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                        </table>
 
                     <input type="hidden" name="findplace" value="1">
                     <input type="hidden" name="newsearch" value="1">
@@ -274,46 +274,46 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                 <form action="admin_deleteselected.php" method="post" name="form2">
                     <?php if ($allow_delete) { ?>
                         <p>
-                            <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                            <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                            <input type="submit" name="xplacaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                            <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                            <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">
+                            <input type="submit" name="xplacaction" value="<?php echo _('Delete Selected'); ?>" onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">
                         </p>
                     <?php } ?>
 
                     <table class="normal">
                         <tr>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
                             <?php if ($allow_delete) { ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Select'); ?></th>
                             <?php } ?>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['place']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Place'); ?></th>
                             <?php if ($map['key']) { ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['placelevel']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Place Level'); ?></th>
                             <?php } ?>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['latitude']; ?></th>
-                            <th class="fieldnameback fieldname"><?php echo $admtext['longitude']; ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Latitude'); ?></th>
+                            <th class="fieldnameback fieldname"><?php echo _('Longitude'); ?></th>
                             <?php if ($map['key']) { ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['zoom']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Zoom'); ?></th>
                                 <?php
                             }
                             if (!$tngconfig['places1tree']) {
                                 ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['tree']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Tree'); ?></th>
                             <?php } ?>
                         </tr>
                         <?php
                         if ($numrows) {
                         $actionstr = "";
                         if ($allow_edit) {
-                            $actionstr .= "<a href=\"admin_editplace.php?ID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                            $actionstr .= "<a href=\"admin_editplace.php?ID=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
                         }
                         if ($allow_delete) {
-                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                            $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                         }
                         $actionstr .= "<a href=\"placesearch.php?psearch=zzz";
                         if (!$tngconfig['places1tree']) $actionstr .= "&amp;tree=yyy";
 
-                        $actionstr .= "\" target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
+                        $actionstr .= "\" target='_blank' title=\"" . _('Test') . "\" class='smallicon admin-test-icon'></a>";
 
                         while ($row = tng_fetch_assoc($result)) {
                             $newactionstr = preg_replace("/xxx/", $row['ID'], $actionstr);
@@ -351,7 +351,7 @@ echo displayHeadline($admtext['places'], "img/places_icon.gif", $menu, $message)
                 echo "</div>";
                 }
                 else {
-                    echo "</table>\n" . $admtext['norecords'];
+                    echo "</table>\n" . _('No records exist.');
                 }
                 tng_free_result($result);
                 ?>

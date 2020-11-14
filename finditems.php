@@ -34,7 +34,7 @@ if ($albumID) {
 }
 
 if ($mediaquery) {
-    $result2 = tng_query($mediaquery) or die ($admtext['cannotexecutequery'] . ": $mediaquery");
+    $result2 = tng_query($mediaquery) or die (_('Cannot execute query') . ": $mediaquery");
     $alreadygot = [];
     while ($row2 = tng_fetch_assoc($result2))
         $alreadygot[] = $row2['entityID'];
@@ -51,14 +51,14 @@ function showAction($entityID, $num = null) {
         $gotit = in_array($entityID, $alreadygot);
         if ($gotit) $lines .= "display:none";
 
-        $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . str_replace("&#39;", "\\'", $entityID) . "', '$num');\">" . $admtext['add'] . "</a></div>";
+        $lines .= "\"><a href='#' onclick=\"return addMedia2EntityLink(findform, '" . str_replace("&#39;", "\\'", $entityID) . "', '$num');\">" . _('Add') . "</a></div>";
         $lines .= "<div id=\"linked_$id\" style=\"text-align:center;width:50px;";
         if (!$gotit) $lines .= "display:none";
 
         $lines .= "\"><img src=\"img/tng_test.gif\" alt=\"\" width='20' height='20'>";
         $lines .= "<div id=\"sdef_" . urlencode($entityID) . "\"></div>";
     } else {
-        $lines .= "\"><a href='#' onclick=\"selectEntity(document.find.newlink1, '$id');\">" . $admtext['select'] . "</a>";
+        $lines .= "\"><a href='#' onclick=\"selectEntity(document.find.newlink1, '$id');\">" . _('Select') . "</a>";
     }
     $lines .= "</div>";
     $lines .= "</td>\n";
@@ -66,7 +66,7 @@ function showAction($entityID, $num = null) {
     return $lines;
 }
 
-$selectline = $mediaID || $albumID ? "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . $admtext['select'] . "</b>&nbsp;</td>\n" : "";
+$selectline = $mediaID || $albumID ? "<td class='fieldnameback fieldname whitespace-no-wrap' width=\"50\">&nbsp;<b>" . _('Select') . "</b>&nbsp;</td>\n" : "";
 
 switch ($type) {
     case "I":
@@ -113,10 +113,10 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['personid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['name'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['birthdate'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['deathdate'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Person ID') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Name') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Birth Date') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Death Date') . "</th>\n";
             $lines .= "</tr>\n";
             while ($row = tng_fetch_assoc($result)) {
                 $birthdate = $deathdate = "";
@@ -125,21 +125,21 @@ switch ($type) {
                 $row['allow_private'] = $rights['private'];
                 if ($rights['both']) {
                     if ($row['birthdate']) {
-                        $birthdate = "{$admtext['birthabbr']} " . displayDate($row['birthdate']);
+                        $birthdate = "" . _('b.') . " " . displayDate($row['birthdate']);
                     } else {
                         if ($row['altbirthdate']) {
-                            $birthdate = "{$admtext['chrabbr']} " . displayDate($row['altbirthdate']);
+                            $birthdate = "" . _('c.') . " " . displayDate($row['altbirthdate']);
                         }
                     }
                     if ($row['deathdate']) {
-                        $deathdate = "{$admtext['deathabbr']} " . displayDate($row['deathdate']);
+                        $deathdate = "" . _('d.') . " " . displayDate($row['deathdate']);
                     } else {
                         if ($row['burialdate']) {
-                            $deathdate = "{$admtext['burialabbr']} " . displayDate($row['burialdate']);
+                            $deathdate = "" . _('bur.') . " " . displayDate($row['burialdate']);
                         }
                     }
                     if (!$birthdate && $deathdate) {
-                        $birthdate = $admtext['nobirthinfo'];
+                        $birthdate = _('No birth info');
                     }
                 }
                 $namestr = getName($row);
@@ -206,9 +206,9 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['familyid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['husbname'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['wifename'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Family ID') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Father\'s Name') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Mother\'s Name') . "</th>\n";
             $lines .= "</tr>\n";
             while ($row = tng_fetch_assoc($result)) {
                 $thishusb = $thiswife = "";
@@ -262,8 +262,8 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . $admtext['sourceid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['title'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . _('Source ID') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Title') . "</th>\n";
             $lines .= "</tr>\n";
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['sourceID']}\">\n";
@@ -289,12 +289,12 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . $admtext['id'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['sourceid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['title'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['page'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['personid'] . "/" . $admtext['familyid'] . "</th>\n";
-            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['event'] . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . _('ID') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Source ID') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Title') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Page') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Person ID') . "/" . _('Family ID') . "</th>\n";
+            $lines .= "<th class='fieldnameback fieldname whitespace-no-wrap'>" . _('Event(s)') . "</th>\n";
             $lines .= "</tr>\n";
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['citationID']}\">\n";
@@ -317,8 +317,8 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . $admtext['repoid'] . "</td>\n";
-            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['title'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap' style=\"width:100px;\">" . _('Repository ID') . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>" . _('Title') . "</td>\n";
             $lines .= "</tr>\n";
             while ($row = tng_fetch_assoc($result)) {
                 $lines .= "<tr id=\"linkrow_{$row['repoID']}\">\n";
@@ -341,7 +341,7 @@ switch ($type) {
         if (tng_num_rows($result)) {
             $lines = "<tr>\n";
             $lines .= $selectline;
-            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>" . $admtext['place'] . "</td>\n";
+            $lines .= "<td class='fieldnameback fieldname whitespace-no-wrap'>" . _('Place') . "</td>\n";
             $lines .= "</tr>\n";
 
             $num = 1;
@@ -363,7 +363,7 @@ switch ($type) {
 if (tng_num_rows($result)) {
     echo "<table class='normal w-full'>\n$lines\n</table>\n";
 } else {
-    echo $admtext['noresults'];
+    echo _('No results found. Please try again.');
 }
 
 tng_free_result($result);

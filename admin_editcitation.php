@@ -24,23 +24,23 @@ header("Content-type:text/html; charset=" . $session_charset);
 
 <form action="" name="citeform3" onsubmit="return updateCitation(this);">
     <div style="float:right;text-align:center;">
-        <input class="btn" name="submit" type="submit" value="<?php echo $admtext['save']; ?>">
-        <p><a href="#" onclick="return gotoSection('editcitation','citations');"><?php echo $text['cancel']; ?></a></p>
+        <input class="btn" name="submit" type="submit" value="<?php echo _('Save'); ?>">
+        <p><a href="#" onclick="return gotoSection('editcitation','citations');"><?php echo _('Cancel'); ?></a></p>
     </div>
-    <h3 class="subhead"><?php echo $admtext['modifycite']; ?> |
+    <h3 class="subhead"><?php echo _('Edit Existing Citation'); ?> |
         <a href="#"
-           onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo $admtext['help']; ?></a>
+            onclick="return openHelp('<?php echo $helplang; ?>/citations_help.php#add', 'newwindow', 'height=500,width=700,resizable=yes,scrollbars=yes'); newwindow.focus();"><?php echo _('Help for this area'); ?></a>
     </h3>
 
     <table cellpadding="2" class="normal">
         <?php if ($row['sourceID']) { ?>
             <tr>
-                <td class='align-top'><?php echo $admtext['source']; ?>:</td>
+                <td class='align-top'><?php echo _('Source'); ?>:</td>
                 <td>
-                    <input type="text" name="sourceID" id="sourceID2" value="<?php echo $row['sourceID']; ?>" size="20"> &nbsp;<?php echo $admtext['text_or']; ?> &nbsp;
-                    <input type="button" value="<?php echo $admtext['find']; ?>" onclick="return initFilter('editcitation','findsource','sourceID2','sourceTitle2');">
-                    <input type="button" value="<?php echo $admtext['create']; ?>"
-                           onclick="return initNewItem('source', document.newsourceform.sourceID, 'sourceID2', 'sourceTitle2', 'editcitation','newsource');">
+                    <input type="text" name="sourceID" id="sourceID2" value="<?php echo $row['sourceID']; ?>" size="20"> &nbsp;<?php echo _('OR'); ?> &nbsp;
+                    <input type="button" value="<?php echo _('Find...'); ?>" onclick="return initFilter('editcitation','findsource','sourceID2','sourceTitle2');">
+                    <input type="button" value="<?php echo _('Create...'); ?>"
+                        onclick="return initNewItem('source', document.newsourceform.sourceID, 'sourceID2', 'sourceTitle2', 'editcitation','newsource');">
                 </td>
             </tr>
             <tr>
@@ -50,19 +50,19 @@ header("Content-type:text/html; charset=" . $session_charset);
             <?php
         } else {
             echo "<tr>";
-            echo "<td>{$admtext['description']}:</td>";
+            echo "<td>" . _('Description') . ":</td>";
             echo "<td><input type='text' name=\"description\" value=\"{$row['description']}\"><input type='hidden' name=\"sourceID\" value=\"\"></td>\n";
             echo "</tr>";
         }
         ?>
         <tr>
-            <td class='align-top'><?php echo $admtext['page']; ?>:</td>
+            <td class='align-top'><?php echo _('Page'); ?>:</td>
             <td>
                 <input type="text" name="citepage" value="<?php echo $row['page']; ?>" size="60">
             </td>
         </tr>
         <tr>
-            <td class='align-top'><?php echo $admtext['reliability']; ?>*:</td>
+            <td class='align-top'><?php echo _('Reliability'); ?>*:</td>
             <td>
                 <select name="quay">
                     <option value=""></option>
@@ -82,21 +82,21 @@ header("Content-type:text/html; charset=" . $session_charset);
                         echo " selected";
                     } ?>>3
                     </option>
-                </select> <span class="normal">(<?php echo $admtext['relyexplain']; ?>)</span>
+                </select> <span class="normal">(<?php echo _('Higher numbers indicate greater reliability.'); ?>)</span>
             </td>
         </tr>
         <tr>
-            <td class='align-top'><?php echo $admtext['citedate']; ?>:</td>
+            <td class='align-top'><?php echo _('Citation Date'); ?>:</td>
             <td>
                 <input type="text" name="citedate" value="<?php echo $row['citedate']; ?>" size="60" onBlur="checkDate(this);">
             </td>
         </tr>
         <tr>
-            <td class='align-top'><?php echo $admtext['actualtext']; ?>:</td>
+            <td class='align-top'><?php echo _('Actual Text'); ?>:</td>
             <td><textarea cols="50" rows="5" name="citetext"><?php echo $row['citetext']; ?></textarea></td>
         </tr>
         <tr>
-            <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
+            <td class='align-top'><?php echo _('Notes'); ?>:</td>
             <td><textarea cols="50" rows="5" name="citenote"><?php echo $row['note']; ?></textarea></td>
         </tr>
     </table>

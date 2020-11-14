@@ -48,34 +48,34 @@ if (!$tngconfig['places1tree']) {
 
 $helplang = findhelp("places_help.php");
 
-tng_adminheader($admtext['modifyplace'], $flags);
+tng_adminheader(_('Edit Existing Place'), $flags);
 
 if ($map['key'] && $isConnected) {
-    echo "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language={$text['glang']}$mapkeystr\"></script>\n";
+    echo "<script src=\"{$http}://maps.googleapis.com/maps/api/js?language=" . _('&amp;hl=en') . "$mapkeystr\"></script>\n";
 }
 ?>
-<script>
-    function validateForm() {
-        let rval = true;
-        if (document.form1.place.value.length == 0) {
-            alert("<?php echo $admtext['enterplace']; ?>");
-            rval = false;
+    <script>
+        function validateForm() {
+            let rval = true;
+            if (document.form1.place.value.length == 0) {
+                alert("<?php echo _('Please enter a place.'); ?>");
+                rval = false;
+            }
+            return rval;
         }
-        return rval;
-    }
 
-    function deleteCemLink(cemeteryID) {
-        if (confirm("<?php echo $admtext['confdelcemlink']; ?>")) {
-            deleteIt('cemlink', cemeteryID, '');
+        function deleteCemLink(cemeteryID) {
+            if (confirm("<?php echo _('Are you sure you want to unlink this cemetery?'); ?>")) {
+                deleteIt('cemlink', cemeteryID, '');
+            }
         }
-    }
 
-    function copyGeoInfo(cemeteryID) {
-        var latitude = document.form1.latitude.value;
-        var longitude = document.form1.longitude.value;
-        var zoom = document.form1.zoom.value;
-        var geo = jQuery('#geo' + cemeteryID);
-        geo.attr('src', 'img/spinner.gif');
+        function copyGeoInfo(cemeteryID) {
+            var latitude = document.form1.latitude.value;
+            var longitude = document.form1.longitude.value;
+            var zoom = document.form1.zoom.value;
+            var geo = jQuery('#geo' + cemeteryID);
+            geo.attr('src', 'img/spinner.gif');
         geo.css('height', '16px');
         geo.css('width', '16px');
 
@@ -105,40 +105,40 @@ if ($map['key'] && $isConnected) {
         });
     }
 
-    function insertCell(row, index, classname, content) {
-        var cell = row.insertCell(index);
-        cell.className = classname;
-        cell.innerHTML = content ? content : content + '&nbsp;';
-        return cell;
-    }
+        function insertCell(row, index, classname, content) {
+            var cell = row.insertCell(index);
+            cell.className = classname;
+            cell.innerHTML = content ? content : content + '&nbsp;';
+            return cell;
+        }
 
-    const delmsg = "<?php echo $admtext['text_delete']; ?>";
+        const delmsg = "<?php echo _('Delete'); ?>";
 
-    function addCemLink(cemeteryID) {
-        //ajax to add
-        var place = '<?php echo urlencode($row['place']); ?>';
-        var params = {cemeteryID: cemeteryID, place: place, action: 'addcemlink'};
-        jQuery.ajax({
-            url: 'ajx_updateorder.php',
-            data: params,
-            dataType: 'json',
-            success: function (vars) {
-                //add new table row
-                var cemtbl = document.getElementById('cemeteries');
-                var newtr = cemtbl.insertRow(cemtbl.rows.length);
-                newtr.id = "row_" + cemeteryID;
-                var actionstr = '<a href="#" onclick="return deleteCemLink(\'' + cemeteryID + '\');" title="' + delmsg + '"  class="smallicon admin-delete-icon"></a>';
-                actionstr += '<a href="#" onclick="return copyGeoInfo(\'' + cemeteryID + '\');\"><img src="img/earth.gif" id="geo' + cemeteryID + '" title="<?php echo $admtext['geocopy']; ?>" alt="<?php echo $admtext['geocopy']; ?>" width="15" height="15" class="oldicon"></a>';
-                insertCell(newtr, 0, "nw", actionstr);
-                insertCell(newtr, 1, "nw", vars.location);
-                tnglitbox.remove();
-                var tds = jQuery('tr#row_' + cemeteryID + ' td');
-                jQuery.each(tds, function (index, item) {
-                    item.effect('highlight', {}, 1400);
-                })
-            }
-        });
-        return false;
+        function addCemLink(cemeteryID) {
+            //ajax to add
+            var place = '<?php echo urlencode($row['place']); ?>';
+            var params = {cemeteryID: cemeteryID, place: place, action: 'addcemlink'};
+            jQuery.ajax({
+                url: 'ajx_updateorder.php',
+                data: params,
+                dataType: 'json',
+                success: function (vars) {
+                    //add new table row
+                    var cemtbl = document.getElementById('cemeteries');
+                    var newtr = cemtbl.insertRow(cemtbl.rows.length);
+                    newtr.id = "row_" + cemeteryID;
+                    var actionstr = '<a href="#" onclick="return deleteCemLink(\'' + cemeteryID + '\');" title="' + delmsg + '"  class="smallicon admin-delete-icon"></a>';
+                    actionstr += '<a href="#" onclick="return copyGeoInfo(\'' + cemeteryID + '\');\"><img src="img/earth.gif" id="geo' + cemeteryID + '" title="<?php echo _('Copy geocode information below to this cemetery'); ?>" alt="<?php echo _('Copy geocode information below to this cemetery'); ?>" width="15" height="15" class="oldicon"></a>';
+                    insertCell(newtr, 0, "nw", actionstr);
+                    insertCell(newtr, 1, "nw", vars.location);
+                    tnglitbox.remove();
+                    var tds = jQuery('tr#row_' + cemeteryID + ' td');
+                    jQuery.each(tds, function (index, item) {
+                        item.effect('highlight', {}, 1400);
+                    })
+                }
+            });
+            return false;
     }
 </script>
 <?php if ($map['key']) include "googlemaplib2.php"; ?>
@@ -155,60 +155,60 @@ if (!isset($tree)) {
         $tree = $row['gedcom'];
 }
 
-$placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
-$placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
-$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
-$placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
-$placetabs[4] = [$allow_edit, "#", $admtext['edit'], "edit"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#add');\" class='lightlink'>{$admtext['help']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"placesearch.php?psearch=" . urlencode($orgplace) . "\" target='_blank' class='lightlink'>{$admtext['test']}</a>";
-$innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID={$row['place']}&amp;tree=$tree&amp;linktype=L\" class='lightlink'>{$admtext['addmedia']}</a>";
+$placetabs[0] = [1, "admin_places.php", _('Search'), "findplace"];
+$placetabs[1] = [$allow_add, "admin_newplace.php", _('Add New'), "addplace"];
+$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", _('Merge'), "merge"];
+$placetabs[3] = [$allow_edit, "admin_geocodeform.php", _('Geocode'), "geo"];
+$placetabs[4] = [$allow_edit, "#", _('Edit'), "edit"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#add');\" class='lightlink'>" . _('Help for this area') . "</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"placesearch.php?psearch=" . urlencode($orgplace) . "\" target='_blank' class='lightlink'>" . _('Test') . "</a>";
+$innermenu .= " &nbsp;|&nbsp; <a href=\"admin_newmedia.php?personID={$row['place']}&amp;tree=$tree&amp;linktype=L\" class='lightlink'>" . _('Add Media') . "</a>";
 $menu = doMenu($placetabs, "edit", $innermenu);
-echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace'], "img/places_icon.gif", $menu, $message);
+echo displayHeadline(_('Places') . " &gt;&gt; " . _('Edit Existing Place'), "img/places_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <form action="admin_updateplace.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
-                <p class="plainheader"><?php echo $row['place']; ?></p>
-                <table class="normal w-full">
-                    <tr>
-                        <td><?php echo $admtext['tree']; ?>:</td>
-                        <td>
-                            <?php if (!$tngconfig['places1tree']) { ?>
-                                <?php if (!$row['gedcom']) { ?>
-                                    <select name="newtree">
-                                        <option value=""></option>
-                                        <?php
-                                        while ($treerow = tng_fetch_assoc($treeresult)) {
-                                            echo "		<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
-                                        }
-                                        tng_free_result($treeresult);
-                                        ?>
-                                    </select>
-                                <?php } else { ?>
-                                    <?php echo $treerow['treename']; ?>
-                                    <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <form action="admin_updateplace.php" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+                    <p class="plainheader"><?php echo $row['place']; ?></p>
+                    <table class="normal w-full">
+                        <tr>
+                            <td><?php echo _('Tree'); ?>:</td>
+                            <td>
+                                <?php if (!$tngconfig['places1tree']) { ?>
+                                    <?php if (!$row['gedcom']) { ?>
+                                        <select name="newtree">
+                                            <option value=""></option>
+                                            <?php
+                                            while ($treerow = tng_fetch_assoc($treeresult)) {
+                                                echo "		<option value=\"{$treerow['gedcom']}\">{$treerow['treename']}</option>\n";
+                                            }
+                                            tng_free_result($treeresult);
+                                            ?>
+                                        </select>
+                                    <?php } else { ?>
+                                        <?php echo $treerow['treename']; ?>
+                                        <input type="hidden" name="tree" value="<?php echo $row['gedcom']; ?>">
+                                    <?php } ?>
                                 <?php } ?>
-                            <?php } ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['place']; ?>:</td>
-                        <td>
-                            <input type="text" value="<?php echo $row['place']; ?>" name="place" id="place" size="50" class="longfield">
-                        </td>
-                    </tr>
-                    <?php
-                    if (determineLDSRights()) {
-                        echo "<tr>";
-                        echo "<td>&nbsp;</td>";
-                        echo "<td><input type='checkbox' name=\"temple\" value='1'";
-                        if ($row['temple']) echo " checked";
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo _('Place'); ?>:</td>
+                            <td>
+                                <input type="text" value="<?php echo $row['place']; ?>" name="place" id="place" size="50" class="longfield">
+                            </td>
+                        </tr>
+                        <?php
+                        if (determineLDSRights()) {
+                            echo "<tr>";
+                            echo "<td>&nbsp;</td>";
+                            echo "<td><input type='checkbox' name=\"temple\" value='1'";
+                            if ($row['temple']) echo " checked";
 
-                        echo "> {$admtext['istemple']}</td>";
-                        echo "</tr>\n";
+                            echo "> " . _('This place name is an LDS temple code') . "</td>";
+                            echo "</tr>\n";
                     }
                     if ($map['key']) {
                         ?>
@@ -223,53 +223,53 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                             </td>
                         </tr>
                     <?php } ?>
-                    <tr>
-                        <td><?php echo $admtext['latitude']; ?>:</td>
-                        <td>
-                            <input type="text" name="latitude" value="<?php echo $row['latitude']; ?>" size="20" id="latbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $admtext['longitude']; ?>:</td>
-                        <td>
-                            <input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox">
-                        </td>
-                    </tr>
-                    <?php if ($map['key']) { ?>
                         <tr>
-                            <td><?php echo $admtext['zoom']; ?>:</td>
+                            <td><?php echo _('Latitude'); ?>:</td>
                             <td>
-                                <input type="text" name="zoom" value="<?php echo $row['zoom']; ?>" size="20" id="zoombox">
+                                <input type="text" name="latitude" value="<?php echo $row['latitude']; ?>" size="20" id="latbox">
                             </td>
                         </tr>
                         <tr>
-                            <td><?php echo $admtext['placelevel']; ?>:</td>
+                            <td><?php echo _('Longitude'); ?>:</td>
                             <td>
-                                <select name="placelevel">
-                                    <option value=""></option>
-                                    <?php
-                                    for ($i = 1; $i < 7; $i++) {
-                                        echo "<option value=\"$i\"";
-                                        if ($i == $row['placelevel']) echo " selected";
+                                <input type="text" name="longitude" value="<?php echo $row['longitude']; ?>" size="20" id="lonbox">
+                            </td>
+                        </tr>
+                        <?php if ($map['key']) { ?>
+                            <tr>
+                                <td><?php echo _('Zoom'); ?>:</td>
+                                <td>
+                                    <input type="text" name="zoom" value="<?php echo $row['zoom']; ?>" size="20" id="zoombox">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><?php echo _('Place Level'); ?>:</td>
+                                <td>
+                                    <select name="placelevel">
+                                        <option value=""></option>
+                                        <?php
+                                        for ($i = 1; $i < 7; $i++) {
+                                            echo "<option value=\"$i\"";
+                                            if ($i == $row['placelevel']) echo " selected";
 
-                                        echo ">" . $admtext['level' . $i] . "</option>\n";
-                                    }
-                                    ?>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class='align-top'><?php echo $admtext['cemeteries']; ?>:</td>
-                            <td>
-                                <table id="cemeteries" class="normal" cellpadding="3" cellspacing="1" border="0">
-                                    <tbody id="cemeteriestblbody">
-                                    <?php
-                                    //get cemeteries with no place assoc
-                                    $query = "SELECT cemeteryID, cemname, city, county, state, country FROM $cemeteries_table WHERE place = \"{$row['place']}\" ORDER BY cemname";
-                                    $cemresult = tng_query($query);
-                                    while ($cemrow = tng_fetch_assoc($cemresult)) {
-                                        $location = $cemrow['cemname'];
-                                        if ($cemrow['city']) {
+                                            echo ">" . $admtext['level' . $i] . "</option>\n";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='align-top'><?php echo _('Cemeteries'); ?>:</td>
+                                <td>
+                                    <table id="cemeteries" class="normal" cellpadding="3" cellspacing="1" border="0">
+                                        <tbody id="cemeteriestblbody">
+                                        <?php
+                                        //get cemeteries with no place assoc
+                                        $query = "SELECT cemeteryID, cemname, city, county, state, country FROM $cemeteries_table WHERE place = \"{$row['place']}\" ORDER BY cemname";
+                                        $cemresult = tng_query($query);
+                                        while ($cemrow = tng_fetch_assoc($cemresult)) {
+                                            $location = $cemrow['cemname'];
+                                            if ($cemrow['city']) {
                                             if ($location) $location .= ", ";
 
                                             $location .= $cemrow['city'];
@@ -288,58 +288,58 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['modifyplace']
                                             if ($location) $location .= ", ";
                                             $location .= $cemrow['country'];
                                         }
-                                        $actionstr = $allow_delete ? "<a href='#' onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";
+                                            $actionstr = $allow_delete ? "<a href='#' onclick=\"return deleteCemLink('{$cemrow['cemeteryID']}');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>" : "&nbsp;";
                                         if ($allow_edit) {
-                                            $actionstr .= "<a href='#' onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"{$admtext['geocopy']}\" alt=\"{$admtext['geocopy']}\" width='15' height='15' class=\"oldicon\"></a>";
+                                            $actionstr .= "<a href='#' onclick=\"return copyGeoInfo('{$cemrow['cemeteryID']}');\"><img src=\"img/earth.gif\" id=\"geo{$cemrow['cemeteryID']}\" title=\"" . _('Copy geocode information below to this cemetery') . "\" alt=\"" . _('Copy geocode information below to this cemetery') . "\" width='15' height='15' class=\"oldicon\"></a>";
                                         }
-                                        echo "<tr id=\"row_{$cemrow['cemeteryID']}\">";
-                                        echo "<td class='whitespace-no-wrap'>$actionstr</td>";
-                                        echo "<td class='whitespace-no-wrap'>$location</td>";
-                                        echo "</tr>\n";
-                                    }
-                                    ?>
-                                    </tbody>
-                                </table>
-                                <input type="button" value="<?php echo $admtext['linkcem']; ?>" onclick="pickCemetery();">
-                                <img src="img/earth.gif" alt="<?php echo $admtext['geocopy']; ?>" width="15" height="15" class="oldicon"> = <?php echo $admtext['geocopy']; ?>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                    <tr>
-                        <td class='align-top'><?php echo $admtext['notes']; ?>:</td>
-                        <td><textarea cols="50" rows="5" name="notes"><?php echo $row['notes']; ?></textarea></td>
-                    </tr>
-                    <?php if (!$assignedbranch) { ?>
+                                            echo "<tr id=\"row_{$cemrow['cemeteryID']}\">";
+                                            echo "<td class='whitespace-no-wrap'>$actionstr</td>";
+                                            echo "<td class='whitespace-no-wrap'>$location</td>";
+                                            echo "</tr>\n";
+                                        }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                    <input type="button" value="<?php echo _('Link this place to a cemetery'); ?>" onclick="pickCemetery();">
+                                    <img src="img/earth.gif" alt="<?php echo _('Copy geocode information below to this cemetery'); ?>" width="15" height="15" class="oldicon"> = <?php echo _('Copy geocode information below to this cemetery'); ?>
+                                </td>
+                            </tr>
+                        <?php } ?>
                         <tr>
-                            <td class="align-top" colspan="2">
-                                <input type="checkbox" name="propagate" value="1" checked> <?php echo $admtext['propagate']; ?>:
+                            <td class='align-top'><?php echo _('Notes'); ?>:</td>
+                            <td><textarea cols="50" rows="5" name="notes"><?php echo $row['notes']; ?></textarea></td>
+                        </tr>
+                        <?php if (!$assignedbranch) { ?>
+                            <tr>
+                                <td class="align-top" colspan="2">
+                                    <input type="checkbox" name="propagate" value="1" checked> <?php echo _('Make changes to place name in existing events'); ?>:
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        <tr>
+                            <td class="align-top" colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <?php
+                                echo _('On save') . ":<br>";
+                                echo "<input type='radio' name='newscreen' value='return'> " . _('Return to this page') . "<br>\n";
+                                if ($cw) {
+                                    echo "<input type='radio' name='newscreen' value=\"close\" checked> " . _('Close this window') . "\n";
+                                } else {
+                                    echo "<input type='radio' name='newscreen' value=\"none\" checked> " . _('Return to menu') . "\n";
+                                }
+                                ?>
                             </td>
                         </tr>
-                    <?php } ?>
-                    <tr>
-                        <td class="align-top" colspan="2">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <?php
-                            echo $admtext['onsave'] . ":<br>";
-                            echo "<input type='radio' name='newscreen' value='return'> {$admtext['savereturn']}<br>\n";
-                            if ($cw) {
-                                echo "<input type='radio' name='newscreen' value=\"close\" checked> {$text['closewindow']}\n";
-                            } else {
-                                echo "<input type='radio' name='newscreen' value=\"none\" checked> {$admtext['saveback']}\n";
-                            }
-                            ?>
-                        </td>
-                    </tr>
-                </table>
-                <br>&nbsp;
-                <input type="hidden" name="ID" value="<?php echo "$ID"; ?>">
-                <input type="hidden" name="orgplace" value="<?php echo $row['place']; ?>">
-                <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo $admtext['save']; ?>">
-            </form>
-        </td>
-    </tr>
+                    </table>
+                    <br>&nbsp;
+                    <input type="hidden" name="ID" value="<?php echo "$ID"; ?>">
+                    <input type="hidden" name="orgplace" value="<?php echo $row['place']; ?>">
+                    <input type="submit" name="submit" accesskey="s" class="btn" value="<?php echo _('Save'); ?>">
+                </form>
+            </td>
+        </tr>
 
-</table>
+    </table>
 <?php echo tng_adminfooter(); ?>

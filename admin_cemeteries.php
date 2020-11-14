@@ -71,15 +71,15 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 }
 $helplang = findhelp("cemeteries_help.php");
 
-tng_adminheader($admtext['cemeteries'], $flags);
+tng_adminheader(_('Cemeteries'), $flags);
 ?>
-<script>
-    function confirmDelete(ID) {
-        if (confirm('<?php echo $admtext['confdeletecem']; ?>'))
-            deleteIt('cemetery', ID);
-        return false;
-    }
-</script>
+    <script>
+        function confirmDelete(ID) {
+            if (confirm('<?php echo _('Are you sure you want to delete this cemetery?'); ?>'))
+                deleteIt('cemetery', ID);
+            return false;
+        }
+    </script>
 
 <?php
 echo "</head>\n";
@@ -87,11 +87,11 @@ echo "<!-- begin tng_adminlayout -->\n";
 echo tng_adminlayout();
 echo "<!-- end tng_adminlayout -->\n";
 
-$cemtabs[0] = [1, "admin_cemeteries.php", $admtext['search'], "findcem"];
-$cemtabs[1] = [$allow_add, "admin_newcemetery.php", $admtext['addnew'], "addcemetery"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/cemeteries_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$cemtabs[0] = [1, "admin_cemeteries.php", _('Search'), "findcem"];
+$cemtabs[1] = [$allow_add, "admin_newcemetery.php", _('Add New'), "addcemetery"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/cemeteries_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($cemtabs, "findcem", $innermenu);
-echo displayHeadline($admtext['cemeteries'], "img/cemeteries_icon.gif", $menu, $message);
+echo displayHeadline(_('Cemeteries'), "img/cemeteries_icon.gif", $menu, $message);
 $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-current inline-block"]);
 ?>
     <table class="w-full lightback md:mx-auto md:max-x-3xl">
@@ -101,7 +101,7 @@ $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-curren
                     <form action="admin_cemeteries.php" name="form1">
                         <div class="relative mb-4 md:flex">
                             <div class="container mx-4 normal">
-                                <label for="searchstring"><?php echo $admtext['searchfor']; ?>:</label>
+                                <label for="searchstring"><?php echo _('Search for'); ?>:</label>
                                 <input id='searchstring' class="relative w-full px-2 py-1 text-sm text-gray-700 placeholder-gray-400 bg-white rounded shadow outline-none focus:outline-none focus:shadow-outline lg:text-md" name="q" type="search"
                                     placeholder="Search..." value="<?php echo $searchstring_noquotes; ?>">
                             </div>
@@ -118,36 +118,36 @@ $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-curren
                     <form action="admin_deleteselected.php" method="post" name="form2">
                         <?php if ($allow_delete) { ?>
                             <p class="mx-4">
-                                <input type="button" name="selectall" value="<?php echo $admtext['selectall']; ?>" onClick="toggleAll(1);">
-                                <input type="button" name="clearall" value="<?php echo $admtext['clearall']; ?>" onClick="toggleAll(0);">
-                                <input type="submit" name="xcemaction" value="<?php echo $admtext['deleteselected']; ?>" onClick="return confirm('<?php echo $admtext['confdeleterecs']; ?>');">
+                                <input type="button" name="selectall" value="<?php echo _('Select All'); ?>" onClick="toggleAll(1);">
+                                <input type="button" name="clearall" value="<?php echo _('Clear All'); ?>" onClick="toggleAll(0);">
+                                <input type="submit" name="xcemaction" value="<?php echo _('Delete Selected'); ?>" onClick="return confirm('<?php echo _('Are you sure you want to delete the selected records?'); ?>');">
                             </p>
                         <?php } ?>
                         <table class="w-full normal md:mx-auto md:max-w-3xl">
                             <tr>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['action']; ?></th>
+                                <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
                                 <?php if ($allow_delete) { ?>
-                                    <th class="fieldnameback fieldname"><?php echo $admtext['select']; ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('Select'); ?></th>
                                 <?php } ?>
-                                <th class="fieldnameback fieldname"><?php echo $admtext['cemetery']; ?></th>
-                                <!--                            <th class="fieldnameback fieldname">--><?php //echo $admtext['location']; ?><!--</th>-->
+                                <th class="fieldnameback fieldname"><?php echo _('Cemetery'); ?></th>
+                                <!--                            <th class="fieldnameback fieldname">--><?php //echo _('Location'); ?><!--</th>-->
                                 <?php if ($map['key']) { ?>
-                                    <th class="fieldnameback fieldname"><?php echo $admtext['googleplace']; ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('Geocode Location'); ?></th>
                                 <?php } else { ?>
-                                    <th class="fieldnameback fieldname"><?php echo $admtext['latitude']; ?></th>
-                                    <th class="fieldnameback fieldname"><?php echo $admtext['longitude']; ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('Latitude'); ?></th>
+                                    <th class="fieldnameback fieldname"><?php echo _('Longitude'); ?></th>
                                 <?php } ?>
                             </tr>
                             <?php
                             if ($numrows) {
                             $actionstr = "";
                             if ($allow_edit) {
-                                $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\" title=\"{$admtext['edit']}\" class='smallicon admin-edit-icon'></a>";
+                                $actionstr .= "<a href=\"admin_editcemetery.php?cemeteryID=xxx\" title=\"" . _('Edit') . "\" class='smallicon admin-edit-icon'></a>";
                             }
                             if ($allow_delete) {
-                                $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"{$admtext['text_delete']}\" class='smallicon admin-delete-icon'></a>";
+                                $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                             }
-                            $actionstr .= "<a href='showmap.php?cemeteryID=xxx&amp' target='_blank' title=\"{$admtext['test']}\" class='smallicon admin-test-icon'></a>";
+                            $actionstr .= "<a href='showmap.php?cemeteryID=xxx&amp' target='_blank' title=\"" . _('Test') . "\" class='smallicon admin-test-icon'></a>";
                             foreach ($cemeteries as $row) {
                                 $location = cemeteryPlace($row);
                                 $newactionstr = preg_replace("/xxx/", $row['cemeteryID'], $actionstr);
@@ -156,22 +156,22 @@ $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-curren
                                     echo "<td class='text-center lightback'><input type='checkbox' name=\"del{$row['cemeteryID']}\" value='1'></td>";
                                 }
                                 $editlink = "admin_editcemetery.php?cemeteryID={$row['cemeteryID']}";
-                                $cemname = $allow_edit ? "<a href=\"$editlink\" title=\"{$admtext['edit']}\">" . $row['cemname'] . "</a>" : $row['cemname'];
+                                $cemname = $allow_edit ? "<a href=\"$editlink\" title=\"" . _('Edit') . "\">" . $row['cemname'] . "</a>" : $row['cemname'];
                                 echo "<td class='lightback'>$cemname<br>$location</td>\n";
                                 //                            echo "<td class='lightback'>$location</td>\n";
                                 if ($map['key']) {
                                     echo "<td nowrap class='lightback'>";
                                     $geo = "";
                                     if ($row['latitude']) {
-                                        $geo .= "{$admtext['latitude']}: " . number_format($row['latitude'], 3);
+                                        $geo .= "" . _('Latitude') . ": " . number_format($row['latitude'], 3);
                                     }
                                     if ($row['longitude']) {
                                         if ($geo) $geo .= "<br>";
-                                        $geo .= "{$admtext['longitude']}: " . number_format($row['longitude'], 3);
+                                        $geo .= "" . _('Longitude') . ": " . number_format($row['longitude'], 3);
                                     }
                                 if ($row['zoom']) {
                                     if ($geo) $geo .= "<br>";
-                                    $geo .= "{$admtext['zoom']}: " . $row['zoom'];
+                                    $geo .= "" . _('Zoom') . ": " . $row['zoom'];
                                 }
                                     echo "$geo</td>\n";
                                 } else {
@@ -189,7 +189,7 @@ $searchIcon = buildSvgElement("img/search.svg", ["class" => "w-4 h-4 fill-curren
                     echo "</div>";
                     }
                 else {
-                    echo $admtext['norecords'];
+                    echo _('No records exist.');
                 }
                 ?>
                 </form>

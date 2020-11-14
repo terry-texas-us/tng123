@@ -34,7 +34,7 @@ if ($link) {
     $admin_login = 1;
     include "checklogin.php";
     if ($assignedtree) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -51,57 +51,59 @@ $helplang = findhelp("setup_help.php");
 
 if (!$sub) $sub = "configuration";
 
-tng_adminheader($admtext['setup'], $flags);
+tng_adminheader(_('Setup'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$setuptabs[0] = [1, "admin_setup.php", $admtext['configuration'], "configuration"];
-$setuptabs[1] = [1, "admin_diagnostics.php", $admtext['diagnostics'], "diagnostics"];
-$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", $admtext['tablecreation'], "tablecreation"];
+$setuptabs[0] = [1, "admin_setup.php", _('Configuration'), "configuration"];
+$setuptabs[1] = [1, "admin_diagnostics.php", _('Diagnostics'), "diagnostics"];
+$setuptabs[2] = [1, "admin_setup.php?sub=tablecreation", _('Table Creation'), "tablecreation"];
 $internallink = $sub == "configuration" ? "config" : "tables";
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/setup_help.php#$internallink');\" class='lightlink'>{$admtext['help']}</a>";
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/setup_help.php#$internallink');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($setuptabs, $sub, $innermenu);
-echo displayHeadline($admtext['setup'] . " &gt;&gt; " . $admtext[$sub], "img/setup_icon.gif", $menu, "");
+echo displayHeadline(_('Setup') . " &gt;&gt; " . $admtext[$sub], "img/setup_icon.gif", $menu, "");
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <?php if ($sub == "configuration") { ?>
-                <span class="normal"><em><?php echo $admtext['entersysvars']; ?></em></span><br><br>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <?php if ($sub == "configuration") { ?>
+                    <span class="normal"><em><?php echo _('Enter values for system variables.'); ?></em></span><br><br>
 
-                <table>
-                    <tr>
-                        <td>
-                            <h3 class="subhead"><a href="admin_genconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['configsettings']; ?></a></h3>
-                            <h3 class="subhead"><a href="admin_pedconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['pedconfigsettings']; ?></a></h3>
-                        </td>
-                        <td style="width:50px;">&nbsp;</td>
-                        <td>
-                            <h3 class="subhead"><a href="admin_logconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['logconfigsettings']; ?></a></h3>
-                            <h3 class="subhead"><a href="admin_importconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['importconfigsettings']; ?></a></h3>
-                        </td>
-                        <td style="width:50px;">&nbsp;</td>
-                        <td>
-                            <h3 class="subhead"><a href="admin_mapconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['mapconfigsettings']; ?></a></h3>
-                            <h3 class="subhead"><a href="admin_templateconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo $admtext['templateconfigsettings']; ?></a></h3>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <p class="normal"><em><?php echo $admtext['custvars']; ?></em></p>
-            <?php } elseif ($sub == "tablecreation") { ?>
-                <span class="normal"><em><?php echo $admtext['createdbtables']; ?></em></span><br>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3 class="subhead"><a href="admin_genconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo _('General Settings'); ?></a></h3>
+                                <h3 class="subhead"><a href="admin_pedconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo _('Chart Settings'); ?></a></h3>
+                            </td>
+                            <td style="width:50px;">&nbsp;</td>
+                            <td>
+                                <h3 class="subhead"><a href="admin_logconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo _('Log Settings'); ?></a></h3>
+                                <h3 class="subhead"><a href="admin_importconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo _('Import Settings'); ?></a></h3>
+                            </td>
+                            <td style="width:50px;">&nbsp;</td>
+                            <td>
+                                <h3 class="subhead"><a href="admin_mapconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo _('Map Settings'); ?></a></h3>
+                                <h3 class="subhead"><a href="admin_templateconfig.php"><img src="img/tng_expand.gif" class="inline-block mr-3"><?php echo _('Template Settings'); ?></a></h3>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <p class="normal"><em><?php echo _('Note: You may create your own custom settings in \"customconfig.php\" (open in a text editor and follow the instructions).'); ?></em></p>
+                <?php } elseif ($sub == "tablecreation") { ?>
+                    <span class="normal"><em><?php echo _('Create the database tables to hold your information.'); ?></em></span><br>
 
-                <p class="normal"><em><?php echo $admtext['tcwarning']; ?></em></p>
-                <form action="">
-                    <?php echo $admtext['collation']; ?>:
-                    <input type="text" name="collation" value="utf8_general_ci"> <?php echo $admtext['collationexpl']; ?><br><br>
-                    <input type="button" value="<?php echo $admtext['createtables']; ?>"
-                        onClick="if( confirm( '<?php echo $admtext['conftabledelete']; ?>' ) ) window.location.href = 'admin_tablecreate.php';">
-                </form>
-            <?php } ?>
+                    <p class="normal">
+                        <em><?php echo _('<strong>Warning!</strong> Select this option only when you are setting your site up for the first time. <strong>All existing data, including photos, histories, headstones and cemetery information, will be erased!</strong>'); ?></em>
+                    </p>
+                    <form action="">
+                        <?php echo _('Collation'); ?>:
+                        <input type="text" name="collation" value="utf8_general_ci"> <?php echo _('(leave blank to accept the default)'); ?><br><br>
+                        <input type="button" value="<?php echo _('Create Tables'); ?>"
+                            onClick="if( confirm( '<?php echo _('This will delete ALL your existing data!! Are you sure you want to continue?'); ?>' ) ) window.location.href = 'admin_tablecreate.php';">
+                    </form>
+                <?php } ?>
         </td>
     </tr>
 </table>

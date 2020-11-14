@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit || !$allow_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -20,7 +20,7 @@ $count = 0;
 initMediaTypes();
 
 $xphaction = stripslashes($xphaction);
-if ($xphaction == $admtext['convto']) {
+if ($xphaction == _('Convert Selected to')) {
     //loop through each one
     foreach (array_keys($_POST) as $key) {
         if (substr($key, 0, 2) == "ph") {
@@ -65,7 +65,7 @@ if ($xphaction == $admtext['convto']) {
 					WHERE $medialinks_table.mediaID = \"$mediaID\" 
 					AND mediatypeID = \"$newmediatype\"
 					AND $medialinks_table.mediaID = $media_table.mediaID";
-                $result3 = tng_query($query3) or die ($admtext['cannotexecutequery'] . ": $query3");
+                $result3 = tng_query($query3) or die (_('Cannot execute query') . ": $query3");
                 while ($row3 = tng_fetch_assoc($result3)) {
                     $query4 = "SELECT count(medialinkID) AS count FROM ($media_table, $medialinks_table) 
 						WHERE personID = \"{$row3['personID']}\" 
@@ -73,7 +73,7 @@ if ($xphaction == $admtext['convto']) {
 						AND mediatypeID = \"$newmediatype\"
 						AND $medialinks_table.mediaID = $media_table.mediaID
 						AND eventID = \"{$row3['eventID']}\"";
-                    $result4 = tng_query($query4) or die ($admtext['cannotexecutequery'] . ": $query4");
+                    $result4 = tng_query($query4) or die (_('Cannot execute query') . ": $query4");
                     if ($result4) {
                         $row4 = tng_fetch_assoc($result4);
                         $newrow = $row4['count'] + 1;
@@ -83,7 +83,7 @@ if ($xphaction == $admtext['convto']) {
                     }
 
                     $query5 = "UPDATE $medialinks_table SET ordernum = \"$newrow\" WHERE medialinkID = \"{$row3['medialinkID']}\"";
-                    $result5 = tng_query($query5) or die ($admtext['cannotexecutequery'] . ": $query5");
+                    $result5 = tng_query($query5) or die (_('Cannot execute query') . ": $query5");
 
                     //reorder old media type for everything linked to item
                     $query6 = "SELECT personID FROM $people_table WHERE personID = \"{$row3['personID']}\" AND gedcom = \"{$row3['gedcom']}\"";
@@ -106,7 +106,7 @@ if ($xphaction == $admtext['convto']) {
         $query = "UPDATE $mediatypes_table SET disabled='0' where mediatypeID=\"$newmediatypeID\"";
         $result = @tng_query($query);
     }
-} elseif ($xphaction == $admtext['addtoalbum']) {
+} elseif ($xphaction == _('Add to Album')) {
     setcookie("tng_search_media_post[album]", $albumID, 0);
     foreach (array_keys($_POST) as $key) {
         if (substr($key, 0, 2) == "ph") {
@@ -132,7 +132,7 @@ if ($xphaction == $admtext['convto']) {
             }
         }
     }
-} elseif ($xphaction == $admtext['deleteselected']) {
+} elseif ($xphaction == _('Delete Selected')) {
     $query = "DELETE FROM $media_table WHERE 1=0";
 
     foreach (array_keys($_POST) as $key) {
@@ -142,7 +142,7 @@ if ($xphaction == $admtext['convto']) {
             $query .= " OR mediaID=\"$mediaID\"";
 
             $aquery = "DELETE FROM $albumlinks_table WHERE mediaID=\"$mediaID\"";
-            $aresult = tng_query($aquery) or die ($admtext['cannotexecutequery'] . ": $aquery");
+            $aresult = tng_query($aquery) or die (_('Cannot execute query') . ": $aquery");
 
             resortMedia($mediaID);
         }
@@ -151,11 +151,11 @@ if ($xphaction == $admtext['convto']) {
     $result = tng_query($query);
 }
 
-adminwritelog($admtext['modifymedia'] . ": " . $admtext['all']);
+adminwritelog(_('Edit Existing Media') . ": " . _('All'));
 
 if ($count) {
-    $message = $admtext['changestoallmedia'] . " {$admtext['succsaved']}.";
+    $message = _('Changes to all selected media') . " " . _('were successfully saved') . ".";
 } else {
-    $message = $admtext['nochanges'];
+    $message = _('No changes were made.');
 }
 header("Location: admin_media.php?message=" . urlencode($message));

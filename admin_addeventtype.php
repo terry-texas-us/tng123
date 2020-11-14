@@ -6,7 +6,7 @@ include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -26,11 +26,11 @@ $params = [&$template, &$tag, &$description, &$display, &$type, &$keep, &$collap
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
     $eventtypeID = tng_insert_id();
-    $message = $admtext['eventtype'] . " $eventtypeID {$admtext['succadded']}.";
+    $message = _('Event Type') . " $eventtypeID " . _('was successfully added') . ".";
 
-    adminwritelog($admtext['addnewevtype'] . ": $tag $type - $display");
+    adminwritelog(_('Add New Event Type') . ": $tag $type - $display");
 } else {
-    $message = $admtext['eventtype'] . " $eventtypeID {$admtext['idexists']}.";
+    $message = _('Event Type') . " $eventtypeID " . _('could not be added because this ID already exists.') . ".";
 }
 
 header("Location: admin_eventtypes.php?message=" . urlencode($message));

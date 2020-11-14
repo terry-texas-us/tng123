@@ -9,7 +9,7 @@ $admin_login = 1;
 include "checklogin.php";
 
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -47,7 +47,7 @@ if ($success) {
         tng_execute($query, $params);
     }
 
-    adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">{$admtext['addnewdna']}: $testID</a>");
+    adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">" . _('Add New DNA Test') . ": $testID</a>");
 
     header("Location: admin_edit_dna_test.php?testID=$testID&newtest=1&added=1");
 } else {

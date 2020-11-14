@@ -6,7 +6,7 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 if (!$allow_delete) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -162,7 +162,7 @@ foreach (array_keys($_POST) as $key) {
             deleteAlbumLinks($place, $tree);
         } elseif ($xtimeaction) {
             $query3 = "DELETE FROM $tlevents_table WHERE tleventID = \"$thisid\"";
-            $result3 = tng_query($query3) or die ($admtext['cannotexecutequery'] . ": $query3");
+            $result3 = tng_query($query3) or die (_('Cannot execute query') . ": $query3");
             $items[] = $thisid;
         } elseif ($xuseraction || $xruseraction) {
             $query3 = "SELECT username FROM $users_table WHERE userID = \"$thisid\"";
@@ -171,7 +171,7 @@ foreach (array_keys($_POST) as $key) {
             tng_free_result($result3);
 
             $query3 = "DELETE FROM $users_table WHERE userID = \"$thisid\"";
-            $result3 = tng_query($query3) or die ($admtext['cannotexecutequery'] . ": $query3");
+            $result3 = tng_query($query3) or die (_('Cannot execute query') . ": $query3");
             $items[] = $urow['username'];
         } elseif ($xbranchaction) {
             $args = explode('&', $thisid);
@@ -194,11 +194,11 @@ foreach (array_keys($_POST) as $key) {
 }
 $result = tng_query($query);
 
-adminwritelog("{$admtext['deleted']}: " . $modifymsg . " " . implode(', ', $items));
+adminwritelog("" . _('Deleted') . ": " . $modifymsg . " " . implode(', ', $items));
 
 if ($count) {
-    $message = $admtext['changestoallitems'] . " " . $admtext['succsaved'] . ".";
+    $message = _('Changes to all items') . " " . _('were successfully saved') . ".";
 } else {
-    $message = $admtext['nochanges'];
+    $message = _('No changes were made.');
 }
 header("Location: $location" . "?message=" . urlencode($message));

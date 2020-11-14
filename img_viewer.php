@@ -105,19 +105,19 @@ $float = strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 7") > 0 ? " style=\"float:lef
 </div>
 <script>
     <?php
-    echo "var magmode_msg = \"{$text['magmode']}\";\n";
-    echo "var zoomin_msg = \"{$text['zoomin']}\";\n";
-    echo "var zoomout_msg = \"{$text['zoomout']}\";\n";
-    echo "var panmode_msg = \"{$text['panmode']}\";\n";
-    echo "var pan_msg = \"{$text['pan']}\";\n";
-    echo "var magnifyreg_msg = \"{$text['magnifyreg']}\";\n";
-    echo "var fw_msg = \"{$text['fitwidth']}\";\n";
-    echo "var fh_msg = \"{$text['fitheight']}\";\n";
-    echo "var nw_msg = \"{$text['newwin']}\";\n";
-    echo "var opennw_msg = \"{$text['opennw']}\";\n";
-    echo "var imgctrls_msg = \"{$text['imgctrls']}\";\n";
-    echo "var vwrctrls_msg = \"{$text['vwrctrls']}\";\n";
-    echo "var close_msg = \"{$text['vwrclose']}\";\n";
+    echo "var magmode_msg = \"" . _('Magnify Mode') . "\";\n";
+    echo "var zoomin_msg = \"" . _('Zoom In') . "\";\n";
+    echo "var zoomout_msg = \"" . _('Zoom Out') . "\";\n";
+    echo "var panmode_msg = \"" . _('Pan Mode') . "\";\n";
+    echo "var pan_msg = \"" . _('Click and drag to move within the image') . "\";\n";
+    echo "var magnifyreg_msg = \"" . _('Click to magnify a region of the image') . "\";\n";
+    echo "var fw_msg = \"" . _('Fit Width') . "\";\n";
+    echo "var fh_msg = \"" . _('Fit Height') . "\";\n";
+    echo "var nw_msg = \"" . _('Open in new window') . "\";\n";
+    echo "var opennw_msg = \"" . _('Open image in a new window') . "\";\n";
+    echo "var imgctrls_msg = \"" . _('Enable Image Controls') . "\";\n";
+    echo "var vwrctrls_msg = \"" . _('Enable Image Viewer Controls') . "\";\n";
+    echo "var close_msg = \"" . _('Close Image Viewer') . "\";\n";
     echo "var imgnewwin_url = \"img_newwin.php?\";\n";
     echo "if(parent.document.getElementById(window.name)) {viewer = imageViewer(\"imgviewer\", \"$mediasrc\", \"$width\", \"$height\", $sa, \"$mediaID\", \"$medialinkID\", \"" . urlencode($imgrow['description']) . "\");}\n";
     ?>

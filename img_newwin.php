@@ -27,7 +27,7 @@ header("Content-type:text/html;charset=" . $session_charset);
 <body onload="calcHeight(window.innerHeight);">
 <?php
 include "js/img_utils.js";
-echo "<div id=\"loadingdiv2\" style=\"position:static;\">{$text['loading']}</div>\n";
+echo "<div id=\"loadingdiv2\" style=\"position:static;\">" . _('Loading...') . "</div>\n";
 ?>
 
 <iframe name="iframe1" id="iframe1"

@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedbranch || !$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -19,10 +19,10 @@ $query = "INSERT INTO $branches_table (gedcom,branch,description,personID,agens,
 $params = [&$template, &$tree, &$branch, &$description, &$personID, &$agens, &$dgens, &$dagens, &$dospouses];
 $affected_rows = tng_execute_noerror($query, $params);
 if ($affected_rows == 1) {
-    $message = $admtext['branch'] . " $description {$admtext['succadded']}.";
-    adminwritelog($admtext['addnewbranch'] . " : $gedcom/$description");
+    $message = _('Branch') . " $description " . _('was successfully added') . ".";
+    adminwritelog(_('Add New Branch') . " : $gedcom/$description");
 } else {
-    $message = $admtext['branch'] . " $description {$admtext['idexists']}.";
+    $message = _('Branch') . " $description " . _('could not be added because this ID already exists.') . ".";
 }
 
 

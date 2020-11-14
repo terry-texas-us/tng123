@@ -81,10 +81,10 @@ switch ($_POST['subroutine']) {
         $failed .= $failed2;
 
         if ($success == count($files) + count($folders)) {
-            $msg = $text['perms'];
+            $msg = _('Permissions have all been set.');
             $class = "green";
         } else {
-            $msg = $text['noperms'] . " $failed. " . $text['manual'];
+            $msg = _('Permissions could not be set for these files:') . " $failed. " . _('Please set them manually.');
         }
 
         break;
@@ -95,7 +95,7 @@ switch ($_POST['subroutine']) {
         $oldname = $_POST['oldname'];
         $foldertype = $_POST['foldertype'];
         if (file_exists($foldername) || @rename($oldname, $foldername)) {
-            $msg = $text['folder'] . " $oldname " . $text['renamedto'] . " $foldername";
+            $msg = _('Folder') . " $oldname " . _('renamed to') . " $foldername";
             $class = "green";
             if ($foldertype == "gedpath") {
                 $saveimportconfig = 1;
@@ -104,7 +104,7 @@ switch ($_POST['subroutine']) {
             }
             eval("\$$foldertype = \"$foldername\";");
         } else {
-            $msg = $text['folder'] . " $oldname " . $text['norename'];
+            $msg = _('Folder') . " $oldname " . _('could not be renamed');
         }
         break;
 
@@ -136,24 +136,24 @@ switch ($_POST['subroutine']) {
         $link = tng_connect($new_database_host, $new_database_username, $new_database_password, $new_database_name, $new_database_port, $new_database_socket);
         if ($link) {
             if (tng_select_db($link, $new_database_name)) {
-                $msg = $text['infosaved'];
+                $msg = _('Information saved, connection verified!');
                 $class = "green";
             } else {
                 $query = "CREATE DATABASE $new_database_name";
                 $result = @tng_query($query);
                 if ($result) {
                     if (tng_select_db($link, $new_database_name)) {
-                        $msg = $text['newdb'] . " $new_database_name";
+                        $msg = _('Information saved, connection verified, new database created:') . " $new_database_name";
                         $class = "green";
                     } else {
-                        $msg = $text['noattach'];
+                        $msg = _('Information saved. Connection made and database created, but TNG cannot attach to it.');
                     }
                 } else {
-                    $msg = $text['nodb'];
+                    $msg = _('Information saved. Connection made, but database does not exist and could not be created here. Please verify that the database name is correct, and that the database user has proper access, or use your control panel to create it.');
                 }
             }
         } else {
-            $msg = $text['noconn'] . " Host Name, Database Name, Database Username, Database Password.";
+            $msg = _('Information saved but connection failed. One or more of the following is incorrect:') . " Host Name, Database Name, Database Username, Database Password.";
         }
 
         $database_host = $new_database_host;
@@ -179,13 +179,13 @@ switch ($_POST['subroutine']) {
         if ($link && tng_select_db($link, $database_name)) {
             $badtables = createtables($collation);
             if (!$badtables) {
-                $msg = $text['tablescr'];
+                $msg = _('The tables have been created!');
                 $class = "green";
             } else {
-                $msg = $text['notables'] . " $badtables";
+                $msg = _('The following tables could not be created:') . " $badtables";
             }
         } else {
-            $msg = $text['nocomm'];
+            $msg = _('TNG is not communicating with your database. No tables were created.');
         }
         $tng_notinstalled = "";
         $saveconfig = 1;
@@ -200,13 +200,13 @@ switch ($_POST['subroutine']) {
         $result = @tng_query($query);
 
         if ($result) {
-            $msg = $text['user'] . " '$username' " . $text['created'];
+            $msg = _('User') . " '$username' " . _('has been created');
             $class = "green";
             $_SESSION['currentuser'] = $username;
             $_SESSION['currentuserdesc'] = "Administrator";
             $_SESSION['assignedtree'] = "";
         } else {
-            $msg = $text['nouser'];
+            $msg = _('User was not created. Username may already exist.');
         }
         $dbowner = $realname;
         $emailaddr = $email;
@@ -219,10 +219,10 @@ switch ($_POST['subroutine']) {
         $result = @tng_query($query);
 
         if ($result) {
-            $msg = $text['tree'] . " \"$newtreeid\" " . $text['created'];
+            $msg = _('Tree') . " \"$newtreeid\" " . _('has been created');
             $class = "green";
         } else {
-            $msg = $text['notree'];
+            $msg = _('Tree was not created. Tree ID may already exist.');
         }
         break;
 
@@ -244,7 +244,7 @@ switch ($_POST['subroutine']) {
 
         $charset = $newcharset;
         $language = $newlanguage;
-        $msg = $text['infosaved2'];
+        $msg = _('Information saved');
         $class = "green";
         $saveconfig = 1;
         break;
@@ -259,7 +259,7 @@ switch ($_POST['subroutine']) {
             $flen = @file_put_contents("config/config.php", $templatesettings);
             if ($flen) {
                 $class = "green";
-                $msg = $text['infosaved2'] . " ($newtemplate)";
+                $msg = _('Information saved') . " ($newtemplate)";
             }
         }
         if (!$flen) {
@@ -268,18 +268,18 @@ switch ($_POST['subroutine']) {
         break;
 
     case 'login';
-        $msg = $text['loginfirst'];
+        $msg = _('You must log in first.');
         break;
 
     default:
         //set default message
-        $msg = $text['noop'];
+        $msg = _('No operation was performed.');
         break;
 }
 
 if ($saveconfig) {
     $fp = @fopen("config/config.php", "w", 1);
-    if (!$fp) die ($text['cannotopen'] . " config.php");
+    if (!$fp) die (_('Cannot open file') . " config.php");
 
 
     flock($fp, LOCK_EX);
@@ -419,7 +419,7 @@ if ($saveconfig) {
 
 if ($saveimportconfig) {
     $fp = @fopen("config/importconfig.php", "w", 1);
-    if (!$fp) die ($text['cannotopen'] . " importconfig.php");
+    if (!$fp) die (_('Cannot open file') . " importconfig.php");
 
 
     flock($fp, LOCK_EX);

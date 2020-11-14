@@ -12,7 +12,7 @@ if (!count($_POST)) {
 if ($link) {
     include "checklogin.php";
     if ($assignedtree || !$allow_edit) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }
@@ -21,7 +21,7 @@ if ($link) {
 require "adminlog.php";
 
 $fp = @fopen("config/importconfig.php", "w", 1);
-if (!$fp) die ($admtext['cannotopen'] . " importconfig.php");
+if (!$fp) die (_('Cannot open file') . " importconfig.php");
 
 
 $localphotopathdisplay = addslashes($localphotopathdisplay);
@@ -58,6 +58,6 @@ fwrite($fp, "?>\n");
 flock($fp, LOCK_UN);
 fclose($fp);
 
-adminwritelog($admtext['modifyimportsettings']);
+adminwritelog(_('Modify Import Configuration Settings'));
 
 header("Location: admin_setup.php");

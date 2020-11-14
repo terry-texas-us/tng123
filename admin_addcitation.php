@@ -9,7 +9,7 @@ require "datelib.php";
 require "adminlog.php";
 
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     exit;
 }
 
@@ -31,7 +31,7 @@ $citationID = tng_insert_id();
 
 $_SESSION['lastcite'] = $tree . "|" . $citationID;
 
-adminwritelog($admtext['addnewcite'] . ": $citationID/$tree/$persfamID/$eventID/$sourceID");
+adminwritelog(_('Add New Citation') . ": $citationID/$tree/$persfamID/$eventID/$sourceID");
 
 $query = "SELECT title FROM $sources_table WHERE sourceID = \"$sourceID\" AND gedcom = '$tree'";
 $result = tng_query($query);

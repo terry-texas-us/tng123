@@ -43,9 +43,9 @@ foreach ($timeline as $timeentry) {
             $row2['allow_living'] = $rights['living'];
             $row2['allow_private'] = $rights['private'];
             if (($row2['living'] && !$rights['living']) || ($row2['private'] && !$rights['private'])) {
-                $tng_message .= $text['noliving'] . ": " . getName($row2) . " ({$output['timeperson']})<br>\n";
+                $tng_message .= _('The following individual is flagged as living or private and could not be added because you are not logged in with proper permissions') . ": " . getName($row2) . " ({$output['timeperson']})<br>\n";
             } elseif (!$row2['birth']) {
-                $tng_message .= $text['nobirth'] . ": " . getName($row2) . " ({$output['timeperson']})<br>\n";
+                $tng_message .= _('The following individual does not have a valid birth date and could not be added') . ": " . getName($row2) . " ({$output['timeperson']})<br>\n";
             } else {
                 array_push($finalarray, $timeentry);
             }

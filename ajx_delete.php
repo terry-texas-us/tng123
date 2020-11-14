@@ -33,7 +33,7 @@ switch ($t) {
         $query = "DELETE FROM $album2entities_table WHERE albumID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ":: " . _todo_('Album') . " $id";
+        $logmsg = _('Deleted') . ":: " . _todo_('Album') . " $id";
         break;
     case "file":
         if (file_exists($rootpath . $desc)) //$desc is the file name in filepicker
@@ -41,13 +41,13 @@ switch ($t) {
             $deleted = unlink($rootpath . $desc);
         }
 
-        $logmsg = $admtext['deleted'] . ": $desc";
+        $logmsg = _('Deleted') . ": $desc";
         break;
     case "language":
         $query = "DELETE FROM $languages_table WHERE languageID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['language']} $id";
+        $logmsg = _('Deleted') . ": " . _('Language') . " $id";
         break;
     case "media":
         require "medialib.php";
@@ -63,7 +63,7 @@ switch ($t) {
         $query = "DELETE FROM $albumlinks_table WHERE mediaID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['media']} $id";
+        $logmsg = _('Deleted') . ": " . _('Media') . " $id";
         break;
     case "tevent":
         $row = getID("personID, familyID, gedcom", $temp_events_table, $id, "tempID");
@@ -74,13 +74,13 @@ switch ($t) {
         $query = "DELETE FROM $temp_events_table WHERE tempID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['tentdata']} " . $row['gedcom'] . "/" . ($row['personID'] ? $row['personID'] : $row['familyID']);
+        $logmsg = _('Deleted') . ": " . _('Temporary event record for ') . " " . $row['gedcom'] . "/" . ($row['personID'] ? $row['personID'] : $row['familyID']);
         break;
     case "tlevent":
         $query = "DELETE FROM $tlevents_table WHERE tleventID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['tlevent'] . " $id {$admtext['succdeleted']}";
+        $logmsg = _('was successfully deleted') . " $id " . _('Note') . "";
         break;
     case "note":
         $query = "DELETE FROM $notelinks_table WHERE xnoteID=\"$id\"";
@@ -89,7 +89,7 @@ switch ($t) {
         $query = "DELETE FROM $xnotes_table WHERE ID=\"{$id}\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['note'] . " $id {$admtext['succdeleted']}";
+        $logmsg = _('was successfully deleted') . " $id " . _('Deleted') . "";
         break;
     case "person":
         $row = getID("personID, gedcom, branch, sex", $people_table, $id);
@@ -103,7 +103,7 @@ switch ($t) {
 
         deletePersonPlus($personID, $tree, $row['sex']);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['person']} $tree/$personID";
+        $logmsg = _('Person') . ": " . _('Deleted') . " $tree/$personID";
         break;
     case "family":
         $row = getID("familyID, branch, gedcom", $families_table, $id);
@@ -130,7 +130,7 @@ switch ($t) {
         deleteMediaLinks($familyID, $tree);
         deleteAlbumLinks($familyID, $tree);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['family']} $tree/$familyID";
+        $logmsg = _('Family') . ": " . _('Deleted') . " $tree/$familyID";
         break;
     case "source":
         if ($assignedtree && $assignedtree != $tree) exit;
@@ -151,7 +151,7 @@ $row = getID("sourceID, gedcom", $sources_table, $id);
         deleteMediaLinks($sourceID, $tree);
         deleteAlbumLinks($sourceID, $tree);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['source']} $sourceID";
+        $logmsg = _('Source') . ": " . _('Deleted') . " $sourceID";
         break;
     case "repository":
         if ($assignedtree && $assignedtree != $tree) exit;
@@ -179,7 +179,7 @@ $row = getID("repoID, gedcom", $repositories_table, $id);
         deleteMediaLinks($repoID, $tree);
         deleteAlbumLinks($repoID, $tree);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['person']} $tree/$personID";
+        $logmsg = _('Person') . ": " . _('Deleted') . " $tree/$personID";
         break;
     case "place":
         $row = getID("place, gedcom", $places_table, $id);
@@ -194,7 +194,7 @@ $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
         deleteMediaLinks($place, $tree);
         deleteAlbumLinks($place, $tree);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['place']} $tree/$place";
+        $logmsg = _('Place') . ": " . _('Deleted') . " $tree/$place";
         break;
     case "cemetery":
         $query = "SELECT maplink FROM $cemeteries_table WHERE cemeteryID = \"$id\"";
@@ -205,7 +205,7 @@ $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
         $query = "DELETE FROM $cemeteries_table WHERE cemeteryID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['cemetery']} $id";
+        $logmsg = _('Cemetery') . ": " . _('Deleted') . " $id";
         break;
     case "user":
         $query3 = "SELECT username FROM $users_table WHERE userID = \"$id\"";
@@ -216,25 +216,25 @@ $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
         $query = "DELETE FROM $users_table WHERE userID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['user']} {$urow['username']}";
+        $logmsg = _('User') . ": " . _('Deleted') . " {$urow['username']}";
         break;
     case "branch":
         $branch = $id;
         require "branchlib.php";
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['branch']} $id";
+        $logmsg = _('Branch') . ": " . _('Deleted') . " $id";
         break;
     case "eventtype":
         $query = "DELETE FROM $eventtypes_table WHERE eventtypeID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['eventtype']} $id";
+        $logmsg = _('Event Type') . ": " . _('Deleted') . " $id";
         break;
     case "report":
         $query = "DELETE FROM $reports_table WHERE reportID=\"$id\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": {$admtext['report']} $id";
+        $logmsg = _('Report') . ": " . _('Deleted') . " $id";
         break;
     case "entity":
         $newname = addslashes($delitem);
@@ -245,7 +245,7 @@ $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
         }
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . ": $entity: $delitem";
+        $logmsg = _('Deleted') . ": $entity: $delitem";
         break;
     case "tree":
         $query = "DELETE FROM $people_table WHERE gedcom = \"$id\"";
@@ -312,7 +312,7 @@ $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
         $query = "UPDATE $users_table SET allow_living='-1' WHERE gedcom = \"$id\" AND username != \"$currentuser\"";
         $result = @tng_query($query);
 
-        $logmsg = $admtext['deleted'] . " $id {$admtext['succdeleted']}.";
+        $logmsg = _('was successfully deleted') . " $id " . _('Child unlinked from family') . ".";
         break;
     case "child_unlink":
         $query = "DELETE FROM $children_table WHERE familyID='$familyID' AND personID='$personID' AND gedcom = '$tree'";
@@ -323,7 +323,7 @@ $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
 
         updateHasKidsFamily($familyID);
 
-        $logmsg = $admtext['chunlinked'] . ": $personID/$familyID ($tree).";
+        $logmsg = _('Deleted') . ": $personID/$familyID ($tree).";
         break;
     case "child_delete":
         $query = "SELECT sex FROM $people_table WHERE personID='$personID' AND gedcom = '$tree'";
@@ -336,7 +336,7 @@ $query = "DELETE FROM $places_table WHERE ID=\"$id\"";
 
         deletePersonPlus($personID, $tree, $row['sex']);
 
-        $logmsg = $admtext['deleted'] . ": $personID/$familyID ($tree).";
+        $logmsg = _('Deleted') . ": $personID/$familyID ($tree).";
         break;
     case "mediatype":
         $query = "DELETE FROM $mediatypes_table WHERE mediatypeID=\"$id\"";

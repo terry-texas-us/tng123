@@ -68,11 +68,11 @@ if ($eventID) {
         $query = "DELETE FROM $events_table WHERE eventID = '$eventID'";
     }
     $result = tng_query($query);
-    adminwritelog($admtext['modifyevent'] . ": $eventID");
+    adminwritelog(_('Modify Event') . ": $eventID");
 } else {
     $query = "INSERT INTO $events_table (eventtypeID, persfamID, age, agency, cause, addressID, info, gedcom, parenttag, eventdate, eventdatetr, eventplace)  VALUES(0, '$persfamID', \"$age\", \"$agency\", \"$cause\", \"$addressID\", \"$info\", '$tree', \"$eventtypeID\", \"\", \"0000-00-00\", \"\")";
     $result = tng_query($query);
-    adminwritelog($admtext['addnewevent'] . ": $eventtypeID/$tree/$persfamID");
+    adminwritelog(_('Add New Event') . ": $eventtypeID/$tree/$persfamID");
     $rval = 1;
 }
 echo $rval;

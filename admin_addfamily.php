@@ -8,7 +8,7 @@ $admin_login = 1;
 include "checklogin.php";
 $tree = $tree1;
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -42,7 +42,7 @@ $query = "SELECT familyID FROM $families_table WHERE familyID = '$familyID' AND 
 $result = tng_query($query);
 
 if ($result && tng_num_rows($result)) {
-    $message = $admtext['family'] . " $familyID " . $admtext['idexists'];
+    $message = _('Family') . " $familyID " . _('could not be added because this ID already exists.');
     header("Location: admin_families.php?message=$message");
     exit;
 }
@@ -81,7 +81,7 @@ foreach ($places as $place) {
 $husband = ucfirst(trim($husband));
 if ($husband) {
     $spquery = "SELECT living FROM $people_table WHERE personID = \"$husband\" AND gedcom = '$tree'";
-    $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
+    $spouselive = tng_query($spquery) or die (_('Cannot execute query') . ": $spquery");
     $spouserow = tng_fetch_assoc($spouselive);
     $husbliving = $spouserow['living'];
 
@@ -99,7 +99,7 @@ if ($husband) {
 $wife = ucfirst(trim($wife));
 if ($wife) {
     $spquery = "SELECT living FROM $people_table WHERE personID = \"$wife\" AND gedcom = '$tree'";
-    $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
+    $spouselive = tng_query($spquery) or die (_('Cannot execute query') . ": $spquery");
     $spouserow = tng_fetch_assoc($spouselive);
     $wifeliving = $spouserow['living'];
 
@@ -166,8 +166,7 @@ if ($lastperson) {
     tng_execute($query, $params);
 }
 
-
-adminwritelog("<a href=\"admin_editfamily.php?familyID=$familyID&amp;tree=$tree\">{$admtext['addnewfamily']}: $tree/$familyID</a>");
+adminwritelog("<a href=\"admin_editfamily.php?familyID=$familyID&amp;tree=$tree\">" . _('Add New Family') . ": $tree/$familyID</a>");
 
 if ($newfamily == "ajax") {
     echo "1";

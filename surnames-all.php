@@ -1,17 +1,18 @@
 <?php
+
 $textpart = "surnames";
 @set_time_limit(0);
 include "tng_begin.php";
 
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"surnames-all.php?tree=$tree\">{$text['surnamelist']}: {$text['allsurnames']}$treestr</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href=\"surnames-all.php?tree=$tree\">" . _('Surname List') . ": " . _('All Surnames') . "$treestr</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
-tng_header("{$text['surnamelist']} - {$text['allsurnames']}", $flags);
+tng_header("" . _('Surname List') . " - " . _('All Surnames') . "", $flags);
 ?>
     <a id="top"></a>
-    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo $text['surnamelist']; ?></h2><br class="clearleft">
+    <h2 class="header"><span class="headericon" id="surnames-hdr-icon"></span><?php echo _('Surname List'); ?></h2><br class="clearleft">
 <?php
 echo treeDropdown(['startform' => true, 'endform' => true, 'action' => 'surnames-all', 'method' => 'get', 'name' => 'form1', 'id' => 'form1']);
 
@@ -32,7 +33,7 @@ if ($allwhere) {
 }
 
 $linkstr = "";
-$nosurname = urlencode($text['nosurname']);
+$nosurname = urlencode(_('[no surname]'));
 $query = "SELECT UCASE(left(lastname, 1)) AS firstchar, UCASE($binary left(lastname,1)) AS binfirstchar FROM $people_table $wherestr GROUP BY binfirstchar ORDER by binfirstchar";
 $result = tng_query($query);
 if ($result) {
@@ -42,8 +43,8 @@ if ($result) {
         if ($initialchar != 1) $linkstr .= " ";
 
         if ($surname['firstchar'] == "") {
-            $surname['firstchar'] = $text['nosurname'];
-            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink rounded'>{$text['nosurname']}</a> ";
+            $surname['firstchar'] = _('[no surname]');
+            $linkstr .= "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\" class='snlink rounded'>" . _('[no surname]') . "</a> ";
         } else {
             if ($surname['firstchar'] != "_") {
                 $linkstr .= "<a href=\"#char$initialchar\" class='snlink rounded'>{$surname['firstchar']}</a>";
@@ -56,9 +57,9 @@ if ($result) {
 }
 ?>
     <div class="titlebox rounded-lg normal">
-        <h3 class="subhead"><?php echo $text['surnamesstarting']; ?></h3>
+        <h3 class="subhead"><?php echo _('Show surnames starting with'); ?></h3>
         <p class="firstchars"><?php echo $linkstr; ?></p>
-        <br><?php echo "<a href='surnames.php'>{$text['mainsurnamepage']}</a>"; ?>
+        <br><?php echo "<a href='surnames.php'>" . _('Main surname page') . "</a>"; ?>
     </div>
 
     <br>
@@ -91,7 +92,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
                         $num_in_col_ctr = 0;
                         while ($surname = tng_fetch_assoc($result)) {
                             $surname2 = urlencode($surname['lastname']);
-                            $name = $surname['lastname'] ? "<a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$text['nosurname']}</a>";
+                            $name = $surname['lastname'] ? "<a href=\"search.php?mylastname=$surname2&amp;lnqualify=equals&amp;mybool=AND$treestr\">{$surname['lowername']}</a>" : "<a href=\"search.php?mylastname=$nosurname&amp;lnqualify=equals&amp;mybool=AND$treestr\">" . _('[no surname]') . "</a>";
                             echo "$snnum. $name ({$surname['lncount']})<br>\n";
                             $snnum++;
                             $num_in_col_ctr++;
@@ -109,7 +110,7 @@ for ($scount = 1; $scount < $initialchar; $scount++) {
             </tr>
         </table>
     </div>
-    <br><p class="normal"><a href="#top"><?php echo $text['backtotop']; ?></a></p><br>
+    <br><p class="normal"><a href="#top"><?php echo _('Back to top'); ?></a></p><br>
     <?php
 }
 tng_footer("");

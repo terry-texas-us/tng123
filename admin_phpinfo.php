@@ -8,7 +8,7 @@ if ($link) {
     $admin_login = 1;
     include "checklogin.php";
     if ($assignedtree) {
-        $message = $admtext['norights'];
+        $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
         header("Location: admin_login.php?message=" . urlencode($message));
         exit;
     }

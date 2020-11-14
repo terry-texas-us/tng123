@@ -18,37 +18,37 @@ if ($resetignore) {
     $result = tng_query($query);
 }
 
-tng_adminheader($admtext['places'], $flags);
+tng_adminheader(_('Places'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$placetabs[0] = [1, "admin_places.php", $admtext['search'], "findplace"];
-$placetabs[1] = [$allow_add, "admin_newplace.php", $admtext['addnew'], "addplace"];
-$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", $admtext['merge'], "merge"];
-$placetabs[3] = [$allow_edit, "admin_geocodeform.php", $admtext['geocode'], "geo"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#modify');\" class='lightlink'>{$admtext['help']}</a>";
+$placetabs[0] = [1, "admin_places.php", _('Search'), "findplace"];
+$placetabs[1] = [$allow_add, "admin_newplace.php", _('Add New'), "addplace"];
+$placetabs[2] = [$allow_edit && $allow_delete, "admin_mergeplaces.php", _('Merge'), "merge"];
+$placetabs[3] = [$allow_edit, "admin_geocodeform.php", _('Geocode'), "geo"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/places_help.php#modify');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($placetabs, "geo", $innermenu);
-echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "img/places_icon.gif", $menu, $message);
+echo displayHeadline(_('Places') . " &gt;&gt; " . _('Geocode'), "img/places_icon.gif", $menu, $message);
 ?>
 
-<table class="lightback">
-    <tr class="databack">
-        <td class="tngshadow">
-            <h3 class="subhead"><?php echo $admtext['geocoding']; ?></h3>
+    <table class="lightback">
+        <tr class="databack">
+            <td class="tngshadow">
+                <h3 class="subhead"><?php echo _('Geocoding...'); ?></h3>
 
-            <div class="normal">
-                <?php
-                $treestr = $tree1 ? " AND gedcom = \"$tree1\"" : "";
-                $limitstr = $limit ? "LIMIT $limit" : "";
+                <div class="normal">
+                    <?php
+                    $treestr = $tree1 ? " AND gedcom = \"$tree1\"" : "";
+                    $limitstr = $limit ? "LIMIT $limit" : "";
 
-                $query = "SELECT ID, place FROM $places_table WHERE (latitude = \"\" OR latitude IS NULL) AND (longitude = \"\" OR longitude IS NULL) AND temple != '1' AND geoignore != '1'$treestr ORDER BY place $limitstr";
-                $result = tng_query($query);
+                    $query = "SELECT ID, place FROM $places_table WHERE (latitude = \"\" OR latitude IS NULL) AND (longitude = \"\" OR longitude IS NULL) AND temple != '1' AND geoignore != '1'$treestr ORDER BY place $limitstr";
+                    $result = tng_query($query);
 
-                $delay = 0;
+                    $delay = 0;
                 $count = 0;
 
-                adminwritelog("<a href=\"admin_geocode.php\">{$admtext['geoexpl']} ($limit)</a>");
+                    adminwritelog("<a href=\"admin_geocode.php\">" . _('Geocode all Places without latitude and longitude coordinates') . " ($limit)</a>");
 
                 while ($row = tng_fetch_assoc($result)) {
                     $count++;
@@ -61,14 +61,14 @@ echo displayHeadline($admtext['places'] . " &gt;&gt; " . $admtext['geocode'], "i
                         echo "<br>\n$count. $display ... &nbsp; ";
                         echo geocode($address, $multiples, $id);
                     } else {
-                        echo "<br>\n$count. " . $admtext['blankplace'] . " &nbsp; <strong>" . $admtext['nogeocode'] . "</strong>";
+                        echo "<br>\n$count. " . _('Blank place name') . " &nbsp; <strong>" . _('Could not be geocoded') . "</strong>";
                     }
                 }
-                tng_free_result($result);
-                ?>
-            </div>
-            <p><a href="admin_geocodeform.php"><?php echo $admtext['backgeo']; ?></a></p>
-        </td>
-    </tr>
-</table>
+                    tng_free_result($result);
+                    ?>
+                </div>
+                <p><a href="admin_geocodeform.php"><?php echo _('Return to Geocode menu'); ?></a></p>
+            </td>
+        </tr>
+    </table>
 <?php echo tng_adminfooter(); ?>

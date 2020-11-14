@@ -8,7 +8,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit && !$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -69,7 +69,7 @@ if ($personID && $personID != $personID_org) {
     $result = @tng_query($query);
 }
 
-adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">{$admtext['modifydna']}: $testID</a>");
+adminwritelog("<a href=\"admin_edit_dna_test.php?testID=$testID\">" . _('Edit Existing DNA Test') . ": $testID</a>");
 
 if ($newtest == "return") {
     header("Location: admin_edit_dna_test.php?testID=$testID&cw=$cw");
@@ -87,7 +87,7 @@ if ($newtest == "return") {
         </html>
         <?php
     } else {
-        $message = $admtext['changestotest'] . " $test_number {$admtext['succsaved']}.";
+        $message = _('Changes to test') . " $test_number " . _('were successfully saved') . ".";
         header("Location: admin_dna_tests.php?message=" . urlencode($message));
     }
 }

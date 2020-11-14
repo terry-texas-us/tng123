@@ -86,20 +86,20 @@ function doMedia($mediatypeID) {
                 if ($mediatypeID == "headstones") {
                     $deathdate = $prow['deathdate'] ? $prow['deathdate'] : $prow['burialdate'];
                     if ($prow['deathdate']) {
-                        $abbrev = $text['deathabbr'];
+                        $abbrev = _('d.');
                     } elseif ($prow['burialdate']) {
-                        $abbrev = $text['burialabbr'];
+                        $abbrev = _('bur.');
                     }
                     $hstext = $deathdate ? " ($abbrev " . displayDate($deathdate) . ")" : "";
                 }
             } elseif ($prow['familyID'] != NULL) {
                 $medialink = "familygroup.php?familyID={$prow['familyID']}&amp;tree={$prow['gedcom']}";
-                $mediatext = "{$text['family']}: " . getFamilyName($prow);
+                $mediatext = "" . _('Family') . ": " . getFamilyName($prow);
             } elseif ($prow['sourceID'] != NULL) {
-                $mediatext = $prow['title'] ? "{$text['source']}: {$prow['title']}" : "{$text['source']}: {$prow['sourceID']}";
+                $mediatext = $prow['title'] ? "" . _('Source') . ": {$prow['title']}" : "" . _('Source') . ": {$prow['sourceID']}";
                 $medialink = "showsource.php?sourceID={$prow['sourceID']}&amp;tree={$prow['gedcom']}";
             } elseif ($prow['repoID'] != NULL) {
-                $mediatext = $prow['reponame'] ? $text['repository'] . ": " . $prow['reponame'] : $text['repository'] . ": " . $prow['repoID'];
+                $mediatext = $prow['reponame'] ? _('Repository') . ": " . $prow['reponame'] : _('Repository') . ": " . $prow['repoID'];
                 $medialink = "showrepo.php?repoID={$prow['repoID']}&amp;tree={$prow['gedcom']}";
             } else {
                 $medialink = "placesearch.php?psearch={$prow['personID']}&amp;tree={$prow['gedcom']}";
@@ -107,7 +107,7 @@ function doMedia($mediatypeID) {
             }
             if ($prow['eventID']) {
                 $query = "SELECT description FROM $events_table, $eventtypes_table WHERE eventID = \"{$prow['eventID']}\" AND $events_table.eventtypeID = $eventtypes_table.eventtypeID";
-                $eresult = tng_query($query) or die ("{$text['cannotexecutequery']}: $query");
+                $eresult = tng_query($query) or die ("" . _('Cannot execute query') . ": $query");
                 $erow = tng_fetch_assoc($eresult);
                 $event = $erow['description'] ? $erow['description'] : $prow['eventID'];
                 tng_free_result($eresult);
@@ -122,15 +122,15 @@ function doMedia($mediatypeID) {
             $description = strip_tags($row['description']);
             $notes = nl2br(strip_tags(getXrefNotes($row['notes'], $row['gedcom'])));
             if (($foundliving || $foundprivate) && !$row['alwayson']) {
-                $notes .= " ({$text['livingphoto']})";
+                $notes .= " (" . _('At least one living or private individual is linked to this item - Details withheld.') . ")";
             }
         } else {
-            $description = $text['living'];
-            $notes = "({$text['livingphoto']})";
+            $description = _('Living');
+            $notes = "(" . _('At least one living or private individual is linked to this item - Details withheld.') . ")";
         }
 
         if ($row['status']) {
-            $notes = "{$text['status']}: {$row['status']}. $notes";
+            $notes = "" . _('Status') . ": {$row['status']}. $notes";
         }
 
         $item = "\n<item>\n"; // build the $item string so that you can apply string functions more globally instead of piece meal, as required
@@ -142,7 +142,7 @@ function doMedia($mediatypeID) {
         if ($mediatypeID == "headstones") {
             $deathdate = $row['deathdate'] ? $row['deathdate'] : $row['burialdate'];
             $item .= "<description>" . xmlcharacters($hstext . " " . htmlspecialchars($notes, ENT_NOQUOTES, $session_charset)) . "</description>\n";
-            $item .= "<category>{$text['tree']}: " . xmlcharacters($trow['treename']) . "</category>\n";
+            $item .= "<category>" . _('Tree') . ": " . xmlcharacters($trow['treename']) . "</category>\n";
         } else {
             $item .= "<description>" . xmlcharacters(htmlspecialchars($notes, ENT_NOQUOTES, $session_charset)) . "</description>\n";
         }
@@ -171,9 +171,9 @@ $item .= "<lastBuildDate>$date</lastBuildDate>\n";
 //as of 6.0, these will come from config.php, but anything defined in customconfig.php will take precedence
 $item .= "<description>" . xmlcharacters($site_desc) . "</description>\n";
 if ($personID) {
-    $item .= "<title>" . trim($sitename . " " . $text['indinfo']) . ": $personID</title>\n";
+    $item .= "<title>" . trim($sitename . " " . _('Individual')) . ": $personID</title>\n";
 } elseif ($familyID) {
-    $item .= "<title>" . trim($sitename . " " . $text['family']) . ": $familyID</title>\n";
+    $item .= "<title>" . trim($sitename . " " . _('Family')) . ": $familyID</title>\n";
 } else {
     $item .= "<title>$sitename</title>\n";
 }
@@ -184,9 +184,9 @@ if ($rssimage) {                            // define $rssimage in your customco
     $item .= "<image>\n";
     $item .= "<url>" . $tngdomain . $rssimage . "</url>\n";     // path for the logo
     if ($personID) {
-        $item .= "<title>" . trim($sitename . " " . $text['indinfo']) . ": $personID</title>\n";  // images require a title (match it with either the personID)
+        $item .= "<title>" . trim($sitename . " " . _('Individual')) . ": $personID</title>\n";  // images require a title (match it with either the personID)
     } elseif ($familyID) {
-        $item .= "<title>" . trim($sitename . " " . $text['family']) . ": $familyID</title>\n";    // the familyID
+        $item .= "<title>" . trim($sitename . " " . _('Family')) . ": $familyID</title>\n";    // the familyID
     } else {
         $item .= "<title>$sitename</title>\n";                      // or just the site name
     }
@@ -197,7 +197,7 @@ echo $item;
 
 //you will need to define $rsslang in your customconfig.php file before you can use this
 
-$text['pastxdays'] = preg_replace("/xx/", "$change_cutoff", $text['pastxdays']);
+_('(past xx days)') = preg_replace("/xx/", "$change_cutoff", _('(past xx days)'));
 if (!$change_cutoff) $change_cutoff = 0;
 
 if (!$change_limit) $change_limit = 10;
@@ -241,11 +241,11 @@ if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a p
             $birthplacestr = "";
             if ($rights['both']) {
                 if ($row['birthdate']) {
-                    $birthdate = $text['birthabbr'] . " " . displayDate($row['birthdate']);
+                    $birthdate = _('b.') . " " . displayDate($row['birthdate']);
                     $birthplace = $row['birthplace'];
                 } else {
                     if ($row['altbirthdate']) {
-                        $birthdate = $text['chrabbr'] . " " . displayDate($row['altbirthdate']);
+                        $birthdate = _('c.') . " " . displayDate($row['altbirthdate']);
                         $birthplace = $row['altbirthplace'];
                     } else {
                         $birthdate = "";
@@ -262,16 +262,16 @@ if (!$familyID) {    // if a family is NOT specified (ie: we are looking for a p
 
             $item = "\n<item>\n";
             $item .= "<title>";
-            $item .= xmlcharacters($text['indinfo'] . ": " . $namestr . " (" . $row['personID'] . ")");
+            $item .= xmlcharacters(_('Individual') . ": " . $namestr . " (" . $row['personID'] . ")");
             $item .= "</title>\n";
             $item .= "<link>" . "$tngdomain/getperson.php?personID=" . $row['personID'] . "&amp;tree=" . $row['gedcom'] . $langstr . "</link>\n";
             $item .= "<description>";
             if ($birthdate || $birthplace) {
                 $item .= xmlcharacters("$birthdate, $birthplace") . "</description>\n";
             } else {
-                $item .= xmlcharacters($text['birthabbr']) . "</description>\n";
+                $item .= xmlcharacters(_('b.')) . "</description>\n";
             }
-            $item .= "<category>{$text['tree']}: " . xmlcharacters($treerow['treename']) . "</category>\n";
+            $item .= "<category>" . _('Tree') . ": " . xmlcharacters($treerow['treename']) . "</category>\n";
             $changedate = date_format(date_create($row['changedatef']), "D, d M Y H:i:s");
             $item .= "<pubDate>$changedate $timezone </pubDate>\n";
             $item .= "</item>\n";
@@ -302,7 +302,7 @@ if (!$personID) {
             $treerow = tng_fetch_assoc($treeresult);
 
             $item = "\n<item>\n";
-            $item .= "<title>" . xmlcharacters($text['family'] . ": " . getFamilyName($row)) . "</title>\n";
+            $item .= "<title>" . xmlcharacters(_('Family') . ": " . getFamilyName($row)) . "</title>\n";
             $item .= "<link>" . "$tngdomain/familygroup.php?familyID={$row['familyID']}&amp;tree={$row['gedcom']}$langstr" . "</link>\n";
             $item .= "<description>";
 
@@ -313,7 +313,7 @@ if (!$personID) {
             $item .= xmlcharacters($row['marrplace']);
 
             $item .= "</description>\n";
-            $item .= "<category>{$text['tree']}: " . xmlcharacters($treerow['treename']) . "</category>\n";
+            $item .= "<category>" . _('Tree') . ": " . xmlcharacters($treerow['treename']) . "</category>\n";
             $item .= "<pubDate>" . displayDate($row['changedatef']) . " $timezone </pubDate>\n";
             $item .= "</item>\n";
             echo $item;

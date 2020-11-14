@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -28,8 +28,8 @@ if (!$display) $display = $defdisplay;
 $query = "UPDATE $eventtypes_table SET tag=\"$tag\",type=\"$type\",description=\"$description\",display=\"$display\",keep=\"$keep\",collapse=\"$collapse\",ordernum=\"$ordernum\",ldsevent=\"$ldsevent\" WHERE eventtypeID=\"$eventtypeID\"";
 $result = tng_query($query);
 
-adminwritelog($admtext['modifyeventtype'] . ": $eventtypeID");
+adminwritelog(_('Edit Existing Event Type') . ": $eventtypeID");
 
-$message = $admtext['changestoevtype'] . " $eventtypeID {$admtext['succsaved']}.";
+$message = _('Changes to event type') . " $eventtypeID " . _('were successfully saved') . ".";
 header("Location: admin_eventtypes.php?message=" . urlencode($message));
 

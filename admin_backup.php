@@ -8,7 +8,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedtree) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -66,7 +66,7 @@ function backup($table) {
         @chmod($filename, 0664);
         return "";
     } else {
-        return $admtext['cannotopen'] . " $filename.";
+        return _('Cannot open file') . " $filename.";
     }
 }
 
@@ -115,7 +115,7 @@ if ($table == "struct") {
     if (file_exists($filename)) unlink($filename);
 
     $fp = @fopen($filename, "w");
-    if (!$fp) die ($admtext['cannotopen'] . " $filename");
+    if (!$fp) die (_('Cannot open file') . " $filename");
 
     flock($fp, LOCK_EX);
 
@@ -131,21 +131,20 @@ if ($table == "struct") {
     fclose($fp);
     @chmod($filename, 0664);
 
-    $message = $admtext['tablestruct'] . " {$admtext['succbackedup']}.";
-    adminwritelog($admtext['backup'] . ": {$admtext['tablestruct']}");
+    $message = _('Table structure') . " " . _('successfully backed up') . ".";
+    adminwritelog(_('Back up') . ": " . _('Table structure') . "");
 } elseif ($table == "del") {
-    $tablename = $admtext['alltables'];
-    $message = "$tablename {$admtext['succdel']}.";
+    $tablename = _('Selected Tables');
+    $message = "$tablename " . _('successfully deleted') . ".";
 
     foreach ($tablelist as $table) {
         eval("\$dothistable = \"\$$table\";");
         if ($dothistable) delbackup($table);
-
     }
 } else {
     if ($table == "all") {
-        $tablename = $admtext['alltables'];
-        $message = "$tablename {$admtext['succbackedup']}.";
+        $tablename = _('Selected Tables');
+        $message = "$tablename " . _('successfully backed up') . ".";
 
         foreach ($tablelist as $table) {
             eval("\$dothistable = \"\$$table\";");
@@ -165,9 +164,9 @@ if ($table == "struct") {
         $fileflag = $tablename && file_exists("$rootpath$backuppath/$tablename.bak");
         $timestamp = getfiletime("$rootpath$backuppath/$tablename.bak");
         $size = getfilesize("$rootpath$backuppath/$tablename.bak");
-        $ajaxmsg = "$tablename&$timestamp&$size&" . (($ajaxmsg) ? $ajaxmsg : $admtext['succbackedup']);
+        $ajaxmsg = "$tablename&$timestamp&$size&" . (($ajaxmsg) ? $ajaxmsg : _('successfully backed up'));
     }
-    adminwritelog($admtext['backup'] . ": $tablename");
+    adminwritelog(_('Back up') . ": $tablename");
 }
 
 header("Content-type:text/html; charset=" . $session_charset);

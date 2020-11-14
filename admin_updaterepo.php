@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit || ($assignedtree && $assignedtree != $tree)) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -39,7 +39,7 @@ if ($addressID) {
 $query = "UPDATE $repositories_table SET reponame=\"$reponame\",addressID=\"$addressID\",changedate=\"$newdate\",changedby=\"$currentuser\" WHERE repoID=\"$repoID\" AND gedcom = '$tree'";
 $result = tng_query($query);
 
-adminwritelog("<a href=\"editrepo.php?repoID=$repoID&tree=$tree\">{$admtext['modifyrepo']}: $tree/$repoID</a>");
+adminwritelog("<a href=\"editrepo.php?repoID=$repoID&tree=$tree\">" . _('Edit Existing Repository') . ": $tree/$repoID</a>");
 
 if ($newscreen == "return") {
     header("Location: admin_editrepo.php?repoID=$repoID&tree=$tree");
@@ -57,7 +57,7 @@ if ($newscreen == "return") {
         </html>
         <?php
     } else {
-        $message = $admtext['changestorepo'] . " $repoID {$admtext['succsaved']}.";
+        $message = _('Changes to repository') . " $repoID " . _('were successfully saved') . ".";
         header("Location: admin_repositories.php?message=" . urlencode($message));
     }
 }

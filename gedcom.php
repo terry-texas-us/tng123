@@ -44,7 +44,7 @@ function getCitations($persfamID) {
 
     $citations = [];
     $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' ORDER BY eventID";
-    $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $query");
+    $citresult = tng_query($citquery) or die (_('Cannot execute query') . ": $query");
 
     while ($cite = tng_fetch_assoc($citresult)) {
         $eventID = $cite['eventID'] ? $cite['eventID'] : "-x--general--x-";
@@ -521,9 +521,9 @@ function writeIndividual($person) {
         } elseif (showNames($ind) == 2) {
             $info .= "1 NAME " . initials($ind['firstname']) . " /" . trim($ind['lnprefix'] . " " . $ind['lastname']) . "/$lineending";
         } elseif ($ind['private']) {
-            $info .= "1 NAME {$admtext['text_private']} //$lineending";
+            $info .= "1 NAME " . _('Private') . " //$lineending";
         } else {
-            $info .= "1 NAME {$text['living']} //$lineending";
+            $info .= "1 NAME " . _('Living') . " //$lineending";
         }
 
         if ($rights['both']) {
@@ -890,7 +890,7 @@ function doSources() {
     if ($newsources) {
         foreach ($newsources as $nextsource) {
             $srcquery = "SELECT * FROM $sources_table WHERE sourceID = \"$nextsource\" AND gedcom = '$tree'";
-            $srcresult = tng_query($srcquery) or die ($text['cannotexecutequery'] . ": $query");
+            $srcresult = tng_query($srcquery) or die (_('Cannot execute query') . ": $query");
             if ($srcresult) {
                 $source = tng_fetch_assoc($srcresult);
                 echo "0 @{$source['sourceID']}@ SOUR$lineending";
@@ -944,7 +944,7 @@ function doRepositories() {
     if ($newrepos) {
         foreach ($newrepos as $nextrepo) {
             $repoquery = "SELECT * FROM $repositories_table WHERE repoID = \"$nextrepo\" AND gedcom = '$tree'";
-            $reporesult = tng_query($repoquery) or die ($text['cannotexecutequery'] . ": $query");
+            $reporesult = tng_query($repoquery) or die (_('Cannot execute query') . ": $query");
             if ($reporesult) {
                 $repo = tng_fetch_assoc($reporesult);
                 echo "0 @{$repo['repoID']}@ REPO$lineending";
@@ -995,9 +995,9 @@ if ($maxgcgen > 0 || $type == "all") {
     header("Content-Disposition: attachment; filename=$filenamestr.ged\n\n");
 
     include "$mylanguage/text.php";
-    $logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $namestr);
-    writelog(xmlcharacters("{$text['gedcreatedfrom']} $logname ($personID), $maxgcgen {$text['generations']} ($type) {$text['gedcreatedfor']} $email."));
-    preparebookmark(xmlcharacters("{$text['gedcreatedfrom']} $namestr ($personID), $maxgcgen {$text['generations']} ($type) {$text['gedcreatedfor']} $email."));
+    $logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $namestr);
+    writelog(xmlcharacters("" . _('GEDCOM created from') . " $logname ($personID), $maxgcgen " . _('Generations') . " ($type) " . _('created for') . " $email."));
+    preparebookmark(xmlcharacters("" . _('GEDCOM created from') . " $namestr ($personID), $maxgcgen " . _('Generations') . " ($type) " . _('created for') . " $email."));
 
     $owneremail = $treerow['email'] ? $treerow['email'] : $emailaddr;
     $ownername = $treerow['owner'] ? $treerow['owner'] : $dbowner;
@@ -1023,10 +1023,10 @@ if ($maxgcgen > 0 || $type == "all") {
 
     $generation = 1;
 
-    if ($type == $text['ancestors']) {
+    if ($type == _('Ancestors')) {
         getAncestor($personID, $generation);
     } else {
-        if ($type == $text['descendants']) {
+        if ($type == _('Descendants')) {
             if (!array_key_exists($personID, $indarray)) {
                 $indarray[$personID] = writeIndividual($personID);
             }
@@ -1096,7 +1096,7 @@ if ($maxgcgen > 0 || $type == "all") {
     echo "0 TRLR$lineending";
 } else {
     tng_header("Error", "");
-    echo "<h1>Error</h1>\n<p>maxgen = $maxgcgen. {$text['nomaxgen']}</p>\n";
+    echo "<h1>Error</h1>\n<p>maxgen = $maxgcgen. " . _('You must indicate a maximum number of generations. Please use the Back button to return to the previous page and correct the error') . "</p>\n";
     echo tng_menu("", "", "", 1);
     tng_footer("");
 }

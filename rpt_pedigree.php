@@ -26,12 +26,12 @@ $pdf->AddFont($rptFont, "B", '', $uni);
 
 // build up the ancestors
 if ($blankform) {
-    $title = $text['pedigreech'];
+    $title = _('Pedigree Chart');
 } else {
     $righttree = checktree($tree);
     $infoAncestors = getMyAncestors($personID, $tree, $genperpage);
     $row = $infoAncestors[0][0];
-    $title = $text['pedigreefor'] . " " . getName($row);
+    $title = _('Pedigree Chart for') . " " . getName($row);
     $rights = determineLivingPrivateRights($row, $righttree);
     $row['allow_living'] = $rights['living'];
     $row['allow_private'] = $rights['private'];
@@ -294,7 +294,7 @@ function createBlankChart($gens, $topy) {
     $mfhalf = ($mothboxheight + $fathboxheight) / 2;
     $mhalf = $mothboxheight / 2;
     $fhalf = $fathboxheight / 2;
-    $abbrevs = [$text['capbirthabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']];
+    $abbrevs = [_('B'), _('P'), _('D'), _('P')];
     if ($gens <= 4) {
         $moretopmrg = 0.2;
 
@@ -580,16 +580,16 @@ function drawHusbWifeCombo($w, $num, $fh, $mh, $hsp, $vsp, $endspace = 0, $drawl
 
     // what characters are we going to display?
     if ($listmode == 0) {
-        $charlisth = [$text['capbirthabbr'], $text['capplaceabbr'], $text['capmarrabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']];
-        $charlistw = [$text['capbirthabbr'], $text['capplaceabbr'], $text['capdeathabbr'], $text['capplaceabbr']];
+        $charlisth = [_('B'), _('P'), _('M'), _('P'), _('D'), _('P')];
+        $charlistw = [_('B'), _('P'), _('D'), _('P')];
     } else {
         if ($listmode == 1) {
-            $charlisth = [$text['capbirthabbr'], $text['capdeathabbr']];
-            $charlistw = [$text['capbirthabbr'], $text['capdeathabbr']];
+            $charlisth = [_('B'), _('D')];
+            $charlistw = [_('B'), _('D')];
         } else {
             if ($listmode == 2) {
-                $charlisth = [$text['capbirthabbr']];
-                $charlistw = [$text['capbirthabbr']];
+                $charlisth = [_('B')];
+                $charlistw = [_('B')];
             }
         }
     }

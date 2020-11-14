@@ -8,7 +8,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if ($assignedtree) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -20,7 +20,7 @@ function restore($table) {
 
     $filename = "$rootpath$backuppath/$table.bak";
     if (!file_exists($filename)) {
-        return $admtext['cannotopen'] . " $table.bak";
+        return _('Cannot open file') . " $table.bak";
     }
     $lines = file($filename);
     $query = "DELETE FROM $table";
@@ -89,14 +89,14 @@ if ($table == "struct") {
         }
     }
 
-    $message = "{$admtext['tablestruct']} {$admtext['succrestored']}.";
-    adminwritelog("{$admtext['restore']}: {$admtext['tablestruct']}");
+    $message = "" . _('Table structure') . " " . _('successfully restored') . ".";
+    adminwritelog("" . _('Restore') . ": " . _('Table structure') . "");
 } else {
     if ($table == "all") {
         $tablelist = [$address_table, $albums_table, $albumlinks_table, $album2entities_table, $assoc_table, $branches_table, $branchlinks_table, $cemeteries_table, $people_table, $families_table, $children_table,
             $languages_table, $places_table, $states_table, $countries_table, $sources_table, $repositories_table, $citations_table, $reports_table, $dna_groups_table, $dna_links_table, $dna_tests_table,
             $events_table, $eventtypes_table, $trees_table, $notelinks_table, $xnotes_table, $users_table, $tlevents_table, $temp_events_table, $templates_table, $media_table, $medialinks_table, $mediatypes_table, $mostwanted_table];
-        $tablename = $admtext['alltables'];
+        $tablename = _('Selected Tables');
         $message = "";
 
         foreach ($tablelist as $tablecheck) if (!isset(${$tablecheck})) {
@@ -111,16 +111,16 @@ if ($table == "struct") {
             }
         }
         if (!$message) {
-            $message = "$tablename {$admtext['succrestored']}.";
+            $message = "$tablename " . _('successfully restored') . ".";
         }
     } else {
         $tablelist = ["$table"];
         $tablename = $table;
-        $message = "{$admtext['table']} $tablename {$admtext['succrestored']}.";
+        $message = "" . _('Table') . " $tablename " . _('successfully restored') . ".";
         $ajaxmsg = restore($table);
-        $ajaxmsg = "$tablename&" . (($ajaxmsg) ? $ajaxmsg : $admtext['succrestored']);
+        $ajaxmsg = "$tablename&" . (($ajaxmsg) ? $ajaxmsg : _('successfully restored'));
     }
-    adminwritelog($admtext['restore'] . ": $tablename");
+    adminwritelog(_('Restore') . ": $tablename");
 }
 
 header("Content-type:text/html; charset=" . $session_charset);

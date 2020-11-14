@@ -16,7 +16,7 @@ $row = tng_fetch_assoc($result);
 tng_free_result($result);
 
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -123,7 +123,7 @@ if (!$editconflict) {
     $placetree = $tngconfig['places1tree'] ? "" : $tree;
     foreach ($places as $place) {
         $query = "INSERT IGNORE INTO $places_table (gedcom,place,placelevel,zoom,geoignore) VALUES (\"$placetree\",\"$place\",'0','0','0')";
-        $result = @tng_query($query) or die ($admtext['cannotexecutequery'] . ": $query");
+        $result = @tng_query($query) or die (_('Cannot execute query') . ": $query");
         if ($tngconfig['autogeo'] && tng_affected_rows()) {
             $ID = tng_insert_id();
             $message = geocode($place, 0, $ID);
@@ -194,7 +194,7 @@ if (!$editconflict) {
                 }
             }
             if ($spquery) {
-                $spouselive = tng_query($spquery) or die ($admtext['cannotexecutequery'] . ": $spquery");
+                $spouselive = tng_query($spquery) or die (_('Cannot execute query') . ": $spquery");
                 $spouserow = tng_fetch_assoc($spouselive);
                 $spouseliving = $spouserow['living'];
                 $spouseprivate = $spouserow['private'];
@@ -209,15 +209,15 @@ if (!$editconflict) {
         }
     }
 
-    adminwritelog("<a href=\"admin_editperson.php?personID=$personID&tree=$tree\">{$admtext['modifyperson']}: $tree/$personID</a>");
+    adminwritelog("<a href=\"admin_editperson.php?personID=$personID&tree=$tree\">" . _('Edit Existing Person') . ": $tree/$personID</a>");
 } else {
-    $message = $admtext['notsaved'];
+    $message = _('Changes were not saved. Another user has locked the record.');
 }
 
 if ($media == "1") {
     header("Location: admin_newmedia.php?personID=$personID&tree=$tree&linktype=I&cw=$cw");
 } elseif ($newfamily == "none") {
-    $message = $admtext['changestoperson'] . " $personID {$admtext['succsaved']}.";
+    $message = _('Changes to person') . " $personID " . _('were successfully saved') . ".";
     header("Location: admin_people.php?message=" . urlencode($message));
 } elseif ($newfamily == "return") {
     header("Location: admin_editperson.php?personID=$personID&tree=$tree&cw=$cw");

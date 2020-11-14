@@ -51,7 +51,7 @@ function tng_adminheader($title, $flags) {
         }
     }
     const closeimg = 'img/tng_close.gif';
-    const loadingmsg = '{$text['loading']}';
+    const loadingmsg = '" . _('Loading...') . "';
     </script>";
     initMediaTypes();
     $header .= "<!-- end tng_adminheader -->\n";
@@ -76,18 +76,18 @@ function tng_adminlayout($args = "") {
     $output .= "<div class='pl-3 overflow-hidden'>\n";
     $output .= "<h1 class='my-1 whitespace-no-wrap'>$tng_title</h1>\n";
     $output .= "<span class='whitetext normal whitespace-no-wrap'>\n";
-    $output .= "<a href='admin.php' class='lightlink'>{$admtext['adminhome']}</a>\n";
-    $output .= "<a href='$homepage' class='lightlink'>{$admtext['publichome']}</a>\n";
+    $output .= "<a href='admin.php' class='lightlink'>" . _('Admin Home') . "</a>\n";
+    $output .= "<a href='$homepage' class='lightlink'>" . _('Public Home') . "</a>\n";
     //    if ($allow_admin) {
-    //        $output .= "&nbsp;|&nbsp; <a href='adminshowlog.php' class='lightlink' target='main'>{$admtext['showlog']}</a>\n";
+    //        $output .= "&nbsp;|&nbsp; <a href='adminshowlog.php' class='lightlink' target='main'>" . _('Admin Log') . "</a>\n";
     //    }
-    //    $output .= "&nbsp;|&nbsp; <a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='lightlink'>{$admtext['getstart']}</a>\n";
+    //    $output .= "&nbsp;|&nbsp; <a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='lightlink'>" . _('Getting Started') . "</a>\n";
     if ($maint) {
-        $output .= "&nbsp;|&nbsp; <strong><span class='yellow'>{$text['mainton']}</span></strong>\n";
+        $output .= "&nbsp;|&nbsp; <strong><span class='yellow'>" . _('Maintenance Mode is ON') . "</span></strong>\n";
     }
     //    $output .= "&nbsp;|&nbsp; <a href='https://tng.lythgoes.net/wiki' class='lightlink' target='_blank'>TNG Wiki</a>\n";
     //    $output .= "&nbsp;|&nbsp; <a href='https://tng.community' class='lightlink' target='_blank'>TNG Forum</a>\n";
-    $output .= "<a href='logout.php?admin_login=1' class='lightlink float-right' target='_parent'>{$admtext['logout']}&nbsp; (<strong>$currentuser</strong>)</a>\n";
+    $output .= "<a href='logout.php?admin_login=1' class='lightlink float-right' target='_parent'>" . _('Logout') . "&nbsp; (<strong>$currentuser</strong>)</a>\n";
     $output .= "</span>\n";
     $output .= "</div>\n";
     $output .= "</div>\n";
@@ -116,9 +116,9 @@ function tng_adminfooter() {
     $helplang = findhelp("index_help.php");
     $html .= "<nav class='text-center lg:flex items-center justify-around flex-wrap p-6'>\n";
     if ($allow_admin) {
-        $html .= "<a href='adminshowlog.php' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='main'>{$admtext['showlog']}</a>\n";
+        $html .= "<a href='adminshowlog.php' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='main'>" . _('Admin Log') . "</a>\n";
     }
-    $html .= "<a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4'>{$admtext['getstart']}</a>\n";
+    $html .= "<a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4'>" . _('Getting Started') . "</a>\n";
     $html .= "<a href='https://tng.lythgoes.net/wiki' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='_blank'>TNG Wiki</a>\n";
     $html .= "<a href='https://tng.community' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='_blank'>TNG Forum</a>\n";
     $html .= "</nav>\n";
@@ -225,7 +225,7 @@ function checkReview($type) {
         $revwhere .= " AND branch LIKE '%$assignedbranch%'";
     }
     $revquery = "SELECT count(tempID) AS tcount FROM ($table, $temp_events_table) WHERE $revwhere";
-    $revresult = tng_query($revquery) or die ($admtext['cannotexecutequery'] . ": $revquery");
+    $revresult = tng_query($revquery) or die (_('Cannot execute query') . ": $revquery");
     $revrow = tng_fetch_assoc($revresult);
     tng_free_result($revresult);
 
@@ -270,7 +270,7 @@ function deleteNote($noteID, $flag) {
 function displayToggle($id, $state, $target, $headline, $subhead, $append = "") {
     global $admtext;
     $rval = "<span class='subhead'><a href='#' onclick=\"return toggleSection('$target','$id');\" class='no-underline togglehead' style='color:#000;'>";
-    $rval .= "<img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' alt='{$admtext['toggle']}' id='$id' class='inline-block' title='{$admtext['toggle']}'>";
+    $rval .= "<img src='img/" . ($state ? "tng_collapse.gif" : "tng_expand.gif") . "' alt='" . _('toggle display') . "' id='$id' class='inline-block' title='" . _('toggle display') . "'>";
     $rval .= "<strong class='ml-1'>$headline</strong></a> $append</span><br>\n";
     if ($subhead) {
         $rval .= "<span class='normal tsh-indent'><em>$subhead</em></span><br>\n";
@@ -330,18 +330,18 @@ function showEventRow($datefield, $placefield, $label, $persfamID) {
     $tr .= "<td><input type='text' value='" . $row[$datefield] . "' name='$datefield' onblur='checkDate(this);{$blurAction}' maxlength='50'$short></td>\n";
     $tr .= "<td><input type='text' value='" . $row[$placefield] . "' name='$placefield' {$onblur}id='$placefield'$long></td>\n";
     if (in_array($label, $ldsarray)) {
-        $tr .= "<td><a href='#' onclick=\"return openFindPlaceForm('$placefield', 1);\" title=\"{$admtext['find']}\" class='smallicon admin-temp-icon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return openFindPlaceForm('$placefield', 1);\" title=\"" . _('Find...') . "\" class='smallicon admin-temp-icon'></a></td>\n";
     } else {
-        $tr .= "<td><a href='#' onclick=\"return openFindPlaceForm('$placefield');\" title=\"{$admtext['find']}\" class='smallicon admin-find-icon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return openFindPlaceForm('$placefield');\" title=\"" . _('Find...') . "\" class='smallicon admin-find-icon'></a></td>\n";
     }
     if (isset($gotmore)) {
-        $tr .= "<td><a href='#' onclick=\"return showMore('$label', '$persfamID');\" title=\"{$admtext['more']}\" id='moreicon$label' class='smallicon $moreicon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return showMore('$label', '$persfamID');\" title=\"" . _('More') . "\" id='moreicon$label' class='smallicon $moreicon'></a></td>\n";
     }
     if (isset($gotnotes)) {
-        $tr .= "<td><a href='#' onclick=\"return showNotes('$label', '$persfamID');\" title=\"{$admtext['notes']}\" id='notesicon$label' class='smallicon $notesicon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return showNotes('$label', '$persfamID');\" title=\"" . _('Notes') . "\" id='notesicon$label' class='smallicon $notesicon'></a></td>\n";
     }
     if (isset($gotcites)) {
-        $tr .= "<td><a href='#' onclick=\"return showCitations('$label', '$persfamID');\" title=\"{$admtext['sources']}\" id='citesicon$label' class='smallicon $citesicon'></a></td>\n";
+        $tr .= "<td><a href='#' onclick=\"return showCitations('$label', '$persfamID');\" title=\"" . _('Sources') . "\" id='citesicon$label' class='smallicon $citesicon'></a></td>\n";
     }
     $tr .= "</tr>\n";
     return $tr;

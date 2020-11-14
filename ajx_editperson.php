@@ -23,7 +23,7 @@ initMediaTypes();
 $row = fetchAndCleanPersonRow($personID, $people_table, $tree);
 
 if ((!$allow_edit && (!$allow_add || !$added)) || ($assignedtree && $assignedtree != $tree) || !checkbranch($row['branch'])) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: ajx_login.php?message=" . urlencode($message));
     exit;
 }
@@ -34,18 +34,18 @@ if ($row['sex'] == "M") {
     $spouse = "wife";
     $self = "husband";
     $spouseorder = "husborder";
-    $selfdisplay = $admtext['ashusband'];
+    $selfdisplay = _('as father');
 } else {
     if ($row['sex'] == "F") {
         $spouse = "husband";
         $self = "wife";
         $spouseorder = "wifeorder";
-        $selfdisplay = $admtext['aswife'];
+        $selfdisplay = _('as mother');
     } else {
         $spouse = "";
         $self = "";
         $spouseorder = "";
-        $selfdisplay = $admtext['asspouse'];
+        $selfdisplay = _('as spouse');
     }
 }
 
@@ -75,7 +75,7 @@ include_once "eventlib.php";
         <tr class="databack">
             <td class="tngbotshadow">
                 <div style="float:right;">
-                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo $admtext['save']; ?>">
+                    <input type="submit" name="submit2" accesskey="s" class="bigsave" value="<?php echo _('Save'); ?>">
                 </div>
                 <table cellpadding="0" cellspacing="0" class="normal">
                     <tr>
@@ -89,20 +89,20 @@ include_once "eventlib.php";
 				            <div class="topbuffer bottombuffer smallest">
                                 <?php
                                 if ($editconflict) {
-                                    echo "<br><p>{$admtext['editconflict']}</p>";
+                                    echo "<br><p>" . _('Another user is already editing this record. Please try again later.') . "</p>";
                                 } else {
                                     $notesicon = $gotnotes['general'] ? "admin-note-on-icon" : "admin-note-off-icon";
                                     $citesicon = $gotcites['general'] ? "admin-cite-on-icon" : "admin-cite-off-icon";
                                     $associcon = $gotassoc ? "admin-asso-on-icon" : "admin-asso-off-icon";
-                                    echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">{$admtext['save']}</a>\n";
-                                    echo "<a href='#' onclick=\"return showNotes('', '$personID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">{$admtext['notes']}</a>\n";
-                                    echo "<a href='#' onclick=\"return showCitations('', '$personID');\" id='citesicon' class=\"smallicon si-plus $citesicon\">{$admtext['sources']}</a>\n";
-                                    echo "<a href='#' onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">{$admtext['associations']}</a>\n";
+                                    echo "<a href='#' onclick=\"document.form1.submit();\" class=\"smallicon si-plus admin-save-icon\">" . _('Save') . "</a>\n";
+                                    echo "<a href='#' onclick=\"return showNotes('', '$personID');\" id='notesicon' class=\"smallicon si-plus $notesicon\">" . _('Notes') . "</a>\n";
+                                    echo "<a href='#' onclick=\"return showCitations('', '$personID');\" id='citesicon' class=\"smallicon si-plus $citesicon\">" . _('Sources') . "</a>\n";
+                                    echo "<a href='#' onclick=\"return showAssociations('$personID','I');\" id=\"associcon\" class=\"smallicon si-plus $associcon\">" . _('Associations') . "</a>\n";
                                 }
                                 ?>
                                 <br class="clear-both">
 				            </div>
-				            <span class="smallest"><?php echo $admtext['lastmodified'] . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
+				            <span class="smallest"><?php echo _('Last Modified Date') . ": {$row['changedate']} ({$row['changedby']})"; ?></span>
                         </td>
                     </tr>
                 </table>
@@ -111,14 +111,14 @@ include_once "eventlib.php";
         <?php if (!$editconflict) { ?>
         <tr class="databack">
             <td class="tngbotshadow">
-                <?php echo displayToggle("plus0", 1, "names", $admtext['name'], ""); ?>
+                <?php echo displayToggle("plus0", 1, "names", _('Name'), ""); ?>
 
                 <div id="names">
                     <table class="normal topmarginsmall">
                         <tr>
-                            <td><?php echo $admtext['firstgivennames']; ?></td>
-                            <?php if ($lnprefixes) echo "<td>{$admtext['lnprefix']}</td>\n"; ?>
-                            <td><?php echo $admtext['lastsurname']; ?></td>
+                            <td><?php echo _('First/Given Name(s)'); ?></td>
+                            <?php if ($lnprefixes) echo "<td>" . _('Surname Prefix') . "</td>\n"; ?>
+                            <td><?php echo _('Last/Surname'); ?></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
@@ -138,10 +138,10 @@ include_once "eventlib.php";
                                 $notesicon = "img/" . ($gotnotes['NAME'] ? "tng_anote_on.gif" : "tng_anote.gif");
                                 $citesicon = "img/" . ($gotcites['NAME'] ? "tng_cite_on.gif" : "tng_cite.gif");
                                 echo "<a href='#' onclick=\"return showNotes('NAME','$personID');\">\n";
-                                echo "<img src=\"$notesicon\" title=\"{$admtext['notes']}\" alt=\"{$admtext['notes']}\" width='20' height='20' id=\"notesiconNAME\" class=\"smallicon\">\n";
+                                echo "<img src=\"$notesicon\" title=\"" . _('Notes') . "\" alt=\"" . _('Notes') . "\" width='20' height='20' id=\"notesiconNAME\" class=\"smallicon\">\n";
                                 echo "</a>\n";
                                 echo "<a href='#' onclick=\"return showCitations('NAME','$personID');\">\n";
-                                echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width='20' height='20' id=\"citesiconNAME\" class=\"smallicon\">\n";
+                                echo "<img src=\"$citesicon\" title=\"" . _('Sources') . "\" alt=\"" . _('Sources') . "\" width='20' height='20' id=\"citesiconNAME\" class=\"smallicon\">\n";
                                 echo "</a>\n";
                                 ?>
                             </td>
@@ -149,25 +149,25 @@ include_once "eventlib.php";
                     </table>
                     <table class="normal topmarginsmall">
                         <tr>
-                            <td><?php echo $admtext['sex']; ?></td>
-                            <td><?php echo $admtext['nickname']; ?></td>
-                            <td><?php echo $admtext['title']; ?></td>
-                            <td><?php echo $admtext['prefix']; ?></td>
-                            <td><?php echo $admtext['suffix']; ?></td>
-                            <td><?php echo $admtext['nameorder']; ?></td>
+                            <td><?php echo _('Gender'); ?></td>
+                            <td><?php echo _('Nickname'); ?></td>
+                            <td><?php echo _('Title'); ?></td>
+                            <td><?php echo _('Prefix'); ?></td>
+                            <td><?php echo _('Suffix'); ?></td>
+                            <td><?php echo _('Name Order'); ?></td>
                         </tr>
                         <tr>
                             <td>
                                 <select name="sex">
                                     <option value="U" <?php if ($row['sex'] == "U") {
                                         echo "selected";
-                                    } ?>><?php echo $admtext['unknown']; ?></option>
+                                    } ?>><?php echo _('Unknown'); ?></option>
                                     <option value="M" <?php if ($row['sex'] == "M") {
                                         echo "selected";
-                                    } ?>><?php echo $admtext['male']; ?></option>
+                                    } ?>><?php echo _('Male'); ?></option>
                                     <option value="F" <?php if ($row['sex'] == "F") {
                                         echo "selected";
-                                    } ?>><?php echo $admtext['female']; ?></option>
+                                    } ?>><?php echo _('Female'); ?></option>
                                 </select>
                             </td>
                             <td>
@@ -184,16 +184,16 @@ include_once "eventlib.php";
                             </td>
                             <td>
                                 <select name="pnameorder">
-                                    <option value="0"><?php echo $admtext['default']; ?></option>
+                                    <option value="0"><?php echo _('Default'); ?></option>
                                     <option value="1" <?php if ($row['nameorder'] == "1") {
                                         echo "selected";
-                                    } ?>><?php echo $admtext['western']; ?></option>
+                                    } ?>><?php echo _('First name first'); ?></option>
                                     <option value="2" <?php if ($row['nameorder'] == "2") {
                                         echo "selected";
-                                    } ?>><?php echo $admtext['oriental']; ?></option>
+                                    } ?>><?php echo _('Surname first (without commas)'); ?></option>
                                     <option value="3" <?php if ($row['nameorder'] == "3") {
                                         echo "selected";
-                                    } ?>><?php echo $admtext['lnfirst']; ?></option>
+                                    } ?>><?php echo _('Surname first (with commas)'); ?></option>
                                 </select>
                             </td>
                         </tr>
@@ -204,13 +204,13 @@ include_once "eventlib.php";
                             <td class="whitespace-no-wrap">
                                 <input type="checkbox" name="living" value="1"<?php if ($row['living']) {
                                     echo " checked";
-                                } ?>> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
+                                } ?>> <?php echo _('Living'); ?>&nbsp;&nbsp;
                                 <input type="checkbox" name="private" value="1"<?php if ($row['private']) {
                                     echo " checked";
-                                } ?>> <?php echo $admtext['text_private']; ?>
+                                } ?>> <?php echo _('Private'); ?>
                             </td>
-                            <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
-                            <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
+                            <td class="spaceonleft"><?php echo _('Tree') . ": " . $treerow['treename']; ?></td>
+                            <td class="spaceonleft"><?php echo _('Branch') . ": "; ?>
 
                                 <?php
                                 $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
@@ -227,20 +227,20 @@ include_once "eventlib.php";
                                     }
                                     $options .= ">{$branchrow['description']}</option>\n";
                                 }
-                                $desclist = count($descriptions) ? implode(', ', $descriptions) : $admtext['nobranch'];
+                                $desclist = count($descriptions) ? implode(', ', $descriptions) : _('No Branch');
                                 echo "<span id=\"branchlist\">$desclist</span>";
                                 if (!$assignedbranch) {
                                 $totbranches = tng_num_rows($branchresult) + 1;
                                 if ($totbranches < 2) $totbranches = 2;
                                 $selectnum = $totbranches < 8 ? $totbranches : 8;
-                                $select = $totbranches >= 8 ? $admtext['scrollbranch'] . "<br>" : "";
+                                $select = $totbranches >= 8 ? _('(Scroll to see all choices)') . "<br>" : "";
                                 $select .= "<select name=\"branch[]\" id='branch' multiple size=\"$selectnum\" style=\"overflow:auto;\">\n";
                                 $select .= "	<option value=\"\"";
                                 if ($row['branch'] == "") $select .= " selected";
-                                $select .= ">{$admtext['nobranch']}</option>\n";
+                                $select .= ">" . _('No Branch') . "</option>\n";
                                 $select .= "$options</select>\n";
                                 echo " &nbsp;<span class='whitespace-no-wrap'>(<a href='#' onclick=\"showBranchEdit('branchedit'); quitBranchEdit('branchedit'); return false;\">";
-                                echo $admtext['edit'];
+                                echo _('Edit');
                                 echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
                                 echo "</a> )</span><br>";
                                 ?>
@@ -262,15 +262,15 @@ include_once "eventlib.php";
         </tr>
         <tr class="databack">
             <td class="tngbotshadow">
-                <?php echo displayToggle("plus1", 1, "events", $admtext['events'], ""); ?>
+                <?php echo displayToggle("plus1", 1, "events", _('Events'), ""); ?>
 
                 <div id="events">
-                    <p class="smallest topmarginsmall"><?php echo $admtext['datenote']; ?></p>
+                    <p class="smallest topmarginsmall"><?php echo _('<strong>Note:</strong> When entering dates, please use the standard genealogical format DD MMM YYYY. For example, 10 Apr 2004.'); ?></p>
                     <table class="normal" cellpadding="1" cellspacing="2">
                         <tr>
                             <td>&nbsp;</td>
-                            <td><?php echo $admtext['date']; ?></td>
-                            <td><?php echo $admtext['place']; ?></td>
+                            <td><?php echo _('Date'); ?></td>
+                            <td><?php echo _('Place'); ?></td>
                             <td colspan="4">&nbsp;</td>
                         </tr>
                         <?php
@@ -283,7 +283,7 @@ include_once "eventlib.php";
                         $checked = $row['burialtype'] == 1 ? " checked" : "";
                         echo "<tr>";
                         echo "<td></td>";
-                        echo "<td colspan='3'><input type='checkbox' name='burialtype' id='burialtype' value='1'{$checked}> <label for='burialtype'>{$admtext['cremated']}</label></td>";
+                        echo "<td colspan='3'><input type='checkbox' name='burialtype' id='burialtype' value='1'{$checked}> <label for='burialtype'>" . _('Cremated') . "</label></td>";
                         echo "</tr>\n";
                         if ($rights['lds']) {
                             echo showEventRow('baptdate', 'baptplace', 'BAPL', $personID);
@@ -296,7 +296,7 @@ include_once "eventlib.php";
                             <td colspan="2">
                                 <br>
                                 <p class="subhead font-medium">
-                                    <?php echo $admtext['otherevents'] . ": <input type='button' value=\"  {$admtext['addnew']} \" onClick=\"newEvent('I', '$personID', '$tree');\">\n"; ?>
+                                    <?php echo _('Other Events') . ": <input type='button' value=\"  " . _('Add New') . " \" onClick=\"newEvent('I', '$personID', '$tree');\">\n"; ?>
                                 </p>
                             </td>
                         </tr>
@@ -321,7 +321,7 @@ include_once "eventlib.php";
         ?>
         <tr class="databack">
             <td class="tngbotshadow">
-                <?php echo displayToggle("plus2", 0, "parents", $admtext['parents'] . " (<span id=\"parentcount\">$parentcount</span>)", ""); ?>
+                <?php echo displayToggle("plus2", 0, "parents", _('Parents') . " (<span id=\"parentcount\">$parentcount</span>)", ""); ?>
 
                 <div id="parents" style="display:none;"><br>
                     <?php
@@ -335,14 +335,14 @@ include_once "eventlib.php";
                     echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($parentcount > 1) {
                         echo "<td class='dragarea rounded-lg normal'>";
-                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
+                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
-                    echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href='#' onclick=\"return unlinkParents('{$parent['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['aschild']}</a></div>\n";
+                    echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href='#' onclick=\"return unlinkParents('{$parent['familyID']}');\">" . _('Unlink current individual') . " ($personID) " . _('as child') . "</a></div>\n";
                     echo "<table class='normal'>";
                     echo "<tr>";
-                    echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
+                    echo "<td class='align-top'><strong>" . _('Family') . ":</strong></td>\n";
                     echo "<td class='align-top' colspan='4'>\n";
 
                     echo $parent['familyID'] . "\n</td></tr>";
@@ -353,18 +353,17 @@ include_once "eventlib.php";
                     $fathrow['allow_private'] = $frights['private'];
                     ?>
         <tr>
-            <td class='align-top'><?php echo $admtext['father']; ?>:</td>
+            <td class='align-top'><?php echo _('Father'); ?>:</td>
             <td class="align-top" colspan="4">
                 <?php
                 if ($fathrow['personID']) {
-
                     echo getName($fathrow) . " - " . $fathrow['personID'];
                 }
                 ?>
             </td>
         </tr>
         <tr>
-            <td class='align-top'>&nbsp;&nbsp;<?php echo $admtext['relationship']; ?>:</td>
+            <td class='align-top'>&nbsp;&nbsp;<?php echo _('Relationship'); ?>:</td>
             <td class="align-top" colspan="4">
                 <select name="frel<?php echo $parent['familyID']; ?>">
                     <option value=""></option>
@@ -396,18 +395,17 @@ include_once "eventlib.php";
         $mothrow['allow_living'] = $mrights['living'];
         $mothrow['allow_private'] = $mrights['private']; ?>
         <tr>
-            <td class='align-top'><span class="normal"><?php echo $admtext['mother']; ?>:</span></td>
+            <td class='align-top'><span class="normal"><?php echo _('Mother'); ?>:</span></td>
             <td class="align-top" colspan="4">
                 <?php
                 if ($mothrow['personID']) {
-
                     echo getName($mothrow) . " - " . $mothrow['personID'];
                 }
                 ?>
             </td>
         </tr>
         <tr>
-            <td class='align-top'>&nbsp;&nbsp;<?php echo $admtext['relationship']; ?>:</td>
+            <td class='align-top'>&nbsp;&nbsp;<?php echo _('Relationship'); ?>:</td>
             <td class="align-top" colspan="4">
                 <select name="mrel<?php echo $parent['familyID']; ?>">
                     <option value=""></option>
@@ -431,28 +429,28 @@ include_once "eventlib.php";
     $parent['sealplace'] = preg_replace("/\"/", "&#34;", $parent['sealplace']);
     if ($rights['lds']) {
         $citquery = "SELECT citationID FROM $citations_table WHERE persfamID = \"$personID" . "::" . "{$parent['familyID']}\" AND gedcom = '$tree'";
-        $citresult = tng_query($citquery) or die ($text['cannotexecutequery'] . ": $citquery");
+        $citresult = tng_query($citquery) or die (_('Cannot execute query') . ": $citquery");
         $citesicon = "img/" . (tng_num_rows($citresult) ? "tng_cite_on.gif" : "tng_cite.gif");
         tng_free_result($citresult);
         echo "<table>";
         echo "<tr>";
         echo "<td>&nbsp;</td>";
-        echo "<td>" . $admtext['date'] . "</td>";
-        echo "<td>" . $admtext['place'] . "</td>";
+        echo "<td>" . _('Date') . "</td>";
+        echo "<td>" . _('Place') . "</td>";
         echo "<td colspan='2'>&nbsp;</td>";
         echo "</tr>\n";
         echo "<tr>\n";
-        echo "<td class='align-top whitespace-no-wrap' style='width:110px;'>" . $admtext['SLGC'] . ":</td>\n";
+        echo "<td class='align-top whitespace-no-wrap' style='width:110px;'>" . _('Sealed to Parents (LDS)') . ":</td>\n";
         echo "<td><input type='text' value=\"" . $parent['sealdate'] . "\" name=\"sealpdate" . $parent['familyID'] . "\" onblur=\"checkDate(this);\" maxlength='50' class='w-32'></td>\n";
         echo "<td><input type='text' value=\"" . $parent['sealplace'] . "\" name=\"sealpplace" . $parent['familyID'] . "\" id=\"sealpplace" . $parent['familyID'] . "\" class='longfield'></td>\n";
         echo "<td>\n";
         echo "<a href='#' onclick=\"return openFindPlaceForm('sealpplace" . $parent['familyID'] . "');\">\n";
-        echo "<img src=\"img/tng_find.gif\" title=\"{$admtext['find']}\" alt=\"{$admtext['find']}\" width='20' height='20' class='smallicon'>\n";
+        echo "<img src=\"img/tng_find.gif\" title=\"" . _('Find...') . "\" alt=\"" . _('Find...') . "\" width='20' height='20' class='smallicon'>\n";
         echo "</a>\n";
         echo "</td>\n";
         echo "<td>\n";
         echo "<a href='#' onclick=\"return showCitations('SLGC','$personID::" . $parent['familyID'] . "');\">\n";
-        echo "<img src=\"$citesicon\" title=\"{$admtext['sources']}\" alt=\"{$admtext['sources']}\" width='20' height='20' id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\">\n";
+        echo "<img src=\"$citesicon\" title=\"" . _('Sources') . "\" alt=\"" . _('Sources') . "\" width='20' height='20' id=\"citesiconSLGC$personID::" . $parent['familyID'] . "\" class=\"smallicon\">\n";
         echo "</a>\n";
         echo "</td>\n";
         echo "</tr>\n";
@@ -488,7 +486,7 @@ include_once "eventlib.php";
             ?>
             <tr class="databack">
             <td class="tngbotshadow">
-            <?php echo displayToggle("plus3", 0, "spouses", $admtext['spouses'] . " (<span id=\"marrcount\">$marrcount</span>)", ""); ?>
+            <?php echo displayToggle("plus3", 0, "spouses", _('Spouses / Partners') . " (<span id=\"marrcount\">$marrcount</span>)", ""); ?>
 
             <div id="spouses" style="display:none;"><br>
             <?php
@@ -509,16 +507,16 @@ include_once "eventlib.php";
                     echo "<table class='w-full' cellpadding='5' cellspacing='1'><tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class='dragarea normal'>";
-                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>{$admtext['drag']}<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
+                        echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                         echo "</td>\n";
                     }
                     echo "<td class='lightback normal'>\n";
                     echo "<table class='normal w-full'\n>";
                     echo "<tr>\n";
-                    echo "<td class='align-top'><strong>{$admtext['family']}:</strong></td>\n";
+                    echo "<td class='align-top'><strong>" . _('Family') . ":</strong></td>\n";
                     echo "<td class='align-top' width=\"94%\">\n";
                     echo "<div id=\"unlinks_{$marriagerow['familyID']}\" style=\"float:right;display:none;\">\n";
-                    echo "<a href='#' onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">{$admtext['unlinkindividual']} ($personID) {$admtext['asspouse']}</a>\n";
+                    echo "<a href='#' onclick=\"return unlinkSpouse('{$marriagerow['familyID']}');\">" . _('Unlink current individual') . " ($personID) " . _('as spouse') . "</a>\n";
                     echo "</div>\n";
 
                     echo $marriagerow['familyID'] . "\n</td></tr>";
@@ -534,7 +532,7 @@ include_once "eventlib.php";
                     }
                     ?>
                     <tr>
-                        <td class='align-top'><?php echo $admtext['spouse']; ?>:</td>
+                        <td class='align-top'><?php echo _('Spouse'); ?>:</td>
                         <td class='align-top'>
                             <?php
                             if ($spouserow['personID']) {
@@ -545,7 +543,7 @@ include_once "eventlib.php";
                     </tr>
                     <?php if ($marriagerow['marrdate'] || $marriagerow['marrplace']) { ?>
                         <tr>
-                            <td class='align-top'><span class="normal"><?php echo $admtext['married']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo _('Married'); ?>:</span></td>
                             <td class='align-top'><span class="normal"><?php echo $marriagerow['marrdate']; ?></span></td>
                         </tr>
                         <?php
@@ -559,7 +557,7 @@ include_once "eventlib.php";
                     if ($children && tng_num_rows($children)) {
                         ?>
                         <tr>
-                            <td class='align-top'><span class="normal"><?php echo $admtext['children']; ?>:</span></td>
+                            <td class='align-top'><span class="normal"><?php echo _('Children'); ?>:</span></td>
                             <td class='align-top'><span class="normal">
                         <?php
                         $kidcount = 1;
@@ -576,7 +574,7 @@ include_once "eventlib.php";
                                 if ($crights['both']) {
                                     echo getName($child) . " - {$child['pID']}";
                                 } else {
-                                    echo $admtext['living'] . " - " . $child['pID'];
+                                    echo _('Living') . " - " . $child['pID'];
                                 }
                                 echo "</span></td>";
                                 echo "</tr>\n";

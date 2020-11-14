@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -39,11 +39,11 @@ if ($affected_rows) {
     $placeID = tng_insert_id();
     if ($tngconfig['autogeo']) $message = geocode($place, 0, $placeID);
 
-    adminwritelog("<a href=\"admin_editplace.php?ID=$placeID\">{$admtext['addnewplace']}: $placeID - " . stripslashes($place) . "</a>");
+    adminwritelog("<a href=\"admin_editplace.php?ID=$placeID\">" . _('Add New Place') . ": $placeID - " . stripslashes($place) . "</a>");
 
-    $message = $admtext['place'] . " " . stripslashes($place) . " {$admtext['succadded']}.";
+    $message = _('Place') . " " . stripslashes($place) . " " . _('was successfully added') . ".";
 } else {
-    $message = $admtext['place'] . " " . stripslashes($place) . " {$admtext['idexists']}";
+    $message = _('Place') . " " . stripslashes($place) . " " . _('could not be added because this ID already exists.') . "";
 }
 
 header("Location: admin_places.php?message=" . urlencode($message));

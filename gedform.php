@@ -26,14 +26,14 @@ if (($disallowgedcreate && (!$allow_ged || !$rightbranch)) || !$personID) {
 $flags['scripting'] = "<script>
 function validateForm() {
 	if( document.gedform.email.value == \"\" ) {
-		alert('{$text['enteremail']}');
+		alert('" . _('Please enter a valid e-mail address.') . "');
 		return false;
 	}
 	else return true;
 }
 </script>\n";
 
-tng_header($text['creategedfor'] . ": {$text['gedstartfrom']} $name", $flags);
+tng_header(_('Create GEDCOM') . ": " . _('GEDCOM starting from') . " $name", $flags);
 
 $photostr = showSmallPhoto($personID, $name, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $name, getYears($row));
@@ -42,7 +42,7 @@ $innermenu = "&nbsp; \n";
 
 echo tng_menu("I", "gedcom", $personID, $innermenu);
 
-echo "<h3 class='subhead'>{$text['creategedfor']}</h3>\n";
+echo "<h3 class='subhead'>" . _('Create GEDCOM') . "</h3>\n";
 
 if ($currentuser) {
     $formstr = getFORM("gedcom", "GET", "gedform", "");
@@ -55,28 +55,28 @@ echo $formstr;
     <input type="hidden" name="tree" value="<?php echo $tree; ?>">
     <table cellspacing="1" cellpadding="4" class="whiteback">
         <tr>
-            <td class="fieldnameback" width="30%"><span class="fieldname"><?php echo $text['gedstartfrom']; ?>:&nbsp; </span></td>
+            <td class="fieldnameback" width="30%"><span class="fieldname"><?php echo _('GEDCOM starting from'); ?>:&nbsp; </span></td>
             <td class="databack" width="70%"><span class="normal"><?php echo $name; ?></span></td>
         </tr>
         <?php if (!$currentuser) { ?>
             <tr>
-                <td class="fieldnameback"><span class="fieldname"><?php echo $text['email']; ?>:&nbsp; </span></td>
+                <td class="fieldnameback"><span class="fieldname"><?php echo _('E-mail'); ?>:&nbsp; </span></td>
                 <td class="databack"><span class="normal"><input name="email" type="text" size="20"></span></td>
             </tr>
         <?php } ?>
         <tr>
-            <td class="fieldnameback"><span class="fieldname"><?php echo $text['producegedfrom']; ?>:&nbsp; </span></td>
+            <td class="fieldnameback"><span class="fieldname"><?php echo _('Produce a GEDCOM file from'); ?>:&nbsp; </span></td>
             <td class="databack">
                 <span class="normal">
                     <select name="type">
-                        <option value="<?php echo $text['ancestors']; ?>" selected><?php echo $text['ancestors']; ?></option>
-                        <option value="<?php echo $text['descendants']; ?>"><?php echo $text['descendants']; ?></option>
+                        <option value="<?php echo _('Ancestors'); ?>" selected><?php echo _('Ancestors'); ?></option>
+                        <option value="<?php echo _('Descendants'); ?>"><?php echo _('Descendants'); ?></option>
                     </select>
                 </span>
             </td>
         </tr>
         <tr>
-            <td class="fieldnameback"><span class="fieldname"><?php echo $text['numgens']; ?>:&nbsp; </span></td>
+            <td class="fieldnameback"><span class="fieldname"><?php echo _('Number of generations'); ?>:&nbsp; </span></td>
             <td class="databack"><span class="normal">
 <select name="maxgcgen">
 <?php
@@ -91,7 +91,7 @@ for ($i = 1; $i <= $maxgedcom; $i++)
         <?php if ($rights['lds']) { ?>
             <tr>
                 <td class="fieldnameback">&nbsp;</td>
-                <td class="databack"><span class="normal"><input type="checkbox" name="lds" value="yes"> <?php echo $text['includelds']; ?></span></td>
+                <td class="databack"><span class="normal"><input type="checkbox" name="lds" value="yes"> <?php echo _('Include LDS information'); ?></span></td>
             </tr>
         <?php } ?>
     </table>
@@ -101,7 +101,7 @@ if ($currentuser) {
 }
 ?>
     <br>
-    <input type="submit" class="btn" value="<?php echo $text['buildged']; ?>">
+    <input type="submit" class="btn" value="<?php echo _('Build GEDCOM'); ?>">
     </form>
     <br>
 <?php

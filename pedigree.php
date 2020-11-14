@@ -45,7 +45,7 @@ $rights = determineLivingPrivateRights($row, $righttree, $rightbranch);
 $row['allow_living'] = $rights['living'];
 $row['allow_private'] = $rights['private'];
 $pedname = getName($row);
-$logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $pedname);
+$logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $pedname);
 tng_free_result($result);
 
 $treeResult = getTreeSimple($tree);
@@ -98,7 +98,7 @@ if (file_exists($arrrtpath)) {
     $offpageimg = @GetImageSize($arrrtpath);
     $offpageimgw = $offpageimg[0];
     $offpageimgh = $offpageimg[1];
-    $pedigree['offpagelink'] = "<img src=\"img/ArrowRight.gif\" $offpageimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
+    $pedigree['offpagelink'] = "<img src=\"img/ArrowRight.gif\" $offpageimg[3] title=\"" . _('New pedigree') . "\" alt=\"" . _('New pedigree') . "\">";
 } else {
     $pedigree['offpagelink'] = "<b>&gt;</b>";
 }
@@ -108,12 +108,12 @@ if (file_exists($arrltpath)) {
     $leftarrowimg = @GetImageSize($arrltpath);
     $leftarrowimgw = $leftarrowimg[0];
     $leftarrowimgh = $leftarrowimg[1];
-    $pedigree['leftarrowlink'] = "<img src=\"img/ArrowLeft.gif\" $leftarrowimg[3] title=\"{$text['popupnote2']}\" alt=\"{$text['popupnote2']}\">";
+    $pedigree['leftarrowlink'] = "<img src=\"img/ArrowLeft.gif\" $leftarrowimg[3] title=\"" . _('New pedigree') . "\" alt=\"" . _('New pedigree') . "\">";
 } else {
     $pedigree['leftarrowlink'] = "<b>&lt;</b>";
 }
 if (file_exists($rootpath . $endrootpath . "img/chart.gif")) {
-    $pedigree['chartlink'] = "<img src='img/chart.gif' alt=\"{$text['popupnote2']}\" title=\"{$text['popupnote2']}\" class='inline-block'>";
+    $pedigree['chartlink'] = "<img src='img/chart.gif' alt=\"" . _('New pedigree') . "\" title=\"" . _('New pedigree') . "\" class='inline-block'>";
 } else {
     $pedigree['chartlink'] = "<span class='normal font-semibold'>P</span>";
 }
@@ -438,23 +438,23 @@ $flags['scripting'] .= "var tngprint = $tngprint;\n";
 if ($allow_edit) {
     $flags['scripting'] .= "var allow_cites = true;\n";
     $flags['scripting'] .= "var allow_notes = true;\n";
-    $flags['scripting'] .= "const confdeletepers = \"{$admtext['confdeletepers']}\";\n";
-    $flags['scripting'] .= "const confremchild = \"{$admtext['confremchild']}\";\n";
-    $flags['scripting'] .= "const confunlink = \"{$admtext['confunlink']}\";\n";
-    $flags['scripting'] .= "const confunlinkc = \"{$admtext['confunlinkc']}\";\n";
-    $flags['scripting'] .= "const enterfamilyid = \"{$admtext['enterfamilyid']}\";\n";
-    $flags['scripting'] .= "const enterpersonid = \"{$admtext['enterpersonid']}\";\n";
+    $flags['scripting'] .= "const confdeletepers = \"" . _('Are you sure you want to delete this person? The individual will be entirely deleted from your tree.') . "\";\n";
+    $flags['scripting'] .= "const confremchild = \"" . _('Are you sure you want to remove this child from this family? The individual will not be deleted from the database.') . "\";\n";
+    $flags['scripting'] .= "const confunlink = \"" . _('Are you sure you want to unlink this individual as a spouse in this family?') . "\";\n";
+    $flags['scripting'] .= "const confunlinkc = \"" . _('Are you sure you want to unlink this individual as a child in this family?') . "\";\n";
+    $flags['scripting'] .= "const enterfamilyid = \"" . _('Please enter a Family ID.') . "\";\n";
+    $flags['scripting'] .= "const enterpersonid = \"" . _('Please enter a Person ID') . "\";\n";
 }
 
-$flags['scripting'] .= "var unknown = '{$text['unknownlit']}';\n";
-$flags['scripting'] .= "var txt_parents = '{$text['parents']}';\n";
-$flags['scripting'] .= "var txt_children = '{$text['children']}';\n";
-$flags['scripting'] .= "var txt_family = '{$text['family']}';\n";
-$flags['scripting'] .= "var txt_addfam = '{$text['addnewfam']}';\n";
-$flags['scripting'] .= "var txt_editfam = '{$text['editfam']}';\n";
-$flags['scripting'] .= "var txt_groupsheet = '{$text['groupsheet']}';\n";
-$flags['scripting'] .= "var txt_editperson = '{$text['editperson']}';\n";
-$flags['scripting'] .= "var txt_newped = '{$text['popupnote2']}';\n";
+$flags['scripting'] .= "var unknown = '" . _('Unknown') . "';\n";
+$flags['scripting'] .= "var txt_parents = '" . _('Parents') . "';\n";
+$flags['scripting'] .= "var txt_children = '" . _('Children') . "';\n";
+$flags['scripting'] .= "var txt_family = '" . _('Family') . "';\n";
+$flags['scripting'] .= "var txt_addfam = '" . _('Add New Family') . "';\n";
+$flags['scripting'] .= "var txt_editfam = '" . _('Edit Family') . "';\n";
+$flags['scripting'] .= "var txt_groupsheet = '" . _('Group Sheet') . "';\n";
+$flags['scripting'] .= "var txt_editperson = '" . _('Edit Person') . "';\n";
+$flags['scripting'] .= "var txt_newped = '" . _('New pedigree') . "';\n";
 
 $flags['scripting'] .= "var families = new Array(), people = new Array(); endslots = new Array(), slots = new Array();\n";
 $flags['scripting'] .= "var endslotctr;\n";
@@ -476,19 +476,18 @@ $boxes = "";
 showBox(1, $slot);
 $flags['scripting'] .= "</style>\n";
 
-$gentext = xmlcharacters($text['generations']);
-writelog("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $logname ($personID)") . "</a> $generations " . $gentext);
-preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $generations " . $gentext);
+$gentext = xmlcharacters(_('Generations'));
+writelog("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("" . _('Pedigree Chart for') . " $logname ($personID)") . "</a> $generations " . $gentext);
+preparebookmark("<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;generations=$generations&amp;display=$display\">" . xmlcharacters("" . _('Pedigree Chart for') . " $pedname ($personID)") . "</a> $generations " . $gentext);
 
-tng_header($text['pedigreefor'] . " $pedname", $flags);
+tng_header(_('Pedigree Chart for') . " $pedname", $flags);
 
 if ($allow_edit || $allow_add) include "eventlib_js.php";
-
 
 $photostr = showSmallPhoto($personID, $pedname, $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $pedname, getYears($row));
 
-$innermenu = $text['generations'] . ": &nbsp;";
+$innermenu = _('Generations') . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='pedigree.php?personID=' + firstperson + '&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
@@ -497,14 +496,14 @@ for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class=\"lightlink$slinkstyle\" id=\"stdpedlnk\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink$chtlinkstyle\" id=\"pedchartlnk\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class=\"lightlink$clinkstyle\" id=\"compedlnk\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class=\"lightlink$blinkstyle\" id=\"boxpedlnk\">{$text['pedbox']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink' id=\"textlnk\">{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink' id=\"ahnlnk\">{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class='lightlink' id=\"extralnk\">{$text['media']}</a>\n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class=\"lightlink$slinkstyle\" id=\"stdpedlnk\">" . _('Standard') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink$chtlinkstyle\" id=\"pedchartlnk\">" . _('Vertical') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class=\"lightlink$clinkstyle\" id=\"compedlnk\">" . _('Compact') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class=\"lightlink$blinkstyle\" id=\"boxpedlnk\">" . _('Box') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink' id=\"textlnk\">" . _('Text Only') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink' id=\"ahnlnk\">" . _('Ahnentafel') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>" . _('Fan Chart') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class='lightlink' id=\"extralnk\">" . _('Media') . "</a>\n";
 if ($generations <= 6 && $allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=ped&amp;personID=' + firstperson + '&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
@@ -515,11 +514,11 @@ echo tng_menu("I", "pedigree", $personID, $innermenu);
 echo "</form>\n";
 
 if (!$tngprint) {
-    echo "<span class='normal'>(" . $text['scrollnote'];
+    echo "<span class='normal'>(" . _('Notes: You may have to scroll down or right to see chart.');
     if ($pedigree['usepopups_real']) {
-        echo ($pedigree['downarrow'] ? " <img src='{$templatepath}img/ArrowDown.gif' width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt='' class='inline-block'>" : " <a href='#'><span class='normal font-semibold'>V</span></a>") . $text['popupnote1'];
+        echo ($pedigree['downarrow'] ? " <img src='{$templatepath}img/ArrowDown.gif' width=\"{$pedigree['downarroww']}\" height=\"{$pedigree['downarrowh']}\" alt='' class='inline-block'>" : " <a href='#'><span class='normal font-semibold'>V</span></a>") . _('Additional information');
         if ($pedigree['popupchartlinks']) {
-            echo "&nbsp;&nbsp;{$pedigree['chartlink']} &nbsp; " . $text['popupnote2'];
+            echo "&nbsp;&nbsp;{$pedigree['chartlink']} &nbsp; " . _('New pedigree');
         }
     }
     echo ")</span>";
@@ -527,9 +526,9 @@ if (!$tngprint) {
 ?>
     <br>
     <div align="left"
-         style="position:relative;margin-top:8px;margin-bottom:16px;height:<?php echo(20 + $pedigree['borderwidth'] + ($pedigree['maxheight'] - $pedigree['boxVsep']) + $pedigree['shadowoffset']); ?>px;"
-         id="outer">
-        <div id="loading"><img src="img/spinner.gif" alt=""> <?php echo $text['loading']; ?></div>
+        style="position:relative;margin-top:8px;margin-bottom:16px;height:<?php echo(20 + $pedigree['borderwidth'] + ($pedigree['maxheight'] - $pedigree['boxVsep']) + $pedigree['shadowoffset']); ?>px;"
+        id="outer">
+        <div id="loading"><img src="img/spinner.gif" alt=""> <?php echo _('Loading...'); ?></div>
         <?php echo $boxes; ?>
     </div>
     <script src="js/rpt_utils.js"></script>

@@ -6,7 +6,7 @@ session_start();
 
 $flags['error'] = "";
 
-tng_header($text['login'], $flags);
+tng_header(_('Login'), $flags);
 
 $loginfieldclass = "medfield";
 $loginbtnclass = "btn";

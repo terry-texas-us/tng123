@@ -61,7 +61,7 @@ if ($type == "I" || $type == "C") {
 
     $persfamID = $familyID;
     $plus = $hname && $wname ? " + " : "";
-    $name = $text['family'] . " $familyID<br>$hname$plus$wname";
+    $name = _('Family') . " $familyID<br>$hname$plus$wname";
 }
 
 if (is_numeric($event)) {
@@ -178,7 +178,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="tentedit">
-    <h3 class="subhead"><?php echo $text['editevent']; ?></h3>
+    <h3 class="subhead"><?php echo _('Suggest a change for this event'); ?></h3>
 
     <h2 class="header"><?php echo "$name: $title"; ?></h2>
     <?php
@@ -193,11 +193,11 @@ header("Content-type:text/html; charset=" . $session_charset);
         <?php
         if ($datefield) {
             echo "<tr>";
-            echo "<td class='align-top'><span class='normal'>{$text['date']}: </span></td>";
+            echo "<td class='align-top'><span class='normal'>" . _('Date') . ": </span></td>";
             echo "<td class='align-top'><span class='normal'>$row[$datefield]</span></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
+            echo "<td class='align-top'><span class='normal'>" . _('Suggested') . ": </span></td>";
             echo "<td class='align-top'><input type='text' name=\"newdate\" value=\"$row[$datefield]\" onblur=\"checkDate(this);\"></td>";
             echo "</tr>\n";
             echo "<tr>";
@@ -207,11 +207,11 @@ header("Content-type:text/html; charset=" . $session_charset);
         if ($placefield) {
             $row[$placefield] = preg_replace("/\"/", "&#34;", $row[$placefield]);
             echo "<tr>";
-            echo "<td class='align-top'><span class='normal'>{$text['place']}: </span></td>";
+            echo "<td class='align-top'><span class='normal'>" . _('Place') . ": </span></td>";
             echo "<td class='align-top'><span class='normal'>$row[$placefield]</span></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
+            echo "<td class='align-top'><span class='normal'>" . _('Suggested') . ": </span></td>";
             echo "<td class='align-top'><input type='text' name=\"newplace\" size=\"40\" value=\"$row[$placefield]\"></td>";
             echo "</tr>\n";
             echo "<tr>";
@@ -220,13 +220,13 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         if ($factfield) {
             $row[$factfield] = preg_replace("/\"/", "&#34;", $row[$factfield]);
-            $factmsg = $event == "MARR" ? $text['type'] : $text['detail'];
+            $factmsg = $event == "MARR" ? _('Type') : _('Detail');
             echo "<tr>";
             echo "<td class='align-top'><span class='normal'>$factmsg: </span></td>";
             echo "<td class='align-top'><span class='normal'>$row[$factfield]</span></td>";
             echo "</tr>\n";
             echo "<tr>";
-            echo "<td class='align-top'><span class='normal'>{$text['suggested']}: </span></td>";
+            echo "<td class='align-top'><span class='normal'>" . _('Suggested') . ": </span></td>";
             echo "<td class='align-top'>";
             if ($event == "MARR") {
                 echo "<input type='text' name=\"newinfo\" size=\"40\" value=\"$row[$factfield]\">";
@@ -241,19 +241,19 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         ?>
         <tr>
-            <td class='align-top'><span class="normal"><?php echo $text['notes']; ?>: </span></td>
+            <td class='align-top'><span class="normal"><?php echo _('Notes'); ?>: </span></td>
             <td class='align-top'><textarea cols="40" rows="3" name="usernote"></textarea></td>
         </tr>
     </table>
     <br>
-    <input type="submit" value="<?php echo $text['savechanges']; ?>">
+    <input type="submit" value="<?php echo _('Save Changes'); ?>">
     <span id="tspinner" style="display:none;"><img src="img/spinner.gif"></span>
     </form>
 
 </div>
 
 <div class="databack" style="margin:10px;border:0;display:none;" id="finished">
-    <h2 class="header"><?php echo $text['thanks']; ?></h2>
-    <p class="normal"><?php echo $text['received']; ?><br><br>
-        <a href="#" onclick="tnglitbox.remove();"><?php echo $text['closewindow']; ?></a></p>
+    <h2 class="header"><?php echo _('Thank you'); ?></h2>
+    <p class="normal"><?php echo _('Your suggestion was forwarded to the site administrator for review.'); ?><br><br>
+        <a href="#" onclick="tnglitbox.remove();"><?php echo _('Close this window'); ?></a></p>
 </div>

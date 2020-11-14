@@ -18,6 +18,6 @@ echo $singleMediaCard->buildHtmlContent($tree, 'photos', 5);
 $recentPeopleCard = new RecentPeopleCard();
 $recentPeopleCard->setPath("");
 $tables = ['people' => $people_table, 'trees' => $trees_table];
-echo $recentPeopleCard->buildHtmlContent($text['individuals'], $tables, $tree, 10);
+echo $recentPeopleCard->buildHtmlContent(_('individuals'), $tables, $tree, 10);
 echo "</div>\n";
 echo "</div>\n";

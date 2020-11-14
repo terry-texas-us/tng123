@@ -13,7 +13,7 @@ require "adminlog.php";
 require "deletelib.php";
 
 if ($assignedbranch) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -374,30 +374,30 @@ function doDescendants($personID, $gender, $gen, $maxgen) {
 
 $helplang = findhelp("branches_help.php");
 
-tng_adminheader($admtext['labelbranches'], $flags);
+tng_adminheader(_('Label Branches'), $flags);
 
 echo "</head>\n";
 echo tng_adminlayout();
 
-$branchtabs[0] = [1, "admin_branches.php", $admtext['search'], "findbranch"];
-$branchtabs[1] = [$allow_add, "admin_newbranch.php", $admtext['addnew'], "addbranch"];
-$branchtabs[2] = [$allow_edit, "#", $admtext['labelbranches'], "label"];
-$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php#labelbranch');\" class='lightlink'>{$admtext['help']}</a>";
+$branchtabs[0] = [1, "admin_branches.php", _('Search'), "findbranch"];
+$branchtabs[1] = [$allow_add, "admin_newbranch.php", _('Add New'), "addbranch"];
+$branchtabs[2] = [$allow_edit, "#", _('Label Branches'), "label"];
+$innermenu = "<a href='#' onclick=\"return openHelp('$helplang/branches_help.php#labelbranch');\" class='lightlink'>" . _('Help for this area') . "</a>";
 $menu = doMenu($branchtabs, "label", $innermenu);
-echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranches'], "img/branches_icon.gif", $menu, $message);
+echo displayHeadline(_('Branches') . " &gt;&gt; " . _('Label Branches'), "img/branches_icon.gif", $menu, $message);
 ?>
 <div class="lightback pad2">
     <div class="databack normal p-1">
 
         <?php
         if ($branchaction == "clear") {
-            $branchtitle = $admtext['clearingbranch'];
+            $branchtitle = _('Clearing Branch Labels');
             $overwrite = 1;
         } elseif ($branchaction == "delete") {
             $branchtitle = "DELETING BRANCH";
             $overwrite = 0;
         } else {
-            $branchtitle = $admtext['addingbranch'];
+            $branchtitle = _('Adding Branch Labels');
             $branchclause = $overwrite ? "" : " AND branch = \"\"";
         }
         echo "<p><strong>$branchtitle</strong></p>";
@@ -427,16 +427,15 @@ echo displayHeadline($admtext['branches'] . " &gt;&gt; " . $admtext['labelbranch
             if ($dagens > $dgens) $dgens = $dagens;
 
             if ($dgens > 0) doDescendants($personID, $gender, 1, $dgens);
-
         }
         if ($counter || $fcounter) echo "<br><br>";
 
-        echo "<span class='normal'>{$admtext['totalaffected']}: $counter {$admtext['people']}, $fcounter {$admtext['families']}.</span>";
+        echo "<span class='normal'>" . _('Total Affected') . ": $counter " . _('People') . ", $fcounter " . _('Families') . ".</span>";
 
-        adminwritelog($admtext['labelbranches'] . ": $tree/$branch ($branchaction/$set)");
+        adminwritelog(_('Label Branches') . ": $tree/$branch ($branchaction/$set)");
         ?>
 
-        <p class="normal"><a href="admin_branchmenu.php?tree=<?php echo "$tree&amp;branch=$branch"; ?>"><?php echo $admtext['labelmore']; ?></a></p>
+        <p class="normal"><a href="admin_branchmenu.php?tree=<?php echo "$tree&amp;branch=$branch"; ?>"><?php echo _('Label more branches'); ?></a></p>
 
     </div>
 </div>

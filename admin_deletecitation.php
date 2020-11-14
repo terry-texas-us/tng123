@@ -20,7 +20,7 @@ if ($_SESSION['lastcite'] == $tree . "|" . $citationID) {
     unset($_SESSION['lastcite']);
 }
 
-adminwritelog("{$admtext['deleted']}: {$admtext['citation']} $citationID");
+adminwritelog("" . _('Deleted') . ": " . _('Citation') . " $citationID");
 
 echo $row['ccount'];
 

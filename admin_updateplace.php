@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 $admin_login = 1;
 include "checklogin.php";
 if (!$allow_edit) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -36,7 +36,7 @@ if (!$tngconfig['places1tree'] && $newtree) {
 $query = "UPDATE $places_table SET place=\"$place\",placelevel=\"$placelevel\",temple=\"$temple\",latitude=\"$latitude\",longitude=\"$longitude\",zoom=\"$zoom\",notes=\"$notes\",geoignore='0'$newtreestr WHERE ID='$ID'";
 $result = @tng_query_noerror($query);
 if (!$result) {
-    $message = $admtext['duplicate'];
+    $message = _('Changes were not saved. Another record with the same key already exists.');
     header("Location: admin_places.php?message=" . urlencode($message));
     exit;
 }
@@ -89,7 +89,7 @@ if ($propagate && trim($orgplace)) {
     $result = tng_query($query);
 }
 
-adminwritelog("<a href=\"admin_editplace.php?ID=$ID$treeurl\">{$admtext['modifyplace']}: $place</a>");
+adminwritelog("<a href=\"admin_editplace.php?ID=$ID$treeurl\">" . _('Edit Existing Place') . ": $place</a>");
 
 if ($newscreen == "return") {
     header("Location: admin_editplace.php?ID=$ID$treeurl");
@@ -106,7 +106,7 @@ if ($newscreen == "return") {
     </html>
     <?php
 } else {
-    $message = $admtext['changestoplace'] . " $place {$admtext['succsaved']}.";
+    $message = _('Changes to place') . " $place " . _('were successfully saved') . ".";
     header("Location: admin_places.php?message=" . urlencode($message));
 }
 ?>

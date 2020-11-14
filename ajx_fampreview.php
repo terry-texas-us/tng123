@@ -70,21 +70,21 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $haskids = $ind['haskids'] ? "X" : "&nbsp;";
     $restriction = $familyID ? "AND familyID != '$familyID'" : "";
     if ($ind['sex'] == "M") {
-        $sex = $text['male'];
+        $sex = _('Male');
     } else {
         if ($ind['sex'] == "F") {
-            $sex = $text['female'];
+            $sex = _('Female');
         } else {
-            $sex = $text['unknown'];
+            $sex = _('Unknown');
         }
     }
     $namestr = getName($ind);
     $personID = $ind['personID'];
     //adjust for same-sex relationships
-    if ($ind['sex'] == "M" && $label == $text['wife']) {
-        $label = $text['husband'];
-    } elseif ($ind['sex'] == "F" && $label == $text['husband']) {
-        $label = $text['wife'];
+    if ($ind['sex'] == "M" && $label == _('Mother')) {
+        $label = _('Father');
+    } elseif ($ind['sex'] == "F" && $label == _('Father')) {
+        $label = _('Mother');
     }
     //show photo & name
     $indtext .= "<tr>\n";
@@ -97,7 +97,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $indtext .= "</td>\n";
     $indtext .= "</tr>\n";
     $event = [];
-    $event['text'] = $text['born'];
+    $event['text'] = _('Born');
     $event['event'] = "BIRT";
     $event['type'] = "I";
     $event['ID'] = $personID;
@@ -115,11 +115,11 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $event['place'] = $ind['altbirthplace'];
     }
     if ((isset($event['date']) && $event['date']) || (isset($event['place']) && $event['place'])) {
-        $event['text'] = $text['christened'];
+        $event['text'] = _('Christened');
         $indtext .= showDatePlace($event);
     }
     $event = [];
-    $event['text'] = $text['died'];
+    $event['text'] = _('Died');
     $event['event'] = "DEAT";
     $event['type'] = "I";
     $event['ID'] = $personID;
@@ -129,7 +129,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     }
     $indtext .= showDatePlace($event);
     $event = [];
-    $event['text'] = $text['buried'];
+    $event['text'] = _('Buried');
     $event['event'] = "BURI";
     $event['type'] = "I";
     $event['ID'] = $personID;
@@ -150,7 +150,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
             tng_free_result($result);
             $event = [];
             $eventd = [];
-            $event['text'] = $text['married'];
+            $event['text'] = _('Married');
             $event['event'] = "MARR";
             $event['type'] = "F";
             $event['ID'] = $familyID;
@@ -158,7 +158,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
                 $event['date'] = $fam['marrdate'];
                 $event['place'] = $fam['marrplace'];
                 $eventd['event'] = "DIV";
-                $eventd['text'] = $text['divorced'];
+                $eventd['text'] = _('Divorced');
                 $eventd['date'] = $fam['divdate'];
                 $eventd['place'] = $fam['divplace'];
             }
@@ -167,9 +167,9 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
                 $indtext .= showDatePlace($eventd);
             }
         }
-        $spousetext = $text['otherspouse'];
+        $spousetext = _('Other Spouse');
     } else {
-        $spousetext = $text['spouse'];
+        $spousetext = _('Spouse');
     }
     //show other spouses
     $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, families.living AS fliving, families.private AS fprivate, families.branch AS branch, families.gedcom, people.living AS living, people.private AS private, marrdate, marrplace ";
@@ -198,7 +198,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $spouselink .= $fam['familyID'];
         $indtext .= showFact($spousetext, $spouselink);
         $event = [];
-        $event['text'] = $text['married'];
+        $event['text'] = _('Married');
         $event['event'] = "MARR";
         $event['type'] = "F";
         $event['ID'] = $fam['familyID'];
@@ -226,7 +226,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $fathername = getName($parent);
         tng_free_result($presult);
         $fatherlink = $fathername ? "$fathername | " . $parent['familyID'] : "";
-        $indtext .= showFact($text['father'], $fatherlink);
+        $indtext .= showFact(_('Father'), $fatherlink);
         $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch, people.gedcom ";
         $query .= "FROM $families_table families, $people_table people ";
         $query .= "WHERE families.familyID = \"{$ind['famc']}\" AND families.gedcom = '$tree' AND people.personID = families.wife AND people.gedcom = '$tree'";
@@ -238,7 +238,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $mothername = getName($parent);
         tng_free_result($presult);
         $motherlink = $mothername ? "$mothername | " . $parent['familyID'] : "";
-        $indtext .= showFact($text['mother'], $motherlink);
+        $indtext .= showFact(_('Mother'), $motherlink);
     }
     return $indtext;
 }
@@ -261,8 +261,8 @@ $frights = determineLivingPrivateRights($famrow, $righttree);
 $famrow['allow_living'] = $frights['living'];
 $famrow['allow_private'] = $frights['private'];
 $famname = getFamilyName($famrow);
-$namestr = $text['family'] . ": <small>$famname</small>";
-//$years = $famrow['marrdate'] && $frights['both'] ? $text['marrabbr'] . " " . displayDate($famrow['marrdate']) : "";
+$namestr = _('Family') . ": <small>$famname</small>";
+//$years = $famrow['marrdate'] && $frights['both'] ? _('m.') . " " . displayDate($famrow['marrdate']) : "";
 $photostr = showSmallPhoto($familyID, $famname, $famrow['allow_living'], 0);
 echo tng_DrawHeading($photostr, $namestr, $years);
 $famtext = "";
@@ -275,7 +275,7 @@ if ($famrow['husband']) {
     $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['husband']}\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $husbrow = tng_fetch_assoc($result);
-    $label = $husbrow['sex'] != "F" ? $text['husband'] : $text['wife'];
+    $label = $husbrow['sex'] != "F" ? _('Father') : _('Mother');
     $famtext .= displayIndividual($husbrow, $label, $familyID, 1);
     tng_free_result($result);
 }
@@ -284,7 +284,7 @@ if ($famrow['wife']) {
     $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['wife']}\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $wiferow = tng_fetch_assoc($result);
-    $label = $husbrow['sex'] != "M" ? $text['wife'] : $text['husband'];
+    $label = $husbrow['sex'] != "M" ? _('Mother') : _('Father');
     $famtext .= displayIndividual($wiferow, $label, $familyID, 0);
     tng_free_result($result);
 }
@@ -302,7 +302,7 @@ if ($result && tng_num_rows($result)) {
     $childcount = 0;
     foreach ($children as $child) {
         $childcount++;
-        $famtext .= displayIndividual($child, "{$text['child']} $childcount", "", 1);
+        $famtext .= displayIndividual($child, "" . _('Child') . " $childcount", "", 1);
     }
 }
 $famtext .= "</table>\n";

@@ -15,8 +15,8 @@ $result = tng_query($query);
     <?php
     if (tng_num_rows($result)) {
         ?>
-        <h3 class="subhead"><?php echo $admtext['choosecem']; ?></h3>
-        <p><?php echo $admtext['cemsavail']; ?></p>
+        <h3 class="subhead"><?php echo _('Choose a Cemetery'); ?></h3>
+        <p><?php echo _('List only includes cemeteries that are not already linked to a place'); ?></p>
         <form action="" name="findcemetery" id="findcemetery" onsubmit="return addCemLink(this.cemeteryID.options[this.cemeteryID.selectedIndex].value);">
             <table cellspacing="0" cellpadding="2">
                 <tr>
@@ -52,13 +52,13 @@ $result = tng_query($query);
                         </select>
                     </td>
                     <td>
-                        <input type="submit" value="<?php echo $admtext['go']; ?>">
+                        <input type="submit" value="<?php echo _('Go'); ?>">
                     </td>
                 </tr>
             </table>
         </form>
     <?php } else { ?>
-        <p><?php echo $admtext['nocemsavail']; ?></p>
+        <p><?php echo _('No cemeteries exist, or each cemetery has already been linked to a place.'); ?></p>
         <?php
     }
     tng_free_result($result);

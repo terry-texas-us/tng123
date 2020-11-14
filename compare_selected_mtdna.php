@@ -9,7 +9,6 @@ if ($tngconfig['hidedna'] && (!$allow_edit || !$allow_add || $assignedtree)) {
     exit;
 }
 
-
 $dnatree = isset($_SESSION["ttree"]) ? $_SESSION["ttree"] : "-x--all--x-";
 $test_search = isset($_SESSION["tsearch"]) ? $_SESSION["tsearch"] : "";
 $test_type = isset($_SESSION["ttype"]) ? $_SESSION["ttype"] : "";
@@ -17,24 +16,24 @@ $test_group = isset($_SESSION["tgroup"]) ? $_SESSION["tgroup"] : "";
 
 $browse_dna_tests_url = "browse_dna_tests.php?tree=" . $dnatree . "&amp;testsearch=" . $test_search . "&amp;test_type=" . $test_type . "&amp;test_group=" . $test_group;
 
-$headline = "{$text['dnatestscompare_mtdna']}";
-$text['dnatestscompare_mtdna'] .= ": " . $test_group;
+$headline = "" . _('Compare selected mtDNA Tests') . "";
+_('Compare selected mtDNA Tests') .= ": " . $test_group;
 
-tng_header($text['dnatestscompare_mtdna'], $flags);
+tng_header(_('Compare selected mtDNA Tests'), $flags);
 
-$comptabs[0] = [1, $browse_dna_tests_url, $text['dna_tests'], "dnatests"];
-$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target='_blank' class='lightlink'>{$text['help']}</a>";
+$comptabs[0] = [1, $browse_dna_tests_url, _('DNA Tests'), "dnatests"];
+$innermenu = "<a href=\"https://tng.lythgoes.net/wiki/index.php?title=Compare DNA Tests Results\" target='_blank' class='lightlink'>" . _('Help for this area') . "</a>";
 // Y-DNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class='lightlink'>{$admtext['ydna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=Y-DNA&test_group=\" class='lightlink'>" . _('Y-DNA Tests') . "</a>";
 // mtDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class='lightlink'>{$admtext['mtdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=mtDNA&test_group=\" class='lightlink'>" . _('mtDNA (Mitochondrial) Tests') . "</a>";
 // atDNA Tests
-$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class='lightlink'>{$admtext['atdna_test']}</a>";
+$innermenu .= "&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"browse_dna_tests.php?tree=-x--all--x-&testsearch=&test_type=atDNA&test_group=\" class='lightlink'>" . _('atDNA (autosomal) Tests') . "</a>";
 
 $menu = doMenu($comptabs, "", $innermenu);
 ?>
 
-<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo $text['dnatestscompare_mtdna']; ?></h2>
+<h2 class="header"><span class="headericon" id="dna-hdr-icon"></span><?php echo _('Compare selected mtDNA Tests'); ?></h2>
 <br style="clear: left;">
 <?php
 echo $menu;
@@ -47,7 +46,7 @@ if (isset($_SESSION["ttree"])) {
 $join = "LEFT JOIN";
 
 if (!empty($test_type)) {
-    $admtext['dna_tests'] = substr($test_type, 0, -3) . $admtext['dna_tests'];
+    _('DNA Tests') = substr($test_type, 0, -3) . _('DNA Tests');
     if ($wherestr) {
         $wherestr .= " AND $dna_tests_table.test_type = \"{$test_type}\"";
     } else {
@@ -55,7 +54,7 @@ if (!empty($test_type)) {
     }
 }
 if (!empty($test_group)) {
-    $admtext['dna_tests'] .= ": " . $test_group;
+    _('DNA Tests') .= ": " . $test_group;
     if ($wherestr) {
         $wherestr .= " AND $dna_tests_table.dna_group_desc = \"{$test_group}\"";
     } else {
@@ -63,8 +62,8 @@ if (!empty($test_group)) {
     }
 }
 
-$treestr = $tree ? " ({$text['tree']}: $tree)" : "";
-$logstring = "<a href=\"compare_selected_mtdna.php?tree=$tree&amp;&amp;testsearch=$test_search\">" . xmlcharacters($text['dnatestscompare_mtdna'] . $treestr) . "</a>";
+$treestr = $tree ? " (" . _('Tree') . ": $tree)" : "";
+$logstring = "<a href=\"compare_selected_mtdna.php?tree=$tree&amp;&amp;testsearch=$test_search\">" . xmlcharacters(_('Compare selected mtDNA Tests') . $treestr) . "</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
@@ -81,19 +80,19 @@ echo "<div class='normal'>\n";
 
             <?php
             if ($allow_edit || $showtestnumbers) { ?>
-                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['test_number']; ?>&nbsp;</th>
+                <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Test Number/Name'); ?>&nbsp;</th>
             <?php } ?>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['takenby']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['haplo']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['sequence']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['hvr1_values']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['hvr2_values']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $admtext['mrca']; ?>&nbsp;</th>
-            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo $text['testgroup']; ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Taken by'); ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Haplogroup'); ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Ref'); ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('HVR1 Differences'); ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('HVR2 Differences'); ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('MRC Ancestor'); ?>&nbsp;</th>
+            <th class="fieldnameback fieldname whitespace-no-wrap">&nbsp;<?php echo _('Test Group'); ?>&nbsp;</th>
             <?php
             global $numtrees;
             if (!$assignedtree && ($numtrees > 1)) { ?>
-                <th class="fieldnameback fieldname">&nbsp;<?php echo $text['tree']; ?>&nbsp;</th><?php } ?>
+                <th class="fieldnameback fieldname">&nbsp;<?php echo _('Tree'); ?>&nbsp;</th><?php } ?>
         </tr>
         </thead>
 
@@ -119,7 +118,7 @@ echo "<div class='normal'>\n";
                 echo "<td class=\"$databack\">$i</td>\n";
                 if ($allow_edit || $showtestnumbers) {
                     if ($row['private_test']) {
-                        $privtest = "<br>&nbsp;(" . $admtext['text_private'] . ")";
+                        $privtest = "<br>&nbsp;(" . _('Private') . ")";
                     } else {
                         $privtest = "";
                     }
@@ -137,7 +136,7 @@ echo "<div class='normal'>\n";
                 $dna_namestr = getName($dprow);
                 $vitalinfo = getBirthInfo($dprow);
                 if ($row['private_dna'] && $allow_edit) {
-                    $privacy = "&nbsp;(" . $admtext['text_private'] . ")";
+                    $privacy = "&nbsp;(" . _('Private') . ")";
                 } else {
                     $privacy = "";
                 }
@@ -148,7 +147,7 @@ echo "<div class='normal'>\n";
                 }
 
                 if ($row['private_dna'] && !$allow_edit) {
-                    $dna_namestr = $admtext['text_private'];
+                    $dna_namestr = _('Private');
                 }
                 tng_free_result($dna_pers_result);
                 echo "<td class=\"$databack\">$dna_namestr&nbsp;</td>";
@@ -203,7 +202,7 @@ echo "<div class='normal'>\n";
                 }
                 echo "<td class=\"$databack\">&nbsp;$mrcanc_namestr</td>";
 
-                $group = $row['dna_group_desc'] ? $row['dna_group_desc'] : $text['none'];
+                $group = $row['dna_group_desc'] ? $row['dna_group_desc'] : _('No encryption');
                 echo "<td class=\"$databack\">$group</td>";
                 if (!$assignedtree && ($numtrees > 1)) {
                     echo "<td class='$databack whitespace-no-wrap'><a href=\"showtree.php?tree={$row['gedcom']}\">{$row['treename']}</a>&nbsp;</td>";

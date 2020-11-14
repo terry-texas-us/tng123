@@ -20,21 +20,21 @@ header("Content-type:text/html; charset=" . $session_charset);
     <table cellpadding="0">
         <tr>
             <td class='align-top'>
-                <h3 class="subhead"><?php echo $admtext['searchresults']; ?></h3><br>
-                <span class="normal">(<?php echo $admtext['clicktoselect']; ?>)</span><br>
+                <h3 class="subhead"><?php echo _('Search Results'); ?></h3><br>
+                <span class="normal">(<?php echo _('click to select'); ?>)</span><br>
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <form action="">
-                    <input type="button" value="<?php echo $admtext['find']; ?>" onclick="reopenFindRepoForm();">
+                    <input type="button" value="<?php echo _('Find...'); ?>" onclick="reopenFindRepoForm();">
                 </form>
             </td>
         </tr>
     </table>
     <table cellspacing="1" cellpadding="3">
         <tr>
-            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['repoid']; ?></b>&nbsp;</span></td>
-            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo $admtext['name']; ?></b>&nbsp;</span></td>
+            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo _('Repository ID'); ?></b>&nbsp;</span></td>
+            <td class="fieldnameback"><span class="fieldname">&nbsp;<b><?php echo _('Name'); ?></b>&nbsp;</span></td>
         </tr>
         <?php
         while ($row = tng_fetch_assoc($result)) {

@@ -31,7 +31,7 @@ $row['allow_living'] = $rights['living'];
 $row['allow_private'] = $rights['private'];
 $row['name'] = getName($row);
 
-$logname = $tngconfig['nnpriv'] && $row['private'] ? $admtext['text_private'] : ($nonames && $row['living'] ? $text['living'] : $row['name']);
+$logname = $tngconfig['nnpriv'] && $row['private'] ? _('Private') : ($nonames && $row['living'] ? _('Living') : $row['name']);
 
 $treeResult = getTreeSimple($tree);
 $treerow = tng_fetch_assoc($treeResult);
@@ -39,17 +39,17 @@ $disallowgedcreate = $treerow['disallowgedcreate'];
 $allowpdf = !$treerow['disallowpdf'] || ($allow_pdf && $rightbranch);
 tng_free_result($treeResult);
 
-writelog("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;generations=$gens&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $logname ($personID)") . "</a> $gens " . $gentext);
-preparebookmark("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;generations=$gens&amp;display=$display\">" . xmlcharacters("{$text['pedigreefor']} $pedname ($personID)") . "</a> $gens " . $gentext);
+writelog("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;generations=$gens&amp;display=$display\">" . xmlcharacters("" . _('Pedigree Chart for') . " $logname ($personID)") . "</a> $gens " . $gentext);
+preparebookmark("<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;generations=$gens&amp;display=$display\">" . xmlcharacters("" . _('Pedigree Chart for') . " $pedname ($personID)") . "</a> $gens " . $gentext);
 
 $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 
-tng_header($text['pedigreefor'] . " " . $row['name'], $flags);
+tng_header(_('Pedigree Chart for') . " " . $row['name'], $flags);
 
 $photostr = showSmallPhoto($personID, $row['name'], $rights['both'], 0, false, $row['sex']);
 echo tng_DrawHeading($photostr, $row['name'], getYears($row));
 
-$innermenu = $text['generations'] . ": &nbsp;";
+$innermenu = _('Generations') . ": &nbsp;";
 $innermenu .= "<select name=\"generations\" class=\"verysmall\" onchange=\"window.location.href='verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=$display&amp;generations=' + this.options[this.selectedIndex].value\">\n";
 for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= "<option value=\"$i\"";
@@ -58,14 +58,14 @@ for ($i = 2; $i <= $pedigree['maxgen']; $i++) {
     $innermenu .= ">$i</option>\n";
 }
 $innermenu .= "</select>&nbsp;&nbsp;&nbsp;\n";
-$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class='lightlink' id=\"stdpedlnk\">{$text['pedstandard']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink3\" id=\"pedchartlnk\">{$text['pedvertical']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class='lightlink' id=\"compedlnk\">{$text['pedcompact']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class='lightlink' id=\"boxpedlnk\">{$text['pedbox']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>{$text['pedtextonly']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>{$text['ahnentafel']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>{$text['fanchart']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
-$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class='lightlink'>{$text['media']}</a>\n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=standard&amp;generations=$generations\" class='lightlink' id=\"stdpedlnk\">" . _('Standard') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"verticalchart.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=vertical&amp;generations=$generations\" class=\"lightlink3\" id=\"pedchartlnk\">" . _('Vertical') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=compact&amp;generations=$generations\" class='lightlink' id=\"compedlnk\">" . _('Compact') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;display=box&amp;generations=$generations\" class='lightlink' id=\"boxpedlnk\">" . _('Box') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"pedigreetext.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>" . _('Text Only') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"ahnentafel.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>" . _('Ahnentafel') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"fan.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;generations=$generations\" class='lightlink'>" . _('Fan Chart') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+$innermenu .= "<a href=\"extrastree.php?personID=$personID&amp;tree=$tree&amp;parentset=$parentset&amp;showall=1&amp;generations=$generations\" class='lightlink'>" . _('Media') . "</a>\n";
 if ($gens <= 6 && $allowpdf) {
     $innermenu .= " &nbsp;&nbsp; | &nbsp;&nbsp; <a href='#' class='lightlink' ";
     $innermenu .= "onclick=\"tnglitbox = new LITBox('rpt_pdfform.php?pdftype=ped&amp;personID=$personID&amp;tree=$tree&amp;generations=$generations', {width: 400, height: 480}); return false;\">PDF</a>\n";
@@ -127,7 +127,7 @@ function get_details(&$gens, $generation, $max_generations) {
                     $person_count++;
                 }
             } else {
-                echo $text['no_ancestors'];
+                echo _('No ancestors found');
                 die();
             }
         }
@@ -346,26 +346,26 @@ function do_chart($gens, $output = false) {
                 $person['xpos'] = round($person['xpos']);
                 $bio = '';
                 if ($person['birthdate'] || $person['birthplace']) {
-                    $bio .= trim($text['born'] . ": " . displayDate($person['birthdate']));
+                    $bio .= trim(_('Born') . ": " . displayDate($person['birthdate']));
                     if ($person['birthdate'] && $person['birthplace']) {
                         $bio .= ", ";
                     }
                     $bio .= $person['birthplace'];
                 } elseif ($person['altbirthdate'] || $person['altbirthplace']) {
-                    $bio .= trim($text['christened'] . ": " . displayDate($person['altbirthdate']));
+                    $bio .= trim(_('Christened') . ": " . displayDate($person['altbirthdate']));
                     if ($person['altbirthdate'] && $person['altbirthplace']) {
                         $bio .= ", ";
                     }
                     $bio .= $person['altbirthplace'];
                 }
                 if ($person['deathdate'] || $person['deathplace']) {
-                    $bio .= trim(($bio ? ' &#013;' : '') . $text['died'] . ": " . displayDate($person['deathdate']));
+                    $bio .= trim(($bio ? ' &#013;' : '') . _('Died') . ": " . displayDate($person['deathdate']));
                     if ($person['deathdate'] && $person['deathplace']) {
                         $bio .= ", ";
                     }
                     $bio .= $person['deathplace'];
                 } elseif ($person['burialdate'] || $person['burialplace']) {
-                    $bio .= trim(($bio ? ' &#013;' : '') . $text['buried'] . ": " . displayDate($person['burialdate']));
+                    $bio .= trim(($bio ? ' &#013;' : '') . _('Buried') . ": " . displayDate($person['burialdate']));
                     if ($person['burialdate'] && $person['burialplace']) {
                         $bio .= ", ";
                     }

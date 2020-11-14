@@ -4,7 +4,7 @@ function adminwritelog($string) {
 
     require "config/logconfig.php";
 
-    $string .= " ({$admtext['user']}: $currentuserdesc)";
+    $string .= " (" . _('User') . ": $currentuserdesc)";
 
     $lines = file($adminlogfile);
     if ($adminmaxloglines && sizeof($lines) >= $adminmaxloglines) {
@@ -14,7 +14,7 @@ function adminwritelog($string) {
     array_unshift($lines, "$updated $string.\n");
 
     $fp = @fopen($adminlogfile, "w");
-    if (!$fp) die ("{$admtext['cannotopen']} $adminlogfile");
+    if (!$fp) die ("" . _('Cannot open file') . " $adminlogfile");
 
 
     flock($fp, LOCK_EX);

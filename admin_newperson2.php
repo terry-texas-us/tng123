@@ -9,7 +9,7 @@ include "$mylanguage/admintext.php";
 $admin_login = true;
 include "checklogin.php";
 if (!$allow_add) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -48,7 +48,7 @@ header("Content-type:text/html; charset=" . $session_charset);
 ?>
 
 <div class="databack ajaxwindow" id="newperson">
-    <h3 class="subhead"><?php echo $admtext['addnewperson']; ?></h3>
+    <h3 class="subhead"><?php echo _('Add New Person'); ?></h3>
 
     <form method="post" name="npform"<?php if ($needped) {
         echo " action=\"admin_addperson2.php\"";
@@ -57,23 +57,23 @@ header("Content-type:text/html; charset=" . $session_charset);
     } ?> style="margin-top:10px;">
         <table cellpadding="2" class="normal">
             <tr>
-                <td class="align-top" colspan="2"><strong><?php echo $admtext['prefixpersonid']; ?></strong></td>
+                <td class="align-top" colspan="2"><strong><?php echo _('Please prefix Person ID with \"I\" for \"Individual\"'); ?></strong></td>
             </tr>
             <tr>
-                <td><span class="normal"><?php echo $admtext['personid']; ?>:</span></td>
+                <td><span class="normal"><?php echo _('Person ID'); ?>:</span></td>
                 <td>
                     <input type="text" name="personID" size="10" onblur="this.value=this.value.toUpperCase()">
-                    <input type="button" value="<?php echo $admtext['generate']; ?>" onclick="generateID('person',document.npform.personID,document.form1.tree1);">
-                    <input type="button" value="<?php echo $admtext['check']; ?>" onclick="checkID(document.npform.personID.value,'person','checkmsg2',document.form1.tree1);">
+                    <input type="button" value="<?php echo _('Generate'); ?>" onclick="generateID('person',document.npform.personID,document.form1.tree1);">
+                    <input type="button" value="<?php echo _('Check'); ?>" onclick="checkID(document.npform.personID.value,'person','checkmsg2',document.form1.tree1);">
                     <span id="checkmsg2" class="normal"></span>
                 </td>
             </tr>
         </table>
         <table class="normal topmarginsmall">
             <tr>
-                <td><?php echo $admtext['firstgivennames']; ?></td>
-                <?php if ($lnprefixes) echo "<td>{$admtext['lnprefix']}</td>\n"; ?>
-                <td><?php echo $admtext['lastsurname']; ?></td>
+                <td><?php echo _('First/Given Name(s)'); ?></td>
+                <?php if ($lnprefixes) echo "<td>" . _('Surname Prefix') . "</td>\n"; ?>
+                <td><?php echo _('Last/Surname'); ?></td>
             </tr>
             <tr>
                 <td>
@@ -91,22 +91,22 @@ header("Content-type:text/html; charset=" . $session_charset);
         </table>
         <table class="normal topmarginsmall">
             <tr>
-                <td><?php echo $admtext['sex']; ?></td>
-                <td><?php echo $admtext['nickname']; ?></td>
-                <td><?php echo $admtext['title']; ?></td>
-                <td><?php echo $admtext['prefix']; ?></td>
-                <td><?php echo $admtext['suffix']; ?></td>
+                <td><?php echo _('Gender'); ?></td>
+                <td><?php echo _('Nickname'); ?></td>
+                <td><?php echo _('Title'); ?></td>
+                <td><?php echo _('Prefix'); ?></td>
+                <td><?php echo _('Suffix'); ?></td>
             </tr>
             <tr>
                 <td>
                     <select name="sex">
-                        <option value="U"><?php echo $admtext['unknown']; ?></option>
+                        <option value="U"><?php echo _('Unknown'); ?></option>
                         <option value="M"<?php if ($gender == 'M') {
                             echo " selected";
-                        } ?>><?php echo $admtext['male']; ?></option>
+                        } ?>><?php echo _('Male'); ?></option>
                         <option value="F"<?php if ($gender == 'F') {
                             echo " selected";
-                        } ?>><?php echo $admtext['female']; ?></option>
+                        } ?>><?php echo _('Female'); ?></option>
                     </select>
                 </td>
                 <td>
@@ -127,11 +127,11 @@ header("Content-type:text/html; charset=" . $session_charset);
         <table class="normal topbuffer">
             <tr>
                 <td class="whitespace-no-wrap">
-                    <input type="checkbox" name="living" value="1" checked="checked"> <?php echo $admtext['living']; ?>&nbsp;&nbsp;
-                    <input type="checkbox" name="private" value="1"> <?php echo $admtext['text_private']; ?>
+                    <input type="checkbox" name="living" value="1" checked="checked"> <?php echo _('Living'); ?>&nbsp;&nbsp;
+                    <input type="checkbox" name="private" value="1"> <?php echo _('Private'); ?>
                 </td>
-                <td class="spaceonleft"><?php echo $admtext['tree'] . ": " . $treerow['treename']; ?></td>
-                <td class="spaceonleft"><?php echo $admtext['branch'] . ": "; ?>
+                <td class="spaceonleft"><?php echo _('Tree') . ": " . $treerow['treename']; ?></td>
+                <td class="spaceonleft"><?php echo _('Branch') . ": "; ?>
                     <?php
                     $query = "SELECT branch, description FROM $branches_table WHERE gedcom = '$tree' ORDER BY description";
                     $branchresult = tng_query($query);
@@ -149,15 +149,15 @@ header("Content-type:text/html; charset=" . $session_charset);
                     }
                     echo "<span id=\"branchlist2\"></span>";
                     if (!$assignedbranch) {
-                    if ($numbranches > 8) $select = $admtext['scrollbranch'] . "<br>";
+                    if ($numbranches > 8) $select = _('(Scroll to see all choices)') . "<br>";
                     $select .= "<select name=\"branch[]\" id=\"branch2\" multiple size='8'>\n";
                     $select .= "	<option value=\"\"";
                     if ($row['branch'] == "") $select .= " selected";
-                    $select .= ">{$admtext['nobranch']}</option>\n";
+                    $select .= ">" . _('No Branch') . "</option>\n";
                     $select .= "$options</select>\n";
                     echo " <span class='whitespace-no-wrap'>(";
                     echo "<a href='#' onclick=\"showBranchEdit('branchedit2'); quitBranchEdit('branchedit2'); return false;\">";
-                    echo $admtext['edit'];
+                    echo _('Edit');
                     echo buildSvgElement("img/chevron-down.svg", ["class" => "w-3 h-3 ml-2 fill-current inline-block"]);
                     echo "</a> )</span><br>";
                     ?>
@@ -174,12 +174,12 @@ header("Content-type:text/html; charset=" . $session_charset);
             </tr>
         </table>
 
-        <p class="normal topmarginsmall" style="margin-bottom:8px;"><?php echo $admtext['datenote']; ?></p>
+        <p class="normal topmarginsmall" style="margin-bottom:8px;"><?php echo _('<strong>Note:</strong> When entering dates, please use the standard genealogical format DD MMM YYYY. For example, 10 Apr 2004.'); ?></p>
         <table class="normal">
             <tr>
                 <td>&nbsp;</td>
-                <td><?php echo $admtext['date']; ?></td>
-                <td><?php echo $admtext['place']; ?></td>
+                <td><?php echo _('Date'); ?></td>
+                <td><?php echo _('Place'); ?></td>
                 <td colspan="4">&nbsp;</td>
             </tr>
             <?php
@@ -193,7 +193,7 @@ header("Content-type:text/html; charset=" . $session_charset);
             echo showEventRow('burialdate', 'burialplace', 'BURI', '');
             echo "<tr>";
             echo "<td></td>";
-            echo "<td colspan='3'><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">{$admtext['cremated']}</label></td>";
+            echo "<td colspan='3'><input type='checkbox' name=\"burialtype\" id=\"burialtype\" value='1'> <label for=\"burialtype\">" . _('Cremated') . "</label></td>";
             echo "</tr>\n";
             if (determineLDSRights()) {
                 echo showEventRow('baptdate', 'baptplace', 'BAPL', '');
@@ -207,8 +207,8 @@ header("Content-type:text/html; charset=" . $session_charset);
         <?php
         if ($type == "child") {
             echo "<br>\n";
-            echo $admtext['relationship'] . " ({$admtext['father']}): " . relateSelect("father") . "&nbsp;&nbsp;";
-            echo $admtext['relationship'] . " ({$admtext['mother']}): " . relateSelect("mother");
+            echo _('Relationship') . " (" . _('Father') . "): " . relateSelect("father") . "&nbsp;&nbsp;";
+            echo _('Relationship') . " (" . _('Mother') . "): " . relateSelect("mother");
         }
         ?>
 
@@ -225,6 +225,6 @@ header("Content-type:text/html; charset=" . $session_charset);
         }
         ?>
         <p class="normal" style="margin-top:15px;margin-left:4px;">
-            <input type="submit" name="submit" value="<?php echo $admtext['save']; ?>"> &nbsp; <strong><?php echo $admtext['pevslater2']; ?></strong></p>
+            <input type="submit" name="submit" value="<?php echo _('Save'); ?>"> &nbsp; <strong><?php echo _('Note: Additional events, plus event-specific notes and citations, may be added later.'); ?></strong></p>
         <div id="errormsg" class="red" style="display:none;"></div>
     </form>

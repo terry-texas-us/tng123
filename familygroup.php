@@ -5,7 +5,7 @@ include "tng_begin.php";
 include "personlib.php";
 $icon = buildSvgElement("img/search.svg", ["class" => "w-3 h-3 fill-current inline-block"]);
 $placelinkbegin = $tngconfig['places1tree'] ? "<a href=\"placesearch.php?psearch=" : "<a href=\"placesearch.php?tree=$tree&amp;psearch=";
-$placelinkend = "\" title=\"{$text['findplaces']}\">$icon</a>";
+$placelinkend = "\" title=\"" . _('Find all individuals with events at this location') . "\">$icon</a>";
 $firstsection = 0;
 $tableid = "";
 $cellnumber = 0;
@@ -63,7 +63,7 @@ function showDatePlace($event) {
         }
     }
     $dptext .= "<tr>\n";
-    $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height='15' alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
+    $editicon = $tentative_edit ? "<img src=\"img/tng_edit.gif\" width=\"16\" height='15' alt=\"" . _('Suggest a change for this event') . "\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['event']}&amp;title={$event['text']}', {width:500, height:500});\" class=\"fakelink\" />" : "";
     $dptext .= "<td class='fieldnameback align-top'$cellid><span class='fieldname'>" . $event['text'] . "&nbsp;$editicon</span></td>\n";
     $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['date']) . "$dcitestr&nbsp;</span></td>\n";
     $dptext .= "<td class='databack'";
@@ -81,11 +81,11 @@ function showDatePlace($event) {
             $event['type'] = $event['type2'];
             $event['ID'] = $event['ID2'];
         }
-        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height='15' alt=\"{$text['editevent']}\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
+        $editicon = $tentative_edit && $event['eventlds'] ? "<img src=\"img/tng_edit.gif\" width=\"16\" height='15' alt=\"" . _('Suggest a change for this event') . "\" align=\"absmiddle\" onclick=\"tnglitbox = new LITBox('ajx_tentedit.php?tree=$tree&amp;persfamID={$event['ID']}&amp;type={$event['type']}&amp;event={$event['eventlds']}&amp;title={$event['ldstext']}', {width:500, height:500});\" class=\"fakelink\">" : "";
         $dptext .= "<td class='fieldnameback align-top'><span class='fieldname'>" . $event['ldstext'] . "&nbsp;$editicon</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>" . displayDate($event['ldsdate']) . "&nbsp;</span></td>\n";
         $dptext .= "<td class='databack'><span class='normal'>{$event['ldsplace']}&nbsp;";
-        if ($event['ldsplace'] && $event['ldsplace'] != $text['place']) {
+        if ($event['ldsplace'] && $event['ldsplace'] != _('Place')) {
             $dptext .= $placelinkbegin . urlencode($event['ldsplace']) . $placelinkend;
         }
         $dptext .= "</span></td>\n";
@@ -116,21 +116,21 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $haskids = $ind['haskids'] ? "X" : "&nbsp;";
     $restriction = $familyID ? "AND familyID != '$familyID'" : "";
     if ($ind['sex'] == "M") {
-        $sex = $text['male'];
+        $sex = _('Male');
     } else {
         if ($ind['sex'] == "F") {
-            $sex = $text['female'];
+            $sex = _('Female');
         } else {
-            $sex = $text['unknown'];
+            $sex = _('Unknown');
         }
     }
     $namestr = getName($ind);
     $personID = $ind['personID'];
     //adjust for same-sex relationships
-    if ($ind['sex'] == "M" && $label == $text['wife']) {
-        $label = $text['husband'];
-    } elseif ($ind['sex'] == "F" && $label == $text['husband']) {
-        $label = $text['wife'];
+    if ($ind['sex'] == "M" && $label == _('Mother')) {
+        $label = _('Father');
+    } elseif ($ind['sex'] == "F" && $label == _('Father')) {
+        $label = _('Mother');
     }
     $indtext .= "<div class='titlebox rounded-lg'>\n";
     $indtext .= "<table class='w-full' border='0' cellspacing='2' cellpadding='0'>\n";
@@ -141,7 +141,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     if ($ind['haskids']) $indtext .= "+ ";
     $indtext .= "<a href=\"getperson.php?personID={$ind['personID']}&amp;tree=$tree\">$namestr</a>";
     if ($allow_edit && $rightbranch) {
-        $indtext .= " | <a href=\"admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target='_blank'>{$text['edit']}</a>";
+        $indtext .= " | <a href=\"admin_editperson.php?personID={$ind['personID']}&amp;tree=$tree&amp;cw=1\" target='_blank'>" . _('Edit') . "</a>";
     }
     $indtext .= "<br></h3>\n";
     $indtext .= "</td></tr>\n</table>\n<br>\n";
@@ -152,17 +152,17 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $indtext .= "<col class=\"labelcol\"/><col class=\"eventdatecol\"><col/>";
     $indtext .= $allow_lds_this ? "<col style=\"width:125px;\"/><col class=\"eventdatecol\"/><col class=\"labelcol\"/>\n" : "\n";
 
-    $event['text'] = $text['born'];
+    $event['text'] = _('Born');
     $event['event'] = "BIRT";
     $event['type'] = "I";
     $event['ID'] = $personID;
-    $event['ldstext'] = $text['ldsords'];
+    $event['ldstext'] = _('LDS Ordinances');
     if ($rights['both']) {
         $event['date'] = $ind['birthdate'];
         $event['place'] = $ind['birthplace'];
         if ($allow_lds_this) {
-            $event['ldsdate'] = $text['date'];
-            $event['ldsplace'] = $text['place'];
+            $event['ldsdate'] = _('Date');
+            $event['ldsplace'] = _('Place');
         }
     }
     $indtext .= showDatePlace($event);
@@ -172,7 +172,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $event['type'] = "I";
     $event['ID'] = $personID;
     $event['eventlds'] = "BAPL";
-    $event['ldstext'] = $text['baptizedlds'];
+    $event['ldstext'] = _('Baptized (LDS)');
     if ($rights['both']) {
         $event['date'] = $ind['altbirthdate'];
         $event['place'] = $ind['altbirthplace'];
@@ -182,17 +182,17 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         }
     }
     if ((isset($event['date']) && $event['date']) || (isset($event['place']) && $event['place']) || isset($event['ldsdate']) || isset($event['ldsplace'])) {
-        $event['text'] = $text['christened'];
+        $event['text'] = _('Christened');
         $indtext .= showDatePlace($event);
     }
 
     $event = [];
-    $event['text'] = $text['died'];
+    $event['text'] = _('Died');
     $event['event'] = "DEAT";
     $event['type'] = "I";
     $event['ID'] = $personID;
     $event['eventlds'] = "ENDL";
-    $event['ldstext'] = $text['endowedlds'];
+    $event['ldstext'] = _('Endowed (LDS)');
     if ($rights['both']) {
         $event['date'] = $ind['deathdate'];
         $event['place'] = $ind['deathplace'];
@@ -204,12 +204,12 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $indtext .= showDatePlace($event);
 
     $event = [];
-    $event['text'] = $ind['burialtype'] ? $text['cremated'] : $text['buried'];
+    $event['text'] = $ind['burialtype'] ? _('Cremated') : _('Buried');
     $event['event'] = "BURI";
     $event['type'] = "I";
     $event['ID'] = $personID;
     $event['eventlds'] = "SLGC";
-    $event['ldstext'] = $text['sealedplds'];
+    $event['ldstext'] = _('Sealed to Parents (LDS)');
     if ($rights['both']) {
         $event['date'] = $ind['burialdate'];
         $event['place'] = $ind['burialplace'];
@@ -244,12 +244,12 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
 
             $event = [];
             $eventd = [];
-            $event['text'] = $text['married'];
+            $event['text'] = _('Married');
             $event['event'] = "MARR";
             $event['type'] = "F";
             $event['ID'] = $familyID;
             $event['eventlds'] = "SLGS";
-            $event['ldstext'] = $text['sealedslds'];
+            $event['ldstext'] = _('Sealed to Spouse (LDS)');
             if ($famrights['both'] && $rights['both']) {
                 $event['date'] = $fam['marrdate'];
                 $event['place'] = $fam['marrplace'];
@@ -258,7 +258,7 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
                     $event['ldsplace'] = $fam['sealplace'];
                 }
                 $eventd['event'] = "DIV";
-                $eventd['text'] = $text['divorced'];
+                $eventd['text'] = _('Divorced');
                 $eventd['date'] = $fam['divdate'];
                 $eventd['place'] = $fam['divplace'];
             }
@@ -270,12 +270,12 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
             }
 
             if ($fam['marrtype'] && $famrights['both'] && $rights['both']) {
-                $indtext .= showFact($text['type'], $fam['marrtype']);
+                $indtext .= showFact(_('Type'), $fam['marrtype']);
             }
         }
-        $spousetext = $text['otherspouse'];
+        $spousetext = _('Other Spouse');
     } else {
-        $spousetext = $text['spouse'];
+        $spousetext = _('Spouse');
     }
 
     //show other spouses
@@ -318,12 +318,12 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $indtext .= showFact($spousetext, $spouselink);
 
         $event = [];
-        $event['text'] = $text['married'];
+        $event['text'] = _('Married');
         $event['event'] = "MARR";
         $event['type'] = "F";
         $event['ID'] = $fam['familyID'];
         $event['eventlds'] = "SLGS";
-        $event['ldstext'] = $text['sealedslds'];
+        $event['ldstext'] = _('Sealed to Spouse (LDS)');
         if ($famrights['both'] && $rights['both']) {
             $event['date'] = $fam['marrdate'];
             $event['place'] = $fam['marrplace'];
@@ -350,8 +350,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $fathername = getName($parent);
         tng_free_result($presult);
         $fatherlink = $fathername ? "<a href=\"getperson.php?personID={$parent['personID']}&amp;tree=$tree\">$fathername</a> | " : "";
-        $fatherlink .= $fathername ? "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} {$text['groupsheet']}</a>" : "";
-        $indtext .= showFact($text['father'], $fatherlink);
+        $fatherlink .= $fathername ? "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} " . _('Group Sheet') . "</a>" : "";
+        $indtext .= showFact(_('Father'), $fatherlink);
 
         $query = "SELECT familyID, personID, firstname, lnprefix, lastname, prefix, suffix, nameorder, people.living, people.private, people.branch ";
         $query .= "FROM $families_table families, $people_table people ";
@@ -366,8 +366,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
         $mothername = getName($parent);
         tng_free_result($presult);
         $motherlink = $mothername ? "<a href=\"getperson.php?personID={$parent['personID']}&amp;tree=$tree\">$mothername</a> | " : "";
-        $motherlink .= $mothername ? "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} {$text['groupsheet']}</a>" : "";
-        $indtext .= showFact($text['mother'], $motherlink);
+        $motherlink .= $mothername ? "<a href=\"familygroup.php?familyID={$parent['familyID']}&amp;tree=$tree\">{$parent['familyID']} " . _('Group Sheet') . "</a>" : "";
+        $indtext .= showFact(_('Mother'), $motherlink);
     }
     $indtext .= "</table>\n</div>\n<br>\n";
 
@@ -394,24 +394,23 @@ $famrow['allow_private'] = $rights['private'];
 
 $famname = getFamilyName($famrow);
 
-$logname = $tngconfig['nnpriv'] && $family['private'] ? $admtext['text_private'] : ($nonames && $famrow['living'] ? $text['living'] : $famname);
-$logstring = "<a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\">{$text['familygroupfor']} $logname ($familyID)</a>";
+$logname = $tngconfig['nnpriv'] && $family['private'] ? _('Private') : ($nonames && $famrow['living'] ? _('Living') : $famname);
+$logstring = "<a href=\"familygroup.php?familyID=$familyID&amp;tree=$tree\">" . _('Family Group Sheet for') . " $logname ($familyID)</a>";
 writelog($logstring);
 preparebookmark($logstring);
 
 $famname .= " ($familyID)";
-$namestr = $text['family'] . ": " . $famname;
+$namestr = _('Family') . ": " . $famname;
 if (!$rightbranch) $tentative_edit = "";
-
 
 $famnotes = getNotes($familyID, "F");
 
-$years = $famrow['marrdate'] && $rights['both'] ? $text['marrabbr'] . " " . displayDate($famrow['marrdate']) : "";
+$years = $famrow['marrdate'] && $rights['both'] ? _('m.') . " " . displayDate($famrow['marrdate']) : "";
 
 if ($rights['both']) {
-    tng_header($text['familygroupfor'] . " $famname $years ", $flags);
+    tng_header(_('Family Group Sheet for') . " $famname $years ", $flags);
 } else {
-    tng_header($text['familygroupfor'] . " $famname", $flags);
+    tng_header(_('Family Group Sheet for') . " $famname", $flags);
 }
 
 if ($rights['both']) {
@@ -439,7 +438,7 @@ if ($famrow['husband']) {
     $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['husband']}\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $husbrow = tng_fetch_assoc($result);
-    $label = $husbrow['sex'] != "F" ? $text['husband'] : $text['wife'];
+    $label = $husbrow['sex'] != "F" ? _('Father') : _('Mother');
     $famtext .= displayIndividual($husbrow, $label, $familyID, 1);
     tng_free_result($result);
 }
@@ -449,7 +448,7 @@ if ($famrow['wife']) {
     $query = "SELECT * FROM $people_table WHERE personID = \"{$famrow['wife']}\" AND gedcom = '$tree'";
     $result = tng_query($query);
     $wiferow = tng_fetch_assoc($result);
-    $label = $husbrow['sex'] != "M" ? $text['wife'] : $text['husband'];
+    $label = $husbrow['sex'] != "M" ? _('Mother') : _('Father');
     $famtext .= displayIndividual($wiferow, $label, $familyID, 0);
     tng_free_result($result);
 }
@@ -463,7 +462,7 @@ if ($children && tng_num_rows($children)) {
     $childcount = 0;
     while ($childrow = tng_fetch_assoc($children)) {
         $childcount++;
-        $famtext .= displayIndividual($childrow, $text['child'] . " $childcount", "", 1);
+        $famtext .= displayIndividual($childrow, _('Child') . " $childcount", "", 1);
     }
 }
 tng_free_result($children);
@@ -478,7 +477,7 @@ if ($rights['both']) {
     $query = "SELECT passocID, relationship, reltype FROM $assoc_table WHERE gedcom = '$tree' AND personID = '$familyID'";
     $assocresult = tng_query($query);
     while ($assoc = tng_fetch_assoc($assocresult)) {
-        $assoctext .= showEvent(["text" => $text['association'], "fact" => formatAssoc($assoc)]);
+        $assoctext .= showEvent(["text" => _('Association'), "fact" => formatAssoc($assoc)]);
     }
     tng_free_result($assocresult);
     if ($assoctext) {
@@ -506,7 +505,7 @@ if ($rights['both']) {
         $famtext .= "<div class='titlebox rounded-lg'>\n";
         $famtext .= "<table class='whiteback w-full' cellpadding='4' cellspacing='1' border='0'>\n";
         $famtext .= "<tr>\n";
-        $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
+        $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>" . _('Notes') . "&nbsp;</span></td>\n";
         $famtext .= "<td class='databack' colspan='2'>$notes</td>\n";
         $famtext .= "</tr>\n";
         $famtext .= "</table>\n</div>\n<br>\n";
@@ -517,7 +516,7 @@ if ($rights['both']) {
         $famtext .= "<div class='titlebox rounded-lg'>\n";
         $famtext .= "<table class='whiteback w-full' cellpadding='4' cellspacing='1' border='0'>\n";
         $famtext .= "<tr>\n";
-        $famtext .= "<td class='fieldnameback indleftcol align-top' name=\"citations1\" id=\"citations1\" style=\"width:100px;\"><a name=\"sources\"><span class='fieldname'>{$text['sources']}&nbsp;</span></td>\n";
+        $famtext .= "<td class='fieldnameback indleftcol align-top' name=\"citations1\" id=\"citations1\" style=\"width:100px;\"><a name=\"sources\"><span class='fieldname'>" . _('Sources') . "&nbsp;</span></td>\n";
         $famtext .= "<td class='databack' colspan='2'><ol class=\"normal citeblock\">";
         $citectr = 0;
         $count = count($citestring);
@@ -536,8 +535,8 @@ if ($rights['both']) {
     $famtext .= "<div class='titlebox rounded-lg'>\n";
     $famtext .= "<table class='whiteback w-full' cellpadding='4' cellspacing='1' border='0'>\n";
     $famtext .= "<tr>\n";
-    $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>{$text['notes']}&nbsp;</span></td>\n";
-    $famtext .= "<td class='databack' colspan='2'><span class='normal'>{$text['livingnote']}</span></td>\n";
+    $famtext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\" style=\"width:100px;\"><span class='fieldname'>" . _('Notes') . "&nbsp;</span></td>\n";
+    $famtext .= "<td class='databack' colspan='2'><span class='normal'>" . _('At least one living or private individual is linked to this note - Details withheld.') . "</span></td>\n";
     $famtext .= "</tr>\n";
     $famtext .= "</table>\n</div>\n<br>\n";
     $famtext .= endSection("notes");
@@ -552,22 +551,22 @@ if ($media || $notes || $assoctext) {
     } else {
         $tng_alink = "lightlink3";
     }
-    $innermenu = "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">{$text['faminfo']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+    $innermenu = "<a href='#' class=\"$tng_plink\" onclick=\"return infoToggle('info');\" id=\"tng_plink\">" . _('Family Information') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     if ($media) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">{$text['media']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('media');\" id=\"tng_mlink\">" . _('Media') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($assoctext) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('assoc');\" id=\"tng_xlink\">{$text['association']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('assoc');\" id=\"tng_xlink\">" . _('Association') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($notes) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">{$text['notes']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('notes');\" id=\"tng_nlink\">" . _('Notes') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
     if ($citedispctr) {
-        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('citations');\" id=\"tng_clink\">{$text['sources']}</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
+        $innermenu .= "<a href='#' class='lightlink' onclick=\"return infoToggle('citations');\" id=\"tng_clink\">" . _('Sources') . "</a> &nbsp;&nbsp; | &nbsp;&nbsp; \n";
     }
-    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">{$text['all']}</a>\n";
+    $innermenu .= "<a href='#' class=\"$tng_alink\" onclick=\"return infoToggle('all');\" id=\"tng_alink\">" . _('All') . "</a>\n";
 } else {
-    $innermenu = "<span class=\"lightlink3\" id=\"tng_plink\">{$text['faminfo']}</span>\n";
+    $innermenu = "<span class=\"lightlink3\" id=\"tng_plink\">" . _('Family Information') . "</span>\n";
 }
 
 $treeResult = getTreeSimple($tree);

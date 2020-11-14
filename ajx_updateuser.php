@@ -8,7 +8,7 @@ include "checklogin.php";
 require "adminlog.php";
 
 if (!$currentuser || $currentuser != $_POST['orguser']) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
@@ -31,7 +31,7 @@ $country = addslashes($country);
 $proceed = true;
 //first validate the original login
 $query = "SELECT password FROM {$users_table} WHERE username = \"{$currentuser}\" AND password = \"{$orgpwd}\"";
-$result = tng_query($query) or die ("{$admtext['cannotexecutequery']}: $query");
+$result = tng_query($query) or die ("" . _('Cannot execute query') . ": $query");
 
 if (!$result || tng_num_rows($result) == 0) {
     $proceed = false;
@@ -41,7 +41,7 @@ tng_free_result($result);
 //check to make sure this user doesn't already exist
 if ($proceed && $username != $currentuser) {
     $query = "SELECT username FROM $users_table WHERE username = \"$username\"";
-    $result = tng_query($query) or die ("{$admtext['cannotexecutequery']}: $query");
+    $result = tng_query($query) or die ("" . _('Cannot execute query') . ": $query");
 
     if ($result && tng_num_rows($result)) $proceed = false;
 
@@ -60,7 +60,7 @@ if ($proceed) {
     $query = "UPDATE $users_table SET username='$username',{$pwd_str}realname=\"$realname\",phone=\"$phone\",email='$email',website=\"$website\",address=\"$address\",city=\"$city\",state=\"$state\",zip=\"$zip\",country=\"$country\",languageID=\"$preflang\" WHERE username=\"$currentuser\"";
     $result = @tng_query($query);
 
-    adminwritelog("{$admtext['modifyuser']}: $currentuser/a>");
+    adminwritelog("" . _('Edit Existing User') . ": $currentuser/a>");
 
     if (tng_affected_rows() != -1 && ($password != $orgpwd || $username != $currentuser)) {
         $_SESSION['currentuser'] = $username;
@@ -71,7 +71,7 @@ if ($proceed) {
         setcookie("tngpass_$newroot", "", time() - 31536000, "/");
     }
 } else {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }

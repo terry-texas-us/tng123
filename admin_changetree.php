@@ -7,7 +7,7 @@ include "$mylanguage/admintext.php";
 include "checklogin.php";
 //permissions
 if ($assignedtree || !$allow_edit) {
-    $message = $admtext['norights'];
+    $message = _('You are not authorized to view this page. If you have a username and password, please login below.');
     header("Location: admin_login.php?message=" . urlencode($message));
     exit;
 }
