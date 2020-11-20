@@ -2,8 +2,7 @@
 include "begin.php";
 include "adminlib.php";
 require_once "./admin/trees.php";
-$textpart = "sources";
-include "$mylanguage/admintext.php";
+
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";

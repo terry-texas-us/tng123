@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "setup";
-include "$mylanguage/admintext.php";
 
 header("Content-type:text/html; charset=" . $session_charset);
 if ($link) {

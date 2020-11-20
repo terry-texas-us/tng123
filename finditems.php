@@ -2,8 +2,6 @@
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "sources";
-include "$mylanguage/admintext.php";
 
 define("MODAL_FIND_RESULTS_LIMIT", 100);
 

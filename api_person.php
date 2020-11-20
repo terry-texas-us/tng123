@@ -1,9 +1,7 @@
 <?php
 include "begin.php";
 include "genlib.php";
-$textpart = "getperson";
 include "getlang.php";
-include "$mylanguage/text.php";
 
 include "api_checklogin.php";
 include "personlib.php";

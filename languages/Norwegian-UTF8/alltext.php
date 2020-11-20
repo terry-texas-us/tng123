@@ -149,7 +149,7 @@ $text['years'] = "år";
 //added in 10.0.0
 $admtext['CONL'] = "Konfirmasjon";
 $admtext['INIT'] = "Initiatory (LDS)";
-$admtext['step'] = "Stebarn";
+$admtext['stepchild'] = "Stebarn";
 $text['switchm'] = "Bytt til mobilt nettsted";
 $text['switchs'] = "Bytt til standard nettsted";
 

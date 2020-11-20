@@ -1,6 +1,6 @@
 <?php
 
-global $text, $tmp;
+global $tmp;
 
 $dadlabel = getTemplateMessage('t11_dadside');
 $momlabel = getTemplateMessage('t11_momside');

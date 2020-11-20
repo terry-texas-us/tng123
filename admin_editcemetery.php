@@ -4,8 +4,6 @@ include "begin.php";
 include "config/mapconfig.php";
 $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include "adminlib.php";
-$textpart = "cemeteries";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

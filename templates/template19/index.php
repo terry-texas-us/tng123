@@ -2,7 +2,7 @@
 
 $flags['noicons'] = 0;
 
-tng_header($sitename ? "" : $text['mnuheader'], $flags);
+tng_header($sitename ? "" : _("Home Page"), $flags);
 $dadlabel = getTemplateMessage('t19_dadside');
 $momlabel = getTemplateMessage('t19_momside');
 ?>
@@ -20,34 +20,34 @@ $momlabel = getTemplateMessage('t19_momside');
     <div class="contentRight">
         <h1><?php echo getTemplateMessage('t19_featuretitle1'); ?></h1>
         <p class="dropcap"><?php echo getTemplateMessage('t19_featurepara1'); ?></p>
-        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink1']; ?>"><?php echo $text['more']; ?></a></p>
+        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink1']; ?>"><?php echo _("More"); ?></a></p>
         <!-- 2nd text box with image floated right -->
         <h3><?php echo getTemplateMessage('t19_featuretitle2'); ?></h3>
         <p><a href="<?php echo $tmp['t19_featurelink2']; ?>" title="" class=""><img src="<?php echo $templatepath . $tmp['t19_featurethumb1']; ?>" id="mainphoto" class="img-frame-right"
                     alt="main image"></a><?php echo getTemplateMessage('t19_featurepara2'); ?></p>
-        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink3']; ?>"><?php echo $text['more']; ?></a></p>
+        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink3']; ?>"><?php echo _("More"); ?></a></p>
     </div>
     <!-- SidebarLeft content area -->
     <div class="sidebarLeft">
         <div class="callbox1">
-            <h4><?php echo $text['search']; ?></h4>
+            <h4><?php echo _("Search"); ?></h4>
             <form method="get" name="searchform" action="search.php" class="entry-content" id="home-search-box">
                 <div style="display:inline-block;">
-                    <label for="myfirstname"><?php echo $text['firstname']; ?></label>
+                    <label for="myfirstname"><?php echo _("First Name"); ?></label>
                     <br>
                     <input id="myfirstname" class="w-medfield" name="myfirstname" type="text" value="">
                     <br>
-                    <label for="mylastname"><?php echo $text['lastname']; ?></label>
+                    <label for="mylastname"><?php echo _("Last Name"); ?></label>
                     <br>
                     <input id="mylastname" class="medfield" name="mylastname" type="text" value="">
                     <br>
                     <input type="hidden" name="mybool" value="AND">
                 </div>
                 <div style="display: inline-block; vertical-align: top; padding: 15px;">
-                    <input type="submit" id="search-submit" value="<?php echo $text['search']; ?>">
+                    <input type="submit" id="search-submit" value="<?php echo _("Search"); ?>">
                     <ul class="home-menus">
-                        <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
-                        <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
+                        <li><a href="surnames.php"><?php echo _("Surnames"); ?></a></li>
+                        <li><a href="searchform.php"><?php echo _("Advanced Search"); ?></a></li>
                     </ul>
                 </div>
             </form>
@@ -55,7 +55,7 @@ $momlabel = getTemplateMessage('t19_momside');
         <div class="callbox1">
             <h4><?php echo getTemplateMessage('t19_featuretitle3'); ?></h4>
             <p><?php echo getTemplateMessage('t19_featurepara3'); ?></p>
-            <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink4']; ?>"><?php echo $text['more']; ?></a></p>
+            <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink4']; ?>"><?php echo _("More"); ?></a></p>
             <p></p>
         </div>
         <div class="callbox1">
@@ -150,7 +150,7 @@ $momlabel = getTemplateMessage('t19_momside');
     <article class="contentBox3a">
         <h6><?php echo getTemplateMessage('t19_featuretitle5'); ?><img src="<?php echo $templatepath . $tmp['t19_featurethumb2']; ?>" id="bottomphoto1" class="img-round-left" alt="bottom image"></h6>
         <p><?php echo getTemplateMessage('t19_featurepara6'); ?></p>
-        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink5']; ?>"><?php echo $text['more']; ?></a></p>
+        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink5']; ?>"><?php echo _("More"); ?></a></p>
     </article>
 
     <article class="contentBox3b">
@@ -198,7 +198,7 @@ $momlabel = getTemplateMessage('t19_momside');
     <article class="contentBox3c">
         <h6><?php echo getTemplateMessage('t19_featuretitle6'); ?><img src="<?php echo $templatepath . $tmp['t19_featurethumb3']; ?>" id="bottomphoto1" class="img-round-left" alt="bottom image"></h6>
         <p><?php echo getTemplateMessage('t19_featurepara7'); ?></p>
-        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink6']; ?>"><?php echo $text['more']; ?></a></p>
+        <p class="right"><a class="btn-detail" href="<?php echo $tmp['t19_featurelink6']; ?>"><?php echo _("More"); ?></a></p>
     </article>
     <div class="clear"></div>
 </div> </div>

@@ -441,7 +441,7 @@ $pdf->Output();
 function childLine($childnum, $data, $cite = '') {
     global $pdf, $paperdim, $lftmrg, $rtmrg, $lineheight;
     global $rptFontSize, $rptFont, $lblFontSize, $citefontsub;
-    global $labelwidth, $text;
+    global $labelwidth;
 
     $pdf->SetFont($rptFont, "B", $lblFontSize);
 

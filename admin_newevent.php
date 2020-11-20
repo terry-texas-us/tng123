@@ -2,8 +2,6 @@
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "events";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

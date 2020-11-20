@@ -1,4 +1,7 @@
-<?php global $text, $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes, $rootpath; ?>
+<?php
+
+global $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes, $rootpath;
+?>
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicback">
 
@@ -104,40 +107,40 @@ echo "</script>\n";
                 <div class="menuback">
                     <?php
                     if ($currentuser) {
-                        echo "<p class=\"blueemphasis\">&nbsp;&nbsp;{$text['welcome']}, $currentuserdesc.</p>\n";
+                        echo "<p class='blueemphasis'>&nbsp;&nbsp;" . _("Welcome") . ", $currentuserdesc.</p>\n";
                     } else {
-                        echo "<p class=\"blueemphasis\">&nbsp;&nbsp;{$text['welcome']}, {$text['visitor']}.</p>\n";
+                        echo "<p class='blueemphasis'>&nbsp;&nbsp;" . _("Welcome") . ", " . _("Visitor") . ".</p>\n";
                     }
                     ?>
-                    <a href="searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
+                    <a href="searchform.php" class="searchimg"><?php echo _("Search"); ?></a>
 
                     <form action="search.php" method="get">
-                        <p class="fieldname"><?php echo $text['mnufirstname']; ?>:<br>
+                        <p class="fieldname"><?php echo _("First Name"); ?>:<br>
                             <input type="text" name="myfirstname" class="searchbox" size="14"/>
                         </p>
-                        <p class="fieldname"><?php echo $text['mnulastname']; ?>: <br>
+                        <p class="fieldname"><?php echo _("Last Name"); ?>: <br>
                             <input type="text" name="mylastname" class="searchbox" size="14"/>
                         </p>
                         <input type="hidden" name="mybool" value="AND"/>
-                        <input type="submit" name="search" value="<?php echo $text['mnusearchfornames']; ?>" class="small"/>
+                        <input type="submit" name="search" value="<?php echo _("Search"); ?>" class="small"/>
                     </form>
                     <div id="leftnavmenu" class="fieldname">
                         <ul>
-                            <li class="bullet"><a href="searchform.php" class="leftnavlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
-                            <li class="bullet"><a href="surnames.php" class="leftnavlink"><?php echo $text['mnulastnames']; ?></a></li>
+                            <li class="bullet"><a href="searchform.php" class="leftnavlink"><?php echo _("Advanced Search"); ?></a></li>
+                            <li class="bullet"><a href="surnames.php" class="leftnavlink"><?php echo _("Surnames"); ?></a></li>
                         </ul>
                         <?php
                         if ($currentuser) {
                             echo "<ul>\n";
-                            echo "<li class=\"bullet\"><a href=\"logout.php\" class=\"leftnavlink\">{$text['mnulogout']}</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"logout.php\" class=\"leftnavlink\">" . _("Log Out") . "</a></li>\n";
                         } else {
                             echo "<ul>\n";
-                            echo "<li class=\"bullet\"><a href=\"login.php\" class=\"leftnavlink\">{$text['mnulogon']}</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"login.php\" class=\"leftnavlink\">" . _("Log In") . "</a></li>\n";
                             if (!$currentuser && !$tngconfig['disallowreg'])
-                                echo "<li class=\"bullet\"><a href=\"newacctform.php\" class=\"leftnavlink\">{$text['mnuregister']}</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"newacctform.php\" class=\"leftnavlink\">" . _("Register for a User Account") . "</a></li>\n";
                         }
 
-                        echo "<li class=\"bullet\"><a href=\"changelanguage.php\" class=\"lightlink\">{$text['mnulanguage']}</a></li>\n";
+                        echo "<li class=\"bullet\"><a href=\"changelanguage.php\" class=\"lightlink\">" . _("Change Language") . "</a></li>\n";
                         ?>
                         </ul><br>
                     </div>
@@ -239,15 +242,15 @@ echo "</script>\n";
                     <div id="gen" class="fieldname">
                         <ul class="categoryitems">
                             <?php
-                            echo "<li class=\"bullet\"><a href=\"whatsnew.php\" class=\"lightlink\">{$text['mnuwhatsnew']}</a></li>\n";
-                            echo "<li class=\"bullet\"><a href=\"mostwanted.php\" class=\"lightlink\">{$text['mostwanted']}</a></li>\n";
-                            echo "<li class=\"bullet\"><a href=\"reports.php\" class=\"lightlink\">{$text['mnureports']}</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"whatsnew.php\" class=\"lightlink\">" . _("What's New") . "</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"mostwanted.php\" class=\"lightlink\">" . _("Most Wanted") . "</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"reports.php\" class=\"lightlink\">" . _("Reports") . "</a></li>\n";
                             if (!$tngconfig['hidedna'])
-                                echo "<li class=\"bullet\"><a href=\"browse_dna_tests.php\" class=\"lightlink\">{$text['dna_tests']}</a></li>\n";
-                            echo "<li class=\"bullet\"><a href=\"statistics.php\" class=\"lightlink\">{$text['mnustatistics']}</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"browse_dna_tests.php\" class=\"lightlink\">" . _("DNA Tests") . "</a></li>\n";
+                            echo "<li class=\"bullet\"><a href=\"statistics.php\" class=\"lightlink\">" . _("Statistics") . "</a></li>\n";
                             if ($allow_admin) {
-                                echo "<li class=\"bullet\"><a href=\"showlog.php\" class=\"lightlink\">{$text['mnushowlog']}</a></li>\n";
-                                echo "<li class=\"bullet\"><a href=\"admin.php\" class=\"lightlink\">{$text['mnuadmin']}</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"showlog.php\" class=\"lightlink\">" . _("Access Log") . "</a></li>\n";
+                                echo "<li class=\"bullet\"><a href=\"admin.php\" class=\"lightlink\">" . _("Administration") . "</a></li>\n";
                             }
 
                             ?>

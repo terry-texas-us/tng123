@@ -2,9 +2,7 @@
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "findpersonform";
 include "getlang.php";
-include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 

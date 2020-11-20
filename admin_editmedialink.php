@@ -36,27 +36,26 @@ function doEvent($eventID, $displayval, $info) {
 
 $options = "<option value=\"\">" . _('No encryption') . "</option>";
 if ($row['linktype'] == "I") {
-    //standard people events
-    $list = ["NAME", "BIRT", "CHR", "DEAT", "BURI"];
-    foreach ($list as $eventtype)
-        $options .= doEvent($eventtype, $admtext[$eventtype], '');
+    $options .= doEvent("NAME", _("Name"), '');
+    $options .= doEvent("BIRT", _("Birth"), '');
+    $options .= doEvent("CHR", _("Christening"), '');
+    $options .= doEvent("DEAT", _("Death"), '');
+    $options .= doEvent("BURI", _("Burial"), '');
+
     if ($ldsOK) {
-        $ldslist = ["BAPL", "CONL", "INIT", "ENDL", "SLGC"];
-        foreach ($ldslist as $eventtype)
-            $options .= doEvent($eventtype, $admtext[$eventtype], '');
+        $options .= doEvent("BAPL", _("Baptism (LDS)"), '');
+        $options .= doEvent("CONL", _("Confirmation (LDS)"), '');
+        $options .= doEvent("INIT", _("Initiatory (LDS)"), '');
+        $options .= doEvent("ENDL", _("Endowment (LDS)"), '');
+        $options .= doEvent("SLGC", _("Sealed to Parents (LDS)"), '');
     }
 } elseif ($row['linktype'] == "F") {
-    //standard family events
-    $list = ["MARR", "DIV"];
-    foreach ($list as $eventtype)
-        $options .= doEvent($eventtype, $admtext[$eventtype], '');
+    $options .= doEvent("MARR", _("Married"), '');
+    $options .= doEvent("DIV", _("Divorced"), '');
     if ($ldsOK) {
-        $ldslist = ["SLGS"];
-        foreach ($ldslist as $eventtype)
-            $options .= doEvent($eventtype, $admtext[$eventtype], '');
+        $options .= doEvent("SLGS", _("Sealed to Spouse (LDS)"), '');
     }
 }
-
 //now call up custom events linked to passed in entity
 $query = "SELECT display, eventdate, eventplace, info, eventID ";
 $query .= "FROM $events_table events, $eventtypes_table eventtypes ";

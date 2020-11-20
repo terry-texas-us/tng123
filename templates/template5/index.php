@@ -10,7 +10,7 @@ echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " mt-2'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 $title = getTemplateMessage('t5_maintitle');
 $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", $text['contactus_long']);
@@ -36,7 +36,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                         <tr>
                             <td colspan="2" class="boxback">
                                 <div id="menubar">
-                                    <a href="whatsnew.php" class="lightlink2"><?php echo $text['mnuwhatsnew']; ?></a>
+                                    <a href="whatsnew.php" class="lightlink2"><?php echo _("What's New"); ?></a>
                                     <?php
                                     foreach ($mediatypes as $mediatype) {
                                         if (!$mediatype['disabled']) {
@@ -44,29 +44,29 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                         }
                                     }
                                     ?>
-                                    | <a href="browsealbums.php" class="lightlink2"><?php echo $text['albums']; ?></a>
-                                    | <a href="browsemedia.php" class="lightlink2"><?php echo $text['allmedia']; ?></a><br>
+                                    | <a href="browsealbums.php" class="lightlink2"><?php echo _("Albums"); ?></a>
+                                    | <a href="browsemedia.php" class="lightlink2"><?php echo _("All Media"); ?></a><br>
 
-                                    <a href="mostwanted.php" class="lightlink2"><?php echo $text['mostwanted']; ?></a>
-                                    | <a href="reports.php" class="lightlink2"><?php echo $text['mnureports']; ?></a>
-                                    | <a href="cemeteries.php" class="lightlink2"><?php echo $text['mnucemeteries']; ?></a>
-                                    | <a href="anniversaries.php" class="lightlink2"><?php echo $text['anniversaries']; ?></a>
-                                    | <a href="calendar.php" class="lightlink2"><?php echo $text['calendar']; ?></a>
-                                    | <a href="places.php" class="lightlink2"><?php echo $text['places']; ?></a><br>
+                                    <a href="mostwanted.php" class="lightlink2"><?php echo _("Most Wanted"); ?></a>
+                                    | <a href="reports.php" class="lightlink2"><?php echo _("Reports"); ?></a>
+                                    | <a href="cemeteries.php" class="lightlink2"><?php echo _("Cemeteries"); ?></a>
+                                    | <a href="anniversaries.php" class="lightlink2"><?php echo _("Dates and Anniversaries"); ?></a>
+                                    | <a href="calendar.php" class="lightlink2"><?php echo _("Calendar"); ?></a>
+                                    | <a href="places.php" class="lightlink2"><?php echo _("Places"); ?></a><br>
 
-                                    <a href="browsenotes.php" class="lightlink2"><?php echo $text['notes']; ?></a>
-                                    | <a href="browsesources.php" class="lightlink2"><?php echo $text['mnusources']; ?></a>
-                                    | <a href="browserepos.php" class="lightlink2"><?php echo $text['repositories']; ?></a>
+                                    <a href="browsenotes.php" class="lightlink2"><?php echo _("Notes"); ?></a>
+                                    | <a href="browsesources.php" class="lightlink2"><?php echo _("Sources"); ?></a>
+                                    | <a href="browserepos.php" class="lightlink2"><?php echo _("Repositories"); ?></a>
                                     <?php if (!$tngconfig['hidedna']) { ?>
-                                        | <a href="browse_dna_tests.php" class="lightlink2"><?php echo $text['dna_tests']; ?></a>
+                                        | <a href="browse_dna_tests.php" class="lightlink2"><?php echo _("DNA Tests"); ?></a>
                                     <?php } ?>
-                                    | <a href="statistics.php" class="lightlink2"><?php echo $text['mnustatistics']; ?></a>
-                                    | <a href="bookmarks.php" class="lightlink2"><?php echo $text['bookmarks']; ?></a>
-                                    | <a href="suggest.php" class="lightlink2"><?php echo $text['contactus']; ?></a>
+                                    | <a href="statistics.php" class="lightlink2"><?php echo _("Statistics"); ?></a>
+                                    | <a href="bookmarks.php" class="lightlink2"><?php echo _("Bookmarks"); ?></a>
+                                    | <a href="suggest.php" class="lightlink2"><?php echo _("Contact Us"); ?></a>
                                     <?php
                                     if ($allow_admin) {
-                                        echo "| <a href='showlog.php' class='lightlink2'>{$text['mnushowlog']}</a>\n";
-                                        echo "| <a href='admin.php' class='lightlink2'>{$text['mnuadmin']}</a>\n";
+                                        echo "| <a href='showlog.php' class='lightlink2'>" . _("Access Log") . "</a>\n";
+                                        echo "| <a href='admin.php' class='lightlink2'>" . _("Administration") . "</a>\n";
                                     }
                                     ?>
                                 </div>
@@ -76,7 +76,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                             <td>
                                 <div class="leftcontent">
                                     <div class="theader">
-                                        <h1><?php echo $text['welcome']; ?>!</h1>
+                                        <h1><?php echo _("Welcome"); ?>!</h1>
                                     </div>
                                     <div class="normal">
                                         <?php echo getTemplateMessage('t5_mainpara'); ?>
@@ -85,14 +85,14 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                             <?php
                                             if (!$currentuser) {
                                                 if (!$tngconfig['disallowreg']) {
-                                                    echo "<li><a href='newacctform.php'>{$text['mnuregister']}</a></li>\n";
+                                                    echo "<li><a href='newacctform.php'>" . _("Register for a User Account") . "</a></li>\n";
                                                 }
-                                                echo "<li><a href='login.php'>{$text['mnulogon']}</a></li>\n";
+                                                echo "<li><a href='login.php'>" . _("Log In") . "</a></li>\n";
                                             } else {
-                                                echo "<li><a href='logout.php'>{$text['mnulogout']}</a></li>\n";
+                                                echo "<li><a href='logout.php'>" . _("Log Out") . "</a></li>\n";
                                             }
                                             if ($chooselang) {
-                                                echo "<li><a href='changelanguage.php'>{$text['mnulanguage']}</a></li>\n";
+                                                echo "<li><a href='changelanguage.php'>" . _("Change Language") . "</a></li>\n";
                                             }
                                             ?>
                                         </ul>
@@ -101,21 +101,21 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                 <div class="rightcontent">
                                     <img src="<?php echo $templatepath; ?><?php echo $tmp['t5_mainimage']; ?>" alt=""
                                         class="indexphoto"><br><br>
-                                    <span class="right" style="margin-right:8px;"><?php echo $text['whichbranch']; ?></span>
+                                    <span class="right" style="margin-right:8px;"><?php echo _("Which branch are you from?"); ?></span>
                                 </div>
                                 <div class="rightcontent">
                                     <form action="search.php" method="get">
                                         <table class="indexbox rounded" id="searchbox">
                                             <tr>
                                                 <td class="padding">
-                                                    <label><?php echo $text['mnufirstname']; ?>:<br>
+                                                    <label><?php echo _("First Name"); ?>:<br>
                                                         <input type="search" name="myfirstname" class="searchbox">
                                                     </label>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="padding">
-                                                    <label><?php echo $text['mnulastname']; ?>:<br>
+                                                    <label><?php echo _("Last Name"); ?>:<br>
                                                         <input type="search" name="mylastname" class="searchbox">
                                                     </label>
                                                 </td>
@@ -124,9 +124,9 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                                 <td class="padding">
                                                     <span class="normal">
                                                         <input type="hidden" name="mybool" value="AND">
-                                                        <input type="submit" name="search" value="<?php echo $text['mnusearchfornames']; ?>"><br><br>
-						                                <?php echo "<a href='surnames.php' class='lightlink2'>{$text['mnulastnames']}</a><br>\n"; ?>
-                                                        <?php echo "<a href='searchform.php' class='lightlink2'>{$text['mnuadvancedsearch']}</a>\n"; ?>
+                                                        <input type="submit" name="search" value="<?php echo _("Search"); ?>"><br><br>
+						                                <?php echo "<a href='surnames.php' class='lightlink2'>" . _("Surnames") . "</a><br>\n"; ?>
+                                                        <?php echo "<a href='searchform.php' class='lightlink2'>" . _("Advanced Search") . "</a>\n"; ?>
                                                     </span>
                                                 </td>
                                             </tr>

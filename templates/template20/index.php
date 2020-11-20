@@ -10,7 +10,7 @@ $flags['noicons'] = false;
 $flags['noheader'] = false;
 $flags['nobody'] = false;
 $tngconfig['showshare'] = false;
-tng_header($sitename ? "" : $text['ourpages'], $flags);
+tng_header($sitename ? "" : _("Our Family Genealogy Pages"), $flags);
 ?>
     <div id="homepage" class="content">
         <div id="leftsection" class="leftsection"><br>
@@ -79,7 +79,7 @@ tng_header($sitename ? "" : $text['ourpages'], $flags);
                     <br class="featuretext"><?php echo getTemplateMessage('t20_featurepara6'); ?>
                 </p>
             </div>
-            <div id="contactus" class="normal"><b><?php echo $text['contactus']; ?></b></div>
+            <div id="contactus" class="normal"><b><?php echo _("Contact Us"); ?></b></div>
 
             <div class="normal">
                 <p><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image" class="emailimg"/></p>
@@ -95,7 +95,7 @@ tng_header($sitename ? "" : $text['ourpages'], $flags);
         <div>
             <?php
             $nc = new surname_cloud();
-            $nc->display($tmp['t20_nbrsurnames'] . $text['inplace'] . $sitename);
+            $nc->display($tmp['t20_nbrsurnames'] . _(" in ") . $sitename);
             ?>
         </div>
     </div>

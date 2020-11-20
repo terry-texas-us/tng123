@@ -1,4 +1,7 @@
-<?php global $text, $tmp; ?>
+<?php
+
+global $tmp;
+?>
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
 <table class="tableborder rounded-lg t3shadow w-full" cellspacing="0" cellpadding="5">
@@ -13,17 +16,17 @@
                 <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headtitleimg']; ?>" alt="" class="menutitle">
             <?php } ?>
             <br>
-            <a href="index.php" class="topmenu"><?php echo $text['homepage']; ?></a> |
-            <a href="whatsnew.php" class="topmenu"><?php echo $text['mnuwhatsnew']; ?></a> |
-            <a href="browsemedia.php?mediatypeID=photos" class="topmenu"><?php echo $text['mnuphotos']; ?></a> |
-            <a href="browsemedia.php?mediatypeID=histories" class="topmenu"><?php echo $text['mnuhistories']; ?></a> |
-            <a href="browsesources.php" class="topmenu"><?php echo $text['mnusources']; ?></a> |
-            <a href="reports.php" class="topmenu"><?php echo $text['mnureports']; ?></a> |
-            <a href="calendar.php" class="topmenu"><?php echo $text['calendar']; ?></a> |
-            <a href="cemeteries.php" class="topmenu"><?php echo $text['mnucemeteries']; ?></a> |
-            <a href="browsemedia.php?mediatypeID=headstones" class="topmenu"><?php echo $text['mnutombstones']; ?></a> |
-            <a href="statistics.php" class="topmenu"><?php echo $text['mnustatistics']; ?></a> |
-            <a href="surnames.php" class="topmenu"><?php echo $text['mnulastnames']; ?></a>
+            <a href="index.php" class="topmenu"><?php echo _("Home"); ?></a> |
+            <a href="whatsnew.php" class="topmenu"><?php echo _("What's New"); ?></a> |
+            <a href="browsemedia.php?mediatypeID=photos" class="topmenu"><?php echo _("Photos"); ?></a> |
+            <a href="browsemedia.php?mediatypeID=histories" class="topmenu"><?php echo _("Histories"); ?></a> |
+            <a href="browsesources.php" class="topmenu"><?php echo _("Sources"); ?></a> |
+            <a href="reports.php" class="topmenu"><?php echo _("Reports"); ?></a> |
+            <a href="calendar.php" class="topmenu"><?php echo _("Calendar"); ?></a> |
+            <a href="cemeteries.php" class="topmenu"><?php echo _("Cemeteries"); ?></a> |
+            <a href="browsemedia.php?mediatypeID=headstones" class="topmenu"><?php echo _("Headstones"); ?></a> |
+            <a href="statistics.php" class="topmenu"><?php echo _("Statistics"); ?></a> |
+            <a href="surnames.php" class="topmenu"><?php echo _("Surnames"); ?></a>
         </td>
     </tr>
 </table>

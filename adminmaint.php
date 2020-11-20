@@ -2,8 +2,6 @@
 include "begin.php";
 $tngconfig['maint'] = "";
 include "adminlib.php";
-$textpart = "setup";
-include "$mylanguage/admintext.php";
 
 $maintenance_mode = true;
 include "checklogin.php";

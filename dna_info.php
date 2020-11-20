@@ -3,9 +3,7 @@
 //Created By Add DNA Test Results Mod
 require_once "begin.php";
 require_once "genlib.php";
-$textpart = "dna";
 require_once "getlang.php";
-require_once "$mylanguage/text.php";
 
 header("Content-type:text/html; charset=" . $session_charset);
 ?>

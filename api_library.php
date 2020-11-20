@@ -29,8 +29,13 @@ function setMinEvent($data, $datetr) {
     }
 }
 
+/**
+ * @param $row
+ * @param false $fullevents
+ * @return string
+ */
 function api_person($row, $fullevents = false) {
-    global $lnprefixes, $text, $rights, $events;
+    global $lnprefixes, $rights, $events;
 
     $person = "\"id\":\"{$row['personID']}\",\"tree\":\"{$row['gedcom']}\",";
     if ($row['allow_living']) {

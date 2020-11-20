@@ -149,7 +149,7 @@ $text['years'] = "år";
 //added in 10.0.0
 $admtext['CONL'] = "Bekræftelse (SDH)";
 $admtext['INIT'] = "Forberedende (SDH)";
-$admtext['step'] = "Stedbarn";
+$admtext['stepchild'] = "Stedbarn";
 $text['switchm'] = "Skift til mobilvisning";
 $text['switchs'] = "Skift til standardvisning";
 

@@ -6,9 +6,6 @@ $mapkeystr = $map['key'] && $map['key'] != "1" ? "&amp;key=" . $map['key'] : "";
 include "adminlib.php";
 require_once "./admin/trees.php";
 
-$textpart = "photos";
-include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";

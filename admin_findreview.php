@@ -5,6 +5,7 @@ include "adminlib.php";
 require_once "admin/pagination.php";
 $textpart = "review";
 include "$mylanguage/admintext.php";
+
 $admin_login = true;
 include "checklogin.php";
 include "version.php";

@@ -2,8 +2,6 @@
 @ini_set('memory_limit', '200M');
 include "begin.php";
 include "adminlib.php";
-$textpart = "setup";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

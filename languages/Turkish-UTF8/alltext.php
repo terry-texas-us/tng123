@@ -149,7 +149,7 @@ $text['years'] = "yıl";
 //added in 10.0.0
 $admtext['CONL'] = "Onay (LDS)";
 $admtext['INIT'] = "Başlatan (LDS)";
-$admtext['step'] = "Üvey Evlât";
+$admtext['stepchild'] = "Üvey Evlât";
 $text['switchm'] = "Mobil siteye geç";
 $text['switchs'] = "Standart siteye geç";
 

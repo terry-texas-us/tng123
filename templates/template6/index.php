@@ -5,12 +5,12 @@ if (!isset($title) || !$title) {
 }
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Home Page"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 ?>
     <table class="w-full" cellspacing="0" cellpadding="5">
@@ -27,7 +27,7 @@ if ($tngconfig['maint']) {
                         <table cellspacing="0">
                             <tr>
                                 <td>
-                                    <label for="myfirstname"><?php echo $text['firstname']; ?>:</label>
+                                    <label for="myfirstname"><?php echo _("First Name"); ?>:</label>
                                 </td>
                                 <td class="searchbox">
                                     <input id="myfirstname" name="myfirstname" type="search">
@@ -36,7 +36,7 @@ if ($tngconfig['maint']) {
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="mylastname"><?php echo $text['lastname']; ?>:</label>
+                                    <label for="mylastname"><?php echo _("Last Name"); ?>:</label>
                                 </td>
                                 <td class="searchbox">
                                     <input id="mylastname" name="mylastname" type="search">
@@ -49,8 +49,8 @@ if ($tngconfig['maint']) {
                     </div>
                 </form>
                 <p class="text-center">
-                    [<a href="surnames.php"><?php echo $text['mnulastnames']; ?></a>]<br>
-                    [<a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]
+                    [<a href="surnames.php"><?php echo _("Surnames"); ?></a>]<br>
+                    [<a href="searchform.php"><?php echo _("Advanced Search"); ?></a>]
                 </p>
                 <p class="text-center">
                     [<a href="http://www.gendexnetwork.org">GenDex Network</a>]<br>
@@ -60,7 +60,7 @@ if ($tngconfig['maint']) {
             <td class="section">
                 <img src="<?php echo $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""><br>
                 <?php include "randomphoto.php"; ?>
-                <p class="text-center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo $text['viewphotos']; ?></a>]</p>
+                <p class="text-center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo _("View all photos"); ?></a>]</p>
                 <p class="normal"><img src="<?php echo $templatepath; ?>img/header_famhist.gif" width="200" height="50" alt=""><br>
                     <?php echo getTemplateMessage('t6_fhpara'); ?>
                 </p>
@@ -91,7 +91,7 @@ if ($tngconfig['maint']) {
                 <p class="normal"><img src="<?php echo $templatepath; ?>img/header_mostwanted.gif" width="200" height="50" alt="">
                 </p>
                 <?php echo getTemplateMessage('t6_mwpara'); ?>
-                <p class="text-center">[<a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a>] </p>
+                <p class="text-center">[<a href="mostwanted.php"><?php echo _("Most Wanted"); ?></a>] </p>
                 <p class="normal"><img src="<?php echo $templatepath; ?>img/header_resources.gif" width="200" height="50" alt="">
                 </p>
                 <?php echo getTemplateMessage('t6_respara'); ?>

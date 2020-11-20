@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "events";
-include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 

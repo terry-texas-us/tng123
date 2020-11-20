@@ -289,7 +289,7 @@ function setoutmainfamily($family, $colsep, $order, $patorder, $matorder, $left,
  * @param int $reverse
  */
 function doBox($person, $left, $top, $class, $type, $reverse = 0) {
-    global $familychart, $text;
+    global $familychart;
     $downarrow = "<img src='img/ArrowDown.gif' alt='' class='famdownarrow inline-block'>";
     $uparrow = "<img src='img/admArrowUp.gif' alt='' class='famuparrow inline-block'>";
     $name = $person['displayname'];
@@ -366,7 +366,7 @@ function doConnector($side, $x1, $x2, $x3, $y1, $y2) {
  */
 function doOtherSpouses($person, $spouse, $left, $top, $reverse) {
     #insert html of a plus symbol with popups if other spouse(s)
-    global $text, $families_table, $people_table, $tree;
+    global $families_table, $people_table, $tree;
     if ($otherfamilies = getfamilyID($person, 'other')) {
         echo "<div class='more' style='left:{$left}px;top:{$top}px;'>
 		<img src='img/tng_more.gif' onclick='toggle(\"$spouse\");' alt='Other spouses' title='" . _('other spouses') . "'>
@@ -439,7 +439,7 @@ function getfamilyID($person, $type) {
  */
 function getOtherFamilies($tree, $personID, $familyID) {
     #check to see if person has another (usually adopted) family, return ID and text
-    global $text, $admtext;
+    global $admtext;
     $result = getChildParentsFamily($tree, $personID);
     $res = [];
     while ($row = tng_fetch_assoc($result)) {
@@ -491,7 +491,7 @@ function getRights($person) {
  */
 function doheader($tree, $family) {
     #calls tng_Drawheading and tng_menu
-    global $text, $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $allow_pdf, $nonames;
+    global $admtext, $flags, $tngconfig, $rightbranch, $disallowgedcreate, $allowpdf, $allow_pdf, $nonames;
     $f = $family['husband'];
     $m = $family['wife'];
     $familyID = $f ? $f['familyID'] : ($m ? $m['familyID'] : $family['children'][0]['familyID']);

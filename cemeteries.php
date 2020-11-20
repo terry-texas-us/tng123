@@ -21,8 +21,8 @@ preparebookmark($logstring);
 tng_header(_('Cemeteries and Headstones'), $flags);
 ?>
 <script>
-    const collapsemsg = "<?php echo _('Collapse'); ?>";
-    const expandmsg = "<?php echo _('Expand'); ?>";
+    const collapseMessage = "<?php echo _('Collapse'); ?>";
+    const expandMessage = "<?php echo _('Expand'); ?>";
 
     function toggleSection(key) {
         let sectionSelection = jQuery('#' + key);
@@ -35,13 +35,14 @@ tng_header(_('Cemeteries and Headstones'), $flags);
         }
         return false;
     }
+
     plus = new Image;
     plus.src = "img/tng_expand.gif";
     minus = new Image;
     minus.src = "img/tng_collapse.gif";
 
     function swap(x, y) {
-        jQuery('#' + x).attr('title', y === "minus" ? collapsemsg : expandmsg);
+        jQuery('#' + x).attr('title', y === "minus" ? collapseMessage : expandMessage);
         document.images[x].src = eval(y + '.src');
     }
 </script>

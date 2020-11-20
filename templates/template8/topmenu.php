@@ -1,4 +1,7 @@
-<?php global $text, $currentuser, $allow_admin, $tmp; ?>
+<?php
+
+global $currentuser, $allow_admin, $tmp;
+?>
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> templatebody m-2">
 <table class="page">
@@ -18,16 +21,16 @@
                     </td>
                     <td class="searchtext">
                         <form id="topsearchform" name="topsearchform" action="search.php" method="get">
-                            <label for="myfirstname" class="subsearch"><?php echo $text['mnufirstname']; ?>:</label>
+                            <label for="myfirstname" class="subsearch"><?php echo _("First Name"); ?>:</label>
                             <input name="myfirstname" type="search" id="myfirstname">
-                            <label for="mylastname" class="subsearch"><?php echo $text['mnulastname']; ?>:</label>
+                            <label for="mylastname" class="subsearch"><?php echo _("Last Name"); ?>:</label>
                             <input name="mylastname" type="search" id="mylastname">
                             <input type="hidden" value="AND" name="mybool">
                             <input alt="Submit Search" style="vertical-align: bottom; border:none;" type="image" name="imageField"
                                 src="<?php echo $templatepath; ?>img/searchbutton.gif">
                             <br>
-                            <span>[<a class="subsearch" href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a>]&nbsp;&nbsp;</span>
-                            <span>[<a class="subsearch" href="surnames.php"><?php echo $text['mnulastnames']; ?></a>]</span>
+                            <span>[<a class="subsearch" href="searchform.php"><?php echo _("Advanced Search"); ?></a>]&nbsp;&nbsp;</span>
+                            <span>[<a class="subsearch" href="surnames.php"><?php echo _("Surnames"); ?></a>]</span>
                         </form>
                     </td>
                 </tr>
@@ -46,9 +49,9 @@
                 $flags['noicons'] = true;
 
                 if ($currentuser) {
-                    echo "<span class='logintext'>{$text['welcome']}, $currentuser</span>";
+                    echo "<span class='logintext'>" . _("Welcome") . ", $currentuser</span>";
                 } else {
-                    echo "<span class='logintext'>{$text['anon']}</span>";
+                    echo "<span class='logintext'>" . _("You are currently anonymous") . "</span>";
                 }
                 ?>
             </div>

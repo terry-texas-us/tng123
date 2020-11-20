@@ -2,9 +2,7 @@
 include "begin.php";
 $tngconfig['maint'] = "";
 include "genlib.php";
-$textpart = "gedcom";
 include "getlang.php";
-include "$mylanguage/text.php";
 
 if ($enttype) include "checklogin.php";
 

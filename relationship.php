@@ -57,7 +57,7 @@ class Relationship
     }
 
     public function printRelationshipSentence() {
-        global $text, $gender1, $gender2, $namestr, $namestr2;
+        global $gender1, $gender2, $namestr, $namestr2;
 
         $spousemsg = "";
         $name1 = $namestr;
@@ -175,9 +175,16 @@ class Relationship
         echo "<p>" . $relmsg . "</p>\n";
     }
 
+    /**
+     * @param $spouseflag
+     * @param $namestr
+     * @param $gender1
+     * @param $namestr2
+     * @param $gender2
+     * @param $messages
+     * @return string
+     */
     public function getRelMsg($spouseflag, $namestr, $gender1, $namestr2, $gender2, $messages) {
-        global $text;
-
         if ($spouseflag == 1) {
             $spousemsg = $gender2 == "M" ? _('the wife of ') : ($gender2 == "F" ? _('the husband of ') : _('the spouse of '));
         } elseif ($spouseflag == 2) { //same sex relationship
@@ -338,9 +345,14 @@ function drawCouple($couple, $topflag, $linedown) {
     echo "\n\n";
 }
 
+/**
+ * @param $drawpersonID
+ * @param $spouseflag
+ * @param $topflag
+ */
 function drawBox($drawpersonID, $spouseflag, $topflag) {
     global $gens, $tree, $pedigree;
-    global $text, $personID1, $primarypersonID, $slot, $righttree;
+    global $personID1, $primarypersonID, $slot, $righttree;
 
     if ($spouseflag && !$topflag) {
         $boxcolortouse = getColor(1);

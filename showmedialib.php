@@ -15,6 +15,10 @@ function display_size($file_size) {
     return $file_size;
 } // function display_size()
 
+/**
+ * @param $info
+ * @return string
+ */
 function output_iptc_data($info) {
     global $text, $session_charset;
 
@@ -203,9 +207,17 @@ function findLivingPrivate($mediaID, $tree) {
     return $info;
 }
 
+/**
+ * @param $mediaID
+ * @param $personID
+ * @param $albumlinkID
+ * @param $result
+ * @param bool $showlinks
+ * @return string
+ */
 function getMediaNavigation($mediaID, $personID, $albumlinkID, $result, $showlinks = true) {
     global $allow_admin, $allow_media_edit, $albumname, $albumID, $offset;
-    global $tree, $page, $maxsearchresults, $linktype, $showall, $tnggallery, $text;
+    global $tree, $page, $maxsearchresults, $linktype, $showall, $tnggallery;
     global $tngconfig;
     global $totalpages, $all;
 
@@ -300,8 +312,13 @@ function getAlbumLinkText($mediaID) {
     return $albumlinktext;
 }
 
+/**
+ * @param $mediaID
+ * @param $ioffset
+ * @return string
+ */
 function getMediaLinkText($mediaID, $ioffset) {
-    global $text, $admtext, $medialinks_table, $people_table, $families_table, $sources_table, $repositories_table, $events_table, $eventtypes_table, $wherestr2, $maxsearchresults;
+    global $admtext, $medialinks_table, $people_table, $families_table, $sources_table, $repositories_table, $events_table, $eventtypes_table, $wherestr2, $maxsearchresults;
     global $tngconfig, $citations_table;
 
     if ($ioffset) {
@@ -422,8 +439,12 @@ function getMediaLinkText($mediaID, $ioffset) {
     return $medialinktext;
 }
 
+/**
+ * @param $imgrow
+ * @param false $ss
+ */
 function showMediaSource($imgrow, $ss = false) {
-    global $text, $usefolder, $size, $imagetypes, $htmldocs, $tngconfig, $videotypes, $recordingtypes;
+    global $usefolder, $size, $imagetypes, $htmldocs, $tngconfig, $videotypes, $recordingtypes;
     global $description, $medialinkID, $albumlinkID, $mediatypes_like;
 
     if ($imgrow['form']) {
@@ -559,12 +580,23 @@ function showMediaSource($imgrow, $ss = false) {
 
 }
 
+/**
+ * @param $label
+ * @param $fact
+ * @return string
+ */
 function tableRow($label, $fact) {
     return "<tr><td style=\"width:100px;\" class='fieldnameback fieldname'>$label</td><td class='databack'>" . insertLinks($fact) . "</td></tr>\n";
 }
 
+/**
+ * @param $imgrow
+ * @param $medialinktext
+ * @param $albumlinktext
+ * @return string
+ */
 function showTable($imgrow, $medialinktext, $albumlinktext) {
-    global $text, $rootpath, $usefolder, $showextended, $imagetypes, $size, $info;
+    global $rootpath, $usefolder, $showextended, $imagetypes, $size, $info;
 
     $tabletext = "";
     $filename = $imgrow['abspath'] ? $imgrow['path'] : basename($imgrow['path']);
@@ -609,8 +641,12 @@ function showTable($imgrow, $medialinktext, $albumlinktext) {
     return $tabletext;
 }
 
+/**
+ * @param $imgrow
+ * @param $tree
+ */
 function doCemPlusMap($imgrow, $tree) {
-    global $cemeteries_table, $media_table, $text, $rootpath, $headstonepath, $mediatypes_assoc, $mediapath, $thumbmaxw;
+    global $cemeteries_table, $media_table, $rootpath, $headstonepath, $mediatypes_assoc, $mediapath, $thumbmaxw;
 
     $query = "SELECT cemname, city, county, state, country, maplink, notes FROM $cemeteries_table WHERE cemeteryID = \"{$imgrow['cemeteryID']}\"";
     $cemresult = tng_query($query);

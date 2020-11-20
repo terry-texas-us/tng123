@@ -4,8 +4,6 @@ include "begin.php";
 include "config/logconfig.php";
 include "config/importconfig.php";
 include "adminlib.php";
-$textpart = "setup";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

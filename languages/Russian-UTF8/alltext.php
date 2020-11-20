@@ -149,7 +149,7 @@ $text['years'] = "лет";
 //added in 10.0.0
 $admtext['CONL'] = "Конфирмация (СПД)";
 $admtext['INIT'] = "Посвящение (СПД)";
-$admtext['step'] = "Пасынок";
+$admtext['stepchild'] = "Пасынок";
 $text['switchm'] = "Переключиться на мобильный сайт";
 $text['switchs'] = "Переключиться на стандартный сайт";
 

@@ -7,12 +7,12 @@ $flags['style'] .= "div.art-headerobject {background-image: url('$templatepath{$
 $flags['style'] .= "</style>\n";
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Our Family History"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 $dadlabel = getTemplateMessage('t10_dadside');
 $momlabel = getTemplateMessage('t10_momside');
@@ -77,7 +77,7 @@ $title = getTemplateMessage('t10_maintitle');
                         <?php } ?>
                         <li>
                             <a href="suggest.php?page=<?php echo $title; ?>"><span class="l"></span><span
-                                    class="t"><?php echo $text['contactus']; ?></span></a>
+                                    class="t"><?php echo _("Contact Us"); ?></span></a>
                         </li>
                     </ul>
                 </div>
@@ -101,9 +101,9 @@ $title = getTemplateMessage('t10_maintitle');
                                     <div class="art-vmenublockcontent-body">
                                         <ul class="art-vmenu">
                                             <li><a href="whatsnew.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['mnuwhatsnew']; ?></span></a></li>
+                                                        class="t"><?php echo _("What's New"); ?></span></a></li>
                                             <li><a href="mostwanted.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['mostwanted']; ?></span></a></li>
+                                                        class="t"><?php echo _("Most Wanted"); ?></span></a></li>
                                             <?php
                                             foreach ($mediatypes as $mediatype) {
                                                 if (!$mediatype['disabled']) {
@@ -112,39 +112,39 @@ $title = getTemplateMessage('t10_maintitle');
                                             }
                                             ?>
                                             <li><a href="browsealbums.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['albums']; ?></span></a></li>
+                                                        class="t"><?php echo _("Albums"); ?></span></a></li>
                                             <li><a href="browsemedia.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['allmedia']; ?></span></a></li>
+                                                        class="t"><?php echo _("All Media"); ?></span></a></li>
                                             <li><a href="cemeteries.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['mnucemeteries']; ?></span></a></li>
+                                                        class="t"><?php echo _("Cemeteries"); ?></span></a></li>
                                             <li><a href="places.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['places']; ?></span></a></li>
+                                                        class="t"><?php echo _("Places"); ?></span></a></li>
                                             <li><a href="browsenotes.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['notes']; ?></span></a></li>
+                                                        class="t"><?php echo _("Notes"); ?></span></a></li>
                                             <li><a href="anniversaries.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['anniversaries']; ?></span></a></li>
+                                                        class="t"><?php echo _("Dates and Anniversaries"); ?></span></a></li>
                                             <li><a href="calendar.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['calendar']; ?></span></a></li>
+                                                        class="t"><?php echo _("Calendar"); ?></span></a></li>
                                             <li><a href="reports.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['reports']; ?></span></a></li>
+                                                        class="t"><?php echo _("Reports"); ?></span></a></li>
                                             <li><a href="browsesources.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['mnusources']; ?></span></a></li>
+                                                        class="t"><?php echo _("Sources"); ?></span></a></li>
                                             <li><a href="browserepos.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['repositories']; ?></span></a></li>
+                                                        class="t"><?php echo _("Repositories"); ?></span></a></li>
                                             <?php if (!$tngconfig['hidedna']) { ?>
                                                 <li><a href="browse_dna_tests.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['dna_tests']; ?></span></a></li>
+                                                            class="t"><?php echo _("DNA Tests"); ?></span></a></li>
                                             <?php } ?>
                                             <li><a href="statistics.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['mnustatistics']; ?></span></a></li>
+                                                        class="t"><?php echo _("Statistics"); ?></span></a></li>
                                             <?php if ($allow_admin) { ?>
                                                 <li><a href="showlog.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['mnushowlog']; ?></span></a></li>
+                                                            class="t"><?php echo _("Access Log"); ?></span></a></li>
                                                 <li><a href="admin.php"><span class="l"></span><span class="r"></span><span
-                                                            class="t"><?php echo $text['mnuadmin']; ?></span></a></li>
+                                                            class="t"><?php echo _("Administration"); ?></span></a></li>
                                             <?php } ?>
                                             <li><a href="bookmarks.php"><span class="l"></span><span class="r"></span><span
-                                                        class="t"><?php echo $text['bookmarks']; ?></span></a></li>
+                                                        class="t"><?php echo _("Bookmarks"); ?></span></a></li>
                                         </ul>
 
                                         <div class="cleared"></div>
@@ -190,23 +190,22 @@ $title = getTemplateMessage('t10_maintitle');
                                         }
 
                                         if ($currentuser) {
-                                            echo "<p class='subhead'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href='logout.php'>{$text['mnulogout']}</a></p>\n";
+                                            echo "<p class='subhead'><strong>" . _("Welcome") . ", $currentuserdesc.</strong> <a href='logout.php'>" . _("Log Out") . "</a></p>\n";
                                         } else {
                                             $loginContent = "";
                                             if (!$tngconfig['showlogin']) {
-                                                $loginContent = "<a href='login.php'>{$text['mnulogon']}</a>";
+                                                $loginContent = "<a href='login.php'>" . _("Log In") . "</a>";
                                             }
                                             if (!$tngconfig['disallowreg']) {
                                                 if ($loginContent) $loginContent .= " | ";
 
-                                                $loginContent .= "<a href='newacctform.php'>{$text['mnuregister']}</a>";
+                                                $loginContent .= "<a href='newacctform.php'>" . _("Register for a User Account") . "</a>";
                                             }
                                             if ($loginContent) echo "<p class='subhead'>$loginContent</p>\n";
-
                                         }
                                         echo getTemplateMessage('t10_mainpara');
                                         ?>
-                                        <h4><?php echo $text['contactus']; ?></h4>
+                                        <h4><?php echo _("Contact Us"); ?></h4>
                                         <p><img src="<?php echo $templatepath; ?>img/email.gif" alt="email image"
                                                 class="emailimg"><?php echo $text['contactus_long']; ?></p>
 
@@ -235,7 +234,7 @@ $title = getTemplateMessage('t10_maintitle');
                                 <div class="art-blockheader">
                                     <div class="l"></div>
                                     <div class="r"></div>
-                                    <h3 class="t"><?php echo $text['search']; ?></h3>
+                                    <h3 class="t"><?php echo _("Search"); ?></h3>
                                 </div>
                                 <div class="art-blockcontent">
                                     <div class="art-blockcontent-tl"></div>
@@ -250,17 +249,17 @@ $title = getTemplateMessage('t10_maintitle');
                                     <div class="art-blockcontent-body">
                                         <div>
                                             <form name="searchform" action="search.php" method="get">
-                                                <label for="myfirstname"><?php echo $text['firstname']; ?></label>
+                                                <label for="myfirstname"><?php echo _("First Name"); ?></label>
                                                 <input type="search" value="" name="myfirstname" style="width: 95%;">
-                                                <label for="mylastname"><?php echo $text['lastname']; ?></label>
+                                                <label for="mylastname"><?php echo _("Last Name"); ?></label>
                                                 <input type="search" value="" name="mylastname" style="width: 95%;">
                                                 <input type="hidden" name="mybool" value="AND">
                                                 <input type="submit" style="margin-top:5px; margin-bottom:5px;"
-                                                    value="<?php echo $text['search']; ?>">
+                                                    value="<?php echo _("Search"); ?>">
                                             </form>
                                             <ul class="home-menus">
-                                                <li><a href="surnames.php"><?php echo $text['surnames']; ?></a></li>
-                                                <li><a href="searchform.php"><?php echo $text['mnuadvancedsearch']; ?></a></li>
+                                                <li><a href="surnames.php"><?php echo _("Surnames"); ?></a></li>
+                                                <li><a href="searchform.php"><?php echo _("Advanced Search"); ?></a></li>
                                             </ul>
                                         </div>
                                         <div class="cleared"></div>
@@ -283,7 +282,7 @@ $title = getTemplateMessage('t10_maintitle');
                                 <div class="art-blockheader">
                                     <div class="l"></div>
                                     <div class="r"></div>
-                                    <h3 class="t"><?php echo $text['features']; ?></h3>
+                                    <h3 class="t"><?php echo _("Features"); ?></h3>
                                 </div>
                                 <div class="art-blockcontent">
                                     <div class="art-blockcontent-tl"></div>
@@ -322,7 +321,7 @@ $title = getTemplateMessage('t10_maintitle');
                                 <div class="art-blockheader">
                                     <div class="l"></div>
                                     <div class="r"></div>
-                                    <h3 class="t"><?php echo $text['resources']; ?></h3>
+                                    <h3 class="t"><?php echo _("Resources"); ?></h3>
                                 </div>
                                 <div class="art-blockcontent">
                                     <div class="art-blockcontent-tl"></div>

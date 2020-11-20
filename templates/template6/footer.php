@@ -1,4 +1,7 @@
-<?php global $text, $flags; ?>
+<?php
+
+global $flags;
+?>
 
 </td>
 </tr>

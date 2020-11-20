@@ -1,4 +1,7 @@
-<?php global $text, $flags, $currentuser, $mylanguage, $tngconfig; ?>
+<?php
+
+global $flags, $currentuser, $mylanguage, $tngconfig;
+?>
 
 </div>
 </td>

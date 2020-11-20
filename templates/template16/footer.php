@@ -1,4 +1,7 @@
-<?php global $text, $currentuser, $mylanguage, $tmp, $flags; ?>
+<?php
+
+global $currentuser, $mylanguage, $tmp, $flags;
+?>
 
 </div>
 </div>

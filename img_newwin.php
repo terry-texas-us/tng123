@@ -1,9 +1,7 @@
 <?php
 include "begin.php";
 include "genlib.php";
-$textpart = "imgviewer";
 include "getlang.php";
-include "$mylanguage/text.php";
 
 header("Content-type:text/html;charset=" . $session_charset);
 ?>

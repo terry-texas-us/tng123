@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "genlib.php";
-$textpart = "getperson";
-include "$languages_path$language/text.php";
 
 include_once "tngdblib.php";
 include "checklogin.php";

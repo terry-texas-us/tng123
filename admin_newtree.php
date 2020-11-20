@@ -5,9 +5,6 @@ include "adminlib.php";
 /** @global mixed $beforeimport yes if modal request made 'Add New Tree' during GEDCOM Import */
 $beforeimport = $_GET['beforeimport'] ?? null;
 
-$textpart = "trees";
-include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";

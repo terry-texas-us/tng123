@@ -9,9 +9,6 @@ require_once "./admin/trees.php";
 require_once "./public/families.php";
 require_once "./public/people.php";
 
-$textpart = "families";
-include "$mylanguage/admintext.php";
-
 include "checklogin.php";
 include "version.php";
 

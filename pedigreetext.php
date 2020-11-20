@@ -11,7 +11,9 @@ if (isset($generations)) $generations = intval($generations);
 
 if (isset($parentset)) $parentset = intval($parentset);
 
-
+/**
+ * @param $pedborder
+ */
 function showBlank($pedborder) {
     echo "<td $pedborder><span class='normal'>&nbsp;</span></td>\n";
     echo "<td class='whitespace-no-wrap'><span class='normal'>&nbsp;</span></td>\n</tr>\n";
@@ -19,8 +21,13 @@ function showBlank($pedborder) {
     echo "<td class='whitespace-no-wrap'><span class='normal'>&nbsp;</span></td>\n</tr>\n";
 }
 
+/**
+ * @param $key
+ * @param $generation
+ * @param $slot
+ */
 function displayIndividual($key, $generation, $slot) {
-    global $tree, $generations, $marrdate, $marrplace, $pedmax, $text;
+    global $tree, $generations, $marrdate, $marrplace, $pedmax;
     global $parentset, $righttree;
 
     $nextslot = $slot * 2;

@@ -152,14 +152,25 @@ function getParents($personID) {
     return $parentinfo;
 }
 
+/**
+ * @param $personID
+ * @return string
+ */
 function getNewChart($personID) {
-    global $tree, $generations, $text, $descendvert_url, $kidsflag;
+    global $tree, $generations, $descendvert_url, $kidsflag;
     return $kidsflag ? "<a href=\"$descendvert_url" . "personID=$personID&amp;tree=$tree&amp;generations=$generations\"><img src=\"img/dchart.gif\" width=\"10\" height=\"9\" alt=\"" . _('New chart') . "\" border='0'/></a>" : "";
 }
 
+/**
+ * @param $level
+ * @param $person
+ * @param $spouseflag
+ * @param $kidsflag
+ * @return string
+ */
 function doBox($level, $person, $spouseflag, $kidsflag) {
     global $pedigree, $leftmarker, $rightmarker, $spouseoffset, $maxwidth, $maxheight, $personID, $tree, $getperson_url;
-    global $generations, $descendvert_url, $text, $numboxes, $rounded, $slot;
+    global $generations, $descendvert_url, $numboxes, $rounded, $slot;
 
     $numboxes++;
     if (!$leftmarker[$level])
@@ -522,9 +533,11 @@ function getData($key, $sex, $level) {
     return $stats;
 }
 
+/**
+ * @param $row
+ * @return string
+ */
 function getVitalDates($row) {
-    global $text;
-
     $vitalinfo = "";
 
     if ($row['allow_living'] && $row['allow_private']) {

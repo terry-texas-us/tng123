@@ -1,7 +1,5 @@
 <?php
 @set_time_limit(0);
-$textpart = "pedigree";
-include "tng_begin.php";
 
 include "config/pedconfig.php";
 include "pedbox.php";
@@ -17,7 +15,7 @@ function xmlPhoto($persfamID, $living, $gender): string {
 }
 
 function xmlPerson($currperson, $backperson, $generation) {
-    global $tree, $text, $pedigree, $parentset, $righttree;
+    global $tree, $pedigree, $parentset, $righttree;
     global $generations, $display, $people, $familylist, $families;
 
     $result = getPersonData($tree, $currperson);
@@ -233,7 +231,7 @@ function getChildren($familyID): string {
 }
 
 function getFamily($famrow) {
-    global $text, $righttree;
+    global $righttree;
 
     $family = "{\"famID\":\"" . $famrow['familyID'] . "\",\"husband\":\"" . $famrow['husband'] . "\",\"wife\":\"" . $famrow['wife'] . "\",";
     $rightbranch = $righttree ? checkbranch($famrow['branch']) : false;

@@ -336,11 +336,11 @@ if (!class_exists('TNGPDF')) {
 
         public function Footer() {
             global $footerConfig;
-            global $tngdomain, $sitename, $dbowner, $text;
+            global $tngdomain, $sitename, $dbowner;
 
             if ($this->page == 1 && $footerConfig['skipFirst'] == 'true') return;
 
-$origlMargin = $this->lMargin;
+            $origlMargin = $this->lMargin;
             $this->SetLeftMargin($footerConfig['lMargin']);
             $this->SetFont($footerConfig['font'], '', $footerConfig['fontSizeSmall']);
             $h1 = $this->FontSize;

@@ -150,7 +150,7 @@ $text['years'] = "године";
 //added in 10.0.0
 $admtext['CONL'] = "Потврда (ЛДС)";
 $admtext['INIT'] = "Уводни (ЛДС)";
-$admtext['step'] = "пасторче";
+$admtext['stepchild'] = "пасторче";
 $text['switchm'] = "Пребаците се на мобилни сајт";
 $text['switchs'] = "Пребаците се на стандардни сајт";
 

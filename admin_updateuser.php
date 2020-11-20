@@ -2,8 +2,7 @@
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "users";
-include "$mylanguage/admintext.php";
+
 $admin_login = 1;
 include "checklogin.php";
 require "adminlog.php";

@@ -11,8 +11,12 @@ preparebookmark($logstring);
 
 $gotImageJpeg = function_exists('imageJpeg');
 
+/**
+ * @param $type
+ * @return string
+ */
 function showDivs($type) {
-    global $text, $people_table, $media_table, $mostwanted_table, $mediatypes_assoc, $mediapath, $rootpath;
+    global $people_table, $media_table, $mostwanted_table, $mediatypes_assoc, $mediapath, $rootpath;
     global $gotImageJpeg, $maxmediafilesize, $tree;
 
     $mediatext = "<table class='whiteback w-full' cellpadding='8' cellspacing='2'>\n";

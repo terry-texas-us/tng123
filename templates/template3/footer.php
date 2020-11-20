@@ -1,4 +1,7 @@
-<?php global $text, $currentuser, $mylanguage, $flags; ?>
+<?php
+
+global $currentuser, $mylanguage, $flags;
+?>
 
 <table class="tableborder rounded t3shadow w-full" cellspacing="0" cellpadding="5">
     <tr>

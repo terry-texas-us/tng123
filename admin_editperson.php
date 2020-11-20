@@ -12,6 +12,7 @@ require_once "./admin/trees.php";
 require_once "./public/people.php";
 $textpart = "people";
 include "$mylanguage/admintext.php";
+
 $admin_login = true;
 include "checklogin.php";
 include "version.php";
@@ -71,6 +72,12 @@ $gotcites = checkForCitations($personID, $tree);
 $gotassoc = checkForAssociations($personID, $tree);
 $gotmore = checkForEvents($personID, $tree);
 
+/**
+ * @param $parent
+ * @param $spouse
+ * @param $label
+ * @return string
+ */
 function parentRow($parent, $spouse, $label) {
     global $people_table, $families_table, $admtext, $tree, $righttree, $cw;
 
@@ -83,16 +90,16 @@ function parentRow($parent, $spouse, $label) {
     if ($gotparent) {
         $prow = tng_fetch_assoc($gotparent);
         if ($prow['sex'] == "M") {
-            $label = "father";
+            $label = "Father";
         } elseif ($prow['sex'] == "F") {
-            $label = "mother";
+            $label = "Mother";
         }
         //if unknown, it gets what was passed in
 
         list($prow, $birthinfo) = getVitalInformation($prow, $righttree);
 
         $pout = "<tr>\n";
-        $pout .= "<td>" . $admtext[$label] . ":</td>\n";
+        $pout .= "<td>" . _($label) . ":</td>\n";
         $pout .= "<td colspan='4'>";
         if ($prow['personID']) {
             $pout .= "<a href=\"admin_editperson.php?personID={$prow['personID']}&amp;tree={$tree}&amp;cw={$cw}\">" . getName($prow) . " - {$prow['personID']}</a>{$birthinfo}";
@@ -102,17 +109,17 @@ function parentRow($parent, $spouse, $label) {
         $pout .= "<tr>\n";
         $pout .= "<td>&nbsp;&nbsp;" . _('Relationship') . ":</td>\n";
         $pout .= "<td colspan='4'>\n";
-        $fieldname = $label == "father" ? "frel" : "mrel";
+        $fieldname = $label == "Father" ? "frel" : "mrel";
         $pout .= "<select name=\"$fieldname{$parent['familyID']}\">\n";
         $pout .= "<option value=\"\"></option>\n";
 
-        $reltypes = ["adopted", "birth", "foster", "sealing", "step", "putative"];
+        $reltypes = ["adopted", "birth", "foster", "sealing", "stepchild", "putative"];
         foreach ($reltypes as $reltype) {
-            $pout .= "<option value=\"$reltype\"";
-            if ($parent[$fieldname] == $reltype || $parent[$fieldname] == $admtext[$reltype]) {
+            $pout .= "<option value='$reltype'";
+            if ($parent[$fieldname] == $reltype || $parent[$fieldname] == _(ucfirst($reltype))) {
                 $pout .= " selected";
             }
-            $pout .= ">{$admtext[$reltype]}</option>\n";
+            $pout .= ">" . _(ucfirst($reltype)) . "</option>\n";
         }
         $pout .= "</select>\n";
         $pout .= "</td>\n";
@@ -272,10 +279,10 @@ echo displayHeadline(_('People') . " &gt;&gt; " . _('Edit Existing Person'), "im
 ?>
 
     <form action="admin_updateperson.php" method="post" name="form1" id="form1">
-        <table class="lightback normal w-full" cellpadding="10" cellspacing="2">
+        <table class="lightback normal w-full">
             <tr class="databack"> <!-- Form content Header -->
-                <td class="tngshadow">
-                    <table cellpadding="0" cellspacing="0" class="normal">
+                <td class="tngshadow p-2">
+                    <table class="normal">
                         <tr>
                             <td class='align-top'>
                                 <div id="thumbholder" style="margin-right:5px;<?php if (!$photo) {
@@ -464,7 +471,7 @@ echo displayHeadline(_('People') . " &gt;&gt; " . _('Edit Existing Person'), "im
                 </td>
             </tr>
             <?php
-            $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = \"{$personID}\" AND gedcom = '$tree' ORDER BY parentorder";
+            $query = "SELECT personID, familyID, sealdate, sealplace, frel, mrel FROM $children_table WHERE personID = '$personID' AND gedcom = '$tree' ORDER BY parentorder";
             $parents = tng_query($query);
             $parentcount = tng_num_rows($parents);
             ?>
@@ -479,14 +486,14 @@ echo displayHeadline(_('People') . " &gt;&gt; " . _('Edit Existing Person'), "im
                         <?php
                         while ($parent = tng_fetch_assoc($parents)) {
                         echo "<div class='sortrow' id=\"parents_{$parent['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinkp_{$parent['familyID']}').show();\" onmouseout=\"jQuery('#unlinkp_{$parent['familyID']}').hide();\">\n";
-                        echo "<table class='w-full' cellpadding='5' cellspacing='1'>";
+                        echo "<table class='w-full'>";
                         echo "<tr>\n";
                         if ($parentcount > 1) {
-                            echo "<td class='dragarea rounded-lg normal'>";
+                            echo "<td class='dragarea rounded-lg normal p-1'>";
                             echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                             echo "</td>\n";
                         }
-                        echo "<td class='lightback normal'>\n";
+                        echo "<td class='lightback normal p-1'>\n";
                         echo "<div id=\"unlinkp_{$parent['familyID']}\" style=\"float:right;display:none;\"><a href='#' onclick=\"return unlinkChild('{$parent['familyID']}');\">" . _('Unlink current individual') . " ($personID) " . _('as child') . "</a></div>\n";
                         echo "<table class='normal'>";
                         echo "<tr>";
@@ -564,14 +571,14 @@ echo displayHeadline(_('People') . " &gt;&gt; " . _('Edit Existing Person'), "im
                         }
                     }
                     echo "<div class='sortrow' id=\"spouses_{$marriagerow['familyID']}\" style=\"clear:both;\" onmouseover=\"jQuery('#unlinks_{$marriagerow['familyID']}').show();\" onmouseout=\"jQuery('#unlinks_{$marriagerow['familyID']}').hide();\">\n";
-                    echo "<table class='w-full' cellpadding='5' cellspacing='1'>";
+                    echo "<table class='w-full'>";
                     echo "<tr>\n";
                     if ($marrcount > 1) {
                         echo "<td class='dragarea rounded-lg normal'>";
                         echo "<img src='img/admArrowUp.gif' alt='' class='inline-block'>" . _('Drag') . "<img src='img/admArrowDown.gif' alt='' class='inline-block'>\n";
                         echo "</td>\n";
                     }
-                    echo "<td class='lightback normal'>\n";
+                    echo "<td class='lightback normal p-1'>\n";
                     echo "<table class='normal w-full'>";
                     echo "<tr>";
                     echo "<td class='align-top'><strong>" . _('Family') . ":</strong></td>\n";
@@ -619,7 +626,7 @@ echo displayHeadline(_('People') . " &gt;&gt; " . _('Edit Existing Person'), "im
             <td class='align-top'>
                 <?php
                 $kidcount = 1;
-                echo "<table cellpadding = '0' cellspacing = '0'>\n";
+                echo "<table>\n";
                 while ($child = tng_fetch_assoc($children)) {
                     $ifkids = $child['haskids'] ? "+" : "&nbsp;";
                     $crights = determineLivingPrivateRights($child);

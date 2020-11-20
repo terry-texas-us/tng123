@@ -11,10 +11,6 @@ require_once "./public/families.php";
 
 if (!$familyID) die("no args");
 
-
-$textpart = "families";
-include "$mylanguage/admintext.php";
-
 include "checklogin.php";
 
 initMediaTypes();

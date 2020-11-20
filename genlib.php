@@ -66,7 +66,7 @@ function standardHeaderVariants($headElement, array $flags): void {
  * @param $flags
  */
 function tng_header($title, $flags) {
-    global $tngconfig, $text;
+    global $tngconfig;
     echo "<!doctype html>\n";
     echo "<html lang='en'>\n";
     initMediaTypes();
@@ -83,7 +83,7 @@ function tng_header($title, $flags) {
  * @param bool[] $flags
  */
 function tng_footer($flags = ['basicfooter' => true]) {
-    global $tngprint, $map, $text, $dbowner, $tngdomain, $sitename, $templatepath, $tngconfig;
+    global $tngprint, $map, $dbowner, $tngdomain, $sitename, $templatepath, $tngconfig;
     $needtherest = true;
     if ($tngprint) {
         $printfooter = $sitename;
@@ -236,13 +236,12 @@ function tng_DrawHeading($photostr, $namestr, $years) {
  * @return mixed|string
  */
 function getSurnameOnly($row) {
-    global $text, $admtext, $tngconfig;
+    global $admtext, $tngconfig;
 
     $nonames = showNames($row);
     if ($row['allow_living'] || $nonames != 1) {
         $namestr = trim($row['lnprefix'] . " " . $row['lastname']);
         if ($tngconfig['ucsurnames']) $namestr = tng_strtoupper($namestr);
-
     } elseif ($row['private']) {
         $namestr = _('Private');
     } else {
@@ -257,7 +256,7 @@ function getSurnameOnly($row) {
  * @return mixed|string
  */
 function getFirstNameOnly($row) {
-    global $text, $admtext;
+    global $admtext;
 
     $nonames = showNames($row);
     if (($row['allow_living'] && $row['allow_private']) || !$nonames) {
@@ -281,7 +280,7 @@ function getFirstNameOnly($row) {
  * @return string
  */
 function tng_menu($enttype, $currpage, $entityID, $innermenu) {
-    global $tree, $text, $disallowgedcreate, $allow_edit;
+    global $tree, $disallowgedcreate, $allow_edit;
     global $rightbranch, $allow_ged, $emailaddr, $newbrowser, $tngconfig, $tngprint;
 
     $nexttab = 0;
@@ -360,7 +359,7 @@ function tng_smallIcon($options) {
  * @return string
  */
 function tng_getLeftIcons() {
-    global $tngconfig, $text, $homepage, $currentuser, $allow_profile;
+    global $tngconfig, $homepage, $currentuser, $allow_profile;
 
     if (!isset($tngconfig['menucount'])) $tngconfig['menucount'] = 0;
 
@@ -405,7 +404,7 @@ function tng_getLeftIcons() {
  * @return string
  */
 function tng_getRightIcons(): string {
-    global $text, $tngconfig, $gotlastpage, $isConnected;
+    global $tngconfig, $gotlastpage, $isConnected;
 
     $right_icons = "";
     if (!empty($tngconfig['showshare']) && $isConnected) {
@@ -601,7 +600,7 @@ function get_menustyle($key, $itemcount) {
  * @return string
  */
 function tng_mobileicons($title) {
-    global $text, $tngconfig, $custmenu, $custommobilemenu, $custommenulinks;
+    global $tngconfig, $custmenu, $custommobilemenu, $custommenulinks;
 
     $menu = "<div id='tngheader'>\n";
     $menu .= "<div id='mast'>\n";
@@ -669,7 +668,7 @@ function tng_mobileicons($title) {
  * @return string
  */
 function tng_icons($instance, $title = "") {
-    global $text, $tngconfig, $customshare, $tngprint, $custommenu, $custmenu, $custommenulinks;
+    global $tngconfig, $customshare, $tngprint, $custommenu, $custmenu, $custommenulinks;
 
     $fullmenu = "";
     if ($tngprint) {
@@ -846,7 +845,7 @@ function tngddrow($link, $id, $thumb, $label, $labelliteral = false) {
  * @return string
  */
 function treeDropdown($forminfo) {
-    global $text, $requirelogin, $assignedtree, $trees_table, $time_offset, $treerestrict, $tree, $numtrees, $tngconfig;
+    global $requirelogin, $assignedtree, $trees_table, $time_offset, $treerestrict, $tree, $numtrees, $tngconfig;
 
     $ret = "";
     if (!$requirelogin || !$treerestrict || !$assignedtree) {
@@ -906,7 +905,7 @@ function treeDropdown($forminfo) {
  * @return string
  */
 function treeSelect($treeresult, $formname = null, $onchange = null) {
-    global $text, $tree;
+    global $tree;
 
     $ret = "<select name=\"tree\" id=\"treeselect\"";
     if ($formname) {

@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "review";
-include "$mylanguage/admintext.php";
 
 $admin_login = true;
 include "checklogin.php";

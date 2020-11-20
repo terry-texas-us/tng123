@@ -98,12 +98,14 @@ class SingleMediaCard
             if ($row['allow_living']) {
                 $description = $showPhotoInfo ? "<a href='$href'>$description</a>" : $description;
             } else {
+                $livingPrivateMessage = _("At least one living or private individual is linked to this item - Details withheld.");
                 $nonamesloc = $row['private'] ? $tngconfig['nnpriv'] : $nonames;
                 if ($nonamesloc) {
-                    $description = $text['livingphoto'];
                     $notes = "";
+                    $description = $livingPrivateMessage;
                 } else {
-                    $notes = $notes ? $notes . "<br>({$text['livingphoto']})" : "({$text['livingphoto']})";
+                    if ($notes) $notes .= "<br>";
+                    $notes .= "($livingPrivateMessage)";
                 }
                 $href = "";
             }

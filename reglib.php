@@ -54,8 +54,13 @@ function getSpouses($personID, $sex) {
     return $spouses;
 }
 
+/**
+ * @param $personID
+ * @param $sex
+ * @return string
+ */
 function getSpouseParents($personID, $sex) {
-    global $tree, $righttree, $text, $admtext;
+    global $tree, $righttree, $admtext;
 
     if ($sex == "M") {
         $childtext = tng_strtolower(_('son of'));
@@ -127,9 +132,12 @@ function getSpouseParents($personID, $sex) {
     return $allparents;
 }
 
+/**
+ * @param $row
+ * @param null $needparents
+ * @return string
+ */
 function getVitalDates($row, $needparents = null) {
-    global $text;
-
     $vitalinfo = "";
 
     if ($row['allow_living'] && $row['allow_private']) {
@@ -190,9 +198,12 @@ function getVitalDates($row, $needparents = null) {
     return $vitalinfo;
 }
 
+/**
+ * @param $row
+ * @param $personsex
+ * @return string
+ */
 function getSpouseDates($row, $personsex) {
-    global $text;
-
     $spouseinfo = "";
 
     if ($row['allow_living'] && $row['allow_private']) {
@@ -224,8 +235,12 @@ function getSpouseDates($row, $personsex) {
     return $spouseinfo;
 }
 
+/**
+ * @param $row
+ * @return string
+ */
 function getOtherEvents($row) {
-    global $tree, $eventtypes_table, $events_table, $text, $pedigree;
+    global $tree, $eventtypes_table, $events_table, $pedigree;
 
     $otherEvents = "";
     if ($pedigree['regnotes'] && $row['allow_living'] && $row['allow_private']) {
@@ -271,8 +286,13 @@ function getOtherEvents($row) {
     return $otherEvents;
 }
 
+/**
+ * @param $persfamID
+ * @param $flag
+ * @return array
+ */
 function getRegNotes($persfamID, $flag) {
-    global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text;
+    global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table;
 
     $custnotes = [];
     $gennotes = [];

@@ -3,10 +3,6 @@ include "begin.php";
 include "adminlib.php";
 require_once "core/html/cleanUserProfile.php";
 
-
-$textpart = "users";
-include "$mylanguage/admintext.php";
-
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";

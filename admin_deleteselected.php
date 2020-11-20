@@ -1,7 +1,7 @@
 <?php
+
 include "begin.php";
 include "adminlib.php";
-include "$mylanguage/admintext.php";
 
 $admin_login = true;
 include "checklogin.php";
@@ -14,6 +14,12 @@ if (!$allow_delete) {
 require "adminlog.php";
 require "deletelib.php";
 
+/**
+ * @param $fields
+ * @param $table
+ * @param $id
+ * @return string[]|null
+ */
 function getID($fields, $table, $id) {
     $query = "SELECT $fields FROM $table WHERE ID = \"$id\"";
     $result = @tng_query($query);
@@ -24,62 +30,60 @@ function getID($fields, $table, $id) {
 
 if ($xsrcaction) {
     $query = "DELETE FROM $sources_table WHERE 1=0";
-    $modmsg = "sources";
+    $modmsg = "Sources";
     $id = "ID";
     $location = "admin_sources.php";
 } elseif ($xrepoaction) {
     $query = "DELETE FROM $repositories_table WHERE 1=0";
-    $modmsg = "repositories";
+    $modmsg = "Repositories";
     $id = "ID";
     $location = "admin_repositories.php";
 } elseif ($xperaction) {
     $query = "DELETE FROM $people_table WHERE 1=0";
-    $modmsg = "people";
+    $modmsg = "People";
     $id = "ID";
     $location = "admin_people.php";
 } elseif ($xfamaction) {
     $query = "DELETE FROM $families_table WHERE 1=0";
-    $modmsg = "families";
+    $modmsg = "Families";
     $id = "ID";
     $location = "admin_families.php";
 } elseif ($xplacaction) {
     $query = "DELETE FROM $places_table WHERE 1=0";
-    $modmsg = "places";
+    $modmsg = "Places";
     $id = "ID";
     $location = "admin_places.php";
 } elseif ($xtimeaction) {
     $query = "DELETE FROM $tlevents_table WHERE 1=0";
-    $modmsg = "tlevents";
+    $modmsg = "Timeline Events";
     $id = "tleventID";
     $location = "admin_timelineevents.php";
 } elseif ($xuseraction) {
     $query = "DELETE FROM $users_table WHERE 1=0";
-    $modmsg = "users";
+    $modmsg = "Users";
     $id = "userID";
     $location = "admin_users.php";
 } elseif ($xbranchaction) {
     $query = "DELETE FROM $branches_table WHERE 1=0";
-    $modmsg = "branches";
+    $modmsg = "Branches";
     $id = "branch";
     $location = "admin_branches.php";
 } elseif ($xruseraction) {
     $query = "DELETE FROM $users_table WHERE 1=0";
-    $modmsg = "users";
+    $modmsg = "Users";
     $id = "userID";
     $location = "admin_reviewusers.php";
 } elseif ($xcemaction) {
     $query = "DELETE FROM $cemeteries_table WHERE 1=0";
-    $modmsg = "cemeteries";
+    $modmsg = "Cemeteries";
     $id = "cemeteryID";
     $location = "admin_cemeteries.php";
 } elseif ($xnoteaction) {
     $query = "DELETE FROM $xnotes_table WHERE 1=0";
-    $modmsg = "notes";
+    $modmsg = "Notes";
     $id = "ID";
     $location = "admin_notelist.php";
 }
-
-$modifymsg = $admtext[$modmsg];
 $count = 0;
 $items = [];
 foreach (array_keys($_POST) as $key) {
@@ -194,7 +198,7 @@ foreach (array_keys($_POST) as $key) {
 }
 $result = tng_query($query);
 
-adminwritelog("" . _('Deleted') . ": " . $modifymsg . " " . implode(', ', $items));
+adminwritelog("" . _('Deleted') . ": " . _($modmsg) . " " . implode(', ', $items));
 
 if ($count) {
     $message = _('Changes to all items') . " " . _('were successfully saved') . ".";

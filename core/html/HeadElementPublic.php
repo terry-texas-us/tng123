@@ -191,14 +191,13 @@ class HeadElementPublic
      * @return string
      */
     public static function getLitBoxScript($error): string {
-        global $text;
         $script = "<script>\n";
         $script .= "var tnglitbox;\n";
         $script .= "var share = 0;\n";
         $script .= "const closeimg = 'img/tng_close.gif';\n";
-        $script .= "const loadingmsg = '{$text['loading']}';\n";
-        $script .= "const expand_msg = '{$text['expand']}';\n";
-        $script .= "const collapse_msg = '{$text['collapse']}';\n";
+        $script .= "const loadingMessage = '" . _('Loading...') . "';\n";
+        $script .= "const expandMessage = '" . _('Expand') . "';\n";
+        $script .= "const collapseMessage = '" . _('Collapse') . "';\n";
 
         if (isset($error) && $error) {
             $script .= "jQuery(document).ready(function(){openLogin('ajx_login.php?p=" . urlencode("") . "&message={$error}');});\n";

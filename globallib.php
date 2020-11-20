@@ -106,7 +106,7 @@ function getNameRev($row, $hcard = null) {
  * @return mixed|string|string[]|null
  */
 function getNameUniversal($row, $order, $hcard = null) {
-    global $text, $admtext, $tngconfig, $nonames;
+    global $admtext, $tngconfig, $nonames;
 
     $indexlist = ['lastname', 'firstname', 'lnprefix', 'allow_living', 'allow_private'];
     foreach ($indexlist as $index)
@@ -148,7 +148,7 @@ function getNameUniversal($row, $order, $hcard = null) {
  * @return string
  */
 function getFamilyName($row): string {
-    global $text, $people_table;
+    global $people_table;
 
     $righttree = checktree($row['gedcom']);
 
@@ -219,17 +219,14 @@ function showNames($row): string {
  * @return string
  */
 function getGenderIcon($gender, $valign): string {
-    global $text;
-
     $icon = "";
     if ($gender) {
         if ($gender == "M") {
-            $genderstr = "male";
+            $icon = buildSvgElement("img/mars.svg", ["class" => "w-4 h-4 text-blue-700 fill-current inline-block"]);
+            //            $icon .= "<img src='img/tng_male.gif' alt='" . _('Male') . "' class='inline-block' style='vertical-align: {$valign}px;'>";
         } elseif ($gender == "F") {
-            $genderstr = "female";
-        }
-        if ($genderstr) {
-            $icon = "<img src='img/tng_$genderstr.gif' alt='{$text[$genderstr]}' class='inline-block' style='vertical-align: {$valign}px;'>";
+            $icon = buildSvgElement("img/venus.svg", ["class" => "w-4 h-4 text-red-700 fill-current inline-block"]);
+            //            $icon .= "<img src='img/tng_female.gif' alt='" . _('Female') . "' class='inline-block' style='vertical-align: {$valign}px;'>";
         }
     }
     return $icon;
@@ -604,7 +601,7 @@ function getScriptPath() {
  * @return string
  */
 function get_browseitems_nav($total, $address, $perpage, $pagenavpages) {
-    global $tngpage, $totalpages, $text, $orgtree, $test_type, $test_group;
+    global $tngpage, $totalpages, $orgtree, $test_type, $test_group;
 
     $nextlink = '';
 
@@ -707,7 +704,7 @@ function displayDate($date): string {
  * @return string
  */
 function printDate($date, $datetr) {
-    global $dates, $text;
+    global $dates;
 
     $newdate = "";
     $prefix = 0;      //	added to displayDate function
@@ -1080,10 +1077,7 @@ function age($row) {
 
     }
 
-    if ($age <> "") {
-        global $text;
-        $age .= " " . _('years') . "";
-    }
+    if ($age <> "") $age .= " " . _('years') . "";
 
     return $age;
 }

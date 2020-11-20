@@ -153,7 +153,7 @@ $text['years'] = "years";
 //added in 10.0.0
 $admtext['CONL'] = "Confirmation (LDS)";
 $admtext['INIT'] = "Initiatory (LDS)";
-$admtext['step'] = "Stepchild";
+$admtext['stepchild'] = "Stepchild";
 $text['switchm'] = "Switch to mobile site";
 $text['switchs'] = "Switch to standard site";
 

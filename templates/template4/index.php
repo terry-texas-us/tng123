@@ -5,12 +5,12 @@ $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['ourpages'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Our Family Genealogy Pages"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 $title1 = getTemplateMessage('t4_headtitle1');
 $title2 = getTemplateMessage('t4_headtitle2');
@@ -24,19 +24,19 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
             </tr>
             <tr>
                 <td class="menuback">
-                    <a href="searchform.php" class="searchimg"><?php echo $text['search']; ?></a>
+                    <a href="searchform.php" class="searchimg"><?php echo _("Search"); ?></a>
                     <form action="search.php" method="get">
                         <table class="menuback">
                             <tr>
                                 <td>
-                                    <label class="fieldname"><?php echo $text['mnufirstname']; ?>:<br>
+                                    <label class="fieldname"><?php echo _("First Name"); ?>:<br>
                                         <input class="searchbox" name="myfirstname" type="search">
                                     </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label class="fieldname"><?php echo $text['mnulastname']; ?>: <br>
+                                    <label class="fieldname"><?php echo _("Last Name"); ?>: <br>
                                         <input class="searchbox" name="mylastname" type="search">
                                     </label>
                                 </td>
@@ -44,7 +44,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                             <tr>
                                 <td>
                                     <input name="mybool" type="hidden" value="AND">
-                                    <input name="search" type="submit" value="<?php echo $text['mnusearchfornames']; ?>">
+                                    <input name="search" type="submit" value="<?php echo _("Search"); ?>">
                                 </td>
                             </tr>
                         </table>
@@ -54,48 +54,48 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                             <td>
                                 <div class="fieldname">
                                     <ul>
-                                        <li><a href="searchform.php" class="lightlink"><?php echo $text['mnuadvancedsearch']; ?></a></li>
-                                        <li><a href="surnames.php" class="lightlink"><?php echo $text['mnulastnames']; ?></a><br><br></li>
+                                        <li><a href="searchform.php" class="lightlink"><?php echo _("Advanced Search"); ?></a></li>
+                                        <li><a href="surnames.php" class="lightlink"><?php echo _("Surnames"); ?></a><br><br></li>
                                     </ul>
                                     <?php
                                     if ($currentuser) {
-                                        echo "<p><span class='emphasisyellow'>{$text['welcome']}, $currentuserdesc.</span></p>\n";
+                                        echo "<p><span class='emphasisyellow'>" . _("Welcome") . ", $currentuserdesc.</span></p>\n";
                                         echo "<ul>\n";
-                                        echo "<li><a href='logout.php' class='lightlink'>{$text['mnulogout']}</a></li>\n";
+                                        echo "<li><a href='logout.php' class='lightlink'>" . _("Log Out") . "</a></li>\n";
                                     } else {
                                         echo "<ul>\n";
-                                        echo "<li><a href='login.php' class='lightlink'>{$text['mnulogon']}</a></li>\n";
+                                        echo "<li><a href='login.php' class='lightlink'>" . _("Log In") . "</a></li>\n";
                                     }
-                                    echo "<li><a href='whatsnew.php' class='lightlink'>{$text['mnuwhatsnew']}</a></li>\n";
-                                    echo "<li><a href='mostwanted.php' class='lightlink'>{$text['mostwanted']}</a></li>\n";
+                                    echo "<li><a href='whatsnew.php' class='lightlink'>" . _("What's New") . "</a></li>\n";
+                                    echo "<li><a href='mostwanted.php' class='lightlink'>" . _("Most Wanted") . "</a></li>\n";
                                     foreach ($mediatypes as $mediatype) {
                                         if (!$mediatype['disabled']) {
                                             echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}' class='lightlink'>{$mediatype['display']}</a></li>\n";
                                         }
                                     }
-                                    echo "<li><a href='browsealbums.php' class='lightlink'>{$text['albums']}</a></li>\n";
-                                    echo "<li><a href='browsemedia.php' class='lightlink'>{$text['allmedia']}</a></li>\n";
-                                    echo "<li><a href='cemeteries.php' class='lightlink'>{$text['mnucemeteries']}</a></li>\n";
-                                    echo "<li><a href='places.php' class='lightlink'>{$text['places']}</a></li>\n";
-                                    echo "<li><a href='browsenotes.php' class='lightlink'>{$text['notes']}</a></li>\n";
-                                    echo "<li><a href='anniversaries.php' class='lightlink'>{$text['anniversaries']}</a></li>\n";
-                                    echo "<li><a href='calendar.php' class='lightlink'>{$text['calendar']}</a></li>\n";
-                                    echo "<li><a href='reports.php' class='lightlink'>{$text['mnureports']}</a></li>\n";
-                                    echo "<li><a href='browsesources.php' class='lightlink'>{$text['mnusources']}</a></li>\n";
-                                    echo "<li><a href='browserepos.php' class='lightlink'>{$text['repositories']}</a></li>\n";
+                                    echo "<li><a href='browsealbums.php' class='lightlink'>" . _("Albums") . "</a></li>\n";
+                                    echo "<li><a href='browsemedia.php' class='lightlink'>" . _("All Media") . "</a></li>\n";
+                                    echo "<li><a href='cemeteries.php' class='lightlink'>" . _("Cemeteries") . "</a></li>\n";
+                                    echo "<li><a href='places.php' class='lightlink'>" . _("Places") . "</a></li>\n";
+                                    echo "<li><a href='browsenotes.php' class='lightlink'>" . _("Notes") . "</a></li>\n";
+                                    echo "<li><a href='anniversaries.php' class='lightlink'>" . _("Dates and Anniversaries") . "</a></li>\n";
+                                    echo "<li><a href='calendar.php' class='lightlink'>" . _("Calendar") . "</a></li>\n";
+                                    echo "<li><a href='reports.php' class='lightlink'>" . _("Reports") . "</a></li>\n";
+                                    echo "<li><a href='browsesources.php' class='lightlink'>" . _("Sources") . "</a></li>\n";
+                                    echo "<li><a href='browserepos.php' class='lightlink'>" . _("Repositories") . "</a></li>\n";
                                     if (!$tngconfig['hidedna']) {
-                                        echo "<li><a href='browse_dna_tests.php' class='lightlink'>{$text['dna_tests']}</a></li>\n";
+                                        echo "<li><a href='browse_dna_tests.php' class='lightlink'>" . _("DNA Tests") . "</a></li>\n";
                                     }
-                                    echo "<li><a href='statistics.php' class='lightlink'>{$text['mnustatistics']}</a></li>\n";
-                                    echo "<li><a href='changelanguage.php' class='lightlink'>{$text['mnulanguage']}</a></li>\n";
+                                    echo "<li><a href='statistics.php' class='lightlink'>" . _("Statistics") . "</a></li>\n";
+                                    echo "<li><a href='changelanguage.php' class='lightlink'>" . _("Change Language") . "</a></li>\n";
                                     if ($allow_admin) {
-                                        echo "<li><a href='showlog.php' class='lightlink'>{$text['mnushowlog']}</a></li>\n";
-                                        echo "<li><a href='admin.php' class='lightlink'>{$text['mnuadmin']}</a></li>\n";
+                                        echo "<li><a href='showlog.php' class='lightlink'>" . _("Access Log") . "</a></li>\n";
+                                        echo "<li><a href='admin.php' class='lightlink'>" . _("Administration") . "</a></li>\n";
                                     }
-                                    echo "<li><a href='bookmarks.php' class='lightlink'>{$text['bookmarks']}</a></li>\n";
-                                    echo "<li><a href='suggest.php?page=$title' class='lightlink'>{$text['contactus']}</a></li>\n";
+                                    echo "<li><a href='bookmarks.php' class='lightlink'>" . _("Bookmarks") . "</a></li>\n";
+                                    echo "<li><a href='suggest.php?page=$title' class='lightlink'>" . _("Contact Us") . "</a></li>\n";
                                     if (!$currentuser && !$tngconfig['disallowreg']) {
-                                        echo "<li><a href='newacctform.php' class='lightlink'>{$text['mnuregister']}</a></li>\n";
+                                        echo "<li><a href='newacctform.php' class='lightlink'>" . _("Register for a User Account") . "</a></li>\n";
                                     }
                                     echo "</ul><br>\n";
                                     ?>
@@ -128,7 +128,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                         <div class="rightsection"><br>
                             <table cellspacing="0">
                                 <tr>
-                                    <td class='align-top'><span class="normal"><b><?php echo $text['featarts']; ?></b></span></td>
+                                    <td class='align-top'><span class="normal"><b><?php echo _("Feature Articles"); ?></b></span></td>
                                 </tr>
                                 <tr>
                                     <td class="line align-top"></td>
@@ -174,7 +174,7 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                                     <td class='align-top'><span class="normal">&nbsp;</span></td>
                                 </tr>
                                 <tr>
-                                    <td class='align-top'><span class="normal"><b><?php echo $text['contactus']; ?></b></span></td>
+                                    <td class='align-top'><span class="normal"><b><?php echo _("Contact Us"); ?></b></span></td>
                                 </tr>
                                 <tr>
                                     <td class="line align-top"></td>

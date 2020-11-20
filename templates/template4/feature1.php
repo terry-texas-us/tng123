@@ -10,12 +10,12 @@ $flags['noheader'] = false; // include the template topmenu.php
 $flags['nobody'] = true; // do not add the <body> tag - tag added in topmenu.php
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['ourpages'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Our Family Genealogy Pages"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 ?>
 <h1>Feature 1 Story</h1>

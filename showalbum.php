@@ -9,7 +9,7 @@ $albumID = preg_replace("/[^0-9]/", '', $albumID);
 $flags['imgprev'] = true;
 $noneliving = $noneprivate = 1;
 function getAlbumLinkText($albumID) {
-    global $noneliving, $noneprivate, $text, $album2entities_table, $people_table, $families_table, $sources_table, $repositories_table, $events_table, $eventtypes_table, $wherestr2, $maxsearchresults;
+    global $noneliving, $noneprivate, $album2entities_table, $people_table, $families_table, $sources_table, $repositories_table, $events_table, $eventtypes_table, $wherestr2, $maxsearchresults;
     global $tngconfig;
     $links = "";
     if ($ioffset) {

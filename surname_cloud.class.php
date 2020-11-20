@@ -22,7 +22,7 @@ class surname_cloud
      * @return string
      */
     public function display($top = "50", $surnameTree = "", $surnameBranch = "") {
-        global $people_table, $text, $lnprefixes, $assignedtree;
+        global $people_table, $lnprefixes, $assignedtree;
         $treeBranchUrlString = "";
 
         // If you have surnames you wish to exclude enter them here

@@ -149,7 +149,7 @@ $text['years'] = "anos";
 //added in 10.0.0
 $admtext['CONL'] = "Confirmação (SUD)";
 $admtext['INIT'] = "Iniciação (SUD)";
-$admtext['step'] = "Enteado(a)";
+$admtext['stepchild'] = "Enteado(a)";
 $text['switchm'] = "Alternar para sítio móvel";
 $text['switchs'] = "Alternar para sítio padrão";
 

@@ -2,8 +2,6 @@
 include "begin.php";
 include "processvars.php";
 include "adminlib.php";
-$textpart = "setup";
-include "$mylanguage/admintext.php";
 
 if (!count($_POST)) {
     header("Location: admin_main.php");

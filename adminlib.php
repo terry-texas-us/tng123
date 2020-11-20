@@ -19,7 +19,7 @@ $isConnected = isConnected();
  * @param $flags
  */
 function tng_adminheader($title, $flags) {
-    global $session_charset, $sitename, $templatenum, $text, $tngdomain, $tngconfig, $isConnected;
+    global $session_charset, $sitename, $templatenum, $tngdomain, $tngconfig, $isConnected;
     $header = "<!-- begin tng_adminheader -->\n";
     header("Content-type:text/html;charset=" . $session_charset);
     $header .= "<!doctype html>\n";
@@ -51,7 +51,7 @@ function tng_adminheader($title, $flags) {
         }
     }
     const closeimg = 'img/tng_close.gif';
-    const loadingmsg = '" . _('Loading...') . "';
+    const loadingMessage = '" . _('Loading...') . "';
     </script>";
     initMediaTypes();
     $header .= "<!-- end tng_adminheader -->\n";
@@ -63,8 +63,7 @@ function tng_adminheader($title, $flags) {
  * @return string
  */
 function tng_adminlayout($args = "") {
-    global $tng_title, $tng_version, $currentuser, $allow_admin, $admtext, $text, $maint, $homepage;
-    $helplang = findhelp("index_help.php");
+    global $tng_title, $currentuser, $maint, $homepage;
     $output = "<!-- begin tng_adminlayout - $args -->\n";
     $output .= "<body class='m-0 adminbody'$args>\n";
     $output .= "<div class='fixed top-0 w-full m-0 text-base leading-snug topbanner sideback whiteheader'>\n";
@@ -75,19 +74,13 @@ function tng_adminlayout($args = "") {
     $output .= "</div>\n";
     $output .= "<div class='pl-3 overflow-hidden'>\n";
     $output .= "<h1 class='my-1 whitespace-no-wrap'>$tng_title</h1>\n";
-    $output .= "<span class='whitetext normal whitespace-no-wrap'>\n";
+    $output .= "<span class='whitespace-no-wrap whitetext normal'>\n";
     $output .= "<a href='admin.php' class='lightlink'>" . _('Admin Home') . "</a>\n";
     $output .= "<a href='$homepage' class='lightlink'>" . _('Public Home') . "</a>\n";
-    //    if ($allow_admin) {
-    //        $output .= "&nbsp;|&nbsp; <a href='adminshowlog.php' class='lightlink' target='main'>" . _('Admin Log') . "</a>\n";
-    //    }
-    //    $output .= "&nbsp;|&nbsp; <a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='lightlink'>" . _('Getting Started') . "</a>\n";
     if ($maint) {
         $output .= "&nbsp;|&nbsp; <strong><span class='yellow'>" . _('Maintenance Mode is ON') . "</span></strong>\n";
     }
-    //    $output .= "&nbsp;|&nbsp; <a href='https://tng.lythgoes.net/wiki' class='lightlink' target='_blank'>TNG Wiki</a>\n";
-    //    $output .= "&nbsp;|&nbsp; <a href='https://tng.community' class='lightlink' target='_blank'>TNG Forum</a>\n";
-    $output .= "<a href='logout.php?admin_login=1' class='lightlink float-right' target='_parent'>" . _('Logout') . "&nbsp; (<strong>$currentuser</strong>)</a>\n";
+    $output .= "<a href='logout.php?admin_login=1' class='float-right lightlink' target='_parent'>" . _('Logout') . "&nbsp; (<strong>$currentuser</strong>)</a>\n";
     $output .= "</span>\n";
     $output .= "</div>\n";
     $output .= "</div>\n";
@@ -114,13 +107,13 @@ function tng_adminfooter() {
     $html .= "</div>\n";
     $html .= "</div>\n";
     $helplang = findhelp("index_help.php");
-    $html .= "<nav class='text-center lg:flex items-center justify-around flex-wrap p-6'>\n";
+    $html .= "<nav class='flex-wrap items-center justify-around p-6 text-center lg:flex'>\n";
     if ($allow_admin) {
-        $html .= "<a href='adminshowlog.php' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='main'>" . _('Admin Log') . "</a>\n";
+        $html .= "<a href='adminshowlog.php' class='block mt-4 mr-4 text-indigo-200 lg:inline-block lg:mt-0 hover:text-white' target='main'>" . _('Admin Log') . "</a>\n";
     }
-    $html .= "<a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4'>" . _('Getting Started') . "</a>\n";
-    $html .= "<a href='https://tng.lythgoes.net/wiki' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='_blank'>TNG Wiki</a>\n";
-    $html .= "<a href='https://tng.community' class='block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4' target='_blank'>TNG Forum</a>\n";
+    $html .= "<a href='#' onclick=\"return openHelp('{$helplang}/index_help.php');\" class='block mt-4 mr-4 text-indigo-200 lg:inline-block lg:mt-0 hover:text-white'>" . _('Getting Started') . "</a>\n";
+    $html .= "<a href='https://tng.lythgoes.net/wiki' class='block mt-4 mr-4 text-indigo-200 lg:inline-block lg:mt-0 hover:text-white' target='_blank'>TNG Wiki</a>\n";
+    $html .= "<a href='https://tng.community' class='block mt-4 mr-4 text-indigo-200 lg:inline-block lg:mt-0 hover:text-white' target='_blank'>TNG Forum</a>\n";
     $html .= "</nav>\n";
     $html .= "</body>\n";
     $html .= "</html>\n";
@@ -288,15 +281,12 @@ function displayToggle($id, $state, $target, $headline, $subhead, $append = "") 
  */
 function displayHeadline($headline, $icon, $menu, $message) {
     $rval = "<div class='lightback'>\n";
-    $rval .= "<div class='flex items-center p-1'>\n";
+    $rval .= "<div class='flex items-center p-1 mb-4'>\n";
     $rval .= "<img src='$icon' alt='$headline' class='mr-3' title='$headline'>";
     $rval .= "<span class='plainheader'>$headline</span>\n";
-    $rval .= "</div><br>\n";
-    if ($message) {
-        $rval .= "<p class='normal red'>&nbsp;<em>" . urldecode(stripslashes($message)) . "</em></p>\n";
-    } else {
-        $rval .= "<br>\n";
-    }
+    $rval .= "</div>\n";
+    if ($message) $rval .= "<p class='ml-4 italic normal red'>" . urldecode(stripslashes($message)) . "</p>\n";
+
     $rval .= "$menu\n";
     $rval .= "</div>\n";
 

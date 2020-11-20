@@ -4,8 +4,7 @@ include "begin.php";
 include "config/mapconfig.php";
 include "adminlib.php";
 require_once "admin/pagination.php";
-$textpart = "photos";
-include "$mylanguage/admintext.php";
+
 $admin_login = true;
 include "checklogin.php";
 include "version.php";

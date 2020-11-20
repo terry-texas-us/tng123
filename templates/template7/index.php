@@ -5,12 +5,12 @@ $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['ourpages'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Our Family Genealogy Pages"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " m-2'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 ?>
 <div>
@@ -31,7 +31,7 @@ if ($tngconfig['maint']) {
                 </td>
             <?php } ?>
             <td class="news">
-                <div><span class="emphasis"><?php echo $text['news']; ?>:</span>
+                <div><span class="emphasis"><?php echo _("News"); ?>:</span>
                     <?php echo getTemplateMessage('t7_newstext'); ?>
                 </div>
             </td>
@@ -42,10 +42,10 @@ if ($tngconfig['maint']) {
             <tr class="strip">
                 <td class="fieldnameback">
                     <span class="fieldname">
-                        <label class="whitespace-no-wrap"><?php echo $text['mnufirstname']; ?>: <input type="search" name="myfirstname"></label>
-                        <label class="whitespace-no-wrap pl-2"><?php echo $text['mnulastname']; ?>: <input type="search" name="mylastname"></label>
+                        <label class="whitespace-no-wrap"><?php echo _("First Name"); ?>: <input type="search" name="myfirstname"></label>
+                        <label class="whitespace-no-wrap pl-2"><?php echo _("Last Name"); ?>: <input type="search" name="mylastname"></label>
                         <input type="hidden" name="mybool" value="AND"><input type="hidden" name="offset" value="0">
-                        <span class="px-2"><input type="submit" name="search" value="<?php echo $text['mnusearch']; ?>"></span>
+                        <span class="px-2"><input type="submit" name="search" value="<?php echo _("Search"); ?>"></span>
                     </span>
                 </td>
             </tr>
@@ -62,14 +62,14 @@ if ($tngconfig['maint']) {
                         <td class="fieldname">
                             <?php
                             if ($currentuser) {
-                                echo "<a href='logout.php' class='lightlink'>{$text['mnulogout']}</a><br>\n";
+                                echo "<a href='logout.php' class='lightlink'>" . _("Log Out") . "</a><br>\n";
                             } else {
-                                echo "<a href='login.php' class='lightlink'>{$text['mnulogon']}</a><br>\n";
+                                echo "<a href='login.php' class='lightlink'>" . _("Log In") . "</a><br>\n";
                             }
-                            echo "<a href='searchform.php' class='lightlink'>{$text['mnuadvancedsearch']}</a><br>\n";
-                            echo "<a href='surnames.php' class='lightlink'>{$text['mnulastnames']}</a><br>\n";
-                            echo "<a href='whatsnew.php' class='lightlink'>{$text['mnuwhatsnew']}</a><br>\n";
-                            echo "<a href='mostwanted.php' class='lightlink'>{$text['mostwanted']}</a><br>\n";
+                            echo "<a href='searchform.php' class='lightlink'>" . _("Advanced Search") . "</a><br>\n";
+                            echo "<a href='surnames.php' class='lightlink'>" . _("Surnames") . "</a><br>\n";
+                            echo "<a href='whatsnew.php' class='lightlink'>" . _("What's New") . "</a><br>\n";
+                            echo "<a href='mostwanted.php' class='lightlink'>" . _("Most Wanted") . "</a><br>\n";
 
                             foreach ($mediatypes as $mediatype) {
                                 if (!$mediatype['disabled']) {
@@ -77,29 +77,29 @@ if ($tngconfig['maint']) {
                                 }
                             }
 
-                            echo "<a href='browsealbums.php' class='lightlink'>{$text['albums']}</a><br>\n";
-                            echo "<a href='browsemedia.php' class='lightlink'>{$text['allmedia']}</a><br>\n";
-                            echo "<a href='cemeteries.php' class='lightlink'>{$text['mnucemeteries']}</a><br>\n";
-                            echo "<a href='places.php' class='lightlink'>{$text['places']}</a><br>\n";
-                            echo "<a href='browsenotes.php' class='lightlink'>{$text['notes']}</a><br>\n";
-                            echo "<a href='anniversaries.php' class='lightlink'>{$text['anniversaries']}</a><br>\n";
-                            echo "<a href='calendar.php' class='lightlink'>{$text['calendar']}</a><br>\n";
-                            echo "<a href='reports.php' class='lightlink'>{$text['mnureports']}</a><br>\n";
-                            echo "<a href='browsesources.php' class='lightlink'>{$text['mnusources']}</a><br>\n";
-                            echo "<a href='browserepos.php' class='lightlink'>{$text['repositories']}</a><br>\n";
+                            echo "<a href='browsealbums.php' class='lightlink'>" . _("Albums") . "</a><br>\n";
+                            echo "<a href='browsemedia.php' class='lightlink'>" . _("All Media") . "</a><br>\n";
+                            echo "<a href='cemeteries.php' class='lightlink'>" . _("Cemeteries") . "</a><br>\n";
+                            echo "<a href='places.php' class='lightlink'>" . _("Places") . "</a><br>\n";
+                            echo "<a href='browsenotes.php' class='lightlink'>" . _("Notes") . "</a><br>\n";
+                            echo "<a href='anniversaries.php' class='lightlink'>" . _("Dates and Anniversaries") . "</a><br>\n";
+                            echo "<a href='calendar.php' class='lightlink'>" . _("Calendar") . "</a><br>\n";
+                            echo "<a href='reports.php' class='lightlink'>" . _("Reports") . "</a><br>\n";
+                            echo "<a href='browsesources.php' class='lightlink'>" . _("Sources") . "</a><br>\n";
+                            echo "<a href='browserepos.php' class='lightlink'>" . _("Repositories") . "</a><br>\n";
                             if (!$tngconfig['hidedna']) {
-                                echo "<a href='browse_dna_tests.php' class='lightlink'>{$text['dna_tests']}</a><br>\n";
+                                echo "<a href='browse_dna_tests.php' class='lightlink'>" . _("DNA Tests") . "</a><br>\n";
                             }
-                            echo "<a href='statistics.php' class='lightlink'>{$text['mnustatistics']}</a><br>\n";
-                            echo "<a href='changelanguage.php' class='lightlink'>{$text['mnulanguage']}</a><br>\n";
+                            echo "<a href='statistics.php' class='lightlink'>" . _("Statistics") . "</a><br>\n";
+                            echo "<a href='changelanguage.php' class='lightlink'>" . _("Change Language") . "</a><br>\n";
                             if ($allow_admin) {
-                                echo "<a href='showlog.php' class='lightlink'>{$text['mnushowlog']}</a><br>\n";
-                                echo "<a href='admin.php' class='lightlink'>{$text['mnuadmin']}</a><br>\n";
+                                echo "<a href='showlog.php' class='lightlink'>" . _("Access Log") . "</a><br>\n";
+                                echo "<a href='admin.php' class='lightlink'>" . _("Administration") . "</a><br>\n";
                             }
-                            echo "<a href='bookmarks.php' class='lightlink'>{$text['bookmarks']}</a><br>\n";
-                            echo "<a href='suggest.php?page=$title' class='lightlink'>{$text['contactus']}</a><br>\n";
+                            echo "<a href='bookmarks.php' class='lightlink'>" . _("Bookmarks") . "</a><br>\n";
+                            echo "<a href='suggest.php?page=$title' class='lightlink'>" . _("Contact Us") . "</a><br>\n";
                             if (!$currentuser && !$tngconfig['disallowreg']) {
-                                echo "<a href='newacctform.php' class='lightlink'>{$text['mnuregister']}</a><br>\n";
+                                echo "<a href='newacctform.php' class='lightlink'>" . _("Register for a User Account") . "</a><br>\n";
                             }
                             ?>
                         </td>
@@ -130,7 +130,7 @@ if ($tngconfig['maint']) {
                                     <td class="rightcontent"><br>
                                         <table width="200" cellspacing="0">
                                             <tr>
-                                                <td class='align-top'><span class="emphasis"><?php echo $text['latupdates']; ?></span></td>
+                                                <td class='align-top'><span class="emphasis"><?php echo _("Latest Updates"); ?></span></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="line"></td>
@@ -143,7 +143,7 @@ if ($tngconfig['maint']) {
                                                     <div class="normal">
                                                         <?php
                                                         $tngquery = "SELECT lastname, firstname, changedate, personID, gedcom, living, private, branch, lnprefix, title, suffix, prefix FROM $people_table ORDER BY changedate DESC LIMIT 10";
-                                                        $resulttng = tng_query($tngquery) or die($text['cannotexecutequery'] . ": $tngquery");
+                                                        $resulttng = tng_query($tngquery) or die(_("Cannot execute query") . ": $tngquery");
 
                                                         $found = tng_num_rows($resulttng);
                                                         while ($dbrow = tng_fetch_assoc($resulttng)) {
@@ -166,7 +166,7 @@ if ($tngconfig['maint']) {
                                                 <td class='align-top'><span class="normal">&nbsp;</span></td>
                                             </tr>
                                             <tr>
-                                                <td class='align-top'><span class="emphasis"><?php echo $text['featphoto']; ?></span></td>
+                                                <td class='align-top'><span class="emphasis"><?php echo _("Featured Photo"); ?></span></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="line"></td>

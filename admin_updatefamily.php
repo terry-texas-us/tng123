@@ -2,8 +2,6 @@
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "families";
-include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 require "adminlog.php";

@@ -16,6 +16,9 @@ include "version.php";
 $date = date("r");
 $timezone = date("O");
 
+/**
+ * @param $mediatypeID
+ */
 function doMedia($mediatypeID) {
     global $tngdomain, $langstr, $mediatypes_display, $timezone, $session_charset;
 

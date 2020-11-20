@@ -149,7 +149,7 @@ $text['years'] = "年";
 //added in 10.0.0
 $admtext['CONL'] = "确认(LDS)";
 $admtext['INIT'] = "入会(LDS)";
-$admtext['step'] = "继子女";
+$admtext['stepchild'] = "继子女";
 $text['switchm'] = "切换移动页";
 $text['switchs'] = "切换标准页";
 

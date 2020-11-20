@@ -1,6 +1,10 @@
 <?php
+
+/**
+ * @param $string
+ */
 function writelog($string) {
-    global $text, $currentuser, $currentuserdesc, $_SERVER, $time_offset, $exusers, $badhosts, $charset;
+    global $currentuser, $currentuserdesc, $_SERVER, $time_offset, $exusers, $badhosts, $charset;
     require "config/logconfig.php";
     if (!isset($_SERVER['REMOTE_HOST'])) $_SERVER['REMOTE_HOST'] = '';
     $string = str_replace(["\n", "\r"], " ", $string);

@@ -149,7 +149,7 @@ $text['years'] = "jaar";
 //added in 10.0.0
 $admtext['CONL'] = "Bevestiging (LDS)";
 $admtext['INIT'] = "Initiatie (LDS)";
-$admtext['step'] = "Stiefkind";
+$admtext['stepchild'] = "Stiefkind";
 $text['switchm'] = "Ga naar mobiele site";
 $text['switchs'] = "Ga naar standaard site";
 

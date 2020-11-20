@@ -4,9 +4,7 @@ include "begin.php";
 $tmp = getTemplateVars($templates_table, $templatenum);
 $tngconfig['maint'] = "";
 include "genlib.php";
-$textpart = "language";
 include "getlang.php";
-include "$mylanguage/text.php";
 
 $maintenance_mode = true;
 

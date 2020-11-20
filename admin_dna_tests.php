@@ -3,10 +3,9 @@
 include "begin.php";
 include "adminlib.php";
 require_once "admin/pagination.php";
-$textpart = "dna";
 include "personlib.php";
 include "tngdblib.php";
-include "$mylanguage/admintext.php";
+
 $admin_login = true;
 include "checklogin.php";
 include "version.php";

@@ -17,8 +17,16 @@ if ($pedigree['stdesc']) {
     $imgtitle = _('Collapse');
 }
 
+/**
+ * @param $key
+ * @param $sex
+ * @param $level
+ * @param $trail
+ * @param $dab
+ * @return string
+ */
 function getIndividual($key, $sex, $level, $trail, $dab) {
-    global $tree, $generations, $text, $righttree;
+    global $tree, $generations, $righttree;
     global $divctr, $display, $excolimg, $imgtitle;
 
     $rval = "";
@@ -124,9 +132,11 @@ function getIndividual($key, $sex, $level, $trail, $dab) {
     return $rval;
 }
 
+/**
+ * @param $row
+ * @return string
+ */
 function getVitalDates($row) {
-    global $text;
-
     $vitalinfo = "";
 
     if ($row['allow_living'] && $row['allow_private']) {
@@ -181,8 +191,8 @@ $flags['scripting'] = "<script>var tnglitbox;</script>\n";
 tng_header(_('Descendancy for') . " $namestr", $flags);
 ?>
     <script>
-        var collapsemsg = "<?php echo _('Collapse'); ?>";
-        var expandmsg = "<?php echo _('Expand'); ?>";
+        const collapseMessage = "<?php echo _('Collapse'); ?>";
+        const expandMessage = "<?php echo _('Expand'); ?>";
 
         function toggleDescSection(key) {
             var section = jQuery('#' + key);
@@ -216,7 +226,7 @@ tng_header(_('Descendancy for') . " $namestr", $flags);
         minus.src = "img/tng_minus.gif";
 
         function swap(x, y) {
-            jQuery('#' + x).attr('title', y == "minus" ? collapsemsg : expandmsg);
+            jQuery('#' + x).attr('title', y == "minus" ? collapseMessage : expandMessage);
             document.images[x].src = eval(y + '.src');
         }
     </script>

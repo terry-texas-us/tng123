@@ -2,8 +2,6 @@
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "photos";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";
@@ -11,13 +9,12 @@ include "checklogin.php";
 initMediaTypes();
 
 function get_album_nav($total, $perpage, $pagenavpages) {
-    global $page, $totalpages, $text, $orgtree, $albumID, $searchstring, $mediatypeID, $hsstat, $cemeteryID;
+    global $page, $totalpages, $orgtree, $albumID, $searchstring, $mediatypeID, $hsstat, $cemeteryID;
     if (!$page) $page = 1;
     if (!$perpage) $perpage = 50;
     if ($total <= $perpage) return "";
     $totalpages = ceil($total / $perpage);
     if ($page > $totalpages) $page = $totalpages;
-
 
     if ($page > 1) {
         $prevpage = $page - 1;

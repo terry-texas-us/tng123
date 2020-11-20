@@ -2,8 +2,6 @@
 include "begin.php";
 include "config/pedconfig.php";
 include "adminlib.php";
-$textpart = "setup";
-include "$mylanguage/admintext.php";
 
 if ($link) {
     $admin_login = 1;

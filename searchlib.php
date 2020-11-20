@@ -8,8 +8,6 @@ $criteria_count = 0;
  * @return mixed
  */
 function buildColumn($qualifier, $column, $usevalue) {
-    global $text;
-
     $criteria = "";
     switch ($qualifier) {
         case "equals":
@@ -73,7 +71,7 @@ function buildColumn($qualifier, $column, $usevalue) {
  * @param $textstr
  */
 function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier, $value, $textstr) {
-    global $text, $criteria_limit, $criteria_count;
+    global $criteria_limit, $criteria_count;
 
     if ($qualifier == "exists" || $qualifier == "dnexist") {
         $value = "";
@@ -150,7 +148,7 @@ function buildYearCriteria($column, $colvar, $qualifyvar, $altcolumn, $qualifier
  * @param $value
  */
 function addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qualifystr, $value) {
-    global $allwhere, $mybool, $querystring, $urlstring, $mybooltext, $text;
+    global $allwhere, $mybool, $querystring, $urlstring, $mybooltext;
 
     if ($urlstring) $urlstring .= "&amp;";
 
@@ -189,7 +187,7 @@ function addtoQuery($textstr, $colvar, $criteria, $qualifyvar, $qualifier, $qual
  * @return string
  */
 function doCustomEvents($type) {
-    global $dontdo, $cejoin, $eventtypes_table, $events_table, $text, $allwhere, $mybool;
+    global $dontdo, $cejoin, $eventtypes_table, $events_table, $allwhere, $mybool;
 
     $cejoin = "";
     $query = "SELECT eventtypeID, tag, display FROM $eventtypes_table WHERE keep='1' AND type='$type' ORDER BY display";

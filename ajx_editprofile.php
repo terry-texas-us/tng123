@@ -4,9 +4,6 @@ include "begin.php";
 include "adminlib.php";
 require_once "core/html/cleanUserProfile.php";
 
-$textpart = "login";
-include "$mylanguage/text.php";
-
 include "checklogin.php";
 //if no rights, just throw up a message. don't redirect
 //remove javascript. put that somewhere global

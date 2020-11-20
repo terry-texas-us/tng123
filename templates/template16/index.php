@@ -4,12 +4,12 @@ $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true, 'bodyclass' => "homebody"];
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Our Family History"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . " homebody'>\n";
 $dadlabel = getTemplateMessage('t16_dadside');
@@ -19,18 +19,18 @@ $title = getTemplateMessage('t16_maintitle');
 $rp_maxwidth = "300";
 $rp_maxheight = "300";
 
-$search = "<h3>{$text['search']}</h3>\n";
+$search = "<h3>" . _("Search") . "</h3>\n";
 $search .= "<form action='search.php' method='get'>\n";
-$search .= "<label for='myfirstname' class='formfield' style='padding-top: 0;'>{$text['mnufirstname']}:</label>\n";
+$search .= "<label for='myfirstname' class='formfield' style='padding-top: 0;'>" . _("First Name") . ":</label>\n";
 $search .= "<input id='myfirstname' class='formfield' name='myfirstname' type='search'>\n";
-$search .= "<label for='mylastname' class='formfield'>{$text['mnulastname']}: </label>\n";
+$search .= "<label for='mylastname' class='formfield'>" . _("Last Name") . ": </label>\n";
 $search .= "<input id='mylastname' class='formfield' name='mylastname' type='search'><br>\n";
 $search .= "<input name='mybool' type='hidden' value='AND'>\n";
 $search .= "<div style='float: left; margin-right: 10px; margin-bottom: 5px;'>\n";
-$search .= "<input type='submit' name='search' value='{$text['mnusearchfornames']}' class='btn' id='searchbtn'>\n";
+$search .= "<input type='submit' name='search' value='" . _("Search") . "' class='btn' id='searchbtn'>\n";
 $search .= "</div>\n";
-$search .= "<a href='searchform.php'>{$text['mnuadvancedsearch']}</a><br>\n";
-$search .= "<a href='surnames.php'>{$text['mnulastnames']}</a>\n";
+$search .= "<a href='searchform.php'>" . _("Advanced Search") . "</a><br>\n";
+$search .= "<a href='surnames.php'>" . _("Surnames") . "</a>\n";
 $search .= "<br style='clear: both;'>\n";
 $search .= "</form>\n";
 ?>
@@ -67,7 +67,7 @@ $search .= "</form>\n";
                             <?php echo $search; ?>
                         </div>
                         <div class="tsidesection">
-                            <h3><?php echo $text['featphoto']; ?></h3>
+                            <h3><?php echo _("Featured Photo"); ?></h3>
                             <?php
                             $rp_maxwidth = "100%";
                             include "randomphoto.php";
@@ -76,8 +76,8 @@ $search .= "</form>\n";
                         <div class="tsidesection">
                             <h3><?php echo $admtext['menu']; ?></h3>
                             <ul class="vmenu">
-                                <li><a href="whatsnew.php"><?php echo $text['mnuwhatsnew']; ?></a></li>
-                                <li><a href="mostwanted.php"><?php echo $text['mostwanted']; ?></a></li>
+                                <li><a href="whatsnew.php"><?php echo _("What's New"); ?></a></li>
+                                <li><a href="mostwanted.php"><?php echo _("Most Wanted"); ?></a></li>
                                 <?php
                                 foreach ($mediatypes as $mediatype) {
                                     if (!$mediatype['disabled']) {
@@ -85,25 +85,25 @@ $search .= "</form>\n";
                                     }
                                 }
                                 ?>
-                                <li><a href="browsealbums.php"><?php echo $text['albums']; ?></a></li>
-                                <li><a href="browsemedia.php"><?php echo $text['allmedia']; ?></a></li>
-                                <li><a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a></li>
-                                <li><a href="places.php"><?php echo $text['places']; ?></a></li>
-                                <li><a href="browsenotes.php"><?php echo $text['notes']; ?></a></li>
-                                <li><a href="anniversaries.php"><?php echo $text['anniversaries']; ?></a></li>
-                                <li><a href="calendar.php"><?php echo $text['calendar']; ?></a></li>
-                                <li><a href="reports.php"><?php echo $text['reports']; ?></a></li>
-                                <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
-                                <li><a href="browserepos.php"><?php echo $text['repositories']; ?></a></li>
+                                <li><a href="browsealbums.php"><?php echo _("Albums"); ?></a></li>
+                                <li><a href="browsemedia.php"><?php echo _("All Media"); ?></a></li>
+                                <li><a href="cemeteries.php"><?php echo _("Cemeteries"); ?></a></li>
+                                <li><a href="places.php"><?php echo _("Places"); ?></a></li>
+                                <li><a href="browsenotes.php"><?php echo _("Notes"); ?></a></li>
+                                <li><a href="anniversaries.php"><?php echo _("Dates and Anniversaries"); ?></a></li>
+                                <li><a href="calendar.php"><?php echo _("Calendar"); ?></a></li>
+                                <li><a href="reports.php"><?php echo _("Reports"); ?></a></li>
+                                <li><a href="browsesources.php"><?php echo _("Sources"); ?></a></li>
+                                <li><a href="browserepos.php"><?php echo _("Repositories"); ?></a></li>
                                 <?php if (!$tngconfig['hidedna']) { ?>
-                                    <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
+                                    <li><a href="browse_dna_tests.php"><?php echo _("DNA Tests"); ?></a></li>
                                 <?php } ?>
-                                <li><a href="statistics.php"><?php echo $text['mnustatistics']; ?></a></li>
+                                <li><a href="statistics.php"><?php echo _("Statistics"); ?></a></li>
                                 <?php if ($allow_admin) { ?>
-                                    <li><a href="showlog.php"><?php echo $text['mnushowlog']; ?></a></li>
-                                    <li><a href="admin.php"><?php echo $text['mnuadmin']; ?></a></li>
+                                    <li><a href="showlog.php"><?php echo _("Access Log"); ?></a></li>
+                                    <li><a href="admin.php"><?php echo _("Administration"); ?></a></li>
                                 <?php } ?>
-                                <li><a href="bookmarks.php"><?php echo $text['bookmarks']; ?></a></li>
+                                <li><a href="bookmarks.php"><?php echo _("Bookmarks"); ?></a></li>
                             </ul>
                         </div>
                     </div>
@@ -139,23 +139,22 @@ $search .= "</form>\n";
                                 tng_free_result($result);
 
                                 if ($currentuser) {
-                                    echo "<p class='mt-2'><strong>{$text['welcome']}, $currentuserdesc.</strong> <a href='logout.php'>{$text['mnulogout']}</a></p>\n";
+                                    echo "<p class='mt-2'><strong>" . _("Welcome") . ", $currentuserdesc.</strong> <a href='logout.php'>" . _("Log Out") . "</a></p>\n";
                                 } else {
                                     $loginContent = "";
                                     if (!$tngconfig['showlogin']) {
-                                        $loginContent = "<a href='login.php'>{$text['mnulogon']}</a>";
+                                        $loginContent = "<a href='login.php'>" . _("Log In") . "</a>";
                                     }
                                     if (!$tngconfig['disallowreg']) {
                                         if ($loginContent) $loginContent .= " | ";
 
-                                        $loginContent .= "<a href='newacctform.php'>{$text['mnuregister']}</a>";
+                                        $loginContent .= "<a href='newacctform.php'>" . _("Register for a User Account") . "</a>";
                                     }
                                     if ($loginContent) echo "<p>$loginContent</p>\n";
-
                                 }
                                 echo getTemplateMessage('t16_mainpara');
                                 ?>
-                                <h3><?php echo $text['contactus']; ?></h3>
+                                <h3><?php echo _("Contact Us"); ?></h3>
                                 <p class="contact">
                                     <img src="<?php echo $templatepath; ?>img/email.gif" alt="email image" class="emailimg"><?php echo $text['contactus_long']; ?>
                                 </p>
@@ -175,11 +174,11 @@ $search .= "</form>\n";
                             </div>
                         <?php } ?>
                         <div class="tblock">
-                            <h2><?php echo $text['whatsnew'] . " | <a href='whatsnew.php'>" . $text['more'] . "</a>"; ?></h2>
+                            <h2><?php echo _("What's New") . " | <a href='whatsnew.php'>" . _("More") . "</a>"; ?></h2>
                             <?php include "widget_whatsnew.php"; ?>
                         </div>
                         <div class="tblock">
-                            <h2><?php echo $text['surnames'] . " | <a href='surnames.php'>" . $text['more'] . "</a>"; ?></h2>
+                            <h2><?php echo _("Surnames") . " | <a href='surnames.php'>" . _("More") . "</a>"; ?></h2>
                             <?php
                             include "surname_cloud.class.php";
                             $nc = new surname_cloud();

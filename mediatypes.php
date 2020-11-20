@@ -13,6 +13,9 @@ $mediatypeObjs = [];
 $mctr = 0;
 $maxmediafilesize = 5000000; //5 Mb is too large to create a thumbnail
 
+/**
+ * @param $newtype
+ */
 function setMediaType($newtype) {
     global $mediatypes, $mediatypes_assoc, $mediatypes_icons, $mediatypes_thumbs, $mediatypes_display, $mediatypes_like, $mediatypeObjs, $mctr;
     global $mediatypes_locpaths, $text;

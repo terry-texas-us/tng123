@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "cemeteries";
-include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 

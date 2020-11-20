@@ -42,7 +42,7 @@ function showFact($text, $fact) {
  * @return string
  */
 function showDatePlace($event) {
-    global $allow_lds_this, $cellnumber, $text, $tentative_edit, $tree, $familyID;
+    global $allow_lds_this, $cellnumber, $tentative_edit, $tree, $familyID;
     global $placelinkbegin, $placelinkend;
 
     $dptext = "";
@@ -102,7 +102,7 @@ function showDatePlace($event) {
  * @return string
  */
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
-    global $tree, $text, $children_table, $righttree;
+    global $tree, $children_table, $righttree;
     global $allow_lds_this, $allow_edit, $families_table, $people_table, $personID;
 
     $indtext = "";

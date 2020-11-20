@@ -149,7 +149,7 @@ $text['years'] = "let";
 //added in 10.0.0
 $admtext['CONL'] = "Biřmování (CJKSpd)";
 $admtext['INIT'] = "Zasvěcení (CJKSpd)";
-$admtext['step'] = "Nevlastní dítě";
+$admtext['stepchild'] = "Nevlastní dítě";
 $text['switchm'] = "Přepnout na mobilní verzi";
 $text['switchs'] = "Přepnout na standardní verzi";
 

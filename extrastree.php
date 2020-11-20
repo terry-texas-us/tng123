@@ -6,7 +6,12 @@ include "config/pedconfig.php";
 
 if (!$generations) $generations = 12;
 
-
+/**
+ * @param $key
+ * @param $generation
+ * @param $slot
+ * @param $column
+ */
 function displayIndividual($key, $generation, $slot, $column) {
     global $columns, $tree, $pedmax, $text, $media_table, $medialinks_table, $col1fam, $col2fam;
     global $showall, $parentset, $righttree;

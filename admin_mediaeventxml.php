@@ -31,27 +31,25 @@ echo "<target>$count</target>\n";
 echo "</targetlist>\n";
 
 if ($linktype == "I") {
-    //standard people events
-    $list = ["NAME", "BIRT", "CHR", "DEAT", "BURI"];
-    foreach ($list as $eventtype)
-        doEvent($eventtype, $admtext[$eventtype], "");
+    doEvent("NAME", _("Name"), '');
+    doEvent("BIRT", _("Birth"), '');
+    doEvent("CHR", _("Christening"), '');
+    doEvent("DEAT", _("Death"), '');
+    doEvent("BURI", _("Burial"), '');
     if ($allow_lds) {
-        $ldslist = ["BAPL", "CONL", "INIT", "ENDL", "SLGC"];
-        foreach ($ldslist as $eventtype)
-            doEvent($eventtype, $admtext[$eventtype], "");
+        doEvent("BAPL", _("Baptism (LDS)"), '');
+        doEvent("CONL", _("Confirmation (LDS)"), '');
+        doEvent("INIT", _("Initiatory (LDS)"), '');
+        doEvent("ENDL", _("Endowment (LDS)"), '');
+        doEvent("SLGC", _("Sealed to Parents (LDS)"), '');
     }
 } elseif ($linktype == "F") {
-    //standard family events
-    $list = ["MARR", "DIV"];
-    foreach ($list as $eventtype)
-        doEvent($eventtype, $admtext[$eventtype], "");
+    doEvent("MARR", _("Married"), '');
+    doEvent("DIV", _("Divorced"), '');
     if ($allow_lds) {
-        $ldslist = ["SLGS"];
-        foreach ($ldslist as $eventtype)
-            doEvent($eventtype, $admtext[$eventtype], "");
+        doEvent("SLGS", _("Sealed to Spouse (LDS)"), '');
     }
 }
-
 //now call up custom events linked to passed in entity
 $query = "SELECT display, eventdate, eventplace, info, eventID ";
 $query .= "FROM $events_table events, $eventtypes_table eventtypes ";

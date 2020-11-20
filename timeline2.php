@@ -64,8 +64,12 @@ $treerow = tng_fetch_assoc($treeResult);
 $disallowgedcreate = $treerow['disallowgedcreate'];
 tng_free_result($treeResult);
 
+/**
+ * @param $person
+ * @return string
+ */
 function getEvents($person) {
-    global $text, $ratio, $righttree;
+    global $ratio, $righttree;
 
     $personID = $person['personID'];
     $tree = $person['tree'];

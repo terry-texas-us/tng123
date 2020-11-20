@@ -46,8 +46,13 @@ if ($tnggallery) {
 $_SESSION['tng_gallery'] = $tnggallery;
 $_SESSION['tng_mediatree'] = $tree;
 
+/**
+ * @param $instance
+ * @param $pagenav
+ * @return string
+ */
 function doMediaSearch($instance, $pagenav) {
-    global $text, $mediasearch, $orgmediatypeID, $tree, $tnggallery;
+    global $mediasearch, $orgmediatypeID, $tree, $tnggallery;
 
     $str = getFORM("browsemedia", "get", "MediaSearch$instance", "");
     $str .= "<input type='text' name=\"mediasearch\" value=\"$mediasearch\"> <input type='submit' value=\"" . _('Search') . "\"> <input type='button' value=\"" . _('Reset') . "\" onclick=\"window.location.href='browsemedia.php?mediatypeID=$orgmediatypeID&amp;tree=$tree&amp;tnggallery=$tnggallery';\">&nbsp;&nbsp;&nbsp;";

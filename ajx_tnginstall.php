@@ -16,8 +16,6 @@ $session_charset = $_SESSION['session_charset'];
 
 $languages_path = "languages/";
 include "getlang.php";
-$textpart = "install";
-include "$mylanguage/text.php";
 
 include "genlib.php";
 include "config/importconfig.php";

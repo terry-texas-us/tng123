@@ -8,8 +8,6 @@ if ($umfs < 15) {
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "trees";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";
@@ -614,8 +612,12 @@ echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('GEDCOM Export'), "im
             return $assocstr;
         }
 
+        /**
+         * @param $ind
+         * @return string
+         */
         function writeIndividual($ind) {
-            global $tree, $people_table, $events_table, $eventtypes_table, $lnprefixes, $branchstr, $text;
+            global $tree, $people_table, $events_table, $eventtypes_table, $lnprefixes, $branchstr;
             global $children_table, $families_table, $citations, $templeready, $savestate, $fp, $lineending, $righttree, $exprivatestr, $exlivingstr;
 
             $rights = determineLivingPrivateRights($ind, $righttree);
@@ -1076,7 +1078,7 @@ echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('GEDCOM Export'), "im
         }
 
         function doSources() {
-            global $tree, $sources_table, $admtext, $savestate, $tngconfig, $allsources, $allrepos, $branch, $text;
+            global $tree, $sources_table, $admtext, $savestate, $tngconfig, $allsources, $allrepos, $branch;
 
             $sourcestr = "";
             if ($branch) {
@@ -1180,8 +1182,11 @@ echo displayHeadline(_('Import/Export') . " &gt;&gt; " . _('GEDCOM Export'), "im
             return $sourcestr;
         }
 
+        /**
+         * @return string
+         */
         function doRepositories() {
-            global $tree, $branch, $repositories_table, $admtext, $savestate, $tngconfig, $allrepos, $text;
+            global $tree, $branch, $repositories_table, $admtext, $savestate, $tngconfig, $allrepos;
 
             $repostr = "";
 

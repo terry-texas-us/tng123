@@ -160,14 +160,21 @@ $pdf->Output();
 
 // END PDF REPORT
 
+/**
+ * @param $key
+ * @param $sex
+ * @param $level
+ * @param $trail
+ * @param $num
+ */
 function getIndividual($key, $sex, $level, $trail, $num) {
     global $j, $infoDescend, $numbering;
-    global $tree, $genperpage, $text;
+    global $tree, $genperpage;
     global $numgen, $startnum, $righttree;
 
     if (is_null($j)) $j = 1;
 
-if ($sex == 'M') {
+    if ($sex == 'M') {
         $self = 'husband';
         $spouse = 'wife';
         $spouseorder = 'husborder';
@@ -301,15 +308,18 @@ if ($sex == 'M') {
     tng_free_result($result);
 }
 
+/**
+ * @param $row
+ * @return string|string[]|void
+ */
 function getVitalDates($row) {
-    global $getPlace, $text;
+    global $getPlace;
     if ($getPlace == 2) return;
     $vitalinfo = "";
     if ($row['allow_living'] && $row['allow_private']) {
         if ($row['birthdate']) {
             $vitalinfo .= _('b.') . ' ' . displayDate($row['birthdate']) . ', ';
             if ($row['birthplace']) $vitalinfo .= $row['birthplace'] . ', ';
-
         }
         if ((!$row['birthdate'] || $getPlace == 3) && $row['altbirthdate']) {
             $vitalinfo .= _('c.') . ' ' . displayDate($row['altbirthdate']) . ', ';

@@ -2,9 +2,8 @@
 
 include "begin.php";
 include "genlib.php";
-$textpart = "familygroup";
 include "getlang.php";
-include "$mylanguage/text.php";
+
 include "checklogin.php";
 include "personlib.php";
 $firstsection = 0;
@@ -61,7 +60,7 @@ function showDatePlace($event) {
  * @return string
  */
 function displayIndividual($ind, $label, $familyID, $showmarriage) {
-    global $tree, $text, $totcols;
+    global $tree, $totcols;
     global $personID, $families_table, $people_table, $righttree;
     $indtext = "";
     $rights = determineLivingPrivateRights($ind, $righttree);

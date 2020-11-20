@@ -149,7 +149,7 @@ $text['years'] = "ans";
 //added in 10.0.0
 $admtext['CONL'] = "Confirmation (SDJ)";
 $admtext['INIT'] = "Initiation (SDJ)";
-$admtext['step'] = "de famille reconstituée";
+$admtext['stepchild'] = "de famille reconstituée";
 $text['switchm'] = "Basculer vers site mobile";
 $text['switchs'] = "Basculer vers site normal";
 

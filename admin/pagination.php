@@ -8,7 +8,7 @@
  * @return string
  */
 function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages = 5) {
-    global $tngpage, $totalpages, $text, $orgtree, $test_type, $test_group;
+    global $tngpage, $totalpages, $orgtree, $test_type, $test_group;
     $first = ucfirst(_('first'));
     $previous = ucfirst(_('previous'));
     $last = ucfirst(_('last'));
@@ -62,10 +62,8 @@ function getPaginationControlsHtml($total, $address, $perpage, $pagenavpages = 5
  * @return string
  */
 function getPaginationLocationHtml($start, $pagetotal, $grandtotal) {
-    global $text;
-    $showing = ucfirst(_('showing'));
     $html = "<div class='mx-4 inline'>\n";
-    $html .= "$showing " . number_format($start) . " " . _('to') . " <span class='pagetotal'>" . number_format($pagetotal) . "</span> " . _('of') . " <span class='restotal'>" . number_format($grandtotal) . "</span>";
+    $html .= ucfirst(_('showing')) . number_format($start) . " " . _('to') . " <span class='pagetotal'>" . number_format($pagetotal) . "</span> " . _('of') . " <span class='restotal'>" . number_format($grandtotal) . "</span>";
     $html .= "</div>\n";
     return $html;
 }
@@ -75,7 +73,7 @@ function getPaginationLocationHtml($start, $pagetotal, $grandtotal) {
  * @return string
  */
 function getToPageHtml($address, $perpage) {
-    global $text, $orgtree;
+    global $orgtree;
     $html = " <div class='rounded mx-4 inline'>";
     $html .= "<span class='pr-2'>" . ucfirst(_todo_("go to page")) . "</span>";
     $html .= "<input type='text' class='w-20 px-3 border-none tngpage' placeholder=\"" . _('Page') . " #\" name='tngpage' onkeyup=\"if(pageEnter(this, event)) {goToPage($(this).next(), '$address', '$orgtree', $perpage);}\"> ";

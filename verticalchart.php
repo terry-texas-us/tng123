@@ -95,8 +95,13 @@ function initChart() {
     do_chart($gens, true);
 }
 
+/**
+ * @param $gens
+ * @param $generation
+ * @param $max_generations
+ */
 function get_details(&$gens, $generation, $max_generations) {
-    global $width, $person_count, $gedcom, $people_table, $families_table, $text;
+    global $width, $person_count, $gedcom, $people_table, $families_table;
     $delete_variables = ['firstname', 'lnprefix', 'lastname', 'title', 'prefix', 'suffix', 'nameorder', 'allow_living', 'allow_private'];
     foreach ($gens[$generation] as $num => $g) {
         if ($g) {
@@ -318,9 +323,12 @@ function move_descendant(&$gens, $gen_num, $num) {
     }
 }
 
-
+/**
+ * @param $gens
+ * @param false $output
+ */
 function do_chart($gens, $output = false) {
-    global $width, $height, $spacing, $fontsize, $text, $containerheight;
+    global $width, $height, $spacing, $fontsize, $containerheight;
     $rows = sizeof($gens);
     $ignore = isset($_GET['ignorestart']);
     foreach ($gens as $gen_num => $generation) {

@@ -10,7 +10,7 @@ $num_collapsed = 0;
  * @return string
  */
 function getBirthInfo($thisperson, $noicon = null) {
-    global $text, $tngconfig, $tree;
+    global $tngconfig, $tree;
 
     $varlist = ['birthdate', 'birthplace', 'altbirthdate', 'altbirthplace', 'deathdate', 'deathplace', 'burialdate', 'burialplace'];
     foreach ($varlist as $myindex) {
@@ -89,7 +89,7 @@ function getBirthInfo($thisperson, $noicon = null) {
  * @param int $shortcite
  */
 function getCitations($persfamID, $shortcite = 1) {
-    global $sources_table, $text, $tree, $citations_table, $citations, $citationsctr, $citedisplay;
+    global $sources_table, $tree, $citations_table, $citations, $citationsctr, $citedisplay;
 
     $actualtext = $shortcite ? "" : ", actualtext";
     $citquery = "SELECT citationID, title, shorttitle, author, other, publisher, callnum, page, quay, citedate, citetext, citations.note AS note, citations.sourceID, description, eventID{$actualtext} ";
@@ -238,7 +238,7 @@ function reorderCitation($citekey, $withlink = 1) {
  * @return array
  */
 function getNotes($persfamID, $flag) {
-    global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $text, $allow_private;
+    global $notelinks_table, $xnotes_table, $tree, $eventtypes_table, $events_table, $allow_private;
 
     $custnotes = [];
     $gennotes = [];
@@ -556,7 +556,7 @@ $eventcounter = 0;
  * @return string
  */
 function showEvent($data) {
-    global $notestogether, $text, $tree;
+    global $notestogether, $tree;
     global $tableid, $cellnumber, $tentative_edit;
     global $indnotes, $famnotes, $srcnotes, $reponotes, $indmedia, $fammedia, $srcmedia, $repomedia, $tngconfig;
     global $indalbums, $famalbums, $srcalbums, $repoalbums, $eventcounter, $num_collapsed;
@@ -906,7 +906,7 @@ function getLinkTypeMisc($entity, $linktype) {
  * @return array
  */
 function getAlbums($entity, $linktype) {
-    global $tree, $album2entities_table, $albums_table, $albumlinks_table, $people_table, $families_table, $text, $livedefault;
+    global $tree, $album2entities_table, $albums_table, $albumlinks_table, $people_table, $families_table, $livedefault;
 
     $albums = [];
 
@@ -987,7 +987,7 @@ function getAlbums($entity, $linktype) {
  * @return string
  */
 function writeAlbums($albums_array) {
-    global $tableid, $cellnumber, $text, $datewidth;
+    global $tableid, $cellnumber, $datewidth;
 
     $albumtext = "";
     $albums = !empty($albums_array['-x--general--x-']) ? $albums_array['-x--general--x-'] : '';
@@ -1036,7 +1036,7 @@ function writeAlbums($albums_array) {
  * @return array
  */
 function getMedia($entity, $linktype, $all = false) {
-    global $medialinks_table, $media_table, $tree, $text, $nonames;
+    global $medialinks_table, $media_table, $tree, $nonames;
     global $mediapath, $mediatypes_assoc, $tngconfig, $rootpath;
 
     $media = [];
@@ -1243,7 +1243,7 @@ function writeMedia($media_array, $mediatypeID, $prefix = "") {
  * @return string
  */
 function getAlbumPhoto($albumID, $albumname) {
-    global $livedefault, $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
+    global $livedefault, $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $medialinks_table;
     global $mediatypes_assoc, $mediapath, $tree;
 
     $query2 = "SELECT path, thumbpath, usecollfolder, mediatypeID, albumlinks.mediaID AS mediaID, alwayson ";
@@ -1330,7 +1330,7 @@ function getAlbumPhoto($albumID, $albumname) {
  * @return array
  */
 function getFact($row) {
-    global $address_table, $text;
+    global $address_table;
 
     $fact = [];
     $i = 0;
@@ -1406,7 +1406,7 @@ function getStdExtras($persfamID) {
  * @return string
  */
 function formatAssoc($assoc) {
-    global $text, $tree, $people_table, $families_table;
+    global $tree, $people_table, $families_table;
 
     $assocstr = $namestr = "";
 

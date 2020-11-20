@@ -149,7 +149,7 @@ $text['years'] = "Jahre";
 //added in 10.0.0
 $admtext['CONL'] = "Konfirmation (LDS)";
 $admtext['INIT'] = "Vorverordnungen (LDS)";
-$admtext['step'] = "Stiefkind";
+$admtext['stepchild'] = "Stiefkind";
 $text['switchm'] = "Zur mobilen Webseite wechseln";
 $text['switchs'] = "Zur Desktop-Webseite wechseln";
 

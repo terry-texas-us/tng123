@@ -859,7 +859,7 @@ function applyFilter(options) {
     if (options.criteria == lastCriteria && options.filter == lastFilter) {
         return false; //don't search because it's the same as it was the last time
     }
-    jQuery('#' + options.destdiv).html('<span class="subhead">' + loadingmsg + "</span>");
+    jQuery('#' + options.destdiv).html('<span class="subhead">' + loadingMessage + "</span>");
     lastCriteria = options.criteria;
     lastFilter = options.filter;
 

@@ -1,9 +1,7 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "people";
 include "getlang.php";
-include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 

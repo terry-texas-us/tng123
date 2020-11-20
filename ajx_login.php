@@ -2,9 +2,7 @@
 include "begin.php";
 $tngconfig['maint'] = "";
 include "genlib.php";
-$textpart = "login";
 include "getlang.php";
-include "$mylanguage/text.php";
 
 include "log.php";
 

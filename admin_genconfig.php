@@ -2,8 +2,6 @@
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "setup";
-include "$mylanguage/admintext.php";
 
 $treeList = [];
 if ($link) {

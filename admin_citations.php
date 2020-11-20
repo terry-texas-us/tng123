@@ -24,7 +24,7 @@ if ($eventtype['display']) {
 } elseif ($eventtype['tag']) {
     $eventtypedesc = $eventtype['tag'];
 } elseif ($eventID) {
-    $eventtypedesc = $admtext[$eventID] ? $admtext[$eventID] : _('Notes');
+    $eventtypedesc = _($eventID) ? _($eventID) : _('Notes');
 } else {
     $eventtypedesc = _('General');
 }

@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "eventtypes";
-include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 if (!$allow_add) {

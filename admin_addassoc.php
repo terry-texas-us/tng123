@@ -4,9 +4,6 @@ include "begin.php";
 include "adminlib.php";
 require "./admin/associations.php";
 
-$textpart = "people";
-include "$mylanguage/admintext.php";
-
 include "checklogin.php";
 require "adminlog.php";
 

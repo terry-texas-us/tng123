@@ -12,8 +12,13 @@ require_once "admin/pagination.php";
 
 $maxsearchresults = $maxdnasearchresults ? $maxdnasearchresults : $maxsearchresults;
 
+/**
+ * @param $test_type
+ * @param $test_group
+ * @return string
+ */
 function get_test_groups($test_type, $test_group) {
-    global $text, $dna_groups_table;
+    global $dna_groups_table;
     $wherestr2 = $test_type ? " AND test_type = \"$test_type\"" : "";
     $groupquery = "SELECT description, test_type, gedcom FROM $dna_groups_table WHERE description IS NOT NULL $wherestr2 ORDER BY description";
     $groupsel = "	<option value=\"\">" . _('All Groups') . "</option>\n";
@@ -29,8 +34,13 @@ function get_test_groups($test_type, $test_group) {
     return $groupsel;
 }
 
+/**
+ * @param $instance
+ * @param $pagenav
+ * @return string
+ */
 function doTestSearch($instance, $pagenav) {
-    global $text, $testsearch, $tree;
+    global $testsearch, $tree;
 
     $str = "<span class='normal'>\n";
     $str .= getFORM("browse_dna_tests", "get", "TestSearch$instance", "");

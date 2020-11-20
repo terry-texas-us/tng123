@@ -4,12 +4,12 @@ global $allow_admin;
 $flags['noicons'] = true;
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['mnuheader'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Home Page"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 ?>
     <table class="home_table">
@@ -30,7 +30,7 @@ if ($tngconfig['maint']) {
                 </ul>
                 <br>
                 <ul class="homenav">
-                    <li><a href="whatsnew.php"><?php echo $text['mnuwhatsnew']; ?></a></li>
+                    <li><a href="whatsnew.php"><?php echo _("What's New"); ?></a></li>
                 </ul>
                 <br>
                 <ul class="homenav">
@@ -41,41 +41,41 @@ if ($tngconfig['maint']) {
                         }
                     }
                     ?>
-                    <li><a href="browsealbums.php"<?php echo $text['albums']; ?></a></li>
-                    <li><a href="cemeteries.php"><?php echo $text['mnucemeteries']; ?></a></li>
-                    <li><a href="browsesources.php"><?php echo $text['mnusources']; ?></a></li>
-                    <li><a href="reports.php"><?php echo $text['mnureports']; ?></a></li>
+                    <li><a href="browsealbums.php"<?php echo _("Albums"); ?></a></li>
+                    <li><a href="cemeteries.php"><?php echo _("Cemeteries"); ?></a></li>
+                    <li><a href="browsesources.php"><?php echo _("Sources"); ?></a></li>
+                    <li><a href="reports.php"><?php echo _("Reports"); ?></a></li>
                 </ul>
                 <br>
                 <ul class="homenav">
-                    <li><a href="anniversaries.php"><?php echo $text['anniversaries']; ?></a></li>
-                    <li><a href="calendar.php"><?php echo $text['calendar']; ?></a></li>
-                    <li><a href="places.php"><?php echo $text['places']; ?></a></li>
+                    <li><a href="anniversaries.php"><?php echo _("Dates and Anniversaries"); ?></a></li>
+                    <li><a href="calendar.php"><?php echo _("Calendar"); ?></a></li>
+                    <li><a href="places.php"><?php echo _("Places"); ?></a></li>
                     <?php if (!$tngconfig['hidedna']) { ?>
-                        <li><a href="browse_dna_tests.php"><?php echo $text['dna_tests']; ?></a></li>
+                        <li><a href="browse_dna_tests.php"><?php echo _("DNA Tests"); ?></a></li>
                     <?php } ?>
-                    <li><a href="statistics.php"><?php echo $text['mnustatistics']; ?></a></li>
+                    <li><a href="statistics.php"><?php echo _("Statistics"); ?></a></li>
                 </ul>
                 <br>
                 <?php
                 if ($allow_admin) {
                     echo "<ul class=\"homenav\">";
-                    echo "<li><a href=\"admin.php\">{$text['mnuadmin']}</a></li>";
+                    echo "<li><a href=\"admin.php\">" . _("Administration") . "</a></li>";
                     echo "</ul><br>";
                 }
                 ?>
             </td>
             <td class="home_section" id="hs1">
-                <h2 class="header"><?php echo $text['welcome']; ?></h2>
+                <h2 class="header"><?php echo _("Welcome"); ?></h2>
                 <?php include "randomphoto.php"; ?>
                 <?php echo getTemplateMessage('t8_mainpara'); ?>
                 <br class="clear-both"><br>
             </td>
             <td class="home_section" id="hs2">
-                <h2 class="header"><?php echo $text['features']; ?></h2>
+                <h2 class="header"><?php echo _("Features"); ?></h2>
                 <?php echo getTemplateMessage('t8_featurespara'); ?>
                 <hr>
-                <h2 class="header"><?php echo $text['contactus']; ?></h2>
+                <h2 class="header"><?php echo _("Contact Us"); ?></h2>
                 <?php
                 $title1 = getTemplateMessage('t8_headtitle1');
                 $title2 = getTemplateMessage('t8_headtitle2');
@@ -88,7 +88,7 @@ if ($tngconfig['maint']) {
             </td>
             <td class="home_section" id="hs3">
                 <div class="latest_news rounded-lg">
-                    <h2 class="header"><?php echo $text['latestnews']; ?></h2>
+                    <h2 class="header"><?php echo _("Latest News"); ?></h2>
                     <hr>
                     <?php echo getTemplateMessage('t8_latestnews'); ?>
                 </div>

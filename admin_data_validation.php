@@ -75,10 +75,12 @@ $reports = ['wr_gender', 'unk_gender', 'marr_young', 'marr_aft_death', 'marr_bef
                         ?>
                         <tr>
                             <td class="lightback" align="right">&nbsp;<?php echo $i; ?></td>
-                            <td class="lightback">&nbsp;<a href="admin_valreport.php?report=<?php echo $this_report; ?>&amp;tree=<?php echo $assignedtree; ?>"
-                                    class="valreport"><?php echo $admtext[$this_report]; ?></a></td>
+                            <td class="lightback">&nbsp;
+                                <!-- todo $this_report is language key, not locale text -->
+                                <a href="admin_valreport.php?report=<?php echo $this_report; ?>&amp;tree=<?php echo $assignedtree; ?>" class="valreport"><?php echo _($this_report); ?></a>
+                            </td>
                         </tr>
-                <?php } ?>
+                    <?php } ?>
             </table>
         </td>
     </tr>

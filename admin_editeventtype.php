@@ -90,11 +90,11 @@ tng_adminheader(_('Edit Existing Event Type'), $flags);
                 } else {
                     $displayval = "";
                 }
-                $display = "" . _('Display') . " ({$langrow['display']})";
+                $display = _('Display') . " ({$langrow['display']})";
                 $displayname = "display" . $langrow['languageID'];
                 $displayrows .= "<tr>";
                 $displayrows .= "<td class='align-top'>$display</td>";
-                $displayrows .= "<td><input type='text' name=\"$displayname\" size=\"40\" value=\"$displayval\" onFocus=\"if(this.value == '') this.value = document.form1.defdisplay.value;\"></td>";
+                $displayrows .= "<td><input type='text' name='$displayname' size='40' value='$displayval' onFocus=\"if(this.value == '') this.value = document.form1.defdisplay.value;\"></td>";
                 $displayrows .= "</tr>\n";
                 echo "if( document.form1.$displayname.value ) addToDisplay('$lang',document.form1.$displayname.value);\n";
             }
@@ -123,9 +123,9 @@ tng_adminheader(_('Edit Existing Event Type'), $flags);
     }
     ?>
 </script>
+    </head>
 
 <?php
-echo "</head>\n";
 echo tng_adminlayout();
 
 $evtabs[0] = [1, "admin_eventtypes.php", _('Search'), "findevent"];
@@ -173,7 +173,7 @@ echo displayHeadline(_('Custom Event Types') . " &gt;&gt; " . _('Edit Existing E
                                 &nbsp; <?php echo _('or enter'); ?>:
                             </td>
                             <td>
-                                <input type="text" name="tag2" size="10" onBlur="if(this.value == 'EVEN') {toggleTdesc(1);} else {toggleTdesc(0);}">
+                                <input type="text" name="tag2" size="10" onBlur="if(this.value == 'EVEN' || this.value == '') {toggleTdesc(1);} else {toggleTdesc(0);}">
                                 (<?php echo _('will take precedence if both fields contain data'); ?>)
                             </td>
                         </tr>

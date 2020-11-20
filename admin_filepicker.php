@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "photos";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";
@@ -265,8 +263,6 @@ function lCountFiles() {
 } // function lCountFiles()
 
 function frmFilesHdFt($colspan, $nCurrentPage, $nPages) {
-    global $text;
-
     if ($nPages > 1) {
         echo "<div class='normal' style=\"float:right;padding:10px;\">\n";
 

@@ -2,8 +2,6 @@
 include "begin.php";
 include "config/mapconfig.php";
 include "adminlib.php";
-$textpart = "findplace";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

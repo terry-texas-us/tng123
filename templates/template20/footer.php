@@ -1,4 +1,7 @@
-<?php global $currentuser, $text, $tng_version, $flags; ?>
+<?php
+
+global $currentuser, $tng_version, $flags;
+?>
 
 </div>  <!-- end of content div -->
 </div>  <!-- end of col1 div -->

@@ -6,9 +6,8 @@
  * @return string
  */
 function getAlbumPhoto($albumID, $albumname) {
-    global $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $text, $medialinks_table;
+    global $rootpath, $media_table, $albumlinks_table, $people_table, $families_table, $citations_table, $medialinks_table;
     global $mediatypes_assoc, $mediapath, $tngconfig, $sitever, $livedefault, $tree;
-
 
     $query2 = "SELECT gedcom, path, thumbpath, usecollfolder, mediatypeID, albumlinks.mediaID AS mediaID, alwayson, media.gedcom ";
     $query2 .= "FROM ($media_table media, $albumlinks_table albumlinks) ";

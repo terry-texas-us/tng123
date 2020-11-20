@@ -4,7 +4,6 @@ include "tng_begin.php";
 
 if (!$personID) die("no args");
 
-
 include "config/pedconfig.php";
 include "personlib.php";
 include "reglib.php";

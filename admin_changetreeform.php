@@ -3,9 +3,6 @@ include "begin.php";
 include "adminlib.php";
 require "./admin/trees.php";
 
-$textpart = "trees";
-include "$mylanguage/admintext.php";
-
 include "checklogin.php";
 //permissions
 if ($assignedtree || !$allow_edit) {

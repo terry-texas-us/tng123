@@ -5,8 +5,6 @@
 include "begin.php";
 include "genlib.php";
 include "getlang.php";
-$textpart = "familygroup";
-include "$mylanguage/text.php";
 
 $tngprint = 1;
 include "checklogin.php";
@@ -214,7 +212,7 @@ else {
 $pdf->Output();
 
 function displayChild($personID, $childcount) {
-    global $tree, $people_table, $families_table, $children_table, $text, $citesources, $righttree;
+    global $tree, $people_table, $families_table, $children_table, $citesources, $righttree;
 
     $query = "SELECT * FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);
@@ -341,8 +339,13 @@ function displayChild($personID, $childcount) {
     tng_free_result($spresult);
 }
 
+/**
+ * @param $personID
+ * @param $showparents
+ * @param $showmarriage
+ */
 function displayIndividual($personID, $showparents, $showmarriage) {
-    global $familyID, $tree, $people_table, $families_table, $children_table, $text, $citesources, $righttree;
+    global $familyID, $tree, $people_table, $families_table, $children_table, $citesources, $righttree;
 
     $query = "SELECT * FROM $people_table WHERE personID = \"$personID\" AND gedcom = '$tree'";
     $result = tng_query($query);

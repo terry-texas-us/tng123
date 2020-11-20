@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "branches";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

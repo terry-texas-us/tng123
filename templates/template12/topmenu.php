@@ -1,4 +1,7 @@
-<?php global $text, $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig, $logout_url; ?>
+<?php
+
+global $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig, $logout_url;
+?>
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?> publicbody">
     <a id="top"></a>
@@ -19,10 +22,10 @@
                         <table>
                             <tr>
                                 <td class="col1and2">
-                                    <a><span class="cb-searchtext"><?php echo $text['mnufirstname']; ?></span></a>
+                                    <a><span class="cb-searchtext"><?php echo _("First Name"); ?></span></a>
                                 </td>
                                 <td class="col1and2" colspan="2">
-                                    <a><span class="cb-searchtext"><?php echo $text['mnulastname']; ?></span></a>
+                                    <a><span class="cb-searchtext"><?php echo _("Last Name"); ?></span></a>
                                 </td>
                             </tr>
                             <tr>
@@ -44,10 +47,10 @@
                             </script>
                             <tr>
                                 <td id="cb-header-links">
-                                    <a href="searchform.php">[<?php echo $text['mnuadvancedsearch']; ?>]</a>
+                                    <a href="searchform.php">[<?php echo _("Advanced Search"); ?>]</a>
                                 </td>
                                 <td colspan="2" id="cb-header-links">
-                                    <a href="surnames.php">[<?php echo $text['mnulastnames']; ?>]</a>
+                                    <a href="surnames.php">[<?php echo _("Surnames"); ?>]</a>
                                     <br>
                                 </td>
                             </tr>

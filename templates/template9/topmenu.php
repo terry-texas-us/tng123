@@ -1,6 +1,6 @@
 <?php
 
-global $text, $tmp;
+global $tmp;
 
 $dadlabel = getTemplateMessage('t9_dadside');
 $momlabel = getTemplateMessage('t9_momside');
@@ -62,7 +62,7 @@ $momlabel = getTemplateMessage('t9_momside');
                         <?php } ?>
                         <li>
                             <a href="suggest.php?page=<?php echo urlencode(str_replace("?", "", $title)); ?>"><span
-                                    class="l"></span><span class="t"><?php echo $text['contactus']; ?></span></a>
+                                    class="l"></span><span class="t"><?php echo _("Contact Us"); ?></span></a>
                         </li>
                     </ul>
                 </div>

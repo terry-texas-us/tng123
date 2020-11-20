@@ -1,6 +1,6 @@
 <?php
 
-global $text, $currentuser, $allow_admin, $tmp, $homepage;
+global $currentuser, $allow_admin, $tmp, $homepage;
 
 $dadlabel = getTemplateMessage('t15_dadside');
 $momlabel = getTemplateMessage('t15_momside');
@@ -35,9 +35,9 @@ $pagetitle = getTemplateMessage('t15_maintitle');
                     <form id="topsearchform" name="topsearchform" action="search.php" method="get">
                         <?php echo getFORM("search", "get", "", ""); ?>
                         <input type="hidden" value="AND" name="mybool">
-                        <?php echo $text['firstname']; ?>:&nbsp;<input size="12" name="myfirstname" type="search" id="myfirstname"> &nbsp;
-                        <?php echo $text['lastname']; ?>:&nbsp;<input size="12" name="mylastname" type="search" id="mylastname"> &nbsp;
-                        <input type="submit" value="<?php echo $text['search']; ?>">
+                        <?php echo _("First Name"); ?>:&nbsp;<input size="12" name="myfirstname" type="search" id="myfirstname"> &nbsp;
+                        <?php echo _("Last Name"); ?>:&nbsp;<input size="12" name="mylastname" type="search" id="mylastname"> &nbsp;
+                        <input type="submit" value="<?php echo _("Search"); ?>">
                     </form>
                 </li>
             </ul>

@@ -5,12 +5,12 @@ $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 echo "<!doctype html>\n";
 echo "<html lang='en'>\n";
-$headElement = new HeadElementPublic($sitename ? "" : $text['ourhist'], $flags);
+$headElement = new HeadElementPublic($sitename ? "" : _("Our Family History"), $flags);
 echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>{$text['mainton']}</strong></span><br><br>\n";
+    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 $title = getTemplateMessage('t1_maintitle');
 ?>
@@ -33,19 +33,19 @@ $title = getTemplateMessage('t1_maintitle');
                 <td class="normal align-top">
                     <?php
                     if ($currentuser) {
-                        echo "<p><strong>{$text['welcome']}, $currentuserdesc.</strong></p>\n";
+                        echo "<p><strong>" . _("Welcome") . ", $currentuserdesc.</strong></p>\n";
                     }
                     ?>
-                    <h2><?php echo $text['mnusearchfornames']; ?></h2>
+                    <h2><?php echo _("Search"); ?></h2>
 
                     <form name="searchform" action="search.php" method="get">
-                        <label for="myfirstname"><?php echo $text['firstname']; ?></label>
+                        <label for="myfirstname"><?php echo _("First Name"); ?></label>
                         <input id="myfirstname" name="myfirstname" type="search" value="">
-                        <label for="mylastname"><?php echo $text['lastname']; ?></label>
+                        <label for="mylastname"><?php echo _("Last Name"); ?></label>
                         <input id="mylastname" name="mylastname" type="search" value="">
                         <input name="mybool" type="hidden" value="AND">
                         <input name="offset" type="hidden" value="0">
-                        <input id="search-submit" type="submit" value="<?php echo $text['search']; ?>">
+                        <input id="search-submit" type="submit" value="<?php echo _("Search"); ?>">
                     </form>
 
                     <br>
@@ -77,37 +77,37 @@ $title = getTemplateMessage('t1_maintitle');
                 </td>
                 <td class="std-only">&nbsp;&nbsp;</td>
                 <td class="normal std-only align-top">
-                    <h2><?php echo $text['welcome']; ?></h2>
+                    <h2><?php echo _("Welcome"); ?></h2>
                     <?php
                     if ($mainpara) echo "<div>$mainpara</div>\n";
 
                     ?>
-                    <h2><?php echo $text['mnufeatures']; ?></h2>
+                    <h2><?php echo _("Other Features"); ?></h2>
                     <table class="w-full">
                         <tr>
                             <td class="align-top" style="width: 30%;">
                                 <ul>
                                     <?php
                                     if ($currentuser) {
-                                        echo "<li><a href='logout.php'>{$text['mnulogout']}</a></li>\n";
+                                        echo "<li><a href='logout.php'>" . _("Log Out") . "</a></li>\n";
                                         if ($allow_admin) {
-                                            echo "<li><a href='admin.php'>{$text['mnuadmin']}</a></li>\n";
+                                            echo "<li><a href='admin.php'>" . _("Administration") . "</a></li>\n";
                                         }
                                     } else {
-                                        echo "<li><a href='login.php'>{$text['mnulogon']}</a></li>\n";
+                                        echo "<li><a href='login.php'>" . _("Log In") . "</a></li>\n";
                                         if (!$tngconfig['disallowreg']) {
-                                            echo "<li><a href='newacctform.php'>{$text['mnuregister']}</a></li>\n";
+                                            echo "<li><a href='newacctform.php'>" . _("Register for a User Account") . "</a></li>\n";
                                         }
                                     }
-                                    echo "<li><a href='surnames.php'>{$text['mnulastnames']}</a></li>\n";
-                                    echo "<li><a href='searchform.php'>{$text['mnuadvancedsearch']}</a></li>\n";
-                                    echo "<li><a href='famsearchform.php'>{$text['searchfams']}</a></li>\n";
-                                    echo "<li><a href='searchsite.php'>{$text['searchsitemenu']}</a></li>\n";
-                                    echo "<li><a href='places.php'>{$text['places']}</a></li>\n";
-                                    echo "<li><a href='anniversaries.php'>{$text['anniversaries']}</a></li>\n";
-                                    echo "<li><a href='calendar.php'>{$text['calendar']}</a></li>\n";
-                                    echo "<li><a href='cemeteries.php'>{$text['mnucemeteries']}</a></li>\n";
-                                    echo "<li><a href='bookmarks.php'>{$text['bookmarks']}</a></li>\n";
+                                    echo "<li><a href='surnames.php'>" . _("Surnames") . "</a></li>\n";
+                                    echo "<li><a href='searchform.php'>" . _("Advanced Search") . "</a></li>\n";
+                                    echo "<li><a href='famsearchform.php'>" . _("Search Families") . "</a></li>\n";
+                                    echo "<li><a href='searchsite.php'>" . _("Search Site") . "</a></li>\n";
+                                    echo "<li><a href='places.php'>" . _("Places") . "</a></li>\n";
+                                    echo "<li><a href='anniversaries.php'>" . _("Dates and Anniversaries") . "</a></li>\n";
+                                    echo "<li><a href='calendar.php'>" . _("Calendar") . "</a></li>\n";
+                                    echo "<li><a href='cemeteries.php'>" . _("Cemeteries") . "</a></li>\n";
+                                    echo "<li><a href='bookmarks.php'>" . _("Bookmarks") . "</a></li>\n";
                                     ?>
                                 </ul>
                             </td>
@@ -120,8 +120,8 @@ $title = getTemplateMessage('t1_maintitle');
                                             echo "<li><a href='browsemedia.php?mediatypeID={$mediatype['ID']}'>{$mediatype['display']}</a></li>\n";
                                         }
                                     }
-                                    echo "<li><a href='browsemedia.php'>{$text['allmedia']}</a></li>\n";
-                                    echo "<li><a href='browsealbums.php'>{$text['albums']}</a></li>\n";
+                                    echo "<li><a href='browsemedia.php'>" . _("All Media") . "</a></li>\n";
+                                    echo "<li><a href='browsealbums.php'>" . _("Albums") . "</a></li>\n";
                                     ?>
                                 </ul>
                             </td>
@@ -129,21 +129,21 @@ $title = getTemplateMessage('t1_maintitle');
                             <td class="align-top" style="width: 30%;">
                                 <ul>
                                     <?php
-                                    echo "<li><a href='whatsnew.php'>{$text['mnuwhatsnew']}</a></li>\n";
-                                    echo "<li><a href='mostwanted.php'>{$text['mostwanted']}</a></li>\n";
-                                    echo "<li><a href='reports.php'>{$text['mnureports']}</a></li>\n";
-                                    echo "<li><a href='statistics.php'>{$text['mnustatistics']}</a></li>\n";
-                                    echo "<li><a href='browsetrees.php'>{$text['trees']}</a></li>\n";
-                                    echo "<li><a href='browsenotes.php'>{$text['notes']}</a></li>\n";
-                                    echo "<li><a href='browsesources.php'>{$text['mnusources']}</a></li>\n";
-                                    echo "<li><a href='browserepos.php'>{$text['repositories']}</a></li>\n";
+                                    echo "<li><a href='whatsnew.php'>" . _("What's New") . "</a></li>\n";
+                                    echo "<li><a href='mostwanted.php'>" . _("Most Wanted") . "</a></li>\n";
+                                    echo "<li><a href='reports.php'>" . _("Reports") . "</a></li>\n";
+                                    echo "<li><a href='statistics.php'>" . _("Statistics") . "</a></li>\n";
+                                    echo "<li><a href='browsetrees.php'>" . _("Trees") . "</a></li>\n";
+                                    echo "<li><a href='browsenotes.php'>" . _("Notes") . "</a></li>\n";
+                                    echo "<li><a href='browsesources.php'>" . _("Sources") . "</a></li>\n";
+                                    echo "<li><a href='browserepos.php'>" . _("Repositories") . "</a></li>\n";
                                     if (!$tngconfig['hidedna']) {
-                                        echo "<li><a href='browse_dna_tests.php'>{$text['dna_tests']}</a></li>\n";
+                                        echo "<li><a href='browse_dna_tests.php'>" . _("DNA Tests") . "</a></li>\n";
                                     }
                                     if ($allow_admin) {
-                                        echo "<li><a href='showlog.php'>{$text['mnushowlog']}</a></li>\n";
+                                        echo "<li><a href='showlog.php'>" . _("Access Log") . "</a></li>\n";
                                     }
-                                    echo "<li><a href='suggest.php?page=$title'>{$text['contactus']}</a></li>\n";
+                                    echo "<li><a href='suggest.php?page=$title'>" . _("Contact Us") . "</a></li>\n";
                                     ?>
                                 </ul>
                                 <br>

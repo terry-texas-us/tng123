@@ -2,8 +2,6 @@
 include "begin.php";
 include "config/importconfig.php";
 include "adminlib.php";
-$textpart = "trees";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

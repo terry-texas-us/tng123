@@ -3,9 +3,6 @@ include "begin.php";
 include "adminlib.php";
 require_once "./admin/trees.php";
 
-$textpart = "people";
-include "$mylanguage/admintext.php";
-
 include "checklogin.php";
 
 if (!$allow_add) {

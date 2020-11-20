@@ -149,7 +149,7 @@ $text['years'] = "lat";
 //added in 10.0.0
 $admtext['CONL'] = "Konfirmacja (LDS)";
 $admtext['INIT'] = "Inicjacja (LDS)";
-$admtext['step'] = "Pasierb/Pasierbica";
+$admtext['stepchild'] = "Pasierb/Pasierbica";
 $text['switchm'] = "Wersja mobilna";
 $text['switchs'] = "Wersja standardowa";
 

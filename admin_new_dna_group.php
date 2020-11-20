@@ -1,9 +1,7 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "dna";
 include "getlang.php";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

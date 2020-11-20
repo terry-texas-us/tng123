@@ -1,4 +1,7 @@
-<?php global $text, $flags; ?>
+<?php
+
+global $flags;
+?>
 
 </div>
 <div class="footer-widgets">
@@ -13,7 +16,7 @@
                         $tl1 = getTemplateMessage('t15_textlink1');
                         if ($tl1) {
                             ?>
-                            <p><a class="footer-link" href="<?php echo $tl1; ?>"><?php echo $text['more']; ?> ...</a></p>
+                            <p><a class="footer-link" href="<?php echo $tl1; ?>"><?php echo _("More"); ?> ...</a></p>
                         <?php } ?>
                     </div>
                 </div>
@@ -29,7 +32,7 @@
                         $tl2 = getTemplateMessage('t15_textlink2');
                         if ($tl2) {
                             ?>
-                            <p><a class="footer-link" href="<?php echo $tl2; ?>"><?php echo $text['more']; ?> ...</a></p>
+                            <p><a class="footer-link" href="<?php echo $tl2; ?>"><?php echo _("More"); ?> ...</a></p>
                         <?php } ?>
                     </div>
                 </div>
@@ -38,11 +41,11 @@
         <div class="footer-widgets-3 widget-area">
             <section class="widget widget_search">
                 <div class="">
-                    <h4 class="widget-title-footer"><?php echo $text['search']; ?></h4>
+                    <h4 class="widget-title-footer"><?php echo _("Search"); ?></h4>
                     <form method="get" class="search-form" action="helpme" role="search"
                         onsubmit="return searchGoogleWebSite('<?php echo $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']); ?>')">
-                        <input name="s" id="GoogleText" placeholder="<?php echo $text['searchsite']; ?> ..." type="search">
-                        <input value="<?php echo $text['search']; ?>" type="submit">
+                        <input name="s" id="GoogleText" placeholder="<?php echo _("Search this site"); ?> ..." type="search">
+                        <input value="<?php echo _("Search"); ?>" type="submit">
                     </form>
                 </div>
             </section>

@@ -4,13 +4,12 @@ include "begin.php";
 include "adminlib.php";
 require_once "admin/pagination.php";
 require_once "./core/sql/extractWhereClause.php";
-$textpart = "eventtypes";
-include "$mylanguage/admintext.php";
+
 $admin_login = 1;
 include "checklogin.php";
 include "version.php";
 $tng_search_eventtypes = $_SESSION['tng_search_eventtypes'] = 1;
-if ($newsearch) {
+if (!empty($newsearch)) {
     $exptime = 05;
     $searchstring = stripslashes(trim($searchstring));
     setcookie("tng_search_eventtypes_post[search]", $searchstring, $exptime);
@@ -20,28 +19,31 @@ if ($newsearch) {
     setcookie("tng_search_eventtypes_post[tngpage]", 1, $exptime);
     setcookie("tng_search_eventtypes_post[offset]", 0, $exptime);
 } else {
-    if (!$searchstring) {
-        $searchstring = stripslashes($_COOKIE['tng_search_eventtypes_post']['search']);
+    if (empty($searchstring)) {
+        $searchstring = isset($_COOKIE['tng_search_eventtypes_post']['search']) ? stripslashes($_COOKIE['tng_search_eventtypes_post']['search']) : "";
     }
-    if (!$etype) {
-        $etype = $_COOKIE['tng_search_eventtypes_post']['etype'];
-    }
-    if (!$stype) {
-        $stype = $_COOKIE['tng_search_eventtypes_post']['stype'];
-    }
-    if (!$onimport) {
-        $onimport = $_COOKIE['tng_search_eventtypes_post']['onimport'];
+    if (empty($onimport)) {
+        $onimport = isset($_COOKIE['tng_search_eventtypes_post']['onimport']) ? $_COOKIE['tng_search_eventtypes_post']['onimport'] : "";
     }
     if (!isset($offset)) {
-        $tngpage = $_COOKIE['tng_search_eventtypes_post']['tngpage'];
-        $offset = $_COOKIE['tng_search_eventtypes_post']['offset'];
+        $tngpage = isset($_COOKIE['tng_search_eventtypes_post']['tngpage']) ? $_COOKIE['tng_search_eventtypes_post']['tngpage'] : 1;
+        $offset = isset($_COOKIE['tng_search_eventtypes_post']['offset']) ? $_COOKIE['tng_search_eventtypes_post']['offset'] : 0;
     } else {
         $exptime = 0;
+        if (!isset($tngpage)) $tngpage = 1;
+        if (!isset($offset)) $offset = 0;
         setcookie("tng_search_eventtypes_post[tngpage]", $tngpage, $exptime);
         setcookie("tng_search_eventtypes_post[offset]", $offset, $exptime);
     }
 }
 
+if ($order) {
+    setcookie("tng_search_eventtypes_post[order]", $order, $exptime);
+} else {
+    $order = isset($_COOKIE['tng_search_eventtypes_post']['order']) ? $_COOKIE['tng_search_eventtypes_post']['order'] : "tag";
+}
+
+if (!isset($offset)) $offset = 0;
 if ($offset) {
     $offsetplus = $offset + 1;
     $newoffset = "$offset, ";
@@ -51,36 +53,68 @@ if ($offset) {
     $tngpage = 1;
 }
 
+$tagsort = "tag";
+$typesort = "type";
+$dispsort = "disp";
+$evsort = "ev";
+
+$iconSortAlphaDown = buildSvgElement("img/sort-alpha-down.svg", ["class" => "w-4 h-4 ml-1 fill-current inline-block"]);
+$iconSortAlphaUp = buildSvgElement("img/sort-alpha-up.svg", ["class" => "w-4 h-4 ml-1 fill-current inline-block"]);
+
+if ($order == "tag") {
+    $orderstr = "tag, description";
+    $tagsort = "<a href='admin_eventtypes.php?order=tagup' class='whitespace-no-wrap lightlink'>" . _('Tag') . "$iconSortAlphaDown</a>";
+} else {
+    $tagsort = "<a href='admin_eventtypes.php?order=tag' class='whitespace-no-wrap lightlink'>" . _('Tag') . "$iconSortAlphaUp</a>";
+    if ($order == "tagup") $orderstr = "tag DESC, description DESC";
+}
+
+if ($order == "type") {
+    $orderstr = "type, tag, description";
+    $typesort = "<a href='admin_eventtypes.php?order=typeup' class='lightlink whitespace-no-wrap'>" . _('Type/Description') . "$iconSortAlphaDown</a>";
+} else {
+    $typesort = "<a href='admin_eventtypes.php?order=type' class='lightlink whitespace-no-wrap'>" . _('Type/Description') . "$iconSortAlphaUp</a>";
+    if ($order == "typeup") $orderstr = "type DESC, tag DESC, description DESC";
+}
+
+if ($order == "disp") {
+    $orderstr = "description, tag";
+    $dispsort = "<a href='admin_eventtypes.php?order=dispup' class='lightlink whitespace-no-wrap'>" . _('Display') . "$iconSortAlphaDown</a>";
+} else {
+    $dispsort = "<a href='admin_eventtypes.php?order=disp' class='lightlink whitespace-no-wrap'>" . _('Display') . "$iconSortAlphaUp</a>";
+    if ($order == "dispup") $orderstr = "description DESC, tag DESC";
+}
+
+if ($order == "ev") {
+    $iconSortNumericUp = buildSvgElement("img/sort-numeric-up.svg", ["class" => "w-4 h-4 ml-1 fill-current inline-block"]);
+    $orderstr = "total_events DESC, tag";
+    $evsort = "<a href='admin_eventtypes.php?order=evup' class='lightlink whitespace-no-wrap'>" . _('Events') . "$iconSortNumericUp</a>";
+} else {
+    $iconSortNumericDown = buildSvgElement("img/sort-numeric-down.svg", ["class" => "w-4 h-4 ml-1 fill-current inline-block"]);
+    $evsort = "<a href='admin_eventtypes.php?order=ev' class='lightlink whitespace-no-wrap'>" . _('Events') . "$iconSortNumericDown</a>";
+    if ($order == "evup") $orderstr = "total_events, tag";
+}
+
+$wherestr = $searchstring ? "(tag LIKE '%$searchstring%' OR description LIKE '%$searchstring%' OR display LIKE '%$searchstring%')" : "";
+if ($etype) $wherestr .= $wherestr ? " AND type = '$etype'" : "type = '$etype'";
+if ($onimport || $onimport === "0") $wherestr .= $wherestr ? " AND keep = '$onimport'" : "keep = '$onimport'";
+if ($wherestr) $wherestr = "WHERE $wherestr";
+
 $query = "SELECT eventtypes.eventtypeID, tag, description, display, type, keep, collapse, ordernum, count(eventID) AS total_events ";
 $query .= "FROM $eventtypes_table eventtypes ";
 $query .= "LEFT JOIN $events_table events ON eventtypes.eventtypeID = events.eventtypeID ";
-
-$restrictions = [];
-if ($searchstring) {
-    array_push($restrictions, "(tag LIKE '%$searchstring%' OR description LIKE '%$searchstring%' OR display LIKE '%$searchstring%')");
-}
-if ($etype) array_push($restrictions, "type = '$etype'");
-
-if ($onimport || $onimport === "0") {
-    array_push($restrictions, "keep = '$onimport'");
-}
-if (!empty($restrictions)) {
-    $query .= "WHERE " . implode(" AND ", $restrictions) . " ";
-}
+$query .= "$wherestr ";
 $query .= "GROUP BY eventtypeID ";
-$query .= "ORDER BY ";
-if ($stype == "E") $query .= "total_events DESC, ";
-
-$query .= "tag, description ";
+$query .= "ORDER BY $orderstr, description ";
 $query .= "LIMIT $newoffset" . $maxsearchresults;
 $result = tng_query($query);
+$events = tng_fetch_all($result);
+tng_free_result($result);
 
-$numrows = tng_num_rows($result);
+$numrows = count($events);
 if ($numrows == $maxsearchresults || $offsetplus > 1) {
-    $query2 = "SELECT count(eventtypeID) AS ecount ";
-    $query2 .= "FROM $eventtypes_table ";
-    $query2 .= extractWhereClause($query, ["GROUP BY"]);
-    $result2 = tng_query($query2);
+    $query = "SELECT COUNT(eventtypeID) AS ecount FROM $eventtypes_table $wherestr";
+    $result2 = tng_query($query);
     $row = tng_fetch_assoc($result2);
     $totrows = $row['ecount'];
     tng_free_result($result2);
@@ -89,17 +123,8 @@ if ($numrows == $maxsearchresults || $offsetplus > 1) {
 }
 $helplang = findhelp("eventtypes_help.php");
 
+$flags['tabs'] = $tngconfig['tabs'];
 tng_adminheader(_('Event Types'), $flags);
-?>
-    <script>
-        function confirmDelete(ID) {
-            if (confirm('<?php echo _('Are you sure you want to delete this event type?'); ?>'))
-                deleteIt('eventtype', ID);
-            return false;
-        }
-    </script>
-
-<?php
 echo "</head>\n";
 echo tng_adminlayout();
 
@@ -113,12 +138,13 @@ echo displayHeadline(_('Custom Event Types'), "img/customeventtypes_icon.gif", $
         <tr class="databack">
             <td class="tngshadow">
                 <div class="normal">
-                    <form action="admin_eventtypes.php" name="form1">
+                    <form class="my-4" name="form1" action="admin_eventtypes.php">
                         <table class="normal">
                             <tr>
-                                <td><?php echo _('Search for'); ?>:</td>
+                                <!--                                <td>--><?php //echo _('Search for'); ?><!--:</td>-->
                                 <td>
-                                    <input class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
+                                    <label for="searchstring"><?php echo _('Search for'); ?></label>
+                                    <input id="searchstring" class="longfield" name="searchstring" type="search" value="<?php echo $searchstring; ?>">
                                 </td>
                                 <td>
                                     <input type="submit" name="submit" value="<?php echo _('Search'); ?>" class="align-top">
@@ -143,15 +169,6 @@ echo displayHeadline(_('Custom Event Types'), "img/customeventtypes_icon.gif", $
                                         <option value="R"<?php if ($etype == "R") {
                                             echo " selected";
                                         } ?>><?php echo _('Repository'); ?></option>
-                                    </select> &nbsp;
-                                    <?php echo _('Sort by'); ?>:
-                                    <select name="stype">
-                                        <option value="T"<?php if (!$stype || $stype == "T") {
-                                            echo " selected";
-                                        } ?>><?php echo _('Tag'); ?></option>
-                                        <option value="E"<?php if ($stype == "E") {
-                                            echo " selected";
-                                        } ?>><?php echo _('Events'); ?></option>
                                     </select>
                                 </td>
                                 <td>
@@ -194,18 +211,18 @@ echo displayHeadline(_('Custom Event Types'), "img/customeventtypes_icon.gif", $
 
                         <table class="normal">
                             <tr>
-                                <th class="fieldnameback fieldname"><?php echo _('Action'); ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo _('Action'); ?></th>
                                 <?php if ($allow_delete || $allow_edit) { ?>
-                                    <th class="fieldnameback fieldname"><?php echo _('Select'); ?></th>
+                                    <th class="p-1 fieldnameback fieldname"><?php echo _('Select'); ?></th>
                                 <?php } ?>
-                                <th class="fieldnameback fieldname"><?php echo _('Tag'); ?></th>
-                                <th class="fieldnameback fieldname"><?php echo _('Type/Description'); ?></th>
-                                <th class="fieldnameback fieldname"><?php echo _('Display'); ?></th>
-                                <th class="fieldnameback fieldname"><?php echo _('Order #'); ?></th>
-                                <th class="fieldnameback fieldname"><?php echo _('Ind/Fam'); ?></th>
-                                <th class="fieldnameback fieldname"><?php echo _('On Import'); ?></th>
-                                <th class="fieldnameback fieldname"><?php echo _('Collapse'); ?></th>
-                                <th class="fieldnameback fieldname"><?php echo _('Events'); ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo $tagsort; ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo $typesort; ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo $dispsort; ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo _('Order #'); ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo _('Ind/Fam'); ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo _('On Import'); ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo _('Collapse'); ?></th>
+                                <th class="p-1 fieldnameback fieldname"><?php echo $evsort; ?></th>
                             </tr>
 
                             <?php
@@ -217,40 +234,40 @@ echo displayHeadline(_('Custom Event Types'), "img/customeventtypes_icon.gif", $
                             if ($allow_delete) {
                                 $actionstr .= "<a href='#' onClick=\"return confirmDelete('xxx');\" title=\"" . _('Delete') . "\" class='smallicon admin-delete-icon'></a>";
                         }
-                        while ($row = tng_fetch_assoc($result)) {
-                            $keep = $row['keep'] ? _('Accept') : _('Ignore');
-                            $collapse = $row['collapse'] ? _('Yes') : _('No');
-                            switch ($row['type']) {
-                                case "I":
-                                    $type = _('Individual');
-                                    break;
-                                case "F":
-                                    $type = _('Family');
-                                    break;
-                                case "S":
+                            foreach ($events as $row) {
+                                $keep = $row['keep'] ? _('Accept') : _('Ignore');
+                                $collapse = $row['collapse'] ? _('Yes') : _('No');
+                                switch ($row['type']) {
+                                    case "I":
+                                        $type = _('Individual');
+                                        break;
+                                    case "F":
+                                        $type = _('Family');
+                                        break;
+                                    case "S":
                                     $type = _('Source');
                                     break;
                                 case "R":
                                     $type = _('Repository');
                                     break;
+                                }
+                                $displayval = getEventDisplay($row['display']);
+                                $newactionstr = preg_replace("/xxx/", $row['eventtypeID'], $actionstr);
+                                echo "<tr id=\"row_{$row['eventtypeID']}\">\n";
+                                echo "<td class='p-1 lightback'><div class='action-btns2'>$newactionstr</div></td>\n";
+                                if ($allow_delete || $allow_edit) {
+                                    echo "<td class='p-1 text-center lightback'><input type='checkbox' name=\"et{$row['eventtypeID']}\" value='1'></td>\n";
+                                }
+                                echo "<td class='p-1 lightback'>{$row['tag']}</td>\n";
+                                echo "<td class='p-1 lightback'>{$row['description']}</td>\n";
+                                echo "<td class='p-1 lightback'>$displayval&nbsp;</td>\n";
+                                echo "<td class='p-1 lightback'>{$row['ordernum']}</td>";
+                                echo "<td class='p-1 lightback'>$type</td>";
+                                echo "<td class='p-1 lightback'>$keep</td>";
+                                echo "<td class='p-1 lightback'>$collapse</td>";
+                                echo "<td class='p-1 text-right lightback'>" . number_format($row['total_events']) . "</td>";
+                                echo "</tr>\n";
                             }
-                            $displayval = getEventDisplay($row['display']);
-                            $newactionstr = preg_replace("/xxx/", $row['eventtypeID'], $actionstr);
-                            echo "<tr id=\"row_{$row['eventtypeID']}\">\n";
-                            echo "<td class='lightback'><div class=\"action-btns2\">$newactionstr</div></td>\n";
-                            if ($allow_delete || $allow_edit) {
-                                echo "<td class='lightback text-center'><input type='checkbox' name=\"et{$row['eventtypeID']}\" value='1'></td>\n";
-                            }
-                            echo "<td class='lightback'>&nbsp;{$row['tag']}&nbsp;</td>\n";
-                            echo "<td class='lightback'>&nbsp;{$row['description']}&nbsp;</td>\n";
-                            echo "<td class='lightback'>&nbsp;$displayval&nbsp;</td>\n";
-                            echo "<td class='lightback'>{$row['ordernum']}</td>";
-                            echo "<td class='lightback'>&nbsp;$type&nbsp;</td>";
-                            echo "<td class='lightback'>&nbsp;$keep&nbsp;</td>";
-                            echo "<td class='lightback'>&nbsp;$collapse&nbsp;</td>";
-                            echo "<td class='lightback' style=\"text-align:right;\">&nbsp;" . number_format($row['total_events']) . "&nbsp;</td>";
-                            echo "</tr>\n";
-                        }
                         ?>
                     </table>
                 <?php
@@ -262,11 +279,17 @@ echo displayHeadline(_('Custom Event Types'), "img/customeventtypes_icon.gif", $
                 else {
                     echo "</table>\n" . _('No records exist.');
                 }
-                tng_free_result($result);
                 ?>
-                </form>
+                    </form>
                 </div>
             </td>
         </tr>
     </table>
+    <script>
+        function confirmDelete(ID) {
+            if (confirm('<?php echo _('Are you sure you want to delete this event type?'); ?>'))
+                deleteIt('eventtype', ID);
+            return false;
+        }
+    </script>
 <?php echo tng_adminfooter(); ?>

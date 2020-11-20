@@ -72,7 +72,7 @@ net.ContentLoader.prototype.defaultError = function () {
 function showPreview(mediaID, medialinkID, path, entitystr, sitever) {
     if (jQuery('#prev' + entitystr).html() == "") {
         var caption_div = sitever != "mobile" ? '<div class=\"prev-caption\" id=\"capt' + entitystr + '\"></div>' : '<div class=\"prev-close\"><img id=\"close-' + entitystr + '\" src="img/tng_close.gif"></div>';
-        jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '"><img src="img/spinner.gif" style="border:0;"> ' + loadingmsg + '</div><a href="showmedia.php?mediaID=' + mediaID + '&medialinkID=' + medialinkID + '"><img src="ajx_smallimage.php?mediaID=' + mediaID + '&path=' + encodeURIComponent(path) + '" style="display:none;" onload="jQuery(\'#ld\'+\'' + entitystr + '\').hide(); this.style.display=\'\';"></a>' + caption_div);
+        jQuery('#prev' + entitystr).html('<div id="ld' + entitystr + '"><img src="img/spinner.gif" style="border:0;"> ' + loadingMessage + '</div><a href="showmedia.php?mediaID=' + mediaID + '&medialinkID=' + medialinkID + '"><img src="ajx_smallimage.php?mediaID=' + mediaID + '&path=' + encodeURIComponent(path) + '" style="display:none;" onload="jQuery(\'#ld\'+\'' + entitystr + '\').hide(); this.style.display=\'\';"></a>' + caption_div);
         pageWidth = jQuery(window).width();
         parent = jQuery('#prev' + entitystr).parent();
         currX = parent.position().left;
@@ -224,7 +224,7 @@ function toggleCollapsed(collapsing) {
         var affectedRows = jQuery('.' + targetId);
         if (!collapsing && $(item).attr('src').indexOf('desc') > 0) {
             $(item).attr('src', "img/tng_sort_asc.gif");
-            $(item).attr('title', collapse_msg);
+            $(item).attr('title', collapseMessage);
             jQuery('.l' + targetId).attr('rowspan', affectedRows.length + 1);
             if (targetId.substring(0, 1) == "m") {
                 //jQuery('#dr'+targetId).show();
@@ -233,7 +233,7 @@ function toggleCollapsed(collapsing) {
             affectedRows.show();
         } else if (collapsing && $(item).attr('src').indexOf('asc') > 0) {
             $(item).attr('src', "img/tng_sort_desc.gif");
-            $(item).attr('title', expand_msg);
+            $(item).attr('title', expandMessage);
             jQuery('.l' + targetId).removeAttr('rowspan');
             if (targetId.substring(0, 1) == "m") {
                 //jQuery('#dr'+targetId).hide();
@@ -262,11 +262,11 @@ jQuery(document).ready(function () {
         var affectedRows = jQuery('.' + targetId);
         if (target.attr('src').indexOf('desc') > 0) {
             target.attr('src', "img/tng_sort_asc.gif");
-            target.attr('title', collapse_msg);
+            target.attr('title', collapseMessage);
             jQuery('.l' + targetId).attr('rowspan', affectedRows.length + 1);
         } else {
             target.attr('src', "img/tng_sort_desc.gif");
-            target.attr('title', expand_msg);
+            target.attr('title', expandMessage);
             jQuery('.l' + targetId).removeAttr('rowspan');
         }
         if (targetId.substring(0, 1) == "m") {

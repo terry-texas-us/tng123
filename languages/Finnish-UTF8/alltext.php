@@ -149,7 +149,7 @@ $text['years'] = "vuotta";
 //added in 10.0.0
 $admtext['CONL'] = "Konfirmaatio (LDS)";
 $admtext['INIT'] = "Pesu ja voitelu (LDS)";
-$admtext['step'] = "veli- tai tytärpuoli";
+$admtext['stepchild'] = "veli- tai tytärpuoli";
 $text['switchm'] = "Vaihda mobiiliin";
 $text['switchs'] = "Vaihda normaaliin";
 

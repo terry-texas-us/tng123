@@ -10,8 +10,6 @@ if ($umfs < 15) {
 
 include "begin.php";
 include "adminlib.php";
-$textpart = "gedimport";
-include "$mylanguage/admintext.php";
 
 $admin_login = 1;
 include "checklogin.php";

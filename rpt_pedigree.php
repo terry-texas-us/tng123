@@ -274,7 +274,7 @@ function fillChart($gens, $ancestors, $topy, $yvals) {
 
 function createBlankChart($gens, $topy) {
     global $pdf, $paperdim, $topmrg, $botmrg, $lftmrg, $rtmrg;
-    global $lineheight, $rptFont, $rptFontSize, $text, $startnum;
+    global $lineheight, $rptFont, $rptFontSize, $startnum;
 
     $lineheight = 0.1;
 
@@ -570,9 +570,23 @@ function drawBoxLine($x, $y, $w, $num, $list) {
     return ($y + $lineheight);
 }
 
-// returns the location of the horizontal line for prev gen
+/**
+ * returns the location of the horizontal line for prev gen
+ *
+ * @param $w
+ * @param $num
+ * @param $fh
+ * @param $mh
+ * @param $hsp
+ * @param $vsp
+ * @param int $endspace
+ * @param int $drawlines
+ * @param int $listmode
+ * @param int $boxmode
+ * @return float|int
+ */
 function drawHusbWifeCombo($w, $num, $fh, $mh, $hsp, $vsp, $endspace = 0, $drawlines = 1, $listmode = 0, $boxmode = 0) {
-    global $pdf, $lineheight, $text;
+    global $pdf, $lineheight;
 
     // set the coords
     $x = $pdf->GetX();

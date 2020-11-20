@@ -151,7 +151,7 @@ $text['years'] = "godine";
 //added in 10.0.0
 $admtext['CONL'] = "Potvrda";
 $admtext['INIT'] = "Uvodni (LDS)";
-$admtext['step'] = "pastorče";
+$admtext['stepchild'] = "pastorče";
 $text['switchm'] = "Prebacite se na mobilni sajt";
 $text['switchs'] = "Prebacite se na standardni sajt";
 

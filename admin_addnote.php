@@ -1,8 +1,6 @@
 <?php
 include "begin.php";
 include "adminlib.php";
-$textpart = "notes";
-include "$mylanguage/admintext.php";
 
 include "checklogin.php";
 if (!$allow_add || ($assignedtree && $assignedtree != $tree)) exit;

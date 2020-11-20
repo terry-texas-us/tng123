@@ -1,6 +1,6 @@
 <?php
 
-global $text, $tmp;
+global $tmp;
 ?>
 <body>
 <div class="text-center">
@@ -24,11 +24,11 @@ global $text, $tmp;
                 $flags['noicons'] = true;
 
                 if ($currentuser) {
-                    echo "<span class=\"headertext\">{$text['welcome']}, $currentuserdesc</span>&nbsp;";
-                    echo "<a href=\"logout.php\"><span class=\"headertext-sm\">{$text['mnulogout']}</span></a>";
+                    echo "<span class='headertext'>" . _("Welcome") . ", $currentuserdesc</span>&nbsp;";
+                    echo "<a href=\"logout.php\"><span class='headertext-sm'>" . _("Log Out") . "</span></a>";
                 } else {
-                    echo "<span class=\"headertext\">{$text['anon']}</span>&nbsp;";
-                    echo "<a href=\"login.php\"><span class=\"headertext-sm\">{$text['mnulogon']}</span></a>";
+                    echo "<span class='headertext'>" . _("You are currently anonymous") . "</span>&nbsp;";
+                    echo "<a href=\"login.php\"><span class='headertext-sm'>" . _("Log In") . "</span></a>";
                 }
                 ?>
 

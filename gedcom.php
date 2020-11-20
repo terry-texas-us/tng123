@@ -39,8 +39,12 @@ function getAncestor($person, $generation) {
     }
 }
 
+/**
+ * @param $persfamID
+ * @return array
+ */
 function getCitations($persfamID) {
-    global $citations_table, $text, $tree;
+    global $citations_table, $tree;
 
     $citations = [];
     $citquery = "SELECT citationID, page, quay, citedate, citetext, note, sourceID, description, eventID FROM $citations_table WHERE persfamID = '$persfamID' AND gedcom = '$tree' ORDER BY eventID";
@@ -446,8 +450,12 @@ function appendParents($child) {
     return $info;
 }
 
+/**
+ * @param $person
+ * @return string
+ */
 function writeIndividual($person) {
-    global $tree, $ldsOK, $people_table, $events_table, $eventtypes_table, $text, $admtext, $citations, $lnprefixes, $assoc_table, $lineending, $private, $righttree;
+    global $tree, $ldsOK, $people_table, $events_table, $eventtypes_table, $admtext, $citations, $lnprefixes, $assoc_table, $lineending, $private, $righttree;
 
     $query = "SELECT lastname, lnprefix, firstname, sex, title, prefix, suffix, nameorder, nickname, birthdate, birthplace, altbirthdate, altbirthplace, deathdate, deathplace, burialdate, burialplace, burialtype, baptdate, baptplace, confdate, confplace, initdate, initplace, endldate, endlplace, famc, living, private, branch, DATE_FORMAT(changedate,\"%d %b %Y\") AS changedate FROM $people_table WHERE personID = \"$person\" AND gedcom = '$tree'";
     $result = tng_query($query);
@@ -884,7 +892,7 @@ function getDescendant($person, $generation) {
 }
 
 function doSources() {
-    global $tree, $sources_table, $events_table, $eventtypes_table, $allsources, $text, $allrepos, $lineending;
+    global $tree, $sources_table, $events_table, $eventtypes_table, $allsources, $allrepos, $lineending;
 
     $newsources = array_unique($allsources);
     if ($newsources) {
