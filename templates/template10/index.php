@@ -1,5 +1,4 @@
 <?php
-
 global $allow_admin;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
 $flags['style'] = "<style>\n";

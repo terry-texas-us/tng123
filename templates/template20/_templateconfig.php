@@ -135,4 +135,4 @@ $tmp['20_topsurnames'] = "The 40 most frequent last names on our site";
 $tmp['20_topsurnames_English-UTF8'] = "The 40 most frequent last names on our site";
 $tmp['20_topsurnames_French-UTF8'] = "Les 40 plus fréquents noms de famille sur notre site";
 $tmp['20_nbrsurnames'] = "40";
-?>
+

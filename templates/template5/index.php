@@ -1,5 +1,4 @@
 <?php
-
 global $allow_admin;
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
@@ -27,14 +26,14 @@ $text['contactus_long'] = str_replace("suggest.php", "suggest.php?page=$title", 
                 </td>
                 <td class="content" colspan="2">
 
-                    <table class="innertable w-full" cellpadding="5" cellspacing="0">
+                    <table class="innertable w-full">
                         <tr>
                             <td colspan="2" class="indexheader">
-                                <?php echo $title; ?> <!-- Our Family History and Ancestry -->
+                                <?php echo $title; ?>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="boxback">
+                            <td colspan="2" class="boxback pr-2">
                                 <div id="menubar">
                                     <a href="whatsnew.php" class="lightlink2"><?php echo _("What's New"); ?></a>
                                     <?php

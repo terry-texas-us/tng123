@@ -1,5 +1,4 @@
 <?php
-
 global $tmp;
 
 $dadlabel = getTemplateMessage('t10_dadside');

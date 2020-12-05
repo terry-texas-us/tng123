@@ -55,7 +55,7 @@ if ($totnum_tests) {
         $linkedstr = $num_links > 1 ? _('DNA Tests') : _('DNA Test');
     }
     $persontext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
-    $persontext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
+    $persontext .= "<col class='labelcol'/><col style=\"width:{$datewidth}px;\"/><col class=\"takenbycol\"/><col class=\"haplogroupcol\"/><col />\n";
     $persontext .= "<tr>\n";
     $persontext .= "<td class='fieldnameback fieldname align-top' rowspan=\"$num_tests\">" . _('DNA Tests') . "$toggleicon</td>\n";
     $persontext .= "<td colspan='4' class='fieldnameback fieldname'><strong>&nbsp;$num_links&nbsp;$linkedstr</strong>&nbsp;";

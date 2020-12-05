@@ -1,5 +1,4 @@
 <?php
-
 global $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes;
 ?>
 

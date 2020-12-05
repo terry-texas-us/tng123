@@ -1,5 +1,4 @@
 <?php
-
 global $subroot, $currentuser, $currentuserdesc, $allow_admin, $tmp, $mediatypes, $rootpath;
 ?>
 

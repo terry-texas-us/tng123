@@ -1,5 +1,4 @@
 <?php
-
 global $currentuser, $allow_admin, $subroot, $tmp, $homepage;
 
 $dadlabel = getTemplateMessage('t19_dadside');

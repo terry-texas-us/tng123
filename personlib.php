@@ -850,7 +850,7 @@ function doMediaSection($entity, $medialist, $albums) {
             if ($media) $media .= "<br>\n";
 
             $media .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
-            $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
+            $media .= "<col class='labelcol'/><col style=\"width:{$datewidth}px;\"/><col/>\n";
             $media .= "$newmedia\n</table>\n";
         }
     }
@@ -859,7 +859,7 @@ function doMediaSection($entity, $medialist, $albums) {
         if ($media) $media .= "<br>\n";
 
         $media .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
-        $media .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
+        $media .= "<col class='labelcol'/><col style=\"width:{$datewidth}px;\"/><col/>\n";
         $media .= "$albumtext\n</table>\n";
     }
     return $media;

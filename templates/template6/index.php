@@ -10,12 +10,12 @@ echo $headElement->getHtml();
 standardHeaderVariants($headElement, $flags);
 echo "<body id='bodytop' class='" . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . "'>\n";
 if ($tngconfig['maint']) {
-    echo "<span class='fieldnameback yellow p-1'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
+    echo "<span class='p-1 fieldnameback yellow'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 ?>
-    <table class="w-full" cellspacing="0" cellpadding="5">
+    <table class="w-full md:w-11/12 md:mx-auto">
         <tr>
-            <td class="section">
+            <td class="p-1 section">
                 <img src="<?php echo $templatepath; ?>img/header_welcome.gif" width="200" height="50" alt=""><br>
                 <span class="normal"><?php echo getTemplateMessage('t6_mainpara'); ?><br><br><br></span>
                 <img src="<?php echo $templatepath; ?>img/header_search.gif" width="200" height="50" alt=""><br>
@@ -24,7 +24,7 @@ if ($tngconfig['maint']) {
                 <form id="form1" action="search.php" method="get">
                     <div>
                         <input type="hidden" value="AND" name="mybool">
-                        <table cellspacing="0">
+                        <table>
                             <tr>
                                 <td>
                                     <label for="myfirstname"><?php echo _("First Name"); ?>:</label>
@@ -32,7 +32,6 @@ if ($tngconfig['maint']) {
                                 <td class="searchbox">
                                     <input id="myfirstname" name="myfirstname" type="search">
                                 </td>
-
                             </tr>
                             <tr>
                                 <td>
@@ -57,7 +56,7 @@ if ($tngconfig['maint']) {
                     [<a href="http://www.familytreeseeker.com">FamilyTreeSeeker.com</a>]
                 </p>
             </td>
-            <td class="section">
+            <td class="p-1 section">
                 <img src="<?php echo $templatepath; ?>img/header_featphoto.gif" width="200" height="50" alt=""><br>
                 <?php include "randomphoto.php"; ?>
                 <p class="text-center">[<a href="browsemedia.php?mediatypeID=photos"><?php echo _("View all photos"); ?></a>]</p>
@@ -77,17 +76,17 @@ if ($tngconfig['maint']) {
                         <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <td class="normal align-top">
+                        <td class="align-top normal">
                             <?php echo $tmp['t6_fhlinkshis']; ?>
                         </td>
-                        <td class="normal align-top">
+                        <td class="align-top normal">
                             <?php echo $tmp['t6_fhlinkshers']; ?>
                         </td>
                     </tr>
                 </table>
                 <p>&nbsp;</p>
             </td>
-            <td class="section">
+            <td class="p-1 section">
                 <p class="normal"><img src="<?php echo $templatepath; ?>img/header_mostwanted.gif" width="200" height="50" alt="">
                 </p>
                 <?php echo getTemplateMessage('t6_mwpara'); ?>

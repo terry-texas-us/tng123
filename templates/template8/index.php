@@ -1,5 +1,4 @@
 <?php
-
 global $allow_admin;
 $flags['noicons'] = true;
 echo "<!doctype html>\n";

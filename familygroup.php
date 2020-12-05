@@ -149,8 +149,8 @@ function displayIndividual($ind, $label, $familyID, $showmarriage) {
     $event = [];
 
     $indtext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
-    $indtext .= "<col class=\"labelcol\"/><col class=\"eventdatecol\"><col/>";
-    $indtext .= $allow_lds_this ? "<col style=\"width:125px;\"/><col class=\"eventdatecol\"/><col class=\"labelcol\"/>\n" : "\n";
+    $indtext .= "<col class='labelcol'/><col class=\"eventdatecol\"><col/>";
+    $indtext .= $allow_lds_this ? "<col style=\"width:125px;\"/><col class=\"eventdatecol\"/><col class='labelcol'/>\n" : "\n";
 
     $event['text'] = _('Born');
     $event['event'] = "BIRT";

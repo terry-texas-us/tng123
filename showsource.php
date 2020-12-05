@@ -63,7 +63,7 @@ $sourcetext = "";
 $sourcetext .= "<ul class='nopad'>\n";
 $sourcetext .= beginSection("info");
 $sourcetext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
-$sourcetext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
+$sourcetext .= "<col class='labelcol'/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($srcrow['title']) {
     $sourcetext .= showEvent(["text" => _('Title'), "fact" => $srcrow['title']]);
 }
@@ -191,7 +191,7 @@ $notes = buildNotes($srcnotes, "");
 if ($notes) {
     $sourcetext .= beginSection("notes");
     $sourcetext .= "<table class='whiteback tfixed' cellspacing='1'  cellpadding='4'>\n";
-    $sourcetext .= "<col class=\"labelcol\"/><col/>\n";
+    $sourcetext .= "<col class='labelcol'/><col/>\n";
     $sourcetext .= "<tr>\n";
     $sourcetext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>&nbsp;" . _('Notes') . "&nbsp;</span></td>\n";
     $sourcetext .= "<td class='databack'>$notes</td>\n";

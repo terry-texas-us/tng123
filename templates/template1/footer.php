@@ -1,5 +1,4 @@
 <?php
-
 global $currentuser, $mylanguage, $tmp, $flags;
 ?>
 

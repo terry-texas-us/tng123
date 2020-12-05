@@ -1,5 +1,4 @@
 <?php
-
 global $allow_admin;
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];

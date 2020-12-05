@@ -1,5 +1,4 @@
 <?php
-
 global $mediatypes, $currentuser, $allow_admin, $tmp, $target, $tngconfig, $logout_url;
 ?>
 

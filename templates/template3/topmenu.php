@@ -1,15 +1,14 @@
 <?php
-
 global $tmp;
 ?>
 
 <body id="bodytop" class="<?php echo pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME); ?>">
-<table class="tableborder rounded-lg t3shadow w-full" cellspacing="0" cellpadding="5">
+<table class="w-full rounded-lg tableborder t3shadow">
     <tr>
-        <td class="t3hdr rounded-lg">
+        <td class="p-1 rounded-lg t3hdr">
             <img src="<?php echo $templatepath; ?><?php echo $tmp['t3_headimg']; ?>" alt="" class="headerphoto" width="186" height="110">
         </td>
-        <td class="topmenu rounded-lg">
+        <td class="p-1 rounded-lg topmenu">
             <?php if ($tmp['t3_titlechoice'] == "text") { ?>
                 <em class="toptitle"><?php echo getTemplateMessage('t3_maintitle'); ?></em><br>
             <?php } else { ?>

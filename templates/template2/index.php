@@ -1,5 +1,4 @@
 <?php
-
 global $allow_admin;
 $tngconfig['showshare'] = false;
 $flags = ['noicons' => true, 'noheader' => true, 'nobody' => true];
@@ -13,6 +12,7 @@ if ($tngconfig['maint']) {
     echo "<span class='p-1 fieldnameback yellow'><strong>" . _("Maintenance Mode is ON") . "</strong></span><br><br>\n";
 }
 $title = getTemplateMessage('t2_maintitle');
+$mainpara = getTemplateMessage('t2_mainpara');
 ?>
     <script>
         pedigreeoff = new Image(162, 24);
@@ -30,10 +30,10 @@ $title = getTemplateMessage('t2_maintitle');
         }
     </script>
 
-    <div class="text-center">
-        <table class="p-0 rounded-lg indexpage">
+    <div class="md:w-11/12 mx-auto">
+        <table class="w-full p-0 rounded-lg indexpage">
             <tr>
-                <td class='align-top'>
+                <td>
                     <div class="rounded-lg databack">
                         <div class="inline float-left">
                             <?php if ($tmp['t2_titlechoice'] == "text") { ?>
@@ -41,28 +41,18 @@ $title = getTemplateMessage('t2_maintitle');
                                     <em class="maintitle"><?php echo $title; ?></em>
                                 </div>
                             <?php } else { ?>
-                                <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443"
-                                    height="114" class="rounded-lg noimgborder">
-                                <?php
-                            }
-                            $mainpara = getTemplateMessage('t2_mainpara');
-                            ?>
-                            <br>
-                            <?php
-                            if ($mainpara) {
-                                echo "<div style='max-width: 390px; padding-left:20px;'>$mainpara</div><br>\n";
-                            }
-                            ?>
+                                <img src="<?php echo $templatepath; ?><?php echo $tmp['t2_titleimage']; ?>" alt="" width="443" height="114" class="rounded-lg noimgborder">
+                            <?php } ?>
+                            <?php if ($mainpara) echo "<div class='pl-5 max-w-md'>$mainpara</div><br>\n"; ?>
                             <a href="pedigree.php?personID=<?php echo $tmp['t2_pedperson']; ?>&amp;tree=<?php echo $tmp['t2_pedtree']; ?>"
                                 class="mainlink smalltitle">&#8226; <?php echo _("Pedigree"); ?></a>
                             <a href="extrastree.php?personID=<?php echo $tmp['t2_phhistperson']; ?>&amp;tree=<?php echo $tmp['t2_phhisttree']; ?>"
                                 class="mainlink smalltitle">&#8226; <?php echo _("Photos &amp; Histories"); ?></a>
 
-                            <div id="linktable">
-                                <br><br>
-                                <table cellspacing="4">
+                            <div id="linktable" class="my-4">
+                                <table>
                                     <tr>
-                                        <td rowspan="6">&nbsp;&nbsp;&nbsp;</td>
+                                        <td rowspan="6" class="pr-3"></td>
                                         <td class='align-top'>
                                             <?php
                                             if ($currentuser) {
@@ -72,121 +62,70 @@ $title = getTemplateMessage('t2_maintitle');
                                             }
                                             ?>
                                         </td>
-                                        <td>&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="whatsnew.php" class="sidelink"><?php echo _("What's New"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="statistics.php" class="sidelink"><?php echo _("Statistics"); ?></a></td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="anniversaries.php" class="sidelink"><?php echo _("Dates and Anniversaries"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="pr-2"></td>
+                                        <td><a href="whatsnew.php" class="sidelink"><?php echo _("What's New"); ?></a></td>
+                                        <td class="pr-2"></td>
+                                        <td><a href="statistics.php" class="sidelink"><?php echo _("Statistics"); ?></a></td>
+                                        <td class="pr-2"></td>
+                                        <td><a href="anniversaries.php" class="sidelink"><?php echo _("Dates and Anniversaries"); ?></a></td>
                                     </tr>
                                     <tr>
-                                        <td class='align-top'>
-                                            <a href="browsemedia.php?mediatypeID=photos" class="sidelink"><?php echo _("Photos"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="browsemedia.php?mediatypeID=histories" class="sidelink"><?php echo _("Histories"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="cemeteries.php" class="sidelink"><?php echo _("Cemeteries"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="places.php" class="sidelink"><?php echo _("Places"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td><a href="browsemedia.php?mediatypeID=photos" class="sidelink"><?php echo _("Photos"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="browsemedia.php?mediatypeID=histories" class="sidelink"><?php echo _("Histories"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="cemeteries.php" class="sidelink"><?php echo _("Cemeteries"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="places.php" class="sidelink"><?php echo _("Places"); ?></a></td>
                                     </tr>
                                     <tr>
-                                        <td class='align-top'>
-                                            <a href="browsemedia.php?mediatypeID=documents" class="sidelink"><?php echo _("Documents"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="browsemedia.php" class="sidelink"><?php echo _("All Media"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="browsemedia.php?mediatypeID=headstones" class="sidelink"><?php echo _("Headstones"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="browsealbums.php" class="sidelink"><?php echo _("Albums"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td><a href="browsemedia.php?mediatypeID=documents" class="sidelink"><?php echo _("Documents"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="browsemedia.php" class="sidelink"><?php echo _("All Media"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="browsemedia.php?mediatypeID=headstones" class="sidelink"><?php echo _("Headstones"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="browsealbums.php" class="sidelink"><?php echo _("Albums"); ?></a></td>
                                     </tr>
                                     <tr>
-                                        <td class='align-top'>
-                                            <a href="reports.php" class="sidelink"><?php echo _("Reports"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="browsesources.php" class="sidelink"><?php echo _("Sources"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="bookmarks.php" class="sidelink"><?php echo _("Bookmarks"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="suggest.php?page=<?php echo $title; ?>" class="sidelink"><?php echo _("Contact Us"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td><a href="reports.php" class="sidelink"><?php echo _("Reports"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="browsesources.php" class="sidelink"><?php echo _("Sources"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="bookmarks.php" class="sidelink"><?php echo _("Bookmarks"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="suggest.php?page=<?php echo $title; ?>" class="sidelink"><?php echo _("Contact Us"); ?></a></td>
                                     </tr>
                                     <tr>
-                                        <td class='align-top'>
-                                            <a href="mostwanted.php" class="sidelink"><?php echo _("Most Wanted"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="browserepos.php" class="sidelink"><?php echo _("Repositories"); ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="showlog.php" class="sidelink"><?php if ($allow_admin) {
+                                        <td><a href="mostwanted.php" class="sidelink"><?php echo _("Most Wanted"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="browserepos.php" class="sidelink"><?php echo _("Repositories"); ?></a></td>
+                                        <td></td>
+                                        <td><a href="showlog.php" class="sidelink"><?php if ($allow_admin) {
                                                     echo _("Access Log");
-                                                } ?></a>
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                        <td class='align-top'>
-                                            <a href="admin.php" class="sidelink"><?php if ($allow_admin) {
+                                                } ?></a></td>
+                                        <td></td>
+                                        <td><a href="admin.php" class="sidelink"><?php if ($allow_admin) {
                                                     echo _("Administration");
-                                                } ?></a>&nbsp;
-                                        </td>
-                                        <td>&nbsp;&nbsp;&nbsp;</td>
+                                                } ?></a></td>
                                     </tr>
                                     <?php if (!$currentuser && !$tngconfig['disallowreg']) { ?>
-                                        <tr>
-                                            <td class="align-top" colspan="4">
-                                                <a href="newacctform.php" class="sidelink"><?php echo _("Register for a User Account"); ?></a>
-                                            </td>
-                                            <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <tr class="mt-4">
+                                            <td colspan="4"><a href="newacctform.php" class="sidelink"><?php echo _("Register for a User Account"); ?></a></td>
                                         </tr>
                                     <?php } ?>
                                 </table>
                             </div>
-                            <br>
-
                             <form id="form1" name="searchform" action="search.php" method="get">
-                                <div id="searchblock">
+                                <div id="searchblock" class="flex">
                                     <div id="searchtitleblock">
                                         <span class="smalltitle"><?php echo _("Search"); ?></span>
-                                        <table cellspacing="6">
+                                        <table>
                                             <tr>
-                                                <td align="center">
-                                                    <a href="searchform.php" class="sidelink"><?php echo _("Advanced Search"); ?></a>
-                                                </td>
+                                                <td><a href="searchform.php" class="sidelink"><?php echo _("Advanced Search"); ?></a></td>
                                             </tr>
                                             <tr>
-                                                <td align="center">
-                                                    <a href="surnames.php" class="sidelink"><?php echo _("Surnames"); ?></a>
-                                                </td>
+                                                <td><a href="surnames.php" class="sidelink"><?php echo _("Surnames"); ?></a></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -198,11 +137,10 @@ $title = getTemplateMessage('t2_maintitle');
                                         <label for="mylastname"><small><?php echo _("Last Name"); ?>:</small></label>
                                         <br>
                                         <input id="mylastname" class="searchbox" name="mylastname" type="search">
-                                        <br>
                                         <input name="mybool" type="hidden" value="AND">
                                     </div>
                                     <div id="searcharrowblock">
-                                        <input class="indexsubmit" name="imgsubmit" src="<?php echo $templatepath; ?>img/button.jpg" type="image" style="border: none;" alt="">
+                                        <input class="indexsubmit" name="imgsubmit" src="<?php echo $templatepath; ?>img/button.jpg" type="image" alt="">
                                     </div>
                                 </div>
                             </form>
@@ -217,7 +155,6 @@ $title = getTemplateMessage('t2_maintitle');
         </table>
         <div class="footer">
             <p><a href="changelanguage.php" class="footer"><?php echo _("Change Language"); ?></a></p>
-
             <?php
             $flags['basicfooter'] = true;
             tng_footer($flags);

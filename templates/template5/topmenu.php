@@ -1,5 +1,4 @@
 <?php
-
 global $tmp;
 ?>
 
@@ -30,6 +29,6 @@ global $tmp;
         </tr>
         <tr>
             <td>
-                <table class="w-full border-0" cellspacing="0" cellpadding="7" border="0">
+                <table class="w-full border-0">
                     <tr>
-                        <td style="border-collapse:separate;">
+                        <td class="p-2 border-separate">

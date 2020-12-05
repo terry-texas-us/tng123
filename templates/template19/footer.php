@@ -1,5 +1,4 @@
 <?php
-
 global $flags, $tng_version;
 ?>
 

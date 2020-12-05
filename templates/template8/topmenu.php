@@ -1,5 +1,4 @@
 <?php
-
 global $currentuser, $allow_admin, $tmp;
 ?>
 

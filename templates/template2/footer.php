@@ -1,5 +1,4 @@
 <?php
-
 global $flags, $currentuser, $mylanguage, $tngconfig;
 ?>
 

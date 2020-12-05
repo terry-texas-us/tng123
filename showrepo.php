@@ -46,7 +46,7 @@ $repotext = "";
 $repotext .= "<ul class='nopad'>\n";
 $repotext .= beginSection("info");
 $repotext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
-$repotext .= "<col class=\"labelcol\"/><col style=\"width:{$datewidth}px;\"/><col/>\n";
+$repotext .= "<col class='labelcol'/><col style=\"width:{$datewidth}px;\"/><col/>\n";
 if ($reporow['reponame']) {
     $repotext .= showEvent(["text" => _('Name'), "fact" => $reporow['reponame']]);
 }
@@ -111,7 +111,7 @@ $notes = buildNotes($reponotes, "");
 if ($notes) {
     $repotext .= beginSection("notes");
     $repotext .= "<table class='whiteback tfixed' cellspacing='1' cellpadding='4'>\n";
-    $repotext .= "<col class=\"labelcol\"/><col/>\n";
+    $repotext .= "<col class='labelcol'/><col/>\n";
     $repotext .= "<tr>\n";
     $repotext .= "<td class='fieldnameback indleftcol align-top' id=\"notes1\"><span class='fieldname'>&nbsp;" . _('Notes') . "&nbsp;</span></td>\n";
     $repotext .= "<td class='databack'>$notes</td>\n";

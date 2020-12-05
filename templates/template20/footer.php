@@ -1,5 +1,4 @@
 <?php
-
 global $currentuser, $tng_version, $flags;
 ?>
 
